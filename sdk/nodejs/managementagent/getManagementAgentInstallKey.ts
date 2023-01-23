@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentInstallKey(args: GetManagementAgentInstallKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentInstallKeyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", {
         "managementAgentInstallKeyId": args.managementAgentInstallKeyId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetManagementAgentInstallKeyResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Gets complete details of the Agent install Key for a given key id
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgentInstallKey = oci.ManagementAgent.getManagementAgentInstallKey({
+ *     managementAgentInstallKeyId: oci_management_agent_management_agent_install_key.test_management_agent_install_key.id,
+ * });
+ * ```
+ */
 export function getManagementAgentInstallKeyOutput(args: GetManagementAgentInstallKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentInstallKeyResult> {
-    return pulumi.output(args).apply(a => getManagementAgentInstallKey(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgentInstallKey(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudExadataInfrastructure(args: GetCloudExadataInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudExadataInfrastructureResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", {
         "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,
     }, opts);
@@ -47,6 +45,14 @@ export interface GetCloudExadataInfrastructureArgs {
  */
 export interface GetCloudExadataInfrastructureResult {
     /**
+     * The requested number of additional storage servers activated for the Exadata infrastructure.
+     */
+    readonly activatedStorageCount: number;
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     */
+    readonly additionalStorageCount: number;
+    /**
      * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      */
     readonly availabilityDomain: string;
@@ -64,9 +70,21 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly computeCount: number;
     /**
+     * The total number of CPU cores allocated.
+     */
+    readonly cpuCount: number;
+    /**
      * The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
      */
     readonly customerContacts: outputs.Database.GetCloudExadataInfrastructureCustomerContact[];
+    /**
+     * Size, in terabytes, of the DATA disk group.
+     */
+    readonly dataStorageSizeInTbs: number;
+    /**
+     * The local node storage allocated in GBs.
+     */
+    readonly dbNodeStorageSizeInGbs: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -96,6 +114,26 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly maintenanceWindows: outputs.Database.GetCloudExadataInfrastructureMaintenanceWindow[];
     /**
+     * The total number of CPU cores available.
+     */
+    readonly maxCpuCount: number;
+    /**
+     * The total available DATA disk group size.
+     */
+    readonly maxDataStorageInTbs: number;
+    /**
+     * The total local node storage available in GBs.
+     */
+    readonly maxDbNodeStorageInGbs: number;
+    /**
+     * The total memory available in GBs.
+     */
+    readonly maxMemoryInGbs: number;
+    /**
+     * The memory allocated in GBs.
+     */
+    readonly memorySizeInGbs: number;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     readonly nextMaintenanceRunId: string;
@@ -120,9 +158,24 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly totalStorageSizeInGbs: number;
 }
-
+/**
+ * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudExadataInfrastructure = oci.Database.getCloudExadataInfrastructure({
+ *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
+ * });
+ * ```
+ */
 export function getCloudExadataInfrastructureOutput(args: GetCloudExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudExadataInfrastructureResult> {
-    return pulumi.output(args).apply(a => getCloudExadataInfrastructure(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudExadataInfrastructure(a, opts))
 }
 
 /**

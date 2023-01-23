@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLetterOfAuthorityResult> InvokeAsync(GetLetterOfAuthorityArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLetterOfAuthorityResult>("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args ?? new GetLetterOfAuthorityArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLetterOfAuthorityResult>("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args ?? new GetLetterOfAuthorityArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLetterOfAuthorityResult> Invoke(GetLetterOfAuthorityInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLetterOfAuthorityResult>("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args ?? new GetLetterOfAuthorityInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLetterOfAuthorityResult>("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args ?? new GetLetterOfAuthorityInvokeArgs(), options.WithDefaults());
     }
 
 

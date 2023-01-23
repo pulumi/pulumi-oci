@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployment(args: GetDeploymentArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeployment:getDeployment", {
         "deploymentId": args.deploymentId,
     }, opts);
@@ -55,16 +53,20 @@ export interface GetDeploymentResult {
      */
     readonly cpuCoreCount: number;
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      */
     readonly deploymentBackupId: string;
+    /**
+     * Information regarding the deployment diagnostic collection
+     */
+    readonly deploymentDiagnosticDatas: outputs.GoldenGate.GetDeploymentDeploymentDiagnosticData[];
     readonly deploymentId: string;
     /**
-     * The deployment type.
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
      */
     readonly deploymentType: string;
     /**
@@ -84,7 +86,7 @@ export interface GetDeploymentResult {
      */
     readonly fqdn: string;
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
@@ -124,7 +126,7 @@ export interface GetDeploymentResult {
      */
     readonly lifecycleSubState: string;
     /**
-     * An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     readonly nsgIds: string[];
     /**
@@ -152,7 +154,7 @@ export interface GetDeploymentResult {
      */
     readonly subnetId: string;
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
     readonly systemTags: {[key: string]: any};
     /**
@@ -168,9 +170,24 @@ export interface GetDeploymentResult {
      */
     readonly timeUpgradeRequired: string;
 }
-
+/**
+ * This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
+ *
+ * Retrieves a deployment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployment = oci.GoldenGate.getDeployment({
+ *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
+ * });
+ * ```
+ */
 export function getDeploymentOutput(args: GetDeploymentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentResult> {
-    return pulumi.output(args).apply(a => getDeployment(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployment(a, opts))
 }
 
 /**

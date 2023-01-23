@@ -21,7 +21,7 @@ class GetSnapshotResult:
     """
     A collection of values returned by getSnapshot.
     """
-    def __init__(__self__, defined_tags=None, file_system_id=None, freeform_tags=None, id=None, is_clone_source=None, lifecycle_details=None, name=None, provenance_id=None, snapshot_id=None, state=None, time_created=None):
+    def __init__(__self__, defined_tags=None, file_system_id=None, freeform_tags=None, id=None, is_clone_source=None, lifecycle_details=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, time_created=None):
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -49,6 +49,12 @@ class GetSnapshotResult:
         if snapshot_id and not isinstance(snapshot_id, str):
             raise TypeError("Expected argument 'snapshot_id' to be a str")
         pulumi.set(__self__, "snapshot_id", snapshot_id)
+        if snapshot_time and not isinstance(snapshot_time, str):
+            raise TypeError("Expected argument 'snapshot_time' to be a str")
+        pulumi.set(__self__, "snapshot_time", snapshot_time)
+        if snapshot_type and not isinstance(snapshot_type, str):
+            raise TypeError("Expected argument 'snapshot_type' to be a str")
+        pulumi.set(__self__, "snapshot_type", snapshot_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -92,7 +98,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="isCloneSource")
     def is_clone_source(self) -> bool:
         """
-        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "is_clone_source")
 
@@ -100,7 +106,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        Additional information about the current 'lifecycleState'.
+        Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -116,7 +122,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="provenanceId")
     def provenance_id(self) -> str:
         """
-        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "provenance_id")
 
@@ -124,6 +130,25 @@ class GetSnapshotResult:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> str:
         return pulumi.get(self, "snapshot_id")
+
+    @property
+    @pulumi.getter(name="snapshotTime")
+    def snapshot_time(self) -> str:
+        """
+        The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+        * If the snapshot is created in the original file system directory.
+        * If the snapshot is cloned from a file system.
+        * If the snapshot is replicated from a file system.
+        """
+        return pulumi.get(self, "snapshot_time")
+
+    @property
+    @pulumi.getter(name="snapshotType")
+    def snapshot_type(self) -> str:
+        """
+        Specifies the generation type of the snapshot.
+        """
+        return pulumi.get(self, "snapshot_type")
 
     @property
     @pulumi.getter
@@ -157,6 +182,8 @@ class AwaitableGetSnapshotResult(GetSnapshotResult):
             name=self.name,
             provenance_id=self.provenance_id,
             snapshot_id=self.snapshot_id,
+            snapshot_time=self.snapshot_time,
+            snapshot_type=self.snapshot_type,
             state=self.state,
             time_created=self.time_created)
 
@@ -195,6 +222,8 @@ def get_snapshot(snapshot_id: Optional[str] = None,
         name=__ret__.name,
         provenance_id=__ret__.provenance_id,
         snapshot_id=__ret__.snapshot_id,
+        snapshot_time=__ret__.snapshot_time,
+        snapshot_type=__ret__.snapshot_type,
         state=__ret__.state,
         time_created=__ret__.time_created)
 

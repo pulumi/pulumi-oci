@@ -77,7 +77,7 @@ type LookupDatabaseSoftwareImageResult struct {
 	ImageShapeFamily string `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
 	ImageType string `pulumi:"imageType"`
-	// The patches included in the image and the version of the image
+	// The patches included in the image and the version of the image.
 	IncludedPatchesSummary string `pulumi:"includedPatchesSummary"`
 	// True if this Database software image is supported for Upgrade.
 	IsUpgradeSupported bool `pulumi:"isUpgradeSupported"`
@@ -186,7 +186,7 @@ func (o LookupDatabaseSoftwareImageResultOutput) ImageType() pulumi.StringOutput
 	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.ImageType }).(pulumi.StringOutput)
 }
 
-// The patches included in the image and the version of the image
+// The patches included in the image and the version of the image.
 func (o LookupDatabaseSoftwareImageResultOutput) IncludedPatchesSummary() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.IncludedPatchesSummary }).(pulumi.StringOutput)
 }

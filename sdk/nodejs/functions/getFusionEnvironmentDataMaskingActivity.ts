@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentDataMaskingActivity(args: GetFusionEnvironmentDataMaskingActivityArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentDataMaskingActivityResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity", {
         "dataMaskingActivityId": args.dataMaskingActivityId,
         "fusionEnvironmentId": args.fusionEnvironmentId,
@@ -74,9 +71,25 @@ export interface GetFusionEnvironmentDataMaskingActivityResult {
      */
     readonly timeMaskingStart: string;
 }
-
+/**
+ * This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Gets a DataMaskingActivity by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentDataMaskingActivity = oci.Functions.getFusionEnvironmentDataMaskingActivity({
+ *     dataMaskingActivityId: oci_fusion_apps_data_masking_activity.test_data_masking_activity.id,
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentDataMaskingActivityOutput(args: GetFusionEnvironmentDataMaskingActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentDataMaskingActivityResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentDataMaskingActivity(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentDataMaskingActivity(a, opts))
 }
 
 /**

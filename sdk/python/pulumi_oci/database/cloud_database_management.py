@@ -32,8 +32,6 @@ class CloudDatabaseManagementArgs:
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
-               - `BASIC`
-               - `ADVANCED`
         :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
         :param pulumi.Input[int] port: The port used to connect to the database.
@@ -95,8 +93,6 @@ class CloudDatabaseManagementArgs:
         """
         (Updatable) Specifies database management type
         enum:
-        - `BASIC`
-        - `ADVANCED`
         """
         return pulumi.get(self, "management_type")
 
@@ -196,8 +192,6 @@ class _CloudDatabaseManagementState:
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
-               - `BASIC`
-               - `ADVANCED`
         :param pulumi.Input[int] port: The port used to connect to the database.
         :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param pulumi.Input[str] protocol: Protocol used by the database connection.
@@ -265,8 +259,6 @@ class _CloudDatabaseManagementState:
         """
         (Updatable) Specifies database management type
         enum:
-        - `BASIC`
-        - `ADVANCED`
         """
         return pulumi.get(self, "management_type")
 
@@ -403,8 +395,6 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
-               - `BASIC`
-               - `ADVANCED`
         :param pulumi.Input[int] port: The port used to connect to the database.
         :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param pulumi.Input[str] protocol: Protocol used by the database connection.
@@ -539,8 +529,6 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
-               - `BASIC`
-               - `ADVANCED`
         :param pulumi.Input[int] port: The port used to connect to the database.
         :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param pulumi.Input[str] protocol: Protocol used by the database connection.
@@ -591,8 +579,6 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         """
         (Updatable) Specifies database management type
         enum:
-        - `BASIC`
-        - `ADVANCED`
         """
         return pulumi.get(self, "management_type")
 

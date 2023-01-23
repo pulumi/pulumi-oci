@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVmClusterUpdateHistoryEntriesResult> InvokeAsync(GetVmClusterUpdateHistoryEntriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterUpdateHistoryEntriesResult>("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", args ?? new GetVmClusterUpdateHistoryEntriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterUpdateHistoryEntriesResult>("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", args ?? new GetVmClusterUpdateHistoryEntriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVmClusterUpdateHistoryEntriesResult> Invoke(GetVmClusterUpdateHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVmClusterUpdateHistoryEntriesResult>("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", args ?? new GetVmClusterUpdateHistoryEntriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterUpdateHistoryEntriesResult>("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", args ?? new GetVmClusterUpdateHistoryEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

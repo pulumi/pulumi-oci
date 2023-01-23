@@ -18,10 +18,14 @@ __all__ = [
     'InvokeRunDriverShapeConfigArgs',
     'InvokeRunExecutorShapeConfigArgs',
     'InvokeRunParameterArgs',
+    'PrivateEndpointScanDetailArgs',
+    'RunStatementOutputArgs',
+    'RunStatementOutputDataArgs',
     'GetApplicationsFilterArgs',
     'GetInvokeRunsFilterArgs',
     'GetPrivateEndpointsFilterArgs',
     'GetRunLogsFilterArgs',
+    'GetRunStatementsFilterArgs',
 ]
 
 @pulumi.input_type
@@ -329,6 +333,171 @@ class InvokeRunParameterArgs:
 
 
 @pulumi.input_type
+class PrivateEndpointScanDetailArgs:
+    def __init__(__self__, *,
+                 fqdn: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] fqdn: (Updatable) A fully-qualified domain name (FQDN).
+        :param pulumi.Input[str] port: (Updatable) The port number of the FQDN
+        """
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A fully-qualified domain name (FQDN).
+        """
+        return pulumi.get(self, "fqdn")
+
+    @fqdn.setter
+    def fqdn(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "fqdn", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The port number of the FQDN
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "port", value)
+
+
+@pulumi.input_type
+class RunStatementOutputArgs:
+    def __init__(__self__, *,
+                 datas: Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]] = None,
+                 error_name: Optional[pulumi.Input[str]] = None,
+                 error_value: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 tracebacks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]] datas: An object representing execution output of a statement.
+        :param pulumi.Input[str] error_name: The name of the error in the statement output.
+        :param pulumi.Input[str] error_value: The value of the error in the statement output.
+        :param pulumi.Input[str] status: Status of the statement output.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tracebacks: The traceback of the statement output.
+        """
+        if datas is not None:
+            pulumi.set(__self__, "datas", datas)
+        if error_name is not None:
+            pulumi.set(__self__, "error_name", error_name)
+        if error_value is not None:
+            pulumi.set(__self__, "error_value", error_value)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tracebacks is not None:
+            pulumi.set(__self__, "tracebacks", tracebacks)
+
+    @property
+    @pulumi.getter
+    def datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]:
+        """
+        An object representing execution output of a statement.
+        """
+        return pulumi.get(self, "datas")
+
+    @datas.setter
+    def datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]):
+        pulumi.set(self, "datas", value)
+
+    @property
+    @pulumi.getter(name="errorName")
+    def error_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the error in the statement output.
+        """
+        return pulumi.get(self, "error_name")
+
+    @error_name.setter
+    def error_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_name", value)
+
+    @property
+    @pulumi.getter(name="errorValue")
+    def error_value(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value of the error in the statement output.
+        """
+        return pulumi.get(self, "error_value")
+
+    @error_value.setter
+    def error_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_value", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Status of the statement output.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter
+    def tracebacks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The traceback of the statement output.
+        """
+        return pulumi.get(self, "tracebacks")
+
+    @tracebacks.setter
+    def tracebacks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tracebacks", value)
+
+
+@pulumi.input_type
+class RunStatementOutputDataArgs:
+    def __init__(__self__, *,
+                 type: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+        :param pulumi.Input[str] value: The statement code execution output in html format.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        The statement code execution output in html format.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
 class GetApplicationsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -459,6 +628,45 @@ class GetPrivateEndpointsFilterArgs:
 
 @pulumi.input_type
 class GetRunLogsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetRunStatementsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

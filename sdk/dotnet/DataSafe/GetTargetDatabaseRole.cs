@@ -12,10 +12,10 @@ namespace Pulumi.Oci.DataSafe
     public static class GetTargetDatabaseRole
     {
         public static Task<GetTargetDatabaseRoleResult> InvokeAsync(GetTargetDatabaseRoleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabaseRoleResult>("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args ?? new GetTargetDatabaseRoleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabaseRoleResult>("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args ?? new GetTargetDatabaseRoleArgs(), options.WithDefaults());
 
         public static Output<GetTargetDatabaseRoleResult> Invoke(GetTargetDatabaseRoleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseRoleResult>("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args ?? new GetTargetDatabaseRoleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseRoleResult>("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args ?? new GetTargetDatabaseRoleInvokeArgs(), options.WithDefaults());
     }
 
 

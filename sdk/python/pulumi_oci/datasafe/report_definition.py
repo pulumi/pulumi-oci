@@ -182,6 +182,7 @@ class _ReportDefinitionState:
                  column_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]] = None,
                  column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compliance_standards: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  data_source: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -190,6 +191,12 @@ class _ReportDefinitionState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_seeded: Optional[pulumi.Input[bool]] = None,
                  parent_id: Optional[pulumi.Input[str]] = None,
+                 record_time_span: Optional[pulumi.Input[str]] = None,
+                 schedule: Optional[pulumi.Input[str]] = None,
+                 scheduled_report_compartment_id: Optional[pulumi.Input[str]] = None,
+                 scheduled_report_mime_type: Optional[pulumi.Input[str]] = None,
+                 scheduled_report_name: Optional[pulumi.Input[str]] = None,
+                 scheduled_report_row_limit: Optional[pulumi.Input[int]] = None,
                  scim_filter: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  summaries: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]] = None,
@@ -203,6 +210,7 @@ class _ReportDefinitionState:
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]] column_sortings: (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the report definition.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] compliance_standards: The list of data protection regulations/standards used in the report that will help demonstrate compliance.
         :param pulumi.Input[str] data_source: Specifies the name of a resource that provides data for the report. For example alerts, events.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A description of the report definition.
@@ -211,6 +219,12 @@ class _ReportDefinitionState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_seeded: Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         :param pulumi.Input[str] parent_id: The OCID of the parent report definition.
+        :param pulumi.Input[str] record_time_span: The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        :param pulumi.Input[str] schedule: Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        :param pulumi.Input[str] scheduled_report_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of report to be excel or pdf
+        :param pulumi.Input[str] scheduled_report_name: The name of the report to be scheduled.
+        :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on number of rows in report.
         :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
         :param pulumi.Input[str] state: The current state of the report.
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
@@ -228,6 +242,8 @@ class _ReportDefinitionState:
             pulumi.set(__self__, "column_sortings", column_sortings)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compliance_standards is not None:
+            pulumi.set(__self__, "compliance_standards", compliance_standards)
         if data_source is not None:
             pulumi.set(__self__, "data_source", data_source)
         if defined_tags is not None:
@@ -244,6 +260,18 @@ class _ReportDefinitionState:
             pulumi.set(__self__, "is_seeded", is_seeded)
         if parent_id is not None:
             pulumi.set(__self__, "parent_id", parent_id)
+        if record_time_span is not None:
+            pulumi.set(__self__, "record_time_span", record_time_span)
+        if schedule is not None:
+            pulumi.set(__self__, "schedule", schedule)
+        if scheduled_report_compartment_id is not None:
+            pulumi.set(__self__, "scheduled_report_compartment_id", scheduled_report_compartment_id)
+        if scheduled_report_mime_type is not None:
+            pulumi.set(__self__, "scheduled_report_mime_type", scheduled_report_mime_type)
+        if scheduled_report_name is not None:
+            pulumi.set(__self__, "scheduled_report_name", scheduled_report_name)
+        if scheduled_report_row_limit is not None:
+            pulumi.set(__self__, "scheduled_report_row_limit", scheduled_report_row_limit)
         if scim_filter is not None:
             pulumi.set(__self__, "scim_filter", scim_filter)
         if state is not None:
@@ -316,6 +344,18 @@ class _ReportDefinitionState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="complianceStandards")
+    def compliance_standards(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        """
+        return pulumi.get(self, "compliance_standards")
+
+    @compliance_standards.setter
+    def compliance_standards(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "compliance_standards", value)
 
     @property
     @pulumi.getter(name="dataSource")
@@ -412,6 +452,78 @@ class _ReportDefinitionState:
     @parent_id.setter
     def parent_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "parent_id", value)
+
+    @property
+    @pulumi.getter(name="recordTimeSpan")
+    def record_time_span(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        """
+        return pulumi.get(self, "record_time_span")
+
+    @record_time_span.setter
+    def record_time_span(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "record_time_span", value)
+
+    @property
+    @pulumi.getter
+    def schedule(self) -> Optional[pulumi.Input[str]]:
+        """
+        Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        """
+        return pulumi.get(self, "schedule")
+
+    @schedule.setter
+    def schedule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "schedule", value)
+
+    @property
+    @pulumi.getter(name="scheduledReportCompartmentId")
+    def scheduled_report_compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        """
+        return pulumi.get(self, "scheduled_report_compartment_id")
+
+    @scheduled_report_compartment_id.setter
+    def scheduled_report_compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_report_compartment_id", value)
+
+    @property
+    @pulumi.getter(name="scheduledReportMimeType")
+    def scheduled_report_mime_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the format of report to be excel or pdf
+        """
+        return pulumi.get(self, "scheduled_report_mime_type")
+
+    @scheduled_report_mime_type.setter
+    def scheduled_report_mime_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_report_mime_type", value)
+
+    @property
+    @pulumi.getter(name="scheduledReportName")
+    def scheduled_report_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the report to be scheduled.
+        """
+        return pulumi.get(self, "scheduled_report_name")
+
+    @scheduled_report_name.setter
+    def scheduled_report_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_report_name", value)
+
+    @property
+    @pulumi.getter(name="scheduledReportRowLimit")
+    def scheduled_report_row_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the limit on number of rows in report.
+        """
+        return pulumi.get(self, "scheduled_report_row_limit")
+
+    @scheduled_report_row_limit.setter
+    def scheduled_report_row_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "scheduled_report_row_limit", value)
 
     @property
     @pulumi.getter(name="scimFilter")
@@ -698,9 +810,16 @@ class ReportDefinition(pulumi.CustomResource):
                 raise TypeError("Missing required property 'summaries'")
             __props__.__dict__["summaries"] = summaries
             __props__.__dict__["category"] = None
+            __props__.__dict__["compliance_standards"] = None
             __props__.__dict__["data_source"] = None
             __props__.__dict__["display_order"] = None
             __props__.__dict__["is_seeded"] = None
+            __props__.__dict__["record_time_span"] = None
+            __props__.__dict__["schedule"] = None
+            __props__.__dict__["scheduled_report_compartment_id"] = None
+            __props__.__dict__["scheduled_report_mime_type"] = None
+            __props__.__dict__["scheduled_report_name"] = None
+            __props__.__dict__["scheduled_report_row_limit"] = None
             __props__.__dict__["scim_filter"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -721,6 +840,7 @@ class ReportDefinition(pulumi.CustomResource):
             column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnInfoArgs']]]]] = None,
             column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnSortingArgs']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compliance_standards: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             data_source: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -729,6 +849,12 @@ class ReportDefinition(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_seeded: Optional[pulumi.Input[bool]] = None,
             parent_id: Optional[pulumi.Input[str]] = None,
+            record_time_span: Optional[pulumi.Input[str]] = None,
+            schedule: Optional[pulumi.Input[str]] = None,
+            scheduled_report_compartment_id: Optional[pulumi.Input[str]] = None,
+            scheduled_report_mime_type: Optional[pulumi.Input[str]] = None,
+            scheduled_report_name: Optional[pulumi.Input[str]] = None,
+            scheduled_report_row_limit: Optional[pulumi.Input[int]] = None,
             scim_filter: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]]] = None,
@@ -747,6 +873,7 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnInfoArgs']]]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnSortingArgs']]]] column_sortings: (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the report definition.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] compliance_standards: The list of data protection regulations/standards used in the report that will help demonstrate compliance.
         :param pulumi.Input[str] data_source: Specifies the name of a resource that provides data for the report. For example alerts, events.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A description of the report definition.
@@ -755,6 +882,12 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_seeded: Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         :param pulumi.Input[str] parent_id: The OCID of the parent report definition.
+        :param pulumi.Input[str] record_time_span: The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        :param pulumi.Input[str] schedule: Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        :param pulumi.Input[str] scheduled_report_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of report to be excel or pdf
+        :param pulumi.Input[str] scheduled_report_name: The name of the report to be scheduled.
+        :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on number of rows in report.
         :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
         :param pulumi.Input[str] state: The current state of the report.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
@@ -771,6 +904,7 @@ class ReportDefinition(pulumi.CustomResource):
         __props__.__dict__["column_infos"] = column_infos
         __props__.__dict__["column_sortings"] = column_sortings
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compliance_standards"] = compliance_standards
         __props__.__dict__["data_source"] = data_source
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -779,6 +913,12 @@ class ReportDefinition(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_seeded"] = is_seeded
         __props__.__dict__["parent_id"] = parent_id
+        __props__.__dict__["record_time_span"] = record_time_span
+        __props__.__dict__["schedule"] = schedule
+        __props__.__dict__["scheduled_report_compartment_id"] = scheduled_report_compartment_id
+        __props__.__dict__["scheduled_report_mime_type"] = scheduled_report_mime_type
+        __props__.__dict__["scheduled_report_name"] = scheduled_report_name
+        __props__.__dict__["scheduled_report_row_limit"] = scheduled_report_row_limit
         __props__.__dict__["scim_filter"] = scim_filter
         __props__.__dict__["state"] = state
         __props__.__dict__["summaries"] = summaries
@@ -826,6 +966,14 @@ class ReportDefinition(pulumi.CustomResource):
         (Updatable) The OCID of the compartment containing the report definition.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="complianceStandards")
+    def compliance_standards(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        """
+        return pulumi.get(self, "compliance_standards")
 
     @property
     @pulumi.getter(name="dataSource")
@@ -890,6 +1038,54 @@ class ReportDefinition(pulumi.CustomResource):
         The OCID of the parent report definition.
         """
         return pulumi.get(self, "parent_id")
+
+    @property
+    @pulumi.getter(name="recordTimeSpan")
+    def record_time_span(self) -> pulumi.Output[str]:
+        """
+        The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        """
+        return pulumi.get(self, "record_time_span")
+
+    @property
+    @pulumi.getter
+    def schedule(self) -> pulumi.Output[str]:
+        """
+        Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        """
+        return pulumi.get(self, "schedule")
+
+    @property
+    @pulumi.getter(name="scheduledReportCompartmentId")
+    def scheduled_report_compartment_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        """
+        return pulumi.get(self, "scheduled_report_compartment_id")
+
+    @property
+    @pulumi.getter(name="scheduledReportMimeType")
+    def scheduled_report_mime_type(self) -> pulumi.Output[str]:
+        """
+        Specifies the format of report to be excel or pdf
+        """
+        return pulumi.get(self, "scheduled_report_mime_type")
+
+    @property
+    @pulumi.getter(name="scheduledReportName")
+    def scheduled_report_name(self) -> pulumi.Output[str]:
+        """
+        The name of the report to be scheduled.
+        """
+        return pulumi.get(self, "scheduled_report_name")
+
+    @property
+    @pulumi.getter(name="scheduledReportRowLimit")
+    def scheduled_report_row_limit(self) -> pulumi.Output[int]:
+        """
+        Specifies the limit on number of rows in report.
+        """
+        return pulumi.get(self, "scheduled_report_row_limit")
 
     @property
     @pulumi.getter(name="scimFilter")

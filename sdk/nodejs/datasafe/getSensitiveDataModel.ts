@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveDataModel(args: GetSensitiveDataModelArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModel:getSensitiveDataModel", {
         "sensitiveDataModelId": args.sensitiveDataModelId,
     }, opts);
@@ -119,9 +116,24 @@ export interface GetSensitiveDataModelResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified sensitive data model.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSensitiveDataModel = oci.DataSafe.getSensitiveDataModel({
+ *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ * });
+ * ```
+ */
 export function getSensitiveDataModelOutput(args: GetSensitiveDataModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelResult> {
-    return pulumi.output(args).apply(a => getSensitiveDataModel(a, opts))
+    return pulumi.output(args).apply((a: any) => getSensitiveDataModel(a, opts))
 }
 
 /**

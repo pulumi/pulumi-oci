@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlBackups(args: GetMysqlBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlBackupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlBackups:getMysqlBackups", {
         "backupId": args.backupId,
         "compartmentId": args.compartmentId,
@@ -109,9 +107,29 @@ export interface GetMysqlBackupsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Mysql Backups in Oracle Cloud Infrastructure MySQL Database service.
+ *
+ * Get a list of DB System backups.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMysqlBackups = oci.Mysql.getMysqlBackups({
+ *     compartmentId: _var.compartment_id,
+ *     backupId: oci_mysql_mysql_backup.test_backup.id,
+ *     creationType: _var.mysql_backup_creation_type,
+ *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
+ *     displayName: _var.mysql_backup_display_name,
+ *     state: _var.mysql_backup_state,
+ * });
+ * ```
+ */
 export function getMysqlBackupsOutput(args: GetMysqlBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlBackupsResult> {
-    return pulumi.output(args).apply(a => getMysqlBackups(a, opts))
+    return pulumi.output(args).apply((a: any) => getMysqlBackups(a, opts))
 }
 
 /**

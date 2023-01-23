@@ -380,7 +380,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             __props__.__dict__["key_alias"] = key_alias
             if passphrase is None and not opts.urn:
                 raise TypeError("Missing required property 'passphrase'")
-            __props__.__dict__["passphrase"] = passphrase
+            __props__.__dict__["passphrase"] = None if passphrase is None else pulumi.Output.secret(passphrase)
             if user_id is None and not opts.urn:
                 raise TypeError("Missing required property 'user_id'")
             __props__.__dict__["user_id"] = user_id
@@ -389,6 +389,8 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             __props__.__dict__["state"] = None
             __props__.__dict__["tenant_id"] = None
             __props__.__dict__["time_created"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["passphrase"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(BdsInstanceApiKey, __self__).__init__(
             'oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey',
             resource_name,

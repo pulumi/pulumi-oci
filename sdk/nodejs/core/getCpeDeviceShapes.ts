@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,16 +29,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCpeDeviceShapes = pulumi.output(oci.Core.getCpeDeviceShapes());
+ * const testCpeDeviceShapes = oci.Core.getCpeDeviceShapes({});
  * ```
  */
 export function getCpeDeviceShapes(args?: GetCpeDeviceShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetCpeDeviceShapesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", {
         "filters": args.filters,
     }, opts);
@@ -64,9 +62,34 @@ export interface GetCpeDeviceShapesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the CPE device types that the Networking service provides CPE configuration
+ * content for (example: Cisco ASA). The content helps a network engineer configure
+ * the actual CPE device represented by a [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
+ *
+ * If you want to generate CPE configuration content for one of the returned CPE device types,
+ * ensure that the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object's `cpeDeviceShapeId` attribute is set
+ * to the CPE device type's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (returned by this operation).
+ *
+ * For information about generating CPE configuration content, see these operations:
+ *
+ *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+ *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+ *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCpeDeviceShapes = oci.Core.getCpeDeviceShapes({});
+ * ```
+ */
 export function getCpeDeviceShapesOutput(args?: GetCpeDeviceShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpeDeviceShapesResult> {
-    return pulumi.output(args).apply(a => getCpeDeviceShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getCpeDeviceShapes(a, opts))
 }
 
 /**

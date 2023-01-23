@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabases(args: GetAutonomousDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabasesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
         "compartmentId": args.compartmentId,
@@ -156,9 +154,33 @@ export interface GetAutonomousDatabasesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of Autonomous Databases based on the query parameters specified.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
+ *     dbVersion: _var.autonomous_database_db_version,
+ *     dbWorkload: _var.autonomous_database_db_workload,
+ *     displayName: _var.autonomous_database_display_name,
+ *     infrastructureType: _var.autonomous_database_infrastructure_type,
+ *     isDataGuardEnabled: _var.autonomous_database_is_data_guard_enabled,
+ *     isFreeTier: _var.autonomous_database_is_free_tier,
+ *     isRefreshableClone: _var.autonomous_database_is_refreshable_clone,
+ *     state: _var.autonomous_database_state,
+ * });
+ * ```
+ */
 export function getAutonomousDatabasesOutput(args: GetAutonomousDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabasesResult> {
-    return pulumi.output(args).apply(a => getAutonomousDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousDatabases(a, opts))
 }
 
 /**

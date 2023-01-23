@@ -13,26 +13,23 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     [OutputType]
     public sealed class NetworkFirewallPolicyUrlList
     {
-        public readonly string Key;
-        public readonly string? Pattern;
         /// <summary>
-        /// (Updatable) Type of the secrets mapped based on the policy.
-        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        /// (Updatable) The identifier for the url list
         /// </summary>
-        public readonly string Type;
+        public readonly string UrlListName;
+        /// <summary>
+        /// (Updatable) The list of Url Patterns.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.NetworkFirewallPolicyUrlListUrlListValue> UrlListValues;
 
         [OutputConstructor]
         private NetworkFirewallPolicyUrlList(
-            string key,
+            string urlListName,
 
-            string? pattern,
-
-            string type)
+            ImmutableArray<Outputs.NetworkFirewallPolicyUrlListUrlListValue> urlListValues)
         {
-            Key = key;
-            Pattern = pattern;
-            Type = type;
+            UrlListName = urlListName;
+            UrlListValues = urlListValues;
         }
     }
 }

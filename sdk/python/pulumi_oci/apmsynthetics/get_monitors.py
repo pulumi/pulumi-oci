@@ -23,7 +23,7 @@ class GetMonitorsResult:
     """
     A collection of values returned by getMonitors.
     """
-    def __init__(__self__, apm_domain_id=None, display_name=None, filters=None, id=None, monitor_collections=None, monitor_type=None, script_id=None, status=None, vantage_point=None):
+    def __init__(__self__, apm_domain_id=None, display_name=None, filters=None, id=None, is_maintenance_window_active=None, is_maintenance_window_set=None, monitor_collections=None, monitor_type=None, script_id=None, status=None, vantage_point=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -36,6 +36,12 @@ class GetMonitorsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_maintenance_window_active and not isinstance(is_maintenance_window_active, bool):
+            raise TypeError("Expected argument 'is_maintenance_window_active' to be a bool")
+        pulumi.set(__self__, "is_maintenance_window_active", is_maintenance_window_active)
+        if is_maintenance_window_set and not isinstance(is_maintenance_window_set, bool):
+            raise TypeError("Expected argument 'is_maintenance_window_set' to be a bool")
+        pulumi.set(__self__, "is_maintenance_window_set", is_maintenance_window_set)
         if monitor_collections and not isinstance(monitor_collections, list):
             raise TypeError("Expected argument 'monitor_collections' to be a list")
         pulumi.set(__self__, "monitor_collections", monitor_collections)
@@ -77,6 +83,16 @@ class GetMonitorsResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isMaintenanceWindowActive")
+    def is_maintenance_window_active(self) -> Optional[bool]:
+        return pulumi.get(self, "is_maintenance_window_active")
+
+    @property
+    @pulumi.getter(name="isMaintenanceWindowSet")
+    def is_maintenance_window_set(self) -> Optional[bool]:
+        return pulumi.get(self, "is_maintenance_window_set")
 
     @property
     @pulumi.getter(name="monitorCollections")
@@ -126,6 +142,8 @@ class AwaitableGetMonitorsResult(GetMonitorsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            is_maintenance_window_active=self.is_maintenance_window_active,
+            is_maintenance_window_set=self.is_maintenance_window_set,
             monitor_collections=self.monitor_collections,
             monitor_type=self.monitor_type,
             script_id=self.script_id,
@@ -136,6 +154,8 @@ class AwaitableGetMonitorsResult(GetMonitorsResult):
 def get_monitors(apm_domain_id: Optional[str] = None,
                  display_name: Optional[str] = None,
                  filters: Optional[Sequence[pulumi.InputType['GetMonitorsFilterArgs']]] = None,
+                 is_maintenance_window_active: Optional[bool] = None,
+                 is_maintenance_window_set: Optional[bool] = None,
                  monitor_type: Optional[str] = None,
                  script_id: Optional[str] = None,
                  status: Optional[str] = None,
@@ -154,6 +174,8 @@ def get_monitors(apm_domain_id: Optional[str] = None,
 
     test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
         display_name=var["monitor_display_name"],
+        is_maintenance_window_active=var["monitor_is_maintenance_window_active"],
+        is_maintenance_window_set=var["monitor_is_maintenance_window_set"],
         monitor_type=var["monitor_monitor_type"],
         script_id=oci_apm_synthetics_script["test_script"]["id"],
         status=var["monitor_status"],
@@ -163,6 +185,8 @@ def get_monitors(apm_domain_id: Optional[str] = None,
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str display_name: A filter to return only the resources that match the entire display name.
+    :param bool is_maintenance_window_active: A filter to return the monitors whose maintenance window is currently active.
+    :param bool is_maintenance_window_set: A filter to return the monitors whose maintenance window is set.
     :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
     :param str script_id: A filter to return only monitors using scriptId.
     :param str status: A filter to return only monitors that match the status given.
@@ -172,6 +196,8 @@ def get_monitors(apm_domain_id: Optional[str] = None,
     __args__['apmDomainId'] = apm_domain_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['isMaintenanceWindowActive'] = is_maintenance_window_active
+    __args__['isMaintenanceWindowSet'] = is_maintenance_window_set
     __args__['monitorType'] = monitor_type
     __args__['scriptId'] = script_id
     __args__['status'] = status
@@ -184,6 +210,8 @@ def get_monitors(apm_domain_id: Optional[str] = None,
         display_name=__ret__.display_name,
         filters=__ret__.filters,
         id=__ret__.id,
+        is_maintenance_window_active=__ret__.is_maintenance_window_active,
+        is_maintenance_window_set=__ret__.is_maintenance_window_set,
         monitor_collections=__ret__.monitor_collections,
         monitor_type=__ret__.monitor_type,
         script_id=__ret__.script_id,
@@ -195,6 +223,8 @@ def get_monitors(apm_domain_id: Optional[str] = None,
 def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMonitorsFilterArgs']]]]] = None,
+                        is_maintenance_window_active: Optional[pulumi.Input[Optional[bool]]] = None,
+                        is_maintenance_window_set: Optional[pulumi.Input[Optional[bool]]] = None,
                         monitor_type: Optional[pulumi.Input[Optional[str]]] = None,
                         script_id: Optional[pulumi.Input[Optional[str]]] = None,
                         status: Optional[pulumi.Input[Optional[str]]] = None,
@@ -213,6 +243,8 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
 
     test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
         display_name=var["monitor_display_name"],
+        is_maintenance_window_active=var["monitor_is_maintenance_window_active"],
+        is_maintenance_window_set=var["monitor_is_maintenance_window_set"],
         monitor_type=var["monitor_monitor_type"],
         script_id=oci_apm_synthetics_script["test_script"]["id"],
         status=var["monitor_status"],
@@ -222,6 +254,8 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str display_name: A filter to return only the resources that match the entire display name.
+    :param bool is_maintenance_window_active: A filter to return the monitors whose maintenance window is currently active.
+    :param bool is_maintenance_window_set: A filter to return the monitors whose maintenance window is set.
     :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
     :param str script_id: A filter to return only monitors using scriptId.
     :param str status: A filter to return only monitors that match the status given.

@@ -9,6 +9,8 @@ import com.pulumi.oci.Database.inputs.VmClusterNetworkVmNetworkNodeArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,45 +21,45 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
      * (Updatable) The network domain name.
      * 
      */
-    @Import(name="domainName", required=true)
-    private Output<String> domainName;
+    @Import(name="domainName")
+    private @Nullable Output<String> domainName;
 
     /**
      * @return (Updatable) The network domain name.
      * 
      */
-    public Output<String> domainName() {
-        return this.domainName;
+    public Optional<Output<String>> domainName() {
+        return Optional.ofNullable(this.domainName);
     }
 
     /**
      * (Updatable) The network gateway.
      * 
      */
-    @Import(name="gateway", required=true)
-    private Output<String> gateway;
+    @Import(name="gateway")
+    private @Nullable Output<String> gateway;
 
     /**
      * @return (Updatable) The network gateway.
      * 
      */
-    public Output<String> gateway() {
-        return this.gateway;
+    public Optional<Output<String>> gateway() {
+        return Optional.ofNullable(this.gateway);
     }
 
     /**
      * (Updatable) The network netmask.
      * 
      */
-    @Import(name="netmask", required=true)
-    private Output<String> netmask;
+    @Import(name="netmask")
+    private @Nullable Output<String> netmask;
 
     /**
      * @return (Updatable) The network netmask.
      * 
      */
-    public Output<String> netmask() {
-        return this.netmask;
+    public Optional<Output<String>> netmask() {
+        return Optional.ofNullable(this.netmask);
     }
 
     /**
@@ -94,15 +96,15 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
      * (Updatable) The network VLAN ID.
      * 
      */
-    @Import(name="vlanId", required=true)
-    private Output<String> vlanId;
+    @Import(name="vlanId")
+    private @Nullable Output<String> vlanId;
 
     /**
      * @return (Updatable) The network VLAN ID.
      * 
      */
-    public Output<String> vlanId() {
-        return this.vlanId;
+    public Optional<Output<String>> vlanId() {
+        return Optional.ofNullable(this.vlanId);
     }
 
     private VmClusterNetworkVmNetworkArgs() {}
@@ -140,7 +142,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder domainName(Output<String> domainName) {
+        public Builder domainName(@Nullable Output<String> domainName) {
             $.domainName = domainName;
             return this;
         }
@@ -161,7 +163,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder gateway(Output<String> gateway) {
+        public Builder gateway(@Nullable Output<String> gateway) {
             $.gateway = gateway;
             return this;
         }
@@ -182,7 +184,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder netmask(Output<String> netmask) {
+        public Builder netmask(@Nullable Output<String> netmask) {
             $.netmask = netmask;
             return this;
         }
@@ -255,7 +257,7 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder vlanId(Output<String> vlanId) {
+        public Builder vlanId(@Nullable Output<String> vlanId) {
             $.vlanId = vlanId;
             return this;
         }
@@ -271,12 +273,8 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         public VmClusterNetworkVmNetworkArgs build() {
-            $.domainName = Objects.requireNonNull($.domainName, "expected parameter 'domainName' to be non-null");
-            $.gateway = Objects.requireNonNull($.gateway, "expected parameter 'gateway' to be non-null");
-            $.netmask = Objects.requireNonNull($.netmask, "expected parameter 'netmask' to be non-null");
             $.networkType = Objects.requireNonNull($.networkType, "expected parameter 'networkType' to be non-null");
             $.nodes = Objects.requireNonNull($.nodes, "expected parameter 'nodes' to be non-null");
-            $.vlanId = Objects.requireNonNull($.vlanId, "expected parameter 'vlanId' to be non-null");
             return $;
         }
     }

@@ -613,13 +613,13 @@ class ScheduleQueryPropertiesArgs:
                  query_type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input['ScheduleQueryPropertiesDateRangeArgs'] date_range: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        :param pulumi.Input[str] granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         :param pulumi.Input[float] compartment_depth: The depth level of the compartment.
         :param pulumi.Input[str] filter: The filter object for query usage.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        :param pulumi.Input[bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param pulumi.Input[str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        :param pulumi.Input[bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param pulumi.Input[str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
         pulumi.set(__self__, "date_range", date_range)
         pulumi.set(__self__, "granularity", granularity)
@@ -652,7 +652,7 @@ class ScheduleQueryPropertiesArgs:
     @pulumi.getter
     def granularity(self) -> pulumi.Input[str]:
         """
-        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         """
         return pulumi.get(self, "granularity")
 
@@ -712,7 +712,7 @@ class ScheduleQueryPropertiesArgs:
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
@@ -724,7 +724,7 @@ class ScheduleQueryPropertiesArgs:
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
         return pulumi.get(self, "query_type")
 
@@ -741,7 +741,7 @@ class ScheduleQueryPropertiesDateRangeArgs:
                  time_usage_ended: Optional[pulumi.Input[str]] = None,
                  time_usage_started: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC
+        :param pulumi.Input[str] date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC.
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
         """
@@ -757,7 +757,7 @@ class ScheduleQueryPropertiesDateRangeArgs:
     @pulumi.getter(name="dateRangeType")
     def date_range_type(self) -> pulumi.Input[str]:
         """
-        Defines whether the schedule date range is STATIC or DYNAMIC
+        Defines whether the schedule date range is STATIC or DYNAMIC.
         """
         return pulumi.get(self, "date_range_type")
 
@@ -807,7 +807,7 @@ class ScheduleQueryPropertiesGroupByTagArgs:
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] key: The tag key.
-        :param pulumi.Input[str] namespace: The namespace needed to determine object storage bucket.
+        :param pulumi.Input[str] namespace: (Updatable) The namespace needed to determine the object storage bucket.
         :param pulumi.Input[str] value: The tag value.
         """
         if key is not None:
@@ -833,7 +833,7 @@ class ScheduleQueryPropertiesGroupByTagArgs:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The namespace needed to determine object storage bucket.
+        (Updatable) The namespace needed to determine the object storage bucket.
         """
         return pulumi.get(self, "namespace")
 
@@ -862,10 +862,10 @@ class ScheduleResultLocationArgs:
                  namespace: pulumi.Input[str],
                  region: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] bucket: The bucket name where usage/cost CSVs will be uploaded
-        :param pulumi.Input[str] location_type: Defines the type of location where the usage/cost CSVs will be stored
-        :param pulumi.Input[str] namespace: The namespace needed to determine object storage bucket.
-        :param pulumi.Input[str] region: The destination Object Store Region specified by customer
+        :param pulumi.Input[str] bucket: (Updatable) The bucket name where usage or cost CSVs will be uploaded.
+        :param pulumi.Input[str] location_type: (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
+        :param pulumi.Input[str] namespace: (Updatable) The namespace needed to determine the object storage bucket.
+        :param pulumi.Input[str] region: (Updatable) The destination Object Store Region specified by the customer.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
@@ -876,7 +876,7 @@ class ScheduleResultLocationArgs:
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
         """
-        The bucket name where usage/cost CSVs will be uploaded
+        (Updatable) The bucket name where usage or cost CSVs will be uploaded.
         """
         return pulumi.get(self, "bucket")
 
@@ -888,7 +888,7 @@ class ScheduleResultLocationArgs:
     @pulumi.getter(name="locationType")
     def location_type(self) -> pulumi.Input[str]:
         """
-        Defines the type of location where the usage/cost CSVs will be stored
+        (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
         """
         return pulumi.get(self, "location_type")
 
@@ -900,7 +900,7 @@ class ScheduleResultLocationArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        The namespace needed to determine object storage bucket.
+        (Updatable) The namespace needed to determine the object storage bucket.
         """
         return pulumi.get(self, "namespace")
 
@@ -912,7 +912,7 @@ class ScheduleResultLocationArgs:
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
         """
-        The destination Object Store Region specified by customer
+        (Updatable) The destination Object Store Region specified by the customer.
         """
         return pulumi.get(self, "region")
 

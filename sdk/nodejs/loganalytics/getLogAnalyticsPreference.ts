@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsPreference(args: GetLogAnalyticsPreferenceArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsPreferenceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", {
         "namespace": args.namespace,
     }, opts);
@@ -56,9 +54,24 @@ export interface GetLogAnalyticsPreferenceResult {
     readonly items: outputs.LogAnalytics.GetLogAnalyticsPreferenceItem[];
     readonly namespace: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Lists the preferences of the tenant. Currently, only "DEFAULT_HOMEPAGE" is supported.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsPreference = oci.LogAnalytics.getLogAnalyticsPreference({
+ *     namespace: _var.log_analytics_preference_namespace,
+ * });
+ * ```
+ */
 export function getLogAnalyticsPreferenceOutput(args: GetLogAnalyticsPreferenceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsPreferenceResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsPreference(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsPreference(a, opts))
 }
 
 /**

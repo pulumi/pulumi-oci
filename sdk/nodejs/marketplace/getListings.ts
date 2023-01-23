@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -47,11 +48,8 @@ import * as utilities from "../utilities";
  */
 export function getListings(args?: GetListingsArgs, opts?: pulumi.InvokeOptions): Promise<GetListingsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getListings:getListings", {
         "categories": args.categories,
         "compartmentId": args.compartmentId,
@@ -153,9 +151,48 @@ export interface GetListingsResult {
     readonly pricings?: string[];
     readonly publisherId?: string;
 }
-
+/**
+ * This data source provides the list of Listings in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Gets a list of listings from Oracle Cloud Infrastructure Marketplace by searching keywords and
+ * filtering according to listing attributes.
+ *
+ * If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+ * you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+ *
+ * Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+ * listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
+ * The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
+ * its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+ * listing resource version, create a subscription by issuing a
+ * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
+ *
+ * To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
+ * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testListings = oci.Marketplace.getListings({
+ *     categories: _var.listing_category,
+ *     compartmentId: _var.compartment_id,
+ *     imageId: oci_core_image.test_image.id,
+ *     isFeatured: _var.listing_is_featured,
+ *     listingId: oci_marketplace_listing.test_listing.id,
+ *     listingTypes: _var.listing_listing_types,
+ *     names: _var.listing_name,
+ *     operatingSystems: _var.listing_operating_systems,
+ *     packageType: _var.listing_package_type,
+ *     pricings: _var.listing_pricing,
+ *     publisherId: oci_marketplace_publisher.test_publisher.id,
+ * });
+ * ```
+ */
 export function getListingsOutput(args?: GetListingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingsResult> {
-    return pulumi.output(args).apply(a => getListings(a, opts))
+    return pulumi.output(args).apply((a: any) => getListings(a, opts))
 }
 
 /**

@@ -39,12 +39,12 @@ import (
 //					BackendTcpProxyProtocolVersion: pulumi.Any(_var.Listener_connection_configuration_backend_tcp_proxy_protocol_version),
 //				},
 //				HostnameNames: pulumi.StringArray{
-//					pulumi.Any(oci_load_balancer_hostname.Test_hostname.Name),
+//					oci_load_balancer_hostname.Test_hostname.Name,
 //				},
 //				PathRouteSetName:  pulumi.Any(oci_load_balancer_path_route_set.Test_path_route_set.Name),
 //				RoutingPolicyName: pulumi.Any(oci_load_balancer_load_balancer_routing_policy.Test_load_balancer_routing_policy.Name),
 //				RuleSetNames: pulumi.StringArray{
-//					pulumi.Any(oci_load_balancer_rule_set.Test_rule_set.Name),
+//					oci_load_balancer_rule_set.Test_rule_set.Name,
 //				},
 //				SslConfiguration: &loadbalancer.ListenerSslConfigurationArgs{
 //					CertificateName:                pulumi.Any(oci_load_balancer_certificate.Test_certificate.Name),

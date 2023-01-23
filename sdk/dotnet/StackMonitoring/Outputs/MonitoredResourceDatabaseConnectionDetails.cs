@@ -37,6 +37,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// (Updatable) Service name used for connection requests.
         /// </summary>
         public readonly string ServiceName;
+        /// <summary>
+        /// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// </summary>
+        public readonly string? SslSecretId;
 
         [OutputConstructor]
         private MonitoredResourceDatabaseConnectionDetails(
@@ -50,7 +54,9 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string protocol,
 
-            string serviceName)
+            string serviceName,
+
+            string? sslSecretId)
         {
             ConnectorId = connectorId;
             DbId = dbId;
@@ -58,6 +64,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             Port = port;
             Protocol = protocol;
             ServiceName = serviceName;
+            SslSecretId = sslSecretId;
         }
     }
 }

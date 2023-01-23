@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKeyVersions(args: GetKeyVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetKeyVersionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getKeyVersions:getKeyVersions", {
         "filters": args.filters,
         "keyId": args.keyId,
@@ -75,9 +73,31 @@ export interface GetKeyVersionsResult {
     readonly keyVersions: outputs.Kms.GetKeyVersionsKeyVersion[];
     readonly managementEndpoint: string;
 }
-
+/**
+ * This data source provides the list of Key Versions in Oracle Cloud Infrastructure Kms service.
+ *
+ * Lists all [KeyVersion](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/KeyVersion/) resources for the specified
+ * master encryption key.
+ *
+ * As a management operation, this call is subject to a Key Management limit that applies to the total number
+ * of requests across all management read operations. Key Management might throttle this call to reject an
+ * otherwise valid request when the total rate of management read operations exceeds 10 requests per second
+ * for a given tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testKeyVersions = oci.Kms.getKeyVersions({
+ *     keyId: oci_kms_key.test_key.id,
+ *     managementEndpoint: _var.key_version_management_endpoint,
+ * });
+ * ```
+ */
 export function getKeyVersionsOutput(args: GetKeyVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyVersionsResult> {
-    return pulumi.output(args).apply(a => getKeyVersions(a, opts))
+    return pulumi.output(args).apply((a: any) => getKeyVersions(a, opts))
 }
 
 /**

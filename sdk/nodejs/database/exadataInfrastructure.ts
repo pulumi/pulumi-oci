@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -45,8 +46,8 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     isCpsOfflineReportEnabled: _var.exadata_infrastructure_is_cps_offline_report_enabled,
+ *     isMultiRackDeployment: _var.exadata_infrastructure_is_multi_rack_deployment,
  *     maintenanceWindow: {
- *         preference: _var.exadata_infrastructure_maintenance_window_preference,
  *         customActionTimeoutInMins: _var.exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
  *         daysOfWeeks: [{
  *             name: _var.exadata_infrastructure_maintenance_window_days_of_week_name,
@@ -59,8 +60,10 @@ import * as utilities from "../utilities";
  *             name: _var.exadata_infrastructure_maintenance_window_months_name,
  *         }],
  *         patchingMode: _var.exadata_infrastructure_maintenance_window_patching_mode,
+ *         preference: _var.exadata_infrastructure_maintenance_window_preference,
  *         weeksOfMonths: _var.exadata_infrastructure_maintenance_window_weeks_of_month,
  *     },
+ *     multiRackConfigurationFile: _var.exadata_infrastructure_multi_rack_configuration_file,
  *     storageCount: _var.exadata_infrastructure_storage_count,
  * });
  * ```
@@ -109,6 +112,14 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
      */
     public readonly activationFile!: pulumi.Output<string | undefined>;
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     */
+    public /*out*/ readonly additionalComputeCount!: pulumi.Output<number>;
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     */
+    public /*out*/ readonly additionalComputeSystemModel!: pulumi.Output<string>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
@@ -191,6 +202,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly isCpsOfflineReportEnabled!: pulumi.Output<boolean>;
     /**
+     * (Updatable) Indicates if deployment is Multi-Rack or not.
+     */
+    public readonly isMultiRackDeployment!: pulumi.Output<boolean>;
+    /**
      * Additional information about the current lifecycle state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -226,6 +241,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      */
     public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string>;
+    /**
+     * (Updatable) The base64 encoded Multi-Rack configuration json file.
+     */
+    public readonly multiRackConfigurationFile!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The netmask for the control plane network.
      */
@@ -274,6 +293,8 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             const state = argsOrState as ExadataInfrastructureState | undefined;
             resourceInputs["activatedStorageCount"] = state ? state.activatedStorageCount : undefined;
             resourceInputs["activationFile"] = state ? state.activationFile : undefined;
+            resourceInputs["additionalComputeCount"] = state ? state.additionalComputeCount : undefined;
+            resourceInputs["additionalComputeSystemModel"] = state ? state.additionalComputeSystemModel : undefined;
             resourceInputs["additionalStorageCount"] = state ? state.additionalStorageCount : undefined;
             resourceInputs["adminNetworkCidr"] = state ? state.adminNetworkCidr : undefined;
             resourceInputs["cloudControlPlaneServer1"] = state ? state.cloudControlPlaneServer1 : undefined;
@@ -295,6 +316,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["gateway"] = state ? state.gateway : undefined;
             resourceInputs["infiniBandNetworkCidr"] = state ? state.infiniBandNetworkCidr : undefined;
             resourceInputs["isCpsOfflineReportEnabled"] = state ? state.isCpsOfflineReportEnabled : undefined;
+            resourceInputs["isMultiRackDeployment"] = state ? state.isMultiRackDeployment : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maintenanceSloStatus"] = state ? state.maintenanceSloStatus : undefined;
             resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
@@ -304,6 +326,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["maxMemoryInGbs"] = state ? state.maxMemoryInGbs : undefined;
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["monthlyDbServerVersion"] = state ? state.monthlyDbServerVersion : undefined;
+            resourceInputs["multiRackConfigurationFile"] = state ? state.multiRackConfigurationFile : undefined;
             resourceInputs["netmask"] = state ? state.netmask : undefined;
             resourceInputs["ntpServers"] = state ? state.ntpServers : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
@@ -367,13 +390,17 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["gateway"] = args ? args.gateway : undefined;
             resourceInputs["infiniBandNetworkCidr"] = args ? args.infiniBandNetworkCidr : undefined;
             resourceInputs["isCpsOfflineReportEnabled"] = args ? args.isCpsOfflineReportEnabled : undefined;
+            resourceInputs["isMultiRackDeployment"] = args ? args.isMultiRackDeployment : undefined;
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
+            resourceInputs["multiRackConfigurationFile"] = args ? args.multiRackConfigurationFile : undefined;
             resourceInputs["netmask"] = args ? args.netmask : undefined;
             resourceInputs["ntpServers"] = args ? args.ntpServers : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["storageCount"] = args ? args.storageCount : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
+            resourceInputs["additionalComputeCount"] = undefined /*out*/;
+            resourceInputs["additionalComputeSystemModel"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["csiNumber"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
@@ -408,6 +435,14 @@ export interface ExadataInfrastructureState {
      * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
      */
     activationFile?: pulumi.Input<string>;
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     */
+    additionalComputeCount?: pulumi.Input<number>;
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     */
+    additionalComputeSystemModel?: pulumi.Input<string>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
@@ -490,6 +525,10 @@ export interface ExadataInfrastructureState {
      */
     isCpsOfflineReportEnabled?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Indicates if deployment is Multi-Rack or not.
+     */
+    isMultiRackDeployment?: pulumi.Input<boolean>;
+    /**
      * Additional information about the current lifecycle state.
      */
     lifecycleDetails?: pulumi.Input<string>;
@@ -525,6 +564,10 @@ export interface ExadataInfrastructureState {
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      */
     monthlyDbServerVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded Multi-Rack configuration json file.
+     */
+    multiRackConfigurationFile?: pulumi.Input<string>;
     /**
      * (Updatable) The netmask for the control plane network.
      */
@@ -629,9 +672,17 @@ export interface ExadataInfrastructureArgs {
      */
     isCpsOfflineReportEnabled?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Indicates if deployment is Multi-Rack or not.
+     */
+    isMultiRackDeployment?: pulumi.Input<boolean>;
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceWindow>;
+    /**
+     * (Updatable) The base64 encoded Multi-Rack configuration json file.
+     */
+    multiRackConfigurationFile?: pulumi.Input<string>;
     /**
      * (Updatable) The netmask for the control plane network.
      */

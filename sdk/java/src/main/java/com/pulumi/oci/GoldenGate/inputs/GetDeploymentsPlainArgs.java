@@ -17,14 +17,44 @@ public final class GetDeploymentsPlainArgs extends com.pulumi.resources.InvokeAr
     public static final GetDeploymentsPlainArgs Empty = new GetDeploymentsPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+     * 
+     */
+    @Import(name="assignableConnectionId")
+    private @Nullable String assignableConnectionId;
+
+    /**
+     * @return Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+     * 
+     */
+    public Optional<String> assignableConnectionId() {
+        return Optional.ofNullable(this.assignableConnectionId);
+    }
+
+    /**
+     * The OCID of the connection which for the deployment must be assigned.
+     * 
+     */
+    @Import(name="assignedConnectionId")
+    private @Nullable String assignedConnectionId;
+
+    /**
+     * @return The OCID of the connection which for the deployment must be assigned.
+     * 
+     */
+    public Optional<String> assignedConnectionId() {
+        return Optional.ofNullable(this.assignedConnectionId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -98,15 +128,33 @@ public final class GetDeploymentsPlainArgs extends com.pulumi.resources.InvokeAr
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * The connection type which the deployment must support.
+     * 
+     */
+    @Import(name="supportedConnectionType")
+    private @Nullable String supportedConnectionType;
+
+    /**
+     * @return The connection type which the deployment must support.
+     * 
+     */
+    public Optional<String> supportedConnectionType() {
+        return Optional.ofNullable(this.supportedConnectionType);
+    }
+
     private GetDeploymentsPlainArgs() {}
 
     private GetDeploymentsPlainArgs(GetDeploymentsPlainArgs $) {
+        this.assignableConnectionId = $.assignableConnectionId;
+        this.assignedConnectionId = $.assignedConnectionId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.fqdn = $.fqdn;
         this.lifecycleSubState = $.lifecycleSubState;
         this.state = $.state;
+        this.supportedConnectionType = $.supportedConnectionType;
     }
 
     public static Builder builder() {
@@ -128,7 +176,29 @@ public final class GetDeploymentsPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param assignableConnectionId Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignableConnectionId(@Nullable String assignableConnectionId) {
+            $.assignableConnectionId = assignableConnectionId;
+            return this;
+        }
+
+        /**
+         * @param assignedConnectionId The OCID of the connection which for the deployment must be assigned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignedConnectionId(@Nullable String assignedConnectionId) {
+            $.assignedConnectionId = assignedConnectionId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -188,6 +258,17 @@ public final class GetDeploymentsPlainArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param supportedConnectionType The connection type which the deployment must support.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder supportedConnectionType(@Nullable String supportedConnectionType) {
+            $.supportedConnectionType = supportedConnectionType;
             return this;
         }
 

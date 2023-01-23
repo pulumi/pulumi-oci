@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentFamilySubscriptionDetailResult> InvokeAsync(GetFusionEnvironmentFamilySubscriptionDetailArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentFamilySubscriptionDetailResult>("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", args ?? new GetFusionEnvironmentFamilySubscriptionDetailArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentFamilySubscriptionDetailResult>("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", args ?? new GetFusionEnvironmentFamilySubscriptionDetailArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentFamilySubscriptionDetailResult> Invoke(GetFusionEnvironmentFamilySubscriptionDetailInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilySubscriptionDetailResult>("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", args ?? new GetFusionEnvironmentFamilySubscriptionDetailInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilySubscriptionDetailResult>("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", args ?? new GetFusionEnvironmentFamilySubscriptionDetailInvokeArgs(), options.WithDefaults());
     }
 
 

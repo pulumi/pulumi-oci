@@ -43,6 +43,17 @@ public final class GetWorkspaceResult {
      * 
      */
     private String dnsServerZone;
+    private String endpointCompartmentId;
+    /**
+     * @return DCMS endpoint associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    private String endpointId;
+    /**
+     * @return Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    private String endpointName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -60,6 +71,13 @@ public final class GetWorkspaceResult {
      */
     private Boolean isPrivateNetworkEnabled;
     private Integer quiesceTimeout;
+    private String registryCompartmentId;
+    /**
+     * @return DCMS registry associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    private String registryId;
+    private String registryName;
     /**
      * @return Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
      * 
@@ -135,6 +153,23 @@ public final class GetWorkspaceResult {
     public String dnsServerZone() {
         return this.dnsServerZone;
     }
+    public String endpointCompartmentId() {
+        return this.endpointCompartmentId;
+    }
+    /**
+     * @return DCMS endpoint associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    public String endpointId() {
+        return this.endpointId;
+    }
+    /**
+     * @return Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    public String endpointName() {
+        return this.endpointName;
+    }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -161,6 +196,19 @@ public final class GetWorkspaceResult {
     }
     public Integer quiesceTimeout() {
         return this.quiesceTimeout;
+    }
+    public String registryCompartmentId() {
+        return this.registryCompartmentId;
+    }
+    /**
+     * @return DCMS registry associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    public String registryId() {
+        return this.registryId;
+    }
+    public String registryName() {
+        return this.registryName;
     }
     /**
      * @return Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
@@ -223,11 +271,17 @@ public final class GetWorkspaceResult {
         private String displayName;
         private String dnsServerIp;
         private String dnsServerZone;
+        private String endpointCompartmentId;
+        private String endpointId;
+        private String endpointName;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isForceOperation;
         private Boolean isPrivateNetworkEnabled;
         private Integer quiesceTimeout;
+        private String registryCompartmentId;
+        private String registryId;
+        private String registryName;
         private String state;
         private String stateMessage;
         private String subnetId;
@@ -244,11 +298,17 @@ public final class GetWorkspaceResult {
     	      this.displayName = defaults.displayName;
     	      this.dnsServerIp = defaults.dnsServerIp;
     	      this.dnsServerZone = defaults.dnsServerZone;
+    	      this.endpointCompartmentId = defaults.endpointCompartmentId;
+    	      this.endpointId = defaults.endpointId;
+    	      this.endpointName = defaults.endpointName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isForceOperation = defaults.isForceOperation;
     	      this.isPrivateNetworkEnabled = defaults.isPrivateNetworkEnabled;
     	      this.quiesceTimeout = defaults.quiesceTimeout;
+    	      this.registryCompartmentId = defaults.registryCompartmentId;
+    	      this.registryId = defaults.registryId;
+    	      this.registryName = defaults.registryName;
     	      this.state = defaults.state;
     	      this.stateMessage = defaults.stateMessage;
     	      this.subnetId = defaults.subnetId;
@@ -289,6 +349,21 @@ public final class GetWorkspaceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder endpointCompartmentId(String endpointCompartmentId) {
+            this.endpointCompartmentId = Objects.requireNonNull(endpointCompartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder endpointId(String endpointId) {
+            this.endpointId = Objects.requireNonNull(endpointId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder endpointName(String endpointName) {
+            this.endpointName = Objects.requireNonNull(endpointName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
@@ -311,6 +386,21 @@ public final class GetWorkspaceResult {
         @CustomType.Setter
         public Builder quiesceTimeout(Integer quiesceTimeout) {
             this.quiesceTimeout = Objects.requireNonNull(quiesceTimeout);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder registryCompartmentId(String registryCompartmentId) {
+            this.registryCompartmentId = Objects.requireNonNull(registryCompartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder registryId(String registryId) {
+            this.registryId = Objects.requireNonNull(registryId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder registryName(String registryName) {
+            this.registryName = Objects.requireNonNull(registryName);
             return this;
         }
         @CustomType.Setter
@@ -356,11 +446,17 @@ public final class GetWorkspaceResult {
             o.displayName = displayName;
             o.dnsServerIp = dnsServerIp;
             o.dnsServerZone = dnsServerZone;
+            o.endpointCompartmentId = endpointCompartmentId;
+            o.endpointId = endpointId;
+            o.endpointName = endpointName;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isForceOperation = isForceOperation;
             o.isPrivateNetworkEnabled = isPrivateNetworkEnabled;
             o.quiesceTimeout = quiesceTimeout;
+            o.registryCompartmentId = registryCompartmentId;
+            o.registryId = registryId;
+            o.registryName = registryName;
             o.state = state;
             o.stateMessage = stateMessage;
             o.subnetId = subnetId;

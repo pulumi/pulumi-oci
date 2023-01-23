@@ -26,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEncryptedData(args: GetEncryptedDataArgs, opts?: pulumi.InvokeOptions): Promise<GetEncryptedDataResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getEncryptedData:getEncryptedData", {
         "associatedData": args.associatedData,
         "cryptoEndpoint": args.cryptoEndpoint,
@@ -78,9 +75,29 @@ export interface GetEncryptedDataResult {
     readonly keyId: string;
     readonly plaintext: string;
 }
-
+/**
+ * The `oci.Kms.EncryptedData` data source provides details about a specific EncryptedData
+ *
+ * Encrypts data using the given EncryptDataDetails resource.
+ * Plaintext included in the example request is a base64-encoded value
+ * of a UTF-8 string.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEncryptedData = oci.Kms.getEncryptedData({
+ *     cryptoEndpoint: _var.encrypted_data_crypto_endpoint,
+ *     keyId: oci_kms_key.test_key.id,
+ *     plaintext: _var.encrypted_data_plaintext,
+ *     associatedData: _var.encrypted_data_associated_data,
+ * });
+ * ```
+ */
 export function getEncryptedDataOutput(args: GetEncryptedDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEncryptedDataResult> {
-    return pulumi.output(args).apply(a => getEncryptedData(a, opts))
+    return pulumi.output(args).apply((a: any) => getEncryptedData(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificateAuthorityVersions(args: GetCertificateAuthorityVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityVersionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", {
         "certificateAuthorityId": args.certificateAuthorityId,
         "filters": args.filters,
@@ -73,9 +71,26 @@ export interface GetCertificateAuthorityVersionsResult {
      */
     readonly versionNumber?: string;
 }
-
+/**
+ * This data source provides the list of Certificate Authority Versions in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Lists all versions for the specified certificate authority (CA).
+ * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificateAuthorityVersions = oci.CertificatesManagement.getCertificateAuthorityVersions({
+ *     certificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
+ *     versionNumber: _var.certificate_authority_version_version_number,
+ * });
+ * ```
+ */
 export function getCertificateAuthorityVersionsOutput(args: GetCertificateAuthorityVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityVersionsResult> {
-    return pulumi.output(args).apply(a => getCertificateAuthorityVersions(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificateAuthorityVersions(a, opts))
 }
 
 /**

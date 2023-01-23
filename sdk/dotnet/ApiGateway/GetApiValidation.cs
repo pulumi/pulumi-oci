@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetApiValidationResult> InvokeAsync(GetApiValidationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetApiValidationResult>("oci:ApiGateway/getApiValidation:getApiValidation", args ?? new GetApiValidationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiValidationResult>("oci:ApiGateway/getApiValidation:getApiValidation", args ?? new GetApiValidationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetApiValidationResult> Invoke(GetApiValidationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetApiValidationResult>("oci:ApiGateway/getApiValidation:getApiValidation", args ?? new GetApiValidationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiValidationResult>("oci:ApiGateway/getApiValidation:getApiValidation", args ?? new GetApiValidationInvokeArgs(), options.WithDefaults());
     }
 
 

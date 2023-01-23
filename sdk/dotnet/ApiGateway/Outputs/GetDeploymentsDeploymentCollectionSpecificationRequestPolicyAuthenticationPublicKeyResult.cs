@@ -22,7 +22,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKeyResult> Keys;
         /// <summary>
-        /// The duration for which the JWKS should be cached before it is fetched again.
+        /// The duration for which the introspect URL response should be cached before it is fetched again.
         /// </summary>
         public readonly int MaxCacheDurationInHours;
         /// <summary>

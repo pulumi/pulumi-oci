@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseUpgradeHistoryEntries(args: GetDatabaseUpgradeHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseUpgradeHistoryEntriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries", {
         "databaseId": args.databaseId,
         "filters": args.filters,
@@ -76,9 +74,26 @@ export interface GetDatabaseUpgradeHistoryEntriesResult {
     readonly state?: string;
     readonly upgradeAction?: string;
 }
-
+/**
+ * This data source provides the list of Database Upgrade History Entries in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseUpgradeHistoryEntries = oci.Database.getDatabaseUpgradeHistoryEntries({
+ *     databaseId: oci_database_database.test_database.id,
+ *     state: _var.database_upgrade_history_entry_state,
+ *     upgradeAction: _var.database_upgrade_history_entry_upgrade_action,
+ * });
+ * ```
+ */
 export function getDatabaseUpgradeHistoryEntriesOutput(args: GetDatabaseUpgradeHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseUpgradeHistoryEntriesResult> {
-    return pulumi.output(args).apply(a => getDatabaseUpgradeHistoryEntries(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseUpgradeHistoryEntries(a, opts))
 }
 
 /**

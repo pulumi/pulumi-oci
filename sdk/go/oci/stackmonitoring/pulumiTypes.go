@@ -1546,6 +1546,8 @@ type MonitoredResourceDatabaseConnectionDetails struct {
 	Protocol string `pulumi:"protocol"`
 	// (Updatable) Service name used for connection requests.
 	ServiceName string `pulumi:"serviceName"`
+	// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	SslSecretId *string `pulumi:"sslSecretId"`
 }
 
 // MonitoredResourceDatabaseConnectionDetailsInput is an input type that accepts MonitoredResourceDatabaseConnectionDetailsArgs and MonitoredResourceDatabaseConnectionDetailsOutput values.
@@ -1572,6 +1574,8 @@ type MonitoredResourceDatabaseConnectionDetailsArgs struct {
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 	// (Updatable) Service name used for connection requests.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	SslSecretId pulumi.StringPtrInput `pulumi:"sslSecretId"`
 }
 
 func (MonitoredResourceDatabaseConnectionDetailsArgs) ElementType() reflect.Type {
@@ -1681,6 +1685,11 @@ func (o MonitoredResourceDatabaseConnectionDetailsOutput) ServiceName() pulumi.S
 	return o.ApplyT(func(v MonitoredResourceDatabaseConnectionDetails) string { return v.ServiceName }).(pulumi.StringOutput)
 }
 
+// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o MonitoredResourceDatabaseConnectionDetailsOutput) SslSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceDatabaseConnectionDetails) *string { return v.SslSecretId }).(pulumi.StringPtrOutput)
+}
+
 type MonitoredResourceDatabaseConnectionDetailsPtrOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceDatabaseConnectionDetailsPtrOutput) ElementType() reflect.Type {
@@ -1762,6 +1771,16 @@ func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ServiceName() pulum
 			return nil
 		}
 		return &v.ServiceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) SslSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceDatabaseConnectionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SslSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2086,6 +2105,8 @@ func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOut
 type MonitoredResourcesListMemberItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId *string `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Monitored Resource Host
@@ -2120,6 +2141,8 @@ type MonitoredResourcesListMemberItemInput interface {
 type MonitoredResourcesListMemberItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId pulumi.StringPtrInput `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Monitored Resource Host
@@ -2194,6 +2217,11 @@ func (o MonitoredResourcesListMemberItemOutput) ToMonitoredResourcesListMemberIt
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o MonitoredResourcesListMemberItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+func (o MonitoredResourcesListMemberItemOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2624,6 +2652,8 @@ type MonitoredResourcesSearchItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName *string `pulumi:"displayName"`
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId *string `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return resources with host name match
@@ -2634,6 +2664,8 @@ type MonitoredResourcesSearchItem struct {
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name
 	Name *string `pulumi:"name"`
+	// List of monitored resource properties
+	Properties []MonitoredResourcesSearchItemProperty `pulumi:"properties"`
 	// A filter to return resources with matching lifecycle state.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2662,6 +2694,8 @@ type MonitoredResourcesSearchItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId pulumi.StringPtrInput `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return resources with host name match
@@ -2672,6 +2706,8 @@ type MonitoredResourcesSearchItemArgs struct {
 	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// List of monitored resource properties
+	Properties MonitoredResourcesSearchItemPropertyArrayInput `pulumi:"properties"`
 	// A filter to return resources with matching lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2745,6 +2781,11 @@ func (o MonitoredResourcesSearchItemOutput) DisplayName() pulumi.StringPtrOutput
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
+// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+func (o MonitoredResourcesSearchItemOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o MonitoredResourcesSearchItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -2768,6 +2809,11 @@ func (o MonitoredResourcesSearchItemOutput) ManagementAgentId() pulumi.StringPtr
 // A filter to return resources that match exact resource name
 func (o MonitoredResourcesSearchItemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// List of monitored resource properties
+func (o MonitoredResourcesSearchItemOutput) Properties() MonitoredResourcesSearchItemPropertyArrayOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) []MonitoredResourcesSearchItemProperty { return v.Properties }).(MonitoredResourcesSearchItemPropertyArrayOutput)
 }
 
 // A filter to return resources with matching lifecycle state.
@@ -2813,6 +2859,112 @@ func (o MonitoredResourcesSearchItemArrayOutput) Index(i pulumi.IntInput) Monito
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesSearchItem {
 		return vs[0].([]MonitoredResourcesSearchItem)[vs[1].(int)]
 	}).(MonitoredResourcesSearchItemOutput)
+}
+
+type MonitoredResourcesSearchItemProperty struct {
+	// A filter to return resources that match exact resource name
+	Name *string `pulumi:"name"`
+	// property value
+	Value *string `pulumi:"value"`
+}
+
+// MonitoredResourcesSearchItemPropertyInput is an input type that accepts MonitoredResourcesSearchItemPropertyArgs and MonitoredResourcesSearchItemPropertyOutput values.
+// You can construct a concrete instance of `MonitoredResourcesSearchItemPropertyInput` via:
+//
+//	MonitoredResourcesSearchItemPropertyArgs{...}
+type MonitoredResourcesSearchItemPropertyInput interface {
+	pulumi.Input
+
+	ToMonitoredResourcesSearchItemPropertyOutput() MonitoredResourcesSearchItemPropertyOutput
+	ToMonitoredResourcesSearchItemPropertyOutputWithContext(context.Context) MonitoredResourcesSearchItemPropertyOutput
+}
+
+type MonitoredResourcesSearchItemPropertyArgs struct {
+	// A filter to return resources that match exact resource name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// property value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MonitoredResourcesSearchItemPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourcesSearchItemProperty)(nil)).Elem()
+}
+
+func (i MonitoredResourcesSearchItemPropertyArgs) ToMonitoredResourcesSearchItemPropertyOutput() MonitoredResourcesSearchItemPropertyOutput {
+	return i.ToMonitoredResourcesSearchItemPropertyOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourcesSearchItemPropertyArgs) ToMonitoredResourcesSearchItemPropertyOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemPropertyOutput)
+}
+
+// MonitoredResourcesSearchItemPropertyArrayInput is an input type that accepts MonitoredResourcesSearchItemPropertyArray and MonitoredResourcesSearchItemPropertyArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourcesSearchItemPropertyArrayInput` via:
+//
+//	MonitoredResourcesSearchItemPropertyArray{ MonitoredResourcesSearchItemPropertyArgs{...} }
+type MonitoredResourcesSearchItemPropertyArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourcesSearchItemPropertyArrayOutput() MonitoredResourcesSearchItemPropertyArrayOutput
+	ToMonitoredResourcesSearchItemPropertyArrayOutputWithContext(context.Context) MonitoredResourcesSearchItemPropertyArrayOutput
+}
+
+type MonitoredResourcesSearchItemPropertyArray []MonitoredResourcesSearchItemPropertyInput
+
+func (MonitoredResourcesSearchItemPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourcesSearchItemProperty)(nil)).Elem()
+}
+
+func (i MonitoredResourcesSearchItemPropertyArray) ToMonitoredResourcesSearchItemPropertyArrayOutput() MonitoredResourcesSearchItemPropertyArrayOutput {
+	return i.ToMonitoredResourcesSearchItemPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourcesSearchItemPropertyArray) ToMonitoredResourcesSearchItemPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemPropertyArrayOutput)
+}
+
+type MonitoredResourcesSearchItemPropertyOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourcesSearchItemPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourcesSearchItemProperty)(nil)).Elem()
+}
+
+func (o MonitoredResourcesSearchItemPropertyOutput) ToMonitoredResourcesSearchItemPropertyOutput() MonitoredResourcesSearchItemPropertyOutput {
+	return o
+}
+
+func (o MonitoredResourcesSearchItemPropertyOutput) ToMonitoredResourcesSearchItemPropertyOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemPropertyOutput {
+	return o
+}
+
+// A filter to return resources that match exact resource name
+func (o MonitoredResourcesSearchItemPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItemProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// property value
+func (o MonitoredResourcesSearchItemPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItemProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourcesSearchItemPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourcesSearchItemPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourcesSearchItemProperty)(nil)).Elem()
+}
+
+func (o MonitoredResourcesSearchItemPropertyArrayOutput) ToMonitoredResourcesSearchItemPropertyArrayOutput() MonitoredResourcesSearchItemPropertyArrayOutput {
+	return o
+}
+
+func (o MonitoredResourcesSearchItemPropertyArrayOutput) ToMonitoredResourcesSearchItemPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemPropertyArrayOutput {
+	return o
+}
+
+func (o MonitoredResourcesSearchItemPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchItemPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesSearchItemProperty {
+		return vs[0].([]MonitoredResourcesSearchItemProperty)[vs[1].(int)]
+	}).(MonitoredResourcesSearchItemPropertyOutput)
 }
 
 type GetDiscoveryJobDiscoveryDetail struct {
@@ -4719,6 +4871,8 @@ type GetMonitoredResourceDatabaseConnectionDetail struct {
 	Protocol string `pulumi:"protocol"`
 	// Service name used for connection requests.
 	ServiceName string `pulumi:"serviceName"`
+	// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	SslSecretId string `pulumi:"sslSecretId"`
 }
 
 // GetMonitoredResourceDatabaseConnectionDetailInput is an input type that accepts GetMonitoredResourceDatabaseConnectionDetailArgs and GetMonitoredResourceDatabaseConnectionDetailOutput values.
@@ -4745,6 +4899,8 @@ type GetMonitoredResourceDatabaseConnectionDetailArgs struct {
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 	// Service name used for connection requests.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
 }
 
 func (GetMonitoredResourceDatabaseConnectionDetailArgs) ElementType() reflect.Type {
@@ -4826,6 +4982,11 @@ func (o GetMonitoredResourceDatabaseConnectionDetailOutput) Protocol() pulumi.St
 // Service name used for connection requests.
 func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceDatabaseConnectionDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetMonitoredResourceDatabaseConnectionDetailOutput) SslSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceDatabaseConnectionDetail) string { return v.SslSecretId }).(pulumi.StringOutput)
 }
 
 type GetMonitoredResourceDatabaseConnectionDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4992,6 +5153,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput)(nil)).Elem(), MonitoredResourcesSearchAssociationItemSourceResourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemInput)(nil)).Elem(), MonitoredResourcesSearchItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailArrayInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailCredentialInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailCredentialArgs{})
@@ -5065,6 +5228,8 @@ func init() {
 	pulumi.RegisterOutputType(MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyOutput{})
+	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailCredentialOutput{})

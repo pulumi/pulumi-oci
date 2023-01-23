@@ -61,18 +61,33 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+     * The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
-     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
      */
     public Output<String> sourceType() {
         return this.sourceType;
+    }
+
+    /**
+     * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a @.manifest.json object PAR.
+     * 
+     */
+    @Import(name="sourceUrl")
+    private @Nullable Output<String> sourceUrl;
+
+    /**
+     * @return The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a @.manifest.json object PAR.
+     * 
+     */
+    public Optional<Output<String>> sourceUrl() {
+        return Optional.ofNullable(this.sourceUrl);
     }
 
     private MysqlDbSystemSourceArgs() {}
@@ -82,6 +97,7 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
         this.dbSystemId = $.dbSystemId;
         this.recoveryPoint = $.recoveryPoint;
         this.sourceType = $.sourceType;
+        this.sourceUrl = $.sourceUrl;
     }
 
     public static Builder builder() {
@@ -166,7 +182,7 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param sourceType The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+         * @param sourceType The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
          * 
          * @return builder
          * 
@@ -177,13 +193,34 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param sourceType The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+         * @param sourceType The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
          * 
          * @return builder
          * 
          */
         public Builder sourceType(String sourceType) {
             return sourceType(Output.of(sourceType));
+        }
+
+        /**
+         * @param sourceUrl The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a @.manifest.json object PAR.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceUrl(@Nullable Output<String> sourceUrl) {
+            $.sourceUrl = sourceUrl;
+            return this;
+        }
+
+        /**
+         * @param sourceUrl The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a @.manifest.json object PAR.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceUrl(String sourceUrl) {
+            return sourceUrl(Output.of(sourceUrl));
         }
 
         public MysqlDbSystemSourceArgs build() {

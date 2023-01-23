@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecretVersion(args: GetSecretVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Vault/getSecretVersion:getSecretVersion", {
         "secretId": args.secretId,
         "secretVersionNumber": args.secretVersionNumber,
@@ -89,9 +86,25 @@ export interface GetSecretVersionResult {
      */
     readonly versionNumber: string;
 }
-
+/**
+ * This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
+ *
+ * Gets information about the specified version of a secret.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecretVersion = oci.Vault.getSecretVersion({
+ *     secretId: oci_vault_secret.test_secret.id,
+ *     secretVersionNumber: _var.secret_version_secret_version_number,
+ * });
+ * ```
+ */
 export function getSecretVersionOutput(args: GetSecretVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretVersionResult> {
-    return pulumi.output(args).apply(a => getSecretVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecretVersion(a, opts))
 }
 
 /**

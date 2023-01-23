@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerRepository(args: GetContainerRepositoryArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerRepositoryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerRepository:getContainerRepository", {
         "repositoryId": args.repositoryId,
     }, opts);
@@ -104,9 +102,24 @@ export interface GetContainerRepositoryResult {
      */
     readonly timeLastPushed: string;
 }
-
+/**
+ * This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
+ *
+ * Get container repository.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testContainerRepository = oci.Artifacts.getContainerRepository({
+ *     repositoryId: oci_artifacts_repository.test_repository.id,
+ * });
+ * ```
+ */
 export function getContainerRepositoryOutput(args: GetContainerRepositoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerRepositoryResult> {
-    return pulumi.output(args).apply(a => getContainerRepository(a, opts))
+    return pulumi.output(args).apply((a: any) => getContainerRepository(a, opts))
 }
 
 /**

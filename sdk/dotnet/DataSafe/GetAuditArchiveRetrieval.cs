@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditArchiveRetrievalResult> InvokeAsync(GetAuditArchiveRetrievalArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditArchiveRetrievalResult>("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args ?? new GetAuditArchiveRetrievalArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditArchiveRetrievalResult>("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args ?? new GetAuditArchiveRetrievalArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditArchiveRetrievalResult> Invoke(GetAuditArchiveRetrievalInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditArchiveRetrievalResult>("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args ?? new GetAuditArchiveRetrievalInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditArchiveRetrievalResult>("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args ?? new GetAuditArchiveRetrievalInvokeArgs(), options.WithDefaults());
     }
 
 

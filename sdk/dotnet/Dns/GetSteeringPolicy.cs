@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSteeringPolicyResult> InvokeAsync(GetSteeringPolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSteeringPolicyResult>("oci:Dns/getSteeringPolicy:getSteeringPolicy", args ?? new GetSteeringPolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSteeringPolicyResult>("oci:Dns/getSteeringPolicy:getSteeringPolicy", args ?? new GetSteeringPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSteeringPolicyResult> Invoke(GetSteeringPolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyResult>("oci:Dns/getSteeringPolicy:getSteeringPolicy", args ?? new GetSteeringPolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyResult>("oci:Dns/getSteeringPolicy:getSteeringPolicy", args ?? new GetSteeringPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

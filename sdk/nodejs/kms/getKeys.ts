@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -32,11 +33,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKeys(args: GetKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetKeysResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getKeys:getKeys", {
         "algorithm": args.algorithm,
         "compartmentId": args.compartmentId,
@@ -117,9 +115,34 @@ export interface GetKeysResult {
      */
     readonly protectionMode?: string;
 }
-
+/**
+ * This data source provides the list of Keys in Oracle Cloud Infrastructure Kms service.
+ *
+ * Lists the master encryption keys in the specified vault and compartment.
+ *
+ * As a management operation, this call is subject to a Key Management limit that applies to the total number
+ * of requests across all management read operations. Key Management might throttle this call to reject an
+ * otherwise valid request when the total rate of management read operations exceeds 10 requests per second
+ * for a given tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testKeys = oci.Kms.getKeys({
+ *     compartmentId: _var.compartment_id,
+ *     managementEndpoint: _var.key_management_endpoint,
+ *     algorithm: _var.key_algorithm,
+ *     length: _var.key_length,
+ *     curveId: oci_kms_curve.test_curve.id,
+ *     protectionMode: _var.key_protection_mode,
+ * });
+ * ```
+ */
 export function getKeysOutput(args: GetKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeysResult> {
-    return pulumi.output(args).apply(a => getKeys(a, opts))
+    return pulumi.output(args).apply((a: any) => getKeys(a, opts))
 }
 
 /**

@@ -47,7 +47,13 @@ import (
 //
 // ## Import
 //
-// Import is not supported for this resource.
+// GenericArtifacts can be imported using the `id`, e.g.
+//
+// ```sh
+//
+//	$ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact "generic/artifacts/{artifactId}"
+//
+// ```
 type GenericArtifact struct {
 	pulumi.CustomResourceState
 

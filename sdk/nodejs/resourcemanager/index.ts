@@ -5,16 +5,41 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getPrivateEndpoint";
-export * from "./getPrivateEndpointReachableIp";
-export * from "./getPrivateEndpoints";
-export * from "./getStack";
-export * from "./getStackTfState";
-export * from "./getStacks";
-export * from "./privateEndpoint";
+export { GetPrivateEndpointArgs, GetPrivateEndpointResult, GetPrivateEndpointOutputArgs } from "./getPrivateEndpoint";
+export const getPrivateEndpoint: typeof import("./getPrivateEndpoint").getPrivateEndpoint = null as any;
+export const getPrivateEndpointOutput: typeof import("./getPrivateEndpoint").getPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpoint","getPrivateEndpointOutput"], () => require("./getPrivateEndpoint"));
 
-// Import resources to register:
-import { PrivateEndpoint } from "./privateEndpoint";
+export { GetPrivateEndpointReachableIpArgs, GetPrivateEndpointReachableIpResult, GetPrivateEndpointReachableIpOutputArgs } from "./getPrivateEndpointReachableIp";
+export const getPrivateEndpointReachableIp: typeof import("./getPrivateEndpointReachableIp").getPrivateEndpointReachableIp = null as any;
+export const getPrivateEndpointReachableIpOutput: typeof import("./getPrivateEndpointReachableIp").getPrivateEndpointReachableIpOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpointReachableIp","getPrivateEndpointReachableIpOutput"], () => require("./getPrivateEndpointReachableIp"));
+
+export { GetPrivateEndpointsArgs, GetPrivateEndpointsResult, GetPrivateEndpointsOutputArgs } from "./getPrivateEndpoints";
+export const getPrivateEndpoints: typeof import("./getPrivateEndpoints").getPrivateEndpoints = null as any;
+export const getPrivateEndpointsOutput: typeof import("./getPrivateEndpoints").getPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpoints","getPrivateEndpointsOutput"], () => require("./getPrivateEndpoints"));
+
+export { GetStackArgs, GetStackResult, GetStackOutputArgs } from "./getStack";
+export const getStack: typeof import("./getStack").getStack = null as any;
+export const getStackOutput: typeof import("./getStack").getStackOutput = null as any;
+utilities.lazyLoad(exports, ["getStack","getStackOutput"], () => require("./getStack"));
+
+export { GetStackTfStateArgs, GetStackTfStateResult, GetStackTfStateOutputArgs } from "./getStackTfState";
+export const getStackTfState: typeof import("./getStackTfState").getStackTfState = null as any;
+export const getStackTfStateOutput: typeof import("./getStackTfState").getStackTfStateOutput = null as any;
+utilities.lazyLoad(exports, ["getStackTfState","getStackTfStateOutput"], () => require("./getStackTfState"));
+
+export { GetStacksArgs, GetStacksResult, GetStacksOutputArgs } from "./getStacks";
+export const getStacks: typeof import("./getStacks").getStacks = null as any;
+export const getStacksOutput: typeof import("./getStacks").getStacksOutput = null as any;
+utilities.lazyLoad(exports, ["getStacks","getStacksOutput"], () => require("./getStacks"));
+
+export { PrivateEndpointArgs, PrivateEndpointState } from "./privateEndpoint";
+export type PrivateEndpoint = import("./privateEndpoint").PrivateEndpoint;
+export const PrivateEndpoint: typeof import("./privateEndpoint").PrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["PrivateEndpoint"], () => require("./privateEndpoint"));
+
 
 const _module = {
     version: utilities.getVersion(),

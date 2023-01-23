@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAssociation(args: GetAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetAssociationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getAssociation:getAssociation", {
         "associationId": args.associationId,
     }, opts);
@@ -79,9 +76,24 @@ export interface GetAssociationResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Association resource in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Gets details about the specified association.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAssociation = oci.CertificatesManagement.getAssociation({
+ *     associationId: oci_certificates_management_association.test_association.id,
+ * });
+ * ```
+ */
 export function getAssociationOutput(args: GetAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssociationResult> {
-    return pulumi.output(args).apply(a => getAssociation(a, opts))
+    return pulumi.output(args).apply((a: any) => getAssociation(a, opts))
 }
 
 /**

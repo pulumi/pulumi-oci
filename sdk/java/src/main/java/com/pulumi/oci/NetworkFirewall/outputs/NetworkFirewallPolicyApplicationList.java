@@ -4,51 +4,39 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Integer;
+import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyApplicationListApplicationValue;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkFirewallPolicyApplicationList {
-    private @Nullable Integer icmpCode;
-    private @Nullable Integer icmpType;
-    private String key;
-    private @Nullable Integer maximumPort;
-    private @Nullable Integer minimumPort;
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) The key is the identifier by which the application list is referenced.
      * 
      */
-    private String type;
+    private String applicationListName;
+    /**
+     * @return (Updatable) Details about the application
+     * 
+     */
+    private @Nullable List<NetworkFirewallPolicyApplicationListApplicationValue> applicationValues;
 
     private NetworkFirewallPolicyApplicationList() {}
-    public Optional<Integer> icmpCode() {
-        return Optional.ofNullable(this.icmpCode);
-    }
-    public Optional<Integer> icmpType() {
-        return Optional.ofNullable(this.icmpType);
-    }
-    public String key() {
-        return this.key;
-    }
-    public Optional<Integer> maximumPort() {
-        return Optional.ofNullable(this.maximumPort);
-    }
-    public Optional<Integer> minimumPort() {
-        return Optional.ofNullable(this.minimumPort);
-    }
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) The key is the identifier by which the application list is referenced.
      * 
      */
-    public String type() {
-        return this.type;
+    public String applicationListName() {
+        return this.applicationListName;
+    }
+    /**
+     * @return (Updatable) Details about the application
+     * 
+     */
+    public List<NetworkFirewallPolicyApplicationListApplicationValue> applicationValues() {
+        return this.applicationValues == null ? List.of() : this.applicationValues;
     }
 
     public static Builder builder() {
@@ -60,61 +48,32 @@ public final class NetworkFirewallPolicyApplicationList {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Integer icmpCode;
-        private @Nullable Integer icmpType;
-        private String key;
-        private @Nullable Integer maximumPort;
-        private @Nullable Integer minimumPort;
-        private String type;
+        private String applicationListName;
+        private @Nullable List<NetworkFirewallPolicyApplicationListApplicationValue> applicationValues;
         public Builder() {}
         public Builder(NetworkFirewallPolicyApplicationList defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.icmpCode = defaults.icmpCode;
-    	      this.icmpType = defaults.icmpType;
-    	      this.key = defaults.key;
-    	      this.maximumPort = defaults.maximumPort;
-    	      this.minimumPort = defaults.minimumPort;
-    	      this.type = defaults.type;
+    	      this.applicationListName = defaults.applicationListName;
+    	      this.applicationValues = defaults.applicationValues;
         }
 
         @CustomType.Setter
-        public Builder icmpCode(@Nullable Integer icmpCode) {
-            this.icmpCode = icmpCode;
+        public Builder applicationListName(String applicationListName) {
+            this.applicationListName = Objects.requireNonNull(applicationListName);
             return this;
         }
         @CustomType.Setter
-        public Builder icmpType(@Nullable Integer icmpType) {
-            this.icmpType = icmpType;
+        public Builder applicationValues(@Nullable List<NetworkFirewallPolicyApplicationListApplicationValue> applicationValues) {
+            this.applicationValues = applicationValues;
             return this;
         }
-        @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder maximumPort(@Nullable Integer maximumPort) {
-            this.maximumPort = maximumPort;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder minimumPort(@Nullable Integer minimumPort) {
-            this.minimumPort = minimumPort;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
-            return this;
+        public Builder applicationValues(NetworkFirewallPolicyApplicationListApplicationValue... applicationValues) {
+            return applicationValues(List.of(applicationValues));
         }
         public NetworkFirewallPolicyApplicationList build() {
             final var o = new NetworkFirewallPolicyApplicationList();
-            o.icmpCode = icmpCode;
-            o.icmpType = icmpType;
-            o.key = key;
-            o.maximumPort = maximumPort;
-            o.minimumPort = minimumPort;
-            o.type = type;
+            o.applicationListName = applicationListName;
+            o.applicationValues = applicationValues;
             return o;
         }
     }

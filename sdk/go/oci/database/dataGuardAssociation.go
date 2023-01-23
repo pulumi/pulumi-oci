@@ -126,7 +126,7 @@ type DataGuardAssociation struct {
 	// The hostname for the DB node.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
-	IsActiveDataGuardEnabled pulumi.BoolOutput `pulumi:"isActiveDataGuardEnabled"`
+	IsActiveDataGuardEnabled pulumi.BoolPtrOutput `pulumi:"isActiveDataGuardEnabled"`
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
 	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
@@ -203,6 +203,13 @@ func NewDataGuardAssociation(ctx *pulumi.Context,
 	if args.TransportType == nil {
 		return nil, errors.New("invalid value for required argument 'TransportType'")
 	}
+	if args.DatabaseAdminPassword != nil {
+		args.DatabaseAdminPassword = pulumi.ToSecret(args.DatabaseAdminPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"databaseAdminPassword",
+	})
+	opts = append(opts, secrets)
 	var resource DataGuardAssociation
 	err := ctx.RegisterResource("oci:Database/dataGuardAssociation:DataGuardAssociation", name, args, &resource, opts...)
 	if err != nil {
@@ -736,8 +743,8 @@ func (o DataGuardAssociationOutput) Hostname() pulumi.StringOutput {
 }
 
 // (Updatable) True if active Data Guard is enabled.
-func (o DataGuardAssociationOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.BoolOutput { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+func (o DataGuardAssociationOutput) IsActiveDataGuardEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.BoolPtrOutput { return v.IsActiveDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSourceEvent(args: GetDataSourceEventArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSourceEventResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", {
         "dataSourceId": args.dataSourceId,
         "region": args.region,
@@ -69,9 +67,25 @@ export interface GetDataSourceEventResult {
      */
     readonly region?: string;
 }
-
+/**
+ * This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Returns a list of events from CloudGuard DataSource
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataSourceEvent = oci.CloudGuard.getDataSourceEvent({
+ *     dataSourceId: oci_cloud_guard_data_source.test_data_source.id,
+ *     region: _var.data_source_event_region,
+ * });
+ * ```
+ */
 export function getDataSourceEventOutput(args: GetDataSourceEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourceEventResult> {
-    return pulumi.output(args).apply(a => getDataSourceEvent(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataSourceEvent(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  */
 export function getPublishers(args?: GetPublishersArgs, opts?: pulumi.InvokeOptions): Promise<GetPublishersResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getPublishers:getPublishers", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -67,9 +65,25 @@ export interface GetPublishersResult {
      */
     readonly publishers: outputs.Marketplace.GetPublishersPublisher[];
 }
-
+/**
+ * This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPublishers = oci.Marketplace.getPublishers({
+ *     compartmentId: _var.compartment_id,
+ *     publisherId: oci_marketplace_publisher.test_publisher.id,
+ * });
+ * ```
+ */
 export function getPublishersOutput(args?: GetPublishersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublishersResult> {
-    return pulumi.output(args).apply(a => getPublishers(a, opts))
+    return pulumi.output(args).apply((a: any) => getPublishers(a, opts))
 }
 
 /**

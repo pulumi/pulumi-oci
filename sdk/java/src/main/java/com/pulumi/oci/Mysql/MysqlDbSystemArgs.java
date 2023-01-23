@@ -100,14 +100,14 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the Configuration to be used for this DB System.
+     * (Updatable) The OCID of the Configuration to be used for this DB System.
      * 
      */
     @Import(name="configurationId")
     private @Nullable Output<String> configurationId;
 
     /**
-     * @return The OCID of the Configuration to be used for this DB System.
+     * @return (Updatable) The OCID of the Configuration to be used for this DB System.
      * 
      */
     public Optional<Output<String>> configurationId() {
@@ -130,14 +130,14 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+     * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      * 
      */
     @Import(name="dataStorageSizeInGb")
     private @Nullable Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+     * @return (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      * 
      */
     public Optional<Output<Integer>> dataStorageSizeInGb() {
@@ -280,14 +280,14 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
      * 
      */
     @Import(name="maintenance")
     private @Nullable Output<MysqlDbSystemMaintenanceArgs> maintenance;
 
     /**
-     * @return (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+     * @return (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
      * 
      */
     public Optional<Output<MysqlDbSystemMaintenanceArgs>> maintenance() {
@@ -295,14 +295,14 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Name of the MySQL Version in use for the DB System.
+     * The specific MySQL version identifier.
      * 
      */
     @Import(name="mysqlVersion")
     private @Nullable Output<String> mysqlVersion;
 
     /**
-     * @return Name of the MySQL Version in use for the DB System.
+     * @return The specific MySQL version identifier.
      * 
      */
     public Optional<Output<String>> mysqlVersion() {
@@ -340,7 +340,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the shape. The shape determines the resources allocated
+     * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -348,7 +348,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> shapeName;
 
     /**
-     * @return The name of the shape. The shape determines the resources allocated
+     * @return (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -571,7 +571,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configurationId The OCID of the Configuration to be used for this DB System.
+         * @param configurationId (Updatable) The OCID of the Configuration to be used for this DB System.
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configurationId The OCID of the Configuration to be used for this DB System.
+         * @param configurationId (Updatable) The OCID of the Configuration to be used for this DB System.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataStorageSizeInGb Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+         * @param dataStorageSizeInGb (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataStorageSizeInGb Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+         * @param dataStorageSizeInGb (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
          * 
          * @return builder
          * 
@@ -833,7 +833,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenance (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+         * @param maintenance (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
          * 
          * @return builder
          * 
@@ -844,7 +844,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenance (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+         * @param maintenance (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
          * 
          * @return builder
          * 
@@ -854,7 +854,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mysqlVersion Name of the MySQL Version in use for the DB System.
+         * @param mysqlVersion The specific MySQL version identifier.
          * 
          * @return builder
          * 
@@ -865,7 +865,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mysqlVersion Name of the MySQL Version in use for the DB System.
+         * @param mysqlVersion The specific MySQL version identifier.
          * 
          * @return builder
          * 
@@ -917,7 +917,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shapeName The name of the shape. The shape determines the resources allocated
+         * @param shapeName (Updatable) The name of the shape. The shape determines the resources allocated
          * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
          * 
          * @return builder
@@ -929,7 +929,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shapeName The name of the shape. The shape determines the resources allocated
+         * @param shapeName (Updatable) The name of the shape. The shape determines the resources allocated
          * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
          * 
          * @return builder

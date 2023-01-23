@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentRefreshActivityResult> InvokeAsync(GetFusionEnvironmentRefreshActivityArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentRefreshActivityResult>("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args ?? new GetFusionEnvironmentRefreshActivityArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentRefreshActivityResult>("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args ?? new GetFusionEnvironmentRefreshActivityArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentRefreshActivityResult> Invoke(GetFusionEnvironmentRefreshActivityInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivityResult>("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args ?? new GetFusionEnvironmentRefreshActivityInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivityResult>("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args ?? new GetFusionEnvironmentRefreshActivityInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -132,6 +132,10 @@ namespace Pulumi.Oci.Functions
         public readonly string LifecycleDetails;
         public readonly string RefreshActivityId;
         /// <summary>
+        /// Details of refresh investigation information, each item represents a different issue.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult> RefreshIssueDetailsLists;
+        /// <summary>
         /// Service availability / impact during refresh activity execution up down
         /// </summary>
         public readonly string ServiceAvailability;
@@ -160,10 +164,6 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public readonly string TimeOfRestorationPoint;
         /// <summary>
-        /// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-        /// </summary>
-        public readonly string TimeScheduledStart;
-        /// <summary>
         /// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
@@ -180,6 +180,8 @@ namespace Pulumi.Oci.Functions
 
             string refreshActivityId,
 
+            ImmutableArray<Outputs.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult> refreshIssueDetailsLists,
+
             string serviceAvailability,
 
             string sourceFusionEnvironmentId,
@@ -194,8 +196,6 @@ namespace Pulumi.Oci.Functions
 
             string timeOfRestorationPoint,
 
-            string timeScheduledStart,
-
             string timeUpdated)
         {
             DisplayName = displayName;
@@ -203,6 +203,7 @@ namespace Pulumi.Oci.Functions
             Id = id;
             LifecycleDetails = lifecycleDetails;
             RefreshActivityId = refreshActivityId;
+            RefreshIssueDetailsLists = refreshIssueDetailsLists;
             ServiceAvailability = serviceAvailability;
             SourceFusionEnvironmentId = sourceFusionEnvironmentId;
             State = state;
@@ -210,7 +211,6 @@ namespace Pulumi.Oci.Functions
             TimeExpectedFinish = timeExpectedFinish;
             TimeFinished = timeFinished;
             TimeOfRestorationPoint = timeOfRestorationPoint;
-            TimeScheduledStart = timeScheduledStart;
             TimeUpdated = timeUpdated;
         }
     }

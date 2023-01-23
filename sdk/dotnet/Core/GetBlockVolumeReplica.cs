@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBlockVolumeReplicaResult> InvokeAsync(GetBlockVolumeReplicaArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBlockVolumeReplicaResult>("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", args ?? new GetBlockVolumeReplicaArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBlockVolumeReplicaResult>("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", args ?? new GetBlockVolumeReplicaArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Block Volume Replica resource in Oracle Cloud Infrastructure Core service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBlockVolumeReplicaResult> Invoke(GetBlockVolumeReplicaInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBlockVolumeReplicaResult>("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", args ?? new GetBlockVolumeReplicaInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBlockVolumeReplicaResult>("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", args ?? new GetBlockVolumeReplicaInvokeArgs(), options.WithDefaults());
     }
 
 

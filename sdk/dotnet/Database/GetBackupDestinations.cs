@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBackupDestinationsResult> InvokeAsync(GetBackupDestinationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBackupDestinationsResult>("oci:Database/getBackupDestinations:getBackupDestinations", args ?? new GetBackupDestinationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackupDestinationsResult>("oci:Database/getBackupDestinations:getBackupDestinations", args ?? new GetBackupDestinationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBackupDestinationsResult> Invoke(GetBackupDestinationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBackupDestinationsResult>("oci:Database/getBackupDestinations:getBackupDestinations", args ?? new GetBackupDestinationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackupDestinationsResult>("oci:Database/getBackupDestinations:getBackupDestinations", args ?? new GetBackupDestinationsInvokeArgs(), options.WithDefaults());
     }
 
 

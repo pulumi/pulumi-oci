@@ -117,13 +117,13 @@ type MysqlDbSystem struct {
 	Channels MysqlDbSystemChannelArrayOutput `pulumi:"channels"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The OCID of the Configuration to be used for this DB System.
+	// (Updatable) The OCID of the Configuration to be used for this DB System.
 	ConfigurationId pulumi.StringOutput `pulumi:"configurationId"`
 	// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery pulumi.StringOutput `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements MysqlDbSystemCurrentPlacementArrayOutput `pulumi:"currentPlacements"`
-	// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -153,9 +153,9 @@ type MysqlDbSystem struct {
 	IsHighlyAvailable pulumi.BoolOutput `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+	// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance MysqlDbSystemMaintenanceOutput `pulumi:"maintenance"`
-	// Name of the MySQL Version in use for the DB System.
+	// The specific MySQL version identifier.
 	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails MysqlDbSystemPointInTimeRecoveryDetailArrayOutput `pulumi:"pointInTimeRecoveryDetails"`
@@ -163,7 +163,7 @@ type MysqlDbSystem struct {
 	Port pulumi.IntOutput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntOutput `pulumi:"portX"`
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -199,6 +199,13 @@ func NewMysqlDbSystem(ctx *pulumi.Context,
 	if args.SubnetId == nil {
 		return nil, errors.New("invalid value for required argument 'SubnetId'")
 	}
+	if args.AdminPassword != nil {
+		args.AdminPassword = pulumi.ToSecret(args.AdminPassword).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"adminPassword",
+	})
+	opts = append(opts, secrets)
 	var resource MysqlDbSystem
 	err := ctx.RegisterResource("oci:Mysql/mysqlDbSystem:MysqlDbSystem", name, args, &resource, opts...)
 	if err != nil {
@@ -235,13 +242,13 @@ type mysqlDbSystemState struct {
 	Channels []MysqlDbSystemChannel `pulumi:"channels"`
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The OCID of the Configuration to be used for this DB System.
+	// (Updatable) The OCID of the Configuration to be used for this DB System.
 	ConfigurationId *string `pulumi:"configurationId"`
 	// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery *string `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements []MysqlDbSystemCurrentPlacement `pulumi:"currentPlacements"`
-	// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -271,9 +278,9 @@ type mysqlDbSystemState struct {
 	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+	// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance *MysqlDbSystemMaintenance `pulumi:"maintenance"`
-	// Name of the MySQL Version in use for the DB System.
+	// The specific MySQL version identifier.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails []MysqlDbSystemPointInTimeRecoveryDetail `pulumi:"pointInTimeRecoveryDetails"`
@@ -281,7 +288,7 @@ type mysqlDbSystemState struct {
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -313,13 +320,13 @@ type MysqlDbSystemState struct {
 	Channels MysqlDbSystemChannelArrayInput
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	// The OCID of the Configuration to be used for this DB System.
+	// (Updatable) The OCID of the Configuration to be used for this DB System.
 	ConfigurationId pulumi.StringPtrInput
 	// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery pulumi.StringPtrInput
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements MysqlDbSystemCurrentPlacementArrayInput
-	// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -349,9 +356,9 @@ type MysqlDbSystemState struct {
 	IsHighlyAvailable pulumi.BoolPtrInput
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+	// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance MysqlDbSystemMaintenancePtrInput
-	// Name of the MySQL Version in use for the DB System.
+	// The specific MySQL version identifier.
 	MysqlVersion pulumi.StringPtrInput
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails MysqlDbSystemPointInTimeRecoveryDetailArrayInput
@@ -359,7 +366,7 @@ type MysqlDbSystemState struct {
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -391,11 +398,11 @@ type mysqlDbSystemArgs struct {
 	BackupPolicy *MysqlDbSystemBackupPolicy `pulumi:"backupPolicy"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The OCID of the Configuration to be used for this DB System.
+	// (Updatable) The OCID of the Configuration to be used for this DB System.
 	ConfigurationId *string `pulumi:"configurationId"`
 	// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery *string `pulumi:"crashRecovery"`
-	// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -415,15 +422,15 @@ type mysqlDbSystemArgs struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Specifies if the DB System is highly available.
 	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
-	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+	// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance *MysqlDbSystemMaintenance `pulumi:"maintenance"`
-	// Name of the MySQL Version in use for the DB System.
+	// The specific MySQL version identifier.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -448,11 +455,11 @@ type MysqlDbSystemArgs struct {
 	BackupPolicy MysqlDbSystemBackupPolicyPtrInput
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput
-	// The OCID of the Configuration to be used for this DB System.
+	// (Updatable) The OCID of the Configuration to be used for this DB System.
 	ConfigurationId pulumi.StringPtrInput
 	// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
 	CrashRecovery pulumi.StringPtrInput
-	// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -472,15 +479,15 @@ type MysqlDbSystemArgs struct {
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolPtrInput
-	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+	// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance MysqlDbSystemMaintenancePtrInput
-	// Name of the MySQL Version in use for the DB System.
+	// The specific MySQL version identifier.
 	MysqlVersion pulumi.StringPtrInput
 	// The port for primary endpoint of the DB System to listen on.
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -615,7 +622,7 @@ func (o MysqlDbSystemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The OCID of the Configuration to be used for this DB System.
+// (Updatable) The OCID of the Configuration to be used for this DB System.
 func (o MysqlDbSystemOutput) ConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.ConfigurationId }).(pulumi.StringOutput)
 }
@@ -630,7 +637,7 @@ func (o MysqlDbSystemOutput) CurrentPlacements() MysqlDbSystemCurrentPlacementAr
 	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemCurrentPlacementArrayOutput { return v.CurrentPlacements }).(MysqlDbSystemCurrentPlacementArrayOutput)
 }
 
-// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 func (o MysqlDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }
@@ -705,12 +712,12 @@ func (o MysqlDbSystemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
 func (o MysqlDbSystemOutput) Maintenance() MysqlDbSystemMaintenanceOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemMaintenanceOutput { return v.Maintenance }).(MysqlDbSystemMaintenanceOutput)
 }
 
-// Name of the MySQL Version in use for the DB System.
+// The specific MySQL version identifier.
 func (o MysqlDbSystemOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.MysqlVersion }).(pulumi.StringOutput)
 }
@@ -732,7 +739,7 @@ func (o MysqlDbSystemOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.PortX }).(pulumi.IntOutput)
 }
 
-// The name of the shape. The shape determines the resources allocated
+// (Updatable) The name of the shape. The shape determines the resources allocated
 // * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 func (o MysqlDbSystemOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.ShapeName }).(pulumi.StringOutput)

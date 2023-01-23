@@ -105,6 +105,11 @@ namespace Pulumi.Oci.LoadBalancer
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "passphrase",
+                    "privateKey",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -146,17 +151,37 @@ namespace Pulumi.Oci.LoadBalancer
         [Input("loadBalancerId", required: true)]
         public Input<string> LoadBalancerId { get; set; } = null!;
 
+        [Input("passphrase")]
+        private Input<string>? _passphrase;
+
         /// <summary>
         /// A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
         /// </summary>
-        [Input("passphrase")]
-        public Input<string>? Passphrase { get; set; }
+        public Input<string>? Passphrase
+        {
+            get => _passphrase;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _passphrase = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("privateKey")]
+        private Input<string>? _privateKey;
 
         /// <summary>
         /// The SSL private key for your certificate, in PEM format.
         /// </summary>
-        [Input("privateKey")]
-        public Input<string>? PrivateKey { get; set; }
+        public Input<string>? PrivateKey
+        {
+            get => _privateKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The public certificate, in PEM format, that you received from your SSL certificate provider.
@@ -190,17 +215,37 @@ namespace Pulumi.Oci.LoadBalancer
         [Input("loadBalancerId")]
         public Input<string>? LoadBalancerId { get; set; }
 
+        [Input("passphrase")]
+        private Input<string>? _passphrase;
+
         /// <summary>
         /// A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
         /// </summary>
-        [Input("passphrase")]
-        public Input<string>? Passphrase { get; set; }
+        public Input<string>? Passphrase
+        {
+            get => _passphrase;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _passphrase = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("privateKey")]
+        private Input<string>? _privateKey;
 
         /// <summary>
         /// The SSL private key for your certificate, in PEM format.
         /// </summary>
-        [Input("privateKey")]
-        public Input<string>? PrivateKey { get; set; }
+        public Input<string>? PrivateKey
+        {
+            get => _privateKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The public certificate, in PEM format, that you received from your SSL certificate provider.

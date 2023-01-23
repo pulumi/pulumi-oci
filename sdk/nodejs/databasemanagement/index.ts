@@ -5,70 +5,296 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./dbManagementPrivateEndpoint";
-export * from "./getDbManagementPrivateEndpoint";
-export * from "./getDbManagementPrivateEndpointAssociatedDatabase";
-export * from "./getDbManagementPrivateEndpointAssociatedDatabases";
-export * from "./getDbManagementPrivateEndpoints";
-export * from "./getJobExecutionsStatus";
-export * from "./getJobExecutionsStatuses";
-export * from "./getManagedDatabase";
-export * from "./getManagedDatabaseAddmTask";
-export * from "./getManagedDatabaseAddmTasks";
-export * from "./getManagedDatabaseAlertLogCount";
-export * from "./getManagedDatabaseAlertLogCounts";
-export * from "./getManagedDatabaseAttentionLogCount";
-export * from "./getManagedDatabaseAttentionLogCounts";
-export * from "./getManagedDatabaseGroup";
-export * from "./getManagedDatabaseGroups";
-export * from "./getManagedDatabaseOptimizerStatisticsAdvisorExecution";
-export * from "./getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript";
-export * from "./getManagedDatabaseOptimizerStatisticsAdvisorExecutions";
-export * from "./getManagedDatabaseOptimizerStatisticsCollectionAggregations";
-export * from "./getManagedDatabaseOptimizerStatisticsCollectionOperation";
-export * from "./getManagedDatabaseOptimizerStatisticsCollectionOperations";
-export * from "./getManagedDatabaseSqlTuningAdvisorTask";
-export * from "./getManagedDatabaseSqlTuningAdvisorTasks";
-export * from "./getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison";
-export * from "./getManagedDatabaseSqlTuningAdvisorTasksFinding";
-export * from "./getManagedDatabaseSqlTuningAdvisorTasksFindings";
-export * from "./getManagedDatabaseSqlTuningAdvisorTasksRecommendation";
-export * from "./getManagedDatabaseSqlTuningAdvisorTasksRecommendations";
-export * from "./getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan";
-export * from "./getManagedDatabaseSqlTuningAdvisorTasksSummaryReport";
-export * from "./getManagedDatabaseSqlTuningSet";
-export * from "./getManagedDatabaseSqlTuningSets";
-export * from "./getManagedDatabaseTableStatistics";
-export * from "./getManagedDatabaseUser";
-export * from "./getManagedDatabaseUserConsumerGroupPrivilege";
-export * from "./getManagedDatabaseUserConsumerGroupPrivileges";
-export * from "./getManagedDatabaseUserDataAccessContainer";
-export * from "./getManagedDatabaseUserDataAccessContainers";
-export * from "./getManagedDatabaseUserObjectPrivilege";
-export * from "./getManagedDatabaseUserObjectPrivileges";
-export * from "./getManagedDatabaseUserProxiedForUser";
-export * from "./getManagedDatabaseUserProxiedForUsers";
-export * from "./getManagedDatabaseUserRole";
-export * from "./getManagedDatabaseUserRoles";
-export * from "./getManagedDatabaseUsers";
-export * from "./getManagedDatabases";
-export * from "./getManagedDatabasesAsmProperties";
-export * from "./getManagedDatabasesAsmProperty";
-export * from "./getManagedDatabasesDatabaseParameter";
-export * from "./getManagedDatabasesDatabaseParameters";
-export * from "./getManagedDatabasesUserProxyUser";
-export * from "./getManagedDatabasesUserProxyUsers";
-export * from "./getManagedDatabasesUserSystemPrivilege";
-export * from "./getManagedDatabasesUserSystemPrivileges";
-export * from "./managedDatabaseGroup";
-export * from "./managedDatabasesChangeDatabaseParameter";
-export * from "./managedDatabasesResetDatabaseParameter";
+export { DbManagementPrivateEndpointArgs, DbManagementPrivateEndpointState } from "./dbManagementPrivateEndpoint";
+export type DbManagementPrivateEndpoint = import("./dbManagementPrivateEndpoint").DbManagementPrivateEndpoint;
+export const DbManagementPrivateEndpoint: typeof import("./dbManagementPrivateEndpoint").DbManagementPrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["DbManagementPrivateEndpoint"], () => require("./dbManagementPrivateEndpoint"));
 
-// Import resources to register:
-import { DbManagementPrivateEndpoint } from "./dbManagementPrivateEndpoint";
-import { ManagedDatabaseGroup } from "./managedDatabaseGroup";
-import { ManagedDatabasesChangeDatabaseParameter } from "./managedDatabasesChangeDatabaseParameter";
-import { ManagedDatabasesResetDatabaseParameter } from "./managedDatabasesResetDatabaseParameter";
+export { GetDbManagementPrivateEndpointArgs, GetDbManagementPrivateEndpointResult, GetDbManagementPrivateEndpointOutputArgs } from "./getDbManagementPrivateEndpoint";
+export const getDbManagementPrivateEndpoint: typeof import("./getDbManagementPrivateEndpoint").getDbManagementPrivateEndpoint = null as any;
+export const getDbManagementPrivateEndpointOutput: typeof import("./getDbManagementPrivateEndpoint").getDbManagementPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getDbManagementPrivateEndpoint","getDbManagementPrivateEndpointOutput"], () => require("./getDbManagementPrivateEndpoint"));
+
+export { GetDbManagementPrivateEndpointAssociatedDatabaseArgs, GetDbManagementPrivateEndpointAssociatedDatabaseResult, GetDbManagementPrivateEndpointAssociatedDatabaseOutputArgs } from "./getDbManagementPrivateEndpointAssociatedDatabase";
+export const getDbManagementPrivateEndpointAssociatedDatabase: typeof import("./getDbManagementPrivateEndpointAssociatedDatabase").getDbManagementPrivateEndpointAssociatedDatabase = null as any;
+export const getDbManagementPrivateEndpointAssociatedDatabaseOutput: typeof import("./getDbManagementPrivateEndpointAssociatedDatabase").getDbManagementPrivateEndpointAssociatedDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getDbManagementPrivateEndpointAssociatedDatabase","getDbManagementPrivateEndpointAssociatedDatabaseOutput"], () => require("./getDbManagementPrivateEndpointAssociatedDatabase"));
+
+export { GetDbManagementPrivateEndpointAssociatedDatabasesArgs, GetDbManagementPrivateEndpointAssociatedDatabasesResult, GetDbManagementPrivateEndpointAssociatedDatabasesOutputArgs } from "./getDbManagementPrivateEndpointAssociatedDatabases";
+export const getDbManagementPrivateEndpointAssociatedDatabases: typeof import("./getDbManagementPrivateEndpointAssociatedDatabases").getDbManagementPrivateEndpointAssociatedDatabases = null as any;
+export const getDbManagementPrivateEndpointAssociatedDatabasesOutput: typeof import("./getDbManagementPrivateEndpointAssociatedDatabases").getDbManagementPrivateEndpointAssociatedDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbManagementPrivateEndpointAssociatedDatabases","getDbManagementPrivateEndpointAssociatedDatabasesOutput"], () => require("./getDbManagementPrivateEndpointAssociatedDatabases"));
+
+export { GetDbManagementPrivateEndpointsArgs, GetDbManagementPrivateEndpointsResult, GetDbManagementPrivateEndpointsOutputArgs } from "./getDbManagementPrivateEndpoints";
+export const getDbManagementPrivateEndpoints: typeof import("./getDbManagementPrivateEndpoints").getDbManagementPrivateEndpoints = null as any;
+export const getDbManagementPrivateEndpointsOutput: typeof import("./getDbManagementPrivateEndpoints").getDbManagementPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbManagementPrivateEndpoints","getDbManagementPrivateEndpointsOutput"], () => require("./getDbManagementPrivateEndpoints"));
+
+export { GetJobExecutionsStatusArgs, GetJobExecutionsStatusResult, GetJobExecutionsStatusOutputArgs } from "./getJobExecutionsStatus";
+export const getJobExecutionsStatus: typeof import("./getJobExecutionsStatus").getJobExecutionsStatus = null as any;
+export const getJobExecutionsStatusOutput: typeof import("./getJobExecutionsStatus").getJobExecutionsStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getJobExecutionsStatus","getJobExecutionsStatusOutput"], () => require("./getJobExecutionsStatus"));
+
+export { GetJobExecutionsStatusesArgs, GetJobExecutionsStatusesResult, GetJobExecutionsStatusesOutputArgs } from "./getJobExecutionsStatuses";
+export const getJobExecutionsStatuses: typeof import("./getJobExecutionsStatuses").getJobExecutionsStatuses = null as any;
+export const getJobExecutionsStatusesOutput: typeof import("./getJobExecutionsStatuses").getJobExecutionsStatusesOutput = null as any;
+utilities.lazyLoad(exports, ["getJobExecutionsStatuses","getJobExecutionsStatusesOutput"], () => require("./getJobExecutionsStatuses"));
+
+export { GetManagedDatabaseArgs, GetManagedDatabaseResult, GetManagedDatabaseOutputArgs } from "./getManagedDatabase";
+export const getManagedDatabase: typeof import("./getManagedDatabase").getManagedDatabase = null as any;
+export const getManagedDatabaseOutput: typeof import("./getManagedDatabase").getManagedDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabase","getManagedDatabaseOutput"], () => require("./getManagedDatabase"));
+
+export { GetManagedDatabaseAddmTaskArgs, GetManagedDatabaseAddmTaskResult, GetManagedDatabaseAddmTaskOutputArgs } from "./getManagedDatabaseAddmTask";
+export const getManagedDatabaseAddmTask: typeof import("./getManagedDatabaseAddmTask").getManagedDatabaseAddmTask = null as any;
+export const getManagedDatabaseAddmTaskOutput: typeof import("./getManagedDatabaseAddmTask").getManagedDatabaseAddmTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseAddmTask","getManagedDatabaseAddmTaskOutput"], () => require("./getManagedDatabaseAddmTask"));
+
+export { GetManagedDatabaseAddmTasksArgs, GetManagedDatabaseAddmTasksResult, GetManagedDatabaseAddmTasksOutputArgs } from "./getManagedDatabaseAddmTasks";
+export const getManagedDatabaseAddmTasks: typeof import("./getManagedDatabaseAddmTasks").getManagedDatabaseAddmTasks = null as any;
+export const getManagedDatabaseAddmTasksOutput: typeof import("./getManagedDatabaseAddmTasks").getManagedDatabaseAddmTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseAddmTasks","getManagedDatabaseAddmTasksOutput"], () => require("./getManagedDatabaseAddmTasks"));
+
+export { GetManagedDatabaseAlertLogCountArgs, GetManagedDatabaseAlertLogCountResult, GetManagedDatabaseAlertLogCountOutputArgs } from "./getManagedDatabaseAlertLogCount";
+export const getManagedDatabaseAlertLogCount: typeof import("./getManagedDatabaseAlertLogCount").getManagedDatabaseAlertLogCount = null as any;
+export const getManagedDatabaseAlertLogCountOutput: typeof import("./getManagedDatabaseAlertLogCount").getManagedDatabaseAlertLogCountOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseAlertLogCount","getManagedDatabaseAlertLogCountOutput"], () => require("./getManagedDatabaseAlertLogCount"));
+
+export { GetManagedDatabaseAlertLogCountsArgs, GetManagedDatabaseAlertLogCountsResult, GetManagedDatabaseAlertLogCountsOutputArgs } from "./getManagedDatabaseAlertLogCounts";
+export const getManagedDatabaseAlertLogCounts: typeof import("./getManagedDatabaseAlertLogCounts").getManagedDatabaseAlertLogCounts = null as any;
+export const getManagedDatabaseAlertLogCountsOutput: typeof import("./getManagedDatabaseAlertLogCounts").getManagedDatabaseAlertLogCountsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseAlertLogCounts","getManagedDatabaseAlertLogCountsOutput"], () => require("./getManagedDatabaseAlertLogCounts"));
+
+export { GetManagedDatabaseAttentionLogCountArgs, GetManagedDatabaseAttentionLogCountResult, GetManagedDatabaseAttentionLogCountOutputArgs } from "./getManagedDatabaseAttentionLogCount";
+export const getManagedDatabaseAttentionLogCount: typeof import("./getManagedDatabaseAttentionLogCount").getManagedDatabaseAttentionLogCount = null as any;
+export const getManagedDatabaseAttentionLogCountOutput: typeof import("./getManagedDatabaseAttentionLogCount").getManagedDatabaseAttentionLogCountOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseAttentionLogCount","getManagedDatabaseAttentionLogCountOutput"], () => require("./getManagedDatabaseAttentionLogCount"));
+
+export { GetManagedDatabaseAttentionLogCountsArgs, GetManagedDatabaseAttentionLogCountsResult, GetManagedDatabaseAttentionLogCountsOutputArgs } from "./getManagedDatabaseAttentionLogCounts";
+export const getManagedDatabaseAttentionLogCounts: typeof import("./getManagedDatabaseAttentionLogCounts").getManagedDatabaseAttentionLogCounts = null as any;
+export const getManagedDatabaseAttentionLogCountsOutput: typeof import("./getManagedDatabaseAttentionLogCounts").getManagedDatabaseAttentionLogCountsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseAttentionLogCounts","getManagedDatabaseAttentionLogCountsOutput"], () => require("./getManagedDatabaseAttentionLogCounts"));
+
+export { GetManagedDatabaseGroupArgs, GetManagedDatabaseGroupResult, GetManagedDatabaseGroupOutputArgs } from "./getManagedDatabaseGroup";
+export const getManagedDatabaseGroup: typeof import("./getManagedDatabaseGroup").getManagedDatabaseGroup = null as any;
+export const getManagedDatabaseGroupOutput: typeof import("./getManagedDatabaseGroup").getManagedDatabaseGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseGroup","getManagedDatabaseGroupOutput"], () => require("./getManagedDatabaseGroup"));
+
+export { GetManagedDatabaseGroupsArgs, GetManagedDatabaseGroupsResult, GetManagedDatabaseGroupsOutputArgs } from "./getManagedDatabaseGroups";
+export const getManagedDatabaseGroups: typeof import("./getManagedDatabaseGroups").getManagedDatabaseGroups = null as any;
+export const getManagedDatabaseGroupsOutput: typeof import("./getManagedDatabaseGroups").getManagedDatabaseGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseGroups","getManagedDatabaseGroupsOutput"], () => require("./getManagedDatabaseGroups"));
+
+export { GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionOutputArgs } from "./getManagedDatabaseOptimizerStatisticsAdvisorExecution";
+export const getManagedDatabaseOptimizerStatisticsAdvisorExecution: typeof import("./getManagedDatabaseOptimizerStatisticsAdvisorExecution").getManagedDatabaseOptimizerStatisticsAdvisorExecution = null as any;
+export const getManagedDatabaseOptimizerStatisticsAdvisorExecutionOutput: typeof import("./getManagedDatabaseOptimizerStatisticsAdvisorExecution").getManagedDatabaseOptimizerStatisticsAdvisorExecutionOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseOptimizerStatisticsAdvisorExecution","getManagedDatabaseOptimizerStatisticsAdvisorExecutionOutput"], () => require("./getManagedDatabaseOptimizerStatisticsAdvisorExecution"));
+
+export { GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutputArgs } from "./getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript";
+export const getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript: typeof import("./getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript").getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = null as any;
+export const getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput: typeof import("./getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript").getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript","getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput"], () => require("./getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript"));
+
+export { GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutputArgs } from "./getManagedDatabaseOptimizerStatisticsAdvisorExecutions";
+export const getManagedDatabaseOptimizerStatisticsAdvisorExecutions: typeof import("./getManagedDatabaseOptimizerStatisticsAdvisorExecutions").getManagedDatabaseOptimizerStatisticsAdvisorExecutions = null as any;
+export const getManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutput: typeof import("./getManagedDatabaseOptimizerStatisticsAdvisorExecutions").getManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseOptimizerStatisticsAdvisorExecutions","getManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutput"], () => require("./getManagedDatabaseOptimizerStatisticsAdvisorExecutions"));
+
+export { GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs, GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult, GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOutputArgs } from "./getManagedDatabaseOptimizerStatisticsCollectionAggregations";
+export const getManagedDatabaseOptimizerStatisticsCollectionAggregations: typeof import("./getManagedDatabaseOptimizerStatisticsCollectionAggregations").getManagedDatabaseOptimizerStatisticsCollectionAggregations = null as any;
+export const getManagedDatabaseOptimizerStatisticsCollectionAggregationsOutput: typeof import("./getManagedDatabaseOptimizerStatisticsCollectionAggregations").getManagedDatabaseOptimizerStatisticsCollectionAggregationsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseOptimizerStatisticsCollectionAggregations","getManagedDatabaseOptimizerStatisticsCollectionAggregationsOutput"], () => require("./getManagedDatabaseOptimizerStatisticsCollectionAggregations"));
+
+export { GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs, GetManagedDatabaseOptimizerStatisticsCollectionOperationResult, GetManagedDatabaseOptimizerStatisticsCollectionOperationOutputArgs } from "./getManagedDatabaseOptimizerStatisticsCollectionOperation";
+export const getManagedDatabaseOptimizerStatisticsCollectionOperation: typeof import("./getManagedDatabaseOptimizerStatisticsCollectionOperation").getManagedDatabaseOptimizerStatisticsCollectionOperation = null as any;
+export const getManagedDatabaseOptimizerStatisticsCollectionOperationOutput: typeof import("./getManagedDatabaseOptimizerStatisticsCollectionOperation").getManagedDatabaseOptimizerStatisticsCollectionOperationOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseOptimizerStatisticsCollectionOperation","getManagedDatabaseOptimizerStatisticsCollectionOperationOutput"], () => require("./getManagedDatabaseOptimizerStatisticsCollectionOperation"));
+
+export { GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs, GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult, GetManagedDatabaseOptimizerStatisticsCollectionOperationsOutputArgs } from "./getManagedDatabaseOptimizerStatisticsCollectionOperations";
+export const getManagedDatabaseOptimizerStatisticsCollectionOperations: typeof import("./getManagedDatabaseOptimizerStatisticsCollectionOperations").getManagedDatabaseOptimizerStatisticsCollectionOperations = null as any;
+export const getManagedDatabaseOptimizerStatisticsCollectionOperationsOutput: typeof import("./getManagedDatabaseOptimizerStatisticsCollectionOperations").getManagedDatabaseOptimizerStatisticsCollectionOperationsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseOptimizerStatisticsCollectionOperations","getManagedDatabaseOptimizerStatisticsCollectionOperationsOutput"], () => require("./getManagedDatabaseOptimizerStatisticsCollectionOperations"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTaskArgs, GetManagedDatabaseSqlTuningAdvisorTaskResult, GetManagedDatabaseSqlTuningAdvisorTaskOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTask";
+export const getManagedDatabaseSqlTuningAdvisorTask: typeof import("./getManagedDatabaseSqlTuningAdvisorTask").getManagedDatabaseSqlTuningAdvisorTask = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTaskOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTask").getManagedDatabaseSqlTuningAdvisorTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTask","getManagedDatabaseSqlTuningAdvisorTaskOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTask"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTasksArgs, GetManagedDatabaseSqlTuningAdvisorTasksResult, GetManagedDatabaseSqlTuningAdvisorTasksOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTasks";
+export const getManagedDatabaseSqlTuningAdvisorTasks: typeof import("./getManagedDatabaseSqlTuningAdvisorTasks").getManagedDatabaseSqlTuningAdvisorTasks = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTasksOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTasks").getManagedDatabaseSqlTuningAdvisorTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTasks","getManagedDatabaseSqlTuningAdvisorTasksOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTasks"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs, GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult, GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison";
+export const getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison").getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison").getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison","getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs, GetManagedDatabaseSqlTuningAdvisorTasksFindingResult, GetManagedDatabaseSqlTuningAdvisorTasksFindingOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTasksFinding";
+export const getManagedDatabaseSqlTuningAdvisorTasksFinding: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksFinding").getManagedDatabaseSqlTuningAdvisorTasksFinding = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTasksFindingOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksFinding").getManagedDatabaseSqlTuningAdvisorTasksFindingOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTasksFinding","getManagedDatabaseSqlTuningAdvisorTasksFindingOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTasksFinding"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs, GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult, GetManagedDatabaseSqlTuningAdvisorTasksFindingsOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTasksFindings";
+export const getManagedDatabaseSqlTuningAdvisorTasksFindings: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksFindings").getManagedDatabaseSqlTuningAdvisorTasksFindings = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTasksFindingsOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksFindings").getManagedDatabaseSqlTuningAdvisorTasksFindingsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTasksFindings","getManagedDatabaseSqlTuningAdvisorTasksFindingsOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTasksFindings"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs, GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult, GetManagedDatabaseSqlTuningAdvisorTasksRecommendationOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTasksRecommendation";
+export const getManagedDatabaseSqlTuningAdvisorTasksRecommendation: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksRecommendation").getManagedDatabaseSqlTuningAdvisorTasksRecommendation = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTasksRecommendationOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksRecommendation").getManagedDatabaseSqlTuningAdvisorTasksRecommendationOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTasksRecommendation","getManagedDatabaseSqlTuningAdvisorTasksRecommendationOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTasksRecommendation"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs, GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult, GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTasksRecommendations";
+export const getManagedDatabaseSqlTuningAdvisorTasksRecommendations: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksRecommendations").getManagedDatabaseSqlTuningAdvisorTasksRecommendations = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksRecommendations").getManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTasksRecommendations","getManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTasksRecommendations"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs, GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult, GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan";
+export const getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan").getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan").getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan","getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan"));
+
+export { GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs, GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult, GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTasksSummaryReport";
+export const getManagedDatabaseSqlTuningAdvisorTasksSummaryReport: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksSummaryReport").getManagedDatabaseSqlTuningAdvisorTasksSummaryReport = null as any;
+export const getManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutput: typeof import("./getManagedDatabaseSqlTuningAdvisorTasksSummaryReport").getManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningAdvisorTasksSummaryReport","getManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutput"], () => require("./getManagedDatabaseSqlTuningAdvisorTasksSummaryReport"));
+
+export { GetManagedDatabaseSqlTuningSetArgs, GetManagedDatabaseSqlTuningSetResult, GetManagedDatabaseSqlTuningSetOutputArgs } from "./getManagedDatabaseSqlTuningSet";
+export const getManagedDatabaseSqlTuningSet: typeof import("./getManagedDatabaseSqlTuningSet").getManagedDatabaseSqlTuningSet = null as any;
+export const getManagedDatabaseSqlTuningSetOutput: typeof import("./getManagedDatabaseSqlTuningSet").getManagedDatabaseSqlTuningSetOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningSet","getManagedDatabaseSqlTuningSetOutput"], () => require("./getManagedDatabaseSqlTuningSet"));
+
+export { GetManagedDatabaseSqlTuningSetsArgs, GetManagedDatabaseSqlTuningSetsResult, GetManagedDatabaseSqlTuningSetsOutputArgs } from "./getManagedDatabaseSqlTuningSets";
+export const getManagedDatabaseSqlTuningSets: typeof import("./getManagedDatabaseSqlTuningSets").getManagedDatabaseSqlTuningSets = null as any;
+export const getManagedDatabaseSqlTuningSetsOutput: typeof import("./getManagedDatabaseSqlTuningSets").getManagedDatabaseSqlTuningSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlTuningSets","getManagedDatabaseSqlTuningSetsOutput"], () => require("./getManagedDatabaseSqlTuningSets"));
+
+export { GetManagedDatabaseTableStatisticsArgs, GetManagedDatabaseTableStatisticsResult, GetManagedDatabaseTableStatisticsOutputArgs } from "./getManagedDatabaseTableStatistics";
+export const getManagedDatabaseTableStatistics: typeof import("./getManagedDatabaseTableStatistics").getManagedDatabaseTableStatistics = null as any;
+export const getManagedDatabaseTableStatisticsOutput: typeof import("./getManagedDatabaseTableStatistics").getManagedDatabaseTableStatisticsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseTableStatistics","getManagedDatabaseTableStatisticsOutput"], () => require("./getManagedDatabaseTableStatistics"));
+
+export { GetManagedDatabaseUserArgs, GetManagedDatabaseUserResult, GetManagedDatabaseUserOutputArgs } from "./getManagedDatabaseUser";
+export const getManagedDatabaseUser: typeof import("./getManagedDatabaseUser").getManagedDatabaseUser = null as any;
+export const getManagedDatabaseUserOutput: typeof import("./getManagedDatabaseUser").getManagedDatabaseUserOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUser","getManagedDatabaseUserOutput"], () => require("./getManagedDatabaseUser"));
+
+export { GetManagedDatabaseUserConsumerGroupPrivilegeArgs, GetManagedDatabaseUserConsumerGroupPrivilegeResult, GetManagedDatabaseUserConsumerGroupPrivilegeOutputArgs } from "./getManagedDatabaseUserConsumerGroupPrivilege";
+export const getManagedDatabaseUserConsumerGroupPrivilege: typeof import("./getManagedDatabaseUserConsumerGroupPrivilege").getManagedDatabaseUserConsumerGroupPrivilege = null as any;
+export const getManagedDatabaseUserConsumerGroupPrivilegeOutput: typeof import("./getManagedDatabaseUserConsumerGroupPrivilege").getManagedDatabaseUserConsumerGroupPrivilegeOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserConsumerGroupPrivilege","getManagedDatabaseUserConsumerGroupPrivilegeOutput"], () => require("./getManagedDatabaseUserConsumerGroupPrivilege"));
+
+export { GetManagedDatabaseUserConsumerGroupPrivilegesArgs, GetManagedDatabaseUserConsumerGroupPrivilegesResult, GetManagedDatabaseUserConsumerGroupPrivilegesOutputArgs } from "./getManagedDatabaseUserConsumerGroupPrivileges";
+export const getManagedDatabaseUserConsumerGroupPrivileges: typeof import("./getManagedDatabaseUserConsumerGroupPrivileges").getManagedDatabaseUserConsumerGroupPrivileges = null as any;
+export const getManagedDatabaseUserConsumerGroupPrivilegesOutput: typeof import("./getManagedDatabaseUserConsumerGroupPrivileges").getManagedDatabaseUserConsumerGroupPrivilegesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserConsumerGroupPrivileges","getManagedDatabaseUserConsumerGroupPrivilegesOutput"], () => require("./getManagedDatabaseUserConsumerGroupPrivileges"));
+
+export { GetManagedDatabaseUserDataAccessContainerArgs, GetManagedDatabaseUserDataAccessContainerResult, GetManagedDatabaseUserDataAccessContainerOutputArgs } from "./getManagedDatabaseUserDataAccessContainer";
+export const getManagedDatabaseUserDataAccessContainer: typeof import("./getManagedDatabaseUserDataAccessContainer").getManagedDatabaseUserDataAccessContainer = null as any;
+export const getManagedDatabaseUserDataAccessContainerOutput: typeof import("./getManagedDatabaseUserDataAccessContainer").getManagedDatabaseUserDataAccessContainerOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserDataAccessContainer","getManagedDatabaseUserDataAccessContainerOutput"], () => require("./getManagedDatabaseUserDataAccessContainer"));
+
+export { GetManagedDatabaseUserDataAccessContainersArgs, GetManagedDatabaseUserDataAccessContainersResult, GetManagedDatabaseUserDataAccessContainersOutputArgs } from "./getManagedDatabaseUserDataAccessContainers";
+export const getManagedDatabaseUserDataAccessContainers: typeof import("./getManagedDatabaseUserDataAccessContainers").getManagedDatabaseUserDataAccessContainers = null as any;
+export const getManagedDatabaseUserDataAccessContainersOutput: typeof import("./getManagedDatabaseUserDataAccessContainers").getManagedDatabaseUserDataAccessContainersOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserDataAccessContainers","getManagedDatabaseUserDataAccessContainersOutput"], () => require("./getManagedDatabaseUserDataAccessContainers"));
+
+export { GetManagedDatabaseUserObjectPrivilegeArgs, GetManagedDatabaseUserObjectPrivilegeResult, GetManagedDatabaseUserObjectPrivilegeOutputArgs } from "./getManagedDatabaseUserObjectPrivilege";
+export const getManagedDatabaseUserObjectPrivilege: typeof import("./getManagedDatabaseUserObjectPrivilege").getManagedDatabaseUserObjectPrivilege = null as any;
+export const getManagedDatabaseUserObjectPrivilegeOutput: typeof import("./getManagedDatabaseUserObjectPrivilege").getManagedDatabaseUserObjectPrivilegeOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserObjectPrivilege","getManagedDatabaseUserObjectPrivilegeOutput"], () => require("./getManagedDatabaseUserObjectPrivilege"));
+
+export { GetManagedDatabaseUserObjectPrivilegesArgs, GetManagedDatabaseUserObjectPrivilegesResult, GetManagedDatabaseUserObjectPrivilegesOutputArgs } from "./getManagedDatabaseUserObjectPrivileges";
+export const getManagedDatabaseUserObjectPrivileges: typeof import("./getManagedDatabaseUserObjectPrivileges").getManagedDatabaseUserObjectPrivileges = null as any;
+export const getManagedDatabaseUserObjectPrivilegesOutput: typeof import("./getManagedDatabaseUserObjectPrivileges").getManagedDatabaseUserObjectPrivilegesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserObjectPrivileges","getManagedDatabaseUserObjectPrivilegesOutput"], () => require("./getManagedDatabaseUserObjectPrivileges"));
+
+export { GetManagedDatabaseUserProxiedForUserArgs, GetManagedDatabaseUserProxiedForUserResult, GetManagedDatabaseUserProxiedForUserOutputArgs } from "./getManagedDatabaseUserProxiedForUser";
+export const getManagedDatabaseUserProxiedForUser: typeof import("./getManagedDatabaseUserProxiedForUser").getManagedDatabaseUserProxiedForUser = null as any;
+export const getManagedDatabaseUserProxiedForUserOutput: typeof import("./getManagedDatabaseUserProxiedForUser").getManagedDatabaseUserProxiedForUserOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserProxiedForUser","getManagedDatabaseUserProxiedForUserOutput"], () => require("./getManagedDatabaseUserProxiedForUser"));
+
+export { GetManagedDatabaseUserProxiedForUsersArgs, GetManagedDatabaseUserProxiedForUsersResult, GetManagedDatabaseUserProxiedForUsersOutputArgs } from "./getManagedDatabaseUserProxiedForUsers";
+export const getManagedDatabaseUserProxiedForUsers: typeof import("./getManagedDatabaseUserProxiedForUsers").getManagedDatabaseUserProxiedForUsers = null as any;
+export const getManagedDatabaseUserProxiedForUsersOutput: typeof import("./getManagedDatabaseUserProxiedForUsers").getManagedDatabaseUserProxiedForUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserProxiedForUsers","getManagedDatabaseUserProxiedForUsersOutput"], () => require("./getManagedDatabaseUserProxiedForUsers"));
+
+export { GetManagedDatabaseUserRoleArgs, GetManagedDatabaseUserRoleResult, GetManagedDatabaseUserRoleOutputArgs } from "./getManagedDatabaseUserRole";
+export const getManagedDatabaseUserRole: typeof import("./getManagedDatabaseUserRole").getManagedDatabaseUserRole = null as any;
+export const getManagedDatabaseUserRoleOutput: typeof import("./getManagedDatabaseUserRole").getManagedDatabaseUserRoleOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserRole","getManagedDatabaseUserRoleOutput"], () => require("./getManagedDatabaseUserRole"));
+
+export { GetManagedDatabaseUserRolesArgs, GetManagedDatabaseUserRolesResult, GetManagedDatabaseUserRolesOutputArgs } from "./getManagedDatabaseUserRoles";
+export const getManagedDatabaseUserRoles: typeof import("./getManagedDatabaseUserRoles").getManagedDatabaseUserRoles = null as any;
+export const getManagedDatabaseUserRolesOutput: typeof import("./getManagedDatabaseUserRoles").getManagedDatabaseUserRolesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUserRoles","getManagedDatabaseUserRolesOutput"], () => require("./getManagedDatabaseUserRoles"));
+
+export { GetManagedDatabaseUsersArgs, GetManagedDatabaseUsersResult, GetManagedDatabaseUsersOutputArgs } from "./getManagedDatabaseUsers";
+export const getManagedDatabaseUsers: typeof import("./getManagedDatabaseUsers").getManagedDatabaseUsers = null as any;
+export const getManagedDatabaseUsersOutput: typeof import("./getManagedDatabaseUsers").getManagedDatabaseUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseUsers","getManagedDatabaseUsersOutput"], () => require("./getManagedDatabaseUsers"));
+
+export { GetManagedDatabasesArgs, GetManagedDatabasesResult, GetManagedDatabasesOutputArgs } from "./getManagedDatabases";
+export const getManagedDatabases: typeof import("./getManagedDatabases").getManagedDatabases = null as any;
+export const getManagedDatabasesOutput: typeof import("./getManagedDatabases").getManagedDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabases","getManagedDatabasesOutput"], () => require("./getManagedDatabases"));
+
+export { GetManagedDatabasesAsmPropertiesArgs, GetManagedDatabasesAsmPropertiesResult, GetManagedDatabasesAsmPropertiesOutputArgs } from "./getManagedDatabasesAsmProperties";
+export const getManagedDatabasesAsmProperties: typeof import("./getManagedDatabasesAsmProperties").getManagedDatabasesAsmProperties = null as any;
+export const getManagedDatabasesAsmPropertiesOutput: typeof import("./getManagedDatabasesAsmProperties").getManagedDatabasesAsmPropertiesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabasesAsmProperties","getManagedDatabasesAsmPropertiesOutput"], () => require("./getManagedDatabasesAsmProperties"));
+
+export { GetManagedDatabasesAsmPropertyArgs, GetManagedDatabasesAsmPropertyResult, GetManagedDatabasesAsmPropertyOutputArgs } from "./getManagedDatabasesAsmProperty";
+export const getManagedDatabasesAsmProperty: typeof import("./getManagedDatabasesAsmProperty").getManagedDatabasesAsmProperty = null as any;
+export const getManagedDatabasesAsmPropertyOutput: typeof import("./getManagedDatabasesAsmProperty").getManagedDatabasesAsmPropertyOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabasesAsmProperty","getManagedDatabasesAsmPropertyOutput"], () => require("./getManagedDatabasesAsmProperty"));
+
+export { GetManagedDatabasesDatabaseParameterArgs, GetManagedDatabasesDatabaseParameterResult, GetManagedDatabasesDatabaseParameterOutputArgs } from "./getManagedDatabasesDatabaseParameter";
+export const getManagedDatabasesDatabaseParameter: typeof import("./getManagedDatabasesDatabaseParameter").getManagedDatabasesDatabaseParameter = null as any;
+export const getManagedDatabasesDatabaseParameterOutput: typeof import("./getManagedDatabasesDatabaseParameter").getManagedDatabasesDatabaseParameterOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabasesDatabaseParameter","getManagedDatabasesDatabaseParameterOutput"], () => require("./getManagedDatabasesDatabaseParameter"));
+
+export { GetManagedDatabasesDatabaseParametersArgs, GetManagedDatabasesDatabaseParametersResult, GetManagedDatabasesDatabaseParametersOutputArgs } from "./getManagedDatabasesDatabaseParameters";
+export const getManagedDatabasesDatabaseParameters: typeof import("./getManagedDatabasesDatabaseParameters").getManagedDatabasesDatabaseParameters = null as any;
+export const getManagedDatabasesDatabaseParametersOutput: typeof import("./getManagedDatabasesDatabaseParameters").getManagedDatabasesDatabaseParametersOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabasesDatabaseParameters","getManagedDatabasesDatabaseParametersOutput"], () => require("./getManagedDatabasesDatabaseParameters"));
+
+export { GetManagedDatabasesUserProxyUserArgs, GetManagedDatabasesUserProxyUserResult, GetManagedDatabasesUserProxyUserOutputArgs } from "./getManagedDatabasesUserProxyUser";
+export const getManagedDatabasesUserProxyUser: typeof import("./getManagedDatabasesUserProxyUser").getManagedDatabasesUserProxyUser = null as any;
+export const getManagedDatabasesUserProxyUserOutput: typeof import("./getManagedDatabasesUserProxyUser").getManagedDatabasesUserProxyUserOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabasesUserProxyUser","getManagedDatabasesUserProxyUserOutput"], () => require("./getManagedDatabasesUserProxyUser"));
+
+export { GetManagedDatabasesUserProxyUsersArgs, GetManagedDatabasesUserProxyUsersResult, GetManagedDatabasesUserProxyUsersOutputArgs } from "./getManagedDatabasesUserProxyUsers";
+export const getManagedDatabasesUserProxyUsers: typeof import("./getManagedDatabasesUserProxyUsers").getManagedDatabasesUserProxyUsers = null as any;
+export const getManagedDatabasesUserProxyUsersOutput: typeof import("./getManagedDatabasesUserProxyUsers").getManagedDatabasesUserProxyUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabasesUserProxyUsers","getManagedDatabasesUserProxyUsersOutput"], () => require("./getManagedDatabasesUserProxyUsers"));
+
+export { GetManagedDatabasesUserSystemPrivilegeArgs, GetManagedDatabasesUserSystemPrivilegeResult, GetManagedDatabasesUserSystemPrivilegeOutputArgs } from "./getManagedDatabasesUserSystemPrivilege";
+export const getManagedDatabasesUserSystemPrivilege: typeof import("./getManagedDatabasesUserSystemPrivilege").getManagedDatabasesUserSystemPrivilege = null as any;
+export const getManagedDatabasesUserSystemPrivilegeOutput: typeof import("./getManagedDatabasesUserSystemPrivilege").getManagedDatabasesUserSystemPrivilegeOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabasesUserSystemPrivilege","getManagedDatabasesUserSystemPrivilegeOutput"], () => require("./getManagedDatabasesUserSystemPrivilege"));
+
+export { GetManagedDatabasesUserSystemPrivilegesArgs, GetManagedDatabasesUserSystemPrivilegesResult, GetManagedDatabasesUserSystemPrivilegesOutputArgs } from "./getManagedDatabasesUserSystemPrivileges";
+export const getManagedDatabasesUserSystemPrivileges: typeof import("./getManagedDatabasesUserSystemPrivileges").getManagedDatabasesUserSystemPrivileges = null as any;
+export const getManagedDatabasesUserSystemPrivilegesOutput: typeof import("./getManagedDatabasesUserSystemPrivileges").getManagedDatabasesUserSystemPrivilegesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabasesUserSystemPrivileges","getManagedDatabasesUserSystemPrivilegesOutput"], () => require("./getManagedDatabasesUserSystemPrivileges"));
+
+export { ManagedDatabaseGroupArgs, ManagedDatabaseGroupState } from "./managedDatabaseGroup";
+export type ManagedDatabaseGroup = import("./managedDatabaseGroup").ManagedDatabaseGroup;
+export const ManagedDatabaseGroup: typeof import("./managedDatabaseGroup").ManagedDatabaseGroup = null as any;
+utilities.lazyLoad(exports, ["ManagedDatabaseGroup"], () => require("./managedDatabaseGroup"));
+
+export { ManagedDatabasesChangeDatabaseParameterArgs, ManagedDatabasesChangeDatabaseParameterState } from "./managedDatabasesChangeDatabaseParameter";
+export type ManagedDatabasesChangeDatabaseParameter = import("./managedDatabasesChangeDatabaseParameter").ManagedDatabasesChangeDatabaseParameter;
+export const ManagedDatabasesChangeDatabaseParameter: typeof import("./managedDatabasesChangeDatabaseParameter").ManagedDatabasesChangeDatabaseParameter = null as any;
+utilities.lazyLoad(exports, ["ManagedDatabasesChangeDatabaseParameter"], () => require("./managedDatabasesChangeDatabaseParameter"));
+
+export { ManagedDatabasesResetDatabaseParameterArgs, ManagedDatabasesResetDatabaseParameterState } from "./managedDatabasesResetDatabaseParameter";
+export type ManagedDatabasesResetDatabaseParameter = import("./managedDatabasesResetDatabaseParameter").ManagedDatabasesResetDatabaseParameter;
+export const ManagedDatabasesResetDatabaseParameter: typeof import("./managedDatabasesResetDatabaseParameter").ManagedDatabasesResetDatabaseParameter = null as any;
+utilities.lazyLoad(exports, ["ManagedDatabasesResetDatabaseParameter"], () => require("./managedDatabasesResetDatabaseParameter"));
+
 
 const _module = {
     version: utilities.getVersion(),

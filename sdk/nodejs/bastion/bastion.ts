@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
+ *     dnsProxyStatus: _var.bastion_dns_proxy_status,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
@@ -84,6 +85,10 @@ export class Bastion extends pulumi.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     */
+    public readonly dnsProxyStatus!: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -158,6 +163,7 @@ export class Bastion extends pulumi.CustomResource {
             resourceInputs["clientCidrBlockAllowLists"] = state ? state.clientCidrBlockAllowLists : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["dnsProxyStatus"] = state ? state.dnsProxyStatus : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maxSessionTtlInSeconds"] = state ? state.maxSessionTtlInSeconds : undefined;
@@ -187,6 +193,7 @@ export class Bastion extends pulumi.CustomResource {
             resourceInputs["clientCidrBlockAllowLists"] = args ? args.clientCidrBlockAllowLists : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["dnsProxyStatus"] = args ? args.dnsProxyStatus : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["maxSessionTtlInSeconds"] = args ? args.maxSessionTtlInSeconds : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -227,6 +234,10 @@ export interface BastionState {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     */
+    dnsProxyStatus?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -305,6 +316,10 @@ export interface BastionArgs {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     */
+    dnsProxyStatus?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */

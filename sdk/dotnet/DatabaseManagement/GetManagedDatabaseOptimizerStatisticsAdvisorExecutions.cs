@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> InvokeAsync(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> Invoke(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs(), options.WithDefaults());
     }
 
 

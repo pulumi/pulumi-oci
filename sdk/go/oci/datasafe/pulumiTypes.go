@@ -478,6 +478,8 @@ type AuditProfileAuditTrail struct {
 	TargetId *string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected *string `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -528,6 +530,8 @@ type AuditProfileAuditTrailArgs struct {
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected pulumi.StringPtrInput `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -660,6 +664,11 @@ func (o AuditProfileAuditTrailOutput) TargetId() pulumi.StringPtrOutput {
 // The date and time the audit profile was created, in the format defined by RFC3339.
 func (o AuditProfileAuditTrailOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+func (o AuditProfileAuditTrailOutput) TimeLastCollected() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.TimeLastCollected }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the audit profile was updated, in the format defined by RFC3339.
@@ -6675,7 +6684,7 @@ type GetAuditEventItem struct {
 	AuditLocation string `pulumi:"auditLocation"`
 	// Comma-seperated list of audit policies that caused the current audit event.
 	AuditPolicies string `pulumi:"auditPolicies"`
-	// The OCID of the audit trail that generated this audit event.
+	// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 	AuditTrailId string `pulumi:"auditTrailId"`
 	// Type of auditing.
 	AuditType string `pulumi:"auditType"`
@@ -6760,7 +6769,7 @@ type GetAuditEventItemArgs struct {
 	AuditLocation pulumi.StringInput `pulumi:"auditLocation"`
 	// Comma-seperated list of audit policies that caused the current audit event.
 	AuditPolicies pulumi.StringInput `pulumi:"auditPolicies"`
-	// The OCID of the audit trail that generated this audit event.
+	// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 	AuditTrailId pulumi.StringInput `pulumi:"auditTrailId"`
 	// Type of auditing.
 	AuditType pulumi.StringInput `pulumi:"auditType"`
@@ -6896,7 +6905,7 @@ func (o GetAuditEventItemOutput) AuditPolicies() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventItem) string { return v.AuditPolicies }).(pulumi.StringOutput)
 }
 
-// The OCID of the audit trail that generated this audit event.
+// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 func (o GetAuditEventItemOutput) AuditTrailId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventItem) string { return v.AuditTrailId }).(pulumi.StringOutput)
 }
@@ -7175,7 +7184,7 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	AuditLocation string `pulumi:"auditLocation"`
 	// Comma-seperated list of audit policies that caused the current audit event.
 	AuditPolicies string `pulumi:"auditPolicies"`
-	// The OCID of the audit trail that generated this audit event.
+	// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 	AuditTrailId string `pulumi:"auditTrailId"`
 	// Type of auditing.
 	AuditType string `pulumi:"auditType"`
@@ -7260,7 +7269,7 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	AuditLocation pulumi.StringInput `pulumi:"auditLocation"`
 	// Comma-seperated list of audit policies that caused the current audit event.
 	AuditPolicies pulumi.StringInput `pulumi:"auditPolicies"`
-	// The OCID of the audit trail that generated this audit event.
+	// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 	AuditTrailId pulumi.StringInput `pulumi:"auditTrailId"`
 	// Type of auditing.
 	AuditType pulumi.StringInput `pulumi:"auditType"`
@@ -7396,7 +7405,7 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) AuditPolicies() pulumi.Str
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.AuditPolicies }).(pulumi.StringOutput)
 }
 
-// The OCID of the audit trail that generated this audit event.
+// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 func (o GetAuditEventsAuditEventCollectionItemOutput) AuditTrailId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.AuditTrailId }).(pulumi.StringOutput)
 }
@@ -9271,6 +9280,8 @@ type GetAuditProfileAuditTrail struct {
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected string `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -9321,6 +9332,8 @@ type GetAuditProfileAuditTrailArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected pulumi.StringInput `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -9453,6 +9466,11 @@ func (o GetAuditProfileAuditTrailOutput) TargetId() pulumi.StringOutput {
 // The date and time the audit profile was created, in the format defined by RFC3339.
 func (o GetAuditProfileAuditTrailOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+func (o GetAuditProfileAuditTrailOutput) TimeLastCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.TimeLastCollected }).(pulumi.StringOutput)
 }
 
 // The date and time the audit profile was updated, in the format defined by RFC3339.
@@ -11004,6 +11022,8 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrail struct {
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected string `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -11054,6 +11074,8 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected pulumi.StringInput `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -11192,6 +11214,11 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) TargetId() p
 // The date and time the audit profile was created, in the format defined by RFC3339.
 func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) TimeLastCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.TimeLastCollected }).(pulumi.StringOutput)
 }
 
 // The date and time the audit profile was updated, in the format defined by RFC3339.
@@ -11693,6 +11720,8 @@ type GetAuditTrailsAuditTrailCollectionItem struct {
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected string `pulumi:"timeLastCollected"`
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -11746,6 +11775,8 @@ type GetAuditTrailsAuditTrailCollectionItemArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected pulumi.StringInput `pulumi:"timeLastCollected"`
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -11887,6 +11918,11 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) TargetId() pulumi.StringOu
 // The date and time the audit trail was created, in the format defined by RFC3339.
 func (o GetAuditTrailsAuditTrailCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) TimeLastCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.TimeLastCollected }).(pulumi.StringOutput)
 }
 
 // The date and time the audit trail was updated, in the format defined by RFC3339.
@@ -13791,14 +13827,20 @@ type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem struct {
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
 	DbDefinedChildColumnKeys []string `pulumi:"dbDefinedChildColumnKeys"`
 	// The OCID of the discovery job.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryJobId string `pulumi:"discoveryJobId"`
 	// A filter to return only the resources that match the specified discovery type.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryType string `pulumi:"discoveryType"`
 	// The estimated number of data values the column has in the associated database.
 	EstimatedDataValueCount string `pulumi:"estimatedDataValueCount"`
 	// A filter to return the discovery result resources based on the value of their isResultApplied attribute.
 	IsResultApplied bool `pulumi:"isResultApplied"`
 	// The unique key that identifies the discovery result.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	Key string `pulumi:"key"`
 	// The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
 	ModifiedAttributes []GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute `pulumi:"modifiedAttributes"`
@@ -13845,14 +13887,20 @@ type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs struct {
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
 	DbDefinedChildColumnKeys pulumi.StringArrayInput `pulumi:"dbDefinedChildColumnKeys"`
 	// The OCID of the discovery job.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryJobId pulumi.StringInput `pulumi:"discoveryJobId"`
 	// A filter to return only the resources that match the specified discovery type.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryType pulumi.StringInput `pulumi:"discoveryType"`
 	// The estimated number of data values the column has in the associated database.
 	EstimatedDataValueCount pulumi.StringInput `pulumi:"estimatedDataValueCount"`
 	// A filter to return the discovery result resources based on the value of their isResultApplied attribute.
 	IsResultApplied pulumi.BoolInput `pulumi:"isResultApplied"`
 	// The unique key that identifies the discovery result.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
 	ModifiedAttributes GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayInput `pulumi:"modifiedAttributes"`
@@ -13957,11 +14005,15 @@ func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) DbDefined
 }
 
 // The OCID of the discovery job.
+//
+// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) DiscoveryJobId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem) string { return v.DiscoveryJobId }).(pulumi.StringOutput)
 }
 
 // A filter to return only the resources that match the specified discovery type.
+//
+// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) DiscoveryType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem) string { return v.DiscoveryType }).(pulumi.StringOutput)
 }
@@ -13979,6 +14031,8 @@ func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) IsResultA
 }
 
 // The unique key that identifies the discovery result.
+//
+// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -18962,8 +19016,12 @@ type GetMaskingReportsMaskingReportCollectionItem struct {
 	MaskingPolicyId string `pulumi:"maskingPolicyId"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId string `pulumi:"maskingWorkRequestId"`
+	// The current state of the masking report.
+	State string `pulumi:"state"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
+	// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
 	TimeMaskingFinished string `pulumi:"timeMaskingFinished"`
 	// The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -19000,8 +19058,12 @@ type GetMaskingReportsMaskingReportCollectionItemArgs struct {
 	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId pulumi.StringInput `pulumi:"maskingWorkRequestId"`
+	// The current state of the masking report.
+	State pulumi.StringInput `pulumi:"state"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
 	TimeMaskingFinished pulumi.StringInput `pulumi:"timeMaskingFinished"`
 	// The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -19089,9 +19151,19 @@ func (o GetMaskingReportsMaskingReportCollectionItemOutput) MaskingWorkRequestId
 	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.MaskingWorkRequestId }).(pulumi.StringOutput)
 }
 
+// The current state of the masking report.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
 // A filter to return only items related to a specific target OCID.
 func (o GetMaskingReportsMaskingReportCollectionItemOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -20190,6 +20262,8 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	ColumnSortings []GetReportDefinitionsReportDefinitionCollectionItemColumnSorting `pulumi:"columnSortings"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+	ComplianceStandards []string `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
 	DataSource string `pulumi:"dataSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -20208,6 +20282,18 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	IsSeeded bool `pulumi:"isSeeded"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 	ParentId string `pulumi:"parentId"`
+	// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+	RecordTimeSpan string `pulumi:"recordTimeSpan"`
+	// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+	Schedule string `pulumi:"schedule"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+	ScheduledReportCompartmentId string `pulumi:"scheduledReportCompartmentId"`
+	// Specifies the format of report to be excel or pdf
+	ScheduledReportMimeType string `pulumi:"scheduledReportMimeType"`
+	// The name of the report to be scheduled.
+	ScheduledReportName string `pulumi:"scheduledReportName"`
+	// Specifies the limit on number of rows in report.
+	ScheduledReportRowLimit int `pulumi:"scheduledReportRowLimit"`
 	// Additional scim filters used to get the specific summary.
 	ScimFilter string `pulumi:"scimFilter"`
 	// An optional filter to return only resources that match the specified lifecycle state.
@@ -20244,6 +20330,8 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	ColumnSortings GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayInput `pulumi:"columnSortings"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+	ComplianceStandards pulumi.StringArrayInput `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
 	DataSource pulumi.StringInput `pulumi:"dataSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -20262,6 +20350,18 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	IsSeeded pulumi.BoolInput `pulumi:"isSeeded"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 	ParentId pulumi.StringInput `pulumi:"parentId"`
+	// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+	RecordTimeSpan pulumi.StringInput `pulumi:"recordTimeSpan"`
+	// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+	Schedule pulumi.StringInput `pulumi:"schedule"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+	ScheduledReportCompartmentId pulumi.StringInput `pulumi:"scheduledReportCompartmentId"`
+	// Specifies the format of report to be excel or pdf
+	ScheduledReportMimeType pulumi.StringInput `pulumi:"scheduledReportMimeType"`
+	// The name of the report to be scheduled.
+	ScheduledReportName pulumi.StringInput `pulumi:"scheduledReportName"`
+	// Specifies the limit on number of rows in report.
+	ScheduledReportRowLimit pulumi.IntInput `pulumi:"scheduledReportRowLimit"`
 	// Additional scim filters used to get the specific summary.
 	ScimFilter pulumi.StringInput `pulumi:"scimFilter"`
 	// An optional filter to return only resources that match the specified lifecycle state.
@@ -20358,6 +20458,11 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) CompartmentId(
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ComplianceStandards() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) []string { return v.ComplianceStandards }).(pulumi.StringArrayOutput)
+}
+
 // Specifies the name of a resource that provides data for the report. For example  alerts, events.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) DataSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.DataSource }).(pulumi.StringOutput)
@@ -20405,6 +20510,38 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) IsSeeded() pul
 // The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ParentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.ParentId }).(pulumi.StringOutput)
+}
+
+// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) RecordTimeSpan() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.RecordTimeSpan }).(pulumi.StringOutput)
+}
+
+// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) Schedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.Schedule }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string {
+		return v.ScheduledReportCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the format of report to be excel or pdf
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportMimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
+}
+
+// The name of the report to be scheduled.
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.ScheduledReportName }).(pulumi.StringOutput)
+}
+
+// Specifies the limit on number of rows in report.
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportRowLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) int { return v.ScheduledReportRowLimit }).(pulumi.IntOutput)
 }
 
 // Additional scim filters used to get the specific summary.
@@ -21205,6 +21342,8 @@ type GetReportsReportCollectionItem struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Specifies the time at which the report was generated.
 	TimeGenerated string `pulumi:"timeGenerated"`
+	// An optional filter to return only resources that match the specified type.
+	Type string `pulumi:"type"`
 }
 
 // GetReportsReportCollectionItemInput is an input type that accepts GetReportsReportCollectionItemArgs and GetReportsReportCollectionItemOutput values.
@@ -21241,6 +21380,8 @@ type GetReportsReportCollectionItemArgs struct {
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// Specifies the time at which the report was generated.
 	TimeGenerated pulumi.StringInput `pulumi:"timeGenerated"`
+	// An optional filter to return only resources that match the specified type.
+	Type pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetReportsReportCollectionItemArgs) ElementType() reflect.Type {
@@ -21347,6 +21488,11 @@ func (o GetReportsReportCollectionItemOutput) SystemTags() pulumi.MapOutput {
 // Specifies the time at which the report was generated.
 func (o GetReportsReportCollectionItemOutput) TimeGenerated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.TimeGenerated }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified type.
+func (o GetReportsReportCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetReportsReportCollectionItemArrayOutput struct{ *pulumi.OutputState }

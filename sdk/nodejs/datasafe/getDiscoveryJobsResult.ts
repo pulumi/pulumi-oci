@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryJobsResult(args: GetDiscoveryJobsResultArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobsResultResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", {
         "discoveryJobId": args.discoveryJobId,
         "resultKey": args.resultKey,
@@ -72,9 +70,14 @@ export interface GetDiscoveryJobsResultResult {
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      */
     readonly dbDefinedChildColumnKeys: string[];
+    /**
+     * The OCID of the discovery job.
+     */
     readonly discoveryJobId: string;
     /**
      * The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
     readonly discoveryType: string;
     /**
@@ -88,6 +91,8 @@ export interface GetDiscoveryJobsResultResult {
     readonly isResultApplied: boolean;
     /**
      * The unique key that identifies the discovery result.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
     readonly key: string;
     /**
@@ -132,9 +137,25 @@ export interface GetDiscoveryJobsResultResult {
      */
     readonly sensitiveTypeId: string;
 }
-
+/**
+ * This data source provides details about a specific Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified discovery result.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDiscoveryJobsResult = oci.DataSafe.getDiscoveryJobsResult({
+ *     discoveryJobId: oci_data_safe_discovery_job.test_discovery_job.id,
+ *     resultKey: _var.discovery_jobs_result_result_key,
+ * });
+ * ```
+ */
 export function getDiscoveryJobsResultOutput(args: GetDiscoveryJobsResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobsResultResult> {
-    return pulumi.output(args).apply(a => getDiscoveryJobsResult(a, opts))
+    return pulumi.output(args).apply((a: any) => getDiscoveryJobsResult(a, opts))
 }
 
 /**

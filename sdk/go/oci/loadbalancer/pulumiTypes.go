@@ -8600,7 +8600,6 @@ type GetRuleSetsRuleSetItem struct {
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods []string `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-	// * `conditions` -
 	AreInvalidCharactersAllowed bool                              `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  []GetRuleSetsRuleSetItemCondition `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information.
@@ -8646,7 +8645,6 @@ type GetRuleSetsRuleSetItemArgs struct {
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods pulumi.StringArrayInput `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-	// * `conditions` -
 	AreInvalidCharactersAllowed pulumi.BoolInput                          `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  GetRuleSetsRuleSetItemConditionArrayInput `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information.
@@ -8737,7 +8735,6 @@ func (o GetRuleSetsRuleSetItemOutput) AllowedMethods() pulumi.StringArrayOutput 
 }
 
 // Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-// * `conditions` -
 func (o GetRuleSetsRuleSetItemOutput) AreInvalidCharactersAllowed() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRuleSetsRuleSetItem) bool { return v.AreInvalidCharactersAllowed }).(pulumi.BoolOutput)
 }

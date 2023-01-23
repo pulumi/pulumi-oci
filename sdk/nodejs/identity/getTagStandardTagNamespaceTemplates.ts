@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTagStandardTagNamespaceTemplates(args: GetTagStandardTagNamespaceTemplatesArgs, opts?: pulumi.InvokeOptions): Promise<GetTagStandardTagNamespaceTemplatesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetTagStandardTagNamespaceTemplatesResult {
      */
     readonly standardTagNamespaceTemplates: outputs.Identity.GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate[];
 }
-
+/**
+ * This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists available standard tag namespaces that users can create.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTagStandardTagNamespaceTemplates = oci.Identity.getTagStandardTagNamespaceTemplates({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getTagStandardTagNamespaceTemplatesOutput(args: GetTagStandardTagNamespaceTemplatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagStandardTagNamespaceTemplatesResult> {
-    return pulumi.output(args).apply(a => getTagStandardTagNamespaceTemplates(a, opts))
+    return pulumi.output(args).apply((a: any) => getTagStandardTagNamespaceTemplates(a, opts))
 }
 
 /**

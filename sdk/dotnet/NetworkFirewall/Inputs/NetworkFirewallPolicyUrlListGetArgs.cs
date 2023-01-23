@@ -12,19 +12,23 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
 
     public sealed class NetworkFirewallPolicyUrlListGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("key", required: true)]
-        public Input<string> Key { get; set; } = null!;
+        /// <summary>
+        /// (Updatable) The identifier for the url list
+        /// </summary>
+        [Input("urlListName", required: true)]
+        public Input<string> UrlListName { get; set; } = null!;
 
-        [Input("pattern")]
-        public Input<string>? Pattern { get; set; }
+        [Input("urlListValues")]
+        private InputList<Inputs.NetworkFirewallPolicyUrlListUrlListValueGetArgs>? _urlListValues;
 
         /// <summary>
-        /// (Updatable) Type of the secrets mapped based on the policy.
-        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        /// (Updatable) The list of Url Patterns.
         /// </summary>
-        [Input("type", required: true)]
-        public Input<string> Type { get; set; } = null!;
+        public InputList<Inputs.NetworkFirewallPolicyUrlListUrlListValueGetArgs> UrlListValues
+        {
+            get => _urlListValues ?? (_urlListValues = new InputList<Inputs.NetworkFirewallPolicyUrlListUrlListValueGetArgs>());
+            set => _urlListValues = value;
+        }
 
         public NetworkFirewallPolicyUrlListGetArgs()
         {

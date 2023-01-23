@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -48,11 +49,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityAssessments(args: GetSecurityAssessmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessments:getSecurityAssessments", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -175,9 +173,50 @@ export interface GetSecurityAssessmentsResult {
      */
     readonly type?: string;
 }
-
+/**
+ * This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of security assessments.
+ *
+ * The ListSecurityAssessments operation returns only the assessments in the specified `compartmentId`.
+ * The list does not include any subcompartments of the compartmentId passed.
+ *
+ * The parameter `accessLevel` specifies whether to return only those compartments for which the
+ * requestor has INSPECT permissions on at least one resource directly
+ * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+ * Principal doesn't have access to even one of the child compartments. This is valid only when
+ * `compartmentIdInSubtree` is set to `true`.
+ *
+ * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
+ * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+ * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityAssessments = oci.DataSafe.getSecurityAssessments({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.security_assessment_access_level,
+ *     compartmentIdInSubtree: _var.security_assessment_compartment_id_in_subtree,
+ *     displayName: _var.security_assessment_display_name,
+ *     isBaseline: _var.security_assessment_is_baseline,
+ *     isScheduleAssessment: _var.security_assessment_is_schedule_assessment,
+ *     scheduleAssessmentId: oci_data_safe_schedule_assessment.test_schedule_assessment.id,
+ *     state: _var.security_assessment_state,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ *     timeCreatedGreaterThanOrEqualTo: _var.security_assessment_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.security_assessment_time_created_less_than,
+ *     triggeredBy: _var.security_assessment_triggered_by,
+ *     type: _var.security_assessment_type,
+ * });
+ * ```
+ */
 export function getSecurityAssessmentsOutput(args: GetSecurityAssessmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentsResult> {
-    return pulumi.output(args).apply(a => getSecurityAssessments(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityAssessments(a, opts))
 }
 
 /**

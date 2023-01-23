@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUsers(args: GetManagedDatabaseUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUsersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUsers:getManagedDatabaseUsers", {
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
@@ -69,9 +67,25 @@ export interface GetManagedDatabaseUsersResult {
      */
     readonly userCollections: outputs.DatabaseManagement.GetManagedDatabaseUsersUserCollection[];
 }
-
+/**
+ * This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of users for the specified managedDatabaseId.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseUsers = oci.DatabaseManagement.getManagedDatabaseUsers({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     name: _var.managed_database_user_name,
+ * });
+ * ```
+ */
 export function getManagedDatabaseUsersOutput(args: GetManagedDatabaseUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUsersResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseUsers(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseUsers(a, opts))
 }
 
 /**

@@ -5,6 +5,7 @@ package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionSchemaColumn;
+import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionSchemaIdentity;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -12,53 +13,25 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTablesTableCollectionSchema {
-    /**
-     * @return The columns of a table.
-     * 
-     */
     private List<GetTablesTableCollectionSchemaColumn> columns;
-    /**
-     * @return A list of column names that make up a key.
-     * 
-     */
+    private List<GetTablesTableCollectionSchemaIdentity> identities;
     private List<String> primaryKeys;
-    /**
-     * @return A list of column names that make up a key.
-     * 
-     */
     private List<String> shardKeys;
-    /**
-     * @return The default Time-to-Live for the table, in days.
-     * 
-     */
     private Integer ttl;
 
     private GetTablesTableCollectionSchema() {}
-    /**
-     * @return The columns of a table.
-     * 
-     */
     public List<GetTablesTableCollectionSchemaColumn> columns() {
         return this.columns;
     }
-    /**
-     * @return A list of column names that make up a key.
-     * 
-     */
+    public List<GetTablesTableCollectionSchemaIdentity> identities() {
+        return this.identities;
+    }
     public List<String> primaryKeys() {
         return this.primaryKeys;
     }
-    /**
-     * @return A list of column names that make up a key.
-     * 
-     */
     public List<String> shardKeys() {
         return this.shardKeys;
     }
-    /**
-     * @return The default Time-to-Live for the table, in days.
-     * 
-     */
     public Integer ttl() {
         return this.ttl;
     }
@@ -73,6 +46,7 @@ public final class GetTablesTableCollectionSchema {
     @CustomType.Builder
     public static final class Builder {
         private List<GetTablesTableCollectionSchemaColumn> columns;
+        private List<GetTablesTableCollectionSchemaIdentity> identities;
         private List<String> primaryKeys;
         private List<String> shardKeys;
         private Integer ttl;
@@ -80,6 +54,7 @@ public final class GetTablesTableCollectionSchema {
         public Builder(GetTablesTableCollectionSchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columns = defaults.columns;
+    	      this.identities = defaults.identities;
     	      this.primaryKeys = defaults.primaryKeys;
     	      this.shardKeys = defaults.shardKeys;
     	      this.ttl = defaults.ttl;
@@ -92,6 +67,14 @@ public final class GetTablesTableCollectionSchema {
         }
         public Builder columns(GetTablesTableCollectionSchemaColumn... columns) {
             return columns(List.of(columns));
+        }
+        @CustomType.Setter
+        public Builder identities(List<GetTablesTableCollectionSchemaIdentity> identities) {
+            this.identities = Objects.requireNonNull(identities);
+            return this;
+        }
+        public Builder identities(GetTablesTableCollectionSchemaIdentity... identities) {
+            return identities(List.of(identities));
         }
         @CustomType.Setter
         public Builder primaryKeys(List<String> primaryKeys) {
@@ -117,6 +100,7 @@ public final class GetTablesTableCollectionSchema {
         public GetTablesTableCollectionSchema build() {
             final var o = new GetTablesTableCollectionSchema();
             o.columns = columns;
+            o.identities = identities;
             o.primaryKeys = primaryKeys;
             o.shardKeys = shardKeys;
             o.ttl = ttl;

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPreauthrequests(args: GetPreauthrequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetPreauthrequestsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", {
         "bucket": args.bucket,
         "filters": args.filters,
@@ -79,9 +77,26 @@ export interface GetPreauthrequestsResult {
      */
     readonly preauthenticatedRequests: outputs.ObjectStorage.GetPreauthrequestsPreauthenticatedRequest[];
 }
-
+/**
+ * This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Lists pre-authenticated requests for the bucket.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPreauthenticatedRequests = oci.ObjectStorage.getPreauthrequests({
+ *     bucket: _var.preauthenticated_request_bucket,
+ *     namespace: _var.preauthenticated_request_namespace,
+ *     objectNamePrefix: _var.preauthenticated_request_object_name_prefix,
+ * });
+ * ```
+ */
 export function getPreauthrequestsOutput(args: GetPreauthrequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPreauthrequestsResult> {
-    return pulumi.output(args).apply(a => getPreauthrequests(a, opts))
+    return pulumi.output(args).apply((a: any) => getPreauthrequests(a, opts))
 }
 
 /**

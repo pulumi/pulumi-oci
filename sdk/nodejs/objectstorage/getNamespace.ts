@@ -28,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getNamespace(args?: GetNamespaceArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getNamespace:getNamespace", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -62,9 +59,30 @@ export interface GetNamespaceResult {
      */
     readonly namespace: string;
 }
-
+/**
+ * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Each Oracle Cloud Infrastructure tenant is assigned one unique and uneditable Object Storage namespace. The namespace
+ * is a system-generated string assigned during account creation. For some older tenancies, the namespace string may be
+ * the tenancy name in all lower-case letters. You cannot edit a namespace.
+ *
+ * GetNamespace returns the name of the Object Storage namespace for the user making the request.
+ * If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
+ * tenancy, provided the user has access to it.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNamespace = oci.ObjectStorage.getNamespace({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getNamespaceOutput(args?: GetNamespaceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceResult> {
-    return pulumi.output(args).apply(a => getNamespace(a, opts))
+    return pulumi.output(args).apply((a: any) => getNamespace(a, opts))
 }
 
 /**

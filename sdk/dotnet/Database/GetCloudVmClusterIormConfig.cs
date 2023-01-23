@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCloudVmClusterIormConfigResult> InvokeAsync(GetCloudVmClusterIormConfigArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCloudVmClusterIormConfigResult> Invoke(GetCloudVmClusterIormConfigInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigInvokeArgs(), options.WithDefaults());
     }
 
 

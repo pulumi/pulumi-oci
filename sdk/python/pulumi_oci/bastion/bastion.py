@@ -19,6 +19,7 @@ class BastionArgs:
                  target_subnet_id: pulumi.Input[str],
                  client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dns_proxy_status: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  max_session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -31,6 +32,7 @@ class BastionArgs:
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
         :param pulumi.Input[str] name: The name of the bastion, which can't be changed after creation.
@@ -44,6 +46,8 @@ class BastionArgs:
             pulumi.set(__self__, "client_cidr_block_allow_lists", client_cidr_block_allow_lists)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if dns_proxy_status is not None:
+            pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if max_session_ttl_in_seconds is not None:
@@ -116,6 +120,18 @@ class BastionArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="dnsProxyStatus")
+    def dns_proxy_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        """
+        return pulumi.get(self, "dns_proxy_status")
+
+    @dns_proxy_status.setter
+    def dns_proxy_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dns_proxy_status", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -183,6 +199,7 @@ class _BastionState:
                  client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dns_proxy_status: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  max_session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -203,6 +220,7 @@ class _BastionState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
         :param pulumi.Input[int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
@@ -226,6 +244,8 @@ class _BastionState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if dns_proxy_status is not None:
+            pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
@@ -302,6 +322,18 @@ class _BastionState:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="dnsProxyStatus")
+    def dns_proxy_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        """
+        return pulumi.get(self, "dns_proxy_status")
+
+    @dns_proxy_status.setter
+    def dns_proxy_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dns_proxy_status", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -481,6 +513,7 @@ class Bastion(pulumi.CustomResource):
                  client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dns_proxy_status: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  max_session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -507,6 +540,7 @@ class Bastion(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
+            dns_proxy_status=var["bastion_dns_proxy_status"],
             freeform_tags={
                 "bar-key": "value",
             },
@@ -529,6 +563,7 @@ class Bastion(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
         :param pulumi.Input[str] name: The name of the bastion, which can't be changed after creation.
@@ -561,6 +596,7 @@ class Bastion(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
+            dns_proxy_status=var["bastion_dns_proxy_status"],
             freeform_tags={
                 "bar-key": "value",
             },
@@ -596,6 +632,7 @@ class Bastion(pulumi.CustomResource):
                  client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dns_proxy_status: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  max_session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -619,6 +656,7 @@ class Bastion(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["dns_proxy_status"] = dns_proxy_status
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["max_session_ttl_in_seconds"] = max_session_ttl_in_seconds
             __props__.__dict__["name"] = name
@@ -649,6 +687,7 @@ class Bastion(pulumi.CustomResource):
             client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            dns_proxy_status: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             max_session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -674,6 +713,7 @@ class Bastion(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
         :param pulumi.Input[int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
@@ -697,6 +737,7 @@ class Bastion(pulumi.CustomResource):
         __props__.__dict__["client_cidr_block_allow_lists"] = client_cidr_block_allow_lists
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["dns_proxy_status"] = dns_proxy_status
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["max_session_ttl_in_seconds"] = max_session_ttl_in_seconds
@@ -744,6 +785,14 @@ class Bastion(pulumi.CustomResource):
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="dnsProxyStatus")
+    def dns_proxy_status(self) -> pulumi.Output[str]:
+        """
+        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        """
+        return pulumi.get(self, "dns_proxy_status")
 
     @property
     @pulumi.getter(name="freeformTags")

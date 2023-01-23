@@ -57,6 +57,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// Specifies the time at which the report was generated.
         /// </summary>
         public readonly string TimeGenerated;
+        /// <summary>
+        /// An optional filter to return only resources that match the specified type.
+        /// </summary>
+        public readonly string Type;
 
         [OutputConstructor]
         private GetReportsReportCollectionItemResult(
@@ -80,7 +84,9 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableDictionary<string, object> systemTags,
 
-            string timeGenerated)
+            string timeGenerated,
+
+            string type)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -93,6 +99,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             State = state;
             SystemTags = systemTags;
             TimeGenerated = timeGenerated;
+            Type = type;
         }
     }
 }

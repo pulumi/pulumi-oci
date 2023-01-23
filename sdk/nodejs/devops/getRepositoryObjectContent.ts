@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryObjectContent(args: GetRepositoryObjectContentArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryObjectContentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", {
         "filePath": args.filePath,
         "repositoryId": args.repositoryId,
@@ -65,9 +62,26 @@ export interface GetRepositoryObjectContentResult {
     readonly repositoryId: string;
     readonly sha: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieve contents of a specified object.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryObjectContent = oci.DevOps.getRepositoryObjectContent({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     sha: _var.repository_object_content_sha,
+ *     filePath: _var.repository_object_content_file_path,
+ * });
+ * ```
+ */
 export function getRepositoryObjectContentOutput(args: GetRepositoryObjectContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryObjectContentResult> {
-    return pulumi.output(args).apply(a => getRepositoryObjectContent(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryObjectContent(a, opts))
 }
 
 /**

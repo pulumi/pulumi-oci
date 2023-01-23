@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Events
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRuleResult> InvokeAsync(GetRuleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRuleResult>("oci:Events/getRule:getRule", args ?? new GetRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRuleResult>("oci:Events/getRule:getRule", args ?? new GetRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Events service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Events
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRuleResult> Invoke(GetRuleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRuleResult>("oci:Events/getRule:getRule", args ?? new GetRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRuleResult>("oci:Events/getRule:getRule", args ?? new GetRuleInvokeArgs(), options.WithDefaults());
     }
 
 

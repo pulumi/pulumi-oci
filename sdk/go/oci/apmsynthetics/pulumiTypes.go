@@ -10,6 +10,162 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type ConfigAvailabilityConfiguration struct {
+	// (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	MaxAllowedFailuresPerInterval *int `pulumi:"maxAllowedFailuresPerInterval"`
+	// (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	MinAllowedRunsPerInterval *int `pulumi:"minAllowedRunsPerInterval"`
+}
+
+// ConfigAvailabilityConfigurationInput is an input type that accepts ConfigAvailabilityConfigurationArgs and ConfigAvailabilityConfigurationOutput values.
+// You can construct a concrete instance of `ConfigAvailabilityConfigurationInput` via:
+//
+//	ConfigAvailabilityConfigurationArgs{...}
+type ConfigAvailabilityConfigurationInput interface {
+	pulumi.Input
+
+	ToConfigAvailabilityConfigurationOutput() ConfigAvailabilityConfigurationOutput
+	ToConfigAvailabilityConfigurationOutputWithContext(context.Context) ConfigAvailabilityConfigurationOutput
+}
+
+type ConfigAvailabilityConfigurationArgs struct {
+	// (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	MaxAllowedFailuresPerInterval pulumi.IntPtrInput `pulumi:"maxAllowedFailuresPerInterval"`
+	// (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	MinAllowedRunsPerInterval pulumi.IntPtrInput `pulumi:"minAllowedRunsPerInterval"`
+}
+
+func (ConfigAvailabilityConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (i ConfigAvailabilityConfigurationArgs) ToConfigAvailabilityConfigurationOutput() ConfigAvailabilityConfigurationOutput {
+	return i.ToConfigAvailabilityConfigurationOutputWithContext(context.Background())
+}
+
+func (i ConfigAvailabilityConfigurationArgs) ToConfigAvailabilityConfigurationOutputWithContext(ctx context.Context) ConfigAvailabilityConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigAvailabilityConfigurationOutput)
+}
+
+func (i ConfigAvailabilityConfigurationArgs) ToConfigAvailabilityConfigurationPtrOutput() ConfigAvailabilityConfigurationPtrOutput {
+	return i.ToConfigAvailabilityConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigAvailabilityConfigurationArgs) ToConfigAvailabilityConfigurationPtrOutputWithContext(ctx context.Context) ConfigAvailabilityConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigAvailabilityConfigurationOutput).ToConfigAvailabilityConfigurationPtrOutputWithContext(ctx)
+}
+
+// ConfigAvailabilityConfigurationPtrInput is an input type that accepts ConfigAvailabilityConfigurationArgs, ConfigAvailabilityConfigurationPtr and ConfigAvailabilityConfigurationPtrOutput values.
+// You can construct a concrete instance of `ConfigAvailabilityConfigurationPtrInput` via:
+//
+//	        ConfigAvailabilityConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigAvailabilityConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToConfigAvailabilityConfigurationPtrOutput() ConfigAvailabilityConfigurationPtrOutput
+	ToConfigAvailabilityConfigurationPtrOutputWithContext(context.Context) ConfigAvailabilityConfigurationPtrOutput
+}
+
+type configAvailabilityConfigurationPtrType ConfigAvailabilityConfigurationArgs
+
+func ConfigAvailabilityConfigurationPtr(v *ConfigAvailabilityConfigurationArgs) ConfigAvailabilityConfigurationPtrInput {
+	return (*configAvailabilityConfigurationPtrType)(v)
+}
+
+func (*configAvailabilityConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (i *configAvailabilityConfigurationPtrType) ToConfigAvailabilityConfigurationPtrOutput() ConfigAvailabilityConfigurationPtrOutput {
+	return i.ToConfigAvailabilityConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *configAvailabilityConfigurationPtrType) ToConfigAvailabilityConfigurationPtrOutputWithContext(ctx context.Context) ConfigAvailabilityConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigAvailabilityConfigurationPtrOutput)
+}
+
+type ConfigAvailabilityConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ConfigAvailabilityConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (o ConfigAvailabilityConfigurationOutput) ToConfigAvailabilityConfigurationOutput() ConfigAvailabilityConfigurationOutput {
+	return o
+}
+
+func (o ConfigAvailabilityConfigurationOutput) ToConfigAvailabilityConfigurationOutputWithContext(ctx context.Context) ConfigAvailabilityConfigurationOutput {
+	return o
+}
+
+func (o ConfigAvailabilityConfigurationOutput) ToConfigAvailabilityConfigurationPtrOutput() ConfigAvailabilityConfigurationPtrOutput {
+	return o.ToConfigAvailabilityConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigAvailabilityConfigurationOutput) ToConfigAvailabilityConfigurationPtrOutputWithContext(ctx context.Context) ConfigAvailabilityConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigAvailabilityConfiguration) *ConfigAvailabilityConfiguration {
+		return &v
+	}).(ConfigAvailabilityConfigurationPtrOutput)
+}
+
+// (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+func (o ConfigAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ConfigAvailabilityConfiguration) *int { return v.MaxAllowedFailuresPerInterval }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+func (o ConfigAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ConfigAvailabilityConfiguration) *int { return v.MinAllowedRunsPerInterval }).(pulumi.IntPtrOutput)
+}
+
+type ConfigAvailabilityConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigAvailabilityConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (o ConfigAvailabilityConfigurationPtrOutput) ToConfigAvailabilityConfigurationPtrOutput() ConfigAvailabilityConfigurationPtrOutput {
+	return o
+}
+
+func (o ConfigAvailabilityConfigurationPtrOutput) ToConfigAvailabilityConfigurationPtrOutputWithContext(ctx context.Context) ConfigAvailabilityConfigurationPtrOutput {
+	return o
+}
+
+func (o ConfigAvailabilityConfigurationPtrOutput) Elem() ConfigAvailabilityConfigurationOutput {
+	return o.ApplyT(func(v *ConfigAvailabilityConfiguration) ConfigAvailabilityConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigAvailabilityConfiguration
+		return ret
+	}).(ConfigAvailabilityConfigurationOutput)
+}
+
+// (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+func (o ConfigAvailabilityConfigurationPtrOutput) MaxAllowedFailuresPerInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ConfigAvailabilityConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxAllowedFailuresPerInterval
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+func (o ConfigAvailabilityConfigurationPtrOutput) MinAllowedRunsPerInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ConfigAvailabilityConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinAllowedRunsPerInterval
+	}).(pulumi.IntPtrOutput)
+}
+
 type ConfigConfiguration struct {
 	// (Updatable) Type of configuration.
 	ConfigType *string `pulumi:"configType"`
@@ -1469,6 +1625,162 @@ func (o ConfigConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) Confi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigConfigurationVerifyText {
 		return vs[0].([]ConfigConfigurationVerifyText)[vs[1].(int)]
 	}).(ConfigConfigurationVerifyTextOutput)
+}
+
+type ConfigMaintenanceWindowSchedule struct {
+	// (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeEnded *string `pulumi:"timeEnded"`
+	// (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeStarted *string `pulumi:"timeStarted"`
+}
+
+// ConfigMaintenanceWindowScheduleInput is an input type that accepts ConfigMaintenanceWindowScheduleArgs and ConfigMaintenanceWindowScheduleOutput values.
+// You can construct a concrete instance of `ConfigMaintenanceWindowScheduleInput` via:
+//
+//	ConfigMaintenanceWindowScheduleArgs{...}
+type ConfigMaintenanceWindowScheduleInput interface {
+	pulumi.Input
+
+	ToConfigMaintenanceWindowScheduleOutput() ConfigMaintenanceWindowScheduleOutput
+	ToConfigMaintenanceWindowScheduleOutputWithContext(context.Context) ConfigMaintenanceWindowScheduleOutput
+}
+
+type ConfigMaintenanceWindowScheduleArgs struct {
+	// (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
+	// (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
+}
+
+func (ConfigMaintenanceWindowScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i ConfigMaintenanceWindowScheduleArgs) ToConfigMaintenanceWindowScheduleOutput() ConfigMaintenanceWindowScheduleOutput {
+	return i.ToConfigMaintenanceWindowScheduleOutputWithContext(context.Background())
+}
+
+func (i ConfigMaintenanceWindowScheduleArgs) ToConfigMaintenanceWindowScheduleOutputWithContext(ctx context.Context) ConfigMaintenanceWindowScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigMaintenanceWindowScheduleOutput)
+}
+
+func (i ConfigMaintenanceWindowScheduleArgs) ToConfigMaintenanceWindowSchedulePtrOutput() ConfigMaintenanceWindowSchedulePtrOutput {
+	return i.ToConfigMaintenanceWindowSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i ConfigMaintenanceWindowScheduleArgs) ToConfigMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) ConfigMaintenanceWindowSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigMaintenanceWindowScheduleOutput).ToConfigMaintenanceWindowSchedulePtrOutputWithContext(ctx)
+}
+
+// ConfigMaintenanceWindowSchedulePtrInput is an input type that accepts ConfigMaintenanceWindowScheduleArgs, ConfigMaintenanceWindowSchedulePtr and ConfigMaintenanceWindowSchedulePtrOutput values.
+// You can construct a concrete instance of `ConfigMaintenanceWindowSchedulePtrInput` via:
+//
+//	        ConfigMaintenanceWindowScheduleArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigMaintenanceWindowSchedulePtrInput interface {
+	pulumi.Input
+
+	ToConfigMaintenanceWindowSchedulePtrOutput() ConfigMaintenanceWindowSchedulePtrOutput
+	ToConfigMaintenanceWindowSchedulePtrOutputWithContext(context.Context) ConfigMaintenanceWindowSchedulePtrOutput
+}
+
+type configMaintenanceWindowSchedulePtrType ConfigMaintenanceWindowScheduleArgs
+
+func ConfigMaintenanceWindowSchedulePtr(v *ConfigMaintenanceWindowScheduleArgs) ConfigMaintenanceWindowSchedulePtrInput {
+	return (*configMaintenanceWindowSchedulePtrType)(v)
+}
+
+func (*configMaintenanceWindowSchedulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i *configMaintenanceWindowSchedulePtrType) ToConfigMaintenanceWindowSchedulePtrOutput() ConfigMaintenanceWindowSchedulePtrOutput {
+	return i.ToConfigMaintenanceWindowSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i *configMaintenanceWindowSchedulePtrType) ToConfigMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) ConfigMaintenanceWindowSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigMaintenanceWindowSchedulePtrOutput)
+}
+
+type ConfigMaintenanceWindowScheduleOutput struct{ *pulumi.OutputState }
+
+func (ConfigMaintenanceWindowScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o ConfigMaintenanceWindowScheduleOutput) ToConfigMaintenanceWindowScheduleOutput() ConfigMaintenanceWindowScheduleOutput {
+	return o
+}
+
+func (o ConfigMaintenanceWindowScheduleOutput) ToConfigMaintenanceWindowScheduleOutputWithContext(ctx context.Context) ConfigMaintenanceWindowScheduleOutput {
+	return o
+}
+
+func (o ConfigMaintenanceWindowScheduleOutput) ToConfigMaintenanceWindowSchedulePtrOutput() ConfigMaintenanceWindowSchedulePtrOutput {
+	return o.ToConfigMaintenanceWindowSchedulePtrOutputWithContext(context.Background())
+}
+
+func (o ConfigMaintenanceWindowScheduleOutput) ToConfigMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) ConfigMaintenanceWindowSchedulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigMaintenanceWindowSchedule) *ConfigMaintenanceWindowSchedule {
+		return &v
+	}).(ConfigMaintenanceWindowSchedulePtrOutput)
+}
+
+// (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o ConfigMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigMaintenanceWindowSchedule) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o ConfigMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigMaintenanceWindowSchedule) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
+}
+
+type ConfigMaintenanceWindowSchedulePtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigMaintenanceWindowSchedulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o ConfigMaintenanceWindowSchedulePtrOutput) ToConfigMaintenanceWindowSchedulePtrOutput() ConfigMaintenanceWindowSchedulePtrOutput {
+	return o
+}
+
+func (o ConfigMaintenanceWindowSchedulePtrOutput) ToConfigMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) ConfigMaintenanceWindowSchedulePtrOutput {
+	return o
+}
+
+func (o ConfigMaintenanceWindowSchedulePtrOutput) Elem() ConfigMaintenanceWindowScheduleOutput {
+	return o.ApplyT(func(v *ConfigMaintenanceWindowSchedule) ConfigMaintenanceWindowSchedule {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigMaintenanceWindowSchedule
+		return ret
+	}).(ConfigMaintenanceWindowScheduleOutput)
+}
+
+// (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o ConfigMaintenanceWindowSchedulePtrOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigMaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeEnded
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o ConfigMaintenanceWindowSchedulePtrOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigMaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeStarted
+	}).(pulumi.StringPtrOutput)
 }
 
 type ConfigScriptParameter struct {
@@ -3323,6 +3635,112 @@ func (o GetDedicatedVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) Get
 	}).(GetDedicatedVantagePointsFilterOutput)
 }
 
+type GetMonitorAvailabilityConfiguration struct {
+	// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	MaxAllowedFailuresPerInterval int `pulumi:"maxAllowedFailuresPerInterval"`
+	// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	MinAllowedRunsPerInterval int `pulumi:"minAllowedRunsPerInterval"`
+}
+
+// GetMonitorAvailabilityConfigurationInput is an input type that accepts GetMonitorAvailabilityConfigurationArgs and GetMonitorAvailabilityConfigurationOutput values.
+// You can construct a concrete instance of `GetMonitorAvailabilityConfigurationInput` via:
+//
+//	GetMonitorAvailabilityConfigurationArgs{...}
+type GetMonitorAvailabilityConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMonitorAvailabilityConfigurationOutput() GetMonitorAvailabilityConfigurationOutput
+	ToGetMonitorAvailabilityConfigurationOutputWithContext(context.Context) GetMonitorAvailabilityConfigurationOutput
+}
+
+type GetMonitorAvailabilityConfigurationArgs struct {
+	// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	MaxAllowedFailuresPerInterval pulumi.IntInput `pulumi:"maxAllowedFailuresPerInterval"`
+	// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	MinAllowedRunsPerInterval pulumi.IntInput `pulumi:"minAllowedRunsPerInterval"`
+}
+
+func (GetMonitorAvailabilityConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitorAvailabilityConfigurationArgs) ToGetMonitorAvailabilityConfigurationOutput() GetMonitorAvailabilityConfigurationOutput {
+	return i.ToGetMonitorAvailabilityConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMonitorAvailabilityConfigurationArgs) ToGetMonitorAvailabilityConfigurationOutputWithContext(ctx context.Context) GetMonitorAvailabilityConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorAvailabilityConfigurationOutput)
+}
+
+// GetMonitorAvailabilityConfigurationArrayInput is an input type that accepts GetMonitorAvailabilityConfigurationArray and GetMonitorAvailabilityConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMonitorAvailabilityConfigurationArrayInput` via:
+//
+//	GetMonitorAvailabilityConfigurationArray{ GetMonitorAvailabilityConfigurationArgs{...} }
+type GetMonitorAvailabilityConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorAvailabilityConfigurationArrayOutput() GetMonitorAvailabilityConfigurationArrayOutput
+	ToGetMonitorAvailabilityConfigurationArrayOutputWithContext(context.Context) GetMonitorAvailabilityConfigurationArrayOutput
+}
+
+type GetMonitorAvailabilityConfigurationArray []GetMonitorAvailabilityConfigurationInput
+
+func (GetMonitorAvailabilityConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitorAvailabilityConfigurationArray) ToGetMonitorAvailabilityConfigurationArrayOutput() GetMonitorAvailabilityConfigurationArrayOutput {
+	return i.ToGetMonitorAvailabilityConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorAvailabilityConfigurationArray) ToGetMonitorAvailabilityConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorAvailabilityConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorAvailabilityConfigurationArrayOutput)
+}
+
+type GetMonitorAvailabilityConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorAvailabilityConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitorAvailabilityConfigurationOutput) ToGetMonitorAvailabilityConfigurationOutput() GetMonitorAvailabilityConfigurationOutput {
+	return o
+}
+
+func (o GetMonitorAvailabilityConfigurationOutput) ToGetMonitorAvailabilityConfigurationOutputWithContext(ctx context.Context) GetMonitorAvailabilityConfigurationOutput {
+	return o
+}
+
+// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+func (o GetMonitorAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorAvailabilityConfiguration) int { return v.MaxAllowedFailuresPerInterval }).(pulumi.IntOutput)
+}
+
+// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+func (o GetMonitorAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorAvailabilityConfiguration) int { return v.MinAllowedRunsPerInterval }).(pulumi.IntOutput)
+}
+
+type GetMonitorAvailabilityConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorAvailabilityConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitorAvailabilityConfigurationArrayOutput) ToGetMonitorAvailabilityConfigurationArrayOutput() GetMonitorAvailabilityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitorAvailabilityConfigurationArrayOutput) ToGetMonitorAvailabilityConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorAvailabilityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitorAvailabilityConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorAvailabilityConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorAvailabilityConfiguration {
+		return vs[0].([]GetMonitorAvailabilityConfiguration)[vs[1].(int)]
+	}).(GetMonitorAvailabilityConfigurationOutput)
+}
+
 type GetMonitorConfiguration struct {
 	// Type of configuration.
 	ConfigType string `pulumi:"configType"`
@@ -4368,6 +4786,112 @@ func (o GetMonitorConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetMonitorConfigurationVerifyTextOutput)
 }
 
+type GetMonitorMaintenanceWindowSchedule struct {
+	// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeEnded string `pulumi:"timeEnded"`
+	// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetMonitorMaintenanceWindowScheduleInput is an input type that accepts GetMonitorMaintenanceWindowScheduleArgs and GetMonitorMaintenanceWindowScheduleOutput values.
+// You can construct a concrete instance of `GetMonitorMaintenanceWindowScheduleInput` via:
+//
+//	GetMonitorMaintenanceWindowScheduleArgs{...}
+type GetMonitorMaintenanceWindowScheduleInput interface {
+	pulumi.Input
+
+	ToGetMonitorMaintenanceWindowScheduleOutput() GetMonitorMaintenanceWindowScheduleOutput
+	ToGetMonitorMaintenanceWindowScheduleOutputWithContext(context.Context) GetMonitorMaintenanceWindowScheduleOutput
+}
+
+type GetMonitorMaintenanceWindowScheduleArgs struct {
+	// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetMonitorMaintenanceWindowScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i GetMonitorMaintenanceWindowScheduleArgs) ToGetMonitorMaintenanceWindowScheduleOutput() GetMonitorMaintenanceWindowScheduleOutput {
+	return i.ToGetMonitorMaintenanceWindowScheduleOutputWithContext(context.Background())
+}
+
+func (i GetMonitorMaintenanceWindowScheduleArgs) ToGetMonitorMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMonitorMaintenanceWindowScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorMaintenanceWindowScheduleOutput)
+}
+
+// GetMonitorMaintenanceWindowScheduleArrayInput is an input type that accepts GetMonitorMaintenanceWindowScheduleArray and GetMonitorMaintenanceWindowScheduleArrayOutput values.
+// You can construct a concrete instance of `GetMonitorMaintenanceWindowScheduleArrayInput` via:
+//
+//	GetMonitorMaintenanceWindowScheduleArray{ GetMonitorMaintenanceWindowScheduleArgs{...} }
+type GetMonitorMaintenanceWindowScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorMaintenanceWindowScheduleArrayOutput() GetMonitorMaintenanceWindowScheduleArrayOutput
+	ToGetMonitorMaintenanceWindowScheduleArrayOutputWithContext(context.Context) GetMonitorMaintenanceWindowScheduleArrayOutput
+}
+
+type GetMonitorMaintenanceWindowScheduleArray []GetMonitorMaintenanceWindowScheduleInput
+
+func (GetMonitorMaintenanceWindowScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i GetMonitorMaintenanceWindowScheduleArray) ToGetMonitorMaintenanceWindowScheduleArrayOutput() GetMonitorMaintenanceWindowScheduleArrayOutput {
+	return i.ToGetMonitorMaintenanceWindowScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorMaintenanceWindowScheduleArray) ToGetMonitorMaintenanceWindowScheduleArrayOutputWithContext(ctx context.Context) GetMonitorMaintenanceWindowScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorMaintenanceWindowScheduleArrayOutput)
+}
+
+type GetMonitorMaintenanceWindowScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorMaintenanceWindowScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o GetMonitorMaintenanceWindowScheduleOutput) ToGetMonitorMaintenanceWindowScheduleOutput() GetMonitorMaintenanceWindowScheduleOutput {
+	return o
+}
+
+func (o GetMonitorMaintenanceWindowScheduleOutput) ToGetMonitorMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMonitorMaintenanceWindowScheduleOutput {
+	return o
+}
+
+// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetMonitorMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetMonitorMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetMonitorMaintenanceWindowScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorMaintenanceWindowScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o GetMonitorMaintenanceWindowScheduleArrayOutput) ToGetMonitorMaintenanceWindowScheduleArrayOutput() GetMonitorMaintenanceWindowScheduleArrayOutput {
+	return o
+}
+
+func (o GetMonitorMaintenanceWindowScheduleArrayOutput) ToGetMonitorMaintenanceWindowScheduleArrayOutputWithContext(ctx context.Context) GetMonitorMaintenanceWindowScheduleArrayOutput {
+	return o
+}
+
+func (o GetMonitorMaintenanceWindowScheduleArrayOutput) Index(i pulumi.IntInput) GetMonitorMaintenanceWindowScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorMaintenanceWindowSchedule {
+		return vs[0].([]GetMonitorMaintenanceWindowSchedule)[vs[1].(int)]
+	}).(GetMonitorMaintenanceWindowScheduleOutput)
+}
+
 type GetMonitorScriptParameter struct {
 	// If parameter value is default or overwritten.
 	IsOverwritten bool `pulumi:"isOverwritten"`
@@ -4815,6 +5339,8 @@ func (o GetMonitorsMonitorCollectionArrayOutput) Index(i pulumi.IntInput) GetMon
 type GetMonitorsMonitorCollectionItem struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// Monitor availability configuration details.
+	AvailabilityConfigurations []GetMonitorsMonitorCollectionItemAvailabilityConfiguration `pulumi:"availabilityConfigurations"`
 	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
 	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
@@ -4831,6 +5357,8 @@ type GetMonitorsMonitorCollectionItem struct {
 	IsRunNow bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce bool `pulumi:"isRunOnce"`
+	// Details used to schedule maintenance window.
+	MaintenanceWindowSchedules []GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -4851,7 +5379,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount int `pulumi:"vantagePointCount"`
@@ -4873,6 +5401,8 @@ type GetMonitorsMonitorCollectionItemInput interface {
 type GetMonitorsMonitorCollectionItemArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	// Monitor availability configuration details.
+	AvailabilityConfigurations GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput `pulumi:"availabilityConfigurations"`
 	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
 	BatchIntervalInSeconds pulumi.IntInput `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
@@ -4889,6 +5419,8 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	IsRunNow pulumi.BoolInput `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolInput `pulumi:"isRunOnce"`
+	// Details used to schedule maintenance window.
+	MaintenanceWindowSchedules GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput `pulumi:"maintenanceWindowSchedules"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType pulumi.StringInput `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -4909,7 +5441,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntInput `pulumi:"vantagePointCount"`
@@ -4973,6 +5505,13 @@ func (o GetMonitorsMonitorCollectionItemOutput) ApmDomainId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
+// Monitor availability configuration details.
+func (o GetMonitorsMonitorCollectionItemOutput) AvailabilityConfigurations() GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []GetMonitorsMonitorCollectionItemAvailabilityConfiguration {
+		return v.AvailabilityConfigurations
+	}).(GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput)
+}
+
 // Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
 func (o GetMonitorsMonitorCollectionItemOutput) BatchIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
@@ -5013,6 +5552,13 @@ func (o GetMonitorsMonitorCollectionItemOutput) IsRunNow() pulumi.BoolOutput {
 // If runOnce is enabled, then the monitor will run once.
 func (o GetMonitorsMonitorCollectionItemOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
+}
+
+// Details used to schedule maintenance window.
+func (o GetMonitorsMonitorCollectionItemOutput) MaintenanceWindowSchedules() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
+		return v.MaintenanceWindowSchedules
+	}).(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput)
 }
 
 // A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
@@ -5067,7 +5613,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) TimeUpdated() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 func (o GetMonitorsMonitorCollectionItemOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }
@@ -5100,6 +5646,116 @@ func (o GetMonitorsMonitorCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItem {
 		return vs[0].([]GetMonitorsMonitorCollectionItem)[vs[1].(int)]
 	}).(GetMonitorsMonitorCollectionItemOutput)
+}
+
+type GetMonitorsMonitorCollectionItemAvailabilityConfiguration struct {
+	// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	MaxAllowedFailuresPerInterval int `pulumi:"maxAllowedFailuresPerInterval"`
+	// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	MinAllowedRunsPerInterval int `pulumi:"minAllowedRunsPerInterval"`
+}
+
+// GetMonitorsMonitorCollectionItemAvailabilityConfigurationInput is an input type that accepts GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs and GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemAvailabilityConfigurationInput` via:
+//
+//	GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs{...}
+type GetMonitorsMonitorCollectionItemAvailabilityConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput() GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput
+	ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput
+}
+
+type GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs struct {
+	// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	MaxAllowedFailuresPerInterval pulumi.IntInput `pulumi:"maxAllowedFailuresPerInterval"`
+	// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	MinAllowedRunsPerInterval pulumi.IntInput `pulumi:"minAllowedRunsPerInterval"`
+}
+
+func (GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput() GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput {
+	return i.ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput)
+}
+
+// GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray and GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray{ GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs{...} }
+type GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput() GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput
+	ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray []GetMonitorsMonitorCollectionItemAvailabilityConfigurationInput
+
+func (GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput() GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput() GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput {
+	return o
+}
+
+// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemAvailabilityConfiguration) int {
+		return v.MaxAllowedFailuresPerInterval
+	}).(pulumi.IntOutput)
+}
+
+// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemAvailabilityConfiguration) int {
+		return v.MinAllowedRunsPerInterval
+	}).(pulumi.IntOutput)
+}
+
+type GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemAvailabilityConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput() GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput) ToGetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemAvailabilityConfiguration {
+		return vs[0].([]GetMonitorsMonitorCollectionItemAvailabilityConfiguration)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfiguration struct {
@@ -6169,6 +6825,112 @@ func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput) Inde
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationVerifyText {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationVerifyText)[vs[1].(int)]
 	}).(GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput)
+}
+
+type GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule struct {
+	// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeEnded string `pulumi:"timeEnded"`
+	// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput is an input type that accepts GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs and GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput` via:
+//
+//	GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs{...}
+type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput
+	ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput
+}
+
+type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs struct {
+	// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput {
+	return i.ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput)
+}
+
+// GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray and GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray{ GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs{...} }
+type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput
+	ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray []GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput
+
+func (GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput {
+	return o
+}
+
+// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
+		return vs[0].([]GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput)
 }
 
 type GetMonitorsMonitorCollectionItemScriptParameter struct {
@@ -8427,6 +9189,8 @@ func (o GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigAvailabilityConfigurationInput)(nil)).Elem(), ConfigAvailabilityConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigAvailabilityConfigurationPtrInput)(nil)).Elem(), ConfigAvailabilityConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationInput)(nil)).Elem(), ConfigConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationPtrInput)(nil)).Elem(), ConfigConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDnsConfigurationInput)(nil)).Elem(), ConfigConfigurationDnsConfigurationArgs{})
@@ -8443,6 +9207,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationRequestQueryParamArrayInput)(nil)).Elem(), ConfigConfigurationRequestQueryParamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationVerifyTextInput)(nil)).Elem(), ConfigConfigurationVerifyTextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationVerifyTextArrayInput)(nil)).Elem(), ConfigConfigurationVerifyTextArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigMaintenanceWindowScheduleInput)(nil)).Elem(), ConfigMaintenanceWindowScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigMaintenanceWindowSchedulePtrInput)(nil)).Elem(), ConfigMaintenanceWindowScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterInput)(nil)).Elem(), ConfigScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterArrayInput)(nil)).Elem(), ConfigScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterMonitorScriptParameterInput)(nil)).Elem(), ConfigScriptParameterMonitorScriptParameterArgs{})
@@ -8471,6 +9237,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsFilterInput)(nil)).Elem(), GetDedicatedVantagePointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsFilterArrayInput)(nil)).Elem(), GetDedicatedVantagePointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorAvailabilityConfigurationInput)(nil)).Elem(), GetMonitorAvailabilityConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorAvailabilityConfigurationArrayInput)(nil)).Elem(), GetMonitorAvailabilityConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationInput)(nil)).Elem(), GetMonitorConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDnsConfigurationInput)(nil)).Elem(), GetMonitorConfigurationDnsConfigurationArgs{})
@@ -8487,6 +9255,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationRequestQueryParamArrayInput)(nil)).Elem(), GetMonitorConfigurationRequestQueryParamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationVerifyTextInput)(nil)).Elem(), GetMonitorConfigurationVerifyTextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationVerifyTextArrayInput)(nil)).Elem(), GetMonitorConfigurationVerifyTextArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorMaintenanceWindowScheduleInput)(nil)).Elem(), GetMonitorMaintenanceWindowScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorMaintenanceWindowScheduleArrayInput)(nil)).Elem(), GetMonitorMaintenanceWindowScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorScriptParameterInput)(nil)).Elem(), GetMonitorScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorScriptParameterArrayInput)(nil)).Elem(), GetMonitorScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorScriptParameterMonitorScriptParameterInput)(nil)).Elem(), GetMonitorScriptParameterMonitorScriptParameterArgs{})
@@ -8497,6 +9267,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemAvailabilityConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs{})
@@ -8513,6 +9285,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationVerifyTextInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationVerifyTextArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemScriptParameterInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemScriptParameterArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs{})
@@ -8549,6 +9323,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVantagePointsPublicVantagePointCollectionItemArrayInput)(nil)).Elem(), GetVantagePointsPublicVantagePointCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVantagePointsPublicVantagePointCollectionItemGeoInput)(nil)).Elem(), GetVantagePointsPublicVantagePointCollectionItemGeoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVantagePointsPublicVantagePointCollectionItemGeoArrayInput)(nil)).Elem(), GetVantagePointsPublicVantagePointCollectionItemGeoArray{})
+	pulumi.RegisterOutputType(ConfigAvailabilityConfigurationOutput{})
+	pulumi.RegisterOutputType(ConfigAvailabilityConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationDnsConfigurationOutput{})
@@ -8565,6 +9341,8 @@ func init() {
 	pulumi.RegisterOutputType(ConfigConfigurationRequestQueryParamArrayOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationVerifyTextOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationVerifyTextArrayOutput{})
+	pulumi.RegisterOutputType(ConfigMaintenanceWindowScheduleOutput{})
+	pulumi.RegisterOutputType(ConfigMaintenanceWindowSchedulePtrOutput{})
 	pulumi.RegisterOutputType(ConfigScriptParameterOutput{})
 	pulumi.RegisterOutputType(ConfigScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(ConfigScriptParameterMonitorScriptParameterOutput{})
@@ -8593,6 +9371,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedVantagePointsFilterOutput{})
 	pulumi.RegisterOutputType(GetDedicatedVantagePointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorAvailabilityConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMonitorAvailabilityConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationDnsConfigurationOutput{})
@@ -8609,6 +9389,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorConfigurationRequestQueryParamArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationVerifyTextOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationVerifyTextArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorMaintenanceWindowScheduleOutput{})
+	pulumi.RegisterOutputType(GetMonitorMaintenanceWindowScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorScriptParameterOutput{})
 	pulumi.RegisterOutputType(GetMonitorScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorScriptParameterMonitorScriptParameterOutput{})
@@ -8619,6 +9401,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput{})
@@ -8635,6 +9419,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemScriptParameterOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput{})

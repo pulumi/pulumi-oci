@@ -5,16 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getModel";
-export * from "./getModels";
-export * from "./getProject";
-export * from "./getProjects";
-export * from "./model";
-export * from "./project";
+export { GetModelArgs, GetModelResult, GetModelOutputArgs } from "./getModel";
+export const getModel: typeof import("./getModel").getModel = null as any;
+export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
+utilities.lazyLoad(exports, ["getModel","getModelOutput"], () => require("./getModel"));
 
-// Import resources to register:
-import { Model } from "./model";
-import { Project } from "./project";
+export { GetModelsArgs, GetModelsResult, GetModelsOutputArgs } from "./getModels";
+export const getModels: typeof import("./getModels").getModels = null as any;
+export const getModelsOutput: typeof import("./getModels").getModelsOutput = null as any;
+utilities.lazyLoad(exports, ["getModels","getModelsOutput"], () => require("./getModels"));
+
+export { GetProjectArgs, GetProjectResult, GetProjectOutputArgs } from "./getProject";
+export const getProject: typeof import("./getProject").getProject = null as any;
+export const getProjectOutput: typeof import("./getProject").getProjectOutput = null as any;
+utilities.lazyLoad(exports, ["getProject","getProjectOutput"], () => require("./getProject"));
+
+export { GetProjectsArgs, GetProjectsResult, GetProjectsOutputArgs } from "./getProjects";
+export const getProjects: typeof import("./getProjects").getProjects = null as any;
+export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
+
+export { ModelArgs, ModelState } from "./model";
+export type Model = import("./model").Model;
+export const Model: typeof import("./model").Model = null as any;
+utilities.lazyLoad(exports, ["Model"], () => require("./model"));
+
+export { ProjectArgs, ProjectState } from "./project";
+export type Project = import("./project").Project;
+export const Project: typeof import("./project").Project = null as any;
+utilities.lazyLoad(exports, ["Project"], () => require("./project"));
+
 
 const _module = {
     version: utilities.getVersion(),

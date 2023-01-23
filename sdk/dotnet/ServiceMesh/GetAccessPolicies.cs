@@ -43,7 +43,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAccessPoliciesResult> InvokeAsync(GetAccessPoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAccessPoliciesResult>("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args ?? new GetAccessPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessPoliciesResult>("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args ?? new GetAccessPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Access Policies in Oracle Cloud Infrastructure Service Mesh service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAccessPoliciesResult> Invoke(GetAccessPoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAccessPoliciesResult>("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args ?? new GetAccessPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessPoliciesResult>("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args ?? new GetAccessPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

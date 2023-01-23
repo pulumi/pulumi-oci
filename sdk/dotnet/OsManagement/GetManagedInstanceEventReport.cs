@@ -42,7 +42,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedInstanceEventReportResult> InvokeAsync(GetManagedInstanceEventReportArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceEventReportResult>("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", args ?? new GetManagedInstanceEventReportArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceEventReportResult>("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", args ?? new GetManagedInstanceEventReportArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedInstanceEventReportResult> Invoke(GetManagedInstanceEventReportInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedInstanceEventReportResult>("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", args ?? new GetManagedInstanceEventReportInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceEventReportResult>("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", args ?? new GetManagedInstanceEventReportInvokeArgs(), options.WithDefaults());
     }
 
 

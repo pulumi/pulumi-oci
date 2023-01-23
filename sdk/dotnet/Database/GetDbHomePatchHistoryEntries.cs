@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbHomePatchHistoryEntriesResult> InvokeAsync(GetDbHomePatchHistoryEntriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbHomePatchHistoryEntriesResult>("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args ?? new GetDbHomePatchHistoryEntriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbHomePatchHistoryEntriesResult>("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args ?? new GetDbHomePatchHistoryEntriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbHomePatchHistoryEntriesResult> Invoke(GetDbHomePatchHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbHomePatchHistoryEntriesResult>("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args ?? new GetDbHomePatchHistoryEntriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbHomePatchHistoryEntriesResult>("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args ?? new GetDbHomePatchHistoryEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

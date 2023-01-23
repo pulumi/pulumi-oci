@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIngressGatewayRouteTables(args: GetIngressGatewayRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetIngressGatewayRouteTablesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -98,9 +96,28 @@ export interface GetIngressGatewayRouteTablesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Ingress Gateway Route Tables in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Returns a list of IngressGatewayRouteTable objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIngressGatewayRouteTables = oci.ServiceMesh.getIngressGatewayRouteTables({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.ingress_gateway_route_table_id,
+ *     ingressGatewayId: oci_service_mesh_ingress_gateway.test_ingress_gateway.id,
+ *     name: _var.ingress_gateway_route_table_name,
+ *     state: _var.ingress_gateway_route_table_state,
+ * });
+ * ```
+ */
 export function getIngressGatewayRouteTablesOutput(args: GetIngressGatewayRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIngressGatewayRouteTablesResult> {
-    return pulumi.output(args).apply(a => getIngressGatewayRouteTables(a, opts))
+    return pulumi.output(args).apply((a: any) => getIngressGatewayRouteTables(a, opts))
 }
 
 /**

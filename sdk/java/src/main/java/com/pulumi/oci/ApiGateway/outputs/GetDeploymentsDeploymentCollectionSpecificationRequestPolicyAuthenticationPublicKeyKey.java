@@ -26,7 +26,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      */
     private String format;
     /**
-     * @return Name of the claim.
+     * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
     private String key;
@@ -79,7 +79,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         return this.format;
     }
     /**
-     * @return Name of the claim.
+     * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
     public String key() {

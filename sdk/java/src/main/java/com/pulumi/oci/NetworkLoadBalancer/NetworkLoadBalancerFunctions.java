@@ -60,7 +60,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendHealthArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -101,7 +101,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendHealthArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -142,7 +142,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendHealthArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -183,7 +183,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendHealthArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -404,7 +404,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -443,7 +443,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -482,7 +482,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -521,7 +521,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -560,7 +560,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -600,7 +600,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -640,7 +640,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -680,7 +680,7 @@ public final class NetworkLoadBalancerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

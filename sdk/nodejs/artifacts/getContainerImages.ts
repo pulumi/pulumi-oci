@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerImages(args: GetContainerImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerImagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerImages:getContainerImages", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -133,9 +131,32 @@ export interface GetContainerImagesResult {
      */
     readonly version?: string;
 }
-
+/**
+ * This data source provides the list of Container Images in Oracle Cloud Infrastructure Artifacts service.
+ *
+ * List container images in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testContainerImages = oci.Artifacts.getContainerImages({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.container_image_compartment_id_in_subtree,
+ *     displayName: _var.container_image_display_name,
+ *     imageId: oci_core_image.test_image.id,
+ *     isVersioned: _var.container_image_is_versioned,
+ *     repositoryId: oci_artifacts_repository.test_repository.id,
+ *     repositoryName: oci_artifacts_repository.test_repository.name,
+ *     state: _var.container_image_state,
+ *     version: _var.container_image_version,
+ * });
+ * ```
+ */
 export function getContainerImagesOutput(args: GetContainerImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImagesResult> {
-    return pulumi.output(args).apply(a => getContainerImages(a, opts))
+    return pulumi.output(args).apply((a: any) => getContainerImages(a, opts))
 }
 
 /**

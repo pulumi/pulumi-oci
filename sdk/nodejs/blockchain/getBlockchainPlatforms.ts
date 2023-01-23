@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBlockchainPlatforms(args: GetBlockchainPlatformsArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockchainPlatformsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getBlockchainPlatforms:getBlockchainPlatforms", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetBlockchainPlatformsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Blockchain Platforms in Oracle Cloud Infrastructure Blockchain service.
+ *
+ * Returns a list Blockchain Platform Instances in a compartment
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBlockchainPlatforms = oci.Blockchain.getBlockchainPlatforms({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.blockchain_platform_display_name,
+ *     state: _var.blockchain_platform_state,
+ * });
+ * ```
+ */
 export function getBlockchainPlatformsOutput(args: GetBlockchainPlatformsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformsResult> {
-    return pulumi.output(args).apply(a => getBlockchainPlatforms(a, opts))
+    return pulumi.output(args).apply((a: any) => getBlockchainPlatforms(a, opts))
 }
 
 /**

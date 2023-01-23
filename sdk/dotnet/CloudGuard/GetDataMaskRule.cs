@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDataMaskRuleResult> InvokeAsync(GetDataMaskRuleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDataMaskRuleResult>("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args ?? new GetDataMaskRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataMaskRuleResult>("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args ?? new GetDataMaskRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDataMaskRuleResult> Invoke(GetDataMaskRuleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDataMaskRuleResult>("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args ?? new GetDataMaskRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataMaskRuleResult>("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args ?? new GetDataMaskRuleInvokeArgs(), options.WithDefaults());
     }
 
 

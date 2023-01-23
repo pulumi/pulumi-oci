@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterUpdateHistoryEntry(args: GetVmClusterUpdateHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterUpdateHistoryEntryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry", {
         "updateHistoryEntryId": args.updateHistoryEntryId,
         "vmClusterId": args.vmClusterId,
@@ -86,9 +83,25 @@ export interface GetVmClusterUpdateHistoryEntryResult {
     readonly updateType: string;
     readonly vmClusterId: string;
 }
-
+/**
+ * This data source provides details about a specific Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusterUpdateHistoryEntry = oci.Database.getVmClusterUpdateHistoryEntry({
+ *     updateHistoryEntryId: oci_database_update_history_entry.test_update_history_entry.id,
+ *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ * });
+ * ```
+ */
 export function getVmClusterUpdateHistoryEntryOutput(args: GetVmClusterUpdateHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterUpdateHistoryEntryResult> {
-    return pulumi.output(args).apply(a => getVmClusterUpdateHistoryEntry(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterUpdateHistoryEntry(a, opts))
 }
 
 /**

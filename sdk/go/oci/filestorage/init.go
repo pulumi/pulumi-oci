@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &FileSystem{}
 	case "oci:FileStorage/mountTarget:MountTarget":
 		r = &MountTarget{}
+	case "oci:FileStorage/replication:Replication":
+		r = &Replication{}
 	case "oci:FileStorage/snapshot:Snapshot":
 		r = &Snapshot{}
 	default:
@@ -62,6 +64,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"FileStorage/mountTarget",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FileStorage/replication",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

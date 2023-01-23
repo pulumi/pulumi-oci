@@ -7,9 +7,15 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetsPlainArgs;
@@ -29,7 +35,10 @@ import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
 import com.pulumi.oci.Jms.inputs.GetListJreUsagePlainArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryPlainArgs;
+import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationResult;
 import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsResult;
+import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultResult;
+import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetResult;
 import com.pulumi.oci.Jms.outputs.GetFleetsResult;
 import com.pulumi.oci.Jms.outputs.GetInstallationSiteResult;
@@ -201,6 +210,162 @@ public final class JmsFunctions {
         return Deployment.getInstance().invokeAsync("oci:Jms/getFleet:getFleet", TypeShape.of(GetFleetResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns fleet level advanced feature configuration
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs args) {
+        return getFleetAdvancedFeatureConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns fleet level advanced feature configuration
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfigurationPlain(GetFleetAdvancedFeatureConfigurationPlainArgs args) {
+        return getFleetAdvancedFeatureConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns fleet level advanced feature configuration
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", TypeShape.of(GetFleetAdvancedFeatureConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns fleet level advanced feature configuration
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfigurationPlain(GetFleetAdvancedFeatureConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", TypeShape.of(GetFleetAdvancedFeatureConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
      * 
      * Returns a list of blocklist entities contained by a fleet.
@@ -363,6 +528,338 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetFleetBlocklistsResult> getFleetBlocklistsPlain(GetFleetBlocklistsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getFleetBlocklists:getFleetBlocklists", TypeShape.of(GetFleetBlocklistsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve metadata of the Crypto Event Analysis result.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
+     *             .cryptoAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetCryptoAnalysisResultResult> getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs args) {
+        return getFleetCryptoAnalysisResult(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve metadata of the Crypto Event Analysis result.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
+     *             .cryptoAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetCryptoAnalysisResultResult> getFleetCryptoAnalysisResultPlain(GetFleetCryptoAnalysisResultPlainArgs args) {
+        return getFleetCryptoAnalysisResultPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve metadata of the Crypto Event Analysis result.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
+     *             .cryptoAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetCryptoAnalysisResultResult> getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", TypeShape.of(GetFleetCryptoAnalysisResultResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve metadata of the Crypto Event Analysis result.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
+     *             .cryptoAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetCryptoAnalysisResultResult> getFleetCryptoAnalysisResultPlain(GetFleetCryptoAnalysisResultPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", TypeShape.of(GetFleetCryptoAnalysisResultResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List Crypto Event Analysis results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .aggregationMode(var_.fleet_crypto_analysis_result_aggregation_mode())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .timeEnd(var_.fleet_crypto_analysis_result_time_end())
+     *             .timeStart(var_.fleet_crypto_analysis_result_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetCryptoAnalysisResultsResult> getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs args) {
+        return getFleetCryptoAnalysisResults(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List Crypto Event Analysis results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .aggregationMode(var_.fleet_crypto_analysis_result_aggregation_mode())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .timeEnd(var_.fleet_crypto_analysis_result_time_end())
+     *             .timeStart(var_.fleet_crypto_analysis_result_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetCryptoAnalysisResultsResult> getFleetCryptoAnalysisResultsPlain(GetFleetCryptoAnalysisResultsPlainArgs args) {
+        return getFleetCryptoAnalysisResultsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List Crypto Event Analysis results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .aggregationMode(var_.fleet_crypto_analysis_result_aggregation_mode())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .timeEnd(var_.fleet_crypto_analysis_result_time_end())
+     *             .timeStart(var_.fleet_crypto_analysis_result_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetCryptoAnalysisResultsResult> getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", TypeShape.of(GetFleetCryptoAnalysisResultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List Crypto Event Analysis results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .aggregationMode(var_.fleet_crypto_analysis_result_aggregation_mode())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .timeEnd(var_.fleet_crypto_analysis_result_time_end())
+     *             .timeStart(var_.fleet_crypto_analysis_result_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetCryptoAnalysisResultsResult> getFleetCryptoAnalysisResultsPlain(GetFleetCryptoAnalysisResultsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", TypeShape.of(GetFleetCryptoAnalysisResultsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
@@ -1277,7 +1774,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns details of a Java release family based on specified version.
+     * Returns metadata associated with a specific Java release family.
      * 
      * ## Example Usage
      * ```java
@@ -1316,7 +1813,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns details of a Java release family based on specified version.
+     * Returns metadata associated with a specific Java release family.
      * 
      * ## Example Usage
      * ```java
@@ -1355,7 +1852,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns details of a Java release family based on specified version.
+     * Returns metadata associated with a specific Java release family.
      * 
      * ## Example Usage
      * ```java
@@ -1394,7 +1891,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns details of a Java release family based on specified version.
+     * Returns metadata associated with a specific Java release family.
      * 
      * ## Example Usage
      * ```java

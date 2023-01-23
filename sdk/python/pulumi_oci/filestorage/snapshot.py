@@ -92,6 +92,8 @@ class _SnapshotState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  provenance_id: Optional[pulumi.Input[str]] = None,
+                 snapshot_time: Optional[pulumi.Input[str]] = None,
+                 snapshot_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
         """
@@ -99,10 +101,15 @@ class _SnapshotState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param pulumi.Input[bool] is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
         :param pulumi.Input[str] name: Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
-        :param pulumi.Input[str] provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param pulumi.Input[str] provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param pulumi.Input[str] snapshot_time: The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+               * If the snapshot is created in the original file system directory.
+               * If the snapshot is cloned from a file system.
+               * If the snapshot is replicated from a file system.
+        :param pulumi.Input[str] snapshot_type: Specifies the generation type of the snapshot.
         :param pulumi.Input[str] state: The current state of the snapshot.
         :param pulumi.Input[str] time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -120,6 +127,10 @@ class _SnapshotState:
             pulumi.set(__self__, "name", name)
         if provenance_id is not None:
             pulumi.set(__self__, "provenance_id", provenance_id)
+        if snapshot_time is not None:
+            pulumi.set(__self__, "snapshot_time", snapshot_time)
+        if snapshot_type is not None:
+            pulumi.set(__self__, "snapshot_type", snapshot_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -165,7 +176,7 @@ class _SnapshotState:
     @pulumi.getter(name="isCloneSource")
     def is_clone_source(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "is_clone_source")
 
@@ -177,7 +188,7 @@ class _SnapshotState:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
-        Additional information about the current 'lifecycleState'.
+        Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -201,13 +212,40 @@ class _SnapshotState:
     @pulumi.getter(name="provenanceId")
     def provenance_id(self) -> Optional[pulumi.Input[str]]:
         """
-        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "provenance_id")
 
     @provenance_id.setter
     def provenance_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "provenance_id", value)
+
+    @property
+    @pulumi.getter(name="snapshotTime")
+    def snapshot_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+        * If the snapshot is created in the original file system directory.
+        * If the snapshot is cloned from a file system.
+        * If the snapshot is replicated from a file system.
+        """
+        return pulumi.get(self, "snapshot_time")
+
+    @snapshot_time.setter
+    def snapshot_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "snapshot_time", value)
+
+    @property
+    @pulumi.getter(name="snapshotType")
+    def snapshot_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the generation type of the snapshot.
+        """
+        return pulumi.get(self, "snapshot_type")
+
+    @snapshot_type.setter
+    def snapshot_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "snapshot_type", value)
 
     @property
     @pulumi.getter
@@ -354,6 +392,8 @@ class Snapshot(pulumi.CustomResource):
             __props__.__dict__["is_clone_source"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["provenance_id"] = None
+            __props__.__dict__["snapshot_time"] = None
+            __props__.__dict__["snapshot_type"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
         super(Snapshot, __self__).__init__(
@@ -373,6 +413,8 @@ class Snapshot(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             provenance_id: Optional[pulumi.Input[str]] = None,
+            snapshot_time: Optional[pulumi.Input[str]] = None,
+            snapshot_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'Snapshot':
         """
@@ -385,10 +427,15 @@ class Snapshot(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param pulumi.Input[bool] is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
         :param pulumi.Input[str] name: Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
-        :param pulumi.Input[str] provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param pulumi.Input[str] provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param pulumi.Input[str] snapshot_time: The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+               * If the snapshot is created in the original file system directory.
+               * If the snapshot is cloned from a file system.
+               * If the snapshot is replicated from a file system.
+        :param pulumi.Input[str] snapshot_type: Specifies the generation type of the snapshot.
         :param pulumi.Input[str] state: The current state of the snapshot.
         :param pulumi.Input[str] time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -403,6 +450,8 @@ class Snapshot(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["name"] = name
         __props__.__dict__["provenance_id"] = provenance_id
+        __props__.__dict__["snapshot_time"] = snapshot_time
+        __props__.__dict__["snapshot_type"] = snapshot_type
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         return Snapshot(resource_name, opts=opts, __props__=__props__)
@@ -435,7 +484,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="isCloneSource")
     def is_clone_source(self) -> pulumi.Output[bool]:
         """
-        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "is_clone_source")
 
@@ -443,7 +492,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
-        Additional information about the current 'lifecycleState'.
+        Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -459,9 +508,28 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="provenanceId")
     def provenance_id(self) -> pulumi.Output[str]:
         """
-        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "provenance_id")
+
+    @property
+    @pulumi.getter(name="snapshotTime")
+    def snapshot_time(self) -> pulumi.Output[str]:
+        """
+        The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+        * If the snapshot is created in the original file system directory.
+        * If the snapshot is cloned from a file system.
+        * If the snapshot is replicated from a file system.
+        """
+        return pulumi.get(self, "snapshot_time")
+
+    @property
+    @pulumi.getter(name="snapshotType")
+    def snapshot_type(self) -> pulumi.Output[str]:
+        """
+        Specifies the generation type of the snapshot.
+        """
+        return pulumi.get(self, "snapshot_type")
 
     @property
     @pulumi.getter

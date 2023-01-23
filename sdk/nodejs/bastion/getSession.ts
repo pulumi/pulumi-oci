@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSession(args: GetSessionArgs, opts?: pulumi.InvokeOptions): Promise<GetSessionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Bastion/getSession:getSession", {
         "sessionId": args.sessionId,
     }, opts);
@@ -108,9 +106,24 @@ export interface GetSessionResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Session resource in Oracle Cloud Infrastructure Bastion service.
+ *
+ * Retrieves a session identified by the session ID. A bastion session lets authorized users connect to a target resource for a predetermined amount of time.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSession = oci.Bastion.getSession({
+ *     sessionId: oci_bastion_session.test_session.id,
+ * });
+ * ```
+ */
 export function getSessionOutput(args: GetSessionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSessionResult> {
-    return pulumi.output(args).apply(a => getSession(a, opts))
+    return pulumi.output(args).apply((a: any) => getSession(a, opts))
 }
 
 /**

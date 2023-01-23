@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  */
 export function getBuildRuns(args?: GetBuildRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetBuildRunsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getBuildRuns:getBuildRuns", {
         "buildPipelineId": args.buildPipelineId,
         "compartmentId": args.compartmentId,
@@ -115,9 +113,29 @@ export interface GetBuildRunsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Build Runs in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of build run summary.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBuildRuns = oci.DevOps.getBuildRuns({
+ *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.build_run_display_name,
+ *     id: _var.build_run_id,
+ *     projectId: oci_devops_project.test_project.id,
+ *     state: _var.build_run_state,
+ * });
+ * ```
+ */
 export function getBuildRunsOutput(args?: GetBuildRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildRunsResult> {
-    return pulumi.output(args).apply(a => getBuildRuns(a, opts))
+    return pulumi.output(args).apply((a: any) => getBuildRuns(a, opts))
 }
 
 /**

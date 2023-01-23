@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeployEnvironmentResult> InvokeAsync(GetDeployEnvironmentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeployEnvironmentResult>("oci:DevOps/getDeployEnvironment:getDeployEnvironment", args ?? new GetDeployEnvironmentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeployEnvironmentResult>("oci:DevOps/getDeployEnvironment:getDeployEnvironment", args ?? new GetDeployEnvironmentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeployEnvironmentResult> Invoke(GetDeployEnvironmentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeployEnvironmentResult>("oci:DevOps/getDeployEnvironment:getDeployEnvironment", args ?? new GetDeployEnvironmentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployEnvironmentResult>("oci:DevOps/getDeployEnvironment:getDeployEnvironment", args ?? new GetDeployEnvironmentInvokeArgs(), options.WithDefaults());
     }
 
 

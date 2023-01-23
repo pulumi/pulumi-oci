@@ -18,6 +18,9 @@ namespace Pulumi.Oci.DevOps.Inputs
         [Input("baseRef")]
         public Input<string>? BaseRef { get; set; }
 
+        /// <summary>
+        /// (Updatable) Attributes to support include/exclude files for triggering build runs.
+        /// </summary>
         [Input("fileFilter")]
         public Input<Inputs.TriggerActionFilterIncludeFileFilterArgs>? FileFilter { get; set; }
 
@@ -26,6 +29,12 @@ namespace Pulumi.Oci.DevOps.Inputs
         /// </summary>
         [Input("headRef")]
         public Input<string>? HeadRef { get; set; }
+
+        /// <summary>
+        /// (Updatable) The repository name for trigger events.
+        /// </summary>
+        [Input("repositoryName")]
+        public Input<string>? RepositoryName { get; set; }
 
         public TriggerActionFilterIncludeArgs()
         {

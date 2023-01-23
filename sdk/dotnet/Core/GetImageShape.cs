@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetImageShapeResult> InvokeAsync(GetImageShapeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetImageShapeResult>("oci:Core/getImageShape:getImageShape", args ?? new GetImageShapeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetImageShapeResult>("oci:Core/getImageShape:getImageShape", args ?? new GetImageShapeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Image Shape resource in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetImageShapeResult> Invoke(GetImageShapeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetImageShapeResult>("oci:Core/getImageShape:getImageShape", args ?? new GetImageShapeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetImageShapeResult>("oci:Core/getImageShape:getImageShape", args ?? new GetImageShapeInvokeArgs(), options.WithDefaults());
     }
 
 

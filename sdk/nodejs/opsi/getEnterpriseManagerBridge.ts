@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEnterpriseManagerBridge(args: GetEnterpriseManagerBridgeArgs, opts?: pulumi.InvokeOptions): Promise<GetEnterpriseManagerBridgeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", {
         "enterpriseManagerBridgeId": args.enterpriseManagerBridgeId,
     }, opts);
@@ -103,9 +100,24 @@ export interface GetEnterpriseManagerBridgeResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets details of an Operations Insights Enterprise Manager bridge.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEnterpriseManagerBridge = oci.Opsi.getEnterpriseManagerBridge({
+ *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
+ * });
+ * ```
+ */
 export function getEnterpriseManagerBridgeOutput(args: GetEnterpriseManagerBridgeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnterpriseManagerBridgeResult> {
-    return pulumi.output(args).apply(a => getEnterpriseManagerBridge(a, opts))
+    return pulumi.output(args).apply((a: any) => getEnterpriseManagerBridge(a, opts))
 }
 
 /**

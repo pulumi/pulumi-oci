@@ -42,7 +42,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -81,7 +81,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -120,7 +120,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -159,7 +159,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -360,7 +360,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -404,7 +404,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -448,7 +448,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -492,7 +492,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -536,7 +536,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -580,7 +580,7 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

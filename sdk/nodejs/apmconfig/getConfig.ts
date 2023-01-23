@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConfig(args: GetConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmConfig/getConfig:getConfig", {
         "apmDomainId": args.apmDomainId,
         "configId": args.configId,
@@ -117,9 +115,25 @@ export interface GetConfigResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
+ *
+ * Gets the configuration item identified by the OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConfig = oci.ApmConfig.getConfig({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     configId: oci_apm_config_config.test_config.id,
+ * });
+ * ```
+ */
 export function getConfigOutput(args: GetConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigResult> {
-    return pulumi.output(args).apply(a => getConfig(a, opts))
+    return pulumi.output(args).apply((a: any) => getConfig(a, opts))
 }
 
 /**

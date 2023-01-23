@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *             .targetSubnetId(oci_core_subnet.test_subnet().id())
  *             .clientCidrBlockAllowLists(var_.bastion_client_cidr_block_allow_list())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .dnsProxyStatus(var_.bastion_dns_proxy_status())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .maxSessionTtlInSeconds(var_.bastion_max_session_ttl_in_seconds())
  *             .phoneBookEntry(var_.bastion_phone_book_entry())
@@ -126,6 +127,20 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     * 
+     */
+    @Export(name="dnsProxyStatus", type=String.class, parameters={})
+    private Output<String> dnsProxyStatus;
+
+    /**
+     * @return Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     * 
+     */
+    public Output<String> dnsProxyStatus() {
+        return this.dnsProxyStatus;
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`

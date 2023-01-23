@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaintenanceRun(args: GetMaintenanceRunArgs, opts?: pulumi.InvokeOptions): Promise<GetMaintenanceRunResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getMaintenanceRun:getMaintenanceRun", {
         "maintenanceRunId": args.maintenanceRunId,
     }, opts);
@@ -163,9 +161,24 @@ export interface GetMaintenanceRunResult {
      */
     readonly timeStarted: string;
 }
-
+/**
+ * This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified maintenance run.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaintenanceRun = oci.Database.getMaintenanceRun({
+ *     maintenanceRunId: oci_database_maintenance_run.test_maintenance_run.id,
+ * });
+ * ```
+ */
 export function getMaintenanceRunOutput(args: GetMaintenanceRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceRunResult> {
-    return pulumi.output(args).apply(a => getMaintenanceRun(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaintenanceRun(a, opts))
 }
 
 /**

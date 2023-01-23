@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInfrastructureTargetVersionResult> InvokeAsync(GetInfrastructureTargetVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInfrastructureTargetVersionResult>("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args ?? new GetInfrastructureTargetVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInfrastructureTargetVersionResult>("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args ?? new GetInfrastructureTargetVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInfrastructureTargetVersionResult> Invoke(GetInfrastructureTargetVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInfrastructureTargetVersionResult>("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args ?? new GetInfrastructureTargetVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInfrastructureTargetVersionResult>("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args ?? new GetInfrastructureTargetVersionInvokeArgs(), options.WithDefaults());
     }
 
 

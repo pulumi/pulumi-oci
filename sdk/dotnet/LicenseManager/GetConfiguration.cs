@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetConfigurationResult> InvokeAsync(GetConfigurationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConfigurationResult>("oci:LicenseManager/getConfiguration:getConfiguration", args ?? new GetConfigurationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConfigurationResult>("oci:LicenseManager/getConfiguration:getConfiguration", args ?? new GetConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure License Manager service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetConfigurationResult> Invoke(GetConfigurationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConfigurationResult>("oci:LicenseManager/getConfiguration:getConfiguration", args ?? new GetConfigurationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetConfigurationResult>("oci:LicenseManager/getConfiguration:getConfiguration", args ?? new GetConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

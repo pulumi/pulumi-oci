@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeBackups(args: GetVolumeBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeBackupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeBackups:getVolumeBackups", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -102,9 +100,28 @@ export interface GetVolumeBackupsResult {
      */
     readonly volumeId?: string;
 }
-
+/**
+ * This data source provides the list of Volume Backups in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the volume backups in the specified compartment. You can filter the results by volume.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolumeBackups = oci.Core.getVolumeBackups({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.volume_backup_display_name,
+ *     sourceVolumeBackupId: oci_core_volume_backup.test_volume_backup.id,
+ *     state: _var.volume_backup_state,
+ *     volumeId: oci_core_volume.test_volume.id,
+ * });
+ * ```
+ */
 export function getVolumeBackupsOutput(args: GetVolumeBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeBackupsResult> {
-    return pulumi.output(args).apply(a => getVolumeBackups(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolumeBackups(a, opts))
 }
 
 /**

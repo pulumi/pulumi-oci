@@ -27,7 +27,7 @@ import (
 type NetworkFirewallPolicy struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
 	ApplicationLists NetworkFirewallPolicyApplicationListArrayOutput `pulumi:"applicationLists"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -41,7 +41,7 @@ type NetworkFirewallPolicy struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
 	IpAddressLists NetworkFirewallPolicyIpAddressListArrayOutput `pulumi:"ipAddressLists"`
 	// To determine if any Network Firewall is associated with this Network Firewall Policy.
 	IsFirewallAttached pulumi.BoolOutput `pulumi:"isFirewallAttached"`
@@ -95,7 +95,7 @@ func GetNetworkFirewallPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkFirewallPolicy resources.
 type networkFirewallPolicyState struct {
-	// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
 	ApplicationLists []NetworkFirewallPolicyApplicationList `pulumi:"applicationLists"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -109,7 +109,7 @@ type networkFirewallPolicyState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
 	IpAddressLists []NetworkFirewallPolicyIpAddressList `pulumi:"ipAddressLists"`
 	// To determine if any Network Firewall is associated with this Network Firewall Policy.
 	IsFirewallAttached *bool `pulumi:"isFirewallAttached"`
@@ -132,7 +132,7 @@ type networkFirewallPolicyState struct {
 }
 
 type NetworkFirewallPolicyState struct {
-	// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
 	ApplicationLists NetworkFirewallPolicyApplicationListArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId pulumi.StringPtrInput
@@ -146,7 +146,7 @@ type NetworkFirewallPolicyState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
 	IpAddressLists NetworkFirewallPolicyIpAddressListArrayInput
 	// To determine if any Network Firewall is associated with this Network Firewall Policy.
 	IsFirewallAttached pulumi.BoolPtrInput
@@ -173,7 +173,7 @@ func (NetworkFirewallPolicyState) ElementType() reflect.Type {
 }
 
 type networkFirewallPolicyArgs struct {
-	// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
 	ApplicationLists []NetworkFirewallPolicyApplicationList `pulumi:"applicationLists"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -187,7 +187,7 @@ type networkFirewallPolicyArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
 	IpAddressLists []NetworkFirewallPolicyIpAddressList `pulumi:"ipAddressLists"`
 	// (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
 	MappedSecrets []NetworkFirewallPolicyMappedSecret `pulumi:"mappedSecrets"`
@@ -199,7 +199,7 @@ type networkFirewallPolicyArgs struct {
 
 // The set of arguments for constructing a NetworkFirewallPolicy resource.
 type NetworkFirewallPolicyArgs struct {
-	// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
 	ApplicationLists NetworkFirewallPolicyApplicationListArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId pulumi.StringInput
@@ -213,7 +213,7 @@ type NetworkFirewallPolicyArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
 	IpAddressLists NetworkFirewallPolicyIpAddressListArrayInput
 	// (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
 	MappedSecrets NetworkFirewallPolicyMappedSecretArrayInput
@@ -310,7 +310,7 @@ func (o NetworkFirewallPolicyOutput) ToNetworkFirewallPolicyOutputWithContext(ct
 	return o
 }
 
-// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
 func (o NetworkFirewallPolicyOutput) ApplicationLists() NetworkFirewallPolicyApplicationListArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicyApplicationListArrayOutput {
 		return v.ApplicationLists
@@ -351,7 +351,7 @@ func (o NetworkFirewallPolicyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
 func (o NetworkFirewallPolicyOutput) IpAddressLists() NetworkFirewallPolicyIpAddressListArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicyIpAddressListArrayOutput { return v.IpAddressLists }).(NetworkFirewallPolicyIpAddressListArrayOutput)
 }

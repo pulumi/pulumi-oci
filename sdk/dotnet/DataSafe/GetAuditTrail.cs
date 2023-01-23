@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditTrailResult> InvokeAsync(GetAuditTrailArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditTrailResult>("oci:DataSafe/getAuditTrail:getAuditTrail", args ?? new GetAuditTrailArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditTrailResult>("oci:DataSafe/getAuditTrail:getAuditTrail", args ?? new GetAuditTrailArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditTrailResult> Invoke(GetAuditTrailInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditTrailResult>("oci:DataSafe/getAuditTrail:getAuditTrail", args ?? new GetAuditTrailInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditTrailResult>("oci:DataSafe/getAuditTrail:getAuditTrail", args ?? new GetAuditTrailInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -166,6 +166,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        /// </summary>
+        public readonly string TimeLastCollected;
+        /// <summary>
         /// The date and time the audit trail was updated, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
@@ -214,6 +218,8 @@ namespace Pulumi.Oci.DataSafe
 
             string timeCreated,
 
+            string timeLastCollected,
+
             string timeUpdated,
 
             string trailLocation,
@@ -237,6 +243,7 @@ namespace Pulumi.Oci.DataSafe
             SystemTags = systemTags;
             TargetId = targetId;
             TimeCreated = timeCreated;
+            TimeLastCollected = timeLastCollected;
             TimeUpdated = timeUpdated;
             TrailLocation = trailLocation;
             WorkRequestId = workRequestId;

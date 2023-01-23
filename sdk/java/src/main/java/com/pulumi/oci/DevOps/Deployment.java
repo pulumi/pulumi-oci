@@ -12,13 +12,16 @@ import com.pulumi.oci.DevOps.inputs.DeploymentState;
 import com.pulumi.oci.DevOps.outputs.DeploymentDeployArtifactOverrideArguments;
 import com.pulumi.oci.DevOps.outputs.DeploymentDeployPipelineArtifact;
 import com.pulumi.oci.DevOps.outputs.DeploymentDeployPipelineEnvironment;
+import com.pulumi.oci.DevOps.outputs.DeploymentDeployStageOverrideArguments;
 import com.pulumi.oci.DevOps.outputs.DeploymentDeploymentArguments;
 import com.pulumi.oci.DevOps.outputs.DeploymentDeploymentExecutionProgress;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -122,18 +125,32 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.deployPipelineId;
     }
     /**
-     * Specifies the OCID of the stage to be redeployed.
+     * The OCID of the stage.
      * 
      */
     @Export(name="deployStageId", type=String.class, parameters={})
     private Output<String> deployStageId;
 
     /**
-     * @return Specifies the OCID of the stage to be redeployed.
+     * @return The OCID of the stage.
      * 
      */
     public Output<String> deployStageId() {
         return this.deployStageId;
+    }
+    /**
+     * Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     * 
+     */
+    @Export(name="deployStageOverrideArguments", type=DeploymentDeployStageOverrideArguments.class, parameters={})
+    private Output<DeploymentDeployStageOverrideArguments> deployStageOverrideArguments;
+
+    /**
+     * @return Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     * 
+     */
+    public Output<DeploymentDeployStageOverrideArguments> deployStageOverrideArguments() {
+        return this.deployStageOverrideArguments;
     }
     /**
      * Specifies list of arguments passed along with the deployment.
@@ -302,6 +319,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+     * 
+     */
+    @Export(name="triggerNewDevopsDeployment", type=Boolean.class, parameters={})
+    private Output</* @Nullable */ Boolean> triggerNewDevopsDeployment;
+
+    /**
+     * @return A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+     * 
+     */
+    public Output<Optional<Boolean>> triggerNewDevopsDeployment() {
+        return Codegen.optional(this.triggerNewDevopsDeployment);
     }
 
     /**

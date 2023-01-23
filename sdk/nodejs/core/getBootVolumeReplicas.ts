@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getBootVolumeReplicas(args?: GetBootVolumeReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeReplicasResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -100,9 +98,28 @@ export interface GetBootVolumeReplicasResult {
     readonly state?: string;
     readonly volumeGroupReplicaId?: string;
 }
-
+/**
+ * This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the boot volume replicas in the specified compartment and availability domain.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBootVolumeReplicas = oci.Core.getBootVolumeReplicas({
+ *     availabilityDomain: _var.boot_volume_replica_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.boot_volume_replica_display_name,
+ *     state: _var.boot_volume_replica_state,
+ *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ * });
+ * ```
+ */
 export function getBootVolumeReplicasOutput(args?: GetBootVolumeReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeReplicasResult> {
-    return pulumi.output(args).apply(a => getBootVolumeReplicas(a, opts))
+    return pulumi.output(args).apply((a: any) => getBootVolumeReplicas(a, opts))
 }
 
 /**

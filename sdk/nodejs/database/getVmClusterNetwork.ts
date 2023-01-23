@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterNetwork(args: GetVmClusterNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterNetworkResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterNetwork:getVmClusterNetwork", {
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "vmClusterNetworkId": args.vmClusterNetworkId,
@@ -53,6 +51,7 @@ export interface GetVmClusterNetworkArgs {
  * A collection of values returned by getVmClusterNetwork.
  */
 export interface GetVmClusterNetworkResult {
+    readonly action: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -94,7 +93,7 @@ export interface GetVmClusterNetworkResult {
      */
     readonly scans: outputs.Database.GetVmClusterNetworkScan[];
     /**
-     * The current state of the VM cluster network.
+     * The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      */
     readonly state: string;
     /**
@@ -112,9 +111,26 @@ export interface GetVmClusterNetworkResult {
      */
     readonly vmNetworks: outputs.Database.GetVmClusterNetworkVmNetwork[];
 }
-
+/**
+ * This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+ * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusterNetwork = oci.Database.getVmClusterNetwork({
+ *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
+ * });
+ * ```
+ */
 export function getVmClusterNetworkOutput(args: GetVmClusterNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworkResult> {
-    return pulumi.output(args).apply(a => getVmClusterNetwork(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterNetwork(a, opts))
 }
 
 /**

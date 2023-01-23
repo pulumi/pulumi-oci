@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTrace(args: GetTraceArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getTrace:getTrace", {
         "apmDomainId": args.apmDomainId,
         "traceKey": args.traceKey,
@@ -134,9 +132,25 @@ export interface GetTraceResult {
      */
     readonly traceStatus: string;
 }
-
+/**
+ * This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
+ *
+ * Gets the trace details identified by traceId.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTrace = oci.ApmTraces.getTrace({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     traceKey: _var.trace_trace_key,
+ * });
+ * ```
+ */
 export function getTraceOutput(args: GetTraceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceResult> {
-    return pulumi.output(args).apply(a => getTrace(a, opts))
+    return pulumi.output(args).apply((a: any) => getTrace(a, opts))
 }
 
 /**

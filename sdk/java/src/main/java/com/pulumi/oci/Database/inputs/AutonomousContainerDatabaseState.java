@@ -72,14 +72,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      * 
      */
     @Import(name="availableCpus")
     private @Nullable Output<Double> availableCpus;
 
     /**
-     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      * 
      */
     public Optional<Output<Double>> availableCpus() {
@@ -543,14 +543,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
-     * @return The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Optional<Output<String>> role() {
@@ -793,7 +793,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param availableCpus Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+         * @param availableCpus Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -804,7 +804,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param availableCpus Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+         * @param availableCpus Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -1480,7 +1480,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param role The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+         * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
          * 
          * @return builder
          * 
@@ -1491,7 +1491,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param role The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+         * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
          * 
          * @return builder
          * 

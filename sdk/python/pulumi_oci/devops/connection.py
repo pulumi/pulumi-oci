@@ -612,7 +612,7 @@ class Connection(pulumi.CustomResource):
             __props__ = ConnectionArgs.__new__(ConnectionArgs)
 
             __props__.__dict__["access_token"] = access_token
-            __props__.__dict__["app_password"] = app_password
+            __props__.__dict__["app_password"] = None if app_password is None else pulumi.Output.secret(app_password)
             __props__.__dict__["base_url"] = base_url
             if connection_type is None and not opts.urn:
                 raise TypeError("Missing required property 'connection_type'")
@@ -631,6 +631,8 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["appPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Connection, __self__).__init__(
             'oci:DevOps/connection:Connection',
             resource_name,

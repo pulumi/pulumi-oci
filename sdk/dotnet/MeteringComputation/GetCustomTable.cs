@@ -39,7 +39,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCustomTableResult> InvokeAsync(GetCustomTableArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCustomTableResult>("oci:MeteringComputation/getCustomTable:getCustomTable", args ?? new GetCustomTableArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCustomTableResult>("oci:MeteringComputation/getCustomTable:getCustomTable", args ?? new GetCustomTableArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCustomTableResult> Invoke(GetCustomTableInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCustomTableResult>("oci:MeteringComputation/getCustomTable:getCustomTable", args ?? new GetCustomTableInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCustomTableResult>("oci:MeteringComputation/getCustomTable:getCustomTable", args ?? new GetCustomTableInvokeArgs(), options.WithDefaults());
     }
 
 

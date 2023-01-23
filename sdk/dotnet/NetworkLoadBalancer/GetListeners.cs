@@ -38,7 +38,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetListenersResult> InvokeAsync(GetListenersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetListenersResult>("oci:NetworkLoadBalancer/getListeners:getListeners", args ?? new GetListenersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetListenersResult>("oci:NetworkLoadBalancer/getListeners:getListeners", args ?? new GetListenersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetListenersResult> Invoke(GetListenersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetListenersResult>("oci:NetworkLoadBalancer/getListeners:getListeners", args ?? new GetListenersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetListenersResult>("oci:NetworkLoadBalancer/getListeners:getListeners", args ?? new GetListenersInvokeArgs(), options.WithDefaults());
     }
 
 

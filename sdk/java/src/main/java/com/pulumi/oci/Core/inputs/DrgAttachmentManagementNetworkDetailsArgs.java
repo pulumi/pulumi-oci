@@ -16,14 +16,14 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
     public static final DrgAttachmentManagementNetworkDetailsArgs Empty = new DrgAttachmentManagementNetworkDetailsArgs();
 
     /**
-     * -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
     @Import(name="id", required=true)
     private Output<String> id;
 
     /**
-     * @return -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
     public Output<String> id() {
@@ -46,14 +46,14 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * The OCID of the route table the DRG attachment is using.
      * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
-     * @return (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * @return The OCID of the route table the DRG attachment is using.
      * 
      */
     public Optional<Output<String>> routeTableId() {
@@ -62,7 +62,6 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
 
     /**
      * The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-     * * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
      * 
      */
     @Import(name="type", required=true)
@@ -70,7 +69,6 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
 
     /**
      * @return The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-     * * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
      * 
      */
     public Output<String> type() {
@@ -105,7 +103,7 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param id -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
          * 
          * @return builder
          * 
@@ -116,7 +114,7 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param id -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
          * 
          * @return builder
          * 
@@ -147,7 +145,7 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param routeTableId (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+         * @param routeTableId The OCID of the route table the DRG attachment is using.
          * 
          * @return builder
          * 
@@ -158,7 +156,7 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param routeTableId (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+         * @param routeTableId The OCID of the route table the DRG attachment is using.
          * 
          * @return builder
          * 
@@ -169,7 +167,6 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
 
         /**
          * @param type The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-         * * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
          * 
          * @return builder
          * 
@@ -181,7 +178,6 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
 
         /**
          * @param type The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-         * * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
          * 
          * @return builder
          * 

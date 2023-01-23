@@ -360,14 +360,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isActiveDataGuardEnabled", type=Boolean.class, parameters={})
-    private Output<Boolean> isActiveDataGuardEnabled;
+    private Output</* @Nullable */ Boolean> isActiveDataGuardEnabled;
 
     /**
      * @return (Updatable) True if active Data Guard is enabled.
      * 
      */
-    public Output<Boolean> isActiveDataGuardEnabled() {
-        return this.isActiveDataGuardEnabled;
+    public Output<Optional<Boolean>> isActiveDataGuardEnabled() {
+        return Codegen.optional(this.isActiveDataGuardEnabled);
     }
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
@@ -720,6 +720,9 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "databaseAdminPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

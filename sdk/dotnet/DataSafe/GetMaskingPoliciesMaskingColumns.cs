@@ -53,7 +53,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMaskingPoliciesMaskingColumnsResult> InvokeAsync(GetMaskingPoliciesMaskingColumnsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMaskingPoliciesMaskingColumnsResult>("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", args ?? new GetMaskingPoliciesMaskingColumnsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingPoliciesMaskingColumnsResult>("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", args ?? new GetMaskingPoliciesMaskingColumnsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMaskingPoliciesMaskingColumnsResult> Invoke(GetMaskingPoliciesMaskingColumnsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMaskingPoliciesMaskingColumnsResult>("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", args ?? new GetMaskingPoliciesMaskingColumnsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPoliciesMaskingColumnsResult>("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", args ?? new GetMaskingPoliciesMaskingColumnsInvokeArgs(), options.WithDefaults());
     }
 
 

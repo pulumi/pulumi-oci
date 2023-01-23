@@ -15,15 +15,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseRegionalWalletManagement = pulumi.output(oci.Database.getAutonomousDatabaseRegionalWalletManagement());
+ * const testAutonomousDatabaseRegionalWalletManagement = oci.Database.getAutonomousDatabaseRegionalWalletManagement({});
  * ```
  */
 export function getAutonomousDatabaseRegionalWalletManagement(opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseRegionalWalletManagementResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", {
     }, opts);
 }

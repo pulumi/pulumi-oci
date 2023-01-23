@@ -59,6 +59,8 @@ type AuditTrail struct {
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected pulumi.StringOutput `pulumi:"timeLastCollected"`
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -131,6 +133,8 @@ type auditTrailState struct {
 	TargetId *string `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected *string `pulumi:"timeLastCollected"`
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -172,6 +176,8 @@ type AuditTrailState struct {
 	TargetId pulumi.StringPtrInput
 	// The date and time the audit trail was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
+	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	TimeLastCollected pulumi.StringPtrInput
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -388,6 +394,11 @@ func (o AuditTrailOutput) TargetId() pulumi.StringOutput {
 // The date and time the audit trail was created, in the format defined by RFC3339.
 func (o AuditTrailOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditTrail) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+func (o AuditTrailOutput) TimeLastCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuditTrail) pulumi.StringOutput { return v.TimeLastCollected }).(pulumi.StringOutput)
 }
 
 // The date and time the audit trail was updated, in the format defined by RFC3339.

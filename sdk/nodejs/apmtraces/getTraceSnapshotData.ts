@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTraceSnapshotData(args: GetTraceSnapshotDataArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceSnapshotDataResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", {
         "apmDomainId": args.apmDomainId,
         "isSummarized": args.isSummarized,
@@ -96,9 +94,28 @@ export interface GetTraceSnapshotDataResult {
      */
     readonly traceSnapshotDetails: outputs.ApmTraces.GetTraceSnapshotDataTraceSnapshotDetail[];
 }
-
+/**
+ * This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
+ *
+ * Gets the trace snapshots data identified by trace ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTraceSnapshotData = oci.ApmTraces.getTraceSnapshotData({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     traceKey: _var.trace_snapshot_data_trace_key,
+ *     isSummarized: _var.trace_snapshot_data_is_summarized,
+ *     snapshotTime: _var.trace_snapshot_data_snapshot_time,
+ *     threadId: oci_apm_traces_thread.test_thread.id,
+ * });
+ * ```
+ */
 export function getTraceSnapshotDataOutput(args: GetTraceSnapshotDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceSnapshotDataResult> {
-    return pulumi.output(args).apply(a => getTraceSnapshotData(a, opts))
+    return pulumi.output(args).apply((a: any) => getTraceSnapshotData(a, opts))
 }
 
 /**

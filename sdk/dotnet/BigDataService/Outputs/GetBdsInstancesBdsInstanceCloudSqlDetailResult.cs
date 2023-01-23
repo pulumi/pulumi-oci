@@ -30,6 +30,18 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailResult> KerberosDetails;
         /// <summary>
+        /// The total amount of memory available to the node, in gigabytes.
+        /// </summary>
+        public readonly int MemoryInGbs;
+        /// <summary>
+        /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        /// </summary>
+        public readonly int Nvmes;
+        /// <summary>
+        /// The total number of OCPUs available to the node.
+        /// </summary>
+        public readonly int Ocpus;
+        /// <summary>
         /// Shape of the node.
         /// </summary>
         public readonly string Shape;
@@ -44,12 +56,21 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailResult> kerberosDetails,
 
+            int memoryInGbs,
+
+            int nvmes,
+
+            int ocpus,
+
             string shape)
         {
             BlockVolumeSizeInGbs = blockVolumeSizeInGbs;
             IpAddress = ipAddress;
             IsKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
             KerberosDetails = kerberosDetails;
+            MemoryInGbs = memoryInGbs;
+            Nvmes = nvmes;
+            Ocpus = ocpus;
             Shape = shape;
         }
     }

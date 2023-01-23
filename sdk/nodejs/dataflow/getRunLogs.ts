@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRunLogs(args: GetRunLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetRunLogsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getRunLogs:getRunLogs", {
         "filters": args.filters,
         "runId": args.runId,
@@ -59,9 +57,24 @@ export interface GetRunLogsResult {
      */
     readonly runLogs: outputs.DataFlow.GetRunLogsRunLog[];
 }
-
+/**
+ * This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.
+ *
+ * Retrieves summaries of the run's logs.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRunLogs = oci.DataFlow.getRunLogs({
+ *     runId: oci_dataflow_run.test_run.id,
+ * });
+ * ```
+ */
 export function getRunLogsOutput(args: GetRunLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunLogsResult> {
-    return pulumi.output(args).apply(a => getRunLogs(a, opts))
+    return pulumi.output(args).apply((a: any) => getRunLogs(a, opts))
 }
 
 /**

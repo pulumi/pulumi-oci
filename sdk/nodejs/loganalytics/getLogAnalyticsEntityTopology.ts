@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsEntityTopology(args: GetLogAnalyticsEntityTopologyArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntityTopologyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", {
         "logAnalyticsEntityId": args.logAnalyticsEntityId,
         "namespace": args.namespace,
@@ -73,9 +71,26 @@ export interface GetLogAnalyticsEntityTopologyResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
+ *     logAnalyticsEntityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
+ *     namespace: _var.log_analytics_entity_topology_namespace,
+ *     state: _var.log_analytics_entity_topology_state,
+ * });
+ * ```
+ */
 export function getLogAnalyticsEntityTopologyOutput(args: GetLogAnalyticsEntityTopologyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntityTopologyResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsEntityTopology(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsEntityTopology(a, opts))
 }
 
 /**

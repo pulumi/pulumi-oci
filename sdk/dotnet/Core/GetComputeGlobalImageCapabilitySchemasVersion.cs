@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetComputeGlobalImageCapabilitySchemasVersionResult> InvokeAsync(GetComputeGlobalImageCapabilitySchemasVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetComputeGlobalImageCapabilitySchemasVersionResult>("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", args ?? new GetComputeGlobalImageCapabilitySchemasVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeGlobalImageCapabilitySchemasVersionResult>("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", args ?? new GetComputeGlobalImageCapabilitySchemasVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> Invoke(GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetComputeGlobalImageCapabilitySchemasVersionResult>("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", args ?? new GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeGlobalImageCapabilitySchemasVersionResult>("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", args ?? new GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs(), options.WithDefaults());
     }
 
 

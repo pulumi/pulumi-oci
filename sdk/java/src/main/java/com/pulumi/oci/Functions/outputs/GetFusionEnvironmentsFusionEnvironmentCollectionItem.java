@@ -5,9 +5,11 @@ package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail;
+import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRule;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -78,6 +80,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      */
     private String idcsDomainUrl;
     /**
+     * @return If it&#39;s true, then the Break Glass feature is enabled
+     * 
+     */
+    private Boolean isBreakGlassEnabled;
+    /**
      * @return BYOK key id
      * 
      */
@@ -86,12 +93,17 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      * @return BYOK key info
      * 
      */
-    private List<String> kmsKeyInfos;
+    private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
+     * 
+     */
+    private String lockboxId;
     /**
      * @return The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
@@ -237,6 +249,13 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         return this.idcsDomainUrl;
     }
     /**
+     * @return If it&#39;s true, then the Break Glass feature is enabled
+     * 
+     */
+    public Boolean isBreakGlassEnabled() {
+        return this.isBreakGlassEnabled;
+    }
+    /**
      * @return BYOK key id
      * 
      */
@@ -247,7 +266,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      * @return BYOK key info
      * 
      */
-    public List<String> kmsKeyInfos() {
+    public List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos() {
         return this.kmsKeyInfos;
     }
     /**
@@ -256,6 +275,13 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
+     * 
+     */
+    public String lockboxId() {
+        return this.lockboxId;
     }
     /**
      * @return The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
@@ -357,9 +383,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         private String fusionEnvironmentType;
         private String id;
         private String idcsDomainUrl;
+        private Boolean isBreakGlassEnabled;
         private String kmsKeyId;
-        private List<String> kmsKeyInfos;
+        private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos;
         private String lifecycleDetails;
+        private String lockboxId;
         private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies;
         private String publicUrl;
         private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes;
@@ -387,9 +415,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     	      this.fusionEnvironmentType = defaults.fusionEnvironmentType;
     	      this.id = defaults.id;
     	      this.idcsDomainUrl = defaults.idcsDomainUrl;
+    	      this.isBreakGlassEnabled = defaults.isBreakGlassEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyInfos = defaults.kmsKeyInfos;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.lockboxId = defaults.lockboxId;
     	      this.maintenancePolicies = defaults.maintenancePolicies;
     	      this.publicUrl = defaults.publicUrl;
     	      this.refreshes = defaults.refreshes;
@@ -478,21 +508,31 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isBreakGlassEnabled(Boolean isBreakGlassEnabled) {
+            this.isBreakGlassEnabled = Objects.requireNonNull(isBreakGlassEnabled);
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyInfos(List<String> kmsKeyInfos) {
+        public Builder kmsKeyInfos(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos) {
             this.kmsKeyInfos = Objects.requireNonNull(kmsKeyInfos);
             return this;
         }
-        public Builder kmsKeyInfos(String... kmsKeyInfos) {
+        public Builder kmsKeyInfos(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo... kmsKeyInfos) {
             return kmsKeyInfos(List.of(kmsKeyInfos));
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lockboxId(String lockboxId) {
+            this.lockboxId = Objects.requireNonNull(lockboxId);
             return this;
         }
         @CustomType.Setter
@@ -577,9 +617,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
             o.fusionEnvironmentType = fusionEnvironmentType;
             o.id = id;
             o.idcsDomainUrl = idcsDomainUrl;
+            o.isBreakGlassEnabled = isBreakGlassEnabled;
             o.kmsKeyId = kmsKeyId;
             o.kmsKeyInfos = kmsKeyInfos;
             o.lifecycleDetails = lifecycleDetails;
+            o.lockboxId = lockboxId;
             o.maintenancePolicies = maintenancePolicies;
             o.publicUrl = publicUrl;
             o.refreshes = refreshes;

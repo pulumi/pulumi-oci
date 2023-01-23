@@ -67,6 +67,8 @@ class SessionTargetResourceDetails(dict):
             suggest = "session_type"
         elif key == "targetResourceDisplayName":
             suggest = "target_resource_display_name"
+        elif key == "targetResourceFqdn":
+            suggest = "target_resource_fqdn"
         elif key == "targetResourceId":
             suggest = "target_resource_id"
         elif key == "targetResourceOperatingSystemUserName":
@@ -90,6 +92,7 @@ class SessionTargetResourceDetails(dict):
     def __init__(__self__, *,
                  session_type: str,
                  target_resource_display_name: Optional[str] = None,
+                 target_resource_fqdn: Optional[str] = None,
                  target_resource_id: Optional[str] = None,
                  target_resource_operating_system_user_name: Optional[str] = None,
                  target_resource_port: Optional[int] = None,
@@ -97,16 +100,17 @@ class SessionTargetResourceDetails(dict):
         """
         :param str session_type: The session type.
         :param str target_resource_display_name: The display name of the target Compute instance that the session connects to.
-        :param str target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-               * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-               * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        :param str target_resource_fqdn: The Fully Qualified Domain Name of the target resource that the session connects to.
+        :param str target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         :param str target_resource_operating_system_user_name: The name of the user on the target resource operating system that the session uses for the connection.
         :param int target_resource_port: The port number to connect to on the target resource.
-        :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
         """
         pulumi.set(__self__, "session_type", session_type)
         if target_resource_display_name is not None:
             pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+        if target_resource_fqdn is not None:
+            pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
         if target_resource_id is not None:
             pulumi.set(__self__, "target_resource_id", target_resource_id)
         if target_resource_operating_system_user_name is not None:
@@ -133,12 +137,18 @@ class SessionTargetResourceDetails(dict):
         return pulumi.get(self, "target_resource_display_name")
 
     @property
+    @pulumi.getter(name="targetResourceFqdn")
+    def target_resource_fqdn(self) -> Optional[str]:
+        """
+        The Fully Qualified Domain Name of the target resource that the session connects to.
+        """
+        return pulumi.get(self, "target_resource_fqdn")
+
+    @property
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> Optional[str]:
         """
-        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-        * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-        * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         """
         return pulumi.get(self, "target_resource_id")
 
@@ -162,7 +172,7 @@ class SessionTargetResourceDetails(dict):
     @pulumi.getter(name="targetResourcePrivateIpAddress")
     def target_resource_private_ip_address(self) -> Optional[str]:
         """
-        The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        The private IP address of the target resource that the session connects to.
         """
         return pulumi.get(self, "target_resource_private_ip_address")
 
@@ -174,6 +184,7 @@ class GetBastionsBastionResult(dict):
                  client_cidr_block_allow_lists: Sequence[str],
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
+                 dns_proxy_status: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  lifecycle_details: str,
@@ -194,6 +205,7 @@ class GetBastionsBastionResult(dict):
         :param Sequence[str] client_cidr_block_allow_lists: A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         :param str compartment_id: The unique identifier (OCID) of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The unique identifier (OCID) of the bastion, which can't be changed after creation.
         :param str lifecycle_details: A message describing the current state in more detail.
@@ -214,6 +226,7 @@ class GetBastionsBastionResult(dict):
         pulumi.set(__self__, "client_cidr_block_allow_lists", client_cidr_block_allow_lists)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -261,6 +274,14 @@ class GetBastionsBastionResult(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="dnsProxyStatus")
+    def dns_proxy_status(self) -> str:
+        """
+        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        """
+        return pulumi.get(self, "dns_proxy_status")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -439,13 +460,15 @@ class GetSessionTargetResourceDetailResult(dict):
     def __init__(__self__, *,
                  session_type: str,
                  target_resource_display_name: str,
+                 target_resource_fqdn: str,
                  target_resource_id: str,
                  target_resource_operating_system_user_name: str,
                  target_resource_port: int,
                  target_resource_private_ip_address: str):
         """
-        :param str session_type: The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+        :param str session_type: The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
         :param str target_resource_display_name: The display name of the target Compute instance that the session connects to.
+        :param str target_resource_fqdn: The Fully Qualified Domain Name of the target resource that the session connects to.
         :param str target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         :param str target_resource_operating_system_user_name: The name of the user on the target resource operating system that the session uses for the connection.
         :param int target_resource_port: The port number to connect to on the target resource.
@@ -453,6 +476,7 @@ class GetSessionTargetResourceDetailResult(dict):
         """
         pulumi.set(__self__, "session_type", session_type)
         pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+        pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
         pulumi.set(__self__, "target_resource_id", target_resource_id)
         pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
         pulumi.set(__self__, "target_resource_port", target_resource_port)
@@ -462,7 +486,7 @@ class GetSessionTargetResourceDetailResult(dict):
     @pulumi.getter(name="sessionType")
     def session_type(self) -> str:
         """
-        The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+        The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
         """
         return pulumi.get(self, "session_type")
 
@@ -473,6 +497,14 @@ class GetSessionTargetResourceDetailResult(dict):
         The display name of the target Compute instance that the session connects to.
         """
         return pulumi.get(self, "target_resource_display_name")
+
+    @property
+    @pulumi.getter(name="targetResourceFqdn")
+    def target_resource_fqdn(self) -> str:
+        """
+        The Fully Qualified Domain Name of the target resource that the session connects to.
+        """
+        return pulumi.get(self, "target_resource_fqdn")
 
     @property
     @pulumi.getter(name="targetResourceId")
@@ -729,13 +761,15 @@ class GetSessionsSessionTargetResourceDetailResult(dict):
     def __init__(__self__, *,
                  session_type: str,
                  target_resource_display_name: str,
+                 target_resource_fqdn: str,
                  target_resource_id: str,
                  target_resource_operating_system_user_name: str,
                  target_resource_port: int,
                  target_resource_private_ip_address: str):
         """
-        :param str session_type: The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+        :param str session_type: The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
         :param str target_resource_display_name: The display name of the target Compute instance that the session connects to.
+        :param str target_resource_fqdn: The Fully Qualified Domain Name of the target resource that the session connects to.
         :param str target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         :param str target_resource_operating_system_user_name: The name of the user on the target resource operating system that the session uses for the connection.
         :param int target_resource_port: The port number to connect to on the target resource.
@@ -743,6 +777,7 @@ class GetSessionsSessionTargetResourceDetailResult(dict):
         """
         pulumi.set(__self__, "session_type", session_type)
         pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+        pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
         pulumi.set(__self__, "target_resource_id", target_resource_id)
         pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
         pulumi.set(__self__, "target_resource_port", target_resource_port)
@@ -752,7 +787,7 @@ class GetSessionsSessionTargetResourceDetailResult(dict):
     @pulumi.getter(name="sessionType")
     def session_type(self) -> str:
         """
-        The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+        The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
         """
         return pulumi.get(self, "session_type")
 
@@ -763,6 +798,14 @@ class GetSessionsSessionTargetResourceDetailResult(dict):
         The display name of the target Compute instance that the session connects to.
         """
         return pulumi.get(self, "target_resource_display_name")
+
+    @property
+    @pulumi.getter(name="targetResourceFqdn")
+    def target_resource_fqdn(self) -> str:
+        """
+        The Fully Qualified Domain Name of the target resource that the session connects to.
+        """
+        return pulumi.get(self, "target_resource_fqdn")
 
     @property
     @pulumi.getter(name="targetResourceId")

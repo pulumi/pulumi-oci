@@ -51,7 +51,7 @@ type AutonomousDatabaseInstanceWalletManagement struct {
 
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId pulumi.StringOutput `pulumi:"autonomousDatabaseId"`
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntOutput `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrOutput `pulumi:"shouldRotate"`
@@ -95,7 +95,7 @@ func GetAutonomousDatabaseInstanceWalletManagement(ctx *pulumi.Context,
 type autonomousDatabaseInstanceWalletManagementState struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate *bool `pulumi:"shouldRotate"`
@@ -108,7 +108,7 @@ type autonomousDatabaseInstanceWalletManagementState struct {
 type AutonomousDatabaseInstanceWalletManagementState struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId pulumi.StringPtrInput
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrInput
@@ -125,7 +125,7 @@ func (AutonomousDatabaseInstanceWalletManagementState) ElementType() reflect.Typ
 type autonomousDatabaseInstanceWalletManagementArgs struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate *bool `pulumi:"shouldRotate"`
@@ -135,7 +135,7 @@ type autonomousDatabaseInstanceWalletManagementArgs struct {
 type AutonomousDatabaseInstanceWalletManagementArgs struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId pulumi.StringInput
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrInput
@@ -233,7 +233,7 @@ func (o AutonomousDatabaseInstanceWalletManagementOutput) AutonomousDatabaseId()
 	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.StringOutput { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 func (o AutonomousDatabaseInstanceWalletManagementOutput) GracePeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.IntOutput { return v.GracePeriod }).(pulumi.IntOutput)
 }

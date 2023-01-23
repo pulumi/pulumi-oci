@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHttpMonitor(args: GetHttpMonitorArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpMonitorResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getHttpMonitor:getHttpMonitor", {
         "monitorId": args.monitorId,
     }, opts);
@@ -119,9 +116,24 @@ export interface GetHttpMonitorResult {
      */
     readonly vantagePointNames: string[];
 }
-
+/**
+ * This data source provides details about a specific Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+ *
+ * Gets the configuration for the specified monitor.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHttpMonitor = oci.HealthChecks.getHttpMonitor({
+ *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ * });
+ * ```
+ */
 export function getHttpMonitorOutput(args: GetHttpMonitorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpMonitorResult> {
-    return pulumi.output(args).apply(a => getHttpMonitor(a, opts))
+    return pulumi.output(args).apply((a: any) => getHttpMonitor(a, opts))
 }
 
 /**

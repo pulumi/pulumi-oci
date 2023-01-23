@@ -30,11 +30,21 @@ namespace Pulumi.Oci.DataSafe.Inputs
         [Input("status", required: true)]
         public Input<string> Status { get; set; } = null!;
 
+        [Input("storePassword")]
+        private Input<string>? _storePassword;
+
         /// <summary>
         /// (Updatable) The password to read the trust store and key store files, if they are password protected.
         /// </summary>
-        [Input("storePassword")]
-        public Input<string>? StorePassword { get; set; }
+        public Input<string>? StorePassword
+        {
+            get => _storePassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _storePassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) Base64 encoded string of trust store file content.

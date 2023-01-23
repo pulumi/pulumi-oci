@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHostnames(args: GetHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetHostnamesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getHostnames:getHostnames", {
         "filters": args.filters,
         "loadBalancerId": args.loadBalancerId,
@@ -59,9 +57,24 @@ export interface GetHostnamesResult {
     readonly id: string;
     readonly loadBalancerId: string;
 }
-
+/**
+ * This data source provides the list of Hostnames in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Lists all hostname resources associated with the specified load balancer.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHostnames = oci.LoadBalancer.getHostnames({
+ *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * });
+ * ```
+ */
 export function getHostnamesOutput(args: GetHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostnamesResult> {
-    return pulumi.output(args).apply(a => getHostnames(a, opts))
+    return pulumi.output(args).apply((a: any) => getHostnames(a, opts))
 }
 
 /**

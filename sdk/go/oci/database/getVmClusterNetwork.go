@@ -60,6 +60,7 @@ type LookupVmClusterNetworkArgs struct {
 
 // A collection of values returned by getVmClusterNetwork.
 type LookupVmClusterNetworkResult struct {
+	Action string `pulumi:"action"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -80,7 +81,7 @@ type LookupVmClusterNetworkResult struct {
 	Ntps []string `pulumi:"ntps"`
 	// The SCAN details.
 	Scans []GetVmClusterNetworkScan `pulumi:"scans"`
-	// The current state of the VM cluster network.
+	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
 	State string `pulumi:"state"`
 	// The date and time when the VM cluster network was created.
 	TimeCreated              string `pulumi:"timeCreated"`
@@ -130,6 +131,10 @@ func (o LookupVmClusterNetworkResultOutput) ToLookupVmClusterNetworkResultOutput
 
 func (o LookupVmClusterNetworkResultOutput) ToLookupVmClusterNetworkResultOutputWithContext(ctx context.Context) LookupVmClusterNetworkResultOutput {
 	return o
+}
+
+func (o LookupVmClusterNetworkResultOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.Action }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -182,7 +187,7 @@ func (o LookupVmClusterNetworkResultOutput) Scans() GetVmClusterNetworkScanArray
 	return o.ApplyT(func(v LookupVmClusterNetworkResult) []GetVmClusterNetworkScan { return v.Scans }).(GetVmClusterNetworkScanArrayOutput)
 }
 
-// The current state of the VM cluster network.
+// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
 func (o LookupVmClusterNetworkResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.State }).(pulumi.StringOutput)
 }

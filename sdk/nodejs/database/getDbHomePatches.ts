@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbHomePatches(args: GetDbHomePatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbHomePatchesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbHomePatches:getDbHomePatches", {
         "dbHomeId": args.dbHomeId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetDbHomePatchesResult {
      */
     readonly patches: outputs.Database.GetDbHomePatchesPatch[];
 }
-
+/**
+ * This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists patches applicable to the requested Database Home.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbHomePatches = oci.Database.getDbHomePatches({
+ *     dbHomeId: oci_database_db_home.test_db_home.id,
+ * });
+ * ```
+ */
 export function getDbHomePatchesOutput(args: GetDbHomePatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomePatchesResult> {
-    return pulumi.output(args).apply(a => getDbHomePatches(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbHomePatches(a, opts))
 }
 
 /**

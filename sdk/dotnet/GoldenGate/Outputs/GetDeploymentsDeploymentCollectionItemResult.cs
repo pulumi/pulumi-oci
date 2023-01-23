@@ -14,7 +14,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetDeploymentsDeploymentCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly int CpuCoreCount;
         /// <summary>
-        /// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
@@ -30,7 +30,11 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string DeploymentBackupId;
         /// <summary>
-        /// The deployment type.
+        /// Information regarding the deployment diagnostic collection
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult> DeploymentDiagnosticDatas;
+        /// <summary>
+        /// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
         /// </summary>
         public readonly string DeploymentType;
         /// <summary>
@@ -50,7 +54,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Fqdn;
         /// <summary>
-        /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
@@ -90,7 +94,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string LifecycleSubState;
         /// <summary>
-        /// An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+        /// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
@@ -118,7 +122,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
@@ -143,6 +147,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ImmutableDictionary<string, object> definedTags,
 
             string deploymentBackupId,
+
+            ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult> deploymentDiagnosticDatas,
 
             string deploymentType,
 
@@ -200,6 +206,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             CpuCoreCount = cpuCoreCount;
             DefinedTags = definedTags;
             DeploymentBackupId = deploymentBackupId;
+            DeploymentDiagnosticDatas = deploymentDiagnosticDatas;
             DeploymentType = deploymentType;
             DeploymentUrl = deploymentUrl;
             Description = description;

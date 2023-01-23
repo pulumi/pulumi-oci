@@ -31,7 +31,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public Input<string>? Filter { get; set; }
 
         /// <summary>
-        /// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        /// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         /// </summary>
         [Input("granularity", required: true)]
         public Input<string> Granularity { get; set; } = null!;
@@ -61,13 +61,13 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         }
 
         /// <summary>
-        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         /// </summary>
         [Input("isAggregateByTime")]
         public Input<bool>? IsAggregateByTime { get; set; }
 
         /// <summary>
-        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         /// </summary>
         [Input("queryType")]
         public Input<string>? QueryType { get; set; }

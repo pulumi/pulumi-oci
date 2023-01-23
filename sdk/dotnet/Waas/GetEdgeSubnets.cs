@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEdgeSubnetsResult> InvokeAsync(GetEdgeSubnetsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEdgeSubnetsResult>("oci:Waas/getEdgeSubnets:getEdgeSubnets", args ?? new GetEdgeSubnetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeSubnetsResult>("oci:Waas/getEdgeSubnets:getEdgeSubnets", args ?? new GetEdgeSubnetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEdgeSubnetsResult> Invoke(GetEdgeSubnetsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEdgeSubnetsResult>("oci:Waas/getEdgeSubnets:getEdgeSubnets", args ?? new GetEdgeSubnetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeSubnetsResult>("oci:Waas/getEdgeSubnets:getEdgeSubnets", args ?? new GetEdgeSubnetsInvokeArgs(), options.WithDefaults());
     }
 
 

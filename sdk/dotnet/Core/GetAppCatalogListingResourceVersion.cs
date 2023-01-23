@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAppCatalogListingResourceVersionResult> InvokeAsync(GetAppCatalogListingResourceVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogListingResourceVersionResult>("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", args ?? new GetAppCatalogListingResourceVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogListingResourceVersionResult>("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", args ?? new GetAppCatalogListingResourceVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific App Catalog Listing Resource Version resource in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAppCatalogListingResourceVersionResult> Invoke(GetAppCatalogListingResourceVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppCatalogListingResourceVersionResult>("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", args ?? new GetAppCatalogListingResourceVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppCatalogListingResourceVersionResult>("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", args ?? new GetAppCatalogListingResourceVersionInvokeArgs(), options.WithDefaults());
     }
 
 

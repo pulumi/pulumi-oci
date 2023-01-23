@@ -59,6 +59,7 @@ import javax.annotation.Nullable;
  *             .definedTags(var_.autonomous_vm_cluster_defined_tags())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isLocalBackupEnabled(var_.autonomous_vm_cluster_is_local_backup_enabled())
+ *             .isMtlsEnabled(var_.autonomous_vm_cluster_is_mtls_enabled())
  *             .licenseModel(var_.autonomous_vm_cluster_license_model())
  *             .maintenanceWindowDetails(AutonomousVmClusterMaintenanceWindowDetailArgs.builder()
  *                 .preference(var_.autonomous_vm_cluster_maintenance_window_details_preference())
@@ -73,6 +74,8 @@ import javax.annotation.Nullable;
  *                 .weeksOfMonths(var_.autonomous_vm_cluster_maintenance_window_details_weeks_of_month())
  *                 .build())
  *             .memoryPerOracleComputeUnitInGbs(var_.autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs())
+ *             .scanListenerPortNonTls(var_.autonomous_vm_cluster_scan_listener_port_non_tls())
+ *             .scanListenerPortTls(var_.autonomous_vm_cluster_scan_listener_port_tls())
  *             .timeZone(var_.autonomous_vm_cluster_time_zone())
  *             .totalContainerDatabases(var_.autonomous_vm_cluster_total_container_databases())
  *             .build());
@@ -177,14 +180,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The number of OCPU cores to enable per VM cluster node.
+     * The number of CPU cores to enable per VM cluster node.
      * 
      */
     @Export(name="cpuCoreCountPerNode", type=Integer.class, parameters={})
     private Output<Integer> cpuCoreCountPerNode;
 
     /**
-     * @return The number of OCPU cores to enable per VM cluster node.
+     * @return The number of CPU cores to enable per VM cluster node.
      * 
      */
     public Output<Integer> cpuCoreCountPerNode() {
@@ -307,6 +310,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isLocalBackupEnabled() {
         return this.isLocalBackupEnabled;
+    }
+    /**
+     * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * 
+     */
+    @Export(name="isMtlsEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isMtlsEnabled;
+
+    /**
+     * @return Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * 
+     */
+    public Output<Boolean> isMtlsEnabled() {
+        return this.isMtlsEnabled;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -447,6 +464,34 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> reclaimableCpus() {
         return this.reclaimableCpus;
+    }
+    /**
+     * The SCAN Listener Non TLS port number. Default value is 1521.
+     * 
+     */
+    @Export(name="scanListenerPortNonTls", type=Integer.class, parameters={})
+    private Output<Integer> scanListenerPortNonTls;
+
+    /**
+     * @return The SCAN Listener Non TLS port number. Default value is 1521.
+     * 
+     */
+    public Output<Integer> scanListenerPortNonTls() {
+        return this.scanListenerPortNonTls;
+    }
+    /**
+     * The SCAN Listener TLS port number. Default value is 2484.
+     * 
+     */
+    @Export(name="scanListenerPortTls", type=Integer.class, parameters={})
+    private Output<Integer> scanListenerPortTls;
+
+    /**
+     * @return The SCAN Listener TLS port number. Default value is 2484.
+     * 
+     */
+    public Output<Integer> scanListenerPortTls() {
+        return this.scanListenerPortTls;
     }
     /**
      * The current state of the Autonomous VM cluster.

@@ -37,7 +37,7 @@ import (
 //			_, err := Monitoring.NewAlarm(ctx, "testAlarm", &Monitoring.AlarmArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				Destinations: pulumi.StringArray{
-//					pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
+//					oci_ons_notification_topic.Test_notification_topic.Id,
 //				},
 //				DisplayName:         pulumi.Any(_var.Alarm_display_name),
 //				IsEnabled:           pulumi.Any(_var.Alarm_is_enabled),

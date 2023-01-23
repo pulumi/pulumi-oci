@@ -13,6 +13,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     [OutputType]
     public sealed class GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult
     {
+        public readonly ImmutableArray<string> AllowedPostLogoutUris;
         /// <summary>
         /// The body of the stock response from the mock backend.
         /// </summary>
@@ -31,9 +32,21 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly bool IsSslVerifyDisabled;
         /// <summary>
+        /// Defines a state that should be shared on redirecting to postLogout URL.
+        /// </summary>
+        public readonly string PostLogoutState;
+        /// <summary>
         /// Defines a timeout for reading a response from the proxied server.
         /// </summary>
         public readonly double ReadTimeoutInSeconds;
+        /// <summary>
+        /// List of backends to chose from for Dynamic Routing.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendResult> RoutingBackends;
+        /// <summary>
+        /// Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSourceResult> SelectionSources;
         /// <summary>
         /// Defines a timeout for transmitting a request to the proxied server.
         /// </summary>
@@ -50,6 +63,8 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult(
+            ImmutableArray<string> allowedPostLogoutUris,
+
             string body,
 
             double connectTimeoutInSeconds,
@@ -60,7 +75,13 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             bool isSslVerifyDisabled,
 
+            string postLogoutState,
+
             double readTimeoutInSeconds,
+
+            ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendResult> routingBackends,
+
+            ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSourceResult> selectionSources,
 
             double sendTimeoutInSeconds,
 
@@ -70,12 +91,16 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             string url)
         {
+            AllowedPostLogoutUris = allowedPostLogoutUris;
             Body = body;
             ConnectTimeoutInSeconds = connectTimeoutInSeconds;
             FunctionId = functionId;
             Headers = headers;
             IsSslVerifyDisabled = isSslVerifyDisabled;
+            PostLogoutState = postLogoutState;
             ReadTimeoutInSeconds = readTimeoutInSeconds;
+            RoutingBackends = routingBackends;
+            SelectionSources = selectionSources;
             SendTimeoutInSeconds = sendTimeoutInSeconds;
             Status = status;
             Type = type;

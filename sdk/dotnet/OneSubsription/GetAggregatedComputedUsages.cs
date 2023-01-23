@@ -17,7 +17,7 @@ namespace Pulumi.Oci.OneSubsription
         /// This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
         /// </summary>
         public static Task<GetAggregatedComputedUsagesResult> InvokeAsync(GetAggregatedComputedUsagesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAggregatedComputedUsagesResult>("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args ?? new GetAggregatedComputedUsagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAggregatedComputedUsagesResult>("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args ?? new GetAggregatedComputedUsagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Aggregated Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.OneSubsription
         /// This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
         /// </summary>
         public static Output<GetAggregatedComputedUsagesResult> Invoke(GetAggregatedComputedUsagesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAggregatedComputedUsagesResult>("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args ?? new GetAggregatedComputedUsagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAggregatedComputedUsagesResult>("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args ?? new GetAggregatedComputedUsagesInvokeArgs(), options.WithDefaults());
     }
 
 

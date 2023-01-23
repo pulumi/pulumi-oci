@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetKeyVersionResult> InvokeAsync(GetKeyVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKeyVersionResult>("oci:Kms/getKeyVersion:getKeyVersion", args ?? new GetKeyVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKeyVersionResult>("oci:Kms/getKeyVersion:getKeyVersion", args ?? new GetKeyVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Key Version resource in Oracle Cloud Infrastructure Kms service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetKeyVersionResult> Invoke(GetKeyVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetKeyVersionResult>("oci:Kms/getKeyVersion:getKeyVersion", args ?? new GetKeyVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetKeyVersionResult>("oci:Kms/getKeyVersion:getKeyVersion", args ?? new GetKeyVersionInvokeArgs(), options.WithDefaults());
     }
 
 

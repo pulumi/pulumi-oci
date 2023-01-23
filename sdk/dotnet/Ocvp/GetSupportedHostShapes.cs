@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSupportedHostShapesResult> InvokeAsync(GetSupportedHostShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// {{% examples %}}
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSupportedHostShapesResult> Invoke(GetSupportedHostShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesInvokeArgs(), options.WithDefaults());
     }
 
 

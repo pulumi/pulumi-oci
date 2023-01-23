@@ -17,29 +17,27 @@ __all__ = ['VirtualDeploymentArgs', 'VirtualDeployment']
 class VirtualDeploymentArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 listeners: pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]],
-                 service_discovery: pulumi.Input['VirtualDeploymentServiceDiscoveryArgs'],
                  virtual_service_id: pulumi.Input[str],
                  access_logging: Optional[pulumi.Input['VirtualDeploymentAccessLoggingArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 listeners: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 service_discovery: Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']] = None):
         """
         The set of arguments for constructing a VirtualDeployment resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]] listeners: (Updatable) The listeners for the virtual deployment.
-        :param pulumi.Input['VirtualDeploymentServiceDiscoveryArgs'] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
         :param pulumi.Input['VirtualDeploymentAccessLoggingArgs'] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]] listeners: (Updatable) The listeners for the virtual deployment.
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+        :param pulumi.Input['VirtualDeploymentServiceDiscoveryArgs'] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "listeners", listeners)
-        pulumi.set(__self__, "service_discovery", service_discovery)
         pulumi.set(__self__, "virtual_service_id", virtual_service_id)
         if access_logging is not None:
             pulumi.set(__self__, "access_logging", access_logging)
@@ -49,8 +47,12 @@ class VirtualDeploymentArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if listeners is not None:
+            pulumi.set(__self__, "listeners", listeners)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if service_discovery is not None:
+            pulumi.set(__self__, "service_discovery", service_discovery)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -63,30 +65,6 @@ class VirtualDeploymentArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def listeners(self) -> pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]:
-        """
-        (Updatable) The listeners for the virtual deployment.
-        """
-        return pulumi.get(self, "listeners")
-
-    @listeners.setter
-    def listeners(self, value: pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]):
-        pulumi.set(self, "listeners", value)
-
-    @property
-    @pulumi.getter(name="serviceDiscovery")
-    def service_discovery(self) -> pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']:
-        """
-        (Updatable) Service Discovery configuration for virtual deployments.
-        """
-        return pulumi.get(self, "service_discovery")
-
-    @service_discovery.setter
-    def service_discovery(self, value: pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']):
-        pulumi.set(self, "service_discovery", value)
 
     @property
     @pulumi.getter(name="virtualServiceId")
@@ -150,6 +128,18 @@ class VirtualDeploymentArgs:
 
     @property
     @pulumi.getter
+    def listeners(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]]:
+        """
+        (Updatable) The listeners for the virtual deployment.
+        """
+        return pulumi.get(self, "listeners")
+
+    @listeners.setter
+    def listeners(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]]):
+        pulumi.set(self, "listeners", value)
+
+    @property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
@@ -159,6 +149,18 @@ class VirtualDeploymentArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="serviceDiscovery")
+    def service_discovery(self) -> Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']]:
+        """
+        (Updatable) Service Discovery configuration for virtual deployments.
+        """
+        return pulumi.get(self, "service_discovery")
+
+    @service_discovery.setter
+    def service_discovery(self, value: Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']]):
+        pulumi.set(self, "service_discovery", value)
 
 
 @pulumi.input_type
@@ -421,14 +423,6 @@ class VirtualDeployment(pulumi.CustomResource):
 
         test_virtual_deployment = oci.service_mesh.VirtualDeployment("testVirtualDeployment",
             compartment_id=var["compartment_id"],
-            listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=var["virtual_deployment_listeners_port"],
-                protocol=var["virtual_deployment_listeners_protocol"],
-            )],
-            service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                hostname=var["virtual_deployment_service_discovery_hostname"],
-                type=var["virtual_deployment_service_discovery_type"],
-            ),
             virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
             access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
                 is_enabled=var["virtual_deployment_access_logging_is_enabled"],
@@ -439,7 +433,17 @@ class VirtualDeployment(pulumi.CustomResource):
             description=var["virtual_deployment_description"],
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
+                port=var["virtual_deployment_listeners_port"],
+                protocol=var["virtual_deployment_listeners_protocol"],
+                idle_timeout_in_ms=var["virtual_deployment_listeners_idle_timeout_in_ms"],
+                request_timeout_in_ms=var["virtual_deployment_listeners_request_timeout_in_ms"],
+            )],
+            service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
+                type=var["virtual_deployment_service_discovery_type"],
+                hostname=var["virtual_deployment_service_discovery_hostname"],
+            ))
         ```
 
         ## Import
@@ -481,14 +485,6 @@ class VirtualDeployment(pulumi.CustomResource):
 
         test_virtual_deployment = oci.service_mesh.VirtualDeployment("testVirtualDeployment",
             compartment_id=var["compartment_id"],
-            listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=var["virtual_deployment_listeners_port"],
-                protocol=var["virtual_deployment_listeners_protocol"],
-            )],
-            service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                hostname=var["virtual_deployment_service_discovery_hostname"],
-                type=var["virtual_deployment_service_discovery_type"],
-            ),
             virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
             access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
                 is_enabled=var["virtual_deployment_access_logging_is_enabled"],
@@ -499,7 +495,17 @@ class VirtualDeployment(pulumi.CustomResource):
             description=var["virtual_deployment_description"],
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
+                port=var["virtual_deployment_listeners_port"],
+                protocol=var["virtual_deployment_listeners_protocol"],
+                idle_timeout_in_ms=var["virtual_deployment_listeners_idle_timeout_in_ms"],
+                request_timeout_in_ms=var["virtual_deployment_listeners_request_timeout_in_ms"],
+            )],
+            service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
+                type=var["virtual_deployment_service_discovery_type"],
+                hostname=var["virtual_deployment_service_discovery_hostname"],
+            ))
         ```
 
         ## Import
@@ -550,12 +556,8 @@ class VirtualDeployment(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if listeners is None and not opts.urn:
-                raise TypeError("Missing required property 'listeners'")
             __props__.__dict__["listeners"] = listeners
             __props__.__dict__["name"] = name
-            if service_discovery is None and not opts.urn:
-                raise TypeError("Missing required property 'service_discovery'")
             __props__.__dict__["service_discovery"] = service_discovery
             if virtual_service_id is None and not opts.urn:
                 raise TypeError("Missing required property 'virtual_service_id'")

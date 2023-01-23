@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getArtifactByPath(args: GetArtifactByPathArgs, opts?: pulumi.InvokeOptions): Promise<GetArtifactByPathResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", {
         "artifactPath": args.artifactPath,
         "repositoryId": args.repositoryId,
@@ -73,9 +70,26 @@ export interface GetArtifactByPathResult {
     readonly timeCreated: string;
     readonly version: string;
 }
-
+/**
+ * This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
+ *
+ * Get generic artifact content.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testArtifactByPath = oci.GenericArtifactsContent.getArtifactByPath({
+ *     artifactPath: _var.artifact_by_path_artifact_path,
+ *     repositoryId: oci_artifacts_repository.test_repository.id,
+ *     version: _var.artifact_by_path_version,
+ * });
+ * ```
+ */
 export function getArtifactByPathOutput(args: GetArtifactByPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetArtifactByPathResult> {
-    return pulumi.output(args).apply(a => getArtifactByPath(a, opts))
+    return pulumi.output(args).apply((a: any) => getArtifactByPath(a, opts))
 }
 
 /**

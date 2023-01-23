@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -11,11 +12,8 @@ import * as utilities from "../utilities";
  * Returns a list of data assets within a data catalog.
  */
 export function getDataAssets(args: GetDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDataAssetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getDataAssets:getDataAssets", {
         "catalogId": args.catalogId,
         "createdById": args.createdById,
@@ -108,9 +106,13 @@ export interface GetDataAssetsResult {
      */
     readonly typeKey?: string;
 }
-
+/**
+ * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Returns a list of data assets within a data catalog.
+ */
 export function getDataAssetsOutput(args: GetDataAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataAssetsResult> {
-    return pulumi.output(args).apply(a => getDataAssets(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataAssets(a, opts))
 }
 
 /**

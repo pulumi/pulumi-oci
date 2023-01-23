@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryFileDiff(args: GetRepositoryFileDiffArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryFileDiffResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", {
         "baseVersion": args.baseVersion,
         "filePath": args.filePath,
@@ -112,9 +110,28 @@ export interface GetRepositoryFileDiffResult {
     readonly repositoryId: string;
     readonly targetVersion: string;
 }
-
+/**
+ * This data source provides details about a specific Repository File Diff resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Gets the line-by-line difference between file on different commits.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryFileDiff = oci.DevOps.getRepositoryFileDiff({
+ *     baseVersion: _var.repository_file_diff_base_version,
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     targetVersion: _var.repository_file_diff_target_version,
+ *     filePath: _var.repository_file_diff_file_path,
+ *     isComparisonFromMergeBase: _var.repository_file_diff_is_comparison_from_merge_base,
+ * });
+ * ```
+ */
 export function getRepositoryFileDiffOutput(args: GetRepositoryFileDiffOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryFileDiffResult> {
-    return pulumi.output(args).apply(a => getRepositoryFileDiff(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryFileDiff(a, opts))
 }
 
 /**

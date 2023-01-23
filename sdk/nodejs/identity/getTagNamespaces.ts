@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTagNamespaces(args: GetTagNamespacesArgs, opts?: pulumi.InvokeOptions): Promise<GetTagNamespacesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagNamespaces:getTagNamespaces", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -79,9 +77,26 @@ export interface GetTagNamespacesResult {
      */
     readonly tagNamespaces: outputs.Identity.GetTagNamespacesTagNamespace[];
 }
-
+/**
+ * This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the tag namespaces in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTagNamespaces = oci.Identity.getTagNamespaces({
+ *     compartmentId: _var.compartment_id,
+ *     includeSubcompartments: _var.tag_namespace_include_subcompartments,
+ *     state: _var.tag_namespace_state,
+ * });
+ * ```
+ */
 export function getTagNamespacesOutput(args: GetTagNamespacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagNamespacesResult> {
-    return pulumi.output(args).apply(a => getTagNamespaces(a, opts))
+    return pulumi.output(args).apply((a: any) => getTagNamespaces(a, opts))
 }
 
 /**

@@ -24,11 +24,21 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("credentialType")]
         public Input<string>? CredentialType { get; set; }
 
+        [Input("password")]
+        private Input<string>? _password;
+
         /// <summary>
         /// (Updatable) The password that will be used to connect to the database.
         /// </summary>
-        [Input("password")]
-        public Input<string>? Password { get; set; }
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The role of the user that will be connecting to the database.

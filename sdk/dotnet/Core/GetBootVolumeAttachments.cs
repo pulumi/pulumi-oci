@@ -12,10 +12,10 @@ namespace Pulumi.Oci.Core
     public static class GetBootVolumeAttachments
     {
         public static Task<GetBootVolumeAttachmentsResult> InvokeAsync(GetBootVolumeAttachmentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeAttachmentsResult>("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args ?? new GetBootVolumeAttachmentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeAttachmentsResult>("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args ?? new GetBootVolumeAttachmentsArgs(), options.WithDefaults());
 
         public static Output<GetBootVolumeAttachmentsResult> Invoke(GetBootVolumeAttachmentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBootVolumeAttachmentsResult>("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args ?? new GetBootVolumeAttachmentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeAttachmentsResult>("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args ?? new GetBootVolumeAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

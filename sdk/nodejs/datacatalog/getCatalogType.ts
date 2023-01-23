@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogType(args: GetCatalogTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogTypeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogType:getCatalogType", {
         "catalogId": args.catalogId,
         "fields": args.fields,
@@ -112,9 +109,26 @@ export interface GetCatalogTypeResult {
      */
     readonly uri: string;
 }
-
+/**
+ * This data source provides details about a specific Catalog Type resource in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Gets a specific type by key within a data catalog.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCatalogType = oci.DataCatalog.getCatalogType({
+ *     catalogId: oci_datacatalog_catalog.test_catalog.id,
+ *     typeKey: _var.catalog_type_type_key,
+ *     fields: _var.catalog_type_fields,
+ * });
+ * ```
+ */
 export function getCatalogTypeOutput(args: GetCatalogTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogTypeResult> {
-    return pulumi.output(args).apply(a => getCatalogType(a, opts))
+    return pulumi.output(args).apply((a: any) => getCatalogType(a, opts))
 }
 
 /**

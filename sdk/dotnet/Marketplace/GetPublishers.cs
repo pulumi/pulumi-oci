@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPublishersResult> InvokeAsync(GetPublishersArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPublishersResult>("oci:Marketplace/getPublishers:getPublishers", args ?? new GetPublishersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPublishersResult>("oci:Marketplace/getPublishers:getPublishers", args ?? new GetPublishersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPublishersResult> Invoke(GetPublishersInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPublishersResult>("oci:Marketplace/getPublishers:getPublishers", args ?? new GetPublishersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublishersResult>("oci:Marketplace/getPublishers:getPublishers", args ?? new GetPublishersInvokeArgs(), options.WithDefaults());
     }
 
 

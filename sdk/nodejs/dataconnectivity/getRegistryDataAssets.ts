@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRegistryDataAssets(args: GetRegistryDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetRegistryDataAssetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataConnectivity/getRegistryDataAssets:getRegistryDataAssets", {
         "endpointIds": args.endpointIds,
         "excludeEndpointIds": args.excludeEndpointIds,
@@ -127,9 +125,32 @@ export interface GetRegistryDataAssetsResult {
      */
     readonly type?: string;
 }
-
+/**
+ * This data source provides the list of Registry Data Assets in Oracle Cloud Infrastructure Data Connectivity service.
+ *
+ * Retrieves a list of all data asset summaries.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRegistryDataAssets = oci.DataConnectivity.getRegistryDataAssets({
+ *     registryId: oci_data_connectivity_registry.test_registry.id,
+ *     endpointIds: _var.registry_data_asset_endpoint_ids,
+ *     excludeEndpointIds: _var.registry_data_asset_exclude_endpoint_ids,
+ *     excludeTypes: _var.registry_data_asset_exclude_types,
+ *     favoritesQueryParam: _var.registry_data_asset_favorites_query_param,
+ *     fields: _var.registry_data_asset_fields,
+ *     folderId: oci_data_connectivity_folder.test_folder.id,
+ *     includeTypes: _var.registry_data_asset_include_types,
+ *     name: _var.registry_data_asset_name,
+ * });
+ * ```
+ */
 export function getRegistryDataAssetsOutput(args: GetRegistryDataAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegistryDataAssetsResult> {
-    return pulumi.output(args).apply(a => getRegistryDataAssets(a, opts))
+    return pulumi.output(args).apply((a: any) => getRegistryDataAssets(a, opts))
 }
 
 /**

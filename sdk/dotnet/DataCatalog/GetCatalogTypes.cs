@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCatalogTypesResult> InvokeAsync(GetCatalogTypesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCatalogTypesResult>("oci:DataCatalog/getCatalogTypes:getCatalogTypes", args ?? new GetCatalogTypesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCatalogTypesResult>("oci:DataCatalog/getCatalogTypes:getCatalogTypes", args ?? new GetCatalogTypesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCatalogTypesResult> Invoke(GetCatalogTypesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCatalogTypesResult>("oci:DataCatalog/getCatalogTypes:getCatalogTypes", args ?? new GetCatalogTypesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogTypesResult>("oci:DataCatalog/getCatalogTypes:getCatalogTypes", args ?? new GetCatalogTypesInvokeArgs(), options.WithDefaults());
     }
 
 

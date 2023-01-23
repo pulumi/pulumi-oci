@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Nosql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIndexResult> InvokeAsync(GetIndexArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIndexResult>("oci:Nosql/getIndex:getIndex", args ?? new GetIndexArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIndexResult>("oci:Nosql/getIndex:getIndex", args ?? new GetIndexArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Index resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Nosql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIndexResult> Invoke(GetIndexInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIndexResult>("oci:Nosql/getIndex:getIndex", args ?? new GetIndexInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIndexResult>("oci:Nosql/getIndex:getIndex", args ?? new GetIndexInvokeArgs(), options.WithDefaults());
     }
 
 

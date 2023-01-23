@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecrets(args: GetSecretsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Vault/getSecrets:getSecrets", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -89,9 +87,27 @@ export interface GetSecretsResult {
      */
     readonly vaultId?: string;
 }
-
+/**
+ * This data source provides the list of Secrets in Oracle Cloud Infrastructure Vault service.
+ *
+ * Lists all secrets in the specified vault and compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecrets = oci.Vault.getSecrets({
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.secret_name,
+ *     state: _var.secret_state,
+ *     vaultId: oci_kms_vault.test_vault.id,
+ * });
+ * ```
+ */
 export function getSecretsOutput(args: GetSecretsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretsResult> {
-    return pulumi.output(args).apply(a => getSecrets(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecrets(a, opts))
 }
 
 /**

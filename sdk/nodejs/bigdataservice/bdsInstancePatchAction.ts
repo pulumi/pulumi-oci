@@ -95,10 +95,12 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
                 throw new Error("Missing required property 'version'");
             }
             resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = args ? args.clusterAdminPassword : undefined;
+            resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["clusterAdminPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(BdsInstancePatchAction.__pulumiType, name, resourceInputs, opts);
     }
 }

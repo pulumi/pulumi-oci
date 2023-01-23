@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -16,16 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRegions = pulumi.output(oci.Identity.getRegions());
+ * const testRegions = oci.Identity.getRegions({});
  * ```
  */
 export function getRegions(args?: GetRegionsArgs, opts?: pulumi.InvokeOptions): Promise<GetRegionsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getRegions:getRegions", {
         "filters": args.filters,
     }, opts);
@@ -52,9 +50,22 @@ export interface GetRegionsResult {
      */
     readonly regions: outputs.Identity.GetRegionsRegion[];
 }
-
+/**
+ * This data source provides the list of Regions in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists all the regions offered by Oracle Cloud Infrastructure.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRegions = oci.Identity.getRegions({});
+ * ```
+ */
 export function getRegionsOutput(args?: GetRegionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegionsResult> {
-    return pulumi.output(args).apply(a => getRegions(a, opts))
+    return pulumi.output(args).apply((a: any) => getRegions(a, opts))
 }
 
 /**

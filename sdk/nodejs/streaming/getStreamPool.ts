@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStreamPool(args: GetStreamPoolArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamPoolResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Streaming/getStreamPool:getStreamPool", {
         "streamPoolId": args.streamPoolId,
     }, opts);
@@ -100,9 +98,24 @@ export interface GetStreamPoolResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
+ *
+ * Gets detailed information about the stream pool, such as Kafka settings.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testStreamPool = oci.Streaming.getStreamPool({
+ *     streamPoolId: oci_streaming_stream_pool.test_stream_pool.id,
+ * });
+ * ```
+ */
 export function getStreamPoolOutput(args: GetStreamPoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamPoolResult> {
-    return pulumi.output(args).apply(a => getStreamPool(a, opts))
+    return pulumi.output(args).apply((a: any) => getStreamPool(a, opts))
 }
 
 /**

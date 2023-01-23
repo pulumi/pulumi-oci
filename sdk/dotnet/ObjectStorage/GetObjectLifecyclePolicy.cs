@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetObjectLifecyclePolicyResult> InvokeAsync(GetObjectLifecyclePolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetObjectLifecyclePolicyResult>("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args ?? new GetObjectLifecyclePolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectLifecyclePolicyResult>("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args ?? new GetObjectLifecyclePolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetObjectLifecyclePolicyResult> Invoke(GetObjectLifecyclePolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetObjectLifecyclePolicyResult>("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args ?? new GetObjectLifecyclePolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetObjectLifecyclePolicyResult>("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args ?? new GetObjectLifecyclePolicyInvokeArgs(), options.WithDefaults());
     }
 
 

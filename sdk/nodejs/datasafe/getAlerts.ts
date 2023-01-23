@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlerts(args: GetAlertsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlerts:getAlerts", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -96,9 +94,29 @@ export interface GetAlertsResult {
     readonly id?: string;
     readonly scimQuery?: string;
 }
-
+/**
+ * This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of all alerts.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlerts = oci.DataSafe.getAlerts({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.alert_access_level,
+ *     compartmentIdInSubtree: _var.alert_compartment_id_in_subtree,
+ *     fields: _var.alert_field,
+ *     id: _var.alert_id,
+ *     scimQuery: _var.alert_scim_query,
+ * });
+ * ```
+ */
 export function getAlertsOutput(args: GetAlertsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertsResult> {
-    return pulumi.output(args).apply(a => getAlerts(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlerts(a, opts))
 }
 
 /**

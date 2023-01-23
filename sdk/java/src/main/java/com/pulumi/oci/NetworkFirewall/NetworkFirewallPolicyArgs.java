@@ -26,14 +26,14 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
     public static final NetworkFirewallPolicyArgs Empty = new NetworkFirewallPolicyArgs();
 
     /**
-     * (Updatable) Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+     * (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
      * 
      */
     @Import(name="applicationLists")
     private @Nullable Output<List<NetworkFirewallPolicyApplicationListArgs>> applicationLists;
 
     /**
-     * @return (Updatable) Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+     * @return (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
      * 
      */
     public Optional<Output<List<NetworkFirewallPolicyApplicationListArgs>>> applicationLists() {
@@ -131,14 +131,14 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+     * (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
      * 
      */
     @Import(name="ipAddressLists")
     private @Nullable Output<List<NetworkFirewallPolicyIpAddressListArgs>> ipAddressLists;
 
     /**
-     * @return (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+     * @return (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
      * 
      */
     public Optional<Output<List<NetworkFirewallPolicyIpAddressListArgs>>> ipAddressLists() {
@@ -225,7 +225,7 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param applicationLists (Updatable) Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+         * @param applicationLists (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param applicationLists (Updatable) Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+         * @param applicationLists (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param applicationLists (Updatable) Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+         * @param applicationLists (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipAddressLists (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+         * @param ipAddressLists (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipAddressLists (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+         * @param ipAddressLists (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipAddressLists (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+         * @param ipAddressLists (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
          * 
          * @return builder
          * 

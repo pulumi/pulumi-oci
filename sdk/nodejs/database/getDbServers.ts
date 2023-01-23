@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbServers(args: GetDbServersArgs, opts?: pulumi.InvokeOptions): Promise<GetDbServersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbServers:getDbServers", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetDbServersResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Db Servers in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbServers = oci.Database.getDbServers({
+ *     compartmentId: _var.compartment_id,
+ *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ *     displayName: _var.db_server_display_name,
+ *     state: _var.db_server_state,
+ * });
+ * ```
+ */
 export function getDbServersOutput(args: GetDbServersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbServersResult> {
-    return pulumi.output(args).apply(a => getDbServers(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbServers(a, opts))
 }
 
 /**

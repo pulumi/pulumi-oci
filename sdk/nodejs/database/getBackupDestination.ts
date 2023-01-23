@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBackupDestination(args: GetBackupDestinationArgs, opts?: pulumi.InvokeOptions): Promise<GetBackupDestinationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getBackupDestination:getBackupDestination", {
         "backupDestinationId": args.backupDestinationId,
     }, opts);
@@ -115,9 +113,24 @@ export interface GetBackupDestinationResult {
      */
     readonly vpcUsers: string[];
 }
-
+/**
+ * This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBackupDestination = oci.Database.getBackupDestination({
+ *     backupDestinationId: oci_database_backup_destination.test_backup_destination.id,
+ * });
+ * ```
+ */
 export function getBackupDestinationOutput(args: GetBackupDestinationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupDestinationResult> {
-    return pulumi.output(args).apply(a => getBackupDestination(a, opts))
+    return pulumi.output(args).apply((a: any) => getBackupDestination(a, opts))
 }
 
 /**

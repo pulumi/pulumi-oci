@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabasePdbConversionHistoryEntries(args: GetDatabasePdbConversionHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabasePdbConversionHistoryEntriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", {
         "databaseId": args.databaseId,
         "filters": args.filters,
@@ -76,9 +74,26 @@ export interface GetDatabasePdbConversionHistoryEntriesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabasePdbConversionHistoryEntries = oci.Database.getDatabasePdbConversionHistoryEntries({
+ *     databaseId: oci_database_database.test_database.id,
+ *     pdbConversionAction: _var.database_pdb_conversion_history_entry_pdb_conversion_action,
+ *     state: _var.database_pdb_conversion_history_entry_state,
+ * });
+ * ```
+ */
 export function getDatabasePdbConversionHistoryEntriesOutput(args: GetDatabasePdbConversionHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabasePdbConversionHistoryEntriesResult> {
-    return pulumi.output(args).apply(a => getDatabasePdbConversionHistoryEntries(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabasePdbConversionHistoryEntries(a, opts))
 }
 
 /**

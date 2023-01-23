@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousContainerDatabaseDataguardAssociationsResult> InvokeAsync(GetAutonomousContainerDatabaseDataguardAssociationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousContainerDatabaseDataguardAssociationsResult>("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", args ?? new GetAutonomousContainerDatabaseDataguardAssociationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousContainerDatabaseDataguardAssociationsResult>("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", args ?? new GetAutonomousContainerDatabaseDataguardAssociationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseDataguardAssociationsResult> Invoke(GetAutonomousContainerDatabaseDataguardAssociationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseDataguardAssociationsResult>("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", args ?? new GetAutonomousContainerDatabaseDataguardAssociationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseDataguardAssociationsResult>("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", args ?? new GetAutonomousContainerDatabaseDataguardAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

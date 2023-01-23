@@ -44,7 +44,7 @@ class GetSchedulesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The tenancy of the customer
+        The customer tenancy.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -68,7 +68,7 @@ class GetSchedulesResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The unique name of the schedule created by the user
+        The unique name of the schedule created by the user.
         """
         return pulumi.get(self, "name")
 

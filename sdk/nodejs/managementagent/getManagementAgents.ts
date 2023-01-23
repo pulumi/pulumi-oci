@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -35,11 +36,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgents(args: GetManagementAgentsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgents:getManagementAgents", {
         "accessLevel": args.accessLevel,
         "availabilityStatus": args.availabilityStatus,
@@ -168,9 +166,37 @@ export interface GetManagementAgentsResult {
      */
     readonly versions?: string[];
 }
-
+/**
+ * This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Returns a list of Management Agents.
+ * If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+ * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgents = oci.ManagementAgent.getManagementAgents({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.management_agent_access_level,
+ *     availabilityStatus: _var.management_agent_availability_status,
+ *     compartmentIdInSubtree: _var.management_agent_compartment_id_in_subtree,
+ *     displayName: _var.management_agent_display_name,
+ *     hostId: oci_management_agent_host.test_host.id,
+ *     installType: _var.management_agent_install_type,
+ *     isCustomerDeployed: _var.management_agent_is_customer_deployed,
+ *     platformTypes: _var.management_agent_platform_type,
+ *     pluginNames: _var.management_agent_plugin_name,
+ *     state: _var.management_agent_state,
+ *     versions: _var.management_agent_version,
+ * });
+ * ```
+ */
 export function getManagementAgentsOutput(args: GetManagementAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentsResult> {
-    return pulumi.output(args).apply(a => getManagementAgents(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgents(a, opts))
 }
 
 /**

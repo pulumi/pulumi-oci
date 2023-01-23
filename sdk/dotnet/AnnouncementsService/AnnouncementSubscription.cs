@@ -50,6 +50,8 @@ namespace Pulumi.Oci.AnnouncementsService
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         PreferredLanguage = @var.Announcement_subscription_preferred_language,
+    ///         PreferredTimeZone = @var.Announcement_subscription_preferred_time_zone,
     ///     });
     /// 
     /// });
@@ -113,6 +115,18 @@ namespace Pulumi.Oci.AnnouncementsService
         /// </summary>
         [Output("onsTopicId")]
         public Output<string> OnsTopicId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        /// </summary>
+        [Output("preferredLanguage")]
+        public Output<string> PreferredLanguage { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        /// </summary>
+        [Output("preferredTimeZone")]
+        public Output<string> PreferredTimeZone { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the announcement subscription.
@@ -238,6 +252,18 @@ namespace Pulumi.Oci.AnnouncementsService
         [Input("onsTopicId", required: true)]
         public Input<string> OnsTopicId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        /// </summary>
+        [Input("preferredLanguage")]
+        public Input<string>? PreferredLanguage { get; set; }
+
+        /// <summary>
+        /// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        /// </summary>
+        [Input("preferredTimeZone")]
+        public Input<string>? PreferredTimeZone { get; set; }
+
         public AnnouncementSubscriptionArgs()
         {
         }
@@ -305,6 +331,18 @@ namespace Pulumi.Oci.AnnouncementsService
         /// </summary>
         [Input("onsTopicId")]
         public Input<string>? OnsTopicId { get; set; }
+
+        /// <summary>
+        /// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        /// </summary>
+        [Input("preferredLanguage")]
+        public Input<string>? PreferredLanguage { get; set; }
+
+        /// <summary>
+        /// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        /// </summary>
+        [Input("preferredTimeZone")]
+        public Input<string>? PreferredTimeZone { get; set; }
 
         /// <summary>
         /// The current lifecycle state of the announcement subscription.

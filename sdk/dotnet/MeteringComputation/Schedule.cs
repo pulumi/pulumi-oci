@@ -26,6 +26,25 @@ namespace Pulumi.Oci.MeteringComputation
     ///     var testSchedule = new Oci.MeteringComputation.Schedule("testSchedule", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         ResultLocation = new Oci.MeteringComputation.Inputs.ScheduleResultLocationArgs
+    ///         {
+    ///             Bucket = @var.Schedule_result_location_bucket,
+    ///             LocationType = @var.Schedule_result_location_location_type,
+    ///             Namespace = @var.Schedule_result_location_namespace,
+    ///             Region = @var.Schedule_result_location_region,
+    ///         },
+    ///         ScheduleRecurrences = @var.Schedule_schedule_recurrences,
+    ///         TimeScheduled = @var.Schedule_time_scheduled,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Schedule_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         OutputFileFormat = @var.Schedule_output_file_format,
     ///         QueryProperties = new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesArgs
     ///         {
     ///             DateRange = new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesDateRangeArgs
@@ -51,23 +70,7 @@ namespace Pulumi.Oci.MeteringComputation
     ///             IsAggregateByTime = @var.Schedule_query_properties_is_aggregate_by_time,
     ///             QueryType = @var.Schedule_query_properties_query_type,
     ///         },
-    ///         ResultLocation = new Oci.MeteringComputation.Inputs.ScheduleResultLocationArgs
-    ///         {
-    ///             Bucket = @var.Schedule_result_location_bucket,
-    ///             LocationType = @var.Schedule_result_location_location_type,
-    ///             Namespace = @var.Schedule_result_location_namespace,
-    ///             Region = @var.Schedule_result_location_region,
-    ///         },
-    ///         ScheduleRecurrences = @var.Schedule_schedule_recurrences,
-    ///         TimeScheduled = @var.Schedule_time_scheduled,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
+    ///         SavedReportId = oci_data_safe_report.Test_report.Id,
     ///     });
     /// 
     /// });
@@ -85,7 +88,7 @@ namespace Pulumi.Oci.MeteringComputation
     public partial class Schedule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The tenancy of the customer
+        /// The customer tenancy.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -97,16 +100,28 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        /// (Updatable) The description of the schedule.
+        /// </summary>
+        [Output("description")]
+        public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The unique name of the schedule created by the user
+        /// The unique name of the user-created schedule.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Specifies supported output file format.
+        /// </summary>
+        [Output("outputFileFormat")]
+        public Output<string> OutputFileFormat { get; private set; } = null!;
 
         /// <summary>
         /// The query properties.
@@ -115,19 +130,25 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<Outputs.ScheduleQueryProperties> QueryProperties { get; private set; } = null!;
 
         /// <summary>
-        /// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        /// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         /// </summary>
         [Output("resultLocation")]
         public Output<Outputs.ScheduleResultLocation> ResultLocation { get; private set; } = null!;
 
         /// <summary>
-        /// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        /// The saved report id which can also be used to generate query.
+        /// </summary>
+        [Output("savedReportId")]
+        public Output<string> SavedReportId { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
         [Output("scheduleRecurrences")]
         public Output<string> ScheduleRecurrences { get; private set; } = null!;
 
         /// <summary>
-        /// The lifecycle state of the schedule
+        /// The schedule lifecycle state.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -139,13 +160,19 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time of when the schedule was created
+        /// The date and time the schedule was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time of the first time job execution
+        /// The date and time of the next job execution.
+        /// </summary>
+        [Output("timeNextRun")]
+        public Output<string> TimeNextRun { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time of the first time job execution.
         /// </summary>
         [Output("timeScheduled")]
         public Output<string> TimeScheduled { get; private set; } = null!;
@@ -197,7 +224,7 @@ namespace Pulumi.Oci.MeteringComputation
     public sealed class ScheduleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The tenancy of the customer
+        /// The customer tenancy.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -214,11 +241,17 @@ namespace Pulumi.Oci.MeteringComputation
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// (Updatable) The description of the schedule.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -227,31 +260,43 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// The unique name of the schedule created by the user
+        /// The unique name of the user-created schedule.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The query properties.
+        /// (Updatable) Specifies supported output file format.
         /// </summary>
-        [Input("queryProperties", required: true)]
-        public Input<Inputs.ScheduleQueryPropertiesArgs> QueryProperties { get; set; } = null!;
+        [Input("outputFileFormat")]
+        public Input<string>? OutputFileFormat { get; set; }
 
         /// <summary>
-        /// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        /// The query properties.
+        /// </summary>
+        [Input("queryProperties")]
+        public Input<Inputs.ScheduleQueryPropertiesArgs>? QueryProperties { get; set; }
+
+        /// <summary>
+        /// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         /// </summary>
         [Input("resultLocation", required: true)]
         public Input<Inputs.ScheduleResultLocationArgs> ResultLocation { get; set; } = null!;
 
         /// <summary>
-        /// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        /// The saved report id which can also be used to generate query.
+        /// </summary>
+        [Input("savedReportId")]
+        public Input<string>? SavedReportId { get; set; }
+
+        /// <summary>
+        /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
         [Input("scheduleRecurrences", required: true)]
         public Input<string> ScheduleRecurrences { get; set; } = null!;
 
         /// <summary>
-        /// The date and time of the first time job execution
+        /// The date and time of the first time job execution.
         /// </summary>
         [Input("timeScheduled", required: true)]
         public Input<string> TimeScheduled { get; set; } = null!;
@@ -265,7 +310,7 @@ namespace Pulumi.Oci.MeteringComputation
     public sealed class ScheduleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The tenancy of the customer
+        /// The customer tenancy.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -282,11 +327,17 @@ namespace Pulumi.Oci.MeteringComputation
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// (Updatable) The description of the schedule.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -295,10 +346,16 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// The unique name of the schedule created by the user
+        /// The unique name of the user-created schedule.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies supported output file format.
+        /// </summary>
+        [Input("outputFileFormat")]
+        public Input<string>? OutputFileFormat { get; set; }
 
         /// <summary>
         /// The query properties.
@@ -307,19 +364,25 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<Inputs.ScheduleQueryPropertiesGetArgs>? QueryProperties { get; set; }
 
         /// <summary>
-        /// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        /// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         /// </summary>
         [Input("resultLocation")]
         public Input<Inputs.ScheduleResultLocationGetArgs>? ResultLocation { get; set; }
 
         /// <summary>
-        /// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        /// The saved report id which can also be used to generate query.
+        /// </summary>
+        [Input("savedReportId")]
+        public Input<string>? SavedReportId { get; set; }
+
+        /// <summary>
+        /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
         [Input("scheduleRecurrences")]
         public Input<string>? ScheduleRecurrences { get; set; }
 
         /// <summary>
-        /// The lifecycle state of the schedule
+        /// The schedule lifecycle state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -337,13 +400,19 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// The date and time of when the schedule was created
+        /// The date and time the schedule was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time of the first time job execution
+        /// The date and time of the next job execution.
+        /// </summary>
+        [Input("timeNextRun")]
+        public Input<string>? TimeNextRun { get; set; }
+
+        /// <summary>
+        /// The date and time of the first time job execution.
         /// </summary>
         [Input("timeScheduled")]
         public Input<string>? TimeScheduled { get; set; }

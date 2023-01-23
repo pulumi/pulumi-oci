@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRouteTablesResult> InvokeAsync(GetRouteTablesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRouteTablesResult>("oci:Core/getRouteTables:getRouteTables", args ?? new GetRouteTablesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRouteTablesResult>("oci:Core/getRouteTables:getRouteTables", args ?? new GetRouteTablesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Route Tables in Oracle Cloud Infrastructure Core service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRouteTablesResult> Invoke(GetRouteTablesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRouteTablesResult>("oci:Core/getRouteTables:getRouteTables", args ?? new GetRouteTablesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRouteTablesResult>("oci:Core/getRouteTables:getRouteTables", args ?? new GetRouteTablesInvokeArgs(), options.WithDefaults());
     }
 
 

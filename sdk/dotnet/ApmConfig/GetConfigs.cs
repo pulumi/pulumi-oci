@@ -45,7 +45,7 @@ namespace Pulumi.Oci.ApmConfig
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetConfigsResult> InvokeAsync(GetConfigsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConfigsResult>("oci:ApmConfig/getConfigs:getConfigs", args ?? new GetConfigsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConfigsResult>("oci:ApmConfig/getConfigs:getConfigs", args ?? new GetConfigsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.ApmConfig
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetConfigsResult> Invoke(GetConfigsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConfigsResult>("oci:ApmConfig/getConfigs:getConfigs", args ?? new GetConfigsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetConfigsResult>("oci:ApmConfig/getConfigs:getConfigs", args ?? new GetConfigsInvokeArgs(), options.WithDefaults());
     }
 
 

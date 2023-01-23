@@ -129,6 +129,13 @@ func NewAutoScalingConfiguration(ctx *pulumi.Context,
 	if args.NodeType == nil {
 		return nil, errors.New("invalid value for required argument 'NodeType'")
 	}
+	if args.ClusterAdminPassword != nil {
+		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"clusterAdminPassword",
+	})
+	opts = append(opts, secrets)
 	var resource AutoScalingConfiguration
 	err := ctx.RegisterResource("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, args, &resource, opts...)
 	if err != nil {

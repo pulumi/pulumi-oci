@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBucketResult> InvokeAsync(GetBucketArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBucketResult>("oci:ObjectStorage/getBucket:getBucket", args ?? new GetBucketArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBucketResult>("oci:ObjectStorage/getBucket:getBucket", args ?? new GetBucketArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBucketResult> Invoke(GetBucketInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBucketResult>("oci:ObjectStorage/getBucket:getBucket", args ?? new GetBucketInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBucketResult>("oci:ObjectStorage/getBucket:getBucket", args ?? new GetBucketInvokeArgs(), options.WithDefaults());
     }
 
 

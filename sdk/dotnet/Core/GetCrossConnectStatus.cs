@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCrossConnectStatusResult> InvokeAsync(GetCrossConnectStatusArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCrossConnectStatusResult>("oci:Core/getCrossConnectStatus:getCrossConnectStatus", args ?? new GetCrossConnectStatusArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCrossConnectStatusResult>("oci:Core/getCrossConnectStatus:getCrossConnectStatus", args ?? new GetCrossConnectStatusArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCrossConnectStatusResult> Invoke(GetCrossConnectStatusInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCrossConnectStatusResult>("oci:Core/getCrossConnectStatus:getCrossConnectStatus", args ?? new GetCrossConnectStatusInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectStatusResult>("oci:Core/getCrossConnectStatus:getCrossConnectStatus", args ?? new GetCrossConnectStatusInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -420,9 +420,9 @@ func (o JobJobInfrastructureConfigurationDetailsPtrOutput) SubnetId() pulumi.Str
 }
 
 type JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails struct {
-	// (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) The total number of OCPUs available to the job run instance.
 	Ocpus *float64 `pulumi:"ocpus"`
 }
 
@@ -438,9 +438,9 @@ type JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsInput interfac
 }
 
 type JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs struct {
-	// (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) The total number of OCPUs available to the job run instance.
 	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
@@ -521,12 +521,12 @@ func (o JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput) ToJ
 	}).(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput)
 }
 
-// (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) The total amount of memory available to the job run instance, in gigabytes.
 func (o JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) The total number of OCPUs available to the job run instance.
 func (o JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
@@ -555,7 +555,7 @@ func (o JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput) 
 	}).(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput)
 }
 
-// (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) The total amount of memory available to the job run instance, in gigabytes.
 func (o JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails) *float64 {
 		if v == nil {
@@ -565,7 +565,7 @@ func (o JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput) 
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) The total number of OCPUs available to the job run instance.
 func (o JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails) *float64 {
 		if v == nil {
@@ -1099,9 +1099,9 @@ func (o JobRunJobInfrastructureConfigurationDetailArrayOutput) Index(i pulumi.In
 }
 
 type JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus *float64 `pulumi:"ocpus"`
 }
 
@@ -1117,9 +1117,9 @@ type JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInput interfa
 }
 
 type JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
@@ -1174,12 +1174,12 @@ func (o JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) To
 	return o
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the job run instance, in gigabytes.
 func (o JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the job run instance.
 func (o JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
@@ -2777,9 +2777,9 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails struct {
-	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus *float64 `pulumi:"ocpus"`
 }
 
@@ -2795,9 +2795,9 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs struct {
-	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
@@ -2878,14 +2878,14 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput)
 }
 
-// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails) *float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails) *float64 {
 		return v.Ocpus
@@ -2916,7 +2916,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOutput)
 }
 
-// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails) *float64 {
 		if v == nil {
@@ -2926,7 +2926,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails) *float64 {
 		if v == nil {
@@ -3293,9 +3293,9 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) SubnetId() pulumi.
 }
 
 type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails struct {
-	// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) The total number of OCPUs available to the notebook session instance.
 	Ocpus *float64 `pulumi:"ocpus"`
 }
 
@@ -3311,9 +3311,9 @@ type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetail
 }
 
 type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs struct {
-	// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) The total number of OCPUs available to the notebook session instance.
 	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
@@ -3394,14 +3394,14 @@ func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDet
 	}).(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput)
 }
 
-// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
 func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails) *float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) The total number of OCPUs available to the notebook session instance.
 func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails) *float64 {
 		return v.Ocpus
@@ -3432,7 +3432,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDet
 	}).(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput)
 }
 
-// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
 func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails) *float64 {
 		if v == nil {
@@ -3442,7 +3442,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDet
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) The total number of OCPUs available to the notebook session instance.
 func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails) *float64 {
 		if v == nil {
@@ -3649,9 +3649,9 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsPtrOutput) SubnetId() 
 }
 
 type NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails struct {
-	// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) The total number of OCPUs available to the notebook session instance.
 	Ocpus *float64 `pulumi:"ocpus"`
 }
 
@@ -3667,9 +3667,9 @@ type NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfi
 }
 
 type NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs struct {
-	// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) The total number of OCPUs available to the notebook session instance.
 	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
@@ -3750,14 +3750,14 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeCo
 	}).(NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrOutput)
 }
 
-// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
 func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails) *float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) The total number of OCPUs available to the notebook session instance.
 func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails) *float64 {
 		return v.Ocpus
@@ -3788,7 +3788,7 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeCo
 	}).(NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOutput)
 }
 
-// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
 func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails) *float64 {
 		if v == nil {
@@ -3798,7 +3798,7 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeCo
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) The total number of OCPUs available to the notebook session instance.
 func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails) *float64 {
 		if v == nil {
@@ -4717,9 +4717,9 @@ func (o GetJobJobInfrastructureConfigurationDetailArrayOutput) Index(i pulumi.In
 }
 
 type GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -4735,9 +4735,9 @@ type GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailInput interfa
 }
 
 type GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -4792,12 +4792,12 @@ func (o GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) To
 	return o
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the job run instance, in gigabytes.
 func (o GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the job run instance.
 func (o GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 { return v.Ocpus }).(pulumi.Float64Output)
 }
@@ -5206,9 +5206,9 @@ func (o GetJobRunJobInfrastructureConfigurationDetailArrayOutput) Index(i pulumi
 }
 
 type GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -5224,9 +5224,9 @@ type GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInput inte
 }
 
 type GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -5281,14 +5281,14 @@ func (o GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
 	return o
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the job run instance, in gigabytes.
 func (o GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the job run instance.
 func (o GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 { return v.Ocpus }).(pulumi.Float64Output)
 }
@@ -6164,9 +6164,9 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayOutput) Index(i
 }
 
 type GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -6182,9 +6182,9 @@ type GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInp
 }
 
 type GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -6239,14 +6239,14 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail
 	return o
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the job run instance, in gigabytes.
 func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the job run instance.
 func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -7360,9 +7360,9 @@ func (o GetJobsJobJobInfrastructureConfigurationDetailArrayOutput) Index(i pulum
 }
 
 type GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -7378,9 +7378,9 @@ type GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailInput int
 }
 
 type GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs struct {
-	// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the job run instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -7435,14 +7435,14 @@ func (o GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput
 	return o
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the job run instance, in gigabytes.
 func (o GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the job run instance.
 func (o GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 { return v.Ocpus }).(pulumi.Float64Output)
 }
@@ -8548,9 +8548,9 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail struct {
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -8566,9 +8566,9 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs struct {
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -8623,14 +8623,14 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	return o
 }
 
-// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -9999,9 +9999,9 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail struct {
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -10017,9 +10017,9 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs struct {
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -10074,14 +10074,14 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	return o
 }
 
-// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -10216,6 +10216,302 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy {
 		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy)[vs[1].(int)]
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput)
+}
+
+type GetModelVersionSetsFilter struct {
+	// A filter to return only resources that match the entire name given.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetModelVersionSetsFilterInput is an input type that accepts GetModelVersionSetsFilterArgs and GetModelVersionSetsFilterOutput values.
+// You can construct a concrete instance of `GetModelVersionSetsFilterInput` via:
+//
+//	GetModelVersionSetsFilterArgs{...}
+type GetModelVersionSetsFilterInput interface {
+	pulumi.Input
+
+	ToGetModelVersionSetsFilterOutput() GetModelVersionSetsFilterOutput
+	ToGetModelVersionSetsFilterOutputWithContext(context.Context) GetModelVersionSetsFilterOutput
+}
+
+type GetModelVersionSetsFilterArgs struct {
+	// A filter to return only resources that match the entire name given.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetModelVersionSetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelVersionSetsFilter)(nil)).Elem()
+}
+
+func (i GetModelVersionSetsFilterArgs) ToGetModelVersionSetsFilterOutput() GetModelVersionSetsFilterOutput {
+	return i.ToGetModelVersionSetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetModelVersionSetsFilterArgs) ToGetModelVersionSetsFilterOutputWithContext(ctx context.Context) GetModelVersionSetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelVersionSetsFilterOutput)
+}
+
+// GetModelVersionSetsFilterArrayInput is an input type that accepts GetModelVersionSetsFilterArray and GetModelVersionSetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetModelVersionSetsFilterArrayInput` via:
+//
+//	GetModelVersionSetsFilterArray{ GetModelVersionSetsFilterArgs{...} }
+type GetModelVersionSetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetModelVersionSetsFilterArrayOutput() GetModelVersionSetsFilterArrayOutput
+	ToGetModelVersionSetsFilterArrayOutputWithContext(context.Context) GetModelVersionSetsFilterArrayOutput
+}
+
+type GetModelVersionSetsFilterArray []GetModelVersionSetsFilterInput
+
+func (GetModelVersionSetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelVersionSetsFilter)(nil)).Elem()
+}
+
+func (i GetModelVersionSetsFilterArray) ToGetModelVersionSetsFilterArrayOutput() GetModelVersionSetsFilterArrayOutput {
+	return i.ToGetModelVersionSetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelVersionSetsFilterArray) ToGetModelVersionSetsFilterArrayOutputWithContext(ctx context.Context) GetModelVersionSetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelVersionSetsFilterArrayOutput)
+}
+
+type GetModelVersionSetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetModelVersionSetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelVersionSetsFilter)(nil)).Elem()
+}
+
+func (o GetModelVersionSetsFilterOutput) ToGetModelVersionSetsFilterOutput() GetModelVersionSetsFilterOutput {
+	return o
+}
+
+func (o GetModelVersionSetsFilterOutput) ToGetModelVersionSetsFilterOutputWithContext(ctx context.Context) GetModelVersionSetsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetModelVersionSetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetModelVersionSetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetModelVersionSetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetModelVersionSetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelVersionSetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetModelVersionSetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelVersionSetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelVersionSetsFilter)(nil)).Elem()
+}
+
+func (o GetModelVersionSetsFilterArrayOutput) ToGetModelVersionSetsFilterArrayOutput() GetModelVersionSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetModelVersionSetsFilterArrayOutput) ToGetModelVersionSetsFilterArrayOutputWithContext(ctx context.Context) GetModelVersionSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetModelVersionSetsFilterArrayOutput) Index(i pulumi.IntInput) GetModelVersionSetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelVersionSetsFilter {
+		return vs[0].([]GetModelVersionSetsFilter)[vs[1].(int)]
+	}).(GetModelVersionSetsFilterOutput)
+}
+
+type GetModelVersionSetsModelVersionSet struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A short description of the model version set.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+	Id string `pulumi:"id"`
+	// A filter to return only resources that match the entire name given.
+	Name string `pulumi:"name"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+	ProjectId string `pulumi:"projectId"`
+	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+	State string `pulumi:"state"`
+	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetModelVersionSetsModelVersionSetInput is an input type that accepts GetModelVersionSetsModelVersionSetArgs and GetModelVersionSetsModelVersionSetOutput values.
+// You can construct a concrete instance of `GetModelVersionSetsModelVersionSetInput` via:
+//
+//	GetModelVersionSetsModelVersionSetArgs{...}
+type GetModelVersionSetsModelVersionSetInput interface {
+	pulumi.Input
+
+	ToGetModelVersionSetsModelVersionSetOutput() GetModelVersionSetsModelVersionSetOutput
+	ToGetModelVersionSetsModelVersionSetOutputWithContext(context.Context) GetModelVersionSetsModelVersionSetOutput
+}
+
+type GetModelVersionSetsModelVersionSetArgs struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A short description of the model version set.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources that match the entire name given.
+	Name pulumi.StringInput `pulumi:"name"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetModelVersionSetsModelVersionSetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelVersionSetsModelVersionSet)(nil)).Elem()
+}
+
+func (i GetModelVersionSetsModelVersionSetArgs) ToGetModelVersionSetsModelVersionSetOutput() GetModelVersionSetsModelVersionSetOutput {
+	return i.ToGetModelVersionSetsModelVersionSetOutputWithContext(context.Background())
+}
+
+func (i GetModelVersionSetsModelVersionSetArgs) ToGetModelVersionSetsModelVersionSetOutputWithContext(ctx context.Context) GetModelVersionSetsModelVersionSetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelVersionSetsModelVersionSetOutput)
+}
+
+// GetModelVersionSetsModelVersionSetArrayInput is an input type that accepts GetModelVersionSetsModelVersionSetArray and GetModelVersionSetsModelVersionSetArrayOutput values.
+// You can construct a concrete instance of `GetModelVersionSetsModelVersionSetArrayInput` via:
+//
+//	GetModelVersionSetsModelVersionSetArray{ GetModelVersionSetsModelVersionSetArgs{...} }
+type GetModelVersionSetsModelVersionSetArrayInput interface {
+	pulumi.Input
+
+	ToGetModelVersionSetsModelVersionSetArrayOutput() GetModelVersionSetsModelVersionSetArrayOutput
+	ToGetModelVersionSetsModelVersionSetArrayOutputWithContext(context.Context) GetModelVersionSetsModelVersionSetArrayOutput
+}
+
+type GetModelVersionSetsModelVersionSetArray []GetModelVersionSetsModelVersionSetInput
+
+func (GetModelVersionSetsModelVersionSetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelVersionSetsModelVersionSet)(nil)).Elem()
+}
+
+func (i GetModelVersionSetsModelVersionSetArray) ToGetModelVersionSetsModelVersionSetArrayOutput() GetModelVersionSetsModelVersionSetArrayOutput {
+	return i.ToGetModelVersionSetsModelVersionSetArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelVersionSetsModelVersionSetArray) ToGetModelVersionSetsModelVersionSetArrayOutputWithContext(ctx context.Context) GetModelVersionSetsModelVersionSetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelVersionSetsModelVersionSetArrayOutput)
+}
+
+type GetModelVersionSetsModelVersionSetOutput struct{ *pulumi.OutputState }
+
+func (GetModelVersionSetsModelVersionSetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelVersionSetsModelVersionSet)(nil)).Elem()
+}
+
+func (o GetModelVersionSetsModelVersionSetOutput) ToGetModelVersionSetsModelVersionSetOutput() GetModelVersionSetsModelVersionSetOutput {
+	return o
+}
+
+func (o GetModelVersionSetsModelVersionSetOutput) ToGetModelVersionSetsModelVersionSetOutputWithContext(ctx context.Context) GetModelVersionSetsModelVersionSetOutput {
+	return o
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetModelVersionSetsModelVersionSetOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+func (o GetModelVersionSetsModelVersionSetOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetModelVersionSetsModelVersionSetOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A short description of the model version set.
+func (o GetModelVersionSetsModelVersionSetOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetModelVersionSetsModelVersionSetOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+func (o GetModelVersionSetsModelVersionSetOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetModelVersionSetsModelVersionSetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+func (o GetModelVersionSetsModelVersionSetOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+func (o GetModelVersionSetsModelVersionSetOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+func (o GetModelVersionSetsModelVersionSetOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+func (o GetModelVersionSetsModelVersionSetOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetModelVersionSetsModelVersionSetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelVersionSetsModelVersionSetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelVersionSetsModelVersionSet)(nil)).Elem()
+}
+
+func (o GetModelVersionSetsModelVersionSetArrayOutput) ToGetModelVersionSetsModelVersionSetArrayOutput() GetModelVersionSetsModelVersionSetArrayOutput {
+	return o
+}
+
+func (o GetModelVersionSetsModelVersionSetArrayOutput) ToGetModelVersionSetsModelVersionSetArrayOutputWithContext(ctx context.Context) GetModelVersionSetsModelVersionSetArrayOutput {
+	return o
+}
+
+func (o GetModelVersionSetsModelVersionSetArrayOutput) Index(i pulumi.IntInput) GetModelVersionSetsModelVersionSetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelVersionSetsModelVersionSet {
+		return vs[0].([]GetModelVersionSetsModelVersionSet)[vs[1].(int)]
+	}).(GetModelVersionSetsModelVersionSetOutput)
 }
 
 type GetModelsFilter struct {
@@ -10985,9 +11281,9 @@ func (o GetNotebookSessionNotebookSessionConfigDetailArrayOutput) Index(i pulumi
 }
 
 type GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail struct {
-	// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -11003,9 +11299,9 @@ type GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDeta
 }
 
 type GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs struct {
-	// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -11060,14 +11356,14 @@ func (o GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigD
 	return o
 }
 
-// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the notebook session instance, in gigabytes.
 func (o GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the notebook session instance.
 func (o GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -11221,9 +11517,9 @@ func (o GetNotebookSessionNotebookSessionConfigurationDetailArrayOutput) Index(i
 }
 
 type GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail struct {
-	// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -11239,9 +11535,9 @@ type GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCon
 }
 
 type GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs struct {
-	// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -11296,14 +11592,14 @@ func (o GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShape
 	return o
 }
 
-// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the notebook session instance, in gigabytes.
 func (o GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the notebook session instance.
 func (o GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -12326,9 +12622,9 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput
 }
 
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail struct {
-	// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -12344,9 +12640,9 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessio
 }
 
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs struct {
-	// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -12401,14 +12697,14 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSes
 	return o
 }
 
-// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the notebook session instance, in gigabytes.
 func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the notebook session instance.
 func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -12564,9 +12860,9 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArra
 }
 
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail struct {
-	// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -12582,9 +12878,9 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNoteboo
 }
 
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs struct {
-	// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -12639,14 +12935,14 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNote
 	return o
 }
 
-// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// The total amount of memory available to the notebook session instance, in gigabytes.
 func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// The total number of OCPUs available to the notebook session instance.
 func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -13405,6 +13701,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsFilterInput)(nil)).Elem(), GetModelVersionSetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsFilterArrayInput)(nil)).Elem(), GetModelVersionSetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsModelVersionSetInput)(nil)).Elem(), GetModelVersionSetsModelVersionSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsModelVersionSetArrayInput)(nil)).Elem(), GetModelVersionSetsModelVersionSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsFilterInput)(nil)).Elem(), GetModelsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsFilterArrayInput)(nil)).Elem(), GetModelsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelInput)(nil)).Elem(), GetModelsModelArgs{})
@@ -13601,6 +13901,10 @@ func init() {
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetModelVersionSetsFilterOutput{})
+	pulumi.RegisterOutputType(GetModelVersionSetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetModelVersionSetsModelVersionSetOutput{})
+	pulumi.RegisterOutputType(GetModelVersionSetsModelVersionSetArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsFilterOutput{})
 	pulumi.RegisterOutputType(GetModelsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelOutput{})

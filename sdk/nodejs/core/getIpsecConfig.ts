@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecConfig(args: GetIpsecConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConfigResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecConfig:getIpsecConfig", {
         "filters": args.filters,
         "ipsecId": args.ipsecId,
@@ -70,9 +68,27 @@ export interface GetIpsecConfigResult {
      */
     readonly tunnels: outputs.Core.GetIpsecConfigTunnel[];
 }
-
+/**
+ * This data source provides details about a specific Ip Sec Connection Device Config resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Deprecated. To get tunnel information, instead use:
+ *
+ * * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel)
+ * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpSecConnectionDeviceConfig = oci.Core.getIpsecConfig({
+ *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ * });
+ * ```
+ */
 export function getIpsecConfigOutput(args: GetIpsecConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConfigResult> {
-    return pulumi.output(args).apply(a => getIpsecConfig(a, opts))
+    return pulumi.output(args).apply((a: any) => getIpsecConfig(a, opts))
 }
 
 /**

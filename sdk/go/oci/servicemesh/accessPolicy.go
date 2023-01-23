@@ -32,13 +32,6 @@ import (
 //			_, err := ServiceMesh.NewAccessPolicy(ctx, "testAccessPolicy", &ServiceMesh.AccessPolicyArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
-//				DefinedTags: pulumi.AnyMap{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
-//				},
-//				Description: pulumi.Any(_var.Access_policy_description),
-//				FreeformTags: pulumi.AnyMap{
-//					"bar-key": pulumi.Any("value"),
-//				},
 //				Rules: servicemesh.AccessPolicyRuleArray{
 //					&servicemesh.AccessPolicyRuleArgs{
 //						Action: pulumi.Any(_var.Access_policy_rules_action),
@@ -61,6 +54,13 @@ import (
 //							VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
 //						},
 //					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Access_policy_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
 //				},
 //			})
 //			if err != nil {
@@ -122,6 +122,9 @@ func NewAccessPolicy(ctx *pulumi.Context,
 	}
 	if args.MeshId == nil {
 		return nil, errors.New("invalid value for required argument 'MeshId'")
+	}
+	if args.Rules == nil {
+		return nil, errors.New("invalid value for required argument 'Rules'")
 	}
 	var resource AccessPolicy
 	err := ctx.RegisterResource("oci:ServiceMesh/accessPolicy:AccessPolicy", name, args, &resource, opts...)

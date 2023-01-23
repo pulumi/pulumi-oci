@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListener(args: GetListenerArgs, opts?: pulumi.InvokeOptions): Promise<GetListenerResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getListener:getListener", {
         "listenerName": args.listenerName,
         "networkLoadBalancerId": args.networkLoadBalancerId,
@@ -75,9 +72,25 @@ export interface GetListenerResult {
      */
     readonly protocol: string;
 }
-
+/**
+ * This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
+ *
+ * Retrieves listener properties associated with a given network load balancer and listener name.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testListener = oci.NetworkLoadBalancer.getListener({
+ *     listenerName: oci_network_load_balancer_listener.test_listener.name,
+ *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
+ * });
+ * ```
+ */
 export function getListenerOutput(args: GetListenerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListenerResult> {
-    return pulumi.output(args).apply(a => getListener(a, opts))
+    return pulumi.output(args).apply((a: any) => getListener(a, opts))
 }
 
 /**

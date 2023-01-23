@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditProfile(args: GetAuditProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfileResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditProfile:getAuditProfile", {
         "auditProfileId": args.auditProfileId,
     }, opts);
@@ -124,9 +122,24 @@ export interface GetAuditProfileResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of audit profile resource and associated audit trails of the audit profile.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditProfile = oci.DataSafe.getAuditProfile({
+ *     auditProfileId: oci_data_safe_audit_profile.test_audit_profile.id,
+ * });
+ * ```
+ */
 export function getAuditProfileOutput(args: GetAuditProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileResult> {
-    return pulumi.output(args).apply(a => getAuditProfile(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditProfile(a, opts))
 }
 
 /**

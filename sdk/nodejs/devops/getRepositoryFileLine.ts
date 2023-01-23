@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryFileLine(args: GetRepositoryFileLineArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryFileLineResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", {
         "filePath": args.filePath,
         "repositoryId": args.repositoryId,
@@ -77,9 +75,27 @@ export interface GetRepositoryFileLineResult {
     readonly revision: string;
     readonly startLineNumber?: number;
 }
-
+/**
+ * This data source provides details about a specific Repository File Line resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/lines"
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryFileLine = oci.DevOps.getRepositoryFileLine({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     revision: _var.repository_file_line_revision,
+ *     filePath: _var.repository_file_line_file_path,
+ *     startLineNumber: _var.repository_file_line_start_line_number,
+ * });
+ * ```
+ */
 export function getRepositoryFileLineOutput(args: GetRepositoryFileLineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryFileLineResult> {
-    return pulumi.output(args).apply(a => getRepositoryFileLine(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryFileLine(a, opts))
 }
 
 /**

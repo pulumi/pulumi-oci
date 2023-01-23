@@ -11,6 +11,8 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// **Deprecated. This resource does not support create and update operations.**
+//
 // This resource provides the Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
 //
 // ## Example Usage
@@ -59,14 +61,21 @@ type DiscoveryJobsResult struct {
 	DataType pulumi.StringOutput `pulumi:"dataType"`
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
 	DbDefinedChildColumnKeys pulumi.StringArrayOutput `pulumi:"dbDefinedChildColumnKeys"`
-	DiscoveryJobId           pulumi.StringOutput      `pulumi:"discoveryJobId"`
+	// The OCID of the discovery job.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
+	DiscoveryJobId pulumi.StringOutput `pulumi:"discoveryJobId"`
 	// The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryType pulumi.StringOutput `pulumi:"discoveryType"`
 	// The estimated number of data values the column has in the associated database.
 	EstimatedDataValueCount pulumi.StringOutput `pulumi:"estimatedDataValueCount"`
 	// Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
 	IsResultApplied pulumi.BoolOutput `pulumi:"isResultApplied"`
 	// The unique key that identifies the discovery result.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
 	ModifiedAttributes DiscoveryJobsResultModifiedAttributeArrayOutput `pulumi:"modifiedAttributes"`
@@ -132,14 +141,21 @@ type discoveryJobsResultState struct {
 	DataType *string `pulumi:"dataType"`
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
 	DbDefinedChildColumnKeys []string `pulumi:"dbDefinedChildColumnKeys"`
-	DiscoveryJobId           *string  `pulumi:"discoveryJobId"`
+	// The OCID of the discovery job.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
+	DiscoveryJobId *string `pulumi:"discoveryJobId"`
 	// The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryType *string `pulumi:"discoveryType"`
 	// The estimated number of data values the column has in the associated database.
 	EstimatedDataValueCount *string `pulumi:"estimatedDataValueCount"`
 	// Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
 	IsResultApplied *bool `pulumi:"isResultApplied"`
 	// The unique key that identifies the discovery result.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	Key *string `pulumi:"key"`
 	// The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
 	ModifiedAttributes []DiscoveryJobsResultModifiedAttribute `pulumi:"modifiedAttributes"`
@@ -174,14 +190,21 @@ type DiscoveryJobsResultState struct {
 	DataType pulumi.StringPtrInput
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
 	DbDefinedChildColumnKeys pulumi.StringArrayInput
-	DiscoveryJobId           pulumi.StringPtrInput
+	// The OCID of the discovery job.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
+	DiscoveryJobId pulumi.StringPtrInput
 	// The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryType pulumi.StringPtrInput
 	// The estimated number of data values the column has in the associated database.
 	EstimatedDataValueCount pulumi.StringPtrInput
 	// Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
 	IsResultApplied pulumi.BoolPtrInput
 	// The unique key that identifies the discovery result.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	Key pulumi.StringPtrInput
 	// The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
 	ModifiedAttributes DiscoveryJobsResultModifiedAttributeArrayInput
@@ -210,11 +233,17 @@ func (DiscoveryJobsResultState) ElementType() reflect.Type {
 }
 
 type discoveryJobsResultArgs struct {
+	// The OCID of the discovery job.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryJobId string `pulumi:"discoveryJobId"`
 }
 
 // The set of arguments for constructing a DiscoveryJobsResult resource.
 type DiscoveryJobsResultArgs struct {
+	// The OCID of the discovery job.
+	//
+	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 	DiscoveryJobId pulumi.StringInput
 }
 
@@ -330,11 +359,16 @@ func (o DiscoveryJobsResultOutput) DbDefinedChildColumnKeys() pulumi.StringArray
 	return o.ApplyT(func(v *DiscoveryJobsResult) pulumi.StringArrayOutput { return v.DbDefinedChildColumnKeys }).(pulumi.StringArrayOutput)
 }
 
+// The OCID of the discovery job.
+//
+// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 func (o DiscoveryJobsResultOutput) DiscoveryJobId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DiscoveryJobsResult) pulumi.StringOutput { return v.DiscoveryJobId }).(pulumi.StringOutput)
 }
 
 // The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+//
+// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 func (o DiscoveryJobsResultOutput) DiscoveryType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DiscoveryJobsResult) pulumi.StringOutput { return v.DiscoveryType }).(pulumi.StringOutput)
 }
@@ -350,6 +384,8 @@ func (o DiscoveryJobsResultOutput) IsResultApplied() pulumi.BoolOutput {
 }
 
 // The unique key that identifies the discovery result.
+//
+// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
 func (o DiscoveryJobsResultOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *DiscoveryJobsResult) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }

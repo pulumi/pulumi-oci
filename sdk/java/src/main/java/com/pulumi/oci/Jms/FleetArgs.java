@@ -111,14 +111,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      * 
      */
     @Import(name="isAdvancedFeaturesEnabled")
     private @Nullable Output<Boolean> isAdvancedFeaturesEnabled;
 
     /**
-     * @return (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * @return (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      * 
      */
     public Optional<Output<Boolean>> isAdvancedFeaturesEnabled() {
@@ -298,7 +298,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
          * 
          * @return builder
          * 

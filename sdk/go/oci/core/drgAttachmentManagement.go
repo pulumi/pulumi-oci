@@ -70,7 +70,7 @@ type DrgAttachmentManagement struct {
 	DrgId pulumi.StringOutput `pulumi:"drgId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId pulumi.StringOutput `pulumi:"drgRouteTableId"`
-	// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
 	ExportDrgRouteDistributionId pulumi.StringOutput `pulumi:"exportDrgRouteDistributionId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -82,7 +82,7 @@ type DrgAttachmentManagement struct {
 	NetworkId pulumi.StringPtrOutput `pulumi:"networkId"`
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrOutput `pulumi:"removeExportDrgRouteDistributionTrigger"`
-	// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+	// The OCID of the route table the DRG attachment is using.
 	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -142,7 +142,7 @@ type drgAttachmentManagementState struct {
 	DrgId *string `pulumi:"drgId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId *string `pulumi:"drgRouteTableId"`
-	// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
 	ExportDrgRouteDistributionId *string `pulumi:"exportDrgRouteDistributionId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -154,7 +154,7 @@ type drgAttachmentManagementState struct {
 	NetworkId *string `pulumi:"networkId"`
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger *bool `pulumi:"removeExportDrgRouteDistributionTrigger"`
-	// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+	// The OCID of the route table the DRG attachment is using.
 	RouteTableId *string `pulumi:"routeTableId"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State *string `pulumi:"state"`
@@ -177,7 +177,7 @@ type DrgAttachmentManagementState struct {
 	DrgId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId pulumi.StringPtrInput
-	// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
 	ExportDrgRouteDistributionId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -189,7 +189,7 @@ type DrgAttachmentManagementState struct {
 	NetworkId pulumi.StringPtrInput
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrInput
-	// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+	// The OCID of the route table the DRG attachment is using.
 	RouteTableId pulumi.StringPtrInput
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringPtrInput
@@ -216,7 +216,7 @@ type drgAttachmentManagementArgs struct {
 	DrgId string `pulumi:"drgId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId *string `pulumi:"drgRouteTableId"`
-	// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
 	ExportDrgRouteDistributionId *string `pulumi:"exportDrgRouteDistributionId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -226,7 +226,7 @@ type drgAttachmentManagementArgs struct {
 	NetworkId *string `pulumi:"networkId"`
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger *bool `pulumi:"removeExportDrgRouteDistributionTrigger"`
-	// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+	// The OCID of the route table the DRG attachment is using.
 	RouteTableId *string `pulumi:"routeTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	VcnId *string `pulumi:"vcnId"`
@@ -246,7 +246,7 @@ type DrgAttachmentManagementArgs struct {
 	DrgId pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId pulumi.StringPtrInput
-	// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
 	ExportDrgRouteDistributionId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -256,7 +256,7 @@ type DrgAttachmentManagementArgs struct {
 	NetworkId pulumi.StringPtrInput
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrInput
-	// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+	// The OCID of the route table the DRG attachment is using.
 	RouteTableId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	VcnId pulumi.StringPtrInput
@@ -379,7 +379,7 @@ func (o DrgAttachmentManagementOutput) DrgRouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.DrgRouteTableId }).(pulumi.StringOutput)
 }
 
-// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
 func (o DrgAttachmentManagementOutput) ExportDrgRouteDistributionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.ExportDrgRouteDistributionId }).(pulumi.StringOutput)
 }
@@ -411,7 +411,7 @@ func (o DrgAttachmentManagementOutput) RemoveExportDrgRouteDistributionTrigger()
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+// The OCID of the route table the DRG attachment is using.
 func (o DrgAttachmentManagementOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.RouteTableId }).(pulumi.StringOutput)
 }

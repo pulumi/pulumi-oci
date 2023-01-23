@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getBlockVolumeReplicas(args?: GetBlockVolumeReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockVolumeReplicasResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -100,9 +98,28 @@ export interface GetBlockVolumeReplicasResult {
     readonly state?: string;
     readonly volumeGroupReplicaId?: string;
 }
-
+/**
+ * This data source provides the list of Block Volume Replicas in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the block volume replicas in the specified compartment and availability domain.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBlockVolumeReplicas = oci.Core.getBlockVolumeReplicas({
+ *     availabilityDomain: _var.block_volume_replica_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.block_volume_replica_display_name,
+ *     state: _var.block_volume_replica_state,
+ *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ * });
+ * ```
+ */
 export function getBlockVolumeReplicasOutput(args?: GetBlockVolumeReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockVolumeReplicasResult> {
-    return pulumi.output(args).apply(a => getBlockVolumeReplicas(a, opts))
+    return pulumi.output(args).apply((a: any) => getBlockVolumeReplicas(a, opts))
 }
 
 /**

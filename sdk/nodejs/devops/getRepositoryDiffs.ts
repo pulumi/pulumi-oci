@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryDiffs(args: GetRepositoryDiffsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryDiffsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", {
         "baseVersion": args.baseVersion,
         "filters": args.filters,
@@ -80,9 +78,27 @@ export interface GetRepositoryDiffsResult {
     readonly repositoryId: string;
     readonly targetVersion: string;
 }
-
+/**
+ * This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
+ *
+ * Compares two revisions and lists the differences. Supports comparison between two references or commits.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryDiffs = oci.DevOps.getRepositoryDiffs({
+ *     baseVersion: _var.repository_diff_base_version,
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     targetVersion: _var.repository_diff_target_version,
+ *     isComparisonFromMergeBase: _var.repository_diff_is_comparison_from_merge_base,
+ * });
+ * ```
+ */
 export function getRepositoryDiffsOutput(args: GetRepositoryDiffsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryDiffsResult> {
-    return pulumi.output(args).apply(a => getRepositoryDiffs(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryDiffs(a, opts))
 }
 
 /**

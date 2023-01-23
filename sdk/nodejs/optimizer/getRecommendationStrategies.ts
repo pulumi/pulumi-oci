@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRecommendationStrategies(args: GetRecommendationStrategiesArgs, opts?: pulumi.InvokeOptions): Promise<GetRecommendationStrategiesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getRecommendationStrategies:getRecommendationStrategies", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -83,9 +81,27 @@ export interface GetRecommendationStrategiesResult {
      */
     readonly recommendationStrategyCollections: outputs.Optimizer.GetRecommendationStrategiesRecommendationStrategyCollection[];
 }
-
+/**
+ * This data source provides the list of Recommendation Strategies in Oracle Cloud Infrastructure Optimizer service.
+ *
+ * Lists the existing strategies.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRecommendationStrategies = oci.Optimizer.getRecommendationStrategies({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.recommendation_strategy_compartment_id_in_subtree,
+ *     name: _var.recommendation_strategy_name,
+ *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
+ * });
+ * ```
+ */
 export function getRecommendationStrategiesOutput(args: GetRecommendationStrategiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationStrategiesResult> {
-    return pulumi.output(args).apply(a => getRecommendationStrategies(a, opts))
+    return pulumi.output(args).apply((a: any) => getRecommendationStrategies(a, opts))
 }
 
 /**

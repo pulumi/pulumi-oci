@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTunnelSecurityAssociationsResult> InvokeAsync(GetTunnelSecurityAssociationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTunnelSecurityAssociationsResult>("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args ?? new GetTunnelSecurityAssociationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTunnelSecurityAssociationsResult>("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args ?? new GetTunnelSecurityAssociationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTunnelSecurityAssociationsResult> Invoke(GetTunnelSecurityAssociationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTunnelSecurityAssociationsResult>("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args ?? new GetTunnelSecurityAssociationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTunnelSecurityAssociationsResult>("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args ?? new GetTunnelSecurityAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

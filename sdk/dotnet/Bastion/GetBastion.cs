@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Bastion
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBastionResult> InvokeAsync(GetBastionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBastionResult>("oci:Bastion/getBastion:getBastion", args ?? new GetBastionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBastionResult>("oci:Bastion/getBastion:getBastion", args ?? new GetBastionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Bastion
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBastionResult> Invoke(GetBastionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBastionResult>("oci:Bastion/getBastion:getBastion", args ?? new GetBastionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBastionResult>("oci:Bastion/getBastion:getBastion", args ?? new GetBastionInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -120,6 +120,10 @@ namespace Pulumi.Oci.Bastion
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
+        /// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        /// </summary>
+        public readonly string DnsProxyStatus;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -193,6 +197,8 @@ namespace Pulumi.Oci.Bastion
 
             ImmutableDictionary<string, object> definedTags,
 
+            string dnsProxyStatus,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -228,6 +234,7 @@ namespace Pulumi.Oci.Bastion
             ClientCidrBlockAllowLists = clientCidrBlockAllowLists;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            DnsProxyStatus = dnsProxyStatus;
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;

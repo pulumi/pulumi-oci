@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetReportResult> InvokeAsync(GetReportArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetReportResult>("oci:DataSafe/getReport:getReport", args ?? new GetReportArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetReportResult>("oci:DataSafe/getReport:getReport", args ?? new GetReportArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Report resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetReportResult> Invoke(GetReportInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetReportResult>("oci:DataSafe/getReport:getReport", args ?? new GetReportInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetReportResult>("oci:DataSafe/getReport:getReport", args ?? new GetReportInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -148,6 +148,10 @@ namespace Pulumi.Oci.DataSafe
         /// Specifies the time at which the report was generated.
         /// </summary>
         public readonly string TimeGenerated;
+        /// <summary>
+        /// The type of the report.
+        /// </summary>
+        public readonly string Type;
 
         [OutputConstructor]
         private GetReportResult(
@@ -173,7 +177,9 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableDictionary<string, object> systemTags,
 
-            string timeGenerated)
+            string timeGenerated,
+
+            string type)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -187,6 +193,7 @@ namespace Pulumi.Oci.DataSafe
             State = state;
             SystemTags = systemTags;
             TimeGenerated = timeGenerated;
+            Type = type;
         }
     }
 }

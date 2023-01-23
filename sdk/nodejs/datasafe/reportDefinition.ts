@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -114,6 +115,10 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     */
+    public /*out*/ readonly complianceStandards!: pulumi.Output<string[]>;
+    /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      */
     public /*out*/ readonly dataSource!: pulumi.Output<string>;
@@ -145,6 +150,30 @@ export class ReportDefinition extends pulumi.CustomResource {
      * The OCID of the parent report definition.
      */
     public readonly parentId!: pulumi.Output<string>;
+    /**
+     * The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     */
+    public /*out*/ readonly recordTimeSpan!: pulumi.Output<string>;
+    /**
+     * Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+     */
+    public /*out*/ readonly schedule!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     */
+    public /*out*/ readonly scheduledReportCompartmentId!: pulumi.Output<string>;
+    /**
+     * Specifies the format of report to be excel or pdf
+     */
+    public /*out*/ readonly scheduledReportMimeType!: pulumi.Output<string>;
+    /**
+     * The name of the report to be scheduled.
+     */
+    public /*out*/ readonly scheduledReportName!: pulumi.Output<string>;
+    /**
+     * Specifies the limit on number of rows in report.
+     */
+    public /*out*/ readonly scheduledReportRowLimit!: pulumi.Output<number>;
     /**
      * (Updatable) Additional scim filters used to get the specific summary.
      */
@@ -188,6 +217,7 @@ export class ReportDefinition extends pulumi.CustomResource {
             resourceInputs["columnInfos"] = state ? state.columnInfos : undefined;
             resourceInputs["columnSortings"] = state ? state.columnSortings : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["complianceStandards"] = state ? state.complianceStandards : undefined;
             resourceInputs["dataSource"] = state ? state.dataSource : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -196,6 +226,12 @@ export class ReportDefinition extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isSeeded"] = state ? state.isSeeded : undefined;
             resourceInputs["parentId"] = state ? state.parentId : undefined;
+            resourceInputs["recordTimeSpan"] = state ? state.recordTimeSpan : undefined;
+            resourceInputs["schedule"] = state ? state.schedule : undefined;
+            resourceInputs["scheduledReportCompartmentId"] = state ? state.scheduledReportCompartmentId : undefined;
+            resourceInputs["scheduledReportMimeType"] = state ? state.scheduledReportMimeType : undefined;
+            resourceInputs["scheduledReportName"] = state ? state.scheduledReportName : undefined;
+            resourceInputs["scheduledReportRowLimit"] = state ? state.scheduledReportRowLimit : undefined;
             resourceInputs["scimFilter"] = state ? state.scimFilter : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["summaries"] = state ? state.summaries : undefined;
@@ -236,9 +272,16 @@ export class ReportDefinition extends pulumi.CustomResource {
             resourceInputs["parentId"] = args ? args.parentId : undefined;
             resourceInputs["summaries"] = args ? args.summaries : undefined;
             resourceInputs["category"] = undefined /*out*/;
+            resourceInputs["complianceStandards"] = undefined /*out*/;
             resourceInputs["dataSource"] = undefined /*out*/;
             resourceInputs["displayOrder"] = undefined /*out*/;
             resourceInputs["isSeeded"] = undefined /*out*/;
+            resourceInputs["recordTimeSpan"] = undefined /*out*/;
+            resourceInputs["schedule"] = undefined /*out*/;
+            resourceInputs["scheduledReportCompartmentId"] = undefined /*out*/;
+            resourceInputs["scheduledReportMimeType"] = undefined /*out*/;
+            resourceInputs["scheduledReportName"] = undefined /*out*/;
+            resourceInputs["scheduledReportRowLimit"] = undefined /*out*/;
             resourceInputs["scimFilter"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -275,6 +318,10 @@ export interface ReportDefinitionState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     */
+    complianceStandards?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      */
     dataSource?: pulumi.Input<string>;
@@ -306,6 +353,30 @@ export interface ReportDefinitionState {
      * The OCID of the parent report definition.
      */
     parentId?: pulumi.Input<string>;
+    /**
+     * The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     */
+    recordTimeSpan?: pulumi.Input<string>;
+    /**
+     * Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+     */
+    schedule?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     */
+    scheduledReportCompartmentId?: pulumi.Input<string>;
+    /**
+     * Specifies the format of report to be excel or pdf
+     */
+    scheduledReportMimeType?: pulumi.Input<string>;
+    /**
+     * The name of the report to be scheduled.
+     */
+    scheduledReportName?: pulumi.Input<string>;
+    /**
+     * Specifies the limit on number of rows in report.
+     */
+    scheduledReportRowLimit?: pulumi.Input<number>;
     /**
      * (Updatable) Additional scim filters used to get the specific summary.
      */

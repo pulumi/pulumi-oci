@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetAlertPolicyAssociations(args: GetTargetAlertPolicyAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAlertPolicyAssociationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", {
         "accessLevel": args.accessLevel,
         "alertPolicyId": args.alertPolicyId,
@@ -124,9 +122,32 @@ export interface GetTargetAlertPolicyAssociationsResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of all target-alert policy associations.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetAlertPolicyAssociations = oci.DataSafe.getTargetAlertPolicyAssociations({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.target_alert_policy_association_access_level,
+ *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
+ *     compartmentIdInSubtree: _var.target_alert_policy_association_compartment_id_in_subtree,
+ *     state: _var.target_alert_policy_association_state,
+ *     targetAlertPolicyAssociationId: oci_data_safe_target_alert_policy_association.test_target_alert_policy_association.id,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ *     timeCreatedGreaterThanOrEqualTo: _var.target_alert_policy_association_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.target_alert_policy_association_time_created_less_than,
+ * });
+ * ```
+ */
 export function getTargetAlertPolicyAssociationsOutput(args: GetTargetAlertPolicyAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAlertPolicyAssociationsResult> {
-    return pulumi.output(args).apply(a => getTargetAlertPolicyAssociations(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetAlertPolicyAssociations(a, opts))
 }
 
 /**

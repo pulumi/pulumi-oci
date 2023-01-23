@@ -47,7 +47,7 @@ import (
 type AutonomousDatabaseRegionalWalletManagement struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntOutput `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrOutput `pulumi:"shouldRotate"`
@@ -86,7 +86,7 @@ func GetAutonomousDatabaseRegionalWalletManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AutonomousDatabaseRegionalWalletManagement resources.
 type autonomousDatabaseRegionalWalletManagementState struct {
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate *bool `pulumi:"shouldRotate"`
@@ -97,7 +97,7 @@ type autonomousDatabaseRegionalWalletManagementState struct {
 }
 
 type AutonomousDatabaseRegionalWalletManagementState struct {
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrInput
@@ -112,7 +112,7 @@ func (AutonomousDatabaseRegionalWalletManagementState) ElementType() reflect.Typ
 }
 
 type autonomousDatabaseRegionalWalletManagementArgs struct {
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate *bool `pulumi:"shouldRotate"`
@@ -120,7 +120,7 @@ type autonomousDatabaseRegionalWalletManagementArgs struct {
 
 // The set of arguments for constructing a AutonomousDatabaseRegionalWalletManagement resource.
 type AutonomousDatabaseRegionalWalletManagementArgs struct {
-	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrInput
@@ -213,7 +213,7 @@ func (o AutonomousDatabaseRegionalWalletManagementOutput) ToAutonomousDatabaseRe
 	return o
 }
 
-// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 func (o AutonomousDatabaseRegionalWalletManagementOutput) GracePeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseRegionalWalletManagement) pulumi.IntOutput { return v.GracePeriod }).(pulumi.IntOutput)
 }

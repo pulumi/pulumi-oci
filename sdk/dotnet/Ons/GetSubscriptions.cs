@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Ons
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubscriptionsResult> InvokeAsync(GetSubscriptionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionsResult>("oci:Ons/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionsResult>("oci:Ons/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Notifications service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Ons
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubscriptionsResult> Invoke(GetSubscriptionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubscriptionsResult>("oci:Ons/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionsResult>("oci:Ons/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetWaasPolicyResult> InvokeAsync(GetWaasPolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetWaasPolicyResult>("oci:Waas/getWaasPolicy:getWaasPolicy", args ?? new GetWaasPolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetWaasPolicyResult>("oci:Waas/getWaasPolicy:getWaasPolicy", args ?? new GetWaasPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetWaasPolicyResult> Invoke(GetWaasPolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetWaasPolicyResult>("oci:Waas/getWaasPolicy:getWaasPolicy", args ?? new GetWaasPolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetWaasPolicyResult>("oci:Waas/getWaasPolicy:getWaasPolicy", args ?? new GetWaasPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

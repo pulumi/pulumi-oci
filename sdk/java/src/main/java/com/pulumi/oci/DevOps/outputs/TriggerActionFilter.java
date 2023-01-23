@@ -19,6 +19,10 @@ public final class TriggerActionFilter {
      * 
      */
     private @Nullable List<String> events;
+    /**
+     * @return (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     private @Nullable TriggerActionFilterExclude exclude;
     /**
      * @return (Updatable) Attributes to filter GitLab self-hosted server events.
@@ -26,7 +30,7 @@ public final class TriggerActionFilter {
      */
     private @Nullable TriggerActionFilterInclude include;
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * @return (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
      */
     private String triggerSource;
@@ -39,6 +43,10 @@ public final class TriggerActionFilter {
     public List<String> events() {
         return this.events == null ? List.of() : this.events;
     }
+    /**
+     * @return (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     public Optional<TriggerActionFilterExclude> exclude() {
         return Optional.ofNullable(this.exclude);
     }
@@ -50,7 +58,7 @@ public final class TriggerActionFilter {
         return Optional.ofNullable(this.include);
     }
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * @return (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
      */
     public String triggerSource() {

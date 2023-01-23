@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHttpRedirect(args: GetHttpRedirectArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpRedirectResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getHttpRedirect:getHttpRedirect", {
         "httpRedirectId": args.httpRedirectId,
     }, opts);
@@ -88,9 +86,24 @@ export interface GetHttpRedirectResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets the details of a HTTP Redirect.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHttpRedirect = oci.Waas.getHttpRedirect({
+ *     httpRedirectId: oci_waas_http_redirect.test_http_redirect.id,
+ * });
+ * ```
+ */
 export function getHttpRedirectOutput(args: GetHttpRedirectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpRedirectResult> {
-    return pulumi.output(args).apply(a => getHttpRedirect(a, opts))
+    return pulumi.output(args).apply((a: any) => getHttpRedirect(a, opts))
 }
 
 /**

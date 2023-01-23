@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecret(args: GetSecretArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Vault/getSecret:getSecret", {
         "secretId": args.secretId,
     }, opts);
@@ -113,9 +111,24 @@ export interface GetSecretResult {
      */
     readonly vaultId: string;
 }
-
+/**
+ * This data source provides details about a specific Secret resource in Oracle Cloud Infrastructure Vault service.
+ *
+ * Gets information about the specified secret.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecret = oci.Vault.getSecret({
+ *     secretId: oci_vault_secret.test_secret.id,
+ * });
+ * ```
+ */
 export function getSecretOutput(args: GetSecretOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretResult> {
-    return pulumi.output(args).apply(a => getSecret(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecret(a, opts))
 }
 
 /**

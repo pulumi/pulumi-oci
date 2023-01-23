@@ -27,6 +27,11 @@ public final class GetFleetResult {
      */
     private Integer approximateInstallationCount;
     /**
+     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * 
+     */
+    private Integer approximateJavaServerCount;
+    /**
      * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      * 
      */
@@ -73,7 +78,7 @@ public final class GetFleetResult {
      */
     private List<GetFleetInventoryLog> inventoryLogs;
     /**
-     * @return Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * @return Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      * 
      */
     private Boolean isAdvancedFeaturesEnabled;
@@ -112,6 +117,13 @@ public final class GetFleetResult {
      */
     public Integer approximateInstallationCount() {
         return this.approximateInstallationCount;
+    }
+    /**
+     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * 
+     */
+    public Integer approximateJavaServerCount() {
+        return this.approximateJavaServerCount;
     }
     /**
      * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -180,7 +192,7 @@ public final class GetFleetResult {
         return this.inventoryLogs;
     }
     /**
-     * @return Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * @return Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      * 
      */
     public Boolean isAdvancedFeaturesEnabled() {
@@ -226,6 +238,7 @@ public final class GetFleetResult {
     public static final class Builder {
         private Integer approximateApplicationCount;
         private Integer approximateInstallationCount;
+        private Integer approximateJavaServerCount;
         private Integer approximateJreCount;
         private Integer approximateManagedInstanceCount;
         private String compartmentId;
@@ -246,6 +259,7 @@ public final class GetFleetResult {
     	      Objects.requireNonNull(defaults);
     	      this.approximateApplicationCount = defaults.approximateApplicationCount;
     	      this.approximateInstallationCount = defaults.approximateInstallationCount;
+    	      this.approximateJavaServerCount = defaults.approximateJavaServerCount;
     	      this.approximateJreCount = defaults.approximateJreCount;
     	      this.approximateManagedInstanceCount = defaults.approximateManagedInstanceCount;
     	      this.compartmentId = defaults.compartmentId;
@@ -271,6 +285,11 @@ public final class GetFleetResult {
         @CustomType.Setter
         public Builder approximateInstallationCount(Integer approximateInstallationCount) {
             this.approximateInstallationCount = Objects.requireNonNull(approximateInstallationCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder approximateJavaServerCount(Integer approximateJavaServerCount) {
+            this.approximateJavaServerCount = Objects.requireNonNull(approximateJavaServerCount);
             return this;
         }
         @CustomType.Setter
@@ -358,6 +377,7 @@ public final class GetFleetResult {
             final var o = new GetFleetResult();
             o.approximateApplicationCount = approximateApplicationCount;
             o.approximateInstallationCount = approximateInstallationCount;
+            o.approximateJavaServerCount = approximateJavaServerCount;
             o.approximateJreCount = approximateJreCount;
             o.approximateManagedInstanceCount = approximateManagedInstanceCount;
             o.compartmentId = compartmentId;

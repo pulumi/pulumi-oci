@@ -27,10 +27,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &JobRun{}
 	case "oci:DataScience/model:Model":
 		r = &Model{}
+	case "oci:DataScience/modelArtifactExport:ModelArtifactExport":
+		r = &ModelArtifactExport{}
+	case "oci:DataScience/modelArtifactImport:ModelArtifactImport":
+		r = &ModelArtifactImport{}
 	case "oci:DataScience/modelDeployment:ModelDeployment":
 		r = &ModelDeployment{}
 	case "oci:DataScience/modelProvenance:ModelProvenance":
 		r = &ModelProvenance{}
+	case "oci:DataScience/modelVersionSet:ModelVersionSet":
+		r = &ModelVersionSet{}
 	case "oci:DataScience/notebookSession:NotebookSession":
 		r = &NotebookSession{}
 	case "oci:DataScience/project:Project":
@@ -65,12 +71,27 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataScience/modelArtifactExport",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/modelArtifactImport",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataScience/modelDeployment",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataScience/modelProvenance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/modelVersionSet",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

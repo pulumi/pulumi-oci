@@ -11,20 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## ]
-//
-// ***
-// subcategory: "Core"
-// layout: "oci"
-// page_title: "Oracle Cloud Infrastructure: Core.BootVolume"
-// sidebar_current: "docs-oci-resource-core-boot_volume"
-// description: |-
-//
-//	Provides the Boot Volume resource in Oracle Cloud Infrastructure Core service
-//
-// ---
-//
-// # Core.BootVolume
 // This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
 //
 // Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.

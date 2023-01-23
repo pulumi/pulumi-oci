@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabasesDatabaseParameterResult> InvokeAsync(GetManagedDatabasesDatabaseParameterArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesDatabaseParameterResult>("oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter", args ?? new GetManagedDatabasesDatabaseParameterArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesDatabaseParameterResult>("oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter", args ?? new GetManagedDatabasesDatabaseParameterArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Databases Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabasesDatabaseParameterResult> Invoke(GetManagedDatabasesDatabaseParameterInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesDatabaseParameterResult>("oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter", args ?? new GetManagedDatabasesDatabaseParameterInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesDatabaseParameterResult>("oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter", args ?? new GetManagedDatabasesDatabaseParameterInvokeArgs(), options.WithDefaults());
     }
 
 

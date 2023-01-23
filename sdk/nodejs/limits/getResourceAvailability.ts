@@ -27,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResourceAvailability(args: GetResourceAvailabilityArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceAvailabilityResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getResourceAvailability:getResourceAvailability", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -95,9 +92,30 @@ export interface GetResourceAvailabilityResult {
      */
     readonly used: string;
 }
-
+/**
+ * This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
+ *
+ * For a given compartmentId, resource limit name, and scope, returns the following:
+ *   * The number of available resources associated with the given limit.
+ *   * The usage in the selected compartment for the given limit.
+ *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResourceAvailability = oci.Limits.getResourceAvailability({
+ *     compartmentId: _var.tenancy_ocid,
+ *     limitName: _var.resource_availability_limit_name,
+ *     serviceName: oci_limits_service.test_service.name,
+ *     availabilityDomain: _var.resource_availability_availability_domain,
+ * });
+ * ```
+ */
 export function getResourceAvailabilityOutput(args: GetResourceAvailabilityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceAvailabilityResult> {
-    return pulumi.output(args).apply(a => getResourceAvailability(a, opts))
+    return pulumi.output(args).apply((a: any) => getResourceAvailability(a, opts))
 }
 
 /**

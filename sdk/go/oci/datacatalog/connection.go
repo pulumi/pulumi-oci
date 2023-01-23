@@ -118,6 +118,13 @@ func NewConnection(ctx *pulumi.Context,
 	if args.TypeKey == nil {
 		return nil, errors.New("invalid value for required argument 'TypeKey'")
 	}
+	if args.EncProperties != nil {
+		args.EncProperties = pulumi.ToSecret(args.EncProperties).(pulumi.MapInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"encProperties",
+	})
+	opts = append(opts, secrets)
 	var resource Connection
 	err := ctx.RegisterResource("oci:DataCatalog/connection:Connection", name, args, &resource, opts...)
 	if err != nil {

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPluggableDatabase(args: GetPluggableDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetPluggableDatabaseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getPluggableDatabase:getPluggableDatabase", {
         "pluggableDatabaseId": args.pluggableDatabaseId,
     }, opts);
@@ -88,6 +86,10 @@ export interface GetPluggableDatabaseResult {
      */
     readonly pdbName: string;
     readonly pluggableDatabaseId: string;
+    /**
+     * The configuration of the Pluggable Database Management service.
+     */
+    readonly pluggableDatabaseManagementConfigs: outputs.Database.GetPluggableDatabasePluggableDatabaseManagementConfig[];
     readonly shouldPdbAdminAccountBeLocked: boolean;
     /**
      * The current state of the pluggable database.
@@ -99,9 +101,24 @@ export interface GetPluggableDatabaseResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified pluggable database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPluggableDatabase = oci.Database.getPluggableDatabase({
+ *     pluggableDatabaseId: oci_database_pluggable_database.test_pluggable_database.id,
+ * });
+ * ```
+ */
 export function getPluggableDatabaseOutput(args: GetPluggableDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPluggableDatabaseResult> {
-    return pulumi.output(args).apply(a => getPluggableDatabase(a, opts))
+    return pulumi.output(args).apply((a: any) => getPluggableDatabase(a, opts))
 }
 
 /**

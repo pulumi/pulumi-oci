@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceEnvironments(args: GetServiceEnvironmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceEnvironmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -87,9 +85,28 @@ export interface GetServiceEnvironmentsResult {
     readonly serviceEnvironmentId?: string;
     readonly serviceEnvironmentType?: string;
 }
-
+/**
+ * This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
+ *
+ * List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
+ * Information includes the service instance endpoints and service definition details.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testServiceEnvironments = oci.ServiceManagerProxy.getServiceEnvironments({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.service_environment_display_name,
+ *     serviceEnvironmentId: oci_service_manager_proxy_service_environment.test_service_environment.id,
+ *     serviceEnvironmentType: _var.service_environment_service_environment_type,
+ * });
+ * ```
+ */
 export function getServiceEnvironmentsOutput(args: GetServiceEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceEnvironmentsResult> {
-    return pulumi.output(args).apply(a => getServiceEnvironments(a, opts))
+    return pulumi.output(args).apply((a: any) => getServiceEnvironments(a, opts))
 }
 
 /**

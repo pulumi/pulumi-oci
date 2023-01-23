@@ -156,7 +156,7 @@ namespace Pulumi.Oci.DataScience
         public Output<string> ProjectId { get; private set; } = null!;
 
         /// <summary>
-        /// The state of the model deployment.
+        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -273,6 +273,12 @@ namespace Pulumi.Oci.DataScience
         [Input("projectId", required: true)]
         public Input<string> ProjectId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
+
         public ModelDeploymentArgs()
         {
         }
@@ -360,7 +366,7 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? ProjectId { get; set; }
 
         /// <summary>
-        /// The state of the model deployment.
+        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

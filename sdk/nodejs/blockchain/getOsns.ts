@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOsns(args: GetOsnsArgs, opts?: pulumi.InvokeOptions): Promise<GetOsnsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getOsns:getOsns", {
         "blockchainPlatformId": args.blockchainPlatformId,
         "displayName": args.displayName,
@@ -66,9 +64,25 @@ export interface GetOsnsResult {
      */
     readonly osnCollections: outputs.Blockchain.GetOsnsOsnCollection[];
 }
-
+/**
+ * This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
+ *
+ * List Blockchain Platform OSNs
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOsns = oci.Blockchain.getOsns({
+ *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
+ *     displayName: _var.osn_display_name,
+ * });
+ * ```
+ */
 export function getOsnsOutput(args: GetOsnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOsnsResult> {
-    return pulumi.output(args).apply(a => getOsns(a, opts))
+    return pulumi.output(args).apply((a: any) => getOsns(a, opts))
 }
 
 /**

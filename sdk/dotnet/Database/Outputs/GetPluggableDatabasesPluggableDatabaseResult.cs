@@ -54,6 +54,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
         /// </summary>
         public readonly string PdbName;
+        /// <summary>
+        /// The configuration of the Pluggable Database Management service.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult> PluggableDatabaseManagementConfigs;
         public readonly bool ShouldPdbAdminAccountBeLocked;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
@@ -89,6 +93,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string pdbName,
 
+            ImmutableArray<Outputs.GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult> pluggableDatabaseManagementConfigs,
+
             bool shouldPdbAdminAccountBeLocked,
 
             string state,
@@ -108,6 +114,7 @@ namespace Pulumi.Oci.Database.Outputs
             OpenMode = openMode;
             PdbAdminPassword = pdbAdminPassword;
             PdbName = pdbName;
+            PluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
             ShouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             State = state;
             TdeWalletPassword = tdeWalletPassword;

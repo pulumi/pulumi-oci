@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .targetResourceDetails(SessionTargetResourceDetailsArgs.builder()
  *                 .sessionType(var_.session_target_resource_details_session_type())
+ *                 .targetResourceFqdn(var_.session_target_resource_details_target_resource_fqdn())
  *                 .targetResourceId(oci_bastion_target_resource.test_target_resource().id())
  *                 .targetResourceOperatingSystemUserName(oci_identity_user.test_user().name())
  *                 .targetResourcePort(var_.session_target_resource_details_target_resource_port())

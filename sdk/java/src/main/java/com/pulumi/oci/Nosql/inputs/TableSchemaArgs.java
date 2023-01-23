@@ -6,6 +6,7 @@ package com.pulumi.oci.Nosql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Nosql.inputs.TableSchemaColumnArgs;
+import com.pulumi.oci.Nosql.inputs.TableSchemaIdentityArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -31,6 +32,21 @@ public final class TableSchemaArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<TableSchemaColumnArgs>>> columns() {
         return Optional.ofNullable(this.columns);
+    }
+
+    /**
+     * The identity properties of a table, if any.
+     * 
+     */
+    @Import(name="identities")
+    private @Nullable Output<List<TableSchemaIdentityArgs>> identities;
+
+    /**
+     * @return The identity properties of a table, if any.
+     * 
+     */
+    public Optional<Output<List<TableSchemaIdentityArgs>>> identities() {
+        return Optional.ofNullable(this.identities);
     }
 
     /**
@@ -82,6 +98,7 @@ public final class TableSchemaArgs extends com.pulumi.resources.ResourceArgs {
 
     private TableSchemaArgs(TableSchemaArgs $) {
         this.columns = $.columns;
+        this.identities = $.identities;
         this.primaryKeys = $.primaryKeys;
         this.shardKeys = $.shardKeys;
         this.ttl = $.ttl;
@@ -134,6 +151,37 @@ public final class TableSchemaArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder columns(TableSchemaColumnArgs... columns) {
             return columns(List.of(columns));
+        }
+
+        /**
+         * @param identities The identity properties of a table, if any.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identities(@Nullable Output<List<TableSchemaIdentityArgs>> identities) {
+            $.identities = identities;
+            return this;
+        }
+
+        /**
+         * @param identities The identity properties of a table, if any.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identities(List<TableSchemaIdentityArgs> identities) {
+            return identities(Output.of(identities));
+        }
+
+        /**
+         * @param identities The identity properties of a table, if any.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identities(TableSchemaIdentityArgs... identities) {
+            return identities(List.of(identities));
         }
 
         /**

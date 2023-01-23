@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -47,9 +48,11 @@ import * as utilities from "../utilities";
  *         connectorId: _var.monitored_resource_database_connector_id,
  *         dbId: _var.monitored_resource_database_id,
  *         dbUniqueName: _var.monitored_resource_database_connection_details_db_unique_name,
+ *         sslSecretId: oci_vault_secret.test_secret.id,
  *     },
  *     displayName: _var.monitored_resource_display_name,
  *     externalResourceId: _var.monitored_resource_external_resource_id,
+ *     externalId: oci_stack_monitoring_external.test_external.id,
  *     hostName: _var.monitored_resource_host_name,
  *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
  *     properties: [{
@@ -120,6 +123,10 @@ export class MonitoredResource extends pulumi.CustomResource {
      * (Updatable) Monitored resource display name.
      */
     public readonly displayName!: pulumi.Output<string | undefined>;
+    /**
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+     */
+    public readonly externalId!: pulumi.Output<string | undefined>;
     /**
      * Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
      */
@@ -192,6 +199,7 @@ export class MonitoredResource extends pulumi.CustomResource {
             resourceInputs["databaseConnectionDetails"] = state ? state.databaseConnectionDetails : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["externalId"] = state ? state.externalId : undefined;
             resourceInputs["externalResourceId"] = state ? state.externalResourceId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostName"] = state ? state.hostName : undefined;
@@ -218,6 +226,7 @@ export class MonitoredResource extends pulumi.CustomResource {
             resourceInputs["credentials"] = args ? args.credentials : undefined;
             resourceInputs["databaseConnectionDetails"] = args ? args.databaseConnectionDetails : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["externalId"] = args ? args.externalId : undefined;
             resourceInputs["externalResourceId"] = args ? args.externalResourceId : undefined;
             resourceInputs["hostName"] = args ? args.hostName : undefined;
             resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
@@ -266,6 +275,10 @@ export interface MonitoredResourceState {
      * (Updatable) Monitored resource display name.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+     */
+    externalId?: pulumi.Input<string>;
     /**
      * Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
      */
@@ -344,6 +357,10 @@ export interface MonitoredResourceArgs {
      * (Updatable) Monitored resource display name.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+     */
+    externalId?: pulumi.Input<string>;
     /**
      * Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
      */

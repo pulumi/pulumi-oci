@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJavaRelease(args: GetJavaReleaseArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaReleaseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaRelease:getJavaRelease", {
         "releaseVersion": args.releaseVersion,
     }, opts);
@@ -47,11 +45,15 @@ export interface GetJavaReleaseArgs {
  */
 export interface GetJavaReleaseResult {
     /**
+     * Artifact content types for the Java version.
+     */
+    readonly artifactContentTypes: string[];
+    /**
      * List of Java artifacts.
      */
     readonly artifacts: outputs.Jms.GetJavaReleaseArtifact[];
     /**
-     * Complete information of a specific Java release family.
+     * Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      */
     readonly familyDetails: outputs.Jms.GetJavaReleaseFamilyDetail[];
     /**
@@ -95,9 +97,24 @@ export interface GetJavaReleaseResult {
      */
     readonly securityStatus: string;
 }
-
+/**
+ * This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
+ *
+ * Returns detail of a Java release.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJavaRelease = oci.Jms.getJavaRelease({
+ *     releaseVersion: _var.java_release_release_version,
+ * });
+ * ```
+ */
 export function getJavaReleaseOutput(args: GetJavaReleaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaReleaseResult> {
-    return pulumi.output(args).apply(a => getJavaRelease(a, opts))
+    return pulumi.output(args).apply((a: any) => getJavaRelease(a, opts))
 }
 
 /**

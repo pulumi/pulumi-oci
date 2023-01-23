@@ -98,6 +98,13 @@ func NewBdsInstanceApiKey(ctx *pulumi.Context,
 	if args.UserId == nil {
 		return nil, errors.New("invalid value for required argument 'UserId'")
 	}
+	if args.Passphrase != nil {
+		args.Passphrase = pulumi.ToSecret(args.Passphrase).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"passphrase",
+	})
+	opts = append(opts, secrets)
 	var resource BdsInstanceApiKey
 	err := ctx.RegisterResource("oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey", name, args, &resource, opts...)
 	if err != nil {

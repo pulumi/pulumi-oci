@@ -12,11 +12,21 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
 
     public sealed class ManagedDatabasesChangeDatabaseParameterCredentialsGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("password")]
+        private Input<string>? _password;
+
         /// <summary>
         /// The password for the database user name.
         /// </summary>
-        [Input("password")]
-        public Input<string>? Password { get; set; }
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The role of the database user. Indicates whether the database user is a normal user or sysdba.

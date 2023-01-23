@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJavaFamiliesResult> InvokeAsync(GetJavaFamiliesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJavaFamiliesResult>("oci:Jms/getJavaFamilies:getJavaFamilies", args ?? new GetJavaFamiliesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaFamiliesResult>("oci:Jms/getJavaFamilies:getJavaFamilies", args ?? new GetJavaFamiliesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJavaFamiliesResult> Invoke(GetJavaFamiliesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJavaFamiliesResult>("oci:Jms/getJavaFamilies:getJavaFamilies", args ?? new GetJavaFamiliesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaFamiliesResult>("oci:Jms/getJavaFamilies:getJavaFamilies", args ?? new GetJavaFamiliesInvokeArgs(), options.WithDefaults());
     }
 
 

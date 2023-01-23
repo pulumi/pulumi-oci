@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", {
         "executionName": args.executionName,
         "managedDatabaseId": args.managedDatabaseId,
@@ -69,9 +66,26 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResu
     readonly script: string;
     readonly taskName: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript({
+ *     executionName: _var.managed_database_optimizer_statistics_advisor_execution_script_execution_name,
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     taskName: _var.managed_database_optimizer_statistics_advisor_execution_script_task_name,
+ * });
+ * ```
+ */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBuildRun(args: GetBuildRunArgs, opts?: pulumi.InvokeOptions): Promise<GetBuildRunResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getBuildRun:getBuildRun", {
         "buildRunId": args.buildRunId,
     }, opts);
@@ -116,9 +114,24 @@ export interface GetBuildRunResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Build Run resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns the details of a build run for a given build run ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBuildRun = oci.DevOps.getBuildRun({
+ *     buildRunId: oci_devops_build_run.test_build_run.id,
+ * });
+ * ```
+ */
 export function getBuildRunOutput(args: GetBuildRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildRunResult> {
-    return pulumi.output(args).apply(a => getBuildRun(a, opts))
+    return pulumi.output(args).apply((a: any) => getBuildRun(a, opts))
 }
 
 /**

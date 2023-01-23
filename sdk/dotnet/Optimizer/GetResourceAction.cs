@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetResourceActionResult> InvokeAsync(GetResourceActionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetResourceActionResult>("oci:Optimizer/getResourceAction:getResourceAction", args ?? new GetResourceActionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetResourceActionResult>("oci:Optimizer/getResourceAction:getResourceAction", args ?? new GetResourceActionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetResourceActionResult> Invoke(GetResourceActionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetResourceActionResult>("oci:Optimizer/getResourceAction:getResourceAction", args ?? new GetResourceActionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetResourceActionResult>("oci:Optimizer/getResourceAction:getResourceAction", args ?? new GetResourceActionInvokeArgs(), options.WithDefaults());
     }
 
 

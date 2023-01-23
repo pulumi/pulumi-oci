@@ -14,13 +14,17 @@ namespace Pulumi.Oci.Bastion.Outputs
     public sealed class GetSessionsSessionTargetResourceDetailResult
     {
         /// <summary>
-        /// The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+        /// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
         /// </summary>
         public readonly string SessionType;
         /// <summary>
         /// The display name of the target Compute instance that the session connects to.
         /// </summary>
         public readonly string TargetResourceDisplayName;
+        /// <summary>
+        /// The Fully Qualified Domain Name of the target resource that the session connects to.
+        /// </summary>
+        public readonly string TargetResourceFqdn;
         /// <summary>
         /// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         /// </summary>
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.Bastion.Outputs
 
             string targetResourceDisplayName,
 
+            string targetResourceFqdn,
+
             string targetResourceId,
 
             string targetResourceOperatingSystemUserName,
@@ -54,6 +60,7 @@ namespace Pulumi.Oci.Bastion.Outputs
         {
             SessionType = sessionType;
             TargetResourceDisplayName = targetResourceDisplayName;
+            TargetResourceFqdn = targetResourceFqdn;
             TargetResourceId = targetResourceId;
             TargetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             TargetResourcePort = targetResourcePort;

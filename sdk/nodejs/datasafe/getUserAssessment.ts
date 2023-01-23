@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessment(args: GetUserAssessmentArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessment:getUserAssessment", {
         "userAssessmentId": args.userAssessmentId,
     }, opts);
@@ -137,9 +135,24 @@ export interface GetUserAssessmentResult {
     readonly type: string;
     readonly userAssessmentId: string;
 }
-
+/**
+ * This data source provides details about a specific User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a user assessment by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUserAssessment = oci.DataSafe.getUserAssessment({
+ *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ * });
+ * ```
+ */
 export function getUserAssessmentOutput(args: GetUserAssessmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentResult> {
-    return pulumi.output(args).apply(a => getUserAssessment(a, opts))
+    return pulumi.output(args).apply((a: any) => getUserAssessment(a, opts))
 }
 
 /**

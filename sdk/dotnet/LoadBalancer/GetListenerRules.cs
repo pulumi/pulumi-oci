@@ -46,7 +46,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetListenerRulesResult> InvokeAsync(GetListenerRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetListenerRulesResult>("oci:LoadBalancer/getListenerRules:getListenerRules", args ?? new GetListenerRulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetListenerRulesResult>("oci:LoadBalancer/getListenerRules:getListenerRules", args ?? new GetListenerRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetListenerRulesResult> Invoke(GetListenerRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetListenerRulesResult>("oci:LoadBalancer/getListenerRules:getListenerRules", args ?? new GetListenerRulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetListenerRulesResult>("oci:LoadBalancer/getListenerRules:getListenerRules", args ?? new GetListenerRulesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -59,6 +59,16 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
      */
     private String onsTopicId;
     /**
+     * @return (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     * 
+     */
+    private String preferredLanguage;
+    /**
+     * @return The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     * 
+     */
+    private String preferredTimeZone;
+    /**
      * @return A filter to return only announcement subscriptions that match the given lifecycle state.
      * 
      */
@@ -144,6 +154,20 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
         return this.onsTopicId;
     }
     /**
+     * @return (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     * 
+     */
+    public String preferredLanguage() {
+        return this.preferredLanguage;
+    }
+    /**
+     * @return The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     * 
+     */
+    public String preferredTimeZone() {
+        return this.preferredTimeZone;
+    }
+    /**
      * @return A filter to return only announcement subscriptions that match the given lifecycle state.
      * 
      */
@@ -190,6 +214,8 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
         private String id;
         private String lifecycleDetails;
         private String onsTopicId;
+        private String preferredLanguage;
+        private String preferredTimeZone;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -206,6 +232,8 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.onsTopicId = defaults.onsTopicId;
+    	      this.preferredLanguage = defaults.preferredLanguage;
+    	      this.preferredTimeZone = defaults.preferredTimeZone;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -261,6 +289,16 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
             return this;
         }
         @CustomType.Setter
+        public Builder preferredLanguage(String preferredLanguage) {
+            this.preferredLanguage = Objects.requireNonNull(preferredLanguage);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder preferredTimeZone(String preferredTimeZone) {
+            this.preferredTimeZone = Objects.requireNonNull(preferredTimeZone);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -291,6 +329,8 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;
             o.onsTopicId = onsTopicId;
+            o.preferredLanguage = preferredLanguage;
+            o.preferredTimeZone = preferredTimeZone;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;

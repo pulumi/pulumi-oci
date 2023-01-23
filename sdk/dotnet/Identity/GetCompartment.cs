@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCompartmentResult> InvokeAsync(GetCompartmentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCompartmentResult>("oci:Identity/getCompartment:getCompartment", args ?? new GetCompartmentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCompartmentResult>("oci:Identity/getCompartment:getCompartment", args ?? new GetCompartmentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCompartmentResult> Invoke(GetCompartmentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCompartmentResult>("oci:Identity/getCompartment:getCompartment", args ?? new GetCompartmentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCompartmentResult>("oci:Identity/getCompartment:getCompartment", args ?? new GetCompartmentInvokeArgs(), options.WithDefaults());
     }
 
 

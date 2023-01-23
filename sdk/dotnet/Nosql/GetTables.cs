@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Nosql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTablesResult> InvokeAsync(GetTablesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTablesResult>("oci:Nosql/getTables:getTables", args ?? new GetTablesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTablesResult>("oci:Nosql/getTables:getTables", args ?? new GetTablesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Tables in Oracle Cloud Infrastructure NoSQL Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Nosql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTablesResult> Invoke(GetTablesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTablesResult>("oci:Nosql/getTables:getTables", args ?? new GetTablesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTablesResult>("oci:Nosql/getTables:getTables", args ?? new GetTablesInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Nosql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The column name.
+        /// Human-friendly table name, immutable.
         /// </summary>
         public readonly string? Name;
         /// <summary>

@@ -887,7 +887,7 @@ public final class LimitsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
-     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -927,7 +927,7 @@ public final class LimitsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
-     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -967,7 +967,7 @@ public final class LimitsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
-     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1007,7 +1007,7 @@ public final class LimitsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
-     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

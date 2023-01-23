@@ -5,12 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./config";
-export * from "./getConfig";
-export * from "./getConfigs";
+export { ConfigArgs, ConfigState } from "./config";
+export type Config = import("./config").Config;
+export const Config: typeof import("./config").Config = null as any;
+utilities.lazyLoad(exports, ["Config"], () => require("./config"));
 
-// Import resources to register:
-import { Config } from "./config";
+export { GetConfigArgs, GetConfigResult, GetConfigOutputArgs } from "./getConfig";
+export const getConfig: typeof import("./getConfig").getConfig = null as any;
+export const getConfigOutput: typeof import("./getConfig").getConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getConfig","getConfigOutput"], () => require("./getConfig"));
+
+export { GetConfigsArgs, GetConfigsResult, GetConfigsOutputArgs } from "./getConfigs";
+export const getConfigs: typeof import("./getConfigs").getConfigs = null as any;
+export const getConfigsOutput: typeof import("./getConfigs").getConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getConfigs","getConfigsOutput"], () => require("./getConfigs"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementAgentInstallKeyResult> InvokeAsync(GetManagementAgentInstallKeyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentInstallKeyResult>("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args ?? new GetManagementAgentInstallKeyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentInstallKeyResult>("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args ?? new GetManagementAgentInstallKeyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementAgentInstallKeyResult> Invoke(GetManagementAgentInstallKeyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementAgentInstallKeyResult>("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args ?? new GetManagementAgentInstallKeyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentInstallKeyResult>("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args ?? new GetManagementAgentInstallKeyInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getQueries(args: GetQueriesArgs, opts?: pulumi.InvokeOptions): Promise<GetQueriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getQueries:getQueries", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -68,9 +66,24 @@ export interface GetQueriesResult {
      */
     readonly queryCollections: outputs.MeteringComputation.GetQueriesQueryCollection[];
 }
-
+/**
+ * This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
+ *
+ * Returns the saved query list.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testQueries = oci.MeteringComputation.getQueries({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getQueriesOutput(args: GetQueriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueriesResult> {
-    return pulumi.output(args).apply(a => getQueries(a, opts))
+    return pulumi.output(args).apply((a: any) => getQueries(a, opts))
 }
 
 /**

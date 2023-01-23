@@ -5,16 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getNotificationTopic";
-export * from "./getNotificationTopics";
-export * from "./getSubscription";
-export * from "./getSubscriptions";
-export * from "./notificationTopic";
-export * from "./subscription";
+export { GetNotificationTopicArgs, GetNotificationTopicResult, GetNotificationTopicOutputArgs } from "./getNotificationTopic";
+export const getNotificationTopic: typeof import("./getNotificationTopic").getNotificationTopic = null as any;
+export const getNotificationTopicOutput: typeof import("./getNotificationTopic").getNotificationTopicOutput = null as any;
+utilities.lazyLoad(exports, ["getNotificationTopic","getNotificationTopicOutput"], () => require("./getNotificationTopic"));
 
-// Import resources to register:
-import { NotificationTopic } from "./notificationTopic";
-import { Subscription } from "./subscription";
+export { GetNotificationTopicsArgs, GetNotificationTopicsResult, GetNotificationTopicsOutputArgs } from "./getNotificationTopics";
+export const getNotificationTopics: typeof import("./getNotificationTopics").getNotificationTopics = null as any;
+export const getNotificationTopicsOutput: typeof import("./getNotificationTopics").getNotificationTopicsOutput = null as any;
+utilities.lazyLoad(exports, ["getNotificationTopics","getNotificationTopicsOutput"], () => require("./getNotificationTopics"));
+
+export { GetSubscriptionArgs, GetSubscriptionResult, GetSubscriptionOutputArgs } from "./getSubscription";
+export const getSubscription: typeof import("./getSubscription").getSubscription = null as any;
+export const getSubscriptionOutput: typeof import("./getSubscription").getSubscriptionOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscription","getSubscriptionOutput"], () => require("./getSubscription"));
+
+export { GetSubscriptionsArgs, GetSubscriptionsResult, GetSubscriptionsOutputArgs } from "./getSubscriptions";
+export const getSubscriptions: typeof import("./getSubscriptions").getSubscriptions = null as any;
+export const getSubscriptionsOutput: typeof import("./getSubscriptions").getSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptions","getSubscriptionsOutput"], () => require("./getSubscriptions"));
+
+export { NotificationTopicArgs, NotificationTopicState } from "./notificationTopic";
+export type NotificationTopic = import("./notificationTopic").NotificationTopic;
+export const NotificationTopic: typeof import("./notificationTopic").NotificationTopic = null as any;
+utilities.lazyLoad(exports, ["NotificationTopic"], () => require("./notificationTopic"));
+
+export { SubscriptionArgs, SubscriptionState } from "./subscription";
+export type Subscription = import("./subscription").Subscription;
+export const Subscription: typeof import("./subscription").Subscription = null as any;
+utilities.lazyLoad(exports, ["Subscription"], () => require("./subscription"));
+
 
 const _module = {
     version: utilities.getVersion(),

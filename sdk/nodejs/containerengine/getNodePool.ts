@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNodePool(args: GetNodePoolArgs, opts?: pulumi.InvokeOptions): Promise<GetNodePoolResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getNodePool:getNodePool", {
         "nodePoolId": args.nodePoolId,
     }, opts);
@@ -147,9 +145,24 @@ export interface GetNodePoolResult {
      */
     readonly subnetIds: string[];
 }
-
+/**
+ * This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+ *
+ * Get the details of a node pool.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNodePool = oci.ContainerEngine.getNodePool({
+ *     nodePoolId: oci_containerengine_node_pool.test_node_pool.id,
+ * });
+ * ```
+ */
 export function getNodePoolOutput(args: GetNodePoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolResult> {
-    return pulumi.output(args).apply(a => getNodePool(a, opts))
+    return pulumi.output(args).apply((a: any) => getNodePool(a, opts))
 }
 
 /**

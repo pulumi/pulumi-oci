@@ -14,9 +14,11 @@ __all__ = [
     'FusionEnvironmentAdminUserItem',
     'FusionEnvironmentCreateFusionEnvironmentAdminUserDetails',
     'FusionEnvironmentFamilyFamilyMaintenancePolicy',
+    'FusionEnvironmentKmsKeyInfo',
     'FusionEnvironmentMaintenancePolicy',
     'FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime',
     'FusionEnvironmentRefresh',
+    'FusionEnvironmentRefreshActivityRefreshIssueDetailsList',
     'FusionEnvironmentRule',
     'FusionEnvironmentRuleCondition',
 ]
@@ -245,6 +247,96 @@ class FusionEnvironmentFamilyFamilyMaintenancePolicy(dict):
 
 
 @pulumi.output_type
+class FusionEnvironmentKmsKeyInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "activeKeyId":
+            suggest = "active_key_id"
+        elif key == "activeKeyVersion":
+            suggest = "active_key_version"
+        elif key == "currentKeyLifecycleState":
+            suggest = "current_key_lifecycle_state"
+        elif key == "scheduledKeyId":
+            suggest = "scheduled_key_id"
+        elif key == "scheduledKeyStatus":
+            suggest = "scheduled_key_status"
+        elif key == "scheduledKeyVersion":
+            suggest = "scheduled_key_version"
+        elif key == "scheduledLifecycleState":
+            suggest = "scheduled_lifecycle_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FusionEnvironmentKmsKeyInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FusionEnvironmentKmsKeyInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FusionEnvironmentKmsKeyInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active_key_id: Optional[str] = None,
+                 active_key_version: Optional[str] = None,
+                 current_key_lifecycle_state: Optional[str] = None,
+                 scheduled_key_id: Optional[str] = None,
+                 scheduled_key_status: Optional[str] = None,
+                 scheduled_key_version: Optional[str] = None,
+                 scheduled_lifecycle_state: Optional[str] = None):
+        if active_key_id is not None:
+            pulumi.set(__self__, "active_key_id", active_key_id)
+        if active_key_version is not None:
+            pulumi.set(__self__, "active_key_version", active_key_version)
+        if current_key_lifecycle_state is not None:
+            pulumi.set(__self__, "current_key_lifecycle_state", current_key_lifecycle_state)
+        if scheduled_key_id is not None:
+            pulumi.set(__self__, "scheduled_key_id", scheduled_key_id)
+        if scheduled_key_status is not None:
+            pulumi.set(__self__, "scheduled_key_status", scheduled_key_status)
+        if scheduled_key_version is not None:
+            pulumi.set(__self__, "scheduled_key_version", scheduled_key_version)
+        if scheduled_lifecycle_state is not None:
+            pulumi.set(__self__, "scheduled_lifecycle_state", scheduled_lifecycle_state)
+
+    @property
+    @pulumi.getter(name="activeKeyId")
+    def active_key_id(self) -> Optional[str]:
+        return pulumi.get(self, "active_key_id")
+
+    @property
+    @pulumi.getter(name="activeKeyVersion")
+    def active_key_version(self) -> Optional[str]:
+        return pulumi.get(self, "active_key_version")
+
+    @property
+    @pulumi.getter(name="currentKeyLifecycleState")
+    def current_key_lifecycle_state(self) -> Optional[str]:
+        return pulumi.get(self, "current_key_lifecycle_state")
+
+    @property
+    @pulumi.getter(name="scheduledKeyId")
+    def scheduled_key_id(self) -> Optional[str]:
+        return pulumi.get(self, "scheduled_key_id")
+
+    @property
+    @pulumi.getter(name="scheduledKeyStatus")
+    def scheduled_key_status(self) -> Optional[str]:
+        return pulumi.get(self, "scheduled_key_status")
+
+    @property
+    @pulumi.getter(name="scheduledKeyVersion")
+    def scheduled_key_version(self) -> Optional[str]:
+        return pulumi.get(self, "scheduled_key_version")
+
+    @property
+    @pulumi.getter(name="scheduledLifecycleState")
+    def scheduled_lifecycle_state(self) -> Optional[str]:
+        return pulumi.get(self, "scheduled_lifecycle_state")
+
+
+@pulumi.output_type
 class FusionEnvironmentMaintenancePolicy(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -420,6 +512,42 @@ class FusionEnvironmentRefresh(dict):
         The point of time of the latest DB backup for the last refresh
         """
         return pulumi.get(self, "time_of_restoration_point")
+
+
+@pulumi.output_type
+class FusionEnvironmentRefreshActivityRefreshIssueDetailsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "refreshIssues":
+            suggest = "refresh_issues"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FusionEnvironmentRefreshActivityRefreshIssueDetailsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FusionEnvironmentRefreshActivityRefreshIssueDetailsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FusionEnvironmentRefreshActivityRefreshIssueDetailsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 refresh_issues: Optional[str] = None):
+        """
+        :param str refresh_issues: Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+        """
+        if refresh_issues is not None:
+            pulumi.set(__self__, "refresh_issues", refresh_issues)
+
+    @property
+    @pulumi.getter(name="refreshIssues")
+    def refresh_issues(self) -> Optional[str]:
+        """
+        Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+        """
+        return pulumi.get(self, "refresh_issues")
 
 
 @pulumi.output_type

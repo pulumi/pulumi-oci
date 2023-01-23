@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Apm
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDataKeysResult> InvokeAsync(GetDataKeysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDataKeysResult>("oci:Apm/getDataKeys:getDataKeys", args ?? new GetDataKeysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataKeysResult>("oci:Apm/getDataKeys:getDataKeys", args ?? new GetDataKeysArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Apm
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDataKeysResult> Invoke(GetDataKeysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDataKeysResult>("oci:Apm/getDataKeys:getDataKeys", args ?? new GetDataKeysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataKeysResult>("oci:Apm/getDataKeys:getDataKeys", args ?? new GetDataKeysInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -13,6 +13,12 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
     public sealed class VirtualDeploymentListenerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+        /// </summary>
+        [Input("idleTimeoutInMs")]
+        public Input<string>? IdleTimeoutInMs { get; set; }
+
+        /// <summary>
         /// (Updatable) Port in which virtual deployment is running.
         /// </summary>
         [Input("port", required: true)]
@@ -23,6 +29,12 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+        /// </summary>
+        [Input("requestTimeoutInMs")]
+        public Input<string>? RequestTimeoutInMs { get; set; }
 
         public VirtualDeploymentListenerGetArgs()
         {

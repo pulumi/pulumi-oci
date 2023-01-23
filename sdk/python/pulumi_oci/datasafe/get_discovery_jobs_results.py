@@ -66,6 +66,9 @@ class GetDiscoveryJobsResultsResult:
     @property
     @pulumi.getter(name="discoveryJobId")
     def discovery_job_id(self) -> str:
+        """
+        The OCID of the discovery job.
+        """
         return pulumi.get(self, "discovery_job_id")
 
     @property

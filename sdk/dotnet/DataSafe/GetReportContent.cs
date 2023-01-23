@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetReportContentResult> InvokeAsync(GetReportContentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetReportContentResult>("oci:DataSafe/getReportContent:getReportContent", args ?? new GetReportContentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetReportContentResult>("oci:DataSafe/getReportContent:getReportContent", args ?? new GetReportContentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetReportContentResult> Invoke(GetReportContentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetReportContentResult>("oci:DataSafe/getReportContent:getReportContent", args ?? new GetReportContentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetReportContentResult>("oci:DataSafe/getReportContent:getReportContent", args ?? new GetReportContentInvokeArgs(), options.WithDefaults());
     }
 
 

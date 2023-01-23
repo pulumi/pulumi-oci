@@ -39,7 +39,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBdsInstanceMetastoreConfigResult> InvokeAsync(GetBdsInstanceMetastoreConfigArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceMetastoreConfigResult>("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args ?? new GetBdsInstanceMetastoreConfigArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceMetastoreConfigResult>("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args ?? new GetBdsInstanceMetastoreConfigArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBdsInstanceMetastoreConfigResult> Invoke(GetBdsInstanceMetastoreConfigInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBdsInstanceMetastoreConfigResult>("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args ?? new GetBdsInstanceMetastoreConfigInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceMetastoreConfigResult>("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args ?? new GetBdsInstanceMetastoreConfigInvokeArgs(), options.WithDefaults());
     }
 
 

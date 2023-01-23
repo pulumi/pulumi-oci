@@ -2,10 +2,13 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * **Deprecated. This resource does not support create and update operations.**
+ *
  * This resource provides the Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
  *
  * ## Example Usage
@@ -14,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobsResult = new oci.DataSafe.DiscoveryJobsResult("test_discovery_jobs_result", {});
+ * const testDiscoveryJobsResult = new oci.datasafe.DiscoveryJobsResult("testDiscoveryJobsResult", {});
  * ```
  *
  * ## Import
@@ -73,9 +76,16 @@ export class DiscoveryJobsResult extends pulumi.CustomResource {
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      */
     public /*out*/ readonly dbDefinedChildColumnKeys!: pulumi.Output<string[]>;
+    /**
+     * The OCID of the discovery job.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
+     */
     public readonly discoveryJobId!: pulumi.Output<string>;
     /**
      * The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
     public /*out*/ readonly discoveryType!: pulumi.Output<string>;
     /**
@@ -88,6 +98,8 @@ export class DiscoveryJobsResult extends pulumi.CustomResource {
     public /*out*/ readonly isResultApplied!: pulumi.Output<boolean>;
     /**
      * The unique key that identifies the discovery result.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
     public /*out*/ readonly key!: pulumi.Output<string>;
     /**
@@ -219,9 +231,16 @@ export interface DiscoveryJobsResultState {
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      */
     dbDefinedChildColumnKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The OCID of the discovery job.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
+     */
     discoveryJobId?: pulumi.Input<string>;
     /**
      * The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
     discoveryType?: pulumi.Input<string>;
     /**
@@ -234,6 +253,8 @@ export interface DiscoveryJobsResultState {
     isResultApplied?: pulumi.Input<boolean>;
     /**
      * The unique key that identifies the discovery result.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
     key?: pulumi.Input<string>;
     /**
@@ -282,5 +303,10 @@ export interface DiscoveryJobsResultState {
  * The set of arguments for constructing a DiscoveryJobsResult resource.
  */
 export interface DiscoveryJobsResultArgs {
+    /**
+     * The OCID of the discovery job.
+     *
+     * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
+     */
     discoveryJobId: pulumi.Input<string>;
 }

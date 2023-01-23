@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApiContent(args: GetApiContentArgs, opts?: pulumi.InvokeOptions): Promise<GetApiContentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getApiContent:getApiContent", {
         "apiId": args.apiId,
     }, opts);
@@ -52,9 +49,24 @@ export interface GetApiContentResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Get the raw API content.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApiContent = oci.ApiGateway.getApiContent({
+ *     apiId: oci_apigateway_api.test_api.id,
+ * });
+ * ```
+ */
 export function getApiContentOutput(args: GetApiContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiContentResult> {
-    return pulumi.output(args).apply(a => getApiContent(a, opts))
+    return pulumi.output(args).apply((a: any) => getApiContent(a, opts))
 }
 
 /**

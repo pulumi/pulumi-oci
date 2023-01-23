@@ -48,7 +48,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetObjectResult> InvokeAsync(GetObjectArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetObjectResult>("oci:ObjectStorage/getObject:getObject", args ?? new GetObjectArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectResult>("oci:ObjectStorage/getObject:getObject", args ?? new GetObjectArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetObjectResult> Invoke(GetObjectInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetObjectResult>("oci:ObjectStorage/getObject:getObject", args ?? new GetObjectInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetObjectResult>("oci:ObjectStorage/getObject:getObject", args ?? new GetObjectInvokeArgs(), options.WithDefaults());
     }
 
 

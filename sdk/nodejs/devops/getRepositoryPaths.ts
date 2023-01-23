@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryPaths(args: GetRepositoryPathsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryPathsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryPaths:getRepositoryPaths", {
         "displayName": args.displayName,
         "filters": args.filters,
@@ -87,9 +85,28 @@ export interface GetRepositoryPathsResult {
      */
     readonly repositoryPathCollections: outputs.DevOps.GetRepositoryPathsRepositoryPathCollection[];
 }
-
+/**
+ * This data source provides the list of Repository Paths in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a list of files and directories in a repository.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryPaths = oci.DevOps.getRepositoryPaths({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     displayName: _var.repository_path_display_name,
+ *     folderPath: _var.repository_path_folder_path,
+ *     pathsInSubtree: _var.repository_path_paths_in_subtree,
+ *     ref: _var.repository_path_ref,
+ * });
+ * ```
+ */
 export function getRepositoryPathsOutput(args: GetRepositoryPathsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryPathsResult> {
-    return pulumi.output(args).apply(a => getRepositoryPaths(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryPaths(a, opts))
 }
 
 /**

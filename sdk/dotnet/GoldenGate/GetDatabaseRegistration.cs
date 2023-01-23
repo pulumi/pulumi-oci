@@ -14,6 +14,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
         /// 
+        /// Note: Deprecated. Use the new resource model APIs instead.
         /// Retrieves a DatabaseRegistration.
         /// 
         /// 
@@ -39,11 +40,12 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseRegistrationResult> InvokeAsync(GetDatabaseRegistrationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseRegistrationResult>("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args ?? new GetDatabaseRegistrationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseRegistrationResult>("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args ?? new GetDatabaseRegistrationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
         /// 
+        /// Note: Deprecated. Use the new resource model APIs instead.
         /// Retrieves a DatabaseRegistration.
         /// 
         /// 
@@ -69,7 +71,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseRegistrationResult> Invoke(GetDatabaseRegistrationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseRegistrationResult>("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args ?? new GetDatabaseRegistrationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseRegistrationResult>("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args ?? new GetDatabaseRegistrationInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -123,7 +125,7 @@ namespace Pulumi.Oci.GoldenGate
         public readonly string DatabaseId;
         public readonly string DatabaseRegistrationId;
         /// <summary>
-        /// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
@@ -139,7 +141,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string Fqdn;
         /// <summary>
-        /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
@@ -172,7 +174,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string SecretId;
         /// <summary>
-        /// The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        /// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         /// </summary>
         public readonly string SessionMode;
         /// <summary>
@@ -184,7 +186,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>

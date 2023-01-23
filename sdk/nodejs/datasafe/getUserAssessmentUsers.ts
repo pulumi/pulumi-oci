@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -39,11 +40,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessmentUsers(args: GetUserAssessmentUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentUsersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", {
         "accessLevel": args.accessLevel,
         "accountStatus": args.accountStatus,
@@ -175,9 +173,41 @@ export interface GetUserAssessmentUsersResult {
      */
     readonly users: outputs.DataSafe.GetUserAssessmentUsersUser[];
 }
-
+/**
+ * This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of users of the specified user assessment. The result contains the database user details for each user, such
+ * as user type, account status, last login time, user creation time, authentication type, user profile, and the date and time
+ * of the latest password change. It also contains the user category derived from these user details as well as privileges
+ * granted to each user.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUserAssessmentUsers = oci.DataSafe.getUserAssessmentUsers({
+ *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     accessLevel: _var.user_assessment_user_access_level,
+ *     accountStatus: _var.user_assessment_user_account_status,
+ *     authenticationType: _var.user_assessment_user_authentication_type,
+ *     compartmentIdInSubtree: _var.user_assessment_user_compartment_id_in_subtree,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ *     timeLastLoginGreaterThanOrEqualTo: _var.user_assessment_user_time_last_login_greater_than_or_equal_to,
+ *     timeLastLoginLessThan: _var.user_assessment_user_time_last_login_less_than,
+ *     timePasswordLastChangedGreaterThanOrEqualTo: _var.user_assessment_user_time_password_last_changed_greater_than_or_equal_to,
+ *     timePasswordLastChangedLessThan: _var.user_assessment_user_time_password_last_changed_less_than,
+ *     timeUserCreatedGreaterThanOrEqualTo: _var.user_assessment_user_time_user_created_greater_than_or_equal_to,
+ *     timeUserCreatedLessThan: _var.user_assessment_user_time_user_created_less_than,
+ *     userCategory: _var.user_assessment_user_user_category,
+ *     userKey: _var.user_assessment_user_user_key,
+ *     userName: oci_identity_user.test_user.name,
+ * });
+ * ```
+ */
 export function getUserAssessmentUsersOutput(args: GetUserAssessmentUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentUsersResult> {
-    return pulumi.output(args).apply(a => getUserAssessmentUsers(a, opts))
+    return pulumi.output(args).apply((a: any) => getUserAssessmentUsers(a, opts))
 }
 
 /**

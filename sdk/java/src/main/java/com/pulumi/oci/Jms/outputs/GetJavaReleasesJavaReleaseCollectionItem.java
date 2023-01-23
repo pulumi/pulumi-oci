@@ -14,12 +14,17 @@ import java.util.Objects;
 @CustomType
 public final class GetJavaReleasesJavaReleaseCollectionItem {
     /**
+     * @return Artifact content types for the Java version.
+     * 
+     */
+    private List<String> artifactContentTypes;
+    /**
      * @return List of Java artifacts.
      * 
      */
     private List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
     /**
-     * @return Complete information of a specific Java release family.
+     * @return Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      * 
      */
     private List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
@@ -71,6 +76,13 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
 
     private GetJavaReleasesJavaReleaseCollectionItem() {}
     /**
+     * @return Artifact content types for the Java version.
+     * 
+     */
+    public List<String> artifactContentTypes() {
+        return this.artifactContentTypes;
+    }
+    /**
      * @return List of Java artifacts.
      * 
      */
@@ -78,7 +90,7 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         return this.artifacts;
     }
     /**
-     * @return Complete information of a specific Java release family.
+     * @return Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      * 
      */
     public List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails() {
@@ -157,6 +169,7 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> artifactContentTypes;
         private List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
         private List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
         private String familyVersion;
@@ -171,6 +184,7 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         public Builder() {}
         public Builder(GetJavaReleasesJavaReleaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.artifactContentTypes = defaults.artifactContentTypes;
     	      this.artifacts = defaults.artifacts;
     	      this.familyDetails = defaults.familyDetails;
     	      this.familyVersion = defaults.familyVersion;
@@ -184,6 +198,14 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
     	      this.securityStatus = defaults.securityStatus;
         }
 
+        @CustomType.Setter
+        public Builder artifactContentTypes(List<String> artifactContentTypes) {
+            this.artifactContentTypes = Objects.requireNonNull(artifactContentTypes);
+            return this;
+        }
+        public Builder artifactContentTypes(String... artifactContentTypes) {
+            return artifactContentTypes(List.of(artifactContentTypes));
+        }
         @CustomType.Setter
         public Builder artifacts(List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts) {
             this.artifacts = Objects.requireNonNull(artifacts);
@@ -250,6 +272,7 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         }
         public GetJavaReleasesJavaReleaseCollectionItem build() {
             final var o = new GetJavaReleasesJavaReleaseCollectionItem();
+            o.artifactContentTypes = artifactContentTypes;
             o.artifacts = artifacts;
             o.familyDetails = familyDetails;
             o.familyVersion = familyVersion;

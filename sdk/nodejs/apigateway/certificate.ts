@@ -15,20 +15,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificate = new oci.ApiGateway.Certificate("test_certificate", {
- *     //Required
- *     certificate: var_certificate_certificate,
- *     compartmentId: var_compartment_id,
- *     //Optional
+ * const testCertificate = new oci.apigateway.Certificate("testCertificate", {
+ *     certificate: _var.certificate_certificate,
+ *     compartmentId: _var.compartment_id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: var_certificate_display_name,
+ *     displayName: _var.certificate_display_name,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     intermediateCertificates: var_certificate_intermediate_certificates,
- *     privateKey: var_certificate_private_key,
+ *     intermediateCertificates: _var.certificate_intermediate_certificates,
+ *     privateKey: _var.certificate_private_key,
  * });
  * ```
  *
@@ -164,7 +162,7 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["intermediateCertificates"] = args ? args.intermediateCertificates : undefined;
-            resourceInputs["privateKey"] = args ? args.privateKey : undefined;
+            resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["subjectNames"] = undefined /*out*/;
@@ -173,6 +171,8 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["privateKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Certificate.__pulumiType, name, resourceInputs, opts);
     }
 }

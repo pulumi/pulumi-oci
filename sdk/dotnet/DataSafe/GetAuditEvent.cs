@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditEventResult> InvokeAsync(GetAuditEventArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditEventResult>("oci:DataSafe/getAuditEvent:getAuditEvent", args ?? new GetAuditEventArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditEventResult>("oci:DataSafe/getAuditEvent:getAuditEvent", args ?? new GetAuditEventArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Audit Event resource in Oracle Cloud Infrastructure Data Safe service.
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditEventResult> Invoke(GetAuditEventInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditEventResult>("oci:DataSafe/getAuditEvent:getAuditEvent", args ?? new GetAuditEventInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditEventResult>("oci:DataSafe/getAuditEvent:getAuditEvent", args ?? new GetAuditEventInvokeArgs(), options.WithDefaults());
     }
 
 

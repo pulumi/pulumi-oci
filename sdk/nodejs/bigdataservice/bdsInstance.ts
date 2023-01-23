@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,44 +28,60 @@ import * as utilities from "../utilities";
  *     masterNode: {
  *         shape: _var.bds_instance_nodes_shape,
  *         subnetId: oci_core_subnet.test_subnet.id,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
  *         numberOfNodes: _var.bds_instance_number_of_nodes,
+ *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
  *         shapeConfig: {
  *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
+ *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
  *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
  *         },
  *     },
  *     utilNode: {
  *         shape: _var.bds_instance_nodes_shape,
  *         subnetId: oci_core_subnet.test_subnet.id,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
  *         numberOfNodes: _var.bds_instance_number_of_nodes,
+ *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
  *         shapeConfig: {
  *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
+ *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
  *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
  *         },
  *     },
  *     workerNode: {
  *         shape: _var.bds_instance_nodes_shape,
  *         subnetId: oci_core_subnet.test_subnet.id,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
  *         numberOfNodes: _var.bds_instance_number_of_nodes,
+ *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
  *         shapeConfig: {
  *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
+ *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
  *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
  *         },
  *     },
  *     computeOnlyWorkerNode: {
  *         shape: _var.bds_instance_nodes_shape,
  *         subnetId: oci_core_subnet.test_subnet.id,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
  *         numberOfNodes: _var.bds_instance_number_of_nodes,
+ *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
  *         shapeConfig: {
  *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
+ *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
+ *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
+ *         },
+ *     },
+ *     edgeNode: {
+ *         shape: _var.bds_instance_nodes_shape,
+ *         subnetId: oci_core_subnet.test_subnet.id,
+ *         numberOfNodes: _var.bds_instance_number_of_nodes,
+ *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
+ *         shapeConfig: {
+ *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
+ *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
  *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
  *         },
  *     },
  *     bootstrapScriptUrl: _var.bds_instance_bootstrap_script_url,
+ *     clusterProfile: _var.bds_instance_cluster_profile,
  *     definedTags: _var.bds_instance_defined_tags,
  *     freeformTags: _var.bds_instance_freeform_tags,
  *     kerberosRealmName: _var.bds_instance_kerberos_realm_name,
@@ -117,17 +134,21 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly bootstrapScriptUrl!: pulumi.Output<string>;
     /**
-     * -(Optional) The information about added Cloud SQL capability
+     * The information about added Cloud SQL capability
      */
     public readonly cloudSqlDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceCloudSqlDetail[]>;
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
     public readonly clusterAdminPassword!: pulumi.Output<string>;
     /**
      * Specific info about a Hadoop cluster
      */
     public /*out*/ readonly clusterDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceClusterDetail[]>;
+    /**
+     * Profile of the Big Data Service cluster.
+     */
+    public readonly clusterProfile!: pulumi.Output<string>;
     /**
      * The SSH public key used to authenticate the cluster connection.
      */
@@ -142,7 +163,7 @@ export class BdsInstance extends pulumi.CustomResource {
     public readonly compartmentId!: pulumi.Output<string>;
     public readonly computeOnlyWorkerNode!: pulumi.Output<outputs.BigDataService.BdsInstanceComputeOnlyWorkerNode | undefined>;
     /**
-     * The user who created the BDS instance.
+     * The user who created the cluster.
      */
     public /*out*/ readonly createdBy!: pulumi.Output<string>;
     /**
@@ -153,14 +174,19 @@ export class BdsInstance extends pulumi.CustomResource {
      * (Updatable) Name of the BDS instance
      */
     public readonly displayName!: pulumi.Output<string>;
+    public readonly edgeNode!: pulumi.Output<outputs.BigDataService.BdsInstanceEdgeNode | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+     * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
     public readonly isCloudSqlConfigured!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+     */
+    public readonly isForceStopJobs!: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag specifying whether or not the cluster is HA
      */
@@ -194,9 +220,9 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public /*out*/ readonly numberOfNodes!: pulumi.Output<number>;
     /**
-     * The state of the BDS instance
+     * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string>;
     /**
      * The time the BDS instance was created. An RFC3339 formatted datetime string
      */
@@ -228,6 +254,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["cloudSqlDetails"] = state ? state.cloudSqlDetails : undefined;
             resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
             resourceInputs["clusterDetails"] = state ? state.clusterDetails : undefined;
+            resourceInputs["clusterProfile"] = state ? state.clusterProfile : undefined;
             resourceInputs["clusterPublicKey"] = state ? state.clusterPublicKey : undefined;
             resourceInputs["clusterVersion"] = state ? state.clusterVersion : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -235,8 +262,10 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["edgeNode"] = state ? state.edgeNode : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCloudSqlConfigured"] = state ? state.isCloudSqlConfigured : undefined;
+            resourceInputs["isForceStopJobs"] = state ? state.isForceStopJobs : undefined;
             resourceInputs["isHighAvailability"] = state ? state.isHighAvailability : undefined;
             resourceInputs["isSecure"] = state ? state.isSecure : undefined;
             resourceInputs["kerberosRealmName"] = state ? state.kerberosRealmName : undefined;
@@ -284,32 +313,37 @@ export class BdsInstance extends pulumi.CustomResource {
             }
             resourceInputs["bootstrapScriptUrl"] = args ? args.bootstrapScriptUrl : undefined;
             resourceInputs["cloudSqlDetails"] = args ? args.cloudSqlDetails : undefined;
-            resourceInputs["clusterAdminPassword"] = args ? args.clusterAdminPassword : undefined;
+            resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
+            resourceInputs["clusterProfile"] = args ? args.clusterProfile : undefined;
             resourceInputs["clusterPublicKey"] = args ? args.clusterPublicKey : undefined;
             resourceInputs["clusterVersion"] = args ? args.clusterVersion : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["computeOnlyWorkerNode"] = args ? args.computeOnlyWorkerNode : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["edgeNode"] = args ? args.edgeNode : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isCloudSqlConfigured"] = args ? args.isCloudSqlConfigured : undefined;
+            resourceInputs["isForceStopJobs"] = args ? args.isForceStopJobs : undefined;
             resourceInputs["isHighAvailability"] = args ? args.isHighAvailability : undefined;
             resourceInputs["isSecure"] = args ? args.isSecure : undefined;
             resourceInputs["kerberosRealmName"] = args ? args.kerberosRealmName : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["masterNode"] = args ? args.masterNode : undefined;
             resourceInputs["networkConfig"] = args ? args.networkConfig : undefined;
+            resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["utilNode"] = args ? args.utilNode : undefined;
             resourceInputs["workerNode"] = args ? args.workerNode : undefined;
             resourceInputs["clusterDetails"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["nodes"] = undefined /*out*/;
             resourceInputs["numberOfNodes"] = undefined /*out*/;
-            resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["clusterAdminPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(BdsInstance.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -323,17 +357,21 @@ export interface BdsInstanceState {
      */
     bootstrapScriptUrl?: pulumi.Input<string>;
     /**
-     * -(Optional) The information about added Cloud SQL capability
+     * The information about added Cloud SQL capability
      */
     cloudSqlDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceCloudSqlDetail>[]>;
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
     clusterAdminPassword?: pulumi.Input<string>;
     /**
      * Specific info about a Hadoop cluster
      */
     clusterDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceClusterDetail>[]>;
+    /**
+     * Profile of the Big Data Service cluster.
+     */
+    clusterProfile?: pulumi.Input<string>;
     /**
      * The SSH public key used to authenticate the cluster connection.
      */
@@ -348,7 +386,7 @@ export interface BdsInstanceState {
     compartmentId?: pulumi.Input<string>;
     computeOnlyWorkerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceComputeOnlyWorkerNode>;
     /**
-     * The user who created the BDS instance.
+     * The user who created the cluster.
      */
     createdBy?: pulumi.Input<string>;
     /**
@@ -359,14 +397,19 @@ export interface BdsInstanceState {
      * (Updatable) Name of the BDS instance
      */
     displayName?: pulumi.Input<string>;
+    edgeNode?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNode>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+     * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
     isCloudSqlConfigured?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+     */
+    isForceStopJobs?: pulumi.Input<boolean>;
     /**
      * Boolean flag specifying whether or not the cluster is HA
      */
@@ -400,7 +443,7 @@ export interface BdsInstanceState {
      */
     numberOfNodes?: pulumi.Input<number>;
     /**
-     * The state of the BDS instance
+     * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
     state?: pulumi.Input<string>;
     /**
@@ -427,13 +470,17 @@ export interface BdsInstanceArgs {
      */
     bootstrapScriptUrl?: pulumi.Input<string>;
     /**
-     * -(Optional) The information about added Cloud SQL capability
+     * The information about added Cloud SQL capability
      */
     cloudSqlDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceCloudSqlDetail>[]>;
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
     clusterAdminPassword: pulumi.Input<string>;
+    /**
+     * Profile of the Big Data Service cluster.
+     */
+    clusterProfile?: pulumi.Input<string>;
     /**
      * The SSH public key used to authenticate the cluster connection.
      */
@@ -455,14 +502,19 @@ export interface BdsInstanceArgs {
      * (Updatable) Name of the BDS instance
      */
     displayName: pulumi.Input<string>;
+    edgeNode?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNode>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+     * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
     isCloudSqlConfigured?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+     */
+    isForceStopJobs?: pulumi.Input<boolean>;
     /**
      * Boolean flag specifying whether or not the cluster is HA
      */
@@ -487,6 +539,10 @@ export interface BdsInstanceArgs {
      * Additional configuration of customer's network.
      */
     networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig>;
+    /**
+     * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+     */
+    state?: pulumi.Input<string>;
     /**
      * The utility node in the BDS instance
      */

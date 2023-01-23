@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleet(args: GetFleetArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleet:getFleet", {
         "fleetId": args.fleetId,
     }, opts);
@@ -54,6 +52,10 @@ export interface GetFleetResult {
      * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      */
     readonly approximateInstallationCount: number;
+    /**
+     * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     */
+    readonly approximateJavaServerCount: number;
     /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      */
@@ -92,7 +94,7 @@ export interface GetFleetResult {
      */
     readonly inventoryLogs: outputs.Jms.GetFleetInventoryLog[];
     /**
-     * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      */
     readonly isAdvancedFeaturesEnabled: boolean;
     /**
@@ -112,9 +114,24 @@ export interface GetFleetResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Jms service.
+ *
+ * Retrieve a Fleet with the specified identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFleet = oci.Jms.getFleet({
+ *     fleetId: oci_jms_fleet.test_fleet.id,
+ * });
+ * ```
+ */
 export function getFleetOutput(args: GetFleetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetResult> {
-    return pulumi.output(args).apply(a => getFleet(a, opts))
+    return pulumi.output(args).apply((a: any) => getFleet(a, opts))
 }
 
 /**

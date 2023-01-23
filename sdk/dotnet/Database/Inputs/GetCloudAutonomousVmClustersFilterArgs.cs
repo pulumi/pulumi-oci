@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class GetCloudAutonomousVmClustersFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of the month of the year.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

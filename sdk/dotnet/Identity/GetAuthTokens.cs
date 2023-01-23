@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuthTokensResult> InvokeAsync(GetAuthTokensArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuthTokensResult>("oci:Identity/getAuthTokens:getAuthTokens", args ?? new GetAuthTokensArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuthTokensResult>("oci:Identity/getAuthTokens:getAuthTokens", args ?? new GetAuthTokensArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuthTokensResult> Invoke(GetAuthTokensInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuthTokensResult>("oci:Identity/getAuthTokens:getAuthTokens", args ?? new GetAuthTokensInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuthTokensResult>("oci:Identity/getAuthTokens:getAuthTokens", args ?? new GetAuthTokensInvokeArgs(), options.WithDefaults());
     }
 
 

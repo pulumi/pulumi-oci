@@ -5,24 +5,66 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./dkim";
-export * from "./emailDomain";
-export * from "./getDkim";
-export * from "./getDkims";
-export * from "./getEmailDomain";
-export * from "./getEmailDomains";
-export * from "./getSender";
-export * from "./getSenders";
-export * from "./getSuppression";
-export * from "./getSuppressions";
-export * from "./sender";
-export * from "./suppression";
+export { DkimArgs, DkimState } from "./dkim";
+export type Dkim = import("./dkim").Dkim;
+export const Dkim: typeof import("./dkim").Dkim = null as any;
+utilities.lazyLoad(exports, ["Dkim"], () => require("./dkim"));
 
-// Import resources to register:
-import { Dkim } from "./dkim";
-import { EmailDomain } from "./emailDomain";
-import { Sender } from "./sender";
-import { Suppression } from "./suppression";
+export { EmailDomainArgs, EmailDomainState } from "./emailDomain";
+export type EmailDomain = import("./emailDomain").EmailDomain;
+export const EmailDomain: typeof import("./emailDomain").EmailDomain = null as any;
+utilities.lazyLoad(exports, ["EmailDomain"], () => require("./emailDomain"));
+
+export { GetDkimArgs, GetDkimResult, GetDkimOutputArgs } from "./getDkim";
+export const getDkim: typeof import("./getDkim").getDkim = null as any;
+export const getDkimOutput: typeof import("./getDkim").getDkimOutput = null as any;
+utilities.lazyLoad(exports, ["getDkim","getDkimOutput"], () => require("./getDkim"));
+
+export { GetDkimsArgs, GetDkimsResult, GetDkimsOutputArgs } from "./getDkims";
+export const getDkims: typeof import("./getDkims").getDkims = null as any;
+export const getDkimsOutput: typeof import("./getDkims").getDkimsOutput = null as any;
+utilities.lazyLoad(exports, ["getDkims","getDkimsOutput"], () => require("./getDkims"));
+
+export { GetEmailDomainArgs, GetEmailDomainResult, GetEmailDomainOutputArgs } from "./getEmailDomain";
+export const getEmailDomain: typeof import("./getEmailDomain").getEmailDomain = null as any;
+export const getEmailDomainOutput: typeof import("./getEmailDomain").getEmailDomainOutput = null as any;
+utilities.lazyLoad(exports, ["getEmailDomain","getEmailDomainOutput"], () => require("./getEmailDomain"));
+
+export { GetEmailDomainsArgs, GetEmailDomainsResult, GetEmailDomainsOutputArgs } from "./getEmailDomains";
+export const getEmailDomains: typeof import("./getEmailDomains").getEmailDomains = null as any;
+export const getEmailDomainsOutput: typeof import("./getEmailDomains").getEmailDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getEmailDomains","getEmailDomainsOutput"], () => require("./getEmailDomains"));
+
+export { GetSenderArgs, GetSenderResult, GetSenderOutputArgs } from "./getSender";
+export const getSender: typeof import("./getSender").getSender = null as any;
+export const getSenderOutput: typeof import("./getSender").getSenderOutput = null as any;
+utilities.lazyLoad(exports, ["getSender","getSenderOutput"], () => require("./getSender"));
+
+export { GetSendersArgs, GetSendersResult, GetSendersOutputArgs } from "./getSenders";
+export const getSenders: typeof import("./getSenders").getSenders = null as any;
+export const getSendersOutput: typeof import("./getSenders").getSendersOutput = null as any;
+utilities.lazyLoad(exports, ["getSenders","getSendersOutput"], () => require("./getSenders"));
+
+export { GetSuppressionArgs, GetSuppressionResult, GetSuppressionOutputArgs } from "./getSuppression";
+export const getSuppression: typeof import("./getSuppression").getSuppression = null as any;
+export const getSuppressionOutput: typeof import("./getSuppression").getSuppressionOutput = null as any;
+utilities.lazyLoad(exports, ["getSuppression","getSuppressionOutput"], () => require("./getSuppression"));
+
+export { GetSuppressionsArgs, GetSuppressionsResult, GetSuppressionsOutputArgs } from "./getSuppressions";
+export const getSuppressions: typeof import("./getSuppressions").getSuppressions = null as any;
+export const getSuppressionsOutput: typeof import("./getSuppressions").getSuppressionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSuppressions","getSuppressionsOutput"], () => require("./getSuppressions"));
+
+export { SenderArgs, SenderState } from "./sender";
+export type Sender = import("./sender").Sender;
+export const Sender: typeof import("./sender").Sender = null as any;
+utilities.lazyLoad(exports, ["Sender"], () => require("./sender"));
+
+export { SuppressionArgs, SuppressionState } from "./suppression";
+export type Suppression = import("./suppression").Suppression;
+export const Suppression: typeof import("./suppression").Suppression = null as any;
+utilities.lazyLoad(exports, ["Suppression"], () => require("./suppression"));
+
 
 const _module = {
     version: utilities.getVersion(),

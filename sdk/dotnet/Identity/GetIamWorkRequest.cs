@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIamWorkRequestResult> InvokeAsync(GetIamWorkRequestArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamWorkRequestResult>("oci:Identity/getIamWorkRequest:getIamWorkRequest", args ?? new GetIamWorkRequestArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamWorkRequestResult>("oci:Identity/getIamWorkRequest:getIamWorkRequest", args ?? new GetIamWorkRequestArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Iam Work Request resource in Oracle Cloud Infrastructure Identity service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIamWorkRequestResult> Invoke(GetIamWorkRequestInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestResult>("oci:Identity/getIamWorkRequest:getIamWorkRequest", args ?? new GetIamWorkRequestInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestResult>("oci:Identity/getIamWorkRequest:getIamWorkRequest", args ?? new GetIamWorkRequestInvokeArgs(), options.WithDefaults());
     }
 
 

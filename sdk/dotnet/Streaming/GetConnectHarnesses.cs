@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Streaming
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetConnectHarnessesResult> InvokeAsync(GetConnectHarnessesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConnectHarnessesResult>("oci:Streaming/getConnectHarnesses:getConnectHarnesses", args ?? new GetConnectHarnessesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConnectHarnessesResult>("oci:Streaming/getConnectHarnesses:getConnectHarnesses", args ?? new GetConnectHarnessesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Connect Harnesses in Oracle Cloud Infrastructure Streaming service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Streaming
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetConnectHarnessesResult> Invoke(GetConnectHarnessesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConnectHarnessesResult>("oci:Streaming/getConnectHarnesses:getConnectHarnesses", args ?? new GetConnectHarnessesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectHarnessesResult>("oci:Streaming/getConnectHarnesses:getConnectHarnesses", args ?? new GetConnectHarnessesInvokeArgs(), options.WithDefaults());
     }
 
 

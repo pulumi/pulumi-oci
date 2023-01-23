@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMigrationsResult> InvokeAsync(GetMigrationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());
     }
 
 

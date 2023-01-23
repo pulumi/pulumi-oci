@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetReplicationPoliciesResult> InvokeAsync(GetReplicationPoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetReplicationPoliciesResult>("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args ?? new GetReplicationPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetReplicationPoliciesResult>("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args ?? new GetReplicationPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetReplicationPoliciesResult> Invoke(GetReplicationPoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetReplicationPoliciesResult>("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args ?? new GetReplicationPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationPoliciesResult>("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args ?? new GetReplicationPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVtap(args: GetVtapArgs, opts?: pulumi.InvokeOptions): Promise<GetVtapResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVtap:getVtap", {
         "vtapId": args.vtapId,
     }, opts);
@@ -75,8 +72,6 @@ export interface GetVtapResult {
     readonly id: string;
     /**
      * Used to start or stop a `Vtap` resource.
-     * * `TRUE` directs the VTAP to start mirroring traffic.
-     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      */
     readonly isVtapEnabled: boolean;
     /**
@@ -137,9 +132,24 @@ export interface GetVtapResult {
      */
     readonly vxlanNetworkIdentifier: string;
 }
-
+/**
+ * This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified `Vtap` resource.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVtap = oci.Core.getVtap({
+ *     vtapId: oci_core_vtap.test_vtap.id,
+ * });
+ * ```
+ */
 export function getVtapOutput(args: GetVtapOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVtapResult> {
-    return pulumi.output(args).apply(a => getVtap(a, opts))
+    return pulumi.output(args).apply((a: any) => getVtap(a, opts))
 }
 
 /**

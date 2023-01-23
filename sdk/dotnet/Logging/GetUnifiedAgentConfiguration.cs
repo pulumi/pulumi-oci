@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Logging
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUnifiedAgentConfigurationResult> InvokeAsync(GetUnifiedAgentConfigurationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUnifiedAgentConfigurationResult>("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args ?? new GetUnifiedAgentConfigurationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUnifiedAgentConfigurationResult>("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args ?? new GetUnifiedAgentConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Logging
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUnifiedAgentConfigurationResult> Invoke(GetUnifiedAgentConfigurationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUnifiedAgentConfigurationResult>("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args ?? new GetUnifiedAgentConfigurationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUnifiedAgentConfigurationResult>("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args ?? new GetUnifiedAgentConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

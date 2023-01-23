@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJobAdvisorReportResult> InvokeAsync(GetJobAdvisorReportArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJobAdvisorReportResult> Invoke(GetJobAdvisorReportInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportInvokeArgs(), options.WithDefaults());
     }
 
 

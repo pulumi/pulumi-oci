@@ -32,7 +32,7 @@ public final class OpensearchFunctions {
      * 
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
-     * #### {Compartment-Name} - Name of  your compartment
+     * ##### {Compartment-Name} - Name of  your compartment
      * ```java
      * package generated_program;
      * 
@@ -55,6 +55,9 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -99,7 +102,7 @@ public final class OpensearchFunctions {
      * 
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
-     * #### {Compartment-Name} - Name of  your compartment
+     * ##### {Compartment-Name} - Name of  your compartment
      * ```java
      * package generated_program;
      * 
@@ -122,6 +125,9 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -166,7 +172,7 @@ public final class OpensearchFunctions {
      * 
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
-     * #### {Compartment-Name} - Name of  your compartment
+     * ##### {Compartment-Name} - Name of  your compartment
      * ```java
      * package generated_program;
      * 
@@ -189,6 +195,9 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -233,7 +242,7 @@ public final class OpensearchFunctions {
      * 
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
-     * #### {Compartment-Name} - Name of  your compartment
+     * ##### {Compartment-Name} - Name of  your compartment
      * ```java
      * package generated_program;
      * 
@@ -256,6 +265,9 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -323,6 +335,9 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -394,6 +409,9 @@ public final class OpensearchFunctions {
      * }
      * ```
      * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -463,6 +481,9 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -534,6 +555,9 @@ public final class OpensearchFunctions {
      * }
      * ```
      * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -576,6 +600,37 @@ public final class OpensearchFunctions {
      * 
      * Lists the supported Opensearch versions
      * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -614,6 +669,37 @@ public final class OpensearchFunctions {
      * This data source provides details about a specific Opensearch Version resource in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Lists the supported Opensearch versions
+     * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -654,6 +740,37 @@ public final class OpensearchFunctions {
      * 
      * Lists the supported Opensearch versions
      * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -692,6 +809,37 @@ public final class OpensearchFunctions {
      * This data source provides details about a specific Opensearch Version resource in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Lists the supported Opensearch versions
+     * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -732,6 +880,37 @@ public final class OpensearchFunctions {
      * 
      * Lists the supported Opensearch versions
      * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -770,6 +949,37 @@ public final class OpensearchFunctions {
      * This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Lists the supported Opensearch versions
+     * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java
@@ -810,6 +1020,37 @@ public final class OpensearchFunctions {
      * 
      * Lists the supported Opensearch versions
      * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -848,6 +1089,37 @@ public final class OpensearchFunctions {
      * This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
      * 
      * Lists the supported Opensearch versions
+     * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
      * ```java

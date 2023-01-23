@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExadataInsightsResult> InvokeAsync(GetExadataInsightsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExadataInsightsResult>("oci:Opsi/getExadataInsights:getExadataInsights", args ?? new GetExadataInsightsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataInsightsResult>("oci:Opsi/getExadataInsights:getExadataInsights", args ?? new GetExadataInsightsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Exadata Insights in Oracle Cloud Infrastructure Opsi service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExadataInsightsResult> Invoke(GetExadataInsightsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExadataInsightsResult>("oci:Opsi/getExadataInsights:getExadataInsights", args ?? new GetExadataInsightsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInsightsResult>("oci:Opsi/getExadataInsights:getExadataInsights", args ?? new GetExadataInsightsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseToolsPrivateEndpoints(args: GetDatabaseToolsPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsPrivateEndpointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -102,9 +100,28 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
      */
     readonly subnetId?: string;
 }
-
+/**
+ * This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
+ *
+ * Returns a list of Database Tools private endpoints.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseToolsPrivateEndpoints = oci.DatabaseTools.getDatabaseToolsPrivateEndpoints({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.database_tools_private_endpoint_display_name,
+ *     endpointServiceId: oci_core_service.test_service.id,
+ *     state: _var.database_tools_private_endpoint_state,
+ *     subnetId: oci_core_subnet.test_subnet.id,
+ * });
+ * ```
+ */
 export function getDatabaseToolsPrivateEndpointsOutput(args: GetDatabaseToolsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsPrivateEndpointsResult> {
-    return pulumi.output(args).apply(a => getDatabaseToolsPrivateEndpoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseToolsPrivateEndpoints(a, opts))
 }
 
 /**

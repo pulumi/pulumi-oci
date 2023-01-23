@@ -47,7 +47,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLibraryMaskingFormatsResult> InvokeAsync(GetLibraryMaskingFormatsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLibraryMaskingFormatsResult>("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", args ?? new GetLibraryMaskingFormatsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLibraryMaskingFormatsResult>("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", args ?? new GetLibraryMaskingFormatsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLibraryMaskingFormatsResult> Invoke(GetLibraryMaskingFormatsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLibraryMaskingFormatsResult>("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", args ?? new GetLibraryMaskingFormatsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLibraryMaskingFormatsResult>("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", args ?? new GetLibraryMaskingFormatsInvokeArgs(), options.WithDefaults());
     }
 
 

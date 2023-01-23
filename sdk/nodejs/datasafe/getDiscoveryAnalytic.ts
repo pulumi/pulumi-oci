@@ -2,13 +2,16 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
  * This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets consolidated discovery analytics data based on the specified query parameters.
+ * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+ * is equivalent to accessLevel "ACCESSIBLE" by default.
  *
  * ## Example Usage
  *
@@ -26,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryAnalytic(args: GetDiscoveryAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryAnalyticResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryAnalytic:getDiscoveryAnalytic", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -90,9 +90,30 @@ export interface GetDiscoveryAnalyticResult {
      */
     readonly targetId?: string;
 }
-
+/**
+ * This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets consolidated discovery analytics data based on the specified query parameters.
+ * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+ * is equivalent to accessLevel "ACCESSIBLE" by default.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDiscoveryAnalytic = oci.DataSafe.getDiscoveryAnalytic({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.discovery_analytic_compartment_id_in_subtree,
+ *     groupBy: _var.discovery_analytic_group_by,
+ *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ * });
+ * ```
+ */
 export function getDiscoveryAnalyticOutput(args: GetDiscoveryAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryAnalyticResult> {
-    return pulumi.output(args).apply(a => getDiscoveryAnalytic(a, opts))
+    return pulumi.output(args).apply((a: any) => getDiscoveryAnalytic(a, opts))
 }
 
 /**

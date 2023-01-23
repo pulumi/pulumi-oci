@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAvailabilityDomain(args: GetAvailabilityDomainArgs, opts?: pulumi.InvokeOptions): Promise<GetAvailabilityDomainResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", {
         "adNumber": args.adNumber,
         "compartmentId": args.compartmentId,
@@ -72,9 +69,24 @@ export interface GetAvailabilityDomainResult {
      */
     readonly name: string;
 }
-
+/**
+ * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCompartment = oci.Identity.getAvailabilityDomain({
+ *     compartmentId: _var.tenancy_ocid,
+ *     id: _var.id,
+ *     adNumber: _var.ad_number,
+ * });
+ * ```
+ */
 export function getAvailabilityDomainOutput(args: GetAvailabilityDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAvailabilityDomainResult> {
-    return pulumi.output(args).apply(a => getAvailabilityDomain(a, opts))
+    return pulumi.output(args).apply((a: any) => getAvailabilityDomain(a, opts))
 }
 
 /**

@@ -619,6 +619,8 @@ class AuditProfileAuditTrail(dict):
             suggest = "target_id"
         elif key == "timeCreated":
             suggest = "time_created"
+        elif key == "timeLastCollected":
+            suggest = "time_last_collected"
         elif key == "timeUpdated":
             suggest = "time_updated"
         elif key == "trailLocation":
@@ -653,6 +655,7 @@ class AuditProfileAuditTrail(dict):
                  system_tags: Optional[Mapping[str, Any]] = None,
                  target_id: Optional[str] = None,
                  time_created: Optional[str] = None,
+                 time_last_collected: Optional[str] = None,
                  time_updated: Optional[str] = None,
                  trail_location: Optional[str] = None,
                  work_request_id: Optional[str] = None):
@@ -672,6 +675,7 @@ class AuditProfileAuditTrail(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: The OCID of the Data Safe target for which the audit profile is created.
         :param str time_created: The date and time the audit profile was created, in the format defined by RFC3339.
+        :param str time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -706,6 +710,8 @@ class AuditProfileAuditTrail(dict):
             pulumi.set(__self__, "target_id", target_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_last_collected is not None:
+            pulumi.set(__self__, "time_last_collected", time_last_collected)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if trail_location is not None:
@@ -832,6 +838,14 @@ class AuditProfileAuditTrail(dict):
         The date and time the audit profile was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastCollected")
+    def time_last_collected(self) -> Optional[str]:
+        """
+        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_collected")
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -4589,7 +4603,7 @@ class GetAuditEventItemResult(dict):
         :param str audit_event_time: Time of audit event occurrence in the target database.
         :param str audit_location: The location of the audit. Currently the value is audit table.
         :param str audit_policies: Comma-seperated list of audit policies that caused the current audit event.
-        :param str audit_trail_id: The OCID of the audit trail that generated this audit event.
+        :param str audit_trail_id: The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
         :param str audit_type: Type of auditing.
         :param str client_hostname: Name of the host machine from which the session was spawned.
         :param str client_id: The client identifier in each Oracle session.
@@ -4694,7 +4708,7 @@ class GetAuditEventItemResult(dict):
     @pulumi.getter(name="auditTrailId")
     def audit_trail_id(self) -> str:
         """
-        The OCID of the audit trail that generated this audit event.
+        The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
         """
         return pulumi.get(self, "audit_trail_id")
 
@@ -4994,7 +5008,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         :param str audit_event_time: Time of audit event occurrence in the target database.
         :param str audit_location: The location of the audit. Currently the value is audit table.
         :param str audit_policies: Comma-seperated list of audit policies that caused the current audit event.
-        :param str audit_trail_id: The OCID of the audit trail that generated this audit event.
+        :param str audit_trail_id: The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
         :param str audit_type: Type of auditing.
         :param str client_hostname: Name of the host machine from which the session was spawned.
         :param str client_id: The client identifier in each Oracle session.
@@ -5099,7 +5113,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="auditTrailId")
     def audit_trail_id(self) -> str:
         """
-        The OCID of the audit trail that generated this audit event.
+        The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
         """
         return pulumi.get(self, "audit_trail_id")
 
@@ -6149,6 +6163,7 @@ class GetAuditProfileAuditTrailResult(dict):
                  system_tags: Mapping[str, Any],
                  target_id: str,
                  time_created: str,
+                 time_last_collected: str,
                  time_updated: str,
                  trail_location: str,
                  work_request_id: str):
@@ -6168,6 +6183,7 @@ class GetAuditProfileAuditTrailResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: The OCID of the Data Safe target for which the audit profile is created.
         :param str time_created: The date and time the audit profile was created, in the format defined by RFC3339.
+        :param str time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -6187,6 +6203,7 @@ class GetAuditProfileAuditTrailResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_collected", time_last_collected)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "trail_location", trail_location)
         pulumi.set(__self__, "work_request_id", work_request_id)
@@ -6310,6 +6327,14 @@ class GetAuditProfileAuditTrailResult(dict):
         The date and time the audit profile was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastCollected")
+    def time_last_collected(self) -> str:
+        """
+        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_collected")
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -6919,6 +6944,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
                  system_tags: Mapping[str, Any],
                  target_id: str,
                  time_created: str,
+                 time_last_collected: str,
                  time_updated: str,
                  trail_location: str,
                  work_request_id: str):
@@ -6938,6 +6964,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_created: The date and time the audit profile was created, in the format defined by RFC3339.
+        :param str time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -6957,6 +6984,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_collected", time_last_collected)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "trail_location", trail_location)
         pulumi.set(__self__, "work_request_id", work_request_id)
@@ -7080,6 +7108,14 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         The date and time the audit profile was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastCollected")
+    def time_last_collected(self) -> str:
+        """
+        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_collected")
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -7245,6 +7281,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
                  system_tags: Mapping[str, Any],
                  target_id: str,
                  time_created: str,
+                 time_last_collected: str,
                  time_updated: str,
                  trail_location: str,
                  work_request_id: str):
@@ -7265,6 +7302,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_created: The date and time the audit trail was created, in the format defined by RFC3339.
+        :param str time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit trail was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -7286,6 +7324,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_collected", time_last_collected)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "trail_location", trail_location)
         pulumi.set(__self__, "work_request_id", work_request_id)
@@ -7422,6 +7461,14 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         The date and time the audit trail was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastCollected")
+    def time_last_collected(self) -> str:
+        """
+        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_collected")
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -10796,7 +10843,9 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
                  id: str,
                  masking_policy_id: str,
                  masking_work_request_id: str,
+                 state: str,
                  target_id: str,
+                 time_created: str,
                  time_masking_finished: str,
                  time_masking_started: str,
                  total_masked_columns: str,
@@ -10809,7 +10858,9 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         :param str id: The OCID of the masking report.
         :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
         :param str masking_work_request_id: The OCID of the masking work request that resulted in this masking report.
+        :param str state: The current state of the masking report.
         :param str target_id: A filter to return only items related to a specific target OCID.
+        :param str time_created: The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_masking_finished: The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         :param str time_masking_started: The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         :param str total_masked_columns: The total number of masked columns.
@@ -10822,7 +10873,9 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
         pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_masking_finished", time_masking_finished)
         pulumi.set(__self__, "time_masking_started", time_masking_started)
         pulumi.set(__self__, "total_masked_columns", total_masked_columns)
@@ -10864,12 +10917,28 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         return pulumi.get(self, "masking_work_request_id")
 
     @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the masking report.
+        """
+        return pulumi.get(self, "state")
+
+    @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
         A filter to return only items related to a specific target OCID.
         """
         return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeMaskingFinished")
@@ -11384,6 +11453,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
                  column_infos: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult'],
                  column_sortings: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult'],
                  compartment_id: str,
+                 compliance_standards: Sequence[str],
                  data_source: str,
                  defined_tags: Mapping[str, Any],
                  description: str,
@@ -11393,6 +11463,12 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
                  id: str,
                  is_seeded: bool,
                  parent_id: str,
+                 record_time_span: str,
+                 schedule: str,
+                 scheduled_report_compartment_id: str,
+                 scheduled_report_mime_type: str,
+                 scheduled_report_name: str,
+                 scheduled_report_row_limit: int,
                  scim_filter: str,
                  state: str,
                  summaries: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemSummaryResult'],
@@ -11405,6 +11481,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs'] column_infos: An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
         :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs'] column_sortings: An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Sequence[str] compliance_standards: The list of data protection regulations/standards used in the report that will help demonstrate compliance.
         :param str data_source: Specifies the name of a resource that provides data for the report. For example  alerts, events.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param str description: A description of the report definition.
@@ -11414,6 +11491,12 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param str id: The OCID of the report definition.
         :param bool is_seeded: A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
         :param str parent_id: The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
+        :param str record_time_span: The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        :param str schedule: Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        :param str scheduled_report_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        :param str scheduled_report_mime_type: Specifies the format of report to be excel or pdf
+        :param str scheduled_report_name: The name of the report to be scheduled.
+        :param int scheduled_report_row_limit: Specifies the limit on number of rows in report.
         :param str scim_filter: Additional scim filters used to get the specific summary.
         :param str state: An optional filter to return only resources that match the specified lifecycle state.
         :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs'] summaries: An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
@@ -11426,6 +11509,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         pulumi.set(__self__, "column_infos", column_infos)
         pulumi.set(__self__, "column_sortings", column_sortings)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compliance_standards", compliance_standards)
         pulumi.set(__self__, "data_source", data_source)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
@@ -11435,6 +11519,12 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_seeded", is_seeded)
         pulumi.set(__self__, "parent_id", parent_id)
+        pulumi.set(__self__, "record_time_span", record_time_span)
+        pulumi.set(__self__, "schedule", schedule)
+        pulumi.set(__self__, "scheduled_report_compartment_id", scheduled_report_compartment_id)
+        pulumi.set(__self__, "scheduled_report_mime_type", scheduled_report_mime_type)
+        pulumi.set(__self__, "scheduled_report_name", scheduled_report_name)
+        pulumi.set(__self__, "scheduled_report_row_limit", scheduled_report_row_limit)
         pulumi.set(__self__, "scim_filter", scim_filter)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summaries", summaries)
@@ -11481,6 +11571,14 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         A filter to return only resources that match the specified compartment OCID.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="complianceStandards")
+    def compliance_standards(self) -> Sequence[str]:
+        """
+        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        """
+        return pulumi.get(self, "compliance_standards")
 
     @property
     @pulumi.getter(name="dataSource")
@@ -11553,6 +11651,54 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
         """
         return pulumi.get(self, "parent_id")
+
+    @property
+    @pulumi.getter(name="recordTimeSpan")
+    def record_time_span(self) -> str:
+        """
+        The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        """
+        return pulumi.get(self, "record_time_span")
+
+    @property
+    @pulumi.getter
+    def schedule(self) -> str:
+        """
+        Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        """
+        return pulumi.get(self, "schedule")
+
+    @property
+    @pulumi.getter(name="scheduledReportCompartmentId")
+    def scheduled_report_compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        """
+        return pulumi.get(self, "scheduled_report_compartment_id")
+
+    @property
+    @pulumi.getter(name="scheduledReportMimeType")
+    def scheduled_report_mime_type(self) -> str:
+        """
+        Specifies the format of report to be excel or pdf
+        """
+        return pulumi.get(self, "scheduled_report_mime_type")
+
+    @property
+    @pulumi.getter(name="scheduledReportName")
+    def scheduled_report_name(self) -> str:
+        """
+        The name of the report to be scheduled.
+        """
+        return pulumi.get(self, "scheduled_report_name")
+
+    @property
+    @pulumi.getter(name="scheduledReportRowLimit")
+    def scheduled_report_row_limit(self) -> int:
+        """
+        Specifies the limit on number of rows in report.
+        """
+        return pulumi.get(self, "scheduled_report_row_limit")
 
     @property
     @pulumi.getter(name="scimFilter")
@@ -11892,7 +12038,8 @@ class GetReportsReportCollectionItemResult(dict):
                  report_definition_id: str,
                  state: str,
                  system_tags: Mapping[str, Any],
-                 time_generated: str):
+                 time_generated: str,
+                 type: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -11905,6 +12052,7 @@ class GetReportsReportCollectionItemResult(dict):
         :param str state: An optional filter to return only resources that match the specified lifecycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_generated: Specifies the time at which the report was generated.
+        :param str type: An optional filter to return only resources that match the specified type.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -11917,6 +12065,7 @@ class GetReportsReportCollectionItemResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_generated", time_generated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12005,6 +12154,14 @@ class GetReportsReportCollectionItemResult(dict):
         Specifies the time at which the report was generated.
         """
         return pulumi.get(self, "time_generated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        An optional filter to return only resources that match the specified type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

@@ -2,13 +2,26 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
  * This data source provides details about a specific Opensearch Version resource in Oracle Cloud Infrastructure Opensearch service.
  *
  * Lists the supported Opensearch versions
+ *
+ * ## Prerequisites
+ *
+ * The below policies must be created in compartment before creating OpensearchCluster
+ *
+ * ##### {Compartment-Name} - Name of  your compartment
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * ```
+ *
+ * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+ * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
  *
  * ## Example Usage
  *
@@ -22,11 +35,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOpensearchVersion(args: GetOpensearchVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetOpensearchVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -56,9 +66,36 @@ export interface GetOpensearchVersionResult {
      */
     readonly items: outputs.Opensearch.GetOpensearchVersionItem[];
 }
-
+/**
+ * This data source provides details about a specific Opensearch Version resource in Oracle Cloud Infrastructure Opensearch service.
+ *
+ * Lists the supported Opensearch versions
+ *
+ * ## Prerequisites
+ *
+ * The below policies must be created in compartment before creating OpensearchCluster
+ *
+ * ##### {Compartment-Name} - Name of  your compartment
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * ```
+ *
+ * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+ * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOpensearchVersion = oci.Opensearch.getOpensearchVersion({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getOpensearchVersionOutput(args: GetOpensearchVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchVersionResult> {
-    return pulumi.output(args).apply(a => getOpensearchVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getOpensearchVersion(a, opts))
 }
 
 /**

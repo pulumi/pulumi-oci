@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseAttentionLogCount(args: GetManagedDatabaseAttentionLogCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAttentionLogCountResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", {
         "groupBy": args.groupBy,
         "isRegularExpression": args.isRegularExpression,
@@ -108,9 +106,31 @@ export interface GetManagedDatabaseAttentionLogCountResult {
     readonly typeFilter?: string;
     readonly urgencyFilter?: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Attention Log Count resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Get the counts of attention logs for the specified Managed Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseAttentionLogCount = oci.DatabaseManagement.getManagedDatabaseAttentionLogCount({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     groupBy: _var.managed_database_attention_log_count_group_by,
+ *     isRegularExpression: _var.managed_database_attention_log_count_is_regular_expression,
+ *     logSearchText: _var.managed_database_attention_log_count_log_search_text,
+ *     timeGreaterThanOrEqualTo: _var.managed_database_attention_log_count_time_greater_than_or_equal_to,
+ *     timeLessThanOrEqualTo: _var.managed_database_attention_log_count_time_less_than_or_equal_to,
+ *     typeFilter: _var.managed_database_attention_log_count_type_filter,
+ *     urgencyFilter: _var.managed_database_attention_log_count_urgency_filter,
+ * });
+ * ```
+ */
 export function getManagedDatabaseAttentionLogCountOutput(args: GetManagedDatabaseAttentionLogCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAttentionLogCountResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseAttentionLogCount(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseAttentionLogCount(a, opts))
 }
 
 /**

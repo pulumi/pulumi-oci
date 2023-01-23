@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsEntitiesSummary(args: GetLogAnalyticsEntitiesSummaryArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntitiesSummaryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary", {
         "compartmentId": args.compartmentId,
         "namespace": args.namespace,
@@ -73,9 +70,25 @@ export interface GetLogAnalyticsEntitiesSummaryResult {
     readonly id: string;
     readonly namespace: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Returns log analytics entities count summary report.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsEntitiesSummary = oci.LogAnalytics.getLogAnalyticsEntitiesSummary({
+ *     compartmentId: _var.compartment_id,
+ *     namespace: _var.log_analytics_entities_summary_namespace,
+ * });
+ * ```
+ */
 export function getLogAnalyticsEntitiesSummaryOutput(args: GetLogAnalyticsEntitiesSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntitiesSummaryResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsEntitiesSummary(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsEntitiesSummary(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNatGateways(args: GetNatGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetNatGatewaysResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNatGateways:getNatGateways", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -93,9 +91,28 @@ export interface GetNatGatewaysResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Nat Gateways in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the NAT gateways in the specified compartment. You may optionally specify a VCN OCID
+ * to filter the results by VCN.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNatGateways = oci.Core.getNatGateways({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.nat_gateway_display_name,
+ *     state: _var.nat_gateway_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getNatGatewaysOutput(args: GetNatGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNatGatewaysResult> {
-    return pulumi.output(args).apply(a => getNatGateways(a, opts))
+    return pulumi.output(args).apply((a: any) => getNatGateways(a, opts))
 }
 
 /**

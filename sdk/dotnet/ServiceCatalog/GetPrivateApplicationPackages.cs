@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPrivateApplicationPackagesResult> InvokeAsync(GetPrivateApplicationPackagesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPrivateApplicationPackagesResult>("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args ?? new GetPrivateApplicationPackagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateApplicationPackagesResult>("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args ?? new GetPrivateApplicationPackagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Private Application Packages in Oracle Cloud Infrastructure Service Catalog service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPrivateApplicationPackagesResult> Invoke(GetPrivateApplicationPackagesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationPackagesResult>("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args ?? new GetPrivateApplicationPackagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationPackagesResult>("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args ?? new GetPrivateApplicationPackagesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -29,7 +29,7 @@ public final class GetInvokeRunsRun {
      */
     private List<GetInvokeRunsRunApplicationLogConfig> applicationLogConfigs;
     /**
-     * @return An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     private String archiveUri;
@@ -115,6 +115,11 @@ public final class GetInvokeRunsRun {
      */
     private String id;
     /**
+     * @return The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     * 
+     */
+    private String idleTimeoutInMinutes;
+    /**
      * @return The Spark language.
      * 
      */
@@ -129,6 +134,11 @@ public final class GetInvokeRunsRun {
      * 
      */
     private String logsBucketUri;
+    /**
+     * @return The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     * 
+     */
+    private String maxDurationInMinutes;
     /**
      * @return The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
@@ -241,7 +251,7 @@ public final class GetInvokeRunsRun {
         return this.applicationLogConfigs;
     }
     /**
-     * @return An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     public String archiveUri() {
@@ -363,6 +373,13 @@ public final class GetInvokeRunsRun {
         return this.id;
     }
     /**
+     * @return The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     * 
+     */
+    public String idleTimeoutInMinutes() {
+        return this.idleTimeoutInMinutes;
+    }
+    /**
      * @return The Spark language.
      * 
      */
@@ -382,6 +399,13 @@ public final class GetInvokeRunsRun {
      */
     public String logsBucketUri() {
         return this.logsBucketUri;
+    }
+    /**
+     * @return The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     * 
+     */
+    public String maxDurationInMinutes() {
+        return this.maxDurationInMinutes;
     }
     /**
      * @return The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -546,9 +570,11 @@ public final class GetInvokeRunsRun {
         private String fileUri;
         private Map<String,Object> freeformTags;
         private String id;
+        private String idleTimeoutInMinutes;
         private String language;
         private String lifecycleDetails;
         private String logsBucketUri;
+        private String maxDurationInMinutes;
         private String metastoreId;
         private Integer numExecutors;
         private String opcRequestId;
@@ -591,9 +617,11 @@ public final class GetInvokeRunsRun {
     	      this.fileUri = defaults.fileUri;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.idleTimeoutInMinutes = defaults.idleTimeoutInMinutes;
     	      this.language = defaults.language;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logsBucketUri = defaults.logsBucketUri;
+    	      this.maxDurationInMinutes = defaults.maxDurationInMinutes;
     	      this.metastoreId = defaults.metastoreId;
     	      this.numExecutors = defaults.numExecutors;
     	      this.opcRequestId = defaults.opcRequestId;
@@ -728,6 +756,11 @@ public final class GetInvokeRunsRun {
             return this;
         }
         @CustomType.Setter
+        public Builder idleTimeoutInMinutes(String idleTimeoutInMinutes) {
+            this.idleTimeoutInMinutes = Objects.requireNonNull(idleTimeoutInMinutes);
+            return this;
+        }
+        @CustomType.Setter
         public Builder language(String language) {
             this.language = Objects.requireNonNull(language);
             return this;
@@ -740,6 +773,11 @@ public final class GetInvokeRunsRun {
         @CustomType.Setter
         public Builder logsBucketUri(String logsBucketUri) {
             this.logsBucketUri = Objects.requireNonNull(logsBucketUri);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxDurationInMinutes(String maxDurationInMinutes) {
+            this.maxDurationInMinutes = Objects.requireNonNull(maxDurationInMinutes);
             return this;
         }
         @CustomType.Setter
@@ -868,9 +906,11 @@ public final class GetInvokeRunsRun {
             o.fileUri = fileUri;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.idleTimeoutInMinutes = idleTimeoutInMinutes;
             o.language = language;
             o.lifecycleDetails = lifecycleDetails;
             o.logsBucketUri = logsBucketUri;
+            o.maxDurationInMinutes = maxDurationInMinutes;
             o.metastoreId = metastoreId;
             o.numExecutors = numExecutors;
             o.opcRequestId = opcRequestId;

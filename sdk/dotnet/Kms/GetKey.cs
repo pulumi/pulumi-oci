@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetKeyResult> InvokeAsync(GetKeyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKeyResult>("oci:Kms/getKey:getKey", args ?? new GetKeyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKeyResult>("oci:Kms/getKey:getKey", args ?? new GetKeyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Key resource in Oracle Cloud Infrastructure Kms service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetKeyResult> Invoke(GetKeyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetKeyResult>("oci:Kms/getKey:getKey", args ?? new GetKeyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetKeyResult>("oci:Kms/getKey:getKey", args ?? new GetKeyInvokeArgs(), options.WithDefaults());
     }
 
 

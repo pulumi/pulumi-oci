@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogPrivateEndpoint(args: GetCatalogPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogPrivateEndpointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", {
         "catalogPrivateEndpointId": args.catalogPrivateEndpointId,
     }, opts);
@@ -95,9 +92,24 @@ export interface GetCatalogPrivateEndpointResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Gets a specific private reverse connection by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCatalogPrivateEndpoint = oci.DataCatalog.getCatalogPrivateEndpoint({
+ *     catalogPrivateEndpointId: oci_datacatalog_catalog_private_endpoint.test_catalog_private_endpoint.id,
+ * });
+ * ```
+ */
 export function getCatalogPrivateEndpointOutput(args: GetCatalogPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogPrivateEndpointResult> {
-    return pulumi.output(args).apply(a => getCatalogPrivateEndpoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getCatalogPrivateEndpoint(a, opts))
 }
 
 /**

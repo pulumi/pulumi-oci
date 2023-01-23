@@ -39,8 +39,6 @@ public final class SecurityListIngressSecurityRule {
     private String source;
     /**
      * @return (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-     * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
      * 
      */
     private @Nullable String sourceType;
@@ -93,8 +91,6 @@ public final class SecurityListIngressSecurityRule {
     }
     /**
      * @return (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-     * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
      * 
      */
     public Optional<String> sourceType() {

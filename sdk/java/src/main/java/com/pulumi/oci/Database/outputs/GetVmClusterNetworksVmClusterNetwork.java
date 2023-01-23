@@ -15,6 +15,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVmClusterNetworksVmClusterNetwork {
+    private String action;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -88,6 +89,9 @@ public final class GetVmClusterNetworksVmClusterNetwork {
     private List<GetVmClusterNetworksVmClusterNetworkVmNetwork> vmNetworks;
 
     private GetVmClusterNetworksVmClusterNetwork() {}
+    public String action() {
+        return this.action;
+    }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -199,6 +203,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String action;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -217,6 +222,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
         public Builder() {}
         public Builder(GetVmClusterNetworksVmClusterNetwork defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -234,6 +240,11 @@ public final class GetVmClusterNetworksVmClusterNetwork {
     	      this.vmNetworks = defaults.vmNetworks;
         }
 
+        @CustomType.Setter
+        public Builder action(String action) {
+            this.action = Objects.requireNonNull(action);
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -323,6 +334,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
         }
         public GetVmClusterNetworksVmClusterNetwork build() {
             final var o = new GetVmClusterNetworksVmClusterNetwork();
+            o.action = action;
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.displayName = displayName;

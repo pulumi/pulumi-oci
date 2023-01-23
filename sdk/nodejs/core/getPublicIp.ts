@@ -50,11 +50,8 @@ import * as utilities from "../utilities";
  */
 export function getPublicIp(args?: GetPublicIpArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicIpResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPublicIp:getPublicIp", {
         "id": args.id,
         "ipAddress": args.ipAddress,
@@ -122,8 +119,6 @@ export interface GetPublicIpResult {
     readonly ipAddress: string;
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
-     * * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral public IP must always be assigned to an entity. If the assigned entity is a private IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the VNIC is terminated, or when the instance is terminated. If the assigned entity is a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), the ephemeral public IP is automatically deleted when the NAT gateway is terminated.
-     * * `RESERVED`: You control the public IP's lifetime. You can delete a reserved public IP whenever you like. It does not need to be assigned to a private IP at all times.
      */
     readonly lifetime: string;
     /**
@@ -136,8 +131,6 @@ export interface GetPublicIpResult {
     readonly publicIpPoolId: string;
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
-     * * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
-     * * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      */
     readonly scope: string;
     /**
@@ -149,9 +142,52 @@ export interface GetPublicIpResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified public IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
+ * Alternatively, you can get the object by using [GetPublicIpByIpAddress](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByIpAddress)
+ * with the public IP address (for example, 203.0.113.2).
+ *
+ * Or you can use [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByPrivateIpId)
+ * with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is assigned to.
+ *
+ * **Note:** If you're fetching a reserved public IP that is in the process of being
+ * moved to a different private IP, the service returns the public IP object with
+ * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
+ *
+ * ## Example Usage
+ * ### Get a public ip by public ip id
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOciCorePublicIpById = oci.Core.getPublicIp({
+ *     id: _var.test_public_ip_id,
+ * });
+ * ```
+ * ### Get a public ip by private ip id
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOciCorePublicIpByPrivateIpId = oci.Core.getPublicIp({
+ *     privateIpId: _var.test_public_ip_private_ip_id,
+ * });
+ * ```
+ * ### Get a public ip by public ip address
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOciCorePublicIpByIp = oci.Core.getPublicIp({
+ *     ipAddress: _var.test_public_ip_ip_address,
+ * });
+ * ```
+ */
 export function getPublicIpOutput(args?: GetPublicIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpResult> {
-    return pulumi.output(args).apply(a => getPublicIp(a, opts))
+    return pulumi.output(args).apply((a: any) => getPublicIp(a, opts))
 }
 
 /**

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAwrHub(args: GetAwrHubArgs, opts?: pulumi.InvokeOptions): Promise<GetAwrHubResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getAwrHub:getAwrHub", {
         "awrHubId": args.awrHubId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetAwrHubResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets details of an AWR hub.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAwrHub = oci.Opsi.getAwrHub({
+ *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
+ * });
+ * ```
+ */
 export function getAwrHubOutput(args: GetAwrHubOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwrHubResult> {
-    return pulumi.output(args).apply(a => getAwrHub(a, opts))
+    return pulumi.output(args).apply((a: any) => getAwrHub(a, opts))
 }
 
 /**

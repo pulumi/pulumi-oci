@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Bastion.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
+        /// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        /// </summary>
+        public readonly string DnsProxyStatus;
+        /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -100,6 +104,8 @@ namespace Pulumi.Oci.Bastion.Outputs
 
             ImmutableDictionary<string, object> definedTags,
 
+            string dnsProxyStatus,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -134,6 +140,7 @@ namespace Pulumi.Oci.Bastion.Outputs
             ClientCidrBlockAllowLists = clientCidrBlockAllowLists;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            DnsProxyStatus = dnsProxyStatus;
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;

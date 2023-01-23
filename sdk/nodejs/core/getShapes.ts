@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getShapes(args: GetShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getShapes:getShapes", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -74,9 +72,27 @@ export interface GetShapesResult {
      */
     readonly shapes: outputs.Core.GetShapesShape[];
 }
-
+/**
+ * This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the shapes that can be used to launch an instance within the specified compartment. You can
+ * filter the list by compatibility with a specific image.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testShapes = oci.Core.getShapes({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.shape_availability_domain,
+ *     imageId: oci_core_image.test_image.id,
+ * });
+ * ```
+ */
 export function getShapesOutput(args: GetShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapesResult> {
-    return pulumi.output(args).apply(a => getShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getShapes(a, opts))
 }
 
 /**

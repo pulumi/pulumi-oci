@@ -15,6 +15,9 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets consolidated discovery analytics data based on the specified query parameters.
+        /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+        /// is equivalent to accessLevel "ACCESSIBLE" by default.
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -42,12 +45,15 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDiscoveryAnalyticsResult> InvokeAsync(GetDiscoveryAnalyticsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryAnalyticsResult>("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args ?? new GetDiscoveryAnalyticsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryAnalyticsResult>("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args ?? new GetDiscoveryAnalyticsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets consolidated discovery analytics data based on the specified query parameters.
+        /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+        /// is equivalent to accessLevel "ACCESSIBLE" by default.
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -75,7 +81,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDiscoveryAnalyticsResult> Invoke(GetDiscoveryAnalyticsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDiscoveryAnalyticsResult>("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args ?? new GetDiscoveryAnalyticsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryAnalyticsResult>("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args ?? new GetDiscoveryAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

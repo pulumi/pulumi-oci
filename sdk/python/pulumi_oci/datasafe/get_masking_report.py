@@ -21,7 +21,7 @@ class GetMaskingReportResult:
     """
     A collection of values returned by getMaskingReport.
     """
-    def __init__(__self__, compartment_id=None, id=None, masking_policy_id=None, masking_report_id=None, masking_work_request_id=None, target_id=None, time_masking_finished=None, time_masking_started=None, total_masked_columns=None, total_masked_objects=None, total_masked_schemas=None, total_masked_sensitive_types=None, total_masked_values=None):
+    def __init__(__self__, compartment_id=None, id=None, masking_policy_id=None, masking_report_id=None, masking_work_request_id=None, state=None, target_id=None, time_created=None, time_masking_finished=None, time_masking_started=None, total_masked_columns=None, total_masked_objects=None, total_masked_schemas=None, total_masked_sensitive_types=None, total_masked_values=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -37,9 +37,15 @@ class GetMaskingReportResult:
         if masking_work_request_id and not isinstance(masking_work_request_id, str):
             raise TypeError("Expected argument 'masking_work_request_id' to be a str")
         pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if time_created and not isinstance(time_created, str):
+            raise TypeError("Expected argument 'time_created' to be a str")
+        pulumi.set(__self__, "time_created", time_created)
         if time_masking_finished and not isinstance(time_masking_finished, str):
             raise TypeError("Expected argument 'time_masking_finished' to be a str")
         pulumi.set(__self__, "time_masking_finished", time_masking_finished)
@@ -100,12 +106,28 @@ class GetMaskingReportResult:
         return pulumi.get(self, "masking_work_request_id")
 
     @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the masking report.
+        """
+        return pulumi.get(self, "state")
+
+    @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
         The OCID of the target database masked.
         """
         return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeMaskingFinished")
@@ -175,7 +197,9 @@ class AwaitableGetMaskingReportResult(GetMaskingReportResult):
             masking_policy_id=self.masking_policy_id,
             masking_report_id=self.masking_report_id,
             masking_work_request_id=self.masking_work_request_id,
+            state=self.state,
             target_id=self.target_id,
+            time_created=self.time_created,
             time_masking_finished=self.time_masking_finished,
             time_masking_started=self.time_masking_started,
             total_masked_columns=self.total_masked_columns,
@@ -215,7 +239,9 @@ def get_masking_report(masking_report_id: Optional[str] = None,
         masking_policy_id=__ret__.masking_policy_id,
         masking_report_id=__ret__.masking_report_id,
         masking_work_request_id=__ret__.masking_work_request_id,
+        state=__ret__.state,
         target_id=__ret__.target_id,
+        time_created=__ret__.time_created,
         time_masking_finished=__ret__.time_masking_finished,
         time_masking_started=__ret__.time_masking_started,
         total_masked_columns=__ret__.total_masked_columns,

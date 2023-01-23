@@ -22,7 +22,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, time_upgrade_required=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -35,6 +35,9 @@ class GetDeploymentResult:
         if deployment_backup_id and not isinstance(deployment_backup_id, str):
             raise TypeError("Expected argument 'deployment_backup_id' to be a str")
         pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
+        if deployment_diagnostic_datas and not isinstance(deployment_diagnostic_datas, list):
+            raise TypeError("Expected argument 'deployment_diagnostic_datas' to be a list")
+        pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
         if deployment_id and not isinstance(deployment_id, str):
             raise TypeError("Expected argument 'deployment_id' to be a str")
         pulumi.set(__self__, "deployment_id", deployment_id)
@@ -137,7 +140,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -150,6 +153,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "deployment_backup_id")
 
     @property
+    @pulumi.getter(name="deploymentDiagnosticDatas")
+    def deployment_diagnostic_datas(self) -> Sequence['outputs.GetDeploymentDeploymentDiagnosticDataResult']:
+        """
+        Information regarding the deployment diagnostic collection
+        """
+        return pulumi.get(self, "deployment_diagnostic_datas")
+
+    @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> str:
         return pulumi.get(self, "deployment_id")
@@ -158,7 +169,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
         """
-        The deployment type.
+        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
         """
         return pulumi.get(self, "deployment_type")
 
@@ -198,7 +209,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -278,7 +289,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -334,7 +345,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -373,6 +384,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             cpu_core_count=self.cpu_core_count,
             defined_tags=self.defined_tags,
             deployment_backup_id=self.deployment_backup_id,
+            deployment_diagnostic_datas=self.deployment_diagnostic_datas,
             deployment_id=self.deployment_id,
             deployment_type=self.deployment_type,
             deployment_url=self.deployment_url,
@@ -431,6 +443,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         cpu_core_count=__ret__.cpu_core_count,
         defined_tags=__ret__.defined_tags,
         deployment_backup_id=__ret__.deployment_backup_id,
+        deployment_diagnostic_datas=__ret__.deployment_diagnostic_datas,
         deployment_id=__ret__.deployment_id,
         deployment_type=__ret__.deployment_type,
         deployment_url=__ret__.deployment_url,

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstances(args: GetInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstances:getInstances", {
         "availabilityDomain": args.availabilityDomain,
         "capacityReservationId": args.capacityReservationId,
@@ -104,9 +102,30 @@ export interface GetInstancesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Instances in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the instances in the specified compartment and the specified availability domain.
+ * You can filter the results by specifying an instance name (the list will include all the identically-named
+ * instances in the compartment).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstances = oci.Core.getInstances({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.instance_availability_domain,
+ *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
+ *     displayName: _var.instance_display_name,
+ *     state: _var.instance_state,
+ * });
+ * ```
+ */
 export function getInstancesOutput(args: GetInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancesResult> {
-    return pulumi.output(args).apply(a => getInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstances(a, opts))
 }
 
 /**

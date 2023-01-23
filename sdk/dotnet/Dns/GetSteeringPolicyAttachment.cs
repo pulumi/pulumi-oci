@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSteeringPolicyAttachmentResult> InvokeAsync(GetSteeringPolicyAttachmentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSteeringPolicyAttachmentResult>("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", args ?? new GetSteeringPolicyAttachmentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSteeringPolicyAttachmentResult>("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", args ?? new GetSteeringPolicyAttachmentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSteeringPolicyAttachmentResult> Invoke(GetSteeringPolicyAttachmentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyAttachmentResult>("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", args ?? new GetSteeringPolicyAttachmentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyAttachmentResult>("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", args ?? new GetSteeringPolicyAttachmentInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -50,9 +50,12 @@ const (
 	blockchainMod                   = "Blockchain"                   // Blockchain
 	budgetMod                       = "Budget"                       // Budget
 	certificatesManagementMod       = "CertificatesManagement"       // Certificates Management
+	cloudBridgeMod                  = "CloudBridge"                  // Cloud Bridge
 	cloudGuardMod                   = "CloudGuard"                   // Cloud Guard
+	cloudMigrationsMod              = "CloudMigrations"              // Cloud Migrations
 	computeInstanceAgent            = "ComputeInstanceAgent"         // Compute Instance Agent
 	containerEngineMod              = "ContainerEngine"              // Container Engine
+	containerInstancesMod           = "ContainerInstances"           // Container Instances
 	coreMod                         = "Core"                         // Core
 	dataConnectivityMod             = "DataConnectivity"             // Data Connectivity
 	dataLabellingServiceMod         = "DataLabellingService"         // Data Labelling Service
@@ -66,6 +69,7 @@ const (
 	dataIntegrationMod              = "DataIntegration"              // Data Integration
 	dataScienceMod                  = "DataScience"                  // Data Science
 	devopsMod                       = "DevOps"                       // DevOps
+	disasterRecoveryMod             = "DisasterRecovery"             // Disaster Recovery
 	dnsMod                          = "Dns"                          // DNS
 	emailMod                        = "Email"                        // Email
 	emWarehouseMod                  = "EmWarehouse"                  // EM Warehouse
@@ -89,6 +93,7 @@ const (
 	managementAgentMod              = "ManagementAgent"              // Management Agent
 	managementDashboardMod          = "ManagementDashboard"          // Management Dashboard
 	marketplaceMod                  = "Marketplace"                  // Marketplace
+	mediaServicesMod                = "MediaServices"                // Media Services
 	meteringComputationMod          = "MeteringComputation"          // Metering Computation
 	monitoringMod                   = "Monitoring"                   // Monitoring
 	mysqlMod                        = "Mysql"                        // Mysql
@@ -103,6 +108,7 @@ const (
 	ospGatewayMod                   = "OspGateway"                   // Osp Gateway
 	onsMod                          = "Ons"                          // Ons
 	oneSubscriptionMod              = "OneSubsription"               // One Subscription
+	opaMod                          = "Opa"                          // OPA (Oracle Policy Agent)
 	opensearchMod                   = "Opensearch"                   // Opensearch
 	operatorAccessControlMod        = "OperatorAccessControl"        // Operator Access Control
 	opsiMod                         = "Opsi"                         // Opsi
@@ -111,6 +117,7 @@ const (
 	osubOrganizationSubscriptionMod = "OsubOrganizationSubscription" // Osub Organization Subscription
 	osubSubscriptionMod             = "OsubSubscription"             // Osub Subscription
 	osubUsageMod                    = "OsubUsage"                    // Osub Usage
+	queueMod                        = "Queue"                        // Queue
 	resourceManagerMod              = "ResourceManager"              // Resource Manager
 	schMod                          = "Sch"                          // Sch
 	secretsMod                      = "Secrets"                      // Secrets
@@ -250,6 +257,15 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_certificates_management_certificate":           {Tok: tfbridge.MakeResource(mainPkg, certificatesManagementMod, "Certificate")},
 			"oci_certificates_management_certificate_authority": {Tok: tfbridge.MakeResource(mainPkg, certificatesManagementMod, "CertificateAuthority")},
 
+			"oci_cloud_bridge_agent":              {Tok: tfbridge.MakeResource(mainPkg, cloudBridgeMod, "Agent")},
+			"oci_cloud_bridge_agent_dependency":   {Tok: tfbridge.MakeResource(mainPkg, cloudBridgeMod, "AgentDependency")},
+			"oci_cloud_bridge_agent_plugin":       {Tok: tfbridge.MakeResource(mainPkg, cloudBridgeMod, "AgentPlugin")},
+			"oci_cloud_bridge_asset":              {Tok: tfbridge.MakeResource(mainPkg, cloudBridgeMod, "Asset")},
+			"oci_cloud_bridge_asset_source":       {Tok: tfbridge.MakeResource(mainPkg, cloudBridgeMod, "AssetSource")},
+			"oci_cloud_bridge_discovery_schedule": {Tok: tfbridge.MakeResource(mainPkg, cloudBridgeMod, "DiscoverySchedule")},
+			"oci_cloud_bridge_environment":        {Tok: tfbridge.MakeResource(mainPkg, cloudBridgeMod, "Environment")},
+			"oci_cloud_bridge_inventory":          {Tok: tfbridge.MakeResource(mainPkg, cloudBridgeMod, "Inventory")},
+
 			"oci_cloud_guard_data_source":               {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "CloudGuardDataSource")},
 			"oci_cloud_guard_cloud_guard_configuration": {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "CloudGuardConfiguration")},
 			"oci_cloud_guard_data_mask_rule":            {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "DataMaskRule")},
@@ -260,8 +276,16 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_cloud_guard_security_recipe":           {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "SecurityRecipe")},
 			"oci_cloud_guard_security_zone":             {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "SecurityZone")},
 
+			"oci_cloud_migrations_migration":            {Tok: tfbridge.MakeResource(mainPkg, cloudMigrationsMod, "Migration")},
+			"oci_cloud_migrations_migration_asset":      {Tok: tfbridge.MakeResource(mainPkg, cloudMigrationsMod, "MigrationAsset")},
+			"oci_cloud_migrations_migration_plan":       {Tok: tfbridge.MakeResource(mainPkg, cloudMigrationsMod, "MigrationPlan")},
+			"oci_cloud_migrations_replication_schedule": {Tok: tfbridge.MakeResource(mainPkg, cloudMigrationsMod, "ReplicationSchedule")},
+			"oci_cloud_migrations_target_asset":         {Tok: tfbridge.MakeResource(mainPkg, cloudMigrationsMod, "TargetAsset")},
+
 			"oci_containerengine_cluster":   {Tok: tfbridge.MakeResource(mainPkg, containerEngineMod, "Cluster")},
 			"oci_containerengine_node_pool": {Tok: tfbridge.MakeResource(mainPkg, containerEngineMod, "NodePool")},
+
+			"oci_container_instances_container_instance": {Tok: tfbridge.MakeResource(mainPkg, containerEngineMod, "ContainerInstance")},
 
 			"oci_core_app_catalog_listing_resource_version_agreement": {Tok: tfbridge.MakeResource(mainPkg, coreMod, "AppCatalogListingResourceVersionAgreement")},
 			"oci_core_app_catalog_subscription":                       {Tok: tfbridge.MakeResource(mainPkg, coreMod, "AppCatalogSubscription")},
@@ -432,12 +456,13 @@ func Provider() tfbridge.ProviderInfo {
 					},
 				},
 			},
-			"oci_database_database_software_image":    {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DatabaseSoftwareImage")},
-			"oci_database_database_upgrade":           {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DatabaseUpgrade")},
-			"oci_database_db_home":                    {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbHome")},
-			"oci_database_db_node_console_connection": {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbNodeConsoleConnection")},
-			"oci_database_db_system":                  {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbSystem")},
-			"oci_database_exadata_infrastructure":     {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExadataInfrastructure")},
+			"oci_database_database_software_image":        {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DatabaseSoftwareImage")},
+			"oci_database_database_upgrade":               {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DatabaseUpgrade")},
+			"oci_database_db_home":                        {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbHome")},
+			"oci_database_db_node_console_connection":     {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbNodeConsoleConnection")},
+			"oci_database_db_system":                      {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbSystem")},
+			"oci_database_exadata_infrastructure":         {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExadataInfrastructure")},
+			"oci_database_exadata_infrastructure_compute": {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExadataInfrastructureCompute")},
 			"oci_database_exadata_infrastructure_storage": {
 				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExadataInfrastructureStorage"),
 				Docs: &tfbridge.DocInfo{
@@ -459,6 +484,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_pluggable_database":                                             {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "PluggableDatabase")},
 			"oci_database_pluggable_databases_local_clone":                                {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "PluggableDatabasesLocalClone")},
 			"oci_database_pluggable_databases_remote_clone":                               {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "PluggableDatabasesRemoteClone")},
+			"oci_database_pluggable_database_pluggabledatabasemanagements_management":     {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "PluggableDatabaseManagementsManagement")},
 			"oci_database_vm_cluster":                                                     {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmCluster")},
 			"oci_database_vm_cluster_add_virtual_machine":                                 {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmClusterAddVirtualNetwork")},
 			"oci_database_vm_cluster_network":                                             {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmClusterNetwork")},
@@ -505,16 +531,26 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_dataflow_application":      {Tok: tfbridge.MakeResource(mainPkg, dataFlowMod, "Application")},
 			"oci_dataflow_invoke_run":       {Tok: tfbridge.MakeResource(mainPkg, dataFlowMod, "InvokeRun")},
 			"oci_dataflow_private_endpoint": {Tok: tfbridge.MakeResource(mainPkg, dataFlowMod, "PrivateEndpoint")},
+			"oci_dataflow_run_statement":    {Tok: tfbridge.MakeResource(mainPkg, dataFlowMod, "RunStatement")},
 
-			"oci_dataintegration_workspace": {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "Workspace")},
+			"oci_dataintegration_workspace":         {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "Workspace")},
+			"oci_dataintegration_workspace_folder":  {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "WorkspaceFolder")},
+			"oci_dataintegration_workspace_project": {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "WorkspaceProject")},
 
-			"oci_datascience_job":              {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Job")},
-			"oci_datascience_job_run":          {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "JobRun")},
-			"oci_datascience_model":            {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Model")},
-			"oci_datascience_model_deployment": {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelDeployment")},
-			"oci_datascience_model_provenance": {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelProvenance")},
-			"oci_datascience_notebook_session": {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "NotebookSession")},
-			"oci_datascience_project":          {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Project")},
+			"oci_datascience_job":                   {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Job")},
+			"oci_datascience_job_run":               {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "JobRun")},
+			"oci_datascience_model":                 {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Model")},
+			"oci_datascience_model_artifact_export": {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelArtifactExport")},
+			"oci_datascience_model_artifact_import": {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelArtifactImport")},
+			"oci_datascience_model_version_set":     {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelVersionSet")},
+			"oci_datascience_model_deployment":      {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelDeployment")},
+			"oci_datascience_model_provenance":      {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelProvenance")},
+			"oci_datascience_notebook_session":      {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "NotebookSession")},
+			"oci_datascience_project":               {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Project")},
+
+			"oci_disaster_recovery_dr_plan":             {Tok: tfbridge.MakeResource(mainPkg, disasterRecoveryMod, "DrPlan")},
+			"oci_disaster_recovery_dr_plan_execution":   {Tok: tfbridge.MakeResource(mainPkg, disasterRecoveryMod, "DrPlanExecution")},
+			"oci_disaster_recovery_dr_protection_group": {Tok: tfbridge.MakeResource(mainPkg, disasterRecoveryMod, "DrProtectionGroup")},
 
 			"oci_dns_record":                     {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "Record")},
 			"oci_dns_resolver":                   {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "Resolver")},
@@ -539,6 +575,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_file_storage_export_set":   {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "ExportSet")},
 			"oci_file_storage_file_system":  {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "FileSystem")},
 			"oci_file_storage_mount_target": {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "MountTarget")},
+			"oci_file_storage_replication":  {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "Replication")},
 			"oci_file_storage_snapshot":     {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "Snapshot")},
 
 			"oci_functions_application":     {Tok: tfbridge.MakeResource(mainPkg, functionsMod, "Application")},
@@ -556,6 +593,8 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_golden_gate_database_registration": {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "DatabaseRegistration")},
 			"oci_golden_gate_deployment":            {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "Deployment")},
 			"oci_golden_gate_deployment_backup":     {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "DeploymentBackup")},
+			"oci_golden_gate_connection":            {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "Connection")},
+			"oci_golden_gate_connection_assignment": {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "ConnectionAssignment")},
 
 			"oci_health_checks_http_monitor": {Tok: tfbridge.MakeResource(mainPkg, healthChecksMod, "HttpMonitor")},
 			"oci_health_checks_http_probe":   {Tok: tfbridge.MakeResource(mainPkg, healthChecksMod, "HttpProbe")},
@@ -641,6 +680,9 @@ func Provider() tfbridge.ProviderInfo {
 					},
 				},
 			},
+			"oci_log_analytics_namespace_ingest_time_rule":             {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "NamespaceIngestTimeRule")},
+			"oci_log_analytics_namespace_ingest_time_rules_management": {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "NamespaceIngestTimeRulesManagement")},
+
 			"oci_log_analytics_namespace_scheduled_task": {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "NamespaceScheduledTask")},
 
 			"oci_logging_log":                         {Tok: tfbridge.MakeResource(mainPkg, loggingMod, "Log")},
@@ -657,6 +699,14 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_marketplace_listing_package_agreement": {Tok: tfbridge.MakeResource(mainPkg, marketplaceMod, "ListingPackageAgreement")},
 			"oci_marketplace_publication":               {Tok: tfbridge.MakeResource(mainPkg, marketplaceMod, "Publication")},
 
+			"oci_media_services_media_asset":                  {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "MediaAsset")},
+			"oci_media_services_media_workflow":               {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "MediaWorkflow")},
+			"oci_media_services_media_workflow_configuration": {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "MediaWorkflowConfiguration")},
+			"oci_media_services_media_workflow_job":           {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "MediaWorkflowJob")},
+			"oci_media_services_stream_cdn_config":            {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "StreamCdnConfig")},
+			"oci_media_services_stream_distribution_channel":  {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "StreamDistributionChannel")},
+			"oci_media_services_stream_packaging_config":      {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "StreamPackagingConfig")},
+
 			"oci_metering_computation_custom_table": {Tok: tfbridge.MakeResource(mainPkg, meteringComputationMod, "CustomTable")},
 			"oci_metering_computation_query":        {Tok: tfbridge.MakeResource(mainPkg, meteringComputationMod, "Query")},
 			"oci_metering_computation_usage":        {Tok: tfbridge.MakeResource(mainPkg, meteringComputationMod, "Usage")},
@@ -670,6 +720,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_mysql_heat_wave_cluster":   {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "HeatWaveCluster")},
 			"oci_mysql_mysql_backup":        {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlBackup")},
 			"oci_mysql_mysql_db_system":     {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlDbSystem")},
+			"oci_mysql_replica":             {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "Replica")},
 
 			"oci_network_load_balancer_backend":               {Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "Backend")},
 			"oci_network_load_balancer_backend_set":           {Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "BackendSet")},
@@ -705,6 +756,8 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_ons_notification_topic": {Tok: tfbridge.MakeResource(mainPkg, onsMod, "NotificationTopic")},
 			"oci_ons_subscription":       {Tok: tfbridge.MakeResource(mainPkg, onsMod, "Subscription")},
 
+			"oci_opa_opa_instance": {Tok: tfbridge.MakeResource(mainPkg, opaMod, "OpaInstance")},
+
 			"oci_opensearch_opensearch_cluster": {Tok: tfbridge.MakeResource(mainPkg, opensearchMod, "Cluster")},
 
 			"oci_operator_access_control_operator_control":            {Tok: tfbridge.MakeResource(mainPkg, operatorAccessControlMod, "OperatorControl")},
@@ -725,6 +778,8 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_optimizer_profile":           {Tok: tfbridge.MakeResource(mainPkg, optimizerMod, "Profile")},
 			"oci_optimizer_recommendation":    {Tok: tfbridge.MakeResource(mainPkg, optimizerMod, "Recommendation")},
 			"oci_optimizer_resource_action":   {Tok: tfbridge.MakeResource(mainPkg, optimizerMod, "ResourceAction")},
+
+			"oci_queue_queue": {Tok: tfbridge.MakeResource(mainPkg, queueMod, "Queue")},
 
 			"oci_service_catalog_private_application":         {Tok: tfbridge.MakeResource(mainPkg, serviceCatalogMod, "PrivateApplication")},
 			"oci_service_catalog_service_catalog":             {Tok: tfbridge.MakeResource(mainPkg, serviceCatalogMod, "Catalog")},
@@ -940,6 +995,24 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_certificates_management_certificate_versions":           {Tok: tfbridge.MakeDataSource(mainPkg, certificatesManagementMod, "getCertificateVersions")},
 			"oci_certificates_management_certificates":                   {Tok: tfbridge.MakeDataSource(mainPkg, certificatesManagementMod, "getCertificates")},
 
+			"oci_cloud_bridge_agent":               {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAgent")},
+			"oci_cloud_bridge_agent_dependencies":  {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAgentDependencies")},
+			"oci_cloud_bridge_agent_dependency":    {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAgentDependency")},
+			"oci_cloud_bridge_agent_plugin":        {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAgentPlugin")},
+			"oci_cloud_bridge_agents":              {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAgents")},
+			"oci_cloud_bridge_appliance_image":     {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getApplianceImage")},
+			"oci_cloud_bridge_appliance_images":    {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getApplianceImages")},
+			"oci_cloud_bridge_asset":               {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAsset")},
+			"oci_cloud_bridge_asset_source":        {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAssetSource")},
+			"oci_cloud_bridge_asset_sources":       {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAssetSources")},
+			"oci_cloud_bridge_assets":              {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getAssets")},
+			"oci_cloud_bridge_discovery_schedule":  {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getDiscoverySchedule")},
+			"oci_cloud_bridge_discovery_schedules": {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getDiscoverySchedules")},
+			"oci_cloud_bridge_environment":         {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getEnvironment")},
+			"oci_cloud_bridge_environments":        {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getEnvironments")},
+			"oci_cloud_bridge_inventories":         {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getInventories")},
+			"oci_cloud_bridge_inventory":           {Tok: tfbridge.MakeDataSource(mainPkg, cloudBridgeMod, "getInventory")},
+
 			"oci_cloud_guard_cloud_guard_configuration": {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getCloudGuardConfiguration")},
 			"oci_cloud_guard_data_mask_rule":            {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDataMaskRule")},
 			"oci_cloud_guard_data_mask_rules":           {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDataMaskRules")},
@@ -964,6 +1037,19 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_cloud_guard_security_zone":             {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getSecurityZone")},
 			"oci_cloud_guard_security_zones":            {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getSecurityZones")},
 
+			"oci_cloud_migrations_migration":                       {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getMigration")},
+			"oci_cloud_migrations_migration_asset":                 {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getMigrationAsset")},
+			"oci_cloud_migrations_migration_assets":                {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getMigrationAssets")},
+			"oci_cloud_migrations_migration_plan":                  {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getMigrationPlan")},
+			"oci_cloud_migrations_migration_plan_available_shape":  {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getMigrationPlanAvailableShape")},
+			"oci_cloud_migrations_migration_plan_available_shapes": {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getMigrationPlanAvailableShapes")},
+			"oci_cloud_migrations_migration_plans":                 {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getMigrationPlans")},
+			"oci_cloud_migrations_migrations":                      {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getMigrations")},
+			"oci_cloud_migrations_replication_schedule":            {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getReplicationSchedule")},
+			"oci_cloud_migrations_replication_schedules":           {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getReplicationSchedules")},
+			"oci_cloud_migrations_target_asset":                    {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getTargetAsset")},
+			"oci_cloud_migrations_target_assets":                   {Tok: tfbridge.MakeDataSource(mainPkg, cloudMigrationsMod, "getTargetAssets")},
+
 			"oci_computeinstanceagent_instance_agent_plugin":      {Tok: tfbridge.MakeDataSource(mainPkg, computeInstanceAgent, "getInstanceAgentPlugin")},
 			"oci_computeinstanceagent_instance_agent_plugins":     {Tok: tfbridge.MakeDataSource(mainPkg, computeInstanceAgent, "getInstanceAgentPlugins")},
 			"oci_computeinstanceagent_instance_available_plugins": {Tok: tfbridge.MakeDataSource(mainPkg, computeInstanceAgent, "getInstanceAvailablePlugin")},
@@ -983,6 +1069,11 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_containerengine_work_request_errors":      {Tok: tfbridge.MakeDataSource(mainPkg, containerEngineMod, "getWorkRequestErrors")},
 			"oci_containerengine_work_request_log_entries": {Tok: tfbridge.MakeDataSource(mainPkg, containerEngineMod, "getWorkRequestLogEntries")},
 			"oci_containerengine_work_requests":            {Tok: tfbridge.MakeDataSource(mainPkg, containerEngineMod, "getWorkRequests")},
+
+			"oci_container_instances_container_instance":        {Tok: tfbridge.MakeDataSource(mainPkg, containerInstancesMod, "getContainerInstance")},
+			"oci_container_instances_container_instance_shape":  {Tok: tfbridge.MakeDataSource(mainPkg, containerInstancesMod, "getContainerInstanceShape")},
+			"oci_container_instances_container_instance_shapes": {Tok: tfbridge.MakeDataSource(mainPkg, containerInstancesMod, "getContainerInstanceShapes")},
+			"oci_container_instances_container_instances":       {Tok: tfbridge.MakeDataSource(mainPkg, containerInstancesMod, "getContainerInstances")},
 
 			"oci_core_app_catalog_listing":                              {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getAppCatalogListing")},
 			"oci_core_app_catalog_listing_resource_version":             {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getAppCatalogListingResourceVersion")},
@@ -1262,6 +1353,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_autonomous_database_dataguard_association":            {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getAutonomousDatabaseDataguardAssociation")},
 			"oci_database_autonomous_database_dataguard_associations":           {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getAutonomousDatabaseDataguardAssociations")},
 			"oci_database_autonomous_database_instance_wallet_management":       {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getAutonomousDatabaseInstanceWalletManagement")},
+			"oci_database_autonomous_database_refreshable_clones":               {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getAutonomousDatabaseRefreshableClones")},
 			"oci_database_autonomous_database_regional_wallet_management":       {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getAutonomousDatabaseRegionalWalletManagement")},
 			"oci_database_autonomous_database_wallet":                           {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getAutonomousDatabaseWallet")},
 			"oci_database_autonomous_databases":                                 {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getAutonomousDatabases")},
@@ -1282,6 +1374,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_cloud_autonomous_vm_clusters":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudAutonomousVmClusters")},
 			"oci_database_cloud_exadata_infrastructure":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudExadataInfrastructure")},
 			"oci_database_cloud_exadata_infrastructures":                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudExadataInfrastructures")},
+			"oci_database_cloud_exadata_infrastructure_un_allocated_resource":   {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudExadataInfrastructureUnAllocatedResource")},
 			"oci_database_cloud_vm_cluster":                                     {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudVmCluster")},
 			"oci_database_cloud_vm_cluster_iorm_config":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudVmClusterIormConfig")},
 			"oci_database_cloud_vm_clusters":                                    {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudVmClusters")},
@@ -1451,9 +1544,15 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_dataflow_private_endpoints": {Tok: tfbridge.MakeDataSource(mainPkg, dataFlowMod, "getPrivateEndpoints")},
 			"oci_dataflow_run_log":           {Tok: tfbridge.MakeDataSource(mainPkg, dataFlowMod, "getRunLog")},
 			"oci_dataflow_run_logs":          {Tok: tfbridge.MakeDataSource(mainPkg, dataFlowMod, "getRunLogs")},
+			"oci_dataflow_run_statement":     {Tok: tfbridge.MakeDataSource(mainPkg, dataFlowMod, "getRunStatement")},
+			"oci_dataflow_run_statements":    {Tok: tfbridge.MakeDataSource(mainPkg, dataFlowMod, "getRunStatements")},
 
-			"oci_dataintegration_workspace":  {Tok: tfbridge.MakeDataSource(mainPkg, dataIntegrationMod, "getWorkspace")},
-			"oci_dataintegration_workspaces": {Tok: tfbridge.MakeDataSource(mainPkg, dataIntegrationMod, "getWorkspaces")},
+			"oci_dataintegration_workspace":          {Tok: tfbridge.MakeDataSource(mainPkg, dataIntegrationMod, "getWorkspace")},
+			"oci_dataintegration_workspaces":         {Tok: tfbridge.MakeDataSource(mainPkg, dataIntegrationMod, "getWorkspaces")},
+			"oci_dataintegration_workspace_folder":   {Tok: tfbridge.MakeDataSource(mainPkg, dataIntegrationMod, "getWorkspaceFolder")},
+			"oci_dataintegration_workspace_folders":  {Tok: tfbridge.MakeDataSource(mainPkg, dataIntegrationMod, "getWorkspaceFolders")},
+			"oci_dataintegration_workspace_project":  {Tok: tfbridge.MakeDataSource(mainPkg, dataIntegrationMod, "getWorkspaceProject")},
+			"oci_dataintegration_workspace_projects": {Tok: tfbridge.MakeDataSource(mainPkg, dataIntegrationMod, "getWorkspaceProjects")},
 
 			"oci_datascience_fast_launch_job_configs": {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getFastLaunchJobConfigs")},
 			"oci_datascience_job":                     {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getJob")},
@@ -1466,6 +1565,8 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_datascience_model_deployment_shapes": {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getModelDeploymentShapes")},
 			"oci_datascience_model_deployments":       {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getModelDeployments")},
 			"oci_datascience_model_provenance":        {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getModelProvenance")},
+			"oci_datascience_model_version_set":       {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getModelVersionSet")},
+			"oci_datascience_model_version_sets":      {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getModelVersionSets")},
 			"oci_datascience_models":                  {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getModels")},
 			"oci_datascience_notebook_session":        {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getNotebookSession")},
 			"oci_datascience_notebook_session_shapes": {Tok: tfbridge.MakeDataSource(mainPkg, dataScienceMod, "getNotebookSessionShapes")},
@@ -1516,6 +1617,13 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_devops_triggers":                   {Tok: tfbridge.MakeDataSource(mainPkg, devopsMod, "getTriggers")},
 			"oci_devops_repo_file_line":             {Tok: tfbridge.MakeDataSource(mainPkg, devopsMod, "getRepoFileLine")},
 
+			"oci_disaster_recovery_dr_plan":              {Tok: tfbridge.MakeDataSource(mainPkg, disasterRecoveryMod, "getDrPlan")},
+			"oci_disaster_recovery_dr_plan_execution":    {Tok: tfbridge.MakeDataSource(mainPkg, disasterRecoveryMod, "getDrPlanExecution")},
+			"oci_disaster_recovery_dr_plan_executions":   {Tok: tfbridge.MakeDataSource(mainPkg, disasterRecoveryMod, "getDrPlanExecutions")},
+			"oci_disaster_recovery_dr_plans":             {Tok: tfbridge.MakeDataSource(mainPkg, disasterRecoveryMod, "getDrPlans")},
+			"oci_disaster_recovery_dr_protection_group":  {Tok: tfbridge.MakeDataSource(mainPkg, disasterRecoveryMod, "getDrProtectionGroup")},
+			"oci_disaster_recovery_dr_protection_groups": {Tok: tfbridge.MakeDataSource(mainPkg, disasterRecoveryMod, "getDrProtectionGroups")},
+
 			"oci_dns_records":                     {Tok: tfbridge.MakeDataSource(mainPkg, dnsMod, "getRecords")},
 			"oci_dns_resolver":                    {Tok: tfbridge.MakeDataSource(mainPkg, dnsMod, "getResolver")},
 			"oci_dns_resolver_endpoint":           {Tok: tfbridge.MakeDataSource(mainPkg, dnsMod, "getResolverEndpoint")},
@@ -1550,12 +1658,16 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_events_rule":  {Tok: tfbridge.MakeDataSource(mainPkg, eventsMod, "getRule")},
 			"oci_events_rules": {Tok: tfbridge.MakeDataSource(mainPkg, eventsMod, "getRules")},
 
-			"oci_file_storage_export_sets":   {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getExportSets")},
-			"oci_file_storage_exports":       {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getExports")},
-			"oci_file_storage_file_systems":  {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getFileSystems")},
-			"oci_file_storage_mount_targets": {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getMountTargets")},
-			"oci_file_storage_snapshot":      {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getSnapshot")},
-			"oci_file_storage_snapshots":     {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getSnapshots")},
+			"oci_file_storage_export_sets":         {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getExportSets")},
+			"oci_file_storage_exports":             {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getExports")},
+			"oci_file_storage_file_systems":        {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getFileSystems")},
+			"oci_file_storage_mount_targets":       {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getMountTargets")},
+			"oci_file_storage_snapshot":            {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getSnapshot")},
+			"oci_file_storage_snapshots":           {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getSnapshots")},
+			"oci_file_storage_replication":         {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getReplication")},
+			"oci_file_storage_replication_target":  {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getReplicationTarget")},
+			"oci_file_storage_replication_targets": {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getReplicationTargets")},
+			"oci_file_storage_replications":        {Tok: tfbridge.MakeDataSource(mainPkg, fileStorageMod, "getReplications")},
 
 			"oci_functions_application":  {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getApplication")},
 			"oci_functions_applications": {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getApplications")},
@@ -1593,6 +1705,19 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_golden_gate_deployment_upgrade":     {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getDeploymentUpgrade")},
 			"oci_golden_gate_deployment_upgrades":    {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getDeploymentUpgrades")},
 			"oci_golden_gate_deployments":            {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getDeployments")},
+
+			"oci_golden_gate_connection":             {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getConnection")},
+			"oci_golden_gate_connection_assignment":  {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getConnectionAssignment")},
+			"oci_golden_gate_connection_assignments": {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getConnectionAssignments")},
+			"oci_golden_gate_connections":            {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getConnections")},
+			"oci_golden_gate_deployment_type":        {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getDeploymentType")},
+			"oci_golden_gate_deployment_types":       {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getDeploymentTypes")},
+			"oci_golden_gate_message":                {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getMessage")},
+			"oci_golden_gate_messages":               {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getMessages")},
+			"oci_golden_gate_trail_file":             {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getTrailFile")},
+			"oci_golden_gate_trail_files":            {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getTrailFiles")},
+			"oci_golden_gate_trail_sequence":         {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getTrailSequence")},
+			"oci_golden_gate_trail_sequences":        {Tok: tfbridge.MakeDataSource(mainPkg, goldenGateMod, "getTrailSequences")},
 
 			"oci_health_checks_http_monitor":       {Tok: tfbridge.MakeDataSource(mainPkg, healthChecksMod, "getHttpMonitor")},
 			"oci_health_checks_http_monitors":      {Tok: tfbridge.MakeDataSource(mainPkg, healthChecksMod, "getHttpMonitors")},
@@ -1649,17 +1774,20 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_integration_integration_instance":  {Tok: tfbridge.MakeDataSource(mainPkg, integrationMod, "getIntegrationInstance")},
 			"oci_integration_integration_instances": {Tok: tfbridge.MakeDataSource(mainPkg, integrationMod, "getIntegrationInstances")},
 
-			"oci_jms_fleet":                        {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleet")},
-			"oci_jms_fleet_blocklists":             {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleetBlocklists")},
-			"oci_jms_fleet_installation_site":      {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getInstallationSite")},
-			"oci_jms_fleet_installation_sites":     {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getInstallationSites")},
-			"oci_jms_fleets":                       {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleets")},
-			"oci_jms_list_jre_usage":               {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getListJreUsage")},
-			"oci_jms_summarize_resource_inventory": {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getSummarizeResourceInventory")},
-			"oci_jms_java_families":                {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaFamilies")},
-			"oci_jms_java_family":                  {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaFamily")},
-			"oci_jms_java_release":                 {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaRelease")},
-			"oci_jms_java_releases":                {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaReleases")},
+			"oci_jms_fleet": {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleet")},
+			"oci_jms_fleet_advanced_feature_configuration": {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleetAdvancedFeatureConfiguration")},
+			"oci_jms_fleet_blocklists":                     {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleetBlocklists")},
+			"oci_jms_fleet_crypto_analysis_result":         {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleetCryptoAnalysisResult")},
+			"oci_jms_fleet_crypto_analysis_results":        {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleetCryptoAnalysisResults")},
+			"oci_jms_fleet_installation_site":              {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getInstallationSite")},
+			"oci_jms_fleet_installation_sites":             {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getInstallationSites")},
+			"oci_jms_fleets":                               {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleets")},
+			"oci_jms_list_jre_usage":                       {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getListJreUsage")},
+			"oci_jms_summarize_resource_inventory":         {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getSummarizeResourceInventory")},
+			"oci_jms_java_families":                        {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaFamilies")},
+			"oci_jms_java_family":                          {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaFamily")},
+			"oci_jms_java_release":                         {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaRelease")},
+			"oci_jms_java_releases":                        {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaReleases")},
 
 			"oci_kms_decrypted_data":     {Tok: tfbridge.MakeDataSource(mainPkg, kmsMod, "getDecryptedData")},
 			"oci_kms_encrypted_data":     {Tok: tfbridge.MakeDataSource(mainPkg, kmsMod, "getEncryptedData")},
@@ -1730,6 +1858,11 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_log_analytics_namespace_scheduled_tasks":              {Tok: tfbridge.MakeDataSource(mainPkg, logAnalyticsMod, "getNamespaceScheduledTasks")},
 			"oci_log_analytics_namespaces":                             {Tok: tfbridge.MakeDataSource(mainPkg, logAnalyticsMod, "getNamespaces")},
 
+			"oci_log_analytics_namespace_ingest_time_rule":            {Tok: tfbridge.MakeDataSource(mainPkg, logAnalyticsMod, "getNamespaceIngestTimeRule")},
+			"oci_log_analytics_namespace_ingest_time_rules":           {Tok: tfbridge.MakeDataSource(mainPkg, logAnalyticsMod, "getNamespaceIngestTimeRules")},
+			"oci_log_analytics_namespace_rules":                       {Tok: tfbridge.MakeDataSource(mainPkg, logAnalyticsMod, "getNamespaceRules")},
+			"oci_log_analytics_namespace_storage_encryption_key_info": {Tok: tfbridge.MakeDataSource(mainPkg, logAnalyticsMod, "getNamespaceStorageEncryptionKeyInfo")},
+
 			"oci_logging_log":                          {Tok: tfbridge.MakeDataSource(mainPkg, loggingMod, "getLog")},
 			"oci_logging_log_group":                    {Tok: tfbridge.MakeDataSource(mainPkg, loggingMod, "getLogGroup")},
 			"oci_logging_log_groups":                   {Tok: tfbridge.MakeDataSource(mainPkg, loggingMod, "getLogGroups")},
@@ -1767,6 +1900,26 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_marketplace_publications":               {Tok: tfbridge.MakeDataSource(mainPkg, marketplaceMod, "getPublications")},
 			"oci_marketplace_publishers":                 {Tok: tfbridge.MakeDataSource(mainPkg, marketplaceMod, "getPublishers")},
 
+			"oci_media_services_media_asset":                                 {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaAsset")},
+			"oci_media_services_media_asset_distribution_channel_attachment": {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaAssetDistributionChannelAttachment")},
+			"oci_media_services_media_assets":                                {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaAssets")},
+			"oci_media_services_media_workflow":                              {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflow")},
+			"oci_media_services_media_workflow_configuration":                {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflowConfiguration")},
+			"oci_media_services_media_workflow_configurations":               {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflowConfigurations")},
+			"oci_media_services_media_workflow_job":                          {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflowJob")},
+			"oci_media_services_media_workflow_job_fact":                     {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflowJobFact")},
+			"oci_media_services_media_workflow_job_facts":                    {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflowJobFacts")},
+			"oci_media_services_media_workflow_jobs":                         {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflowJobs")},
+			"oci_media_services_media_workflow_task_declaration":             {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflowTaskDeclaration")},
+			"oci_media_services_media_workflows":                             {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getMediaWorkflows")},
+			"oci_media_services_stream_cdn_config":                           {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getStreamCdnConfig")},
+			"oci_media_services_stream_cdn_configs":                          {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getStreamCdnConfigs")},
+			"oci_media_services_stream_distribution_channel":                 {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getStreamDistributionChannel")},
+			"oci_media_services_stream_distribution_channels":                {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getStreamDistributionChannels")},
+			"oci_media_services_stream_packaging_config":                     {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getStreamPackagingConfig")},
+			"oci_media_services_stream_packaging_configs":                    {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getStreamPackagingConfigs")},
+			"oci_media_services_system_media_workflow":                       {Tok: tfbridge.MakeDataSource(mainPkg, mediaServicesMod, "getSystemMediaWorkflow")},
+
 			"oci_metering_computation_configuration":  {Tok: tfbridge.MakeDataSource(mainPkg, meteringComputationMod, "getConfiguration")},
 			"oci_metering_computation_custom_table":   {Tok: tfbridge.MakeDataSource(mainPkg, meteringComputationMod, "getCustomTable")},
 			"oci_metering_computation_custom_tables":  {Tok: tfbridge.MakeDataSource(mainPkg, meteringComputationMod, "getCustomTables")},
@@ -1795,6 +1948,9 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_mysql_mysql_db_systems":              {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getMysqlDbSystems")},
 			"oci_mysql_mysql_versions":                {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getMysqlVersion")},
 			"oci_mysql_shapes":                        {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getShapes")},
+
+			"oci_mysql_replica":  {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getReplica")},
+			"oci_mysql_replicas": {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getReplicas")},
 
 			"oci_network_load_balancer_backend_health": {Tok: tfbridge.MakeDataSource(mainPkg, networkLoadBalancerMod, "getBackendHealth")},
 			"oci_network_load_balancer_backend_set":    {Tok: tfbridge.MakeDataSource(mainPkg, networkLoadBalancerMod, "getBackendSet")},
@@ -1882,6 +2038,9 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_opensearch_opensearch_version":  {Tok: tfbridge.MakeDataSource(mainPkg, opensearchMod, "getOpensearchVersion")},
 			"oci_opensearch_opensearch_versions": {Tok: tfbridge.MakeDataSource(mainPkg, opensearchMod, "getOpensearchVersions")},
 
+			"oci_opa_opa_instance":  {Tok: tfbridge.MakeDataSource(mainPkg, opaMod, "getOpaInstance")},
+			"oci_opa_opa_instances": {Tok: tfbridge.MakeDataSource(mainPkg, opaMod, "getOpaInstances")},
+
 			"oci_operator_access_control_access_request":               {Tok: tfbridge.MakeDataSource(mainPkg, operatorAccessControlMod, "getAccessRequest")},
 			"oci_operator_access_control_access_request_history":       {Tok: tfbridge.MakeDataSource(mainPkg, operatorAccessControlMod, "getAccessRequestHistory")},
 			"oci_operator_access_control_access_requests":              {Tok: tfbridge.MakeDataSource(mainPkg, operatorAccessControlMod, "getAccessRequests")},
@@ -1966,6 +2125,9 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_osub_usage_computed_usage_aggregateds": {Tok: tfbridge.MakeDataSource(mainPkg, osubUsageMod, "getCommitmentAggregateds")},
 			"oci_osub_usage_computed_usages":            {Tok: tfbridge.MakeDataSource(mainPkg, osubUsageMod, "getComputedUsages")},
 
+			"oci_queue_queue":  {Tok: tfbridge.MakeDataSource(mainPkg, queueMod, "getQueue")},
+			"oci_queue_queues": {Tok: tfbridge.MakeDataSource(mainPkg, queueMod, "getQueues")},
+
 			"oci_resourcemanager_stack":                         {Tok: tfbridge.MakeDataSource(mainPkg, resourceManagerMod, "getStack")},
 			"oci_resourcemanager_stack_tf_state":                {Tok: tfbridge.MakeDataSource(mainPkg, resourceManagerMod, "getStackTfState")},
 			"oci_resourcemanager_stacks":                        {Tok: tfbridge.MakeDataSource(mainPkg, resourceManagerMod, "getStacks")},
@@ -2039,14 +2201,15 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_visual_builder_vb_instance_applications": {Tok: tfbridge.MakeDataSource(mainPkg, visualBuilderMod, "getVbInstanceApplications")},
 			"oci_visual_builder_vb_instances":             {Tok: tfbridge.MakeDataSource(mainPkg, visualBuilderMod, "getVbInstances")},
 
-			"oci_vulnerability_scanning_container_scan_recipe":  {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getContainerScanRecipe")},
-			"oci_vulnerability_scanning_container_scan_recipes": {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getContainerScanRecipes")},
-			"oci_vulnerability_scanning_container_scan_target":  {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getContainerScanTarget")},
-			"oci_vulnerability_scanning_container_scan_targets": {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getContainerScanTargets")},
-			"oci_vulnerability_scanning_host_scan_recipe":       {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanRecipe")},
-			"oci_vulnerability_scanning_host_scan_recipes":      {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanRecipes")},
-			"oci_vulnerability_scanning_host_scan_target":       {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanTarget")},
-			"oci_vulnerability_scanning_host_scan_targets":      {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanTargets")},
+			"oci_vulnerability_scanning_container_scan_recipe":   {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getContainerScanRecipe")},
+			"oci_vulnerability_scanning_container_scan_recipes":  {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getContainerScanRecipes")},
+			"oci_vulnerability_scanning_container_scan_target":   {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getContainerScanTarget")},
+			"oci_vulnerability_scanning_container_scan_targets":  {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getContainerScanTargets")},
+			"oci_vulnerability_scanning_host_scan_recipe":        {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanRecipe")},
+			"oci_vulnerability_scanning_host_scan_recipes":       {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanRecipes")},
+			"oci_vulnerability_scanning_host_scan_target":        {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanTarget")},
+			"oci_vulnerability_scanning_host_scan_targets":       {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanTargets")},
+			"oci_vulnerability_scanning_host_scan_target_errors": {Tok: tfbridge.MakeDataSource(mainPkg, vulnerabilityScanningMod, "getHostScanTargetErrors")},
 
 			"oci_waa_web_app_acceleration":          {Tok: tfbridge.MakeDataSource(mainPkg, waaMod, "getAppAcceleration")},
 			"oci_waa_web_app_accelerations":         {Tok: tfbridge.MakeDataSource(mainPkg, waaMod, "getAppAccelerations")},

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        /// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         /// </summary>
         [Input("memoryInGbs")]
         public Input<double>? MemoryInGbs { get; set; }
 
         /// <summary>
-        /// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        /// (Updatable) The total number of OCPUs available to the notebook session instance.
         /// </summary>
         [Input("ocpus")]
         public Input<double>? Ocpus { get; set; }

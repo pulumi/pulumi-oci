@@ -5,34 +5,106 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./bucket";
-export * from "./getBucket";
-export * from "./getBucketSummaries";
-export * from "./getNamespace";
-export * from "./getNamespaceMetadata";
-export * from "./getObject";
-export * from "./getObjectHead";
-export * from "./getObjectLifecyclePolicy";
-export * from "./getObjectVersions";
-export * from "./getObjects";
-export * from "./getPreauthrequest";
-export * from "./getPreauthrequests";
-export * from "./getReplicationPolicies";
-export * from "./getReplicationPolicy";
-export * from "./getReplicationSources";
-export * from "./namespaceMetadata";
-export * from "./objectLifecyclePolicy";
-export * from "./preauthrequest";
-export * from "./replicationPolicy";
-export * from "./storageObject";
+export { BucketArgs, BucketState } from "./bucket";
+export type Bucket = import("./bucket").Bucket;
+export const Bucket: typeof import("./bucket").Bucket = null as any;
+utilities.lazyLoad(exports, ["Bucket"], () => require("./bucket"));
 
-// Import resources to register:
-import { Bucket } from "./bucket";
-import { NamespaceMetadata } from "./namespaceMetadata";
-import { ObjectLifecyclePolicy } from "./objectLifecyclePolicy";
-import { Preauthrequest } from "./preauthrequest";
-import { ReplicationPolicy } from "./replicationPolicy";
-import { StorageObject } from "./storageObject";
+export { GetBucketArgs, GetBucketResult, GetBucketOutputArgs } from "./getBucket";
+export const getBucket: typeof import("./getBucket").getBucket = null as any;
+export const getBucketOutput: typeof import("./getBucket").getBucketOutput = null as any;
+utilities.lazyLoad(exports, ["getBucket","getBucketOutput"], () => require("./getBucket"));
+
+export { GetBucketSummariesArgs, GetBucketSummariesResult, GetBucketSummariesOutputArgs } from "./getBucketSummaries";
+export const getBucketSummaries: typeof import("./getBucketSummaries").getBucketSummaries = null as any;
+export const getBucketSummariesOutput: typeof import("./getBucketSummaries").getBucketSummariesOutput = null as any;
+utilities.lazyLoad(exports, ["getBucketSummaries","getBucketSummariesOutput"], () => require("./getBucketSummaries"));
+
+export { GetNamespaceArgs, GetNamespaceResult, GetNamespaceOutputArgs } from "./getNamespace";
+export const getNamespace: typeof import("./getNamespace").getNamespace = null as any;
+export const getNamespaceOutput: typeof import("./getNamespace").getNamespaceOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespace","getNamespaceOutput"], () => require("./getNamespace"));
+
+export { GetNamespaceMetadataArgs, GetNamespaceMetadataResult, GetNamespaceMetadataOutputArgs } from "./getNamespaceMetadata";
+export const getNamespaceMetadata: typeof import("./getNamespaceMetadata").getNamespaceMetadata = null as any;
+export const getNamespaceMetadataOutput: typeof import("./getNamespaceMetadata").getNamespaceMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceMetadata","getNamespaceMetadataOutput"], () => require("./getNamespaceMetadata"));
+
+export { GetObjectArgs, GetObjectResult, GetObjectOutputArgs } from "./getObject";
+export const getObject: typeof import("./getObject").getObject = null as any;
+export const getObjectOutput: typeof import("./getObject").getObjectOutput = null as any;
+utilities.lazyLoad(exports, ["getObject","getObjectOutput"], () => require("./getObject"));
+
+export { GetObjectHeadArgs, GetObjectHeadResult, GetObjectHeadOutputArgs } from "./getObjectHead";
+export const getObjectHead: typeof import("./getObjectHead").getObjectHead = null as any;
+export const getObjectHeadOutput: typeof import("./getObjectHead").getObjectHeadOutput = null as any;
+utilities.lazyLoad(exports, ["getObjectHead","getObjectHeadOutput"], () => require("./getObjectHead"));
+
+export { GetObjectLifecyclePolicyArgs, GetObjectLifecyclePolicyResult, GetObjectLifecyclePolicyOutputArgs } from "./getObjectLifecyclePolicy";
+export const getObjectLifecyclePolicy: typeof import("./getObjectLifecyclePolicy").getObjectLifecyclePolicy = null as any;
+export const getObjectLifecyclePolicyOutput: typeof import("./getObjectLifecyclePolicy").getObjectLifecyclePolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getObjectLifecyclePolicy","getObjectLifecyclePolicyOutput"], () => require("./getObjectLifecyclePolicy"));
+
+export { GetObjectVersionsArgs, GetObjectVersionsResult, GetObjectVersionsOutputArgs } from "./getObjectVersions";
+export const getObjectVersions: typeof import("./getObjectVersions").getObjectVersions = null as any;
+export const getObjectVersionsOutput: typeof import("./getObjectVersions").getObjectVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getObjectVersions","getObjectVersionsOutput"], () => require("./getObjectVersions"));
+
+export { GetObjectsArgs, GetObjectsResult, GetObjectsOutputArgs } from "./getObjects";
+export const getObjects: typeof import("./getObjects").getObjects = null as any;
+export const getObjectsOutput: typeof import("./getObjects").getObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getObjects","getObjectsOutput"], () => require("./getObjects"));
+
+export { GetPreauthrequestArgs, GetPreauthrequestResult, GetPreauthrequestOutputArgs } from "./getPreauthrequest";
+export const getPreauthrequest: typeof import("./getPreauthrequest").getPreauthrequest = null as any;
+export const getPreauthrequestOutput: typeof import("./getPreauthrequest").getPreauthrequestOutput = null as any;
+utilities.lazyLoad(exports, ["getPreauthrequest","getPreauthrequestOutput"], () => require("./getPreauthrequest"));
+
+export { GetPreauthrequestsArgs, GetPreauthrequestsResult, GetPreauthrequestsOutputArgs } from "./getPreauthrequests";
+export const getPreauthrequests: typeof import("./getPreauthrequests").getPreauthrequests = null as any;
+export const getPreauthrequestsOutput: typeof import("./getPreauthrequests").getPreauthrequestsOutput = null as any;
+utilities.lazyLoad(exports, ["getPreauthrequests","getPreauthrequestsOutput"], () => require("./getPreauthrequests"));
+
+export { GetReplicationPoliciesArgs, GetReplicationPoliciesResult, GetReplicationPoliciesOutputArgs } from "./getReplicationPolicies";
+export const getReplicationPolicies: typeof import("./getReplicationPolicies").getReplicationPolicies = null as any;
+export const getReplicationPoliciesOutput: typeof import("./getReplicationPolicies").getReplicationPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getReplicationPolicies","getReplicationPoliciesOutput"], () => require("./getReplicationPolicies"));
+
+export { GetReplicationPolicyArgs, GetReplicationPolicyResult, GetReplicationPolicyOutputArgs } from "./getReplicationPolicy";
+export const getReplicationPolicy: typeof import("./getReplicationPolicy").getReplicationPolicy = null as any;
+export const getReplicationPolicyOutput: typeof import("./getReplicationPolicy").getReplicationPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getReplicationPolicy","getReplicationPolicyOutput"], () => require("./getReplicationPolicy"));
+
+export { GetReplicationSourcesArgs, GetReplicationSourcesResult, GetReplicationSourcesOutputArgs } from "./getReplicationSources";
+export const getReplicationSources: typeof import("./getReplicationSources").getReplicationSources = null as any;
+export const getReplicationSourcesOutput: typeof import("./getReplicationSources").getReplicationSourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getReplicationSources","getReplicationSourcesOutput"], () => require("./getReplicationSources"));
+
+export { NamespaceMetadataArgs, NamespaceMetadataState } from "./namespaceMetadata";
+export type NamespaceMetadata = import("./namespaceMetadata").NamespaceMetadata;
+export const NamespaceMetadata: typeof import("./namespaceMetadata").NamespaceMetadata = null as any;
+utilities.lazyLoad(exports, ["NamespaceMetadata"], () => require("./namespaceMetadata"));
+
+export { ObjectLifecyclePolicyArgs, ObjectLifecyclePolicyState } from "./objectLifecyclePolicy";
+export type ObjectLifecyclePolicy = import("./objectLifecyclePolicy").ObjectLifecyclePolicy;
+export const ObjectLifecyclePolicy: typeof import("./objectLifecyclePolicy").ObjectLifecyclePolicy = null as any;
+utilities.lazyLoad(exports, ["ObjectLifecyclePolicy"], () => require("./objectLifecyclePolicy"));
+
+export { PreauthrequestArgs, PreauthrequestState } from "./preauthrequest";
+export type Preauthrequest = import("./preauthrequest").Preauthrequest;
+export const Preauthrequest: typeof import("./preauthrequest").Preauthrequest = null as any;
+utilities.lazyLoad(exports, ["Preauthrequest"], () => require("./preauthrequest"));
+
+export { ReplicationPolicyArgs, ReplicationPolicyState } from "./replicationPolicy";
+export type ReplicationPolicy = import("./replicationPolicy").ReplicationPolicy;
+export const ReplicationPolicy: typeof import("./replicationPolicy").ReplicationPolicy = null as any;
+utilities.lazyLoad(exports, ["ReplicationPolicy"], () => require("./replicationPolicy"));
+
+export { StorageObjectArgs, StorageObjectState } from "./storageObject";
+export type StorageObject = import("./storageObject").StorageObject;
+export const StorageObject: typeof import("./storageObject").StorageObject = null as any;
+utilities.lazyLoad(exports, ["StorageObject"], () => require("./storageObject"));
+
 
 const _module = {
     version: utilities.getVersion(),

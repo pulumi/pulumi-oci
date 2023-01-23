@@ -38,8 +38,9 @@ import (
 //							TriggerSource: pulumi.Any(_var.Trigger_actions_filter_trigger_source),
 //							Events:        pulumi.Any(_var.Trigger_actions_filter_events),
 //							Include: &devops.TriggerActionFilterIncludeArgs{
-//								BaseRef: pulumi.Any(_var.Trigger_actions_filter_include_base_ref),
-//								HeadRef: pulumi.Any(_var.Trigger_actions_filter_include_head_ref),
+//								BaseRef:        pulumi.Any(_var.Trigger_actions_filter_include_base_ref),
+//								HeadRef:        pulumi.Any(_var.Trigger_actions_filter_include_head_ref),
+//								RepositoryName: pulumi.Any(oci_devops_repository.Test_repository.Name),
 //							},
 //						},
 //					},
@@ -81,7 +82,8 @@ type Trigger struct {
 	Actions TriggerActionArrayOutput `pulumi:"actions"`
 	// The OCID of the compartment that contains the trigger.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	ConnectionId  pulumi.StringOutput `pulumi:"connectionId"`
+	// (Updatable) The OCID of the connection resource used to get details for triggered events.
+	ConnectionId pulumi.StringOutput `pulumi:"connectionId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional description about the trigger.
@@ -104,7 +106,7 @@ type Trigger struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 	TriggerSource pulumi.StringOutput `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl pulumi.StringOutput `pulumi:"triggerUrl"`
@@ -152,7 +154,8 @@ type triggerState struct {
 	Actions []TriggerAction `pulumi:"actions"`
 	// The OCID of the compartment that contains the trigger.
 	CompartmentId *string `pulumi:"compartmentId"`
-	ConnectionId  *string `pulumi:"connectionId"`
+	// (Updatable) The OCID of the connection resource used to get details for triggered events.
+	ConnectionId *string `pulumi:"connectionId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Optional description about the trigger.
@@ -175,7 +178,7 @@ type triggerState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 	TriggerSource *string `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl *string `pulumi:"triggerUrl"`
@@ -186,7 +189,8 @@ type TriggerState struct {
 	Actions TriggerActionArrayInput
 	// The OCID of the compartment that contains the trigger.
 	CompartmentId pulumi.StringPtrInput
-	ConnectionId  pulumi.StringPtrInput
+	// (Updatable) The OCID of the connection resource used to get details for triggered events.
+	ConnectionId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Optional description about the trigger.
@@ -209,7 +213,7 @@ type TriggerState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 	TriggerSource pulumi.StringPtrInput
 	// The endpoint that listens to trigger events.
 	TriggerUrl pulumi.StringPtrInput
@@ -221,8 +225,9 @@ func (TriggerState) ElementType() reflect.Type {
 
 type triggerArgs struct {
 	// (Updatable) The list of actions that are to be performed for this trigger.
-	Actions      []TriggerAction `pulumi:"actions"`
-	ConnectionId *string         `pulumi:"connectionId"`
+	Actions []TriggerAction `pulumi:"actions"`
+	// (Updatable) The OCID of the connection resource used to get details for triggered events.
+	ConnectionId *string `pulumi:"connectionId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Optional description about the trigger.
@@ -235,14 +240,15 @@ type triggerArgs struct {
 	ProjectId string `pulumi:"projectId"`
 	// (Updatable) The OCID of the DevOps code repository.
 	RepositoryId *string `pulumi:"repositoryId"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
 // The set of arguments for constructing a Trigger resource.
 type TriggerArgs struct {
 	// (Updatable) The list of actions that are to be performed for this trigger.
-	Actions      TriggerActionArrayInput
+	Actions TriggerActionArrayInput
+	// (Updatable) The OCID of the connection resource used to get details for triggered events.
 	ConnectionId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -256,7 +262,7 @@ type TriggerArgs struct {
 	ProjectId pulumi.StringInput
 	// (Updatable) The OCID of the DevOps code repository.
 	RepositoryId pulumi.StringPtrInput
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 	TriggerSource pulumi.StringInput
 }
 
@@ -357,6 +363,7 @@ func (o TriggerOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) The OCID of the connection resource used to get details for triggered events.
 func (o TriggerOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.ConnectionId }).(pulumi.StringOutput)
 }
@@ -416,7 +423,7 @@ func (o TriggerOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 func (o TriggerOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.TriggerSource }).(pulumi.StringOutput)
 }

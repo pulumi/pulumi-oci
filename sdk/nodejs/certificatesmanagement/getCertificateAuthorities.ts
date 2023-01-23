@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  */
 export function getCertificateAuthorities(args?: GetCertificateAuthoritiesArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthoritiesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", {
         "certificateAuthorityId": args.certificateAuthorityId,
         "compartmentId": args.compartmentId,
@@ -104,9 +102,29 @@ export interface GetCertificateAuthoritiesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Certificate Authorities in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Lists all certificate authorities (CAs) in the specified compartment.
+ * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificateAuthorities = oci.CertificatesManagement.getCertificateAuthorities({
+ *     certificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
+ *     compartmentId: _var.compartment_id,
+ *     issuerCertificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
+ *     name: _var.certificate_authority_name,
+ *     state: _var.certificate_authority_state,
+ * });
+ * ```
+ */
 export function getCertificateAuthoritiesOutput(args?: GetCertificateAuthoritiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthoritiesResult> {
-    return pulumi.output(args).apply(a => getCertificateAuthorities(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificateAuthorities(a, opts))
 }
 
 /**

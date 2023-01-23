@@ -22,7 +22,7 @@ class GetPluggableDatabaseResult:
     """
     A collection of values returned by getPluggableDatabase.
     """
-    def __init__(__self__, compartment_id=None, connection_strings=None, container_database_id=None, defined_tags=None, freeform_tags=None, id=None, is_restricted=None, lifecycle_details=None, open_mode=None, pdb_admin_password=None, pdb_name=None, pluggable_database_id=None, should_pdb_admin_account_be_locked=None, state=None, tde_wallet_password=None, time_created=None):
+    def __init__(__self__, compartment_id=None, connection_strings=None, container_database_id=None, defined_tags=None, freeform_tags=None, id=None, is_restricted=None, lifecycle_details=None, open_mode=None, pdb_admin_password=None, pdb_name=None, pluggable_database_id=None, pluggable_database_management_configs=None, should_pdb_admin_account_be_locked=None, state=None, tde_wallet_password=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -59,6 +59,9 @@ class GetPluggableDatabaseResult:
         if pluggable_database_id and not isinstance(pluggable_database_id, str):
             raise TypeError("Expected argument 'pluggable_database_id' to be a str")
         pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
+        if pluggable_database_management_configs and not isinstance(pluggable_database_management_configs, list):
+            raise TypeError("Expected argument 'pluggable_database_management_configs' to be a list")
+        pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
         if should_pdb_admin_account_be_locked and not isinstance(should_pdb_admin_account_be_locked, bool):
             raise TypeError("Expected argument 'should_pdb_admin_account_be_locked' to be a bool")
         pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
@@ -163,6 +166,14 @@ class GetPluggableDatabaseResult:
         return pulumi.get(self, "pluggable_database_id")
 
     @property
+    @pulumi.getter(name="pluggableDatabaseManagementConfigs")
+    def pluggable_database_management_configs(self) -> Sequence['outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult']:
+        """
+        The configuration of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "pluggable_database_management_configs")
+
+    @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
     def should_pdb_admin_account_be_locked(self) -> bool:
         return pulumi.get(self, "should_pdb_admin_account_be_locked")
@@ -207,6 +218,7 @@ class AwaitableGetPluggableDatabaseResult(GetPluggableDatabaseResult):
             pdb_admin_password=self.pdb_admin_password,
             pdb_name=self.pdb_name,
             pluggable_database_id=self.pluggable_database_id,
+            pluggable_database_management_configs=self.pluggable_database_management_configs,
             should_pdb_admin_account_be_locked=self.should_pdb_admin_account_be_locked,
             state=self.state,
             tde_wallet_password=self.tde_wallet_password,
@@ -250,6 +262,7 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
         pdb_admin_password=__ret__.pdb_admin_password,
         pdb_name=__ret__.pdb_name,
         pluggable_database_id=__ret__.pluggable_database_id,
+        pluggable_database_management_configs=__ret__.pluggable_database_management_configs,
         should_pdb_admin_account_be_locked=__ret__.should_pdb_admin_account_be_locked,
         state=__ret__.state,
         tde_wallet_password=__ret__.tde_wallet_password,

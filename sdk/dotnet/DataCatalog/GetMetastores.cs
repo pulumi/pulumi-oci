@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMetastoresResult> InvokeAsync(GetMetastoresArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMetastoresResult>("oci:DataCatalog/getMetastores:getMetastores", args ?? new GetMetastoresArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMetastoresResult>("oci:DataCatalog/getMetastores:getMetastores", args ?? new GetMetastoresArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Metastores in Oracle Cloud Infrastructure Data Catalog service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMetastoresResult> Invoke(GetMetastoresInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMetastoresResult>("oci:DataCatalog/getMetastores:getMetastores", args ?? new GetMetastoresInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetastoresResult>("oci:DataCatalog/getMetastores:getMetastores", args ?? new GetMetastoresInvokeArgs(), options.WithDefaults());
     }
 
 

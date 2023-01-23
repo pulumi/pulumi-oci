@@ -42,7 +42,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBillingSchedulesResult> InvokeAsync(GetBillingSchedulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBillingSchedulesResult>("oci:OneSubsription/getBillingSchedules:getBillingSchedules", args ?? new GetBillingSchedulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBillingSchedulesResult>("oci:OneSubsription/getBillingSchedules:getBillingSchedules", args ?? new GetBillingSchedulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Onesubscription service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBillingSchedulesResult> Invoke(GetBillingSchedulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBillingSchedulesResult>("oci:OneSubsription/getBillingSchedules:getBillingSchedules", args ?? new GetBillingSchedulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBillingSchedulesResult>("oci:OneSubsription/getBillingSchedules:getBillingSchedules", args ?? new GetBillingSchedulesInvokeArgs(), options.WithDefaults());
     }
 
 

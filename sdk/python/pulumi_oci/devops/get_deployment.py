@@ -22,7 +22,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, deploy_artifact_override_arguments=None, deploy_pipeline_artifacts=None, deploy_pipeline_environments=None, deploy_pipeline_id=None, deploy_stage_id=None, deployment_arguments=None, deployment_execution_progresses=None, deployment_id=None, deployment_type=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, previous_deployment_id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, deploy_artifact_override_arguments=None, deploy_pipeline_artifacts=None, deploy_pipeline_environments=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_override_arguments=None, deployment_arguments=None, deployment_execution_progresses=None, deployment_id=None, deployment_type=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, previous_deployment_id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None, trigger_new_devops_deployment=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,9 @@ class GetDeploymentResult:
         if deploy_stage_id and not isinstance(deploy_stage_id, str):
             raise TypeError("Expected argument 'deploy_stage_id' to be a str")
         pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        if deploy_stage_override_arguments and not isinstance(deploy_stage_override_arguments, list):
+            raise TypeError("Expected argument 'deploy_stage_override_arguments' to be a list")
+        pulumi.set(__self__, "deploy_stage_override_arguments", deploy_stage_override_arguments)
         if deployment_arguments and not isinstance(deployment_arguments, list):
             raise TypeError("Expected argument 'deployment_arguments' to be a list")
         pulumi.set(__self__, "deployment_arguments", deployment_arguments)
@@ -86,6 +89,9 @@ class GetDeploymentResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if trigger_new_devops_deployment and not isinstance(trigger_new_devops_deployment, bool):
+            raise TypeError("Expected argument 'trigger_new_devops_deployment' to be a bool")
+        pulumi.set(__self__, "trigger_new_devops_deployment", trigger_new_devops_deployment)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -142,6 +148,14 @@ class GetDeploymentResult:
         The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter(name="deployStageOverrideArguments")
+    def deploy_stage_override_arguments(self) -> Sequence['outputs.GetDeploymentDeployStageOverrideArgumentResult']:
+        """
+        Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        """
+        return pulumi.get(self, "deploy_stage_override_arguments")
 
     @property
     @pulumi.getter(name="deploymentArguments")
@@ -252,6 +266,11 @@ class GetDeploymentResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="triggerNewDevopsDeployment")
+    def trigger_new_devops_deployment(self) -> bool:
+        return pulumi.get(self, "trigger_new_devops_deployment")
+
 
 class AwaitableGetDeploymentResult(GetDeploymentResult):
     # pylint: disable=using-constant-test
@@ -266,6 +285,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             deploy_pipeline_environments=self.deploy_pipeline_environments,
             deploy_pipeline_id=self.deploy_pipeline_id,
             deploy_stage_id=self.deploy_stage_id,
+            deploy_stage_override_arguments=self.deploy_stage_override_arguments,
             deployment_arguments=self.deployment_arguments,
             deployment_execution_progresses=self.deployment_execution_progresses,
             deployment_id=self.deployment_id,
@@ -279,7 +299,8 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            trigger_new_devops_deployment=self.trigger_new_devops_deployment)
 
 
 def get_deployment(deployment_id: Optional[str] = None,
@@ -314,6 +335,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         deploy_pipeline_environments=__ret__.deploy_pipeline_environments,
         deploy_pipeline_id=__ret__.deploy_pipeline_id,
         deploy_stage_id=__ret__.deploy_stage_id,
+        deploy_stage_override_arguments=__ret__.deploy_stage_override_arguments,
         deployment_arguments=__ret__.deployment_arguments,
         deployment_execution_progresses=__ret__.deployment_execution_progresses,
         deployment_id=__ret__.deployment_id,
@@ -327,7 +349,8 @@ def get_deployment(deployment_id: Optional[str] = None,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        time_updated=__ret__.time_updated,
+        trigger_new_devops_deployment=__ret__.trigger_new_devops_deployment)
 
 
 @_utilities.lift_output_func(get_deployment)

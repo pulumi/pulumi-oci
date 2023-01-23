@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgent(args: GetManagementAgentArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgent:getManagementAgent", {
         "managementAgentId": args.managementAgentId,
     }, opts);
@@ -146,9 +144,24 @@ export interface GetManagementAgentResult {
      */
     readonly version: string;
 }
-
+/**
+ * This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Gets complete details of the inventory of a given agent id
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgent = oci.ManagementAgent.getManagementAgent({
+ *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
+ * });
+ * ```
+ */
 export function getManagementAgentOutput(args: GetManagementAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentResult> {
-    return pulumi.output(args).apply(a => getManagementAgent(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgent(a, opts))
 }
 
 /**

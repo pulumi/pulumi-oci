@@ -341,10 +341,12 @@ class Certificate(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
-            __props__.__dict__["passphrase"] = passphrase
-            __props__.__dict__["private_key"] = private_key
+            __props__.__dict__["passphrase"] = None if passphrase is None else pulumi.Output.secret(passphrase)
+            __props__.__dict__["private_key"] = None if private_key is None else pulumi.Output.secret(private_key)
             __props__.__dict__["public_certificate"] = public_certificate
             __props__.__dict__["state"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["passphrase", "privateKey"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Certificate, __self__).__init__(
             'oci:LoadBalancer/certificate:Certificate',
             resource_name,

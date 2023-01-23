@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryArchiveContent(args: GetRepositoryArchiveContentArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryArchiveContentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", {
         "format": args.format,
         "refName": args.refName,
@@ -65,9 +62,26 @@ export interface GetRepositoryArchiveContentResult {
     readonly refName?: string;
     readonly repositoryId: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns the archived repository information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryArchiveContent = oci.DevOps.getRepositoryArchiveContent({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     format: _var.repository_archive_content_format,
+ *     refName: _var.repository_archive_content_ref_name,
+ * });
+ * ```
+ */
 export function getRepositoryArchiveContentOutput(args: GetRepositoryArchiveContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryArchiveContentResult> {
-    return pulumi.output(args).apply(a => getRepositoryArchiveContent(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryArchiveContent(a, opts))
 }
 
 /**

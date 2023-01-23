@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryRefResult> InvokeAsync(GetRepositoryRefArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryRefResult>("oci:DevOps/getRepositoryRef:getRepositoryRef", args ?? new GetRepositoryRefArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryRefResult>("oci:DevOps/getRepositoryRef:getRepositoryRef", args ?? new GetRepositoryRefArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryRefResult> Invoke(GetRepositoryRefInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryRefResult>("oci:DevOps/getRepositoryRef:getRepositoryRef", args ?? new GetRepositoryRefInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryRefResult>("oci:DevOps/getRepositoryRef:getRepositoryRef", args ?? new GetRepositoryRefInvokeArgs(), options.WithDefaults());
     }
 
 

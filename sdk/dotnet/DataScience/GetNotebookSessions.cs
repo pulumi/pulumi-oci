@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNotebookSessionsResult> InvokeAsync(GetNotebookSessionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNotebookSessionsResult>("oci:DataScience/getNotebookSessions:getNotebookSessions", args ?? new GetNotebookSessionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNotebookSessionsResult>("oci:DataScience/getNotebookSessions:getNotebookSessions", args ?? new GetNotebookSessionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Notebook Sessions in Oracle Cloud Infrastructure Data Science service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNotebookSessionsResult> Invoke(GetNotebookSessionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNotebookSessionsResult>("oci:DataScience/getNotebookSessions:getNotebookSessions", args ?? new GetNotebookSessionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNotebookSessionsResult>("oci:DataScience/getNotebookSessions:getNotebookSessions", args ?? new GetNotebookSessionsInvokeArgs(), options.WithDefaults());
     }
 
 

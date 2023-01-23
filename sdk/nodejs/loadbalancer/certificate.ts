@@ -114,12 +114,14 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["caCertificate"] = args ? args.caCertificate : undefined;
             resourceInputs["certificateName"] = args ? args.certificateName : undefined;
             resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
-            resourceInputs["passphrase"] = args ? args.passphrase : undefined;
-            resourceInputs["privateKey"] = args ? args.privateKey : undefined;
+            resourceInputs["passphrase"] = args?.passphrase ? pulumi.secret(args.passphrase) : undefined;
+            resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
             resourceInputs["publicCertificate"] = args ? args.publicCertificate : undefined;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["passphrase", "privateKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Certificate.__pulumiType, name, resourceInputs, opts);
     }
 }

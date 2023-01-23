@@ -30,9 +30,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string MaskingWorkRequestId;
         /// <summary>
+        /// The current state of the masking report.
+        /// </summary>
+        public readonly string State;
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         public readonly string TargetId;
+        /// <summary>
+        /// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeCreated;
         /// <summary>
         /// The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         /// </summary>
@@ -72,7 +80,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string maskingWorkRequestId,
 
+            string state,
+
             string targetId,
+
+            string timeCreated,
 
             string timeMaskingFinished,
 
@@ -92,7 +104,9 @@ namespace Pulumi.Oci.DataSafe.Outputs
             Id = id;
             MaskingPolicyId = maskingPolicyId;
             MaskingWorkRequestId = maskingWorkRequestId;
+            State = state;
             TargetId = targetId;
+            TimeCreated = timeCreated;
             TimeMaskingFinished = timeMaskingFinished;
             TimeMaskingStarted = timeMaskingStarted;
             TotalMaskedColumns = totalMaskedColumns;

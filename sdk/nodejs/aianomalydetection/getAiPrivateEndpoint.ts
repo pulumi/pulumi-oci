@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAiPrivateEndpoint(args: GetAiPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetAiPrivateEndpointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", {
         "aiPrivateEndpointId": args.aiPrivateEndpointId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetAiPrivateEndpointResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+ *
+ * Gets a specific private reverse connection by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAiPrivateEndpoint = oci.AiAnomalyDetection.getAiPrivateEndpoint({
+ *     aiPrivateEndpointId: oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint.id,
+ * });
+ * ```
+ */
 export function getAiPrivateEndpointOutput(args: GetAiPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAiPrivateEndpointResult> {
-    return pulumi.output(args).apply(a => getAiPrivateEndpoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getAiPrivateEndpoint(a, opts))
 }
 
 /**

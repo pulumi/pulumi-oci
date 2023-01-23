@@ -66,6 +66,8 @@ type LookupReportDefinitionResult struct {
 	ColumnSortings []GetReportDefinitionColumnSorting `pulumi:"columnSortings"`
 	// The OCID of the compartment containing the report definition.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+	ComplianceStandards []string `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example alerts, events.
 	DataSource string `pulumi:"dataSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -83,8 +85,20 @@ type LookupReportDefinitionResult struct {
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded bool `pulumi:"isSeeded"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
-	ParentId           string `pulumi:"parentId"`
+	ParentId string `pulumi:"parentId"`
+	// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+	RecordTimeSpan     string `pulumi:"recordTimeSpan"`
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
+	// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+	Schedule string `pulumi:"schedule"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+	ScheduledReportCompartmentId string `pulumi:"scheduledReportCompartmentId"`
+	// Specifies the format of report to be excel or pdf
+	ScheduledReportMimeType string `pulumi:"scheduledReportMimeType"`
+	// The name of the report to be scheduled.
+	ScheduledReportName string `pulumi:"scheduledReportName"`
+	// Specifies the limit on number of rows in report.
+	ScheduledReportRowLimit int `pulumi:"scheduledReportRowLimit"`
 	// Additional scim filters used to get the specific summary.
 	ScimFilter string `pulumi:"scimFilter"`
 	// The current state of the report.
@@ -162,6 +176,11 @@ func (o LookupReportDefinitionResultOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+func (o LookupReportDefinitionResultOutput) ComplianceStandards() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) []string { return v.ComplianceStandards }).(pulumi.StringArrayOutput)
+}
+
 // Specifies the name of a resource that provides data for the report. For example alerts, events.
 func (o LookupReportDefinitionResultOutput) DataSource() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.DataSource }).(pulumi.StringOutput)
@@ -207,8 +226,38 @@ func (o LookupReportDefinitionResultOutput) ParentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ParentId }).(pulumi.StringOutput)
 }
 
+// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+func (o LookupReportDefinitionResultOutput) RecordTimeSpan() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.RecordTimeSpan }).(pulumi.StringOutput)
+}
+
 func (o LookupReportDefinitionResultOutput) ReportDefinitionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ReportDefinitionId }).(pulumi.StringOutput)
+}
+
+// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+func (o LookupReportDefinitionResultOutput) Schedule() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Schedule }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+func (o LookupReportDefinitionResultOutput) ScheduledReportCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportCompartmentId }).(pulumi.StringOutput)
+}
+
+// Specifies the format of report to be excel or pdf
+func (o LookupReportDefinitionResultOutput) ScheduledReportMimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
+}
+
+// The name of the report to be scheduled.
+func (o LookupReportDefinitionResultOutput) ScheduledReportName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportName }).(pulumi.StringOutput)
+}
+
+// Specifies the limit on number of rows in report.
+func (o LookupReportDefinitionResultOutput) ScheduledReportRowLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) int { return v.ScheduledReportRowLimit }).(pulumi.IntOutput)
 }
 
 // Additional scim filters used to get the specific summary.

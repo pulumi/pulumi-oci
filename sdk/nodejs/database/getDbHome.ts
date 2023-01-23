@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbHome(args: GetDbHomeArgs, opts?: pulumi.InvokeOptions): Promise<GetDbHomeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbHome:getDbHome", {
         "dbHomeId": args.dbHomeId,
     }, opts);
@@ -112,9 +110,24 @@ export interface GetDbHomeResult {
      */
     readonly vmClusterId: string;
 }
-
+/**
+ * This data source provides details about a specific Db Home resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified Database Home.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbHome = oci.Database.getDbHome({
+ *     dbHomeId: _var.db_home_id,
+ * });
+ * ```
+ */
 export function getDbHomeOutput(args: GetDbHomeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomeResult> {
-    return pulumi.output(args).apply(a => getDbHome(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbHome(a, opts))
 }
 
 /**

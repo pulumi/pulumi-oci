@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCompatibleFormatsForSensitiveTypeResult> InvokeAsync(GetCompatibleFormatsForSensitiveTypeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCompatibleFormatsForSensitiveTypeResult>("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args ?? new GetCompatibleFormatsForSensitiveTypeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCompatibleFormatsForSensitiveTypeResult>("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args ?? new GetCompatibleFormatsForSensitiveTypeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCompatibleFormatsForSensitiveTypeResult> Invoke(GetCompatibleFormatsForSensitiveTypeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCompatibleFormatsForSensitiveTypeResult>("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args ?? new GetCompatibleFormatsForSensitiveTypeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCompatibleFormatsForSensitiveTypeResult>("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args ?? new GetCompatibleFormatsForSensitiveTypeInvokeArgs(), options.WithDefaults());
     }
 
 

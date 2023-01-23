@@ -43,10 +43,14 @@ namespace Pulumi.Oci.LogAnalytics
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         LogSet = @var.Log_analytics_object_collection_rule_log_set,
+    ///         LogSetExtRegex = @var.Log_analytics_object_collection_rule_log_set_ext_regex,
+    ///         LogSetKey = @var.Log_analytics_object_collection_rule_log_set_key,
     ///         ObjectNameFilters = @var.Log_analytics_object_collection_rule_object_name_filters,
     ///         Overrides = @var.Log_analytics_object_collection_rule_overrides,
     ///         PollSince = @var.Log_analytics_object_collection_rule_poll_since,
     ///         PollTill = @var.Log_analytics_object_collection_rule_poll_till,
+    ///         Timezone = @var.Log_analytics_object_collection_rule_timezone,
     ///     });
     /// 
     /// });
@@ -118,6 +122,24 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> LogGroupId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        /// </summary>
+        [Output("logSet")]
+        public Output<string> LogSet { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        /// </summary>
+        [Output("logSetExtRegex")]
+        public Output<string> LogSetExtRegex { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+        /// </summary>
+        [Output("logSetKey")]
+        public Output<string> LogSetKey { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Name of the Logging Analytics Source to use for the processing.
         /// </summary>
         [Output("logSourceName")]
@@ -154,19 +176,19 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> OsNamespace { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+        /// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         /// </summary>
         [Output("overrides")]
         public Output<ImmutableArray<Outputs.LogAnalyticsObjectCollectionRuleOverride>> Overrides { get; private set; } = null!;
 
         /// <summary>
-        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         /// </summary>
         [Output("pollSince")]
         public Output<string> PollSince { get; private set; } = null!;
 
         /// <summary>
-        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        /// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         /// </summary>
         [Output("pollTill")]
         public Output<string> PollTill { get; private set; } = null!;
@@ -188,6 +210,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        /// </summary>
+        [Output("timezone")]
+        public Output<string> Timezone { get; private set; } = null!;
 
 
         /// <summary>
@@ -296,6 +324,24 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> LogGroupId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        /// </summary>
+        [Input("logSet")]
+        public Input<string>? LogSet { get; set; }
+
+        /// <summary>
+        /// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        /// </summary>
+        [Input("logSetExtRegex")]
+        public Input<string>? LogSetExtRegex { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+        /// </summary>
+        [Input("logSetKey")]
+        public Input<string>? LogSetKey { get; set; }
+
+        /// <summary>
         /// (Updatable) Name of the Logging Analytics Source to use for the processing.
         /// </summary>
         [Input("logSourceName", required: true)]
@@ -341,7 +387,7 @@ namespace Pulumi.Oci.LogAnalytics
         private InputList<Inputs.LogAnalyticsObjectCollectionRuleOverrideArgs>? _overrides;
 
         /// <summary>
-        /// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+        /// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         /// </summary>
         public InputList<Inputs.LogAnalyticsObjectCollectionRuleOverrideArgs> Overrides
         {
@@ -350,16 +396,22 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         /// </summary>
         [Input("pollSince")]
         public Input<string>? PollSince { get; set; }
 
         /// <summary>
-        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        /// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         /// </summary>
         [Input("pollTill")]
         public Input<string>? PollTill { get; set; }
+
+        /// <summary>
+        /// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        /// </summary>
+        [Input("timezone")]
+        public Input<string>? Timezone { get; set; }
 
         public LogAnalyticsObjectCollectionRuleArgs()
         {
@@ -436,6 +488,24 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? LogGroupId { get; set; }
 
         /// <summary>
+        /// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        /// </summary>
+        [Input("logSet")]
+        public Input<string>? LogSet { get; set; }
+
+        /// <summary>
+        /// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        /// </summary>
+        [Input("logSetExtRegex")]
+        public Input<string>? LogSetExtRegex { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+        /// </summary>
+        [Input("logSetKey")]
+        public Input<string>? LogSetKey { get; set; }
+
+        /// <summary>
         /// (Updatable) Name of the Logging Analytics Source to use for the processing.
         /// </summary>
         [Input("logSourceName")]
@@ -481,7 +551,7 @@ namespace Pulumi.Oci.LogAnalytics
         private InputList<Inputs.LogAnalyticsObjectCollectionRuleOverrideGetArgs>? _overrides;
 
         /// <summary>
-        /// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+        /// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         /// </summary>
         public InputList<Inputs.LogAnalyticsObjectCollectionRuleOverrideGetArgs> Overrides
         {
@@ -490,13 +560,13 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         /// </summary>
         [Input("pollSince")]
         public Input<string>? PollSince { get; set; }
 
         /// <summary>
-        /// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        /// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         /// </summary>
         [Input("pollTill")]
         public Input<string>? PollTill { get; set; }
@@ -518,6 +588,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        /// </summary>
+        [Input("timezone")]
+        public Input<string>? Timezone { get; set; }
 
         public LogAnalyticsObjectCollectionRuleState()
         {

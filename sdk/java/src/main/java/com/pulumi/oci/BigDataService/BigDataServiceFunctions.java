@@ -54,7 +54,7 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
-     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -94,7 +94,7 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
-     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -134,7 +134,7 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
-     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -174,7 +174,7 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
-     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

@@ -31,7 +31,7 @@ import (
 //				SourceDetails: &core.VolumeGroupSourceDetailsArgs{
 //					Type: pulumi.String("volumeIds"),
 //					VolumeIds: pulumi.StringArray{
-//						pulumi.Any(_var.Volume_group_source_id),
+//						_var.Volume_group_source_id,
 //					},
 //				},
 //				BackupPolicyId: pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),

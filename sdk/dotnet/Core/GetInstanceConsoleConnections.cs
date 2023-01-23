@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstanceConsoleConnectionsResult> InvokeAsync(GetInstanceConsoleConnectionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstanceConsoleConnectionsResult>("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args ?? new GetInstanceConsoleConnectionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceConsoleConnectionsResult>("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args ?? new GetInstanceConsoleConnectionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstanceConsoleConnectionsResult> Invoke(GetInstanceConsoleConnectionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstanceConsoleConnectionsResult>("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args ?? new GetInstanceConsoleConnectionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceConsoleConnectionsResult>("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args ?? new GetInstanceConsoleConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

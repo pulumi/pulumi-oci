@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.PluggableDatabasesRemoteCloneArgs;
 import com.pulumi.oci.Database.inputs.PluggableDatabasesRemoteCloneState;
 import com.pulumi.oci.Database.outputs.PluggableDatabasesRemoteCloneConnectionString;
+import com.pulumi.oci.Database.outputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -22,6 +23,7 @@ import javax.annotation.Nullable;
  * This resource provides the Pluggable Databases Remote Clone resource in Oracle Cloud Infrastructure Database service.
  * 
  * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+ * For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
  * 
  * ## Example Usage
  * ```java
@@ -235,6 +237,20 @@ public class PluggableDatabasesRemoteClone extends com.pulumi.resources.CustomRe
         return this.pluggableDatabaseId;
     }
     /**
+     * The configuration of the Pluggable Database Management service.
+     * 
+     */
+    @Export(name="pluggableDatabaseManagementConfigs", type=List.class, parameters={PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig.class})
+    private Output<List<PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs;
+
+    /**
+     * @return The configuration of the Pluggable Database Management service.
+     * 
+     */
+    public Output<List<PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs() {
+        return this.pluggableDatabaseManagementConfigs;
+    }
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
@@ -351,6 +367,11 @@ public class PluggableDatabasesRemoteClone extends com.pulumi.resources.CustomRe
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "pdbAdminPassword",
+                "sourceContainerDbAdminPassword",
+                "targetTdeWalletPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

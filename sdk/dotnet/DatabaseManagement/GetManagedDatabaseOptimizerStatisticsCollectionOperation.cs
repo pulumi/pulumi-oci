@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> InvokeAsync(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> Invoke(GetManagedDatabaseOptimizerStatisticsCollectionOperationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionOperationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionOperationInvokeArgs(), options.WithDefaults());
     }
 
 

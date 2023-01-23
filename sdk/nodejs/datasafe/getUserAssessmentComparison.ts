@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessmentComparison(args: GetUserAssessmentComparisonArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentComparisonResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentComparison:getUserAssessmentComparison", {
         "comparisonUserAssessmentId": args.comparisonUserAssessmentId,
         "userAssessmentId": args.userAssessmentId,
@@ -71,9 +69,25 @@ export interface GetUserAssessmentComparisonResult {
     readonly timeCreated: string;
     readonly userAssessmentId: string;
 }
-
+/**
+ * This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the comparison report for the user assessments provided.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUserAssessmentComparison = oci.DataSafe.getUserAssessmentComparison({
+ *     comparisonUserAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ * });
+ * ```
+ */
 export function getUserAssessmentComparisonOutput(args: GetUserAssessmentComparisonOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentComparisonResult> {
-    return pulumi.output(args).apply(a => getUserAssessmentComparison(a, opts))
+    return pulumi.output(args).apply((a: any) => getUserAssessmentComparison(a, opts))
 }
 
 /**

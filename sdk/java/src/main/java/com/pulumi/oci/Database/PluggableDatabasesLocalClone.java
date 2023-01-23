@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.PluggableDatabasesLocalCloneArgs;
 import com.pulumi.oci.Database.inputs.PluggableDatabasesLocalCloneState;
 import com.pulumi.oci.Database.outputs.PluggableDatabasesLocalCloneConnectionString;
+import com.pulumi.oci.Database.outputs.PluggableDatabasesLocalClonePluggableDatabaseManagementConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -233,6 +234,20 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
         return this.pluggableDatabaseId;
     }
     /**
+     * The configuration of the Pluggable Database Management service.
+     * 
+     */
+    @Export(name="pluggableDatabaseManagementConfigs", type=List.class, parameters={PluggableDatabasesLocalClonePluggableDatabaseManagementConfig.class})
+    private Output<List<PluggableDatabasesLocalClonePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs;
+
+    /**
+     * @return The configuration of the Pluggable Database Management service.
+     * 
+     */
+    public Output<List<PluggableDatabasesLocalClonePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs() {
+        return this.pluggableDatabaseManagementConfigs;
+    }
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
@@ -321,6 +336,10 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "pdbAdminPassword",
+                "targetTdeWalletPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

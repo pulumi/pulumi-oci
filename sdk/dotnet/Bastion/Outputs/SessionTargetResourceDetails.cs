@@ -22,9 +22,11 @@ namespace Pulumi.Oci.Bastion.Outputs
         /// </summary>
         public readonly string? TargetResourceDisplayName;
         /// <summary>
-        /// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-        /// * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-        /// * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        /// The Fully Qualified Domain Name of the target resource that the session connects to.
+        /// </summary>
+        public readonly string? TargetResourceFqdn;
+        /// <summary>
+        /// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         /// </summary>
         public readonly string? TargetResourceId;
         /// <summary>
@@ -36,7 +38,7 @@ namespace Pulumi.Oci.Bastion.Outputs
         /// </summary>
         public readonly int? TargetResourcePort;
         /// <summary>
-        /// The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        /// The private IP address of the target resource that the session connects to.
         /// </summary>
         public readonly string? TargetResourcePrivateIpAddress;
 
@@ -45,6 +47,8 @@ namespace Pulumi.Oci.Bastion.Outputs
             string sessionType,
 
             string? targetResourceDisplayName,
+
+            string? targetResourceFqdn,
 
             string? targetResourceId,
 
@@ -56,6 +60,7 @@ namespace Pulumi.Oci.Bastion.Outputs
         {
             SessionType = sessionType;
             TargetResourceDisplayName = targetResourceDisplayName;
+            TargetResourceFqdn = targetResourceFqdn;
             TargetResourceId = targetResourceId;
             TargetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             TargetResourcePort = targetResourcePort;

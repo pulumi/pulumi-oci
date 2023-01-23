@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetContainerImagesResult> InvokeAsync(GetContainerImagesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetContainerImagesResult>("oci:Artifacts/getContainerImages:getContainerImages", args ?? new GetContainerImagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerImagesResult>("oci:Artifacts/getContainerImages:getContainerImages", args ?? new GetContainerImagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Container Images in Oracle Cloud Infrastructure Artifacts service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetContainerImagesResult> Invoke(GetContainerImagesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetContainerImagesResult>("oci:Artifacts/getContainerImages:getContainerImages", args ?? new GetContainerImagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerImagesResult>("oci:Artifacts/getContainerImages:getContainerImages", args ?? new GetContainerImagesInvokeArgs(), options.WithDefaults());
     }
 
 

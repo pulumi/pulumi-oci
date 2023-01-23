@@ -93,6 +93,36 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
     }
 
     /**
+     * The OCID of the resource that this endpoint is attached to.
+     * 
+     */
+    @Import(name="resourceId")
+    private @Nullable Output<String> resourceId;
+
+    /**
+     * @return The OCID of the resource that this endpoint is attached to.
+     * 
+     */
+    public Optional<Output<String>> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+
+    /**
+     * The type of endpoint that clients and connectors can connect to.
+     * 
+     */
+    @Import(name="resourceType")
+    private @Nullable Output<String> resourceType;
+
+    /**
+     * @return The type of endpoint that clients and connectors can connect to.
+     * 
+     */
+    public Optional<Output<String>> resourceType() {
+        return Optional.ofNullable(this.resourceType);
+    }
+
+    /**
      * The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
@@ -130,6 +160,8 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
         this.modes = $.modes;
         this.port = $.port;
         this.portX = $.portX;
+        this.resourceId = $.resourceId;
+        this.resourceType = $.resourceType;
         this.status = $.status;
         this.statusDetails = $.statusDetails;
     }
@@ -265,6 +297,48 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
          */
         public Builder portX(Integer portX) {
             return portX(Output.of(portX));
+        }
+
+        /**
+         * @param resourceId The OCID of the resource that this endpoint is attached to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(@Nullable Output<String> resourceId) {
+            $.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * @param resourceId The OCID of the resource that this endpoint is attached to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(String resourceId) {
+            return resourceId(Output.of(resourceId));
+        }
+
+        /**
+         * @param resourceType The type of endpoint that clients and connectors can connect to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(@Nullable Output<String> resourceType) {
+            $.resourceType = resourceType;
+            return this;
+        }
+
+        /**
+         * @param resourceType The type of endpoint that clients and connectors can connect to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(String resourceType) {
+            return resourceType(Output.of(resourceType));
         }
 
         /**

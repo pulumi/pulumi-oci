@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetWebAppFirewallPoliciesResult> InvokeAsync(GetWebAppFirewallPoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetWebAppFirewallPoliciesResult>("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args ?? new GetWebAppFirewallPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetWebAppFirewallPoliciesResult>("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args ?? new GetWebAppFirewallPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Web App Firewall Policies in Oracle Cloud Infrastructure Waf service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetWebAppFirewallPoliciesResult> Invoke(GetWebAppFirewallPoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetWebAppFirewallPoliciesResult>("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args ?? new GetWebAppFirewallPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetWebAppFirewallPoliciesResult>("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args ?? new GetWebAppFirewallPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

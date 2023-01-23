@@ -17,41 +17,54 @@ __all__ = ['ScheduleArgs', 'Schedule']
 class ScheduleArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 query_properties: pulumi.Input['ScheduleQueryPropertiesArgs'],
                  result_location: pulumi.Input['ScheduleResultLocationArgs'],
                  schedule_recurrences: pulumi.Input[str],
                  time_scheduled: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: Optional[pulumi.Input[str]] = None,
+                 output_file_format: Optional[pulumi.Input[str]] = None,
+                 query_properties: Optional[pulumi.Input['ScheduleQueryPropertiesArgs']] = None,
+                 saved_report_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Schedule resource.
-        :param pulumi.Input[str] compartment_id: The tenancy of the customer
-        :param pulumi.Input['ScheduleQueryPropertiesArgs'] query_properties: The query properties.
-        :param pulumi.Input['ScheduleResultLocationArgs'] result_location: The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] schedule_recurrences: In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
-        :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution
+        :param pulumi.Input[str] compartment_id: The customer tenancy.
+        :param pulumi.Input['ScheduleResultLocationArgs'] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: The unique name of the schedule created by the user
+        :param pulumi.Input[str] description: (Updatable) The description of the schedule.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] name: The unique name of the user-created schedule.
+        :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
+        :param pulumi.Input['ScheduleQueryPropertiesArgs'] query_properties: The query properties.
+        :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "query_properties", query_properties)
         pulumi.set(__self__, "result_location", result_location)
         pulumi.set(__self__, "schedule_recurrences", schedule_recurrences)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if output_file_format is not None:
+            pulumi.set(__self__, "output_file_format", output_file_format)
+        if query_properties is not None:
+            pulumi.set(__self__, "query_properties", query_properties)
+        if saved_report_id is not None:
+            pulumi.set(__self__, "saved_report_id", saved_report_id)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        The tenancy of the customer
+        The customer tenancy.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -60,22 +73,10 @@ class ScheduleArgs:
         pulumi.set(self, "compartment_id", value)
 
     @property
-    @pulumi.getter(name="queryProperties")
-    def query_properties(self) -> pulumi.Input['ScheduleQueryPropertiesArgs']:
-        """
-        The query properties.
-        """
-        return pulumi.get(self, "query_properties")
-
-    @query_properties.setter
-    def query_properties(self, value: pulumi.Input['ScheduleQueryPropertiesArgs']):
-        pulumi.set(self, "query_properties", value)
-
-    @property
     @pulumi.getter(name="resultLocation")
     def result_location(self) -> pulumi.Input['ScheduleResultLocationArgs']:
         """
-        The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         """
         return pulumi.get(self, "result_location")
 
@@ -87,7 +88,7 @@ class ScheduleArgs:
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> pulumi.Input[str]:
         """
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 
@@ -99,7 +100,7 @@ class ScheduleArgs:
     @pulumi.getter(name="timeScheduled")
     def time_scheduled(self) -> pulumi.Input[str]:
         """
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
         """
         return pulumi.get(self, "time_scheduled")
 
@@ -120,10 +121,22 @@ class ScheduleArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The description of the schedule.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -135,7 +148,7 @@ class ScheduleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique name of the schedule created by the user
+        The unique name of the user-created schedule.
         """
         return pulumi.get(self, "name")
 
@@ -143,47 +156,97 @@ class ScheduleArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+    @property
+    @pulumi.getter(name="outputFileFormat")
+    def output_file_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies supported output file format.
+        """
+        return pulumi.get(self, "output_file_format")
+
+    @output_file_format.setter
+    def output_file_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "output_file_format", value)
+
+    @property
+    @pulumi.getter(name="queryProperties")
+    def query_properties(self) -> Optional[pulumi.Input['ScheduleQueryPropertiesArgs']]:
+        """
+        The query properties.
+        """
+        return pulumi.get(self, "query_properties")
+
+    @query_properties.setter
+    def query_properties(self, value: Optional[pulumi.Input['ScheduleQueryPropertiesArgs']]):
+        pulumi.set(self, "query_properties", value)
+
+    @property
+    @pulumi.getter(name="savedReportId")
+    def saved_report_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The saved report id which can also be used to generate query.
+        """
+        return pulumi.get(self, "saved_report_id")
+
+    @saved_report_id.setter
+    def saved_report_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "saved_report_id", value)
+
 
 @pulumi.input_type
 class _ScheduleState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 output_file_format: Optional[pulumi.Input[str]] = None,
                  query_properties: Optional[pulumi.Input['ScheduleQueryPropertiesArgs']] = None,
                  result_location: Optional[pulumi.Input['ScheduleResultLocationArgs']] = None,
+                 saved_report_id: Optional[pulumi.Input[str]] = None,
                  schedule_recurrences: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_next_run: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Schedule resources.
-        :param pulumi.Input[str] compartment_id: The tenancy of the customer
+        :param pulumi.Input[str] compartment_id: The customer tenancy.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: The unique name of the schedule created by the user
+        :param pulumi.Input[str] description: (Updatable) The description of the schedule.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] name: The unique name of the user-created schedule.
+        :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
         :param pulumi.Input['ScheduleQueryPropertiesArgs'] query_properties: The query properties.
-        :param pulumi.Input['ScheduleResultLocationArgs'] result_location: The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] schedule_recurrences: In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
-        :param pulumi.Input[str] state: The lifecycle state of the schedule
+        :param pulumi.Input['ScheduleResultLocationArgs'] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
+        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param pulumi.Input[str] state: The schedule lifecycle state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time of when the schedule was created
-        :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution
+        :param pulumi.Input[str] time_created: The date and time the schedule was created.
+        :param pulumi.Input[str] time_next_run: The date and time of the next job execution.
+        :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if output_file_format is not None:
+            pulumi.set(__self__, "output_file_format", output_file_format)
         if query_properties is not None:
             pulumi.set(__self__, "query_properties", query_properties)
         if result_location is not None:
             pulumi.set(__self__, "result_location", result_location)
+        if saved_report_id is not None:
+            pulumi.set(__self__, "saved_report_id", saved_report_id)
         if schedule_recurrences is not None:
             pulumi.set(__self__, "schedule_recurrences", schedule_recurrences)
         if state is not None:
@@ -192,6 +255,8 @@ class _ScheduleState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_next_run is not None:
+            pulumi.set(__self__, "time_next_run", time_next_run)
         if time_scheduled is not None:
             pulumi.set(__self__, "time_scheduled", time_scheduled)
 
@@ -199,7 +264,7 @@ class _ScheduleState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The tenancy of the customer
+        The customer tenancy.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -220,10 +285,22 @@ class _ScheduleState:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The description of the schedule.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -235,13 +312,25 @@ class _ScheduleState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique name of the schedule created by the user
+        The unique name of the user-created schedule.
         """
         return pulumi.get(self, "name")
 
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="outputFileFormat")
+    def output_file_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies supported output file format.
+        """
+        return pulumi.get(self, "output_file_format")
+
+    @output_file_format.setter
+    def output_file_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "output_file_format", value)
 
     @property
     @pulumi.getter(name="queryProperties")
@@ -259,7 +348,7 @@ class _ScheduleState:
     @pulumi.getter(name="resultLocation")
     def result_location(self) -> Optional[pulumi.Input['ScheduleResultLocationArgs']]:
         """
-        The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         """
         return pulumi.get(self, "result_location")
 
@@ -268,10 +357,22 @@ class _ScheduleState:
         pulumi.set(self, "result_location", value)
 
     @property
+    @pulumi.getter(name="savedReportId")
+    def saved_report_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The saved report id which can also be used to generate query.
+        """
+        return pulumi.get(self, "saved_report_id")
+
+    @saved_report_id.setter
+    def saved_report_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "saved_report_id", value)
+
+    @property
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> Optional[pulumi.Input[str]]:
         """
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 
@@ -283,7 +384,7 @@ class _ScheduleState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The lifecycle state of the schedule
+        The schedule lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -307,7 +408,7 @@ class _ScheduleState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time of when the schedule was created
+        The date and time the schedule was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -316,10 +417,22 @@ class _ScheduleState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeNextRun")
+    def time_next_run(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time of the next job execution.
+        """
+        return pulumi.get(self, "time_next_run")
+
+    @time_next_run.setter
+    def time_next_run(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_next_run", value)
+
+    @property
     @pulumi.getter(name="timeScheduled")
     def time_scheduled(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
         """
         return pulumi.get(self, "time_scheduled")
 
@@ -335,10 +448,13 @@ class Schedule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 output_file_format: Optional[pulumi.Input[str]] = None,
                  query_properties: Optional[pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']]] = None,
                  result_location: Optional[pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']]] = None,
+                 saved_report_id: Optional[pulumi.Input[str]] = None,
                  schedule_recurrences: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -355,6 +471,22 @@ class Schedule(pulumi.CustomResource):
 
         test_schedule = oci.metering_computation.Schedule("testSchedule",
             compartment_id=var["compartment_id"],
+            result_location=oci.metering_computation.ScheduleResultLocationArgs(
+                bucket=var["schedule_result_location_bucket"],
+                location_type=var["schedule_result_location_location_type"],
+                namespace=var["schedule_result_location_namespace"],
+                region=var["schedule_result_location_region"],
+            ),
+            schedule_recurrences=var["schedule_schedule_recurrences"],
+            time_scheduled=var["schedule_time_scheduled"],
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=var["schedule_description"],
+            freeform_tags={
+                "bar-key": "value",
+            },
+            output_file_format=var["schedule_output_file_format"],
             query_properties=oci.metering_computation.ScheduleQueryPropertiesArgs(
                 date_range=oci.metering_computation.ScheduleQueryPropertiesDateRangeArgs(
                     date_range_type=var["schedule_query_properties_date_range_date_range_type"],
@@ -374,20 +506,7 @@ class Schedule(pulumi.CustomResource):
                 is_aggregate_by_time=var["schedule_query_properties_is_aggregate_by_time"],
                 query_type=var["schedule_query_properties_query_type"],
             ),
-            result_location=oci.metering_computation.ScheduleResultLocationArgs(
-                bucket=var["schedule_result_location_bucket"],
-                location_type=var["schedule_result_location_location_type"],
-                namespace=var["schedule_result_location_namespace"],
-                region=var["schedule_result_location_region"],
-            ),
-            schedule_recurrences=var["schedule_schedule_recurrences"],
-            time_scheduled=var["schedule_time_scheduled"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            })
+            saved_report_id=oci_data_safe_report["test_report"]["id"])
         ```
 
         ## Import
@@ -400,14 +519,17 @@ class Schedule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The tenancy of the customer
+        :param pulumi.Input[str] compartment_id: The customer tenancy.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: The unique name of the schedule created by the user
+        :param pulumi.Input[str] description: (Updatable) The description of the schedule.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] name: The unique name of the user-created schedule.
+        :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
         :param pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']] query_properties: The query properties.
-        :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] schedule_recurrences: In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
-        :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution
+        :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
+        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
         """
         ...
     @overload
@@ -428,6 +550,22 @@ class Schedule(pulumi.CustomResource):
 
         test_schedule = oci.metering_computation.Schedule("testSchedule",
             compartment_id=var["compartment_id"],
+            result_location=oci.metering_computation.ScheduleResultLocationArgs(
+                bucket=var["schedule_result_location_bucket"],
+                location_type=var["schedule_result_location_location_type"],
+                namespace=var["schedule_result_location_namespace"],
+                region=var["schedule_result_location_region"],
+            ),
+            schedule_recurrences=var["schedule_schedule_recurrences"],
+            time_scheduled=var["schedule_time_scheduled"],
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=var["schedule_description"],
+            freeform_tags={
+                "bar-key": "value",
+            },
+            output_file_format=var["schedule_output_file_format"],
             query_properties=oci.metering_computation.ScheduleQueryPropertiesArgs(
                 date_range=oci.metering_computation.ScheduleQueryPropertiesDateRangeArgs(
                     date_range_type=var["schedule_query_properties_date_range_date_range_type"],
@@ -447,20 +585,7 @@ class Schedule(pulumi.CustomResource):
                 is_aggregate_by_time=var["schedule_query_properties_is_aggregate_by_time"],
                 query_type=var["schedule_query_properties_query_type"],
             ),
-            result_location=oci.metering_computation.ScheduleResultLocationArgs(
-                bucket=var["schedule_result_location_bucket"],
-                location_type=var["schedule_result_location_location_type"],
-                namespace=var["schedule_result_location_namespace"],
-                region=var["schedule_result_location_region"],
-            ),
-            schedule_recurrences=var["schedule_schedule_recurrences"],
-            time_scheduled=var["schedule_time_scheduled"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            })
+            saved_report_id=oci_data_safe_report["test_report"]["id"])
         ```
 
         ## Import
@@ -488,10 +613,13 @@ class Schedule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 output_file_format: Optional[pulumi.Input[str]] = None,
                  query_properties: Optional[pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']]] = None,
                  result_location: Optional[pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']]] = None,
+                 saved_report_id: Optional[pulumi.Input[str]] = None,
                  schedule_recurrences: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -507,14 +635,15 @@ class Schedule(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
-            if query_properties is None and not opts.urn:
-                raise TypeError("Missing required property 'query_properties'")
+            __props__.__dict__["output_file_format"] = output_file_format
             __props__.__dict__["query_properties"] = query_properties
             if result_location is None and not opts.urn:
                 raise TypeError("Missing required property 'result_location'")
             __props__.__dict__["result_location"] = result_location
+            __props__.__dict__["saved_report_id"] = saved_report_id
             if schedule_recurrences is None and not opts.urn:
                 raise TypeError("Missing required property 'schedule_recurrences'")
             __props__.__dict__["schedule_recurrences"] = schedule_recurrences
@@ -524,6 +653,7 @@ class Schedule(pulumi.CustomResource):
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_next_run"] = None
         super(Schedule, __self__).__init__(
             'oci:MeteringComputation/schedule:Schedule',
             resource_name,
@@ -536,14 +666,18 @@ class Schedule(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             name: Optional[pulumi.Input[str]] = None,
+            output_file_format: Optional[pulumi.Input[str]] = None,
             query_properties: Optional[pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']]] = None,
             result_location: Optional[pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']]] = None,
+            saved_report_id: Optional[pulumi.Input[str]] = None,
             schedule_recurrences: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_next_run: Optional[pulumi.Input[str]] = None,
             time_scheduled: Optional[pulumi.Input[str]] = None) -> 'Schedule':
         """
         Get an existing Schedule resource's state with the given name, id, and optional extra
@@ -552,17 +686,21 @@ class Schedule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The tenancy of the customer
+        :param pulumi.Input[str] compartment_id: The customer tenancy.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: The unique name of the schedule created by the user
+        :param pulumi.Input[str] description: (Updatable) The description of the schedule.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] name: The unique name of the user-created schedule.
+        :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
         :param pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']] query_properties: The query properties.
-        :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] schedule_recurrences: In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
-        :param pulumi.Input[str] state: The lifecycle state of the schedule
+        :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
+        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param pulumi.Input[str] state: The schedule lifecycle state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time of when the schedule was created
-        :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution
+        :param pulumi.Input[str] time_created: The date and time the schedule was created.
+        :param pulumi.Input[str] time_next_run: The date and time of the next job execution.
+        :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -570,14 +708,18 @@ class Schedule(pulumi.CustomResource):
 
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["description"] = description
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["name"] = name
+        __props__.__dict__["output_file_format"] = output_file_format
         __props__.__dict__["query_properties"] = query_properties
         __props__.__dict__["result_location"] = result_location
+        __props__.__dict__["saved_report_id"] = saved_report_id
         __props__.__dict__["schedule_recurrences"] = schedule_recurrences
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_next_run"] = time_next_run
         __props__.__dict__["time_scheduled"] = time_scheduled
         return Schedule(resource_name, opts=opts, __props__=__props__)
 
@@ -585,7 +727,7 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        The tenancy of the customer
+        The customer tenancy.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -598,10 +740,18 @@ class Schedule(pulumi.CustomResource):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The description of the schedule.
+        """
+        return pulumi.get(self, "description")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -609,9 +759,17 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The unique name of the schedule created by the user
+        The unique name of the user-created schedule.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="outputFileFormat")
+    def output_file_format(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Specifies supported output file format.
+        """
+        return pulumi.get(self, "output_file_format")
 
     @property
     @pulumi.getter(name="queryProperties")
@@ -625,15 +783,23 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter(name="resultLocation")
     def result_location(self) -> pulumi.Output['outputs.ScheduleResultLocation']:
         """
-        The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         """
         return pulumi.get(self, "result_location")
+
+    @property
+    @pulumi.getter(name="savedReportId")
+    def saved_report_id(self) -> pulumi.Output[str]:
+        """
+        The saved report id which can also be used to generate query.
+        """
+        return pulumi.get(self, "saved_report_id")
 
     @property
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> pulumi.Output[str]:
         """
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 
@@ -641,7 +807,7 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The lifecycle state of the schedule
+        The schedule lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -657,15 +823,23 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The date and time of when the schedule was created
+        The date and time the schedule was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeNextRun")
+    def time_next_run(self) -> pulumi.Output[str]:
+        """
+        The date and time of the next job execution.
+        """
+        return pulumi.get(self, "time_next_run")
 
     @property
     @pulumi.getter(name="timeScheduled")
     def time_scheduled(self) -> pulumi.Output[str]:
         """
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
         """
         return pulumi.get(self, "time_scheduled")
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -129,9 +130,6 @@ export class NetworkSecurityGroupSecurityRule extends pulumi.CustomResource {
     public readonly source!: pulumi.Output<string | undefined>;
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
-     * * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-     * * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      */
     public readonly sourceType!: pulumi.Output<string>;
     /**
@@ -253,9 +251,6 @@ export interface NetworkSecurityGroupSecurityRuleState {
     source?: pulumi.Input<string>;
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
-     * * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-     * * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      */
     sourceType?: pulumi.Input<string>;
     /**
@@ -316,9 +311,6 @@ export interface NetworkSecurityGroupSecurityRuleArgs {
     source?: pulumi.Input<string>;
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
-     * * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-     * * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      */
     sourceType?: pulumi.Input<string>;
     /**

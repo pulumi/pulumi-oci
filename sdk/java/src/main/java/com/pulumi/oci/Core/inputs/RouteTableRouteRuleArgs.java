@@ -70,8 +70,6 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
 
     /**
      * (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
      * 
      */
     @Import(name="destinationType")
@@ -79,8 +77,6 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
 
     /**
      * @return (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
      * 
      */
     public Optional<Output<String>> destinationType() {
@@ -211,8 +207,6 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
 
         /**
          * @param destinationType (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-         * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
-         * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
          * 
          * @return builder
          * 
@@ -224,8 +218,6 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
 
         /**
          * @param destinationType (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-         * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
-         * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
          * 
          * @return builder
          * 

@@ -5,12 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getOdaInstance";
-export * from "./getOdaInstances";
-export * from "./odaInstance";
+export { GetOdaInstanceArgs, GetOdaInstanceResult, GetOdaInstanceOutputArgs } from "./getOdaInstance";
+export const getOdaInstance: typeof import("./getOdaInstance").getOdaInstance = null as any;
+export const getOdaInstanceOutput: typeof import("./getOdaInstance").getOdaInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getOdaInstance","getOdaInstanceOutput"], () => require("./getOdaInstance"));
 
-// Import resources to register:
-import { OdaInstance } from "./odaInstance";
+export { GetOdaInstancesArgs, GetOdaInstancesResult, GetOdaInstancesOutputArgs } from "./getOdaInstances";
+export const getOdaInstances: typeof import("./getOdaInstances").getOdaInstances = null as any;
+export const getOdaInstancesOutput: typeof import("./getOdaInstances").getOdaInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getOdaInstances","getOdaInstancesOutput"], () => require("./getOdaInstances"));
+
+export { OdaInstanceArgs, OdaInstanceState } from "./odaInstance";
+export type OdaInstance = import("./odaInstance").OdaInstance;
+export const OdaInstance: typeof import("./odaInstance").OdaInstance = null as any;
+utilities.lazyLoad(exports, ["OdaInstance"], () => require("./odaInstance"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -35,6 +35,21 @@ public final class GetVmClusterRecommendedNetworkPlainArgs extends com.pulumi.re
     }
 
     /**
+     * The list of Db server Ids to configure network.
+     * 
+     */
+    @Import(name="dbServers")
+    private @Nullable List<String> dbServers;
+
+    /**
+     * @return The list of Db server Ids to configure network.
+     * 
+     */
+    public Optional<List<String>> dbServers() {
+        return Optional.ofNullable(this.dbServers);
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -173,6 +188,7 @@ public final class GetVmClusterRecommendedNetworkPlainArgs extends com.pulumi.re
 
     private GetVmClusterRecommendedNetworkPlainArgs(GetVmClusterRecommendedNetworkPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.dbServers = $.dbServers;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.dns = $.dns;
@@ -211,6 +227,27 @@ public final class GetVmClusterRecommendedNetworkPlainArgs extends com.pulumi.re
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
+        }
+
+        /**
+         * @param dbServers The list of Db server Ids to configure network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(@Nullable List<String> dbServers) {
+            $.dbServers = dbServers;
+            return this;
+        }
+
+        /**
+         * @param dbServers The list of Db server Ids to configure network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
 
         /**

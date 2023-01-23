@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExternalContainerDatabasesResult> InvokeAsync(GetExternalContainerDatabasesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExternalContainerDatabasesResult>("oci:Database/getExternalContainerDatabases:getExternalContainerDatabases", args ?? new GetExternalContainerDatabasesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalContainerDatabasesResult>("oci:Database/getExternalContainerDatabases:getExternalContainerDatabases", args ?? new GetExternalContainerDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of External Container Databases in Oracle Cloud Infrastructure Database service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExternalContainerDatabasesResult> Invoke(GetExternalContainerDatabasesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExternalContainerDatabasesResult>("oci:Database/getExternalContainerDatabases:getExternalContainerDatabases", args ?? new GetExternalContainerDatabasesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalContainerDatabasesResult>("oci:Database/getExternalContainerDatabases:getExternalContainerDatabases", args ?? new GetExternalContainerDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

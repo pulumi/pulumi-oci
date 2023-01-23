@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTables(args: GetTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetTablesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Nosql/getTables:getTables", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -70,7 +68,7 @@ export interface GetTablesResult {
      */
     readonly id: string;
     /**
-     * The column name.
+     * Human-friendly table name, immutable.
      */
     readonly name?: string;
     /**
@@ -82,9 +80,26 @@ export interface GetTablesResult {
      */
     readonly tableCollections: outputs.Nosql.GetTablesTableCollection[];
 }
-
+/**
+ * This data source provides the list of Tables in Oracle Cloud Infrastructure NoSQL Database service.
+ *
+ * Get a list of tables in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTables = oci.Nosql.getTables({
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.table_name,
+ *     state: _var.table_state,
+ * });
+ * ```
+ */
 export function getTablesOutput(args: GetTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTablesResult> {
-    return pulumi.output(args).apply(a => getTables(a, opts))
+    return pulumi.output(args).apply((a: any) => getTables(a, opts))
 }
 
 /**

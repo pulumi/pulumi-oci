@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEvents(args: GetEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetEventsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Audit/getEvents:getEvents", {
         "compartmentId": args.compartmentId,
         "endTime": args.endTime,
@@ -77,9 +75,27 @@ export interface GetEventsResult {
     readonly id: string;
     readonly startTime: string;
 }
-
+/**
+ * This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
+ *
+ * Returns all the audit events processed for the specified compartment within the specified
+ * time range.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditEvents = oci.Audit.getEvents({
+ *     compartmentId: _var.compartment_id,
+ *     endTime: _var.audit_event_end_time,
+ *     startTime: _var.audit_event_start_time,
+ * });
+ * ```
+ */
 export function getEventsOutput(args: GetEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventsResult> {
-    return pulumi.output(args).apply(a => getEvents(a, opts))
+    return pulumi.output(args).apply((a: any) => getEvents(a, opts))
 }
 
 /**

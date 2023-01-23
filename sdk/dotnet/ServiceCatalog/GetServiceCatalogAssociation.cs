@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetServiceCatalogAssociationResult> InvokeAsync(GetServiceCatalogAssociationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetServiceCatalogAssociationResult>("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", args ?? new GetServiceCatalogAssociationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceCatalogAssociationResult>("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", args ?? new GetServiceCatalogAssociationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetServiceCatalogAssociationResult> Invoke(GetServiceCatalogAssociationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetServiceCatalogAssociationResult>("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", args ?? new GetServiceCatalogAssociationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogAssociationResult>("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", args ?? new GetServiceCatalogAssociationInvokeArgs(), options.WithDefaults());
     }
 
 

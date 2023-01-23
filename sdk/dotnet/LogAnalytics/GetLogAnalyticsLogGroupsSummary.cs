@@ -40,7 +40,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsLogGroupsSummaryResult> InvokeAsync(GetLogAnalyticsLogGroupsSummaryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsLogGroupsSummaryResult>("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args ?? new GetLogAnalyticsLogGroupsSummaryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsLogGroupsSummaryResult>("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args ?? new GetLogAnalyticsLogGroupsSummaryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsLogGroupsSummaryResult> Invoke(GetLogAnalyticsLogGroupsSummaryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsLogGroupsSummaryResult>("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args ?? new GetLogAnalyticsLogGroupsSummaryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsLogGroupsSummaryResult>("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args ?? new GetLogAnalyticsLogGroupsSummaryInvokeArgs(), options.WithDefaults());
     }
 
 

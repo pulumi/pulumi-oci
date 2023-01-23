@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResult(args: GetResultArgs, opts?: pulumi.InvokeOptions): Promise<GetResultResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getResult:getResult", {
         "apmDomainId": args.apmDomainId,
         "executionTime": args.executionTime,
@@ -106,9 +104,29 @@ export interface GetResultResult {
      */
     readonly vantagePoint: string;
 }
-
+/**
+ * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ *
+ * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResult = oci.ApmSynthetics.getResult({
+ *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
+ *     executionTime: _var.result_execution_time,
+ *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ *     resultContentType: _var.result_result_content_type,
+ *     resultType: _var.result_result_type,
+ *     vantagePoint: _var.result_vantage_point,
+ * });
+ * ```
+ */
 export function getResultOutput(args: GetResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResultResult> {
-    return pulumi.output(args).apply(a => getResult(a, opts))
+    return pulumi.output(args).apply((a: any) => getResult(a, opts))
 }
 
 /**

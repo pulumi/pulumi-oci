@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployment(args: GetDeploymentArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployment:getDeployment", {
         "deploymentId": args.deploymentId,
     }, opts);
@@ -74,6 +72,10 @@ export interface GetDeploymentResult {
      * The OCID of the stage.
      */
     readonly deployStageId: string;
+    /**
+     * Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     */
+    readonly deployStageOverrideArguments: outputs.DevOps.GetDeploymentDeployStageOverrideArgument[];
     /**
      * Specifies list of arguments passed along with the deployment.
      */
@@ -127,10 +129,26 @@ export interface GetDeploymentResult {
      * Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     readonly timeUpdated: string;
+    readonly triggerNewDevopsDeployment: boolean;
 }
-
+/**
+ * This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a deployment by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployment = oci.DevOps.getDeployment({
+ *     deploymentId: oci_devops_deployment.test_deployment.id,
+ * });
+ * ```
+ */
 export function getDeploymentOutput(args: GetDeploymentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentResult> {
-    return pulumi.output(args).apply(a => getDeployment(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployment(a, opts))
 }
 
 /**

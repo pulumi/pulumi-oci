@@ -14,6 +14,8 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsResult {
+    private @Nullable String assignableConnectionId;
+    private @Nullable String assignedConnectionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
@@ -50,8 +52,15 @@ public final class GetDeploymentsResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String supportedConnectionType;
 
     private GetDeploymentsResult() {}
+    public Optional<String> assignableConnectionId() {
+        return Optional.ofNullable(this.assignableConnectionId);
+    }
+    public Optional<String> assignedConnectionId() {
+        return Optional.ofNullable(this.assignedConnectionId);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
@@ -104,6 +113,9 @@ public final class GetDeploymentsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> supportedConnectionType() {
+        return Optional.ofNullable(this.supportedConnectionType);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -114,6 +126,8 @@ public final class GetDeploymentsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String assignableConnectionId;
+        private @Nullable String assignedConnectionId;
         private String compartmentId;
         private List<GetDeploymentsDeploymentCollection> deploymentCollections;
         private @Nullable String displayName;
@@ -122,9 +136,12 @@ public final class GetDeploymentsResult {
         private String id;
         private @Nullable String lifecycleSubState;
         private @Nullable String state;
+        private @Nullable String supportedConnectionType;
         public Builder() {}
         public Builder(GetDeploymentsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assignableConnectionId = defaults.assignableConnectionId;
+    	      this.assignedConnectionId = defaults.assignedConnectionId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.deploymentCollections = defaults.deploymentCollections;
     	      this.displayName = defaults.displayName;
@@ -133,8 +150,19 @@ public final class GetDeploymentsResult {
     	      this.id = defaults.id;
     	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.state = defaults.state;
+    	      this.supportedConnectionType = defaults.supportedConnectionType;
         }
 
+        @CustomType.Setter
+        public Builder assignableConnectionId(@Nullable String assignableConnectionId) {
+            this.assignableConnectionId = assignableConnectionId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder assignedConnectionId(@Nullable String assignedConnectionId) {
+            this.assignedConnectionId = assignedConnectionId;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -181,8 +209,15 @@ public final class GetDeploymentsResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder supportedConnectionType(@Nullable String supportedConnectionType) {
+            this.supportedConnectionType = supportedConnectionType;
+            return this;
+        }
         public GetDeploymentsResult build() {
             final var o = new GetDeploymentsResult();
+            o.assignableConnectionId = assignableConnectionId;
+            o.assignedConnectionId = assignedConnectionId;
             o.compartmentId = compartmentId;
             o.deploymentCollections = deploymentCollections;
             o.displayName = displayName;
@@ -191,6 +226,7 @@ public final class GetDeploymentsResult {
             o.id = id;
             o.lifecycleSubState = lifecycleSubState;
             o.state = state;
+            o.supportedConnectionType = supportedConnectionType;
             return o;
         }
     }

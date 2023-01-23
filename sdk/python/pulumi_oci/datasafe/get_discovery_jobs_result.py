@@ -43,6 +43,10 @@ class GetDiscoveryJobsResultResult:
         pulumi.set(__self__, "discovery_job_id", discovery_job_id)
         if discovery_type and not isinstance(discovery_type, str):
             raise TypeError("Expected argument 'discovery_type' to be a str")
+        if discovery_type is not None:
+            warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         pulumi.set(__self__, "discovery_type", discovery_type)
         if estimated_data_value_count and not isinstance(estimated_data_value_count, str):
             raise TypeError("Expected argument 'estimated_data_value_count' to be a str")
@@ -55,6 +59,10 @@ class GetDiscoveryJobsResultResult:
         pulumi.set(__self__, "is_result_applied", is_result_applied)
         if key and not isinstance(key, str):
             raise TypeError("Expected argument 'key' to be a str")
+        if key is not None:
+            warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         pulumi.set(__self__, "key", key)
         if modified_attributes and not isinstance(modified_attributes, list):
             raise TypeError("Expected argument 'modified_attributes' to be a list")
@@ -133,6 +141,9 @@ class GetDiscoveryJobsResultResult:
     @property
     @pulumi.getter(name="discoveryJobId")
     def discovery_job_id(self) -> str:
+        """
+        The OCID of the discovery job.
+        """
         return pulumi.get(self, "discovery_job_id")
 
     @property

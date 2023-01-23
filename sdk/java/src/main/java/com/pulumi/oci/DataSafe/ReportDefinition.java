@@ -175,6 +175,20 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * 
+     */
+    @Export(name="complianceStandards", type=List.class, parameters={String.class})
+    private Output<List<String>> complianceStandards;
+
+    /**
+     * @return The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * 
+     */
+    public Output<List<String>> complianceStandards() {
+        return this.complianceStandards;
+    }
+    /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
@@ -285,6 +299,90 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      */
     public Output<String> parentId() {
         return this.parentId;
+    }
+    /**
+     * The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * 
+     */
+    @Export(name="recordTimeSpan", type=String.class, parameters={})
+    private Output<String> recordTimeSpan;
+
+    /**
+     * @return The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * 
+     */
+    public Output<String> recordTimeSpan() {
+        return this.recordTimeSpan;
+    }
+    /**
+     * Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * 
+     */
+    @Export(name="schedule", type=String.class, parameters={})
+    private Output<String> schedule;
+
+    /**
+     * @return Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * 
+     */
+    public Output<String> schedule() {
+        return this.schedule;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * 
+     */
+    @Export(name="scheduledReportCompartmentId", type=String.class, parameters={})
+    private Output<String> scheduledReportCompartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * 
+     */
+    public Output<String> scheduledReportCompartmentId() {
+        return this.scheduledReportCompartmentId;
+    }
+    /**
+     * Specifies the format of report to be excel or pdf
+     * 
+     */
+    @Export(name="scheduledReportMimeType", type=String.class, parameters={})
+    private Output<String> scheduledReportMimeType;
+
+    /**
+     * @return Specifies the format of report to be excel or pdf
+     * 
+     */
+    public Output<String> scheduledReportMimeType() {
+        return this.scheduledReportMimeType;
+    }
+    /**
+     * The name of the report to be scheduled.
+     * 
+     */
+    @Export(name="scheduledReportName", type=String.class, parameters={})
+    private Output<String> scheduledReportName;
+
+    /**
+     * @return The name of the report to be scheduled.
+     * 
+     */
+    public Output<String> scheduledReportName() {
+        return this.scheduledReportName;
+    }
+    /**
+     * Specifies the limit on number of rows in report.
+     * 
+     */
+    @Export(name="scheduledReportRowLimit", type=Integer.class, parameters={})
+    private Output<Integer> scheduledReportRowLimit;
+
+    /**
+     * @return Specifies the limit on number of rows in report.
+     * 
+     */
+    public Output<Integer> scheduledReportRowLimit() {
+        return this.scheduledReportRowLimit;
     }
     /**
      * (Updatable) Additional scim filters used to get the specific summary.

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentStatus(args: GetFusionEnvironmentStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentStatusResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", {
         "fusionEnvironmentId": args.fusionEnvironmentId,
     }, opts);
@@ -55,9 +52,24 @@ export interface GetFusionEnvironmentStatusResult {
      */
     readonly status: string;
 }
-
+/**
+ * This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Gets the status of a Fusion environment identified by its OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentStatus = oci.Functions.getFusionEnvironmentStatus({
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentStatusOutput(args: GetFusionEnvironmentStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentStatusResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentStatus(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentStatus(a, opts))
 }
 
 /**

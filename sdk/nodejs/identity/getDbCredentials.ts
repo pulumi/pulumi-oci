@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbCredentials(args: GetDbCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbCredentialsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDbCredentials:getDbCredentials", {
         "filters": args.filters,
         "name": args.name,
@@ -79,9 +77,26 @@ export interface GetDbCredentialsResult {
      */
     readonly userId: string;
 }
-
+/**
+ * This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the DB credentials for the specified user. The returned object contains the credential's OCID
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbCredentials = oci.Identity.getDbCredentials({
+ *     userId: oci_identity_user.test_user.id,
+ *     name: _var.db_credential_name,
+ *     state: _var.db_credential_state,
+ * });
+ * ```
+ */
 export function getDbCredentialsOutput(args: GetDbCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbCredentialsResult> {
-    return pulumi.output(args).apply(a => getDbCredentials(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbCredentials(a, opts))
 }
 
 /**

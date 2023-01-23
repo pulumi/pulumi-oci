@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOperationsInsightsWarehouseUsersResult> InvokeAsync(GetOperationsInsightsWarehouseUsersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOperationsInsightsWarehouseUsersResult>("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", args ?? new GetOperationsInsightsWarehouseUsersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOperationsInsightsWarehouseUsersResult>("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", args ?? new GetOperationsInsightsWarehouseUsersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Operations Insights Warehouse Users in Oracle Cloud Infrastructure Opsi service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOperationsInsightsWarehouseUsersResult> Invoke(GetOperationsInsightsWarehouseUsersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseUsersResult>("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", args ?? new GetOperationsInsightsWarehouseUsersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseUsersResult>("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", args ?? new GetOperationsInsightsWarehouseUsersInvokeArgs(), options.WithDefaults());
     }
 
 

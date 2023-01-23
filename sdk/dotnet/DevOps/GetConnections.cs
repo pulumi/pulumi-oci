@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetConnectionsResult> InvokeAsync(GetConnectionsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConnectionsResult>("oci:DevOps/getConnections:getConnections", args ?? new GetConnectionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConnectionsResult>("oci:DevOps/getConnections:getConnections", args ?? new GetConnectionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Connections in Oracle Cloud Infrastructure Devops service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetConnectionsResult> Invoke(GetConnectionsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConnectionsResult>("oci:DevOps/getConnections:getConnections", args ?? new GetConnectionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionsResult>("oci:DevOps/getConnections:getConnections", args ?? new GetConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetGuardTargetResult> InvokeAsync(GetGuardTargetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetGuardTargetResult>("oci:CloudGuard/getGuardTarget:getGuardTarget", args ?? new GetGuardTargetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetGuardTargetResult>("oci:CloudGuard/getGuardTarget:getGuardTarget", args ?? new GetGuardTargetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetGuardTargetResult> Invoke(GetGuardTargetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetGuardTargetResult>("oci:CloudGuard/getGuardTarget:getGuardTarget", args ?? new GetGuardTargetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetGuardTargetResult>("oci:CloudGuard/getGuardTarget:getGuardTarget", args ?? new GetGuardTargetInvokeArgs(), options.WithDefaults());
     }
 
 

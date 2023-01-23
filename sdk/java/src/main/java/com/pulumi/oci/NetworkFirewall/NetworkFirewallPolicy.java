@@ -39,12 +39,15 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicy;
  * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicyArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyApplicationListArgs;
  * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionProfileArgs;
  * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleArgs;
  * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyIpAddressListArgs;
  * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyMappedSecretArgs;
  * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicySecurityRuleArgs;
  * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicySecurityRuleConditionArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyUrlListArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -60,7 +63,16 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicy = new NetworkFirewallPolicy(&#34;testNetworkFirewallPolicy&#34;, NetworkFirewallPolicyArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .applicationLists(var_.network_firewall_policy_application_lists())
+ *             .applicationLists(NetworkFirewallPolicyApplicationListArgs.builder()
+ *                 .applicationListName(var_.network_firewall_policy_application_lists_key())
+ *                 .applicationValues(NetworkFirewallPolicyApplicationListApplicationValueArgs.builder()
+ *                     .type(var_.network_firewall_policy_application_lists_type())
+ *                     .icmpType(var_.network_firewall_policy_application_lists_icmp_type())
+ *                     .icmpCode(var_.network_firewall_policy_application_lists_icmp_code())
+ *                     .minimumPort(var_.network_firewall_policy_application_lists_minimum_port())
+ *                     .maximumPort(var_.network_firewall_policy_application_lists_maximum_port())
+ *                     .build())
+ *                 .build())
  *             .decryptionProfiles(NetworkFirewallPolicyDecryptionProfileArgs.builder()
  *                 .isOutOfCapacityBlocked(var_.network_firewall_policy_decryption_profiles_is_out_of_capacity_blocked())
  *                 .isUnsupportedCipherBlocked(var_.network_firewall_policy_decryption_profiles_is_unsupported_cipher_blocked())
@@ -86,7 +98,10 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .displayName(var_.network_firewall_policy_display_name())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .ipAddressLists(var_.network_firewall_policy_ip_address_lists())
+ *             .ipAddressLists(NetworkFirewallPolicyIpAddressListArgs.builder()
+ *                 .ipAddressListName(var_.network_firewall_policy_ip_address_lists_name())
+ *                 .ipAddressListValues(var_.network_firewall_policy_ip_address_lists_value())
+ *                 .build())
  *             .mappedSecrets(NetworkFirewallPolicyMappedSecretArgs.builder()
  *                 .source(var_.network_firewall_policy_mapped_secrets_source())
  *                 .type(var_.network_firewall_policy_mapped_secrets_type())
@@ -104,7 +119,13 @@ import javax.annotation.Nullable;
  *                 .name(var_.network_firewall_policy_security_rules_name())
  *                 .inspection(var_.network_firewall_policy_security_rules_inspection())
  *                 .build())
- *             .urlLists(var_.network_firewall_policy_url_lists())
+ *             .urlLists(NetworkFirewallPolicyUrlListArgs.builder()
+ *                 .urlListName(var_.network_firewall_policy_url_lists_key())
+ *                 .urlListValues(NetworkFirewallPolicyUrlListUrlListValueArgs.builder()
+ *                     .type(var_.network_firewall_policy_url_lists_type())
+ *                     .pattern(var_.network_firewall_policy_url_lists_pattern())
+ *                     .build())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -123,14 +144,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy")
 public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+     * (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
      * 
      */
     @Export(name="applicationLists", type=List.class, parameters={NetworkFirewallPolicyApplicationList.class})
     private Output<List<NetworkFirewallPolicyApplicationList>> applicationLists;
 
     /**
-     * @return (Updatable) Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+     * @return (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
      * 
      */
     public Output<List<NetworkFirewallPolicyApplicationList>> applicationLists() {
@@ -221,14 +242,14 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+     * (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
      * 
      */
     @Export(name="ipAddressLists", type=List.class, parameters={NetworkFirewallPolicyIpAddressList.class})
     private Output<List<NetworkFirewallPolicyIpAddressList>> ipAddressLists;
 
     /**
-     * @return (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+     * @return (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
      * 
      */
     public Output<List<NetworkFirewallPolicyIpAddressList>> ipAddressLists() {

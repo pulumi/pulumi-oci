@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAvailabilityDomainResult> InvokeAsync(GetAvailabilityDomainArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAvailabilityDomainResult>("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", args ?? new GetAvailabilityDomainArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAvailabilityDomainResult>("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", args ?? new GetAvailabilityDomainArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAvailabilityDomainResult> Invoke(GetAvailabilityDomainInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAvailabilityDomainResult>("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", args ?? new GetAvailabilityDomainInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAvailabilityDomainResult>("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", args ?? new GetAvailabilityDomainInvokeArgs(), options.WithDefaults());
     }
 
 

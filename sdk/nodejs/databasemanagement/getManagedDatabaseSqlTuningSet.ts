@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningSet(args: GetManagedDatabaseSqlTuningSetArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningSetResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", {
         "managedDatabaseId": args.managedDatabaseId,
         "nameContains": args.nameContains,
@@ -76,9 +74,26 @@ export interface GetManagedDatabaseSqlTuningSetResult {
      */
     readonly owner?: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Lists the SQL tuning sets for the specified Managed Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseSqlTuningSet = oci.DatabaseManagement.getManagedDatabaseSqlTuningSet({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     nameContains: _var.managed_database_sql_tuning_set_name_contains,
+ *     owner: _var.managed_database_sql_tuning_set_owner,
+ * });
+ * ```
+ */
 export function getManagedDatabaseSqlTuningSetOutput(args: GetManagedDatabaseSqlTuningSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningSetResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseSqlTuningSet(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningSet(a, opts))
 }
 
 /**

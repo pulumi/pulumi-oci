@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUserGroupMembershipsResult> InvokeAsync(GetUserGroupMembershipsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupMembershipsResult>("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args ?? new GetUserGroupMembershipsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupMembershipsResult>("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args ?? new GetUserGroupMembershipsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of User Group Memberships in Oracle Cloud Infrastructure Identity service.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUserGroupMembershipsResult> Invoke(GetUserGroupMembershipsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUserGroupMembershipsResult>("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args ?? new GetUserGroupMembershipsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupMembershipsResult>("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args ?? new GetUserGroupMembershipsInvokeArgs(), options.WithDefaults());
     }
 
 

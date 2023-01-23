@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  */
 export function getSslCipherSuites(args?: GetSslCipherSuitesArgs, opts?: pulumi.InvokeOptions): Promise<GetSslCipherSuitesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", {
         "filters": args.filters,
         "loadBalancerId": args.loadBalancerId,
@@ -60,9 +58,24 @@ export interface GetSslCipherSuitesResult {
      */
     readonly sslCipherSuites: outputs.LoadBalancer.GetSslCipherSuitesSslCipherSuite[];
 }
-
+/**
+ * This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Lists all SSL cipher suites associated with the specified load balancer.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSslCipherSuites = oci.LoadBalancer.getSslCipherSuites({
+ *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * });
+ * ```
+ */
 export function getSslCipherSuitesOutput(args?: GetSslCipherSuitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSslCipherSuitesResult> {
-    return pulumi.output(args).apply(a => getSslCipherSuites(a, opts))
+    return pulumi.output(args).apply((a: any) => getSslCipherSuites(a, opts))
 }
 
 /**

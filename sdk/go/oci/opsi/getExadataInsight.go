@@ -76,11 +76,17 @@ type LookupExadataInsightResult struct {
 	EntitySource string `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
 	ExadataDisplayName string `pulumi:"exadataDisplayName"`
-	ExadataInsightId   string `pulumi:"exadataInsightId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	ExadataInfraId string `pulumi:"exadataInfraId"`
+	// Oracle Cloud Infrastructure exadata infrastructure resource type
+	ExadataInfraResourceType string `pulumi:"exadataInfraResourceType"`
+	ExadataInsightId         string `pulumi:"exadataInsightId"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
 	ExadataName string `pulumi:"exadataName"`
 	// Exadata rack type.
 	ExadataRackType string `pulumi:"exadataRackType"`
+	// The shape of the Exadata Infrastructure.
+	ExadataShape string `pulumi:"exadataShape"`
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType string `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -91,7 +97,8 @@ type LookupExadataInsightResult struct {
 	// true if virtualization is used in the Exadata system
 	IsVirtualizedExadata bool `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails       string                                   `pulumi:"lifecycleDetails"`
+	MemberVmClusterDetails []GetExadataInsightMemberVmClusterDetail `pulumi:"memberVmClusterDetails"`
 	// The current state of the Exadata insight.
 	State string `pulumi:"state"`
 	// Indicates the status of an Exadata insight in Operations Insights
@@ -192,6 +199,16 @@ func (o LookupExadataInsightResultOutput) ExadataDisplayName() pulumi.StringOutp
 	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataDisplayName }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+func (o LookupExadataInsightResultOutput) ExadataInfraId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataInfraId }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure exadata infrastructure resource type
+func (o LookupExadataInsightResultOutput) ExadataInfraResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataInfraResourceType }).(pulumi.StringOutput)
+}
+
 func (o LookupExadataInsightResultOutput) ExadataInsightId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataInsightId }).(pulumi.StringOutput)
 }
@@ -204,6 +221,11 @@ func (o LookupExadataInsightResultOutput) ExadataName() pulumi.StringOutput {
 // Exadata rack type.
 func (o LookupExadataInsightResultOutput) ExadataRackType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataRackType }).(pulumi.StringOutput)
+}
+
+// The shape of the Exadata Infrastructure.
+func (o LookupExadataInsightResultOutput) ExadataShape() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.ExadataShape }).(pulumi.StringOutput)
 }
 
 // Operations Insights internal representation of the the Exadata system type.
@@ -233,6 +255,12 @@ func (o LookupExadataInsightResultOutput) IsVirtualizedExadata() pulumi.BoolOutp
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o LookupExadataInsightResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupExadataInsightResultOutput) MemberVmClusterDetails() GetExadataInsightMemberVmClusterDetailArrayOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) []GetExadataInsightMemberVmClusterDetail {
+		return v.MemberVmClusterDetails
+	}).(GetExadataInsightMemberVmClusterDetailArrayOutput)
 }
 
 // The current state of the Exadata insight.

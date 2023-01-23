@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMesh(args: GetMeshArgs, opts?: pulumi.InvokeOptions): Promise<GetMeshResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getMesh:getMesh", {
         "meshId": args.meshId,
     }, opts);
@@ -47,7 +45,7 @@ export interface GetMeshArgs {
  */
 export interface GetMeshResult {
     /**
-     * A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+     * A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
      */
     readonly certificateAuthorities: outputs.ServiceMesh.GetMeshCertificateAuthority[];
     /**
@@ -100,9 +98,24 @@ export interface GetMeshResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Gets a Mesh by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMesh = oci.ServiceMesh.getMesh({
+ *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ * });
+ * ```
+ */
 export function getMeshOutput(args: GetMeshOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMeshResult> {
-    return pulumi.output(args).apply(a => getMesh(a, opts))
+    return pulumi.output(args).apply((a: any) => getMesh(a, opts))
 }
 
 /**

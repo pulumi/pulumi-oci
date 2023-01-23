@@ -61,7 +61,6 @@ type DrgRouteTableRouteRule struct {
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	Destination pulumi.StringOutput `pulumi:"destination"`
 	// (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 	DestinationType pulumi.StringOutput `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
 	DrgRouteTableId pulumi.StringOutput `pulumi:"drgRouteTableId"`
@@ -123,7 +122,6 @@ type drgRouteTableRouteRuleState struct {
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	Destination *string `pulumi:"destination"`
 	// (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 	DestinationType *string `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
 	DrgRouteTableId *string `pulumi:"drgRouteTableId"`
@@ -145,7 +143,6 @@ type DrgRouteTableRouteRuleState struct {
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	Destination pulumi.StringPtrInput
 	// (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 	DestinationType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
 	DrgRouteTableId pulumi.StringPtrInput
@@ -169,7 +166,6 @@ type drgRouteTableRouteRuleArgs struct {
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	Destination string `pulumi:"destination"`
 	// (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 	DestinationType string `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
 	DrgRouteTableId string `pulumi:"drgRouteTableId"`
@@ -182,7 +178,6 @@ type DrgRouteTableRouteRuleArgs struct {
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	Destination pulumi.StringInput
 	// (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 	DestinationType pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
 	DrgRouteTableId pulumi.StringInput
@@ -288,7 +283,6 @@ func (o DrgRouteTableRouteRuleOutput) Destination() pulumi.StringOutput {
 }
 
 // (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 func (o DrgRouteTableRouteRuleOutput) DestinationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringOutput { return v.DestinationType }).(pulumi.StringOutput)
 }

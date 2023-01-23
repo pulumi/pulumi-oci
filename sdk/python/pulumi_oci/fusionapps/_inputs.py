@@ -13,9 +13,11 @@ __all__ = [
     'FusionEnvironmentAdminUserItemArgs',
     'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs',
     'FusionEnvironmentFamilyFamilyMaintenancePolicyArgs',
+    'FusionEnvironmentKmsKeyInfoArgs',
     'FusionEnvironmentMaintenancePolicyArgs',
     'FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs',
     'FusionEnvironmentRefreshArgs',
+    'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs',
     'FusionEnvironmentRuleArgs',
     'FusionEnvironmentRuleConditionArgs',
 ]
@@ -229,6 +231,95 @@ class FusionEnvironmentFamilyFamilyMaintenancePolicyArgs:
 
 
 @pulumi.input_type
+class FusionEnvironmentKmsKeyInfoArgs:
+    def __init__(__self__, *,
+                 active_key_id: Optional[pulumi.Input[str]] = None,
+                 active_key_version: Optional[pulumi.Input[str]] = None,
+                 current_key_lifecycle_state: Optional[pulumi.Input[str]] = None,
+                 scheduled_key_id: Optional[pulumi.Input[str]] = None,
+                 scheduled_key_status: Optional[pulumi.Input[str]] = None,
+                 scheduled_key_version: Optional[pulumi.Input[str]] = None,
+                 scheduled_lifecycle_state: Optional[pulumi.Input[str]] = None):
+        if active_key_id is not None:
+            pulumi.set(__self__, "active_key_id", active_key_id)
+        if active_key_version is not None:
+            pulumi.set(__self__, "active_key_version", active_key_version)
+        if current_key_lifecycle_state is not None:
+            pulumi.set(__self__, "current_key_lifecycle_state", current_key_lifecycle_state)
+        if scheduled_key_id is not None:
+            pulumi.set(__self__, "scheduled_key_id", scheduled_key_id)
+        if scheduled_key_status is not None:
+            pulumi.set(__self__, "scheduled_key_status", scheduled_key_status)
+        if scheduled_key_version is not None:
+            pulumi.set(__self__, "scheduled_key_version", scheduled_key_version)
+        if scheduled_lifecycle_state is not None:
+            pulumi.set(__self__, "scheduled_lifecycle_state", scheduled_lifecycle_state)
+
+    @property
+    @pulumi.getter(name="activeKeyId")
+    def active_key_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "active_key_id")
+
+    @active_key_id.setter
+    def active_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "active_key_id", value)
+
+    @property
+    @pulumi.getter(name="activeKeyVersion")
+    def active_key_version(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "active_key_version")
+
+    @active_key_version.setter
+    def active_key_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "active_key_version", value)
+
+    @property
+    @pulumi.getter(name="currentKeyLifecycleState")
+    def current_key_lifecycle_state(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "current_key_lifecycle_state")
+
+    @current_key_lifecycle_state.setter
+    def current_key_lifecycle_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "current_key_lifecycle_state", value)
+
+    @property
+    @pulumi.getter(name="scheduledKeyId")
+    def scheduled_key_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "scheduled_key_id")
+
+    @scheduled_key_id.setter
+    def scheduled_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_key_id", value)
+
+    @property
+    @pulumi.getter(name="scheduledKeyStatus")
+    def scheduled_key_status(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "scheduled_key_status")
+
+    @scheduled_key_status.setter
+    def scheduled_key_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_key_status", value)
+
+    @property
+    @pulumi.getter(name="scheduledKeyVersion")
+    def scheduled_key_version(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "scheduled_key_version")
+
+    @scheduled_key_version.setter
+    def scheduled_key_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_key_version", value)
+
+    @property
+    @pulumi.getter(name="scheduledLifecycleState")
+    def scheduled_lifecycle_state(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "scheduled_lifecycle_state")
+
+    @scheduled_lifecycle_state.setter
+    def scheduled_lifecycle_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_lifecycle_state", value)
+
+
+@pulumi.input_type
 class FusionEnvironmentMaintenancePolicyArgs:
     def __init__(__self__, *,
                  environment_maintenance_override: Optional[pulumi.Input[str]] = None,
@@ -375,6 +466,29 @@ class FusionEnvironmentRefreshArgs:
     @time_of_restoration_point.setter
     def time_of_restoration_point(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_of_restoration_point", value)
+
+
+@pulumi.input_type
+class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs:
+    def __init__(__self__, *,
+                 refresh_issues: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] refresh_issues: Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+        """
+        if refresh_issues is not None:
+            pulumi.set(__self__, "refresh_issues", refresh_issues)
+
+    @property
+    @pulumi.getter(name="refreshIssues")
+    def refresh_issues(self) -> Optional[pulumi.Input[str]]:
+        """
+        Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+        """
+        return pulumi.get(self, "refresh_issues")
+
+    @refresh_issues.setter
+    def refresh_issues(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "refresh_issues", value)
 
 
 @pulumi.input_type

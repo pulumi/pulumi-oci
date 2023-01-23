@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetServiceCatalogsResult> InvokeAsync(GetServiceCatalogsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetServiceCatalogsResult>("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", args ?? new GetServiceCatalogsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceCatalogsResult>("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", args ?? new GetServiceCatalogsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetServiceCatalogsResult> Invoke(GetServiceCatalogsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetServiceCatalogsResult>("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", args ?? new GetServiceCatalogsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogsResult>("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", args ?? new GetServiceCatalogsInvokeArgs(), options.WithDefaults());
     }
 
 

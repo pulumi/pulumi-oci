@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstanceMaintenanceRebootResult> InvokeAsync(GetInstanceMaintenanceRebootArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstanceMaintenanceRebootResult>("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args ?? new GetInstanceMaintenanceRebootArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceMaintenanceRebootResult>("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args ?? new GetInstanceMaintenanceRebootArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstanceMaintenanceRebootResult> Invoke(GetInstanceMaintenanceRebootInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstanceMaintenanceRebootResult>("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args ?? new GetInstanceMaintenanceRebootInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMaintenanceRebootResult>("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args ?? new GetInstanceMaintenanceRebootInvokeArgs(), options.WithDefaults());
     }
 
 

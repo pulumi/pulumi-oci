@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpv6(args: GetIpv6Args, opts?: pulumi.InvokeOptions): Promise<GetIpv6Result> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpv6:getIpv6", {
         "ipv6id": args.ipv6id,
     }, opts);
@@ -91,9 +88,27 @@ export interface GetIpv6Result {
      */
     readonly vnicId: string;
 }
-
+/**
+ * This data source provides details about a specific Ipv6 resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified IPv6. You must specify the object's OCID.
+ * Alternatively, you can get the object by using
+ * [ListIpv6s](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/ListIpv6s)
+ * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpv6 = oci.Core.getIpv6({
+ *     ipv6id: oci_core_ipv6.test_ipv6.id,
+ * });
+ * ```
+ */
 export function getIpv6Output(args: GetIpv6OutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpv6Result> {
-    return pulumi.output(args).apply(a => getIpv6(a, opts))
+    return pulumi.output(args).apply((a: any) => getIpv6(a, opts))
 }
 
 /**

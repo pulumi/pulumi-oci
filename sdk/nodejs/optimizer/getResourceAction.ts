@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResourceAction(args: GetResourceActionArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceActionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getResourceAction:getResourceAction", {
         "resourceActionId": args.resourceActionId,
     }, opts);
@@ -120,9 +118,24 @@ export interface GetResourceActionResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
+ *
+ * Gets the resource action that corresponds to the specified OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResourceAction = oci.Optimizer.getResourceAction({
+ *     resourceActionId: oci_optimizer_resource_action.test_resource_action.id,
+ * });
+ * ```
+ */
 export function getResourceActionOutput(args: GetResourceActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceActionResult> {
-    return pulumi.output(args).apply(a => getResourceAction(a, opts))
+    return pulumi.output(args).apply((a: any) => getResourceAction(a, opts))
 }
 
 /**

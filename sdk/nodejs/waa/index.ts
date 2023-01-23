@@ -5,16 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./appAcceleration";
-export * from "./appAccelerationPolicy";
-export * from "./getAppAcceleration";
-export * from "./getAppAccelerationPolicies";
-export * from "./getAppAccelerationPolicy";
-export * from "./getAppAccelerations";
+export { AppAccelerationArgs, AppAccelerationState } from "./appAcceleration";
+export type AppAcceleration = import("./appAcceleration").AppAcceleration;
+export const AppAcceleration: typeof import("./appAcceleration").AppAcceleration = null as any;
+utilities.lazyLoad(exports, ["AppAcceleration"], () => require("./appAcceleration"));
 
-// Import resources to register:
-import { AppAcceleration } from "./appAcceleration";
-import { AppAccelerationPolicy } from "./appAccelerationPolicy";
+export { AppAccelerationPolicyArgs, AppAccelerationPolicyState } from "./appAccelerationPolicy";
+export type AppAccelerationPolicy = import("./appAccelerationPolicy").AppAccelerationPolicy;
+export const AppAccelerationPolicy: typeof import("./appAccelerationPolicy").AppAccelerationPolicy = null as any;
+utilities.lazyLoad(exports, ["AppAccelerationPolicy"], () => require("./appAccelerationPolicy"));
+
+export { GetAppAccelerationArgs, GetAppAccelerationResult, GetAppAccelerationOutputArgs } from "./getAppAcceleration";
+export const getAppAcceleration: typeof import("./getAppAcceleration").getAppAcceleration = null as any;
+export const getAppAccelerationOutput: typeof import("./getAppAcceleration").getAppAccelerationOutput = null as any;
+utilities.lazyLoad(exports, ["getAppAcceleration","getAppAccelerationOutput"], () => require("./getAppAcceleration"));
+
+export { GetAppAccelerationPoliciesArgs, GetAppAccelerationPoliciesResult, GetAppAccelerationPoliciesOutputArgs } from "./getAppAccelerationPolicies";
+export const getAppAccelerationPolicies: typeof import("./getAppAccelerationPolicies").getAppAccelerationPolicies = null as any;
+export const getAppAccelerationPoliciesOutput: typeof import("./getAppAccelerationPolicies").getAppAccelerationPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppAccelerationPolicies","getAppAccelerationPoliciesOutput"], () => require("./getAppAccelerationPolicies"));
+
+export { GetAppAccelerationPolicyArgs, GetAppAccelerationPolicyResult, GetAppAccelerationPolicyOutputArgs } from "./getAppAccelerationPolicy";
+export const getAppAccelerationPolicy: typeof import("./getAppAccelerationPolicy").getAppAccelerationPolicy = null as any;
+export const getAppAccelerationPolicyOutput: typeof import("./getAppAccelerationPolicy").getAppAccelerationPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getAppAccelerationPolicy","getAppAccelerationPolicyOutput"], () => require("./getAppAccelerationPolicy"));
+
+export { GetAppAccelerationsArgs, GetAppAccelerationsResult, GetAppAccelerationsOutputArgs } from "./getAppAccelerations";
+export const getAppAccelerations: typeof import("./getAppAccelerations").getAppAccelerations = null as any;
+export const getAppAccelerationsOutput: typeof import("./getAppAccelerations").getAppAccelerationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppAccelerations","getAppAccelerationsOutput"], () => require("./getAppAccelerations"));
+
 
 const _module = {
     version: utilities.getVersion(),

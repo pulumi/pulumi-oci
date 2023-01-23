@@ -22,13 +22,19 @@ class GetExadataInfrastructureResult:
     """
     A collection of values returned by getExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_storage_count=None, admin_network_cidr=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, netmask=None, ntp_servers=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
+    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, ntp_servers=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
         if activation_file and not isinstance(activation_file, str):
             raise TypeError("Expected argument 'activation_file' to be a str")
         pulumi.set(__self__, "activation_file", activation_file)
+        if additional_compute_count and not isinstance(additional_compute_count, int):
+            raise TypeError("Expected argument 'additional_compute_count' to be a int")
+        pulumi.set(__self__, "additional_compute_count", additional_compute_count)
+        if additional_compute_system_model and not isinstance(additional_compute_system_model, str):
+            raise TypeError("Expected argument 'additional_compute_system_model' to be a str")
+        pulumi.set(__self__, "additional_compute_system_model", additional_compute_system_model)
         if additional_storage_count and not isinstance(additional_storage_count, int):
             raise TypeError("Expected argument 'additional_storage_count' to be a int")
         pulumi.set(__self__, "additional_storage_count", additional_storage_count)
@@ -98,6 +104,9 @@ class GetExadataInfrastructureResult:
         if is_cps_offline_report_enabled and not isinstance(is_cps_offline_report_enabled, bool):
             raise TypeError("Expected argument 'is_cps_offline_report_enabled' to be a bool")
         pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
+        if is_multi_rack_deployment and not isinstance(is_multi_rack_deployment, bool):
+            raise TypeError("Expected argument 'is_multi_rack_deployment' to be a bool")
+        pulumi.set(__self__, "is_multi_rack_deployment", is_multi_rack_deployment)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -125,6 +134,9 @@ class GetExadataInfrastructureResult:
         if monthly_db_server_version and not isinstance(monthly_db_server_version, str):
             raise TypeError("Expected argument 'monthly_db_server_version' to be a str")
         pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
+        if multi_rack_configuration_file and not isinstance(multi_rack_configuration_file, str):
+            raise TypeError("Expected argument 'multi_rack_configuration_file' to be a str")
+        pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         if netmask and not isinstance(netmask, str):
             raise TypeError("Expected argument 'netmask' to be a str")
         pulumi.set(__self__, "netmask", netmask)
@@ -162,6 +174,22 @@ class GetExadataInfrastructureResult:
     @pulumi.getter(name="activationFile")
     def activation_file(self) -> str:
         return pulumi.get(self, "activation_file")
+
+    @property
+    @pulumi.getter(name="additionalComputeCount")
+    def additional_compute_count(self) -> int:
+        """
+        The requested number of additional compute servers for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "additional_compute_count")
+
+    @property
+    @pulumi.getter(name="additionalComputeSystemModel")
+    def additional_compute_system_model(self) -> str:
+        """
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        """
+        return pulumi.get(self, "additional_compute_system_model")
 
     @property
     @pulumi.getter(name="additionalStorageCount")
@@ -342,6 +370,14 @@ class GetExadataInfrastructureResult:
         return pulumi.get(self, "is_cps_offline_report_enabled")
 
     @property
+    @pulumi.getter(name="isMultiRackDeployment")
+    def is_multi_rack_deployment(self) -> bool:
+        """
+        Indicates if deployment is Multi-Rack or not.
+        """
+        return pulumi.get(self, "is_multi_rack_deployment")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -412,6 +448,14 @@ class GetExadataInfrastructureResult:
         The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         """
         return pulumi.get(self, "monthly_db_server_version")
+
+    @property
+    @pulumi.getter(name="multiRackConfigurationFile")
+    def multi_rack_configuration_file(self) -> str:
+        """
+        The base64 encoded Multi-Rack configuration json file.
+        """
+        return pulumi.get(self, "multi_rack_configuration_file")
 
     @property
     @pulumi.getter
@@ -486,6 +530,8 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
         return GetExadataInfrastructureResult(
             activated_storage_count=self.activated_storage_count,
             activation_file=self.activation_file,
+            additional_compute_count=self.additional_compute_count,
+            additional_compute_system_model=self.additional_compute_system_model,
             additional_storage_count=self.additional_storage_count,
             admin_network_cidr=self.admin_network_cidr,
             cloud_control_plane_server1=self.cloud_control_plane_server1,
@@ -509,6 +555,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             id=self.id,
             infini_band_network_cidr=self.infini_band_network_cidr,
             is_cps_offline_report_enabled=self.is_cps_offline_report_enabled,
+            is_multi_rack_deployment=self.is_multi_rack_deployment,
             lifecycle_details=self.lifecycle_details,
             maintenance_slo_status=self.maintenance_slo_status,
             maintenance_windows=self.maintenance_windows,
@@ -518,6 +565,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             max_memory_in_gbs=self.max_memory_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
             monthly_db_server_version=self.monthly_db_server_version,
+            multi_rack_configuration_file=self.multi_rack_configuration_file,
             netmask=self.netmask,
             ntp_servers=self.ntp_servers,
             shape=self.shape,
@@ -536,15 +584,6 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
     Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
     To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"])
-    ```
-
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
@@ -556,6 +595,8 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
     return AwaitableGetExadataInfrastructureResult(
         activated_storage_count=__ret__.activated_storage_count,
         activation_file=__ret__.activation_file,
+        additional_compute_count=__ret__.additional_compute_count,
+        additional_compute_system_model=__ret__.additional_compute_system_model,
         additional_storage_count=__ret__.additional_storage_count,
         admin_network_cidr=__ret__.admin_network_cidr,
         cloud_control_plane_server1=__ret__.cloud_control_plane_server1,
@@ -579,6 +620,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         id=__ret__.id,
         infini_band_network_cidr=__ret__.infini_band_network_cidr,
         is_cps_offline_report_enabled=__ret__.is_cps_offline_report_enabled,
+        is_multi_rack_deployment=__ret__.is_multi_rack_deployment,
         lifecycle_details=__ret__.lifecycle_details,
         maintenance_slo_status=__ret__.maintenance_slo_status,
         maintenance_windows=__ret__.maintenance_windows,
@@ -588,6 +630,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         max_memory_in_gbs=__ret__.max_memory_in_gbs,
         memory_size_in_gbs=__ret__.memory_size_in_gbs,
         monthly_db_server_version=__ret__.monthly_db_server_version,
+        multi_rack_configuration_file=__ret__.multi_rack_configuration_file,
         netmask=__ret__.netmask,
         ntp_servers=__ret__.ntp_servers,
         shape=__ret__.shape,
@@ -606,15 +649,6 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi
 
     Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
     To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"])
-    ```
 
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

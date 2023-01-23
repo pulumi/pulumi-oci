@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemPatches(args: GetDbSystemPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemPatchesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemPatches:getDbSystemPatches", {
         "dbSystemId": args.dbSystemId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetDbSystemPatchesResult {
      */
     readonly patches: outputs.Database.GetDbSystemPatchesPatch[];
 }
-
+/**
+ * This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the patches applicable to the specified DB system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystemPatches = oci.Database.getDbSystemPatches({
+ *     dbSystemId: oci_database_db_system.test_db_system.id,
+ * });
+ * ```
+ */
 export function getDbSystemPatchesOutput(args: GetDbSystemPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemPatchesResult> {
-    return pulumi.output(args).apply(a => getDbSystemPatches(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbSystemPatches(a, opts))
 }
 
 /**

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbNodesResult> InvokeAsync(GetDbNodesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbNodesResult>("oci:Database/getDbNodes:getDbNodes", args ?? new GetDbNodesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbNodesResult>("oci:Database/getDbNodes:getDbNodes", args ?? new GetDbNodesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbNodesResult> Invoke(GetDbNodesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbNodesResult>("oci:Database/getDbNodes:getDbNodes", args ?? new GetDbNodesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbNodesResult>("oci:Database/getDbNodes:getDbNodes", args ?? new GetDbNodesInvokeArgs(), options.WithDefaults());
     }
 
 

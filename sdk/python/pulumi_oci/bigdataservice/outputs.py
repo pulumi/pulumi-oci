@@ -36,6 +36,8 @@ __all__ = [
     'BdsInstanceClusterDetail',
     'BdsInstanceComputeOnlyWorkerNode',
     'BdsInstanceComputeOnlyWorkerNodeShapeConfig',
+    'BdsInstanceEdgeNode',
+    'BdsInstanceEdgeNodeShapeConfig',
     'BdsInstanceMasterNode',
     'BdsInstanceMasterNodeShapeConfig',
     'BdsInstanceNetworkConfig',
@@ -94,6 +96,8 @@ __all__ = [
     'GetBdsInstanceClusterDetailResult',
     'GetBdsInstanceComputeOnlyWorkerNodeResult',
     'GetBdsInstanceComputeOnlyWorkerNodeShapeConfigResult',
+    'GetBdsInstanceEdgeNodeResult',
+    'GetBdsInstanceEdgeNodeShapeConfigResult',
     'GetBdsInstanceMasterNodeResult',
     'GetBdsInstanceMasterNodeShapeConfigResult',
     'GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationResult',
@@ -115,6 +119,8 @@ __all__ = [
     'GetBdsInstancesBdsInstanceClusterDetailResult',
     'GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeResult',
     'GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigResult',
+    'GetBdsInstancesBdsInstanceEdgeNodeResult',
+    'GetBdsInstancesBdsInstanceEdgeNodeShapeConfigResult',
     'GetBdsInstancesBdsInstanceMasterNodeResult',
     'GetBdsInstancesBdsInstanceMasterNodeShapeConfigResult',
     'GetBdsInstancesBdsInstanceNetworkConfigResult',
@@ -1391,6 +1397,8 @@ class BdsInstanceCloudSqlDetail(dict):
             suggest = "is_kerberos_mapped_to_database_users"
         elif key == "kerberosDetails":
             suggest = "kerberos_details"
+        elif key == "memoryInGbs":
+            suggest = "memory_in_gbs"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in BdsInstanceCloudSqlDetail. Access the value via the '{suggest}' property getter instead.")
@@ -1404,34 +1412,39 @@ class BdsInstanceCloudSqlDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 block_volume_size_in_gbs: str,
                  shape: str,
+                 block_volume_size_in_gbs: Optional[str] = None,
                  ip_address: Optional[str] = None,
                  is_kerberos_mapped_to_database_users: Optional[bool] = None,
-                 kerberos_details: Optional[Sequence['outputs.BdsInstanceCloudSqlDetailKerberosDetail']] = None):
+                 kerberos_details: Optional[Sequence['outputs.BdsInstanceCloudSqlDetailKerberosDetail']] = None,
+                 memory_in_gbs: Optional[int] = None,
+                 nvmes: Optional[int] = None,
+                 ocpus: Optional[int] = None):
         """
-        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param str shape: Shape of the node
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param str ip_address: IP address of the node
         :param bool is_kerberos_mapped_to_database_users: Boolean flag specifying whether or not are Kerberos principals mapped to database users.
         :param Sequence['BdsInstanceCloudSqlDetailKerberosDetailArgs'] kerberos_details: Details about Kerberos principals
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
         """
-        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "shape", shape)
+        if block_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
         if is_kerberos_mapped_to_database_users is not None:
             pulumi.set(__self__, "is_kerberos_mapped_to_database_users", is_kerberos_mapped_to_database_users)
         if kerberos_details is not None:
             pulumi.set(__self__, "kerberos_details", kerberos_details)
-
-    @property
-    @pulumi.getter(name="blockVolumeSizeInGbs")
-    def block_volume_size_in_gbs(self) -> str:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        return pulumi.get(self, "block_volume_size_in_gbs")
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter
@@ -1440,6 +1453,14 @@ class BdsInstanceCloudSqlDetail(dict):
         Shape of the node
         """
         return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> Optional[str]:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -1464,6 +1485,30 @@ class BdsInstanceCloudSqlDetail(dict):
         Details about Kerberos principals
         """
         return pulumi.get(self, "kerberos_details")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[int]:
+        """
+        The total amount of memory available to the node, in gigabytes
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[int]:
+        """
+        The total number of OCPUs available to the node.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -1581,20 +1626,20 @@ class BdsInstanceClusterDetail(dict):
                  time_refreshed: Optional[str] = None):
         """
         :param str ambari_url: The URL of Ambari
-        :param str bd_cell_version: Cloud SQL cell version
+        :param str bd_cell_version: Cloud SQL cell version.
         :param str bda_version: BDA version installed in the cluster
-        :param str bdm_version: Big Data Manager version installed in the cluster
-        :param str bds_version: Big Data Service version installed in the cluster
-        :param str big_data_manager_url: The URL of a Big Data Manager
-        :param str cloudera_manager_url: The URL of a Cloudera Manager
-        :param str csql_cell_version: Big Data SQL version
-        :param str db_version: Query Server Database version
-        :param str hue_server_url: The URL of a Hue Server
+        :param str bdm_version: Big Data Manager version installed in the cluster.
+        :param str bds_version: Big Data Service version installed in the cluster.
+        :param str big_data_manager_url: The URL of Big Data Manager.
+        :param str cloudera_manager_url: The URL of Cloudera Manager
+        :param str csql_cell_version: Big Data SQL version.
+        :param str db_version: Cloud SQL query server database version.
+        :param str hue_server_url: The URL of the Hue server.
         :param str jupyter_hub_url: The URL of the Jupyterhub.
         :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
-        :param str os_version: Oracle Linux version installed in the cluster
+        :param str os_version: Oracle Linux version installed in the cluster.
         :param str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
-        :param str time_refreshed: The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+        :param str time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         """
         if ambari_url is not None:
             pulumi.set(__self__, "ambari_url", ambari_url)
@@ -1639,7 +1684,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="bdCellVersion")
     def bd_cell_version(self) -> Optional[str]:
         """
-        Cloud SQL cell version
+        Cloud SQL cell version.
         """
         return pulumi.get(self, "bd_cell_version")
 
@@ -1655,7 +1700,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="bdmVersion")
     def bdm_version(self) -> Optional[str]:
         """
-        Big Data Manager version installed in the cluster
+        Big Data Manager version installed in the cluster.
         """
         return pulumi.get(self, "bdm_version")
 
@@ -1663,7 +1708,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="bdsVersion")
     def bds_version(self) -> Optional[str]:
         """
-        Big Data Service version installed in the cluster
+        Big Data Service version installed in the cluster.
         """
         return pulumi.get(self, "bds_version")
 
@@ -1671,7 +1716,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="bigDataManagerUrl")
     def big_data_manager_url(self) -> Optional[str]:
         """
-        The URL of a Big Data Manager
+        The URL of Big Data Manager.
         """
         return pulumi.get(self, "big_data_manager_url")
 
@@ -1679,7 +1724,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="clouderaManagerUrl")
     def cloudera_manager_url(self) -> Optional[str]:
         """
-        The URL of a Cloudera Manager
+        The URL of Cloudera Manager
         """
         return pulumi.get(self, "cloudera_manager_url")
 
@@ -1687,7 +1732,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="csqlCellVersion")
     def csql_cell_version(self) -> Optional[str]:
         """
-        Big Data SQL version
+        Big Data SQL version.
         """
         return pulumi.get(self, "csql_cell_version")
 
@@ -1695,7 +1740,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[str]:
         """
-        Query Server Database version
+        Cloud SQL query server database version.
         """
         return pulumi.get(self, "db_version")
 
@@ -1703,7 +1748,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="hueServerUrl")
     def hue_server_url(self) -> Optional[str]:
         """
-        The URL of a Hue Server
+        The URL of the Hue server.
         """
         return pulumi.get(self, "hue_server_url")
 
@@ -1727,7 +1772,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="osVersion")
     def os_version(self) -> Optional[str]:
         """
-        Oracle Linux version installed in the cluster
+        Oracle Linux version installed in the cluster.
         """
         return pulumi.get(self, "os_version")
 
@@ -1743,7 +1788,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="timeRefreshed")
     def time_refreshed(self) -> Optional[str]:
         """
-        The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+        The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_refreshed")
 
@@ -1753,12 +1798,12 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "blockVolumeSizeInGbs":
-            suggest = "block_volume_size_in_gbs"
-        elif key == "numberOfNodes":
+        if key == "numberOfNodes":
             suggest = "number_of_nodes"
         elif key == "subnetId":
             suggest = "subnet_id"
+        elif key == "blockVolumeSizeInGbs":
+            suggest = "block_volume_size_in_gbs"
         elif key == "shapeConfig":
             suggest = "shape_config"
 
@@ -1774,32 +1819,25 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 block_volume_size_in_gbs: str,
                  number_of_nodes: int,
                  shape: str,
                  subnet_id: str,
+                 block_volume_size_in_gbs: Optional[str] = None,
                  shape_config: Optional['outputs.BdsInstanceComputeOnlyWorkerNodeShapeConfig'] = None):
         """
-        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param int number_of_nodes: The amount of worker nodes should be created
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param 'BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
-        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if block_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         if shape_config is not None:
             pulumi.set(__self__, "shape_config", shape_config)
-
-    @property
-    @pulumi.getter(name="blockVolumeSizeInGbs")
-    def block_volume_size_in_gbs(self) -> str:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="numberOfNodes")
@@ -1824,6 +1862,14 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
         The OCID of the subnet in which the node should be created
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> Optional[str]:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeConfig")
@@ -1855,13 +1901,17 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
 
     def __init__(__self__, *,
                  memory_in_gbs: Optional[int] = None,
+                 nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
 
@@ -1875,6 +1925,14 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
 
     @property
     @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
@@ -1883,57 +1941,50 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
 
 
 @pulumi.output_type
-class BdsInstanceMasterNode(dict):
+class BdsInstanceEdgeNode(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "blockVolumeSizeInGbs":
-            suggest = "block_volume_size_in_gbs"
-        elif key == "numberOfNodes":
+        if key == "numberOfNodes":
             suggest = "number_of_nodes"
         elif key == "subnetId":
             suggest = "subnet_id"
+        elif key == "blockVolumeSizeInGbs":
+            suggest = "block_volume_size_in_gbs"
         elif key == "shapeConfig":
             suggest = "shape_config"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceMasterNode. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceEdgeNode. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        BdsInstanceMasterNode.__key_warning(key)
+        BdsInstanceEdgeNode.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        BdsInstanceMasterNode.__key_warning(key)
+        BdsInstanceEdgeNode.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 block_volume_size_in_gbs: str,
                  number_of_nodes: int,
                  shape: str,
                  subnet_id: str,
-                 shape_config: Optional['outputs.BdsInstanceMasterNodeShapeConfig'] = None):
+                 block_volume_size_in_gbs: Optional[str] = None,
+                 shape_config: Optional['outputs.BdsInstanceEdgeNodeShapeConfig'] = None):
         """
-        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param int number_of_nodes: The amount of worker nodes should be created
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
-        :param 'BdsInstanceMasterNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param 'BdsInstanceEdgeNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
-        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if block_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         if shape_config is not None:
             pulumi.set(__self__, "shape_config", shape_config)
-
-    @property
-    @pulumi.getter(name="blockVolumeSizeInGbs")
-    def block_volume_size_in_gbs(self) -> str:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="numberOfNodes")
@@ -1958,6 +2009,161 @@ class BdsInstanceMasterNode(dict):
         The OCID of the subnet in which the node should be created
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> Optional[str]:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional['outputs.BdsInstanceEdgeNodeShapeConfig']:
+        """
+        The shape configuration requested for the node.
+        """
+        return pulumi.get(self, "shape_config")
+
+
+@pulumi.output_type
+class BdsInstanceEdgeNodeShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceEdgeNodeShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceEdgeNodeShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceEdgeNodeShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[int] = None,
+                 nvmes: Optional[int] = None,
+                 ocpus: Optional[int] = None):
+        """
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[int]:
+        """
+        The total amount of memory available to the node, in gigabytes
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[int]:
+        """
+        The total number of OCPUs available to the node.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class BdsInstanceMasterNode(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "numberOfNodes":
+            suggest = "number_of_nodes"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "blockVolumeSizeInGbs":
+            suggest = "block_volume_size_in_gbs"
+        elif key == "shapeConfig":
+            suggest = "shape_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceMasterNode. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceMasterNode.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceMasterNode.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 number_of_nodes: int,
+                 shape: str,
+                 subnet_id: str,
+                 block_volume_size_in_gbs: Optional[str] = None,
+                 shape_config: Optional['outputs.BdsInstanceMasterNodeShapeConfig'] = None):
+        """
+        :param int number_of_nodes: The amount of worker nodes should be created
+        :param str shape: Shape of the node
+        :param str subnet_id: The OCID of the subnet in which the node should be created
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param 'BdsInstanceMasterNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
+        """
+        pulumi.set(__self__, "number_of_nodes", number_of_nodes)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if block_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
+
+    @property
+    @pulumi.getter(name="numberOfNodes")
+    def number_of_nodes(self) -> int:
+        """
+        The amount of worker nodes should be created
+        """
+        return pulumi.get(self, "number_of_nodes")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the node
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet in which the node should be created
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> Optional[str]:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeConfig")
@@ -1989,13 +2195,17 @@ class BdsInstanceMasterNodeShapeConfig(dict):
 
     def __init__(__self__, *,
                  memory_in_gbs: Optional[int] = None,
+                 nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
 
@@ -2006,6 +2216,14 @@ class BdsInstanceMasterNodeShapeConfig(dict):
         The total amount of memory available to the node, in gigabytes
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -2138,7 +2356,7 @@ class BdsInstanceNode(dict):
         :param int ocpus: The total number of OCPUs available to the node.
         :param str shape: Shape of the node
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access
-        :param str state: The state of the BDS instance
+        :param str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param str subnet_id: The OCID of the subnet in which the node should be created
         :param str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         """
@@ -2283,7 +2501,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The state of the BDS instance
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         return pulumi.get(self, "state")
 
@@ -2359,12 +2577,12 @@ class BdsInstanceUtilNode(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "blockVolumeSizeInGbs":
-            suggest = "block_volume_size_in_gbs"
-        elif key == "numberOfNodes":
+        if key == "numberOfNodes":
             suggest = "number_of_nodes"
         elif key == "subnetId":
             suggest = "subnet_id"
+        elif key == "blockVolumeSizeInGbs":
+            suggest = "block_volume_size_in_gbs"
         elif key == "shapeConfig":
             suggest = "shape_config"
 
@@ -2380,32 +2598,25 @@ class BdsInstanceUtilNode(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 block_volume_size_in_gbs: str,
                  number_of_nodes: int,
                  shape: str,
                  subnet_id: str,
+                 block_volume_size_in_gbs: Optional[str] = None,
                  shape_config: Optional['outputs.BdsInstanceUtilNodeShapeConfig'] = None):
         """
-        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param int number_of_nodes: The amount of worker nodes should be created
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param 'BdsInstanceUtilNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
-        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if block_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         if shape_config is not None:
             pulumi.set(__self__, "shape_config", shape_config)
-
-    @property
-    @pulumi.getter(name="blockVolumeSizeInGbs")
-    def block_volume_size_in_gbs(self) -> str:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="numberOfNodes")
@@ -2430,6 +2641,14 @@ class BdsInstanceUtilNode(dict):
         The OCID of the subnet in which the node should be created
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> Optional[str]:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeConfig")
@@ -2461,13 +2680,17 @@ class BdsInstanceUtilNodeShapeConfig(dict):
 
     def __init__(__self__, *,
                  memory_in_gbs: Optional[int] = None,
+                 nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
 
@@ -2478,6 +2701,14 @@ class BdsInstanceUtilNodeShapeConfig(dict):
         The total amount of memory available to the node, in gigabytes
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -2493,12 +2724,12 @@ class BdsInstanceWorkerNode(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "blockVolumeSizeInGbs":
-            suggest = "block_volume_size_in_gbs"
-        elif key == "numberOfNodes":
+        if key == "numberOfNodes":
             suggest = "number_of_nodes"
         elif key == "subnetId":
             suggest = "subnet_id"
+        elif key == "blockVolumeSizeInGbs":
+            suggest = "block_volume_size_in_gbs"
         elif key == "shapeConfig":
             suggest = "shape_config"
 
@@ -2514,32 +2745,25 @@ class BdsInstanceWorkerNode(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 block_volume_size_in_gbs: str,
                  number_of_nodes: int,
                  shape: str,
                  subnet_id: str,
+                 block_volume_size_in_gbs: Optional[str] = None,
                  shape_config: Optional['outputs.BdsInstanceWorkerNodeShapeConfig'] = None):
         """
-        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param int number_of_nodes: The amount of worker nodes should be created
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param 'BdsInstanceWorkerNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
-        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if block_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         if shape_config is not None:
             pulumi.set(__self__, "shape_config", shape_config)
-
-    @property
-    @pulumi.getter(name="blockVolumeSizeInGbs")
-    def block_volume_size_in_gbs(self) -> str:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="numberOfNodes")
@@ -2564,6 +2788,14 @@ class BdsInstanceWorkerNode(dict):
         The OCID of the subnet in which the node should be created
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> Optional[str]:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeConfig")
@@ -2595,13 +2827,17 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
 
     def __init__(__self__, *,
                  memory_in_gbs: Optional[int] = None,
+                 nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
 
@@ -2612,6 +2848,14 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
         The total amount of memory available to the node, in gigabytes
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -4251,18 +4495,27 @@ class GetBdsInstanceCloudSqlDetailResult(dict):
                  ip_address: str,
                  is_kerberos_mapped_to_database_users: bool,
                  kerberos_details: Sequence['outputs.GetBdsInstanceCloudSqlDetailKerberosDetailResult'],
+                 memory_in_gbs: int,
+                 nvmes: int,
+                 ocpus: int,
                  shape: str):
         """
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param str ip_address: IP address of the node.
         :param bool is_kerberos_mapped_to_database_users: Boolean flag specifying whether or not Kerberos principals are mapped to database users.
         :param Sequence['GetBdsInstanceCloudSqlDetailKerberosDetailArgs'] kerberos_details: Details about the Kerberos principals.
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
         :param str shape: Shape of the node.
         """
         pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "is_kerberos_mapped_to_database_users", is_kerberos_mapped_to_database_users)
         pulumi.set(__self__, "kerberos_details", kerberos_details)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
         pulumi.set(__self__, "shape", shape)
 
     @property
@@ -4296,6 +4549,30 @@ class GetBdsInstanceCloudSqlDetailResult(dict):
         Details about the Kerberos principals.
         """
         return pulumi.get(self, "kerberos_details")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> int:
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> int:
+        """
+        The total number of OCPUs available to the node.
+        """
+        return pulumi.get(self, "ocpus")
 
     @property
     @pulumi.getter
@@ -4569,12 +4846,15 @@ class GetBdsInstanceComputeOnlyWorkerNodeResult(dict):
 class GetBdsInstanceComputeOnlyWorkerNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: int,
+                 nvmes: int,
                  ocpus: int):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -4584,6 +4864,112 @@ class GetBdsInstanceComputeOnlyWorkerNodeShapeConfigResult(dict):
         The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> int:
+        """
+        The total number of OCPUs available to the node.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetBdsInstanceEdgeNodeResult(dict):
+    def __init__(__self__, *,
+                 block_volume_size_in_gbs: str,
+                 number_of_nodes: int,
+                 shape: str,
+                 shape_configs: Sequence['outputs.GetBdsInstanceEdgeNodeShapeConfigResult'],
+                 subnet_id: str):
+        """
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param int number_of_nodes: The number of nodes that form the cluster.
+        :param str shape: Shape of the node.
+        :param str subnet_id: The OCID of the subnet in which the node is to be created.
+        """
+        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
+        pulumi.set(__self__, "number_of_nodes", number_of_nodes)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_configs", shape_configs)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> str:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="numberOfNodes")
+    def number_of_nodes(self) -> int:
+        """
+        The number of nodes that form the cluster.
+        """
+        return pulumi.get(self, "number_of_nodes")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the node.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetBdsInstanceEdgeNodeShapeConfigResult']:
+        return pulumi.get(self, "shape_configs")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet in which the node is to be created.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetBdsInstanceEdgeNodeShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: int,
+                 nvmes: int,
+                 ocpus: int):
+        """
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> int:
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -4656,12 +5042,15 @@ class GetBdsInstanceMasterNodeResult(dict):
 class GetBdsInstanceMasterNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: int,
+                 nvmes: int,
                  ocpus: int):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -4671,6 +5060,14 @@ class GetBdsInstanceMasterNodeShapeConfigResult(dict):
         The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -5261,12 +5658,15 @@ class GetBdsInstanceUtilNodeResult(dict):
 class GetBdsInstanceUtilNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: int,
+                 nvmes: int,
                  ocpus: int):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -5276,6 +5676,14 @@ class GetBdsInstanceUtilNodeShapeConfigResult(dict):
         The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -5348,12 +5756,15 @@ class GetBdsInstanceWorkerNodeResult(dict):
 class GetBdsInstanceWorkerNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: int,
+                 nvmes: int,
                  ocpus: int):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -5363,6 +5774,14 @@ class GetBdsInstanceWorkerNodeShapeConfigResult(dict):
         The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -5380,6 +5799,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  cloud_sql_details: Sequence['outputs.GetBdsInstancesBdsInstanceCloudSqlDetailResult'],
                  cluster_admin_password: str,
                  cluster_details: Sequence['outputs.GetBdsInstancesBdsInstanceClusterDetailResult'],
+                 cluster_profile: str,
                  cluster_public_key: str,
                  cluster_version: str,
                  compartment_id: str,
@@ -5387,9 +5807,11 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  created_by: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
+                 edge_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceEdgeNodeResult'],
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_cloud_sql_configured: bool,
+                 is_force_stop_jobs: bool,
                  is_high_availability: bool,
                  is_secure: bool,
                  kerberos_realm_name: str,
@@ -5407,6 +5829,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
         :param str bootstrap_script_url: pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
         :param Sequence['GetBdsInstancesBdsInstanceCloudSqlDetailArgs'] cloud_sql_details: The information about added Cloud SQL capability
         :param Sequence['GetBdsInstancesBdsInstanceClusterDetailArgs'] cluster_details: Specific info about a Hadoop cluster
+        :param str cluster_profile: Profile of the Big Data Service cluster.
         :param str cluster_version: Version of the Hadoop distribution.
         :param str compartment_id: The OCID of the compartment.
         :param str created_by: The user who created the cluster.
@@ -5429,6 +5852,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         pulumi.set(__self__, "cluster_details", cluster_details)
+        pulumi.set(__self__, "cluster_profile", cluster_profile)
         pulumi.set(__self__, "cluster_public_key", cluster_public_key)
         pulumi.set(__self__, "cluster_version", cluster_version)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -5436,9 +5860,11 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "edge_nodes", edge_nodes)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
+        pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         pulumi.set(__self__, "is_high_availability", is_high_availability)
         pulumi.set(__self__, "is_secure", is_secure)
         pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
@@ -5481,6 +5907,14 @@ class GetBdsInstancesBdsInstanceResult(dict):
         Specific info about a Hadoop cluster
         """
         return pulumi.get(self, "cluster_details")
+
+    @property
+    @pulumi.getter(name="clusterProfile")
+    def cluster_profile(self) -> str:
+        """
+        Profile of the Big Data Service cluster.
+        """
+        return pulumi.get(self, "cluster_profile")
 
     @property
     @pulumi.getter(name="clusterPublicKey")
@@ -5533,6 +5967,11 @@ class GetBdsInstancesBdsInstanceResult(dict):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="edgeNodes")
+    def edge_nodes(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceEdgeNodeResult']:
+        return pulumi.get(self, "edge_nodes")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -5555,6 +5994,11 @@ class GetBdsInstancesBdsInstanceResult(dict):
         Boolean flag specifying whether or not Cloud SQL should be configured.
         """
         return pulumi.get(self, "is_cloud_sql_configured")
+
+    @property
+    @pulumi.getter(name="isForceStopJobs")
+    def is_force_stop_jobs(self) -> bool:
+        return pulumi.get(self, "is_force_stop_jobs")
 
     @property
     @pulumi.getter(name="isHighAvailability")
@@ -5656,18 +6100,27 @@ class GetBdsInstancesBdsInstanceCloudSqlDetailResult(dict):
                  ip_address: str,
                  is_kerberos_mapped_to_database_users: bool,
                  kerberos_details: Sequence['outputs.GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailResult'],
+                 memory_in_gbs: int,
+                 nvmes: int,
+                 ocpus: int,
                  shape: str):
         """
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         :param str ip_address: IP address of the node.
         :param bool is_kerberos_mapped_to_database_users: Boolean flag specifying whether or not Kerberos principals are mapped to database users.
         :param Sequence['GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArgs'] kerberos_details: Details about the Kerberos principals.
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
         :param str shape: Shape of the node.
         """
         pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "is_kerberos_mapped_to_database_users", is_kerberos_mapped_to_database_users)
         pulumi.set(__self__, "kerberos_details", kerberos_details)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
         pulumi.set(__self__, "shape", shape)
 
     @property
@@ -5701,6 +6154,30 @@ class GetBdsInstancesBdsInstanceCloudSqlDetailResult(dict):
         Details about the Kerberos principals.
         """
         return pulumi.get(self, "kerberos_details")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> int:
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> int:
+        """
+        The total number of OCPUs available to the node.
+        """
+        return pulumi.get(self, "ocpus")
 
     @property
     @pulumi.getter
@@ -5974,12 +6451,15 @@ class GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeResult(dict):
 class GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: int,
+                 nvmes: int,
                  ocpus: int):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -5989,6 +6469,112 @@ class GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigResult(dict):
         The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> int:
+        """
+        The total number of OCPUs available to the node.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetBdsInstancesBdsInstanceEdgeNodeResult(dict):
+    def __init__(__self__, *,
+                 block_volume_size_in_gbs: str,
+                 number_of_nodes: int,
+                 shape: str,
+                 shape_configs: Sequence['outputs.GetBdsInstancesBdsInstanceEdgeNodeShapeConfigResult'],
+                 subnet_id: str):
+        """
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param int number_of_nodes: The number of nodes that form the cluster.
+        :param str shape: Shape of the node.
+        :param str subnet_id: The OCID of the subnet in which the node is to be created.
+        """
+        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
+        pulumi.set(__self__, "number_of_nodes", number_of_nodes)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_configs", shape_configs)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> str:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="numberOfNodes")
+    def number_of_nodes(self) -> int:
+        """
+        The number of nodes that form the cluster.
+        """
+        return pulumi.get(self, "number_of_nodes")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the node.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceEdgeNodeShapeConfigResult']:
+        return pulumi.get(self, "shape_configs")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet in which the node is to be created.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetBdsInstancesBdsInstanceEdgeNodeShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: int,
+                 nvmes: int,
+                 ocpus: int):
+        """
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> int:
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -6061,12 +6647,15 @@ class GetBdsInstancesBdsInstanceMasterNodeResult(dict):
 class GetBdsInstancesBdsInstanceMasterNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: int,
+                 nvmes: int,
                  ocpus: int):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -6076,6 +6665,14 @@ class GetBdsInstancesBdsInstanceMasterNodeShapeConfigResult(dict):
         The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -6389,12 +6986,15 @@ class GetBdsInstancesBdsInstanceUtilNodeResult(dict):
 class GetBdsInstancesBdsInstanceUtilNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: int,
+                 nvmes: int,
                  ocpus: int):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -6404,6 +7004,14 @@ class GetBdsInstancesBdsInstanceUtilNodeShapeConfigResult(dict):
         The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -6476,12 +7084,15 @@ class GetBdsInstancesBdsInstanceWorkerNodeResult(dict):
 class GetBdsInstancesBdsInstanceWorkerNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: int,
+                 nvmes: int,
                  ocpus: int):
         """
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -6491,6 +7102,14 @@ class GetBdsInstancesBdsInstanceWorkerNodeShapeConfigResult(dict):
         The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter

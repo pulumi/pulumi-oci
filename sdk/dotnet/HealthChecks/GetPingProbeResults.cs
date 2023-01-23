@@ -48,7 +48,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPingProbeResultsResult> InvokeAsync(GetPingProbeResultsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPingProbeResultsResult>("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args ?? new GetPingProbeResultsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPingProbeResultsResult>("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args ?? new GetPingProbeResultsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Ping Probe Results in Oracle Cloud Infrastructure Health Checks service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPingProbeResultsResult> Invoke(GetPingProbeResultsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPingProbeResultsResult>("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args ?? new GetPingProbeResultsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPingProbeResultsResult>("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args ?? new GetPingProbeResultsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGenericArtifacts(args: GetGenericArtifactsArgs, opts?: pulumi.InvokeOptions): Promise<GetGenericArtifactsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getGenericArtifacts:getGenericArtifacts", {
         "artifactPath": args.artifactPath,
         "compartmentId": args.compartmentId,
@@ -128,9 +126,31 @@ export interface GetGenericArtifactsResult {
      */
     readonly version?: string;
 }
-
+/**
+ * This data source provides the list of Generic Artifacts in Oracle Cloud Infrastructure Artifacts service.
+ *
+ * Lists artifacts in the specified repository.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testGenericArtifacts = oci.Artifacts.getGenericArtifacts({
+ *     compartmentId: _var.compartment_id,
+ *     repositoryId: oci_artifacts_repository.test_repository.id,
+ *     artifactPath: _var.generic_artifact_artifact_path,
+ *     displayName: _var.generic_artifact_display_name,
+ *     id: _var.generic_artifact_id,
+ *     sha256: _var.generic_artifact_sha256,
+ *     state: _var.generic_artifact_state,
+ *     version: _var.generic_artifact_version,
+ * });
+ * ```
+ */
 export function getGenericArtifactsOutput(args: GetGenericArtifactsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericArtifactsResult> {
-    return pulumi.output(args).apply(a => getGenericArtifacts(a, opts))
+    return pulumi.output(args).apply((a: any) => getGenericArtifacts(a, opts))
 }
 
 /**

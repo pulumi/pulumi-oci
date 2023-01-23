@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstanceAvailablePluginResult> InvokeAsync(GetInstanceAvailablePluginArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstanceAvailablePluginResult>("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", args ?? new GetInstanceAvailablePluginArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceAvailablePluginResult>("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", args ?? new GetInstanceAvailablePluginArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstanceAvailablePluginResult> Invoke(GetInstanceAvailablePluginInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstanceAvailablePluginResult>("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", args ?? new GetInstanceAvailablePluginInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceAvailablePluginResult>("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", args ?? new GetInstanceAvailablePluginInvokeArgs(), options.WithDefaults());
     }
 
 

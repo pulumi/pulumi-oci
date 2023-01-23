@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityZone(args: GetSecurityZoneArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityZoneResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getSecurityZone:getSecurityZone", {
         "securityZoneId": args.securityZoneId,
     }, opts);
@@ -103,9 +100,24 @@ export interface GetSecurityZoneResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityZone = oci.CloudGuard.getSecurityZone({
+ *     securityZoneId: oci_cloud_guard_security_zone.test_security_zone.id,
+ * });
+ * ```
+ */
 export function getSecurityZoneOutput(args: GetSecurityZoneOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityZoneResult> {
-    return pulumi.output(args).apply(a => getSecurityZone(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityZone(a, opts))
 }
 
 /**

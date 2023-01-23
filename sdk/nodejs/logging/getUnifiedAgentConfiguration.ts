@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUnifiedAgentConfiguration(args: GetUnifiedAgentConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetUnifiedAgentConfigurationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", {
         "unifiedAgentConfigurationId": args.unifiedAgentConfigurationId,
     }, opts);
@@ -100,9 +98,24 @@ export interface GetUnifiedAgentConfigurationResult {
     readonly timeLastModified: string;
     readonly unifiedAgentConfigurationId: string;
 }
-
+/**
+ * This data source provides details about a specific Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
+ *
+ * Get the unified agent configuration for an ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUnifiedAgentConfiguration = oci.Logging.getUnifiedAgentConfiguration({
+ *     unifiedAgentConfigurationId: oci_logging_unified_agent_configuration.test_unified_agent_configuration.id,
+ * });
+ * ```
+ */
 export function getUnifiedAgentConfigurationOutput(args: GetUnifiedAgentConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUnifiedAgentConfigurationResult> {
-    return pulumi.output(args).apply(a => getUnifiedAgentConfiguration(a, opts))
+    return pulumi.output(args).apply((a: any) => getUnifiedAgentConfiguration(a, opts))
 }
 
 /**

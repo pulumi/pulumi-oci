@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppCatalogSubscriptions(args: GetAppCatalogSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogSubscriptionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -72,9 +70,25 @@ export interface GetAppCatalogSubscriptionsResult {
      */
     readonly listingId?: string;
 }
-
+/**
+ * This data source provides the list of App Catalog Subscriptions in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists subscriptions for a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAppCatalogSubscriptions = oci.Core.getAppCatalogSubscriptions({
+ *     compartmentId: _var.compartment_id,
+ *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
+ * });
+ * ```
+ */
 export function getAppCatalogSubscriptionsOutput(args: GetAppCatalogSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogSubscriptionsResult> {
-    return pulumi.output(args).apply(a => getAppCatalogSubscriptions(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppCatalogSubscriptions(a, opts))
 }
 
 /**

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJavaReleaseResult> InvokeAsync(GetJavaReleaseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJavaReleaseResult>("oci:Jms/getJavaRelease:getJavaRelease", args ?? new GetJavaReleaseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaReleaseResult>("oci:Jms/getJavaRelease:getJavaRelease", args ?? new GetJavaReleaseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJavaReleaseResult> Invoke(GetJavaReleaseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJavaReleaseResult>("oci:Jms/getJavaRelease:getJavaRelease", args ?? new GetJavaReleaseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaReleaseResult>("oci:Jms/getJavaRelease:getJavaRelease", args ?? new GetJavaReleaseInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -104,11 +104,15 @@ namespace Pulumi.Oci.Jms
     public sealed class GetJavaReleaseResult
     {
         /// <summary>
+        /// Artifact content types for the Java version.
+        /// </summary>
+        public readonly ImmutableArray<string> ArtifactContentTypes;
+        /// <summary>
         /// List of Java artifacts.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaReleaseArtifactResult> Artifacts;
         /// <summary>
-        /// Complete information of a specific Java release family.
+        /// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaReleaseFamilyDetailResult> FamilyDetails;
         /// <summary>
@@ -154,6 +158,8 @@ namespace Pulumi.Oci.Jms
 
         [OutputConstructor]
         private GetJavaReleaseResult(
+            ImmutableArray<string> artifactContentTypes,
+
             ImmutableArray<Outputs.GetJavaReleaseArtifactResult> artifacts,
 
             ImmutableArray<Outputs.GetJavaReleaseFamilyDetailResult> familyDetails,
@@ -178,6 +184,7 @@ namespace Pulumi.Oci.Jms
 
             string securityStatus)
         {
+            ArtifactContentTypes = artifactContentTypes;
             Artifacts = artifacts;
             FamilyDetails = familyDetails;
             FamilyVersion = familyVersion;

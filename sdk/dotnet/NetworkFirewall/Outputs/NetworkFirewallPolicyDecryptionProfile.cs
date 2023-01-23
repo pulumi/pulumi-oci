@@ -49,11 +49,12 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         /// </summary>
         public readonly bool? IsUntrustedIssuerBlocked;
+        /// <summary>
+        /// Source of the secrets, where the secrets are stored.
+        /// </summary>
         public readonly string Key;
         /// <summary>
-        /// (Updatable) Type of the secrets mapped based on the policy.
-        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        /// (Updatable) Type of the url lists based on the policy
         /// </summary>
         public readonly string Type;
 

@@ -63,7 +63,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	AutonomousVmClusterId string `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
 	AvailableCpus float64 `pulumi:"availableCpus"`
 	// Backup options for the Autonomous Container Database.
 	BackupConfigs []GetAutonomousContainerDatabaseBackupConfig `pulumi:"backupConfigs"`
@@ -120,7 +120,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
-	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the container database. The default is STANDARD.
@@ -194,7 +194,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) AvailabilityDomain() pulu
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseResultOutput) AvailableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
 }
@@ -367,7 +367,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ReclaimableCpus() pulumi.
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
 
-// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 func (o LookupAutonomousContainerDatabaseResultOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.Role }).(pulumi.StringOutput)
 }

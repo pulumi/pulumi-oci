@@ -31,9 +31,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.MeteringComputation.Schedule;
  * import com.pulumi.oci.MeteringComputation.ScheduleArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.ScheduleResultLocationArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesDateRangeArgs;
- * import com.pulumi.oci.MeteringComputation.inputs.ScheduleResultLocationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -49,6 +49,18 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSchedule = new Schedule(&#34;testSchedule&#34;, ScheduleArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .resultLocation(ScheduleResultLocationArgs.builder()
+ *                 .bucket(var_.schedule_result_location_bucket())
+ *                 .locationType(var_.schedule_result_location_location_type())
+ *                 .namespace(var_.schedule_result_location_namespace())
+ *                 .region(var_.schedule_result_location_region())
+ *                 .build())
+ *             .scheduleRecurrences(var_.schedule_schedule_recurrences())
+ *             .timeScheduled(var_.schedule_time_scheduled())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.schedule_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .outputFileFormat(var_.schedule_output_file_format())
  *             .queryProperties(ScheduleQueryPropertiesArgs.builder()
  *                 .dateRange(ScheduleQueryPropertiesDateRangeArgs.builder()
  *                     .dateRangeType(var_.schedule_query_properties_date_range_date_range_type())
@@ -68,16 +80,7 @@ import javax.annotation.Nullable;
  *                 .isAggregateByTime(var_.schedule_query_properties_is_aggregate_by_time())
  *                 .queryType(var_.schedule_query_properties_query_type())
  *                 .build())
- *             .resultLocation(ScheduleResultLocationArgs.builder()
- *                 .bucket(var_.schedule_result_location_bucket())
- *                 .locationType(var_.schedule_result_location_location_type())
- *                 .namespace(var_.schedule_result_location_namespace())
- *                 .region(var_.schedule_result_location_region())
- *                 .build())
- *             .scheduleRecurrences(var_.schedule_schedule_recurrences())
- *             .timeScheduled(var_.schedule_time_scheduled())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .savedReportId(oci_data_safe_report.test_report().id())
  *             .build());
  * 
  *     }
@@ -96,14 +99,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:MeteringComputation/schedule:Schedule")
 public class Schedule extends com.pulumi.resources.CustomResource {
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return The tenancy of the customer
+     * @return The customer tenancy.
      * 
      */
     public Output<String> compartmentId() {
@@ -124,32 +127,60 @@ public class Schedule extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) The description of the schedule.
+     * 
+     */
+    @Export(name="description", type=String.class, parameters={})
+    private Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the schedule.
+     * 
+     */
+    public Output<String> description() {
+        return this.description;
+    }
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return The unique name of the schedule created by the user
+     * @return The unique name of the user-created schedule.
      * 
      */
     public Output<String> name() {
         return this.name;
+    }
+    /**
+     * (Updatable) Specifies supported output file format.
+     * 
+     */
+    @Export(name="outputFileFormat", type=String.class, parameters={})
+    private Output<String> outputFileFormat;
+
+    /**
+     * @return (Updatable) Specifies supported output file format.
+     * 
+     */
+    public Output<String> outputFileFormat() {
+        return this.outputFileFormat;
     }
     /**
      * The query properties.
@@ -166,42 +197,56 @@ public class Schedule extends com.pulumi.resources.CustomResource {
         return this.queryProperties;
     }
     /**
-     * The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
     @Export(name="resultLocation", type=ScheduleResultLocation.class, parameters={})
     private Output<ScheduleResultLocation> resultLocation;
 
     /**
-     * @return The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * @return (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
     public Output<ScheduleResultLocation> resultLocation() {
         return this.resultLocation;
     }
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * The saved report id which can also be used to generate query.
+     * 
+     */
+    @Export(name="savedReportId", type=String.class, parameters={})
+    private Output<String> savedReportId;
+
+    /**
+     * @return The saved report id which can also be used to generate query.
+     * 
+     */
+    public Output<String> savedReportId() {
+        return this.savedReportId;
+    }
+    /**
+     * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
     @Export(name="scheduleRecurrences", type=String.class, parameters={})
     private Output<String> scheduleRecurrences;
 
     /**
-     * @return In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * @return Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
     public Output<String> scheduleRecurrences() {
         return this.scheduleRecurrences;
     }
     /**
-     * The lifecycle state of the schedule
+     * The schedule lifecycle state.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The lifecycle state of the schedule
+     * @return The schedule lifecycle state.
      * 
      */
     public Output<String> state() {
@@ -222,28 +267,42 @@ public class Schedule extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The date and time of when the schedule was created
+     * The date and time the schedule was created.
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time of when the schedule was created
+     * @return The date and time the schedule was created.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time of the first time job execution
+     * The date and time of the next job execution.
+     * 
+     */
+    @Export(name="timeNextRun", type=String.class, parameters={})
+    private Output<String> timeNextRun;
+
+    /**
+     * @return The date and time of the next job execution.
+     * 
+     */
+    public Output<String> timeNextRun() {
+        return this.timeNextRun;
+    }
+    /**
+     * The date and time of the first time job execution.
      * 
      */
     @Export(name="timeScheduled", type=String.class, parameters={})
     private Output<String> timeScheduled;
 
     /**
-     * @return The date and time of the first time job execution
+     * @return The date and time of the first time job execution.
      * 
      */
     public Output<String> timeScheduled() {

@@ -65,8 +65,12 @@ type GetMaskingReportResult struct {
 	MaskingReportId string `pulumi:"maskingReportId"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId string `pulumi:"maskingWorkRequestId"`
+	// The current state of the masking report.
+	State string `pulumi:"state"`
 	// The OCID of the target database masked.
 	TargetId string `pulumi:"targetId"`
+	// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
 	TimeMaskingFinished string `pulumi:"timeMaskingFinished"`
 	// The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -145,9 +149,19 @@ func (o GetMaskingReportResultOutput) MaskingWorkRequestId() pulumi.StringOutput
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.MaskingWorkRequestId }).(pulumi.StringOutput)
 }
 
+// The current state of the masking report.
+func (o GetMaskingReportResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The OCID of the target database masked.
 func (o GetMaskingReportResultOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetMaskingReportResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)

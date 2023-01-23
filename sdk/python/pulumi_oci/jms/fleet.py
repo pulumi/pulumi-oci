@@ -32,7 +32,7 @@ class FleetArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         :param pulumi.Input[str] description: (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-        :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         :param pulumi.Input['FleetOperationLogArgs'] operation_log: (Updatable) Custom Log for inventory or operation log.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -125,7 +125,7 @@ class FleetArgs:
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
     def is_advanced_features_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 
@@ -151,6 +151,7 @@ class _FleetState:
     def __init__(__self__, *,
                  approximate_application_count: Optional[pulumi.Input[int]] = None,
                  approximate_installation_count: Optional[pulumi.Input[int]] = None,
+                 approximate_java_server_count: Optional[pulumi.Input[int]] = None,
                  approximate_jre_count: Optional[pulumi.Input[int]] = None,
                  approximate_managed_instance_count: Optional[pulumi.Input[int]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -168,6 +169,7 @@ class _FleetState:
         Input properties used for looking up and filtering Fleet resources.
         :param pulumi.Input[int] approximate_application_count: The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param pulumi.Input[int] approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        :param pulumi.Input[int] approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param pulumi.Input[int] approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param pulumi.Input[int] approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -176,7 +178,7 @@ class _FleetState:
         :param pulumi.Input[str] display_name: (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input['FleetInventoryLogArgs'] inventory_log: (Updatable) Custom Log for inventory or operation log.
-        :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         :param pulumi.Input['FleetOperationLogArgs'] operation_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[str] state: The lifecycle state of the Fleet.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -186,6 +188,8 @@ class _FleetState:
             pulumi.set(__self__, "approximate_application_count", approximate_application_count)
         if approximate_installation_count is not None:
             pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
+        if approximate_java_server_count is not None:
+            pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
         if approximate_jre_count is not None:
             pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
         if approximate_managed_instance_count is not None:
@@ -236,6 +240,18 @@ class _FleetState:
     @approximate_installation_count.setter
     def approximate_installation_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "approximate_installation_count", value)
+
+    @property
+    @pulumi.getter(name="approximateJavaServerCount")
+    def approximate_java_server_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_java_server_count")
+
+    @approximate_java_server_count.setter
+    def approximate_java_server_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "approximate_java_server_count", value)
 
     @property
     @pulumi.getter(name="approximateJreCount")
@@ -337,7 +353,7 @@ class _FleetState:
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
     def is_advanced_features_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 
@@ -462,7 +478,7 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input[pulumi.InputType['FleetInventoryLogArgs']] inventory_log: (Updatable) Custom Log for inventory or operation log.
-        :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         :param pulumi.Input[pulumi.InputType['FleetOperationLogArgs']] operation_log: (Updatable) Custom Log for inventory or operation log.
         """
         ...
@@ -565,6 +581,7 @@ class Fleet(pulumi.CustomResource):
             __props__.__dict__["operation_log"] = operation_log
             __props__.__dict__["approximate_application_count"] = None
             __props__.__dict__["approximate_installation_count"] = None
+            __props__.__dict__["approximate_java_server_count"] = None
             __props__.__dict__["approximate_jre_count"] = None
             __props__.__dict__["approximate_managed_instance_count"] = None
             __props__.__dict__["state"] = None
@@ -582,6 +599,7 @@ class Fleet(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             approximate_application_count: Optional[pulumi.Input[int]] = None,
             approximate_installation_count: Optional[pulumi.Input[int]] = None,
+            approximate_java_server_count: Optional[pulumi.Input[int]] = None,
             approximate_jre_count: Optional[pulumi.Input[int]] = None,
             approximate_managed_instance_count: Optional[pulumi.Input[int]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -604,6 +622,7 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] approximate_application_count: The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param pulumi.Input[int] approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        :param pulumi.Input[int] approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param pulumi.Input[int] approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param pulumi.Input[int] approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -612,7 +631,7 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input[pulumi.InputType['FleetInventoryLogArgs']] inventory_log: (Updatable) Custom Log for inventory or operation log.
-        :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         :param pulumi.Input[pulumi.InputType['FleetOperationLogArgs']] operation_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[str] state: The lifecycle state of the Fleet.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -624,6 +643,7 @@ class Fleet(pulumi.CustomResource):
 
         __props__.__dict__["approximate_application_count"] = approximate_application_count
         __props__.__dict__["approximate_installation_count"] = approximate_installation_count
+        __props__.__dict__["approximate_java_server_count"] = approximate_java_server_count
         __props__.__dict__["approximate_jre_count"] = approximate_jre_count
         __props__.__dict__["approximate_managed_instance_count"] = approximate_managed_instance_count
         __props__.__dict__["compartment_id"] = compartment_id
@@ -654,6 +674,14 @@ class Fleet(pulumi.CustomResource):
         The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_installation_count")
+
+    @property
+    @pulumi.getter(name="approximateJavaServerCount")
+    def approximate_java_server_count(self) -> pulumi.Output[int]:
+        """
+        The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_java_server_count")
 
     @property
     @pulumi.getter(name="approximateJreCount")
@@ -723,7 +751,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
     def is_advanced_features_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 

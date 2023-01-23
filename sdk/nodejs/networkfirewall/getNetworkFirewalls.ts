@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkFirewalls(args: GetNetworkFirewallsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -108,9 +106,29 @@ export interface GetNetworkFirewallsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Network Firewalls in Oracle Cloud Infrastructure Network Firewall service.
+ *
+ * Returns a list of NetworkFirewalls.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewalls = oci.NetworkFirewall.getNetworkFirewalls({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.network_firewall_availability_domain,
+ *     displayName: _var.network_firewall_display_name,
+ *     id: _var.network_firewall_id,
+ *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
+ *     state: _var.network_firewall_state,
+ * });
+ * ```
+ */
 export function getNetworkFirewallsOutput(args: GetNetworkFirewallsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallsResult> {
-    return pulumi.output(args).apply(a => getNetworkFirewalls(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkFirewalls(a, opts))
 }
 
 /**

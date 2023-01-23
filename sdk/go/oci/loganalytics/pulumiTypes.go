@@ -397,6 +397,478 @@ func (o LogAnalyticsPreferencesManagementItemArrayOutput) Index(i pulumi.IntInpu
 	}).(LogAnalyticsPreferencesManagementItemOutput)
 }
 
+type NamespaceIngestTimeRuleAction struct {
+	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+	Dimensions []string `pulumi:"dimensions"`
+	// (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	MetricName string `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace string `pulumi:"namespace"`
+	// (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	ResourceGroup *string `pulumi:"resourceGroup"`
+	// (Updatable) Discriminator.
+	Type string `pulumi:"type"`
+}
+
+// NamespaceIngestTimeRuleActionInput is an input type that accepts NamespaceIngestTimeRuleActionArgs and NamespaceIngestTimeRuleActionOutput values.
+// You can construct a concrete instance of `NamespaceIngestTimeRuleActionInput` via:
+//
+//	NamespaceIngestTimeRuleActionArgs{...}
+type NamespaceIngestTimeRuleActionInput interface {
+	pulumi.Input
+
+	ToNamespaceIngestTimeRuleActionOutput() NamespaceIngestTimeRuleActionOutput
+	ToNamespaceIngestTimeRuleActionOutputWithContext(context.Context) NamespaceIngestTimeRuleActionOutput
+}
+
+type NamespaceIngestTimeRuleActionArgs struct {
+	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+	Dimensions pulumi.StringArrayInput `pulumi:"dimensions"`
+	// (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+	// (Updatable) Discriminator.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (NamespaceIngestTimeRuleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceIngestTimeRuleAction)(nil)).Elem()
+}
+
+func (i NamespaceIngestTimeRuleActionArgs) ToNamespaceIngestTimeRuleActionOutput() NamespaceIngestTimeRuleActionOutput {
+	return i.ToNamespaceIngestTimeRuleActionOutputWithContext(context.Background())
+}
+
+func (i NamespaceIngestTimeRuleActionArgs) ToNamespaceIngestTimeRuleActionOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleActionOutput)
+}
+
+// NamespaceIngestTimeRuleActionArrayInput is an input type that accepts NamespaceIngestTimeRuleActionArray and NamespaceIngestTimeRuleActionArrayOutput values.
+// You can construct a concrete instance of `NamespaceIngestTimeRuleActionArrayInput` via:
+//
+//	NamespaceIngestTimeRuleActionArray{ NamespaceIngestTimeRuleActionArgs{...} }
+type NamespaceIngestTimeRuleActionArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceIngestTimeRuleActionArrayOutput() NamespaceIngestTimeRuleActionArrayOutput
+	ToNamespaceIngestTimeRuleActionArrayOutputWithContext(context.Context) NamespaceIngestTimeRuleActionArrayOutput
+}
+
+type NamespaceIngestTimeRuleActionArray []NamespaceIngestTimeRuleActionInput
+
+func (NamespaceIngestTimeRuleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceIngestTimeRuleAction)(nil)).Elem()
+}
+
+func (i NamespaceIngestTimeRuleActionArray) ToNamespaceIngestTimeRuleActionArrayOutput() NamespaceIngestTimeRuleActionArrayOutput {
+	return i.ToNamespaceIngestTimeRuleActionArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceIngestTimeRuleActionArray) ToNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleActionArrayOutput)
+}
+
+type NamespaceIngestTimeRuleActionOutput struct{ *pulumi.OutputState }
+
+func (NamespaceIngestTimeRuleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceIngestTimeRuleAction)(nil)).Elem()
+}
+
+func (o NamespaceIngestTimeRuleActionOutput) ToNamespaceIngestTimeRuleActionOutput() NamespaceIngestTimeRuleActionOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleActionOutput) ToNamespaceIngestTimeRuleActionOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleActionOutput {
+	return o
+}
+
+// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o NamespaceIngestTimeRuleActionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+func (o NamespaceIngestTimeRuleActionOutput) Dimensions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) []string { return v.Dimensions }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o NamespaceIngestTimeRuleActionOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// The Logging Analytics namespace used for the request.
+func (o NamespaceIngestTimeRuleActionOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o NamespaceIngestTimeRuleActionOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Discriminator.
+func (o NamespaceIngestTimeRuleActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type NamespaceIngestTimeRuleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceIngestTimeRuleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceIngestTimeRuleAction)(nil)).Elem()
+}
+
+func (o NamespaceIngestTimeRuleActionArrayOutput) ToNamespaceIngestTimeRuleActionArrayOutput() NamespaceIngestTimeRuleActionArrayOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleActionArrayOutput) ToNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleActionArrayOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleActionArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRuleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceIngestTimeRuleAction {
+		return vs[0].([]NamespaceIngestTimeRuleAction)[vs[1].(int)]
+	}).(NamespaceIngestTimeRuleActionOutput)
+}
+
+type NamespaceIngestTimeRuleConditions struct {
+	// (Updatable) Optional additional condition(s) to be evaluated.
+	AdditionalConditions []NamespaceIngestTimeRuleConditionsAdditionalCondition `pulumi:"additionalConditions"`
+	// (Updatable) The field name to be evaluated.
+	FieldName string `pulumi:"fieldName"`
+	// (Updatable) The operator to be used for evaluating the field.
+	FieldOperator string `pulumi:"fieldOperator"`
+	// (Updatable) The field value to be evaluated.
+	FieldValue string `pulumi:"fieldValue"`
+	// (Updatable) Discriminator.
+	Kind string `pulumi:"kind"`
+}
+
+// NamespaceIngestTimeRuleConditionsInput is an input type that accepts NamespaceIngestTimeRuleConditionsArgs and NamespaceIngestTimeRuleConditionsOutput values.
+// You can construct a concrete instance of `NamespaceIngestTimeRuleConditionsInput` via:
+//
+//	NamespaceIngestTimeRuleConditionsArgs{...}
+type NamespaceIngestTimeRuleConditionsInput interface {
+	pulumi.Input
+
+	ToNamespaceIngestTimeRuleConditionsOutput() NamespaceIngestTimeRuleConditionsOutput
+	ToNamespaceIngestTimeRuleConditionsOutputWithContext(context.Context) NamespaceIngestTimeRuleConditionsOutput
+}
+
+type NamespaceIngestTimeRuleConditionsArgs struct {
+	// (Updatable) Optional additional condition(s) to be evaluated.
+	AdditionalConditions NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput `pulumi:"additionalConditions"`
+	// (Updatable) The field name to be evaluated.
+	FieldName pulumi.StringInput `pulumi:"fieldName"`
+	// (Updatable) The operator to be used for evaluating the field.
+	FieldOperator pulumi.StringInput `pulumi:"fieldOperator"`
+	// (Updatable) The field value to be evaluated.
+	FieldValue pulumi.StringInput `pulumi:"fieldValue"`
+	// (Updatable) Discriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+}
+
+func (NamespaceIngestTimeRuleConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceIngestTimeRuleConditions)(nil)).Elem()
+}
+
+func (i NamespaceIngestTimeRuleConditionsArgs) ToNamespaceIngestTimeRuleConditionsOutput() NamespaceIngestTimeRuleConditionsOutput {
+	return i.ToNamespaceIngestTimeRuleConditionsOutputWithContext(context.Background())
+}
+
+func (i NamespaceIngestTimeRuleConditionsArgs) ToNamespaceIngestTimeRuleConditionsOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsOutput)
+}
+
+func (i NamespaceIngestTimeRuleConditionsArgs) ToNamespaceIngestTimeRuleConditionsPtrOutput() NamespaceIngestTimeRuleConditionsPtrOutput {
+	return i.ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i NamespaceIngestTimeRuleConditionsArgs) ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsOutput).ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx)
+}
+
+// NamespaceIngestTimeRuleConditionsPtrInput is an input type that accepts NamespaceIngestTimeRuleConditionsArgs, NamespaceIngestTimeRuleConditionsPtr and NamespaceIngestTimeRuleConditionsPtrOutput values.
+// You can construct a concrete instance of `NamespaceIngestTimeRuleConditionsPtrInput` via:
+//
+//	        NamespaceIngestTimeRuleConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type NamespaceIngestTimeRuleConditionsPtrInput interface {
+	pulumi.Input
+
+	ToNamespaceIngestTimeRuleConditionsPtrOutput() NamespaceIngestTimeRuleConditionsPtrOutput
+	ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(context.Context) NamespaceIngestTimeRuleConditionsPtrOutput
+}
+
+type namespaceIngestTimeRuleConditionsPtrType NamespaceIngestTimeRuleConditionsArgs
+
+func NamespaceIngestTimeRuleConditionsPtr(v *NamespaceIngestTimeRuleConditionsArgs) NamespaceIngestTimeRuleConditionsPtrInput {
+	return (*namespaceIngestTimeRuleConditionsPtrType)(v)
+}
+
+func (*namespaceIngestTimeRuleConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamespaceIngestTimeRuleConditions)(nil)).Elem()
+}
+
+func (i *namespaceIngestTimeRuleConditionsPtrType) ToNamespaceIngestTimeRuleConditionsPtrOutput() NamespaceIngestTimeRuleConditionsPtrOutput {
+	return i.ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *namespaceIngestTimeRuleConditionsPtrType) ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsPtrOutput)
+}
+
+type NamespaceIngestTimeRuleConditionsOutput struct{ *pulumi.OutputState }
+
+func (NamespaceIngestTimeRuleConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceIngestTimeRuleConditions)(nil)).Elem()
+}
+
+func (o NamespaceIngestTimeRuleConditionsOutput) ToNamespaceIngestTimeRuleConditionsOutput() NamespaceIngestTimeRuleConditionsOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleConditionsOutput) ToNamespaceIngestTimeRuleConditionsOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleConditionsOutput) ToNamespaceIngestTimeRuleConditionsPtrOutput() NamespaceIngestTimeRuleConditionsPtrOutput {
+	return o.ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o NamespaceIngestTimeRuleConditionsOutput) ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceIngestTimeRuleConditions) *NamespaceIngestTimeRuleConditions {
+		return &v
+	}).(NamespaceIngestTimeRuleConditionsPtrOutput)
+}
+
+// (Updatable) Optional additional condition(s) to be evaluated.
+func (o NamespaceIngestTimeRuleConditionsOutput) AdditionalConditions() NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleConditions) []NamespaceIngestTimeRuleConditionsAdditionalCondition {
+		return v.AdditionalConditions
+	}).(NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput)
+}
+
+// (Updatable) The field name to be evaluated.
+func (o NamespaceIngestTimeRuleConditionsOutput) FieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleConditions) string { return v.FieldName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The operator to be used for evaluating the field.
+func (o NamespaceIngestTimeRuleConditionsOutput) FieldOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleConditions) string { return v.FieldOperator }).(pulumi.StringOutput)
+}
+
+// (Updatable) The field value to be evaluated.
+func (o NamespaceIngestTimeRuleConditionsOutput) FieldValue() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleConditions) string { return v.FieldValue }).(pulumi.StringOutput)
+}
+
+// (Updatable) Discriminator.
+func (o NamespaceIngestTimeRuleConditionsOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleConditions) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+type NamespaceIngestTimeRuleConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (NamespaceIngestTimeRuleConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamespaceIngestTimeRuleConditions)(nil)).Elem()
+}
+
+func (o NamespaceIngestTimeRuleConditionsPtrOutput) ToNamespaceIngestTimeRuleConditionsPtrOutput() NamespaceIngestTimeRuleConditionsPtrOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleConditionsPtrOutput) ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsPtrOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleConditionsPtrOutput) Elem() NamespaceIngestTimeRuleConditionsOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRuleConditions) NamespaceIngestTimeRuleConditions {
+		if v != nil {
+			return *v
+		}
+		var ret NamespaceIngestTimeRuleConditions
+		return ret
+	}).(NamespaceIngestTimeRuleConditionsOutput)
+}
+
+// (Updatable) Optional additional condition(s) to be evaluated.
+func (o NamespaceIngestTimeRuleConditionsPtrOutput) AdditionalConditions() NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRuleConditions) []NamespaceIngestTimeRuleConditionsAdditionalCondition {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalConditions
+	}).(NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput)
+}
+
+// (Updatable) The field name to be evaluated.
+func (o NamespaceIngestTimeRuleConditionsPtrOutput) FieldName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRuleConditions) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FieldName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The operator to be used for evaluating the field.
+func (o NamespaceIngestTimeRuleConditionsPtrOutput) FieldOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRuleConditions) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FieldOperator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The field value to be evaluated.
+func (o NamespaceIngestTimeRuleConditionsPtrOutput) FieldValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRuleConditions) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FieldValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Discriminator.
+func (o NamespaceIngestTimeRuleConditionsPtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRuleConditions) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+type NamespaceIngestTimeRuleConditionsAdditionalCondition struct {
+	// (Updatable) The additional field name to be evaluated.
+	ConditionField string `pulumi:"conditionField"`
+	// (Updatable) The operator to be used for evaluating the additional field.
+	ConditionOperator string `pulumi:"conditionOperator"`
+	// (Updatable) The additional field value to be evaluated.
+	ConditionValue string `pulumi:"conditionValue"`
+}
+
+// NamespaceIngestTimeRuleConditionsAdditionalConditionInput is an input type that accepts NamespaceIngestTimeRuleConditionsAdditionalConditionArgs and NamespaceIngestTimeRuleConditionsAdditionalConditionOutput values.
+// You can construct a concrete instance of `NamespaceIngestTimeRuleConditionsAdditionalConditionInput` via:
+//
+//	NamespaceIngestTimeRuleConditionsAdditionalConditionArgs{...}
+type NamespaceIngestTimeRuleConditionsAdditionalConditionInput interface {
+	pulumi.Input
+
+	ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutput() NamespaceIngestTimeRuleConditionsAdditionalConditionOutput
+	ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutputWithContext(context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionOutput
+}
+
+type NamespaceIngestTimeRuleConditionsAdditionalConditionArgs struct {
+	// (Updatable) The additional field name to be evaluated.
+	ConditionField pulumi.StringInput `pulumi:"conditionField"`
+	// (Updatable) The operator to be used for evaluating the additional field.
+	ConditionOperator pulumi.StringInput `pulumi:"conditionOperator"`
+	// (Updatable) The additional field value to be evaluated.
+	ConditionValue pulumi.StringInput `pulumi:"conditionValue"`
+}
+
+func (NamespaceIngestTimeRuleConditionsAdditionalConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceIngestTimeRuleConditionsAdditionalCondition)(nil)).Elem()
+}
+
+func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArgs) ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutput() NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
+	return i.ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutputWithContext(context.Background())
+}
+
+func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArgs) ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsAdditionalConditionOutput)
+}
+
+// NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput is an input type that accepts NamespaceIngestTimeRuleConditionsAdditionalConditionArray and NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput values.
+// You can construct a concrete instance of `NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput` via:
+//
+//	NamespaceIngestTimeRuleConditionsAdditionalConditionArray{ NamespaceIngestTimeRuleConditionsAdditionalConditionArgs{...} }
+type NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput() NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput
+	ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutputWithContext(context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput
+}
+
+type NamespaceIngestTimeRuleConditionsAdditionalConditionArray []NamespaceIngestTimeRuleConditionsAdditionalConditionInput
+
+func (NamespaceIngestTimeRuleConditionsAdditionalConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceIngestTimeRuleConditionsAdditionalCondition)(nil)).Elem()
+}
+
+func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArray) ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput() NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput {
+	return i.ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArray) ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput)
+}
+
+type NamespaceIngestTimeRuleConditionsAdditionalConditionOutput struct{ *pulumi.OutputState }
+
+func (NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceIngestTimeRuleConditionsAdditionalCondition)(nil)).Elem()
+}
+
+func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutput() NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
+	return o
+}
+
+// (Updatable) The additional field name to be evaluated.
+func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ConditionField() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleConditionsAdditionalCondition) string { return v.ConditionField }).(pulumi.StringOutput)
+}
+
+// (Updatable) The operator to be used for evaluating the additional field.
+func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ConditionOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleConditionsAdditionalCondition) string { return v.ConditionOperator }).(pulumi.StringOutput)
+}
+
+// (Updatable) The additional field value to be evaluated.
+func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ConditionValue() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceIngestTimeRuleConditionsAdditionalCondition) string { return v.ConditionValue }).(pulumi.StringOutput)
+}
+
+type NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceIngestTimeRuleConditionsAdditionalCondition)(nil)).Elem()
+}
+
+func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput() NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput {
+	return o
+}
+
+func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceIngestTimeRuleConditionsAdditionalCondition {
+		return vs[0].([]NamespaceIngestTimeRuleConditionsAdditionalCondition)[vs[1].(int)]
+	}).(NamespaceIngestTimeRuleConditionsAdditionalConditionOutput)
+}
+
 type NamespaceScheduledTaskAction struct {
 	// if true, purge child compartments data
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
@@ -2907,6 +3379,12 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId string `pulumi:"logGroupId"`
+	// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+	LogSet string `pulumi:"logSet"`
+	// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+	LogSetExtRegex string `pulumi:"logSetExtRegex"`
+	// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+	LogSetKey string `pulumi:"logSetKey"`
 	// Name of the Logging Analytics Source to use for the processing.
 	LogSourceName string `pulumi:"logSourceName"`
 	// A filter to return rules only matching with this name.
@@ -2931,6 +3409,8 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	Timezone string `pulumi:"timezone"`
 }
 
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput values.
@@ -2965,6 +3445,12 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+	LogSet pulumi.StringInput `pulumi:"logSet"`
+	// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+	LogSetExtRegex pulumi.StringInput `pulumi:"logSetExtRegex"`
+	// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+	LogSetKey pulumi.StringInput `pulumi:"logSetKey"`
 	// Name of the Logging Analytics Source to use for the processing.
 	LogSourceName pulumi.StringInput `pulumi:"logSourceName"`
 	// A filter to return rules only matching with this name.
@@ -2989,6 +3475,8 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	Timezone pulumi.StringInput `pulumi:"timezone"`
 }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs) ElementType() reflect.Type {
@@ -3112,6 +3600,27 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	}).(pulumi.StringOutput)
 }
 
+// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+		return v.LogSet
+	}).(pulumi.StringOutput)
+}
+
+// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSetExtRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+		return v.LogSetExtRegex
+	}).(pulumi.StringOutput)
+}
+
+// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSetKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+		return v.LogSetKey
+	}).(pulumi.StringOutput)
+}
+
 // Name of the Logging Analytics Source to use for the processing.
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSourceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
@@ -3193,6 +3702,13 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
 		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+		return v.Timezone
 	}).(pulumi.StringOutput)
 }
 
@@ -3697,6 +4213,1219 @@ func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsResourceCategoriesListItem {
 		return vs[0].([]GetLogAnalyticsResourceCategoriesListItem)[vs[1].(int)]
 	}).(GetLogAnalyticsResourceCategoriesListItemOutput)
+}
+
+type GetNamespaceIngestTimeRuleAction struct {
+	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+	Dimensions []string `pulumi:"dimensions"`
+	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	MetricName string `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace string `pulumi:"namespace"`
+	// The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Discriminator.
+	Type string `pulumi:"type"`
+}
+
+// GetNamespaceIngestTimeRuleActionInput is an input type that accepts GetNamespaceIngestTimeRuleActionArgs and GetNamespaceIngestTimeRuleActionOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRuleActionInput` via:
+//
+//	GetNamespaceIngestTimeRuleActionArgs{...}
+type GetNamespaceIngestTimeRuleActionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRuleActionOutput() GetNamespaceIngestTimeRuleActionOutput
+	ToGetNamespaceIngestTimeRuleActionOutputWithContext(context.Context) GetNamespaceIngestTimeRuleActionOutput
+}
+
+type GetNamespaceIngestTimeRuleActionArgs struct {
+	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+	Dimensions pulumi.StringArrayInput `pulumi:"dimensions"`
+	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Discriminator.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNamespaceIngestTimeRuleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRuleAction)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRuleActionArgs) ToGetNamespaceIngestTimeRuleActionOutput() GetNamespaceIngestTimeRuleActionOutput {
+	return i.ToGetNamespaceIngestTimeRuleActionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRuleActionArgs) ToGetNamespaceIngestTimeRuleActionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleActionOutput)
+}
+
+// GetNamespaceIngestTimeRuleActionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleActionArray and GetNamespaceIngestTimeRuleActionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRuleActionArrayInput` via:
+//
+//	GetNamespaceIngestTimeRuleActionArray{ GetNamespaceIngestTimeRuleActionArgs{...} }
+type GetNamespaceIngestTimeRuleActionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRuleActionArrayOutput() GetNamespaceIngestTimeRuleActionArrayOutput
+	ToGetNamespaceIngestTimeRuleActionArrayOutputWithContext(context.Context) GetNamespaceIngestTimeRuleActionArrayOutput
+}
+
+type GetNamespaceIngestTimeRuleActionArray []GetNamespaceIngestTimeRuleActionInput
+
+func (GetNamespaceIngestTimeRuleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRuleAction)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRuleActionArray) ToGetNamespaceIngestTimeRuleActionArrayOutput() GetNamespaceIngestTimeRuleActionArrayOutput {
+	return i.ToGetNamespaceIngestTimeRuleActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRuleActionArray) ToGetNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleActionArrayOutput)
+}
+
+type GetNamespaceIngestTimeRuleActionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRuleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRuleAction)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRuleActionOutput) ToGetNamespaceIngestTimeRuleActionOutput() GetNamespaceIngestTimeRuleActionOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleActionOutput) ToGetNamespaceIngestTimeRuleActionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleActionOutput {
+	return o
+}
+
+// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetNamespaceIngestTimeRuleActionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+func (o GetNamespaceIngestTimeRuleActionOutput) Dimensions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) []string { return v.Dimensions }).(pulumi.StringArrayOutput)
+}
+
+// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o GetNamespaceIngestTimeRuleActionOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// The Logging Analytics namespace used for the request.
+func (o GetNamespaceIngestTimeRuleActionOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o GetNamespaceIngestTimeRuleActionOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Discriminator.
+func (o GetNamespaceIngestTimeRuleActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNamespaceIngestTimeRuleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRuleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRuleAction)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRuleActionArrayOutput) ToGetNamespaceIngestTimeRuleActionArrayOutput() GetNamespaceIngestTimeRuleActionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleActionArrayOutput) ToGetNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleActionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleActionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRuleAction {
+		return vs[0].([]GetNamespaceIngestTimeRuleAction)[vs[1].(int)]
+	}).(GetNamespaceIngestTimeRuleActionOutput)
+}
+
+type GetNamespaceIngestTimeRuleCondition struct {
+	// Optional additional condition(s) to be evaluated.
+	AdditionalConditions []GetNamespaceIngestTimeRuleConditionAdditionalCondition `pulumi:"additionalConditions"`
+	// The field name to be evaluated.
+	FieldName string `pulumi:"fieldName"`
+	// The operator to be used for evaluating the field.
+	FieldOperator string `pulumi:"fieldOperator"`
+	// The field value to be evaluated.
+	FieldValue string `pulumi:"fieldValue"`
+	// Discriminator.
+	Kind string `pulumi:"kind"`
+}
+
+// GetNamespaceIngestTimeRuleConditionInput is an input type that accepts GetNamespaceIngestTimeRuleConditionArgs and GetNamespaceIngestTimeRuleConditionOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRuleConditionInput` via:
+//
+//	GetNamespaceIngestTimeRuleConditionArgs{...}
+type GetNamespaceIngestTimeRuleConditionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRuleConditionOutput() GetNamespaceIngestTimeRuleConditionOutput
+	ToGetNamespaceIngestTimeRuleConditionOutputWithContext(context.Context) GetNamespaceIngestTimeRuleConditionOutput
+}
+
+type GetNamespaceIngestTimeRuleConditionArgs struct {
+	// Optional additional condition(s) to be evaluated.
+	AdditionalConditions GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput `pulumi:"additionalConditions"`
+	// The field name to be evaluated.
+	FieldName pulumi.StringInput `pulumi:"fieldName"`
+	// The operator to be used for evaluating the field.
+	FieldOperator pulumi.StringInput `pulumi:"fieldOperator"`
+	// The field value to be evaluated.
+	FieldValue pulumi.StringInput `pulumi:"fieldValue"`
+	// Discriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+}
+
+func (GetNamespaceIngestTimeRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRuleCondition)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRuleConditionArgs) ToGetNamespaceIngestTimeRuleConditionOutput() GetNamespaceIngestTimeRuleConditionOutput {
+	return i.ToGetNamespaceIngestTimeRuleConditionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRuleConditionArgs) ToGetNamespaceIngestTimeRuleConditionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionOutput)
+}
+
+// GetNamespaceIngestTimeRuleConditionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleConditionArray and GetNamespaceIngestTimeRuleConditionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRuleConditionArrayInput` via:
+//
+//	GetNamespaceIngestTimeRuleConditionArray{ GetNamespaceIngestTimeRuleConditionArgs{...} }
+type GetNamespaceIngestTimeRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRuleConditionArrayOutput() GetNamespaceIngestTimeRuleConditionArrayOutput
+	ToGetNamespaceIngestTimeRuleConditionArrayOutputWithContext(context.Context) GetNamespaceIngestTimeRuleConditionArrayOutput
+}
+
+type GetNamespaceIngestTimeRuleConditionArray []GetNamespaceIngestTimeRuleConditionInput
+
+func (GetNamespaceIngestTimeRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRuleCondition)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRuleConditionArray) ToGetNamespaceIngestTimeRuleConditionArrayOutput() GetNamespaceIngestTimeRuleConditionArrayOutput {
+	return i.ToGetNamespaceIngestTimeRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRuleConditionArray) ToGetNamespaceIngestTimeRuleConditionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionArrayOutput)
+}
+
+type GetNamespaceIngestTimeRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRuleCondition)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRuleConditionOutput) ToGetNamespaceIngestTimeRuleConditionOutput() GetNamespaceIngestTimeRuleConditionOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleConditionOutput) ToGetNamespaceIngestTimeRuleConditionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionOutput {
+	return o
+}
+
+// Optional additional condition(s) to be evaluated.
+func (o GetNamespaceIngestTimeRuleConditionOutput) AdditionalConditions() GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) []GetNamespaceIngestTimeRuleConditionAdditionalCondition {
+		return v.AdditionalConditions
+	}).(GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput)
+}
+
+// The field name to be evaluated.
+func (o GetNamespaceIngestTimeRuleConditionOutput) FieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) string { return v.FieldName }).(pulumi.StringOutput)
+}
+
+// The operator to be used for evaluating the field.
+func (o GetNamespaceIngestTimeRuleConditionOutput) FieldOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) string { return v.FieldOperator }).(pulumi.StringOutput)
+}
+
+// The field value to be evaluated.
+func (o GetNamespaceIngestTimeRuleConditionOutput) FieldValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) string { return v.FieldValue }).(pulumi.StringOutput)
+}
+
+// Discriminator.
+func (o GetNamespaceIngestTimeRuleConditionOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+type GetNamespaceIngestTimeRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRuleCondition)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRuleConditionArrayOutput) ToGetNamespaceIngestTimeRuleConditionArrayOutput() GetNamespaceIngestTimeRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleConditionArrayOutput) ToGetNamespaceIngestTimeRuleConditionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRuleCondition {
+		return vs[0].([]GetNamespaceIngestTimeRuleCondition)[vs[1].(int)]
+	}).(GetNamespaceIngestTimeRuleConditionOutput)
+}
+
+type GetNamespaceIngestTimeRuleConditionAdditionalCondition struct {
+	// The additional field name to be evaluated.
+	ConditionField string `pulumi:"conditionField"`
+	// The operator to be used for evaluating the additional field.
+	ConditionOperator string `pulumi:"conditionOperator"`
+	// The additional field value to be evaluated.
+	ConditionValue string `pulumi:"conditionValue"`
+}
+
+// GetNamespaceIngestTimeRuleConditionAdditionalConditionInput is an input type that accepts GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs and GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRuleConditionAdditionalConditionInput` via:
+//
+//	GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs{...}
+type GetNamespaceIngestTimeRuleConditionAdditionalConditionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutput() GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput
+	ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutputWithContext(context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput
+}
+
+type GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs struct {
+	// The additional field name to be evaluated.
+	ConditionField pulumi.StringInput `pulumi:"conditionField"`
+	// The operator to be used for evaluating the additional field.
+	ConditionOperator pulumi.StringInput `pulumi:"conditionOperator"`
+	// The additional field value to be evaluated.
+	ConditionValue pulumi.StringInput `pulumi:"conditionValue"`
+}
+
+func (GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRuleConditionAdditionalCondition)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutput() GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
+	return i.ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput)
+}
+
+// GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleConditionAdditionalConditionArray and GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput` via:
+//
+//	GetNamespaceIngestTimeRuleConditionAdditionalConditionArray{ GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs{...} }
+type GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput() GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput
+	ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutputWithContext(context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput
+}
+
+type GetNamespaceIngestTimeRuleConditionAdditionalConditionArray []GetNamespaceIngestTimeRuleConditionAdditionalConditionInput
+
+func (GetNamespaceIngestTimeRuleConditionAdditionalConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRuleConditionAdditionalCondition)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArray) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput() GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput {
+	return i.ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArray) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput)
+}
+
+type GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRuleConditionAdditionalCondition)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutput() GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
+	return o
+}
+
+// The additional field name to be evaluated.
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) string { return v.ConditionField }).(pulumi.StringOutput)
+}
+
+// The operator to be used for evaluating the additional field.
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) string { return v.ConditionOperator }).(pulumi.StringOutput)
+}
+
+// The additional field value to be evaluated.
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) string { return v.ConditionValue }).(pulumi.StringOutput)
+}
+
+type GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRuleConditionAdditionalCondition)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput() GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRuleConditionAdditionalCondition {
+		return vs[0].([]GetNamespaceIngestTimeRuleConditionAdditionalCondition)[vs[1].(int)]
+	}).(GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput)
+}
+
+type GetNamespaceIngestTimeRulesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamespaceIngestTimeRulesFilterInput is an input type that accepts GetNamespaceIngestTimeRulesFilterArgs and GetNamespaceIngestTimeRulesFilterOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRulesFilterInput` via:
+//
+//	GetNamespaceIngestTimeRulesFilterArgs{...}
+type GetNamespaceIngestTimeRulesFilterInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRulesFilterOutput() GetNamespaceIngestTimeRulesFilterOutput
+	ToGetNamespaceIngestTimeRulesFilterOutputWithContext(context.Context) GetNamespaceIngestTimeRulesFilterOutput
+}
+
+type GetNamespaceIngestTimeRulesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamespaceIngestTimeRulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRulesFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRulesFilterArgs) ToGetNamespaceIngestTimeRulesFilterOutput() GetNamespaceIngestTimeRulesFilterOutput {
+	return i.ToGetNamespaceIngestTimeRulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRulesFilterArgs) ToGetNamespaceIngestTimeRulesFilterOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesFilterOutput)
+}
+
+// GetNamespaceIngestTimeRulesFilterArrayInput is an input type that accepts GetNamespaceIngestTimeRulesFilterArray and GetNamespaceIngestTimeRulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRulesFilterArrayInput` via:
+//
+//	GetNamespaceIngestTimeRulesFilterArray{ GetNamespaceIngestTimeRulesFilterArgs{...} }
+type GetNamespaceIngestTimeRulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRulesFilterArrayOutput() GetNamespaceIngestTimeRulesFilterArrayOutput
+	ToGetNamespaceIngestTimeRulesFilterArrayOutputWithContext(context.Context) GetNamespaceIngestTimeRulesFilterArrayOutput
+}
+
+type GetNamespaceIngestTimeRulesFilterArray []GetNamespaceIngestTimeRulesFilterInput
+
+func (GetNamespaceIngestTimeRulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRulesFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRulesFilterArray) ToGetNamespaceIngestTimeRulesFilterArrayOutput() GetNamespaceIngestTimeRulesFilterArrayOutput {
+	return i.ToGetNamespaceIngestTimeRulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRulesFilterArray) ToGetNamespaceIngestTimeRulesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesFilterArrayOutput)
+}
+
+type GetNamespaceIngestTimeRulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRulesFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRulesFilterOutput) ToGetNamespaceIngestTimeRulesFilterOutput() GetNamespaceIngestTimeRulesFilterOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesFilterOutput) ToGetNamespaceIngestTimeRulesFilterOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesFilterOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceIngestTimeRulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamespaceIngestTimeRulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamespaceIngestTimeRulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRulesFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRulesFilterArrayOutput) ToGetNamespaceIngestTimeRulesFilterArrayOutput() GetNamespaceIngestTimeRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesFilterArrayOutput) ToGetNamespaceIngestTimeRulesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRulesFilter {
+		return vs[0].([]GetNamespaceIngestTimeRulesFilter)[vs[1].(int)]
+	}).(GetNamespaceIngestTimeRulesFilterOutput)
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection struct {
+	Items []GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionInput` via:
+//
+//	GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs{...}
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput
+	ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutputWithContext(context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs struct {
+	Items GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
+	return i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput)
+}
+
+// GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput` via:
+//
+//	GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray{ GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs{...} }
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput
+	ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutputWithContext(context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray []GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionInput
+
+func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput {
+	return i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput)
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) Items() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection) []GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem {
+		return v.Items
+	}).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput)
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection {
+		return vs[0].([]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection)[vs[1].(int)]
+	}).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput)
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
+	ConditionKind string `pulumi:"conditionKind"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Description for this resource.
+	Description string `pulumi:"description"`
+	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The field name used for filtering. Only rules using the specified field name will be returned.
+	FieldName string `pulumi:"fieldName"`
+	// The field value used for filtering. Only rules using the specified field value will be returned.
+	FieldValue string `pulumi:"fieldValue"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+	Id string `pulumi:"id"`
+	// A flag indicating whether or not the ingest time rule is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+	State string `pulumi:"state"`
+	// The date and time the resource was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the resource was last updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput` via:
+//
+//	GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs{...}
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput
+	ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutputWithContext(context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
+	ConditionKind pulumi.StringInput `pulumi:"conditionKind"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Description for this resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The field name used for filtering. Only rules using the specified field name will be returned.
+	FieldName pulumi.StringInput `pulumi:"fieldName"`
+	// The field value used for filtering. Only rules using the specified field value will be returned.
+	FieldValue pulumi.StringInput `pulumi:"fieldValue"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A flag indicating whether or not the ingest time rule is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the resource was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the resource was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
+	return i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput)
+}
+
+// GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput` via:
+//
+//	GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray{ GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs{...} }
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput
+	ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutputWithContext(context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray []GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput
+
+func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput {
+	return i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput)
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ConditionKind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.ConditionKind }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Description for this resource.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The field name used for filtering. Only rules using the specified field name will be returned.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.FieldName }).(pulumi.StringOutput)
+}
+
+// The field value used for filtering. Only rules using the specified field value will be returned.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FieldValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.FieldValue }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A flag indicating whether or not the ingest time rule is enabled.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was created, in the format defined by RFC3339.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was last updated, in the format defined by RFC3339.
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem {
+		return vs[0].([]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem)[vs[1].(int)]
+	}).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput)
+}
+
+type GetNamespaceRulesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamespaceRulesFilterInput is an input type that accepts GetNamespaceRulesFilterArgs and GetNamespaceRulesFilterOutput values.
+// You can construct a concrete instance of `GetNamespaceRulesFilterInput` via:
+//
+//	GetNamespaceRulesFilterArgs{...}
+type GetNamespaceRulesFilterInput interface {
+	pulumi.Input
+
+	ToGetNamespaceRulesFilterOutput() GetNamespaceRulesFilterOutput
+	ToGetNamespaceRulesFilterOutputWithContext(context.Context) GetNamespaceRulesFilterOutput
+}
+
+type GetNamespaceRulesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamespaceRulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceRulesFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceRulesFilterArgs) ToGetNamespaceRulesFilterOutput() GetNamespaceRulesFilterOutput {
+	return i.ToGetNamespaceRulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceRulesFilterArgs) ToGetNamespaceRulesFilterOutputWithContext(ctx context.Context) GetNamespaceRulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesFilterOutput)
+}
+
+// GetNamespaceRulesFilterArrayInput is an input type that accepts GetNamespaceRulesFilterArray and GetNamespaceRulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceRulesFilterArrayInput` via:
+//
+//	GetNamespaceRulesFilterArray{ GetNamespaceRulesFilterArgs{...} }
+type GetNamespaceRulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceRulesFilterArrayOutput() GetNamespaceRulesFilterArrayOutput
+	ToGetNamespaceRulesFilterArrayOutputWithContext(context.Context) GetNamespaceRulesFilterArrayOutput
+}
+
+type GetNamespaceRulesFilterArray []GetNamespaceRulesFilterInput
+
+func (GetNamespaceRulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceRulesFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceRulesFilterArray) ToGetNamespaceRulesFilterArrayOutput() GetNamespaceRulesFilterArrayOutput {
+	return i.ToGetNamespaceRulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceRulesFilterArray) ToGetNamespaceRulesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceRulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesFilterArrayOutput)
+}
+
+type GetNamespaceRulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceRulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceRulesFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceRulesFilterOutput) ToGetNamespaceRulesFilterOutput() GetNamespaceRulesFilterOutput {
+	return o
+}
+
+func (o GetNamespaceRulesFilterOutput) ToGetNamespaceRulesFilterOutputWithContext(ctx context.Context) GetNamespaceRulesFilterOutput {
+	return o
+}
+
+func (o GetNamespaceRulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceRulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamespaceRulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespaceRulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamespaceRulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceRulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceRulesFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceRulesFilterArrayOutput) ToGetNamespaceRulesFilterArrayOutput() GetNamespaceRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceRulesFilterArrayOutput) ToGetNamespaceRulesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceRulesFilter {
+		return vs[0].([]GetNamespaceRulesFilter)[vs[1].(int)]
+	}).(GetNamespaceRulesFilterOutput)
+}
+
+type GetNamespaceRulesRuleSummaryCollection struct {
+	// An array of rule summary objects.
+	Items []GetNamespaceRulesRuleSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetNamespaceRulesRuleSummaryCollectionInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionArgs and GetNamespaceRulesRuleSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetNamespaceRulesRuleSummaryCollectionInput` via:
+//
+//	GetNamespaceRulesRuleSummaryCollectionArgs{...}
+type GetNamespaceRulesRuleSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceRulesRuleSummaryCollectionOutput() GetNamespaceRulesRuleSummaryCollectionOutput
+	ToGetNamespaceRulesRuleSummaryCollectionOutputWithContext(context.Context) GetNamespaceRulesRuleSummaryCollectionOutput
+}
+
+type GetNamespaceRulesRuleSummaryCollectionArgs struct {
+	// An array of rule summary objects.
+	Items GetNamespaceRulesRuleSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamespaceRulesRuleSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceRulesRuleSummaryCollectionArgs) ToGetNamespaceRulesRuleSummaryCollectionOutput() GetNamespaceRulesRuleSummaryCollectionOutput {
+	return i.ToGetNamespaceRulesRuleSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceRulesRuleSummaryCollectionArgs) ToGetNamespaceRulesRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionOutput)
+}
+
+// GetNamespaceRulesRuleSummaryCollectionArrayInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionArray and GetNamespaceRulesRuleSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceRulesRuleSummaryCollectionArrayInput` via:
+//
+//	GetNamespaceRulesRuleSummaryCollectionArray{ GetNamespaceRulesRuleSummaryCollectionArgs{...} }
+type GetNamespaceRulesRuleSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceRulesRuleSummaryCollectionArrayOutput() GetNamespaceRulesRuleSummaryCollectionArrayOutput
+	ToGetNamespaceRulesRuleSummaryCollectionArrayOutputWithContext(context.Context) GetNamespaceRulesRuleSummaryCollectionArrayOutput
+}
+
+type GetNamespaceRulesRuleSummaryCollectionArray []GetNamespaceRulesRuleSummaryCollectionInput
+
+func (GetNamespaceRulesRuleSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceRulesRuleSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceRulesRuleSummaryCollectionArray) ToGetNamespaceRulesRuleSummaryCollectionArrayOutput() GetNamespaceRulesRuleSummaryCollectionArrayOutput {
+	return i.ToGetNamespaceRulesRuleSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceRulesRuleSummaryCollectionArray) ToGetNamespaceRulesRuleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionArrayOutput)
+}
+
+type GetNamespaceRulesRuleSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceRulesRuleSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionOutput) ToGetNamespaceRulesRuleSummaryCollectionOutput() GetNamespaceRulesRuleSummaryCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionOutput) ToGetNamespaceRulesRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionOutput {
+	return o
+}
+
+// An array of rule summary objects.
+func (o GetNamespaceRulesRuleSummaryCollectionOutput) Items() GetNamespaceRulesRuleSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollection) []GetNamespaceRulesRuleSummaryCollectionItem {
+		return v.Items
+	}).(GetNamespaceRulesRuleSummaryCollectionItemArrayOutput)
+}
+
+type GetNamespaceRulesRuleSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceRulesRuleSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceRulesRuleSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) ToGetNamespaceRulesRuleSummaryCollectionArrayOutput() GetNamespaceRulesRuleSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) ToGetNamespaceRulesRuleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesRuleSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceRulesRuleSummaryCollection {
+		return vs[0].([]GetNamespaceRulesRuleSummaryCollection)[vs[1].(int)]
+	}).(GetNamespaceRulesRuleSummaryCollectionOutput)
+}
+
+type GetNamespaceRulesRuleSummaryCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Description for this resource.
+	Description string `pulumi:"description"`
+	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+	Id string `pulumi:"id"`
+	// A flag indicating whether or not the ingest time rule or scheduled task is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The rule kind used for filtering. Only rules of the specified kind will be returned.
+	Kind string `pulumi:"kind"`
+	// The most recent task execution status.
+	LastExecutionStatus string `pulumi:"lastExecutionStatus"`
+	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+	State string `pulumi:"state"`
+	// The date and time the resource was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the scheduled task last executed, in the format defined by RFC3339.
+	TimeLastExecuted string `pulumi:"timeLastExecuted"`
+	// The date and time the resource was last updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetNamespaceRulesRuleSummaryCollectionItemInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionItemArgs and GetNamespaceRulesRuleSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamespaceRulesRuleSummaryCollectionItemInput` via:
+//
+//	GetNamespaceRulesRuleSummaryCollectionItemArgs{...}
+type GetNamespaceRulesRuleSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamespaceRulesRuleSummaryCollectionItemOutput() GetNamespaceRulesRuleSummaryCollectionItemOutput
+	ToGetNamespaceRulesRuleSummaryCollectionItemOutputWithContext(context.Context) GetNamespaceRulesRuleSummaryCollectionItemOutput
+}
+
+type GetNamespaceRulesRuleSummaryCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Description for this resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A flag indicating whether or not the ingest time rule or scheduled task is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The rule kind used for filtering. Only rules of the specified kind will be returned.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The most recent task execution status.
+	LastExecutionStatus pulumi.StringInput `pulumi:"lastExecutionStatus"`
+	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the resource was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the scheduled task last executed, in the format defined by RFC3339.
+	TimeLastExecuted pulumi.StringInput `pulumi:"timeLastExecuted"`
+	// The date and time the resource was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetNamespaceRulesRuleSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceRulesRuleSummaryCollectionItemArgs) ToGetNamespaceRulesRuleSummaryCollectionItemOutput() GetNamespaceRulesRuleSummaryCollectionItemOutput {
+	return i.ToGetNamespaceRulesRuleSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceRulesRuleSummaryCollectionItemArgs) ToGetNamespaceRulesRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionItemOutput)
+}
+
+// GetNamespaceRulesRuleSummaryCollectionItemArrayInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionItemArray and GetNamespaceRulesRuleSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceRulesRuleSummaryCollectionItemArrayInput` via:
+//
+//	GetNamespaceRulesRuleSummaryCollectionItemArray{ GetNamespaceRulesRuleSummaryCollectionItemArgs{...} }
+type GetNamespaceRulesRuleSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutput() GetNamespaceRulesRuleSummaryCollectionItemArrayOutput
+	ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutputWithContext(context.Context) GetNamespaceRulesRuleSummaryCollectionItemArrayOutput
+}
+
+type GetNamespaceRulesRuleSummaryCollectionItemArray []GetNamespaceRulesRuleSummaryCollectionItemInput
+
+func (GetNamespaceRulesRuleSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceRulesRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceRulesRuleSummaryCollectionItemArray) ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutput() GetNamespaceRulesRuleSummaryCollectionItemArrayOutput {
+	return i.ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceRulesRuleSummaryCollectionItemArray) ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionItemArrayOutput)
+}
+
+type GetNamespaceRulesRuleSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceRulesRuleSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) ToGetNamespaceRulesRuleSummaryCollectionItemOutput() GetNamespaceRulesRuleSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) ToGetNamespaceRulesRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Description for this resource.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A flag indicating whether or not the ingest time rule or scheduled task is enabled.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The rule kind used for filtering. Only rules of the specified kind will be returned.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The most recent task execution status.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) LastExecutionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.LastExecutionStatus }).(pulumi.StringOutput)
+}
+
+// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was created, in the format defined by RFC3339.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the scheduled task last executed, in the format defined by RFC3339.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeLastExecuted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.TimeLastExecuted }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was last updated, in the format defined by RFC3339.
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetNamespaceRulesRuleSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceRulesRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutput() GetNamespaceRulesRuleSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesRuleSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceRulesRuleSummaryCollectionItem {
+		return vs[0].([]GetNamespaceRulesRuleSummaryCollectionItem)[vs[1].(int)]
+	}).(GetNamespaceRulesRuleSummaryCollectionItemOutput)
 }
 
 type GetNamespaceScheduledTaskAction struct {
@@ -4945,6 +6674,121 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArr
 	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput)
 }
 
+type GetNamespaceStorageEncryptionKeyInfoItem struct {
+	// This is the key OCID of the encryption key (null if Oracle-managed).
+	KeyId string `pulumi:"keyId"`
+	// This is the source of the encryption key.
+	KeySource string `pulumi:"keySource"`
+	// This is the type of data to be encrypted. It can be either active or archival.
+	KeyType string `pulumi:"keyType"`
+}
+
+// GetNamespaceStorageEncryptionKeyInfoItemInput is an input type that accepts GetNamespaceStorageEncryptionKeyInfoItemArgs and GetNamespaceStorageEncryptionKeyInfoItemOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageEncryptionKeyInfoItemInput` via:
+//
+//	GetNamespaceStorageEncryptionKeyInfoItemArgs{...}
+type GetNamespaceStorageEncryptionKeyInfoItemInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageEncryptionKeyInfoItemOutput() GetNamespaceStorageEncryptionKeyInfoItemOutput
+	ToGetNamespaceStorageEncryptionKeyInfoItemOutputWithContext(context.Context) GetNamespaceStorageEncryptionKeyInfoItemOutput
+}
+
+type GetNamespaceStorageEncryptionKeyInfoItemArgs struct {
+	// This is the key OCID of the encryption key (null if Oracle-managed).
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// This is the source of the encryption key.
+	KeySource pulumi.StringInput `pulumi:"keySource"`
+	// This is the type of data to be encrypted. It can be either active or archival.
+	KeyType pulumi.StringInput `pulumi:"keyType"`
+}
+
+func (GetNamespaceStorageEncryptionKeyInfoItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageEncryptionKeyInfoItem)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageEncryptionKeyInfoItemArgs) ToGetNamespaceStorageEncryptionKeyInfoItemOutput() GetNamespaceStorageEncryptionKeyInfoItemOutput {
+	return i.ToGetNamespaceStorageEncryptionKeyInfoItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageEncryptionKeyInfoItemArgs) ToGetNamespaceStorageEncryptionKeyInfoItemOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageEncryptionKeyInfoItemOutput)
+}
+
+// GetNamespaceStorageEncryptionKeyInfoItemArrayInput is an input type that accepts GetNamespaceStorageEncryptionKeyInfoItemArray and GetNamespaceStorageEncryptionKeyInfoItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageEncryptionKeyInfoItemArrayInput` via:
+//
+//	GetNamespaceStorageEncryptionKeyInfoItemArray{ GetNamespaceStorageEncryptionKeyInfoItemArgs{...} }
+type GetNamespaceStorageEncryptionKeyInfoItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutput() GetNamespaceStorageEncryptionKeyInfoItemArrayOutput
+	ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutputWithContext(context.Context) GetNamespaceStorageEncryptionKeyInfoItemArrayOutput
+}
+
+type GetNamespaceStorageEncryptionKeyInfoItemArray []GetNamespaceStorageEncryptionKeyInfoItemInput
+
+func (GetNamespaceStorageEncryptionKeyInfoItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageEncryptionKeyInfoItem)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageEncryptionKeyInfoItemArray) ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutput() GetNamespaceStorageEncryptionKeyInfoItemArrayOutput {
+	return i.ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageEncryptionKeyInfoItemArray) ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageEncryptionKeyInfoItemArrayOutput)
+}
+
+type GetNamespaceStorageEncryptionKeyInfoItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageEncryptionKeyInfoItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageEncryptionKeyInfoItem)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) ToGetNamespaceStorageEncryptionKeyInfoItemOutput() GetNamespaceStorageEncryptionKeyInfoItemOutput {
+	return o
+}
+
+func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) ToGetNamespaceStorageEncryptionKeyInfoItemOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoItemOutput {
+	return o
+}
+
+// This is the key OCID of the encryption key (null if Oracle-managed).
+func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// This is the source of the encryption key.
+func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeySource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) string { return v.KeySource }).(pulumi.StringOutput)
+}
+
+// This is the type of data to be encrypted. It can be either active or archival.
+func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) string { return v.KeyType }).(pulumi.StringOutput)
+}
+
+type GetNamespaceStorageEncryptionKeyInfoItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageEncryptionKeyInfoItem)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutput() GetNamespaceStorageEncryptionKeyInfoItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageEncryptionKeyInfoItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceStorageEncryptionKeyInfoItem {
+		return vs[0].([]GetNamespaceStorageEncryptionKeyInfoItem)[vs[1].(int)]
+	}).(GetNamespaceStorageEncryptionKeyInfoItemOutput)
+}
+
 type GetNamespacesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -5267,6 +7111,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*LogAnalyticsObjectCollectionRuleOverrideArrayInput)(nil)).Elem(), LogAnalyticsObjectCollectionRuleOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LogAnalyticsPreferencesManagementItemInput)(nil)).Elem(), LogAnalyticsPreferencesManagementItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LogAnalyticsPreferencesManagementItemArrayInput)(nil)).Elem(), LogAnalyticsPreferencesManagementItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleActionInput)(nil)).Elem(), NamespaceIngestTimeRuleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleActionArrayInput)(nil)).Elem(), NamespaceIngestTimeRuleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsPtrInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsAdditionalConditionInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsAdditionalConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsAdditionalConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionInput)(nil)).Elem(), NamespaceScheduledTaskActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionPtrInput)(nil)).Elem(), NamespaceScheduledTaskActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskSchedulesInput)(nil)).Elem(), NamespaceScheduledTaskSchedulesArgs{})
@@ -5313,6 +7163,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsResourceCategoriesListCategoryArrayInput)(nil)).Elem(), GetLogAnalyticsResourceCategoriesListCategoryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsResourceCategoriesListItemInput)(nil)).Elem(), GetLogAnalyticsResourceCategoriesListItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsResourceCategoriesListItemArrayInput)(nil)).Elem(), GetLogAnalyticsResourceCategoriesListItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleActionInput)(nil)).Elem(), GetNamespaceIngestTimeRuleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleActionArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRuleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleConditionInput)(nil)).Elem(), GetNamespaceIngestTimeRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleConditionArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleConditionAdditionalConditionInput)(nil)).Elem(), GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRuleConditionAdditionalConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesFilterInput)(nil)).Elem(), GetNamespaceIngestTimeRulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesFilterArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesFilterInput)(nil)).Elem(), GetNamespaceRulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesFilterArrayInput)(nil)).Elem(), GetNamespaceRulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollectionInput)(nil)).Elem(), GetNamespaceRulesRuleSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollectionArrayInput)(nil)).Elem(), GetNamespaceRulesRuleSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollectionItemInput)(nil)).Elem(), GetNamespaceRulesRuleSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollectionItemArrayInput)(nil)).Elem(), GetNamespaceRulesRuleSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionInput)(nil)).Elem(), GetNamespaceScheduledTaskActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskScheduleInput)(nil)).Elem(), GetNamespaceScheduledTaskScheduleArgs{})
@@ -5331,6 +7199,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageEncryptionKeyInfoItemInput)(nil)).Elem(), GetNamespaceStorageEncryptionKeyInfoItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageEncryptionKeyInfoItemArrayInput)(nil)).Elem(), GetNamespaceStorageEncryptionKeyInfoItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesFilterInput)(nil)).Elem(), GetNamespacesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesFilterArrayInput)(nil)).Elem(), GetNamespacesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesNamespaceCollectionInput)(nil)).Elem(), GetNamespacesNamespaceCollectionArgs{})
@@ -5343,6 +7213,12 @@ func init() {
 	pulumi.RegisterOutputType(LogAnalyticsObjectCollectionRuleOverrideArrayOutput{})
 	pulumi.RegisterOutputType(LogAnalyticsPreferencesManagementItemOutput{})
 	pulumi.RegisterOutputType(LogAnalyticsPreferencesManagementItemArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceIngestTimeRuleActionOutput{})
+	pulumi.RegisterOutputType(NamespaceIngestTimeRuleActionArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsOutput{})
+	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsPtrOutput{})
+	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsAdditionalConditionOutput{})
+	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskActionOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskActionPtrOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskSchedulesOutput{})
@@ -5389,6 +7265,24 @@ func init() {
 	pulumi.RegisterOutputType(GetLogAnalyticsResourceCategoriesListCategoryArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsResourceCategoriesListItemOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsResourceCategoriesListItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleActionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleActionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleConditionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesFilterOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceRulesFilterOutput{})
+	pulumi.RegisterOutputType(GetNamespaceRulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceRulesRuleSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceRulesRuleSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceRulesRuleSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamespaceRulesRuleSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskScheduleOutput{})
@@ -5407,6 +7301,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageEncryptionKeyInfoItemOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageEncryptionKeyInfoItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespacesFilterOutput{})
 	pulumi.RegisterOutputType(GetNamespacesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespacesNamespaceCollectionOutput{})

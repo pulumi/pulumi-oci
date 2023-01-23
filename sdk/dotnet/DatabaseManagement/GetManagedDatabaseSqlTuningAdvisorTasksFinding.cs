@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Finding resource in Oracle Cloud Infrastructure Database Management service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksFindingInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingInvokeArgs(), options.WithDefaults());
     }
 
 

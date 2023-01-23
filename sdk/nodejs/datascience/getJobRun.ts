@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobRun(args: GetJobRunArgs, opts?: pulumi.InvokeOptions): Promise<GetJobRunResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getJobRun:getJobRun", {
         "jobRunId": args.jobRunId,
     }, opts);
@@ -117,9 +115,24 @@ export interface GetJobRunResult {
      */
     readonly timeStarted: string;
 }
-
+/**
+ * This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.
+ *
+ * Gets a job run.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJobRun = oci.DataScience.getJobRun({
+ *     jobRunId: oci_datascience_job_run.test_job_run.id,
+ * });
+ * ```
+ */
 export function getJobRunOutput(args: GetJobRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobRunResult> {
-    return pulumi.output(args).apply(a => getJobRun(a, opts))
+    return pulumi.output(args).apply((a: any) => getJobRun(a, opts))
 }
 
 /**

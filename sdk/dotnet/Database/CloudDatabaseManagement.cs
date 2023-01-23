@@ -72,8 +72,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Specifies database management type
         /// enum:
-        /// - `BASIC`
-        /// - `ADVANCED`
         /// </summary>
         [Output("managementType")]
         public Output<string> ManagementType { get; private set; } = null!;
@@ -178,8 +176,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Specifies database management type
         /// enum:
-        /// - `BASIC`
-        /// - `ADVANCED`
         /// </summary>
         [Input("managementType", required: true)]
         public Input<string> ManagementType { get; set; } = null!;
@@ -246,8 +242,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Specifies database management type
         /// enum:
-        /// - `BASIC`
-        /// - `ADVANCED`
         /// </summary>
         [Input("managementType")]
         public Input<string>? ManagementType { get; set; }

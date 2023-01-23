@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -177,7 +178,7 @@ export class Connection extends pulumi.CustomResource {
                 throw new Error("Missing required property 'projectId'");
             }
             resourceInputs["accessToken"] = args ? args.accessToken : undefined;
-            resourceInputs["appPassword"] = args ? args.appPassword : undefined;
+            resourceInputs["appPassword"] = args?.appPassword ? pulumi.secret(args.appPassword) : undefined;
             resourceInputs["baseUrl"] = args ? args.baseUrl : undefined;
             resourceInputs["connectionType"] = args ? args.connectionType : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -194,6 +195,8 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["appPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Connection.__pulumiType, name, resourceInputs, opts);
     }
 }

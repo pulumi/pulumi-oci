@@ -89,7 +89,7 @@ public final class GetAutonomousDatabaseResult {
      */
     private List<GetAutonomousDatabaseConnectionUrl> connectionUrls;
     /**
-     * @return The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      */
     private Integer cpuCoreCount;
@@ -480,6 +480,7 @@ public final class GetAutonomousDatabaseResult {
      */
     private String timeUntilReconnectCloneEnabled;
     private String timestamp;
+    private Boolean useLatestAvailableBackupTimeStamp;
     /**
      * @return The amount of storage that has been used, in terabytes.
      * 
@@ -594,7 +595,7 @@ public final class GetAutonomousDatabaseResult {
         return this.connectionUrls;
     }
     /**
-     * @return The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      */
     public Integer cpuCoreCount() {
@@ -1151,6 +1152,9 @@ public final class GetAutonomousDatabaseResult {
     public String timestamp() {
         return this.timestamp;
     }
+    public Boolean useLatestAvailableBackupTimeStamp() {
+        return this.useLatestAvailableBackupTimeStamp;
+    }
     /**
      * @return The amount of storage that has been used, in terabytes.
      * 
@@ -1281,6 +1285,7 @@ public final class GetAutonomousDatabaseResult {
         private String timeReclamationOfFreeAutonomousDatabase;
         private String timeUntilReconnectCloneEnabled;
         private String timestamp;
+        private Boolean useLatestAvailableBackupTimeStamp;
         private Integer usedDataStorageSizeInTbs;
         private String vaultId;
         private List<String> whitelistedIps;
@@ -1386,6 +1391,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
     	      this.timestamp = defaults.timestamp;
+    	      this.useLatestAvailableBackupTimeStamp = defaults.useLatestAvailableBackupTimeStamp;
     	      this.usedDataStorageSizeInTbs = defaults.usedDataStorageSizeInTbs;
     	      this.vaultId = defaults.vaultId;
     	      this.whitelistedIps = defaults.whitelistedIps;
@@ -1932,6 +1938,11 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
+            this.useLatestAvailableBackupTimeStamp = Objects.requireNonNull(useLatestAvailableBackupTimeStamp);
+            return this;
+        }
+        @CustomType.Setter
         public Builder usedDataStorageSizeInTbs(Integer usedDataStorageSizeInTbs) {
             this.usedDataStorageSizeInTbs = Objects.requireNonNull(usedDataStorageSizeInTbs);
             return this;
@@ -2050,6 +2061,7 @@ public final class GetAutonomousDatabaseResult {
             o.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             o.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             o.timestamp = timestamp;
+            o.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             o.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             o.vaultId = vaultId;
             o.whitelistedIps = whitelistedIps;

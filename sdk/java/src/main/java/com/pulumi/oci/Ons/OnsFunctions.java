@@ -534,7 +534,7 @@ public final class OnsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -576,7 +576,7 @@ public final class OnsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -618,7 +618,7 @@ public final class OnsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -660,7 +660,7 @@ public final class OnsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

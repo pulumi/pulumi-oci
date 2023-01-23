@@ -126,6 +126,8 @@ def get_masking_analytics(compartment_id: Optional[str] = None,
     This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
 
     Gets consolidated masking analytics data based on the specified query parameters.
+    If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+    is equivalent to accessLevel "ACCESSIBLE" by default.
 
     ## Example Usage
 
@@ -180,6 +182,8 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[str]] = N
     This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
 
     Gets consolidated masking analytics data based on the specified query parameters.
+    If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+    is equivalent to accessLevel "ACCESSIBLE" by default.
 
     ## Example Usage
 

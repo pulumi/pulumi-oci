@@ -41,7 +41,7 @@ import (
 //
 // All Oracle Cloud Infrastructure Services resources, including
 // mount targets, get an Oracle-assigned, unique ID called an
-// Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).\
+// Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 // When you create a resource, you can find its OCID in the response.
 // You can also retrieve a resource's OCID by using a List API operation on that resource
 // type, or by viewing the resource in the Console.
@@ -110,7 +110,7 @@ type MountTarget struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 	HostnameLabel pulumi.StringOutput `pulumi:"hostnameLabel"`
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -178,7 +178,7 @@ type mountTargetState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 	HostnameLabel *string `pulumi:"hostnameLabel"`
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
 	IpAddress *string `pulumi:"ipAddress"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -209,7 +209,7 @@ type MountTargetState struct {
 	FreeformTags pulumi.MapInput
 	// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 	HostnameLabel pulumi.StringPtrInput
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
 	IpAddress pulumi.StringPtrInput
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringPtrInput
@@ -242,7 +242,7 @@ type mountTargetArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 	HostnameLabel *string `pulumi:"hostnameLabel"`
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
@@ -264,7 +264,7 @@ type MountTargetArgs struct {
 	FreeformTags pulumi.MapInput
 	// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 	HostnameLabel pulumi.StringPtrInput
-	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput
@@ -394,7 +394,7 @@ func (o MountTargetOutput) HostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.HostnameLabel }).(pulumi.StringOutput)
 }
 
-// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
 func (o MountTargetOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
 }

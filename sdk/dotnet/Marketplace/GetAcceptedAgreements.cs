@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAcceptedAgreementsResult> InvokeAsync(GetAcceptedAgreementsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAcceptedAgreementsResult>("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", args ?? new GetAcceptedAgreementsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAcceptedAgreementsResult>("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", args ?? new GetAcceptedAgreementsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Accepted Agreements in Oracle Cloud Infrastructure Marketplace service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAcceptedAgreementsResult> Invoke(GetAcceptedAgreementsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAcceptedAgreementsResult>("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", args ?? new GetAcceptedAgreementsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAcceptedAgreementsResult>("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", args ?? new GetAcceptedAgreementsInvokeArgs(), options.WithDefaults());
     }
 
 

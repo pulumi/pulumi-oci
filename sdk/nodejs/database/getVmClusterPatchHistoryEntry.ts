@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterPatchHistoryEntry(args: GetVmClusterPatchHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterPatchHistoryEntryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", {
         "patchHistoryEntryId": args.patchHistoryEntryId,
         "vmClusterId": args.vmClusterId,
@@ -82,9 +79,25 @@ export interface GetVmClusterPatchHistoryEntryResult {
     readonly timeStarted: string;
     readonly vmClusterId: string;
 }
-
+/**
+ * This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the patch history details for the specified patch history entry.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusterPatchHistoryEntry = oci.Database.getVmClusterPatchHistoryEntry({
+ *     patchHistoryEntryId: oci_database_patch_history_entry.test_patch_history_entry.id,
+ *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ * });
+ * ```
+ */
 export function getVmClusterPatchHistoryEntryOutput(args: GetVmClusterPatchHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterPatchHistoryEntryResult> {
-    return pulumi.output(args).apply(a => getVmClusterPatchHistoryEntry(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterPatchHistoryEntry(a, opts))
 }
 
 /**

@@ -424,7 +424,7 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -469,7 +469,7 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -514,7 +514,7 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -559,7 +559,7 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -604,7 +604,7 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -649,7 +649,7 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

@@ -16,6 +16,22 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// Lists the supported Opensearch versions
         /// 
+        /// ## Prerequisites
+        /// 
+        /// The below policies must be created in compartment before creating OpensearchCluster
+        /// 
+        /// ##### {Compartment-Name} - Name of  your compartment
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        /// });
+        /// ```
+        /// 
+        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
+        /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -39,13 +55,29 @@ namespace Pulumi.Oci.Opensearch
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOpensearchVersionResult> InvokeAsync(GetOpensearchVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOpensearchVersionResult>("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", args ?? new GetOpensearchVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOpensearchVersionResult>("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", args ?? new GetOpensearchVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Opensearch Version resource in Oracle Cloud Infrastructure Opensearch service.
         /// 
         /// Lists the supported Opensearch versions
         /// 
+        /// ## Prerequisites
+        /// 
+        /// The below policies must be created in compartment before creating OpensearchCluster
+        /// 
+        /// ##### {Compartment-Name} - Name of  your compartment
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        /// });
+        /// ```
+        /// 
+        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
+        /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -69,7 +101,7 @@ namespace Pulumi.Oci.Opensearch
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOpensearchVersionResult> Invoke(GetOpensearchVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOpensearchVersionResult>("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", args ?? new GetOpensearchVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOpensearchVersionResult>("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", args ?? new GetOpensearchVersionInvokeArgs(), options.WithDefaults());
     }
 
 

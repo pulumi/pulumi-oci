@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTsigKey(args: GetTsigKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetTsigKeyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getTsigKey:getTsigKey", {
         "tsigKeyId": args.tsigKeyId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetTsigKeyResult {
     readonly timeUpdated: string;
     readonly tsigKeyId: string;
 }
-
+/**
+ * This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets information about the specified TSIG key.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTsigKey = oci.Dns.getTsigKey({
+ *     tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
+ * });
+ * ```
+ */
 export function getTsigKeyOutput(args: GetTsigKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTsigKeyResult> {
-    return pulumi.output(args).apply(a => getTsigKey(a, opts))
+    return pulumi.output(args).apply((a: any) => getTsigKey(a, opts))
 }
 
 /**

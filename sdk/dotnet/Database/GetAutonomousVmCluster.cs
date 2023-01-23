@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousVmClusterResult> InvokeAsync(GetAutonomousVmClusterArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousVmClusterResult>("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", args ?? new GetAutonomousVmClusterArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousVmClusterResult>("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", args ?? new GetAutonomousVmClusterArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousVmClusterResult> Invoke(GetAutonomousVmClusterInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousVmClusterResult>("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", args ?? new GetAutonomousVmClusterInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVmClusterResult>("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", args ?? new GetAutonomousVmClusterInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The number of OCPU cores enabled per VM cluster node.
+        /// The number of CPU cores enabled per VM cluster node.
         /// </summary>
         public readonly int CpuCoreCountPerNode;
         /// <summary>
@@ -175,6 +175,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsLocalBackupEnabled;
         /// <summary>
+        /// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        /// </summary>
+        public readonly bool IsMtlsEnabled;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         public readonly string LastMaintenanceRunId;
@@ -211,6 +215,14 @@ namespace Pulumi.Oci.Database
         /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         /// </summary>
         public readonly int ReclaimableCpus;
+        /// <summary>
+        /// The SCAN Listener Non TLS port number. Default value is 1521.
+        /// </summary>
+        public readonly int ScanListenerPortNonTls;
+        /// <summary>
+        /// The SCAN Listener TLS port number. Default value is 2484.
+        /// </summary>
+        public readonly int ScanListenerPortTls;
         /// <summary>
         /// The current state of the Autonomous VM cluster.
         /// </summary>
@@ -270,6 +282,8 @@ namespace Pulumi.Oci.Database
 
             bool isLocalBackupEnabled,
 
+            bool isMtlsEnabled,
+
             string lastMaintenanceRunId,
 
             string licenseModel,
@@ -289,6 +303,10 @@ namespace Pulumi.Oci.Database
             double ocpusEnabled,
 
             int reclaimableCpus,
+
+            int scanListenerPortNonTls,
+
+            int scanListenerPortTls,
 
             string state,
 
@@ -318,6 +336,7 @@ namespace Pulumi.Oci.Database
             FreeformTags = freeformTags;
             Id = id;
             IsLocalBackupEnabled = isLocalBackupEnabled;
+            IsMtlsEnabled = isMtlsEnabled;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
@@ -328,6 +347,8 @@ namespace Pulumi.Oci.Database
             NextMaintenanceRunId = nextMaintenanceRunId;
             OcpusEnabled = ocpusEnabled;
             ReclaimableCpus = reclaimableCpus;
+            ScanListenerPortNonTls = scanListenerPortNonTls;
+            ScanListenerPortTls = scanListenerPortTls;
             State = state;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

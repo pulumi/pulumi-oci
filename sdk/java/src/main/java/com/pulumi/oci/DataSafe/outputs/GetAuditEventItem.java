@@ -33,7 +33,7 @@ public final class GetAuditEventItem {
      */
     private String auditPolicies;
     /**
-     * @return The OCID of the audit trail that generated this audit event.
+     * @return The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
      * 
      */
     private String auditTrailId;
@@ -216,7 +216,7 @@ public final class GetAuditEventItem {
         return this.auditPolicies;
     }
     /**
-     * @return The OCID of the audit trail that generated this audit event.
+     * @return The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
      * 
      */
     public String auditTrailId() {

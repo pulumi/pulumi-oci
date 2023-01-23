@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DataScience
         ///         CreatedBy = @var.Model_created_by,
         ///         DisplayName = @var.Model_display_name,
         ///         Id = @var.Model_id,
+        ///         ModelVersionSetName = oci_datascience_model_version_set.Test_model_version_set.Name,
         ///         ProjectId = oci_datascience_project.Test_project.Id,
         ///         State = @var.Model_state,
         ///     });
@@ -43,7 +44,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetModelsResult> InvokeAsync(GetModelsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetModelsResult>("oci:DataScience/getModels:getModels", args ?? new GetModelsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelsResult>("oci:DataScience/getModels:getModels", args ?? new GetModelsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Data Science service.
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.DataScience
         ///         CreatedBy = @var.Model_created_by,
         ///         DisplayName = @var.Model_display_name,
         ///         Id = @var.Model_id,
+        ///         ModelVersionSetName = oci_datascience_model_version_set.Test_model_version_set.Name,
         ///         ProjectId = oci_datascience_project.Test_project.Id,
         ///         State = @var.Model_state,
         ///     });
@@ -77,7 +79,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetModelsResult> Invoke(GetModelsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetModelsResult>("oci:DataScience/getModels:getModels", args ?? new GetModelsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelsResult>("oci:DataScience/getModels:getModels", args ?? new GetModelsInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -115,6 +117,9 @@ namespace Pulumi.Oci.DataScience
         [Input("id")]
         public string? Id { get; set; }
 
+        [Input("modelVersionSetName", required: true)]
+        public string ModelVersionSetName { get; set; } = null!;
+
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         /// </summary>
@@ -126,6 +131,9 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        [Input("versionLabel", required: true)]
+        public string VersionLabel { get; set; } = null!;
 
         public GetModelsArgs()
         {
@@ -167,6 +175,9 @@ namespace Pulumi.Oci.DataScience
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        [Input("modelVersionSetName", required: true)]
+        public Input<string> ModelVersionSetName { get; set; } = null!;
+
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         /// </summary>
@@ -178,6 +189,9 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("versionLabel", required: true)]
+        public Input<string> VersionLabel { get; set; } = null!;
 
         public GetModelsInvokeArgs()
         {
@@ -206,6 +220,7 @@ namespace Pulumi.Oci.DataScience
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
         /// </summary>
         public readonly string? Id;
+        public readonly string ModelVersionSetName;
         /// <summary>
         /// The list of models.
         /// </summary>
@@ -218,6 +233,7 @@ namespace Pulumi.Oci.DataScience
         /// The state of the model.
         /// </summary>
         public readonly string? State;
+        public readonly string VersionLabel;
 
         [OutputConstructor]
         private GetModelsResult(
@@ -231,20 +247,26 @@ namespace Pulumi.Oci.DataScience
 
             string? id,
 
+            string modelVersionSetName,
+
             ImmutableArray<Outputs.GetModelsModelResult> models,
 
             string? projectId,
 
-            string? state)
+            string? state,
+
+            string versionLabel)
         {
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            ModelVersionSetName = modelVersionSetName;
             Models = models;
             ProjectId = projectId;
             State = state;
+            VersionLabel = versionLabel;
         }
     }
 }

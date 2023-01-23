@@ -65,7 +65,7 @@ public final class GetDatabaseSoftwareImageResult {
      */
     private String imageType;
     /**
-     * @return The patches included in the image and the version of the image
+     * @return The patches included in the image and the version of the image.
      * 
      */
     private String includedPatchesSummary;
@@ -176,7 +176,7 @@ public final class GetDatabaseSoftwareImageResult {
         return this.imageType;
     }
     /**
-     * @return The patches included in the image and the version of the image
+     * @return The patches included in the image and the version of the image.
      * 
      */
     public String includedPatchesSummary() {

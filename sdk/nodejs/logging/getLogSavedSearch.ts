@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogSavedSearch(args: GetLogSavedSearchArgs, opts?: pulumi.InvokeOptions): Promise<GetLogSavedSearchResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getLogSavedSearch:getLogSavedSearch", {
         "logSavedSearchId": args.logSavedSearchId,
     }, opts);
@@ -87,9 +84,24 @@ export interface GetLogSavedSearchResult {
      */
     readonly timeLastModified: string;
 }
-
+/**
+ * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
+ *
+ * Retrieves a log saved search.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogSavedSearch = oci.Logging.getLogSavedSearch({
+ *     logSavedSearchId: oci_logging_log_saved_search.test_log_saved_search.id,
+ * });
+ * ```
+ */
 export function getLogSavedSearchOutput(args: GetLogSavedSearchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSavedSearchResult> {
-    return pulumi.output(args).apply(a => getLogSavedSearch(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogSavedSearch(a, opts))
 }
 
 /**

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getScheduledRun(args: GetScheduledRunArgs, opts?: pulumi.InvokeOptions): Promise<GetScheduledRunResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getScheduledRun:getScheduledRun", {
         "scheduledRunId": args.scheduledRunId,
     }, opts);
@@ -71,9 +68,24 @@ export interface GetScheduledRunResult {
      */
     readonly timeFinished: string;
 }
-
+/**
+ * This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
+ *
+ * Returns the saved schedule run.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testScheduledRun = oci.MeteringComputation.getScheduledRun({
+ *     scheduledRunId: oci_metering_computation_scheduled_run.test_scheduled_run.id,
+ * });
+ * ```
+ */
 export function getScheduledRunOutput(args: GetScheduledRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduledRunResult> {
-    return pulumi.output(args).apply(a => getScheduledRun(a, opts))
+    return pulumi.output(args).apply((a: any) => getScheduledRun(a, opts))
 }
 
 /**

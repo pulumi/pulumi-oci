@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetHealthResult> InvokeAsync(GetHealthArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetHealthResult>("oci:LoadBalancer/getHealth:getHealth", args ?? new GetHealthArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetHealthResult>("oci:LoadBalancer/getHealth:getHealth", args ?? new GetHealthArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Load Balancer Health resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetHealthResult> Invoke(GetHealthInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetHealthResult>("oci:LoadBalancer/getHealth:getHealth", args ?? new GetHealthInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetHealthResult>("oci:LoadBalancer/getHealth:getHealth", args ?? new GetHealthInvokeArgs(), options.WithDefaults());
     }
 
 

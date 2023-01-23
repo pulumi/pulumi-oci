@@ -17,13 +17,16 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
         /// </summary>
         public readonly ImmutableArray<string> Events;
+        /// <summary>
+        /// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        /// </summary>
         public readonly Outputs.TriggerActionFilterExclude? Exclude;
         /// <summary>
         /// (Updatable) Attributes to filter GitLab self-hosted server events.
         /// </summary>
         public readonly Outputs.TriggerActionFilterInclude? Include;
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        /// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         /// </summary>
         public readonly string TriggerSource;
 

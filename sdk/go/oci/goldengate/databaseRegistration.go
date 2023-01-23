@@ -13,6 +13,7 @@ import (
 
 // This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
 //
+// Note: Deprecated. Use the new resource model APIs instead.
 // Creates a new DatabaseRegistration.
 //
 // ## Example Usage
@@ -82,7 +83,7 @@ type DatabaseRegistration struct {
 	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -90,7 +91,7 @@ type DatabaseRegistration struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
@@ -106,13 +107,13 @@ type DatabaseRegistration struct {
 	SecretCompartmentId pulumi.StringOutput `pulumi:"secretCompartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
 	SecretId pulumi.StringOutput `pulumi:"secretId"`
-	// (Updatable) The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringOutput `pulumi:"sessionMode"`
 	// Possible lifecycle states.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -151,6 +152,13 @@ func NewDatabaseRegistration(ctx *pulumi.Context,
 	if args.Username == nil {
 		return nil, errors.New("invalid value for required argument 'Username'")
 	}
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
 	var resource DatabaseRegistration
 	err := ctx.RegisterResource("oci:GoldenGate/databaseRegistration:DatabaseRegistration", name, args, &resource, opts...)
 	if err != nil {
@@ -181,7 +189,7 @@ type databaseRegistrationState struct {
 	ConnectionString *string `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId *string `pulumi:"databaseId"`
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Metadata about this specific object.
 	Description *string `pulumi:"description"`
@@ -189,7 +197,7 @@ type databaseRegistrationState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
 	IpAddress *string `pulumi:"ipAddress"`
@@ -205,13 +213,13 @@ type databaseRegistrationState struct {
 	SecretCompartmentId *string `pulumi:"secretCompartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
 	SecretId *string `pulumi:"secretId"`
-	// (Updatable) The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode *string `pulumi:"sessionMode"`
 	// Possible lifecycle states.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId *string `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -234,7 +242,7 @@ type DatabaseRegistrationState struct {
 	ConnectionString pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId pulumi.StringPtrInput
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringPtrInput
@@ -242,7 +250,7 @@ type DatabaseRegistrationState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
 	IpAddress pulumi.StringPtrInput
@@ -258,13 +266,13 @@ type DatabaseRegistrationState struct {
 	SecretCompartmentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
 	SecretId pulumi.StringPtrInput
-	// (Updatable) The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringPtrInput
 	// Possible lifecycle states.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringPtrInput
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringPtrInput
@@ -291,7 +299,7 @@ type databaseRegistrationArgs struct {
 	ConnectionString *string `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId *string `pulumi:"databaseId"`
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Metadata about this specific object.
 	Description *string `pulumi:"description"`
@@ -299,7 +307,7 @@ type databaseRegistrationArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn string `pulumi:"fqdn"`
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
 	IpAddress *string `pulumi:"ipAddress"`
@@ -309,7 +317,7 @@ type databaseRegistrationArgs struct {
 	Password string `pulumi:"password"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
 	SecretCompartmentId *string `pulumi:"secretCompartmentId"`
-	// (Updatable) The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode *string `pulumi:"sessionMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId *string `pulumi:"subnetId"`
@@ -331,7 +339,7 @@ type DatabaseRegistrationArgs struct {
 	ConnectionString pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId pulumi.StringPtrInput
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringPtrInput
@@ -339,7 +347,7 @@ type DatabaseRegistrationArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringInput
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
 	IpAddress pulumi.StringPtrInput
@@ -349,7 +357,7 @@ type DatabaseRegistrationArgs struct {
 	Password pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
 	SecretCompartmentId pulumi.StringPtrInput
-	// (Updatable) The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringPtrInput
@@ -468,7 +476,7 @@ func (o DatabaseRegistrationOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.StringOutput { return v.DatabaseId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o DatabaseRegistrationOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -488,7 +496,7 @@ func (o DatabaseRegistrationOutput) Fqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.StringOutput { return v.Fqdn }).(pulumi.StringOutput)
 }
 
-// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o DatabaseRegistrationOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -528,7 +536,7 @@ func (o DatabaseRegistrationOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.StringOutput { return v.SecretId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 func (o DatabaseRegistrationOutput) SessionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.StringOutput { return v.SessionMode }).(pulumi.StringOutput)
 }
@@ -543,7 +551,7 @@ func (o DatabaseRegistrationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o DatabaseRegistrationOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }

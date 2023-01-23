@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCatalogPrivateEndpointResult> InvokeAsync(GetCatalogPrivateEndpointArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCatalogPrivateEndpointResult>("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args ?? new GetCatalogPrivateEndpointArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCatalogPrivateEndpointResult>("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args ?? new GetCatalogPrivateEndpointArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCatalogPrivateEndpointResult> Invoke(GetCatalogPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointResult>("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args ?? new GetCatalogPrivateEndpointInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointResult>("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args ?? new GetCatalogPrivateEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

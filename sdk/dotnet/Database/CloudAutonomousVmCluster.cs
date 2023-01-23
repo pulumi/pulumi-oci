@@ -29,7 +29,10 @@ namespace Pulumi.Oci.Database
     ///         CompartmentId = @var.Compartment_id,
     ///         DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
     ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         AutonomousDataStorageSizeInTbs = @var.Cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
     ///         ClusterTimeZone = @var.Cloud_autonomous_vm_cluster_cluster_time_zone,
+    ///         CpuCoreCountPerNode = @var.Cloud_autonomous_vm_cluster_cpu_core_count_per_node,
+    ///         DbServers = @var.Cloud_autonomous_vm_cluster_db_servers,
     ///         DefinedTags = @var.Cloud_autonomous_vm_cluster_defined_tags,
     ///         Description = @var.Cloud_autonomous_vm_cluster_description,
     ///         FreeformTags = 
@@ -37,7 +40,34 @@ namespace Pulumi.Oci.Database
     ///             { "Department", "Finance" },
     ///         },
     ///         LicenseModel = @var.Cloud_autonomous_vm_cluster_license_model,
+    ///         MaintenanceWindowDetails = new Oci.Database.Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs
+    ///         {
+    ///             CustomActionTimeoutInMins = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins,
+    ///             DaysOfWeeks = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs
+    ///                 {
+    ///                     Name = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
+    ///                 },
+    ///             },
+    ///             HoursOfDays = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_hours_of_day,
+    ///             IsCustomActionTimeoutEnabled = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled,
+    ///             IsMonthlyPatchingEnabled = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled,
+    ///             LeadTimeInWeeks = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+    ///             Months = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs
+    ///                 {
+    ///                     Name = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_months_name,
+    ///                 },
+    ///             },
+    ///             PatchingMode = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_patching_mode,
+    ///             Preference = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_preference,
+    ///             WeeksOfMonths = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
+    ///         },
+    ///         MemoryPerOracleComputeUnitInGbs = @var.Cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
     ///         NsgIds = @var.Cloud_autonomous_vm_cluster_nsg_ids,
+    ///         TotalContainerDatabases = @var.Cloud_autonomous_vm_cluster_total_container_databases,
     ///     });
     /// 
     /// });
@@ -55,7 +85,7 @@ namespace Pulumi.Oci.Database
     public partial class CloudAutonomousVmCluster : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The data disk group size allocated for Autonomous Databases, in TBs.
+        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Output("autonomousDataStorageSizeInTbs")]
         public Output<double> AutonomousDataStorageSizeInTbs { get; private set; } = null!;
@@ -103,10 +133,16 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The number of CPU cores enabled on the cloud Autonomous VM cluster.
+        /// The number of CPU cores on the cloud Autonomous VM cluster.
         /// </summary>
         [Output("cpuCoreCount")]
         public Output<int> CpuCoreCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of OCPU cores to be enabled per VM cluster node.
+        /// </summary>
+        [Output("cpuCoreCountPerNode")]
+        public Output<int> CpuCoreCountPerNode { get; private set; } = null!;
 
         /// <summary>
         /// The total data storage allocated, in gigabytes (GB).
@@ -125,6 +161,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dbNodeStorageSizeInGbs")]
         public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of database servers.
+        /// </summary>
+        [Output("dbServers")]
+        public Output<ImmutableArray<string>> DbServers { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -187,7 +229,19 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each OCPU core.
+        /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        /// </summary>
+        [Output("maintenanceWindowDetails")]
+        public Output<Outputs.CloudAutonomousVmClusterMaintenanceWindowDetails?> MaintenanceWindowDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        /// </summary>
+        [Output("maintenanceWindows")]
+        public Output<ImmutableArray<Outputs.CloudAutonomousVmClusterMaintenanceWindow>> MaintenanceWindows { get; private set; } = null!;
+
+        /// <summary>
+        /// The amount of memory (in GBs) to be enabled per each OCPU core.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
         public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
@@ -218,7 +272,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
-        /// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        /// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         [Output("ocpuCount")]
         public Output<double> OcpuCount { get; private set; } = null!;
@@ -228,12 +282,6 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("reclaimableCpus")]
         public Output<double> ReclaimableCpus { get; private set; } = null!;
-
-        [Output("rotateOrdsCertsTrigger")]
-        public Output<bool?> RotateOrdsCertsTrigger { get; private set; } = null!;
-
-        [Output("rotateSslCertsTrigger")]
-        public Output<bool?> RotateSslCertsTrigger { get; private set; } = null!;
 
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -263,10 +311,10 @@ namespace Pulumi.Oci.Database
         /// The last date and time that the cloud Autonomous VM cluster was updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+        /// The total number of Autonomous Container Databases that can be created.
         /// </summary>
         [Output("totalContainerDatabases")]
         public Output<int> TotalContainerDatabases { get; private set; } = null!;
@@ -318,6 +366,12 @@ namespace Pulumi.Oci.Database
     public sealed class CloudAutonomousVmClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
+        /// </summary>
+        [Input("autonomousDataStorageSizeInTbs")]
+        public Input<double>? AutonomousDataStorageSizeInTbs { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         /// </summary>
         [Input("cloudExadataInfrastructureId", required: true)]
@@ -334,6 +388,24 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// The number of OCPU cores to be enabled per VM cluster node.
+        /// </summary>
+        [Input("cpuCoreCountPerNode")]
+        public Input<int>? CpuCoreCountPerNode { get; set; }
+
+        [Input("dbServers")]
+        private InputList<string>? _dbServers;
+
+        /// <summary>
+        /// The list of database servers.
+        /// </summary>
+        public InputList<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new InputList<string>());
+            set => _dbServers = value;
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -377,6 +449,18 @@ namespace Pulumi.Oci.Database
         [Input("licenseModel")]
         public Input<string>? LicenseModel { get; set; }
 
+        /// <summary>
+        /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        /// </summary>
+        [Input("maintenanceWindowDetails")]
+        public Input<Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs>? MaintenanceWindowDetails { get; set; }
+
+        /// <summary>
+        /// The amount of memory (in GBs) to be enabled per each OCPU core.
+        /// </summary>
+        [Input("memoryPerOracleComputeUnitInGbs")]
+        public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -390,17 +474,23 @@ namespace Pulumi.Oci.Database
             set => _nsgIds = value;
         }
 
-        [Input("rotateOrdsCertsTrigger")]
-        public Input<bool>? RotateOrdsCertsTrigger { get; set; }
-
-        [Input("rotateSslCertsTrigger")]
-        public Input<bool>? RotateSslCertsTrigger { get; set; }
-
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
+
+        /// <summary>
+        /// The last date and time that the cloud Autonomous VM cluster was updated.
+        /// </summary>
+        [Input("timeUpdated")]
+        public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// The total number of Autonomous Container Databases that can be created.
+        /// </summary>
+        [Input("totalContainerDatabases")]
+        public Input<int>? TotalContainerDatabases { get; set; }
 
         public CloudAutonomousVmClusterArgs()
         {
@@ -411,7 +501,7 @@ namespace Pulumi.Oci.Database
     public sealed class CloudAutonomousVmClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The data disk group size allocated for Autonomous Databases, in TBs.
+        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Input("autonomousDataStorageSizeInTbs")]
         public Input<double>? AutonomousDataStorageSizeInTbs { get; set; }
@@ -459,10 +549,16 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The number of CPU cores enabled on the cloud Autonomous VM cluster.
+        /// The number of CPU cores on the cloud Autonomous VM cluster.
         /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
+
+        /// <summary>
+        /// The number of OCPU cores to be enabled per VM cluster node.
+        /// </summary>
+        [Input("cpuCoreCountPerNode")]
+        public Input<int>? CpuCoreCountPerNode { get; set; }
 
         /// <summary>
         /// The total data storage allocated, in gigabytes (GB).
@@ -481,6 +577,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dbNodeStorageSizeInGbs")]
         public Input<int>? DbNodeStorageSizeInGbs { get; set; }
+
+        [Input("dbServers")]
+        private InputList<string>? _dbServers;
+
+        /// <summary>
+        /// The list of database servers.
+        /// </summary>
+        public InputList<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new InputList<string>());
+            set => _dbServers = value;
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -555,7 +663,25 @@ namespace Pulumi.Oci.Database
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each OCPU core.
+        /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        /// </summary>
+        [Input("maintenanceWindowDetails")]
+        public Input<Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsGetArgs>? MaintenanceWindowDetails { get; set; }
+
+        [Input("maintenanceWindows")]
+        private InputList<Inputs.CloudAutonomousVmClusterMaintenanceWindowGetArgs>? _maintenanceWindows;
+
+        /// <summary>
+        /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        /// </summary>
+        public InputList<Inputs.CloudAutonomousVmClusterMaintenanceWindowGetArgs> MaintenanceWindows
+        {
+            get => _maintenanceWindows ?? (_maintenanceWindows = new InputList<Inputs.CloudAutonomousVmClusterMaintenanceWindowGetArgs>());
+            set => _maintenanceWindows = value;
+        }
+
+        /// <summary>
+        /// The amount of memory (in GBs) to be enabled per each OCPU core.
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
@@ -592,7 +718,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        /// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         [Input("ocpuCount")]
         public Input<double>? OcpuCount { get; set; }
@@ -602,12 +728,6 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("reclaimableCpus")]
         public Input<double>? ReclaimableCpus { get; set; }
-
-        [Input("rotateOrdsCertsTrigger")]
-        public Input<bool>? RotateOrdsCertsTrigger { get; set; }
-
-        [Input("rotateSslCertsTrigger")]
-        public Input<bool>? RotateSslCertsTrigger { get; set; }
 
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -640,7 +760,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+        /// The total number of Autonomous Container Databases that can be created.
         /// </summary>
         [Input("totalContainerDatabases")]
         public Input<int>? TotalContainerDatabases { get; set; }

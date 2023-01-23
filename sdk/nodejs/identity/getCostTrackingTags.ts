@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCostTrackingTags(args: GetCostTrackingTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetCostTrackingTagsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getCostTrackingTags:getCostTrackingTags", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -63,9 +61,25 @@ export interface GetCostTrackingTagsResult {
      */
     readonly tags: outputs.Identity.GetCostTrackingTagsTag[];
 }
-
+/**
+ * This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
+ * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCostTrackingTags = oci.Identity.getCostTrackingTags({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getCostTrackingTagsOutput(args: GetCostTrackingTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCostTrackingTagsResult> {
-    return pulumi.output(args).apply(a => getCostTrackingTags(a, opts))
+    return pulumi.output(args).apply((a: any) => getCostTrackingTags(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualServiceRouteTables(args: GetVirtualServiceRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServiceRouteTablesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualServiceRouteTables:getVirtualServiceRouteTables", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -98,9 +96,28 @@ export interface GetVirtualServiceRouteTablesResult {
      */
     readonly virtualServiceRouteTableCollections: outputs.ServiceMesh.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection[];
 }
-
+/**
+ * This data source provides the list of Virtual Service Route Tables in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Returns a list of VirtualServiceRouteTable objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVirtualServiceRouteTables = oci.ServiceMesh.getVirtualServiceRouteTables({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.virtual_service_route_table_id,
+ *     name: _var.virtual_service_route_table_name,
+ *     state: _var.virtual_service_route_table_state,
+ *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ * });
+ * ```
+ */
 export function getVirtualServiceRouteTablesOutput(args: GetVirtualServiceRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServiceRouteTablesResult> {
-    return pulumi.output(args).apply(a => getVirtualServiceRouteTables(a, opts))
+    return pulumi.output(args).apply((a: any) => getVirtualServiceRouteTables(a, opts))
 }
 
 /**

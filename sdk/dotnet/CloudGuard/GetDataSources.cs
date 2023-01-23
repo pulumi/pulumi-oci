@@ -59,7 +59,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDataSourcesResult> InvokeAsync(GetDataSourcesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDataSourcesResult>("oci:CloudGuard/getDataSources:getDataSources", args ?? new GetDataSourcesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataSourcesResult>("oci:CloudGuard/getDataSources:getDataSources", args ?? new GetDataSourcesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDataSourcesResult> Invoke(GetDataSourcesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDataSourcesResult>("oci:CloudGuard/getDataSources:getDataSources", args ?? new GetDataSourcesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataSourcesResult>("oci:CloudGuard/getDataSources:getDataSources", args ?? new GetDataSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

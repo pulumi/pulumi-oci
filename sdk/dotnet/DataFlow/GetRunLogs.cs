@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRunLogsResult> InvokeAsync(GetRunLogsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRunLogsResult>("oci:DataFlow/getRunLogs:getRunLogs", args ?? new GetRunLogsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRunLogsResult>("oci:DataFlow/getRunLogs:getRunLogs", args ?? new GetRunLogsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRunLogsResult> Invoke(GetRunLogsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRunLogsResult>("oci:DataFlow/getRunLogs:getRunLogs", args ?? new GetRunLogsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRunLogsResult>("oci:DataFlow/getRunLogs:getRunLogs", args ?? new GetRunLogsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApis(args: GetApisArgs, opts?: pulumi.InvokeOptions): Promise<GetApisResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getApis:getApis", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetApisResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Apis in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Returns a list of APIs.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApis = oci.ApiGateway.getApis({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.api_display_name,
+ *     state: _var.api_state,
+ * });
+ * ```
+ */
 export function getApisOutput(args: GetApisOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApisResult> {
-    return pulumi.output(args).apply(a => getApis(a, opts))
+    return pulumi.output(args).apply((a: any) => getApis(a, opts))
 }
 
 /**

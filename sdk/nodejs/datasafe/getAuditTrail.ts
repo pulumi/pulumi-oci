@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditTrail(args: GetAuditTrailArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditTrailResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditTrail:getAuditTrail", {
         "auditTrailId": args.auditTrailId,
     }, opts);
@@ -108,6 +105,10 @@ export interface GetAuditTrailResult {
      */
     readonly timeCreated: string;
     /**
+     * The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     */
+    readonly timeLastCollected: string;
+    /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      */
     readonly timeUpdated: string;
@@ -120,9 +121,24 @@ export interface GetAuditTrailResult {
      */
     readonly workRequestId: string;
 }
-
+/**
+ * This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of audit trail.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditTrail = oci.DataSafe.getAuditTrail({
+ *     auditTrailId: oci_data_safe_audit_trail.test_audit_trail.id,
+ * });
+ * ```
+ */
 export function getAuditTrailOutput(args: GetAuditTrailOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditTrailResult> {
-    return pulumi.output(args).apply(a => getAuditTrail(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditTrail(a, opts))
 }
 
 /**

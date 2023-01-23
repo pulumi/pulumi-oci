@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -204,7 +205,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["emailNotification"] = args ? args.emailNotification : undefined;
             resourceInputs["featureSet"] = args ? args.featureSet : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["idcsAccessToken"] = args ? args.idcsAccessToken : undefined;
+            resourceInputs["idcsAccessToken"] = args?.idcsAccessToken ? pulumi.secret(args.idcsAccessToken) : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["licenseType"] = args ? args.licenseType : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -215,6 +216,8 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["idcsAccessToken"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(AnalyticsInstance.__pulumiType, name, resourceInputs, opts);
     }
 }

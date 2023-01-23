@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -137,17 +138,25 @@ export class FusionEnvironment extends pulumi.CustomResource {
      */
     public /*out*/ readonly idcsDomainUrl!: pulumi.Output<string>;
     /**
+     * If it's true, then the Break Glass feature is enabled
+     */
+    public /*out*/ readonly isBreakGlassEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) byok kms keyId
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
     /**
      * BYOK key info
      */
-    public /*out*/ readonly kmsKeyInfos!: pulumi.Output<string[]>;
+    public /*out*/ readonly kmsKeyInfos!: pulumi.Output<outputs.FusionApps.FusionEnvironmentKmsKeyInfo[]>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+     */
+    public /*out*/ readonly lockboxId!: pulumi.Output<string>;
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
@@ -218,9 +227,11 @@ export class FusionEnvironment extends pulumi.CustomResource {
             resourceInputs["fusionEnvironmentFamilyId"] = state ? state.fusionEnvironmentFamilyId : undefined;
             resourceInputs["fusionEnvironmentType"] = state ? state.fusionEnvironmentType : undefined;
             resourceInputs["idcsDomainUrl"] = state ? state.idcsDomainUrl : undefined;
+            resourceInputs["isBreakGlassEnabled"] = state ? state.isBreakGlassEnabled : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyInfos"] = state ? state.kmsKeyInfos : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["lockboxId"] = state ? state.lockboxId : undefined;
             resourceInputs["maintenancePolicy"] = state ? state.maintenancePolicy : undefined;
             resourceInputs["publicUrl"] = state ? state.publicUrl : undefined;
             resourceInputs["refreshes"] = state ? state.refreshes : undefined;
@@ -264,8 +275,10 @@ export class FusionEnvironment extends pulumi.CustomResource {
             resourceInputs["appliedPatchBundles"] = undefined /*out*/;
             resourceInputs["domainId"] = undefined /*out*/;
             resourceInputs["idcsDomainUrl"] = undefined /*out*/;
+            resourceInputs["isBreakGlassEnabled"] = undefined /*out*/;
             resourceInputs["kmsKeyInfos"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["lockboxId"] = undefined /*out*/;
             resourceInputs["publicUrl"] = undefined /*out*/;
             resourceInputs["refreshes"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -334,17 +347,25 @@ export interface FusionEnvironmentState {
      */
     idcsDomainUrl?: pulumi.Input<string>;
     /**
+     * If it's true, then the Break Glass feature is enabled
+     */
+    isBreakGlassEnabled?: pulumi.Input<boolean>;
+    /**
      * (Updatable) byok kms keyId
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
      * BYOK key info
      */
-    kmsKeyInfos?: pulumi.Input<pulumi.Input<string>[]>;
+    kmsKeyInfos?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentKmsKeyInfo>[]>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+     */
+    lockboxId?: pulumi.Input<string>;
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */

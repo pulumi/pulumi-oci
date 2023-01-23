@@ -187,7 +187,9 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
             __props__.__dict__["operations_insights_warehouse_id"] = operations_insights_warehouse_id
             if operations_insights_warehouse_wallet_password is None and not opts.urn:
                 raise TypeError("Missing required property 'operations_insights_warehouse_wallet_password'")
-            __props__.__dict__["operations_insights_warehouse_wallet_password"] = operations_insights_warehouse_wallet_password
+            __props__.__dict__["operations_insights_warehouse_wallet_password"] = None if operations_insights_warehouse_wallet_password is None else pulumi.Output.secret(operations_insights_warehouse_wallet_password)
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["operationsInsightsWarehouseWalletPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(OperationsInsightsWarehouseDownloadWarehouseWallet, __self__).__init__(
             'oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet',
             resource_name,

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getQuota(args: GetQuotaArgs, opts?: pulumi.InvokeOptions): Promise<GetQuotaResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getQuota:getQuota", {
         "quotaId": args.quotaId,
     }, opts);
@@ -89,9 +87,24 @@ export interface GetQuotaResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.
+ *
+ * Gets the quota for the OCID specified.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testQuota = oci.Limits.getQuota({
+ *     quotaId: oci_limits_quota.test_quota.id,
+ * });
+ * ```
+ */
 export function getQuotaOutput(args: GetQuotaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQuotaResult> {
-    return pulumi.output(args).apply(a => getQuota(a, opts))
+    return pulumi.output(args).apply((a: any) => getQuota(a, opts))
 }
 
 /**

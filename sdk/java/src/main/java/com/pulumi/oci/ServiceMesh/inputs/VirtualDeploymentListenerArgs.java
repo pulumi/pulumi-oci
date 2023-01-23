@@ -8,11 +8,28 @@ import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class VirtualDeploymentListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final VirtualDeploymentListenerArgs Empty = new VirtualDeploymentListenerArgs();
+
+    /**
+     * (Updatable) The maximum duration in milliseconds for which the request&#39;s stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+     * 
+     */
+    @Import(name="idleTimeoutInMs")
+    private @Nullable Output<String> idleTimeoutInMs;
+
+    /**
+     * @return (Updatable) The maximum duration in milliseconds for which the request&#39;s stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+     * 
+     */
+    public Optional<Output<String>> idleTimeoutInMs() {
+        return Optional.ofNullable(this.idleTimeoutInMs);
+    }
 
     /**
      * (Updatable) Port in which virtual deployment is running.
@@ -44,11 +61,28 @@ public final class VirtualDeploymentListenerArgs extends com.pulumi.resources.Re
         return this.protocol;
     }
 
+    /**
+     * (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+     * 
+     */
+    @Import(name="requestTimeoutInMs")
+    private @Nullable Output<String> requestTimeoutInMs;
+
+    /**
+     * @return (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+     * 
+     */
+    public Optional<Output<String>> requestTimeoutInMs() {
+        return Optional.ofNullable(this.requestTimeoutInMs);
+    }
+
     private VirtualDeploymentListenerArgs() {}
 
     private VirtualDeploymentListenerArgs(VirtualDeploymentListenerArgs $) {
+        this.idleTimeoutInMs = $.idleTimeoutInMs;
         this.port = $.port;
         this.protocol = $.protocol;
+        this.requestTimeoutInMs = $.requestTimeoutInMs;
     }
 
     public static Builder builder() {
@@ -67,6 +101,27 @@ public final class VirtualDeploymentListenerArgs extends com.pulumi.resources.Re
 
         public Builder(VirtualDeploymentListenerArgs defaults) {
             $ = new VirtualDeploymentListenerArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param idleTimeoutInMs (Updatable) The maximum duration in milliseconds for which the request&#39;s stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idleTimeoutInMs(@Nullable Output<String> idleTimeoutInMs) {
+            $.idleTimeoutInMs = idleTimeoutInMs;
+            return this;
+        }
+
+        /**
+         * @param idleTimeoutInMs (Updatable) The maximum duration in milliseconds for which the request&#39;s stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idleTimeoutInMs(String idleTimeoutInMs) {
+            return idleTimeoutInMs(Output.of(idleTimeoutInMs));
         }
 
         /**
@@ -109,6 +164,27 @@ public final class VirtualDeploymentListenerArgs extends com.pulumi.resources.Re
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
+        }
+
+        /**
+         * @param requestTimeoutInMs (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestTimeoutInMs(@Nullable Output<String> requestTimeoutInMs) {
+            $.requestTimeoutInMs = requestTimeoutInMs;
+            return this;
+        }
+
+        /**
+         * @param requestTimeoutInMs (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestTimeoutInMs(String requestTimeoutInMs) {
+            return requestTimeoutInMs(Output.of(requestTimeoutInMs));
         }
 
         public VirtualDeploymentListenerArgs build() {

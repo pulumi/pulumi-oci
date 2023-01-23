@@ -155,6 +155,51 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
+     * (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+     * 
+     */
+    @Import(name="logSet")
+    private @Nullable Output<String> logSet;
+
+    /**
+     * @return (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+     * 
+     */
+    public Optional<Output<String>> logSet() {
+        return Optional.ofNullable(this.logSet);
+    }
+
+    /**
+     * (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     * 
+     */
+    @Import(name="logSetExtRegex")
+    private @Nullable Output<String> logSetExtRegex;
+
+    /**
+     * @return (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     * 
+     */
+    public Optional<Output<String>> logSetExtRegex() {
+        return Optional.ofNullable(this.logSetExtRegex);
+    }
+
+    /**
+     * (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+     * 
+     */
+    @Import(name="logSetKey")
+    private @Nullable Output<String> logSetKey;
+
+    /**
+     * @return (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+     * 
+     */
+    public Optional<Output<String>> logSetKey() {
+        return Optional.ofNullable(this.logSetKey);
+    }
+
+    /**
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
      * 
      */
@@ -245,14 +290,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
+     * (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
      * 
      */
     @Import(name="overrides")
     private @Nullable Output<List<LogAnalyticsObjectCollectionRuleOverrideArgs>> overrides;
 
     /**
-     * @return (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
+     * @return (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
      * 
      */
     public Optional<Output<List<LogAnalyticsObjectCollectionRuleOverrideArgs>>> overrides() {
@@ -260,14 +305,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
-     * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+     * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
     @Import(name="pollSince")
     private @Nullable Output<String> pollSince;
 
     /**
-     * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+     * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
     public Optional<Output<String>> pollSince() {
@@ -275,14 +320,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
-     * The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+     * The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      * 
      */
     @Import(name="pollTill")
     private @Nullable Output<String> pollTill;
 
     /**
-     * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+     * @return The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      * 
      */
     public Optional<Output<String>> pollTill() {
@@ -334,6 +379,21 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    /**
+     * (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+     * 
+     */
+    @Import(name="timezone")
+    private @Nullable Output<String> timezone;
+
+    /**
+     * @return (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+     * 
+     */
+    public Optional<Output<String>> timezone() {
+        return Optional.ofNullable(this.timezone);
+    }
+
     private LogAnalyticsObjectCollectionRuleState() {}
 
     private LogAnalyticsObjectCollectionRuleState(LogAnalyticsObjectCollectionRuleState $) {
@@ -346,6 +406,9 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logGroupId = $.logGroupId;
+        this.logSet = $.logSet;
+        this.logSetExtRegex = $.logSetExtRegex;
+        this.logSetKey = $.logSetKey;
         this.logSourceName = $.logSourceName;
         this.name = $.name;
         this.namespace = $.namespace;
@@ -358,6 +421,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.timezone = $.timezone;
     }
 
     public static Builder builder() {
@@ -568,6 +632,69 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
+         * @param logSet (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logSet(@Nullable Output<String> logSet) {
+            $.logSet = logSet;
+            return this;
+        }
+
+        /**
+         * @param logSet (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logSet(String logSet) {
+            return logSet(Output.of(logSet));
+        }
+
+        /**
+         * @param logSetExtRegex (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logSetExtRegex(@Nullable Output<String> logSetExtRegex) {
+            $.logSetExtRegex = logSetExtRegex;
+            return this;
+        }
+
+        /**
+         * @param logSetExtRegex (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logSetExtRegex(String logSetExtRegex) {
+            return logSetExtRegex(Output.of(logSetExtRegex));
+        }
+
+        /**
+         * @param logSetKey (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logSetKey(@Nullable Output<String> logSetKey) {
+            $.logSetKey = logSetKey;
+            return this;
+        }
+
+        /**
+         * @param logSetKey (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logSetKey(String logSetKey) {
+            return logSetKey(Output.of(logSetKey));
+        }
+
+        /**
          * @param logSourceName (Updatable) Name of the Logging Analytics Source to use for the processing.
          * 
          * @return builder
@@ -704,7 +831,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param overrides (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
+         * @param overrides (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
          * 
          * @return builder
          * 
@@ -715,7 +842,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param overrides (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
+         * @param overrides (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
          * 
          * @return builder
          * 
@@ -725,7 +852,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param overrides (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
+         * @param overrides (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
          * 
          * @return builder
          * 
@@ -735,7 +862,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param pollSince The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+         * @param pollSince The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
          * 
          * @return builder
          * 
@@ -746,7 +873,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param pollSince The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+         * @param pollSince The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
          * 
          * @return builder
          * 
@@ -756,7 +883,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param pollTill The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+         * @param pollTill The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
          * 
          * @return builder
          * 
@@ -767,7 +894,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param pollTill The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+         * @param pollTill The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
          * 
          * @return builder
          * 
@@ -837,6 +964,27 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param timezone (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timezone(@Nullable Output<String> timezone) {
+            $.timezone = timezone;
+            return this;
+        }
+
+        /**
+         * @param timezone (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timezone(String timezone) {
+            return timezone(Output.of(timezone));
         }
 
         public LogAnalyticsObjectCollectionRuleState build() {

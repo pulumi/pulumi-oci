@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDynamicGroupsResult> InvokeAsync(GetDynamicGroupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDynamicGroupsResult>("oci:Identity/getDynamicGroups:getDynamicGroups", args ?? new GetDynamicGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDynamicGroupsResult>("oci:Identity/getDynamicGroups:getDynamicGroups", args ?? new GetDynamicGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Dynamic Groups in Oracle Cloud Infrastructure Identity service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDynamicGroupsResult> Invoke(GetDynamicGroupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDynamicGroupsResult>("oci:Identity/getDynamicGroups:getDynamicGroups", args ?? new GetDynamicGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDynamicGroupsResult>("oci:Identity/getDynamicGroups:getDynamicGroups", args ?? new GetDynamicGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerDatabases(args: GetAutonomousContainerDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabasesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases", {
         "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,
         "autonomousVmClusterId": args.autonomousVmClusterId,
@@ -142,9 +140,32 @@ export interface GetAutonomousContainerDatabasesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Autonomous Container Databases in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the Autonomous Container Databases in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousContainerDatabases = oci.Database.getAutonomousContainerDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     autonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure.id,
+ *     autonomousVmClusterId: oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster.id,
+ *     availabilityDomain: _var.autonomous_container_database_availability_domain,
+ *     cloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster.id,
+ *     displayName: _var.autonomous_container_database_display_name,
+ *     infrastructureType: _var.autonomous_container_database_infrastructure_type,
+ *     serviceLevelAgreementType: _var.autonomous_container_database_service_level_agreement_type,
+ *     state: _var.autonomous_container_database_state,
+ * });
+ * ```
+ */
 export function getAutonomousContainerDatabasesOutput(args: GetAutonomousContainerDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabasesResult> {
-    return pulumi.output(args).apply(a => getAutonomousContainerDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabases(a, opts))
 }
 
 /**

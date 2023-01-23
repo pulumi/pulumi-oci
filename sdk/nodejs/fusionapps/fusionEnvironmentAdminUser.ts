@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -135,11 +136,13 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
             resourceInputs["firstName"] = args ? args.firstName : undefined;
             resourceInputs["fusionEnvironmentId"] = args ? args.fusionEnvironmentId : undefined;
             resourceInputs["lastName"] = args ? args.lastName : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["username"] = args ? args.username : undefined;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(FusionEnvironmentAdminUser.__pulumiType, name, resourceInputs, opts);
     }
 }

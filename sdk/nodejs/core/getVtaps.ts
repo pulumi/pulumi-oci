@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVtaps(args: GetVtapsArgs, opts?: pulumi.InvokeOptions): Promise<GetVtapsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVtaps:getVtaps", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -107,8 +105,6 @@ export interface GetVtapsResult {
     readonly id: string;
     /**
      * Used to start or stop a `Vtap` resource.
-     * * `TRUE` directs the VTAP to start mirroring traffic.
-     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      */
     readonly isVtapEnabled?: boolean;
     readonly source?: string;
@@ -133,9 +129,31 @@ export interface GetVtapsResult {
      */
     readonly vtaps: outputs.Core.GetVtapsVtap[];
 }
-
+/**
+ * This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the virtual test access points (VTAPs) in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVtaps = oci.Core.getVtaps({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.vtap_display_name,
+ *     isVtapEnabled: _var.vtap_is_vtap_enabled,
+ *     source: _var.vtap_source,
+ *     state: _var.vtap_state,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ *     targetIp: _var.vtap_target_ip,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getVtapsOutput(args: GetVtapsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVtapsResult> {
-    return pulumi.output(args).apply(a => getVtaps(a, opts))
+    return pulumi.output(args).apply((a: any) => getVtaps(a, opts))
 }
 
 /**

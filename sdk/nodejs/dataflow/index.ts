@@ -5,22 +5,76 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./application";
-export * from "./getApplication";
-export * from "./getApplications";
-export * from "./getInvokeRun";
-export * from "./getInvokeRuns";
-export * from "./getPrivateEndpoint";
-export * from "./getPrivateEndpoints";
-export * from "./getRunLog";
-export * from "./getRunLogs";
-export * from "./invokeRun";
-export * from "./privateEndpoint";
+export { ApplicationArgs, ApplicationState } from "./application";
+export type Application = import("./application").Application;
+export const Application: typeof import("./application").Application = null as any;
+utilities.lazyLoad(exports, ["Application"], () => require("./application"));
 
-// Import resources to register:
-import { Application } from "./application";
-import { InvokeRun } from "./invokeRun";
-import { PrivateEndpoint } from "./privateEndpoint";
+export { GetApplicationArgs, GetApplicationResult, GetApplicationOutputArgs } from "./getApplication";
+export const getApplication: typeof import("./getApplication").getApplication = null as any;
+export const getApplicationOutput: typeof import("./getApplication").getApplicationOutput = null as any;
+utilities.lazyLoad(exports, ["getApplication","getApplicationOutput"], () => require("./getApplication"));
+
+export { GetApplicationsArgs, GetApplicationsResult, GetApplicationsOutputArgs } from "./getApplications";
+export const getApplications: typeof import("./getApplications").getApplications = null as any;
+export const getApplicationsOutput: typeof import("./getApplications").getApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getApplications","getApplicationsOutput"], () => require("./getApplications"));
+
+export { GetInvokeRunArgs, GetInvokeRunResult, GetInvokeRunOutputArgs } from "./getInvokeRun";
+export const getInvokeRun: typeof import("./getInvokeRun").getInvokeRun = null as any;
+export const getInvokeRunOutput: typeof import("./getInvokeRun").getInvokeRunOutput = null as any;
+utilities.lazyLoad(exports, ["getInvokeRun","getInvokeRunOutput"], () => require("./getInvokeRun"));
+
+export { GetInvokeRunsArgs, GetInvokeRunsResult, GetInvokeRunsOutputArgs } from "./getInvokeRuns";
+export const getInvokeRuns: typeof import("./getInvokeRuns").getInvokeRuns = null as any;
+export const getInvokeRunsOutput: typeof import("./getInvokeRuns").getInvokeRunsOutput = null as any;
+utilities.lazyLoad(exports, ["getInvokeRuns","getInvokeRunsOutput"], () => require("./getInvokeRuns"));
+
+export { GetPrivateEndpointArgs, GetPrivateEndpointResult, GetPrivateEndpointOutputArgs } from "./getPrivateEndpoint";
+export const getPrivateEndpoint: typeof import("./getPrivateEndpoint").getPrivateEndpoint = null as any;
+export const getPrivateEndpointOutput: typeof import("./getPrivateEndpoint").getPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpoint","getPrivateEndpointOutput"], () => require("./getPrivateEndpoint"));
+
+export { GetPrivateEndpointsArgs, GetPrivateEndpointsResult, GetPrivateEndpointsOutputArgs } from "./getPrivateEndpoints";
+export const getPrivateEndpoints: typeof import("./getPrivateEndpoints").getPrivateEndpoints = null as any;
+export const getPrivateEndpointsOutput: typeof import("./getPrivateEndpoints").getPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpoints","getPrivateEndpointsOutput"], () => require("./getPrivateEndpoints"));
+
+export { GetRunLogArgs, GetRunLogResult, GetRunLogOutputArgs } from "./getRunLog";
+export const getRunLog: typeof import("./getRunLog").getRunLog = null as any;
+export const getRunLogOutput: typeof import("./getRunLog").getRunLogOutput = null as any;
+utilities.lazyLoad(exports, ["getRunLog","getRunLogOutput"], () => require("./getRunLog"));
+
+export { GetRunLogsArgs, GetRunLogsResult, GetRunLogsOutputArgs } from "./getRunLogs";
+export const getRunLogs: typeof import("./getRunLogs").getRunLogs = null as any;
+export const getRunLogsOutput: typeof import("./getRunLogs").getRunLogsOutput = null as any;
+utilities.lazyLoad(exports, ["getRunLogs","getRunLogsOutput"], () => require("./getRunLogs"));
+
+export { GetRunStatementArgs, GetRunStatementResult, GetRunStatementOutputArgs } from "./getRunStatement";
+export const getRunStatement: typeof import("./getRunStatement").getRunStatement = null as any;
+export const getRunStatementOutput: typeof import("./getRunStatement").getRunStatementOutput = null as any;
+utilities.lazyLoad(exports, ["getRunStatement","getRunStatementOutput"], () => require("./getRunStatement"));
+
+export { GetRunStatementsArgs, GetRunStatementsResult, GetRunStatementsOutputArgs } from "./getRunStatements";
+export const getRunStatements: typeof import("./getRunStatements").getRunStatements = null as any;
+export const getRunStatementsOutput: typeof import("./getRunStatements").getRunStatementsOutput = null as any;
+utilities.lazyLoad(exports, ["getRunStatements","getRunStatementsOutput"], () => require("./getRunStatements"));
+
+export { InvokeRunArgs, InvokeRunState } from "./invokeRun";
+export type InvokeRun = import("./invokeRun").InvokeRun;
+export const InvokeRun: typeof import("./invokeRun").InvokeRun = null as any;
+utilities.lazyLoad(exports, ["InvokeRun"], () => require("./invokeRun"));
+
+export { PrivateEndpointArgs, PrivateEndpointState } from "./privateEndpoint";
+export type PrivateEndpoint = import("./privateEndpoint").PrivateEndpoint;
+export const PrivateEndpoint: typeof import("./privateEndpoint").PrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["PrivateEndpoint"], () => require("./privateEndpoint"));
+
+export { RunStatementArgs, RunStatementState } from "./runStatement";
+export type RunStatement = import("./runStatement").RunStatement;
+export const RunStatement: typeof import("./runStatement").RunStatement = null as any;
+utilities.lazyLoad(exports, ["RunStatement"], () => require("./runStatement"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -32,6 +86,8 @@ const _module = {
                 return new InvokeRun(name, <any>undefined, { urn })
             case "oci:DataFlow/privateEndpoint:PrivateEndpoint":
                 return new PrivateEndpoint(name, <any>undefined, { urn })
+            case "oci:DataFlow/runStatement:RunStatement":
+                return new RunStatement(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -40,3 +96,4 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "DataFlow/application", _module)
 pulumi.runtime.registerResourceModule("oci", "DataFlow/invokeRun", _module)
 pulumi.runtime.registerResourceModule("oci", "DataFlow/privateEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "DataFlow/runStatement", _module)

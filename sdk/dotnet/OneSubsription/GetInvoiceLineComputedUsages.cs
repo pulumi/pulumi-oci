@@ -41,7 +41,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInvoiceLineComputedUsagesResult> InvokeAsync(GetInvoiceLineComputedUsagesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInvoiceLineComputedUsagesResult>("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args ?? new GetInvoiceLineComputedUsagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInvoiceLineComputedUsagesResult>("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args ?? new GetInvoiceLineComputedUsagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInvoiceLineComputedUsagesResult> Invoke(GetInvoiceLineComputedUsagesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInvoiceLineComputedUsagesResult>("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args ?? new GetInvoiceLineComputedUsagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvoiceLineComputedUsagesResult>("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args ?? new GetInvoiceLineComputedUsagesInvokeArgs(), options.WithDefaults());
     }
 
 

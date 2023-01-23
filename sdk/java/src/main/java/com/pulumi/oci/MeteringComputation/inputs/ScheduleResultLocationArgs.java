@@ -14,14 +14,14 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
     public static final ScheduleResultLocationArgs Empty = new ScheduleResultLocationArgs();
 
     /**
-     * The bucket name where usage/cost CSVs will be uploaded
+     * (Updatable) The bucket name where usage or cost CSVs will be uploaded.
      * 
      */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
     /**
-     * @return The bucket name where usage/cost CSVs will be uploaded
+     * @return (Updatable) The bucket name where usage or cost CSVs will be uploaded.
      * 
      */
     public Output<String> bucket() {
@@ -29,14 +29,14 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Defines the type of location where the usage/cost CSVs will be stored
+     * (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
      * 
      */
     @Import(name="locationType", required=true)
     private Output<String> locationType;
 
     /**
-     * @return Defines the type of location where the usage/cost CSVs will be stored
+     * @return (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
      * 
      */
     public Output<String> locationType() {
@@ -44,14 +44,14 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The namespace needed to determine object storage bucket.
+     * (Updatable) The namespace needed to determine the object storage bucket.
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The namespace needed to determine object storage bucket.
+     * @return (Updatable) The namespace needed to determine the object storage bucket.
      * 
      */
     public Output<String> namespace() {
@@ -59,14 +59,14 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The destination Object Store Region specified by customer
+     * (Updatable) The destination Object Store Region specified by the customer.
      * 
      */
     @Import(name="region", required=true)
     private Output<String> region;
 
     /**
-     * @return The destination Object Store Region specified by customer
+     * @return (Updatable) The destination Object Store Region specified by the customer.
      * 
      */
     public Output<String> region() {
@@ -101,7 +101,7 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param bucket The bucket name where usage/cost CSVs will be uploaded
+         * @param bucket (Updatable) The bucket name where usage or cost CSVs will be uploaded.
          * 
          * @return builder
          * 
@@ -112,7 +112,7 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param bucket The bucket name where usage/cost CSVs will be uploaded
+         * @param bucket (Updatable) The bucket name where usage or cost CSVs will be uploaded.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param locationType Defines the type of location where the usage/cost CSVs will be stored
+         * @param locationType (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param locationType Defines the type of location where the usage/cost CSVs will be stored
+         * @param locationType (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param namespace The namespace needed to determine object storage bucket.
+         * @param namespace (Updatable) The namespace needed to determine the object storage bucket.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param namespace The namespace needed to determine object storage bucket.
+         * @param namespace (Updatable) The namespace needed to determine the object storage bucket.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param region The destination Object Store Region specified by customer
+         * @param region (Updatable) The destination Object Store Region specified by the customer.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param region The destination Object Store Region specified by customer
+         * @param region (Updatable) The destination Object Store Region specified by the customer.
          * 
          * @return builder
          * 

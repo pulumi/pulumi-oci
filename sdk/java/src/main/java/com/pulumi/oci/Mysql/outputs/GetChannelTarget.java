@@ -4,7 +4,9 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.GetChannelTargetFilter;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -24,6 +26,11 @@ public final class GetChannelTarget {
      * 
      */
     private String dbSystemId;
+    /**
+     * @return Replication filter rules to be applied at the DB System Channel target.
+     * 
+     */
+    private List<GetChannelTargetFilter> filters;
     /**
      * @return The specific target identifier.
      * 
@@ -53,6 +60,13 @@ public final class GetChannelTarget {
         return this.dbSystemId;
     }
     /**
+     * @return Replication filter rules to be applied at the DB System Channel target.
+     * 
+     */
+    public List<GetChannelTargetFilter> filters() {
+        return this.filters;
+    }
+    /**
      * @return The specific target identifier.
      * 
      */
@@ -72,6 +86,7 @@ public final class GetChannelTarget {
         private String applierUsername;
         private String channelName;
         private String dbSystemId;
+        private List<GetChannelTargetFilter> filters;
         private String targetType;
         public Builder() {}
         public Builder(GetChannelTarget defaults) {
@@ -79,6 +94,7 @@ public final class GetChannelTarget {
     	      this.applierUsername = defaults.applierUsername;
     	      this.channelName = defaults.channelName;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.filters = defaults.filters;
     	      this.targetType = defaults.targetType;
         }
 
@@ -98,6 +114,14 @@ public final class GetChannelTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder filters(List<GetChannelTargetFilter> filters) {
+            this.filters = Objects.requireNonNull(filters);
+            return this;
+        }
+        public Builder filters(GetChannelTargetFilter... filters) {
+            return filters(List.of(filters));
+        }
+        @CustomType.Setter
         public Builder targetType(String targetType) {
             this.targetType = Objects.requireNonNull(targetType);
             return this;
@@ -107,6 +131,7 @@ public final class GetChannelTarget {
             o.applierUsername = applierUsername;
             o.channelName = channelName;
             o.dbSystemId = dbSystemId;
+            o.filters = filters;
             o.targetType = targetType;
             return o;
         }

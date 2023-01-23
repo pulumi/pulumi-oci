@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeployPipelinesResult> InvokeAsync(GetDeployPipelinesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeployPipelinesResult>("oci:DevOps/getDeployPipelines:getDeployPipelines", args ?? new GetDeployPipelinesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeployPipelinesResult>("oci:DevOps/getDeployPipelines:getDeployPipelines", args ?? new GetDeployPipelinesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Deploy Pipelines in Oracle Cloud Infrastructure Devops service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeployPipelinesResult> Invoke(GetDeployPipelinesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeployPipelinesResult>("oci:DevOps/getDeployPipelines:getDeployPipelines", args ?? new GetDeployPipelinesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployPipelinesResult>("oci:DevOps/getDeployPipelines:getDeployPipelines", args ?? new GetDeployPipelinesInvokeArgs(), options.WithDefaults());
     }
 
 

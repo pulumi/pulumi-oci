@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVaultUsageResult> InvokeAsync(GetVaultUsageArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVaultUsageResult>("oci:Kms/getVaultUsage:getVaultUsage", args ?? new GetVaultUsageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVaultUsageResult>("oci:Kms/getVaultUsage:getVaultUsage", args ?? new GetVaultUsageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVaultUsageResult> Invoke(GetVaultUsageInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVaultUsageResult>("oci:Kms/getVaultUsage:getVaultUsage", args ?? new GetVaultUsageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVaultUsageResult>("oci:Kms/getVaultUsage:getVaultUsage", args ?? new GetVaultUsageInvokeArgs(), options.WithDefaults());
     }
 
 

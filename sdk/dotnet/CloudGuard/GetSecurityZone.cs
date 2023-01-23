@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecurityZoneResult> InvokeAsync(GetSecurityZoneArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecurityZoneResult>("oci:CloudGuard/getSecurityZone:getSecurityZone", args ?? new GetSecurityZoneArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityZoneResult>("oci:CloudGuard/getSecurityZone:getSecurityZone", args ?? new GetSecurityZoneArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecurityZoneResult> Invoke(GetSecurityZoneInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecurityZoneResult>("oci:CloudGuard/getSecurityZone:getSecurityZone", args ?? new GetSecurityZoneInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityZoneResult>("oci:CloudGuard/getSecurityZone:getSecurityZone", args ?? new GetSecurityZoneInvokeArgs(), options.WithDefaults());
     }
 
 

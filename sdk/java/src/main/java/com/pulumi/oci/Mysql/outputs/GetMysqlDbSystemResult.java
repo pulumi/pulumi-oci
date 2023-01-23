@@ -152,7 +152,7 @@ public final class GetMysqlDbSystemResult {
      */
     private String lifecycleDetails;
     /**
-     * @return The Maintenance Policy for the DB System.
+     * @return The Maintenance Policy for the DB System or Read Replica that this model is included in.
      * 
      */
     private List<GetMysqlDbSystemMaintenance> maintenances;
@@ -391,7 +391,7 @@ public final class GetMysqlDbSystemResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return The Maintenance Policy for the DB System.
+     * @return The Maintenance Policy for the DB System or Read Replica that this model is included in.
      * 
      */
     public List<GetMysqlDbSystemMaintenance> maintenances() {

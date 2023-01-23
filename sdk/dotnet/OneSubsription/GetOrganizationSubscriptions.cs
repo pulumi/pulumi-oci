@@ -39,7 +39,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOrganizationSubscriptionsResult> InvokeAsync(GetOrganizationSubscriptionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOrganizationSubscriptionsResult>("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOrganizationSubscriptionsResult>("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOrganizationSubscriptionsResult> Invoke(GetOrganizationSubscriptionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOrganizationSubscriptionsResult>("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOrganizationSubscriptionsResult>("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

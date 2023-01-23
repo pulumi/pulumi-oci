@@ -41,7 +41,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBdsInstancesResult> InvokeAsync(GetBdsInstancesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstancesResult>("oci:BigDataService/getBdsInstances:getBdsInstances", args ?? new GetBdsInstancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstancesResult>("oci:BigDataService/getBdsInstances:getBdsInstances", args ?? new GetBdsInstancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBdsInstancesResult> Invoke(GetBdsInstancesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBdsInstancesResult>("oci:BigDataService/getBdsInstances:getBdsInstances", args ?? new GetBdsInstancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstancesResult>("oci:BigDataService/getBdsInstances:getBdsInstances", args ?? new GetBdsInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -108,7 +108,7 @@ type LookupMysqlDbSystemResult struct {
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances []GetMysqlDbSystemMaintenance `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
 	MysqlVersion string `pulumi:"mysqlVersion"`
@@ -304,7 +304,7 @@ func (o LookupMysqlDbSystemResultOutput) LifecycleDetails() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The Maintenance Policy for the DB System.
+// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 func (o LookupMysqlDbSystemResultOutput) Maintenances() GetMysqlDbSystemMaintenanceArrayOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemMaintenance { return v.Maintenances }).(GetMysqlDbSystemMaintenanceArrayOutput)
 }

@@ -112,7 +112,6 @@ class GetHostInsightResult:
     def compartment_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        <<<<<<< ours
         """
         return pulumi.get(self, "compartment_id")
 
@@ -269,7 +268,7 @@ class GetHostInsightResult:
     @pulumi.getter(name="platformType")
     def platform_type(self) -> str:
         """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         return pulumi.get(self, "platform_type")
 

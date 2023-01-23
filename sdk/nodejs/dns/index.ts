@@ -5,41 +5,126 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getRecords";
-export * from "./getResolver";
-export * from "./getResolverEndpoint";
-export * from "./getResolverEndpoints";
-export * from "./getResolvers";
-export * from "./getRrset";
-export * from "./getSteeringPolicies";
-export * from "./getSteeringPolicy";
-export * from "./getSteeringPolicyAttachment";
-export * from "./getSteeringPolicyAttachments";
-export * from "./getTsigKey";
-export * from "./getTsigKeys";
-export * from "./getView";
-export * from "./getViews";
-export * from "./getZones";
-export * from "./record";
-export * from "./resolver";
-export * from "./resolverEndpoint";
-export * from "./rrset";
-export * from "./steeringPolicy";
-export * from "./steeringPolicyAttachment";
-export * from "./tsigKey";
-export * from "./view";
-export * from "./zone";
+export { GetRecordsArgs, GetRecordsResult, GetRecordsOutputArgs } from "./getRecords";
+export const getRecords: typeof import("./getRecords").getRecords = null as any;
+export const getRecordsOutput: typeof import("./getRecords").getRecordsOutput = null as any;
+utilities.lazyLoad(exports, ["getRecords","getRecordsOutput"], () => require("./getRecords"));
 
-// Import resources to register:
-import { Record } from "./record";
-import { Resolver } from "./resolver";
-import { ResolverEndpoint } from "./resolverEndpoint";
-import { Rrset } from "./rrset";
-import { SteeringPolicy } from "./steeringPolicy";
-import { SteeringPolicyAttachment } from "./steeringPolicyAttachment";
-import { TsigKey } from "./tsigKey";
-import { View } from "./view";
-import { Zone } from "./zone";
+export { GetResolverArgs, GetResolverResult, GetResolverOutputArgs } from "./getResolver";
+export const getResolver: typeof import("./getResolver").getResolver = null as any;
+export const getResolverOutput: typeof import("./getResolver").getResolverOutput = null as any;
+utilities.lazyLoad(exports, ["getResolver","getResolverOutput"], () => require("./getResolver"));
+
+export { GetResolverEndpointArgs, GetResolverEndpointResult, GetResolverEndpointOutputArgs } from "./getResolverEndpoint";
+export const getResolverEndpoint: typeof import("./getResolverEndpoint").getResolverEndpoint = null as any;
+export const getResolverEndpointOutput: typeof import("./getResolverEndpoint").getResolverEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getResolverEndpoint","getResolverEndpointOutput"], () => require("./getResolverEndpoint"));
+
+export { GetResolverEndpointsArgs, GetResolverEndpointsResult, GetResolverEndpointsOutputArgs } from "./getResolverEndpoints";
+export const getResolverEndpoints: typeof import("./getResolverEndpoints").getResolverEndpoints = null as any;
+export const getResolverEndpointsOutput: typeof import("./getResolverEndpoints").getResolverEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getResolverEndpoints","getResolverEndpointsOutput"], () => require("./getResolverEndpoints"));
+
+export { GetResolversArgs, GetResolversResult, GetResolversOutputArgs } from "./getResolvers";
+export const getResolvers: typeof import("./getResolvers").getResolvers = null as any;
+export const getResolversOutput: typeof import("./getResolvers").getResolversOutput = null as any;
+utilities.lazyLoad(exports, ["getResolvers","getResolversOutput"], () => require("./getResolvers"));
+
+export { GetRrsetArgs, GetRrsetResult, GetRrsetOutputArgs } from "./getRrset";
+export const getRrset: typeof import("./getRrset").getRrset = null as any;
+export const getRrsetOutput: typeof import("./getRrset").getRrsetOutput = null as any;
+utilities.lazyLoad(exports, ["getRrset","getRrsetOutput"], () => require("./getRrset"));
+
+export { GetSteeringPoliciesArgs, GetSteeringPoliciesResult, GetSteeringPoliciesOutputArgs } from "./getSteeringPolicies";
+export const getSteeringPolicies: typeof import("./getSteeringPolicies").getSteeringPolicies = null as any;
+export const getSteeringPoliciesOutput: typeof import("./getSteeringPolicies").getSteeringPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getSteeringPolicies","getSteeringPoliciesOutput"], () => require("./getSteeringPolicies"));
+
+export { GetSteeringPolicyArgs, GetSteeringPolicyResult, GetSteeringPolicyOutputArgs } from "./getSteeringPolicy";
+export const getSteeringPolicy: typeof import("./getSteeringPolicy").getSteeringPolicy = null as any;
+export const getSteeringPolicyOutput: typeof import("./getSteeringPolicy").getSteeringPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getSteeringPolicy","getSteeringPolicyOutput"], () => require("./getSteeringPolicy"));
+
+export { GetSteeringPolicyAttachmentArgs, GetSteeringPolicyAttachmentResult, GetSteeringPolicyAttachmentOutputArgs } from "./getSteeringPolicyAttachment";
+export const getSteeringPolicyAttachment: typeof import("./getSteeringPolicyAttachment").getSteeringPolicyAttachment = null as any;
+export const getSteeringPolicyAttachmentOutput: typeof import("./getSteeringPolicyAttachment").getSteeringPolicyAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getSteeringPolicyAttachment","getSteeringPolicyAttachmentOutput"], () => require("./getSteeringPolicyAttachment"));
+
+export { GetSteeringPolicyAttachmentsArgs, GetSteeringPolicyAttachmentsResult, GetSteeringPolicyAttachmentsOutputArgs } from "./getSteeringPolicyAttachments";
+export const getSteeringPolicyAttachments: typeof import("./getSteeringPolicyAttachments").getSteeringPolicyAttachments = null as any;
+export const getSteeringPolicyAttachmentsOutput: typeof import("./getSteeringPolicyAttachments").getSteeringPolicyAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getSteeringPolicyAttachments","getSteeringPolicyAttachmentsOutput"], () => require("./getSteeringPolicyAttachments"));
+
+export { GetTsigKeyArgs, GetTsigKeyResult, GetTsigKeyOutputArgs } from "./getTsigKey";
+export const getTsigKey: typeof import("./getTsigKey").getTsigKey = null as any;
+export const getTsigKeyOutput: typeof import("./getTsigKey").getTsigKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getTsigKey","getTsigKeyOutput"], () => require("./getTsigKey"));
+
+export { GetTsigKeysArgs, GetTsigKeysResult, GetTsigKeysOutputArgs } from "./getTsigKeys";
+export const getTsigKeys: typeof import("./getTsigKeys").getTsigKeys = null as any;
+export const getTsigKeysOutput: typeof import("./getTsigKeys").getTsigKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getTsigKeys","getTsigKeysOutput"], () => require("./getTsigKeys"));
+
+export { GetViewArgs, GetViewResult, GetViewOutputArgs } from "./getView";
+export const getView: typeof import("./getView").getView = null as any;
+export const getViewOutput: typeof import("./getView").getViewOutput = null as any;
+utilities.lazyLoad(exports, ["getView","getViewOutput"], () => require("./getView"));
+
+export { GetViewsArgs, GetViewsResult, GetViewsOutputArgs } from "./getViews";
+export const getViews: typeof import("./getViews").getViews = null as any;
+export const getViewsOutput: typeof import("./getViews").getViewsOutput = null as any;
+utilities.lazyLoad(exports, ["getViews","getViewsOutput"], () => require("./getViews"));
+
+export { GetZonesArgs, GetZonesResult, GetZonesOutputArgs } from "./getZones";
+export const getZones: typeof import("./getZones").getZones = null as any;
+export const getZonesOutput: typeof import("./getZones").getZonesOutput = null as any;
+utilities.lazyLoad(exports, ["getZones","getZonesOutput"], () => require("./getZones"));
+
+export { RecordArgs, RecordState } from "./record";
+export type Record = import("./record").Record;
+export const Record: typeof import("./record").Record = null as any;
+utilities.lazyLoad(exports, ["Record"], () => require("./record"));
+
+export { ResolverArgs, ResolverState } from "./resolver";
+export type Resolver = import("./resolver").Resolver;
+export const Resolver: typeof import("./resolver").Resolver = null as any;
+utilities.lazyLoad(exports, ["Resolver"], () => require("./resolver"));
+
+export { ResolverEndpointArgs, ResolverEndpointState } from "./resolverEndpoint";
+export type ResolverEndpoint = import("./resolverEndpoint").ResolverEndpoint;
+export const ResolverEndpoint: typeof import("./resolverEndpoint").ResolverEndpoint = null as any;
+utilities.lazyLoad(exports, ["ResolverEndpoint"], () => require("./resolverEndpoint"));
+
+export { RrsetArgs, RrsetState } from "./rrset";
+export type Rrset = import("./rrset").Rrset;
+export const Rrset: typeof import("./rrset").Rrset = null as any;
+utilities.lazyLoad(exports, ["Rrset"], () => require("./rrset"));
+
+export { SteeringPolicyArgs, SteeringPolicyState } from "./steeringPolicy";
+export type SteeringPolicy = import("./steeringPolicy").SteeringPolicy;
+export const SteeringPolicy: typeof import("./steeringPolicy").SteeringPolicy = null as any;
+utilities.lazyLoad(exports, ["SteeringPolicy"], () => require("./steeringPolicy"));
+
+export { SteeringPolicyAttachmentArgs, SteeringPolicyAttachmentState } from "./steeringPolicyAttachment";
+export type SteeringPolicyAttachment = import("./steeringPolicyAttachment").SteeringPolicyAttachment;
+export const SteeringPolicyAttachment: typeof import("./steeringPolicyAttachment").SteeringPolicyAttachment = null as any;
+utilities.lazyLoad(exports, ["SteeringPolicyAttachment"], () => require("./steeringPolicyAttachment"));
+
+export { TsigKeyArgs, TsigKeyState } from "./tsigKey";
+export type TsigKey = import("./tsigKey").TsigKey;
+export const TsigKey: typeof import("./tsigKey").TsigKey = null as any;
+utilities.lazyLoad(exports, ["TsigKey"], () => require("./tsigKey"));
+
+export { ViewArgs, ViewState } from "./view";
+export type View = import("./view").View;
+export const View: typeof import("./view").View = null as any;
+utilities.lazyLoad(exports, ["View"], () => require("./view"));
+
+export { ZoneArgs, ZoneState } from "./zone";
+export type Zone = import("./zone").Zone;
+export const Zone: typeof import("./zone").Zone = null as any;
+utilities.lazyLoad(exports, ["Zone"], () => require("./zone"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -26,7 +26,6 @@ public final class GetRuleSetsRuleSetItem {
     private List<String> allowedMethods;
     /**
      * @return Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If &#34;true&#34;, invalid characters are allowed in the HTTP header. If &#34;false&#34;, invalid characters are not allowed in the HTTP header
-     * * `conditions` -
      * 
      */
     private Boolean areInvalidCharactersAllowed;
@@ -100,7 +99,6 @@ public final class GetRuleSetsRuleSetItem {
     }
     /**
      * @return Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If &#34;true&#34;, invalid characters are allowed in the HTTP header. If &#34;false&#34;, invalid characters are not allowed in the HTTP header
-     * * `conditions` -
      * 
      */
     public Boolean areInvalidCharactersAllowed() {

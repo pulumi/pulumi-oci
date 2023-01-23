@@ -66,14 +66,14 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+     * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
      * 
      */
     @Import(name="granularity", required=true)
     private Output<String> granularity;
 
     /**
-     * @return The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+     * @return The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
      * 
      */
     public Output<String> granularity() {
@@ -111,14 +111,14 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     @Import(name="isAggregateByTime")
     private @Nullable Output<Boolean> isAggregateByTime;
 
     /**
-     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     public Optional<Output<Boolean>> isAggregateByTime() {
@@ -126,14 +126,14 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
      * 
      */
     @Import(name="queryType")
     private @Nullable Output<String> queryType;
 
     /**
-     * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+     * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
      * 
      */
     public Optional<Output<String>> queryType() {
@@ -235,7 +235,7 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param granularity The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+         * @param granularity The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param granularity The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+         * @param granularity The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param queryType The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+         * @param queryType The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param queryType The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+         * @param queryType The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
          * 
          * @return builder
          * 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIndexes(args: GetIndexesArgs, opts?: pulumi.InvokeOptions): Promise<GetIndexesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Nosql/getIndexes:getIndexes", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -89,9 +87,27 @@ export interface GetIndexesResult {
     readonly state?: string;
     readonly tableNameOrId: string;
 }
-
+/**
+ * This data source provides the list of Indexes in Oracle Cloud Infrastructure NoSQL Database service.
+ *
+ * Get a list of indexes on a table.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIndexes = oci.Nosql.getIndexes({
+ *     tableNameOrId: oci_nosql_table_name_or.test_table_name_or.id,
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.index_name,
+ *     state: _var.index_state,
+ * });
+ * ```
+ */
 export function getIndexesOutput(args: GetIndexesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIndexesResult> {
-    return pulumi.output(args).apply(a => getIndexes(a, opts))
+    return pulumi.output(args).apply((a: any) => getIndexes(a, opts))
 }
 
 /**

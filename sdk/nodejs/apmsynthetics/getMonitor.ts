@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitor(args: GetMonitorArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitorResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getMonitor:getMonitor", {
         "apmDomainId": args.apmDomainId,
         "monitorId": args.monitorId,
@@ -53,6 +51,10 @@ export interface GetMonitorArgs {
  */
 export interface GetMonitorResult {
     readonly apmDomainId: string;
+    /**
+     * Monitor availability configuration details.
+     */
+    readonly availabilityConfigurations: outputs.ApmSynthetics.GetMonitorAvailabilityConfiguration[];
     /**
      * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      */
@@ -85,6 +87,10 @@ export interface GetMonitorResult {
      * If runOnce is enabled, then the monitor will run once.
      */
     readonly isRunOnce: boolean;
+    /**
+     * Details used to schedule maintenance window.
+     */
+    readonly maintenanceWindowSchedules: outputs.ApmSynthetics.GetMonitorMaintenanceWindowSchedule[];
     readonly monitorId: string;
     /**
      * Type of the monitor.
@@ -127,7 +133,7 @@ export interface GetMonitorResult {
      */
     readonly timeUpdated: string;
     /**
-     * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     readonly timeoutInSeconds: number;
     /**
@@ -139,9 +145,25 @@ export interface GetMonitorResult {
      */
     readonly vantagePoints: string[];
 }
-
+/**
+ * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ *
+ * Gets the configuration of the monitor identified by the OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMonitor = oci.ApmSynthetics.getMonitor({
+ *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
+ *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ * });
+ * ```
+ */
 export function getMonitorOutput(args: GetMonitorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitorResult> {
-    return pulumi.output(args).apply(a => getMonitor(a, opts))
+    return pulumi.output(args).apply((a: any) => getMonitor(a, opts))
 }
 
 /**

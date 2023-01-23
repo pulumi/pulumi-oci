@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAiPrivateEndpoints(args: GetAiPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetAiPrivateEndpointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -88,9 +86,27 @@ export interface GetAiPrivateEndpointsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Ai Private Endpoints in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+ *
+ * Returns a list of all the AI private endpoints in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAiPrivateEndpoints = oci.AiAnomalyDetection.getAiPrivateEndpoints({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.ai_private_endpoint_display_name,
+ *     id: _var.ai_private_endpoint_id,
+ *     state: _var.ai_private_endpoint_state,
+ * });
+ * ```
+ */
 export function getAiPrivateEndpointsOutput(args: GetAiPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAiPrivateEndpointsResult> {
-    return pulumi.output(args).apply(a => getAiPrivateEndpoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getAiPrivateEndpoints(a, opts))
 }
 
 /**

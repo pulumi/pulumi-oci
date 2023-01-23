@@ -5,13 +5,26 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getVbInstance";
-export * from "./getVbInstanceApplications";
-export * from "./getVbInstances";
-export * from "./vbInstance";
+export { GetVbInstanceArgs, GetVbInstanceResult, GetVbInstanceOutputArgs } from "./getVbInstance";
+export const getVbInstance: typeof import("./getVbInstance").getVbInstance = null as any;
+export const getVbInstanceOutput: typeof import("./getVbInstance").getVbInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getVbInstance","getVbInstanceOutput"], () => require("./getVbInstance"));
 
-// Import resources to register:
-import { VbInstance } from "./vbInstance";
+export { GetVbInstanceApplicationsArgs, GetVbInstanceApplicationsResult, GetVbInstanceApplicationsOutputArgs } from "./getVbInstanceApplications";
+export const getVbInstanceApplications: typeof import("./getVbInstanceApplications").getVbInstanceApplications = null as any;
+export const getVbInstanceApplicationsOutput: typeof import("./getVbInstanceApplications").getVbInstanceApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getVbInstanceApplications","getVbInstanceApplicationsOutput"], () => require("./getVbInstanceApplications"));
+
+export { GetVbInstancesArgs, GetVbInstancesResult, GetVbInstancesOutputArgs } from "./getVbInstances";
+export const getVbInstances: typeof import("./getVbInstances").getVbInstances = null as any;
+export const getVbInstancesOutput: typeof import("./getVbInstances").getVbInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getVbInstances","getVbInstancesOutput"], () => require("./getVbInstances"));
+
+export { VbInstanceArgs, VbInstanceState } from "./vbInstance";
+export type VbInstance = import("./vbInstance").VbInstance;
+export const VbInstance: typeof import("./vbInstance").VbInstance = null as any;
+utilities.lazyLoad(exports, ["VbInstance"], () => require("./vbInstance"));
+
 
 const _module = {
     version: utilities.getVersion(),

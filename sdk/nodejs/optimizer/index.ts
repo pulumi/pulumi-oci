@@ -5,31 +5,101 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./enrollmentStatus";
-export * from "./getCategories";
-export * from "./getCategory";
-export * from "./getEnrollmentStatus";
-export * from "./getEnrollmentStatuses";
-export * from "./getHistories";
-export * from "./getProfile";
-export * from "./getProfileLevel";
-export * from "./getProfileLevels";
-export * from "./getProfiles";
-export * from "./getRecommendation";
-export * from "./getRecommendationStrategies";
-export * from "./getRecommendationStrategy";
-export * from "./getRecommendations";
-export * from "./getResourceAction";
-export * from "./getResourceActions";
-export * from "./profile";
-export * from "./recommendation";
-export * from "./resourceAction";
+export { EnrollmentStatusArgs, EnrollmentStatusState } from "./enrollmentStatus";
+export type EnrollmentStatus = import("./enrollmentStatus").EnrollmentStatus;
+export const EnrollmentStatus: typeof import("./enrollmentStatus").EnrollmentStatus = null as any;
+utilities.lazyLoad(exports, ["EnrollmentStatus"], () => require("./enrollmentStatus"));
 
-// Import resources to register:
-import { EnrollmentStatus } from "./enrollmentStatus";
-import { Profile } from "./profile";
-import { Recommendation } from "./recommendation";
-import { ResourceAction } from "./resourceAction";
+export { GetCategoriesArgs, GetCategoriesResult, GetCategoriesOutputArgs } from "./getCategories";
+export const getCategories: typeof import("./getCategories").getCategories = null as any;
+export const getCategoriesOutput: typeof import("./getCategories").getCategoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getCategories","getCategoriesOutput"], () => require("./getCategories"));
+
+export { GetCategoryArgs, GetCategoryResult, GetCategoryOutputArgs } from "./getCategory";
+export const getCategory: typeof import("./getCategory").getCategory = null as any;
+export const getCategoryOutput: typeof import("./getCategory").getCategoryOutput = null as any;
+utilities.lazyLoad(exports, ["getCategory","getCategoryOutput"], () => require("./getCategory"));
+
+export { GetEnrollmentStatusArgs, GetEnrollmentStatusResult, GetEnrollmentStatusOutputArgs } from "./getEnrollmentStatus";
+export const getEnrollmentStatus: typeof import("./getEnrollmentStatus").getEnrollmentStatus = null as any;
+export const getEnrollmentStatusOutput: typeof import("./getEnrollmentStatus").getEnrollmentStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getEnrollmentStatus","getEnrollmentStatusOutput"], () => require("./getEnrollmentStatus"));
+
+export { GetEnrollmentStatusesArgs, GetEnrollmentStatusesResult, GetEnrollmentStatusesOutputArgs } from "./getEnrollmentStatuses";
+export const getEnrollmentStatuses: typeof import("./getEnrollmentStatuses").getEnrollmentStatuses = null as any;
+export const getEnrollmentStatusesOutput: typeof import("./getEnrollmentStatuses").getEnrollmentStatusesOutput = null as any;
+utilities.lazyLoad(exports, ["getEnrollmentStatuses","getEnrollmentStatusesOutput"], () => require("./getEnrollmentStatuses"));
+
+export { GetHistoriesArgs, GetHistoriesResult, GetHistoriesOutputArgs } from "./getHistories";
+export const getHistories: typeof import("./getHistories").getHistories = null as any;
+export const getHistoriesOutput: typeof import("./getHistories").getHistoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getHistories","getHistoriesOutput"], () => require("./getHistories"));
+
+export { GetProfileArgs, GetProfileResult, GetProfileOutputArgs } from "./getProfile";
+export const getProfile: typeof import("./getProfile").getProfile = null as any;
+export const getProfileOutput: typeof import("./getProfile").getProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getProfile","getProfileOutput"], () => require("./getProfile"));
+
+export { GetProfileLevelArgs, GetProfileLevelResult, GetProfileLevelOutputArgs } from "./getProfileLevel";
+export const getProfileLevel: typeof import("./getProfileLevel").getProfileLevel = null as any;
+export const getProfileLevelOutput: typeof import("./getProfileLevel").getProfileLevelOutput = null as any;
+utilities.lazyLoad(exports, ["getProfileLevel","getProfileLevelOutput"], () => require("./getProfileLevel"));
+
+export { GetProfileLevelsArgs, GetProfileLevelsResult, GetProfileLevelsOutputArgs } from "./getProfileLevels";
+export const getProfileLevels: typeof import("./getProfileLevels").getProfileLevels = null as any;
+export const getProfileLevelsOutput: typeof import("./getProfileLevels").getProfileLevelsOutput = null as any;
+utilities.lazyLoad(exports, ["getProfileLevels","getProfileLevelsOutput"], () => require("./getProfileLevels"));
+
+export { GetProfilesArgs, GetProfilesResult, GetProfilesOutputArgs } from "./getProfiles";
+export const getProfiles: typeof import("./getProfiles").getProfiles = null as any;
+export const getProfilesOutput: typeof import("./getProfiles").getProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getProfiles","getProfilesOutput"], () => require("./getProfiles"));
+
+export { GetRecommendationArgs, GetRecommendationResult, GetRecommendationOutputArgs } from "./getRecommendation";
+export const getRecommendation: typeof import("./getRecommendation").getRecommendation = null as any;
+export const getRecommendationOutput: typeof import("./getRecommendation").getRecommendationOutput = null as any;
+utilities.lazyLoad(exports, ["getRecommendation","getRecommendationOutput"], () => require("./getRecommendation"));
+
+export { GetRecommendationStrategiesArgs, GetRecommendationStrategiesResult, GetRecommendationStrategiesOutputArgs } from "./getRecommendationStrategies";
+export const getRecommendationStrategies: typeof import("./getRecommendationStrategies").getRecommendationStrategies = null as any;
+export const getRecommendationStrategiesOutput: typeof import("./getRecommendationStrategies").getRecommendationStrategiesOutput = null as any;
+utilities.lazyLoad(exports, ["getRecommendationStrategies","getRecommendationStrategiesOutput"], () => require("./getRecommendationStrategies"));
+
+export { GetRecommendationStrategyArgs, GetRecommendationStrategyResult, GetRecommendationStrategyOutputArgs } from "./getRecommendationStrategy";
+export const getRecommendationStrategy: typeof import("./getRecommendationStrategy").getRecommendationStrategy = null as any;
+export const getRecommendationStrategyOutput: typeof import("./getRecommendationStrategy").getRecommendationStrategyOutput = null as any;
+utilities.lazyLoad(exports, ["getRecommendationStrategy","getRecommendationStrategyOutput"], () => require("./getRecommendationStrategy"));
+
+export { GetRecommendationsArgs, GetRecommendationsResult, GetRecommendationsOutputArgs } from "./getRecommendations";
+export const getRecommendations: typeof import("./getRecommendations").getRecommendations = null as any;
+export const getRecommendationsOutput: typeof import("./getRecommendations").getRecommendationsOutput = null as any;
+utilities.lazyLoad(exports, ["getRecommendations","getRecommendationsOutput"], () => require("./getRecommendations"));
+
+export { GetResourceActionArgs, GetResourceActionResult, GetResourceActionOutputArgs } from "./getResourceAction";
+export const getResourceAction: typeof import("./getResourceAction").getResourceAction = null as any;
+export const getResourceActionOutput: typeof import("./getResourceAction").getResourceActionOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceAction","getResourceActionOutput"], () => require("./getResourceAction"));
+
+export { GetResourceActionsArgs, GetResourceActionsResult, GetResourceActionsOutputArgs } from "./getResourceActions";
+export const getResourceActions: typeof import("./getResourceActions").getResourceActions = null as any;
+export const getResourceActionsOutput: typeof import("./getResourceActions").getResourceActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceActions","getResourceActionsOutput"], () => require("./getResourceActions"));
+
+export { ProfileArgs, ProfileState } from "./profile";
+export type Profile = import("./profile").Profile;
+export const Profile: typeof import("./profile").Profile = null as any;
+utilities.lazyLoad(exports, ["Profile"], () => require("./profile"));
+
+export { RecommendationArgs, RecommendationState } from "./recommendation";
+export type Recommendation = import("./recommendation").Recommendation;
+export const Recommendation: typeof import("./recommendation").Recommendation = null as any;
+utilities.lazyLoad(exports, ["Recommendation"], () => require("./recommendation"));
+
+export { ResourceActionArgs, ResourceActionState } from "./resourceAction";
+export type ResourceAction = import("./resourceAction").ResourceAction;
+export const ResourceAction: typeof import("./resourceAction").ResourceAction = null as any;
+utilities.lazyLoad(exports, ["ResourceAction"], () => require("./resourceAction"));
+
 
 const _module = {
     version: utilities.getVersion(),

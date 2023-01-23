@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Mysql
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the Configuration to be used for this DB System.
+        /// (Updatable) The OCID of the Configuration to be used for this DB System.
         /// </summary>
         [Output("configurationId")]
         public Output<string> ConfigurationId { get; private set; } = null!;
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Mysql
         public Output<ImmutableArray<Outputs.MysqlDbSystemCurrentPlacement>> CurrentPlacements { get; private set; } = null!;
 
         /// <summary>
-        /// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        /// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         /// </summary>
         [Output("dataStorageSizeInGb")]
         public Output<int> DataStorageSizeInGb { get; private set; } = null!;
@@ -253,13 +253,13 @@ namespace Pulumi.Oci.Mysql
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         /// </summary>
         [Output("maintenance")]
         public Output<Outputs.MysqlDbSystemMaintenance> Maintenance { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the MySQL Version in use for the DB System.
+        /// The specific MySQL version identifier.
         /// </summary>
         [Output("mysqlVersion")]
         public Output<string> MysqlVersion { get; private set; } = null!;
@@ -283,7 +283,7 @@ namespace Pulumi.Oci.Mysql
         public Output<int> PortX { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the shape. The shape determines the resources allocated
+        /// (Updatable) The name of the shape. The shape determines the resources allocated
         /// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         [Output("shapeName")]
@@ -348,6 +348,10 @@ namespace Pulumi.Oci.Mysql
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "adminPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -371,11 +375,21 @@ namespace Pulumi.Oci.Mysql
 
     public sealed class MysqlDbSystemArgs : global::Pulumi.ResourceArgs
     {
+        [Input("adminPassword")]
+        private Input<string>? _adminPassword;
+
         /// <summary>
         /// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         /// </summary>
-        [Input("adminPassword")]
-        public Input<string>? AdminPassword { get; set; }
+        public Input<string>? AdminPassword
+        {
+            get => _adminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _adminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The username for the administrative user.
@@ -402,7 +416,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the Configuration to be used for this DB System.
+        /// (Updatable) The OCID of the Configuration to be used for this DB System.
         /// </summary>
         [Input("configurationId")]
         public Input<string>? ConfigurationId { get; set; }
@@ -414,7 +428,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? CrashRecovery { get; set; }
 
         /// <summary>
-        /// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        /// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
@@ -492,13 +506,13 @@ namespace Pulumi.Oci.Mysql
         public Input<bool>? IsHighlyAvailable { get; set; }
 
         /// <summary>
-        /// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         /// </summary>
         [Input("maintenance")]
         public Input<Inputs.MysqlDbSystemMaintenanceArgs>? Maintenance { get; set; }
 
         /// <summary>
-        /// Name of the MySQL Version in use for the DB System.
+        /// The specific MySQL version identifier.
         /// </summary>
         [Input("mysqlVersion")]
         public Input<string>? MysqlVersion { get; set; }
@@ -516,7 +530,7 @@ namespace Pulumi.Oci.Mysql
         public Input<int>? PortX { get; set; }
 
         /// <summary>
-        /// The name of the shape. The shape determines the resources allocated
+        /// (Updatable) The name of the shape. The shape determines the resources allocated
         /// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         [Input("shapeName", required: true)]
@@ -554,11 +568,21 @@ namespace Pulumi.Oci.Mysql
 
     public sealed class MysqlDbSystemState : global::Pulumi.ResourceArgs
     {
+        [Input("adminPassword")]
+        private Input<string>? _adminPassword;
+
         /// <summary>
         /// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         /// </summary>
-        [Input("adminPassword")]
-        public Input<string>? AdminPassword { get; set; }
+        public Input<string>? AdminPassword
+        {
+            get => _adminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _adminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The username for the administrative user.
@@ -609,7 +633,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The OCID of the Configuration to be used for this DB System.
+        /// (Updatable) The OCID of the Configuration to be used for this DB System.
         /// </summary>
         [Input("configurationId")]
         public Input<string>? ConfigurationId { get; set; }
@@ -633,7 +657,7 @@ namespace Pulumi.Oci.Mysql
         }
 
         /// <summary>
-        /// Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        /// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
@@ -753,13 +777,13 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         /// </summary>
         [Input("maintenance")]
         public Input<Inputs.MysqlDbSystemMaintenanceGetArgs>? Maintenance { get; set; }
 
         /// <summary>
-        /// Name of the MySQL Version in use for the DB System.
+        /// The specific MySQL version identifier.
         /// </summary>
         [Input("mysqlVersion")]
         public Input<string>? MysqlVersion { get; set; }
@@ -789,7 +813,7 @@ namespace Pulumi.Oci.Mysql
         public Input<int>? PortX { get; set; }
 
         /// <summary>
-        /// The name of the shape. The shape determines the resources allocated
+        /// (Updatable) The name of the shape. The shape determines the resources allocated
         /// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         [Input("shapeName")]

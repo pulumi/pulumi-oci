@@ -66,14 +66,21 @@ type Snapshot struct {
 	FileSystemId pulumi.StringOutput `pulumi:"fileSystemId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneSource pulumi.BoolOutput `pulumi:"isCloneSource"`
-	// Additional information about the current 'lifecycleState'.
+	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ProvenanceId pulumi.StringOutput `pulumi:"provenanceId"`
+	// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+	// * If the snapshot is created in the original file system directory.
+	// * If the snapshot is cloned from a file system.
+	// * If the snapshot is replicated from a file system.
+	SnapshotTime pulumi.StringOutput `pulumi:"snapshotTime"`
+	// Specifies the generation type of the snapshot.
+	SnapshotType pulumi.StringOutput `pulumi:"snapshotType"`
 	// The current state of the snapshot.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -118,14 +125,21 @@ type snapshotState struct {
 	FileSystemId *string `pulumi:"fileSystemId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneSource *bool `pulumi:"isCloneSource"`
-	// Additional information about the current 'lifecycleState'.
+	// Additional information about the current `lifecycleState`.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
 	Name *string `pulumi:"name"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ProvenanceId *string `pulumi:"provenanceId"`
+	// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+	// * If the snapshot is created in the original file system directory.
+	// * If the snapshot is cloned from a file system.
+	// * If the snapshot is replicated from a file system.
+	SnapshotTime *string `pulumi:"snapshotTime"`
+	// Specifies the generation type of the snapshot.
+	SnapshotType *string `pulumi:"snapshotType"`
 	// The current state of the snapshot.
 	State *string `pulumi:"state"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -139,14 +153,21 @@ type SnapshotState struct {
 	FileSystemId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneSource pulumi.BoolPtrInput
-	// Additional information about the current 'lifecycleState'.
+	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringPtrInput
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
 	Name pulumi.StringPtrInput
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ProvenanceId pulumi.StringPtrInput
+	// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+	// * If the snapshot is created in the original file system directory.
+	// * If the snapshot is cloned from a file system.
+	// * If the snapshot is replicated from a file system.
+	SnapshotTime pulumi.StringPtrInput
+	// Specifies the generation type of the snapshot.
+	SnapshotType pulumi.StringPtrInput
 	// The current state of the snapshot.
 	State pulumi.StringPtrInput
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -282,12 +303,12 @@ func (o SnapshotOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o SnapshotOutput) IsCloneSource() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.BoolOutput { return v.IsCloneSource }).(pulumi.BoolOutput)
 }
 
-// Additional information about the current 'lifecycleState'.
+// Additional information about the current `lifecycleState`.
 func (o SnapshotOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -297,9 +318,22 @@ func (o SnapshotOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o SnapshotOutput) ProvenanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.ProvenanceId }).(pulumi.StringOutput)
+}
+
+// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+// * If the snapshot is created in the original file system directory.
+// * If the snapshot is cloned from a file system.
+// * If the snapshot is replicated from a file system.
+func (o SnapshotOutput) SnapshotTime() pulumi.StringOutput {
+	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.SnapshotTime }).(pulumi.StringOutput)
+}
+
+// Specifies the generation type of the snapshot.
+func (o SnapshotOutput) SnapshotType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.SnapshotType }).(pulumi.StringOutput)
 }
 
 // The current state of the snapshot.

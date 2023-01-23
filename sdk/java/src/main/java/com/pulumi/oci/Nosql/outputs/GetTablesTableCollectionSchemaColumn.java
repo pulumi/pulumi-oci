@@ -10,39 +10,27 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTablesTableCollectionSchemaColumn {
-    /**
-     * @return The column default value.
-     * 
-     */
     private String defaultValue;
-    /**
-     * @return The column nullable flag.
-     * 
-     */
+    private Boolean isAsUuid;
+    private Boolean isGenerated;
     private Boolean isNullable;
     /**
      * @return A shell-globbing-style (*?[]) filter for names.
      * 
      */
     private String name;
-    /**
-     * @return The column type.
-     * 
-     */
     private String type;
 
     private GetTablesTableCollectionSchemaColumn() {}
-    /**
-     * @return The column default value.
-     * 
-     */
     public String defaultValue() {
         return this.defaultValue;
     }
-    /**
-     * @return The column nullable flag.
-     * 
-     */
+    public Boolean isAsUuid() {
+        return this.isAsUuid;
+    }
+    public Boolean isGenerated() {
+        return this.isGenerated;
+    }
     public Boolean isNullable() {
         return this.isNullable;
     }
@@ -53,10 +41,6 @@ public final class GetTablesTableCollectionSchemaColumn {
     public String name() {
         return this.name;
     }
-    /**
-     * @return The column type.
-     * 
-     */
     public String type() {
         return this.type;
     }
@@ -71,6 +55,8 @@ public final class GetTablesTableCollectionSchemaColumn {
     @CustomType.Builder
     public static final class Builder {
         private String defaultValue;
+        private Boolean isAsUuid;
+        private Boolean isGenerated;
         private Boolean isNullable;
         private String name;
         private String type;
@@ -78,6 +64,8 @@ public final class GetTablesTableCollectionSchemaColumn {
         public Builder(GetTablesTableCollectionSchemaColumn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultValue = defaults.defaultValue;
+    	      this.isAsUuid = defaults.isAsUuid;
+    	      this.isGenerated = defaults.isGenerated;
     	      this.isNullable = defaults.isNullable;
     	      this.name = defaults.name;
     	      this.type = defaults.type;
@@ -86,6 +74,16 @@ public final class GetTablesTableCollectionSchemaColumn {
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = Objects.requireNonNull(defaultValue);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isAsUuid(Boolean isAsUuid) {
+            this.isAsUuid = Objects.requireNonNull(isAsUuid);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isGenerated(Boolean isGenerated) {
+            this.isGenerated = Objects.requireNonNull(isGenerated);
             return this;
         }
         @CustomType.Setter
@@ -106,6 +104,8 @@ public final class GetTablesTableCollectionSchemaColumn {
         public GetTablesTableCollectionSchemaColumn build() {
             final var o = new GetTablesTableCollectionSchemaColumn();
             o.defaultValue = defaultValue;
+            o.isAsUuid = isAsUuid;
+            o.isGenerated = isGenerated;
             o.isNullable = isNullable;
             o.name = name;
             o.type = type;

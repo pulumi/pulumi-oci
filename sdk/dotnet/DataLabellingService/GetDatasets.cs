@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatasetsResult> InvokeAsync(GetDatasetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatasetsResult>("oci:DataLabellingService/getDatasets:getDatasets", args ?? new GetDatasetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatasetsResult>("oci:DataLabellingService/getDatasets:getDatasets", args ?? new GetDatasetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Datasets in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatasetsResult> Invoke(GetDatasetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatasetsResult>("oci:DataLabellingService/getDatasets:getDatasets", args ?? new GetDatasetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatasetsResult>("oci:DataLabellingService/getDatasets:getDatasets", args ?? new GetDatasetsInvokeArgs(), options.WithDefaults());
     }
 
 

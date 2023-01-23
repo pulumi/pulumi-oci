@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemShapes(args: GetDbSystemShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemShapes:getDbSystemShapes", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -66,9 +64,25 @@ export interface GetDbSystemShapesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystemShapes = oci.Database.getDbSystemShapes({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.db_system_shape_availability_domain,
+ * });
+ * ```
+ */
 export function getDbSystemShapesOutput(args: GetDbSystemShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemShapesResult> {
-    return pulumi.output(args).apply(a => getDbSystemShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbSystemShapes(a, opts))
 }
 
 /**

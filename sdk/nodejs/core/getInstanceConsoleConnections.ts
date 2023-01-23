@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceConsoleConnections(args: GetInstanceConsoleConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceConsoleConnectionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -74,9 +72,27 @@ export interface GetInstanceConsoleConnectionsResult {
      */
     readonly instanceId?: string;
 }
-
+/**
+ * This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the console connections for the specified compartment or instance.
+ *
+ * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstanceConsoleConnections = oci.Core.getInstanceConsoleConnections({
+ *     compartmentId: _var.compartment_id,
+ *     instanceId: oci_core_instance.test_instance.id,
+ * });
+ * ```
+ */
 export function getInstanceConsoleConnectionsOutput(args: GetInstanceConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConsoleConnectionsResult> {
-    return pulumi.output(args).apply(a => getInstanceConsoleConnections(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstanceConsoleConnections(a, opts))
 }
 
 /**

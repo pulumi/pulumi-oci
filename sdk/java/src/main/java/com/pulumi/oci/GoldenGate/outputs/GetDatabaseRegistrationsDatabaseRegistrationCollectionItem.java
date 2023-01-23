@@ -17,7 +17,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String aliasName;
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -32,7 +32,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String databaseId;
     /**
-     * @return Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private Map<String,Object> definedTags;
@@ -52,7 +52,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String fqdn;
     /**
-     * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private Map<String,Object> freeformTags;
@@ -93,7 +93,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String secretId;
     /**
-     * @return The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
     private String sessionMode;
@@ -108,7 +108,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String subnetId;
     /**
-     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     private Map<String,Object> systemTags;
@@ -143,7 +143,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.aliasName;
     }
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -164,7 +164,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.databaseId;
     }
     /**
-     * @return Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
@@ -192,7 +192,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.fqdn;
     }
     /**
-     * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
@@ -251,7 +251,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.secretId;
     }
     /**
-     * @return The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
     public String sessionMode() {
@@ -272,7 +272,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.subnetId;
     }
     /**
-     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Map<String,Object> systemTags() {

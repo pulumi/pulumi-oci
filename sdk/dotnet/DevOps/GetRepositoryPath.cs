@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryPathResult> InvokeAsync(GetRepositoryPathArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryPathResult>("oci:DevOps/getRepositoryPath:getRepositoryPath", args ?? new GetRepositoryPathArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryPathResult>("oci:DevOps/getRepositoryPath:getRepositoryPath", args ?? new GetRepositoryPathArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository Path resource in Oracle Cloud Infrastructure Devops service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryPathResult> Invoke(GetRepositoryPathInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryPathResult>("oci:DevOps/getRepositoryPath:getRepositoryPath", args ?? new GetRepositoryPathInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryPathResult>("oci:DevOps/getRepositoryPath:getRepositoryPath", args ?? new GetRepositoryPathInvokeArgs(), options.WithDefaults());
     }
 
 

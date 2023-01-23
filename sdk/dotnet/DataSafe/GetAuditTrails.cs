@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditTrailsResult> InvokeAsync(GetAuditTrailsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditTrailsResult>("oci:DataSafe/getAuditTrails:getAuditTrails", args ?? new GetAuditTrailsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditTrailsResult>("oci:DataSafe/getAuditTrails:getAuditTrails", args ?? new GetAuditTrailsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Audit Trails in Oracle Cloud Infrastructure Data Safe service.
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditTrailsResult> Invoke(GetAuditTrailsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditTrailsResult>("oci:DataSafe/getAuditTrails:getAuditTrails", args ?? new GetAuditTrailsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditTrailsResult>("oci:DataSafe/getAuditTrails:getAuditTrails", args ?? new GetAuditTrailsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseInsightsResult> InvokeAsync(GetDatabaseInsightsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseInsightsResult>("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args ?? new GetDatabaseInsightsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseInsightsResult>("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args ?? new GetDatabaseInsightsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseInsightsResult> Invoke(GetDatabaseInsightsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseInsightsResult>("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args ?? new GetDatabaseInsightsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseInsightsResult>("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args ?? new GetDatabaseInsightsInvokeArgs(), options.WithDefaults());
     }
 
 

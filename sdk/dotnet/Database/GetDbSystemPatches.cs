@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbSystemPatchesResult> InvokeAsync(GetDbSystemPatchesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemPatchesResult>("oci:Database/getDbSystemPatches:getDbSystemPatches", args ?? new GetDbSystemPatchesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemPatchesResult>("oci:Database/getDbSystemPatches:getDbSystemPatches", args ?? new GetDbSystemPatchesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbSystemPatchesResult> Invoke(GetDbSystemPatchesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbSystemPatchesResult>("oci:Database/getDbSystemPatches:getDbSystemPatches", args ?? new GetDbSystemPatchesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemPatchesResult>("oci:Database/getDbSystemPatches:getDbSystemPatches", args ?? new GetDbSystemPatchesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogs(args: GetCatalogsArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogs:getCatalogs", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetCatalogsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Catalogs in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Returns a list of all the data catalogs in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCatalogs = oci.DataCatalog.getCatalogs({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.catalog_display_name,
+ *     state: _var.catalog_state,
+ * });
+ * ```
+ */
 export function getCatalogsOutput(args: GetCatalogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogsResult> {
-    return pulumi.output(args).apply(a => getCatalogs(a, opts))
+    return pulumi.output(args).apply((a: any) => getCatalogs(a, opts))
 }
 
 /**

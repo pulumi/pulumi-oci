@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIamWorkRequestLogsResult> InvokeAsync(GetIamWorkRequestLogsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamWorkRequestLogsResult>("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", args ?? new GetIamWorkRequestLogsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamWorkRequestLogsResult>("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", args ?? new GetIamWorkRequestLogsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Iam Work Request Logs in Oracle Cloud Infrastructure Identity service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIamWorkRequestLogsResult> Invoke(GetIamWorkRequestLogsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestLogsResult>("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", args ?? new GetIamWorkRequestLogsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestLogsResult>("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", args ?? new GetIamWorkRequestLogsInvokeArgs(), options.WithDefaults());
     }
 
 

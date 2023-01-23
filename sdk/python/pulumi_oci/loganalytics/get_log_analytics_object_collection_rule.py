@@ -22,7 +22,7 @@ class GetLogAnalyticsObjectCollectionRuleResult:
     """
     A collection of values returned by getLogAnalyticsObjectCollectionRule.
     """
-    def __init__(__self__, char_encoding=None, collection_type=None, compartment_id=None, defined_tags=None, description=None, entity_id=None, freeform_tags=None, id=None, lifecycle_details=None, log_analytics_object_collection_rule_id=None, log_group_id=None, log_source_name=None, name=None, namespace=None, object_name_filters=None, os_bucket_name=None, os_namespace=None, overrides=None, poll_since=None, poll_till=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, char_encoding=None, collection_type=None, compartment_id=None, defined_tags=None, description=None, entity_id=None, freeform_tags=None, id=None, lifecycle_details=None, log_analytics_object_collection_rule_id=None, log_group_id=None, log_set=None, log_set_ext_regex=None, log_set_key=None, log_source_name=None, name=None, namespace=None, object_name_filters=None, os_bucket_name=None, os_namespace=None, overrides=None, poll_since=None, poll_till=None, state=None, time_created=None, time_updated=None, timezone=None):
         if char_encoding and not isinstance(char_encoding, str):
             raise TypeError("Expected argument 'char_encoding' to be a str")
         pulumi.set(__self__, "char_encoding", char_encoding)
@@ -56,6 +56,15 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         if log_group_id and not isinstance(log_group_id, str):
             raise TypeError("Expected argument 'log_group_id' to be a str")
         pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_set and not isinstance(log_set, str):
+            raise TypeError("Expected argument 'log_set' to be a str")
+        pulumi.set(__self__, "log_set", log_set)
+        if log_set_ext_regex and not isinstance(log_set_ext_regex, str):
+            raise TypeError("Expected argument 'log_set_ext_regex' to be a str")
+        pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
+        if log_set_key and not isinstance(log_set_key, str):
+            raise TypeError("Expected argument 'log_set_key' to be a str")
+        pulumi.set(__self__, "log_set_key", log_set_key)
         if log_source_name and not isinstance(log_source_name, str):
             raise TypeError("Expected argument 'log_source_name' to be a str")
         pulumi.set(__self__, "log_source_name", log_source_name)
@@ -92,6 +101,9 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if timezone and not isinstance(timezone, str):
+            raise TypeError("Expected argument 'timezone' to be a str")
+        pulumi.set(__self__, "timezone", timezone)
 
     @property
     @pulumi.getter(name="charEncoding")
@@ -177,6 +189,30 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         Logging Analytics Log group OCID to associate the processed logs with.
         """
         return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logSet")
+    def log_set(self) -> str:
+        """
+        The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        """
+        return pulumi.get(self, "log_set")
+
+    @property
+    @pulumi.getter(name="logSetExtRegex")
+    def log_set_ext_regex(self) -> str:
+        """
+        The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        """
+        return pulumi.get(self, "log_set_ext_regex")
+
+    @property
+    @pulumi.getter(name="logSetKey")
+    def log_set_key(self) -> str:
+        """
+        An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+        """
+        return pulumi.get(self, "log_set_key")
 
     @property
     @pulumi.getter(name="logSourceName")
@@ -271,6 +307,14 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter
+    def timezone(self) -> str:
+        """
+        Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        """
+        return pulumi.get(self, "timezone")
+
 
 class AwaitableGetLogAnalyticsObjectCollectionRuleResult(GetLogAnalyticsObjectCollectionRuleResult):
     # pylint: disable=using-constant-test
@@ -289,6 +333,9 @@ class AwaitableGetLogAnalyticsObjectCollectionRuleResult(GetLogAnalyticsObjectCo
             lifecycle_details=self.lifecycle_details,
             log_analytics_object_collection_rule_id=self.log_analytics_object_collection_rule_id,
             log_group_id=self.log_group_id,
+            log_set=self.log_set,
+            log_set_ext_regex=self.log_set_ext_regex,
+            log_set_key=self.log_set_key,
             log_source_name=self.log_source_name,
             name=self.name,
             namespace=self.namespace,
@@ -300,7 +347,8 @@ class AwaitableGetLogAnalyticsObjectCollectionRuleResult(GetLogAnalyticsObjectCo
             poll_till=self.poll_till,
             state=self.state,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            timezone=self.timezone)
 
 
 def get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id: Optional[str] = None,
@@ -343,6 +391,9 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         lifecycle_details=__ret__.lifecycle_details,
         log_analytics_object_collection_rule_id=__ret__.log_analytics_object_collection_rule_id,
         log_group_id=__ret__.log_group_id,
+        log_set=__ret__.log_set,
+        log_set_ext_regex=__ret__.log_set_ext_regex,
+        log_set_key=__ret__.log_set_key,
         log_source_name=__ret__.log_source_name,
         name=__ret__.name,
         namespace=__ret__.namespace,
@@ -354,7 +405,8 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         poll_till=__ret__.poll_till,
         state=__ret__.state,
         time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        time_updated=__ret__.time_updated,
+        timezone=__ret__.timezone)
 
 
 @_utilities.lift_output_func(get_log_analytics_object_collection_rule)

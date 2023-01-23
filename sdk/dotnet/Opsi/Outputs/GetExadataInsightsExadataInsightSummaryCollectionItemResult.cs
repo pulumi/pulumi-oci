@@ -54,6 +54,14 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string ExadataDisplayName;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string ExadataInfraId;
+        /// <summary>
+        /// Oracle Cloud Infrastructure exadata infrastructure resource type
+        /// </summary>
+        public readonly string ExadataInfraResourceType;
+        /// <summary>
         /// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         /// </summary>
         public readonly string ExadataName;
@@ -61,6 +69,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Exadata rack type.
         /// </summary>
         public readonly string ExadataRackType;
+        /// <summary>
+        /// The shape of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string ExadataShape;
         /// <summary>
         /// Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
         /// </summary>
@@ -82,6 +94,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult> MemberVmClusterDetails;
         /// <summary>
         /// Lifecycle states
         /// </summary>
@@ -125,9 +138,15 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string exadataDisplayName,
 
+            string exadataInfraId,
+
+            string exadataInfraResourceType,
+
             string exadataName,
 
             string exadataRackType,
+
+            string exadataShape,
 
             string exadataType,
 
@@ -140,6 +159,8 @@ namespace Pulumi.Oci.Opsi.Outputs
             bool isVirtualizedExadata,
 
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult> memberVmClusterDetails,
 
             string state,
 
@@ -161,14 +182,18 @@ namespace Pulumi.Oci.Opsi.Outputs
             EnterpriseManagerIdentifier = enterpriseManagerIdentifier;
             EntitySource = entitySource;
             ExadataDisplayName = exadataDisplayName;
+            ExadataInfraId = exadataInfraId;
+            ExadataInfraResourceType = exadataInfraResourceType;
             ExadataName = exadataName;
             ExadataRackType = exadataRackType;
+            ExadataShape = exadataShape;
             ExadataType = exadataType;
             FreeformTags = freeformTags;
             Id = id;
             IsAutoSyncEnabled = isAutoSyncEnabled;
             IsVirtualizedExadata = isVirtualizedExadata;
             LifecycleDetails = lifecycleDetails;
+            MemberVmClusterDetails = memberVmClusterDetails;
             State = state;
             Status = status;
             SystemTags = systemTags;

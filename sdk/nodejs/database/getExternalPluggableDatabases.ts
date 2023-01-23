@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalPluggableDatabases(args: GetExternalPluggableDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalPluggableDatabasesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExternalPluggableDatabases:getExternalPluggableDatabases", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -93,9 +91,28 @@ export interface GetExternalPluggableDatabasesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of External Pluggable Databases in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
+ * resources in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalPluggableDatabases = oci.Database.getExternalPluggableDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.external_pluggable_database_display_name,
+ *     externalContainerDatabaseId: oci_database_external_container_database.test_external_container_database.id,
+ *     state: _var.external_pluggable_database_state,
+ * });
+ * ```
+ */
 export function getExternalPluggableDatabasesOutput(args: GetExternalPluggableDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalPluggableDatabasesResult> {
-    return pulumi.output(args).apply(a => getExternalPluggableDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getExternalPluggableDatabases(a, opts))
 }
 
 /**

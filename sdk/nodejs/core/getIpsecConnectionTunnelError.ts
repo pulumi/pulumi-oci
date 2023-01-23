@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecConnectionTunnelError(args: GetIpsecConnectionTunnelErrorArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionTunnelErrorResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", {
         "ipsecId": args.ipsecId,
         "tunnelId": args.tunnelId,
@@ -78,9 +75,25 @@ export interface GetIpsecConnectionTunnelErrorResult {
     readonly timestamp: string;
     readonly tunnelId: string;
 }
-
+/**
+ * This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the identified error for the specified IPSec tunnel ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpsecConnectionTunnelError = oci.Core.getIpsecConnectionTunnelError({
+ *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ *     tunnelId: oci_core_tunnel.test_tunnel.id,
+ * });
+ * ```
+ */
 export function getIpsecConnectionTunnelErrorOutput(args: GetIpsecConnectionTunnelErrorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelErrorResult> {
-    return pulumi.output(args).apply(a => getIpsecConnectionTunnelError(a, opts))
+    return pulumi.output(args).apply((a: any) => getIpsecConnectionTunnelError(a, opts))
 }
 
 /**

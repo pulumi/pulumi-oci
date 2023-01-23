@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,15 +24,13 @@ import * as utilities from "../utilities";
  *     displayName: _var.report_display_name,
  *     reportDefinitionId: oci_data_safe_report_definition.test_report_definition.id,
  *     state: _var.report_state,
+ *     type: _var.report_type,
  * });
  * ```
  */
 export function getReports(args: GetReportsArgs, opts?: pulumi.InvokeOptions): Promise<GetReportsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getReports:getReports", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -40,6 +39,7 @@ export function getReports(args: GetReportsArgs, opts?: pulumi.InvokeOptions): P
         "filters": args.filters,
         "reportDefinitionId": args.reportDefinitionId,
         "state": args.state,
+        "type": args.type,
     }, opts);
 }
 
@@ -72,6 +72,10 @@ export interface GetReportsArgs {
      * An optional filter to return only resources that match the specified lifecycle state.
      */
     state?: string;
+    /**
+     * An optional filter to return only resources that match the specified type.
+     */
+    type?: string;
 }
 
 /**
@@ -105,10 +109,35 @@ export interface GetReportsResult {
      * The current state of the report.
      */
     readonly state?: string;
+    /**
+     * The type of the report.
+     */
+    readonly type?: string;
 }
-
+/**
+ * This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of all the reports in the compartment. It contains information such as report generation time.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testReports = oci.DataSafe.getReports({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.report_access_level,
+ *     compartmentIdInSubtree: _var.report_compartment_id_in_subtree,
+ *     displayName: _var.report_display_name,
+ *     reportDefinitionId: oci_data_safe_report_definition.test_report_definition.id,
+ *     state: _var.report_state,
+ *     type: _var.report_type,
+ * });
+ * ```
+ */
 export function getReportsOutput(args: GetReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportsResult> {
-    return pulumi.output(args).apply(a => getReports(a, opts))
+    return pulumi.output(args).apply((a: any) => getReports(a, opts))
 }
 
 /**
@@ -140,4 +169,8 @@ export interface GetReportsOutputArgs {
      * An optional filter to return only resources that match the specified lifecycle state.
      */
     state?: pulumi.Input<string>;
+    /**
+     * An optional filter to return only resources that match the specified type.
+     */
+    type?: pulumi.Input<string>;
 }

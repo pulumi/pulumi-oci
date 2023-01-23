@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelProvenance(args: GetModelProvenanceArgs, opts?: pulumi.InvokeOptions): Promise<GetModelProvenanceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelProvenance:getModelProvenance", {
         "modelId": args.modelId,
     }, opts);
@@ -72,9 +69,24 @@ export interface GetModelProvenanceResult {
      */
     readonly trainingScript: string;
 }
-
+/**
+ * This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
+ *
+ * Gets provenance information for specified model.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModelProvenance = oci.DataScience.getModelProvenance({
+ *     modelId: oci_datascience_model.test_model.id,
+ * });
+ * ```
+ */
 export function getModelProvenanceOutput(args: GetModelProvenanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelProvenanceResult> {
-    return pulumi.output(args).apply(a => getModelProvenance(a, opts))
+    return pulumi.output(args).apply((a: any) => getModelProvenance(a, opts))
 }
 
 /**

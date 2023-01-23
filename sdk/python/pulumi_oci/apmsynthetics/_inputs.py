@@ -10,6 +10,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'ConfigAvailabilityConfigurationArgs',
     'ConfigConfigurationArgs',
     'ConfigConfigurationDnsConfigurationArgs',
     'ConfigConfigurationNetworkConfigurationArgs',
@@ -18,6 +19,7 @@ __all__ = [
     'ConfigConfigurationRequestHeaderArgs',
     'ConfigConfigurationRequestQueryParamArgs',
     'ConfigConfigurationVerifyTextArgs',
+    'ConfigMaintenanceWindowScheduleArgs',
     'ConfigScriptParameterArgs',
     'ConfigScriptParameterMonitorScriptParameterArgs',
     'DedicatedVantagePointDvpStackDetailsArgs',
@@ -30,6 +32,45 @@ __all__ = [
     'GetScriptsFilterArgs',
     'GetVantagePointsFilterArgs',
 ]
+
+@pulumi.input_type
+class ConfigAvailabilityConfigurationArgs:
+    def __init__(__self__, *,
+                 max_allowed_failures_per_interval: Optional[pulumi.Input[int]] = None,
+                 min_allowed_runs_per_interval: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] max_allowed_failures_per_interval: (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        :param pulumi.Input[int] min_allowed_runs_per_interval: (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        """
+        if max_allowed_failures_per_interval is not None:
+            pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+        if min_allowed_runs_per_interval is not None:
+            pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+
+    @property
+    @pulumi.getter(name="maxAllowedFailuresPerInterval")
+    def max_allowed_failures_per_interval(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        """
+        return pulumi.get(self, "max_allowed_failures_per_interval")
+
+    @max_allowed_failures_per_interval.setter
+    def max_allowed_failures_per_interval(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_allowed_failures_per_interval", value)
+
+    @property
+    @pulumi.getter(name="minAllowedRunsPerInterval")
+    def min_allowed_runs_per_interval(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        """
+        return pulumi.get(self, "min_allowed_runs_per_interval")
+
+    @min_allowed_runs_per_interval.setter
+    def min_allowed_runs_per_interval(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_allowed_runs_per_interval", value)
+
 
 @pulumi.input_type
 class ConfigConfigurationArgs:
@@ -677,6 +718,45 @@ class ConfigConfigurationVerifyTextArgs:
     @text.setter
     def text(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "text", value)
+
+
+@pulumi.input_type
+class ConfigMaintenanceWindowScheduleArgs:
+    def __init__(__self__, *,
+                 time_ended: Optional[pulumi.Input[str]] = None,
+                 time_started: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] time_ended: (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param pulumi.Input[str] time_started: (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        if time_ended is not None:
+            pulumi.set(__self__, "time_ended", time_ended)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_ended")
+
+    @time_ended.setter
+    def time_ended(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_ended", value)
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_started")
+
+    @time_started.setter
+    def time_started(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_started", value)
 
 
 @pulumi.input_type

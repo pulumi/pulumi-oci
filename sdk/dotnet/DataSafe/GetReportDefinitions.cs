@@ -48,7 +48,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetReportDefinitionsResult> InvokeAsync(GetReportDefinitionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetReportDefinitionsResult>("oci:DataSafe/getReportDefinitions:getReportDefinitions", args ?? new GetReportDefinitionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetReportDefinitionsResult>("oci:DataSafe/getReportDefinitions:getReportDefinitions", args ?? new GetReportDefinitionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Report Definitions in Oracle Cloud Infrastructure Data Safe service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetReportDefinitionsResult> Invoke(GetReportDefinitionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetReportDefinitionsResult>("oci:DataSafe/getReportDefinitions:getReportDefinitions", args ?? new GetReportDefinitionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetReportDefinitionsResult>("oci:DataSafe/getReportDefinitions:getReportDefinitions", args ?? new GetReportDefinitionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplicationSources(args: GetReplicationSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationSourcesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getReplicationSources:getReplicationSources", {
         "bucket": args.bucket,
         "filters": args.filters,
@@ -66,9 +64,25 @@ export interface GetReplicationSourcesResult {
      */
     readonly replicationSources: outputs.ObjectStorage.GetReplicationSourcesReplicationSource[];
 }
-
+/**
+ * This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * List the replication sources of a destination bucket.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testReplicationSources = oci.ObjectStorage.getReplicationSources({
+ *     bucket: _var.replication_source_bucket,
+ *     namespace: _var.replication_source_namespace,
+ * });
+ * ```
+ */
 export function getReplicationSourcesOutput(args: GetReplicationSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationSourcesResult> {
-    return pulumi.output(args).apply(a => getReplicationSources(a, opts))
+    return pulumi.output(args).apply((a: any) => getReplicationSources(a, opts))
 }
 
 /**

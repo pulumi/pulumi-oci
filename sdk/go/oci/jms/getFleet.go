@@ -60,6 +60,8 @@ type LookupFleetResult struct {
 	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateInstallationCount int `pulumi:"approximateInstallationCount"`
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	ApproximateJavaServerCount int `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateJreCount int `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -79,7 +81,7 @@ type LookupFleetResult struct {
 	Id string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetInventoryLog `pulumi:"inventoryLogs"`
-	// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetOperationLog `pulumi:"operationLogs"`
@@ -139,6 +141,11 @@ func (o LookupFleetResultOutput) ApproximateInstallationCount() pulumi.IntOutput
 	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
 }
 
+// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+func (o LookupFleetResultOutput) ApproximateJavaServerCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateJavaServerCount }).(pulumi.IntOutput)
+}
+
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 func (o LookupFleetResultOutput) ApproximateJreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateJreCount }).(pulumi.IntOutput)
@@ -188,7 +195,7 @@ func (o LookupFleetResultOutput) InventoryLogs() GetFleetInventoryLogArrayOutput
 	return o.ApplyT(func(v LookupFleetResult) []GetFleetInventoryLog { return v.InventoryLogs }).(GetFleetInventoryLogArrayOutput)
 }
 
-// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 func (o LookupFleetResultOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFleetResult) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
 }

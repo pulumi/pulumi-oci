@@ -40,7 +40,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBackendHealthResult> InvokeAsync(GetBackendHealthArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBackendHealthResult>("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", args ?? new GetBackendHealthArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackendHealthResult>("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", args ?? new GetBackendHealthArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBackendHealthResult> Invoke(GetBackendHealthInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBackendHealthResult>("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", args ?? new GetBackendHealthInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendHealthResult>("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", args ?? new GetBackendHealthInvokeArgs(), options.WithDefaults());
     }
 
 

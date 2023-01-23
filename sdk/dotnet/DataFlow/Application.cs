@@ -29,7 +29,6 @@ namespace Pulumi.Oci.DataFlow
     ///         DisplayName = @var.Application_display_name,
     ///         DriverShape = @var.Application_driver_shape,
     ///         ExecutorShape = @var.Application_executor_shape,
-    ///         FileUri = @var.Application_file_uri,
     ///         Language = @var.Application_language,
     ///         NumExecutors = @var.Application_num_executors,
     ///         SparkVersion = @var.Application_spark_version,
@@ -58,11 +57,14 @@ namespace Pulumi.Oci.DataFlow
     ///             MemoryInGbs = @var.Application_executor_shape_config_memory_in_gbs,
     ///             Ocpus = @var.Application_executor_shape_config_ocpus,
     ///         },
+    ///         FileUri = @var.Application_file_uri,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IdleTimeoutInMinutes = @var.Application_idle_timeout_in_minutes,
     ///         LogsBucketUri = @var.Application_logs_bucket_uri,
+    ///         MaxDurationInMinutes = @var.Application_max_duration_in_minutes,
     ///         MetastoreId = @var.Metastore_id,
     ///         Parameters = new[]
     ///         {
@@ -98,7 +100,7 @@ namespace Pulumi.Oci.DataFlow
         public Output<Outputs.ApplicationApplicationLogConfig> ApplicationLogConfig { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        /// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         [Output("archiveUri")]
         public Output<string?> ArchiveUri { get; private set; } = null!;
@@ -188,6 +190,12 @@ namespace Pulumi.Oci.DataFlow
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+        /// </summary>
+        [Output("idleTimeoutInMinutes")]
+        public Output<string> IdleTimeoutInMinutes { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The Spark language.
         /// </summary>
         [Output("language")]
@@ -198,6 +206,12 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Output("logsBucketUri")]
         public Output<string> LogsBucketUri { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+        /// </summary>
+        [Output("maxDurationInMinutes")]
+        public Output<string> MaxDurationInMinutes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -324,7 +338,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<Inputs.ApplicationApplicationLogConfigArgs>? ApplicationLogConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        /// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         [Input("archiveUri")]
         public Input<string>? ArchiveUri { get; set; }
@@ -422,8 +436,8 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
-        [Input("fileUri", required: true)]
-        public Input<string> FileUri { get; set; } = null!;
+        [Input("fileUri")]
+        public Input<string>? FileUri { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
@@ -438,6 +452,12 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
+        /// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+        /// </summary>
+        [Input("idleTimeoutInMinutes")]
+        public Input<string>? IdleTimeoutInMinutes { get; set; }
+
+        /// <summary>
         /// (Updatable) The Spark language.
         /// </summary>
         [Input("language", required: true)]
@@ -448,6 +468,12 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Input("logsBucketUri")]
         public Input<string>? LogsBucketUri { get; set; }
+
+        /// <summary>
+        /// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+        /// </summary>
+        [Input("maxDurationInMinutes")]
+        public Input<string>? MaxDurationInMinutes { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -512,7 +538,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<Inputs.ApplicationApplicationLogConfigGetArgs>? ApplicationLogConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        /// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         [Input("archiveUri")]
         public Input<string>? ArchiveUri { get; set; }
@@ -626,6 +652,12 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
+        /// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+        /// </summary>
+        [Input("idleTimeoutInMinutes")]
+        public Input<string>? IdleTimeoutInMinutes { get; set; }
+
+        /// <summary>
         /// (Updatable) The Spark language.
         /// </summary>
         [Input("language")]
@@ -636,6 +668,12 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Input("logsBucketUri")]
         public Input<string>? LogsBucketUri { get; set; }
+
+        /// <summary>
+        /// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+        /// </summary>
+        [Input("maxDurationInMinutes")]
+        public Input<string>? MaxDurationInMinutes { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentRefreshActivities(args: GetFusionEnvironmentRefreshActivitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentRefreshActivitiesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", {
         "displayName": args.displayName,
         "filters": args.filters,
@@ -93,9 +91,28 @@ export interface GetFusionEnvironmentRefreshActivitiesResult {
     readonly timeExpectedFinishLessThanOrEqualTo?: string;
     readonly timeScheduledStartGreaterThanOrEqualTo?: string;
 }
-
+/**
+ * This data source provides the list of Fusion Environment Refresh Activities in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Returns a list of RefreshActivities.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentRefreshActivities = oci.Functions.getFusionEnvironmentRefreshActivities({
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ *     displayName: _var.fusion_environment_refresh_activity_display_name,
+ *     state: _var.fusion_environment_refresh_activity_state,
+ *     timeExpectedFinishLessThanOrEqualTo: _var.fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to,
+ *     timeScheduledStartGreaterThanOrEqualTo: _var.fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentRefreshActivitiesOutput(args: GetFusionEnvironmentRefreshActivitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentRefreshActivitiesResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentRefreshActivities(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentRefreshActivities(a, opts))
 }
 
 /**

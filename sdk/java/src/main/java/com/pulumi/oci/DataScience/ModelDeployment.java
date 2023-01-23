@@ -259,14 +259,14 @@ public class ModelDeployment extends com.pulumi.resources.CustomResource {
         return this.projectId;
     }
     /**
-     * The state of the model deployment.
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The state of the model deployment.
+     * @return (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
     public Output<String> state() {

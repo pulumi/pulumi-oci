@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ScheduleQueryPropertiesDateRange {
     /**
-     * @return Defines whether the schedule date range is STATIC or DYNAMIC
+     * @return Defines whether the schedule date range is STATIC or DYNAMIC.
      * 
      */
     private String dateRangeType;
@@ -30,7 +30,7 @@ public final class ScheduleQueryPropertiesDateRange {
 
     private ScheduleQueryPropertiesDateRange() {}
     /**
-     * @return Defines whether the schedule date range is STATIC or DYNAMIC
+     * @return Defines whether the schedule date range is STATIC or DYNAMIC.
      * 
      */
     public String dateRangeType() {

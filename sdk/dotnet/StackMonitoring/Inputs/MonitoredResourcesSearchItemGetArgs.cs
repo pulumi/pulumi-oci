@@ -30,6 +30,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        [Input("externalId")]
+        public Input<string>? ExternalId { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -65,6 +71,18 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        [Input("properties")]
+        private InputList<Inputs.MonitoredResourcesSearchItemPropertyGetArgs>? _properties;
+
+        /// <summary>
+        /// List of monitored resource properties
+        /// </summary>
+        public InputList<Inputs.MonitoredResourcesSearchItemPropertyGetArgs> Properties
+        {
+            get => _properties ?? (_properties = new InputList<Inputs.MonitoredResourcesSearchItemPropertyGetArgs>());
+            set => _properties = value;
+        }
 
         /// <summary>
         /// A filter to return resources with matching lifecycle state.

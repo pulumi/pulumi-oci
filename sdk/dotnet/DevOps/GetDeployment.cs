@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeploymentResult> InvokeAsync(GetDeploymentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentResult>("oci:DevOps/getDeployment:getDeployment", args ?? new GetDeploymentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentResult>("oci:DevOps/getDeployment:getDeployment", args ?? new GetDeploymentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Devops service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeploymentResult> Invoke(GetDeploymentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeploymentResult>("oci:DevOps/getDeployment:getDeployment", args ?? new GetDeploymentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentResult>("oci:DevOps/getDeployment:getDeployment", args ?? new GetDeploymentInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -132,6 +132,10 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public readonly string DeployStageId;
         /// <summary>
+        /// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentDeployStageOverrideArgumentResult> DeployStageOverrideArguments;
+        /// <summary>
         /// Specifies list of arguments passed along with the deployment.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentDeploymentArgumentResult> DeploymentArguments;
@@ -184,6 +188,7 @@ namespace Pulumi.Oci.DevOps
         /// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
+        public readonly bool TriggerNewDevopsDeployment;
 
         [OutputConstructor]
         private GetDeploymentResult(
@@ -200,6 +205,8 @@ namespace Pulumi.Oci.DevOps
             string deployPipelineId,
 
             string deployStageId,
+
+            ImmutableArray<Outputs.GetDeploymentDeployStageOverrideArgumentResult> deployStageOverrideArguments,
 
             ImmutableArray<Outputs.GetDeploymentDeploymentArgumentResult> deploymentArguments,
 
@@ -227,7 +234,9 @@ namespace Pulumi.Oci.DevOps
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            bool triggerNewDevopsDeployment)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -236,6 +245,7 @@ namespace Pulumi.Oci.DevOps
             DeployPipelineEnvironments = deployPipelineEnvironments;
             DeployPipelineId = deployPipelineId;
             DeployStageId = deployStageId;
+            DeployStageOverrideArguments = deployStageOverrideArguments;
             DeploymentArguments = deploymentArguments;
             DeploymentExecutionProgresses = deploymentExecutionProgresses;
             DeploymentId = deploymentId;
@@ -250,6 +260,7 @@ namespace Pulumi.Oci.DevOps
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            TriggerNewDevopsDeployment = triggerNewDevopsDeployment;
         }
     }
 }

@@ -28,7 +28,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
      */
     private String format;
     /**
-     * @return (Updatable) Name of the claim.
+     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
      * 
      */
     private @Nullable String key;
@@ -81,7 +81,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
         return this.format;
     }
     /**
-     * @return (Updatable) Name of the claim.
+     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
      * 
      */
     public Optional<String> key() {

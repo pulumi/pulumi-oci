@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetClusterKubeConfigResult> InvokeAsync(GetClusterKubeConfigArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetClusterKubeConfigResult>("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args ?? new GetClusterKubeConfigArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetClusterKubeConfigResult>("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args ?? new GetClusterKubeConfigArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetClusterKubeConfigResult> Invoke(GetClusterKubeConfigInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetClusterKubeConfigResult>("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args ?? new GetClusterKubeConfigInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterKubeConfigResult>("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args ?? new GetClusterKubeConfigInvokeArgs(), options.WithDefaults());
     }
 
 

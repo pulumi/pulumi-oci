@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProductLicenseResult> InvokeAsync(GetProductLicenseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProductLicenseResult>("oci:LicenseManager/getProductLicense:getProductLicense", args ?? new GetProductLicenseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProductLicenseResult>("oci:LicenseManager/getProductLicense:getProductLicense", args ?? new GetProductLicenseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProductLicenseResult> Invoke(GetProductLicenseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProductLicenseResult>("oci:LicenseManager/getProductLicense:getProductLicense", args ?? new GetProductLicenseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProductLicenseResult>("oci:LicenseManager/getProductLicense:getProductLicense", args ?? new GetProductLicenseInvokeArgs(), options.WithDefaults());
     }
 
 

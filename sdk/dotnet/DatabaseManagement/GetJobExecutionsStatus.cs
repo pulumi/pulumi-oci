@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJobExecutionsStatusResult> InvokeAsync(GetJobExecutionsStatusArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJobExecutionsStatusResult>("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", args ?? new GetJobExecutionsStatusArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobExecutionsStatusResult>("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", args ?? new GetJobExecutionsStatusArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Job Executions Status resource in Oracle Cloud Infrastructure Database Management service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJobExecutionsStatusResult> Invoke(GetJobExecutionsStatusInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJobExecutionsStatusResult>("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", args ?? new GetJobExecutionsStatusInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobExecutionsStatusResult>("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", args ?? new GetJobExecutionsStatusInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -34,9 +34,17 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
         return this.actions;
     }
 
+    /**
+     * (Updatable) The OCID of the connection resource used to get details for triggered events.
+     * 
+     */
     @Import(name="connectionId")
     private @Nullable Output<String> connectionId;
 
+    /**
+     * @return (Updatable) The OCID of the connection resource used to get details for triggered events.
+     * 
+     */
     public Optional<Output<String>> connectionId() {
         return Optional.ofNullable(this.connectionId);
     }
@@ -132,14 +140,14 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
      */
     @Import(name="triggerSource", required=true)
     private Output<String> triggerSource;
 
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * @return (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
      */
     public Output<String> triggerSource() {
@@ -209,11 +217,23 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
             return actions(List.of(actions));
         }
 
+        /**
+         * @param connectionId (Updatable) The OCID of the connection resource used to get details for triggered events.
+         * 
+         * @return builder
+         * 
+         */
         public Builder connectionId(@Nullable Output<String> connectionId) {
             $.connectionId = connectionId;
             return this;
         }
 
+        /**
+         * @param connectionId (Updatable) The OCID of the connection resource used to get details for triggered events.
+         * 
+         * @return builder
+         * 
+         */
         public Builder connectionId(String connectionId) {
             return connectionId(Output.of(connectionId));
         }
@@ -345,7 +365,7 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param triggerSource (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+         * @param triggerSource (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
          * 
          * @return builder
          * 
@@ -356,7 +376,7 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param triggerSource (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+         * @param triggerSource (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
          * 
          * @return builder
          * 

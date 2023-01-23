@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConfigs(args: GetConfigsArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmConfig/getConfigs:getConfigs", {
         "apmDomainId": args.apmDomainId,
         "configType": args.configType,
@@ -114,9 +112,31 @@ export interface GetConfigsResult {
     readonly id: string;
     readonly optionsGroup?: string;
 }
-
+/**
+ * This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
+ *
+ * Returns all configuration items, which can optionally be filtered by configuration type.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConfigs = oci.ApmConfig.getConfigs({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     configType: _var.config_config_type,
+ *     definedTagEquals: _var.config_defined_tag_equals,
+ *     definedTagExists: _var.config_defined_tag_exists,
+ *     displayName: _var.config_display_name,
+ *     freeformTagEquals: _var.config_freeform_tag_equals,
+ *     freeformTagExists: _var.config_freeform_tag_exists,
+ *     optionsGroup: _var.config_options_group,
+ * });
+ * ```
+ */
 export function getConfigsOutput(args: GetConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigsResult> {
-    return pulumi.output(args).apply(a => getConfigs(a, opts))
+    return pulumi.output(args).apply((a: any) => getConfigs(a, opts))
 }
 
 /**

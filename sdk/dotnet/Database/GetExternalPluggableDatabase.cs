@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExternalPluggableDatabaseResult> InvokeAsync(GetExternalPluggableDatabaseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExternalPluggableDatabaseResult>("oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase", args ?? new GetExternalPluggableDatabaseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalPluggableDatabaseResult>("oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase", args ?? new GetExternalPluggableDatabaseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExternalPluggableDatabaseResult> Invoke(GetExternalPluggableDatabaseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExternalPluggableDatabaseResult>("oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase", args ?? new GetExternalPluggableDatabaseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalPluggableDatabaseResult>("oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase", args ?? new GetExternalPluggableDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -49,6 +49,16 @@ import (
 //	}
 //
 // ```
+//
+// ## Import
+//
+// CloudVmClusterIormConfigs can be imported using the `id`, e.g.
+//
+// ```sh
+//
+//	$ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
+//
+// ```
 type CloudVmClusterIormConfig struct {
 	pulumi.CustomResourceState
 
@@ -60,7 +70,7 @@ type CloudVmClusterIormConfig struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Value for the IORM objective Default is "Auto"
 	Objective pulumi.StringOutput `pulumi:"objective"`
-	// The current state of IORM configuration for the Cloud Vm Cluster.
+	// The current state of IORM configuration for the Exadata DB system.
 	State pulumi.StringOutput `pulumi:"state"`
 }
 
@@ -107,7 +117,7 @@ type cloudVmClusterIormConfigState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Value for the IORM objective Default is "Auto"
 	Objective *string `pulumi:"objective"`
-	// The current state of IORM configuration for the Cloud Vm Cluster.
+	// The current state of IORM configuration for the Exadata DB system.
 	State *string `pulumi:"state"`
 }
 
@@ -120,7 +130,7 @@ type CloudVmClusterIormConfigState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Value for the IORM objective Default is "Auto"
 	Objective pulumi.StringPtrInput
-	// The current state of IORM configuration for the Cloud Vm Cluster.
+	// The current state of IORM configuration for the Exadata DB system.
 	State pulumi.StringPtrInput
 }
 
@@ -254,7 +264,7 @@ func (o CloudVmClusterIormConfigOutput) Objective() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmClusterIormConfig) pulumi.StringOutput { return v.Objective }).(pulumi.StringOutput)
 }
 
-// The current state of IORM configuration for the Cloud Vm Cluster.
+// The current state of IORM configuration for the Exadata DB system.
 func (o CloudVmClusterIormConfigOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmClusterIormConfig) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

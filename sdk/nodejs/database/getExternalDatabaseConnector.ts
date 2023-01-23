@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalDatabaseConnector(args: GetExternalDatabaseConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDatabaseConnectorResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector", {
         "externalDatabaseConnectorId": args.externalDatabaseConnectorId,
     }, opts);
@@ -108,9 +106,24 @@ export interface GetExternalDatabaseConnectorResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific External Database Connector resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified external database connector.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalDatabaseConnector = oci.Database.getExternalDatabaseConnector({
+ *     externalDatabaseConnectorId: oci_database_external_database_connector.test_external_database_connector.id,
+ * });
+ * ```
+ */
 export function getExternalDatabaseConnectorOutput(args: GetExternalDatabaseConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDatabaseConnectorResult> {
-    return pulumi.output(args).apply(a => getExternalDatabaseConnector(a, opts))
+    return pulumi.output(args).apply((a: any) => getExternalDatabaseConnector(a, opts))
 }
 
 /**

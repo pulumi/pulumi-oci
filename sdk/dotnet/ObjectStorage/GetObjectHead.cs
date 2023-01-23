@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetObjectHeadResult> InvokeAsync(GetObjectHeadArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetObjectHeadResult>("oci:ObjectStorage/getObjectHead:getObjectHead", args ?? new GetObjectHeadArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectHeadResult>("oci:ObjectStorage/getObjectHead:getObjectHead", args ?? new GetObjectHeadArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetObjectHeadResult> Invoke(GetObjectHeadInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetObjectHeadResult>("oci:ObjectStorage/getObjectHead:getObjectHead", args ?? new GetObjectHeadInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetObjectHeadResult>("oci:ObjectStorage/getObjectHead:getObjectHead", args ?? new GetObjectHeadInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectionRules(args: GetProtectionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getProtectionRules:getProtectionRules", {
         "actions": args.actions,
         "filters": args.filters,
@@ -77,9 +75,27 @@ export interface GetProtectionRulesResult {
     readonly protectionRules: outputs.Waas.GetProtectionRulesProtectionRule[];
     readonly waasPolicyId: string;
 }
-
+/**
+ * This data source provides the list of Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets the list of available protection rules for a WAAS policy. Use the `GetWafConfig` operation to view a list of currently configured protection rules for the Web Application Firewall, or use the `ListRecommendations` operation to get a list of recommended protection rules for the Web Application Firewall.
+ * The list is sorted by `key`, in ascending order.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProtectionRules = oci.Waas.getProtectionRules({
+ *     waasPolicyId: oci_waas_waas_policy.test_waas_policy.id,
+ *     actions: _var.protection_rule_action,
+ *     modSecurityRuleIds: oci_events_rule.test_rule.id,
+ * });
+ * ```
+ */
 export function getProtectionRulesOutput(args: GetProtectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRulesResult> {
-    return pulumi.output(args).apply(a => getProtectionRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getProtectionRules(a, opts))
 }
 
 /**

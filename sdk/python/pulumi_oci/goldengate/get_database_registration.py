@@ -145,7 +145,7 @@ class GetDatabaseRegistrationResult:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -177,7 +177,7 @@ class GetDatabaseRegistrationResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -246,7 +246,7 @@ class GetDatabaseRegistrationResult:
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> str:
         """
-        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         """
         return pulumi.get(self, "session_mode")
 
@@ -270,7 +270,7 @@ class GetDatabaseRegistrationResult:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -352,6 +352,7 @@ def get_database_registration(database_registration_id: Optional[str] = None,
     """
     This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
 
+    Note: Deprecated. Use the new resource model APIs instead.
     Retrieves a DatabaseRegistration.
 
     ## Example Usage
@@ -407,6 +408,7 @@ def get_database_registration_output(database_registration_id: Optional[pulumi.I
     """
     This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
 
+    Note: Deprecated. Use the new resource model APIs instead.
     Retrieves a DatabaseRegistration.
 
     ## Example Usage

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousDatabaseInstanceWalletManagementResult> InvokeAsync(GetAutonomousDatabaseInstanceWalletManagementArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseInstanceWalletManagementResult>("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", args ?? new GetAutonomousDatabaseInstanceWalletManagementArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseInstanceWalletManagementResult>("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", args ?? new GetAutonomousDatabaseInstanceWalletManagementArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousDatabaseInstanceWalletManagementResult> Invoke(GetAutonomousDatabaseInstanceWalletManagementInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseInstanceWalletManagementResult>("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", args ?? new GetAutonomousDatabaseInstanceWalletManagementInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseInstanceWalletManagementResult>("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", args ?? new GetAutonomousDatabaseInstanceWalletManagementInvokeArgs(), options.WithDefaults());
     }
 
 

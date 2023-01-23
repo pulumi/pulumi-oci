@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsResourceCategoriesList(args: GetLogAnalyticsResourceCategoriesListArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsResourceCategoriesListResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", {
         "namespace": args.namespace,
         "resourceCategories": args.resourceCategories,
@@ -81,9 +79,27 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
     readonly resourceIds?: string;
     readonly resourceTypes?: string;
 }
-
+/**
+ * This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Returns a list of resources and their category assignments.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsResourceCategoriesList = oci.LogAnalytics.getLogAnalyticsResourceCategoriesList({
+ *     namespace: _var.log_analytics_resource_categories_list_namespace,
+ *     resourceIds: _var.log_analytics_resource_categories_list_resource_ids,
+ *     resourceTypes: _var.log_analytics_resource_categories_list_resource_types,
+ *     resourceCategories: _var.log_analytics_resource_categories_list_resource_categories,
+ * });
+ * ```
+ */
 export function getLogAnalyticsResourceCategoriesListOutput(args: GetLogAnalyticsResourceCategoriesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsResourceCategoriesListResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsResourceCategoriesList(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsResourceCategoriesList(a, opts))
 }
 
 /**

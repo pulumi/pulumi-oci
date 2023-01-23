@@ -57,7 +57,6 @@ type LookupHostInsightArgs struct {
 // A collection of values returned by getHostInsight.
 type LookupHostInsightResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	// <<<<<<< ours
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
 	ComputeId string `pulumi:"computeId"`
@@ -96,7 +95,7 @@ type LookupHostInsightResult struct {
 	ManagementAgentId string `pulumi:"managementAgentId"`
 	// Platform name.
 	PlatformName string `pulumi:"platformName"`
-	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType string `pulumi:"platformType"`
 	// Platform version.
 	PlatformVersion string `pulumi:"platformVersion"`
@@ -153,7 +152,6 @@ func (o LookupHostInsightResultOutput) ToLookupHostInsightResultOutputWithContex
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-// <<<<<<< ours
 func (o LookupHostInsightResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHostInsightResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -252,7 +250,7 @@ func (o LookupHostInsightResultOutput) PlatformName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHostInsightResult) string { return v.PlatformName }).(pulumi.StringOutput)
 }
 
-// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 func (o LookupHostInsightResultOutput) PlatformType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHostInsightResult) string { return v.PlatformType }).(pulumi.StringOutput)
 }

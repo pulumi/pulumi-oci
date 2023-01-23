@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExsiHost(args: GetExsiHostArgs, opts?: pulumi.InvokeOptions): Promise<GetExsiHostResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getExsiHost:getExsiHost", {
         "esxiHostId": args.esxiHostId,
     }, opts);
@@ -139,9 +136,24 @@ export interface GetExsiHostResult {
      */
     readonly vmwareSoftwareVersion: string;
 }
-
+/**
+ * This data source provides details about a specific Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ *
+ * Gets the specified ESXi host's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEsxiHost = oci.Ocvp.getExsiHost({
+ *     esxiHostId: oci_ocvp_esxi_host.test_esxi_host.id,
+ * });
+ * ```
+ */
 export function getExsiHostOutput(args: GetExsiHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExsiHostResult> {
-    return pulumi.output(args).apply(a => getExsiHost(a, opts))
+    return pulumi.output(args).apply((a: any) => getExsiHost(a, opts))
 }
 
 /**

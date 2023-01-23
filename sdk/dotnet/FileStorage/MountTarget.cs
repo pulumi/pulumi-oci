@@ -40,7 +40,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// All Oracle Cloud Infrastructure Services resources, including
     /// mount targets, get an Oracle-assigned, unique ID called an
-    /// Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).\
+    /// Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
     /// When you create a resource, you can find its OCID in the response.
     /// You can also retrieve a resource's OCID by using a List API operation on that resource
     /// type, or by viewing the resource in the Console.
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> HostnameLabel { get; private set; } = null!;
 
         /// <summary>
-        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
         /// </summary>
         [Output("ipAddress")]
         public Output<string> IpAddress { get; private set; } = null!;
@@ -266,7 +266,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? HostnameLabel { get; set; }
 
         /// <summary>
-        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
@@ -352,7 +352,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? HostnameLabel { get; set; }
 
         /// <summary>
-        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }

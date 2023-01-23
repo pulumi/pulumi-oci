@@ -80,10 +80,12 @@ import (
 type Model struct {
 	pulumi.CustomResourceState
 
+	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition pulumi.StringOutput `pulumi:"artifactContentDisposition"`
-	ArtifactContentLength      pulumi.StringOutput `pulumi:"artifactContentLength"`
-	ArtifactContentMd5         pulumi.StringOutput `pulumi:"artifactContentMd5"`
-	ArtifactLastModified       pulumi.StringOutput `pulumi:"artifactLastModified"`
+	// The content length of the model_artifact.
+	ArtifactContentLength pulumi.StringOutput `pulumi:"artifactContentLength"`
+	ArtifactContentMd5    pulumi.StringOutput `pulumi:"artifactContentMd5"`
+	ArtifactLastModified  pulumi.StringOutput `pulumi:"artifactLastModified"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -102,7 +104,8 @@ type Model struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Input schema file content in String format
-	InputSchema   pulumi.StringOutput `pulumi:"inputSchema"`
+	InputSchema pulumi.StringOutput `pulumi:"inputSchema"`
+	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringOutput `pulumi:"modelArtifact"`
 	// Output schema file content in String format
 	OutputSchema pulumi.StringOutput `pulumi:"outputSchema"`
@@ -155,10 +158,12 @@ func GetModel(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Model resources.
 type modelState struct {
+	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
-	ArtifactContentLength      *string `pulumi:"artifactContentLength"`
-	ArtifactContentMd5         *string `pulumi:"artifactContentMd5"`
-	ArtifactLastModified       *string `pulumi:"artifactLastModified"`
+	// The content length of the model_artifact.
+	ArtifactContentLength *string `pulumi:"artifactContentLength"`
+	ArtifactContentMd5    *string `pulumi:"artifactContentMd5"`
+	ArtifactLastModified  *string `pulumi:"artifactLastModified"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -177,7 +182,8 @@ type modelState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Input schema file content in String format
-	InputSchema   *string `pulumi:"inputSchema"`
+	InputSchema *string `pulumi:"inputSchema"`
+	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact *string `pulumi:"modelArtifact"`
 	// Output schema file content in String format
 	OutputSchema *string `pulumi:"outputSchema"`
@@ -190,10 +196,12 @@ type modelState struct {
 }
 
 type ModelState struct {
+	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition pulumi.StringPtrInput
-	ArtifactContentLength      pulumi.StringPtrInput
-	ArtifactContentMd5         pulumi.StringPtrInput
-	ArtifactLastModified       pulumi.StringPtrInput
+	// The content length of the model_artifact.
+	ArtifactContentLength pulumi.StringPtrInput
+	ArtifactContentMd5    pulumi.StringPtrInput
+	ArtifactLastModified  pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -212,7 +220,8 @@ type ModelState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// Input schema file content in String format
-	InputSchema   pulumi.StringPtrInput
+	InputSchema pulumi.StringPtrInput
+	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringPtrInput
 	// Output schema file content in String format
 	OutputSchema pulumi.StringPtrInput
@@ -229,8 +238,10 @@ func (ModelState) ElementType() reflect.Type {
 }
 
 type modelArgs struct {
+	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
-	ArtifactContentLength      string  `pulumi:"artifactContentLength"`
+	// The content length of the model_artifact.
+	ArtifactContentLength string `pulumi:"artifactContentLength"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) An array of custom metadata details for the model.
@@ -246,8 +257,9 @@ type modelArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Input schema file content in String format
-	InputSchema   *string `pulumi:"inputSchema"`
-	ModelArtifact string  `pulumi:"modelArtifact"`
+	InputSchema *string `pulumi:"inputSchema"`
+	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+	ModelArtifact string `pulumi:"modelArtifact"`
 	// Output schema file content in String format
 	OutputSchema *string `pulumi:"outputSchema"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -258,8 +270,10 @@ type modelArgs struct {
 
 // The set of arguments for constructing a Model resource.
 type ModelArgs struct {
+	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition pulumi.StringPtrInput
-	ArtifactContentLength      pulumi.StringInput
+	// The content length of the model_artifact.
+	ArtifactContentLength pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) An array of custom metadata details for the model.
@@ -275,7 +289,8 @@ type ModelArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// Input schema file content in String format
-	InputSchema   pulumi.StringPtrInput
+	InputSchema pulumi.StringPtrInput
+	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringInput
 	// Output schema file content in String format
 	OutputSchema pulumi.StringPtrInput
@@ -372,10 +387,12 @@ func (o ModelOutput) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 	return o
 }
 
+// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 func (o ModelOutput) ArtifactContentDisposition() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ArtifactContentDisposition }).(pulumi.StringOutput)
 }
 
+// The content length of the model_artifact.
 func (o ModelOutput) ArtifactContentLength() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ArtifactContentLength }).(pulumi.StringOutput)
 }
@@ -437,6 +454,7 @@ func (o ModelOutput) InputSchema() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.InputSchema }).(pulumi.StringOutput)
 }
 
+// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 func (o ModelOutput) ModelArtifact() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelArtifact }).(pulumi.StringOutput)
 }

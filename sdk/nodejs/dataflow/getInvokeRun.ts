@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvokeRun(args: GetInvokeRunArgs, opts?: pulumi.InvokeOptions): Promise<GetInvokeRunResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getInvokeRun:getInvokeRun", {
         "runId": args.runId,
     }, opts);
@@ -55,7 +53,7 @@ export interface GetInvokeRunResult {
      */
     readonly applicationLogConfigs: outputs.DataFlow.GetInvokeRunApplicationLogConfig[];
     /**
-     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
     readonly archiveUri: string;
     /**
@@ -124,6 +122,10 @@ export interface GetInvokeRunResult {
      */
     readonly id: string;
     /**
+     * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     */
+    readonly idleTimeoutInMinutes: string;
+    /**
      * The Spark language.
      */
     readonly language: string;
@@ -135,6 +137,10 @@ export interface GetInvokeRunResult {
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
     readonly logsBucketUri: string;
+    /**
+     * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     */
+    readonly maxDurationInMinutes: string;
     /**
      * The OCID of Oracle Cloud Infrastructure Hive Metastore.
      */
@@ -213,9 +219,24 @@ export interface GetInvokeRunResult {
      */
     readonly warehouseBucketUri: string;
 }
-
+/**
+ * This data source provides details about a specific Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
+ *
+ * Retrieves the run for the specified `runId`.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInvokeRun = oci.DataFlow.getInvokeRun({
+ *     runId: oci_dataflow_run.test_run.id,
+ * });
+ * ```
+ */
 export function getInvokeRunOutput(args: GetInvokeRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvokeRunResult> {
-    return pulumi.output(args).apply(a => getInvokeRun(a, opts))
+    return pulumi.output(args).apply((a: any) => getInvokeRun(a, opts))
 }
 
 /**

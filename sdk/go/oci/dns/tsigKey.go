@@ -96,6 +96,13 @@ func NewTsigKey(ctx *pulumi.Context,
 	if args.Secret == nil {
 		return nil, errors.New("invalid value for required argument 'Secret'")
 	}
+	if args.Secret != nil {
+		args.Secret = pulumi.ToSecret(args.Secret).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"secret",
+	})
+	opts = append(opts, secrets)
 	var resource TsigKey
 	err := ctx.RegisterResource("oci:Dns/tsigKey:TsigKey", name, args, &resource, opts...)
 	if err != nil {

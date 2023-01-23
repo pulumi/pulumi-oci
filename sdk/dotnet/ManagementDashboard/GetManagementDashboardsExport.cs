@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ManagementDashboard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementDashboardsExportResult> InvokeAsync(GetManagementDashboardsExportArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.ManagementDashboard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementDashboardsExportResult> Invoke(GetManagementDashboardsExportInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportInvokeArgs(), options.WithDefaults());
     }
 
 

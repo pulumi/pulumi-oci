@@ -44,7 +44,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetResultResult> InvokeAsync(GetResultArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetResultResult>("oci:ApmSynthetics/getResult:getResult", args ?? new GetResultArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetResultResult>("oci:ApmSynthetics/getResult:getResult", args ?? new GetResultArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetResultResult> Invoke(GetResultInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetResultResult>("oci:ApmSynthetics/getResult:getResult", args ?? new GetResultInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetResultResult>("oci:ApmSynthetics/getResult:getResult", args ?? new GetResultInvokeArgs(), options.WithDefaults());
     }
 
 

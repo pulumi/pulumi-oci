@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProductLicenseConsumers(args: GetProductLicenseConsumersArgs, opts?: pulumi.InvokeOptions): Promise<GetProductLicenseConsumersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getProductLicenseConsumers:getProductLicenseConsumers", {
         "compartmentId": args.compartmentId,
         "isCompartmentIdInSubtree": args.isCompartmentIdInSubtree,
@@ -70,9 +68,26 @@ export interface GetProductLicenseConsumersResult {
     readonly items: outputs.LicenseManager.GetProductLicenseConsumersItem[];
     readonly productLicenseId: string;
 }
-
+/**
+ * This data source provides the list of Product License Consumers in Oracle Cloud Infrastructure License Manager service.
+ *
+ * Retrieves the product license consumers for a particular product license ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProductLicenseConsumers = oci.LicenseManager.getProductLicenseConsumers({
+ *     compartmentId: _var.compartment_id,
+ *     productLicenseId: oci_license_manager_product_license.test_product_license.id,
+ *     isCompartmentIdInSubtree: _var.product_license_consumer_is_compartment_id_in_subtree,
+ * });
+ * ```
+ */
 export function getProductLicenseConsumersOutput(args: GetProductLicenseConsumersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicenseConsumersResult> {
-    return pulumi.output(args).apply(a => getProductLicenseConsumers(a, opts))
+    return pulumi.output(args).apply((a: any) => getProductLicenseConsumers(a, opts))
 }
 
 /**

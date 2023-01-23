@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRegistryFolders(args: GetRegistryFoldersArgs, opts?: pulumi.InvokeOptions): Promise<GetRegistryFoldersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataConnectivity/getRegistryFolders:getRegistryFolders", {
         "favoritesQueryParam": args.favoritesQueryParam,
         "fields": args.fields,
@@ -93,9 +91,28 @@ export interface GetRegistryFoldersResult {
      */
     readonly type?: string;
 }
-
+/**
+ * This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
+ *
+ * Retrieves a list of all the folders.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRegistryFolders = oci.DataConnectivity.getRegistryFolders({
+ *     registryId: oci_data_connectivity_registry.test_registry.id,
+ *     favoritesQueryParam: _var.registry_folder_favorites_query_param,
+ *     fields: _var.registry_folder_fields,
+ *     name: _var.registry_folder_name,
+ *     type: _var.registry_folder_type,
+ * });
+ * ```
+ */
 export function getRegistryFoldersOutput(args: GetRegistryFoldersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegistryFoldersResult> {
-    return pulumi.output(args).apply(a => getRegistryFolders(a, opts))
+    return pulumi.output(args).apply((a: any) => getRegistryFolders(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPingMonitors(args: GetPingMonitorsArgs, opts?: pulumi.InvokeOptions): Promise<GetPingMonitorsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getPingMonitors:getPingMonitors", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -85,9 +83,29 @@ export interface GetPingMonitorsResult {
      */
     readonly pingMonitors: outputs.HealthChecks.GetPingMonitorsPingMonitor[];
 }
-
+/**
+ * This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.
+ *
+ * Gets a list of configured ping monitors.
+ *
+ * Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+ * a URL for fetching the next page.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPingMonitors = oci.HealthChecks.getPingMonitors({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.ping_monitor_display_name,
+ *     homeRegion: _var.ping_monitor_home_region,
+ * });
+ * ```
+ */
 export function getPingMonitorsOutput(args: GetPingMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingMonitorsResult> {
-    return pulumi.output(args).apply(a => getPingMonitors(a, opts))
+    return pulumi.output(args).apply((a: any) => getPingMonitors(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceAvailablePlugin(args: GetInstanceAvailablePluginArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceAvailablePluginResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -79,9 +77,26 @@ export interface GetInstanceAvailablePluginResult {
     readonly osName: string;
     readonly osVersion: string;
 }
-
+/**
+ * This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
+ *
+ * The API to get the list of plugins that are available.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstanceAvailablePlugins = oci.ComputeInstanceAgent.getInstanceAvailablePlugin({
+ *     osName: _var.instance_available_plugin_os_name,
+ *     osVersion: _var.instance_available_plugin_os_version,
+ *     name: _var.instance_available_plugin_name,
+ * });
+ * ```
+ */
 export function getInstanceAvailablePluginOutput(args: GetInstanceAvailablePluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceAvailablePluginResult> {
-    return pulumi.output(args).apply(a => getInstanceAvailablePlugin(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstanceAvailablePlugin(a, opts))
 }
 
 /**

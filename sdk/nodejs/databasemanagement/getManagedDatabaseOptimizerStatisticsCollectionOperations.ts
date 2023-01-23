@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -32,11 +33,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsCollectionOperations(args: GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", {
         "endTimeLessThanOrEqualTo": args.endTimeLessThanOrEqualTo,
         "filterBy": args.filterBy,
@@ -96,9 +94,34 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult
     readonly startTimeGreaterThanOrEqualTo?: string;
     readonly taskType?: string;
 }
-
+/**
+ * This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
+ * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+ * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+ * If the date-time range is not specified, then the operations in the last seven days are listed.
+ * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+ * If you use the same header value in a consecutive request, the next page records are returned.
+ * To obtain the required results, you can apply the different types of filters supported by this API.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseOptimizerStatisticsCollectionOperations = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionOperations({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     endTimeLessThanOrEqualTo: _var.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to,
+ *     filterBy: _var.managed_database_optimizer_statistics_collection_operation_filter_by,
+ *     startTimeGreaterThanOrEqualTo: _var.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to,
+ *     taskType: _var.managed_database_optimizer_statistics_collection_operation_task_type,
+ * });
+ * ```
+ */
 export function getManagedDatabaseOptimizerStatisticsCollectionOperationsOutput(args: GetManagedDatabaseOptimizerStatisticsCollectionOperationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseOptimizerStatisticsCollectionOperations(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsCollectionOperations(a, opts))
 }
 
 /**

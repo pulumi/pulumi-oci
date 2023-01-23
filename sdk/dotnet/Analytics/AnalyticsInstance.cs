@@ -198,6 +198,10 @@ namespace Pulumi.Oci.Analytics
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "idcsAccessToken",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -275,11 +279,21 @@ namespace Pulumi.Oci.Analytics
             set => _freeformTags = value;
         }
 
+        [Input("idcsAccessToken", required: true)]
+        private Input<string>? _idcsAccessToken;
+
         /// <summary>
         /// IDCS access token identifying a stripe and service administrator user.
         /// </summary>
-        [Input("idcsAccessToken", required: true)]
-        public Input<string> IdcsAccessToken { get; set; } = null!;
+        public Input<string>? IdcsAccessToken
+        {
+            get => _idcsAccessToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsAccessToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
@@ -373,11 +387,21 @@ namespace Pulumi.Oci.Analytics
             set => _freeformTags = value;
         }
 
+        [Input("idcsAccessToken")]
+        private Input<string>? _idcsAccessToken;
+
         /// <summary>
         /// IDCS access token identifying a stripe and service administrator user.
         /// </summary>
-        [Input("idcsAccessToken")]
-        public Input<string>? IdcsAccessToken { get; set; }
+        public Input<string>? IdcsAccessToken
+        {
+            get => _idcsAccessToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsAccessToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.

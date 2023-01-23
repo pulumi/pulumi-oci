@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetModelProvenanceResult> InvokeAsync(GetModelProvenanceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetModelProvenanceResult>("oci:DataScience/getModelProvenance:getModelProvenance", args ?? new GetModelProvenanceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelProvenanceResult>("oci:DataScience/getModelProvenance:getModelProvenance", args ?? new GetModelProvenanceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetModelProvenanceResult> Invoke(GetModelProvenanceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetModelProvenanceResult>("oci:DataScience/getModelProvenance:getModelProvenance", args ?? new GetModelProvenanceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelProvenanceResult>("oci:DataScience/getModelProvenance:getModelProvenance", args ?? new GetModelProvenanceInvokeArgs(), options.WithDefaults());
     }
 
 

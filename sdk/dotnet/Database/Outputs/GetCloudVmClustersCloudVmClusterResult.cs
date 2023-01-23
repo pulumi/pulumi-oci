@@ -51,6 +51,18 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int DataStoragePercentage;
         /// <summary>
+        /// The data disk group size to be allocated in TBs.
+        /// </summary>
+        public readonly double DataStorageSizeInTbs;
+        /// <summary>
+        /// The local node storage to be allocated in GBs.
+        /// </summary>
+        public readonly int DbNodeStorageSizeInGbs;
+        /// <summary>
+        /// The list of DB servers.
+        /// </summary>
+        public readonly ImmutableArray<string> DbServers;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -108,6 +120,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ListenerPort;
         /// <summary>
+        /// The memory to be allocated in GBs.
+        /// </summary>
+        public readonly int MemorySizeInGbs;
+        /// <summary>
         /// The number of nodes in the cloud VM cluster.
         /// </summary>
         public readonly int NodeCount;
@@ -120,6 +136,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         public readonly double OcpuCount;
+        public readonly string PrivateZoneId;
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         /// </summary>
@@ -203,6 +220,12 @@ namespace Pulumi.Oci.Database.Outputs
 
             int dataStoragePercentage,
 
+            double dataStorageSizeInTbs,
+
+            int dbNodeStorageSizeInGbs,
+
+            ImmutableArray<string> dbServers,
+
             ImmutableDictionary<string, object> definedTags,
 
             string diskRedundancy,
@@ -233,11 +256,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             string listenerPort,
 
+            int memorySizeInGbs,
+
             int nodeCount,
 
             ImmutableArray<string> nsgIds,
 
             double ocpuCount,
+
+            string privateZoneId,
 
             string scanDnsName,
 
@@ -279,6 +306,9 @@ namespace Pulumi.Oci.Database.Outputs
             CreateAsync = createAsync;
             DataCollectionOptions = dataCollectionOptions;
             DataStoragePercentage = dataStoragePercentage;
+            DataStorageSizeInTbs = dataStorageSizeInTbs;
+            DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            DbServers = dbServers;
             DefinedTags = definedTags;
             DiskRedundancy = diskRedundancy;
             DisplayName = displayName;
@@ -294,9 +324,11 @@ namespace Pulumi.Oci.Database.Outputs
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
             ListenerPort = listenerPort;
+            MemorySizeInGbs = memorySizeInGbs;
             NodeCount = nodeCount;
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
+            PrivateZoneId = privateZoneId;
             ScanDnsName = scanDnsName;
             ScanDnsRecordId = scanDnsRecordId;
             ScanIpIds = scanIpIds;

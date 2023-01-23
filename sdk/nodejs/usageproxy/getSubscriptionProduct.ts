@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptionProduct(args: GetSubscriptionProductArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionProductResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", {
         "producttype": args.producttype,
         "subscriptionId": args.subscriptionId,
@@ -77,9 +75,27 @@ export interface GetSubscriptionProductResult {
     readonly tenancyId: string;
     readonly usagePeriodKey: string;
 }
-
+/**
+ * This data source provides details about a specific Subscription Product resource in Oracle Cloud Infrastructure Usage Proxy service.
+ *
+ * Provides product information that is specific to a reward usage period and its usage details.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscriptionProduct = oci.UsageProxy.getSubscriptionProduct({
+ *     subscriptionId: oci_ons_subscription.test_subscription.id,
+ *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     usagePeriodKey: _var.subscription_product_usage_period_key,
+ *     producttype: _var.subscription_product_producttype,
+ * });
+ * ```
+ */
 export function getSubscriptionProductOutput(args: GetSubscriptionProductOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionProductResult> {
-    return pulumi.output(args).apply(a => getSubscriptionProduct(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscriptionProduct(a, opts))
 }
 
 /**

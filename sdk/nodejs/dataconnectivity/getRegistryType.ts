@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRegistryType(args: GetRegistryTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetRegistryTypeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataConnectivity/getRegistryType:getRegistryType", {
         "fields": args.fields,
         "registryId": args.registryId,
@@ -74,9 +72,26 @@ export interface GetRegistryTypeResult {
     readonly registryId: string;
     readonly typeKey: string;
 }
-
+/**
+ * This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
+ *
+ * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRegistryType = oci.DataConnectivity.getRegistryType({
+ *     registryId: oci_data_connectivity_registry.test_registry.id,
+ *     typeKey: _var.registry_type_type_key,
+ *     fields: _var.registry_type_fields,
+ * });
+ * ```
+ */
 export function getRegistryTypeOutput(args: GetRegistryTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegistryTypeResult> {
-    return pulumi.output(args).apply(a => getRegistryType(a, opts))
+    return pulumi.output(args).apply((a: any) => getRegistryType(a, opts))
 }
 
 /**

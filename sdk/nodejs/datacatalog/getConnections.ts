@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -34,11 +35,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConnections(args: GetConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getConnections:getConnections", {
         "catalogId": args.catalogId,
         "createdById": args.createdById,
@@ -173,9 +171,36 @@ export interface GetConnectionsResult {
      */
     readonly updatedById?: string;
 }
-
+/**
+ * This data source provides the list of Connections in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Returns a list of all Connections for a data asset.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConnections = oci.DataCatalog.getConnections({
+ *     catalogId: oci_datacatalog_catalog.test_catalog.id,
+ *     dataAssetKey: _var.connection_data_asset_key,
+ *     createdById: oci_datacatalog_created_by.test_created_by.id,
+ *     displayName: _var.connection_display_name,
+ *     displayNameContains: _var.connection_display_name_contains,
+ *     externalKey: _var.connection_external_key,
+ *     fields: _var.connection_fields,
+ *     isDefault: _var.connection_is_default,
+ *     state: _var.connection_state,
+ *     timeCreated: _var.connection_time_created,
+ *     timeStatusUpdated: _var.connection_time_status_updated,
+ *     timeUpdated: _var.connection_time_updated,
+ *     updatedById: oci_datacatalog_updated_by.test_updated_by.id,
+ * });
+ * ```
+ */
 export function getConnectionsOutput(args: GetConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionsResult> {
-    return pulumi.output(args).apply(a => getConnections(a, opts))
+    return pulumi.output(args).apply((a: any) => getConnections(a, opts))
 }
 
 /**

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementAgentImagesResult> InvokeAsync(GetManagementAgentImagesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentImagesResult>("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args ?? new GetManagementAgentImagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentImagesResult>("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args ?? new GetManagementAgentImagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementAgentImagesResult> Invoke(GetManagementAgentImagesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementAgentImagesResult>("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args ?? new GetManagementAgentImagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentImagesResult>("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args ?? new GetManagementAgentImagesInvokeArgs(), options.WithDefaults());
     }
 
 

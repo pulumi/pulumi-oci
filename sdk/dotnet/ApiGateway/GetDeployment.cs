@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeploymentResult> InvokeAsync(GetDeploymentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentResult>("oci:ApiGateway/getDeployment:getDeployment", args ?? new GetDeploymentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentResult>("oci:ApiGateway/getDeployment:getDeployment", args ?? new GetDeploymentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure API Gateway service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeploymentResult> Invoke(GetDeploymentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeploymentResult>("oci:ApiGateway/getDeployment:getDeployment", args ?? new GetDeploymentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentResult>("oci:ApiGateway/getDeployment:getDeployment", args ?? new GetDeploymentInvokeArgs(), options.WithDefaults());
     }
 
 

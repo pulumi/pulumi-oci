@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetModelDeploymentShapesResult> InvokeAsync(GetModelDeploymentShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetModelDeploymentShapesResult>("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args ?? new GetModelDeploymentShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelDeploymentShapesResult>("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args ?? new GetModelDeploymentShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetModelDeploymentShapesResult> Invoke(GetModelDeploymentShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetModelDeploymentShapesResult>("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args ?? new GetModelDeploymentShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelDeploymentShapesResult>("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args ?? new GetModelDeploymentShapesInvokeArgs(), options.WithDefaults());
     }
 
 

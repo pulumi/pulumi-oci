@@ -56,6 +56,10 @@ type LookupCloudExadataInfrastructureArgs struct {
 
 // A collection of values returned by getCloudExadataInfrastructure.
 type LookupCloudExadataInfrastructureResult struct {
+	// The requested number of additional storage servers activated for the Exadata infrastructure.
+	ActivatedStorageCount int `pulumi:"activatedStorageCount"`
+	// The requested number of additional storage servers for the Exadata infrastructure.
+	AdditionalStorageCount int `pulumi:"additionalStorageCount"`
 	// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -65,8 +69,14 @@ type LookupCloudExadataInfrastructureResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of compute servers for the cloud Exadata infrastructure.
 	ComputeCount int `pulumi:"computeCount"`
+	// The total number of CPU cores allocated.
+	CpuCount int `pulumi:"cpuCount"`
 	// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
 	CustomerContacts []GetCloudExadataInfrastructureCustomerContact `pulumi:"customerContacts"`
+	// Size, in terabytes, of the DATA disk group.
+	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -81,6 +91,16 @@ type LookupCloudExadataInfrastructureResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetCloudExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// The total number of CPU cores available.
+	MaxCpuCount int `pulumi:"maxCpuCount"`
+	// The total available DATA disk group size.
+	MaxDataStorageInTbs float64 `pulumi:"maxDataStorageInTbs"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs int `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The model name of the cloud Exadata infrastructure resource.
@@ -133,6 +153,16 @@ func (o LookupCloudExadataInfrastructureResultOutput) ToLookupCloudExadataInfras
 	return o
 }
 
+// The requested number of additional storage servers activated for the Exadata infrastructure.
+func (o LookupCloudExadataInfrastructureResultOutput) ActivatedStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.ActivatedStorageCount }).(pulumi.IntOutput)
+}
+
+// The requested number of additional storage servers for the Exadata infrastructure.
+func (o LookupCloudExadataInfrastructureResultOutput) AdditionalStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.AdditionalStorageCount }).(pulumi.IntOutput)
+}
+
 // The name of the availability domain that the cloud Exadata infrastructure resource is located in.
 func (o LookupCloudExadataInfrastructureResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
@@ -157,11 +187,26 @@ func (o LookupCloudExadataInfrastructureResultOutput) ComputeCount() pulumi.IntO
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
+// The total number of CPU cores allocated.
+func (o LookupCloudExadataInfrastructureResultOutput) CpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.CpuCount }).(pulumi.IntOutput)
+}
+
 // The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
 func (o LookupCloudExadataInfrastructureResultOutput) CustomerContacts() GetCloudExadataInfrastructureCustomerContactArrayOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) []GetCloudExadataInfrastructureCustomerContact {
 		return v.CustomerContacts
 	}).(GetCloudExadataInfrastructureCustomerContactArrayOutput)
+}
+
+// Size, in terabytes, of the DATA disk group.
+func (o LookupCloudExadataInfrastructureResultOutput) DataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The local node storage allocated in GBs.
+func (o LookupCloudExadataInfrastructureResultOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -199,6 +244,31 @@ func (o LookupCloudExadataInfrastructureResultOutput) MaintenanceWindows() GetCl
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) []GetCloudExadataInfrastructureMaintenanceWindow {
 		return v.MaintenanceWindows
 	}).(GetCloudExadataInfrastructureMaintenanceWindowArrayOutput)
+}
+
+// The total number of CPU cores available.
+func (o LookupCloudExadataInfrastructureResultOutput) MaxCpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.MaxCpuCount }).(pulumi.IntOutput)
+}
+
+// The total available DATA disk group size.
+func (o LookupCloudExadataInfrastructureResultOutput) MaxDataStorageInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) float64 { return v.MaxDataStorageInTbs }).(pulumi.Float64Output)
+}
+
+// The total local node storage available in GBs.
+func (o LookupCloudExadataInfrastructureResultOutput) MaxDbNodeStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.MaxDbNodeStorageInGbs }).(pulumi.IntOutput)
+}
+
+// The total memory available in GBs.
+func (o LookupCloudExadataInfrastructureResultOutput) MaxMemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.MaxMemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The memory allocated in GBs.
+func (o LookupCloudExadataInfrastructureResultOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.

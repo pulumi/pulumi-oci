@@ -2,22 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## ]
- *
- * ***
- * subcategory: "Core"
- * layout: "oci"
- * page_title: "Oracle Cloud Infrastructure: oci.Core.BootVolume"
- * sidebar_current: "docs-oci-resource-core-boot_volume"
- * description: |-
- *   Provides the Boot Volume resource in Oracle Cloud Infrastructure Core service
- * ---
- *
- * # oci.Core.BootVolume
  * This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
  *
  * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.

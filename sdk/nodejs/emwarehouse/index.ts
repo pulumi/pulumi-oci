@@ -5,15 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./emWarehouse";
-export * from "./getEmWarehouse";
-export * from "./getEmWarehouses";
-export * from "./getEtlRun";
-export * from "./getEtlRuns";
-export * from "./getResourceUsage";
+export { EmWarehouseArgs, EmWarehouseState } from "./emWarehouse";
+export type EmWarehouse = import("./emWarehouse").EmWarehouse;
+export const EmWarehouse: typeof import("./emWarehouse").EmWarehouse = null as any;
+utilities.lazyLoad(exports, ["EmWarehouse"], () => require("./emWarehouse"));
 
-// Import resources to register:
-import { EmWarehouse } from "./emWarehouse";
+export { GetEmWarehouseArgs, GetEmWarehouseResult, GetEmWarehouseOutputArgs } from "./getEmWarehouse";
+export const getEmWarehouse: typeof import("./getEmWarehouse").getEmWarehouse = null as any;
+export const getEmWarehouseOutput: typeof import("./getEmWarehouse").getEmWarehouseOutput = null as any;
+utilities.lazyLoad(exports, ["getEmWarehouse","getEmWarehouseOutput"], () => require("./getEmWarehouse"));
+
+export { GetEmWarehousesArgs, GetEmWarehousesResult, GetEmWarehousesOutputArgs } from "./getEmWarehouses";
+export const getEmWarehouses: typeof import("./getEmWarehouses").getEmWarehouses = null as any;
+export const getEmWarehousesOutput: typeof import("./getEmWarehouses").getEmWarehousesOutput = null as any;
+utilities.lazyLoad(exports, ["getEmWarehouses","getEmWarehousesOutput"], () => require("./getEmWarehouses"));
+
+export { GetEtlRunArgs, GetEtlRunResult, GetEtlRunOutputArgs } from "./getEtlRun";
+export const getEtlRun: typeof import("./getEtlRun").getEtlRun = null as any;
+export const getEtlRunOutput: typeof import("./getEtlRun").getEtlRunOutput = null as any;
+utilities.lazyLoad(exports, ["getEtlRun","getEtlRunOutput"], () => require("./getEtlRun"));
+
+export { GetEtlRunsArgs, GetEtlRunsResult, GetEtlRunsOutputArgs } from "./getEtlRuns";
+export const getEtlRuns: typeof import("./getEtlRuns").getEtlRuns = null as any;
+export const getEtlRunsOutput: typeof import("./getEtlRuns").getEtlRunsOutput = null as any;
+utilities.lazyLoad(exports, ["getEtlRuns","getEtlRunsOutput"], () => require("./getEtlRuns"));
+
+export { GetResourceUsageArgs, GetResourceUsageResult, GetResourceUsageOutputArgs } from "./getResourceUsage";
+export const getResourceUsage: typeof import("./getResourceUsage").getResourceUsage = null as any;
+export const getResourceUsageOutput: typeof import("./getResourceUsage").getResourceUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceUsage","getResourceUsageOutput"], () => require("./getResourceUsage"));
+
 
 const _module = {
     version: utilities.getVersion(),

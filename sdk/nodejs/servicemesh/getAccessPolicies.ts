@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAccessPolicies(args: GetAccessPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessPoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -98,9 +96,28 @@ export interface GetAccessPoliciesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Access Policies in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Returns a list of AccessPolicy objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAccessPolicies = oci.ServiceMesh.getAccessPolicies({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.access_policy_id,
+ *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ *     name: _var.access_policy_name,
+ *     state: _var.access_policy_state,
+ * });
+ * ```
+ */
 export function getAccessPoliciesOutput(args: GetAccessPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessPoliciesResult> {
-    return pulumi.output(args).apply(a => getAccessPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getAccessPolicies(a, opts))
 }
 
 /**

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConnectHarness(args: GetConnectHarnessArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectHarnessResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Streaming/getConnectHarness:getConnectHarness", {
         "connectHarnessId": args.connectHarnessId,
     }, opts);
@@ -79,9 +76,24 @@ export interface GetConnectHarnessResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
+ *
+ * Gets detailed information about a connect harness.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConnectHarness = oci.Streaming.getConnectHarness({
+ *     connectHarnessId: oci_streaming_connect_harnes.test_connect_harnes.id,
+ * });
+ * ```
+ */
 export function getConnectHarnessOutput(args: GetConnectHarnessOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectHarnessResult> {
-    return pulumi.output(args).apply(a => getConnectHarness(a, opts))
+    return pulumi.output(args).apply((a: any) => getConnectHarness(a, opts))
 }
 
 /**

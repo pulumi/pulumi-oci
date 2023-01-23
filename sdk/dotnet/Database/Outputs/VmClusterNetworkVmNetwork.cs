@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// (Updatable) The network domain name.
         /// </summary>
-        public readonly string DomainName;
+        public readonly string? DomainName;
         /// <summary>
         /// (Updatable) The network gateway.
         /// </summary>
-        public readonly string Gateway;
+        public readonly string? Gateway;
         /// <summary>
         /// (Updatable) The network netmask.
         /// </summary>
-        public readonly string Netmask;
+        public readonly string? Netmask;
         /// <summary>
         /// (Updatable) The network type.
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// (Updatable) The network VLAN ID.
         /// </summary>
-        public readonly string VlanId;
+        public readonly string? VlanId;
 
         [OutputConstructor]
         private VmClusterNetworkVmNetwork(
-            string domainName,
+            string? domainName,
 
-            string gateway,
+            string? gateway,
 
-            string netmask,
+            string? netmask,
 
             string networkType,
 
             ImmutableArray<Outputs.VmClusterNetworkVmNetworkNode> nodes,
 
-            string vlanId)
+            string? vlanId)
         {
             DomainName = domainName;
             Gateway = gateway;

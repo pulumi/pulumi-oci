@@ -805,7 +805,7 @@ class IntegrationInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            __props__.__dict__["idcs_at"] = idcs_at
+            __props__.__dict__["idcs_at"] = None if idcs_at is None else pulumi.Output.secret(idcs_at)
             if integration_instance_type is None and not opts.urn:
                 raise TypeError("Missing required property 'integration_instance_type'")
             __props__.__dict__["integration_instance_type"] = integration_instance_type
@@ -825,6 +825,8 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["state_message"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["idcsAt"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(IntegrationInstance, __self__).__init__(
             'oci:Integration/integrationInstance:IntegrationInstance',
             resource_name,

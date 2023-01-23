@@ -12,10 +12,10 @@ namespace Pulumi.Oci.ObjectStorage
     public static class GetNamespaceMetadata
     {
         public static Task<GetNamespaceMetadataResult> InvokeAsync(GetNamespaceMetadataArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceMetadataResult>("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args ?? new GetNamespaceMetadataArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceMetadataResult>("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args ?? new GetNamespaceMetadataArgs(), options.WithDefaults());
 
         public static Output<GetNamespaceMetadataResult> Invoke(GetNamespaceMetadataInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNamespaceMetadataResult>("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args ?? new GetNamespaceMetadataInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceMetadataResult>("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args ?? new GetNamespaceMetadataInvokeArgs(), options.WithDefaults());
     }
 
 

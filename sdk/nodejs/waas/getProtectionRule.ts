@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectionRule(args: GetProtectionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionRuleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getProtectionRule:getProtectionRule", {
         "protectionRuleKey": args.protectionRuleKey,
         "waasPolicyId": args.waasPolicyId,
@@ -87,9 +85,25 @@ export interface GetProtectionRuleResult {
     readonly protectionRuleKey: string;
     readonly waasPolicyId: string;
 }
-
+/**
+ * This data source provides details about a specific Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProtectionRule = oci.Waas.getProtectionRule({
+ *     protectionRuleKey: _var.protection_rule_protection_rule_key,
+ *     waasPolicyId: oci_waas_waas_policy.test_waas_policy.id,
+ * });
+ * ```
+ */
 export function getProtectionRuleOutput(args: GetProtectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRuleResult> {
-    return pulumi.output(args).apply(a => getProtectionRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getProtectionRule(a, opts))
 }
 
 /**

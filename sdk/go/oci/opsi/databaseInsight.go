@@ -73,8 +73,12 @@ type DatabaseInsight struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringOutput `pulumi:"opsiPrivateEndpointId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+	ParentId pulumi.StringOutput `pulumi:"parentId"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 	ProcessorCount pulumi.IntOutput `pulumi:"processorCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	RootId pulumi.StringOutput `pulumi:"rootId"`
 	// Database service name used for connection requests.
 	ServiceName pulumi.StringOutput `pulumi:"serviceName"`
 	// The current state of the database.
@@ -174,8 +178,12 @@ type databaseInsightState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+	ParentId *string `pulumi:"parentId"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 	ProcessorCount *int `pulumi:"processorCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	RootId *string `pulumi:"rootId"`
 	// Database service name used for connection requests.
 	ServiceName *string `pulumi:"serviceName"`
 	// The current state of the database.
@@ -241,8 +249,12 @@ type DatabaseInsightState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+	ParentId pulumi.StringPtrInput
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 	ProcessorCount pulumi.IntPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	RootId pulumi.StringPtrInput
 	// Database service name used for connection requests.
 	ServiceName pulumi.StringPtrInput
 	// The current state of the database.
@@ -558,9 +570,19 @@ func (o DatabaseInsightOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.OpsiPrivateEndpointId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+func (o DatabaseInsightOutput) ParentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.ParentId }).(pulumi.StringOutput)
+}
+
 // Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 func (o DatabaseInsightOutput) ProcessorCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.IntOutput { return v.ProcessorCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+func (o DatabaseInsightOutput) RootId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.RootId }).(pulumi.StringOutput)
 }
 
 // Database service name used for connection requests.

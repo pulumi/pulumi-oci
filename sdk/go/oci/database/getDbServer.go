@@ -90,6 +90,8 @@ type GetDbServerResult struct {
 	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
 	// The allocated memory in GBs on the Db server.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+	Shape string `pulumi:"shape"`
 	// The current state of the Db server.
 	State string `pulumi:"state"`
 	// The date and time that the Db Server was created.
@@ -215,6 +217,11 @@ func (o GetDbServerResultOutput) MaxMemoryInGbs() pulumi.IntOutput {
 // The allocated memory in GBs on the Db server.
 func (o GetDbServerResultOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbServerResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+func (o GetDbServerResultOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServerResult) string { return v.Shape }).(pulumi.StringOutput)
 }
 
 // The current state of the Db server.

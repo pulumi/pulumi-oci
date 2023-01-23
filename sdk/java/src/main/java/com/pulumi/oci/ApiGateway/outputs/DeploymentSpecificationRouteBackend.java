@@ -5,6 +5,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteBackendHeader;
+import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteBackendRoutingBackend;
+import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteBackendSelectionSource;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -16,6 +18,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DeploymentSpecificationRouteBackend {
+    /**
+     * @return (Updatable)
+     * 
+     */
+    private @Nullable List<String> allowedPostLogoutUris;
     /**
      * @return (Updatable) The body of the stock response from the mock backend.
      * 
@@ -42,10 +49,25 @@ public final class DeploymentSpecificationRouteBackend {
      */
     private @Nullable Boolean isSslVerifyDisabled;
     /**
+     * @return (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
+     * 
+     */
+    private @Nullable String postLogoutState;
+    /**
      * @return (Updatable) Defines a timeout for reading a response from the proxied server.
      * 
      */
     private @Nullable Double readTimeoutInSeconds;
+    /**
+     * @return (Updatable) List of backends to chose from for Dynamic Routing.
+     * 
+     */
+    private @Nullable List<DeploymentSpecificationRouteBackendRoutingBackend> routingBackends;
+    /**
+     * @return (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * 
+     */
+    private @Nullable DeploymentSpecificationRouteBackendSelectionSource selectionSource;
     /**
      * @return (Updatable) Defines a timeout for transmitting a request to the proxied server.
      * 
@@ -68,6 +90,13 @@ public final class DeploymentSpecificationRouteBackend {
     private @Nullable String url;
 
     private DeploymentSpecificationRouteBackend() {}
+    /**
+     * @return (Updatable)
+     * 
+     */
+    public List<String> allowedPostLogoutUris() {
+        return this.allowedPostLogoutUris == null ? List.of() : this.allowedPostLogoutUris;
+    }
     /**
      * @return (Updatable) The body of the stock response from the mock backend.
      * 
@@ -104,11 +133,32 @@ public final class DeploymentSpecificationRouteBackend {
         return Optional.ofNullable(this.isSslVerifyDisabled);
     }
     /**
+     * @return (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
+     * 
+     */
+    public Optional<String> postLogoutState() {
+        return Optional.ofNullable(this.postLogoutState);
+    }
+    /**
      * @return (Updatable) Defines a timeout for reading a response from the proxied server.
      * 
      */
     public Optional<Double> readTimeoutInSeconds() {
         return Optional.ofNullable(this.readTimeoutInSeconds);
+    }
+    /**
+     * @return (Updatable) List of backends to chose from for Dynamic Routing.
+     * 
+     */
+    public List<DeploymentSpecificationRouteBackendRoutingBackend> routingBackends() {
+        return this.routingBackends == null ? List.of() : this.routingBackends;
+    }
+    /**
+     * @return (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * 
+     */
+    public Optional<DeploymentSpecificationRouteBackendSelectionSource> selectionSource() {
+        return Optional.ofNullable(this.selectionSource);
     }
     /**
      * @return (Updatable) Defines a timeout for transmitting a request to the proxied server.
@@ -148,12 +198,16 @@ public final class DeploymentSpecificationRouteBackend {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> allowedPostLogoutUris;
         private @Nullable String body;
         private @Nullable Double connectTimeoutInSeconds;
         private @Nullable String functionId;
         private @Nullable List<DeploymentSpecificationRouteBackendHeader> headers;
         private @Nullable Boolean isSslVerifyDisabled;
+        private @Nullable String postLogoutState;
         private @Nullable Double readTimeoutInSeconds;
+        private @Nullable List<DeploymentSpecificationRouteBackendRoutingBackend> routingBackends;
+        private @Nullable DeploymentSpecificationRouteBackendSelectionSource selectionSource;
         private @Nullable Double sendTimeoutInSeconds;
         private @Nullable Integer status;
         private String type;
@@ -161,18 +215,30 @@ public final class DeploymentSpecificationRouteBackend {
         public Builder() {}
         public Builder(DeploymentSpecificationRouteBackend defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.allowedPostLogoutUris = defaults.allowedPostLogoutUris;
     	      this.body = defaults.body;
     	      this.connectTimeoutInSeconds = defaults.connectTimeoutInSeconds;
     	      this.functionId = defaults.functionId;
     	      this.headers = defaults.headers;
     	      this.isSslVerifyDisabled = defaults.isSslVerifyDisabled;
+    	      this.postLogoutState = defaults.postLogoutState;
     	      this.readTimeoutInSeconds = defaults.readTimeoutInSeconds;
+    	      this.routingBackends = defaults.routingBackends;
+    	      this.selectionSource = defaults.selectionSource;
     	      this.sendTimeoutInSeconds = defaults.sendTimeoutInSeconds;
     	      this.status = defaults.status;
     	      this.type = defaults.type;
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
+        public Builder allowedPostLogoutUris(@Nullable List<String> allowedPostLogoutUris) {
+            this.allowedPostLogoutUris = allowedPostLogoutUris;
+            return this;
+        }
+        public Builder allowedPostLogoutUris(String... allowedPostLogoutUris) {
+            return allowedPostLogoutUris(List.of(allowedPostLogoutUris));
+        }
         @CustomType.Setter
         public Builder body(@Nullable String body) {
             this.body = body;
@@ -202,8 +268,26 @@ public final class DeploymentSpecificationRouteBackend {
             return this;
         }
         @CustomType.Setter
+        public Builder postLogoutState(@Nullable String postLogoutState) {
+            this.postLogoutState = postLogoutState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder readTimeoutInSeconds(@Nullable Double readTimeoutInSeconds) {
             this.readTimeoutInSeconds = readTimeoutInSeconds;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder routingBackends(@Nullable List<DeploymentSpecificationRouteBackendRoutingBackend> routingBackends) {
+            this.routingBackends = routingBackends;
+            return this;
+        }
+        public Builder routingBackends(DeploymentSpecificationRouteBackendRoutingBackend... routingBackends) {
+            return routingBackends(List.of(routingBackends));
+        }
+        @CustomType.Setter
+        public Builder selectionSource(@Nullable DeploymentSpecificationRouteBackendSelectionSource selectionSource) {
+            this.selectionSource = selectionSource;
             return this;
         }
         @CustomType.Setter
@@ -228,12 +312,16 @@ public final class DeploymentSpecificationRouteBackend {
         }
         public DeploymentSpecificationRouteBackend build() {
             final var o = new DeploymentSpecificationRouteBackend();
+            o.allowedPostLogoutUris = allowedPostLogoutUris;
             o.body = body;
             o.connectTimeoutInSeconds = connectTimeoutInSeconds;
             o.functionId = functionId;
             o.headers = headers;
             o.isSslVerifyDisabled = isSslVerifyDisabled;
+            o.postLogoutState = postLogoutState;
             o.readTimeoutInSeconds = readTimeoutInSeconds;
+            o.routingBackends = routingBackends;
+            o.selectionSource = selectionSource;
             o.sendTimeoutInSeconds = sendTimeoutInSeconds;
             o.status = status;
             o.type = type;

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVmHost(args: GetDedicatedVmHostArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDedicatedVmHost:getDedicatedVmHost", {
         "dedicatedVmHostId": args.dedicatedVmHostId,
     }, opts);
@@ -103,9 +100,24 @@ export interface GetDedicatedVmHostResult {
      */
     readonly totalOcpus: number;
 }
-
+/**
+ * This data source provides details about a specific Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information about the specified dedicated virtual machine host.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDedicatedVmHost = oci.Core.getDedicatedVmHost({
+ *     dedicatedVmHostId: oci_core_dedicated_vm_host.test_dedicated_vm_host.id,
+ * });
+ * ```
+ */
 export function getDedicatedVmHostOutput(args: GetDedicatedVmHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostResult> {
-    return pulumi.output(args).apply(a => getDedicatedVmHost(a, opts))
+    return pulumi.output(args).apply((a: any) => getDedicatedVmHost(a, opts))
 }
 
 /**

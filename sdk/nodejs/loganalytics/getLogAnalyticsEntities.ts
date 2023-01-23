@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -33,11 +34,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsEntities(args: GetLogAnalyticsEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntitiesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", {
         "cloudResourceId": args.cloudResourceId,
         "compartmentId": args.compartmentId,
@@ -157,9 +155,35 @@ export interface GetLogAnalyticsEntitiesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Return a list of log analytics entities.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
+ *     compartmentId: _var.compartment_id,
+ *     namespace: _var.log_analytics_entity_namespace,
+ *     cloudResourceId: oci_log_analytics_cloud_resource.test_cloud_resource.id,
+ *     entityTypeNames: _var.log_analytics_entity_entity_type_name,
+ *     hostname: _var.log_analytics_entity_hostname,
+ *     hostnameContains: _var.log_analytics_entity_hostname_contains,
+ *     isManagementAgentIdNull: _var.log_analytics_entity_is_management_agent_id_null,
+ *     lifecycleDetailsContains: _var.log_analytics_entity_lifecycle_details_contains,
+ *     name: _var.log_analytics_entity_name,
+ *     nameContains: _var.log_analytics_entity_name_contains,
+ *     sourceId: oci_log_analytics_source.test_source.id,
+ *     state: _var.log_analytics_entity_state,
+ * });
+ * ```
+ */
 export function getLogAnalyticsEntitiesOutput(args: GetLogAnalyticsEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntitiesResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsEntities(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsEntities(a, opts))
 }
 
 /**

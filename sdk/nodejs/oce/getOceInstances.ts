@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOceInstances(args: GetOceInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetOceInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Oce/getOceInstances:getOceInstances", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -89,9 +87,27 @@ export interface GetOceInstancesResult {
      */
     readonly tenancyId?: string;
 }
-
+/**
+ * This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
+ *
+ * Returns a list of OceInstances.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOceInstances = oci.Oce.getOceInstances({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.oce_instance_display_name,
+ *     state: _var.oce_instance_state,
+ *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ * });
+ * ```
+ */
 export function getOceInstancesOutput(args: GetOceInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOceInstancesResult> {
-    return pulumi.output(args).apply(a => getOceInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getOceInstances(a, opts))
 }
 
 /**

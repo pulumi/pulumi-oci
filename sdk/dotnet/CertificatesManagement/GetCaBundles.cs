@@ -43,7 +43,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCaBundlesResult> InvokeAsync(GetCaBundlesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCaBundlesResult>("oci:CertificatesManagement/getCaBundles:getCaBundles", args ?? new GetCaBundlesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCaBundlesResult>("oci:CertificatesManagement/getCaBundles:getCaBundles", args ?? new GetCaBundlesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCaBundlesResult> Invoke(GetCaBundlesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCaBundlesResult>("oci:CertificatesManagement/getCaBundles:getCaBundles", args ?? new GetCaBundlesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCaBundlesResult>("oci:CertificatesManagement/getCaBundles:getCaBundles", args ?? new GetCaBundlesInvokeArgs(), options.WithDefaults());
     }
 
 

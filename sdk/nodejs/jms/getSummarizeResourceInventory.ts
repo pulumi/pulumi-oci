@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  */
 export function getSummarizeResourceInventory(args?: GetSummarizeResourceInventoryArgs, opts?: pulumi.InvokeOptions): Promise<GetSummarizeResourceInventoryResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", {
         "compartmentId": args.compartmentId,
         "timeEnd": args.timeEnd,
@@ -86,9 +83,26 @@ export interface GetSummarizeResourceInventoryResult {
     readonly timeEnd?: string;
     readonly timeStart?: string;
 }
-
+/**
+ * This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
+ *
+ * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSummarizeResourceInventory = oci.Jms.getSummarizeResourceInventory({
+ *     compartmentId: _var.compartment_id,
+ *     timeEnd: _var.summarize_resource_inventory_time_end,
+ *     timeStart: _var.summarize_resource_inventory_time_start,
+ * });
+ * ```
+ */
 export function getSummarizeResourceInventoryOutput(args?: GetSummarizeResourceInventoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSummarizeResourceInventoryResult> {
-    return pulumi.output(args).apply(a => getSummarizeResourceInventory(a, opts))
+    return pulumi.output(args).apply((a: any) => getSummarizeResourceInventory(a, opts))
 }
 
 /**

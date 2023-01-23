@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIngressGateway(args: GetIngressGatewayArgs, opts?: pulumi.InvokeOptions): Promise<GetIngressGatewayResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getIngressGateway:getIngressGateway", {
         "ingressGatewayId": args.ingressGatewayId,
     }, opts);
@@ -108,9 +106,24 @@ export interface GetIngressGatewayResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Gets an IngressGateway by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIngressGateway = oci.ServiceMesh.getIngressGateway({
+ *     ingressGatewayId: oci_service_mesh_ingress_gateway.test_ingress_gateway.id,
+ * });
+ * ```
+ */
 export function getIngressGatewayOutput(args: GetIngressGatewayOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIngressGatewayResult> {
-    return pulumi.output(args).apply(a => getIngressGateway(a, opts))
+    return pulumi.output(args).apply((a: any) => getIngressGateway(a, opts))
 }
 
 /**

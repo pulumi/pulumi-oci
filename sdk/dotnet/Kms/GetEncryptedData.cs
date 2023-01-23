@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEncryptedDataResult> InvokeAsync(GetEncryptedDataArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEncryptedDataResult>("oci:Kms/getEncryptedData:getEncryptedData", args ?? new GetEncryptedDataArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEncryptedDataResult>("oci:Kms/getEncryptedData:getEncryptedData", args ?? new GetEncryptedDataArgs(), options.WithDefaults());
 
         /// <summary>
         /// The `oci.Kms.EncryptedData` data source provides details about a specific EncryptedData
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEncryptedDataResult> Invoke(GetEncryptedDataInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEncryptedDataResult>("oci:Kms/getEncryptedData:getEncryptedData", args ?? new GetEncryptedDataInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEncryptedDataResult>("oci:Kms/getEncryptedData:getEncryptedData", args ?? new GetEncryptedDataInvokeArgs(), options.WithDefaults());
     }
 
 

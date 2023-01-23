@@ -51,7 +51,7 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
-     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -90,7 +90,7 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
-     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -129,7 +129,7 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
-     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -168,7 +168,7 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
-     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

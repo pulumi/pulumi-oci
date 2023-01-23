@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryFileLineResult> InvokeAsync(GetRepositoryFileLineArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryFileLineResult>("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", args ?? new GetRepositoryFileLineArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryFileLineResult>("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", args ?? new GetRepositoryFileLineArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository File Line resource in Oracle Cloud Infrastructure Devops service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryFileLineResult> Invoke(GetRepositoryFileLineInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryFileLineResult>("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", args ?? new GetRepositoryFileLineInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryFileLineResult>("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", args ?? new GetRepositoryFileLineInvokeArgs(), options.WithDefaults());
     }
 
 

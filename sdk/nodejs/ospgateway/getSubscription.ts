@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscription(args: GetSubscriptionArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OspGateway/getSubscription:getSubscription", {
         "compartmentId": args.compartmentId,
         "ospHomeRegion": args.ospHomeRegion,
@@ -140,9 +138,26 @@ export interface GetSubscriptionResult {
      */
     readonly upgradeStateDetails: string;
 }
-
+/**
+ * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
+ *
+ * Get the subscription plan.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscription = oci.OspGateway.getSubscription({
+ *     compartmentId: _var.compartment_id,
+ *     ospHomeRegion: _var.subscription_osp_home_region,
+ *     subscriptionId: oci_osp_gateway_subscription.test_subscription.id,
+ * });
+ * ```
+ */
 export function getSubscriptionOutput(args: GetSubscriptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionResult> {
-    return pulumi.output(args).apply(a => getSubscription(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscription(a, opts))
 }
 
 /**

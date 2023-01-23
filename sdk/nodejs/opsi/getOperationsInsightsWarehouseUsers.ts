@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOperationsInsightsWarehouseUsers(args: GetOperationsInsightsWarehouseUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsWarehouseUsersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -95,9 +93,28 @@ export interface GetOperationsInsightsWarehouseUsersResult {
      */
     readonly states?: string[];
 }
-
+/**
+ * This data source provides the list of Operations Insights Warehouse Users in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperationsInsightsWarehouseUsers = oci.Opsi.getOperationsInsightsWarehouseUsers({
+ *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.operations_insights_warehouse_user_display_name,
+ *     id: _var.operations_insights_warehouse_user_id,
+ *     states: _var.operations_insights_warehouse_user_state,
+ * });
+ * ```
+ */
 export function getOperationsInsightsWarehouseUsersOutput(args: GetOperationsInsightsWarehouseUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehouseUsersResult> {
-    return pulumi.output(args).apply(a => getOperationsInsightsWarehouseUsers(a, opts))
+    return pulumi.output(args).apply((a: any) => getOperationsInsightsWarehouseUsers(a, opts))
 }
 
 /**

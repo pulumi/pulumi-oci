@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbSystemStoragePerformancesResult> InvokeAsync(GetDbSystemStoragePerformancesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbSystemStoragePerformancesResult> Invoke(GetDbSystemStoragePerformancesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesInvokeArgs(), options.WithDefaults());
     }
 
 

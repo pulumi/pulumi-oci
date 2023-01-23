@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
     /**
-     * @return (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) The total amount of memory available to the job run instance, in gigabytes.
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) The total number of OCPUs available to the job run instance.
      * 
      */
     private @Nullable Double ocpus;
 
     private JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails() {}
     /**
-     * @return (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) The total amount of memory available to the job run instance, in gigabytes.
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) The total number of OCPUs available to the job run instance.
      * 
      */
     public Optional<Double> ocpus() {

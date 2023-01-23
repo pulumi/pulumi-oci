@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplicationPolicies(args: GetReplicationPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationPoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", {
         "bucket": args.bucket,
         "filters": args.filters,
@@ -66,9 +64,25 @@ export interface GetReplicationPoliciesResult {
      */
     readonly replicationPolicies: outputs.ObjectStorage.GetReplicationPoliciesReplicationPolicy[];
 }
-
+/**
+ * This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * List the replication policies associated with a bucket.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testReplicationPolicies = oci.ObjectStorage.getReplicationPolicies({
+ *     bucket: _var.replication_policy_bucket,
+ *     namespace: _var.replication_policy_namespace,
+ * });
+ * ```
+ */
 export function getReplicationPoliciesOutput(args: GetReplicationPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationPoliciesResult> {
-    return pulumi.output(args).apply(a => getReplicationPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getReplicationPolicies(a, opts))
 }
 
 /**

@@ -5,30 +5,91 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./backend";
-export * from "./backendSet";
-export * from "./getBackendHealth";
-export * from "./getBackendSet";
-export * from "./getBackendSetHealth";
-export * from "./getBackendSets";
-export * from "./getBackends";
-export * from "./getListener";
-export * from "./getListeners";
-export * from "./getNetworkLoadBalancer";
-export * from "./getNetworkLoadBalancerHealth";
-export * from "./getNetworkLoadBalancers";
-export * from "./getNetworkLoadBalancersPolicies";
-export * from "./getNetworkLoadBalancersProtocols";
-export * from "./listener";
-export * from "./networkLoadBalancer";
-export * from "./networkLoadBalancersBackendSetsUnified";
+export { BackendArgs, BackendState } from "./backend";
+export type Backend = import("./backend").Backend;
+export const Backend: typeof import("./backend").Backend = null as any;
+utilities.lazyLoad(exports, ["Backend"], () => require("./backend"));
 
-// Import resources to register:
-import { Backend } from "./backend";
-import { BackendSet } from "./backendSet";
-import { Listener } from "./listener";
-import { NetworkLoadBalancer } from "./networkLoadBalancer";
-import { NetworkLoadBalancersBackendSetsUnified } from "./networkLoadBalancersBackendSetsUnified";
+export { BackendSetArgs, BackendSetState } from "./backendSet";
+export type BackendSet = import("./backendSet").BackendSet;
+export const BackendSet: typeof import("./backendSet").BackendSet = null as any;
+utilities.lazyLoad(exports, ["BackendSet"], () => require("./backendSet"));
+
+export { GetBackendHealthArgs, GetBackendHealthResult, GetBackendHealthOutputArgs } from "./getBackendHealth";
+export const getBackendHealth: typeof import("./getBackendHealth").getBackendHealth = null as any;
+export const getBackendHealthOutput: typeof import("./getBackendHealth").getBackendHealthOutput = null as any;
+utilities.lazyLoad(exports, ["getBackendHealth","getBackendHealthOutput"], () => require("./getBackendHealth"));
+
+export { GetBackendSetArgs, GetBackendSetResult, GetBackendSetOutputArgs } from "./getBackendSet";
+export const getBackendSet: typeof import("./getBackendSet").getBackendSet = null as any;
+export const getBackendSetOutput: typeof import("./getBackendSet").getBackendSetOutput = null as any;
+utilities.lazyLoad(exports, ["getBackendSet","getBackendSetOutput"], () => require("./getBackendSet"));
+
+export { GetBackendSetHealthArgs, GetBackendSetHealthResult, GetBackendSetHealthOutputArgs } from "./getBackendSetHealth";
+export const getBackendSetHealth: typeof import("./getBackendSetHealth").getBackendSetHealth = null as any;
+export const getBackendSetHealthOutput: typeof import("./getBackendSetHealth").getBackendSetHealthOutput = null as any;
+utilities.lazyLoad(exports, ["getBackendSetHealth","getBackendSetHealthOutput"], () => require("./getBackendSetHealth"));
+
+export { GetBackendSetsArgs, GetBackendSetsResult, GetBackendSetsOutputArgs } from "./getBackendSets";
+export const getBackendSets: typeof import("./getBackendSets").getBackendSets = null as any;
+export const getBackendSetsOutput: typeof import("./getBackendSets").getBackendSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getBackendSets","getBackendSetsOutput"], () => require("./getBackendSets"));
+
+export { GetBackendsArgs, GetBackendsResult, GetBackendsOutputArgs } from "./getBackends";
+export const getBackends: typeof import("./getBackends").getBackends = null as any;
+export const getBackendsOutput: typeof import("./getBackends").getBackendsOutput = null as any;
+utilities.lazyLoad(exports, ["getBackends","getBackendsOutput"], () => require("./getBackends"));
+
+export { GetListenerArgs, GetListenerResult, GetListenerOutputArgs } from "./getListener";
+export const getListener: typeof import("./getListener").getListener = null as any;
+export const getListenerOutput: typeof import("./getListener").getListenerOutput = null as any;
+utilities.lazyLoad(exports, ["getListener","getListenerOutput"], () => require("./getListener"));
+
+export { GetListenersArgs, GetListenersResult, GetListenersOutputArgs } from "./getListeners";
+export const getListeners: typeof import("./getListeners").getListeners = null as any;
+export const getListenersOutput: typeof import("./getListeners").getListenersOutput = null as any;
+utilities.lazyLoad(exports, ["getListeners","getListenersOutput"], () => require("./getListeners"));
+
+export { GetNetworkLoadBalancerArgs, GetNetworkLoadBalancerResult, GetNetworkLoadBalancerOutputArgs } from "./getNetworkLoadBalancer";
+export const getNetworkLoadBalancer: typeof import("./getNetworkLoadBalancer").getNetworkLoadBalancer = null as any;
+export const getNetworkLoadBalancerOutput: typeof import("./getNetworkLoadBalancer").getNetworkLoadBalancerOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkLoadBalancer","getNetworkLoadBalancerOutput"], () => require("./getNetworkLoadBalancer"));
+
+export { GetNetworkLoadBalancerHealthArgs, GetNetworkLoadBalancerHealthResult, GetNetworkLoadBalancerHealthOutputArgs } from "./getNetworkLoadBalancerHealth";
+export const getNetworkLoadBalancerHealth: typeof import("./getNetworkLoadBalancerHealth").getNetworkLoadBalancerHealth = null as any;
+export const getNetworkLoadBalancerHealthOutput: typeof import("./getNetworkLoadBalancerHealth").getNetworkLoadBalancerHealthOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkLoadBalancerHealth","getNetworkLoadBalancerHealthOutput"], () => require("./getNetworkLoadBalancerHealth"));
+
+export { GetNetworkLoadBalancersArgs, GetNetworkLoadBalancersResult, GetNetworkLoadBalancersOutputArgs } from "./getNetworkLoadBalancers";
+export const getNetworkLoadBalancers: typeof import("./getNetworkLoadBalancers").getNetworkLoadBalancers = null as any;
+export const getNetworkLoadBalancersOutput: typeof import("./getNetworkLoadBalancers").getNetworkLoadBalancersOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkLoadBalancers","getNetworkLoadBalancersOutput"], () => require("./getNetworkLoadBalancers"));
+
+export { GetNetworkLoadBalancersPoliciesArgs, GetNetworkLoadBalancersPoliciesResult, GetNetworkLoadBalancersPoliciesOutputArgs } from "./getNetworkLoadBalancersPolicies";
+export const getNetworkLoadBalancersPolicies: typeof import("./getNetworkLoadBalancersPolicies").getNetworkLoadBalancersPolicies = null as any;
+export const getNetworkLoadBalancersPoliciesOutput: typeof import("./getNetworkLoadBalancersPolicies").getNetworkLoadBalancersPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkLoadBalancersPolicies","getNetworkLoadBalancersPoliciesOutput"], () => require("./getNetworkLoadBalancersPolicies"));
+
+export { GetNetworkLoadBalancersProtocolsArgs, GetNetworkLoadBalancersProtocolsResult, GetNetworkLoadBalancersProtocolsOutputArgs } from "./getNetworkLoadBalancersProtocols";
+export const getNetworkLoadBalancersProtocols: typeof import("./getNetworkLoadBalancersProtocols").getNetworkLoadBalancersProtocols = null as any;
+export const getNetworkLoadBalancersProtocolsOutput: typeof import("./getNetworkLoadBalancersProtocols").getNetworkLoadBalancersProtocolsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkLoadBalancersProtocols","getNetworkLoadBalancersProtocolsOutput"], () => require("./getNetworkLoadBalancersProtocols"));
+
+export { ListenerArgs, ListenerState } from "./listener";
+export type Listener = import("./listener").Listener;
+export const Listener: typeof import("./listener").Listener = null as any;
+utilities.lazyLoad(exports, ["Listener"], () => require("./listener"));
+
+export { NetworkLoadBalancerArgs, NetworkLoadBalancerState } from "./networkLoadBalancer";
+export type NetworkLoadBalancer = import("./networkLoadBalancer").NetworkLoadBalancer;
+export const NetworkLoadBalancer: typeof import("./networkLoadBalancer").NetworkLoadBalancer = null as any;
+utilities.lazyLoad(exports, ["NetworkLoadBalancer"], () => require("./networkLoadBalancer"));
+
+export { NetworkLoadBalancersBackendSetsUnifiedArgs, NetworkLoadBalancersBackendSetsUnifiedState } from "./networkLoadBalancersBackendSetsUnified";
+export type NetworkLoadBalancersBackendSetsUnified = import("./networkLoadBalancersBackendSetsUnified").NetworkLoadBalancersBackendSetsUnified;
+export const NetworkLoadBalancersBackendSetsUnified: typeof import("./networkLoadBalancersBackendSetsUnified").NetworkLoadBalancersBackendSetsUnified = null as any;
+utilities.lazyLoad(exports, ["NetworkLoadBalancersBackendSetsUnified"], () => require("./networkLoadBalancersBackendSetsUnified"));
+
 
 const _module = {
     version: utilities.getVersion(),

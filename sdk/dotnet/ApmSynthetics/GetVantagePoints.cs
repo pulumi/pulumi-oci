@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVantagePointsResult> InvokeAsync(GetVantagePointsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVantagePointsResult>("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVantagePointsResult>("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVantagePointsResult> Invoke(GetVantagePointsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVantagePointsResult>("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVantagePointsResult>("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsInvokeArgs(), options.WithDefaults());
     }
 
 

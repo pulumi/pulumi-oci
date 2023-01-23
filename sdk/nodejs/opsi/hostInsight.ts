@@ -118,7 +118,7 @@ export class HostInsight extends pulumi.CustomResource {
      */
     public /*out*/ readonly platformName!: pulumi.Output<string>;
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
      */
     public /*out*/ readonly platformType!: pulumi.Output<string>;
     /**
@@ -306,7 +306,7 @@ export interface HostInsightState {
      */
     platformName?: pulumi.Input<string>;
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
      */
     platformType?: pulumi.Input<string>;
     /**

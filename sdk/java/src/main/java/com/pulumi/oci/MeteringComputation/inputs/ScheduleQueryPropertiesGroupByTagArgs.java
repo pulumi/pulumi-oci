@@ -31,14 +31,14 @@ public final class ScheduleQueryPropertiesGroupByTagArgs extends com.pulumi.reso
     }
 
     /**
-     * The namespace needed to determine object storage bucket.
+     * (Updatable) The namespace needed to determine the object storage bucket.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The namespace needed to determine object storage bucket.
+     * @return (Updatable) The namespace needed to determine the object storage bucket.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -108,7 +108,7 @@ public final class ScheduleQueryPropertiesGroupByTagArgs extends com.pulumi.reso
         }
 
         /**
-         * @param namespace The namespace needed to determine object storage bucket.
+         * @param namespace (Updatable) The namespace needed to determine the object storage bucket.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class ScheduleQueryPropertiesGroupByTagArgs extends com.pulumi.reso
         }
 
         /**
-         * @param namespace The namespace needed to determine object storage bucket.
+         * @param namespace (Updatable) The namespace needed to determine the object storage bucket.
          * 
          * @return builder
          * 

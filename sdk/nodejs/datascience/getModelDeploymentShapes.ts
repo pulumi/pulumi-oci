@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelDeploymentShapes(args: GetModelDeploymentShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetModelDeploymentShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetModelDeploymentShapesResult {
      */
     readonly modelDeploymentShapes: outputs.DataScience.GetModelDeploymentShapesModelDeploymentShape[];
 }
-
+/**
+ * This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
+ *
+ * Lists the valid model deployment shapes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModelDeploymentShapes = oci.DataScience.getModelDeploymentShapes({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getModelDeploymentShapesOutput(args: GetModelDeploymentShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentShapesResult> {
-    return pulumi.output(args).apply(a => getModelDeploymentShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getModelDeploymentShapes(a, opts))
 }
 
 /**

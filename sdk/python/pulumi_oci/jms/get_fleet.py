@@ -22,13 +22,16 @@ class GetFleetResult:
     """
     A collection of values returned by getFleet.
     """
-    def __init__(__self__, approximate_application_count=None, approximate_installation_count=None, approximate_jre_count=None, approximate_managed_instance_count=None, compartment_id=None, defined_tags=None, description=None, display_name=None, fleet_id=None, freeform_tags=None, id=None, inventory_logs=None, is_advanced_features_enabled=None, operation_logs=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, approximate_application_count=None, approximate_installation_count=None, approximate_java_server_count=None, approximate_jre_count=None, approximate_managed_instance_count=None, compartment_id=None, defined_tags=None, description=None, display_name=None, fleet_id=None, freeform_tags=None, id=None, inventory_logs=None, is_advanced_features_enabled=None, operation_logs=None, state=None, system_tags=None, time_created=None):
         if approximate_application_count and not isinstance(approximate_application_count, int):
             raise TypeError("Expected argument 'approximate_application_count' to be a int")
         pulumi.set(__self__, "approximate_application_count", approximate_application_count)
         if approximate_installation_count and not isinstance(approximate_installation_count, int):
             raise TypeError("Expected argument 'approximate_installation_count' to be a int")
         pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
+        if approximate_java_server_count and not isinstance(approximate_java_server_count, int):
+            raise TypeError("Expected argument 'approximate_java_server_count' to be a int")
+        pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
         if approximate_jre_count and not isinstance(approximate_jre_count, int):
             raise TypeError("Expected argument 'approximate_jre_count' to be a int")
         pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
@@ -90,6 +93,14 @@ class GetFleetResult:
         The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_installation_count")
+
+    @property
+    @pulumi.getter(name="approximateJavaServerCount")
+    def approximate_java_server_count(self) -> int:
+        """
+        The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_java_server_count")
 
     @property
     @pulumi.getter(name="approximateJreCount")
@@ -172,7 +183,7 @@ class GetFleetResult:
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
     def is_advanced_features_enabled(self) -> bool:
         """
-        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 
@@ -217,6 +228,7 @@ class AwaitableGetFleetResult(GetFleetResult):
         return GetFleetResult(
             approximate_application_count=self.approximate_application_count,
             approximate_installation_count=self.approximate_installation_count,
+            approximate_java_server_count=self.approximate_java_server_count,
             approximate_jre_count=self.approximate_jre_count,
             approximate_managed_instance_count=self.approximate_managed_instance_count,
             compartment_id=self.compartment_id,
@@ -261,6 +273,7 @@ def get_fleet(fleet_id: Optional[str] = None,
     return AwaitableGetFleetResult(
         approximate_application_count=__ret__.approximate_application_count,
         approximate_installation_count=__ret__.approximate_installation_count,
+        approximate_java_server_count=__ret__.approximate_java_server_count,
         approximate_jre_count=__ret__.approximate_jre_count,
         approximate_managed_instance_count=__ret__.approximate_managed_instance_count,
         compartment_id=__ret__.compartment_id,

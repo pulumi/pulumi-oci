@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOperationsInsightsWarehouseResourceUsageSummaryResult> InvokeAsync(GetOperationsInsightsWarehouseResourceUsageSummaryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOperationsInsightsWarehouseResourceUsageSummaryResult>("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", args ?? new GetOperationsInsightsWarehouseResourceUsageSummaryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOperationsInsightsWarehouseResourceUsageSummaryResult>("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", args ?? new GetOperationsInsightsWarehouseResourceUsageSummaryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> Invoke(GetOperationsInsightsWarehouseResourceUsageSummaryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseResourceUsageSummaryResult>("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", args ?? new GetOperationsInsightsWarehouseResourceUsageSummaryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseResourceUsageSummaryResult>("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", args ?? new GetOperationsInsightsWarehouseResourceUsageSummaryInvokeArgs(), options.WithDefaults());
     }
 
 

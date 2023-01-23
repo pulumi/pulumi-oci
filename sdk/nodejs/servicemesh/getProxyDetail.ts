@@ -15,15 +15,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProxyDetail = pulumi.output(oci.ServiceMesh.getProxyDetail());
+ * const testProxyDetail = oci.ServiceMesh.getProxyDetail({});
  * ```
  */
 export function getProxyDetail(opts?: pulumi.InvokeOptions): Promise<GetProxyDetailResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getProxyDetail:getProxyDetail", {
     }, opts);
 }

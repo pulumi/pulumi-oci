@@ -6,6 +6,7 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthentication;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyCor;
+import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthentication;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyMutualTl;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyRateLimiting;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyUsagePlan;
@@ -24,6 +25,11 @@ public final class GetDeploymentSpecificationRequestPolicy {
      * 
      */
     private List<GetDeploymentSpecificationRequestPolicyCor> cors;
+    /**
+     * @return Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+     * 
+     */
+    private List<GetDeploymentSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications;
     /**
      * @return Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
      * 
@@ -54,6 +60,13 @@ public final class GetDeploymentSpecificationRequestPolicy {
      */
     public List<GetDeploymentSpecificationRequestPolicyCor> cors() {
         return this.cors;
+    }
+    /**
+     * @return Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+     * 
+     */
+    public List<GetDeploymentSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications() {
+        return this.dynamicAuthentications;
     }
     /**
      * @return Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
@@ -88,6 +101,7 @@ public final class GetDeploymentSpecificationRequestPolicy {
     public static final class Builder {
         private List<GetDeploymentSpecificationRequestPolicyAuthentication> authentications;
         private List<GetDeploymentSpecificationRequestPolicyCor> cors;
+        private List<GetDeploymentSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications;
         private List<GetDeploymentSpecificationRequestPolicyMutualTl> mutualTls;
         private List<GetDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings;
         private List<GetDeploymentSpecificationRequestPolicyUsagePlan> usagePlans;
@@ -96,6 +110,7 @@ public final class GetDeploymentSpecificationRequestPolicy {
     	      Objects.requireNonNull(defaults);
     	      this.authentications = defaults.authentications;
     	      this.cors = defaults.cors;
+    	      this.dynamicAuthentications = defaults.dynamicAuthentications;
     	      this.mutualTls = defaults.mutualTls;
     	      this.rateLimitings = defaults.rateLimitings;
     	      this.usagePlans = defaults.usagePlans;
@@ -116,6 +131,14 @@ public final class GetDeploymentSpecificationRequestPolicy {
         }
         public Builder cors(GetDeploymentSpecificationRequestPolicyCor... cors) {
             return cors(List.of(cors));
+        }
+        @CustomType.Setter
+        public Builder dynamicAuthentications(List<GetDeploymentSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications) {
+            this.dynamicAuthentications = Objects.requireNonNull(dynamicAuthentications);
+            return this;
+        }
+        public Builder dynamicAuthentications(GetDeploymentSpecificationRequestPolicyDynamicAuthentication... dynamicAuthentications) {
+            return dynamicAuthentications(List.of(dynamicAuthentications));
         }
         @CustomType.Setter
         public Builder mutualTls(List<GetDeploymentSpecificationRequestPolicyMutualTl> mutualTls) {
@@ -145,6 +168,7 @@ public final class GetDeploymentSpecificationRequestPolicy {
             final var o = new GetDeploymentSpecificationRequestPolicy();
             o.authentications = authentications;
             o.cors = cors;
+            o.dynamicAuthentications = dynamicAuthentications;
             o.mutualTls = mutualTls;
             o.rateLimitings = rateLimitings;
             o.usagePlans = usagePlans;

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptions(args: GetSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getSubscriptions:getSubscriptions", {
         "buyerEmail": args.buyerEmail,
         "compartmentId": args.compartmentId,
@@ -90,9 +88,31 @@ export interface GetSubscriptionsResult {
      */
     readonly subscriptions: outputs.OneSubsription.GetSubscriptionsSubscription[];
 }
-
+/**
+ * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
+ *
+ * This list API returns all subscriptions for a given plan number or subscription id or buyer email
+ * and provides additional parameters to include ratecard and commitment details.
+ * This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
+ * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscriptions = oci.OneSubsription.getSubscriptions({
+ *     compartmentId: _var.compartment_id,
+ *     buyerEmail: _var.subscription_buyer_email,
+ *     isCommitInfoRequired: _var.subscription_is_commit_info_required,
+ *     planNumber: _var.subscription_plan_number,
+ *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
+ * });
+ * ```
+ */
 export function getSubscriptionsOutput(args: GetSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionsResult> {
-    return pulumi.output(args).apply(a => getSubscriptions(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscriptions(a, opts))
 }
 
 /**

@@ -29,11 +29,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetDeployments(ctx, &goldengate.GetDeploymentsArgs{
-//				CompartmentId:     _var.Compartment_id,
-//				DisplayName:       pulumi.StringRef(_var.Deployment_display_name),
-//				Fqdn:              pulumi.StringRef(_var.Deployment_fqdn),
-//				LifecycleSubState: pulumi.StringRef(_var.Deployment_lifecycle_sub_state),
-//				State:             pulumi.StringRef(_var.Deployment_state),
+//				CompartmentId:           _var.Compartment_id,
+//				AssignableConnectionId:  pulumi.StringRef(oci_golden_gate_connection.Test_connection.Id),
+//				AssignedConnectionId:    pulumi.StringRef(oci_golden_gate_connection.Test_connection.Id),
+//				DisplayName:             pulumi.StringRef(_var.Deployment_display_name),
+//				Fqdn:                    pulumi.StringRef(_var.Deployment_fqdn),
+//				LifecycleSubState:       pulumi.StringRef(_var.Deployment_lifecycle_sub_state),
+//				State:                   pulumi.StringRef(_var.Deployment_state),
+//				SupportedConnectionType: pulumi.StringRef(_var.Deployment_supported_connection_type),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,7 +57,11 @@ func GetDeployments(ctx *pulumi.Context, args *GetDeploymentsArgs, opts ...pulum
 
 // A collection of arguments for invoking getDeployments.
 type GetDeploymentsArgs struct {
-	// The ID of the compartment in which to list resources.
+	// Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+	AssignableConnectionId *string `pulumi:"assignableConnectionId"`
+	// The OCID of the connection which for the deployment must be assigned.
+	AssignedConnectionId *string `pulumi:"assignedConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                `pulumi:"displayName"`
@@ -65,10 +72,14 @@ type GetDeploymentsArgs struct {
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State *string `pulumi:"state"`
+	// The connection type which the deployment must support.
+	SupportedConnectionType *string `pulumi:"supportedConnectionType"`
 }
 
 // A collection of values returned by getDeployments.
 type GetDeploymentsResult struct {
+	AssignableConnectionId *string `pulumi:"assignableConnectionId"`
+	AssignedConnectionId   *string `pulumi:"assignedConnectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of deployment_collection.
@@ -83,7 +94,8 @@ type GetDeploymentsResult struct {
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// Possible lifecycle states.
-	State *string `pulumi:"state"`
+	State                   *string `pulumi:"state"`
+	SupportedConnectionType *string `pulumi:"supportedConnectionType"`
 }
 
 func GetDeploymentsOutput(ctx *pulumi.Context, args GetDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentsResultOutput {
@@ -101,7 +113,11 @@ func GetDeploymentsOutput(ctx *pulumi.Context, args GetDeploymentsOutputArgs, op
 
 // A collection of arguments for invoking getDeployments.
 type GetDeploymentsOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+	AssignableConnectionId pulumi.StringPtrInput `pulumi:"assignableConnectionId"`
+	// The OCID of the connection which for the deployment must be assigned.
+	AssignedConnectionId pulumi.StringPtrInput `pulumi:"assignedConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput          `pulumi:"displayName"`
@@ -112,6 +128,8 @@ type GetDeploymentsOutputArgs struct {
 	LifecycleSubState pulumi.StringPtrInput `pulumi:"lifecycleSubState"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// The connection type which the deployment must support.
+	SupportedConnectionType pulumi.StringPtrInput `pulumi:"supportedConnectionType"`
 }
 
 func (GetDeploymentsOutputArgs) ElementType() reflect.Type {
@@ -131,6 +149,14 @@ func (o GetDeploymentsResultOutput) ToGetDeploymentsResultOutput() GetDeployment
 
 func (o GetDeploymentsResultOutput) ToGetDeploymentsResultOutputWithContext(ctx context.Context) GetDeploymentsResultOutput {
 	return o
+}
+
+func (o GetDeploymentsResultOutput) AssignableConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.AssignableConnectionId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetDeploymentsResultOutput) AssignedConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.AssignedConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -170,6 +196,10 @@ func (o GetDeploymentsResultOutput) LifecycleSubState() pulumi.StringPtrOutput {
 // Possible lifecycle states.
 func (o GetDeploymentsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetDeploymentsResultOutput) SupportedConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.SupportedConnectionType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

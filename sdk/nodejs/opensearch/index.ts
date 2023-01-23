@@ -5,14 +5,31 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./cluster";
-export * from "./getOpensearchCluster";
-export * from "./getOpensearchClusters";
-export * from "./getOpensearchVersion";
-export * from "./getOpensearchVersions";
+export { ClusterArgs, ClusterState } from "./cluster";
+export type Cluster = import("./cluster").Cluster;
+export const Cluster: typeof import("./cluster").Cluster = null as any;
+utilities.lazyLoad(exports, ["Cluster"], () => require("./cluster"));
 
-// Import resources to register:
-import { Cluster } from "./cluster";
+export { GetOpensearchClusterArgs, GetOpensearchClusterResult, GetOpensearchClusterOutputArgs } from "./getOpensearchCluster";
+export const getOpensearchCluster: typeof import("./getOpensearchCluster").getOpensearchCluster = null as any;
+export const getOpensearchClusterOutput: typeof import("./getOpensearchCluster").getOpensearchClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getOpensearchCluster","getOpensearchClusterOutput"], () => require("./getOpensearchCluster"));
+
+export { GetOpensearchClustersArgs, GetOpensearchClustersResult, GetOpensearchClustersOutputArgs } from "./getOpensearchClusters";
+export const getOpensearchClusters: typeof import("./getOpensearchClusters").getOpensearchClusters = null as any;
+export const getOpensearchClustersOutput: typeof import("./getOpensearchClusters").getOpensearchClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getOpensearchClusters","getOpensearchClustersOutput"], () => require("./getOpensearchClusters"));
+
+export { GetOpensearchVersionArgs, GetOpensearchVersionResult, GetOpensearchVersionOutputArgs } from "./getOpensearchVersion";
+export const getOpensearchVersion: typeof import("./getOpensearchVersion").getOpensearchVersion = null as any;
+export const getOpensearchVersionOutput: typeof import("./getOpensearchVersion").getOpensearchVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getOpensearchVersion","getOpensearchVersionOutput"], () => require("./getOpensearchVersion"));
+
+export { GetOpensearchVersionsArgs, GetOpensearchVersionsResult, GetOpensearchVersionsOutputArgs } from "./getOpensearchVersions";
+export const getOpensearchVersions: typeof import("./getOpensearchVersions").getOpensearchVersions = null as any;
+export const getOpensearchVersionsOutput: typeof import("./getOpensearchVersions").getOpensearchVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getOpensearchVersions","getOpensearchVersionsOutput"], () => require("./getOpensearchVersions"));
+
 
 const _module = {
     version: utilities.getVersion(),

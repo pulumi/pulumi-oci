@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -11,11 +12,8 @@ import * as utilities from "../utilities";
  * Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
  */
 export function getDbHomes(args: GetDbHomesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbHomesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbHomes:getDbHomes", {
         "backupId": args.backupId,
         "compartmentId": args.compartmentId,
@@ -102,9 +100,13 @@ export interface GetDbHomesResult {
      */
     readonly vmClusterId?: string;
 }
-
+/**
+ * This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
+ */
 export function getDbHomesOutput(args: GetDbHomesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomesResult> {
-    return pulumi.output(args).apply(a => getDbHomes(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbHomes(a, opts))
 }
 
 /**

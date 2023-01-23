@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnnouncementSubscription(args: GetAnnouncementSubscriptionArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnouncementSubscriptionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", {
         "announcementSubscriptionId": args.announcementSubscriptionId,
     }, opts);
@@ -86,6 +84,14 @@ export interface GetAnnouncementSubscriptionResult {
      */
     readonly onsTopicId: string;
     /**
+     * (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     */
+    readonly preferredLanguage: string;
+    /**
+     * The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     */
+    readonly preferredTimeZone: string;
+    /**
      * The current lifecycle state of the announcement subscription.
      */
     readonly state: string;
@@ -102,9 +108,26 @@ export interface GetAnnouncementSubscriptionResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
+ *
+ * Gets the specified announcement subscription.
+ *
+ * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAnnouncementSubscription = oci.AnnouncementsService.getAnnouncementSubscription({
+ *     announcementSubscriptionId: oci_announcements_service_announcement_subscription.test_announcement_subscription.id,
+ * });
+ * ```
+ */
 export function getAnnouncementSubscriptionOutput(args: GetAnnouncementSubscriptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnouncementSubscriptionResult> {
-    return pulumi.output(args).apply(a => getAnnouncementSubscription(a, opts))
+    return pulumi.output(args).apply((a: any) => getAnnouncementSubscription(a, opts))
 }
 
 /**

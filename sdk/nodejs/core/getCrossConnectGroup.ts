@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCrossConnectGroup(args: GetCrossConnectGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCrossConnectGroup:getCrossConnectGroup", {
         "crossConnectGroupId": args.crossConnectGroupId,
     }, opts);
@@ -92,9 +90,24 @@ export interface GetCrossConnectGroupResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified cross-connect group's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCrossConnectGroup = oci.Core.getCrossConnectGroup({
+ *     crossConnectGroupId: oci_core_cross_connect_group.test_cross_connect_group.id,
+ * });
+ * ```
+ */
 export function getCrossConnectGroupOutput(args: GetCrossConnectGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectGroupResult> {
-    return pulumi.output(args).apply(a => getCrossConnectGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getCrossConnectGroup(a, opts))
 }
 
 /**

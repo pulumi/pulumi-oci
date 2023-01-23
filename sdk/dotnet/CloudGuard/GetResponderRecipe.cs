@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetResponderRecipeResult> InvokeAsync(GetResponderRecipeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetResponderRecipeResult>("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args ?? new GetResponderRecipeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetResponderRecipeResult>("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args ?? new GetResponderRecipeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetResponderRecipeResult> Invoke(GetResponderRecipeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetResponderRecipeResult>("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args ?? new GetResponderRecipeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetResponderRecipeResult>("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args ?? new GetResponderRecipeInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -49,7 +49,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsEntitiesResult> InvokeAsync(GetLogAnalyticsEntitiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsEntitiesResult> Invoke(GetLogAnalyticsEntitiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesInvokeArgs(), options.WithDefaults());
     }
 
 

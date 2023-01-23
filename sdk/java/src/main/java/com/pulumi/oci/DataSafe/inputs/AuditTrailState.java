@@ -260,6 +260,21 @@ public final class AuditTrailState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * 
+     */
+    @Import(name="timeLastCollected")
+    private @Nullable Output<String> timeLastCollected;
+
+    /**
+     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * 
+     */
+    public Optional<Output<String>> timeLastCollected() {
+        return Optional.ofNullable(this.timeLastCollected);
+    }
+
+    /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      * 
      */
@@ -323,6 +338,7 @@ public final class AuditTrailState extends com.pulumi.resources.ResourceArgs {
         this.systemTags = $.systemTags;
         this.targetId = $.targetId;
         this.timeCreated = $.timeCreated;
+        this.timeLastCollected = $.timeLastCollected;
         this.timeUpdated = $.timeUpdated;
         this.trailLocation = $.trailLocation;
         this.workRequestId = $.workRequestId;
@@ -680,6 +696,27 @@ public final class AuditTrailState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeLastCollected The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastCollected(@Nullable Output<String> timeLastCollected) {
+            $.timeLastCollected = timeLastCollected;
+            return this;
+        }
+
+        /**
+         * @param timeLastCollected The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastCollected(String timeLastCollected) {
+            return timeLastCollected(Output.of(timeLastCollected));
         }
 
         /**

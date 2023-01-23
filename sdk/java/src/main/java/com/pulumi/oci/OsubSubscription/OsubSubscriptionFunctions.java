@@ -36,7 +36,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -77,7 +77,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -118,7 +118,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -159,7 +159,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -200,7 +200,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -242,7 +242,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -284,7 +284,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -326,7 +326,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -369,7 +369,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetRatecardsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -414,7 +414,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetRatecardsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -459,7 +459,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetRatecardsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -504,7 +504,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetRatecardsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -551,7 +551,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -599,7 +599,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -647,7 +647,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -695,7 +695,7 @@ public final class OsubSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

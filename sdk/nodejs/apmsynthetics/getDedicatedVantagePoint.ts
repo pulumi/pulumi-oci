@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVantagePoint(args: GetDedicatedVantagePointArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVantagePointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", {
         "apmDomainId": args.apmDomainId,
         "dedicatedVantagePointId": args.dedicatedVantagePointId,
@@ -99,9 +97,25 @@ export interface GetDedicatedVantagePointResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ *
+ * Gets the details of the dedicated vantage point identified by the OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDedicatedVantagePoint = oci.ApmSynthetics.getDedicatedVantagePoint({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     dedicatedVantagePointId: oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point.id,
+ * });
+ * ```
+ */
 export function getDedicatedVantagePointOutput(args: GetDedicatedVantagePointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVantagePointResult> {
-    return pulumi.output(args).apply(a => getDedicatedVantagePoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getDedicatedVantagePoint(a, opts))
 }
 
 /**

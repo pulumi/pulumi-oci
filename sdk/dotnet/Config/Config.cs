@@ -30,7 +30,7 @@ namespace Pulumi.Oci
             }
         }
 
-        private static readonly Pulumi.Config __config = new Pulumi.Config("oci");
+        private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("oci");
 
         private static readonly __Value<string?> _auth = new __Value<string?>(() => __config.Get("auth"));
         /// <summary>

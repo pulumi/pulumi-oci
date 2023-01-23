@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWaasPolicy(args: GetWaasPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetWaasPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getWaasPolicy:getWaasPolicy", {
         "waasPolicyId": args.waasPolicyId,
     }, opts);
@@ -104,9 +102,24 @@ export interface GetWaasPolicyResult {
      */
     readonly wafConfigs: outputs.Waas.GetWaasPolicyWafConfig[];
 }
-
+/**
+ * This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets the details of a WAAS policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWaasPolicy = oci.Waas.getWaasPolicy({
+ *     waasPolicyId: oci_waas_waas_policy.test_waas_policy.id,
+ * });
+ * ```
+ */
 export function getWaasPolicyOutput(args: GetWaasPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWaasPolicyResult> {
-    return pulumi.output(args).apply(a => getWaasPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getWaasPolicy(a, opts))
 }
 
 /**

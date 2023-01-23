@@ -73,6 +73,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbSystemsUpgrade{}
 	case "oci:Database/exadataInfrastructure:ExadataInfrastructure":
 		r = &ExadataInfrastructure{}
+	case "oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute":
+		r = &ExadataInfrastructureCompute{}
 	case "oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage":
 		r = &ExadataInfrastructureStorage{}
 	case "oci:Database/exadataIormConfig:ExadataIormConfig":
@@ -107,6 +109,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MaintenanceRun{}
 	case "oci:Database/pluggableDatabase:PluggableDatabase":
 		r = &PluggableDatabase{}
+	case "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement":
+		r = &PluggableDatabaseManagementsManagement{}
 	case "oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone":
 		r = &PluggableDatabasesLocalClone{}
 	case "oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone":
@@ -264,6 +268,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Database/exadataInfrastructureCompute",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Database/exadataInfrastructureStorage",
 		&module{version},
 	)
@@ -345,6 +354,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/pluggableDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/pluggableDatabaseManagementsManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetConfigurationResult> InvokeAsync(GetConfigurationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConfigurationResult>("oci:MeteringComputation/getConfiguration:getConfiguration", args ?? new GetConfigurationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConfigurationResult>("oci:MeteringComputation/getConfiguration:getConfiguration", args ?? new GetConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetConfigurationResult> Invoke(GetConfigurationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConfigurationResult>("oci:MeteringComputation/getConfiguration:getConfiguration", args ?? new GetConfigurationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetConfigurationResult>("oci:MeteringComputation/getConfiguration:getConfiguration", args ?? new GetConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

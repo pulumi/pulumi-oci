@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOrganizationSubscriptions(args: GetOrganizationSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetOrganizationSubscriptionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -73,9 +71,26 @@ export interface GetOrganizationSubscriptionsResult {
     readonly subscriptions: outputs.OsubOrganizationSubscription.GetOrganizationSubscriptionsSubscription[];
     readonly xOneOriginRegion?: string;
 }
-
+/**
+ * This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Osub Organization Subscription service.
+ *
+ * API that returns data for the list of subscription ids returned from Organizations API
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOrganizationSubscriptions = oci.OsubOrganizationSubscription.getOrganizationSubscriptions({
+ *     compartmentId: _var.compartment_id,
+ *     subscriptionIds: _var.organization_subscription_subscription_ids,
+ *     xOneOriginRegion: _var.organization_subscription_x_one_origin_region,
+ * });
+ * ```
+ */
 export function getOrganizationSubscriptionsOutput(args: GetOrganizationSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOrganizationSubscriptionsResult> {
-    return pulumi.output(args).apply(a => getOrganizationSubscriptions(a, opts))
+    return pulumi.output(args).apply((a: any) => getOrganizationSubscriptions(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPingProbeResults(args: GetPingProbeResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetPingProbeResultsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getPingProbeResults:getPingProbeResults", {
         "filters": args.filters,
         "probeConfigurationId": args.probeConfigurationId,
@@ -92,9 +90,33 @@ export interface GetPingProbeResultsResult {
      */
     readonly target?: string;
 }
-
+/**
+ * This data source provides the list of Ping Probe Results in Oracle Cloud Infrastructure Health Checks service.
+ *
+ * Returns the results for the specified probe, where the `probeConfigurationId`
+ * is the OCID of either a monitor or an on-demand probe.
+ *
+ * Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+ * a URL for fetching the next page.  Use `sortOrder` to set the order of the
+ * results.  If `sortOrder` is unspecified, results are sorted in ascending order by
+ * `startTime`.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPingProbeResults = oci.HealthChecks.getPingProbeResults({
+ *     probeConfigurationId: oci_health_checks_probe_configuration.test_probe_configuration.id,
+ *     startTimeGreaterThanOrEqualTo: _var.ping_probe_result_start_time_greater_than_or_equal_to,
+ *     startTimeLessThanOrEqualTo: _var.ping_probe_result_start_time_less_than_or_equal_to,
+ *     target: _var.ping_probe_result_target,
+ * });
+ * ```
+ */
 export function getPingProbeResultsOutput(args: GetPingProbeResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingProbeResultsResult> {
-    return pulumi.output(args).apply(a => getPingProbeResults(a, opts))
+    return pulumi.output(args).apply((a: any) => getPingProbeResults(a, opts))
 }
 
 /**

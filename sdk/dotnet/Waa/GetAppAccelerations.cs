@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Waa
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAppAccelerationsResult> InvokeAsync(GetAppAccelerationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppAccelerationsResult>("oci:Waa/getAppAccelerations:getAppAccelerations", args ?? new GetAppAccelerationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppAccelerationsResult>("oci:Waa/getAppAccelerations:getAppAccelerations", args ?? new GetAppAccelerationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Web App Accelerations in Oracle Cloud Infrastructure Waa service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Waa
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAppAccelerationsResult> Invoke(GetAppAccelerationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppAccelerationsResult>("oci:Waa/getAppAccelerations:getAppAccelerations", args ?? new GetAppAccelerationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppAccelerationsResult>("oci:Waa/getAppAccelerations:getAppAccelerations", args ?? new GetAppAccelerationsInvokeArgs(), options.WithDefaults());
     }
 
 

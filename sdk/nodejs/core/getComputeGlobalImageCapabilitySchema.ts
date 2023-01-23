@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeGlobalImageCapabilitySchema(args: GetComputeGlobalImageCapabilitySchemaArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeGlobalImageCapabilitySchemaResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeGlobalImageCapabilitySchema:getComputeGlobalImageCapabilitySchema", {
         "computeGlobalImageCapabilitySchemaId": args.computeGlobalImageCapabilitySchemaId,
     }, opts);
@@ -75,9 +72,24 @@ export interface GetComputeGlobalImageCapabilitySchemaResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified Compute Global Image Capability Schema
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testComputeGlobalImageCapabilitySchema = oci.Core.getComputeGlobalImageCapabilitySchema({
+ *     computeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema.id,
+ * });
+ * ```
+ */
 export function getComputeGlobalImageCapabilitySchemaOutput(args: GetComputeGlobalImageCapabilitySchemaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemaResult> {
-    return pulumi.output(args).apply(a => getComputeGlobalImageCapabilitySchema(a, opts))
+    return pulumi.output(args).apply((a: any) => getComputeGlobalImageCapabilitySchema(a, opts))
 }
 
 /**

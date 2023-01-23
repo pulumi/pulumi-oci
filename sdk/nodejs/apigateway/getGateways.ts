@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGateways(args: GetGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetGatewaysResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getGateways:getGateways", {
         "certificateId": args.certificateId,
         "compartmentId": args.compartmentId,
@@ -92,9 +90,27 @@ export interface GetGatewaysResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Gateways in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Returns a list of gateways.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testGateways = oci.ApiGateway.getGateways({
+ *     compartmentId: _var.compartment_id,
+ *     certificateId: _var.oci_apigateway_certificate.test_certificate.id,
+ *     displayName: _var.gateway_display_name,
+ *     state: _var.gateway_state,
+ * });
+ * ```
+ */
 export function getGatewaysOutput(args: GetGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGatewaysResult> {
-    return pulumi.output(args).apply(a => getGateways(a, opts))
+    return pulumi.output(args).apply((a: any) => getGateways(a, opts))
 }
 
 /**

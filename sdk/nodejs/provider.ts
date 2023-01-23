@@ -84,8 +84,8 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["disableAutoRetries"] = pulumi.output(args ? args.disableAutoRetries : undefined).apply(JSON.stringify);
             resourceInputs["fingerprint"] = args ? args.fingerprint : undefined;
             resourceInputs["ignoreDefinedTags"] = pulumi.output(args ? args.ignoreDefinedTags : undefined).apply(JSON.stringify);
-            resourceInputs["privateKey"] = args ? args.privateKey : undefined;
-            resourceInputs["privateKeyPassword"] = args ? args.privateKeyPassword : undefined;
+            resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
+            resourceInputs["privateKeyPassword"] = args?.privateKeyPassword ? pulumi.secret(args.privateKeyPassword) : undefined;
             resourceInputs["privateKeyPath"] = args ? args.privateKeyPath : undefined;
             resourceInputs["region"] = args ? args.region : undefined;
             resourceInputs["retryDurationSeconds"] = pulumi.output(args ? args.retryDurationSeconds : undefined).apply(JSON.stringify);
@@ -93,6 +93,8 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["userOcid"] = args ? args.userOcid : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["privateKey", "privateKeyPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 }

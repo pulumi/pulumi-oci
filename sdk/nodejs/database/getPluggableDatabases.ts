@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  */
 export function getPluggableDatabases(args?: GetPluggableDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetPluggableDatabasesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getPluggableDatabases:getPluggableDatabases", {
         "compartmentId": args.compartmentId,
         "databaseId": args.databaseId,
@@ -90,9 +88,27 @@ export interface GetPluggableDatabasesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPluggableDatabases = oci.Database.getPluggableDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     databaseId: oci_database_database.test_database.id,
+ *     pdbName: _var.pluggable_database_pdb_name,
+ *     state: _var.pluggable_database_state,
+ * });
+ * ```
+ */
 export function getPluggableDatabasesOutput(args?: GetPluggableDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPluggableDatabasesResult> {
-    return pulumi.output(args).apply(a => getPluggableDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getPluggableDatabases(a, opts))
 }
 
 /**

@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ImageType;
         /// <summary>
-        /// The patches included in the image and the version of the image
+        /// The patches included in the image and the version of the image.
         /// </summary>
         public readonly string IncludedPatchesSummary;
         /// <summary>

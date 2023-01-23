@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Oce
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOceInstancesResult> InvokeAsync(GetOceInstancesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOceInstancesResult>("oci:Oce/getOceInstances:getOceInstances", args ?? new GetOceInstancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOceInstancesResult>("oci:Oce/getOceInstances:getOceInstances", args ?? new GetOceInstancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Oce
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOceInstancesResult> Invoke(GetOceInstancesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOceInstancesResult>("oci:Oce/getOceInstances:getOceInstances", args ?? new GetOceInstancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOceInstancesResult>("oci:Oce/getOceInstances:getOceInstances", args ?? new GetOceInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -21,6 +21,7 @@ class VmClusterNetworkArgs:
                  exadata_infrastructure_id: pulumi.Input[str],
                  scans: pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]],
                  vm_networks: pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]],
+                 action: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -43,6 +44,8 @@ class VmClusterNetworkArgs:
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         pulumi.set(__self__, "scans", scans)
         pulumi.set(__self__, "vm_networks", vm_networks)
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if dns is not None:
@@ -115,6 +118,15 @@ class VmClusterNetworkArgs:
         pulumi.set(self, "vm_networks", value)
 
     @property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -175,6 +187,7 @@ class VmClusterNetworkArgs:
 @pulumi.input_type
 class _VmClusterNetworkState:
     def __init__(__self__, *,
+                 action: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -200,11 +213,13 @@ class _VmClusterNetworkState:
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[str] state: The current state of the VM cluster network.
+        :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time when the VM cluster network was created.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: (Updatable) Details of the client and backup networks.
         """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -233,6 +248,15 @@ class _VmClusterNetworkState:
             pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
         if vm_networks is not None:
             pulumi.set(__self__, "vm_networks", vm_networks)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -346,7 +370,7 @@ class _VmClusterNetworkState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the VM cluster network.
+        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -405,6 +429,7 @@ class VmClusterNetwork(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -440,16 +465,18 @@ class VmClusterNetwork(pulumi.CustomResource):
                 scan_listener_port_tcp_ssl=var["vm_cluster_network_scans_scan_listener_port_tcp_ssl"],
             )],
             vm_networks=[oci.database.VmClusterNetworkVmNetworkArgs(
-                domain_name=var["vm_cluster_network_vm_networks_domain_name"],
-                gateway=var["vm_cluster_network_vm_networks_gateway"],
-                netmask=var["vm_cluster_network_vm_networks_netmask"],
                 network_type=var["vm_cluster_network_vm_networks_network_type"],
                 nodes=[oci.database.VmClusterNetworkVmNetworkNodeArgs(
                     hostname=var["vm_cluster_network_vm_networks_nodes_hostname"],
                     ip=var["vm_cluster_network_vm_networks_nodes_ip"],
+                    db_server_id=oci_database_db_server["test_db_server"]["id"],
+                    state=var["vm_cluster_network_vm_networks_nodes_state"],
                     vip=var["vm_cluster_network_vm_networks_nodes_vip"],
                     vip_hostname=var["vm_cluster_network_vm_networks_nodes_vip_hostname"],
                 )],
+                domain_name=oci_identity_domain["test_domain"]["name"],
+                gateway=var["vm_cluster_network_vm_networks_gateway"],
+                netmask=var["vm_cluster_network_vm_networks_netmask"],
                 vlan_id=var["vm_cluster_network_vm_networks_vlan_id"],
             )],
             defined_tags=var["vm_cluster_network_defined_tags"],
@@ -511,16 +538,18 @@ class VmClusterNetwork(pulumi.CustomResource):
                 scan_listener_port_tcp_ssl=var["vm_cluster_network_scans_scan_listener_port_tcp_ssl"],
             )],
             vm_networks=[oci.database.VmClusterNetworkVmNetworkArgs(
-                domain_name=var["vm_cluster_network_vm_networks_domain_name"],
-                gateway=var["vm_cluster_network_vm_networks_gateway"],
-                netmask=var["vm_cluster_network_vm_networks_netmask"],
                 network_type=var["vm_cluster_network_vm_networks_network_type"],
                 nodes=[oci.database.VmClusterNetworkVmNetworkNodeArgs(
                     hostname=var["vm_cluster_network_vm_networks_nodes_hostname"],
                     ip=var["vm_cluster_network_vm_networks_nodes_ip"],
+                    db_server_id=oci_database_db_server["test_db_server"]["id"],
+                    state=var["vm_cluster_network_vm_networks_nodes_state"],
                     vip=var["vm_cluster_network_vm_networks_nodes_vip"],
                     vip_hostname=var["vm_cluster_network_vm_networks_nodes_vip_hostname"],
                 )],
+                domain_name=oci_identity_domain["test_domain"]["name"],
+                gateway=var["vm_cluster_network_vm_networks_gateway"],
+                netmask=var["vm_cluster_network_vm_networks_netmask"],
                 vlan_id=var["vm_cluster_network_vm_networks_vlan_id"],
             )],
             defined_tags=var["vm_cluster_network_defined_tags"],
@@ -555,6 +584,7 @@ class VmClusterNetwork(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -574,6 +604,7 @@ class VmClusterNetwork(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = VmClusterNetworkArgs.__new__(VmClusterNetworkArgs)
 
+            __props__.__dict__["action"] = action
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -608,6 +639,7 @@ class VmClusterNetwork(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            action: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -638,7 +670,7 @@ class VmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[str] state: The current state of the VM cluster network.
+        :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time when the VM cluster network was created.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: (Updatable) Details of the client and backup networks.
@@ -647,6 +679,7 @@ class VmClusterNetwork(pulumi.CustomResource):
 
         __props__ = _VmClusterNetworkState.__new__(_VmClusterNetworkState)
 
+        __props__.__dict__["action"] = action
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -662,6 +695,11 @@ class VmClusterNetwork(pulumi.CustomResource):
         __props__.__dict__["vm_cluster_id"] = vm_cluster_id
         __props__.__dict__["vm_networks"] = vm_networks
         return VmClusterNetwork(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter
+    def action(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -739,7 +777,7 @@ class VmClusterNetwork(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the VM cluster network.
+        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 

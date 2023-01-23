@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProtocolsResult> InvokeAsync(GetProtocolsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProtocolsResult>("oci:LoadBalancer/getProtocols:getProtocols", args ?? new GetProtocolsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtocolsResult>("oci:LoadBalancer/getProtocols:getProtocols", args ?? new GetProtocolsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProtocolsResult> Invoke(GetProtocolsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProtocolsResult>("oci:LoadBalancer/getProtocols:getProtocols", args ?? new GetProtocolsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtocolsResult>("oci:LoadBalancer/getProtocols:getProtocols", args ?? new GetProtocolsInvokeArgs(), options.WithDefaults());
     }
 
 

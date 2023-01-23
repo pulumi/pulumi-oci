@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVirtualServiceRouteTableResult> InvokeAsync(GetVirtualServiceRouteTableArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVirtualServiceRouteTableResult>("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args ?? new GetVirtualServiceRouteTableArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualServiceRouteTableResult>("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args ?? new GetVirtualServiceRouteTableArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Virtual Service Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVirtualServiceRouteTableResult> Invoke(GetVirtualServiceRouteTableInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVirtualServiceRouteTableResult>("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args ?? new GetVirtualServiceRouteTableInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualServiceRouteTableResult>("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args ?? new GetVirtualServiceRouteTableInvokeArgs(), options.WithDefaults());
     }
 
 

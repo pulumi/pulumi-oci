@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRatecards(args: GetRatecardsArgs, opts?: pulumi.InvokeOptions): Promise<GetRatecardsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubSubscription/getRatecards:getRatecards", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -98,9 +96,30 @@ export interface GetRatecardsResult {
     readonly timeTo?: string;
     readonly xOneOriginRegion?: string;
 }
-
+/**
+ * This data source provides the list of Ratecards in Oracle Cloud Infrastructure Osub Subscription service.
+ *
+ * List API that returns all ratecards for given Subscription Id and Account ID (if provided) and
+ * for a particular date range
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRatecards = oci.OsubSubscription.getRatecards({
+ *     compartmentId: _var.compartment_id,
+ *     subscriptionId: oci_osub_subscription_subscription.test_subscription.id,
+ *     partNumber: _var.ratecard_part_number,
+ *     timeFrom: _var.ratecard_time_from,
+ *     timeTo: _var.ratecard_time_to,
+ *     xOneOriginRegion: _var.ratecard_x_one_origin_region,
+ * });
+ * ```
+ */
 export function getRatecardsOutput(args: GetRatecardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRatecardsResult> {
-    return pulumi.output(args).apply(a => getRatecards(a, opts))
+    return pulumi.output(args).apply((a: any) => getRatecards(a, opts))
 }
 
 /**

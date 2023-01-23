@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertRules(args: GetAlertRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Budget/getAlertRules:getAlertRules", {
         "budgetId": args.budgetId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetAlertRulesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
+ *
+ * Returns a list of Alert Rules for a specified budget.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlertRules = oci.Budget.getAlertRules({
+ *     budgetId: oci_budget_budget.test_budget.id,
+ *     displayName: _var.alert_rule_display_name,
+ *     state: _var.alert_rule_state,
+ * });
+ * ```
+ */
 export function getAlertRulesOutput(args: GetAlertRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertRulesResult> {
-    return pulumi.output(args).apply(a => getAlertRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlertRules(a, opts))
 }
 
 /**

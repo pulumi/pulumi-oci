@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateEndpoint(args: GetPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ResourceManager/getPrivateEndpoint:getPrivateEndpoint", {
         "privateEndpointId": args.privateEndpointId,
     }, opts);
@@ -103,9 +100,24 @@ export interface GetPrivateEndpointResult {
      */
     readonly vcnId: string;
 }
-
+/**
+ * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
+ *
+ * Gets the specified private endpoint.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateEndpoint = oci.ResourceManager.getPrivateEndpoint({
+ *     privateEndpointId: oci_resourcemanager_private_endpoint.test_private_endpoint.id,
+ * });
+ * ```
+ */
 export function getPrivateEndpointOutput(args: GetPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointResult> {
-    return pulumi.output(args).apply(a => getPrivateEndpoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getPrivateEndpoint(a, opts))
 }
 
 /**

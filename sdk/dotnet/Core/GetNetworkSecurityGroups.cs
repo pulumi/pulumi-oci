@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkSecurityGroupsResult> InvokeAsync(GetNetworkSecurityGroupsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityGroupsResult>("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args ?? new GetNetworkSecurityGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityGroupsResult>("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args ?? new GetNetworkSecurityGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Network Security Groups in Oracle Cloud Infrastructure Core service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkSecurityGroupsResult> Invoke(GetNetworkSecurityGroupsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupsResult>("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args ?? new GetNetworkSecurityGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupsResult>("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args ?? new GetNetworkSecurityGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

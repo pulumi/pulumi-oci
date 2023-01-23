@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksFinding(args: GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", {
         "beginExecId": args.beginExecId,
         "endExecId": args.endExecId,
@@ -108,9 +106,31 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
     readonly sqlTuningAdvisorTaskId: string;
     readonly statsHashFilter?: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Finding resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets an array of the details of the findings that match specific filters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseSqlTuningAdvisorTasksFinding = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksFinding({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
+ *     beginExecId: oci_database_management_begin_exec.test_begin_exec.id,
+ *     endExecId: oci_database_management_end_exec.test_end_exec.id,
+ *     findingFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
+ *     indexHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+ *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_finding_search_period,
+ *     statsHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
+ * });
+ * ```
+ */
 export function getManagedDatabaseSqlTuningAdvisorTasksFindingOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksFindingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseSqlTuningAdvisorTasksFinding(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksFinding(a, opts))
 }
 
 /**

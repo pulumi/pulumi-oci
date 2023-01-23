@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getControlAssignment(args: GetControlAssignmentArgs, opts?: pulumi.InvokeOptions): Promise<GetControlAssignmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", {
         "operatorControlAssignmentId": args.operatorControlAssignmentId,
     }, opts);
@@ -155,9 +152,24 @@ export interface GetControlAssignmentResult {
      */
     readonly unassignerId: string;
 }
-
+/**
+ * This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
+ *
+ * Gets the details of an Operator Control Assignment of the specified ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperatorControlAssignment = oci.OperatorAccessControl.getControlAssignment({
+ *     operatorControlAssignmentId: oci_operator_access_control_operator_control_assignment.test_operator_control_assignment.id,
+ * });
+ * ```
+ */
 export function getControlAssignmentOutput(args: GetControlAssignmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlAssignmentResult> {
-    return pulumi.output(args).apply(a => getControlAssignment(a, opts))
+    return pulumi.output(args).apply((a: any) => getControlAssignment(a, opts))
 }
 
 /**

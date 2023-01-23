@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetResourceAvailabilityResult> InvokeAsync(GetResourceAvailabilityArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetResourceAvailabilityResult>("oci:Limits/getResourceAvailability:getResourceAvailability", args ?? new GetResourceAvailabilityArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetResourceAvailabilityResult>("oci:Limits/getResourceAvailability:getResourceAvailability", args ?? new GetResourceAvailabilityArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetResourceAvailabilityResult> Invoke(GetResourceAvailabilityInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetResourceAvailabilityResult>("oci:Limits/getResourceAvailability:getResourceAvailability", args ?? new GetResourceAvailabilityInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetResourceAvailabilityResult>("oci:Limits/getResourceAvailability:getResourceAvailability", args ?? new GetResourceAvailabilityInvokeArgs(), options.WithDefaults());
     }
 
 

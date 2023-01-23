@@ -29,6 +29,11 @@ namespace Pulumi.Oci.Functions.Outputs
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly string RefreshActivityId;
+        /// <summary>
+        /// Details of refresh investigation information, each item represents a different issue.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult> RefreshIssueDetailsLists;
         /// <summary>
         /// Service availability / impact during refresh activity execution up down
         /// </summary>
@@ -58,10 +63,6 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string TimeOfRestorationPoint;
         /// <summary>
-        /// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-        /// </summary>
-        public readonly string TimeScheduledStart;
-        /// <summary>
         /// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
@@ -75,6 +76,10 @@ namespace Pulumi.Oci.Functions.Outputs
             string id,
 
             string lifecycleDetails,
+
+            string refreshActivityId,
+
+            ImmutableArray<Outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult> refreshIssueDetailsLists,
 
             string serviceAvailability,
 
@@ -90,14 +95,14 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string timeOfRestorationPoint,
 
-            string timeScheduledStart,
-
             string timeUpdated)
         {
             DisplayName = displayName;
             FusionEnvironmentId = fusionEnvironmentId;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            RefreshActivityId = refreshActivityId;
+            RefreshIssueDetailsLists = refreshIssueDetailsLists;
             ServiceAvailability = serviceAvailability;
             SourceFusionEnvironmentId = sourceFusionEnvironmentId;
             State = state;
@@ -105,7 +110,6 @@ namespace Pulumi.Oci.Functions.Outputs
             TimeExpectedFinish = timeExpectedFinish;
             TimeFinished = timeFinished;
             TimeOfRestorationPoint = timeOfRestorationPoint;
-            TimeScheduledStart = timeScheduledStart;
             TimeUpdated = timeUpdated;
         }
     }

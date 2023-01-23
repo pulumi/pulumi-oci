@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolume(args: GetVolumeArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolume:getVolume", {
         "volumeId": args.volumeId,
     }, opts);
@@ -88,8 +86,7 @@ export interface GetVolumeResult {
      */
     readonly id: string;
     /**
-     * Specifies whether the auto-tune performance is enabled for this boot volume.
-     * >>>>>>> theirs
+     * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
     readonly isAutoTuneEnabled: boolean;
     /**
@@ -134,9 +131,24 @@ export interface GetVolumeResult {
      */
     readonly vpusPerGb: string;
 }
-
+/**
+ * This data source provides details about a specific Volume resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information for the specified volume.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolume = oci.Core.getVolume({
+ *     volumeId: oci_core_volume.test_volume.id,
+ * });
+ * ```
+ */
 export function getVolumeOutput(args: GetVolumeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeResult> {
-    return pulumi.output(args).apply(a => getVolume(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolume(a, opts))
 }
 
 /**

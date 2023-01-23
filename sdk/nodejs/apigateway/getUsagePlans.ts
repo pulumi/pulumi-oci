@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUsagePlans(args: GetUsagePlansArgs, opts?: pulumi.InvokeOptions): Promise<GetUsagePlansResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getUsagePlans:getUsagePlans", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetUsagePlansResult {
      */
     readonly usagePlanCollections: outputs.ApiGateway.GetUsagePlansUsagePlanCollection[];
 }
-
+/**
+ * This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Returns a list of usage plans.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUsagePlans = oci.ApiGateway.getUsagePlans({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.usage_plan_display_name,
+ *     state: _var.usage_plan_state,
+ * });
+ * ```
+ */
 export function getUsagePlansOutput(args: GetUsagePlansOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsagePlansResult> {
-    return pulumi.output(args).apply(a => getUsagePlans(a, opts))
+    return pulumi.output(args).apply((a: any) => getUsagePlans(a, opts))
 }
 
 /**

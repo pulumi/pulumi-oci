@@ -14,19 +14,19 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
     public sealed class ScheduleResultLocation
     {
         /// <summary>
-        /// The bucket name where usage/cost CSVs will be uploaded
+        /// (Updatable) The bucket name where usage or cost CSVs will be uploaded.
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// Defines the type of location where the usage/cost CSVs will be stored
+        /// (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
         /// </summary>
         public readonly string LocationType;
         /// <summary>
-        /// The namespace needed to determine object storage bucket.
+        /// (Updatable) The namespace needed to determine the object storage bucket.
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// The destination Object Store Region specified by customer
+        /// (Updatable) The destination Object Store Region specified by the customer.
         /// </summary>
         public readonly string Region;
 

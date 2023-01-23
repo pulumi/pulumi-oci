@@ -14,6 +14,7 @@ import com.pulumi.oci.BigDataService.outputs.AutoScalingConfigurationPolicyDetai
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
@@ -277,6 +278,9 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "clusterAdminPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

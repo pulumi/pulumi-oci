@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>
+        /// Replication filter rules to be applied at the DB System Channel target.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemChannelTargetFilterResult> Filters;
+        /// <summary>
         /// The specific target identifier.
         /// </summary>
         public readonly string TargetType;
@@ -38,11 +42,14 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string dbSystemId,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemChannelTargetFilterResult> filters,
+
             string targetType)
         {
             ApplierUsername = applierUsername;
             ChannelName = channelName;
             DbSystemId = dbSystemId;
+            Filters = filters;
             TargetType = targetType;
         }
     }

@@ -95,7 +95,6 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
     }
     /**
      * (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
      * 
      */
     @Export(name="destinationType", type=String.class, parameters={})
@@ -103,7 +102,6 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
 
     /**
      * @return (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
-     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
      * 
      */
     public Output<String> destinationType() {

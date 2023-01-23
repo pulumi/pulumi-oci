@@ -5,12 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./autoScalingConfiguration";
-export * from "./getAutoScalingConfiguration";
-export * from "./getAutoScalingConfigurations";
+export { AutoScalingConfigurationArgs, AutoScalingConfigurationState } from "./autoScalingConfiguration";
+export type AutoScalingConfiguration = import("./autoScalingConfiguration").AutoScalingConfiguration;
+export const AutoScalingConfiguration: typeof import("./autoScalingConfiguration").AutoScalingConfiguration = null as any;
+utilities.lazyLoad(exports, ["AutoScalingConfiguration"], () => require("./autoScalingConfiguration"));
 
-// Import resources to register:
-import { AutoScalingConfiguration } from "./autoScalingConfiguration";
+export { GetAutoScalingConfigurationArgs, GetAutoScalingConfigurationResult, GetAutoScalingConfigurationOutputArgs } from "./getAutoScalingConfiguration";
+export const getAutoScalingConfiguration: typeof import("./getAutoScalingConfiguration").getAutoScalingConfiguration = null as any;
+export const getAutoScalingConfigurationOutput: typeof import("./getAutoScalingConfiguration").getAutoScalingConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getAutoScalingConfiguration","getAutoScalingConfigurationOutput"], () => require("./getAutoScalingConfiguration"));
+
+export { GetAutoScalingConfigurationsArgs, GetAutoScalingConfigurationsResult, GetAutoScalingConfigurationsOutputArgs } from "./getAutoScalingConfigurations";
+export const getAutoScalingConfigurations: typeof import("./getAutoScalingConfigurations").getAutoScalingConfigurations = null as any;
+export const getAutoScalingConfigurationsOutput: typeof import("./getAutoScalingConfigurations").getAutoScalingConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutoScalingConfigurations","getAutoScalingConfigurationsOutput"], () => require("./getAutoScalingConfigurations"));
+
 
 const _module = {
     version: utilities.getVersion(),

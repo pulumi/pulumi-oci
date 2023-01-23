@@ -79,6 +79,8 @@ type GetReportResult struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Specifies the time at which the report was generated.
 	TimeGenerated string `pulumi:"timeGenerated"`
+	// The type of the report.
+	Type string `pulumi:"type"`
 }
 
 func GetReportOutput(ctx *pulumi.Context, args GetReportOutputArgs, opts ...pulumi.InvokeOption) GetReportResultOutput {
@@ -176,6 +178,11 @@ func (o GetReportResultOutput) SystemTags() pulumi.MapOutput {
 // Specifies the time at which the report was generated.
 func (o GetReportResultOutput) TimeGenerated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportResult) string { return v.TimeGenerated }).(pulumi.StringOutput)
+}
+
+// The type of the report.
+func (o GetReportResultOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
 func init() {

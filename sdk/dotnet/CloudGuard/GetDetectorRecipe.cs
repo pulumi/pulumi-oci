@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDetectorRecipeResult> InvokeAsync(GetDetectorRecipeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDetectorRecipeResult>("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args ?? new GetDetectorRecipeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDetectorRecipeResult>("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args ?? new GetDetectorRecipeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDetectorRecipeResult> Invoke(GetDetectorRecipeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDetectorRecipeResult>("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args ?? new GetDetectorRecipeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDetectorRecipeResult>("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args ?? new GetDetectorRecipeInvokeArgs(), options.WithDefaults());
     }
 
 

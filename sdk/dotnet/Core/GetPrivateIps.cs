@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPrivateIpsResult> InvokeAsync(GetPrivateIpsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPrivateIpsResult>("oci:Core/getPrivateIps:getPrivateIps", args ?? new GetPrivateIpsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateIpsResult>("oci:Core/getPrivateIps:getPrivateIps", args ?? new GetPrivateIpsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPrivateIpsResult> Invoke(GetPrivateIpsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPrivateIpsResult>("oci:Core/getPrivateIps:getPrivateIps", args ?? new GetPrivateIpsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateIpsResult>("oci:Core/getPrivateIps:getPrivateIps", args ?? new GetPrivateIpsInvokeArgs(), options.WithDefaults());
     }
 
 

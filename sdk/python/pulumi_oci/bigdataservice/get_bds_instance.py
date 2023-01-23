@@ -22,7 +22,7 @@ class GetBdsInstanceResult:
     """
     A collection of values returned by getBdsInstance.
     """
-    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_cloud_sql_configured=None, is_high_availability=None, is_secure=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
+    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, is_cloud_sql_configured=None, is_force_stop_jobs=None, is_high_availability=None, is_secure=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -38,6 +38,9 @@ class GetBdsInstanceResult:
         if cluster_details and not isinstance(cluster_details, list):
             raise TypeError("Expected argument 'cluster_details' to be a list")
         pulumi.set(__self__, "cluster_details", cluster_details)
+        if cluster_profile and not isinstance(cluster_profile, str):
+            raise TypeError("Expected argument 'cluster_profile' to be a str")
+        pulumi.set(__self__, "cluster_profile", cluster_profile)
         if cluster_public_key and not isinstance(cluster_public_key, str):
             raise TypeError("Expected argument 'cluster_public_key' to be a str")
         pulumi.set(__self__, "cluster_public_key", cluster_public_key)
@@ -59,6 +62,9 @@ class GetBdsInstanceResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if edge_nodes and not isinstance(edge_nodes, list):
+            raise TypeError("Expected argument 'edge_nodes' to be a list")
+        pulumi.set(__self__, "edge_nodes", edge_nodes)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -68,6 +74,9 @@ class GetBdsInstanceResult:
         if is_cloud_sql_configured and not isinstance(is_cloud_sql_configured, bool):
             raise TypeError("Expected argument 'is_cloud_sql_configured' to be a bool")
         pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
+        if is_force_stop_jobs and not isinstance(is_force_stop_jobs, bool):
+            raise TypeError("Expected argument 'is_force_stop_jobs' to be a bool")
+        pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         if is_high_availability and not isinstance(is_high_availability, bool):
             raise TypeError("Expected argument 'is_high_availability' to be a bool")
         pulumi.set(__self__, "is_high_availability", is_high_availability)
@@ -143,6 +152,14 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "cluster_details")
 
     @property
+    @pulumi.getter(name="clusterProfile")
+    def cluster_profile(self) -> str:
+        """
+        Profile of the Big Data Service cluster.
+        """
+        return pulumi.get(self, "cluster_profile")
+
+    @property
     @pulumi.getter(name="clusterPublicKey")
     def cluster_public_key(self) -> str:
         return pulumi.get(self, "cluster_public_key")
@@ -193,6 +210,11 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="edgeNodes")
+    def edge_nodes(self) -> Sequence['outputs.GetBdsInstanceEdgeNodeResult']:
+        return pulumi.get(self, "edge_nodes")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -215,6 +237,11 @@ class GetBdsInstanceResult:
         Boolean flag specifying whether or not Cloud SQL should be configured.
         """
         return pulumi.get(self, "is_cloud_sql_configured")
+
+    @property
+    @pulumi.getter(name="isForceStopJobs")
+    def is_force_stop_jobs(self) -> bool:
+        return pulumi.get(self, "is_force_stop_jobs")
 
     @property
     @pulumi.getter(name="isHighAvailability")
@@ -320,6 +347,7 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             cloud_sql_details=self.cloud_sql_details,
             cluster_admin_password=self.cluster_admin_password,
             cluster_details=self.cluster_details,
+            cluster_profile=self.cluster_profile,
             cluster_public_key=self.cluster_public_key,
             cluster_version=self.cluster_version,
             compartment_id=self.compartment_id,
@@ -327,9 +355,11 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             created_by=self.created_by,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            edge_nodes=self.edge_nodes,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_cloud_sql_configured=self.is_cloud_sql_configured,
+            is_force_stop_jobs=self.is_force_stop_jobs,
             is_high_availability=self.is_high_availability,
             is_secure=self.is_secure,
             kerberos_realm_name=self.kerberos_realm_name,
@@ -375,6 +405,7 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         cloud_sql_details=__ret__.cloud_sql_details,
         cluster_admin_password=__ret__.cluster_admin_password,
         cluster_details=__ret__.cluster_details,
+        cluster_profile=__ret__.cluster_profile,
         cluster_public_key=__ret__.cluster_public_key,
         cluster_version=__ret__.cluster_version,
         compartment_id=__ret__.compartment_id,
@@ -382,9 +413,11 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         created_by=__ret__.created_by,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
+        edge_nodes=__ret__.edge_nodes,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_cloud_sql_configured=__ret__.is_cloud_sql_configured,
+        is_force_stop_jobs=__ret__.is_force_stop_jobs,
         is_high_availability=__ret__.is_high_availability,
         is_secure=__ret__.is_secure,
         kerberos_realm_name=__ret__.kerberos_realm_name,

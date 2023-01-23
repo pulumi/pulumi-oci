@@ -24,7 +24,7 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationPubli
      */
     private List<GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey> keys;
     /**
-     * @return The duration for which the JWKS should be cached before it is fetched again.
+     * @return The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
     private Integer maxCacheDurationInHours;
@@ -55,7 +55,7 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationPubli
         return this.keys;
     }
     /**
-     * @return The duration for which the JWKS should be cached before it is fetched again.
+     * @return The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
     public Integer maxCacheDurationInHours() {

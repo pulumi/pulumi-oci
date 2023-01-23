@@ -69,8 +69,6 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// (Updatable) Specifies what time zone is the schedule in
         /// enum:
-        /// - `UTC`
-        /// - `REGIONAL_DATA_CENTER_TIME`
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }

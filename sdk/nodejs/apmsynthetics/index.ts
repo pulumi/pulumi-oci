@@ -5,23 +5,66 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./config";
-export * from "./dedicatedVantagePoint";
-export * from "./getDedicatedVantagePoint";
-export * from "./getDedicatedVantagePoints";
-export * from "./getMonitor";
-export * from "./getMonitors";
-export * from "./getResult";
-export * from "./getScript";
-export * from "./getScripts";
-export * from "./getVantagePoint";
-export * from "./getVantagePoints";
-export * from "./script";
+export { ConfigArgs, ConfigState } from "./config";
+export type Config = import("./config").Config;
+export const Config: typeof import("./config").Config = null as any;
+utilities.lazyLoad(exports, ["Config"], () => require("./config"));
 
-// Import resources to register:
-import { Config } from "./config";
-import { DedicatedVantagePoint } from "./dedicatedVantagePoint";
-import { Script } from "./script";
+export { DedicatedVantagePointArgs, DedicatedVantagePointState } from "./dedicatedVantagePoint";
+export type DedicatedVantagePoint = import("./dedicatedVantagePoint").DedicatedVantagePoint;
+export const DedicatedVantagePoint: typeof import("./dedicatedVantagePoint").DedicatedVantagePoint = null as any;
+utilities.lazyLoad(exports, ["DedicatedVantagePoint"], () => require("./dedicatedVantagePoint"));
+
+export { GetDedicatedVantagePointArgs, GetDedicatedVantagePointResult, GetDedicatedVantagePointOutputArgs } from "./getDedicatedVantagePoint";
+export const getDedicatedVantagePoint: typeof import("./getDedicatedVantagePoint").getDedicatedVantagePoint = null as any;
+export const getDedicatedVantagePointOutput: typeof import("./getDedicatedVantagePoint").getDedicatedVantagePointOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedVantagePoint","getDedicatedVantagePointOutput"], () => require("./getDedicatedVantagePoint"));
+
+export { GetDedicatedVantagePointsArgs, GetDedicatedVantagePointsResult, GetDedicatedVantagePointsOutputArgs } from "./getDedicatedVantagePoints";
+export const getDedicatedVantagePoints: typeof import("./getDedicatedVantagePoints").getDedicatedVantagePoints = null as any;
+export const getDedicatedVantagePointsOutput: typeof import("./getDedicatedVantagePoints").getDedicatedVantagePointsOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedVantagePoints","getDedicatedVantagePointsOutput"], () => require("./getDedicatedVantagePoints"));
+
+export { GetMonitorArgs, GetMonitorResult, GetMonitorOutputArgs } from "./getMonitor";
+export const getMonitor: typeof import("./getMonitor").getMonitor = null as any;
+export const getMonitorOutput: typeof import("./getMonitor").getMonitorOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitor","getMonitorOutput"], () => require("./getMonitor"));
+
+export { GetMonitorsArgs, GetMonitorsResult, GetMonitorsOutputArgs } from "./getMonitors";
+export const getMonitors: typeof import("./getMonitors").getMonitors = null as any;
+export const getMonitorsOutput: typeof import("./getMonitors").getMonitorsOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitors","getMonitorsOutput"], () => require("./getMonitors"));
+
+export { GetResultArgs, GetResultResult, GetResultOutputArgs } from "./getResult";
+export const getResult: typeof import("./getResult").getResult = null as any;
+export const getResultOutput: typeof import("./getResult").getResultOutput = null as any;
+utilities.lazyLoad(exports, ["getResult","getResultOutput"], () => require("./getResult"));
+
+export { GetScriptArgs, GetScriptResult, GetScriptOutputArgs } from "./getScript";
+export const getScript: typeof import("./getScript").getScript = null as any;
+export const getScriptOutput: typeof import("./getScript").getScriptOutput = null as any;
+utilities.lazyLoad(exports, ["getScript","getScriptOutput"], () => require("./getScript"));
+
+export { GetScriptsArgs, GetScriptsResult, GetScriptsOutputArgs } from "./getScripts";
+export const getScripts: typeof import("./getScripts").getScripts = null as any;
+export const getScriptsOutput: typeof import("./getScripts").getScriptsOutput = null as any;
+utilities.lazyLoad(exports, ["getScripts","getScriptsOutput"], () => require("./getScripts"));
+
+export { GetVantagePointArgs, GetVantagePointResult, GetVantagePointOutputArgs } from "./getVantagePoint";
+export const getVantagePoint: typeof import("./getVantagePoint").getVantagePoint = null as any;
+export const getVantagePointOutput: typeof import("./getVantagePoint").getVantagePointOutput = null as any;
+utilities.lazyLoad(exports, ["getVantagePoint","getVantagePointOutput"], () => require("./getVantagePoint"));
+
+export { GetVantagePointsArgs, GetVantagePointsResult, GetVantagePointsOutputArgs } from "./getVantagePoints";
+export const getVantagePoints: typeof import("./getVantagePoints").getVantagePoints = null as any;
+export const getVantagePointsOutput: typeof import("./getVantagePoints").getVantagePointsOutput = null as any;
+utilities.lazyLoad(exports, ["getVantagePoints","getVantagePointsOutput"], () => require("./getVantagePoints"));
+
+export { ScriptArgs, ScriptState } from "./script";
+export type Script = import("./script").Script;
+export const Script: typeof import("./script").Script = null as any;
+utilities.lazyLoad(exports, ["Script"], () => require("./script"));
+
 
 const _module = {
     version: utilities.getVersion(),

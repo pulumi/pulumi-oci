@@ -24,6 +24,11 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
      * 
      */
     private @Nullable String headRef;
+    /**
+     * @return The repository name for trigger events.
+     * 
+     */
+    private @Nullable String repositoryName;
 
     private BuildRunBuildRunSourceTriggerInfoActionFilterInclude() {}
     /**
@@ -43,6 +48,13 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
     public Optional<String> headRef() {
         return Optional.ofNullable(this.headRef);
     }
+    /**
+     * @return The repository name for trigger events.
+     * 
+     */
+    public Optional<String> repositoryName() {
+        return Optional.ofNullable(this.repositoryName);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -56,12 +68,14 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
         private @Nullable String baseRef;
         private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters;
         private @Nullable String headRef;
+        private @Nullable String repositoryName;
         public Builder() {}
         public Builder(BuildRunBuildRunSourceTriggerInfoActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseRef = defaults.baseRef;
     	      this.fileFilters = defaults.fileFilters;
     	      this.headRef = defaults.headRef;
+    	      this.repositoryName = defaults.repositoryName;
         }
 
         @CustomType.Setter
@@ -82,11 +96,17 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
             this.headRef = headRef;
             return this;
         }
+        @CustomType.Setter
+        public Builder repositoryName(@Nullable String repositoryName) {
+            this.repositoryName = repositoryName;
+            return this;
+        }
         public BuildRunBuildRunSourceTriggerInfoActionFilterInclude build() {
             final var o = new BuildRunBuildRunSourceTriggerInfoActionFilterInclude();
             o.baseRef = baseRef;
             o.fileFilters = fileFilters;
             o.headRef = headRef;
+            o.repositoryName = repositoryName;
             return o;
         }
     }

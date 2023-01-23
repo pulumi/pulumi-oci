@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserConsumerGroupPrivilege(args: GetManagedDatabaseUserConsumerGroupPrivilegeArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserConsumerGroupPrivilegeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", {
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
@@ -73,9 +71,26 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegeResult {
     readonly name?: string;
     readonly userName: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database User Consumer Group Privilege resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of consumer group privileges granted to a specific user.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseUserConsumerGroupPrivilege = oci.DatabaseManagement.getManagedDatabaseUserConsumerGroupPrivilege({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     userName: oci_identity_user.test_user.name,
+ *     name: _var.managed_database_user_consumer_group_privilege_name,
+ * });
+ * ```
+ */
 export function getManagedDatabaseUserConsumerGroupPrivilegeOutput(args: GetManagedDatabaseUserConsumerGroupPrivilegeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseUserConsumerGroupPrivilege(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserConsumerGroupPrivilege(a, opts))
 }
 
 /**

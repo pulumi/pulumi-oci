@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVmClusterUpdatesResult> InvokeAsync(GetVmClusterUpdatesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterUpdatesResult>("oci:Database/getVmClusterUpdates:getVmClusterUpdates", args ?? new GetVmClusterUpdatesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterUpdatesResult>("oci:Database/getVmClusterUpdates:getVmClusterUpdates", args ?? new GetVmClusterUpdatesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVmClusterUpdatesResult> Invoke(GetVmClusterUpdatesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVmClusterUpdatesResult>("oci:Database/getVmClusterUpdates:getVmClusterUpdates", args ?? new GetVmClusterUpdatesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterUpdatesResult>("oci:Database/getVmClusterUpdates:getVmClusterUpdates", args ?? new GetVmClusterUpdatesInvokeArgs(), options.WithDefaults());
     }
 
 

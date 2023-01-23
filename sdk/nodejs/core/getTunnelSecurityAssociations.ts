@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTunnelSecurityAssociations(args: GetTunnelSecurityAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTunnelSecurityAssociationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", {
         "filters": args.filters,
         "ipsecId": args.ipsecId,
@@ -66,9 +64,25 @@ export interface GetTunnelSecurityAssociationsResult {
      */
     readonly tunnelSecurityAssociations: outputs.Core.GetTunnelSecurityAssociationsTunnelSecurityAssociation[];
 }
-
+/**
+ * This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the tunnel security associations information for the specified IPSec tunnel ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTunnelSecurityAssociations = oci.Core.getTunnelSecurityAssociations({
+ *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ *     tunnelId: oci_core_tunnel.test_tunnel.id,
+ * });
+ * ```
+ */
 export function getTunnelSecurityAssociationsOutput(args: GetTunnelSecurityAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTunnelSecurityAssociationsResult> {
-    return pulumi.output(args).apply(a => getTunnelSecurityAssociations(a, opts))
+    return pulumi.output(args).apply((a: any) => getTunnelSecurityAssociations(a, opts))
 }
 
 /**

@@ -44,7 +44,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkFirewallsResult> InvokeAsync(GetNetworkFirewallsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallsResult>("oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls", args ?? new GetNetworkFirewallsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallsResult>("oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls", args ?? new GetNetworkFirewallsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Network Firewalls in Oracle Cloud Infrastructure Network Firewall service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkFirewallsResult> Invoke(GetNetworkFirewallsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallsResult>("oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls", args ?? new GetNetworkFirewallsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallsResult>("oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls", args ?? new GetNetworkFirewallsInvokeArgs(), options.WithDefaults());
     }
 
 

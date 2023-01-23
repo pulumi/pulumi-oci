@@ -41,7 +41,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsLogGroupsResult> InvokeAsync(GetLogAnalyticsLogGroupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsLogGroupsResult>("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", args ?? new GetLogAnalyticsLogGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsLogGroupsResult>("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", args ?? new GetLogAnalyticsLogGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsLogGroupsResult> Invoke(GetLogAnalyticsLogGroupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsLogGroupsResult>("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", args ?? new GetLogAnalyticsLogGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsLogGroupsResult>("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", args ?? new GetLogAnalyticsLogGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

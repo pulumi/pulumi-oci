@@ -58,7 +58,7 @@ type GetDeploymentUpgradeArgs struct {
 type GetDeploymentUpgradeResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId        string `pulumi:"deploymentId"`
@@ -69,7 +69,7 @@ type GetDeploymentUpgradeResult struct {
 	Description string `pulumi:"description"`
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
@@ -81,7 +81,7 @@ type GetDeploymentUpgradeResult struct {
 	OggVersion string `pulumi:"oggVersion"`
 	// Possible lifecycle states.
 	State string `pulumi:"state"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -136,7 +136,7 @@ func (o GetDeploymentUpgradeResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetDeploymentUpgradeResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -165,7 +165,7 @@ func (o GetDeploymentUpgradeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o GetDeploymentUpgradeResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -195,7 +195,7 @@ func (o GetDeploymentUpgradeResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o GetDeploymentUpgradeResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }

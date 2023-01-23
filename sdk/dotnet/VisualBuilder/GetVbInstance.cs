@@ -38,7 +38,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVbInstanceResult> InvokeAsync(GetVbInstanceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVbInstanceResult>("oci:VisualBuilder/getVbInstance:getVbInstance", args ?? new GetVbInstanceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVbInstanceResult>("oci:VisualBuilder/getVbInstance:getVbInstance", args ?? new GetVbInstanceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVbInstanceResult> Invoke(GetVbInstanceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVbInstanceResult>("oci:VisualBuilder/getVbInstance:getVbInstance", args ?? new GetVbInstanceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVbInstanceResult>("oci:VisualBuilder/getVbInstance:getVbInstance", args ?? new GetVbInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

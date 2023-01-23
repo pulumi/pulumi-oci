@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -11,11 +12,8 @@ import * as utilities from "../utilities";
  * Retrieves the configuration information for the specified backend set.
  */
 export function getBackendSet(args: GetBackendSetArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", {
         "backendSetName": args.backendSetName,
         "networkLoadBalancerId": args.networkLoadBalancerId,
@@ -68,9 +66,13 @@ export interface GetBackendSetResult {
      */
     readonly policy: string;
 }
-
+/**
+ * This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
+ *
+ * Retrieves the configuration information for the specified backend set.
+ */
 export function getBackendSetOutput(args: GetBackendSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetResult> {
-    return pulumi.output(args).apply(a => getBackendSet(a, opts))
+    return pulumi.output(args).apply((a: any) => getBackendSet(a, opts))
 }
 
 /**

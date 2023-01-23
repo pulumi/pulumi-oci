@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSensitiveTypesResult> InvokeAsync(GetSensitiveTypesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveTypesResult>("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args ?? new GetSensitiveTypesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveTypesResult>("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args ?? new GetSensitiveTypesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSensitiveTypesResult> Invoke(GetSensitiveTypesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSensitiveTypesResult>("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args ?? new GetSensitiveTypesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveTypesResult>("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args ?? new GetSensitiveTypesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSddcs(args: GetSddcsArgs, opts?: pulumi.InvokeOptions): Promise<GetSddcsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSddcs:getSddcs", {
         "compartmentId": args.compartmentId,
         "computeAvailabilityDomain": args.computeAvailabilityDomain,
@@ -93,9 +91,28 @@ export interface GetSddcsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Sddcs in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ *
+ * Lists the SDDCs in the specified compartment. The list can be
+ * filtered by display name or availability domain.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSddcs = oci.Ocvp.getSddcs({
+ *     compartmentId: _var.compartment_id,
+ *     computeAvailabilityDomain: _var.sddc_compute_availability_domain,
+ *     displayName: _var.sddc_display_name,
+ *     state: _var.sddc_state,
+ * });
+ * ```
+ */
 export function getSddcsOutput(args: GetSddcsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSddcsResult> {
-    return pulumi.output(args).apply(a => getSddcs(a, opts))
+    return pulumi.output(args).apply((a: any) => getSddcs(a, opts))
 }
 
 /**

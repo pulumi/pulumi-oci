@@ -4,9 +4,11 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetail;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -62,6 +64,16 @@ public final class GetExadataInsightResult {
      * 
      */
     private String exadataDisplayName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
+    private String exadataInfraId;
+    /**
+     * @return Oracle Cloud Infrastructure exadata infrastructure resource type
+     * 
+     */
+    private String exadataInfraResourceType;
     private String exadataInsightId;
     /**
      * @return The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
@@ -73,6 +85,11 @@ public final class GetExadataInsightResult {
      * 
      */
     private String exadataRackType;
+    /**
+     * @return The shape of the Exadata Infrastructure.
+     * 
+     */
+    private String exadataShape;
     /**
      * @return Operations Insights internal representation of the the Exadata system type.
      * 
@@ -99,6 +116,7 @@ public final class GetExadataInsightResult {
      * 
      */
     private String lifecycleDetails;
+    private List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails;
     /**
      * @return The current state of the Exadata insight.
      * 
@@ -196,6 +214,20 @@ public final class GetExadataInsightResult {
     public String exadataDisplayName() {
         return this.exadataDisplayName;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
+    public String exadataInfraId() {
+        return this.exadataInfraId;
+    }
+    /**
+     * @return Oracle Cloud Infrastructure exadata infrastructure resource type
+     * 
+     */
+    public String exadataInfraResourceType() {
+        return this.exadataInfraResourceType;
+    }
     public String exadataInsightId() {
         return this.exadataInsightId;
     }
@@ -212,6 +244,13 @@ public final class GetExadataInsightResult {
      */
     public String exadataRackType() {
         return this.exadataRackType;
+    }
+    /**
+     * @return The shape of the Exadata Infrastructure.
+     * 
+     */
+    public String exadataShape() {
+        return this.exadataShape;
     }
     /**
      * @return Operations Insights internal representation of the the Exadata system type.
@@ -250,6 +289,9 @@ public final class GetExadataInsightResult {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails() {
+        return this.memberVmClusterDetails;
     }
     /**
      * @return The current state of the Exadata insight.
@@ -306,15 +348,19 @@ public final class GetExadataInsightResult {
         private String enterpriseManagerIdentifier;
         private String entitySource;
         private String exadataDisplayName;
+        private String exadataInfraId;
+        private String exadataInfraResourceType;
         private String exadataInsightId;
         private String exadataName;
         private String exadataRackType;
+        private String exadataShape;
         private String exadataType;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isAutoSyncEnabled;
         private Boolean isVirtualizedExadata;
         private String lifecycleDetails;
+        private List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails;
         private String state;
         private String status;
         private Map<String,Object> systemTags;
@@ -333,15 +379,19 @@ public final class GetExadataInsightResult {
     	      this.enterpriseManagerIdentifier = defaults.enterpriseManagerIdentifier;
     	      this.entitySource = defaults.entitySource;
     	      this.exadataDisplayName = defaults.exadataDisplayName;
+    	      this.exadataInfraId = defaults.exadataInfraId;
+    	      this.exadataInfraResourceType = defaults.exadataInfraResourceType;
     	      this.exadataInsightId = defaults.exadataInsightId;
     	      this.exadataName = defaults.exadataName;
     	      this.exadataRackType = defaults.exadataRackType;
+    	      this.exadataShape = defaults.exadataShape;
     	      this.exadataType = defaults.exadataType;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAutoSyncEnabled = defaults.isAutoSyncEnabled;
     	      this.isVirtualizedExadata = defaults.isVirtualizedExadata;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.memberVmClusterDetails = defaults.memberVmClusterDetails;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
     	      this.systemTags = defaults.systemTags;
@@ -400,6 +450,16 @@ public final class GetExadataInsightResult {
             return this;
         }
         @CustomType.Setter
+        public Builder exadataInfraId(String exadataInfraId) {
+            this.exadataInfraId = Objects.requireNonNull(exadataInfraId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exadataInfraResourceType(String exadataInfraResourceType) {
+            this.exadataInfraResourceType = Objects.requireNonNull(exadataInfraResourceType);
+            return this;
+        }
+        @CustomType.Setter
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = Objects.requireNonNull(exadataInsightId);
             return this;
@@ -412,6 +472,11 @@ public final class GetExadataInsightResult {
         @CustomType.Setter
         public Builder exadataRackType(String exadataRackType) {
             this.exadataRackType = Objects.requireNonNull(exadataRackType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exadataShape(String exadataShape) {
+            this.exadataShape = Objects.requireNonNull(exadataShape);
             return this;
         }
         @CustomType.Setter
@@ -443,6 +508,14 @@ public final class GetExadataInsightResult {
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
+        }
+        @CustomType.Setter
+        public Builder memberVmClusterDetails(List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails) {
+            this.memberVmClusterDetails = Objects.requireNonNull(memberVmClusterDetails);
+            return this;
+        }
+        public Builder memberVmClusterDetails(GetExadataInsightMemberVmClusterDetail... memberVmClusterDetails) {
+            return memberVmClusterDetails(List.of(memberVmClusterDetails));
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -481,15 +554,19 @@ public final class GetExadataInsightResult {
             o.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             o.entitySource = entitySource;
             o.exadataDisplayName = exadataDisplayName;
+            o.exadataInfraId = exadataInfraId;
+            o.exadataInfraResourceType = exadataInfraResourceType;
             o.exadataInsightId = exadataInsightId;
             o.exadataName = exadataName;
             o.exadataRackType = exadataRackType;
+            o.exadataShape = exadataShape;
             o.exadataType = exadataType;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isAutoSyncEnabled = isAutoSyncEnabled;
             o.isVirtualizedExadata = isVirtualizedExadata;
             o.lifecycleDetails = lifecycleDetails;
+            o.memberVmClusterDetails = memberVmClusterDetails;
             o.state = state;
             o.status = status;
             o.systemTags = systemTags;

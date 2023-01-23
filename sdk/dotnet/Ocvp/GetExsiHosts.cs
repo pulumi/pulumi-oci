@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExsiHostsResult> InvokeAsync(GetExsiHostsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExsiHostsResult>("oci:Ocvp/getExsiHosts:getExsiHosts", args ?? new GetExsiHostsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExsiHostsResult>("oci:Ocvp/getExsiHosts:getExsiHosts", args ?? new GetExsiHostsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExsiHostsResult> Invoke(GetExsiHostsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExsiHostsResult>("oci:Ocvp/getExsiHosts:getExsiHosts", args ?? new GetExsiHostsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExsiHostsResult>("oci:Ocvp/getExsiHosts:getExsiHosts", args ?? new GetExsiHostsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetCloudAutonomousVmClustersFilterResult
     {
+        /// <summary>
+        /// Name of the month of the year.
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

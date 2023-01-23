@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentFamilyLimitsAndUsageResult> InvokeAsync(GetFusionEnvironmentFamilyLimitsAndUsageArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentFamilyLimitsAndUsageResult>("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args ?? new GetFusionEnvironmentFamilyLimitsAndUsageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentFamilyLimitsAndUsageResult>("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args ?? new GetFusionEnvironmentFamilyLimitsAndUsageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> Invoke(GetFusionEnvironmentFamilyLimitsAndUsageInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilyLimitsAndUsageResult>("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args ?? new GetFusionEnvironmentFamilyLimitsAndUsageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilyLimitsAndUsageResult>("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args ?? new GetFusionEnvironmentFamilyLimitsAndUsageInvokeArgs(), options.WithDefaults());
     }
 
 

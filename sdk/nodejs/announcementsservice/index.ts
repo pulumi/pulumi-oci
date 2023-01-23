@@ -5,16 +5,31 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./announcementSubscription";
-export * from "./announcementSubscriptionsActionsChangeCompartment";
-export * from "./announcementSubscriptionsFilterGroup";
-export * from "./getAnnouncementSubscription";
-export * from "./getAnnouncementSubscriptions";
+export { AnnouncementSubscriptionArgs, AnnouncementSubscriptionState } from "./announcementSubscription";
+export type AnnouncementSubscription = import("./announcementSubscription").AnnouncementSubscription;
+export const AnnouncementSubscription: typeof import("./announcementSubscription").AnnouncementSubscription = null as any;
+utilities.lazyLoad(exports, ["AnnouncementSubscription"], () => require("./announcementSubscription"));
 
-// Import resources to register:
-import { AnnouncementSubscription } from "./announcementSubscription";
-import { AnnouncementSubscriptionsActionsChangeCompartment } from "./announcementSubscriptionsActionsChangeCompartment";
-import { AnnouncementSubscriptionsFilterGroup } from "./announcementSubscriptionsFilterGroup";
+export { AnnouncementSubscriptionsActionsChangeCompartmentArgs, AnnouncementSubscriptionsActionsChangeCompartmentState } from "./announcementSubscriptionsActionsChangeCompartment";
+export type AnnouncementSubscriptionsActionsChangeCompartment = import("./announcementSubscriptionsActionsChangeCompartment").AnnouncementSubscriptionsActionsChangeCompartment;
+export const AnnouncementSubscriptionsActionsChangeCompartment: typeof import("./announcementSubscriptionsActionsChangeCompartment").AnnouncementSubscriptionsActionsChangeCompartment = null as any;
+utilities.lazyLoad(exports, ["AnnouncementSubscriptionsActionsChangeCompartment"], () => require("./announcementSubscriptionsActionsChangeCompartment"));
+
+export { AnnouncementSubscriptionsFilterGroupArgs, AnnouncementSubscriptionsFilterGroupState } from "./announcementSubscriptionsFilterGroup";
+export type AnnouncementSubscriptionsFilterGroup = import("./announcementSubscriptionsFilterGroup").AnnouncementSubscriptionsFilterGroup;
+export const AnnouncementSubscriptionsFilterGroup: typeof import("./announcementSubscriptionsFilterGroup").AnnouncementSubscriptionsFilterGroup = null as any;
+utilities.lazyLoad(exports, ["AnnouncementSubscriptionsFilterGroup"], () => require("./announcementSubscriptionsFilterGroup"));
+
+export { GetAnnouncementSubscriptionArgs, GetAnnouncementSubscriptionResult, GetAnnouncementSubscriptionOutputArgs } from "./getAnnouncementSubscription";
+export const getAnnouncementSubscription: typeof import("./getAnnouncementSubscription").getAnnouncementSubscription = null as any;
+export const getAnnouncementSubscriptionOutput: typeof import("./getAnnouncementSubscription").getAnnouncementSubscriptionOutput = null as any;
+utilities.lazyLoad(exports, ["getAnnouncementSubscription","getAnnouncementSubscriptionOutput"], () => require("./getAnnouncementSubscription"));
+
+export { GetAnnouncementSubscriptionsArgs, GetAnnouncementSubscriptionsResult, GetAnnouncementSubscriptionsOutputArgs } from "./getAnnouncementSubscriptions";
+export const getAnnouncementSubscriptions: typeof import("./getAnnouncementSubscriptions").getAnnouncementSubscriptions = null as any;
+export const getAnnouncementSubscriptionsOutput: typeof import("./getAnnouncementSubscriptions").getAnnouncementSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAnnouncementSubscriptions","getAnnouncementSubscriptionsOutput"], () => require("./getAnnouncementSubscriptions"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitoredResource(args: GetMonitoredResourceArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredResourceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", {
         "monitoredResourceId": args.monitoredResourceId,
     }, opts);
@@ -70,6 +68,10 @@ export interface GetMonitoredResourceResult {
      * Monitored resource display name.
      */
     readonly displayName: string;
+    /**
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     */
+    readonly externalId: string;
     readonly externalResourceId: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -125,9 +127,24 @@ export interface GetMonitoredResourceResult {
      */
     readonly type: string;
 }
-
+/**
+ * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
+ *
+ * Gets a monitored resource by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMonitoredResource = oci.StackMonitoring.getMonitoredResource({
+ *     monitoredResourceId: oci_stack_monitoring_monitored_resource.test_monitored_resource.id,
+ * });
+ * ```
+ */
 export function getMonitoredResourceOutput(args: GetMonitoredResourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredResourceResult> {
-    return pulumi.output(args).apply(a => getMonitoredResource(a, opts))
+    return pulumi.output(args).apply((a: any) => getMonitoredResource(a, opts))
 }
 
 /**

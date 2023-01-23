@@ -49,7 +49,7 @@ public final class GetAutonomousVmClusterResult {
      */
     private String compartmentId;
     /**
-     * @return The number of OCPU cores enabled per VM cluster node.
+     * @return The number of CPU cores enabled per VM cluster node.
      * 
      */
     private Integer cpuCoreCountPerNode;
@@ -104,6 +104,11 @@ public final class GetAutonomousVmClusterResult {
      */
     private Boolean isLocalBackupEnabled;
     /**
+     * @return Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * 
+     */
+    private Boolean isMtlsEnabled;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -149,6 +154,16 @@ public final class GetAutonomousVmClusterResult {
      * 
      */
     private Integer reclaimableCpus;
+    /**
+     * @return The SCAN Listener Non TLS port number. Default value is 1521.
+     * 
+     */
+    private Integer scanListenerPortNonTls;
+    /**
+     * @return The SCAN Listener TLS port number. Default value is 2484.
+     * 
+     */
+    private Integer scanListenerPortTls;
     /**
      * @return The current state of the Autonomous VM cluster.
      * 
@@ -222,7 +237,7 @@ public final class GetAutonomousVmClusterResult {
         return this.compartmentId;
     }
     /**
-     * @return The number of OCPU cores enabled per VM cluster node.
+     * @return The number of CPU cores enabled per VM cluster node.
      * 
      */
     public Integer cpuCoreCountPerNode() {
@@ -299,6 +314,13 @@ public final class GetAutonomousVmClusterResult {
         return this.isLocalBackupEnabled;
     }
     /**
+     * @return Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * 
+     */
+    public Boolean isMtlsEnabled() {
+        return this.isMtlsEnabled;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -365,6 +387,20 @@ public final class GetAutonomousVmClusterResult {
         return this.reclaimableCpus;
     }
     /**
+     * @return The SCAN Listener Non TLS port number. Default value is 1521.
+     * 
+     */
+    public Integer scanListenerPortNonTls() {
+        return this.scanListenerPortNonTls;
+    }
+    /**
+     * @return The SCAN Listener TLS port number. Default value is 2484.
+     * 
+     */
+    public Integer scanListenerPortTls() {
+        return this.scanListenerPortTls;
+    }
+    /**
      * @return The current state of the Autonomous VM cluster.
      * 
      */
@@ -427,6 +463,7 @@ public final class GetAutonomousVmClusterResult {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isLocalBackupEnabled;
+        private Boolean isMtlsEnabled;
         private String lastMaintenanceRunId;
         private String licenseModel;
         private String lifecycleDetails;
@@ -437,6 +474,8 @@ public final class GetAutonomousVmClusterResult {
         private String nextMaintenanceRunId;
         private Double ocpusEnabled;
         private Integer reclaimableCpus;
+        private Integer scanListenerPortNonTls;
+        private Integer scanListenerPortTls;
         private String state;
         private String timeCreated;
         private String timeZone;
@@ -463,6 +502,7 @@ public final class GetAutonomousVmClusterResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isLocalBackupEnabled = defaults.isLocalBackupEnabled;
+    	      this.isMtlsEnabled = defaults.isMtlsEnabled;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -473,6 +513,8 @@ public final class GetAutonomousVmClusterResult {
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.ocpusEnabled = defaults.ocpusEnabled;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
+    	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
+    	      this.scanListenerPortTls = defaults.scanListenerPortTls;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -571,6 +613,11 @@ public final class GetAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isMtlsEnabled(Boolean isMtlsEnabled) {
+            this.isMtlsEnabled = Objects.requireNonNull(isMtlsEnabled);
+            return this;
+        }
+        @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
             this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
             return this;
@@ -627,6 +674,16 @@ public final class GetAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
+            this.scanListenerPortNonTls = Objects.requireNonNull(scanListenerPortNonTls);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
+            this.scanListenerPortTls = Objects.requireNonNull(scanListenerPortTls);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -671,6 +728,7 @@ public final class GetAutonomousVmClusterResult {
             o.freeformTags = freeformTags;
             o.id = id;
             o.isLocalBackupEnabled = isLocalBackupEnabled;
+            o.isMtlsEnabled = isMtlsEnabled;
             o.lastMaintenanceRunId = lastMaintenanceRunId;
             o.licenseModel = licenseModel;
             o.lifecycleDetails = lifecycleDetails;
@@ -681,6 +739,8 @@ public final class GetAutonomousVmClusterResult {
             o.nextMaintenanceRunId = nextMaintenanceRunId;
             o.ocpusEnabled = ocpusEnabled;
             o.reclaimableCpus = reclaimableCpus;
+            o.scanListenerPortNonTls = scanListenerPortNonTls;
+            o.scanListenerPortTls = scanListenerPortTls;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeZone = timeZone;

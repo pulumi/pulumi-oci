@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getChannels(args: GetChannelsArgs, opts?: pulumi.InvokeOptions): Promise<GetChannelsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getChannels:getChannels", {
         "channelId": args.channelId,
         "compartmentId": args.compartmentId,
@@ -109,9 +107,29 @@ export interface GetChannelsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Channels in Oracle Cloud Infrastructure MySQL Database service.
+ *
+ * Lists all the Channels that match the specified filters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testChannels = oci.Mysql.getChannels({
+ *     compartmentId: _var.compartment_id,
+ *     channelId: oci_mysql_channel.test_channel.id,
+ *     dbSystemId: oci_database_db_system.test_db_system.id,
+ *     displayName: _var.channel_display_name,
+ *     isEnabled: _var.channel_is_enabled,
+ *     state: _var.channel_state,
+ * });
+ * ```
+ */
 export function getChannelsOutput(args: GetChannelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetChannelsResult> {
-    return pulumi.output(args).apply(a => getChannels(a, opts))
+    return pulumi.output(args).apply((a: any) => getChannels(a, opts))
 }
 
 /**

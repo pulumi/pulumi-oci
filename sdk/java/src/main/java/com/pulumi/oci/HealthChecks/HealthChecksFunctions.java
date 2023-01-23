@@ -1065,7 +1065,7 @@ public final class HealthChecksFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
-     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1105,7 +1105,7 @@ public final class HealthChecksFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
-     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1145,7 +1145,7 @@ public final class HealthChecksFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
-     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1185,7 +1185,7 @@ public final class HealthChecksFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
-     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1225,7 +1225,7 @@ public final class HealthChecksFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
-     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1265,7 +1265,7 @@ public final class HealthChecksFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
-     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

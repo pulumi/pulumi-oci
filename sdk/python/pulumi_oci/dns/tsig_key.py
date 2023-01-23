@@ -404,11 +404,13 @@ class TsigKey(pulumi.CustomResource):
             __props__.__dict__["name"] = name
             if secret is None and not opts.urn:
                 raise TypeError("Missing required property 'secret'")
-            __props__.__dict__["secret"] = secret
+            __props__.__dict__["secret"] = None if secret is None else pulumi.Output.secret(secret)
             __props__.__dict__["self"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["secret"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(TsigKey, __self__).__init__(
             'oci:Dns/tsigKey:TsigKey',
             resource_name,

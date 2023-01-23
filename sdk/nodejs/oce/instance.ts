@@ -239,7 +239,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["idcsAccessToken"] = args ? args.idcsAccessToken : undefined;
+            resourceInputs["idcsAccessToken"] = args?.idcsAccessToken ? pulumi.secret(args.idcsAccessToken) : undefined;
             resourceInputs["instanceAccessType"] = args ? args.instanceAccessType : undefined;
             resourceInputs["instanceLicenseType"] = args ? args.instanceLicenseType : undefined;
             resourceInputs["instanceUsageType"] = args ? args.instanceUsageType : undefined;
@@ -260,6 +260,8 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["idcsAccessToken"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Instance.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecConnections(args: GetIpsecConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecConnections:getIpsecConnections", {
         "compartmentId": args.compartmentId,
         "cpeId": args.cpeId,
@@ -83,9 +81,27 @@ export interface GetIpsecConnectionsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the IPSec connections for the specified compartment. You can filter the
+ * results by DRG or CPE.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpSecConnections = oci.Core.getIpsecConnections({
+ *     compartmentId: _var.compartment_id,
+ *     cpeId: oci_core_cpe.test_cpe.id,
+ *     drgId: oci_core_drg.test_drg.id,
+ * });
+ * ```
+ */
 export function getIpsecConnectionsOutput(args: GetIpsecConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionsResult> {
-    return pulumi.output(args).apply(a => getIpsecConnections(a, opts))
+    return pulumi.output(args).apply((a: any) => getIpsecConnections(a, opts))
 }
 
 /**

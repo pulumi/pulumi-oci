@@ -5,10 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./generatedScopedAccessToken";
+export { GeneratedScopedAccessTokenArgs, GeneratedScopedAccessTokenState } from "./generatedScopedAccessToken";
+export type GeneratedScopedAccessToken = import("./generatedScopedAccessToken").GeneratedScopedAccessToken;
+export const GeneratedScopedAccessToken: typeof import("./generatedScopedAccessToken").GeneratedScopedAccessToken = null as any;
+utilities.lazyLoad(exports, ["GeneratedScopedAccessToken"], () => require("./generatedScopedAccessToken"));
 
-// Import resources to register:
-import { GeneratedScopedAccessToken } from "./generatedScopedAccessToken";
 
 const _module = {
     version: utilities.getVersion(),

@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
  *
- * Returns details of a Java release family based on specified version.
+ * Returns metadata associated with a specific Java release family.
  *
  * ## Example Usage
  *
@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJavaFamily(args: GetJavaFamilyArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaFamilyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaFamily:getJavaFamily", {
         "familyVersion": args.familyVersion,
     }, opts);
@@ -70,9 +67,24 @@ export interface GetJavaFamilyResult {
      */
     readonly supportType: string;
 }
-
+/**
+ * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
+ *
+ * Returns metadata associated with a specific Java release family.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJavaFamily = oci.Jms.getJavaFamily({
+ *     familyVersion: _var.java_family_family_version,
+ * });
+ * ```
+ */
 export function getJavaFamilyOutput(args: GetJavaFamilyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaFamilyResult> {
-    return pulumi.output(args).apply(a => getJavaFamily(a, opts))
+    return pulumi.output(args).apply((a: any) => getJavaFamily(a, opts))
 }
 
 /**

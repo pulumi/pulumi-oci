@@ -78,7 +78,9 @@ import javax.annotation.Nullable;
  *                 .ocpus(var_.invoke_run_executor_shape_config_ocpus())
  *                 .build())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .idleTimeoutInMinutes(var_.invoke_run_idle_timeout_in_minutes())
  *             .logsBucketUri(var_.invoke_run_logs_bucket_uri())
+ *             .maxDurationInMinutes(var_.invoke_run_max_duration_in_minutes())
  *             .metastoreId(var_.metastore_id())
  *             .numExecutors(var_.invoke_run_num_executors())
  *             .parameters(InvokeRunParameterArgs.builder()
@@ -137,14 +139,14 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
         return this.applicationLogConfig;
     }
     /**
-     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     @Export(name="archiveUri", type=String.class, parameters={})
     private Output<String> archiveUri;
 
     /**
-     * @return An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     public Output<String> archiveUri() {
@@ -367,6 +369,20 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     * 
+     */
+    @Export(name="idleTimeoutInMinutes", type=String.class, parameters={})
+    private Output<String> idleTimeoutInMinutes;
+
+    /**
+     * @return (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     * 
+     */
+    public Output<String> idleTimeoutInMinutes() {
+        return this.idleTimeoutInMinutes;
+    }
+    /**
      * The Spark language.
      * 
      */
@@ -407,6 +423,20 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      */
     public Output<String> logsBucketUri() {
         return this.logsBucketUri;
+    }
+    /**
+     * (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     * 
+     */
+    @Export(name="maxDurationInMinutes", type=String.class, parameters={})
+    private Output<String> maxDurationInMinutes;
+
+    /**
+     * @return (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     * 
+     */
+    public Output<String> maxDurationInMinutes() {
+        return this.maxDurationInMinutes;
     }
     /**
      * The OCID of Oracle Cloud Infrastructure Hive Metastore.

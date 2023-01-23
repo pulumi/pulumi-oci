@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIdentityProviderGroups(args: GetIdentityProviderGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetIdentityProviderGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", {
         "filters": args.filters,
         "identityProviderId": args.identityProviderId,
@@ -81,9 +79,28 @@ export interface GetIdentityProviderGroupsResult {
     readonly name?: string;
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Identity Provider Groups in Oracle Cloud Infrastructure Identity service.
+ *
+ * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
+ *
+ * Lists the identity provider groups.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIdentityProviderGroups = oci.Identity.getIdentityProviderGroups({
+ *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
+ *     name: _var.identity_provider_group_name,
+ *     state: _var.identity_provider_group_state,
+ * });
+ * ```
+ */
 export function getIdentityProviderGroupsOutput(args: GetIdentityProviderGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdentityProviderGroupsResult> {
-    return pulumi.output(args).apply(a => getIdentityProviderGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getIdentityProviderGroups(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerPatches(args: GetAutonomousContainerPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerPatchesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
         "compartmentId": args.compartmentId,
@@ -66,9 +64,25 @@ export interface GetAutonomousContainerPatchesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the patches applicable to the requested container database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
+ *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getAutonomousContainerPatchesOutput(args: GetAutonomousContainerPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerPatchesResult> {
-    return pulumi.output(args).apply(a => getAutonomousContainerPatches(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousContainerPatches(a, opts))
 }
 
 /**

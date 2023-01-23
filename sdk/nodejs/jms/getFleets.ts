@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  */
 export function getFleets(args?: GetFleetsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleets:getFleets", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -97,9 +95,29 @@ export interface GetFleetsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
+ *
+ * Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
+ * is required unless the query parameter `id` is specified.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFleets = oci.Jms.getFleets({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.fleet_display_name,
+ *     displayNameContains: _var.fleet_display_name_contains,
+ *     id: _var.fleet_id,
+ *     state: _var.fleet_state,
+ * });
+ * ```
+ */
 export function getFleetsOutput(args?: GetFleetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetsResult> {
-    return pulumi.output(args).apply(a => getFleets(a, opts))
+    return pulumi.output(args).apply((a: any) => getFleets(a, opts))
 }
 
 /**

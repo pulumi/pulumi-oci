@@ -219,14 +219,14 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The OCID of the Configuration to be used for this DB System.
+     * (Updatable) The OCID of the Configuration to be used for this DB System.
      * 
      */
     @Export(name="configurationId", type=String.class, parameters={})
     private Output<String> configurationId;
 
     /**
-     * @return The OCID of the Configuration to be used for this DB System.
+     * @return (Updatable) The OCID of the Configuration to be used for this DB System.
      * 
      */
     public Output<String> configurationId() {
@@ -261,14 +261,14 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
         return this.currentPlacements;
     }
     /**
-     * Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+     * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      * 
      */
     @Export(name="dataStorageSizeInGb", type=Integer.class, parameters={})
     private Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+     * @return (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      * 
      */
     public Output<Integer> dataStorageSizeInGb() {
@@ -471,28 +471,28 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
      * 
      */
     @Export(name="maintenance", type=MysqlDbSystemMaintenance.class, parameters={})
     private Output<MysqlDbSystemMaintenance> maintenance;
 
     /**
-     * @return (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+     * @return (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
      * 
      */
     public Output<MysqlDbSystemMaintenance> maintenance() {
         return this.maintenance;
     }
     /**
-     * Name of the MySQL Version in use for the DB System.
+     * The specific MySQL version identifier.
      * 
      */
     @Export(name="mysqlVersion", type=String.class, parameters={})
     private Output<String> mysqlVersion;
 
     /**
-     * @return Name of the MySQL Version in use for the DB System.
+     * @return The specific MySQL version identifier.
      * 
      */
     public Output<String> mysqlVersion() {
@@ -541,7 +541,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
         return this.portX;
     }
     /**
-     * The name of the shape. The shape determines the resources allocated
+     * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -549,7 +549,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     private Output<String> shapeName;
 
     /**
-     * @return The name of the shape. The shape determines the resources allocated
+     * @return (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -673,6 +673,9 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "adminPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

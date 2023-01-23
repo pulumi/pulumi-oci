@@ -78,8 +78,8 @@ import javax.annotation.Nullable;
  *             .definedTags(var_.exadata_infrastructure_defined_tags())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isCpsOfflineReportEnabled(var_.exadata_infrastructure_is_cps_offline_report_enabled())
+ *             .isMultiRackDeployment(var_.exadata_infrastructure_is_multi_rack_deployment())
  *             .maintenanceWindow(ExadataInfrastructureMaintenanceWindowArgs.builder()
- *                 .preference(var_.exadata_infrastructure_maintenance_window_preference())
  *                 .customActionTimeoutInMins(var_.exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins())
  *                 .daysOfWeeks(ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.builder()
  *                     .name(var_.exadata_infrastructure_maintenance_window_days_of_week_name())
@@ -92,8 +92,10 @@ import javax.annotation.Nullable;
  *                     .name(var_.exadata_infrastructure_maintenance_window_months_name())
  *                     .build())
  *                 .patchingMode(var_.exadata_infrastructure_maintenance_window_patching_mode())
+ *                 .preference(var_.exadata_infrastructure_maintenance_window_preference())
  *                 .weeksOfMonths(var_.exadata_infrastructure_maintenance_window_weeks_of_month())
  *                 .build())
+ *             .multiRackConfigurationFile(var_.exadata_infrastructure_multi_rack_configuration_file())
  *             .storageCount(var_.exadata_infrastructure_storage_count())
  *             .build());
  * 
@@ -139,6 +141,34 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> activationFile() {
         return Codegen.optional(this.activationFile);
+    }
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
+    @Export(name="additionalComputeCount", type=Integer.class, parameters={})
+    private Output<Integer> additionalComputeCount;
+
+    /**
+     * @return The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
+    public Output<Integer> additionalComputeCount() {
+        return this.additionalComputeCount;
+    }
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
+    @Export(name="additionalComputeSystemModel", type=String.class, parameters={})
+    private Output<String> additionalComputeSystemModel;
+
+    /**
+     * @return Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
+    public Output<String> additionalComputeSystemModel() {
+        return this.additionalComputeSystemModel;
     }
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
@@ -427,6 +457,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
         return this.isCpsOfflineReportEnabled;
     }
     /**
+     * (Updatable) Indicates if deployment is Multi-Rack or not.
+     * 
+     */
+    @Export(name="isMultiRackDeployment", type=Boolean.class, parameters={})
+    private Output<Boolean> isMultiRackDeployment;
+
+    /**
+     * @return (Updatable) Indicates if deployment is Multi-Rack or not.
+     * 
+     */
+    public Output<Boolean> isMultiRackDeployment() {
+        return this.isMultiRackDeployment;
+    }
+    /**
      * Additional information about the current lifecycle state.
      * 
      */
@@ -551,6 +595,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<String> monthlyDbServerVersion() {
         return this.monthlyDbServerVersion;
+    }
+    /**
+     * (Updatable) The base64 encoded Multi-Rack configuration json file.
+     * 
+     */
+    @Export(name="multiRackConfigurationFile", type=String.class, parameters={})
+    private Output</* @Nullable */ String> multiRackConfigurationFile;
+
+    /**
+     * @return (Updatable) The base64 encoded Multi-Rack configuration json file.
+     * 
+     */
+    public Output<Optional<String>> multiRackConfigurationFile() {
+        return Codegen.optional(this.multiRackConfigurationFile);
     }
     /**
      * (Updatable) The netmask for the control plane network.

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkSource(args: GetNetworkSourceArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSourceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getNetworkSource:getNetworkSource", {
         "networkSourceId": args.networkSourceId,
     }, opts);
@@ -96,9 +94,24 @@ export interface GetNetworkSourceResult {
      */
     readonly virtualSourceLists: outputs.Identity.GetNetworkSourceVirtualSourceList[];
 }
-
+/**
+ * This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Gets the specified network source's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkSource = oci.Identity.getNetworkSource({
+ *     networkSourceId: oci_identity_network_source.test_network_source.id,
+ * });
+ * ```
+ */
 export function getNetworkSourceOutput(args: GetNetworkSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSourceResult> {
-    return pulumi.output(args).apply(a => getNetworkSource(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkSource(a, opts))
 }
 
 /**

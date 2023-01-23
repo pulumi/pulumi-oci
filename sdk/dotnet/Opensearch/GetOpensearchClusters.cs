@@ -30,6 +30,9 @@ namespace Pulumi.Oci.Opensearch
         /// });
         /// ```
         /// 
+        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
+        /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -55,7 +58,7 @@ namespace Pulumi.Oci.Opensearch
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOpensearchClustersResult> InvokeAsync(GetOpensearchClustersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOpensearchClustersResult>("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", args ?? new GetOpensearchClustersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOpensearchClustersResult>("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", args ?? new GetOpensearchClustersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
@@ -75,6 +78,9 @@ namespace Pulumi.Oci.Opensearch
         /// {
         /// });
         /// ```
+        /// 
+        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
+        /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -101,7 +107,7 @@ namespace Pulumi.Oci.Opensearch
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOpensearchClustersResult> Invoke(GetOpensearchClustersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOpensearchClustersResult>("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", args ?? new GetOpensearchClustersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOpensearchClustersResult>("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", args ?? new GetOpensearchClustersInvokeArgs(), options.WithDefaults());
     }
 
 

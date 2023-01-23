@@ -235,6 +235,10 @@ namespace Pulumi.Oci.Integration
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "idcsAt",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -318,11 +322,21 @@ namespace Pulumi.Oci.Integration
             set => _freeformTags = value;
         }
 
+        [Input("idcsAt")]
+        private Input<string>? _idcsAt;
+
         /// <summary>
         /// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         /// </summary>
-        [Input("idcsAt")]
-        public Input<string>? IdcsAt { get; set; }
+        public Input<string>? IdcsAt
+        {
+            get => _idcsAt;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsAt = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) Standard or Enterprise type
@@ -446,11 +460,21 @@ namespace Pulumi.Oci.Integration
             set => _freeformTags = value;
         }
 
+        [Input("idcsAt")]
+        private Input<string>? _idcsAt;
+
         /// <summary>
         /// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         /// </summary>
-        [Input("idcsAt")]
-        public Input<string>? IdcsAt { get; set; }
+        public Input<string>? IdcsAt
+        {
+            get => _idcsAt;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsAt = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("idcsInfos")]
         private InputList<Inputs.IntegrationInstanceIdcsInfoGetArgs>? _idcsInfos;

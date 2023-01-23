@@ -5,19 +5,51 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./esxiHost";
-export * from "./getExsiHost";
-export * from "./getExsiHosts";
-export * from "./getSddc";
-export * from "./getSddcs";
-export * from "./getSupportedHostShapes";
-export * from "./getSupportedSkus";
-export * from "./getSupportedVmwareSoftwareVersions";
-export * from "./sddc";
+export { EsxiHostArgs, EsxiHostState } from "./esxiHost";
+export type EsxiHost = import("./esxiHost").EsxiHost;
+export const EsxiHost: typeof import("./esxiHost").EsxiHost = null as any;
+utilities.lazyLoad(exports, ["EsxiHost"], () => require("./esxiHost"));
 
-// Import resources to register:
-import { EsxiHost } from "./esxiHost";
-import { Sddc } from "./sddc";
+export { GetExsiHostArgs, GetExsiHostResult, GetExsiHostOutputArgs } from "./getExsiHost";
+export const getExsiHost: typeof import("./getExsiHost").getExsiHost = null as any;
+export const getExsiHostOutput: typeof import("./getExsiHost").getExsiHostOutput = null as any;
+utilities.lazyLoad(exports, ["getExsiHost","getExsiHostOutput"], () => require("./getExsiHost"));
+
+export { GetExsiHostsArgs, GetExsiHostsResult, GetExsiHostsOutputArgs } from "./getExsiHosts";
+export const getExsiHosts: typeof import("./getExsiHosts").getExsiHosts = null as any;
+export const getExsiHostsOutput: typeof import("./getExsiHosts").getExsiHostsOutput = null as any;
+utilities.lazyLoad(exports, ["getExsiHosts","getExsiHostsOutput"], () => require("./getExsiHosts"));
+
+export { GetSddcArgs, GetSddcResult, GetSddcOutputArgs } from "./getSddc";
+export const getSddc: typeof import("./getSddc").getSddc = null as any;
+export const getSddcOutput: typeof import("./getSddc").getSddcOutput = null as any;
+utilities.lazyLoad(exports, ["getSddc","getSddcOutput"], () => require("./getSddc"));
+
+export { GetSddcsArgs, GetSddcsResult, GetSddcsOutputArgs } from "./getSddcs";
+export const getSddcs: typeof import("./getSddcs").getSddcs = null as any;
+export const getSddcsOutput: typeof import("./getSddcs").getSddcsOutput = null as any;
+utilities.lazyLoad(exports, ["getSddcs","getSddcsOutput"], () => require("./getSddcs"));
+
+export { GetSupportedHostShapesArgs, GetSupportedHostShapesResult, GetSupportedHostShapesOutputArgs } from "./getSupportedHostShapes";
+export const getSupportedHostShapes: typeof import("./getSupportedHostShapes").getSupportedHostShapes = null as any;
+export const getSupportedHostShapesOutput: typeof import("./getSupportedHostShapes").getSupportedHostShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getSupportedHostShapes","getSupportedHostShapesOutput"], () => require("./getSupportedHostShapes"));
+
+export { GetSupportedSkusArgs, GetSupportedSkusResult, GetSupportedSkusOutputArgs } from "./getSupportedSkus";
+export const getSupportedSkus: typeof import("./getSupportedSkus").getSupportedSkus = null as any;
+export const getSupportedSkusOutput: typeof import("./getSupportedSkus").getSupportedSkusOutput = null as any;
+utilities.lazyLoad(exports, ["getSupportedSkus","getSupportedSkusOutput"], () => require("./getSupportedSkus"));
+
+export { GetSupportedVmwareSoftwareVersionsArgs, GetSupportedVmwareSoftwareVersionsResult, GetSupportedVmwareSoftwareVersionsOutputArgs } from "./getSupportedVmwareSoftwareVersions";
+export const getSupportedVmwareSoftwareVersions: typeof import("./getSupportedVmwareSoftwareVersions").getSupportedVmwareSoftwareVersions = null as any;
+export const getSupportedVmwareSoftwareVersionsOutput: typeof import("./getSupportedVmwareSoftwareVersions").getSupportedVmwareSoftwareVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSupportedVmwareSoftwareVersions","getSupportedVmwareSoftwareVersionsOutput"], () => require("./getSupportedVmwareSoftwareVersions"));
+
+export { SddcArgs, SddcState } from "./sddc";
+export type Sddc = import("./sddc").Sddc;
+export const Sddc: typeof import("./sddc").Sddc = null as any;
+utilities.lazyLoad(exports, ["Sddc"], () => require("./sddc"));
+
 
 const _module = {
     version: utilities.getVersion(),

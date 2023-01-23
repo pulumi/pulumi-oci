@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReportDefinition(args: GetReportDefinitionArgs, opts?: pulumi.InvokeOptions): Promise<GetReportDefinitionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getReportDefinition:getReportDefinition", {
         "reportDefinitionId": args.reportDefinitionId,
     }, opts);
@@ -67,6 +65,10 @@ export interface GetReportDefinitionResult {
      */
     readonly compartmentId: string;
     /**
+     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     */
+    readonly complianceStandards: string[];
+    /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      */
     readonly dataSource: string;
@@ -102,7 +104,31 @@ export interface GetReportDefinitionResult {
      * The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      */
     readonly parentId: string;
+    /**
+     * The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     */
+    readonly recordTimeSpan: string;
     readonly reportDefinitionId: string;
+    /**
+     * Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+     */
+    readonly schedule: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     */
+    readonly scheduledReportCompartmentId: string;
+    /**
+     * Specifies the format of report to be excel or pdf
+     */
+    readonly scheduledReportMimeType: string;
+    /**
+     * The name of the report to be scheduled.
+     */
+    readonly scheduledReportName: string;
+    /**
+     * Specifies the limit on number of rows in report.
+     */
+    readonly scheduledReportRowLimit: number;
     /**
      * Additional scim filters used to get the specific summary.
      */
@@ -128,9 +154,24 @@ export interface GetReportDefinitionResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of report definition specified by the identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testReportDefinition = oci.DataSafe.getReportDefinition({
+ *     reportDefinitionId: oci_data_safe_report_definition.test_report_definition.id,
+ * });
+ * ```
+ */
 export function getReportDefinitionOutput(args: GetReportDefinitionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportDefinitionResult> {
-    return pulumi.output(args).apply(a => getReportDefinition(a, opts))
+    return pulumi.output(args).apply((a: any) => getReportDefinition(a, opts))
 }
 
 /**

@@ -10,6 +10,11 @@ import java.util.Objects;
 @CustomType
 public final class GetVmClusterNetworkVmNetworkNode {
     /**
+     * @return The Db server associated with the node.
+     * 
+     */
+    private String dbServerId;
+    /**
      * @return The node host name.
      * 
      */
@@ -19,6 +24,11 @@ public final class GetVmClusterNetworkVmNetworkNode {
      * 
      */
     private String ip;
+    /**
+     * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+     * 
+     */
+    private String state;
     /**
      * @return The node virtual IP (VIP) address.
      * 
@@ -32,6 +42,13 @@ public final class GetVmClusterNetworkVmNetworkNode {
 
     private GetVmClusterNetworkVmNetworkNode() {}
     /**
+     * @return The Db server associated with the node.
+     * 
+     */
+    public String dbServerId() {
+        return this.dbServerId;
+    }
+    /**
      * @return The node host name.
      * 
      */
@@ -44,6 +61,13 @@ public final class GetVmClusterNetworkVmNetworkNode {
      */
     public String ip() {
         return this.ip;
+    }
+    /**
+     * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+     * 
+     */
+    public String state() {
+        return this.state;
     }
     /**
      * @return The node virtual IP (VIP) address.
@@ -69,19 +93,28 @@ public final class GetVmClusterNetworkVmNetworkNode {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String dbServerId;
         private String hostname;
         private String ip;
+        private String state;
         private String vip;
         private String vipHostname;
         public Builder() {}
         public Builder(GetVmClusterNetworkVmNetworkNode defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dbServerId = defaults.dbServerId;
     	      this.hostname = defaults.hostname;
     	      this.ip = defaults.ip;
+    	      this.state = defaults.state;
     	      this.vip = defaults.vip;
     	      this.vipHostname = defaults.vipHostname;
         }
 
+        @CustomType.Setter
+        public Builder dbServerId(String dbServerId) {
+            this.dbServerId = Objects.requireNonNull(dbServerId);
+            return this;
+        }
         @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
@@ -90,6 +123,11 @@ public final class GetVmClusterNetworkVmNetworkNode {
         @CustomType.Setter
         public Builder ip(String ip) {
             this.ip = Objects.requireNonNull(ip);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder state(String state) {
+            this.state = Objects.requireNonNull(state);
             return this;
         }
         @CustomType.Setter
@@ -104,8 +142,10 @@ public final class GetVmClusterNetworkVmNetworkNode {
         }
         public GetVmClusterNetworkVmNetworkNode build() {
             final var o = new GetVmClusterNetworkVmNetworkNode();
+            o.dbServerId = dbServerId;
             o.hostname = hostname;
             o.ip = ip;
+            o.state = state;
             o.vip = vip;
             o.vipHostname = vipHostname;
             return o;

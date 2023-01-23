@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualServiceRouteTable(args: GetVirtualServiceRouteTableArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServiceRouteTableResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", {
         "virtualServiceRouteTableId": args.virtualServiceRouteTableId,
     }, opts);
@@ -104,9 +102,24 @@ export interface GetVirtualServiceRouteTableResult {
     readonly virtualServiceId: string;
     readonly virtualServiceRouteTableId: string;
 }
-
+/**
+ * This data source provides details about a specific Virtual Service Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Gets a VirtualServiceRouteTable by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVirtualServiceRouteTable = oci.ServiceMesh.getVirtualServiceRouteTable({
+ *     virtualServiceRouteTableId: oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table.id,
+ * });
+ * ```
+ */
 export function getVirtualServiceRouteTableOutput(args: GetVirtualServiceRouteTableOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServiceRouteTableResult> {
-    return pulumi.output(args).apply(a => getVirtualServiceRouteTable(a, opts))
+    return pulumi.output(args).apply((a: any) => getVirtualServiceRouteTable(a, opts))
 }
 
 /**

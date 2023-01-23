@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAction(args: GetActionArgs, opts?: pulumi.InvokeOptions): Promise<GetActionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAction:getAction", {
         "operatorActionId": args.operatorActionId,
     }, opts);
@@ -76,9 +74,24 @@ export interface GetActionResult {
      */
     readonly resourceType: string;
 }
-
+/**
+ * This data source provides details about a specific Operator Action resource in Oracle Cloud Infrastructure Operator Access Control service.
+ *
+ * Gets the operator action associated with the specified operator action ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperatorAction = oci.OperatorAccessControl.getAction({
+ *     operatorActionId: oci_operator_access_control_operator_action.test_operator_action.id,
+ * });
+ * ```
+ */
 export function getActionOutput(args: GetActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetActionResult> {
-    return pulumi.output(args).apply(a => getAction(a, opts))
+    return pulumi.output(args).apply((a: any) => getAction(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getByoipRanges(args: GetByoipRangesArgs, opts?: pulumi.InvokeOptions): Promise<GetByoipRangesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getByoipRanges:getByoipRanges", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -83,9 +81,27 @@ export interface GetByoipRangesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Byoip Ranges in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the `ByoipRange` resources in the specified compartment.
+ * You can filter the list using query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testByoipRanges = oci.Core.getByoipRanges({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.byoip_range_display_name,
+ *     state: _var.byoip_range_state,
+ * });
+ * ```
+ */
 export function getByoipRangesOutput(args: GetByoipRangesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipRangesResult> {
-    return pulumi.output(args).apply(a => getByoipRanges(a, opts))
+    return pulumi.output(args).apply((a: any) => getByoipRanges(a, opts))
 }
 
 /**

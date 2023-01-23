@@ -90,9 +90,11 @@ export class OperationsInsightsWarehouseDownloadWarehouseWallet extends pulumi.C
                 throw new Error("Missing required property 'operationsInsightsWarehouseWalletPassword'");
             }
             resourceInputs["operationsInsightsWarehouseId"] = args ? args.operationsInsightsWarehouseId : undefined;
-            resourceInputs["operationsInsightsWarehouseWalletPassword"] = args ? args.operationsInsightsWarehouseWalletPassword : undefined;
+            resourceInputs["operationsInsightsWarehouseWalletPassword"] = args?.operationsInsightsWarehouseWalletPassword ? pulumi.secret(args.operationsInsightsWarehouseWalletPassword) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["operationsInsightsWarehouseWalletPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(OperationsInsightsWarehouseDownloadWarehouseWallet.__pulumiType, name, resourceInputs, opts);
     }
 }

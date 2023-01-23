@@ -96,6 +96,11 @@ namespace Pulumi.Oci
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "privateKey",
+                    "privateKeyPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -146,18 +151,38 @@ namespace Pulumi.Oci
             set => _ignoreDefinedTags = value;
         }
 
+        [Input("privateKey")]
+        private Input<string>? _privateKey;
+
         /// <summary>
         /// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
         /// set to 'ApiKey', ignored otherwise.
         /// </summary>
-        [Input("privateKey")]
-        public Input<string>? PrivateKey { get; set; }
+        public Input<string>? PrivateKey
+        {
+            get => _privateKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("privateKeyPassword")]
+        private Input<string>? _privateKeyPassword;
 
         /// <summary>
         /// (Optional) The password used to secure the private key.
         /// </summary>
-        [Input("privateKeyPassword")]
-        public Input<string>? PrivateKeyPassword { get; set; }
+        public Input<string>? PrivateKeyPassword
+        {
+            get => _privateKeyPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKeyPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if

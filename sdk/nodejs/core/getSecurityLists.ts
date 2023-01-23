@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityLists(args: GetSecurityListsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityListsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getSecurityLists:getSecurityLists", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -93,9 +91,28 @@ export interface GetSecurityListsResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the security lists in the specified VCN and compartment.
+ * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityLists = oci.Core.getSecurityLists({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.security_list_display_name,
+ *     state: _var.security_list_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getSecurityListsOutput(args: GetSecurityListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityListsResult> {
-    return pulumi.output(args).apply(a => getSecurityLists(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityLists(a, opts))
 }
 
 /**

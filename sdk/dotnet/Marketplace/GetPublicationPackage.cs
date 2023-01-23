@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPublicationPackageResult> InvokeAsync(GetPublicationPackageArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPublicationPackageResult>("oci:Marketplace/getPublicationPackage:getPublicationPackage", args ?? new GetPublicationPackageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPublicationPackageResult>("oci:Marketplace/getPublicationPackage:getPublicationPackage", args ?? new GetPublicationPackageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Publication Package resource in Oracle Cloud Infrastructure Marketplace service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPublicationPackageResult> Invoke(GetPublicationPackageInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPublicationPackageResult>("oci:Marketplace/getPublicationPackage:getPublicationPackage", args ?? new GetPublicationPackageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicationPackageResult>("oci:Marketplace/getPublicationPackage:getPublicationPackage", args ?? new GetPublicationPackageInvokeArgs(), options.WithDefaults());
     }
 
 

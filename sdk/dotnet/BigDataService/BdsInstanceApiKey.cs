@@ -129,6 +129,10 @@ namespace Pulumi.Oci.BigDataService
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "passphrase",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -170,11 +174,21 @@ namespace Pulumi.Oci.BigDataService
         [Input("keyAlias", required: true)]
         public Input<string> KeyAlias { get; set; } = null!;
 
+        [Input("passphrase", required: true)]
+        private Input<string>? _passphrase;
+
         /// <summary>
         /// Base64 passphrase used to secure the private key which will be created on user behalf.
         /// </summary>
-        [Input("passphrase", required: true)]
-        public Input<string> Passphrase { get; set; } = null!;
+        public Input<string>? Passphrase
+        {
+            get => _passphrase;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _passphrase = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The OCID of the user for whom this new generated API key pair will be created.
@@ -214,11 +228,21 @@ namespace Pulumi.Oci.BigDataService
         [Input("keyAlias")]
         public Input<string>? KeyAlias { get; set; }
 
+        [Input("passphrase")]
+        private Input<string>? _passphrase;
+
         /// <summary>
         /// Base64 passphrase used to secure the private key which will be created on user behalf.
         /// </summary>
-        [Input("passphrase")]
-        public Input<string>? Passphrase { get; set; }
+        public Input<string>? Passphrase
+        {
+            get => _passphrase;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _passphrase = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.

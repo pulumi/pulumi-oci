@@ -20,10 +20,6 @@ public final class GetTablesTableCollection {
      * 
      */
     private String compartmentId;
-    /**
-     * @return A DDL statement representing the schema.
-     * 
-     */
     private String ddlStatement;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
@@ -55,10 +51,6 @@ public final class GetTablesTableCollection {
      * 
      */
     private String name;
-    /**
-     * @return The table schema information as a JSON object.
-     * 
-     */
     private List<GetTablesTableCollectionSchema> schemas;
     /**
      * @return Filter list by the lifecycle state of the item.
@@ -99,10 +91,6 @@ public final class GetTablesTableCollection {
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return A DDL statement representing the schema.
-     * 
-     */
     public String ddlStatement() {
         return this.ddlStatement;
     }
@@ -148,10 +136,6 @@ public final class GetTablesTableCollection {
     public String name() {
         return this.name;
     }
-    /**
-     * @return The table schema information as a JSON object.
-     * 
-     */
     public List<GetTablesTableCollectionSchema> schemas() {
         return this.schemas;
     }

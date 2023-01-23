@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOnpremConnectors(args: GetOnpremConnectorsArgs, opts?: pulumi.InvokeOptions): Promise<GetOnpremConnectorsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -100,9 +98,29 @@ export interface GetOnpremConnectorsResult {
      */
     readonly onPremConnectors: outputs.DataSafe.GetOnpremConnectorsOnPremConnector[];
 }
-
+/**
+ * This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of on-premises connectors.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOnPremConnectors = oci.DataSafe.getOnpremConnectors({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.on_prem_connector_access_level,
+ *     compartmentIdInSubtree: _var.on_prem_connector_compartment_id_in_subtree,
+ *     displayName: _var.on_prem_connector_display_name,
+ *     onPremConnectorId: oci_data_safe_on_prem_connector.test_on_prem_connector.id,
+ *     onPremConnectorLifecycleState: _var.on_prem_connector_on_prem_connector_lifecycle_state,
+ * });
+ * ```
+ */
 export function getOnpremConnectorsOutput(args: GetOnpremConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnpremConnectorsResult> {
-    return pulumi.output(args).apply(a => getOnpremConnectors(a, opts))
+    return pulumi.output(args).apply((a: any) => getOnpremConnectors(a, opts))
 }
 
 /**

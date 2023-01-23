@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -18,26 +19,29 @@ import * as utilities from "../utilities";
  *
  * const testDeployments = oci.GoldenGate.getDeployments({
  *     compartmentId: _var.compartment_id,
+ *     assignableConnectionId: oci_golden_gate_connection.test_connection.id,
+ *     assignedConnectionId: oci_golden_gate_connection.test_connection.id,
  *     displayName: _var.deployment_display_name,
  *     fqdn: _var.deployment_fqdn,
  *     lifecycleSubState: _var.deployment_lifecycle_sub_state,
  *     state: _var.deployment_state,
+ *     supportedConnectionType: _var.deployment_supported_connection_type,
  * });
  * ```
  */
 export function getDeployments(args: GetDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeployments:getDeployments", {
+        "assignableConnectionId": args.assignableConnectionId,
+        "assignedConnectionId": args.assignedConnectionId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
         "fqdn": args.fqdn,
         "lifecycleSubState": args.lifecycleSubState,
         "state": args.state,
+        "supportedConnectionType": args.supportedConnectionType,
     }, opts);
 }
 
@@ -46,7 +50,15 @@ export function getDeployments(args: GetDeploymentsArgs, opts?: pulumi.InvokeOpt
  */
 export interface GetDeploymentsArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+     */
+    assignableConnectionId?: string;
+    /**
+     * The OCID of the connection which for the deployment must be assigned.
+     */
+    assignedConnectionId?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -66,12 +78,18 @@ export interface GetDeploymentsArgs {
      * A filter to return only the resources that match the 'lifecycleState' given.
      */
     state?: string;
+    /**
+     * The connection type which the deployment must support.
+     */
+    supportedConnectionType?: string;
 }
 
 /**
  * A collection of values returned by getDeployments.
  */
 export interface GetDeploymentsResult {
+    readonly assignableConnectionId?: string;
+    readonly assignedConnectionId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
@@ -101,10 +119,33 @@ export interface GetDeploymentsResult {
      * Possible lifecycle states.
      */
     readonly state?: string;
+    readonly supportedConnectionType?: string;
 }
-
+/**
+ * This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
+ *
+ * Lists the Deployments in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployments = oci.GoldenGate.getDeployments({
+ *     compartmentId: _var.compartment_id,
+ *     assignableConnectionId: oci_golden_gate_connection.test_connection.id,
+ *     assignedConnectionId: oci_golden_gate_connection.test_connection.id,
+ *     displayName: _var.deployment_display_name,
+ *     fqdn: _var.deployment_fqdn,
+ *     lifecycleSubState: _var.deployment_lifecycle_sub_state,
+ *     state: _var.deployment_state,
+ *     supportedConnectionType: _var.deployment_supported_connection_type,
+ * });
+ * ```
+ */
 export function getDeploymentsOutput(args: GetDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentsResult> {
-    return pulumi.output(args).apply(a => getDeployments(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployments(a, opts))
 }
 
 /**
@@ -112,7 +153,15 @@ export function getDeploymentsOutput(args: GetDeploymentsOutputArgs, opts?: pulu
  */
 export interface GetDeploymentsOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+     */
+    assignableConnectionId?: pulumi.Input<string>;
+    /**
+     * The OCID of the connection which for the deployment must be assigned.
+     */
+    assignedConnectionId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -132,4 +181,8 @@ export interface GetDeploymentsOutputArgs {
      * A filter to return only the resources that match the 'lifecycleState' given.
      */
     state?: pulumi.Input<string>;
+    /**
+     * The connection type which the deployment must support.
+     */
+    supportedConnectionType?: pulumi.Input<string>;
 }

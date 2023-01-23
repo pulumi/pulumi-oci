@@ -32,6 +32,12 @@ namespace Pulumi.Oci.DevOps.Inputs
         [Input("headRef")]
         public Input<string>? HeadRef { get; set; }
 
+        /// <summary>
+        /// The repository name for trigger events.
+        /// </summary>
+        [Input("repositoryName")]
+        public Input<string>? RepositoryName { get; set; }
+
         public BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs()
         {
         }

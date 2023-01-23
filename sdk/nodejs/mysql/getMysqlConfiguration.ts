@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlConfiguration(args: GetMysqlConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlConfigurationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", {
         "configurationId": args.configurationId,
     }, opts);
@@ -104,9 +102,24 @@ export interface GetMysqlConfigurationResult {
      */
     readonly variables: outputs.Mysql.GetMysqlConfigurationVariable[];
 }
-
+/**
+ * This data source provides details about a specific Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
+ *
+ * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMysqlConfiguration = oci.Mysql.getMysqlConfiguration({
+ *     configurationId: _var.mysql_configuration_id,
+ * });
+ * ```
+ */
 export function getMysqlConfigurationOutput(args: GetMysqlConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlConfigurationResult> {
-    return pulumi.output(args).apply(a => getMysqlConfiguration(a, opts))
+    return pulumi.output(args).apply((a: any) => getMysqlConfiguration(a, opts))
 }
 
 /**

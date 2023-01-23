@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -34,11 +35,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getZones(args: GetZonesArgs, opts?: pulumi.InvokeOptions): Promise<GetZonesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getZones:getZones", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -159,9 +157,36 @@ export interface GetZonesResult {
      */
     readonly zones: outputs.Dns.GetZonesZone[];
 }
-
+/**
+ * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets a list of all zones in the specified compartment. The collection
+ * can be filtered by name, time created, scope, associated view, and zone type.
+ * Additionally, for Private DNS, the `scope` query parameter is required when
+ * listing private zones.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testZones = oci.Dns.getZones({
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.zone_name,
+ *     nameContains: _var.zone_name_contains,
+ *     scope: _var.zone_scope,
+ *     state: _var.zone_state,
+ *     timeCreatedGreaterThanOrEqualTo: _var.zone_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.zone_time_created_less_than,
+ *     tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
+ *     viewId: oci_dns_view.test_view.id,
+ *     zoneType: _var.zone_zone_type,
+ * });
+ * ```
+ */
 export function getZonesOutput(args: GetZonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetZonesResult> {
-    return pulumi.output(args).apply(a => getZones(a, opts))
+    return pulumi.output(args).apply((a: any) => getZones(a, opts))
 }
 
 /**

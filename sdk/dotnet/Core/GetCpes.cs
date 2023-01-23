@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCpesResult> InvokeAsync(GetCpesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCpesResult>("oci:Core/getCpes:getCpes", args ?? new GetCpesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCpesResult>("oci:Core/getCpes:getCpes", args ?? new GetCpesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCpesResult> Invoke(GetCpesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCpesResult>("oci:Core/getCpes:getCpes", args ?? new GetCpesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpesResult>("oci:Core/getCpes:getCpes", args ?? new GetCpesInvokeArgs(), options.WithDefaults());
     }
 
 

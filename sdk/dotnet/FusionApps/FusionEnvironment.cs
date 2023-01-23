@@ -158,6 +158,12 @@ namespace Pulumi.Oci.FusionApps
         public Output<string> IdcsDomainUrl { get; private set; } = null!;
 
         /// <summary>
+        /// If it's true, then the Break Glass feature is enabled
+        /// </summary>
+        [Output("isBreakGlassEnabled")]
+        public Output<bool> IsBreakGlassEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) byok kms keyId
         /// </summary>
         [Output("kmsKeyId")]
@@ -167,13 +173,19 @@ namespace Pulumi.Oci.FusionApps
         /// BYOK key info
         /// </summary>
         [Output("kmsKeyInfos")]
-        public Output<ImmutableArray<string>> KmsKeyInfos { get; private set; } = null!;
+        public Output<ImmutableArray<Outputs.FusionEnvironmentKmsKeyInfo>> KmsKeyInfos { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+        /// </summary>
+        [Output("lockboxId")]
+        public Output<string> LockboxId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
@@ -488,20 +500,26 @@ namespace Pulumi.Oci.FusionApps
         public Input<string>? IdcsDomainUrl { get; set; }
 
         /// <summary>
+        /// If it's true, then the Break Glass feature is enabled
+        /// </summary>
+        [Input("isBreakGlassEnabled")]
+        public Input<bool>? IsBreakGlassEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) byok kms keyId
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
 
         [Input("kmsKeyInfos")]
-        private InputList<string>? _kmsKeyInfos;
+        private InputList<Inputs.FusionEnvironmentKmsKeyInfoGetArgs>? _kmsKeyInfos;
 
         /// <summary>
         /// BYOK key info
         /// </summary>
-        public InputList<string> KmsKeyInfos
+        public InputList<Inputs.FusionEnvironmentKmsKeyInfoGetArgs> KmsKeyInfos
         {
-            get => _kmsKeyInfos ?? (_kmsKeyInfos = new InputList<string>());
+            get => _kmsKeyInfos ?? (_kmsKeyInfos = new InputList<Inputs.FusionEnvironmentKmsKeyInfoGetArgs>());
             set => _kmsKeyInfos = value;
         }
 
@@ -510,6 +528,12 @@ namespace Pulumi.Oci.FusionApps
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+        /// </summary>
+        [Input("lockboxId")]
+        public Input<string>? LockboxId { get; set; }
 
         /// <summary>
         /// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).

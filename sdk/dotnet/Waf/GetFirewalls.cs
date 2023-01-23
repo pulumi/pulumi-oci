@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFirewallsResult> InvokeAsync(GetFirewallsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFirewallsResult>("oci:Waf/getFirewalls:getFirewalls", args ?? new GetFirewallsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFirewallsResult>("oci:Waf/getFirewalls:getFirewalls", args ?? new GetFirewallsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Web App Firewalls in Oracle Cloud Infrastructure Waf service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFirewallsResult> Invoke(GetFirewallsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFirewallsResult>("oci:Waf/getFirewalls:getFirewalls", args ?? new GetFirewallsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFirewallsResult>("oci:Waf/getFirewalls:getFirewalls", args ?? new GetFirewallsInvokeArgs(), options.WithDefaults());
     }
 
 

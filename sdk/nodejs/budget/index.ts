@@ -5,16 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./budget";
-export * from "./getAlertRule";
-export * from "./getAlertRules";
-export * from "./getBudget";
-export * from "./getBudgets";
-export * from "./rule";
+export { BudgetArgs, BudgetState } from "./budget";
+export type Budget = import("./budget").Budget;
+export const Budget: typeof import("./budget").Budget = null as any;
+utilities.lazyLoad(exports, ["Budget"], () => require("./budget"));
 
-// Import resources to register:
-import { Budget } from "./budget";
-import { Rule } from "./rule";
+export { GetAlertRuleArgs, GetAlertRuleResult, GetAlertRuleOutputArgs } from "./getAlertRule";
+export const getAlertRule: typeof import("./getAlertRule").getAlertRule = null as any;
+export const getAlertRuleOutput: typeof import("./getAlertRule").getAlertRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertRule","getAlertRuleOutput"], () => require("./getAlertRule"));
+
+export { GetAlertRulesArgs, GetAlertRulesResult, GetAlertRulesOutputArgs } from "./getAlertRules";
+export const getAlertRules: typeof import("./getAlertRules").getAlertRules = null as any;
+export const getAlertRulesOutput: typeof import("./getAlertRules").getAlertRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertRules","getAlertRulesOutput"], () => require("./getAlertRules"));
+
+export { GetBudgetArgs, GetBudgetResult, GetBudgetOutputArgs } from "./getBudget";
+export const getBudget: typeof import("./getBudget").getBudget = null as any;
+export const getBudgetOutput: typeof import("./getBudget").getBudgetOutput = null as any;
+utilities.lazyLoad(exports, ["getBudget","getBudgetOutput"], () => require("./getBudget"));
+
+export { GetBudgetsArgs, GetBudgetsResult, GetBudgetsOutputArgs } from "./getBudgets";
+export const getBudgets: typeof import("./getBudgets").getBudgets = null as any;
+export const getBudgetsOutput: typeof import("./getBudgets").getBudgetsOutput = null as any;
+utilities.lazyLoad(exports, ["getBudgets","getBudgetsOutput"], () => require("./getBudgets"));
+
+export { RuleArgs, RuleState } from "./rule";
+export type Rule = import("./rule").Rule;
+export const Rule: typeof import("./rule").Rule = null as any;
+utilities.lazyLoad(exports, ["Rule"], () => require("./rule"));
+
 
 const _module = {
     version: utilities.getVersion(),

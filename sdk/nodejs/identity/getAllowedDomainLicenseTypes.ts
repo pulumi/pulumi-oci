@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  */
 export function getAllowedDomainLicenseTypes(args?: GetAllowedDomainLicenseTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetAllowedDomainLicenseTypesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", {
         "currentLicenseTypeName": args.currentLicenseTypeName,
         "filters": args.filters,
@@ -65,9 +63,29 @@ export interface GetAllowedDomainLicenseTypesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
+ *
+ * List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+ * If {@code name} is provided, it filters and returns resources that match the given license type name.
+ * Otherwise, returns all valid license types that are currently supported.
+ *
+ * - If license type details are retrieved sucessfully, return 202 ACCEPTED.
+ * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAllowedDomainLicenseTypes = oci.Identity.getAllowedDomainLicenseTypes({
+ *     currentLicenseTypeName: _var.allowed_domain_license_type_current_license_type_name,
+ * });
+ * ```
+ */
 export function getAllowedDomainLicenseTypesOutput(args?: GetAllowedDomainLicenseTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAllowedDomainLicenseTypesResult> {
-    return pulumi.output(args).apply(a => getAllowedDomainLicenseTypes(a, opts))
+    return pulumi.output(args).apply((a: any) => getAllowedDomainLicenseTypes(a, opts))
 }
 
 /**

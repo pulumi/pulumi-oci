@@ -17,12 +17,21 @@ public final class TriggerActionFilterInclude {
      * 
      */
     private @Nullable String baseRef;
+    /**
+     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     private @Nullable TriggerActionFilterIncludeFileFilter fileFilter;
     /**
      * @return (Updatable) Branch for push event; source branch for pull requests.
      * 
      */
     private @Nullable String headRef;
+    /**
+     * @return (Updatable) The repository name for trigger events.
+     * 
+     */
+    private @Nullable String repositoryName;
 
     private TriggerActionFilterInclude() {}
     /**
@@ -32,6 +41,10 @@ public final class TriggerActionFilterInclude {
     public Optional<String> baseRef() {
         return Optional.ofNullable(this.baseRef);
     }
+    /**
+     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     public Optional<TriggerActionFilterIncludeFileFilter> fileFilter() {
         return Optional.ofNullable(this.fileFilter);
     }
@@ -41,6 +54,13 @@ public final class TriggerActionFilterInclude {
      */
     public Optional<String> headRef() {
         return Optional.ofNullable(this.headRef);
+    }
+    /**
+     * @return (Updatable) The repository name for trigger events.
+     * 
+     */
+    public Optional<String> repositoryName() {
+        return Optional.ofNullable(this.repositoryName);
     }
 
     public static Builder builder() {
@@ -55,12 +75,14 @@ public final class TriggerActionFilterInclude {
         private @Nullable String baseRef;
         private @Nullable TriggerActionFilterIncludeFileFilter fileFilter;
         private @Nullable String headRef;
+        private @Nullable String repositoryName;
         public Builder() {}
         public Builder(TriggerActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseRef = defaults.baseRef;
     	      this.fileFilter = defaults.fileFilter;
     	      this.headRef = defaults.headRef;
+    	      this.repositoryName = defaults.repositoryName;
         }
 
         @CustomType.Setter
@@ -78,11 +100,17 @@ public final class TriggerActionFilterInclude {
             this.headRef = headRef;
             return this;
         }
+        @CustomType.Setter
+        public Builder repositoryName(@Nullable String repositoryName) {
+            this.repositoryName = repositoryName;
+            return this;
+        }
         public TriggerActionFilterInclude build() {
             final var o = new TriggerActionFilterInclude();
             o.baseRef = baseRef;
             o.fileFilter = fileFilter;
             o.headRef = headRef;
+            o.repositoryName = repositoryName;
             return o;
         }
     }

@@ -371,10 +371,12 @@ class Deployment(pulumi.CustomResource):
                     authentication=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationArgs(
                         type=var["deployment_specification_request_policies_authentication_type"],
                         audiences=var["deployment_specification_request_policies_authentication_audiences"],
+                        cache_keys=var["deployment_specification_request_policies_authentication_cache_key"],
                         function_id=oci_functions_function["test_function"]["id"],
                         is_anonymous_access_allowed=var["deployment_specification_request_policies_authentication_is_anonymous_access_allowed"],
                         issuers=var["deployment_specification_request_policies_authentication_issuers"],
                         max_clock_skew_in_seconds=var["deployment_specification_request_policies_authentication_max_clock_skew_in_seconds"],
+                        parameters=var["deployment_specification_request_policies_authentication_parameters"],
                         public_keys=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs(
                             type=var["deployment_specification_request_policies_authentication_public_keys_type"],
                             is_ssl_verify_disabled=var["deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled"],
@@ -395,6 +397,86 @@ class Deployment(pulumi.CustomResource):
                         token_auth_scheme=var["deployment_specification_request_policies_authentication_token_auth_scheme"],
                         token_header=var["deployment_specification_request_policies_authentication_token_header"],
                         token_query_param=var["deployment_specification_request_policies_authentication_token_query_param"],
+                        validation_failure_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs(
+                            type=var["deployment_specification_request_policies_authentication_validation_failure_policy_type"],
+                            client_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs(
+                                type=var["deployment_specification_request_policies_authentication_validation_failure_policy_client_details_type"],
+                                client_id=oci_apigateway_client["test_client"]["id"],
+                                client_secret_id=oci_vault_secret["test_secret"]["id"],
+                                client_secret_version_number=var["deployment_specification_request_policies_authentication_validation_failure_policy_client_details_client_secret_version_number"],
+                            ),
+                            fallback_redirect_path=var["deployment_specification_request_policies_authentication_validation_failure_policy_fallback_redirect_path"],
+                            logout_path=var["deployment_specification_request_policies_authentication_validation_failure_policy_logout_path"],
+                            max_expiry_duration_in_hours=var["deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours"],
+                            response_code=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_code"],
+                            response_header_transformations=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgs(
+                                filter_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs(
+                                    items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs(
+                                        name=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_items_name"],
+                                    )],
+                                    type=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_type"],
+                                ),
+                                rename_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs(
+                                    items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs(
+                                        from_=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_from"],
+                                        to=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_to"],
+                                    )],
+                                ),
+                                set_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs(
+                                    items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs(
+                                        if_exists=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_if_exists"],
+                                        name=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_name"],
+                                        values=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_values"],
+                                    )],
+                                ),
+                            ),
+                            response_message=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_message"],
+                            response_type=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_type"],
+                            scopes=var["deployment_specification_request_policies_authentication_validation_failure_policy_scopes"],
+                            source_uri_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgs(
+                                type=var["deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_type"],
+                                uri=var["deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_uri"],
+                            ),
+                            use_cookies_for_intermediate_steps=var["deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps"],
+                            use_cookies_for_session=var["deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session"],
+                            use_pkce=var["deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce"],
+                        ),
+                        validation_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs(
+                            type=var["deployment_specification_request_policies_authentication_validation_policy_type"],
+                            additional_validation_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs(
+                                audiences=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_audiences"],
+                                issuers=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_issuers"],
+                                verify_claims=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs(
+                                    is_required=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required"],
+                                    key=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_key"],
+                                    values=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_values"],
+                                )],
+                            ),
+                            client_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs(
+                                type=var["deployment_specification_request_policies_authentication_validation_policy_client_details_type"],
+                                client_id=oci_apigateway_client["test_client"]["id"],
+                                client_secret_id=oci_vault_secret["test_secret"]["id"],
+                                client_secret_version_number=var["deployment_specification_request_policies_authentication_validation_policy_client_details_client_secret_version_number"],
+                            ),
+                            is_ssl_verify_disabled=var["deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled"],
+                            keys=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs(
+                                format=var["deployment_specification_request_policies_authentication_validation_policy_keys_format"],
+                                alg=var["deployment_specification_request_policies_authentication_validation_policy_keys_alg"],
+                                e=var["deployment_specification_request_policies_authentication_validation_policy_keys_e"],
+                                key=var["deployment_specification_request_policies_authentication_validation_policy_keys_key"],
+                                key_ops=var["deployment_specification_request_policies_authentication_validation_policy_keys_key_ops"],
+                                kid=var["deployment_specification_request_policies_authentication_validation_policy_keys_kid"],
+                                kty=var["deployment_specification_request_policies_authentication_validation_policy_keys_kty"],
+                                n=var["deployment_specification_request_policies_authentication_validation_policy_keys_n"],
+                                use=var["deployment_specification_request_policies_authentication_validation_policy_keys_use"],
+                            )],
+                            max_cache_duration_in_hours=var["deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours"],
+                            source_uri_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs(
+                                type=var["deployment_specification_request_policies_authentication_validation_policy_source_uri_details_type"],
+                                uri=var["deployment_specification_request_policies_authentication_validation_policy_source_uri_details_uri"],
+                            ),
+                            uri=var["deployment_specification_request_policies_authentication_validation_policy_uri"],
+                        ),
                         verify_claims=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs(
                             is_required=var["deployment_specification_request_policies_authentication_verify_claims_is_required"],
                             key=var["deployment_specification_request_policies_authentication_verify_claims_key"],
@@ -408,6 +490,134 @@ class Deployment(pulumi.CustomResource):
                         exposed_headers=var["deployment_specification_request_policies_cors_exposed_headers"],
                         is_allow_credentials_enabled=var["deployment_specification_request_policies_cors_is_allow_credentials_enabled"],
                         max_age_in_seconds=var["deployment_specification_request_policies_cors_max_age_in_seconds"],
+                    ),
+                    dynamic_authentication=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs(
+                        authentication_servers=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs(
+                            authentication_server_detail=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs(
+                                type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_type"],
+                                audiences=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_audiences"],
+                                function_id=oci_functions_function["test_function"]["id"],
+                                is_anonymous_access_allowed=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed"],
+                                issuers=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_issuers"],
+                                max_clock_skew_in_seconds=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_max_clock_skew_in_seconds"],
+                                public_keys=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs(
+                                    type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_type"],
+                                    is_ssl_verify_disabled=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled"],
+                                    keys=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs(
+                                        format=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_format"],
+                                        alg=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_alg"],
+                                        e=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_e"],
+                                        key=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key"],
+                                        key_ops=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key_ops"],
+                                        kid=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kid"],
+                                        kty=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kty"],
+                                        n=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_n"],
+                                        use=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_use"],
+                                    )],
+                                    max_cache_duration_in_hours=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours"],
+                                    uri=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_uri"],
+                                ),
+                                token_auth_scheme=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_auth_scheme"],
+                                token_header=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_header"],
+                                token_query_param=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_query_param"],
+                                validation_failure_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs(
+                                    type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_type"],
+                                    client_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs(
+                                        type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_type"],
+                                        client_id=oci_apigateway_client["test_client"]["id"],
+                                        client_secret_id=oci_vault_secret["test_secret"]["id"],
+                                        client_secret_version_number=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_client_secret_version_number"],
+                                    ),
+                                    fallback_redirect_path=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_fallback_redirect_path"],
+                                    logout_path=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_logout_path"],
+                                    max_expiry_duration_in_hours=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours"],
+                                    response_code=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_code"],
+                                    response_header_transformations=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgs(
+                                        filter_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs(
+                                            items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs(
+                                                name=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_items_name"],
+                                            )],
+                                            type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_type"],
+                                        ),
+                                        rename_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs(
+                                            items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs(
+                                                from_=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_from"],
+                                                to=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_to"],
+                                            )],
+                                        ),
+                                        set_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs(
+                                            items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs(
+                                                if_exists=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_if_exists"],
+                                                name=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_name"],
+                                                values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_values"],
+                                            )],
+                                        ),
+                                    ),
+                                    response_message=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_message"],
+                                    response_type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_type"],
+                                    scopes=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_scopes"],
+                                    source_uri_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs(
+                                        type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_type"],
+                                        uri=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_uri"],
+                                    ),
+                                    use_cookies_for_intermediate_steps=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps"],
+                                    use_cookies_for_session=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session"],
+                                    use_pkce=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce"],
+                                ),
+                                validation_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs(
+                                    type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_type"],
+                                    additional_validation_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs(
+                                        audiences=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_audiences"],
+                                        issuers=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_issuers"],
+                                        verify_claims=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs(
+                                            is_required=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required"],
+                                            key=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_key"],
+                                            values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_values"],
+                                        )],
+                                    ),
+                                    client_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs(
+                                        type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_type"],
+                                        client_id=oci_apigateway_client["test_client"]["id"],
+                                        client_secret_id=oci_vault_secret["test_secret"]["id"],
+                                        client_secret_version_number=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_client_secret_version_number"],
+                                    ),
+                                    is_ssl_verify_disabled=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled"],
+                                    keys=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgs(
+                                        format=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_format"],
+                                        alg=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_alg"],
+                                        e=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_e"],
+                                        key=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key"],
+                                        key_ops=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key_ops"],
+                                        kid=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kid"],
+                                        kty=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kty"],
+                                        n=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_n"],
+                                        use=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_use"],
+                                    )],
+                                    max_cache_duration_in_hours=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours"],
+                                    source_uri_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs(
+                                        type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_type"],
+                                        uri=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_uri"],
+                                    ),
+                                    uri=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_uri"],
+                                ),
+                                verify_claims=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs(
+                                    is_required=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required"],
+                                    key=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_key"],
+                                    values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_values"],
+                                )],
+                            ),
+                            key=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs(
+                                name=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_name"],
+                                expression=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression"],
+                                is_default=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default"],
+                                type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type"],
+                                values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values"],
+                            ),
+                        )],
+                        selection_source=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs(
+                            selector=var["deployment_specification_request_policies_dynamic_authentication_selection_source_selector"],
+                            type=var["deployment_specification_request_policies_dynamic_authentication_selection_source_type"],
+                        ),
                     ),
                     mutual_tls=oci.api_gateway.DeploymentSpecificationRequestPoliciesMutualTlsArgs(
                         allowed_sans=var["deployment_specification_request_policies_mutual_tls_allowed_sans"],
@@ -424,6 +634,7 @@ class Deployment(pulumi.CustomResource):
                 routes=[oci.api_gateway.DeploymentSpecificationRouteArgs(
                     backend=oci.api_gateway.DeploymentSpecificationRouteBackendArgs(
                         type=var["deployment_specification_routes_backend_type"],
+                        allowed_post_logout_uris=var["deployment_specification_routes_backend_allowed_post_logout_uris"],
                         body=var["deployment_specification_routes_backend_body"],
                         connect_timeout_in_seconds=var["deployment_specification_routes_backend_connect_timeout_in_seconds"],
                         function_id=oci_functions_function["test_function"]["id"],
@@ -432,7 +643,36 @@ class Deployment(pulumi.CustomResource):
                             value=var["deployment_specification_routes_backend_headers_value"],
                         )],
                         is_ssl_verify_disabled=var["deployment_specification_routes_backend_is_ssl_verify_disabled"],
+                        post_logout_state=var["deployment_specification_routes_backend_post_logout_state"],
                         read_timeout_in_seconds=var["deployment_specification_routes_backend_read_timeout_in_seconds"],
+                        routing_backends=[oci.api_gateway.DeploymentSpecificationRouteBackendRoutingBackendArgs(
+                            backend=oci.api_gateway.DeploymentSpecificationRouteBackendRoutingBackendBackendArgs(
+                                type=var["deployment_specification_routes_backend_routing_backends_backend_type"],
+                                body=var["deployment_specification_routes_backend_routing_backends_backend_body"],
+                                connect_timeout_in_seconds=var["deployment_specification_routes_backend_routing_backends_backend_connect_timeout_in_seconds"],
+                                function_id=oci_functions_function["test_function"]["id"],
+                                headers=[oci.api_gateway.DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs(
+                                    name=var["deployment_specification_routes_backend_routing_backends_backend_headers_name"],
+                                    value=var["deployment_specification_routes_backend_routing_backends_backend_headers_value"],
+                                )],
+                                is_ssl_verify_disabled=var["deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled"],
+                                read_timeout_in_seconds=var["deployment_specification_routes_backend_routing_backends_backend_read_timeout_in_seconds"],
+                                send_timeout_in_seconds=var["deployment_specification_routes_backend_routing_backends_backend_send_timeout_in_seconds"],
+                                status=var["deployment_specification_routes_backend_routing_backends_backend_status"],
+                                url=var["deployment_specification_routes_backend_routing_backends_backend_url"],
+                            ),
+                            key=oci.api_gateway.DeploymentSpecificationRouteBackendRoutingBackendKeyArgs(
+                                name=var["deployment_specification_routes_backend_routing_backends_key_name"],
+                                type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type"],
+                                expression=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression"],
+                                is_default=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default"],
+                                values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values"],
+                            ),
+                        )],
+                        selection_source=oci.api_gateway.DeploymentSpecificationRouteBackendSelectionSourceArgs(
+                            selector=var["deployment_specification_routes_backend_selection_source_selector"],
+                            type=var["deployment_specification_routes_backend_selection_source_type"],
+                        ),
                         send_timeout_in_seconds=var["deployment_specification_routes_backend_send_timeout_in_seconds"],
                         status=var["deployment_specification_routes_backend_status"],
                         url=var["deployment_specification_routes_backend_url"],
@@ -623,10 +863,12 @@ class Deployment(pulumi.CustomResource):
                     authentication=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationArgs(
                         type=var["deployment_specification_request_policies_authentication_type"],
                         audiences=var["deployment_specification_request_policies_authentication_audiences"],
+                        cache_keys=var["deployment_specification_request_policies_authentication_cache_key"],
                         function_id=oci_functions_function["test_function"]["id"],
                         is_anonymous_access_allowed=var["deployment_specification_request_policies_authentication_is_anonymous_access_allowed"],
                         issuers=var["deployment_specification_request_policies_authentication_issuers"],
                         max_clock_skew_in_seconds=var["deployment_specification_request_policies_authentication_max_clock_skew_in_seconds"],
+                        parameters=var["deployment_specification_request_policies_authentication_parameters"],
                         public_keys=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs(
                             type=var["deployment_specification_request_policies_authentication_public_keys_type"],
                             is_ssl_verify_disabled=var["deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled"],
@@ -647,6 +889,86 @@ class Deployment(pulumi.CustomResource):
                         token_auth_scheme=var["deployment_specification_request_policies_authentication_token_auth_scheme"],
                         token_header=var["deployment_specification_request_policies_authentication_token_header"],
                         token_query_param=var["deployment_specification_request_policies_authentication_token_query_param"],
+                        validation_failure_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs(
+                            type=var["deployment_specification_request_policies_authentication_validation_failure_policy_type"],
+                            client_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs(
+                                type=var["deployment_specification_request_policies_authentication_validation_failure_policy_client_details_type"],
+                                client_id=oci_apigateway_client["test_client"]["id"],
+                                client_secret_id=oci_vault_secret["test_secret"]["id"],
+                                client_secret_version_number=var["deployment_specification_request_policies_authentication_validation_failure_policy_client_details_client_secret_version_number"],
+                            ),
+                            fallback_redirect_path=var["deployment_specification_request_policies_authentication_validation_failure_policy_fallback_redirect_path"],
+                            logout_path=var["deployment_specification_request_policies_authentication_validation_failure_policy_logout_path"],
+                            max_expiry_duration_in_hours=var["deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours"],
+                            response_code=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_code"],
+                            response_header_transformations=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgs(
+                                filter_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs(
+                                    items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs(
+                                        name=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_items_name"],
+                                    )],
+                                    type=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_type"],
+                                ),
+                                rename_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs(
+                                    items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs(
+                                        from_=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_from"],
+                                        to=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_to"],
+                                    )],
+                                ),
+                                set_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs(
+                                    items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs(
+                                        if_exists=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_if_exists"],
+                                        name=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_name"],
+                                        values=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_values"],
+                                    )],
+                                ),
+                            ),
+                            response_message=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_message"],
+                            response_type=var["deployment_specification_request_policies_authentication_validation_failure_policy_response_type"],
+                            scopes=var["deployment_specification_request_policies_authentication_validation_failure_policy_scopes"],
+                            source_uri_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgs(
+                                type=var["deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_type"],
+                                uri=var["deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_uri"],
+                            ),
+                            use_cookies_for_intermediate_steps=var["deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps"],
+                            use_cookies_for_session=var["deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session"],
+                            use_pkce=var["deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce"],
+                        ),
+                        validation_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs(
+                            type=var["deployment_specification_request_policies_authentication_validation_policy_type"],
+                            additional_validation_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs(
+                                audiences=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_audiences"],
+                                issuers=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_issuers"],
+                                verify_claims=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs(
+                                    is_required=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required"],
+                                    key=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_key"],
+                                    values=var["deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_values"],
+                                )],
+                            ),
+                            client_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs(
+                                type=var["deployment_specification_request_policies_authentication_validation_policy_client_details_type"],
+                                client_id=oci_apigateway_client["test_client"]["id"],
+                                client_secret_id=oci_vault_secret["test_secret"]["id"],
+                                client_secret_version_number=var["deployment_specification_request_policies_authentication_validation_policy_client_details_client_secret_version_number"],
+                            ),
+                            is_ssl_verify_disabled=var["deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled"],
+                            keys=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs(
+                                format=var["deployment_specification_request_policies_authentication_validation_policy_keys_format"],
+                                alg=var["deployment_specification_request_policies_authentication_validation_policy_keys_alg"],
+                                e=var["deployment_specification_request_policies_authentication_validation_policy_keys_e"],
+                                key=var["deployment_specification_request_policies_authentication_validation_policy_keys_key"],
+                                key_ops=var["deployment_specification_request_policies_authentication_validation_policy_keys_key_ops"],
+                                kid=var["deployment_specification_request_policies_authentication_validation_policy_keys_kid"],
+                                kty=var["deployment_specification_request_policies_authentication_validation_policy_keys_kty"],
+                                n=var["deployment_specification_request_policies_authentication_validation_policy_keys_n"],
+                                use=var["deployment_specification_request_policies_authentication_validation_policy_keys_use"],
+                            )],
+                            max_cache_duration_in_hours=var["deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours"],
+                            source_uri_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs(
+                                type=var["deployment_specification_request_policies_authentication_validation_policy_source_uri_details_type"],
+                                uri=var["deployment_specification_request_policies_authentication_validation_policy_source_uri_details_uri"],
+                            ),
+                            uri=var["deployment_specification_request_policies_authentication_validation_policy_uri"],
+                        ),
                         verify_claims=[oci.api_gateway.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs(
                             is_required=var["deployment_specification_request_policies_authentication_verify_claims_is_required"],
                             key=var["deployment_specification_request_policies_authentication_verify_claims_key"],
@@ -660,6 +982,134 @@ class Deployment(pulumi.CustomResource):
                         exposed_headers=var["deployment_specification_request_policies_cors_exposed_headers"],
                         is_allow_credentials_enabled=var["deployment_specification_request_policies_cors_is_allow_credentials_enabled"],
                         max_age_in_seconds=var["deployment_specification_request_policies_cors_max_age_in_seconds"],
+                    ),
+                    dynamic_authentication=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs(
+                        authentication_servers=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs(
+                            authentication_server_detail=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs(
+                                type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_type"],
+                                audiences=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_audiences"],
+                                function_id=oci_functions_function["test_function"]["id"],
+                                is_anonymous_access_allowed=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed"],
+                                issuers=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_issuers"],
+                                max_clock_skew_in_seconds=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_max_clock_skew_in_seconds"],
+                                public_keys=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs(
+                                    type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_type"],
+                                    is_ssl_verify_disabled=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled"],
+                                    keys=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs(
+                                        format=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_format"],
+                                        alg=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_alg"],
+                                        e=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_e"],
+                                        key=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key"],
+                                        key_ops=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key_ops"],
+                                        kid=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kid"],
+                                        kty=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kty"],
+                                        n=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_n"],
+                                        use=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_use"],
+                                    )],
+                                    max_cache_duration_in_hours=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours"],
+                                    uri=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_uri"],
+                                ),
+                                token_auth_scheme=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_auth_scheme"],
+                                token_header=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_header"],
+                                token_query_param=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_query_param"],
+                                validation_failure_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs(
+                                    type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_type"],
+                                    client_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs(
+                                        type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_type"],
+                                        client_id=oci_apigateway_client["test_client"]["id"],
+                                        client_secret_id=oci_vault_secret["test_secret"]["id"],
+                                        client_secret_version_number=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_client_secret_version_number"],
+                                    ),
+                                    fallback_redirect_path=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_fallback_redirect_path"],
+                                    logout_path=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_logout_path"],
+                                    max_expiry_duration_in_hours=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours"],
+                                    response_code=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_code"],
+                                    response_header_transformations=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgs(
+                                        filter_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs(
+                                            items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs(
+                                                name=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_items_name"],
+                                            )],
+                                            type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_type"],
+                                        ),
+                                        rename_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs(
+                                            items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs(
+                                                from_=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_from"],
+                                                to=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_to"],
+                                            )],
+                                        ),
+                                        set_headers=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs(
+                                            items=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs(
+                                                if_exists=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_if_exists"],
+                                                name=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_name"],
+                                                values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_values"],
+                                            )],
+                                        ),
+                                    ),
+                                    response_message=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_message"],
+                                    response_type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_type"],
+                                    scopes=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_scopes"],
+                                    source_uri_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs(
+                                        type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_type"],
+                                        uri=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_uri"],
+                                    ),
+                                    use_cookies_for_intermediate_steps=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps"],
+                                    use_cookies_for_session=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session"],
+                                    use_pkce=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce"],
+                                ),
+                                validation_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs(
+                                    type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_type"],
+                                    additional_validation_policy=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs(
+                                        audiences=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_audiences"],
+                                        issuers=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_issuers"],
+                                        verify_claims=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs(
+                                            is_required=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required"],
+                                            key=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_key"],
+                                            values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_values"],
+                                        )],
+                                    ),
+                                    client_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs(
+                                        type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_type"],
+                                        client_id=oci_apigateway_client["test_client"]["id"],
+                                        client_secret_id=oci_vault_secret["test_secret"]["id"],
+                                        client_secret_version_number=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_client_secret_version_number"],
+                                    ),
+                                    is_ssl_verify_disabled=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled"],
+                                    keys=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgs(
+                                        format=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_format"],
+                                        alg=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_alg"],
+                                        e=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_e"],
+                                        key=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key"],
+                                        key_ops=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key_ops"],
+                                        kid=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kid"],
+                                        kty=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kty"],
+                                        n=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_n"],
+                                        use=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_use"],
+                                    )],
+                                    max_cache_duration_in_hours=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours"],
+                                    source_uri_details=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs(
+                                        type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_type"],
+                                        uri=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_uri"],
+                                    ),
+                                    uri=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_uri"],
+                                ),
+                                verify_claims=[oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs(
+                                    is_required=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required"],
+                                    key=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_key"],
+                                    values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_values"],
+                                )],
+                            ),
+                            key=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs(
+                                name=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_name"],
+                                expression=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression"],
+                                is_default=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default"],
+                                type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type"],
+                                values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values"],
+                            ),
+                        )],
+                        selection_source=oci.api_gateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs(
+                            selector=var["deployment_specification_request_policies_dynamic_authentication_selection_source_selector"],
+                            type=var["deployment_specification_request_policies_dynamic_authentication_selection_source_type"],
+                        ),
                     ),
                     mutual_tls=oci.api_gateway.DeploymentSpecificationRequestPoliciesMutualTlsArgs(
                         allowed_sans=var["deployment_specification_request_policies_mutual_tls_allowed_sans"],
@@ -676,6 +1126,7 @@ class Deployment(pulumi.CustomResource):
                 routes=[oci.api_gateway.DeploymentSpecificationRouteArgs(
                     backend=oci.api_gateway.DeploymentSpecificationRouteBackendArgs(
                         type=var["deployment_specification_routes_backend_type"],
+                        allowed_post_logout_uris=var["deployment_specification_routes_backend_allowed_post_logout_uris"],
                         body=var["deployment_specification_routes_backend_body"],
                         connect_timeout_in_seconds=var["deployment_specification_routes_backend_connect_timeout_in_seconds"],
                         function_id=oci_functions_function["test_function"]["id"],
@@ -684,7 +1135,36 @@ class Deployment(pulumi.CustomResource):
                             value=var["deployment_specification_routes_backend_headers_value"],
                         )],
                         is_ssl_verify_disabled=var["deployment_specification_routes_backend_is_ssl_verify_disabled"],
+                        post_logout_state=var["deployment_specification_routes_backend_post_logout_state"],
                         read_timeout_in_seconds=var["deployment_specification_routes_backend_read_timeout_in_seconds"],
+                        routing_backends=[oci.api_gateway.DeploymentSpecificationRouteBackendRoutingBackendArgs(
+                            backend=oci.api_gateway.DeploymentSpecificationRouteBackendRoutingBackendBackendArgs(
+                                type=var["deployment_specification_routes_backend_routing_backends_backend_type"],
+                                body=var["deployment_specification_routes_backend_routing_backends_backend_body"],
+                                connect_timeout_in_seconds=var["deployment_specification_routes_backend_routing_backends_backend_connect_timeout_in_seconds"],
+                                function_id=oci_functions_function["test_function"]["id"],
+                                headers=[oci.api_gateway.DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs(
+                                    name=var["deployment_specification_routes_backend_routing_backends_backend_headers_name"],
+                                    value=var["deployment_specification_routes_backend_routing_backends_backend_headers_value"],
+                                )],
+                                is_ssl_verify_disabled=var["deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled"],
+                                read_timeout_in_seconds=var["deployment_specification_routes_backend_routing_backends_backend_read_timeout_in_seconds"],
+                                send_timeout_in_seconds=var["deployment_specification_routes_backend_routing_backends_backend_send_timeout_in_seconds"],
+                                status=var["deployment_specification_routes_backend_routing_backends_backend_status"],
+                                url=var["deployment_specification_routes_backend_routing_backends_backend_url"],
+                            ),
+                            key=oci.api_gateway.DeploymentSpecificationRouteBackendRoutingBackendKeyArgs(
+                                name=var["deployment_specification_routes_backend_routing_backends_key_name"],
+                                type=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type"],
+                                expression=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression"],
+                                is_default=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default"],
+                                values=var["deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values"],
+                            ),
+                        )],
+                        selection_source=oci.api_gateway.DeploymentSpecificationRouteBackendSelectionSourceArgs(
+                            selector=var["deployment_specification_routes_backend_selection_source_selector"],
+                            type=var["deployment_specification_routes_backend_selection_source_type"],
+                        ),
                         send_timeout_in_seconds=var["deployment_specification_routes_backend_send_timeout_in_seconds"],
                         status=var["deployment_specification_routes_backend_status"],
                         url=var["deployment_specification_routes_backend_url"],

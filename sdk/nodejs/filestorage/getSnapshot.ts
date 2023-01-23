@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSnapshot(args: GetSnapshotArgs, opts?: pulumi.InvokeOptions): Promise<GetSnapshotResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getSnapshot:getSnapshot", {
         "snapshotId": args.snapshotId,
     }, opts);
@@ -62,11 +59,11 @@ export interface GetSnapshotResult {
      */
     readonly id: string;
     /**
-     * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     readonly isCloneSource: boolean;
     /**
-     * Additional information about the current 'lifecycleState'.
+     * Additional information about the current `lifecycleState`.
      */
     readonly lifecycleDetails: string;
     /**
@@ -74,10 +71,21 @@ export interface GetSnapshotResult {
      */
     readonly name: string;
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     readonly provenanceId: string;
     readonly snapshotId: string;
+    /**
+     * The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+     * * If the snapshot is created in the original file system directory.
+     * * If the snapshot is cloned from a file system.
+     * * If the snapshot is replicated from a file system.
+     */
+    readonly snapshotTime: string;
+    /**
+     * Specifies the generation type of the snapshot.
+     */
+    readonly snapshotType: string;
     /**
      * The current state of the snapshot.
      */
@@ -87,9 +95,24 @@ export interface GetSnapshotResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.
+ *
+ * Gets the specified snapshot's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSnapshot = oci.FileStorage.getSnapshot({
+ *     snapshotId: oci_file_storage_snapshot.test_snapshot.id,
+ * });
+ * ```
+ */
 export function getSnapshotOutput(args: GetSnapshotOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSnapshotResult> {
-    return pulumi.output(args).apply(a => getSnapshot(a, opts))
+    return pulumi.output(args).apply((a: any) => getSnapshot(a, opts))
 }
 
 /**

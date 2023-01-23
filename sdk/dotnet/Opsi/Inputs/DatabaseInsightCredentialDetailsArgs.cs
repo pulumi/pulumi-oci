@@ -24,11 +24,21 @@ namespace Pulumi.Oci.Opsi.Inputs
         [Input("credentialType", required: true)]
         public Input<string> CredentialType { get; set; } = null!;
 
+        [Input("passwordSecretId")]
+        private Input<string>? _passwordSecretId;
+
         /// <summary>
         /// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         /// </summary>
-        [Input("passwordSecretId")]
-        public Input<string>? PasswordSecretId { get; set; }
+        public Input<string>? PasswordSecretId
+        {
+            get => _passwordSecretId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _passwordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// database user role.

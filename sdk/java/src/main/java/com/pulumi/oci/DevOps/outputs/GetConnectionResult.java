@@ -24,7 +24,7 @@ public final class GetConnectionResult {
      */
     private String appPassword;
     /**
-     * @return The Base URL of the hosted BitbucketServer.
+     * @return The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
      * 
      */
     private String baseUrl;
@@ -116,7 +116,7 @@ public final class GetConnectionResult {
         return this.appPassword;
     }
     /**
-     * @return The Base URL of the hosted BitbucketServer.
+     * @return The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
      * 
      */
     public String baseUrl() {

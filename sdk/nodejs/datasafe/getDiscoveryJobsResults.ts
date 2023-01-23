@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryJobsResults(args: GetDiscoveryJobsResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobsResultsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", {
         "columnNames": args.columnNames,
         "discoveryJobId": args.discoveryJobId,
@@ -88,6 +86,9 @@ export interface GetDiscoveryJobsResultsResult {
      * The name of the sensitive column.
      */
     readonly columnNames?: string[];
+    /**
+     * The OCID of the discovery job.
+     */
     readonly discoveryJobId: string;
     /**
      * The list of discovery_job_result_collection.
@@ -119,9 +120,30 @@ export interface GetDiscoveryJobsResultsResult {
      */
     readonly schemaNames?: string[];
 }
-
+/**
+ * This data source provides the list of Discovery Jobs Results in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of discovery results based on the specified query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
+ *     discoveryJobId: oci_data_safe_discovery_job.test_discovery_job.id,
+ *     columnNames: _var.discovery_jobs_result_column_name,
+ *     discoveryType: _var.discovery_jobs_result_discovery_type,
+ *     isResultApplied: _var.discovery_jobs_result_is_result_applied,
+ *     objects: _var.discovery_jobs_result_object,
+ *     plannedAction: _var.discovery_jobs_result_planned_action,
+ *     schemaNames: _var.discovery_jobs_result_schema_name,
+ * });
+ * ```
+ */
 export function getDiscoveryJobsResultsOutput(args: GetDiscoveryJobsResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobsResultsResult> {
-    return pulumi.output(args).apply(a => getDiscoveryJobsResults(a, opts))
+    return pulumi.output(args).apply((a: any) => getDiscoveryJobsResults(a, opts))
 }
 
 /**

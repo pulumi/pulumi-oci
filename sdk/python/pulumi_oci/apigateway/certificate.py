@@ -482,13 +482,15 @@ class Certificate(pulumi.CustomResource):
             __props__.__dict__["intermediate_certificates"] = intermediate_certificates
             if private_key is None and not opts.urn:
                 raise TypeError("Missing required property 'private_key'")
-            __props__.__dict__["private_key"] = private_key
+            __props__.__dict__["private_key"] = None if private_key is None else pulumi.Output.secret(private_key)
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["subject_names"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_not_valid_after"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["privateKey"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Certificate, __self__).__init__(
             'oci:ApiGateway/certificate:Certificate',
             resource_name,

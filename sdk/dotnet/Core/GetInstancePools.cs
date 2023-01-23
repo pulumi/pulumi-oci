@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstancePoolsResult> InvokeAsync(GetInstancePoolsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstancePoolsResult>("oci:Core/getInstancePools:getInstancePools", args ?? new GetInstancePoolsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstancePoolsResult>("oci:Core/getInstancePools:getInstancePools", args ?? new GetInstancePoolsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Instance Pools in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstancePoolsResult> Invoke(GetInstancePoolsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstancePoolsResult>("oci:Core/getInstancePools:getInstancePools", args ?? new GetInstancePoolsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstancePoolsResult>("oci:Core/getInstancePools:getInstancePools", args ?? new GetInstancePoolsInvokeArgs(), options.WithDefaults());
     }
 
 

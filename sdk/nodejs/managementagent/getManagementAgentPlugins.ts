@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentPlugins(args: GetManagementAgentPluginsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentPluginsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", {
         "agentId": args.agentId,
         "compartmentId": args.compartmentId,
@@ -93,9 +91,28 @@ export interface GetManagementAgentPluginsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Returns a list of managementAgentPlugins.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgentPlugins = oci.ManagementAgent.getManagementAgentPlugins({
+ *     compartmentId: _var.compartment_id,
+ *     agentId: _var.management_agent_id,
+ *     displayName: _var.management_agent_plugin_display_name,
+ *     platformTypes: _var.management_agent_plugin_platform_type,
+ *     state: _var.management_agent_plugin_state,
+ * });
+ * ```
+ */
 export function getManagementAgentPluginsOutput(args: GetManagementAgentPluginsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentPluginsResult> {
-    return pulumi.output(args).apply(a => getManagementAgentPlugins(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgentPlugins(a, opts))
 }
 
 /**

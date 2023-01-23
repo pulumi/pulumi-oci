@@ -75,9 +75,15 @@ namespace Pulumi.Oci.DataScience
     [OciResourceType("oci:DataScience/model:Model")]
     public partial class Model : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+        /// </summary>
         [Output("artifactContentDisposition")]
         public Output<string> ArtifactContentDisposition { get; private set; } = null!;
 
+        /// <summary>
+        /// The content length of the model_artifact.
+        /// </summary>
         [Output("artifactContentLength")]
         public Output<string> ArtifactContentLength { get; private set; } = null!;
 
@@ -144,6 +150,9 @@ namespace Pulumi.Oci.DataScience
         [Output("inputSchema")]
         public Output<string> InputSchema { get; private set; } = null!;
 
+        /// <summary>
+        /// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+        /// </summary>
         [Output("modelArtifact")]
         public Output<string> ModelArtifact { get; private set; } = null!;
 
@@ -217,9 +226,15 @@ namespace Pulumi.Oci.DataScience
 
     public sealed class ModelArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+        /// </summary>
         [Input("artifactContentDisposition")]
         public Input<string>? ArtifactContentDisposition { get; set; }
 
+        /// <summary>
+        /// The content length of the model_artifact.
+        /// </summary>
         [Input("artifactContentLength", required: true)]
         public Input<string> ArtifactContentLength { get; set; } = null!;
 
@@ -295,6 +310,9 @@ namespace Pulumi.Oci.DataScience
         [Input("inputSchema")]
         public Input<string>? InputSchema { get; set; }
 
+        /// <summary>
+        /// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+        /// </summary>
         [Input("modelArtifact", required: true)]
         public Input<string> ModelArtifact { get; set; } = null!;
 
@@ -324,9 +342,15 @@ namespace Pulumi.Oci.DataScience
 
     public sealed class ModelState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+        /// </summary>
         [Input("artifactContentDisposition")]
         public Input<string>? ArtifactContentDisposition { get; set; }
 
+        /// <summary>
+        /// The content length of the model_artifact.
+        /// </summary>
         [Input("artifactContentLength")]
         public Input<string>? ArtifactContentLength { get; set; }
 
@@ -417,6 +441,9 @@ namespace Pulumi.Oci.DataScience
         [Input("inputSchema")]
         public Input<string>? InputSchema { get; set; }
 
+        /// <summary>
+        /// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+        /// </summary>
         [Input("modelArtifact")]
         public Input<string>? ModelArtifact { get; set; }
 

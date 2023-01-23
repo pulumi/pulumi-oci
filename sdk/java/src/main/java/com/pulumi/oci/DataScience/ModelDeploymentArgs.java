@@ -139,6 +139,21 @@ public final class ModelDeploymentArgs extends com.pulumi.resources.ResourceArgs
         return this.projectId;
     }
 
+    /**
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
+    }
+
     private ModelDeploymentArgs() {}
 
     private ModelDeploymentArgs(ModelDeploymentArgs $) {
@@ -150,6 +165,7 @@ public final class ModelDeploymentArgs extends com.pulumi.resources.ResourceArgs
         this.freeformTags = $.freeformTags;
         this.modelDeploymentConfigurationDetails = $.modelDeploymentConfigurationDetails;
         this.projectId = $.projectId;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -336,6 +352,27 @@ public final class ModelDeploymentArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
+        }
+
+        /**
+         * @param state (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         public ModelDeploymentArgs build() {

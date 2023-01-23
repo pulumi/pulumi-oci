@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database Sql Tuning Advisor Tasks Recommendations in Oracle Cloud Infrastructure Database Management service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsInvokeArgs(), options.WithDefaults());
     }
 
 

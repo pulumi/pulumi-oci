@@ -112,7 +112,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The Maintenance Policy for the DB System.
+        /// The Maintenance Policy for the DB System or Read Replica that this model is included in.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemMaintenanceResult> Maintenances;
         /// <summary>

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.AiVision
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProjectsResult> InvokeAsync(GetProjectsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProjectsResult>("oci:AiVision/getProjects:getProjects", args ?? new GetProjectsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProjectsResult>("oci:AiVision/getProjects:getProjects", args ?? new GetProjectsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.AiVision
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProjectsResult> Invoke(GetProjectsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("oci:AiVision/getProjects:getProjects", args ?? new GetProjectsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("oci:AiVision/getProjects:getProjects", args ?? new GetProjectsInvokeArgs(), options.WithDefaults());
     }
 
 

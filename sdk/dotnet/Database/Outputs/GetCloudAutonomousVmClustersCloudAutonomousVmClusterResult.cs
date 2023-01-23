@@ -46,9 +46,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The number of CPU cores enabled on the cloud Autonomous VM cluster.
+        /// The number of CPU cores on the cloud Autonomous VM cluster.
         /// </summary>
         public readonly int CpuCoreCount;
+        /// <summary>
+        /// The number of OCPU cores enabled per VM cluster node.
+        /// </summary>
+        public readonly int CpuCoreCountPerNode;
         /// <summary>
         /// The total data storage allocated, in gigabytes (GB).
         /// </summary>
@@ -61,6 +65,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The local node storage allocated in GBs.
         /// </summary>
         public readonly int DbNodeStorageSizeInGbs;
+        public readonly ImmutableArray<string> DbServers;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -105,6 +110,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailResult> MaintenanceWindowDetails;
+        /// <summary>
+        /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
         /// The amount of memory (in GBs) enabled per each OCPU core.
         /// </summary>
@@ -127,15 +137,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
-        /// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        /// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         public readonly double OcpuCount;
         /// <summary>
         /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         /// </summary>
         public readonly double ReclaimableCpus;
-        public readonly bool RotateOrdsCertsTrigger;
-        public readonly bool RotateSslCertsTrigger;
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         /// </summary>
@@ -181,11 +189,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             int cpuCoreCount,
 
+            int cpuCoreCountPerNode,
+
             double dataStorageSizeInGb,
 
             double dataStorageSizeInTbs,
 
             int dbNodeStorageSizeInGbs,
+
+            ImmutableArray<string> dbServers,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -209,6 +221,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailResult> maintenanceWindowDetails,
+
+            ImmutableArray<Outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult> maintenanceWindows,
+
             int memoryPerOracleComputeUnitInGbs,
 
             int memorySizeInGbs,
@@ -222,10 +238,6 @@ namespace Pulumi.Oci.Database.Outputs
             double ocpuCount,
 
             double reclaimableCpus,
-
-            bool rotateOrdsCertsTrigger,
-
-            bool rotateSslCertsTrigger,
 
             string shape,
 
@@ -248,9 +260,11 @@ namespace Pulumi.Oci.Database.Outputs
             ClusterTimeZone = clusterTimeZone;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
+            CpuCoreCountPerNode = cpuCoreCountPerNode;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            DbServers = dbServers;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
@@ -262,6 +276,8 @@ namespace Pulumi.Oci.Database.Outputs
             LastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
+            MaintenanceWindowDetails = maintenanceWindowDetails;
+            MaintenanceWindows = maintenanceWindows;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
@@ -269,8 +285,6 @@ namespace Pulumi.Oci.Database.Outputs
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
             ReclaimableCpus = reclaimableCpus;
-            RotateOrdsCertsTrigger = rotateOrdsCertsTrigger;
-            RotateSslCertsTrigger = rotateSslCertsTrigger;
             Shape = shape;
             State = state;
             SubnetId = subnetId;

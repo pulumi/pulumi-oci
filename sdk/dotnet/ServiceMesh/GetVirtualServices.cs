@@ -43,7 +43,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVirtualServicesResult> InvokeAsync(GetVirtualServicesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVirtualServicesResult>("oci:ServiceMesh/getVirtualServices:getVirtualServices", args ?? new GetVirtualServicesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualServicesResult>("oci:ServiceMesh/getVirtualServices:getVirtualServices", args ?? new GetVirtualServicesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Virtual Services in Oracle Cloud Infrastructure Service Mesh service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVirtualServicesResult> Invoke(GetVirtualServicesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVirtualServicesResult>("oci:ServiceMesh/getVirtualServices:getVirtualServices", args ?? new GetVirtualServicesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualServicesResult>("oci:ServiceMesh/getVirtualServices:getVirtualServices", args ?? new GetVirtualServicesInvokeArgs(), options.WithDefaults());
     }
 
 

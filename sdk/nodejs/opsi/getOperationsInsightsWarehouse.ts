@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOperationsInsightsWarehouse(args: GetOperationsInsightsWarehouseArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsWarehouseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", {
         "operationsInsightsWarehouseId": args.operationsInsightsWarehouseId,
     }, opts);
@@ -116,9 +113,25 @@ export interface GetOperationsInsightsWarehouseResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets details of an Operations Insights Warehouse.
+ * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperationsInsightsWarehouse = oci.Opsi.getOperationsInsightsWarehouse({
+ *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
+ * });
+ * ```
+ */
 export function getOperationsInsightsWarehouseOutput(args: GetOperationsInsightsWarehouseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehouseResult> {
-    return pulumi.output(args).apply(a => getOperationsInsightsWarehouse(a, opts))
+    return pulumi.output(args).apply((a: any) => getOperationsInsightsWarehouse(a, opts))
 }
 
 /**

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAwrHubResult> InvokeAsync(GetAwrHubArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAwrHubResult>("oci:Opsi/getAwrHub:getAwrHub", args ?? new GetAwrHubArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAwrHubResult>("oci:Opsi/getAwrHub:getAwrHub", args ?? new GetAwrHubArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAwrHubResult> Invoke(GetAwrHubInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAwrHubResult>("oci:Opsi/getAwrHub:getAwrHub", args ?? new GetAwrHubInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubResult>("oci:Opsi/getAwrHub:getAwrHub", args ?? new GetAwrHubInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetConnectionResult> InvokeAsync(GetConnectionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConnectionResult>("oci:DevOps/getConnection:getConnection", args ?? new GetConnectionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConnectionResult>("oci:DevOps/getConnection:getConnection", args ?? new GetConnectionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Devops service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetConnectionResult> Invoke(GetConnectionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DevOps/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DevOps/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public readonly string AppPassword;
         /// <summary>
-        /// The Base URL of the hosted BitbucketServer.
+        /// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
         /// </summary>
         public readonly string BaseUrl;
         /// <summary>

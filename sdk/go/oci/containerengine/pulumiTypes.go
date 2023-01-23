@@ -1821,6 +1821,1834 @@ func (o ClusterOptionsServiceLbConfigPtrOutput) FreeformTags() pulumi.MapOutput 
 	}).(pulumi.MapOutput)
 }
 
+type ContainerInstanceContainer struct {
+	// A list of additional capabilities for the container.
+	AdditionalCapabilities []string `pulumi:"additionalCapabilities"`
+	// A list of string arguments for a container's entrypoint process.
+	Arguments []string `pulumi:"arguments"`
+	// Availability Domain where the ContainerInstance should be created.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// The list of strings which will be concatenated to a single command for checking container's status.
+	Commands []string `pulumi:"commands"`
+	// (Updatable) Compartment Identifier
+	CompartmentId *string `pulumi:"compartmentId"`
+	// The ID of the Container on this Instance.
+	ContainerId         *string `pulumi:"containerId"`
+	ContainerInstanceId *string `pulumi:"containerInstanceId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
+	// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	ExitCode             *int                   `pulumi:"exitCode"`
+	// Fault Domain where the ContainerInstance should run.
+	FaultDomain *string `pulumi:"faultDomain"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+	HealthChecks []ContainerInstanceContainerHealthCheck `pulumi:"healthChecks"`
+	// The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+	ImageUrl string `pulumi:"imageUrl"`
+	// Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+	IsResourcePrincipalDisabled *bool `pulumi:"isResourcePrincipalDisabled"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The size and amount of resources available to the Container.
+	ResourceConfig *ContainerInstanceContainerResourceConfig `pulumi:"resourceConfig"`
+	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	TimeCreated    *string `pulumi:"timeCreated"`
+	TimeTerminated *string `pulumi:"timeTerminated"`
+	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// List of the volume mounts.
+	VolumeMounts []ContainerInstanceContainerVolumeMount `pulumi:"volumeMounts"`
+	// The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+	WorkingDirectory *string `pulumi:"workingDirectory"`
+}
+
+// ContainerInstanceContainerInput is an input type that accepts ContainerInstanceContainerArgs and ContainerInstanceContainerOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerInput` via:
+//
+//	ContainerInstanceContainerArgs{...}
+type ContainerInstanceContainerInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerOutput() ContainerInstanceContainerOutput
+	ToContainerInstanceContainerOutputWithContext(context.Context) ContainerInstanceContainerOutput
+}
+
+type ContainerInstanceContainerArgs struct {
+	// A list of additional capabilities for the container.
+	AdditionalCapabilities pulumi.StringArrayInput `pulumi:"additionalCapabilities"`
+	// A list of string arguments for a container's entrypoint process.
+	Arguments pulumi.StringArrayInput `pulumi:"arguments"`
+	// Availability Domain where the ContainerInstance should be created.
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
+	// The list of strings which will be concatenated to a single command for checking container's status.
+	Commands pulumi.StringArrayInput `pulumi:"commands"`
+	// (Updatable) Compartment Identifier
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// The ID of the Container on this Instance.
+	ContainerId         pulumi.StringPtrInput `pulumi:"containerId"`
+	ContainerInstanceId pulumi.StringPtrInput `pulumi:"containerInstanceId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+	EnvironmentVariables pulumi.MapInput    `pulumi:"environmentVariables"`
+	ExitCode             pulumi.IntPtrInput `pulumi:"exitCode"`
+	// Fault Domain where the ContainerInstance should run.
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+	HealthChecks ContainerInstanceContainerHealthCheckArrayInput `pulumi:"healthChecks"`
+	// The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+	ImageUrl pulumi.StringInput `pulumi:"imageUrl"`
+	// Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+	IsResourcePrincipalDisabled pulumi.BoolPtrInput `pulumi:"isResourcePrincipalDisabled"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// The size and amount of resources available to the Container.
+	ResourceConfig ContainerInstanceContainerResourceConfigPtrInput `pulumi:"resourceConfig"`
+	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	TimeCreated    pulumi.StringPtrInput `pulumi:"timeCreated"`
+	TimeTerminated pulumi.StringPtrInput `pulumi:"timeTerminated"`
+	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// List of the volume mounts.
+	VolumeMounts ContainerInstanceContainerVolumeMountArrayInput `pulumi:"volumeMounts"`
+	// The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+	WorkingDirectory pulumi.StringPtrInput `pulumi:"workingDirectory"`
+}
+
+func (ContainerInstanceContainerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainer)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerArgs) ToContainerInstanceContainerOutput() ContainerInstanceContainerOutput {
+	return i.ToContainerInstanceContainerOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerArgs) ToContainerInstanceContainerOutputWithContext(ctx context.Context) ContainerInstanceContainerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerOutput)
+}
+
+// ContainerInstanceContainerArrayInput is an input type that accepts ContainerInstanceContainerArray and ContainerInstanceContainerArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerArrayInput` via:
+//
+//	ContainerInstanceContainerArray{ ContainerInstanceContainerArgs{...} }
+type ContainerInstanceContainerArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerArrayOutput() ContainerInstanceContainerArrayOutput
+	ToContainerInstanceContainerArrayOutputWithContext(context.Context) ContainerInstanceContainerArrayOutput
+}
+
+type ContainerInstanceContainerArray []ContainerInstanceContainerInput
+
+func (ContainerInstanceContainerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceContainer)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerArray) ToContainerInstanceContainerArrayOutput() ContainerInstanceContainerArrayOutput {
+	return i.ToContainerInstanceContainerArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerArray) ToContainerInstanceContainerArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerArrayOutput)
+}
+
+type ContainerInstanceContainerOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainer)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerOutput) ToContainerInstanceContainerOutput() ContainerInstanceContainerOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerOutput) ToContainerInstanceContainerOutputWithContext(ctx context.Context) ContainerInstanceContainerOutput {
+	return o
+}
+
+// A list of additional capabilities for the container.
+func (o ContainerInstanceContainerOutput) AdditionalCapabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) []string { return v.AdditionalCapabilities }).(pulumi.StringArrayOutput)
+}
+
+// A list of string arguments for a container's entrypoint process.
+func (o ContainerInstanceContainerOutput) Arguments() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) []string { return v.Arguments }).(pulumi.StringArrayOutput)
+}
+
+// Availability Domain where the ContainerInstance should be created.
+func (o ContainerInstanceContainerOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
+// The list of strings which will be concatenated to a single command for checking container's status.
+func (o ContainerInstanceContainerOutput) Commands() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) []string { return v.Commands }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Compartment Identifier
+func (o ContainerInstanceContainerOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the Container on this Instance.
+func (o ContainerInstanceContainerOutput) ContainerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.ContainerId }).(pulumi.StringPtrOutput)
+}
+
+func (o ContainerInstanceContainerOutput) ContainerInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.ContainerInstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o ContainerInstanceContainerOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+func (o ContainerInstanceContainerOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+func (o ContainerInstanceContainerOutput) EnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+}
+
+func (o ContainerInstanceContainerOutput) ExitCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *int { return v.ExitCode }).(pulumi.IntPtrOutput)
+}
+
+// Fault Domain where the ContainerInstance should run.
+func (o ContainerInstanceContainerOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o ContainerInstanceContainerOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+func (o ContainerInstanceContainerOutput) HealthChecks() ContainerInstanceContainerHealthCheckArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) []ContainerInstanceContainerHealthCheck { return v.HealthChecks }).(ContainerInstanceContainerHealthCheckArrayOutput)
+}
+
+// The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+func (o ContainerInstanceContainerOutput) ImageUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) string { return v.ImageUrl }).(pulumi.StringOutput)
+}
+
+// Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+func (o ContainerInstanceContainerOutput) IsResourcePrincipalDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *bool { return v.IsResourcePrincipalDisabled }).(pulumi.BoolPtrOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o ContainerInstanceContainerOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// The size and amount of resources available to the Container.
+func (o ContainerInstanceContainerOutput) ResourceConfig() ContainerInstanceContainerResourceConfigPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *ContainerInstanceContainerResourceConfig { return v.ResourceConfig }).(ContainerInstanceContainerResourceConfigPtrOutput)
+}
+
+// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+func (o ContainerInstanceContainerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ContainerInstanceContainerOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+func (o ContainerInstanceContainerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+func (o ContainerInstanceContainerOutput) TimeTerminated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.TimeTerminated }).(pulumi.StringPtrOutput)
+}
+
+// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+func (o ContainerInstanceContainerOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// List of the volume mounts.
+func (o ContainerInstanceContainerOutput) VolumeMounts() ContainerInstanceContainerVolumeMountArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) []ContainerInstanceContainerVolumeMount { return v.VolumeMounts }).(ContainerInstanceContainerVolumeMountArrayOutput)
+}
+
+// The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+func (o ContainerInstanceContainerOutput) WorkingDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.WorkingDirectory }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceContainerArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceContainer)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerArrayOutput) ToContainerInstanceContainerArrayOutput() ContainerInstanceContainerArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerArrayOutput) ToContainerInstanceContainerArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceContainer {
+		return vs[0].([]ContainerInstanceContainer)[vs[1].(int)]
+	}).(ContainerInstanceContainerOutput)
+}
+
+type ContainerInstanceContainerHealthCheck struct {
+	// The list of strings which will be concatenated to a single command for checking container's status.
+	Commands []string `pulumi:"commands"`
+	// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
+	FailureAction *string `pulumi:"failureAction"`
+	// Number of consecutive failures at which we consider the check failed.
+	FailureThreshold *int `pulumi:"failureThreshold"`
+	// Container health check Http's headers.
+	Headers []ContainerInstanceContainerHealthCheckHeader `pulumi:"headers"`
+	// Container health check type.
+	HealthCheckType string `pulumi:"healthCheckType"`
+	// The initial delay in seconds before start checking container health status.
+	InitialDelayInSeconds *int `pulumi:"initialDelayInSeconds"`
+	// Number of seconds between two consecutive runs for checking container health.
+	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
+	// The name of the volume. This has be unique cross single ContainerInstance.
+	Name *string `pulumi:"name"`
+	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+	Path *string `pulumi:"path"`
+	// Container health check Http's port.
+	Port          *int    `pulumi:"port"`
+	Status        *string `pulumi:"status"`
+	StatusDetails *string `pulumi:"statusDetails"`
+	// Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
+	SuccessThreshold *int `pulumi:"successThreshold"`
+	// Length of waiting time in seconds before marking health check failed.
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
+}
+
+// ContainerInstanceContainerHealthCheckInput is an input type that accepts ContainerInstanceContainerHealthCheckArgs and ContainerInstanceContainerHealthCheckOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerHealthCheckInput` via:
+//
+//	ContainerInstanceContainerHealthCheckArgs{...}
+type ContainerInstanceContainerHealthCheckInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerHealthCheckOutput() ContainerInstanceContainerHealthCheckOutput
+	ToContainerInstanceContainerHealthCheckOutputWithContext(context.Context) ContainerInstanceContainerHealthCheckOutput
+}
+
+type ContainerInstanceContainerHealthCheckArgs struct {
+	// The list of strings which will be concatenated to a single command for checking container's status.
+	Commands pulumi.StringArrayInput `pulumi:"commands"`
+	// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
+	FailureAction pulumi.StringPtrInput `pulumi:"failureAction"`
+	// Number of consecutive failures at which we consider the check failed.
+	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
+	// Container health check Http's headers.
+	Headers ContainerInstanceContainerHealthCheckHeaderArrayInput `pulumi:"headers"`
+	// Container health check type.
+	HealthCheckType pulumi.StringInput `pulumi:"healthCheckType"`
+	// The initial delay in seconds before start checking container health status.
+	InitialDelayInSeconds pulumi.IntPtrInput `pulumi:"initialDelayInSeconds"`
+	// Number of seconds between two consecutive runs for checking container health.
+	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
+	// The name of the volume. This has be unique cross single ContainerInstance.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+	Path pulumi.StringPtrInput `pulumi:"path"`
+	// Container health check Http's port.
+	Port          pulumi.IntPtrInput    `pulumi:"port"`
+	Status        pulumi.StringPtrInput `pulumi:"status"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
+	// Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
+	SuccessThreshold pulumi.IntPtrInput `pulumi:"successThreshold"`
+	// Length of waiting time in seconds before marking health check failed.
+	TimeoutInSeconds pulumi.IntPtrInput `pulumi:"timeoutInSeconds"`
+}
+
+func (ContainerInstanceContainerHealthCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerHealthCheck)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerHealthCheckArgs) ToContainerInstanceContainerHealthCheckOutput() ContainerInstanceContainerHealthCheckOutput {
+	return i.ToContainerInstanceContainerHealthCheckOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerHealthCheckArgs) ToContainerInstanceContainerHealthCheckOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckOutput)
+}
+
+// ContainerInstanceContainerHealthCheckArrayInput is an input type that accepts ContainerInstanceContainerHealthCheckArray and ContainerInstanceContainerHealthCheckArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerHealthCheckArrayInput` via:
+//
+//	ContainerInstanceContainerHealthCheckArray{ ContainerInstanceContainerHealthCheckArgs{...} }
+type ContainerInstanceContainerHealthCheckArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerHealthCheckArrayOutput() ContainerInstanceContainerHealthCheckArrayOutput
+	ToContainerInstanceContainerHealthCheckArrayOutputWithContext(context.Context) ContainerInstanceContainerHealthCheckArrayOutput
+}
+
+type ContainerInstanceContainerHealthCheckArray []ContainerInstanceContainerHealthCheckInput
+
+func (ContainerInstanceContainerHealthCheckArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceContainerHealthCheck)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerHealthCheckArray) ToContainerInstanceContainerHealthCheckArrayOutput() ContainerInstanceContainerHealthCheckArrayOutput {
+	return i.ToContainerInstanceContainerHealthCheckArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerHealthCheckArray) ToContainerInstanceContainerHealthCheckArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckArrayOutput)
+}
+
+type ContainerInstanceContainerHealthCheckOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerHealthCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerHealthCheck)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerHealthCheckOutput) ToContainerInstanceContainerHealthCheckOutput() ContainerInstanceContainerHealthCheckOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckOutput) ToContainerInstanceContainerHealthCheckOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckOutput {
+	return o
+}
+
+// The list of strings which will be concatenated to a single command for checking container's status.
+func (o ContainerInstanceContainerHealthCheckOutput) Commands() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) []string { return v.Commands }).(pulumi.StringArrayOutput)
+}
+
+// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
+func (o ContainerInstanceContainerHealthCheckOutput) FailureAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.FailureAction }).(pulumi.StringPtrOutput)
+}
+
+// Number of consecutive failures at which we consider the check failed.
+func (o ContainerInstanceContainerHealthCheckOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
+}
+
+// Container health check Http's headers.
+func (o ContainerInstanceContainerHealthCheckOutput) Headers() ContainerInstanceContainerHealthCheckHeaderArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) []ContainerInstanceContainerHealthCheckHeader {
+		return v.Headers
+	}).(ContainerInstanceContainerHealthCheckHeaderArrayOutput)
+}
+
+// Container health check type.
+func (o ContainerInstanceContainerHealthCheckOutput) HealthCheckType() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) string { return v.HealthCheckType }).(pulumi.StringOutput)
+}
+
+// The initial delay in seconds before start checking container health status.
+func (o ContainerInstanceContainerHealthCheckOutput) InitialDelayInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.InitialDelayInSeconds }).(pulumi.IntPtrOutput)
+}
+
+// Number of seconds between two consecutive runs for checking container health.
+func (o ContainerInstanceContainerHealthCheckOutput) IntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
+}
+
+// The name of the volume. This has be unique cross single ContainerInstance.
+func (o ContainerInstanceContainerHealthCheckOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+func (o ContainerInstanceContainerHealthCheckOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.Path }).(pulumi.StringPtrOutput)
+}
+
+// Container health check Http's port.
+func (o ContainerInstanceContainerHealthCheckOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+func (o ContainerInstanceContainerHealthCheckOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o ContainerInstanceContainerHealthCheckOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
+}
+
+// Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
+func (o ContainerInstanceContainerHealthCheckOutput) SuccessThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.SuccessThreshold }).(pulumi.IntPtrOutput)
+}
+
+// Length of waiting time in seconds before marking health check failed.
+func (o ContainerInstanceContainerHealthCheckOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
+}
+
+type ContainerInstanceContainerHealthCheckArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerHealthCheckArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceContainerHealthCheck)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerHealthCheckArrayOutput) ToContainerInstanceContainerHealthCheckArrayOutput() ContainerInstanceContainerHealthCheckArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckArrayOutput) ToContainerInstanceContainerHealthCheckArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerHealthCheckOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceContainerHealthCheck {
+		return vs[0].([]ContainerInstanceContainerHealthCheck)[vs[1].(int)]
+	}).(ContainerInstanceContainerHealthCheckOutput)
+}
+
+type ContainerInstanceContainerHealthCheckHeader struct {
+	// The name of the volume. This has be unique cross single ContainerInstance.
+	Name *string `pulumi:"name"`
+	// Container Http header value.
+	Value *string `pulumi:"value"`
+}
+
+// ContainerInstanceContainerHealthCheckHeaderInput is an input type that accepts ContainerInstanceContainerHealthCheckHeaderArgs and ContainerInstanceContainerHealthCheckHeaderOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerHealthCheckHeaderInput` via:
+//
+//	ContainerInstanceContainerHealthCheckHeaderArgs{...}
+type ContainerInstanceContainerHealthCheckHeaderInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerHealthCheckHeaderOutput() ContainerInstanceContainerHealthCheckHeaderOutput
+	ToContainerInstanceContainerHealthCheckHeaderOutputWithContext(context.Context) ContainerInstanceContainerHealthCheckHeaderOutput
+}
+
+type ContainerInstanceContainerHealthCheckHeaderArgs struct {
+	// The name of the volume. This has be unique cross single ContainerInstance.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Container Http header value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ContainerInstanceContainerHealthCheckHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerHealthCheckHeader)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerHealthCheckHeaderArgs) ToContainerInstanceContainerHealthCheckHeaderOutput() ContainerInstanceContainerHealthCheckHeaderOutput {
+	return i.ToContainerInstanceContainerHealthCheckHeaderOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerHealthCheckHeaderArgs) ToContainerInstanceContainerHealthCheckHeaderOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckHeaderOutput)
+}
+
+// ContainerInstanceContainerHealthCheckHeaderArrayInput is an input type that accepts ContainerInstanceContainerHealthCheckHeaderArray and ContainerInstanceContainerHealthCheckHeaderArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerHealthCheckHeaderArrayInput` via:
+//
+//	ContainerInstanceContainerHealthCheckHeaderArray{ ContainerInstanceContainerHealthCheckHeaderArgs{...} }
+type ContainerInstanceContainerHealthCheckHeaderArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerHealthCheckHeaderArrayOutput() ContainerInstanceContainerHealthCheckHeaderArrayOutput
+	ToContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(context.Context) ContainerInstanceContainerHealthCheckHeaderArrayOutput
+}
+
+type ContainerInstanceContainerHealthCheckHeaderArray []ContainerInstanceContainerHealthCheckHeaderInput
+
+func (ContainerInstanceContainerHealthCheckHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceContainerHealthCheckHeader)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerHealthCheckHeaderArray) ToContainerInstanceContainerHealthCheckHeaderArrayOutput() ContainerInstanceContainerHealthCheckHeaderArrayOutput {
+	return i.ToContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerHealthCheckHeaderArray) ToContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckHeaderArrayOutput)
+}
+
+type ContainerInstanceContainerHealthCheckHeaderOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerHealthCheckHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerHealthCheckHeader)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToContainerInstanceContainerHealthCheckHeaderOutput() ContainerInstanceContainerHealthCheckHeaderOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToContainerInstanceContainerHealthCheckHeaderOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckHeaderOutput {
+	return o
+}
+
+// The name of the volume. This has be unique cross single ContainerInstance.
+func (o ContainerInstanceContainerHealthCheckHeaderOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheckHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Container Http header value.
+func (o ContainerInstanceContainerHealthCheckHeaderOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheckHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceContainerHealthCheckHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerHealthCheckHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceContainerHealthCheckHeader)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) ToContainerInstanceContainerHealthCheckHeaderArrayOutput() ContainerInstanceContainerHealthCheckHeaderArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) ToContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckHeaderArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerHealthCheckHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceContainerHealthCheckHeader {
+		return vs[0].([]ContainerInstanceContainerHealthCheckHeader)[vs[1].(int)]
+	}).(ContainerInstanceContainerHealthCheckHeaderOutput)
+}
+
+type ContainerInstanceContainerResourceConfig struct {
+	// The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+	MemoryLimitInGbs *float64 `pulumi:"memoryLimitInGbs"`
+	// The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+	VcpusLimit *float64 `pulumi:"vcpusLimit"`
+}
+
+// ContainerInstanceContainerResourceConfigInput is an input type that accepts ContainerInstanceContainerResourceConfigArgs and ContainerInstanceContainerResourceConfigOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerResourceConfigInput` via:
+//
+//	ContainerInstanceContainerResourceConfigArgs{...}
+type ContainerInstanceContainerResourceConfigInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerResourceConfigOutput() ContainerInstanceContainerResourceConfigOutput
+	ToContainerInstanceContainerResourceConfigOutputWithContext(context.Context) ContainerInstanceContainerResourceConfigOutput
+}
+
+type ContainerInstanceContainerResourceConfigArgs struct {
+	// The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+	MemoryLimitInGbs pulumi.Float64PtrInput `pulumi:"memoryLimitInGbs"`
+	// The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+	VcpusLimit pulumi.Float64PtrInput `pulumi:"vcpusLimit"`
+}
+
+func (ContainerInstanceContainerResourceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerResourceConfig)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerResourceConfigArgs) ToContainerInstanceContainerResourceConfigOutput() ContainerInstanceContainerResourceConfigOutput {
+	return i.ToContainerInstanceContainerResourceConfigOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerResourceConfigArgs) ToContainerInstanceContainerResourceConfigOutputWithContext(ctx context.Context) ContainerInstanceContainerResourceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerResourceConfigOutput)
+}
+
+func (i ContainerInstanceContainerResourceConfigArgs) ToContainerInstanceContainerResourceConfigPtrOutput() ContainerInstanceContainerResourceConfigPtrOutput {
+	return i.ToContainerInstanceContainerResourceConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerResourceConfigArgs) ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerResourceConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerResourceConfigOutput).ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceContainerResourceConfigPtrInput is an input type that accepts ContainerInstanceContainerResourceConfigArgs, ContainerInstanceContainerResourceConfigPtr and ContainerInstanceContainerResourceConfigPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerResourceConfigPtrInput` via:
+//
+//	        ContainerInstanceContainerResourceConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceContainerResourceConfigPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerResourceConfigPtrOutput() ContainerInstanceContainerResourceConfigPtrOutput
+	ToContainerInstanceContainerResourceConfigPtrOutputWithContext(context.Context) ContainerInstanceContainerResourceConfigPtrOutput
+}
+
+type containerInstanceContainerResourceConfigPtrType ContainerInstanceContainerResourceConfigArgs
+
+func ContainerInstanceContainerResourceConfigPtr(v *ContainerInstanceContainerResourceConfigArgs) ContainerInstanceContainerResourceConfigPtrInput {
+	return (*containerInstanceContainerResourceConfigPtrType)(v)
+}
+
+func (*containerInstanceContainerResourceConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceContainerResourceConfig)(nil)).Elem()
+}
+
+func (i *containerInstanceContainerResourceConfigPtrType) ToContainerInstanceContainerResourceConfigPtrOutput() ContainerInstanceContainerResourceConfigPtrOutput {
+	return i.ToContainerInstanceContainerResourceConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceContainerResourceConfigPtrType) ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerResourceConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerResourceConfigPtrOutput)
+}
+
+type ContainerInstanceContainerResourceConfigOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerResourceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerResourceConfig)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerResourceConfigOutput) ToContainerInstanceContainerResourceConfigOutput() ContainerInstanceContainerResourceConfigOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerResourceConfigOutput) ToContainerInstanceContainerResourceConfigOutputWithContext(ctx context.Context) ContainerInstanceContainerResourceConfigOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerResourceConfigOutput) ToContainerInstanceContainerResourceConfigPtrOutput() ContainerInstanceContainerResourceConfigPtrOutput {
+	return o.ToContainerInstanceContainerResourceConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceContainerResourceConfigOutput) ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerResourceConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceContainerResourceConfig) *ContainerInstanceContainerResourceConfig {
+		return &v
+	}).(ContainerInstanceContainerResourceConfigPtrOutput)
+}
+
+// The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+func (o ContainerInstanceContainerResourceConfigOutput) MemoryLimitInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerResourceConfig) *float64 { return v.MemoryLimitInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+func (o ContainerInstanceContainerResourceConfigOutput) VcpusLimit() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerResourceConfig) *float64 { return v.VcpusLimit }).(pulumi.Float64PtrOutput)
+}
+
+type ContainerInstanceContainerResourceConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerResourceConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceContainerResourceConfig)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerResourceConfigPtrOutput) ToContainerInstanceContainerResourceConfigPtrOutput() ContainerInstanceContainerResourceConfigPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerResourceConfigPtrOutput) ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerResourceConfigPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerResourceConfigPtrOutput) Elem() ContainerInstanceContainerResourceConfigOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerResourceConfig) ContainerInstanceContainerResourceConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceContainerResourceConfig
+		return ret
+	}).(ContainerInstanceContainerResourceConfigOutput)
+}
+
+// The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+func (o ContainerInstanceContainerResourceConfigPtrOutput) MemoryLimitInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerResourceConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryLimitInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+func (o ContainerInstanceContainerResourceConfigPtrOutput) VcpusLimit() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerResourceConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.VcpusLimit
+	}).(pulumi.Float64PtrOutput)
+}
+
+type ContainerInstanceContainerVolumeMount struct {
+	// Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+	IsReadOnly *bool `pulumi:"isReadOnly"`
+	// mountPath describes the volume access path.
+	MountPath string `pulumi:"mountPath"`
+	// If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+	Partition *int `pulumi:"partition"`
+	// specifies a sub-path inside the referenced volume instead of its root
+	SubPath *string `pulumi:"subPath"`
+	// The name of the volume.
+	VolumeName string `pulumi:"volumeName"`
+}
+
+// ContainerInstanceContainerVolumeMountInput is an input type that accepts ContainerInstanceContainerVolumeMountArgs and ContainerInstanceContainerVolumeMountOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerVolumeMountInput` via:
+//
+//	ContainerInstanceContainerVolumeMountArgs{...}
+type ContainerInstanceContainerVolumeMountInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerVolumeMountOutput() ContainerInstanceContainerVolumeMountOutput
+	ToContainerInstanceContainerVolumeMountOutputWithContext(context.Context) ContainerInstanceContainerVolumeMountOutput
+}
+
+type ContainerInstanceContainerVolumeMountArgs struct {
+	// Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+	IsReadOnly pulumi.BoolPtrInput `pulumi:"isReadOnly"`
+	// mountPath describes the volume access path.
+	MountPath pulumi.StringInput `pulumi:"mountPath"`
+	// If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+	Partition pulumi.IntPtrInput `pulumi:"partition"`
+	// specifies a sub-path inside the referenced volume instead of its root
+	SubPath pulumi.StringPtrInput `pulumi:"subPath"`
+	// The name of the volume.
+	VolumeName pulumi.StringInput `pulumi:"volumeName"`
+}
+
+func (ContainerInstanceContainerVolumeMountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerVolumeMount)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerVolumeMountArgs) ToContainerInstanceContainerVolumeMountOutput() ContainerInstanceContainerVolumeMountOutput {
+	return i.ToContainerInstanceContainerVolumeMountOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerVolumeMountArgs) ToContainerInstanceContainerVolumeMountOutputWithContext(ctx context.Context) ContainerInstanceContainerVolumeMountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerVolumeMountOutput)
+}
+
+// ContainerInstanceContainerVolumeMountArrayInput is an input type that accepts ContainerInstanceContainerVolumeMountArray and ContainerInstanceContainerVolumeMountArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerVolumeMountArrayInput` via:
+//
+//	ContainerInstanceContainerVolumeMountArray{ ContainerInstanceContainerVolumeMountArgs{...} }
+type ContainerInstanceContainerVolumeMountArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerVolumeMountArrayOutput() ContainerInstanceContainerVolumeMountArrayOutput
+	ToContainerInstanceContainerVolumeMountArrayOutputWithContext(context.Context) ContainerInstanceContainerVolumeMountArrayOutput
+}
+
+type ContainerInstanceContainerVolumeMountArray []ContainerInstanceContainerVolumeMountInput
+
+func (ContainerInstanceContainerVolumeMountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceContainerVolumeMount)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerVolumeMountArray) ToContainerInstanceContainerVolumeMountArrayOutput() ContainerInstanceContainerVolumeMountArrayOutput {
+	return i.ToContainerInstanceContainerVolumeMountArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerVolumeMountArray) ToContainerInstanceContainerVolumeMountArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerVolumeMountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerVolumeMountArrayOutput)
+}
+
+type ContainerInstanceContainerVolumeMountOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerVolumeMountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerVolumeMount)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerVolumeMountOutput) ToContainerInstanceContainerVolumeMountOutput() ContainerInstanceContainerVolumeMountOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerVolumeMountOutput) ToContainerInstanceContainerVolumeMountOutputWithContext(ctx context.Context) ContainerInstanceContainerVolumeMountOutput {
+	return o
+}
+
+// Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+func (o ContainerInstanceContainerVolumeMountOutput) IsReadOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) *bool { return v.IsReadOnly }).(pulumi.BoolPtrOutput)
+}
+
+// mountPath describes the volume access path.
+func (o ContainerInstanceContainerVolumeMountOutput) MountPath() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) string { return v.MountPath }).(pulumi.StringOutput)
+}
+
+// If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+func (o ContainerInstanceContainerVolumeMountOutput) Partition() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) *int { return v.Partition }).(pulumi.IntPtrOutput)
+}
+
+// specifies a sub-path inside the referenced volume instead of its root
+func (o ContainerInstanceContainerVolumeMountOutput) SubPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) *string { return v.SubPath }).(pulumi.StringPtrOutput)
+}
+
+// The name of the volume.
+func (o ContainerInstanceContainerVolumeMountOutput) VolumeName() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) string { return v.VolumeName }).(pulumi.StringOutput)
+}
+
+type ContainerInstanceContainerVolumeMountArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerVolumeMountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceContainerVolumeMount)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerVolumeMountArrayOutput) ToContainerInstanceContainerVolumeMountArrayOutput() ContainerInstanceContainerVolumeMountArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerVolumeMountArrayOutput) ToContainerInstanceContainerVolumeMountArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerVolumeMountArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerVolumeMountArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerVolumeMountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceContainerVolumeMount {
+		return vs[0].([]ContainerInstanceContainerVolumeMount)[vs[1].(int)]
+	}).(ContainerInstanceContainerVolumeMountOutput)
+}
+
+type ContainerInstanceDnsConfig struct {
+	// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+	Nameservers []string `pulumi:"nameservers"`
+	// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+	Options []string `pulumi:"options"`
+	// Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
+	Searches []string `pulumi:"searches"`
+}
+
+// ContainerInstanceDnsConfigInput is an input type that accepts ContainerInstanceDnsConfigArgs and ContainerInstanceDnsConfigOutput values.
+// You can construct a concrete instance of `ContainerInstanceDnsConfigInput` via:
+//
+//	ContainerInstanceDnsConfigArgs{...}
+type ContainerInstanceDnsConfigInput interface {
+	pulumi.Input
+
+	ToContainerInstanceDnsConfigOutput() ContainerInstanceDnsConfigOutput
+	ToContainerInstanceDnsConfigOutputWithContext(context.Context) ContainerInstanceDnsConfigOutput
+}
+
+type ContainerInstanceDnsConfigArgs struct {
+	// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+	Nameservers pulumi.StringArrayInput `pulumi:"nameservers"`
+	// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+	Options pulumi.StringArrayInput `pulumi:"options"`
+	// Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
+	Searches pulumi.StringArrayInput `pulumi:"searches"`
+}
+
+func (ContainerInstanceDnsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceDnsConfig)(nil)).Elem()
+}
+
+func (i ContainerInstanceDnsConfigArgs) ToContainerInstanceDnsConfigOutput() ContainerInstanceDnsConfigOutput {
+	return i.ToContainerInstanceDnsConfigOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceDnsConfigArgs) ToContainerInstanceDnsConfigOutputWithContext(ctx context.Context) ContainerInstanceDnsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceDnsConfigOutput)
+}
+
+func (i ContainerInstanceDnsConfigArgs) ToContainerInstanceDnsConfigPtrOutput() ContainerInstanceDnsConfigPtrOutput {
+	return i.ToContainerInstanceDnsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceDnsConfigArgs) ToContainerInstanceDnsConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceDnsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceDnsConfigOutput).ToContainerInstanceDnsConfigPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceDnsConfigPtrInput is an input type that accepts ContainerInstanceDnsConfigArgs, ContainerInstanceDnsConfigPtr and ContainerInstanceDnsConfigPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceDnsConfigPtrInput` via:
+//
+//	        ContainerInstanceDnsConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceDnsConfigPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceDnsConfigPtrOutput() ContainerInstanceDnsConfigPtrOutput
+	ToContainerInstanceDnsConfigPtrOutputWithContext(context.Context) ContainerInstanceDnsConfigPtrOutput
+}
+
+type containerInstanceDnsConfigPtrType ContainerInstanceDnsConfigArgs
+
+func ContainerInstanceDnsConfigPtr(v *ContainerInstanceDnsConfigArgs) ContainerInstanceDnsConfigPtrInput {
+	return (*containerInstanceDnsConfigPtrType)(v)
+}
+
+func (*containerInstanceDnsConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceDnsConfig)(nil)).Elem()
+}
+
+func (i *containerInstanceDnsConfigPtrType) ToContainerInstanceDnsConfigPtrOutput() ContainerInstanceDnsConfigPtrOutput {
+	return i.ToContainerInstanceDnsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceDnsConfigPtrType) ToContainerInstanceDnsConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceDnsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceDnsConfigPtrOutput)
+}
+
+type ContainerInstanceDnsConfigOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceDnsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceDnsConfig)(nil)).Elem()
+}
+
+func (o ContainerInstanceDnsConfigOutput) ToContainerInstanceDnsConfigOutput() ContainerInstanceDnsConfigOutput {
+	return o
+}
+
+func (o ContainerInstanceDnsConfigOutput) ToContainerInstanceDnsConfigOutputWithContext(ctx context.Context) ContainerInstanceDnsConfigOutput {
+	return o
+}
+
+func (o ContainerInstanceDnsConfigOutput) ToContainerInstanceDnsConfigPtrOutput() ContainerInstanceDnsConfigPtrOutput {
+	return o.ToContainerInstanceDnsConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceDnsConfigOutput) ToContainerInstanceDnsConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceDnsConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceDnsConfig) *ContainerInstanceDnsConfig {
+		return &v
+	}).(ContainerInstanceDnsConfigPtrOutput)
+}
+
+// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+func (o ContainerInstanceDnsConfigOutput) Nameservers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceDnsConfig) []string { return v.Nameservers }).(pulumi.StringArrayOutput)
+}
+
+// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+func (o ContainerInstanceDnsConfigOutput) Options() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceDnsConfig) []string { return v.Options }).(pulumi.StringArrayOutput)
+}
+
+// Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
+func (o ContainerInstanceDnsConfigOutput) Searches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceDnsConfig) []string { return v.Searches }).(pulumi.StringArrayOutput)
+}
+
+type ContainerInstanceDnsConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceDnsConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceDnsConfig)(nil)).Elem()
+}
+
+func (o ContainerInstanceDnsConfigPtrOutput) ToContainerInstanceDnsConfigPtrOutput() ContainerInstanceDnsConfigPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceDnsConfigPtrOutput) ToContainerInstanceDnsConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceDnsConfigPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceDnsConfigPtrOutput) Elem() ContainerInstanceDnsConfigOutput {
+	return o.ApplyT(func(v *ContainerInstanceDnsConfig) ContainerInstanceDnsConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceDnsConfig
+		return ret
+	}).(ContainerInstanceDnsConfigOutput)
+}
+
+// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+func (o ContainerInstanceDnsConfigPtrOutput) Nameservers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ContainerInstanceDnsConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Nameservers
+	}).(pulumi.StringArrayOutput)
+}
+
+// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+func (o ContainerInstanceDnsConfigPtrOutput) Options() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ContainerInstanceDnsConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Options
+	}).(pulumi.StringArrayOutput)
+}
+
+// Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
+func (o ContainerInstanceDnsConfigPtrOutput) Searches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ContainerInstanceDnsConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Searches
+	}).(pulumi.StringArrayOutput)
+}
+
+type ContainerInstanceImagePullSecret struct {
+	// The password which should be used with the registry for authentication. The value is expected in base64 format.
+	Password *string `pulumi:"password"`
+	// The registry endpoint of the container image.
+	RegistryEndpoint string `pulumi:"registryEndpoint"`
+	// The OCID of the secret for registry credentials.
+	SecretId *string `pulumi:"secretId"`
+	// The type of ImagePullSecret.
+	SecretType string `pulumi:"secretType"`
+	// The username which should be used with the registry for authentication. The value is expected in base64 format.
+	Username *string `pulumi:"username"`
+}
+
+// ContainerInstanceImagePullSecretInput is an input type that accepts ContainerInstanceImagePullSecretArgs and ContainerInstanceImagePullSecretOutput values.
+// You can construct a concrete instance of `ContainerInstanceImagePullSecretInput` via:
+//
+//	ContainerInstanceImagePullSecretArgs{...}
+type ContainerInstanceImagePullSecretInput interface {
+	pulumi.Input
+
+	ToContainerInstanceImagePullSecretOutput() ContainerInstanceImagePullSecretOutput
+	ToContainerInstanceImagePullSecretOutputWithContext(context.Context) ContainerInstanceImagePullSecretOutput
+}
+
+type ContainerInstanceImagePullSecretArgs struct {
+	// The password which should be used with the registry for authentication. The value is expected in base64 format.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// The registry endpoint of the container image.
+	RegistryEndpoint pulumi.StringInput `pulumi:"registryEndpoint"`
+	// The OCID of the secret for registry credentials.
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
+	// The type of ImagePullSecret.
+	SecretType pulumi.StringInput `pulumi:"secretType"`
+	// The username which should be used with the registry for authentication. The value is expected in base64 format.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ContainerInstanceImagePullSecretArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceImagePullSecret)(nil)).Elem()
+}
+
+func (i ContainerInstanceImagePullSecretArgs) ToContainerInstanceImagePullSecretOutput() ContainerInstanceImagePullSecretOutput {
+	return i.ToContainerInstanceImagePullSecretOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceImagePullSecretArgs) ToContainerInstanceImagePullSecretOutputWithContext(ctx context.Context) ContainerInstanceImagePullSecretOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceImagePullSecretOutput)
+}
+
+// ContainerInstanceImagePullSecretArrayInput is an input type that accepts ContainerInstanceImagePullSecretArray and ContainerInstanceImagePullSecretArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceImagePullSecretArrayInput` via:
+//
+//	ContainerInstanceImagePullSecretArray{ ContainerInstanceImagePullSecretArgs{...} }
+type ContainerInstanceImagePullSecretArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceImagePullSecretArrayOutput() ContainerInstanceImagePullSecretArrayOutput
+	ToContainerInstanceImagePullSecretArrayOutputWithContext(context.Context) ContainerInstanceImagePullSecretArrayOutput
+}
+
+type ContainerInstanceImagePullSecretArray []ContainerInstanceImagePullSecretInput
+
+func (ContainerInstanceImagePullSecretArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceImagePullSecret)(nil)).Elem()
+}
+
+func (i ContainerInstanceImagePullSecretArray) ToContainerInstanceImagePullSecretArrayOutput() ContainerInstanceImagePullSecretArrayOutput {
+	return i.ToContainerInstanceImagePullSecretArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceImagePullSecretArray) ToContainerInstanceImagePullSecretArrayOutputWithContext(ctx context.Context) ContainerInstanceImagePullSecretArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceImagePullSecretArrayOutput)
+}
+
+type ContainerInstanceImagePullSecretOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceImagePullSecretOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceImagePullSecret)(nil)).Elem()
+}
+
+func (o ContainerInstanceImagePullSecretOutput) ToContainerInstanceImagePullSecretOutput() ContainerInstanceImagePullSecretOutput {
+	return o
+}
+
+func (o ContainerInstanceImagePullSecretOutput) ToContainerInstanceImagePullSecretOutputWithContext(ctx context.Context) ContainerInstanceImagePullSecretOutput {
+	return o
+}
+
+// The password which should be used with the registry for authentication. The value is expected in base64 format.
+func (o ContainerInstanceImagePullSecretOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceImagePullSecret) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// The registry endpoint of the container image.
+func (o ContainerInstanceImagePullSecretOutput) RegistryEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceImagePullSecret) string { return v.RegistryEndpoint }).(pulumi.StringOutput)
+}
+
+// The OCID of the secret for registry credentials.
+func (o ContainerInstanceImagePullSecretOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceImagePullSecret) *string { return v.SecretId }).(pulumi.StringPtrOutput)
+}
+
+// The type of ImagePullSecret.
+func (o ContainerInstanceImagePullSecretOutput) SecretType() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceImagePullSecret) string { return v.SecretType }).(pulumi.StringOutput)
+}
+
+// The username which should be used with the registry for authentication. The value is expected in base64 format.
+func (o ContainerInstanceImagePullSecretOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceImagePullSecret) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceImagePullSecretArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceImagePullSecretArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceImagePullSecret)(nil)).Elem()
+}
+
+func (o ContainerInstanceImagePullSecretArrayOutput) ToContainerInstanceImagePullSecretArrayOutput() ContainerInstanceImagePullSecretArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceImagePullSecretArrayOutput) ToContainerInstanceImagePullSecretArrayOutputWithContext(ctx context.Context) ContainerInstanceImagePullSecretArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceImagePullSecretArrayOutput) Index(i pulumi.IntInput) ContainerInstanceImagePullSecretOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceImagePullSecret {
+		return vs[0].([]ContainerInstanceImagePullSecret)[vs[1].(int)]
+	}).(ContainerInstanceImagePullSecretOutput)
+}
+
+type ContainerInstanceShapeConfig struct {
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// The networking bandwidth available to the instance, in gigabits per second.
+	NetworkingBandwidthInGbps *float64 `pulumi:"networkingBandwidthInGbps"`
+	// The total number of OCPUs available to the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// A short description of the instance's processor (CPU).
+	ProcessorDescription *string `pulumi:"processorDescription"`
+}
+
+// ContainerInstanceShapeConfigInput is an input type that accepts ContainerInstanceShapeConfigArgs and ContainerInstanceShapeConfigOutput values.
+// You can construct a concrete instance of `ContainerInstanceShapeConfigInput` via:
+//
+//	ContainerInstanceShapeConfigArgs{...}
+type ContainerInstanceShapeConfigInput interface {
+	pulumi.Input
+
+	ToContainerInstanceShapeConfigOutput() ContainerInstanceShapeConfigOutput
+	ToContainerInstanceShapeConfigOutputWithContext(context.Context) ContainerInstanceShapeConfigOutput
+}
+
+type ContainerInstanceShapeConfigArgs struct {
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// The networking bandwidth available to the instance, in gigabits per second.
+	NetworkingBandwidthInGbps pulumi.Float64PtrInput `pulumi:"networkingBandwidthInGbps"`
+	// The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// A short description of the instance's processor (CPU).
+	ProcessorDescription pulumi.StringPtrInput `pulumi:"processorDescription"`
+}
+
+func (ContainerInstanceShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceShapeConfig)(nil)).Elem()
+}
+
+func (i ContainerInstanceShapeConfigArgs) ToContainerInstanceShapeConfigOutput() ContainerInstanceShapeConfigOutput {
+	return i.ToContainerInstanceShapeConfigOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceShapeConfigArgs) ToContainerInstanceShapeConfigOutputWithContext(ctx context.Context) ContainerInstanceShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceShapeConfigOutput)
+}
+
+func (i ContainerInstanceShapeConfigArgs) ToContainerInstanceShapeConfigPtrOutput() ContainerInstanceShapeConfigPtrOutput {
+	return i.ToContainerInstanceShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceShapeConfigArgs) ToContainerInstanceShapeConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceShapeConfigOutput).ToContainerInstanceShapeConfigPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceShapeConfigPtrInput is an input type that accepts ContainerInstanceShapeConfigArgs, ContainerInstanceShapeConfigPtr and ContainerInstanceShapeConfigPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceShapeConfigPtrInput` via:
+//
+//	        ContainerInstanceShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceShapeConfigPtrOutput() ContainerInstanceShapeConfigPtrOutput
+	ToContainerInstanceShapeConfigPtrOutputWithContext(context.Context) ContainerInstanceShapeConfigPtrOutput
+}
+
+type containerInstanceShapeConfigPtrType ContainerInstanceShapeConfigArgs
+
+func ContainerInstanceShapeConfigPtr(v *ContainerInstanceShapeConfigArgs) ContainerInstanceShapeConfigPtrInput {
+	return (*containerInstanceShapeConfigPtrType)(v)
+}
+
+func (*containerInstanceShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceShapeConfig)(nil)).Elem()
+}
+
+func (i *containerInstanceShapeConfigPtrType) ToContainerInstanceShapeConfigPtrOutput() ContainerInstanceShapeConfigPtrOutput {
+	return i.ToContainerInstanceShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceShapeConfigPtrType) ToContainerInstanceShapeConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceShapeConfigPtrOutput)
+}
+
+type ContainerInstanceShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceShapeConfig)(nil)).Elem()
+}
+
+func (o ContainerInstanceShapeConfigOutput) ToContainerInstanceShapeConfigOutput() ContainerInstanceShapeConfigOutput {
+	return o
+}
+
+func (o ContainerInstanceShapeConfigOutput) ToContainerInstanceShapeConfigOutputWithContext(ctx context.Context) ContainerInstanceShapeConfigOutput {
+	return o
+}
+
+func (o ContainerInstanceShapeConfigOutput) ToContainerInstanceShapeConfigPtrOutput() ContainerInstanceShapeConfigPtrOutput {
+	return o.ToContainerInstanceShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceShapeConfigOutput) ToContainerInstanceShapeConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceShapeConfig) *ContainerInstanceShapeConfig {
+		return &v
+	}).(ContainerInstanceShapeConfigPtrOutput)
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o ContainerInstanceShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ContainerInstanceShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// The networking bandwidth available to the instance, in gigabits per second.
+func (o ContainerInstanceShapeConfigOutput) NetworkingBandwidthInGbps() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ContainerInstanceShapeConfig) *float64 { return v.NetworkingBandwidthInGbps }).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs available to the instance.
+func (o ContainerInstanceShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v ContainerInstanceShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+// A short description of the instance's processor (CPU).
+func (o ContainerInstanceShapeConfigOutput) ProcessorDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceShapeConfig) *string { return v.ProcessorDescription }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceShapeConfig)(nil)).Elem()
+}
+
+func (o ContainerInstanceShapeConfigPtrOutput) ToContainerInstanceShapeConfigPtrOutput() ContainerInstanceShapeConfigPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceShapeConfigPtrOutput) ToContainerInstanceShapeConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceShapeConfigPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceShapeConfigPtrOutput) Elem() ContainerInstanceShapeConfigOutput {
+	return o.ApplyT(func(v *ContainerInstanceShapeConfig) ContainerInstanceShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceShapeConfig
+		return ret
+	}).(ContainerInstanceShapeConfigOutput)
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o ContainerInstanceShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The networking bandwidth available to the instance, in gigabits per second.
+func (o ContainerInstanceShapeConfigPtrOutput) NetworkingBandwidthInGbps() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkingBandwidthInGbps
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs available to the instance.
+func (o ContainerInstanceShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+// A short description of the instance's processor (CPU).
+func (o ContainerInstanceShapeConfigPtrOutput) ProcessorDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceShapeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProcessorDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceVnic struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The hostname for the VNIC's primary private IP.
+	HostnameLabel *string `pulumi:"hostnameLabel"`
+	// Whether the VNIC should be assigned a public IP address.
+	IsPublicIpAssigned *bool `pulumi:"isPublicIpAssigned"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
+	NsgIds []string `pulumi:"nsgIds"`
+	// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
+	PrivateIp *string `pulumi:"privateIp"`
+	// Whether the source/destination check is disabled on the VNIC.
+	SkipSourceDestCheck *bool `pulumi:"skipSourceDestCheck"`
+	// The OCID of the subnet to create the VNIC in.
+	SubnetId string `pulumi:"subnetId"`
+	// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+	VnicId *string `pulumi:"vnicId"`
+}
+
+// ContainerInstanceVnicInput is an input type that accepts ContainerInstanceVnicArgs and ContainerInstanceVnicOutput values.
+// You can construct a concrete instance of `ContainerInstanceVnicInput` via:
+//
+//	ContainerInstanceVnicArgs{...}
+type ContainerInstanceVnicInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVnicOutput() ContainerInstanceVnicOutput
+	ToContainerInstanceVnicOutputWithContext(context.Context) ContainerInstanceVnicOutput
+}
+
+type ContainerInstanceVnicArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The hostname for the VNIC's primary private IP.
+	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
+	// Whether the VNIC should be assigned a public IP address.
+	IsPublicIpAssigned pulumi.BoolPtrInput `pulumi:"isPublicIpAssigned"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
+	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
+	// Whether the source/destination check is disabled on the VNIC.
+	SkipSourceDestCheck pulumi.BoolPtrInput `pulumi:"skipSourceDestCheck"`
+	// The OCID of the subnet to create the VNIC in.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+	VnicId pulumi.StringPtrInput `pulumi:"vnicId"`
+}
+
+func (ContainerInstanceVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVnic)(nil)).Elem()
+}
+
+func (i ContainerInstanceVnicArgs) ToContainerInstanceVnicOutput() ContainerInstanceVnicOutput {
+	return i.ToContainerInstanceVnicOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVnicArgs) ToContainerInstanceVnicOutputWithContext(ctx context.Context) ContainerInstanceVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVnicOutput)
+}
+
+// ContainerInstanceVnicArrayInput is an input type that accepts ContainerInstanceVnicArray and ContainerInstanceVnicArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceVnicArrayInput` via:
+//
+//	ContainerInstanceVnicArray{ ContainerInstanceVnicArgs{...} }
+type ContainerInstanceVnicArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVnicArrayOutput() ContainerInstanceVnicArrayOutput
+	ToContainerInstanceVnicArrayOutputWithContext(context.Context) ContainerInstanceVnicArrayOutput
+}
+
+type ContainerInstanceVnicArray []ContainerInstanceVnicInput
+
+func (ContainerInstanceVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceVnic)(nil)).Elem()
+}
+
+func (i ContainerInstanceVnicArray) ToContainerInstanceVnicArrayOutput() ContainerInstanceVnicArrayOutput {
+	return i.ToContainerInstanceVnicArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVnicArray) ToContainerInstanceVnicArrayOutputWithContext(ctx context.Context) ContainerInstanceVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVnicArrayOutput)
+}
+
+type ContainerInstanceVnicOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVnic)(nil)).Elem()
+}
+
+func (o ContainerInstanceVnicOutput) ToContainerInstanceVnicOutput() ContainerInstanceVnicOutput {
+	return o
+}
+
+func (o ContainerInstanceVnicOutput) ToContainerInstanceVnicOutputWithContext(ctx context.Context) ContainerInstanceVnicOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o ContainerInstanceVnicOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+func (o ContainerInstanceVnicOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o ContainerInstanceVnicOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The hostname for the VNIC's primary private IP.
+func (o ContainerInstanceVnicOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
+}
+
+// Whether the VNIC should be assigned a public IP address.
+func (o ContainerInstanceVnicOutput) IsPublicIpAssigned() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) *bool { return v.IsPublicIpAssigned }).(pulumi.BoolPtrOutput)
+}
+
+// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
+func (o ContainerInstanceVnicOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
+func (o ContainerInstanceVnicOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
+}
+
+// Whether the source/destination check is disabled on the VNIC.
+func (o ContainerInstanceVnicOutput) SkipSourceDestCheck() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) *bool { return v.SkipSourceDestCheck }).(pulumi.BoolPtrOutput)
+}
+
+// The OCID of the subnet to create the VNIC in.
+func (o ContainerInstanceVnicOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+func (o ContainerInstanceVnicOutput) VnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) *string { return v.VnicId }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceVnic)(nil)).Elem()
+}
+
+func (o ContainerInstanceVnicArrayOutput) ToContainerInstanceVnicArrayOutput() ContainerInstanceVnicArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceVnicArrayOutput) ToContainerInstanceVnicArrayOutputWithContext(ctx context.Context) ContainerInstanceVnicArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceVnicArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceVnic {
+		return vs[0].([]ContainerInstanceVnic)[vs[1].(int)]
+	}).(ContainerInstanceVnicOutput)
+}
+
+type ContainerInstanceVolume struct {
+	// Volume type that we are using for empty dir where it could be either File Storage or Memory
+	BackingStore *string `pulumi:"backingStore"`
+	// Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
+	Configs []ContainerInstanceVolumeConfig `pulumi:"configs"`
+	// The name of the volume. This has be unique cross single ContainerInstance.
+	Name string `pulumi:"name"`
+	// The type of volume.
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// ContainerInstanceVolumeInput is an input type that accepts ContainerInstanceVolumeArgs and ContainerInstanceVolumeOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeInput` via:
+//
+//	ContainerInstanceVolumeArgs{...}
+type ContainerInstanceVolumeInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeOutput() ContainerInstanceVolumeOutput
+	ToContainerInstanceVolumeOutputWithContext(context.Context) ContainerInstanceVolumeOutput
+}
+
+type ContainerInstanceVolumeArgs struct {
+	// Volume type that we are using for empty dir where it could be either File Storage or Memory
+	BackingStore pulumi.StringPtrInput `pulumi:"backingStore"`
+	// Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
+	Configs ContainerInstanceVolumeConfigArrayInput `pulumi:"configs"`
+	// The name of the volume. This has be unique cross single ContainerInstance.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of volume.
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (ContainerInstanceVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolume)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeArgs) ToContainerInstanceVolumeOutput() ContainerInstanceVolumeOutput {
+	return i.ToContainerInstanceVolumeOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeArgs) ToContainerInstanceVolumeOutputWithContext(ctx context.Context) ContainerInstanceVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeOutput)
+}
+
+// ContainerInstanceVolumeArrayInput is an input type that accepts ContainerInstanceVolumeArray and ContainerInstanceVolumeArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeArrayInput` via:
+//
+//	ContainerInstanceVolumeArray{ ContainerInstanceVolumeArgs{...} }
+type ContainerInstanceVolumeArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeArrayOutput() ContainerInstanceVolumeArrayOutput
+	ToContainerInstanceVolumeArrayOutputWithContext(context.Context) ContainerInstanceVolumeArrayOutput
+}
+
+type ContainerInstanceVolumeArray []ContainerInstanceVolumeInput
+
+func (ContainerInstanceVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceVolume)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeArray) ToContainerInstanceVolumeArrayOutput() ContainerInstanceVolumeArrayOutput {
+	return i.ToContainerInstanceVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeArray) ToContainerInstanceVolumeArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeArrayOutput)
+}
+
+type ContainerInstanceVolumeOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolume)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeOutput) ToContainerInstanceVolumeOutput() ContainerInstanceVolumeOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeOutput) ToContainerInstanceVolumeOutputWithContext(ctx context.Context) ContainerInstanceVolumeOutput {
+	return o
+}
+
+// Volume type that we are using for empty dir where it could be either File Storage or Memory
+func (o ContainerInstanceVolumeOutput) BackingStore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) *string { return v.BackingStore }).(pulumi.StringPtrOutput)
+}
+
+// Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
+func (o ContainerInstanceVolumeOutput) Configs() ContainerInstanceVolumeConfigArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) []ContainerInstanceVolumeConfig { return v.Configs }).(ContainerInstanceVolumeConfigArrayOutput)
+}
+
+// The name of the volume. This has be unique cross single ContainerInstance.
+func (o ContainerInstanceVolumeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of volume.
+func (o ContainerInstanceVolumeOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type ContainerInstanceVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceVolume)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeArrayOutput) ToContainerInstanceVolumeArrayOutput() ContainerInstanceVolumeArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeArrayOutput) ToContainerInstanceVolumeArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceVolume {
+		return vs[0].([]ContainerInstanceVolume)[vs[1].(int)]
+	}).(ContainerInstanceVolumeOutput)
+}
+
+type ContainerInstanceVolumeConfig struct {
+	// The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
+	Data *string `pulumi:"data"`
+	// The name of the file. The fileName should be unique across the volume.
+	FileName *string `pulumi:"fileName"`
+	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+	Path *string `pulumi:"path"`
+}
+
+// ContainerInstanceVolumeConfigInput is an input type that accepts ContainerInstanceVolumeConfigArgs and ContainerInstanceVolumeConfigOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeConfigInput` via:
+//
+//	ContainerInstanceVolumeConfigArgs{...}
+type ContainerInstanceVolumeConfigInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeConfigOutput() ContainerInstanceVolumeConfigOutput
+	ToContainerInstanceVolumeConfigOutputWithContext(context.Context) ContainerInstanceVolumeConfigOutput
+}
+
+type ContainerInstanceVolumeConfigArgs struct {
+	// The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
+	Data pulumi.StringPtrInput `pulumi:"data"`
+	// The name of the file. The fileName should be unique across the volume.
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
+	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+	Path pulumi.StringPtrInput `pulumi:"path"`
+}
+
+func (ContainerInstanceVolumeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeConfig)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeConfigArgs) ToContainerInstanceVolumeConfigOutput() ContainerInstanceVolumeConfigOutput {
+	return i.ToContainerInstanceVolumeConfigOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeConfigArgs) ToContainerInstanceVolumeConfigOutputWithContext(ctx context.Context) ContainerInstanceVolumeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeConfigOutput)
+}
+
+// ContainerInstanceVolumeConfigArrayInput is an input type that accepts ContainerInstanceVolumeConfigArray and ContainerInstanceVolumeConfigArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeConfigArrayInput` via:
+//
+//	ContainerInstanceVolumeConfigArray{ ContainerInstanceVolumeConfigArgs{...} }
+type ContainerInstanceVolumeConfigArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeConfigArrayOutput() ContainerInstanceVolumeConfigArrayOutput
+	ToContainerInstanceVolumeConfigArrayOutputWithContext(context.Context) ContainerInstanceVolumeConfigArrayOutput
+}
+
+type ContainerInstanceVolumeConfigArray []ContainerInstanceVolumeConfigInput
+
+func (ContainerInstanceVolumeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceVolumeConfig)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeConfigArray) ToContainerInstanceVolumeConfigArrayOutput() ContainerInstanceVolumeConfigArrayOutput {
+	return i.ToContainerInstanceVolumeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeConfigArray) ToContainerInstanceVolumeConfigArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeConfigArrayOutput)
+}
+
+type ContainerInstanceVolumeConfigOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeConfig)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeConfigOutput) ToContainerInstanceVolumeConfigOutput() ContainerInstanceVolumeConfigOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeConfigOutput) ToContainerInstanceVolumeConfigOutputWithContext(ctx context.Context) ContainerInstanceVolumeConfigOutput {
+	return o
+}
+
+// The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
+func (o ContainerInstanceVolumeConfigOutput) Data() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeConfig) *string { return v.Data }).(pulumi.StringPtrOutput)
+}
+
+// The name of the file. The fileName should be unique across the volume.
+func (o ContainerInstanceVolumeConfigOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeConfig) *string { return v.FileName }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+func (o ContainerInstanceVolumeConfigOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeConfig) *string { return v.Path }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceVolumeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceVolumeConfig)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeConfigArrayOutput) ToContainerInstanceVolumeConfigArrayOutput() ContainerInstanceVolumeConfigArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeConfigArrayOutput) ToContainerInstanceVolumeConfigArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeConfigArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeConfigArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVolumeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceVolumeConfig {
+		return vs[0].([]ContainerInstanceVolumeConfig)[vs[1].(int)]
+	}).(ContainerInstanceVolumeConfigOutput)
+}
+
 type NodePoolInitialNodeLabel struct {
 	// (Updatable) The key of the pair.
 	Key *string `pulumi:"key"`
@@ -9252,6 +11080,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsPersistentVolumeConfigPtrInput)(nil)).Elem(), ClusterOptionsPersistentVolumeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsServiceLbConfigInput)(nil)).Elem(), ClusterOptionsServiceLbConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsServiceLbConfigPtrInput)(nil)).Elem(), ClusterOptionsServiceLbConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerInput)(nil)).Elem(), ContainerInstanceContainerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerArrayInput)(nil)).Elem(), ContainerInstanceContainerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerHealthCheckInput)(nil)).Elem(), ContainerInstanceContainerHealthCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerHealthCheckArrayInput)(nil)).Elem(), ContainerInstanceContainerHealthCheckArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerHealthCheckHeaderInput)(nil)).Elem(), ContainerInstanceContainerHealthCheckHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerHealthCheckHeaderArrayInput)(nil)).Elem(), ContainerInstanceContainerHealthCheckHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerResourceConfigInput)(nil)).Elem(), ContainerInstanceContainerResourceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerResourceConfigPtrInput)(nil)).Elem(), ContainerInstanceContainerResourceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerVolumeMountInput)(nil)).Elem(), ContainerInstanceContainerVolumeMountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerVolumeMountArrayInput)(nil)).Elem(), ContainerInstanceContainerVolumeMountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceDnsConfigInput)(nil)).Elem(), ContainerInstanceDnsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceDnsConfigPtrInput)(nil)).Elem(), ContainerInstanceDnsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceImagePullSecretInput)(nil)).Elem(), ContainerInstanceImagePullSecretArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceImagePullSecretArrayInput)(nil)).Elem(), ContainerInstanceImagePullSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceShapeConfigInput)(nil)).Elem(), ContainerInstanceShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceShapeConfigPtrInput)(nil)).Elem(), ContainerInstanceShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVnicInput)(nil)).Elem(), ContainerInstanceVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVnicArrayInput)(nil)).Elem(), ContainerInstanceVnicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeInput)(nil)).Elem(), ContainerInstanceVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeArrayInput)(nil)).Elem(), ContainerInstanceVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeConfigInput)(nil)).Elem(), ContainerInstanceVolumeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeConfigArrayInput)(nil)).Elem(), ContainerInstanceVolumeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolInitialNodeLabelInput)(nil)).Elem(), NodePoolInitialNodeLabelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolInitialNodeLabelArrayInput)(nil)).Elem(), NodePoolInitialNodeLabelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeInput)(nil)).Elem(), NodePoolNodeArgs{})
@@ -9386,6 +11236,28 @@ func init() {
 	pulumi.RegisterOutputType(ClusterOptionsPersistentVolumeConfigPtrOutput{})
 	pulumi.RegisterOutputType(ClusterOptionsServiceLbConfigOutput{})
 	pulumi.RegisterOutputType(ClusterOptionsServiceLbConfigPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerHealthCheckOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerHealthCheckArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerHealthCheckHeaderOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerHealthCheckHeaderArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerResourceConfigOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerResourceConfigPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerVolumeMountOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerVolumeMountArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceDnsConfigOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceDnsConfigPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceImagePullSecretOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceImagePullSecretArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceShapeConfigOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVnicOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVnicArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeConfigOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeConfigArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolInitialNodeLabelOutput{})
 	pulumi.RegisterOutputType(NodePoolInitialNodeLabelArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeOutput{})

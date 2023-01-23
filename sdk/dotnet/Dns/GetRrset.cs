@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRrsetResult> InvokeAsync(GetRrsetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRrsetResult>("oci:Dns/getRrset:getRrset", args ?? new GetRrsetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRrsetResult>("oci:Dns/getRrset:getRrset", args ?? new GetRrsetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRrsetResult> Invoke(GetRrsetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRrsetResult>("oci:Dns/getRrset:getRrset", args ?? new GetRrsetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRrsetResult>("oci:Dns/getRrset:getRrset", args ?? new GetRrsetInvokeArgs(), options.WithDefaults());
     }
 
 

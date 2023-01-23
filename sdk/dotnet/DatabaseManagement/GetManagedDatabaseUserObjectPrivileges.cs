@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseUserObjectPrivilegesResult> InvokeAsync(GetManagedDatabaseUserObjectPrivilegesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserObjectPrivilegesResult>("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", args ?? new GetManagedDatabaseUserObjectPrivilegesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserObjectPrivilegesResult>("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", args ?? new GetManagedDatabaseUserObjectPrivilegesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database User Object Privileges in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseUserObjectPrivilegesResult> Invoke(GetManagedDatabaseUserObjectPrivilegesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserObjectPrivilegesResult>("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", args ?? new GetManagedDatabaseUserObjectPrivilegesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserObjectPrivilegesResult>("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", args ?? new GetManagedDatabaseUserObjectPrivilegesInvokeArgs(), options.WithDefaults());
     }
 
 

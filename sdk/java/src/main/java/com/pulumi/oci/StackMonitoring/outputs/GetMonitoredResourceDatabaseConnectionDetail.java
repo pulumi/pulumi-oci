@@ -40,6 +40,11 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
      * 
      */
     private String serviceName;
+    /**
+     * @return SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    private String sslSecretId;
 
     private GetMonitoredResourceDatabaseConnectionDetail() {}
     /**
@@ -84,6 +89,13 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
     public String serviceName() {
         return this.serviceName;
     }
+    /**
+     * @return SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    public String sslSecretId() {
+        return this.sslSecretId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -100,6 +112,7 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
         private Integer port;
         private String protocol;
         private String serviceName;
+        private String sslSecretId;
         public Builder() {}
         public Builder(GetMonitoredResourceDatabaseConnectionDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -109,6 +122,7 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
     	      this.serviceName = defaults.serviceName;
+    	      this.sslSecretId = defaults.sslSecretId;
         }
 
         @CustomType.Setter
@@ -141,6 +155,11 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
         }
+        @CustomType.Setter
+        public Builder sslSecretId(String sslSecretId) {
+            this.sslSecretId = Objects.requireNonNull(sslSecretId);
+            return this;
+        }
         public GetMonitoredResourceDatabaseConnectionDetail build() {
             final var o = new GetMonitoredResourceDatabaseConnectionDetail();
             o.connectorId = connectorId;
@@ -149,6 +168,7 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
             o.port = port;
             o.protocol = protocol;
             o.serviceName = serviceName;
+            o.sslSecretId = sslSecretId;
             return o;
         }
     }

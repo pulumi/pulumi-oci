@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBackends(args: GetBackendsArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getBackends:getBackends", {
         "backendSetName": args.backendSetName,
         "filters": args.filters,
@@ -66,9 +64,25 @@ export interface GetBackendsResult {
     readonly id: string;
     readonly networkLoadBalancerId: string;
 }
-
+/**
+ * This data source provides the list of Backends in Oracle Cloud Infrastructure Network Load Balancer service.
+ *
+ * Lists the backend servers for a given network load balancer and backend set.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBackends = oci.NetworkLoadBalancer.getBackends({
+ *     backendSetName: oci_network_load_balancer_backend_set.test_backend_set.name,
+ *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
+ * });
+ * ```
+ */
 export function getBackendsOutput(args: GetBackendsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendsResult> {
-    return pulumi.output(args).apply(a => getBackends(a, opts))
+    return pulumi.output(args).apply((a: any) => getBackends(a, opts))
 }
 
 /**

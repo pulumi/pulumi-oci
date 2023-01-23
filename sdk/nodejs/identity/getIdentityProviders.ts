@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIdentityProviders(args: GetIdentityProvidersArgs, opts?: pulumi.InvokeOptions): Promise<GetIdentityProvidersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIdentityProviders:getIdentityProviders", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -97,9 +95,32 @@ export interface GetIdentityProvidersResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity service.
+ *
+ * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
+ *
+ * Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
+ * identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
+ * compartment ID (remember that the tenancy is simply the root compartment).
+ * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIdentityProviders = oci.Identity.getIdentityProviders({
+ *     compartmentId: _var.tenancy_ocid,
+ *     protocol: _var.identity_provider_protocol,
+ *     name: _var.identity_provider_name,
+ *     state: _var.identity_provider_state,
+ * });
+ * ```
+ */
 export function getIdentityProvidersOutput(args: GetIdentityProvidersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdentityProvidersResult> {
-    return pulumi.output(args).apply(a => getIdentityProviders(a, opts))
+    return pulumi.output(args).apply((a: any) => getIdentityProviders(a, opts))
 }
 
 /**

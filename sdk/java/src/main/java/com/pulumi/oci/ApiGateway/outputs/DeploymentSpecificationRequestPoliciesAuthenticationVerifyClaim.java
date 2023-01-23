@@ -19,7 +19,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
      */
     private @Nullable Boolean isRequired;
     /**
-     * @return (Updatable) Name of the claim.
+     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
      * 
      */
     private @Nullable String key;
@@ -38,7 +38,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
         return Optional.ofNullable(this.isRequired);
     }
     /**
-     * @return (Updatable) Name of the claim.
+     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
      * 
      */
     public Optional<String> key() {

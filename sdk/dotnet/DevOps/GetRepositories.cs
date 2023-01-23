@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoriesResult> InvokeAsync(GetRepositoriesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoriesResult>("oci:DevOps/getRepositories:getRepositories", args ?? new GetRepositoriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoriesResult>("oci:DevOps/getRepositories:getRepositories", args ?? new GetRepositoriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Repositories in Oracle Cloud Infrastructure Devops service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoriesResult> Invoke(GetRepositoriesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoriesResult>("oci:DevOps/getRepositories:getRepositories", args ?? new GetRepositoriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoriesResult>("oci:DevOps/getRepositories:getRepositories", args ?? new GetRepositoriesInvokeArgs(), options.WithDefaults());
     }
 
 

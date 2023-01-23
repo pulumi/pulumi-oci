@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReportContent(args: GetReportContentArgs, opts?: pulumi.InvokeOptions): Promise<GetReportContentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getReportContent:getReportContent", {
         "reportId": args.reportId,
     }, opts);
@@ -51,9 +48,24 @@ export interface GetReportContentResult {
     readonly id: string;
     readonly reportId: string;
 }
-
+/**
+ * This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Downloads the specified report in the form of PDF or XLXS.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testReportContent = oci.DataSafe.getReportContent({
+ *     reportId: oci_data_safe_report.test_report.id,
+ * });
+ * ```
+ */
 export function getReportContentOutput(args: GetReportContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportContentResult> {
-    return pulumi.output(args).apply(a => getReportContent(a, opts))
+    return pulumi.output(args).apply((a: any) => getReportContent(a, opts))
 }
 
 /**

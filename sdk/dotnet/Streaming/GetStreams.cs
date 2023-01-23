@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Streaming
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetStreamsResult> InvokeAsync(GetStreamsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetStreamsResult>("oci:Streaming/getStreams:getStreams", args ?? new GetStreamsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetStreamsResult>("oci:Streaming/getStreams:getStreams", args ?? new GetStreamsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Streams in Oracle Cloud Infrastructure Streaming service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Streaming
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetStreamsResult> Invoke(GetStreamsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetStreamsResult>("oci:Streaming/getStreams:getStreams", args ?? new GetStreamsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetStreamsResult>("oci:Streaming/getStreams:getStreams", args ?? new GetStreamsInvokeArgs(), options.WithDefaults());
     }
 
 

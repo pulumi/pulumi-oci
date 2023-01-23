@@ -124,6 +124,13 @@ func NewVbInstance(ctx *pulumi.Context,
 	if args.NodeCount == nil {
 		return nil, errors.New("invalid value for required argument 'NodeCount'")
 	}
+	if args.IdcsOpenId != nil {
+		args.IdcsOpenId = pulumi.ToSecret(args.IdcsOpenId).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"idcsOpenId",
+	})
+	opts = append(opts, secrets)
 	var resource VbInstance
 	err := ctx.RegisterResource("oci:VisualBuilder/vbInstance:VbInstance", name, args, &resource, opts...)
 	if err != nil {

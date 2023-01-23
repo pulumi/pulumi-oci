@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKeyStores(args: GetKeyStoresArgs, opts?: pulumi.InvokeOptions): Promise<GetKeyStoresResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getKeyStores:getKeyStores", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -62,9 +60,24 @@ export interface GetKeyStoresResult {
      */
     readonly keyStores: outputs.Database.GetKeyStoresKeyStore[];
 }
-
+/**
+ * This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of key stores in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testKeyStores = oci.Database.getKeyStores({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getKeyStoresOutput(args: GetKeyStoresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyStoresResult> {
-    return pulumi.output(args).apply(a => getKeyStores(a, opts))
+    return pulumi.output(args).apply((a: any) => getKeyStores(a, opts))
 }
 
 /**

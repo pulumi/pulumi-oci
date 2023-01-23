@@ -2,13 +2,16 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
  * This data source provides details about a specific Masking Analytic resource in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets consolidated masking analytics data based on the specified query parameters.
+ * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+ * is equivalent to accessLevel "ACCESSIBLE" by default.
  *
  * ## Example Usage
  *
@@ -26,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingAnalytic(args: GetMaskingAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingAnalyticResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingAnalytic:getMaskingAnalytic", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -87,9 +87,30 @@ export interface GetMaskingAnalyticResult {
      */
     readonly targetId?: string;
 }
-
+/**
+ * This data source provides details about a specific Masking Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets consolidated masking analytics data based on the specified query parameters.
+ * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+ * is equivalent to accessLevel "ACCESSIBLE" by default.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaskingAnalytic = oci.DataSafe.getMaskingAnalytic({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.masking_analytic_compartment_id_in_subtree,
+ *     groupBy: _var.masking_analytic_group_by,
+ *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ * });
+ * ```
+ */
 export function getMaskingAnalyticOutput(args: GetMaskingAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingAnalyticResult> {
-    return pulumi.output(args).apply(a => getMaskingAnalytic(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaskingAnalytic(a, opts))
 }
 
 /**

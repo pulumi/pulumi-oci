@@ -80,6 +80,8 @@ __all__ = [
     'DeploymentDeployPipelineEnvironmentItemArgs',
     'DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs',
     'DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs',
+    'DeploymentDeployStageOverrideArgumentsArgs',
+    'DeploymentDeployStageOverrideArgumentsItemArgs',
     'DeploymentDeploymentArgumentsArgs',
     'DeploymentDeploymentArgumentsItemArgs',
     'DeploymentDeploymentExecutionProgressArgs',
@@ -1357,10 +1359,12 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs:
     def __init__(__self__, *,
                  base_ref: Optional[pulumi.Input[str]] = None,
                  file_filters: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs']]]] = None,
-                 head_ref: Optional[pulumi.Input[str]] = None):
+                 head_ref: Optional[pulumi.Input[str]] = None,
+                 repository_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] base_ref: The target branch for pull requests; not applicable for push requests.
         :param pulumi.Input[str] head_ref: Branch for push event; source branch for pull requests.
+        :param pulumi.Input[str] repository_name: The repository name for trigger events.
         """
         if base_ref is not None:
             pulumi.set(__self__, "base_ref", base_ref)
@@ -1368,6 +1372,8 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs:
             pulumi.set(__self__, "file_filters", file_filters)
         if head_ref is not None:
             pulumi.set(__self__, "head_ref", head_ref)
+        if repository_name is not None:
+            pulumi.set(__self__, "repository_name", repository_name)
 
     @property
     @pulumi.getter(name="baseRef")
@@ -1401,6 +1407,18 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs:
     @head_ref.setter
     def head_ref(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "head_ref", value)
+
+    @property
+    @pulumi.getter(name="repositoryName")
+    def repository_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The repository name for trigger events.
+        """
+        return pulumi.get(self, "repository_name")
+
+    @repository_name.setter
+    def repository_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "repository_name", value)
 
 
 @pulumi.input_type
@@ -2990,7 +3008,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs:
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
+        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         """
         if deploy_stage_id is not None:
@@ -3002,7 +3020,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs:
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the OCID of the stage to be redeployed.
+        The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -3130,7 +3148,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs:
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
+        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         """
         if deploy_stage_id is not None:
@@ -3142,7 +3160,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs:
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the OCID of the stage to be redeployed.
+        The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -3161,6 +3179,84 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class DeploymentDeployStageOverrideArgumentsArgs:
+    def __init__(__self__, *,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployStageOverrideArgumentsItemArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeployStageOverrideArgumentsItemArgs']]] items: List of arguments provided at the time of deployment.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployStageOverrideArgumentsItemArgs']]]]:
+        """
+        List of arguments provided at the time of deployment.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployStageOverrideArgumentsItemArgs']]]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class DeploymentDeployStageOverrideArgumentsItemArgs:
+    def __init__(__self__, *,
+                 deploy_stage_id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input[str] name: Name of the parameter (case-sensitive).
+        :param pulumi.Input[str] value: value of the argument.
+        """
+        if deploy_stage_id is not None:
+            pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="deployStageId")
+    def deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the stage.
+        """
+        return pulumi.get(self, "deploy_stage_id")
+
+    @deploy_stage_id.setter
+    def deploy_stage_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deploy_stage_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        value of the argument.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
 
 
 @pulumi.input_type
@@ -3456,8 +3552,9 @@ class TriggerActionFilterArgs:
                  exclude: Optional[pulumi.Input['TriggerActionFilterExcludeArgs']] = None,
                  include: Optional[pulumi.Input['TriggerActionFilterIncludeArgs']] = None):
         """
-        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] events: (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+        :param pulumi.Input['TriggerActionFilterExcludeArgs'] exclude: (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
         :param pulumi.Input['TriggerActionFilterIncludeArgs'] include: (Updatable) Attributes to filter GitLab self-hosted server events.
         """
         pulumi.set(__self__, "trigger_source", trigger_source)
@@ -3472,7 +3569,7 @@ class TriggerActionFilterArgs:
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> pulumi.Input[str]:
         """
-        (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         """
         return pulumi.get(self, "trigger_source")
 
@@ -3495,6 +3592,9 @@ class TriggerActionFilterArgs:
     @property
     @pulumi.getter
     def exclude(self) -> Optional[pulumi.Input['TriggerActionFilterExcludeArgs']]:
+        """
+        (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        """
         return pulumi.get(self, "exclude")
 
     @exclude.setter
@@ -3518,12 +3618,18 @@ class TriggerActionFilterArgs:
 class TriggerActionFilterExcludeArgs:
     def __init__(__self__, *,
                  file_filter: Optional[pulumi.Input['TriggerActionFilterExcludeFileFilterArgs']] = None):
+        """
+        :param pulumi.Input['TriggerActionFilterExcludeFileFilterArgs'] file_filter: (Updatable) Attributes to support include/exclude files for triggering build runs.
+        """
         if file_filter is not None:
             pulumi.set(__self__, "file_filter", file_filter)
 
     @property
     @pulumi.getter(name="fileFilter")
     def file_filter(self) -> Optional[pulumi.Input['TriggerActionFilterExcludeFileFilterArgs']]:
+        """
+        (Updatable) Attributes to support include/exclude files for triggering build runs.
+        """
         return pulumi.get(self, "file_filter")
 
     @file_filter.setter
@@ -3535,12 +3641,18 @@ class TriggerActionFilterExcludeArgs:
 class TriggerActionFilterExcludeFileFilterArgs:
     def __init__(__self__, *,
                  file_paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] file_paths: (Updatable) The file paths/glob pattern for files.
+        """
         if file_paths is not None:
             pulumi.set(__self__, "file_paths", file_paths)
 
     @property
     @pulumi.getter(name="filePaths")
     def file_paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The file paths/glob pattern for files.
+        """
         return pulumi.get(self, "file_paths")
 
     @file_paths.setter
@@ -3553,10 +3665,13 @@ class TriggerActionFilterIncludeArgs:
     def __init__(__self__, *,
                  base_ref: Optional[pulumi.Input[str]] = None,
                  file_filter: Optional[pulumi.Input['TriggerActionFilterIncludeFileFilterArgs']] = None,
-                 head_ref: Optional[pulumi.Input[str]] = None):
+                 head_ref: Optional[pulumi.Input[str]] = None,
+                 repository_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] base_ref: (Updatable) The target branch for pull requests; not applicable for push requests.
+        :param pulumi.Input['TriggerActionFilterIncludeFileFilterArgs'] file_filter: (Updatable) Attributes to support include/exclude files for triggering build runs.
         :param pulumi.Input[str] head_ref: (Updatable) Branch for push event; source branch for pull requests.
+        :param pulumi.Input[str] repository_name: (Updatable) The repository name for trigger events.
         """
         if base_ref is not None:
             pulumi.set(__self__, "base_ref", base_ref)
@@ -3564,6 +3679,8 @@ class TriggerActionFilterIncludeArgs:
             pulumi.set(__self__, "file_filter", file_filter)
         if head_ref is not None:
             pulumi.set(__self__, "head_ref", head_ref)
+        if repository_name is not None:
+            pulumi.set(__self__, "repository_name", repository_name)
 
     @property
     @pulumi.getter(name="baseRef")
@@ -3580,6 +3697,9 @@ class TriggerActionFilterIncludeArgs:
     @property
     @pulumi.getter(name="fileFilter")
     def file_filter(self) -> Optional[pulumi.Input['TriggerActionFilterIncludeFileFilterArgs']]:
+        """
+        (Updatable) Attributes to support include/exclude files for triggering build runs.
+        """
         return pulumi.get(self, "file_filter")
 
     @file_filter.setter
@@ -3598,17 +3718,35 @@ class TriggerActionFilterIncludeArgs:
     def head_ref(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "head_ref", value)
 
+    @property
+    @pulumi.getter(name="repositoryName")
+    def repository_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The repository name for trigger events.
+        """
+        return pulumi.get(self, "repository_name")
+
+    @repository_name.setter
+    def repository_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "repository_name", value)
+
 
 @pulumi.input_type
 class TriggerActionFilterIncludeFileFilterArgs:
     def __init__(__self__, *,
                  file_paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] file_paths: (Updatable) The file paths/glob pattern for files.
+        """
         if file_paths is not None:
             pulumi.set(__self__, "file_paths", file_paths)
 
     @property
     @pulumi.getter(name="filePaths")
     def file_paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The file paths/glob pattern for files.
+        """
         return pulumi.get(self, "file_paths")
 
     @file_paths.setter

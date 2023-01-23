@@ -47,14 +47,20 @@ if typing.TYPE_CHECKING:
     budget = __budget
     import pulumi_oci.certificatesmanagement as __certificatesmanagement
     certificatesmanagement = __certificatesmanagement
+    import pulumi_oci.cloudbridge as __cloudbridge
+    cloudbridge = __cloudbridge
     import pulumi_oci.cloudguard as __cloudguard
     cloudguard = __cloudguard
+    import pulumi_oci.cloudmigrations as __cloudmigrations
+    cloudmigrations = __cloudmigrations
     import pulumi_oci.computeinstanceagent as __computeinstanceagent
     computeinstanceagent = __computeinstanceagent
     import pulumi_oci.config as __config
     config = __config
     import pulumi_oci.containerengine as __containerengine
     containerengine = __containerengine
+    import pulumi_oci.containerinstances as __containerinstances
+    containerinstances = __containerinstances
     import pulumi_oci.core as __core
     core = __core
     import pulumi_oci.database as __database
@@ -81,6 +87,8 @@ if typing.TYPE_CHECKING:
     datascience = __datascience
     import pulumi_oci.devops as __devops
     devops = __devops
+    import pulumi_oci.disasterrecovery as __disasterrecovery
+    disasterrecovery = __disasterrecovery
     import pulumi_oci.dns as __dns
     dns = __dns
     import pulumi_oci.email as __email
@@ -127,6 +135,8 @@ if typing.TYPE_CHECKING:
     managementdashboard = __managementdashboard
     import pulumi_oci.marketplace as __marketplace
     marketplace = __marketplace
+    import pulumi_oci.mediaservices as __mediaservices
+    mediaservices = __mediaservices
     import pulumi_oci.meteringcomputation as __meteringcomputation
     meteringcomputation = __meteringcomputation
     import pulumi_oci.monitoring as __monitoring
@@ -151,6 +161,8 @@ if typing.TYPE_CHECKING:
     onesubsription = __onesubsription
     import pulumi_oci.ons as __ons
     ons = __ons
+    import pulumi_oci.opa as __opa
+    opa = __opa
     import pulumi_oci.opensearch as __opensearch
     opensearch = __opensearch
     import pulumi_oci.operatoraccesscontrol as __operatoraccesscontrol
@@ -171,6 +183,8 @@ if typing.TYPE_CHECKING:
     osubsubscription = __osubsubscription
     import pulumi_oci.osubusage as __osubusage
     osubusage = __osubusage
+    import pulumi_oci.queue as __queue
+    queue = __queue
     import pulumi_oci.resourcemanager as __resourcemanager
     resourcemanager = __resourcemanager
     import pulumi_oci.sch as __sch
@@ -223,10 +237,13 @@ else:
     blockchain = _utilities.lazy_import('pulumi_oci.blockchain')
     budget = _utilities.lazy_import('pulumi_oci.budget')
     certificatesmanagement = _utilities.lazy_import('pulumi_oci.certificatesmanagement')
+    cloudbridge = _utilities.lazy_import('pulumi_oci.cloudbridge')
     cloudguard = _utilities.lazy_import('pulumi_oci.cloudguard')
+    cloudmigrations = _utilities.lazy_import('pulumi_oci.cloudmigrations')
     computeinstanceagent = _utilities.lazy_import('pulumi_oci.computeinstanceagent')
     config = _utilities.lazy_import('pulumi_oci.config')
     containerengine = _utilities.lazy_import('pulumi_oci.containerengine')
+    containerinstances = _utilities.lazy_import('pulumi_oci.containerinstances')
     core = _utilities.lazy_import('pulumi_oci.core')
     database = _utilities.lazy_import('pulumi_oci.database')
     databasemanagement = _utilities.lazy_import('pulumi_oci.databasemanagement')
@@ -240,6 +257,7 @@ else:
     datasafe = _utilities.lazy_import('pulumi_oci.datasafe')
     datascience = _utilities.lazy_import('pulumi_oci.datascience')
     devops = _utilities.lazy_import('pulumi_oci.devops')
+    disasterrecovery = _utilities.lazy_import('pulumi_oci.disasterrecovery')
     dns = _utilities.lazy_import('pulumi_oci.dns')
     email = _utilities.lazy_import('pulumi_oci.email')
     emwarehouse = _utilities.lazy_import('pulumi_oci.emwarehouse')
@@ -263,6 +281,7 @@ else:
     managementagent = _utilities.lazy_import('pulumi_oci.managementagent')
     managementdashboard = _utilities.lazy_import('pulumi_oci.managementdashboard')
     marketplace = _utilities.lazy_import('pulumi_oci.marketplace')
+    mediaservices = _utilities.lazy_import('pulumi_oci.mediaservices')
     meteringcomputation = _utilities.lazy_import('pulumi_oci.meteringcomputation')
     monitoring = _utilities.lazy_import('pulumi_oci.monitoring')
     mysql = _utilities.lazy_import('pulumi_oci.mysql')
@@ -275,6 +294,7 @@ else:
     oda = _utilities.lazy_import('pulumi_oci.oda')
     onesubsription = _utilities.lazy_import('pulumi_oci.onesubsription')
     ons = _utilities.lazy_import('pulumi_oci.ons')
+    opa = _utilities.lazy_import('pulumi_oci.opa')
     opensearch = _utilities.lazy_import('pulumi_oci.opensearch')
     operatoraccesscontrol = _utilities.lazy_import('pulumi_oci.operatoraccesscontrol')
     opsi = _utilities.lazy_import('pulumi_oci.opsi')
@@ -285,6 +305,7 @@ else:
     osuborganizationsubscription = _utilities.lazy_import('pulumi_oci.osuborganizationsubscription')
     osubsubscription = _utilities.lazy_import('pulumi_oci.osubsubscription')
     osubusage = _utilities.lazy_import('pulumi_oci.osubusage')
+    queue = _utilities.lazy_import('pulumi_oci.queue')
     resourcemanager = _utilities.lazy_import('pulumi_oci.resourcemanager')
     sch = _utilities.lazy_import('pulumi_oci.sch')
     secrets = _utilities.lazy_import('pulumi_oci.secrets')
@@ -691,6 +712,70 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "CloudBridge/agent",
+  "fqn": "pulumi_oci.cloudbridge",
+  "classes": {
+   "oci:CloudBridge/agent:Agent": "Agent"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudBridge/agentDependency",
+  "fqn": "pulumi_oci.cloudbridge",
+  "classes": {
+   "oci:CloudBridge/agentDependency:AgentDependency": "AgentDependency"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudBridge/agentPlugin",
+  "fqn": "pulumi_oci.cloudbridge",
+  "classes": {
+   "oci:CloudBridge/agentPlugin:AgentPlugin": "AgentPlugin"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudBridge/asset",
+  "fqn": "pulumi_oci.cloudbridge",
+  "classes": {
+   "oci:CloudBridge/asset:Asset": "Asset"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudBridge/assetSource",
+  "fqn": "pulumi_oci.cloudbridge",
+  "classes": {
+   "oci:CloudBridge/assetSource:AssetSource": "AssetSource"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudBridge/discoverySchedule",
+  "fqn": "pulumi_oci.cloudbridge",
+  "classes": {
+   "oci:CloudBridge/discoverySchedule:DiscoverySchedule": "DiscoverySchedule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudBridge/environment",
+  "fqn": "pulumi_oci.cloudbridge",
+  "classes": {
+   "oci:CloudBridge/environment:Environment": "Environment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudBridge/inventory",
+  "fqn": "pulumi_oci.cloudbridge",
+  "classes": {
+   "oci:CloudBridge/inventory:Inventory": "Inventory"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "CloudGuard/cloudGuardConfiguration",
   "fqn": "pulumi_oci.cloudguard",
   "classes": {
@@ -763,10 +848,58 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "CloudMigrations/migration",
+  "fqn": "pulumi_oci.cloudmigrations",
+  "classes": {
+   "oci:CloudMigrations/migration:Migration": "Migration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudMigrations/migrationAsset",
+  "fqn": "pulumi_oci.cloudmigrations",
+  "classes": {
+   "oci:CloudMigrations/migrationAsset:MigrationAsset": "MigrationAsset"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudMigrations/migrationPlan",
+  "fqn": "pulumi_oci.cloudmigrations",
+  "classes": {
+   "oci:CloudMigrations/migrationPlan:MigrationPlan": "MigrationPlan"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudMigrations/replicationSchedule",
+  "fqn": "pulumi_oci.cloudmigrations",
+  "classes": {
+   "oci:CloudMigrations/replicationSchedule:ReplicationSchedule": "ReplicationSchedule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudMigrations/targetAsset",
+  "fqn": "pulumi_oci.cloudmigrations",
+  "classes": {
+   "oci:CloudMigrations/targetAsset:TargetAsset": "TargetAsset"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ContainerEngine/cluster",
   "fqn": "pulumi_oci.containerengine",
   "classes": {
    "oci:ContainerEngine/cluster:Cluster": "Cluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ContainerEngine/containerInstance",
+  "fqn": "pulumi_oci.containerengine",
+  "classes": {
+   "oci:ContainerEngine/containerInstance:ContainerInstance": "ContainerInstance"
   }
  },
  {
@@ -1387,10 +1520,34 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataFlow/runStatement",
+  "fqn": "pulumi_oci.dataflow",
+  "classes": {
+   "oci:DataFlow/runStatement:RunStatement": "RunStatement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataIntegration/workspace",
   "fqn": "pulumi_oci.dataintegration",
   "classes": {
    "oci:DataIntegration/workspace:Workspace": "Workspace"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataIntegration/workspaceFolder",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceFolder:WorkspaceFolder": "WorkspaceFolder"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataIntegration/workspaceProject",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceProject:WorkspaceProject": "WorkspaceProject"
   }
  },
  {
@@ -1667,6 +1824,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataScience/modelArtifactExport",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelArtifactExport:ModelArtifactExport": "ModelArtifactExport"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/modelArtifactImport",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelArtifactImport:ModelArtifactImport": "ModelArtifactImport"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataScience/modelDeployment",
   "fqn": "pulumi_oci.datascience",
   "classes": {
@@ -1679,6 +1852,14 @@ _utilities.register(
   "fqn": "pulumi_oci.datascience",
   "classes": {
    "oci:DataScience/modelProvenance:ModelProvenance": "ModelProvenance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/modelVersionSet",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelVersionSet:ModelVersionSet": "ModelVersionSet"
   }
  },
  {
@@ -1907,6 +2088,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/exadataInfrastructureCompute",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute": "ExadataInfrastructureCompute"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/exadataInfrastructureStorage",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -2039,6 +2228,14 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/pluggableDatabase:PluggableDatabase": "PluggableDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/pluggableDatabaseManagementsManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement": "PluggableDatabaseManagementsManagement"
   }
  },
  {
@@ -2283,6 +2480,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DisasterRecovery/drPlan",
+  "fqn": "pulumi_oci.disasterrecovery",
+  "classes": {
+   "oci:DisasterRecovery/drPlan:DrPlan": "DrPlan"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DisasterRecovery/drPlanExecution",
+  "fqn": "pulumi_oci.disasterrecovery",
+  "classes": {
+   "oci:DisasterRecovery/drPlanExecution:DrPlanExecution": "DrPlanExecution"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DisasterRecovery/drProtectionGroup",
+  "fqn": "pulumi_oci.disasterrecovery",
+  "classes": {
+   "oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup": "DrProtectionGroup"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Dns/record",
   "fqn": "pulumi_oci.dns",
   "classes": {
@@ -2435,6 +2656,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FileStorage/replication",
+  "fqn": "pulumi_oci.filestorage",
+  "classes": {
+   "oci:FileStorage/replication:Replication": "Replication"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "FileStorage/snapshot",
   "fqn": "pulumi_oci.filestorage",
   "classes": {
@@ -2511,6 +2740,22 @@ _utilities.register(
   "fqn": "pulumi_oci.genericartifactscontent",
   "classes": {
    "oci:GenericArtifactsContent/artifactByPath:ArtifactByPath": "ArtifactByPath"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GoldenGate/connection",
+  "fqn": "pulumi_oci.goldengate",
+  "classes": {
+   "oci:GoldenGate/connection:Connection": "Connection"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GoldenGate/connectionAssignment",
+  "fqn": "pulumi_oci.goldengate",
+  "classes": {
+   "oci:GoldenGate/connectionAssignment:ConnectionAssignment": "ConnectionAssignment"
   }
  },
  {
@@ -3027,6 +3272,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "LogAnalytics/namespaceIngestTimeRule",
+  "fqn": "pulumi_oci.loganalytics",
+  "classes": {
+   "oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule": "NamespaceIngestTimeRule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "LogAnalytics/namespaceIngestTimeRulesManagement",
+  "fqn": "pulumi_oci.loganalytics",
+  "classes": {
+   "oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement": "NamespaceIngestTimeRulesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "LogAnalytics/namespaceScheduledTask",
   "fqn": "pulumi_oci.loganalytics",
   "classes": {
@@ -3115,6 +3376,62 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "MediaServices/mediaAsset",
+  "fqn": "pulumi_oci.mediaservices",
+  "classes": {
+   "oci:MediaServices/mediaAsset:MediaAsset": "MediaAsset"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "MediaServices/mediaWorkflow",
+  "fqn": "pulumi_oci.mediaservices",
+  "classes": {
+   "oci:MediaServices/mediaWorkflow:MediaWorkflow": "MediaWorkflow"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "MediaServices/mediaWorkflowConfiguration",
+  "fqn": "pulumi_oci.mediaservices",
+  "classes": {
+   "oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration": "MediaWorkflowConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "MediaServices/mediaWorkflowJob",
+  "fqn": "pulumi_oci.mediaservices",
+  "classes": {
+   "oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob": "MediaWorkflowJob"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "MediaServices/streamCdnConfig",
+  "fqn": "pulumi_oci.mediaservices",
+  "classes": {
+   "oci:MediaServices/streamCdnConfig:StreamCdnConfig": "StreamCdnConfig"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "MediaServices/streamDistributionChannel",
+  "fqn": "pulumi_oci.mediaservices",
+  "classes": {
+   "oci:MediaServices/streamDistributionChannel:StreamDistributionChannel": "StreamDistributionChannel"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "MediaServices/streamPackagingConfig",
+  "fqn": "pulumi_oci.mediaservices",
+  "classes": {
+   "oci:MediaServices/streamPackagingConfig:StreamPackagingConfig": "StreamPackagingConfig"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "MeteringComputation/customTable",
   "fqn": "pulumi_oci.meteringcomputation",
   "classes": {
@@ -3199,6 +3516,14 @@ _utilities.register(
   "fqn": "pulumi_oci.mysql",
   "classes": {
    "oci:Mysql/mysqlDbSystem:MysqlDbSystem": "MysqlDbSystem"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Mysql/replica",
+  "fqn": "pulumi_oci.mysql",
+  "classes": {
+   "oci:Mysql/replica:Replica": "Replica"
   }
  },
  {
@@ -3367,6 +3692,14 @@ _utilities.register(
   "fqn": "pulumi_oci.ons",
   "classes": {
    "oci:Ons/subscription:Subscription": "Subscription"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Opa/opaInstance",
+  "fqn": "pulumi_oci.opa",
+  "classes": {
+   "oci:Opa/opaInstance:OpaInstance": "OpaInstance"
   }
  },
  {
@@ -3543,6 +3876,14 @@ _utilities.register(
   "fqn": "pulumi_oci.ospgateway",
   "classes": {
    "oci:OspGateway/subscription:Subscription": "Subscription"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Queue/queue",
+  "fqn": "pulumi_oci.queue",
+  "classes": {
+   "oci:Queue/queue:Queue": "Queue"
   }
  },
  {

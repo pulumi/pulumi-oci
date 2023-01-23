@@ -496,10 +496,13 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
 
     The below policies must be created in compartment before creating OpensearchCluster
 
-    #### {Compartment-Name} - Name of  your compartment
+    ##### {Compartment-Name} - Name of  your compartment
     ```python
     import pulumi
     ```
+
+    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
+    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
     ## Example Usage
 
@@ -571,10 +574,13 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[s
 
     The below policies must be created in compartment before creating OpensearchCluster
 
-    #### {Compartment-Name} - Name of  your compartment
+    ##### {Compartment-Name} - Name of  your compartment
     ```python
     import pulumi
     ```
+
+    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
+    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
     ## Example Usage
 

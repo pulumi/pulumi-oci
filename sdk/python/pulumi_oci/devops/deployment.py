@@ -21,21 +21,25 @@ class DeploymentArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deploy_artifact_override_arguments: Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']] = None,
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
+                 deploy_stage_override_arguments: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']] = None,
                  deployment_arguments: Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 previous_deployment_id: Optional[pulumi.Input[str]] = None):
+                 previous_deployment_id: Optional[pulumi.Input[str]] = None,
+                 trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a Deployment resource.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs'] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
-        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
+        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs'] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input['DeploymentDeploymentArgumentsArgs'] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] previous_deployment_id: Specifies the OCID of the previous deployment to be redeployed.
+        :param pulumi.Input[bool] trigger_new_devops_deployment: A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
         """
         pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
         pulumi.set(__self__, "deployment_type", deployment_type)
@@ -45,6 +49,8 @@ class DeploymentArgs:
             pulumi.set(__self__, "deploy_artifact_override_arguments", deploy_artifact_override_arguments)
         if deploy_stage_id is not None:
             pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        if deploy_stage_override_arguments is not None:
+            pulumi.set(__self__, "deploy_stage_override_arguments", deploy_stage_override_arguments)
         if deployment_arguments is not None:
             pulumi.set(__self__, "deployment_arguments", deployment_arguments)
         if display_name is not None:
@@ -53,6 +59,8 @@ class DeploymentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if previous_deployment_id is not None:
             pulumi.set(__self__, "previous_deployment_id", previous_deployment_id)
+        if trigger_new_devops_deployment is not None:
+            pulumi.set(__self__, "trigger_new_devops_deployment", trigger_new_devops_deployment)
 
     @property
     @pulumi.getter(name="deployPipelineId")
@@ -106,13 +114,25 @@ class DeploymentArgs:
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the OCID of the stage to be redeployed.
+        The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
 
     @deploy_stage_id.setter
     def deploy_stage_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "deploy_stage_id", value)
+
+    @property
+    @pulumi.getter(name="deployStageOverrideArguments")
+    def deploy_stage_override_arguments(self) -> Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']]:
+        """
+        Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        """
+        return pulumi.get(self, "deploy_stage_override_arguments")
+
+    @deploy_stage_override_arguments.setter
+    def deploy_stage_override_arguments(self, value: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']]):
+        pulumi.set(self, "deploy_stage_override_arguments", value)
 
     @property
     @pulumi.getter(name="deploymentArguments")
@@ -162,6 +182,18 @@ class DeploymentArgs:
     def previous_deployment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "previous_deployment_id", value)
 
+    @property
+    @pulumi.getter(name="triggerNewDevopsDeployment")
+    def trigger_new_devops_deployment(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+        """
+        return pulumi.get(self, "trigger_new_devops_deployment")
+
+    @trigger_new_devops_deployment.setter
+    def trigger_new_devops_deployment(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "trigger_new_devops_deployment", value)
+
 
 @pulumi.input_type
 class _DeploymentState:
@@ -173,6 +205,7 @@ class _DeploymentState:
                  deploy_pipeline_environments: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]]] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
+                 deploy_stage_override_arguments: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']] = None,
                  deployment_arguments: Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']] = None,
                  deployment_execution_progresses: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
@@ -184,7 +217,8 @@ class _DeploymentState:
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None):
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
         :param pulumi.Input[str] compartment_id: The OCID of a compartment.
@@ -193,7 +227,8 @@ class _DeploymentState:
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]] deploy_pipeline_environments: List of all environments used in the pipeline.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
+        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs'] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input['DeploymentDeploymentArgumentsArgs'] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]] deployment_execution_progresses: The execution progress details of a deployment.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
@@ -206,6 +241,7 @@ class _DeploymentState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[bool] trigger_new_devops_deployment: A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -221,6 +257,8 @@ class _DeploymentState:
             pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
         if deploy_stage_id is not None:
             pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        if deploy_stage_override_arguments is not None:
+            pulumi.set(__self__, "deploy_stage_override_arguments", deploy_stage_override_arguments)
         if deployment_arguments is not None:
             pulumi.set(__self__, "deployment_arguments", deployment_arguments)
         if deployment_execution_progresses is not None:
@@ -245,6 +283,8 @@ class _DeploymentState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if trigger_new_devops_deployment is not None:
+            pulumi.set(__self__, "trigger_new_devops_deployment", trigger_new_devops_deployment)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -322,13 +362,25 @@ class _DeploymentState:
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the OCID of the stage to be redeployed.
+        The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
 
     @deploy_stage_id.setter
     def deploy_stage_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "deploy_stage_id", value)
+
+    @property
+    @pulumi.getter(name="deployStageOverrideArguments")
+    def deploy_stage_override_arguments(self) -> Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']]:
+        """
+        Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        """
+        return pulumi.get(self, "deploy_stage_override_arguments")
+
+    @deploy_stage_override_arguments.setter
+    def deploy_stage_override_arguments(self, value: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']]):
+        pulumi.set(self, "deploy_stage_override_arguments", value)
 
     @property
     @pulumi.getter(name="deploymentArguments")
@@ -474,6 +526,18 @@ class _DeploymentState:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
+    @property
+    @pulumi.getter(name="triggerNewDevopsDeployment")
+    def trigger_new_devops_deployment(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+        """
+        return pulumi.get(self, "trigger_new_devops_deployment")
+
+    @trigger_new_devops_deployment.setter
+    def trigger_new_devops_deployment(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "trigger_new_devops_deployment", value)
+
 
 class Deployment(pulumi.CustomResource):
     @overload
@@ -484,11 +548,13 @@ class Deployment(pulumi.CustomResource):
                  deploy_artifact_override_arguments: Optional[pulumi.Input[pulumi.InputType['DeploymentDeployArtifactOverrideArgumentsArgs']]] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
+                 deploy_stage_override_arguments: Optional[pulumi.Input[pulumi.InputType['DeploymentDeployStageOverrideArgumentsArgs']]] = None,
                  deployment_arguments: Optional[pulumi.Input[pulumi.InputType['DeploymentDeploymentArgumentsArgs']]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  previous_deployment_id: Optional[pulumi.Input[str]] = None,
+                 trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         This resource provides the Deployment resource in Oracle Cloud Infrastructure Devops service.
@@ -508,12 +574,14 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[pulumi.InputType['DeploymentDeployArtifactOverrideArgumentsArgs']] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
+        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input[pulumi.InputType['DeploymentDeployStageOverrideArgumentsArgs']] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input[pulumi.InputType['DeploymentDeploymentArgumentsArgs']] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] previous_deployment_id: Specifies the OCID of the previous deployment to be redeployed.
+        :param pulumi.Input[bool] trigger_new_devops_deployment: A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
         """
         ...
     @overload
@@ -553,11 +621,13 @@ class Deployment(pulumi.CustomResource):
                  deploy_artifact_override_arguments: Optional[pulumi.Input[pulumi.InputType['DeploymentDeployArtifactOverrideArgumentsArgs']]] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
+                 deploy_stage_override_arguments: Optional[pulumi.Input[pulumi.InputType['DeploymentDeployStageOverrideArgumentsArgs']]] = None,
                  deployment_arguments: Optional[pulumi.Input[pulumi.InputType['DeploymentDeploymentArgumentsArgs']]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  previous_deployment_id: Optional[pulumi.Input[str]] = None,
+                 trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -573,6 +643,7 @@ class Deployment(pulumi.CustomResource):
                 raise TypeError("Missing required property 'deploy_pipeline_id'")
             __props__.__dict__["deploy_pipeline_id"] = deploy_pipeline_id
             __props__.__dict__["deploy_stage_id"] = deploy_stage_id
+            __props__.__dict__["deploy_stage_override_arguments"] = deploy_stage_override_arguments
             __props__.__dict__["deployment_arguments"] = deployment_arguments
             if deployment_type is None and not opts.urn:
                 raise TypeError("Missing required property 'deployment_type'")
@@ -580,6 +651,7 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["previous_deployment_id"] = previous_deployment_id
+            __props__.__dict__["trigger_new_devops_deployment"] = trigger_new_devops_deployment
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["deploy_pipeline_artifacts"] = None
             __props__.__dict__["deploy_pipeline_environments"] = None
@@ -607,6 +679,7 @@ class Deployment(pulumi.CustomResource):
             deploy_pipeline_environments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeployPipelineEnvironmentArgs']]]]] = None,
             deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
             deploy_stage_id: Optional[pulumi.Input[str]] = None,
+            deploy_stage_override_arguments: Optional[pulumi.Input[pulumi.InputType['DeploymentDeployStageOverrideArgumentsArgs']]] = None,
             deployment_arguments: Optional[pulumi.Input[pulumi.InputType['DeploymentDeploymentArgumentsArgs']]] = None,
             deployment_execution_progresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeploymentExecutionProgressArgs']]]]] = None,
             deployment_type: Optional[pulumi.Input[str]] = None,
@@ -618,7 +691,8 @@ class Deployment(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_updated: Optional[pulumi.Input[str]] = None) -> 'Deployment':
+            time_updated: Optional[pulumi.Input[str]] = None,
+            trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None) -> 'Deployment':
         """
         Get an existing Deployment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -632,7 +706,8 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeployPipelineArtifactArgs']]]] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeployPipelineEnvironmentArgs']]]] deploy_pipeline_environments: List of all environments used in the pipeline.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
+        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input[pulumi.InputType['DeploymentDeployStageOverrideArgumentsArgs']] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input[pulumi.InputType['DeploymentDeploymentArgumentsArgs']] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeploymentExecutionProgressArgs']]]] deployment_execution_progresses: The execution progress details of a deployment.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
@@ -645,6 +720,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[bool] trigger_new_devops_deployment: A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -657,6 +733,7 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["deploy_pipeline_environments"] = deploy_pipeline_environments
         __props__.__dict__["deploy_pipeline_id"] = deploy_pipeline_id
         __props__.__dict__["deploy_stage_id"] = deploy_stage_id
+        __props__.__dict__["deploy_stage_override_arguments"] = deploy_stage_override_arguments
         __props__.__dict__["deployment_arguments"] = deployment_arguments
         __props__.__dict__["deployment_execution_progresses"] = deployment_execution_progresses
         __props__.__dict__["deployment_type"] = deployment_type
@@ -669,6 +746,7 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["trigger_new_devops_deployment"] = trigger_new_devops_deployment
         return Deployment(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -723,9 +801,17 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> pulumi.Output[str]:
         """
-        Specifies the OCID of the stage to be redeployed.
+        The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter(name="deployStageOverrideArguments")
+    def deploy_stage_override_arguments(self) -> pulumi.Output['outputs.DeploymentDeployStageOverrideArguments']:
+        """
+        Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        """
+        return pulumi.get(self, "deploy_stage_override_arguments")
 
     @property
     @pulumi.getter(name="deploymentArguments")
@@ -822,4 +908,12 @@ class Deployment(pulumi.CustomResource):
         Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="triggerNewDevopsDeployment")
+    def trigger_new_devops_deployment(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+        """
+        return pulumi.get(self, "trigger_new_devops_deployment")
 

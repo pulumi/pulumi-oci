@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResolverEndpoints(args: GetResolverEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetResolverEndpointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getResolverEndpoints:getResolverEndpoints", {
         "filters": args.filters,
         "name": args.name,
@@ -89,9 +87,30 @@ export interface GetResolverEndpointsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
+ * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
+ * query parameter is provided, the collection does not include resolver endpoints in the DELETED
+ * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResolverEndpoints = oci.Dns.getResolverEndpoints({
+ *     resolverId: oci_dns_resolver.test_resolver.id,
+ *     scope: "PRIVATE",
+ *     name: _var.resolver_endpoint_name,
+ *     state: _var.resolver_endpoint_state,
+ * });
+ * ```
+ */
 export function getResolverEndpointsOutput(args: GetResolverEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolverEndpointsResult> {
-    return pulumi.output(args).apply(a => getResolverEndpoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getResolverEndpoints(a, opts))
 }
 
 /**

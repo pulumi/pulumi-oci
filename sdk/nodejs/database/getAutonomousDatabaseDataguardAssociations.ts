@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabaseDataguardAssociations(args: GetAutonomousDatabaseDataguardAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseDataguardAssociationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
         "filters": args.filters,
@@ -62,9 +60,24 @@ export interface GetAutonomousDatabaseDataguardAssociationsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseDataguardAssociations = oci.Database.getAutonomousDatabaseDataguardAssociations({
+ *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
+ * });
+ * ```
+ */
 export function getAutonomousDatabaseDataguardAssociationsOutput(args: GetAutonomousDatabaseDataguardAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseDataguardAssociationsResult> {
-    return pulumi.output(args).apply(a => getAutonomousDatabaseDataguardAssociations(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseDataguardAssociations(a, opts))
 }
 
 /**

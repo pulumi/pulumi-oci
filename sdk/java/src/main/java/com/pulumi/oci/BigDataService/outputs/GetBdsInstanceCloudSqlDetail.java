@@ -6,6 +6,7 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceCloudSqlDetailKerberosDetail;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -32,6 +33,21 @@ public final class GetBdsInstanceCloudSqlDetail {
      * 
      */
     private List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
+    /**
+     * @return The total amount of memory available to the node, in gigabytes.
+     * 
+     */
+    private Integer memoryInGbs;
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    private Integer nvmes;
+    /**
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    private Integer ocpus;
     /**
      * @return Shape of the node.
      * 
@@ -68,6 +84,27 @@ public final class GetBdsInstanceCloudSqlDetail {
         return this.kerberosDetails;
     }
     /**
+     * @return The total amount of memory available to the node, in gigabytes.
+     * 
+     */
+    public Integer memoryInGbs() {
+        return this.memoryInGbs;
+    }
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Integer nvmes() {
+        return this.nvmes;
+    }
+    /**
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    public Integer ocpus() {
+        return this.ocpus;
+    }
+    /**
      * @return Shape of the node.
      * 
      */
@@ -88,6 +125,9 @@ public final class GetBdsInstanceCloudSqlDetail {
         private String ipAddress;
         private Boolean isKerberosMappedToDatabaseUsers;
         private List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
+        private Integer memoryInGbs;
+        private Integer nvmes;
+        private Integer ocpus;
         private String shape;
         public Builder() {}
         public Builder(GetBdsInstanceCloudSqlDetail defaults) {
@@ -96,6 +136,9 @@ public final class GetBdsInstanceCloudSqlDetail {
     	      this.ipAddress = defaults.ipAddress;
     	      this.isKerberosMappedToDatabaseUsers = defaults.isKerberosMappedToDatabaseUsers;
     	      this.kerberosDetails = defaults.kerberosDetails;
+    	      this.memoryInGbs = defaults.memoryInGbs;
+    	      this.nvmes = defaults.nvmes;
+    	      this.ocpus = defaults.ocpus;
     	      this.shape = defaults.shape;
         }
 
@@ -123,6 +166,21 @@ public final class GetBdsInstanceCloudSqlDetail {
             return kerberosDetails(List.of(kerberosDetails));
         }
         @CustomType.Setter
+        public Builder memoryInGbs(Integer memoryInGbs) {
+            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nvmes(Integer nvmes) {
+            this.nvmes = Objects.requireNonNull(nvmes);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ocpus(Integer ocpus) {
+            this.ocpus = Objects.requireNonNull(ocpus);
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
@@ -133,6 +191,9 @@ public final class GetBdsInstanceCloudSqlDetail {
             o.ipAddress = ipAddress;
             o.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
             o.kerberosDetails = kerberosDetails;
+            o.memoryInGbs = memoryInGbs;
+            o.nvmes = nvmes;
+            o.ocpus = ocpus;
             o.shape = shape;
             return o;
         }

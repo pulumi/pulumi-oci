@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVantagePoints(args: GetDedicatedVantagePointsArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVantagePointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", {
         "apmDomainId": args.apmDomainId,
         "displayName": args.displayName,
@@ -89,9 +87,27 @@ export interface GetDedicatedVantagePointsResult {
      */
     readonly status?: string;
 }
-
+/**
+ * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+ *
+ * Returns a list of dedicated vantage points.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDedicatedVantagePoints = oci.ApmSynthetics.getDedicatedVantagePoints({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     displayName: _var.dedicated_vantage_point_display_name,
+ *     name: _var.dedicated_vantage_point_name,
+ *     status: _var.dedicated_vantage_point_status,
+ * });
+ * ```
+ */
 export function getDedicatedVantagePointsOutput(args: GetDedicatedVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVantagePointsResult> {
-    return pulumi.output(args).apply(a => getDedicatedVantagePoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getDedicatedVantagePoints(a, opts))
 }
 
 /**

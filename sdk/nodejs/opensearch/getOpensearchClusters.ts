@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -19,6 +20,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * ```
  *
+ * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+ * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -34,11 +38,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOpensearchClusters(args: GetOpensearchClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetOpensearchClustersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -97,9 +98,39 @@ export interface GetOpensearchClustersResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
+ *
+ * Returns a list of OpensearchClusters.
+ *
+ * ## Prerequisites
+ *
+ * The below policies must be created in compartment before creating OpensearchCluster
+ *
+ * ##### {Compartment-Name} - Name of  your compartment
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * ```
+ *
+ * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+ * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOpensearchClusters = oci.Opensearch.getOpensearchClusters({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.opensearch_cluster_display_name,
+ *     id: _var.opensearch_cluster_id,
+ *     state: _var.opensearch_cluster_state,
+ * });
+ * ```
+ */
 export function getOpensearchClustersOutput(args: GetOpensearchClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchClustersResult> {
-    return pulumi.output(args).apply(a => getOpensearchClusters(a, opts))
+    return pulumi.output(args).apply((a: any) => getOpensearchClusters(a, opts))
 }
 
 /**

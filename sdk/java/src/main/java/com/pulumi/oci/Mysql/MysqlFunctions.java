@@ -29,6 +29,10 @@ import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
 import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
 import com.pulumi.oci.Mysql.inputs.GetMysqlVersionPlainArgs;
+import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
+import com.pulumi.oci.Mysql.inputs.GetReplicaPlainArgs;
+import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
+import com.pulumi.oci.Mysql.inputs.GetReplicasPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
 import com.pulumi.oci.Mysql.inputs.GetShapesPlainArgs;
 import com.pulumi.oci.Mysql.outputs.GetAnalyticsClusterResult;
@@ -42,6 +46,8 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsResult;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemResult;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsResult;
 import com.pulumi.oci.Mysql.outputs.GetMysqlVersionResult;
+import com.pulumi.oci.Mysql.outputs.GetReplicaResult;
+import com.pulumi.oci.Mysql.outputs.GetReplicasResult;
 import com.pulumi.oci.Mysql.outputs.GetShapesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -1904,6 +1910,334 @@ public final class MysqlFunctions {
         return Deployment.getInstance().invokeAsync("oci:Mysql/getMysqlVersion:getMysqlVersion", TypeShape.of(GetMysqlVersionResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Replica resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets the full details of the specified read replica.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
+     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicaResult> getReplica(GetReplicaArgs args) {
+        return getReplica(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Replica resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets the full details of the specified read replica.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
+     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicaResult> getReplicaPlain(GetReplicaPlainArgs args) {
+        return getReplicaPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Replica resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets the full details of the specified read replica.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
+     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicaResult> getReplica(GetReplicaArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Mysql/getReplica:getReplica", TypeShape.of(GetReplicaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replica resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets the full details of the specified read replica.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
+     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicaResult> getReplicaPlain(GetReplicaPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Mysql/getReplica:getReplica", TypeShape.of(GetReplicaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists all the read replicas that match the specified filters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
+     *             .displayName(var_.replica_display_name())
+     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .state(var_.replica_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicasResult> getReplicas(GetReplicasArgs args) {
+        return getReplicas(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists all the read replicas that match the specified filters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
+     *             .displayName(var_.replica_display_name())
+     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .state(var_.replica_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicasResult> getReplicasPlain(GetReplicasPlainArgs args) {
+        return getReplicasPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists all the read replicas that match the specified filters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
+     *             .displayName(var_.replica_display_name())
+     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .state(var_.replica_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicasResult> getReplicas(GetReplicasArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Mysql/getReplicas:getReplicas", TypeShape.of(GetReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists all the read replicas that match the specified filters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
+     *             .displayName(var_.replica_display_name())
+     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .state(var_.replica_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicasResult> getReplicasPlain(GetReplicasPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Mysql/getReplicas:getReplicas", TypeShape.of(GetReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.
      * 
      * Gets a list of the shapes you can use to create a new MySQL DB System.
@@ -1919,7 +2253,7 @@ public final class MysqlFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
-     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1964,7 +2298,7 @@ public final class MysqlFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
-     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2009,7 +2343,7 @@ public final class MysqlFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
-     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2054,7 +2388,7 @@ public final class MysqlFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
-     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceCloudSqlDetailKerberosDetailArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,15 +23,15 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
      * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    @Import(name="blockVolumeSizeInGbs", required=true)
-    private Output<String> blockVolumeSizeInGbs;
+    @Import(name="blockVolumeSizeInGbs")
+    private @Nullable Output<String> blockVolumeSizeInGbs;
 
     /**
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    public Output<String> blockVolumeSizeInGbs() {
-        return this.blockVolumeSizeInGbs;
+    public Optional<Output<String>> blockVolumeSizeInGbs() {
+        return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
 
     /**
@@ -79,6 +80,51 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
     }
 
     /**
+     * The total amount of memory available to the node, in gigabytes
+     * 
+     */
+    @Import(name="memoryInGbs")
+    private @Nullable Output<Integer> memoryInGbs;
+
+    /**
+     * @return The total amount of memory available to the node, in gigabytes
+     * 
+     */
+    public Optional<Output<Integer>> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
+    }
+
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    @Import(name="nvmes")
+    private @Nullable Output<Integer> nvmes;
+
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Output<Integer>> nvmes() {
+        return Optional.ofNullable(this.nvmes);
+    }
+
+    /**
+     * The total number of OCPUs available to the node.
+     * 
+     */
+    @Import(name="ocpus")
+    private @Nullable Output<Integer> ocpus;
+
+    /**
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    public Optional<Output<Integer>> ocpus() {
+        return Optional.ofNullable(this.ocpus);
+    }
+
+    /**
      * Shape of the node
      * 
      */
@@ -100,6 +146,9 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         this.ipAddress = $.ipAddress;
         this.isKerberosMappedToDatabaseUsers = $.isKerberosMappedToDatabaseUsers;
         this.kerberosDetails = $.kerberosDetails;
+        this.memoryInGbs = $.memoryInGbs;
+        this.nvmes = $.nvmes;
+        this.ocpus = $.ocpus;
         this.shape = $.shape;
     }
 
@@ -127,7 +176,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder blockVolumeSizeInGbs(Output<String> blockVolumeSizeInGbs) {
+        public Builder blockVolumeSizeInGbs(@Nullable Output<String> blockVolumeSizeInGbs) {
             $.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
@@ -216,6 +265,69 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
+         * @param memoryInGbs The total amount of memory available to the node, in gigabytes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryInGbs(@Nullable Output<Integer> memoryInGbs) {
+            $.memoryInGbs = memoryInGbs;
+            return this;
+        }
+
+        /**
+         * @param memoryInGbs The total amount of memory available to the node, in gigabytes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryInGbs(Integer memoryInGbs) {
+            return memoryInGbs(Output.of(memoryInGbs));
+        }
+
+        /**
+         * @param nvmes The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(@Nullable Output<Integer> nvmes) {
+            $.nvmes = nvmes;
+            return this;
+        }
+
+        /**
+         * @param nvmes The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(Integer nvmes) {
+            return nvmes(Output.of(nvmes));
+        }
+
+        /**
+         * @param ocpus The total number of OCPUs available to the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ocpus(@Nullable Output<Integer> ocpus) {
+            $.ocpus = ocpus;
+            return this;
+        }
+
+        /**
+         * @param ocpus The total number of OCPUs available to the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ocpus(Integer ocpus) {
+            return ocpus(Output.of(ocpus));
+        }
+
+        /**
          * @param shape Shape of the node
          * 
          * @return builder
@@ -237,7 +349,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         public BdsInstanceCloudSqlDetailArgs build() {
-            $.blockVolumeSizeInGbs = Objects.requireNonNull($.blockVolumeSizeInGbs, "expected parameter 'blockVolumeSizeInGbs' to be non-null");
             $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
             return $;
         }

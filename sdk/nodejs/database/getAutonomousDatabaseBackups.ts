@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  */
 export function getAutonomousDatabaseBackups(args?: GetAutonomousDatabaseBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseBackupsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
         "compartmentId": args.compartmentId,
@@ -93,9 +91,27 @@ export interface GetAutonomousDatabaseBackupsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
+ *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.autonomous_database_backup_display_name,
+ *     state: _var.autonomous_database_backup_state,
+ * });
+ * ```
+ */
 export function getAutonomousDatabaseBackupsOutput(args?: GetAutonomousDatabaseBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseBackupsResult> {
-    return pulumi.output(args).apply(a => getAutonomousDatabaseBackups(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseBackups(a, opts))
 }
 
 /**

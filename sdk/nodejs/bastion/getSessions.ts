@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSessions(args: GetSessionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSessionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Bastion/getSessions:getSessions", {
         "bastionId": args.bastionId,
         "displayName": args.displayName,
@@ -86,9 +84,27 @@ export interface GetSessionsResult {
      */
     readonly sessions: outputs.Bastion.GetSessionsSession[];
 }
-
+/**
+ * This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
+ *
+ * Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSessions = oci.Bastion.getSessions({
+ *     bastionId: oci_bastion_bastion.test_bastion.id,
+ *     displayName: _var.session_display_name,
+ *     sessionId: oci_bastion_session.test_session.id,
+ *     sessionLifecycleState: _var.session_session_lifecycle_state,
+ * });
+ * ```
+ */
 export function getSessionsOutput(args: GetSessionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSessionsResult> {
-    return pulumi.output(args).apply(a => getSessions(a, opts))
+    return pulumi.output(args).apply((a: any) => getSessions(a, opts))
 }
 
 /**

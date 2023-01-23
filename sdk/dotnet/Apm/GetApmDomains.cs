@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Apm
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetApmDomainsResult> InvokeAsync(GetApmDomainsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetApmDomainsResult>("oci:Apm/getApmDomains:getApmDomains", args ?? new GetApmDomainsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetApmDomainsResult>("oci:Apm/getApmDomains:getApmDomains", args ?? new GetApmDomainsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Apm
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetApmDomainsResult> Invoke(GetApmDomainsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetApmDomainsResult>("oci:Apm/getApmDomains:getApmDomains", args ?? new GetApmDomainsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetApmDomainsResult>("oci:Apm/getApmDomains:getApmDomains", args ?? new GetApmDomainsInvokeArgs(), options.WithDefaults());
     }
 
 

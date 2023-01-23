@@ -22,7 +22,10 @@ class GetJavaReleaseResult:
     """
     A collection of values returned by getJavaRelease.
     """
-    def __init__(__self__, artifacts=None, family_details=None, family_version=None, id=None, license_details=None, license_type=None, parent_release_version=None, release_date=None, release_notes_url=None, release_type=None, release_version=None, security_status=None):
+    def __init__(__self__, artifact_content_types=None, artifacts=None, family_details=None, family_version=None, id=None, license_details=None, license_type=None, parent_release_version=None, release_date=None, release_notes_url=None, release_type=None, release_version=None, security_status=None):
+        if artifact_content_types and not isinstance(artifact_content_types, list):
+            raise TypeError("Expected argument 'artifact_content_types' to be a list")
+        pulumi.set(__self__, "artifact_content_types", artifact_content_types)
         if artifacts and not isinstance(artifacts, list):
             raise TypeError("Expected argument 'artifacts' to be a list")
         pulumi.set(__self__, "artifacts", artifacts)
@@ -61,6 +64,14 @@ class GetJavaReleaseResult:
         pulumi.set(__self__, "security_status", security_status)
 
     @property
+    @pulumi.getter(name="artifactContentTypes")
+    def artifact_content_types(self) -> Sequence[str]:
+        """
+        Artifact content types for the Java version.
+        """
+        return pulumi.get(self, "artifact_content_types")
+
+    @property
     @pulumi.getter
     def artifacts(self) -> Sequence['outputs.GetJavaReleaseArtifactResult']:
         """
@@ -72,7 +83,7 @@ class GetJavaReleaseResult:
     @pulumi.getter(name="familyDetails")
     def family_details(self) -> Sequence['outputs.GetJavaReleaseFamilyDetailResult']:
         """
-        Complete information of a specific Java release family.
+        Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
         """
         return pulumi.get(self, "family_details")
 
@@ -163,6 +174,7 @@ class AwaitableGetJavaReleaseResult(GetJavaReleaseResult):
         if False:
             yield self
         return GetJavaReleaseResult(
+            artifact_content_types=self.artifact_content_types,
             artifacts=self.artifacts,
             family_details=self.family_details,
             family_version=self.family_version,
@@ -202,6 +214,7 @@ def get_java_release(release_version: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getJavaRelease:getJavaRelease', __args__, opts=opts, typ=GetJavaReleaseResult).value
 
     return AwaitableGetJavaReleaseResult(
+        artifact_content_types=__ret__.artifact_content_types,
         artifacts=__ret__.artifacts,
         family_details=__ret__.family_details,
         family_version=__ret__.family_version,

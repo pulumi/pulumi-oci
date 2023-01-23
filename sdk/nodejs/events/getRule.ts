@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRule(args: GetRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetRuleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Events/getRule:getRule", {
         "ruleId": args.ruleId,
     }, opts);
@@ -97,9 +95,24 @@ export interface GetRuleResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Events service.
+ *
+ * Retrieves a rule.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRule = oci.Events.getRule({
+ *     ruleId: oci_events_rule.test_rule.id,
+ * });
+ * ```
+ */
 export function getRuleOutput(args: GetRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRuleResult> {
-    return pulumi.output(args).apply(a => getRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getRule(a, opts))
 }
 
 /**

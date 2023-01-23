@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCrossConnectPortSpeedShapeResult> InvokeAsync(GetCrossConnectPortSpeedShapeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCrossConnectPortSpeedShapeResult>("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args ?? new GetCrossConnectPortSpeedShapeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCrossConnectPortSpeedShapeResult>("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args ?? new GetCrossConnectPortSpeedShapeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCrossConnectPortSpeedShapeResult> Invoke(GetCrossConnectPortSpeedShapeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCrossConnectPortSpeedShapeResult>("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args ?? new GetCrossConnectPortSpeedShapeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectPortSpeedShapeResult>("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args ?? new GetCrossConnectPortSpeedShapeInvokeArgs(), options.WithDefaults());
     }
 
 

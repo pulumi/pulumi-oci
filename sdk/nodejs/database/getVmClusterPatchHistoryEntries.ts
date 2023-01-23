@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterPatchHistoryEntries(args: GetVmClusterPatchHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterPatchHistoryEntriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", {
         "filters": args.filters,
         "vmClusterId": args.vmClusterId,
@@ -59,9 +57,24 @@ export interface GetVmClusterPatchHistoryEntriesResult {
     readonly patchHistoryEntries: outputs.Database.GetVmClusterPatchHistoryEntriesPatchHistoryEntry[];
     readonly vmClusterId: string;
 }
-
+/**
+ * This data source provides the list of Vm Cluster Patch History Entries in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusterPatchHistoryEntries = oci.Database.getVmClusterPatchHistoryEntries({
+ *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ * });
+ * ```
+ */
 export function getVmClusterPatchHistoryEntriesOutput(args: GetVmClusterPatchHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterPatchHistoryEntriesResult> {
-    return pulumi.output(args).apply(a => getVmClusterPatchHistoryEntries(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterPatchHistoryEntries(a, opts))
 }
 
 /**

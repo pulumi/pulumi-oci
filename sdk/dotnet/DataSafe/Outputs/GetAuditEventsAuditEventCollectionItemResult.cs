@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string AuditPolicies;
         /// <summary>
-        /// The OCID of the audit trail that generated this audit event.
+        /// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
         /// </summary>
         public readonly string AuditTrailId;
         /// <summary>

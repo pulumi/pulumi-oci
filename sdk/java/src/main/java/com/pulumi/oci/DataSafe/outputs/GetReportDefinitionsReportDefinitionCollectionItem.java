@@ -44,6 +44,11 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      */
     private String compartmentId;
     /**
+     * @return The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * 
+     */
+    private List<String> complianceStandards;
+    /**
      * @return Specifies the name of a resource that provides data for the report. For example  alerts, events.
      * 
      */
@@ -88,6 +93,36 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      * 
      */
     private String parentId;
+    /**
+     * @return The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * 
+     */
+    private String recordTimeSpan;
+    /**
+     * @return Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * 
+     */
+    private String schedule;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * 
+     */
+    private String scheduledReportCompartmentId;
+    /**
+     * @return Specifies the format of report to be excel or pdf
+     * 
+     */
+    private String scheduledReportMimeType;
+    /**
+     * @return The name of the report to be scheduled.
+     * 
+     */
+    private String scheduledReportName;
+    /**
+     * @return Specifies the limit on number of rows in report.
+     * 
+     */
+    private Integer scheduledReportRowLimit;
     /**
      * @return Additional scim filters used to get the specific summary.
      * 
@@ -156,6 +191,13 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
         return this.compartmentId;
     }
     /**
+     * @return The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * 
+     */
+    public List<String> complianceStandards() {
+        return this.complianceStandards;
+    }
+    /**
      * @return Specifies the name of a resource that provides data for the report. For example  alerts, events.
      * 
      */
@@ -219,6 +261,48 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
         return this.parentId;
     }
     /**
+     * @return The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * 
+     */
+    public String recordTimeSpan() {
+        return this.recordTimeSpan;
+    }
+    /**
+     * @return Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * 
+     */
+    public String schedule() {
+        return this.schedule;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * 
+     */
+    public String scheduledReportCompartmentId() {
+        return this.scheduledReportCompartmentId;
+    }
+    /**
+     * @return Specifies the format of report to be excel or pdf
+     * 
+     */
+    public String scheduledReportMimeType() {
+        return this.scheduledReportMimeType;
+    }
+    /**
+     * @return The name of the report to be scheduled.
+     * 
+     */
+    public String scheduledReportName() {
+        return this.scheduledReportName;
+    }
+    /**
+     * @return Specifies the limit on number of rows in report.
+     * 
+     */
+    public Integer scheduledReportRowLimit() {
+        return this.scheduledReportRowLimit;
+    }
+    /**
      * @return Additional scim filters used to get the specific summary.
      * 
      */
@@ -275,6 +359,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
         private List<GetReportDefinitionsReportDefinitionCollectionItemColumnInfo> columnInfos;
         private List<GetReportDefinitionsReportDefinitionCollectionItemColumnSorting> columnSortings;
         private String compartmentId;
+        private List<String> complianceStandards;
         private String dataSource;
         private Map<String,Object> definedTags;
         private String description;
@@ -284,6 +369,12 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
         private String id;
         private Boolean isSeeded;
         private String parentId;
+        private String recordTimeSpan;
+        private String schedule;
+        private String scheduledReportCompartmentId;
+        private String scheduledReportMimeType;
+        private String scheduledReportName;
+        private Integer scheduledReportRowLimit;
         private String scimFilter;
         private String state;
         private List<GetReportDefinitionsReportDefinitionCollectionItemSummary> summaries;
@@ -298,6 +389,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
     	      this.columnInfos = defaults.columnInfos;
     	      this.columnSortings = defaults.columnSortings;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.complianceStandards = defaults.complianceStandards;
     	      this.dataSource = defaults.dataSource;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -307,6 +399,12 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
     	      this.id = defaults.id;
     	      this.isSeeded = defaults.isSeeded;
     	      this.parentId = defaults.parentId;
+    	      this.recordTimeSpan = defaults.recordTimeSpan;
+    	      this.schedule = defaults.schedule;
+    	      this.scheduledReportCompartmentId = defaults.scheduledReportCompartmentId;
+    	      this.scheduledReportMimeType = defaults.scheduledReportMimeType;
+    	      this.scheduledReportName = defaults.scheduledReportName;
+    	      this.scheduledReportRowLimit = defaults.scheduledReportRowLimit;
     	      this.scimFilter = defaults.scimFilter;
     	      this.state = defaults.state;
     	      this.summaries = defaults.summaries;
@@ -348,6 +446,14 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder complianceStandards(List<String> complianceStandards) {
+            this.complianceStandards = Objects.requireNonNull(complianceStandards);
+            return this;
+        }
+        public Builder complianceStandards(String... complianceStandards) {
+            return complianceStandards(List.of(complianceStandards));
         }
         @CustomType.Setter
         public Builder dataSource(String dataSource) {
@@ -395,6 +501,36 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder recordTimeSpan(String recordTimeSpan) {
+            this.recordTimeSpan = Objects.requireNonNull(recordTimeSpan);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder schedule(String schedule) {
+            this.schedule = Objects.requireNonNull(schedule);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scheduledReportCompartmentId(String scheduledReportCompartmentId) {
+            this.scheduledReportCompartmentId = Objects.requireNonNull(scheduledReportCompartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scheduledReportMimeType(String scheduledReportMimeType) {
+            this.scheduledReportMimeType = Objects.requireNonNull(scheduledReportMimeType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scheduledReportName(String scheduledReportName) {
+            this.scheduledReportName = Objects.requireNonNull(scheduledReportName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scheduledReportRowLimit(Integer scheduledReportRowLimit) {
+            this.scheduledReportRowLimit = Objects.requireNonNull(scheduledReportRowLimit);
+            return this;
+        }
+        @CustomType.Setter
         public Builder scimFilter(String scimFilter) {
             this.scimFilter = Objects.requireNonNull(scimFilter);
             return this;
@@ -434,6 +570,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
             o.columnInfos = columnInfos;
             o.columnSortings = columnSortings;
             o.compartmentId = compartmentId;
+            o.complianceStandards = complianceStandards;
             o.dataSource = dataSource;
             o.definedTags = definedTags;
             o.description = description;
@@ -443,6 +580,12 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
             o.id = id;
             o.isSeeded = isSeeded;
             o.parentId = parentId;
+            o.recordTimeSpan = recordTimeSpan;
+            o.schedule = schedule;
+            o.scheduledReportCompartmentId = scheduledReportCompartmentId;
+            o.scheduledReportMimeType = scheduledReportMimeType;
+            o.scheduledReportName = scheduledReportName;
+            o.scheduledReportRowLimit = scheduledReportRowLimit;
             o.scimFilter = scimFilter;
             o.state = state;
             o.summaries = summaries;

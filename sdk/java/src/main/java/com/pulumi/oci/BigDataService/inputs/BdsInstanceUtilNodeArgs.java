@@ -21,15 +21,15 @@ public final class BdsInstanceUtilNodeArgs extends com.pulumi.resources.Resource
      * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    @Import(name="blockVolumeSizeInGbs", required=true)
-    private Output<String> blockVolumeSizeInGbs;
+    @Import(name="blockVolumeSizeInGbs")
+    private @Nullable Output<String> blockVolumeSizeInGbs;
 
     /**
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    public Output<String> blockVolumeSizeInGbs() {
-        return this.blockVolumeSizeInGbs;
+    public Optional<Output<String>> blockVolumeSizeInGbs() {
+        return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
 
     /**
@@ -126,7 +126,7 @@ public final class BdsInstanceUtilNodeArgs extends com.pulumi.resources.Resource
          * @return builder
          * 
          */
-        public Builder blockVolumeSizeInGbs(Output<String> blockVolumeSizeInGbs) {
+        public Builder blockVolumeSizeInGbs(@Nullable Output<String> blockVolumeSizeInGbs) {
             $.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
@@ -226,7 +226,6 @@ public final class BdsInstanceUtilNodeArgs extends com.pulumi.resources.Resource
         }
 
         public BdsInstanceUtilNodeArgs build() {
-            $.blockVolumeSizeInGbs = Objects.requireNonNull($.blockVolumeSizeInGbs, "expected parameter 'blockVolumeSizeInGbs' to be non-null");
             $.numberOfNodes = Objects.requireNonNull($.numberOfNodes, "expected parameter 'numberOfNodes' to be non-null");
             $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
             $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Secrets
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecretbundleVersionsResult> InvokeAsync(GetSecretbundleVersionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecretbundleVersionsResult>("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", args ?? new GetSecretbundleVersionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecretbundleVersionsResult>("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", args ?? new GetSecretbundleVersionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Secrets
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecretbundleVersionsResult> Invoke(GetSecretbundleVersionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecretbundleVersionsResult>("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", args ?? new GetSecretbundleVersionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecretbundleVersionsResult>("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", args ?? new GetSecretbundleVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

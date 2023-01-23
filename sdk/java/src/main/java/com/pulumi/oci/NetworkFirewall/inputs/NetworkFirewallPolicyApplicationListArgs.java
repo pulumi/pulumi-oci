@@ -5,8 +5,9 @@ package com.pulumi.oci.NetworkFirewall.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Integer;
+import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyApplicationListApplicationValueArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,69 +17,41 @@ public final class NetworkFirewallPolicyApplicationListArgs extends com.pulumi.r
 
     public static final NetworkFirewallPolicyApplicationListArgs Empty = new NetworkFirewallPolicyApplicationListArgs();
 
-    @Import(name="icmpCode")
-    private @Nullable Output<Integer> icmpCode;
+    /**
+     * (Updatable) The key is the identifier by which the application list is referenced.
+     * 
+     */
+    @Import(name="applicationListName", required=true)
+    private Output<String> applicationListName;
 
-    public Optional<Output<Integer>> icmpCode() {
-        return Optional.ofNullable(this.icmpCode);
-    }
-
-    @Import(name="icmpType")
-    private @Nullable Output<Integer> icmpType;
-
-    public Optional<Output<Integer>> icmpType() {
-        return Optional.ofNullable(this.icmpType);
-    }
-
-    @Import(name="key", required=true)
-    private Output<String> key;
-
-    public Output<String> key() {
-        return this.key;
-    }
-
-    @Import(name="maximumPort")
-    private @Nullable Output<Integer> maximumPort;
-
-    public Optional<Output<Integer>> maximumPort() {
-        return Optional.ofNullable(this.maximumPort);
-    }
-
-    @Import(name="minimumPort")
-    private @Nullable Output<Integer> minimumPort;
-
-    public Optional<Output<Integer>> minimumPort() {
-        return Optional.ofNullable(this.minimumPort);
+    /**
+     * @return (Updatable) The key is the identifier by which the application list is referenced.
+     * 
+     */
+    public Output<String> applicationListName() {
+        return this.applicationListName;
     }
 
     /**
-     * (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * (Updatable) Details about the application
      * 
      */
-    @Import(name="type", required=true)
-    private Output<String> type;
+    @Import(name="applicationValues")
+    private @Nullable Output<List<NetworkFirewallPolicyApplicationListApplicationValueArgs>> applicationValues;
 
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) Details about the application
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Optional<Output<List<NetworkFirewallPolicyApplicationListApplicationValueArgs>>> applicationValues() {
+        return Optional.ofNullable(this.applicationValues);
     }
 
     private NetworkFirewallPolicyApplicationListArgs() {}
 
     private NetworkFirewallPolicyApplicationListArgs(NetworkFirewallPolicyApplicationListArgs $) {
-        this.icmpCode = $.icmpCode;
-        this.icmpType = $.icmpType;
-        this.key = $.key;
-        this.maximumPort = $.maximumPort;
-        this.minimumPort = $.minimumPort;
-        this.type = $.type;
+        this.applicationListName = $.applicationListName;
+        this.applicationValues = $.applicationValues;
     }
 
     public static Builder builder() {
@@ -99,79 +72,60 @@ public final class NetworkFirewallPolicyApplicationListArgs extends com.pulumi.r
             $ = new NetworkFirewallPolicyApplicationListArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder icmpCode(@Nullable Output<Integer> icmpCode) {
-            $.icmpCode = icmpCode;
-            return this;
-        }
-
-        public Builder icmpCode(Integer icmpCode) {
-            return icmpCode(Output.of(icmpCode));
-        }
-
-        public Builder icmpType(@Nullable Output<Integer> icmpType) {
-            $.icmpType = icmpType;
-            return this;
-        }
-
-        public Builder icmpType(Integer icmpType) {
-            return icmpType(Output.of(icmpType));
-        }
-
-        public Builder key(Output<String> key) {
-            $.key = key;
-            return this;
-        }
-
-        public Builder key(String key) {
-            return key(Output.of(key));
-        }
-
-        public Builder maximumPort(@Nullable Output<Integer> maximumPort) {
-            $.maximumPort = maximumPort;
-            return this;
-        }
-
-        public Builder maximumPort(Integer maximumPort) {
-            return maximumPort(Output.of(maximumPort));
-        }
-
-        public Builder minimumPort(@Nullable Output<Integer> minimumPort) {
-            $.minimumPort = minimumPort;
-            return this;
-        }
-
-        public Builder minimumPort(Integer minimumPort) {
-            return minimumPort(Output.of(minimumPort));
-        }
-
         /**
-         * @param type (Updatable) Type of the secrets mapped based on the policy.
-         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         * @param applicationListName (Updatable) The key is the identifier by which the application list is referenced.
          * 
          * @return builder
          * 
          */
-        public Builder type(Output<String> type) {
-            $.type = type;
+        public Builder applicationListName(Output<String> applicationListName) {
+            $.applicationListName = applicationListName;
             return this;
         }
 
         /**
-         * @param type (Updatable) Type of the secrets mapped based on the policy.
-         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         * @param applicationListName (Updatable) The key is the identifier by which the application list is referenced.
          * 
          * @return builder
          * 
          */
-        public Builder type(String type) {
-            return type(Output.of(type));
+        public Builder applicationListName(String applicationListName) {
+            return applicationListName(Output.of(applicationListName));
+        }
+
+        /**
+         * @param applicationValues (Updatable) Details about the application
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationValues(@Nullable Output<List<NetworkFirewallPolicyApplicationListApplicationValueArgs>> applicationValues) {
+            $.applicationValues = applicationValues;
+            return this;
+        }
+
+        /**
+         * @param applicationValues (Updatable) Details about the application
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationValues(List<NetworkFirewallPolicyApplicationListApplicationValueArgs> applicationValues) {
+            return applicationValues(Output.of(applicationValues));
+        }
+
+        /**
+         * @param applicationValues (Updatable) Details about the application
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationValues(NetworkFirewallPolicyApplicationListApplicationValueArgs... applicationValues) {
+            return applicationValues(List.of(applicationValues));
         }
 
         public NetworkFirewallPolicyApplicationListArgs build() {
-            $.key = Objects.requireNonNull($.key, "expected parameter 'key' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            $.applicationListName = Objects.requireNonNull($.applicationListName, "expected parameter 'applicationListName' to be non-null");
             return $;
         }
     }

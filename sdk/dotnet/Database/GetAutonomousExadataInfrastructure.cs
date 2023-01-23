@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousExadataInfrastructureResult> InvokeAsync(GetAutonomousExadataInfrastructureArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousExadataInfrastructureResult>("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", args ?? new GetAutonomousExadataInfrastructureArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousExadataInfrastructureResult>("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", args ?? new GetAutonomousExadataInfrastructureArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousExadataInfrastructureResult> Invoke(GetAutonomousExadataInfrastructureInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousExadataInfrastructureResult>("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", args ?? new GetAutonomousExadataInfrastructureInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousExadataInfrastructureResult>("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", args ?? new GetAutonomousExadataInfrastructureInvokeArgs(), options.WithDefaults());
     }
 
 

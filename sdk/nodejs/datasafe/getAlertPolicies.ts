@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertPolicies(args: GetAlertPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertPoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlertPolicies:getAlertPolicies", {
         "accessLevel": args.accessLevel,
         "alertPolicyId": args.alertPolicyId,
@@ -134,9 +132,33 @@ export interface GetAlertPoliciesResult {
     readonly timeCreatedLessThan?: string;
     readonly type?: string;
 }
-
+/**
+ * This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of all alert policies.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlertPolicies = oci.DataSafe.getAlertPolicies({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.alert_policy_access_level,
+ *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
+ *     compartmentIdInSubtree: _var.alert_policy_compartment_id_in_subtree,
+ *     displayName: _var.alert_policy_display_name,
+ *     isUserDefined: _var.alert_policy_is_user_defined,
+ *     state: _var.alert_policy_state,
+ *     timeCreatedGreaterThanOrEqualTo: _var.alert_policy_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.alert_policy_time_created_less_than,
+ *     type: _var.alert_policy_type,
+ * });
+ * ```
+ */
 export function getAlertPoliciesOutput(args: GetAlertPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertPoliciesResult> {
-    return pulumi.output(args).apply(a => getAlertPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlertPolicies(a, opts))
 }
 
 /**

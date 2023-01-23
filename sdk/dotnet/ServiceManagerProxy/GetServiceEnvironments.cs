@@ -43,7 +43,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetServiceEnvironmentsResult> InvokeAsync(GetServiceEnvironmentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetServiceEnvironmentsResult>("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args ?? new GetServiceEnvironmentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceEnvironmentsResult>("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args ?? new GetServiceEnvironmentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetServiceEnvironmentsResult> Invoke(GetServiceEnvironmentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentsResult>("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args ?? new GetServiceEnvironmentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentsResult>("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args ?? new GetServiceEnvironmentsInvokeArgs(), options.WithDefaults());
     }
 
 

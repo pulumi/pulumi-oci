@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabasesResult> InvokeAsync(GetDatabasesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabasesResult>("oci:Database/getDatabases:getDatabases", args ?? new GetDatabasesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabasesResult>("oci:Database/getDatabases:getDatabases", args ?? new GetDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabasesResult> Invoke(GetDatabasesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabasesResult>("oci:Database/getDatabases:getDatabases", args ?? new GetDatabasesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabasesResult>("oci:Database/getDatabases:getDatabases", args ?? new GetDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

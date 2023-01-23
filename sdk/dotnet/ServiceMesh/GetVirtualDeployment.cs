@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVirtualDeploymentResult> InvokeAsync(GetVirtualDeploymentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVirtualDeploymentResult>("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", args ?? new GetVirtualDeploymentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualDeploymentResult>("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", args ?? new GetVirtualDeploymentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVirtualDeploymentResult> Invoke(GetVirtualDeploymentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVirtualDeploymentResult>("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", args ?? new GetVirtualDeploymentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualDeploymentResult>("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", args ?? new GetVirtualDeploymentInvokeArgs(), options.WithDefaults());
     }
 
 

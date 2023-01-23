@@ -46,10 +46,14 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				LogSet:            pulumi.Any(_var.Log_analytics_object_collection_rule_log_set),
+//				LogSetExtRegex:    pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_ext_regex),
+//				LogSetKey:         pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_key),
 //				ObjectNameFilters: pulumi.Any(_var.Log_analytics_object_collection_rule_object_name_filters),
 //				Overrides:         pulumi.Any(_var.Log_analytics_object_collection_rule_overrides),
 //				PollSince:         pulumi.Any(_var.Log_analytics_object_collection_rule_poll_since),
 //				PollTill:          pulumi.Any(_var.Log_analytics_object_collection_rule_poll_till),
+//				Timezone:          pulumi.Any(_var.Log_analytics_object_collection_rule_timezone),
 //			})
 //			if err != nil {
 //				return err
@@ -90,6 +94,12 @@ type LogAnalyticsObjectCollectionRule struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringOutput `pulumi:"logGroupId"`
+	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+	LogSet pulumi.StringOutput `pulumi:"logSet"`
+	// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+	LogSetExtRegex pulumi.StringOutput `pulumi:"logSetExtRegex"`
+	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+	LogSetKey pulumi.StringOutput `pulumi:"logSetKey"`
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName pulumi.StringOutput `pulumi:"logSourceName"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
@@ -102,11 +112,11 @@ type LogAnalyticsObjectCollectionRule struct {
 	OsBucketName pulumi.StringOutput `pulumi:"osBucketName"`
 	// Object Storage namespace.
 	OsNamespace pulumi.StringOutput `pulumi:"osNamespace"`
-	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
 	Overrides LogAnalyticsObjectCollectionRuleOverrideArrayOutput `pulumi:"overrides"`
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 	PollSince pulumi.StringOutput `pulumi:"pollSince"`
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+	// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 	PollTill pulumi.StringOutput `pulumi:"pollTill"`
 	// The current state of the rule.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -114,6 +124,8 @@ type LogAnalyticsObjectCollectionRule struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	Timezone pulumi.StringOutput `pulumi:"timezone"`
 }
 
 // NewLogAnalyticsObjectCollectionRule registers a new resource with the given unique name, arguments, and options.
@@ -181,6 +193,12 @@ type logAnalyticsObjectCollectionRuleState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId *string `pulumi:"logGroupId"`
+	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+	LogSet *string `pulumi:"logSet"`
+	// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+	LogSetExtRegex *string `pulumi:"logSetExtRegex"`
+	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+	LogSetKey *string `pulumi:"logSetKey"`
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName *string `pulumi:"logSourceName"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
@@ -193,11 +211,11 @@ type logAnalyticsObjectCollectionRuleState struct {
 	OsBucketName *string `pulumi:"osBucketName"`
 	// Object Storage namespace.
 	OsNamespace *string `pulumi:"osNamespace"`
-	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
 	Overrides []LogAnalyticsObjectCollectionRuleOverride `pulumi:"overrides"`
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 	PollSince *string `pulumi:"pollSince"`
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+	// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 	PollTill *string `pulumi:"pollTill"`
 	// The current state of the rule.
 	State *string `pulumi:"state"`
@@ -205,6 +223,8 @@ type logAnalyticsObjectCollectionRuleState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	Timezone *string `pulumi:"timezone"`
 }
 
 type LogAnalyticsObjectCollectionRuleState struct {
@@ -226,6 +246,12 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringPtrInput
+	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+	LogSet pulumi.StringPtrInput
+	// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+	LogSetExtRegex pulumi.StringPtrInput
+	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+	LogSetKey pulumi.StringPtrInput
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName pulumi.StringPtrInput
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
@@ -238,11 +264,11 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	OsBucketName pulumi.StringPtrInput
 	// Object Storage namespace.
 	OsNamespace pulumi.StringPtrInput
-	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
 	Overrides LogAnalyticsObjectCollectionRuleOverrideArrayInput
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 	PollSince pulumi.StringPtrInput
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+	// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 	PollTill pulumi.StringPtrInput
 	// The current state of the rule.
 	State pulumi.StringPtrInput
@@ -250,6 +276,8 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	Timezone pulumi.StringPtrInput
 }
 
 func (LogAnalyticsObjectCollectionRuleState) ElementType() reflect.Type {
@@ -273,6 +301,12 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId string `pulumi:"logGroupId"`
+	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+	LogSet *string `pulumi:"logSet"`
+	// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+	LogSetExtRegex *string `pulumi:"logSetExtRegex"`
+	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+	LogSetKey *string `pulumi:"logSetKey"`
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName string `pulumi:"logSourceName"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
@@ -285,12 +319,14 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	OsBucketName string `pulumi:"osBucketName"`
 	// Object Storage namespace.
 	OsNamespace string `pulumi:"osNamespace"`
-	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
 	Overrides []LogAnalyticsObjectCollectionRuleOverride `pulumi:"overrides"`
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 	PollSince *string `pulumi:"pollSince"`
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+	// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 	PollTill *string `pulumi:"pollTill"`
+	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	Timezone *string `pulumi:"timezone"`
 }
 
 // The set of arguments for constructing a LogAnalyticsObjectCollectionRule resource.
@@ -311,6 +347,12 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringInput
+	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+	LogSet pulumi.StringPtrInput
+	// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+	LogSetExtRegex pulumi.StringPtrInput
+	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+	LogSetKey pulumi.StringPtrInput
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName pulumi.StringInput
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
@@ -323,12 +365,14 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	OsBucketName pulumi.StringInput
 	// Object Storage namespace.
 	OsNamespace pulumi.StringInput
-	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+	// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
 	Overrides LogAnalyticsObjectCollectionRuleOverrideArrayInput
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 	PollSince pulumi.StringPtrInput
-	// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+	// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 	PollTill pulumi.StringPtrInput
+	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	Timezone pulumi.StringPtrInput
 }
 
 func (LogAnalyticsObjectCollectionRuleArgs) ElementType() reflect.Type {
@@ -463,6 +507,21 @@ func (o LogAnalyticsObjectCollectionRuleOutput) LogGroupId() pulumi.StringOutput
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogGroupId }).(pulumi.StringOutput)
 }
 
+// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+func (o LogAnalyticsObjectCollectionRuleOutput) LogSet() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogSet }).(pulumi.StringOutput)
+}
+
+// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+func (o LogAnalyticsObjectCollectionRuleOutput) LogSetExtRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogSetExtRegex }).(pulumi.StringOutput)
+}
+
+// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+func (o LogAnalyticsObjectCollectionRuleOutput) LogSetKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogSetKey }).(pulumi.StringOutput)
+}
+
 // (Updatable) Name of the Logging Analytics Source to use for the processing.
 func (o LogAnalyticsObjectCollectionRuleOutput) LogSourceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogSourceName }).(pulumi.StringOutput)
@@ -493,19 +552,19 @@ func (o LogAnalyticsObjectCollectionRuleOutput) OsNamespace() pulumi.StringOutpu
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.OsNamespace }).(pulumi.StringOutput)
 }
 
-// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+// (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
 func (o LogAnalyticsObjectCollectionRuleOutput) Overrides() LogAnalyticsObjectCollectionRuleOverrideArrayOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) LogAnalyticsObjectCollectionRuleOverrideArrayOutput {
 		return v.Overrides
 	}).(LogAnalyticsObjectCollectionRuleOverrideArrayOutput)
 }
 
-// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 func (o LogAnalyticsObjectCollectionRuleOutput) PollSince() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.PollSince }).(pulumi.StringOutput)
 }
 
-// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 func (o LogAnalyticsObjectCollectionRuleOutput) PollTill() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.PollTill }).(pulumi.StringOutput)
 }
@@ -523,6 +582,11 @@ func (o LogAnalyticsObjectCollectionRuleOutput) TimeCreated() pulumi.StringOutpu
 // The time when this rule was last updated. An RFC3339 formatted datetime string.
 func (o LogAnalyticsObjectCollectionRuleOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+func (o LogAnalyticsObjectCollectionRuleOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.Timezone }).(pulumi.StringOutput)
 }
 
 type LogAnalyticsObjectCollectionRuleArrayOutput struct{ *pulumi.OutputState }

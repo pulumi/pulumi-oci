@@ -29,6 +29,10 @@ import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelProvenancePlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelVersionSetPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
@@ -52,6 +56,8 @@ import com.pulumi.oci.DataScience.outputs.GetModelDeploymentShapesResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsResult;
 import com.pulumi.oci.DataScience.outputs.GetModelProvenanceResult;
 import com.pulumi.oci.DataScience.outputs.GetModelResult;
+import com.pulumi.oci.DataScience.outputs.GetModelVersionSetResult;
+import com.pulumi.oci.DataScience.outputs.GetModelVersionSetsResult;
 import com.pulumi.oci.DataScience.outputs.GetModelsResult;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionResult;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionShapesResult;
@@ -1051,7 +1057,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1090,7 +1096,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1129,7 +1135,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1168,7 +1174,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1839,6 +1845,338 @@ public final class DataScienceFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModelProvenance:getModelProvenance", TypeShape.of(GetModelProvenanceResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified model version set information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
+     *             .modelVersionSetId(oci_datascience_model_version_set.test_model_version_set().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetModelVersionSetResult> getModelVersionSet(GetModelVersionSetArgs args) {
+        return getModelVersionSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified model version set information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
+     *             .modelVersionSetId(oci_datascience_model_version_set.test_model_version_set().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetModelVersionSetResult> getModelVersionSetPlain(GetModelVersionSetPlainArgs args) {
+        return getModelVersionSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified model version set information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
+     *             .modelVersionSetId(oci_datascience_model_version_set.test_model_version_set().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetModelVersionSetResult> getModelVersionSet(GetModelVersionSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelVersionSet:getModelVersionSet", TypeShape.of(GetModelVersionSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified model version set information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
+     *             .modelVersionSetId(oci_datascience_model_version_set.test_model_version_set().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetModelVersionSetResult> getModelVersionSetPlain(GetModelVersionSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelVersionSet:getModelVersionSet", TypeShape.of(GetModelVersionSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists model version sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_version_set_created_by())
+     *             .id(var_.model_version_set_id())
+     *             .name(var_.model_version_set_name())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_version_set_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetModelVersionSetsResult> getModelVersionSets(GetModelVersionSetsArgs args) {
+        return getModelVersionSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists model version sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_version_set_created_by())
+     *             .id(var_.model_version_set_id())
+     *             .name(var_.model_version_set_name())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_version_set_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetModelVersionSetsResult> getModelVersionSetsPlain(GetModelVersionSetsPlainArgs args) {
+        return getModelVersionSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists model version sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_version_set_created_by())
+     *             .id(var_.model_version_set_id())
+     *             .name(var_.model_version_set_name())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_version_set_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetModelVersionSetsResult> getModelVersionSets(GetModelVersionSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelVersionSets:getModelVersionSets", TypeShape.of(GetModelVersionSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists model version sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_version_set_created_by())
+     *             .id(var_.model_version_set_id())
+     *             .name(var_.model_version_set_name())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_version_set_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetModelVersionSetsResult> getModelVersionSetsPlain(GetModelVersionSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelVersionSets:getModelVersionSets", TypeShape.of(GetModelVersionSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Data Science service.
      * 
      * Lists models in the specified compartment.
@@ -1851,7 +2189,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1870,6 +2208,7 @@ public final class DataScienceFunctions {
      *             .createdBy(var_.model_created_by())
      *             .displayName(var_.model_display_name())
      *             .id(var_.model_id())
+     *             .modelVersionSetName(oci_datascience_model_version_set.test_model_version_set().name())
      *             .projectId(oci_datascience_project.test_project().id())
      *             .state(var_.model_state())
      *             .build());
@@ -1895,7 +2234,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1914,6 +2253,7 @@ public final class DataScienceFunctions {
      *             .createdBy(var_.model_created_by())
      *             .displayName(var_.model_display_name())
      *             .id(var_.model_id())
+     *             .modelVersionSetName(oci_datascience_model_version_set.test_model_version_set().name())
      *             .projectId(oci_datascience_project.test_project().id())
      *             .state(var_.model_state())
      *             .build());
@@ -1939,7 +2279,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1958,6 +2298,7 @@ public final class DataScienceFunctions {
      *             .createdBy(var_.model_created_by())
      *             .displayName(var_.model_display_name())
      *             .id(var_.model_id())
+     *             .modelVersionSetName(oci_datascience_model_version_set.test_model_version_set().name())
      *             .projectId(oci_datascience_project.test_project().id())
      *             .state(var_.model_state())
      *             .build());
@@ -1983,7 +2324,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2002,6 +2343,7 @@ public final class DataScienceFunctions {
      *             .createdBy(var_.model_created_by())
      *             .displayName(var_.model_display_name())
      *             .id(var_.model_id())
+     *             .modelVersionSetName(oci_datascience_model_version_set.test_model_version_set().name())
      *             .projectId(oci_datascience_project.test_project().id())
      *             .state(var_.model_state())
      *             .build());
@@ -2515,7 +2857,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2554,7 +2896,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2593,7 +2935,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2632,7 +2974,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2671,7 +3013,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2714,7 +3056,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2757,7 +3099,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -2800,7 +3142,7 @@ public final class DataScienceFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
-     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

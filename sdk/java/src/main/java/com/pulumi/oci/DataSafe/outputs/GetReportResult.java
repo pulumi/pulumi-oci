@@ -67,6 +67,11 @@ public final class GetReportResult {
      * 
      */
     private String timeGenerated;
+    /**
+     * @return The type of the report.
+     * 
+     */
+    private String type;
 
     private GetReportResult() {}
     /**
@@ -149,6 +154,13 @@ public final class GetReportResult {
     public String timeGenerated() {
         return this.timeGenerated;
     }
+    /**
+     * @return The type of the report.
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -171,6 +183,7 @@ public final class GetReportResult {
         private String state;
         private Map<String,Object> systemTags;
         private String timeGenerated;
+        private String type;
         public Builder() {}
         public Builder(GetReportResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -186,6 +199,7 @@ public final class GetReportResult {
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeGenerated = defaults.timeGenerated;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -248,6 +262,11 @@ public final class GetReportResult {
             this.timeGenerated = Objects.requireNonNull(timeGenerated);
             return this;
         }
+        @CustomType.Setter
+        public Builder type(String type) {
+            this.type = Objects.requireNonNull(type);
+            return this;
+        }
         public GetReportResult build() {
             final var o = new GetReportResult();
             o.compartmentId = compartmentId;
@@ -262,6 +281,7 @@ public final class GetReportResult {
             o.state = state;
             o.systemTags = systemTags;
             o.timeGenerated = timeGenerated;
+            o.type = type;
             return o;
         }
     }

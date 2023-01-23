@@ -6,11 +6,15 @@ package com.pulumi.oci.ApiGateway.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs;
+import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs;
+import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -33,6 +37,21 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationArgs exte
      */
     public Optional<Output<List<String>>> audiences() {
         return Optional.ofNullable(this.audiences);
+    }
+
+    /**
+     * (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * 
+     */
+    @Import(name="cacheKeys")
+    private @Nullable Output<List<String>> cacheKeys;
+
+    /**
+     * @return (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * 
+     */
+    public Optional<Output<List<String>>> cacheKeys() {
+        return Optional.ofNullable(this.cacheKeys);
     }
 
     /**
@@ -93,6 +112,21 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationArgs exte
      */
     public Optional<Output<Double>> maxClockSkewInSeconds() {
         return Optional.ofNullable(this.maxClockSkewInSeconds);
+    }
+
+    /**
+     * (Updatable)
+     * 
+     */
+    @Import(name="parameters")
+    private @Nullable Output<Map<String,Object>> parameters;
+
+    /**
+     * @return (Updatable)
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> parameters() {
+        return Optional.ofNullable(this.parameters);
     }
 
     /**
@@ -171,6 +205,36 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationArgs exte
     }
 
     /**
+     * (Updatable) Policy for defining behaviour on validation failure.
+     * 
+     */
+    @Import(name="validationFailurePolicy")
+    private @Nullable Output<DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs> validationFailurePolicy;
+
+    /**
+     * @return (Updatable) Policy for defining behaviour on validation failure.
+     * 
+     */
+    public Optional<Output<DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs>> validationFailurePolicy() {
+        return Optional.ofNullable(this.validationFailurePolicy);
+    }
+
+    /**
+     * (Updatable) Authentication Policies for the Token Authentication types.
+     * 
+     */
+    @Import(name="validationPolicy")
+    private @Nullable Output<DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs> validationPolicy;
+
+    /**
+     * @return (Updatable) Authentication Policies for the Token Authentication types.
+     * 
+     */
+    public Optional<Output<DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs>> validationPolicy() {
+        return Optional.ofNullable(this.validationPolicy);
+    }
+
+    /**
      * (Updatable) A list of claims which should be validated to consider the token valid.
      * 
      */
@@ -189,15 +253,19 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationArgs exte
 
     private DeploymentSpecificationRequestPoliciesAuthenticationArgs(DeploymentSpecificationRequestPoliciesAuthenticationArgs $) {
         this.audiences = $.audiences;
+        this.cacheKeys = $.cacheKeys;
         this.functionId = $.functionId;
         this.isAnonymousAccessAllowed = $.isAnonymousAccessAllowed;
         this.issuers = $.issuers;
         this.maxClockSkewInSeconds = $.maxClockSkewInSeconds;
+        this.parameters = $.parameters;
         this.publicKeys = $.publicKeys;
         this.tokenAuthScheme = $.tokenAuthScheme;
         this.tokenHeader = $.tokenHeader;
         this.tokenQueryParam = $.tokenQueryParam;
         this.type = $.type;
+        this.validationFailurePolicy = $.validationFailurePolicy;
+        this.validationPolicy = $.validationPolicy;
         this.verifyClaims = $.verifyClaims;
     }
 
@@ -248,6 +316,37 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationArgs exte
          */
         public Builder audiences(String... audiences) {
             return audiences(List.of(audiences));
+        }
+
+        /**
+         * @param cacheKeys (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cacheKeys(@Nullable Output<List<String>> cacheKeys) {
+            $.cacheKeys = cacheKeys;
+            return this;
+        }
+
+        /**
+         * @param cacheKeys (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cacheKeys(List<String> cacheKeys) {
+            return cacheKeys(Output.of(cacheKeys));
+        }
+
+        /**
+         * @param cacheKeys (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cacheKeys(String... cacheKeys) {
+            return cacheKeys(List.of(cacheKeys));
         }
 
         /**
@@ -342,6 +441,27 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationArgs exte
          */
         public Builder maxClockSkewInSeconds(Double maxClockSkewInSeconds) {
             return maxClockSkewInSeconds(Output.of(maxClockSkewInSeconds));
+        }
+
+        /**
+         * @param parameters (Updatable)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(@Nullable Output<Map<String,Object>> parameters) {
+            $.parameters = parameters;
+            return this;
+        }
+
+        /**
+         * @param parameters (Updatable)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(Map<String,Object> parameters) {
+            return parameters(Output.of(parameters));
         }
 
         /**
@@ -447,6 +567,48 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationArgs exte
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        /**
+         * @param validationFailurePolicy (Updatable) Policy for defining behaviour on validation failure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validationFailurePolicy(@Nullable Output<DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs> validationFailurePolicy) {
+            $.validationFailurePolicy = validationFailurePolicy;
+            return this;
+        }
+
+        /**
+         * @param validationFailurePolicy (Updatable) Policy for defining behaviour on validation failure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validationFailurePolicy(DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs validationFailurePolicy) {
+            return validationFailurePolicy(Output.of(validationFailurePolicy));
+        }
+
+        /**
+         * @param validationPolicy (Updatable) Authentication Policies for the Token Authentication types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validationPolicy(@Nullable Output<DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs> validationPolicy) {
+            $.validationPolicy = validationPolicy;
+            return this;
+        }
+
+        /**
+         * @param validationPolicy (Updatable) Authentication Policies for the Token Authentication types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validationPolicy(DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs validationPolicy) {
+            return validationPolicy(Output.of(validationPolicy));
         }
 
         /**

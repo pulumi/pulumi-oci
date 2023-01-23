@@ -5,276 +5,1025 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./appCatalogListingResourceVersionAgreement";
-export * from "./appCatalogSubscription";
-export * from "./bootVolume";
-export * from "./bootVolumeBackup";
-export * from "./captureFilter";
-export * from "./clusterNetwork";
-export * from "./computeCapacityReservation";
-export * from "./computeImageCapabilitySchema";
-export * from "./consoleHistory";
-export * from "./cpe";
-export * from "./crossConnect";
-export * from "./crossConnectGroup";
-export * from "./dedicatedVmHost";
-export * from "./defaultDhcpOptions";
-export * from "./defaultRouteTable";
-export * from "./defaultSecurityList";
-export * from "./dhcpOptions";
-export * from "./drg";
-export * from "./drgAttachment";
-export * from "./drgAttachmentManagement";
-export * from "./drgAttachmentsList";
-export * from "./drgRouteDistribution";
-export * from "./drgRouteDistributionStatement";
-export * from "./drgRouteTable";
-export * from "./drgRouteTableRouteRule";
-export * from "./getAppCatalogListing";
-export * from "./getAppCatalogListingResourceVersion";
-export * from "./getAppCatalogListingResourceVersions";
-export * from "./getAppCatalogListings";
-export * from "./getAppCatalogSubscriptions";
-export * from "./getBlockVolumeReplica";
-export * from "./getBlockVolumeReplicas";
-export * from "./getBootVolume";
-export * from "./getBootVolumeAttachments";
-export * from "./getBootVolumeBackup";
-export * from "./getBootVolumeBackups";
-export * from "./getBootVolumeReplica";
-export * from "./getBootVolumeReplicas";
-export * from "./getBootVolumes";
-export * from "./getByoipAllocatedRanges";
-export * from "./getByoipRange";
-export * from "./getByoipRanges";
-export * from "./getCaptureFilter";
-export * from "./getCaptureFilters";
-export * from "./getClusterNetwork";
-export * from "./getClusterNetworkInstances";
-export * from "./getClusterNetworks";
-export * from "./getCnvDnsResolverAssociation";
-export * from "./getComputeCapacityReservation";
-export * from "./getComputeCapacityReservationInstanceShapes";
-export * from "./getComputeCapacityReservationInstances";
-export * from "./getComputeCapacityReservations";
-export * from "./getComputeGlobalImageCapabilitySchema";
-export * from "./getComputeGlobalImageCapabilitySchemas";
-export * from "./getComputeGlobalImageCapabilitySchemasVersion";
-export * from "./getComputeGlobalImageCapabilitySchemasVersions";
-export * from "./getComputeImageCapabilitySchema";
-export * from "./getComputeImageCapabilitySchemas";
-export * from "./getConsoleHistories";
-export * from "./getConsoleHistoryData";
-export * from "./getCpeDeviceShape";
-export * from "./getCpeDeviceShapes";
-export * from "./getCpes";
-export * from "./getCrossConnect";
-export * from "./getCrossConnectGroup";
-export * from "./getCrossConnectGroups";
-export * from "./getCrossConnectLocations";
-export * from "./getCrossConnectPortSpeedShape";
-export * from "./getCrossConnectStatus";
-export * from "./getCrossConnects";
-export * from "./getDedicatedVmHost";
-export * from "./getDedicatedVmHostInstanceShapes";
-export * from "./getDedicatedVmHostInstances";
-export * from "./getDedicatedVmHostShapes";
-export * from "./getDedicatedVmHosts";
-export * from "./getDhcpOptions";
-export * from "./getDrgAttachments";
-export * from "./getDrgRouteDistribution";
-export * from "./getDrgRouteDistributionStatements";
-export * from "./getDrgRouteDistributions";
-export * from "./getDrgRouteRule";
-export * from "./getDrgRouteTableRouteRules";
-export * from "./getDrgRouteTables";
-export * from "./getDrgs";
-export * from "./getFastConnectProviderService";
-export * from "./getFastConnectProviderServiceKey";
-export * from "./getFastConnectProviderServices";
-export * from "./getImage";
-export * from "./getImageShape";
-export * from "./getImageShapes";
-export * from "./getImages";
-export * from "./getInstance";
-export * from "./getInstanceConfiguration";
-export * from "./getInstanceConfigurations";
-export * from "./getInstanceConsoleConnections";
-export * from "./getInstanceCredentials";
-export * from "./getInstanceDevices";
-export * from "./getInstanceMaintenanceReboot";
-export * from "./getInstanceMeasuredBootReport";
-export * from "./getInstancePool";
-export * from "./getInstancePoolInstances";
-export * from "./getInstancePoolLoadBalancerAttachment";
-export * from "./getInstancePools";
-export * from "./getInstances";
-export * from "./getInternetGateways";
-export * from "./getIpsecAlgorithm";
-export * from "./getIpsecConfig";
-export * from "./getIpsecConnectionTunnel";
-export * from "./getIpsecConnectionTunnelError";
-export * from "./getIpsecConnectionTunnelRoutes";
-export * from "./getIpsecConnectionTunnels";
-export * from "./getIpsecConnections";
-export * from "./getIpsecStatus";
-export * from "./getIpv6";
-export * from "./getIpv6s";
-export * from "./getLetterOfAuthority";
-export * from "./getListingResourceVersion";
-export * from "./getListingResourceVersions";
-export * from "./getLocalPeeringGateways";
-export * from "./getNatGateway";
-export * from "./getNatGateways";
-export * from "./getNetworkSecurityGroup";
-export * from "./getNetworkSecurityGroupSecurityRules";
-export * from "./getNetworkSecurityGroupVnics";
-export * from "./getNetworkSecurityGroups";
-export * from "./getPeerRegionForRemotePeerings";
-export * from "./getPrivateIp";
-export * from "./getPrivateIps";
-export * from "./getPublicIp";
-export * from "./getPublicIpPool";
-export * from "./getPublicIpPools";
-export * from "./getPublicIps";
-export * from "./getRemotePeeringConnections";
-export * from "./getRouteTables";
-export * from "./getSecurityLists";
-export * from "./getServiceGateways";
-export * from "./getServices";
-export * from "./getShape";
-export * from "./getShapes";
-export * from "./getSubnet";
-export * from "./getSubnets";
-export * from "./getTunnelSecurityAssociations";
-export * from "./getVcn";
-export * from "./getVcns";
-export * from "./getVirtualCircuit";
-export * from "./getVirtualCircuitBandwidthShapes";
-export * from "./getVirtualCircuitPublicPrefixes";
-export * from "./getVirtualCircuits";
-export * from "./getVirtualNetworks";
-export * from "./getVlan";
-export * from "./getVlans";
-export * from "./getVnic";
-export * from "./getVnicAttachments";
-export * from "./getVolume";
-export * from "./getVolumeAttachments";
-export * from "./getVolumeBackupPolicies";
-export * from "./getVolumeBackupPolicyAssignments";
-export * from "./getVolumeBackups";
-export * from "./getVolumeGroupBackups";
-export * from "./getVolumeGroupReplica";
-export * from "./getVolumeGroupReplicas";
-export * from "./getVolumeGroups";
-export * from "./getVolumes";
-export * from "./getVtap";
-export * from "./getVtaps";
-export * from "./image";
-export * from "./instance";
-export * from "./instanceConfiguration";
-export * from "./instanceConsoleConnection";
-export * from "./instancePool";
-export * from "./instancePoolInstance";
-export * from "./internetGateway";
-export * from "./ipsec";
-export * from "./ipsecConnectionTunnelManagement";
-export * from "./ipv6";
-export * from "./listingResourceVersionAgreement";
-export * from "./localPeeringGateway";
-export * from "./natGateway";
-export * from "./networkSecurityGroup";
-export * from "./networkSecurityGroupSecurityRule";
-export * from "./privateIp";
-export * from "./publicIp";
-export * from "./publicIpPool";
-export * from "./publicIpPoolCapacity";
-export * from "./remotePeeringConnection";
-export * from "./routeTable";
-export * from "./routeTableAttachment";
-export * from "./securityList";
-export * from "./serviceGateway";
-export * from "./shapeManagement";
-export * from "./subnet";
-export * from "./vcn";
-export * from "./virtualCircuit";
-export * from "./virtualNetwork";
-export * from "./vlan";
-export * from "./vnicAttachment";
-export * from "./volume";
-export * from "./volumeAttachment";
-export * from "./volumeBackup";
-export * from "./volumeBackupPolicy";
-export * from "./volumeBackupPolicyAssignment";
-export * from "./volumeGroup";
-export * from "./volumeGroupBackup";
-export * from "./vtap";
+export { AppCatalogListingResourceVersionAgreementArgs, AppCatalogListingResourceVersionAgreementState } from "./appCatalogListingResourceVersionAgreement";
+export type AppCatalogListingResourceVersionAgreement = import("./appCatalogListingResourceVersionAgreement").AppCatalogListingResourceVersionAgreement;
+export const AppCatalogListingResourceVersionAgreement: typeof import("./appCatalogListingResourceVersionAgreement").AppCatalogListingResourceVersionAgreement = null as any;
+utilities.lazyLoad(exports, ["AppCatalogListingResourceVersionAgreement"], () => require("./appCatalogListingResourceVersionAgreement"));
 
-// Import resources to register:
-import { AppCatalogListingResourceVersionAgreement } from "./appCatalogListingResourceVersionAgreement";
-import { AppCatalogSubscription } from "./appCatalogSubscription";
-import { BootVolume } from "./bootVolume";
-import { BootVolumeBackup } from "./bootVolumeBackup";
-import { CaptureFilter } from "./captureFilter";
-import { ClusterNetwork } from "./clusterNetwork";
-import { ComputeCapacityReservation } from "./computeCapacityReservation";
-import { ComputeImageCapabilitySchema } from "./computeImageCapabilitySchema";
-import { ConsoleHistory } from "./consoleHistory";
-import { Cpe } from "./cpe";
-import { CrossConnect } from "./crossConnect";
-import { CrossConnectGroup } from "./crossConnectGroup";
-import { DedicatedVmHost } from "./dedicatedVmHost";
-import { DefaultDhcpOptions } from "./defaultDhcpOptions";
-import { DefaultRouteTable } from "./defaultRouteTable";
-import { DefaultSecurityList } from "./defaultSecurityList";
-import { DhcpOptions } from "./dhcpOptions";
-import { Drg } from "./drg";
-import { DrgAttachment } from "./drgAttachment";
-import { DrgAttachmentManagement } from "./drgAttachmentManagement";
-import { DrgAttachmentsList } from "./drgAttachmentsList";
-import { DrgRouteDistribution } from "./drgRouteDistribution";
-import { DrgRouteDistributionStatement } from "./drgRouteDistributionStatement";
-import { DrgRouteTable } from "./drgRouteTable";
-import { DrgRouteTableRouteRule } from "./drgRouteTableRouteRule";
-import { Image } from "./image";
-import { Instance } from "./instance";
-import { InstanceConfiguration } from "./instanceConfiguration";
-import { InstanceConsoleConnection } from "./instanceConsoleConnection";
-import { InstancePool } from "./instancePool";
-import { InstancePoolInstance } from "./instancePoolInstance";
-import { InternetGateway } from "./internetGateway";
-import { Ipsec } from "./ipsec";
-import { IpsecConnectionTunnelManagement } from "./ipsecConnectionTunnelManagement";
-import { Ipv6 } from "./ipv6";
-import { ListingResourceVersionAgreement } from "./listingResourceVersionAgreement";
-import { LocalPeeringGateway } from "./localPeeringGateway";
-import { NatGateway } from "./natGateway";
-import { NetworkSecurityGroup } from "./networkSecurityGroup";
-import { NetworkSecurityGroupSecurityRule } from "./networkSecurityGroupSecurityRule";
-import { PrivateIp } from "./privateIp";
-import { PublicIp } from "./publicIp";
-import { PublicIpPool } from "./publicIpPool";
-import { PublicIpPoolCapacity } from "./publicIpPoolCapacity";
-import { RemotePeeringConnection } from "./remotePeeringConnection";
-import { RouteTable } from "./routeTable";
-import { RouteTableAttachment } from "./routeTableAttachment";
-import { SecurityList } from "./securityList";
-import { ServiceGateway } from "./serviceGateway";
-import { ShapeManagement } from "./shapeManagement";
-import { Subnet } from "./subnet";
-import { Vcn } from "./vcn";
-import { VirtualCircuit } from "./virtualCircuit";
-import { VirtualNetwork } from "./virtualNetwork";
-import { Vlan } from "./vlan";
-import { VnicAttachment } from "./vnicAttachment";
-import { Volume } from "./volume";
-import { VolumeAttachment } from "./volumeAttachment";
-import { VolumeBackup } from "./volumeBackup";
-import { VolumeBackupPolicy } from "./volumeBackupPolicy";
-import { VolumeBackupPolicyAssignment } from "./volumeBackupPolicyAssignment";
-import { VolumeGroup } from "./volumeGroup";
-import { VolumeGroupBackup } from "./volumeGroupBackup";
-import { Vtap } from "./vtap";
+export { AppCatalogSubscriptionArgs, AppCatalogSubscriptionState } from "./appCatalogSubscription";
+export type AppCatalogSubscription = import("./appCatalogSubscription").AppCatalogSubscription;
+export const AppCatalogSubscription: typeof import("./appCatalogSubscription").AppCatalogSubscription = null as any;
+utilities.lazyLoad(exports, ["AppCatalogSubscription"], () => require("./appCatalogSubscription"));
+
+export { BootVolumeArgs, BootVolumeState } from "./bootVolume";
+export type BootVolume = import("./bootVolume").BootVolume;
+export const BootVolume: typeof import("./bootVolume").BootVolume = null as any;
+utilities.lazyLoad(exports, ["BootVolume"], () => require("./bootVolume"));
+
+export { BootVolumeBackupArgs, BootVolumeBackupState } from "./bootVolumeBackup";
+export type BootVolumeBackup = import("./bootVolumeBackup").BootVolumeBackup;
+export const BootVolumeBackup: typeof import("./bootVolumeBackup").BootVolumeBackup = null as any;
+utilities.lazyLoad(exports, ["BootVolumeBackup"], () => require("./bootVolumeBackup"));
+
+export { CaptureFilterArgs, CaptureFilterState } from "./captureFilter";
+export type CaptureFilter = import("./captureFilter").CaptureFilter;
+export const CaptureFilter: typeof import("./captureFilter").CaptureFilter = null as any;
+utilities.lazyLoad(exports, ["CaptureFilter"], () => require("./captureFilter"));
+
+export { ClusterNetworkArgs, ClusterNetworkState } from "./clusterNetwork";
+export type ClusterNetwork = import("./clusterNetwork").ClusterNetwork;
+export const ClusterNetwork: typeof import("./clusterNetwork").ClusterNetwork = null as any;
+utilities.lazyLoad(exports, ["ClusterNetwork"], () => require("./clusterNetwork"));
+
+export { ComputeCapacityReservationArgs, ComputeCapacityReservationState } from "./computeCapacityReservation";
+export type ComputeCapacityReservation = import("./computeCapacityReservation").ComputeCapacityReservation;
+export const ComputeCapacityReservation: typeof import("./computeCapacityReservation").ComputeCapacityReservation = null as any;
+utilities.lazyLoad(exports, ["ComputeCapacityReservation"], () => require("./computeCapacityReservation"));
+
+export { ComputeImageCapabilitySchemaArgs, ComputeImageCapabilitySchemaState } from "./computeImageCapabilitySchema";
+export type ComputeImageCapabilitySchema = import("./computeImageCapabilitySchema").ComputeImageCapabilitySchema;
+export const ComputeImageCapabilitySchema: typeof import("./computeImageCapabilitySchema").ComputeImageCapabilitySchema = null as any;
+utilities.lazyLoad(exports, ["ComputeImageCapabilitySchema"], () => require("./computeImageCapabilitySchema"));
+
+export { ConsoleHistoryArgs, ConsoleHistoryState } from "./consoleHistory";
+export type ConsoleHistory = import("./consoleHistory").ConsoleHistory;
+export const ConsoleHistory: typeof import("./consoleHistory").ConsoleHistory = null as any;
+utilities.lazyLoad(exports, ["ConsoleHistory"], () => require("./consoleHistory"));
+
+export { CpeArgs, CpeState } from "./cpe";
+export type Cpe = import("./cpe").Cpe;
+export const Cpe: typeof import("./cpe").Cpe = null as any;
+utilities.lazyLoad(exports, ["Cpe"], () => require("./cpe"));
+
+export { CrossConnectArgs, CrossConnectState } from "./crossConnect";
+export type CrossConnect = import("./crossConnect").CrossConnect;
+export const CrossConnect: typeof import("./crossConnect").CrossConnect = null as any;
+utilities.lazyLoad(exports, ["CrossConnect"], () => require("./crossConnect"));
+
+export { CrossConnectGroupArgs, CrossConnectGroupState } from "./crossConnectGroup";
+export type CrossConnectGroup = import("./crossConnectGroup").CrossConnectGroup;
+export const CrossConnectGroup: typeof import("./crossConnectGroup").CrossConnectGroup = null as any;
+utilities.lazyLoad(exports, ["CrossConnectGroup"], () => require("./crossConnectGroup"));
+
+export { DedicatedVmHostArgs, DedicatedVmHostState } from "./dedicatedVmHost";
+export type DedicatedVmHost = import("./dedicatedVmHost").DedicatedVmHost;
+export const DedicatedVmHost: typeof import("./dedicatedVmHost").DedicatedVmHost = null as any;
+utilities.lazyLoad(exports, ["DedicatedVmHost"], () => require("./dedicatedVmHost"));
+
+export { DefaultDhcpOptionsArgs, DefaultDhcpOptionsState } from "./defaultDhcpOptions";
+export type DefaultDhcpOptions = import("./defaultDhcpOptions").DefaultDhcpOptions;
+export const DefaultDhcpOptions: typeof import("./defaultDhcpOptions").DefaultDhcpOptions = null as any;
+utilities.lazyLoad(exports, ["DefaultDhcpOptions"], () => require("./defaultDhcpOptions"));
+
+export { DefaultRouteTableArgs, DefaultRouteTableState } from "./defaultRouteTable";
+export type DefaultRouteTable = import("./defaultRouteTable").DefaultRouteTable;
+export const DefaultRouteTable: typeof import("./defaultRouteTable").DefaultRouteTable = null as any;
+utilities.lazyLoad(exports, ["DefaultRouteTable"], () => require("./defaultRouteTable"));
+
+export { DefaultSecurityListArgs, DefaultSecurityListState } from "./defaultSecurityList";
+export type DefaultSecurityList = import("./defaultSecurityList").DefaultSecurityList;
+export const DefaultSecurityList: typeof import("./defaultSecurityList").DefaultSecurityList = null as any;
+utilities.lazyLoad(exports, ["DefaultSecurityList"], () => require("./defaultSecurityList"));
+
+export { DhcpOptionsArgs, DhcpOptionsState } from "./dhcpOptions";
+export type DhcpOptions = import("./dhcpOptions").DhcpOptions;
+export const DhcpOptions: typeof import("./dhcpOptions").DhcpOptions = null as any;
+utilities.lazyLoad(exports, ["DhcpOptions"], () => require("./dhcpOptions"));
+
+export { DrgArgs, DrgState } from "./drg";
+export type Drg = import("./drg").Drg;
+export const Drg: typeof import("./drg").Drg = null as any;
+utilities.lazyLoad(exports, ["Drg"], () => require("./drg"));
+
+export { DrgAttachmentArgs, DrgAttachmentState } from "./drgAttachment";
+export type DrgAttachment = import("./drgAttachment").DrgAttachment;
+export const DrgAttachment: typeof import("./drgAttachment").DrgAttachment = null as any;
+utilities.lazyLoad(exports, ["DrgAttachment"], () => require("./drgAttachment"));
+
+export { DrgAttachmentManagementArgs, DrgAttachmentManagementState } from "./drgAttachmentManagement";
+export type DrgAttachmentManagement = import("./drgAttachmentManagement").DrgAttachmentManagement;
+export const DrgAttachmentManagement: typeof import("./drgAttachmentManagement").DrgAttachmentManagement = null as any;
+utilities.lazyLoad(exports, ["DrgAttachmentManagement"], () => require("./drgAttachmentManagement"));
+
+export { DrgAttachmentsListArgs, DrgAttachmentsListState } from "./drgAttachmentsList";
+export type DrgAttachmentsList = import("./drgAttachmentsList").DrgAttachmentsList;
+export const DrgAttachmentsList: typeof import("./drgAttachmentsList").DrgAttachmentsList = null as any;
+utilities.lazyLoad(exports, ["DrgAttachmentsList"], () => require("./drgAttachmentsList"));
+
+export { DrgRouteDistributionArgs, DrgRouteDistributionState } from "./drgRouteDistribution";
+export type DrgRouteDistribution = import("./drgRouteDistribution").DrgRouteDistribution;
+export const DrgRouteDistribution: typeof import("./drgRouteDistribution").DrgRouteDistribution = null as any;
+utilities.lazyLoad(exports, ["DrgRouteDistribution"], () => require("./drgRouteDistribution"));
+
+export { DrgRouteDistributionStatementArgs, DrgRouteDistributionStatementState } from "./drgRouteDistributionStatement";
+export type DrgRouteDistributionStatement = import("./drgRouteDistributionStatement").DrgRouteDistributionStatement;
+export const DrgRouteDistributionStatement: typeof import("./drgRouteDistributionStatement").DrgRouteDistributionStatement = null as any;
+utilities.lazyLoad(exports, ["DrgRouteDistributionStatement"], () => require("./drgRouteDistributionStatement"));
+
+export { DrgRouteTableArgs, DrgRouteTableState } from "./drgRouteTable";
+export type DrgRouteTable = import("./drgRouteTable").DrgRouteTable;
+export const DrgRouteTable: typeof import("./drgRouteTable").DrgRouteTable = null as any;
+utilities.lazyLoad(exports, ["DrgRouteTable"], () => require("./drgRouteTable"));
+
+export { DrgRouteTableRouteRuleArgs, DrgRouteTableRouteRuleState } from "./drgRouteTableRouteRule";
+export type DrgRouteTableRouteRule = import("./drgRouteTableRouteRule").DrgRouteTableRouteRule;
+export const DrgRouteTableRouteRule: typeof import("./drgRouteTableRouteRule").DrgRouteTableRouteRule = null as any;
+utilities.lazyLoad(exports, ["DrgRouteTableRouteRule"], () => require("./drgRouteTableRouteRule"));
+
+export { GetAppCatalogListingArgs, GetAppCatalogListingResult, GetAppCatalogListingOutputArgs } from "./getAppCatalogListing";
+export const getAppCatalogListing: typeof import("./getAppCatalogListing").getAppCatalogListing = null as any;
+export const getAppCatalogListingOutput: typeof import("./getAppCatalogListing").getAppCatalogListingOutput = null as any;
+utilities.lazyLoad(exports, ["getAppCatalogListing","getAppCatalogListingOutput"], () => require("./getAppCatalogListing"));
+
+export { GetAppCatalogListingResourceVersionArgs, GetAppCatalogListingResourceVersionResult, GetAppCatalogListingResourceVersionOutputArgs } from "./getAppCatalogListingResourceVersion";
+export const getAppCatalogListingResourceVersion: typeof import("./getAppCatalogListingResourceVersion").getAppCatalogListingResourceVersion = null as any;
+export const getAppCatalogListingResourceVersionOutput: typeof import("./getAppCatalogListingResourceVersion").getAppCatalogListingResourceVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getAppCatalogListingResourceVersion","getAppCatalogListingResourceVersionOutput"], () => require("./getAppCatalogListingResourceVersion"));
+
+export { GetAppCatalogListingResourceVersionsArgs, GetAppCatalogListingResourceVersionsResult, GetAppCatalogListingResourceVersionsOutputArgs } from "./getAppCatalogListingResourceVersions";
+export const getAppCatalogListingResourceVersions: typeof import("./getAppCatalogListingResourceVersions").getAppCatalogListingResourceVersions = null as any;
+export const getAppCatalogListingResourceVersionsOutput: typeof import("./getAppCatalogListingResourceVersions").getAppCatalogListingResourceVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppCatalogListingResourceVersions","getAppCatalogListingResourceVersionsOutput"], () => require("./getAppCatalogListingResourceVersions"));
+
+export { GetAppCatalogListingsArgs, GetAppCatalogListingsResult, GetAppCatalogListingsOutputArgs } from "./getAppCatalogListings";
+export const getAppCatalogListings: typeof import("./getAppCatalogListings").getAppCatalogListings = null as any;
+export const getAppCatalogListingsOutput: typeof import("./getAppCatalogListings").getAppCatalogListingsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppCatalogListings","getAppCatalogListingsOutput"], () => require("./getAppCatalogListings"));
+
+export { GetAppCatalogSubscriptionsArgs, GetAppCatalogSubscriptionsResult, GetAppCatalogSubscriptionsOutputArgs } from "./getAppCatalogSubscriptions";
+export const getAppCatalogSubscriptions: typeof import("./getAppCatalogSubscriptions").getAppCatalogSubscriptions = null as any;
+export const getAppCatalogSubscriptionsOutput: typeof import("./getAppCatalogSubscriptions").getAppCatalogSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppCatalogSubscriptions","getAppCatalogSubscriptionsOutput"], () => require("./getAppCatalogSubscriptions"));
+
+export { GetBlockVolumeReplicaArgs, GetBlockVolumeReplicaResult, GetBlockVolumeReplicaOutputArgs } from "./getBlockVolumeReplica";
+export const getBlockVolumeReplica: typeof import("./getBlockVolumeReplica").getBlockVolumeReplica = null as any;
+export const getBlockVolumeReplicaOutput: typeof import("./getBlockVolumeReplica").getBlockVolumeReplicaOutput = null as any;
+utilities.lazyLoad(exports, ["getBlockVolumeReplica","getBlockVolumeReplicaOutput"], () => require("./getBlockVolumeReplica"));
+
+export { GetBlockVolumeReplicasArgs, GetBlockVolumeReplicasResult, GetBlockVolumeReplicasOutputArgs } from "./getBlockVolumeReplicas";
+export const getBlockVolumeReplicas: typeof import("./getBlockVolumeReplicas").getBlockVolumeReplicas = null as any;
+export const getBlockVolumeReplicasOutput: typeof import("./getBlockVolumeReplicas").getBlockVolumeReplicasOutput = null as any;
+utilities.lazyLoad(exports, ["getBlockVolumeReplicas","getBlockVolumeReplicasOutput"], () => require("./getBlockVolumeReplicas"));
+
+export { GetBootVolumeArgs, GetBootVolumeResult, GetBootVolumeOutputArgs } from "./getBootVolume";
+export const getBootVolume: typeof import("./getBootVolume").getBootVolume = null as any;
+export const getBootVolumeOutput: typeof import("./getBootVolume").getBootVolumeOutput = null as any;
+utilities.lazyLoad(exports, ["getBootVolume","getBootVolumeOutput"], () => require("./getBootVolume"));
+
+export { GetBootVolumeAttachmentsArgs, GetBootVolumeAttachmentsResult, GetBootVolumeAttachmentsOutputArgs } from "./getBootVolumeAttachments";
+export const getBootVolumeAttachments: typeof import("./getBootVolumeAttachments").getBootVolumeAttachments = null as any;
+export const getBootVolumeAttachmentsOutput: typeof import("./getBootVolumeAttachments").getBootVolumeAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getBootVolumeAttachments","getBootVolumeAttachmentsOutput"], () => require("./getBootVolumeAttachments"));
+
+export { GetBootVolumeBackupArgs, GetBootVolumeBackupResult, GetBootVolumeBackupOutputArgs } from "./getBootVolumeBackup";
+export const getBootVolumeBackup: typeof import("./getBootVolumeBackup").getBootVolumeBackup = null as any;
+export const getBootVolumeBackupOutput: typeof import("./getBootVolumeBackup").getBootVolumeBackupOutput = null as any;
+utilities.lazyLoad(exports, ["getBootVolumeBackup","getBootVolumeBackupOutput"], () => require("./getBootVolumeBackup"));
+
+export { GetBootVolumeBackupsArgs, GetBootVolumeBackupsResult, GetBootVolumeBackupsOutputArgs } from "./getBootVolumeBackups";
+export const getBootVolumeBackups: typeof import("./getBootVolumeBackups").getBootVolumeBackups = null as any;
+export const getBootVolumeBackupsOutput: typeof import("./getBootVolumeBackups").getBootVolumeBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getBootVolumeBackups","getBootVolumeBackupsOutput"], () => require("./getBootVolumeBackups"));
+
+export { GetBootVolumeReplicaArgs, GetBootVolumeReplicaResult, GetBootVolumeReplicaOutputArgs } from "./getBootVolumeReplica";
+export const getBootVolumeReplica: typeof import("./getBootVolumeReplica").getBootVolumeReplica = null as any;
+export const getBootVolumeReplicaOutput: typeof import("./getBootVolumeReplica").getBootVolumeReplicaOutput = null as any;
+utilities.lazyLoad(exports, ["getBootVolumeReplica","getBootVolumeReplicaOutput"], () => require("./getBootVolumeReplica"));
+
+export { GetBootVolumeReplicasArgs, GetBootVolumeReplicasResult, GetBootVolumeReplicasOutputArgs } from "./getBootVolumeReplicas";
+export const getBootVolumeReplicas: typeof import("./getBootVolumeReplicas").getBootVolumeReplicas = null as any;
+export const getBootVolumeReplicasOutput: typeof import("./getBootVolumeReplicas").getBootVolumeReplicasOutput = null as any;
+utilities.lazyLoad(exports, ["getBootVolumeReplicas","getBootVolumeReplicasOutput"], () => require("./getBootVolumeReplicas"));
+
+export { GetBootVolumesArgs, GetBootVolumesResult, GetBootVolumesOutputArgs } from "./getBootVolumes";
+export const getBootVolumes: typeof import("./getBootVolumes").getBootVolumes = null as any;
+export const getBootVolumesOutput: typeof import("./getBootVolumes").getBootVolumesOutput = null as any;
+utilities.lazyLoad(exports, ["getBootVolumes","getBootVolumesOutput"], () => require("./getBootVolumes"));
+
+export { GetByoipAllocatedRangesArgs, GetByoipAllocatedRangesResult, GetByoipAllocatedRangesOutputArgs } from "./getByoipAllocatedRanges";
+export const getByoipAllocatedRanges: typeof import("./getByoipAllocatedRanges").getByoipAllocatedRanges = null as any;
+export const getByoipAllocatedRangesOutput: typeof import("./getByoipAllocatedRanges").getByoipAllocatedRangesOutput = null as any;
+utilities.lazyLoad(exports, ["getByoipAllocatedRanges","getByoipAllocatedRangesOutput"], () => require("./getByoipAllocatedRanges"));
+
+export { GetByoipRangeArgs, GetByoipRangeResult, GetByoipRangeOutputArgs } from "./getByoipRange";
+export const getByoipRange: typeof import("./getByoipRange").getByoipRange = null as any;
+export const getByoipRangeOutput: typeof import("./getByoipRange").getByoipRangeOutput = null as any;
+utilities.lazyLoad(exports, ["getByoipRange","getByoipRangeOutput"], () => require("./getByoipRange"));
+
+export { GetByoipRangesArgs, GetByoipRangesResult, GetByoipRangesOutputArgs } from "./getByoipRanges";
+export const getByoipRanges: typeof import("./getByoipRanges").getByoipRanges = null as any;
+export const getByoipRangesOutput: typeof import("./getByoipRanges").getByoipRangesOutput = null as any;
+utilities.lazyLoad(exports, ["getByoipRanges","getByoipRangesOutput"], () => require("./getByoipRanges"));
+
+export { GetCaptureFilterArgs, GetCaptureFilterResult, GetCaptureFilterOutputArgs } from "./getCaptureFilter";
+export const getCaptureFilter: typeof import("./getCaptureFilter").getCaptureFilter = null as any;
+export const getCaptureFilterOutput: typeof import("./getCaptureFilter").getCaptureFilterOutput = null as any;
+utilities.lazyLoad(exports, ["getCaptureFilter","getCaptureFilterOutput"], () => require("./getCaptureFilter"));
+
+export { GetCaptureFiltersArgs, GetCaptureFiltersResult, GetCaptureFiltersOutputArgs } from "./getCaptureFilters";
+export const getCaptureFilters: typeof import("./getCaptureFilters").getCaptureFilters = null as any;
+export const getCaptureFiltersOutput: typeof import("./getCaptureFilters").getCaptureFiltersOutput = null as any;
+utilities.lazyLoad(exports, ["getCaptureFilters","getCaptureFiltersOutput"], () => require("./getCaptureFilters"));
+
+export { GetClusterNetworkArgs, GetClusterNetworkResult, GetClusterNetworkOutputArgs } from "./getClusterNetwork";
+export const getClusterNetwork: typeof import("./getClusterNetwork").getClusterNetwork = null as any;
+export const getClusterNetworkOutput: typeof import("./getClusterNetwork").getClusterNetworkOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterNetwork","getClusterNetworkOutput"], () => require("./getClusterNetwork"));
+
+export { GetClusterNetworkInstancesArgs, GetClusterNetworkInstancesResult, GetClusterNetworkInstancesOutputArgs } from "./getClusterNetworkInstances";
+export const getClusterNetworkInstances: typeof import("./getClusterNetworkInstances").getClusterNetworkInstances = null as any;
+export const getClusterNetworkInstancesOutput: typeof import("./getClusterNetworkInstances").getClusterNetworkInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterNetworkInstances","getClusterNetworkInstancesOutput"], () => require("./getClusterNetworkInstances"));
+
+export { GetClusterNetworksArgs, GetClusterNetworksResult, GetClusterNetworksOutputArgs } from "./getClusterNetworks";
+export const getClusterNetworks: typeof import("./getClusterNetworks").getClusterNetworks = null as any;
+export const getClusterNetworksOutput: typeof import("./getClusterNetworks").getClusterNetworksOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterNetworks","getClusterNetworksOutput"], () => require("./getClusterNetworks"));
+
+export { GetCnvDnsResolverAssociationArgs, GetCnvDnsResolverAssociationResult, GetCnvDnsResolverAssociationOutputArgs } from "./getCnvDnsResolverAssociation";
+export const getCnvDnsResolverAssociation: typeof import("./getCnvDnsResolverAssociation").getCnvDnsResolverAssociation = null as any;
+export const getCnvDnsResolverAssociationOutput: typeof import("./getCnvDnsResolverAssociation").getCnvDnsResolverAssociationOutput = null as any;
+utilities.lazyLoad(exports, ["getCnvDnsResolverAssociation","getCnvDnsResolverAssociationOutput"], () => require("./getCnvDnsResolverAssociation"));
+
+export { GetComputeCapacityReservationArgs, GetComputeCapacityReservationResult, GetComputeCapacityReservationOutputArgs } from "./getComputeCapacityReservation";
+export const getComputeCapacityReservation: typeof import("./getComputeCapacityReservation").getComputeCapacityReservation = null as any;
+export const getComputeCapacityReservationOutput: typeof import("./getComputeCapacityReservation").getComputeCapacityReservationOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityReservation","getComputeCapacityReservationOutput"], () => require("./getComputeCapacityReservation"));
+
+export { GetComputeCapacityReservationInstanceShapesArgs, GetComputeCapacityReservationInstanceShapesResult, GetComputeCapacityReservationInstanceShapesOutputArgs } from "./getComputeCapacityReservationInstanceShapes";
+export const getComputeCapacityReservationInstanceShapes: typeof import("./getComputeCapacityReservationInstanceShapes").getComputeCapacityReservationInstanceShapes = null as any;
+export const getComputeCapacityReservationInstanceShapesOutput: typeof import("./getComputeCapacityReservationInstanceShapes").getComputeCapacityReservationInstanceShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityReservationInstanceShapes","getComputeCapacityReservationInstanceShapesOutput"], () => require("./getComputeCapacityReservationInstanceShapes"));
+
+export { GetComputeCapacityReservationInstancesArgs, GetComputeCapacityReservationInstancesResult, GetComputeCapacityReservationInstancesOutputArgs } from "./getComputeCapacityReservationInstances";
+export const getComputeCapacityReservationInstances: typeof import("./getComputeCapacityReservationInstances").getComputeCapacityReservationInstances = null as any;
+export const getComputeCapacityReservationInstancesOutput: typeof import("./getComputeCapacityReservationInstances").getComputeCapacityReservationInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityReservationInstances","getComputeCapacityReservationInstancesOutput"], () => require("./getComputeCapacityReservationInstances"));
+
+export { GetComputeCapacityReservationsArgs, GetComputeCapacityReservationsResult, GetComputeCapacityReservationsOutputArgs } from "./getComputeCapacityReservations";
+export const getComputeCapacityReservations: typeof import("./getComputeCapacityReservations").getComputeCapacityReservations = null as any;
+export const getComputeCapacityReservationsOutput: typeof import("./getComputeCapacityReservations").getComputeCapacityReservationsOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityReservations","getComputeCapacityReservationsOutput"], () => require("./getComputeCapacityReservations"));
+
+export { GetComputeGlobalImageCapabilitySchemaArgs, GetComputeGlobalImageCapabilitySchemaResult, GetComputeGlobalImageCapabilitySchemaOutputArgs } from "./getComputeGlobalImageCapabilitySchema";
+export const getComputeGlobalImageCapabilitySchema: typeof import("./getComputeGlobalImageCapabilitySchema").getComputeGlobalImageCapabilitySchema = null as any;
+export const getComputeGlobalImageCapabilitySchemaOutput: typeof import("./getComputeGlobalImageCapabilitySchema").getComputeGlobalImageCapabilitySchemaOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGlobalImageCapabilitySchema","getComputeGlobalImageCapabilitySchemaOutput"], () => require("./getComputeGlobalImageCapabilitySchema"));
+
+export { GetComputeGlobalImageCapabilitySchemasArgs, GetComputeGlobalImageCapabilitySchemasResult, GetComputeGlobalImageCapabilitySchemasOutputArgs } from "./getComputeGlobalImageCapabilitySchemas";
+export const getComputeGlobalImageCapabilitySchemas: typeof import("./getComputeGlobalImageCapabilitySchemas").getComputeGlobalImageCapabilitySchemas = null as any;
+export const getComputeGlobalImageCapabilitySchemasOutput: typeof import("./getComputeGlobalImageCapabilitySchemas").getComputeGlobalImageCapabilitySchemasOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGlobalImageCapabilitySchemas","getComputeGlobalImageCapabilitySchemasOutput"], () => require("./getComputeGlobalImageCapabilitySchemas"));
+
+export { GetComputeGlobalImageCapabilitySchemasVersionArgs, GetComputeGlobalImageCapabilitySchemasVersionResult, GetComputeGlobalImageCapabilitySchemasVersionOutputArgs } from "./getComputeGlobalImageCapabilitySchemasVersion";
+export const getComputeGlobalImageCapabilitySchemasVersion: typeof import("./getComputeGlobalImageCapabilitySchemasVersion").getComputeGlobalImageCapabilitySchemasVersion = null as any;
+export const getComputeGlobalImageCapabilitySchemasVersionOutput: typeof import("./getComputeGlobalImageCapabilitySchemasVersion").getComputeGlobalImageCapabilitySchemasVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGlobalImageCapabilitySchemasVersion","getComputeGlobalImageCapabilitySchemasVersionOutput"], () => require("./getComputeGlobalImageCapabilitySchemasVersion"));
+
+export { GetComputeGlobalImageCapabilitySchemasVersionsArgs, GetComputeGlobalImageCapabilitySchemasVersionsResult, GetComputeGlobalImageCapabilitySchemasVersionsOutputArgs } from "./getComputeGlobalImageCapabilitySchemasVersions";
+export const getComputeGlobalImageCapabilitySchemasVersions: typeof import("./getComputeGlobalImageCapabilitySchemasVersions").getComputeGlobalImageCapabilitySchemasVersions = null as any;
+export const getComputeGlobalImageCapabilitySchemasVersionsOutput: typeof import("./getComputeGlobalImageCapabilitySchemasVersions").getComputeGlobalImageCapabilitySchemasVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGlobalImageCapabilitySchemasVersions","getComputeGlobalImageCapabilitySchemasVersionsOutput"], () => require("./getComputeGlobalImageCapabilitySchemasVersions"));
+
+export { GetComputeImageCapabilitySchemaArgs, GetComputeImageCapabilitySchemaResult, GetComputeImageCapabilitySchemaOutputArgs } from "./getComputeImageCapabilitySchema";
+export const getComputeImageCapabilitySchema: typeof import("./getComputeImageCapabilitySchema").getComputeImageCapabilitySchema = null as any;
+export const getComputeImageCapabilitySchemaOutput: typeof import("./getComputeImageCapabilitySchema").getComputeImageCapabilitySchemaOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeImageCapabilitySchema","getComputeImageCapabilitySchemaOutput"], () => require("./getComputeImageCapabilitySchema"));
+
+export { GetComputeImageCapabilitySchemasArgs, GetComputeImageCapabilitySchemasResult, GetComputeImageCapabilitySchemasOutputArgs } from "./getComputeImageCapabilitySchemas";
+export const getComputeImageCapabilitySchemas: typeof import("./getComputeImageCapabilitySchemas").getComputeImageCapabilitySchemas = null as any;
+export const getComputeImageCapabilitySchemasOutput: typeof import("./getComputeImageCapabilitySchemas").getComputeImageCapabilitySchemasOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeImageCapabilitySchemas","getComputeImageCapabilitySchemasOutput"], () => require("./getComputeImageCapabilitySchemas"));
+
+export { GetConsoleHistoriesArgs, GetConsoleHistoriesResult, GetConsoleHistoriesOutputArgs } from "./getConsoleHistories";
+export const getConsoleHistories: typeof import("./getConsoleHistories").getConsoleHistories = null as any;
+export const getConsoleHistoriesOutput: typeof import("./getConsoleHistories").getConsoleHistoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getConsoleHistories","getConsoleHistoriesOutput"], () => require("./getConsoleHistories"));
+
+export { GetConsoleHistoryDataArgs, GetConsoleHistoryDataResult, GetConsoleHistoryDataOutputArgs } from "./getConsoleHistoryData";
+export const getConsoleHistoryData: typeof import("./getConsoleHistoryData").getConsoleHistoryData = null as any;
+export const getConsoleHistoryDataOutput: typeof import("./getConsoleHistoryData").getConsoleHistoryDataOutput = null as any;
+utilities.lazyLoad(exports, ["getConsoleHistoryData","getConsoleHistoryDataOutput"], () => require("./getConsoleHistoryData"));
+
+export { GetCpeDeviceShapeArgs, GetCpeDeviceShapeResult, GetCpeDeviceShapeOutputArgs } from "./getCpeDeviceShape";
+export const getCpeDeviceShape: typeof import("./getCpeDeviceShape").getCpeDeviceShape = null as any;
+export const getCpeDeviceShapeOutput: typeof import("./getCpeDeviceShape").getCpeDeviceShapeOutput = null as any;
+utilities.lazyLoad(exports, ["getCpeDeviceShape","getCpeDeviceShapeOutput"], () => require("./getCpeDeviceShape"));
+
+export { GetCpeDeviceShapesArgs, GetCpeDeviceShapesResult, GetCpeDeviceShapesOutputArgs } from "./getCpeDeviceShapes";
+export const getCpeDeviceShapes: typeof import("./getCpeDeviceShapes").getCpeDeviceShapes = null as any;
+export const getCpeDeviceShapesOutput: typeof import("./getCpeDeviceShapes").getCpeDeviceShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getCpeDeviceShapes","getCpeDeviceShapesOutput"], () => require("./getCpeDeviceShapes"));
+
+export { GetCpesArgs, GetCpesResult, GetCpesOutputArgs } from "./getCpes";
+export const getCpes: typeof import("./getCpes").getCpes = null as any;
+export const getCpesOutput: typeof import("./getCpes").getCpesOutput = null as any;
+utilities.lazyLoad(exports, ["getCpes","getCpesOutput"], () => require("./getCpes"));
+
+export { GetCrossConnectArgs, GetCrossConnectResult, GetCrossConnectOutputArgs } from "./getCrossConnect";
+export const getCrossConnect: typeof import("./getCrossConnect").getCrossConnect = null as any;
+export const getCrossConnectOutput: typeof import("./getCrossConnect").getCrossConnectOutput = null as any;
+utilities.lazyLoad(exports, ["getCrossConnect","getCrossConnectOutput"], () => require("./getCrossConnect"));
+
+export { GetCrossConnectGroupArgs, GetCrossConnectGroupResult, GetCrossConnectGroupOutputArgs } from "./getCrossConnectGroup";
+export const getCrossConnectGroup: typeof import("./getCrossConnectGroup").getCrossConnectGroup = null as any;
+export const getCrossConnectGroupOutput: typeof import("./getCrossConnectGroup").getCrossConnectGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getCrossConnectGroup","getCrossConnectGroupOutput"], () => require("./getCrossConnectGroup"));
+
+export { GetCrossConnectGroupsArgs, GetCrossConnectGroupsResult, GetCrossConnectGroupsOutputArgs } from "./getCrossConnectGroups";
+export const getCrossConnectGroups: typeof import("./getCrossConnectGroups").getCrossConnectGroups = null as any;
+export const getCrossConnectGroupsOutput: typeof import("./getCrossConnectGroups").getCrossConnectGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getCrossConnectGroups","getCrossConnectGroupsOutput"], () => require("./getCrossConnectGroups"));
+
+export { GetCrossConnectLocationsArgs, GetCrossConnectLocationsResult, GetCrossConnectLocationsOutputArgs } from "./getCrossConnectLocations";
+export const getCrossConnectLocations: typeof import("./getCrossConnectLocations").getCrossConnectLocations = null as any;
+export const getCrossConnectLocationsOutput: typeof import("./getCrossConnectLocations").getCrossConnectLocationsOutput = null as any;
+utilities.lazyLoad(exports, ["getCrossConnectLocations","getCrossConnectLocationsOutput"], () => require("./getCrossConnectLocations"));
+
+export { GetCrossConnectPortSpeedShapeArgs, GetCrossConnectPortSpeedShapeResult, GetCrossConnectPortSpeedShapeOutputArgs } from "./getCrossConnectPortSpeedShape";
+export const getCrossConnectPortSpeedShape: typeof import("./getCrossConnectPortSpeedShape").getCrossConnectPortSpeedShape = null as any;
+export const getCrossConnectPortSpeedShapeOutput: typeof import("./getCrossConnectPortSpeedShape").getCrossConnectPortSpeedShapeOutput = null as any;
+utilities.lazyLoad(exports, ["getCrossConnectPortSpeedShape","getCrossConnectPortSpeedShapeOutput"], () => require("./getCrossConnectPortSpeedShape"));
+
+export { GetCrossConnectStatusArgs, GetCrossConnectStatusResult, GetCrossConnectStatusOutputArgs } from "./getCrossConnectStatus";
+export const getCrossConnectStatus: typeof import("./getCrossConnectStatus").getCrossConnectStatus = null as any;
+export const getCrossConnectStatusOutput: typeof import("./getCrossConnectStatus").getCrossConnectStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getCrossConnectStatus","getCrossConnectStatusOutput"], () => require("./getCrossConnectStatus"));
+
+export { GetCrossConnectsArgs, GetCrossConnectsResult, GetCrossConnectsOutputArgs } from "./getCrossConnects";
+export const getCrossConnects: typeof import("./getCrossConnects").getCrossConnects = null as any;
+export const getCrossConnectsOutput: typeof import("./getCrossConnects").getCrossConnectsOutput = null as any;
+utilities.lazyLoad(exports, ["getCrossConnects","getCrossConnectsOutput"], () => require("./getCrossConnects"));
+
+export { GetDedicatedVmHostArgs, GetDedicatedVmHostResult, GetDedicatedVmHostOutputArgs } from "./getDedicatedVmHost";
+export const getDedicatedVmHost: typeof import("./getDedicatedVmHost").getDedicatedVmHost = null as any;
+export const getDedicatedVmHostOutput: typeof import("./getDedicatedVmHost").getDedicatedVmHostOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedVmHost","getDedicatedVmHostOutput"], () => require("./getDedicatedVmHost"));
+
+export { GetDedicatedVmHostInstanceShapesArgs, GetDedicatedVmHostInstanceShapesResult, GetDedicatedVmHostInstanceShapesOutputArgs } from "./getDedicatedVmHostInstanceShapes";
+export const getDedicatedVmHostInstanceShapes: typeof import("./getDedicatedVmHostInstanceShapes").getDedicatedVmHostInstanceShapes = null as any;
+export const getDedicatedVmHostInstanceShapesOutput: typeof import("./getDedicatedVmHostInstanceShapes").getDedicatedVmHostInstanceShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedVmHostInstanceShapes","getDedicatedVmHostInstanceShapesOutput"], () => require("./getDedicatedVmHostInstanceShapes"));
+
+export { GetDedicatedVmHostInstancesArgs, GetDedicatedVmHostInstancesResult, GetDedicatedVmHostInstancesOutputArgs } from "./getDedicatedVmHostInstances";
+export const getDedicatedVmHostInstances: typeof import("./getDedicatedVmHostInstances").getDedicatedVmHostInstances = null as any;
+export const getDedicatedVmHostInstancesOutput: typeof import("./getDedicatedVmHostInstances").getDedicatedVmHostInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedVmHostInstances","getDedicatedVmHostInstancesOutput"], () => require("./getDedicatedVmHostInstances"));
+
+export { GetDedicatedVmHostShapesArgs, GetDedicatedVmHostShapesResult, GetDedicatedVmHostShapesOutputArgs } from "./getDedicatedVmHostShapes";
+export const getDedicatedVmHostShapes: typeof import("./getDedicatedVmHostShapes").getDedicatedVmHostShapes = null as any;
+export const getDedicatedVmHostShapesOutput: typeof import("./getDedicatedVmHostShapes").getDedicatedVmHostShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedVmHostShapes","getDedicatedVmHostShapesOutput"], () => require("./getDedicatedVmHostShapes"));
+
+export { GetDedicatedVmHostsArgs, GetDedicatedVmHostsResult, GetDedicatedVmHostsOutputArgs } from "./getDedicatedVmHosts";
+export const getDedicatedVmHosts: typeof import("./getDedicatedVmHosts").getDedicatedVmHosts = null as any;
+export const getDedicatedVmHostsOutput: typeof import("./getDedicatedVmHosts").getDedicatedVmHostsOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedVmHosts","getDedicatedVmHostsOutput"], () => require("./getDedicatedVmHosts"));
+
+export { GetDhcpOptionsArgs, GetDhcpOptionsResult, GetDhcpOptionsOutputArgs } from "./getDhcpOptions";
+export const getDhcpOptions: typeof import("./getDhcpOptions").getDhcpOptions = null as any;
+export const getDhcpOptionsOutput: typeof import("./getDhcpOptions").getDhcpOptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDhcpOptions","getDhcpOptionsOutput"], () => require("./getDhcpOptions"));
+
+export { GetDrgAttachmentsArgs, GetDrgAttachmentsResult, GetDrgAttachmentsOutputArgs } from "./getDrgAttachments";
+export const getDrgAttachments: typeof import("./getDrgAttachments").getDrgAttachments = null as any;
+export const getDrgAttachmentsOutput: typeof import("./getDrgAttachments").getDrgAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgAttachments","getDrgAttachmentsOutput"], () => require("./getDrgAttachments"));
+
+export { GetDrgRouteDistributionArgs, GetDrgRouteDistributionResult, GetDrgRouteDistributionOutputArgs } from "./getDrgRouteDistribution";
+export const getDrgRouteDistribution: typeof import("./getDrgRouteDistribution").getDrgRouteDistribution = null as any;
+export const getDrgRouteDistributionOutput: typeof import("./getDrgRouteDistribution").getDrgRouteDistributionOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgRouteDistribution","getDrgRouteDistributionOutput"], () => require("./getDrgRouteDistribution"));
+
+export { GetDrgRouteDistributionStatementsArgs, GetDrgRouteDistributionStatementsResult, GetDrgRouteDistributionStatementsOutputArgs } from "./getDrgRouteDistributionStatements";
+export const getDrgRouteDistributionStatements: typeof import("./getDrgRouteDistributionStatements").getDrgRouteDistributionStatements = null as any;
+export const getDrgRouteDistributionStatementsOutput: typeof import("./getDrgRouteDistributionStatements").getDrgRouteDistributionStatementsOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgRouteDistributionStatements","getDrgRouteDistributionStatementsOutput"], () => require("./getDrgRouteDistributionStatements"));
+
+export { GetDrgRouteDistributionsArgs, GetDrgRouteDistributionsResult, GetDrgRouteDistributionsOutputArgs } from "./getDrgRouteDistributions";
+export const getDrgRouteDistributions: typeof import("./getDrgRouteDistributions").getDrgRouteDistributions = null as any;
+export const getDrgRouteDistributionsOutput: typeof import("./getDrgRouteDistributions").getDrgRouteDistributionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgRouteDistributions","getDrgRouteDistributionsOutput"], () => require("./getDrgRouteDistributions"));
+
+export { GetDrgRouteRuleArgs, GetDrgRouteRuleResult, GetDrgRouteRuleOutputArgs } from "./getDrgRouteRule";
+export const getDrgRouteRule: typeof import("./getDrgRouteRule").getDrgRouteRule = null as any;
+export const getDrgRouteRuleOutput: typeof import("./getDrgRouteRule").getDrgRouteRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgRouteRule","getDrgRouteRuleOutput"], () => require("./getDrgRouteRule"));
+
+export { GetDrgRouteTableRouteRulesArgs, GetDrgRouteTableRouteRulesResult, GetDrgRouteTableRouteRulesOutputArgs } from "./getDrgRouteTableRouteRules";
+export const getDrgRouteTableRouteRules: typeof import("./getDrgRouteTableRouteRules").getDrgRouteTableRouteRules = null as any;
+export const getDrgRouteTableRouteRulesOutput: typeof import("./getDrgRouteTableRouteRules").getDrgRouteTableRouteRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgRouteTableRouteRules","getDrgRouteTableRouteRulesOutput"], () => require("./getDrgRouteTableRouteRules"));
+
+export { GetDrgRouteTablesArgs, GetDrgRouteTablesResult, GetDrgRouteTablesOutputArgs } from "./getDrgRouteTables";
+export const getDrgRouteTables: typeof import("./getDrgRouteTables").getDrgRouteTables = null as any;
+export const getDrgRouteTablesOutput: typeof import("./getDrgRouteTables").getDrgRouteTablesOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgRouteTables","getDrgRouteTablesOutput"], () => require("./getDrgRouteTables"));
+
+export { GetDrgsArgs, GetDrgsResult, GetDrgsOutputArgs } from "./getDrgs";
+export const getDrgs: typeof import("./getDrgs").getDrgs = null as any;
+export const getDrgsOutput: typeof import("./getDrgs").getDrgsOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgs","getDrgsOutput"], () => require("./getDrgs"));
+
+export { GetFastConnectProviderServiceArgs, GetFastConnectProviderServiceResult, GetFastConnectProviderServiceOutputArgs } from "./getFastConnectProviderService";
+export const getFastConnectProviderService: typeof import("./getFastConnectProviderService").getFastConnectProviderService = null as any;
+export const getFastConnectProviderServiceOutput: typeof import("./getFastConnectProviderService").getFastConnectProviderServiceOutput = null as any;
+utilities.lazyLoad(exports, ["getFastConnectProviderService","getFastConnectProviderServiceOutput"], () => require("./getFastConnectProviderService"));
+
+export { GetFastConnectProviderServiceKeyArgs, GetFastConnectProviderServiceKeyResult, GetFastConnectProviderServiceKeyOutputArgs } from "./getFastConnectProviderServiceKey";
+export const getFastConnectProviderServiceKey: typeof import("./getFastConnectProviderServiceKey").getFastConnectProviderServiceKey = null as any;
+export const getFastConnectProviderServiceKeyOutput: typeof import("./getFastConnectProviderServiceKey").getFastConnectProviderServiceKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getFastConnectProviderServiceKey","getFastConnectProviderServiceKeyOutput"], () => require("./getFastConnectProviderServiceKey"));
+
+export { GetFastConnectProviderServicesArgs, GetFastConnectProviderServicesResult, GetFastConnectProviderServicesOutputArgs } from "./getFastConnectProviderServices";
+export const getFastConnectProviderServices: typeof import("./getFastConnectProviderServices").getFastConnectProviderServices = null as any;
+export const getFastConnectProviderServicesOutput: typeof import("./getFastConnectProviderServices").getFastConnectProviderServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getFastConnectProviderServices","getFastConnectProviderServicesOutput"], () => require("./getFastConnectProviderServices"));
+
+export { GetImageArgs, GetImageResult, GetImageOutputArgs } from "./getImage";
+export const getImage: typeof import("./getImage").getImage = null as any;
+export const getImageOutput: typeof import("./getImage").getImageOutput = null as any;
+utilities.lazyLoad(exports, ["getImage","getImageOutput"], () => require("./getImage"));
+
+export { GetImageShapeArgs, GetImageShapeResult, GetImageShapeOutputArgs } from "./getImageShape";
+export const getImageShape: typeof import("./getImageShape").getImageShape = null as any;
+export const getImageShapeOutput: typeof import("./getImageShape").getImageShapeOutput = null as any;
+utilities.lazyLoad(exports, ["getImageShape","getImageShapeOutput"], () => require("./getImageShape"));
+
+export { GetImageShapesArgs, GetImageShapesResult, GetImageShapesOutputArgs } from "./getImageShapes";
+export const getImageShapes: typeof import("./getImageShapes").getImageShapes = null as any;
+export const getImageShapesOutput: typeof import("./getImageShapes").getImageShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getImageShapes","getImageShapesOutput"], () => require("./getImageShapes"));
+
+export { GetImagesArgs, GetImagesResult, GetImagesOutputArgs } from "./getImages";
+export const getImages: typeof import("./getImages").getImages = null as any;
+export const getImagesOutput: typeof import("./getImages").getImagesOutput = null as any;
+utilities.lazyLoad(exports, ["getImages","getImagesOutput"], () => require("./getImages"));
+
+export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
+export const getInstance: typeof import("./getInstance").getInstance = null as any;
+export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getInstance","getInstanceOutput"], () => require("./getInstance"));
+
+export { GetInstanceConfigurationArgs, GetInstanceConfigurationResult, GetInstanceConfigurationOutputArgs } from "./getInstanceConfiguration";
+export const getInstanceConfiguration: typeof import("./getInstanceConfiguration").getInstanceConfiguration = null as any;
+export const getInstanceConfigurationOutput: typeof import("./getInstanceConfiguration").getInstanceConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceConfiguration","getInstanceConfigurationOutput"], () => require("./getInstanceConfiguration"));
+
+export { GetInstanceConfigurationsArgs, GetInstanceConfigurationsResult, GetInstanceConfigurationsOutputArgs } from "./getInstanceConfigurations";
+export const getInstanceConfigurations: typeof import("./getInstanceConfigurations").getInstanceConfigurations = null as any;
+export const getInstanceConfigurationsOutput: typeof import("./getInstanceConfigurations").getInstanceConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceConfigurations","getInstanceConfigurationsOutput"], () => require("./getInstanceConfigurations"));
+
+export { GetInstanceConsoleConnectionsArgs, GetInstanceConsoleConnectionsResult, GetInstanceConsoleConnectionsOutputArgs } from "./getInstanceConsoleConnections";
+export const getInstanceConsoleConnections: typeof import("./getInstanceConsoleConnections").getInstanceConsoleConnections = null as any;
+export const getInstanceConsoleConnectionsOutput: typeof import("./getInstanceConsoleConnections").getInstanceConsoleConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceConsoleConnections","getInstanceConsoleConnectionsOutput"], () => require("./getInstanceConsoleConnections"));
+
+export { GetInstanceCredentialsArgs, GetInstanceCredentialsResult, GetInstanceCredentialsOutputArgs } from "./getInstanceCredentials";
+export const getInstanceCredentials: typeof import("./getInstanceCredentials").getInstanceCredentials = null as any;
+export const getInstanceCredentialsOutput: typeof import("./getInstanceCredentials").getInstanceCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceCredentials","getInstanceCredentialsOutput"], () => require("./getInstanceCredentials"));
+
+export { GetInstanceDevicesArgs, GetInstanceDevicesResult, GetInstanceDevicesOutputArgs } from "./getInstanceDevices";
+export const getInstanceDevices: typeof import("./getInstanceDevices").getInstanceDevices = null as any;
+export const getInstanceDevicesOutput: typeof import("./getInstanceDevices").getInstanceDevicesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceDevices","getInstanceDevicesOutput"], () => require("./getInstanceDevices"));
+
+export { GetInstanceMaintenanceRebootArgs, GetInstanceMaintenanceRebootResult, GetInstanceMaintenanceRebootOutputArgs } from "./getInstanceMaintenanceReboot";
+export const getInstanceMaintenanceReboot: typeof import("./getInstanceMaintenanceReboot").getInstanceMaintenanceReboot = null as any;
+export const getInstanceMaintenanceRebootOutput: typeof import("./getInstanceMaintenanceReboot").getInstanceMaintenanceRebootOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceMaintenanceReboot","getInstanceMaintenanceRebootOutput"], () => require("./getInstanceMaintenanceReboot"));
+
+export { GetInstanceMeasuredBootReportArgs, GetInstanceMeasuredBootReportResult, GetInstanceMeasuredBootReportOutputArgs } from "./getInstanceMeasuredBootReport";
+export const getInstanceMeasuredBootReport: typeof import("./getInstanceMeasuredBootReport").getInstanceMeasuredBootReport = null as any;
+export const getInstanceMeasuredBootReportOutput: typeof import("./getInstanceMeasuredBootReport").getInstanceMeasuredBootReportOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceMeasuredBootReport","getInstanceMeasuredBootReportOutput"], () => require("./getInstanceMeasuredBootReport"));
+
+export { GetInstancePoolArgs, GetInstancePoolResult, GetInstancePoolOutputArgs } from "./getInstancePool";
+export const getInstancePool: typeof import("./getInstancePool").getInstancePool = null as any;
+export const getInstancePoolOutput: typeof import("./getInstancePool").getInstancePoolOutput = null as any;
+utilities.lazyLoad(exports, ["getInstancePool","getInstancePoolOutput"], () => require("./getInstancePool"));
+
+export { GetInstancePoolInstancesArgs, GetInstancePoolInstancesResult, GetInstancePoolInstancesOutputArgs } from "./getInstancePoolInstances";
+export const getInstancePoolInstances: typeof import("./getInstancePoolInstances").getInstancePoolInstances = null as any;
+export const getInstancePoolInstancesOutput: typeof import("./getInstancePoolInstances").getInstancePoolInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstancePoolInstances","getInstancePoolInstancesOutput"], () => require("./getInstancePoolInstances"));
+
+export { GetInstancePoolLoadBalancerAttachmentArgs, GetInstancePoolLoadBalancerAttachmentResult, GetInstancePoolLoadBalancerAttachmentOutputArgs } from "./getInstancePoolLoadBalancerAttachment";
+export const getInstancePoolLoadBalancerAttachment: typeof import("./getInstancePoolLoadBalancerAttachment").getInstancePoolLoadBalancerAttachment = null as any;
+export const getInstancePoolLoadBalancerAttachmentOutput: typeof import("./getInstancePoolLoadBalancerAttachment").getInstancePoolLoadBalancerAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getInstancePoolLoadBalancerAttachment","getInstancePoolLoadBalancerAttachmentOutput"], () => require("./getInstancePoolLoadBalancerAttachment"));
+
+export { GetInstancePoolsArgs, GetInstancePoolsResult, GetInstancePoolsOutputArgs } from "./getInstancePools";
+export const getInstancePools: typeof import("./getInstancePools").getInstancePools = null as any;
+export const getInstancePoolsOutput: typeof import("./getInstancePools").getInstancePoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getInstancePools","getInstancePoolsOutput"], () => require("./getInstancePools"));
+
+export { GetInstancesArgs, GetInstancesResult, GetInstancesOutputArgs } from "./getInstances";
+export const getInstances: typeof import("./getInstances").getInstances = null as any;
+export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
+
+export { GetInternetGatewaysArgs, GetInternetGatewaysResult, GetInternetGatewaysOutputArgs } from "./getInternetGateways";
+export const getInternetGateways: typeof import("./getInternetGateways").getInternetGateways = null as any;
+export const getInternetGatewaysOutput: typeof import("./getInternetGateways").getInternetGatewaysOutput = null as any;
+utilities.lazyLoad(exports, ["getInternetGateways","getInternetGatewaysOutput"], () => require("./getInternetGateways"));
+
+export { GetIpsecAlgorithmResult } from "./getIpsecAlgorithm";
+export const getIpsecAlgorithm: typeof import("./getIpsecAlgorithm").getIpsecAlgorithm = null as any;
+utilities.lazyLoad(exports, ["getIpsecAlgorithm"], () => require("./getIpsecAlgorithm"));
+
+export { GetIpsecConfigArgs, GetIpsecConfigResult, GetIpsecConfigOutputArgs } from "./getIpsecConfig";
+export const getIpsecConfig: typeof import("./getIpsecConfig").getIpsecConfig = null as any;
+export const getIpsecConfigOutput: typeof import("./getIpsecConfig").getIpsecConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getIpsecConfig","getIpsecConfigOutput"], () => require("./getIpsecConfig"));
+
+export { GetIpsecConnectionTunnelArgs, GetIpsecConnectionTunnelResult, GetIpsecConnectionTunnelOutputArgs } from "./getIpsecConnectionTunnel";
+export const getIpsecConnectionTunnel: typeof import("./getIpsecConnectionTunnel").getIpsecConnectionTunnel = null as any;
+export const getIpsecConnectionTunnelOutput: typeof import("./getIpsecConnectionTunnel").getIpsecConnectionTunnelOutput = null as any;
+utilities.lazyLoad(exports, ["getIpsecConnectionTunnel","getIpsecConnectionTunnelOutput"], () => require("./getIpsecConnectionTunnel"));
+
+export { GetIpsecConnectionTunnelErrorArgs, GetIpsecConnectionTunnelErrorResult, GetIpsecConnectionTunnelErrorOutputArgs } from "./getIpsecConnectionTunnelError";
+export const getIpsecConnectionTunnelError: typeof import("./getIpsecConnectionTunnelError").getIpsecConnectionTunnelError = null as any;
+export const getIpsecConnectionTunnelErrorOutput: typeof import("./getIpsecConnectionTunnelError").getIpsecConnectionTunnelErrorOutput = null as any;
+utilities.lazyLoad(exports, ["getIpsecConnectionTunnelError","getIpsecConnectionTunnelErrorOutput"], () => require("./getIpsecConnectionTunnelError"));
+
+export { GetIpsecConnectionTunnelRoutesArgs, GetIpsecConnectionTunnelRoutesResult, GetIpsecConnectionTunnelRoutesOutputArgs } from "./getIpsecConnectionTunnelRoutes";
+export const getIpsecConnectionTunnelRoutes: typeof import("./getIpsecConnectionTunnelRoutes").getIpsecConnectionTunnelRoutes = null as any;
+export const getIpsecConnectionTunnelRoutesOutput: typeof import("./getIpsecConnectionTunnelRoutes").getIpsecConnectionTunnelRoutesOutput = null as any;
+utilities.lazyLoad(exports, ["getIpsecConnectionTunnelRoutes","getIpsecConnectionTunnelRoutesOutput"], () => require("./getIpsecConnectionTunnelRoutes"));
+
+export { GetIpsecConnectionTunnelsArgs, GetIpsecConnectionTunnelsResult, GetIpsecConnectionTunnelsOutputArgs } from "./getIpsecConnectionTunnels";
+export const getIpsecConnectionTunnels: typeof import("./getIpsecConnectionTunnels").getIpsecConnectionTunnels = null as any;
+export const getIpsecConnectionTunnelsOutput: typeof import("./getIpsecConnectionTunnels").getIpsecConnectionTunnelsOutput = null as any;
+utilities.lazyLoad(exports, ["getIpsecConnectionTunnels","getIpsecConnectionTunnelsOutput"], () => require("./getIpsecConnectionTunnels"));
+
+export { GetIpsecConnectionsArgs, GetIpsecConnectionsResult, GetIpsecConnectionsOutputArgs } from "./getIpsecConnections";
+export const getIpsecConnections: typeof import("./getIpsecConnections").getIpsecConnections = null as any;
+export const getIpsecConnectionsOutput: typeof import("./getIpsecConnections").getIpsecConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getIpsecConnections","getIpsecConnectionsOutput"], () => require("./getIpsecConnections"));
+
+export { GetIpsecStatusArgs, GetIpsecStatusResult, GetIpsecStatusOutputArgs } from "./getIpsecStatus";
+export const getIpsecStatus: typeof import("./getIpsecStatus").getIpsecStatus = null as any;
+export const getIpsecStatusOutput: typeof import("./getIpsecStatus").getIpsecStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getIpsecStatus","getIpsecStatusOutput"], () => require("./getIpsecStatus"));
+
+export { GetIpv6Args, GetIpv6Result, GetIpv6OutputArgs } from "./getIpv6";
+export const getIpv6: typeof import("./getIpv6").getIpv6 = null as any;
+export const getIpv6Output: typeof import("./getIpv6").getIpv6Output = null as any;
+utilities.lazyLoad(exports, ["getIpv6","getIpv6Output"], () => require("./getIpv6"));
+
+export { GetIpv6sArgs, GetIpv6sResult, GetIpv6sOutputArgs } from "./getIpv6s";
+export const getIpv6s: typeof import("./getIpv6s").getIpv6s = null as any;
+export const getIpv6sOutput: typeof import("./getIpv6s").getIpv6sOutput = null as any;
+utilities.lazyLoad(exports, ["getIpv6s","getIpv6sOutput"], () => require("./getIpv6s"));
+
+export { GetLetterOfAuthorityArgs, GetLetterOfAuthorityResult, GetLetterOfAuthorityOutputArgs } from "./getLetterOfAuthority";
+export const getLetterOfAuthority: typeof import("./getLetterOfAuthority").getLetterOfAuthority = null as any;
+export const getLetterOfAuthorityOutput: typeof import("./getLetterOfAuthority").getLetterOfAuthorityOutput = null as any;
+utilities.lazyLoad(exports, ["getLetterOfAuthority","getLetterOfAuthorityOutput"], () => require("./getLetterOfAuthority"));
+
+export { GetListingResourceVersionArgs, GetListingResourceVersionResult, GetListingResourceVersionOutputArgs } from "./getListingResourceVersion";
+export const getListingResourceVersion: typeof import("./getListingResourceVersion").getListingResourceVersion = null as any;
+export const getListingResourceVersionOutput: typeof import("./getListingResourceVersion").getListingResourceVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getListingResourceVersion","getListingResourceVersionOutput"], () => require("./getListingResourceVersion"));
+
+export { GetListingResourceVersionsArgs, GetListingResourceVersionsResult, GetListingResourceVersionsOutputArgs } from "./getListingResourceVersions";
+export const getListingResourceVersions: typeof import("./getListingResourceVersions").getListingResourceVersions = null as any;
+export const getListingResourceVersionsOutput: typeof import("./getListingResourceVersions").getListingResourceVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getListingResourceVersions","getListingResourceVersionsOutput"], () => require("./getListingResourceVersions"));
+
+export { GetLocalPeeringGatewaysArgs, GetLocalPeeringGatewaysResult, GetLocalPeeringGatewaysOutputArgs } from "./getLocalPeeringGateways";
+export const getLocalPeeringGateways: typeof import("./getLocalPeeringGateways").getLocalPeeringGateways = null as any;
+export const getLocalPeeringGatewaysOutput: typeof import("./getLocalPeeringGateways").getLocalPeeringGatewaysOutput = null as any;
+utilities.lazyLoad(exports, ["getLocalPeeringGateways","getLocalPeeringGatewaysOutput"], () => require("./getLocalPeeringGateways"));
+
+export { GetNatGatewayArgs, GetNatGatewayResult, GetNatGatewayOutputArgs } from "./getNatGateway";
+export const getNatGateway: typeof import("./getNatGateway").getNatGateway = null as any;
+export const getNatGatewayOutput: typeof import("./getNatGateway").getNatGatewayOutput = null as any;
+utilities.lazyLoad(exports, ["getNatGateway","getNatGatewayOutput"], () => require("./getNatGateway"));
+
+export { GetNatGatewaysArgs, GetNatGatewaysResult, GetNatGatewaysOutputArgs } from "./getNatGateways";
+export const getNatGateways: typeof import("./getNatGateways").getNatGateways = null as any;
+export const getNatGatewaysOutput: typeof import("./getNatGateways").getNatGatewaysOutput = null as any;
+utilities.lazyLoad(exports, ["getNatGateways","getNatGatewaysOutput"], () => require("./getNatGateways"));
+
+export { GetNetworkSecurityGroupArgs, GetNetworkSecurityGroupResult, GetNetworkSecurityGroupOutputArgs } from "./getNetworkSecurityGroup";
+export const getNetworkSecurityGroup: typeof import("./getNetworkSecurityGroup").getNetworkSecurityGroup = null as any;
+export const getNetworkSecurityGroupOutput: typeof import("./getNetworkSecurityGroup").getNetworkSecurityGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkSecurityGroup","getNetworkSecurityGroupOutput"], () => require("./getNetworkSecurityGroup"));
+
+export { GetNetworkSecurityGroupSecurityRulesArgs, GetNetworkSecurityGroupSecurityRulesResult, GetNetworkSecurityGroupSecurityRulesOutputArgs } from "./getNetworkSecurityGroupSecurityRules";
+export const getNetworkSecurityGroupSecurityRules: typeof import("./getNetworkSecurityGroupSecurityRules").getNetworkSecurityGroupSecurityRules = null as any;
+export const getNetworkSecurityGroupSecurityRulesOutput: typeof import("./getNetworkSecurityGroupSecurityRules").getNetworkSecurityGroupSecurityRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkSecurityGroupSecurityRules","getNetworkSecurityGroupSecurityRulesOutput"], () => require("./getNetworkSecurityGroupSecurityRules"));
+
+export { GetNetworkSecurityGroupVnicsArgs, GetNetworkSecurityGroupVnicsResult, GetNetworkSecurityGroupVnicsOutputArgs } from "./getNetworkSecurityGroupVnics";
+export const getNetworkSecurityGroupVnics: typeof import("./getNetworkSecurityGroupVnics").getNetworkSecurityGroupVnics = null as any;
+export const getNetworkSecurityGroupVnicsOutput: typeof import("./getNetworkSecurityGroupVnics").getNetworkSecurityGroupVnicsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkSecurityGroupVnics","getNetworkSecurityGroupVnicsOutput"], () => require("./getNetworkSecurityGroupVnics"));
+
+export { GetNetworkSecurityGroupsArgs, GetNetworkSecurityGroupsResult, GetNetworkSecurityGroupsOutputArgs } from "./getNetworkSecurityGroups";
+export const getNetworkSecurityGroups: typeof import("./getNetworkSecurityGroups").getNetworkSecurityGroups = null as any;
+export const getNetworkSecurityGroupsOutput: typeof import("./getNetworkSecurityGroups").getNetworkSecurityGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkSecurityGroups","getNetworkSecurityGroupsOutput"], () => require("./getNetworkSecurityGroups"));
+
+export { GetPeerRegionForRemotePeeringsArgs, GetPeerRegionForRemotePeeringsResult, GetPeerRegionForRemotePeeringsOutputArgs } from "./getPeerRegionForRemotePeerings";
+export const getPeerRegionForRemotePeerings: typeof import("./getPeerRegionForRemotePeerings").getPeerRegionForRemotePeerings = null as any;
+export const getPeerRegionForRemotePeeringsOutput: typeof import("./getPeerRegionForRemotePeerings").getPeerRegionForRemotePeeringsOutput = null as any;
+utilities.lazyLoad(exports, ["getPeerRegionForRemotePeerings","getPeerRegionForRemotePeeringsOutput"], () => require("./getPeerRegionForRemotePeerings"));
+
+export { GetPrivateIpArgs, GetPrivateIpResult, GetPrivateIpOutputArgs } from "./getPrivateIp";
+export const getPrivateIp: typeof import("./getPrivateIp").getPrivateIp = null as any;
+export const getPrivateIpOutput: typeof import("./getPrivateIp").getPrivateIpOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateIp","getPrivateIpOutput"], () => require("./getPrivateIp"));
+
+export { GetPrivateIpsArgs, GetPrivateIpsResult, GetPrivateIpsOutputArgs } from "./getPrivateIps";
+export const getPrivateIps: typeof import("./getPrivateIps").getPrivateIps = null as any;
+export const getPrivateIpsOutput: typeof import("./getPrivateIps").getPrivateIpsOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateIps","getPrivateIpsOutput"], () => require("./getPrivateIps"));
+
+export { GetPublicIpArgs, GetPublicIpResult, GetPublicIpOutputArgs } from "./getPublicIp";
+export const getPublicIp: typeof import("./getPublicIp").getPublicIp = null as any;
+export const getPublicIpOutput: typeof import("./getPublicIp").getPublicIpOutput = null as any;
+utilities.lazyLoad(exports, ["getPublicIp","getPublicIpOutput"], () => require("./getPublicIp"));
+
+export { GetPublicIpPoolArgs, GetPublicIpPoolResult, GetPublicIpPoolOutputArgs } from "./getPublicIpPool";
+export const getPublicIpPool: typeof import("./getPublicIpPool").getPublicIpPool = null as any;
+export const getPublicIpPoolOutput: typeof import("./getPublicIpPool").getPublicIpPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getPublicIpPool","getPublicIpPoolOutput"], () => require("./getPublicIpPool"));
+
+export { GetPublicIpPoolsArgs, GetPublicIpPoolsResult, GetPublicIpPoolsOutputArgs } from "./getPublicIpPools";
+export const getPublicIpPools: typeof import("./getPublicIpPools").getPublicIpPools = null as any;
+export const getPublicIpPoolsOutput: typeof import("./getPublicIpPools").getPublicIpPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getPublicIpPools","getPublicIpPoolsOutput"], () => require("./getPublicIpPools"));
+
+export { GetPublicIpsArgs, GetPublicIpsResult, GetPublicIpsOutputArgs } from "./getPublicIps";
+export const getPublicIps: typeof import("./getPublicIps").getPublicIps = null as any;
+export const getPublicIpsOutput: typeof import("./getPublicIps").getPublicIpsOutput = null as any;
+utilities.lazyLoad(exports, ["getPublicIps","getPublicIpsOutput"], () => require("./getPublicIps"));
+
+export { GetRemotePeeringConnectionsArgs, GetRemotePeeringConnectionsResult, GetRemotePeeringConnectionsOutputArgs } from "./getRemotePeeringConnections";
+export const getRemotePeeringConnections: typeof import("./getRemotePeeringConnections").getRemotePeeringConnections = null as any;
+export const getRemotePeeringConnectionsOutput: typeof import("./getRemotePeeringConnections").getRemotePeeringConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getRemotePeeringConnections","getRemotePeeringConnectionsOutput"], () => require("./getRemotePeeringConnections"));
+
+export { GetRouteTablesArgs, GetRouteTablesResult, GetRouteTablesOutputArgs } from "./getRouteTables";
+export const getRouteTables: typeof import("./getRouteTables").getRouteTables = null as any;
+export const getRouteTablesOutput: typeof import("./getRouteTables").getRouteTablesOutput = null as any;
+utilities.lazyLoad(exports, ["getRouteTables","getRouteTablesOutput"], () => require("./getRouteTables"));
+
+export { GetSecurityListsArgs, GetSecurityListsResult, GetSecurityListsOutputArgs } from "./getSecurityLists";
+export const getSecurityLists: typeof import("./getSecurityLists").getSecurityLists = null as any;
+export const getSecurityListsOutput: typeof import("./getSecurityLists").getSecurityListsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityLists","getSecurityListsOutput"], () => require("./getSecurityLists"));
+
+export { GetServiceGatewaysArgs, GetServiceGatewaysResult, GetServiceGatewaysOutputArgs } from "./getServiceGateways";
+export const getServiceGateways: typeof import("./getServiceGateways").getServiceGateways = null as any;
+export const getServiceGatewaysOutput: typeof import("./getServiceGateways").getServiceGatewaysOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceGateways","getServiceGatewaysOutput"], () => require("./getServiceGateways"));
+
+export { GetServicesArgs, GetServicesResult, GetServicesOutputArgs } from "./getServices";
+export const getServices: typeof import("./getServices").getServices = null as any;
+export const getServicesOutput: typeof import("./getServices").getServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getServices","getServicesOutput"], () => require("./getServices"));
+
+export { GetShapeArgs, GetShapeResult, GetShapeOutputArgs } from "./getShape";
+export const getShape: typeof import("./getShape").getShape = null as any;
+export const getShapeOutput: typeof import("./getShape").getShapeOutput = null as any;
+utilities.lazyLoad(exports, ["getShape","getShapeOutput"], () => require("./getShape"));
+
+export { GetShapesArgs, GetShapesResult, GetShapesOutputArgs } from "./getShapes";
+export const getShapes: typeof import("./getShapes").getShapes = null as any;
+export const getShapesOutput: typeof import("./getShapes").getShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getShapes","getShapesOutput"], () => require("./getShapes"));
+
+export { GetSubnetArgs, GetSubnetResult, GetSubnetOutputArgs } from "./getSubnet";
+export const getSubnet: typeof import("./getSubnet").getSubnet = null as any;
+export const getSubnetOutput: typeof import("./getSubnet").getSubnetOutput = null as any;
+utilities.lazyLoad(exports, ["getSubnet","getSubnetOutput"], () => require("./getSubnet"));
+
+export { GetSubnetsArgs, GetSubnetsResult, GetSubnetsOutputArgs } from "./getSubnets";
+export const getSubnets: typeof import("./getSubnets").getSubnets = null as any;
+export const getSubnetsOutput: typeof import("./getSubnets").getSubnetsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubnets","getSubnetsOutput"], () => require("./getSubnets"));
+
+export { GetTunnelSecurityAssociationsArgs, GetTunnelSecurityAssociationsResult, GetTunnelSecurityAssociationsOutputArgs } from "./getTunnelSecurityAssociations";
+export const getTunnelSecurityAssociations: typeof import("./getTunnelSecurityAssociations").getTunnelSecurityAssociations = null as any;
+export const getTunnelSecurityAssociationsOutput: typeof import("./getTunnelSecurityAssociations").getTunnelSecurityAssociationsOutput = null as any;
+utilities.lazyLoad(exports, ["getTunnelSecurityAssociations","getTunnelSecurityAssociationsOutput"], () => require("./getTunnelSecurityAssociations"));
+
+export { GetVcnArgs, GetVcnResult, GetVcnOutputArgs } from "./getVcn";
+export const getVcn: typeof import("./getVcn").getVcn = null as any;
+export const getVcnOutput: typeof import("./getVcn").getVcnOutput = null as any;
+utilities.lazyLoad(exports, ["getVcn","getVcnOutput"], () => require("./getVcn"));
+
+export { GetVcnsArgs, GetVcnsResult, GetVcnsOutputArgs } from "./getVcns";
+export const getVcns: typeof import("./getVcns").getVcns = null as any;
+export const getVcnsOutput: typeof import("./getVcns").getVcnsOutput = null as any;
+utilities.lazyLoad(exports, ["getVcns","getVcnsOutput"], () => require("./getVcns"));
+
+export { GetVirtualCircuitArgs, GetVirtualCircuitResult, GetVirtualCircuitOutputArgs } from "./getVirtualCircuit";
+export const getVirtualCircuit: typeof import("./getVirtualCircuit").getVirtualCircuit = null as any;
+export const getVirtualCircuitOutput: typeof import("./getVirtualCircuit").getVirtualCircuitOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualCircuit","getVirtualCircuitOutput"], () => require("./getVirtualCircuit"));
+
+export { GetVirtualCircuitBandwidthShapesArgs, GetVirtualCircuitBandwidthShapesResult, GetVirtualCircuitBandwidthShapesOutputArgs } from "./getVirtualCircuitBandwidthShapes";
+export const getVirtualCircuitBandwidthShapes: typeof import("./getVirtualCircuitBandwidthShapes").getVirtualCircuitBandwidthShapes = null as any;
+export const getVirtualCircuitBandwidthShapesOutput: typeof import("./getVirtualCircuitBandwidthShapes").getVirtualCircuitBandwidthShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualCircuitBandwidthShapes","getVirtualCircuitBandwidthShapesOutput"], () => require("./getVirtualCircuitBandwidthShapes"));
+
+export { GetVirtualCircuitPublicPrefixesArgs, GetVirtualCircuitPublicPrefixesResult, GetVirtualCircuitPublicPrefixesOutputArgs } from "./getVirtualCircuitPublicPrefixes";
+export const getVirtualCircuitPublicPrefixes: typeof import("./getVirtualCircuitPublicPrefixes").getVirtualCircuitPublicPrefixes = null as any;
+export const getVirtualCircuitPublicPrefixesOutput: typeof import("./getVirtualCircuitPublicPrefixes").getVirtualCircuitPublicPrefixesOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualCircuitPublicPrefixes","getVirtualCircuitPublicPrefixesOutput"], () => require("./getVirtualCircuitPublicPrefixes"));
+
+export { GetVirtualCircuitsArgs, GetVirtualCircuitsResult, GetVirtualCircuitsOutputArgs } from "./getVirtualCircuits";
+export const getVirtualCircuits: typeof import("./getVirtualCircuits").getVirtualCircuits = null as any;
+export const getVirtualCircuitsOutput: typeof import("./getVirtualCircuits").getVirtualCircuitsOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualCircuits","getVirtualCircuitsOutput"], () => require("./getVirtualCircuits"));
+
+export { GetVirtualNetworksArgs, GetVirtualNetworksResult, GetVirtualNetworksOutputArgs } from "./getVirtualNetworks";
+export const getVirtualNetworks: typeof import("./getVirtualNetworks").getVirtualNetworks = null as any;
+export const getVirtualNetworksOutput: typeof import("./getVirtualNetworks").getVirtualNetworksOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualNetworks","getVirtualNetworksOutput"], () => require("./getVirtualNetworks"));
+
+export { GetVlanArgs, GetVlanResult, GetVlanOutputArgs } from "./getVlan";
+export const getVlan: typeof import("./getVlan").getVlan = null as any;
+export const getVlanOutput: typeof import("./getVlan").getVlanOutput = null as any;
+utilities.lazyLoad(exports, ["getVlan","getVlanOutput"], () => require("./getVlan"));
+
+export { GetVlansArgs, GetVlansResult, GetVlansOutputArgs } from "./getVlans";
+export const getVlans: typeof import("./getVlans").getVlans = null as any;
+export const getVlansOutput: typeof import("./getVlans").getVlansOutput = null as any;
+utilities.lazyLoad(exports, ["getVlans","getVlansOutput"], () => require("./getVlans"));
+
+export { GetVnicArgs, GetVnicResult, GetVnicOutputArgs } from "./getVnic";
+export const getVnic: typeof import("./getVnic").getVnic = null as any;
+export const getVnicOutput: typeof import("./getVnic").getVnicOutput = null as any;
+utilities.lazyLoad(exports, ["getVnic","getVnicOutput"], () => require("./getVnic"));
+
+export { GetVnicAttachmentsArgs, GetVnicAttachmentsResult, GetVnicAttachmentsOutputArgs } from "./getVnicAttachments";
+export const getVnicAttachments: typeof import("./getVnicAttachments").getVnicAttachments = null as any;
+export const getVnicAttachmentsOutput: typeof import("./getVnicAttachments").getVnicAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getVnicAttachments","getVnicAttachmentsOutput"], () => require("./getVnicAttachments"));
+
+export { GetVolumeArgs, GetVolumeResult, GetVolumeOutputArgs } from "./getVolume";
+export const getVolume: typeof import("./getVolume").getVolume = null as any;
+export const getVolumeOutput: typeof import("./getVolume").getVolumeOutput = null as any;
+utilities.lazyLoad(exports, ["getVolume","getVolumeOutput"], () => require("./getVolume"));
+
+export { GetVolumeAttachmentsArgs, GetVolumeAttachmentsResult, GetVolumeAttachmentsOutputArgs } from "./getVolumeAttachments";
+export const getVolumeAttachments: typeof import("./getVolumeAttachments").getVolumeAttachments = null as any;
+export const getVolumeAttachmentsOutput: typeof import("./getVolumeAttachments").getVolumeAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumeAttachments","getVolumeAttachmentsOutput"], () => require("./getVolumeAttachments"));
+
+export { GetVolumeBackupPoliciesArgs, GetVolumeBackupPoliciesResult, GetVolumeBackupPoliciesOutputArgs } from "./getVolumeBackupPolicies";
+export const getVolumeBackupPolicies: typeof import("./getVolumeBackupPolicies").getVolumeBackupPolicies = null as any;
+export const getVolumeBackupPoliciesOutput: typeof import("./getVolumeBackupPolicies").getVolumeBackupPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumeBackupPolicies","getVolumeBackupPoliciesOutput"], () => require("./getVolumeBackupPolicies"));
+
+export { GetVolumeBackupPolicyAssignmentsArgs, GetVolumeBackupPolicyAssignmentsResult, GetVolumeBackupPolicyAssignmentsOutputArgs } from "./getVolumeBackupPolicyAssignments";
+export const getVolumeBackupPolicyAssignments: typeof import("./getVolumeBackupPolicyAssignments").getVolumeBackupPolicyAssignments = null as any;
+export const getVolumeBackupPolicyAssignmentsOutput: typeof import("./getVolumeBackupPolicyAssignments").getVolumeBackupPolicyAssignmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumeBackupPolicyAssignments","getVolumeBackupPolicyAssignmentsOutput"], () => require("./getVolumeBackupPolicyAssignments"));
+
+export { GetVolumeBackupsArgs, GetVolumeBackupsResult, GetVolumeBackupsOutputArgs } from "./getVolumeBackups";
+export const getVolumeBackups: typeof import("./getVolumeBackups").getVolumeBackups = null as any;
+export const getVolumeBackupsOutput: typeof import("./getVolumeBackups").getVolumeBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumeBackups","getVolumeBackupsOutput"], () => require("./getVolumeBackups"));
+
+export { GetVolumeGroupBackupsArgs, GetVolumeGroupBackupsResult, GetVolumeGroupBackupsOutputArgs } from "./getVolumeGroupBackups";
+export const getVolumeGroupBackups: typeof import("./getVolumeGroupBackups").getVolumeGroupBackups = null as any;
+export const getVolumeGroupBackupsOutput: typeof import("./getVolumeGroupBackups").getVolumeGroupBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumeGroupBackups","getVolumeGroupBackupsOutput"], () => require("./getVolumeGroupBackups"));
+
+export { GetVolumeGroupReplicaArgs, GetVolumeGroupReplicaResult, GetVolumeGroupReplicaOutputArgs } from "./getVolumeGroupReplica";
+export const getVolumeGroupReplica: typeof import("./getVolumeGroupReplica").getVolumeGroupReplica = null as any;
+export const getVolumeGroupReplicaOutput: typeof import("./getVolumeGroupReplica").getVolumeGroupReplicaOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumeGroupReplica","getVolumeGroupReplicaOutput"], () => require("./getVolumeGroupReplica"));
+
+export { GetVolumeGroupReplicasArgs, GetVolumeGroupReplicasResult, GetVolumeGroupReplicasOutputArgs } from "./getVolumeGroupReplicas";
+export const getVolumeGroupReplicas: typeof import("./getVolumeGroupReplicas").getVolumeGroupReplicas = null as any;
+export const getVolumeGroupReplicasOutput: typeof import("./getVolumeGroupReplicas").getVolumeGroupReplicasOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumeGroupReplicas","getVolumeGroupReplicasOutput"], () => require("./getVolumeGroupReplicas"));
+
+export { GetVolumeGroupsArgs, GetVolumeGroupsResult, GetVolumeGroupsOutputArgs } from "./getVolumeGroups";
+export const getVolumeGroups: typeof import("./getVolumeGroups").getVolumeGroups = null as any;
+export const getVolumeGroupsOutput: typeof import("./getVolumeGroups").getVolumeGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumeGroups","getVolumeGroupsOutput"], () => require("./getVolumeGroups"));
+
+export { GetVolumesArgs, GetVolumesResult, GetVolumesOutputArgs } from "./getVolumes";
+export const getVolumes: typeof import("./getVolumes").getVolumes = null as any;
+export const getVolumesOutput: typeof import("./getVolumes").getVolumesOutput = null as any;
+utilities.lazyLoad(exports, ["getVolumes","getVolumesOutput"], () => require("./getVolumes"));
+
+export { GetVtapArgs, GetVtapResult, GetVtapOutputArgs } from "./getVtap";
+export const getVtap: typeof import("./getVtap").getVtap = null as any;
+export const getVtapOutput: typeof import("./getVtap").getVtapOutput = null as any;
+utilities.lazyLoad(exports, ["getVtap","getVtapOutput"], () => require("./getVtap"));
+
+export { GetVtapsArgs, GetVtapsResult, GetVtapsOutputArgs } from "./getVtaps";
+export const getVtaps: typeof import("./getVtaps").getVtaps = null as any;
+export const getVtapsOutput: typeof import("./getVtaps").getVtapsOutput = null as any;
+utilities.lazyLoad(exports, ["getVtaps","getVtapsOutput"], () => require("./getVtaps"));
+
+export { ImageArgs, ImageState } from "./image";
+export type Image = import("./image").Image;
+export const Image: typeof import("./image").Image = null as any;
+utilities.lazyLoad(exports, ["Image"], () => require("./image"));
+
+export { InstanceArgs, InstanceState } from "./instance";
+export type Instance = import("./instance").Instance;
+export const Instance: typeof import("./instance").Instance = null as any;
+utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
+export { InstanceConfigurationArgs, InstanceConfigurationState } from "./instanceConfiguration";
+export type InstanceConfiguration = import("./instanceConfiguration").InstanceConfiguration;
+export const InstanceConfiguration: typeof import("./instanceConfiguration").InstanceConfiguration = null as any;
+utilities.lazyLoad(exports, ["InstanceConfiguration"], () => require("./instanceConfiguration"));
+
+export { InstanceConsoleConnectionArgs, InstanceConsoleConnectionState } from "./instanceConsoleConnection";
+export type InstanceConsoleConnection = import("./instanceConsoleConnection").InstanceConsoleConnection;
+export const InstanceConsoleConnection: typeof import("./instanceConsoleConnection").InstanceConsoleConnection = null as any;
+utilities.lazyLoad(exports, ["InstanceConsoleConnection"], () => require("./instanceConsoleConnection"));
+
+export { InstancePoolArgs, InstancePoolState } from "./instancePool";
+export type InstancePool = import("./instancePool").InstancePool;
+export const InstancePool: typeof import("./instancePool").InstancePool = null as any;
+utilities.lazyLoad(exports, ["InstancePool"], () => require("./instancePool"));
+
+export { InstancePoolInstanceArgs, InstancePoolInstanceState } from "./instancePoolInstance";
+export type InstancePoolInstance = import("./instancePoolInstance").InstancePoolInstance;
+export const InstancePoolInstance: typeof import("./instancePoolInstance").InstancePoolInstance = null as any;
+utilities.lazyLoad(exports, ["InstancePoolInstance"], () => require("./instancePoolInstance"));
+
+export { InternetGatewayArgs, InternetGatewayState } from "./internetGateway";
+export type InternetGateway = import("./internetGateway").InternetGateway;
+export const InternetGateway: typeof import("./internetGateway").InternetGateway = null as any;
+utilities.lazyLoad(exports, ["InternetGateway"], () => require("./internetGateway"));
+
+export { IpsecArgs, IpsecState } from "./ipsec";
+export type Ipsec = import("./ipsec").Ipsec;
+export const Ipsec: typeof import("./ipsec").Ipsec = null as any;
+utilities.lazyLoad(exports, ["Ipsec"], () => require("./ipsec"));
+
+export { IpsecConnectionTunnelManagementArgs, IpsecConnectionTunnelManagementState } from "./ipsecConnectionTunnelManagement";
+export type IpsecConnectionTunnelManagement = import("./ipsecConnectionTunnelManagement").IpsecConnectionTunnelManagement;
+export const IpsecConnectionTunnelManagement: typeof import("./ipsecConnectionTunnelManagement").IpsecConnectionTunnelManagement = null as any;
+utilities.lazyLoad(exports, ["IpsecConnectionTunnelManagement"], () => require("./ipsecConnectionTunnelManagement"));
+
+export { Ipv6Args, Ipv6State } from "./ipv6";
+export type Ipv6 = import("./ipv6").Ipv6;
+export const Ipv6: typeof import("./ipv6").Ipv6 = null as any;
+utilities.lazyLoad(exports, ["Ipv6"], () => require("./ipv6"));
+
+export { ListingResourceVersionAgreementArgs, ListingResourceVersionAgreementState } from "./listingResourceVersionAgreement";
+export type ListingResourceVersionAgreement = import("./listingResourceVersionAgreement").ListingResourceVersionAgreement;
+export const ListingResourceVersionAgreement: typeof import("./listingResourceVersionAgreement").ListingResourceVersionAgreement = null as any;
+utilities.lazyLoad(exports, ["ListingResourceVersionAgreement"], () => require("./listingResourceVersionAgreement"));
+
+export { LocalPeeringGatewayArgs, LocalPeeringGatewayState } from "./localPeeringGateway";
+export type LocalPeeringGateway = import("./localPeeringGateway").LocalPeeringGateway;
+export const LocalPeeringGateway: typeof import("./localPeeringGateway").LocalPeeringGateway = null as any;
+utilities.lazyLoad(exports, ["LocalPeeringGateway"], () => require("./localPeeringGateway"));
+
+export { NatGatewayArgs, NatGatewayState } from "./natGateway";
+export type NatGateway = import("./natGateway").NatGateway;
+export const NatGateway: typeof import("./natGateway").NatGateway = null as any;
+utilities.lazyLoad(exports, ["NatGateway"], () => require("./natGateway"));
+
+export { NetworkSecurityGroupArgs, NetworkSecurityGroupState } from "./networkSecurityGroup";
+export type NetworkSecurityGroup = import("./networkSecurityGroup").NetworkSecurityGroup;
+export const NetworkSecurityGroup: typeof import("./networkSecurityGroup").NetworkSecurityGroup = null as any;
+utilities.lazyLoad(exports, ["NetworkSecurityGroup"], () => require("./networkSecurityGroup"));
+
+export { NetworkSecurityGroupSecurityRuleArgs, NetworkSecurityGroupSecurityRuleState } from "./networkSecurityGroupSecurityRule";
+export type NetworkSecurityGroupSecurityRule = import("./networkSecurityGroupSecurityRule").NetworkSecurityGroupSecurityRule;
+export const NetworkSecurityGroupSecurityRule: typeof import("./networkSecurityGroupSecurityRule").NetworkSecurityGroupSecurityRule = null as any;
+utilities.lazyLoad(exports, ["NetworkSecurityGroupSecurityRule"], () => require("./networkSecurityGroupSecurityRule"));
+
+export { PrivateIpArgs, PrivateIpState } from "./privateIp";
+export type PrivateIp = import("./privateIp").PrivateIp;
+export const PrivateIp: typeof import("./privateIp").PrivateIp = null as any;
+utilities.lazyLoad(exports, ["PrivateIp"], () => require("./privateIp"));
+
+export { PublicIpArgs, PublicIpState } from "./publicIp";
+export type PublicIp = import("./publicIp").PublicIp;
+export const PublicIp: typeof import("./publicIp").PublicIp = null as any;
+utilities.lazyLoad(exports, ["PublicIp"], () => require("./publicIp"));
+
+export { PublicIpPoolArgs, PublicIpPoolState } from "./publicIpPool";
+export type PublicIpPool = import("./publicIpPool").PublicIpPool;
+export const PublicIpPool: typeof import("./publicIpPool").PublicIpPool = null as any;
+utilities.lazyLoad(exports, ["PublicIpPool"], () => require("./publicIpPool"));
+
+export { PublicIpPoolCapacityArgs, PublicIpPoolCapacityState } from "./publicIpPoolCapacity";
+export type PublicIpPoolCapacity = import("./publicIpPoolCapacity").PublicIpPoolCapacity;
+export const PublicIpPoolCapacity: typeof import("./publicIpPoolCapacity").PublicIpPoolCapacity = null as any;
+utilities.lazyLoad(exports, ["PublicIpPoolCapacity"], () => require("./publicIpPoolCapacity"));
+
+export { RemotePeeringConnectionArgs, RemotePeeringConnectionState } from "./remotePeeringConnection";
+export type RemotePeeringConnection = import("./remotePeeringConnection").RemotePeeringConnection;
+export const RemotePeeringConnection: typeof import("./remotePeeringConnection").RemotePeeringConnection = null as any;
+utilities.lazyLoad(exports, ["RemotePeeringConnection"], () => require("./remotePeeringConnection"));
+
+export { RouteTableArgs, RouteTableState } from "./routeTable";
+export type RouteTable = import("./routeTable").RouteTable;
+export const RouteTable: typeof import("./routeTable").RouteTable = null as any;
+utilities.lazyLoad(exports, ["RouteTable"], () => require("./routeTable"));
+
+export { RouteTableAttachmentArgs, RouteTableAttachmentState } from "./routeTableAttachment";
+export type RouteTableAttachment = import("./routeTableAttachment").RouteTableAttachment;
+export const RouteTableAttachment: typeof import("./routeTableAttachment").RouteTableAttachment = null as any;
+utilities.lazyLoad(exports, ["RouteTableAttachment"], () => require("./routeTableAttachment"));
+
+export { SecurityListArgs, SecurityListState } from "./securityList";
+export type SecurityList = import("./securityList").SecurityList;
+export const SecurityList: typeof import("./securityList").SecurityList = null as any;
+utilities.lazyLoad(exports, ["SecurityList"], () => require("./securityList"));
+
+export { ServiceGatewayArgs, ServiceGatewayState } from "./serviceGateway";
+export type ServiceGateway = import("./serviceGateway").ServiceGateway;
+export const ServiceGateway: typeof import("./serviceGateway").ServiceGateway = null as any;
+utilities.lazyLoad(exports, ["ServiceGateway"], () => require("./serviceGateway"));
+
+export { ShapeManagementArgs, ShapeManagementState } from "./shapeManagement";
+export type ShapeManagement = import("./shapeManagement").ShapeManagement;
+export const ShapeManagement: typeof import("./shapeManagement").ShapeManagement = null as any;
+utilities.lazyLoad(exports, ["ShapeManagement"], () => require("./shapeManagement"));
+
+export { SubnetArgs, SubnetState } from "./subnet";
+export type Subnet = import("./subnet").Subnet;
+export const Subnet: typeof import("./subnet").Subnet = null as any;
+utilities.lazyLoad(exports, ["Subnet"], () => require("./subnet"));
+
+export { VcnArgs, VcnState } from "./vcn";
+export type Vcn = import("./vcn").Vcn;
+export const Vcn: typeof import("./vcn").Vcn = null as any;
+utilities.lazyLoad(exports, ["Vcn"], () => require("./vcn"));
+
+export { VirtualCircuitArgs, VirtualCircuitState } from "./virtualCircuit";
+export type VirtualCircuit = import("./virtualCircuit").VirtualCircuit;
+export const VirtualCircuit: typeof import("./virtualCircuit").VirtualCircuit = null as any;
+utilities.lazyLoad(exports, ["VirtualCircuit"], () => require("./virtualCircuit"));
+
+export { VirtualNetworkArgs, VirtualNetworkState } from "./virtualNetwork";
+export type VirtualNetwork = import("./virtualNetwork").VirtualNetwork;
+export const VirtualNetwork: typeof import("./virtualNetwork").VirtualNetwork = null as any;
+utilities.lazyLoad(exports, ["VirtualNetwork"], () => require("./virtualNetwork"));
+
+export { VlanArgs, VlanState } from "./vlan";
+export type Vlan = import("./vlan").Vlan;
+export const Vlan: typeof import("./vlan").Vlan = null as any;
+utilities.lazyLoad(exports, ["Vlan"], () => require("./vlan"));
+
+export { VnicAttachmentArgs, VnicAttachmentState } from "./vnicAttachment";
+export type VnicAttachment = import("./vnicAttachment").VnicAttachment;
+export const VnicAttachment: typeof import("./vnicAttachment").VnicAttachment = null as any;
+utilities.lazyLoad(exports, ["VnicAttachment"], () => require("./vnicAttachment"));
+
+export { VolumeArgs, VolumeState } from "./volume";
+export type Volume = import("./volume").Volume;
+export const Volume: typeof import("./volume").Volume = null as any;
+utilities.lazyLoad(exports, ["Volume"], () => require("./volume"));
+
+export { VolumeAttachmentArgs, VolumeAttachmentState } from "./volumeAttachment";
+export type VolumeAttachment = import("./volumeAttachment").VolumeAttachment;
+export const VolumeAttachment: typeof import("./volumeAttachment").VolumeAttachment = null as any;
+utilities.lazyLoad(exports, ["VolumeAttachment"], () => require("./volumeAttachment"));
+
+export { VolumeBackupArgs, VolumeBackupState } from "./volumeBackup";
+export type VolumeBackup = import("./volumeBackup").VolumeBackup;
+export const VolumeBackup: typeof import("./volumeBackup").VolumeBackup = null as any;
+utilities.lazyLoad(exports, ["VolumeBackup"], () => require("./volumeBackup"));
+
+export { VolumeBackupPolicyArgs, VolumeBackupPolicyState } from "./volumeBackupPolicy";
+export type VolumeBackupPolicy = import("./volumeBackupPolicy").VolumeBackupPolicy;
+export const VolumeBackupPolicy: typeof import("./volumeBackupPolicy").VolumeBackupPolicy = null as any;
+utilities.lazyLoad(exports, ["VolumeBackupPolicy"], () => require("./volumeBackupPolicy"));
+
+export { VolumeBackupPolicyAssignmentArgs, VolumeBackupPolicyAssignmentState } from "./volumeBackupPolicyAssignment";
+export type VolumeBackupPolicyAssignment = import("./volumeBackupPolicyAssignment").VolumeBackupPolicyAssignment;
+export const VolumeBackupPolicyAssignment: typeof import("./volumeBackupPolicyAssignment").VolumeBackupPolicyAssignment = null as any;
+utilities.lazyLoad(exports, ["VolumeBackupPolicyAssignment"], () => require("./volumeBackupPolicyAssignment"));
+
+export { VolumeGroupArgs, VolumeGroupState } from "./volumeGroup";
+export type VolumeGroup = import("./volumeGroup").VolumeGroup;
+export const VolumeGroup: typeof import("./volumeGroup").VolumeGroup = null as any;
+utilities.lazyLoad(exports, ["VolumeGroup"], () => require("./volumeGroup"));
+
+export { VolumeGroupBackupArgs, VolumeGroupBackupState } from "./volumeGroupBackup";
+export type VolumeGroupBackup = import("./volumeGroupBackup").VolumeGroupBackup;
+export const VolumeGroupBackup: typeof import("./volumeGroupBackup").VolumeGroupBackup = null as any;
+utilities.lazyLoad(exports, ["VolumeGroupBackup"], () => require("./volumeGroupBackup"));
+
+export { VtapArgs, VtapState } from "./vtap";
+export type Vtap = import("./vtap").Vtap;
+export const Vtap: typeof import("./vtap").Vtap = null as any;
+utilities.lazyLoad(exports, ["Vtap"], () => require("./vtap"));
+
 
 const _module = {
     version: utilities.getVersion(),

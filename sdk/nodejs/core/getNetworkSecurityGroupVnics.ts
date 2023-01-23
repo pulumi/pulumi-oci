@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkSecurityGroupVnics(args: GetNetworkSecurityGroupVnicsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupVnicsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", {
         "filters": args.filters,
         "networkSecurityGroupId": args.networkSecurityGroupId,
@@ -59,9 +57,24 @@ export interface GetNetworkSecurityGroupVnicsResult {
      */
     readonly networkSecurityGroupVnics: outputs.Core.GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic[];
 }
-
+/**
+ * This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the VNICs in the specified network security group.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkSecurityGroupVnics = oci.Core.getNetworkSecurityGroupVnics({
+ *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
+ * });
+ * ```
+ */
 export function getNetworkSecurityGroupVnicsOutput(args: GetNetworkSecurityGroupVnicsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupVnicsResult> {
-    return pulumi.output(args).apply(a => getNetworkSecurityGroupVnics(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkSecurityGroupVnics(a, opts))
 }
 
 /**

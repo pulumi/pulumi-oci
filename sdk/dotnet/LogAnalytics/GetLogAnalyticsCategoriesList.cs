@@ -42,7 +42,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsCategoriesListResult> InvokeAsync(GetLogAnalyticsCategoriesListArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsCategoriesListResult> Invoke(GetLogAnalyticsCategoriesListInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListInvokeArgs(), options.WithDefaults());
     }
 
 

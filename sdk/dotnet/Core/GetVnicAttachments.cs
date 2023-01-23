@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVnicAttachmentsResult> InvokeAsync(GetVnicAttachmentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVnicAttachmentsResult>("oci:Core/getVnicAttachments:getVnicAttachments", args ?? new GetVnicAttachmentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVnicAttachmentsResult>("oci:Core/getVnicAttachments:getVnicAttachments", args ?? new GetVnicAttachmentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVnicAttachmentsResult> Invoke(GetVnicAttachmentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVnicAttachmentsResult>("oci:Core/getVnicAttachments:getVnicAttachments", args ?? new GetVnicAttachmentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVnicAttachmentsResult>("oci:Core/getVnicAttachments:getVnicAttachments", args ?? new GetVnicAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

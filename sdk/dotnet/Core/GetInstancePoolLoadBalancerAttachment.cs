@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstancePoolLoadBalancerAttachmentResult> InvokeAsync(GetInstancePoolLoadBalancerAttachmentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstancePoolLoadBalancerAttachmentResult>("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", args ?? new GetInstancePoolLoadBalancerAttachmentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstancePoolLoadBalancerAttachmentResult>("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", args ?? new GetInstancePoolLoadBalancerAttachmentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstancePoolLoadBalancerAttachmentResult> Invoke(GetInstancePoolLoadBalancerAttachmentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstancePoolLoadBalancerAttachmentResult>("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", args ?? new GetInstancePoolLoadBalancerAttachmentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstancePoolLoadBalancerAttachmentResult>("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", args ?? new GetInstancePoolLoadBalancerAttachmentInvokeArgs(), options.WithDefaults());
     }
 
 

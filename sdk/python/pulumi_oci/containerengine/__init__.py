@@ -6,6 +6,7 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .cluster import *
+from .container_instance import *
 from .get_cluster_kube_config import *
 from .get_cluster_option import *
 from .get_clusters import *

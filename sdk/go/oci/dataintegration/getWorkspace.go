@@ -67,15 +67,24 @@ type LookupWorkspaceResult struct {
 	// The IP of the custom DNS.
 	DnsServerIp string `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
-	DnsServerZone string `pulumi:"dnsServerZone"`
+	DnsServerZone         string `pulumi:"dnsServerZone"`
+	EndpointCompartmentId string `pulumi:"endpointCompartmentId"`
+	// DCMS endpoint associated with the container/workspace. Returns null if there is none.
+	EndpointId string `pulumi:"endpointId"`
+	// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+	EndpointName string `pulumi:"endpointName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A system-generated and immutable identifier assigned to the workspace upon creation.
 	Id               string `pulumi:"id"`
 	IsForceOperation bool   `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
-	IsPrivateNetworkEnabled bool `pulumi:"isPrivateNetworkEnabled"`
-	QuiesceTimeout          int  `pulumi:"quiesceTimeout"`
+	IsPrivateNetworkEnabled bool   `pulumi:"isPrivateNetworkEnabled"`
+	QuiesceTimeout          int    `pulumi:"quiesceTimeout"`
+	RegistryCompartmentId   string `pulumi:"registryCompartmentId"`
+	// DCMS registry associated with the container/workspace. Returns null if there is none.
+	RegistryId   string `pulumi:"registryId"`
+	RegistryName string `pulumi:"registryName"`
 	// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
 	State string `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -159,6 +168,20 @@ func (o LookupWorkspaceResultOutput) DnsServerZone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.DnsServerZone }).(pulumi.StringOutput)
 }
 
+func (o LookupWorkspaceResultOutput) EndpointCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.EndpointCompartmentId }).(pulumi.StringOutput)
+}
+
+// DCMS endpoint associated with the container/workspace. Returns null if there is none.
+func (o LookupWorkspaceResultOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.EndpointId }).(pulumi.StringOutput)
+}
+
+// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+func (o LookupWorkspaceResultOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.EndpointName }).(pulumi.StringOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o LookupWorkspaceResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -180,6 +203,19 @@ func (o LookupWorkspaceResultOutput) IsPrivateNetworkEnabled() pulumi.BoolOutput
 
 func (o LookupWorkspaceResultOutput) QuiesceTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) int { return v.QuiesceTimeout }).(pulumi.IntOutput)
+}
+
+func (o LookupWorkspaceResultOutput) RegistryCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.RegistryCompartmentId }).(pulumi.StringOutput)
+}
+
+// DCMS registry associated with the container/workspace. Returns null if there is none.
+func (o LookupWorkspaceResultOutput) RegistryId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.RegistryId }).(pulumi.StringOutput)
+}
+
+func (o LookupWorkspaceResultOutput) RegistryName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.RegistryName }).(pulumi.StringOutput)
 }
 
 // Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.

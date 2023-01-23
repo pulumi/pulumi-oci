@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFastConnectProviderService(args: GetFastConnectProviderServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetFastConnectProviderServiceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getFastConnectProviderService:getFastConnectProviderService", {
         "providerServiceId": args.providerServiceId,
     }, opts);
@@ -96,9 +93,25 @@ export interface GetFastConnectProviderServiceResult {
      */
     readonly type: string;
 }
-
+/**
+ * This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified provider service.
+ * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFastConnectProviderService = oci.Core.getFastConnectProviderService({
+ *     providerServiceId: data.oci_core_fast_connect_provider_services.test_fast_connect_provider_services.fast_connect_provider_services[0].id,
+ * });
+ * ```
+ */
 export function getFastConnectProviderServiceOutput(args: GetFastConnectProviderServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastConnectProviderServiceResult> {
-    return pulumi.output(args).apply(a => getFastConnectProviderService(a, opts))
+    return pulumi.output(args).apply((a: any) => getFastConnectProviderService(a, opts))
 }
 
 /**

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Logging
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogGroupResult> InvokeAsync(GetLogGroupArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogGroupResult>("oci:Logging/getLogGroup:getLogGroup", args ?? new GetLogGroupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogGroupResult>("oci:Logging/getLogGroup:getLogGroup", args ?? new GetLogGroupArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Log Group resource in Oracle Cloud Infrastructure Logging service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Logging
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogGroupResult> Invoke(GetLogGroupInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogGroupResult>("oci:Logging/getLogGroup:getLogGroup", args ?? new GetLogGroupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogGroupResult>("oci:Logging/getLogGroup:getLogGroup", args ?? new GetLogGroupInvokeArgs(), options.WithDefaults());
     }
 
 

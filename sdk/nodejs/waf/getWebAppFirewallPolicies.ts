@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWebAppFirewallPolicies(args: GetWebAppFirewallPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetWebAppFirewallPoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -88,9 +86,27 @@ export interface GetWebAppFirewallPoliciesResult {
      */
     readonly webAppFirewallPolicyCollections: outputs.Waf.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection[];
 }
-
+/**
+ * This data source provides the list of Web App Firewall Policies in Oracle Cloud Infrastructure Waf service.
+ *
+ * Gets a list of all WebAppFirewallPolicies in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWebAppFirewallPolicies = oci.Waf.getWebAppFirewallPolicies({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.web_app_firewall_policy_display_name,
+ *     id: _var.web_app_firewall_policy_id,
+ *     states: _var.web_app_firewall_policy_state,
+ * });
+ * ```
+ */
 export function getWebAppFirewallPoliciesOutput(args: GetWebAppFirewallPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWebAppFirewallPoliciesResult> {
-    return pulumi.output(args).apply(a => getWebAppFirewallPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getWebAppFirewallPolicies(a, opts))
 }
 
 /**

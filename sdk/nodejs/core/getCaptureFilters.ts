@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCaptureFilters(args: GetCaptureFiltersArgs, opts?: pulumi.InvokeOptions): Promise<GetCaptureFiltersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCaptureFilters:getCaptureFilters", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetCaptureFiltersResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the capture filters in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCaptureFilters = oci.Core.getCaptureFilters({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.capture_filter_display_name,
+ *     state: _var.capture_filter_state,
+ * });
+ * ```
+ */
 export function getCaptureFiltersOutput(args: GetCaptureFiltersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaptureFiltersResult> {
-    return pulumi.output(args).apply(a => getCaptureFilters(a, opts))
+    return pulumi.output(args).apply((a: any) => getCaptureFilters(a, opts))
 }
 
 /**

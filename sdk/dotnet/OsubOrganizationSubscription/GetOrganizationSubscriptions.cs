@@ -41,7 +41,7 @@ namespace Pulumi.Oci.OsubOrganizationSubscription
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOrganizationSubscriptionsResult> InvokeAsync(GetOrganizationSubscriptionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOrganizationSubscriptionsResult>("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOrganizationSubscriptionsResult>("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Osub Organization Subscription service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.OsubOrganizationSubscription
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOrganizationSubscriptionsResult> Invoke(GetOrganizationSubscriptionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOrganizationSubscriptionsResult>("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOrganizationSubscriptionsResult>("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

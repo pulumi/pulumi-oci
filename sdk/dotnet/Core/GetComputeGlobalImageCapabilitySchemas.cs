@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetComputeGlobalImageCapabilitySchemasResult> InvokeAsync(GetComputeGlobalImageCapabilitySchemasArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetComputeGlobalImageCapabilitySchemasResult>("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", args ?? new GetComputeGlobalImageCapabilitySchemasArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeGlobalImageCapabilitySchemasResult>("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", args ?? new GetComputeGlobalImageCapabilitySchemasArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetComputeGlobalImageCapabilitySchemasResult> Invoke(GetComputeGlobalImageCapabilitySchemasInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetComputeGlobalImageCapabilitySchemasResult>("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", args ?? new GetComputeGlobalImageCapabilitySchemasInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeGlobalImageCapabilitySchemasResult>("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", args ?? new GetComputeGlobalImageCapabilitySchemasInvokeArgs(), options.WithDefaults());
     }
 
 

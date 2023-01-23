@@ -56,9 +56,11 @@ type GetJavaReleaseArgs struct {
 
 // A collection of values returned by getJavaRelease.
 type GetJavaReleaseResult struct {
+	// Artifact content types for the Java version.
+	ArtifactContentTypes []string `pulumi:"artifactContentTypes"`
 	// List of Java artifacts.
 	Artifacts []GetJavaReleaseArtifact `pulumi:"artifacts"`
-	// Complete information of a specific Java release family.
+	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails []GetJavaReleaseFamilyDetail `pulumi:"familyDetails"`
 	// Java release family identifier.
 	FamilyVersion string `pulumi:"familyVersion"`
@@ -120,12 +122,17 @@ func (o GetJavaReleaseResultOutput) ToGetJavaReleaseResultOutputWithContext(ctx 
 	return o
 }
 
+// Artifact content types for the Java version.
+func (o GetJavaReleaseResultOutput) ArtifactContentTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) []string { return v.ArtifactContentTypes }).(pulumi.StringArrayOutput)
+}
+
 // List of Java artifacts.
 func (o GetJavaReleaseResultOutput) Artifacts() GetJavaReleaseArtifactArrayOutput {
 	return o.ApplyT(func(v GetJavaReleaseResult) []GetJavaReleaseArtifact { return v.Artifacts }).(GetJavaReleaseArtifactArrayOutput)
 }
 
-// Complete information of a specific Java release family.
+// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 func (o GetJavaReleaseResultOutput) FamilyDetails() GetJavaReleaseFamilyDetailArrayOutput {
 	return o.ApplyT(func(v GetJavaReleaseResult) []GetJavaReleaseFamilyDetail { return v.FamilyDetails }).(GetJavaReleaseFamilyDetailArrayOutput)
 }

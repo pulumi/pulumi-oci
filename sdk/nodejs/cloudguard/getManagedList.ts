@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedList(args: GetManagedListArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedListResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getManagedList:getManagedList", {
         "managedListId": args.managedListId,
     }, opts);
@@ -111,9 +108,24 @@ export interface GetManagedListResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Returns a managed list identified by managedListId
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedList = oci.CloudGuard.getManagedList({
+ *     managedListId: oci_cloud_guard_managed_list.test_managed_list.id,
+ * });
+ * ```
+ */
 export function getManagedListOutput(args: GetManagedListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedListResult> {
-    return pulumi.output(args).apply(a => getManagedList(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedList(a, opts))
 }
 
 /**

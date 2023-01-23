@@ -60,7 +60,7 @@ type LookupConnectionResult struct {
 	AccessToken string `pulumi:"accessToken"`
 	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword string `pulumi:"appPassword"`
-	// The Base URL of the hosted BitbucketServer.
+	// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
 	BaseUrl string `pulumi:"baseUrl"`
 	// The OCID of the compartment containing the connection.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -141,7 +141,7 @@ func (o LookupConnectionResultOutput) AppPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AppPassword }).(pulumi.StringOutput)
 }
 
-// The Base URL of the hosted BitbucketServer.
+// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
 func (o LookupConnectionResultOutput) BaseUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.BaseUrl }).(pulumi.StringOutput)
 }

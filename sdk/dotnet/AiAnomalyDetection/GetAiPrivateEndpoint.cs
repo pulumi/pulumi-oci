@@ -38,7 +38,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAiPrivateEndpointResult> InvokeAsync(GetAiPrivateEndpointArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAiPrivateEndpointResult>("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", args ?? new GetAiPrivateEndpointArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAiPrivateEndpointResult>("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", args ?? new GetAiPrivateEndpointArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAiPrivateEndpointResult> Invoke(GetAiPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAiPrivateEndpointResult>("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", args ?? new GetAiPrivateEndpointInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAiPrivateEndpointResult>("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", args ?? new GetAiPrivateEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

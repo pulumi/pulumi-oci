@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseSoftwareImage(args: GetDatabaseSoftwareImageArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseSoftwareImageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", {
         "databaseSoftwareImageId": args.databaseSoftwareImageId,
     }, opts);
@@ -87,7 +84,7 @@ export interface GetDatabaseSoftwareImageResult {
      */
     readonly imageType: string;
     /**
-     * The patches included in the image and the version of the image
+     * The patches included in the image and the version of the image.
      */
     readonly includedPatchesSummary: string;
     /**
@@ -116,9 +113,24 @@ export interface GetDatabaseSoftwareImageResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified database software image.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseSoftwareImage = oci.Database.getDatabaseSoftwareImage({
+ *     databaseSoftwareImageId: oci_database_database_software_image.test_database_software_image.id,
+ * });
+ * ```
+ */
 export function getDatabaseSoftwareImageOutput(args: GetDatabaseSoftwareImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseSoftwareImageResult> {
-    return pulumi.output(args).apply(a => getDatabaseSoftwareImage(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseSoftwareImage(a, opts))
 }
 
 /**

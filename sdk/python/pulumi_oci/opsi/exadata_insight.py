@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ExadataInsightArgs', 'ExadataInsight']
 
@@ -15,37 +17,46 @@ __all__ = ['ExadataInsightArgs', 'ExadataInsight']
 class ExadataInsightArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 enterprise_manager_bridge_id: pulumi.Input[str],
-                 enterprise_manager_entity_identifier: pulumi.Input[str],
-                 enterprise_manager_identifier: pulumi.Input[str],
                  entity_source: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
+                 enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
+                 enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
+                 exadata_infra_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
+                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
                  status: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExadataInsight resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
+        :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_sync_enabled: (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
-        pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
-        pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
         pulumi.set(__self__, "entity_source", entity_source)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if enterprise_manager_bridge_id is not None:
+            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+        if enterprise_manager_entity_identifier is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+        if enterprise_manager_identifier is not None:
+            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
+        if exadata_infra_id is not None:
+            pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_sync_enabled is not None:
             pulumi.set(__self__, "is_auto_sync_enabled", is_auto_sync_enabled)
+        if member_vm_cluster_details is not None:
+            pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
         if status is not None:
             pulumi.set(__self__, "status", status)
 
@@ -60,42 +71,6 @@ class ExadataInsightArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> pulumi.Input[str]:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
-        return pulumi.get(self, "enterprise_manager_bridge_id")
-
-    @enterprise_manager_bridge_id.setter
-    def enterprise_manager_bridge_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "enterprise_manager_bridge_id", value)
-
-    @property
-    @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> pulumi.Input[str]:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
-        return pulumi.get(self, "enterprise_manager_entity_identifier")
-
-    @enterprise_manager_entity_identifier.setter
-    def enterprise_manager_entity_identifier(self, value: pulumi.Input[str]):
-        pulumi.set(self, "enterprise_manager_entity_identifier", value)
-
-    @property
-    @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> pulumi.Input[str]:
-        """
-        Enterprise Manager Unique Identifier
-        """
-        return pulumi.get(self, "enterprise_manager_identifier")
-
-    @enterprise_manager_identifier.setter
-    def enterprise_manager_identifier(self, value: pulumi.Input[str]):
-        pulumi.set(self, "enterprise_manager_identifier", value)
 
     @property
     @pulumi.getter(name="entitySource")
@@ -122,6 +97,51 @@ class ExadataInsightArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="enterpriseManagerBridgeId")
+    def enterprise_manager_bridge_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        OPSI Enterprise Manager Bridge OCID
+        """
+        return pulumi.get(self, "enterprise_manager_bridge_id")
+
+    @enterprise_manager_bridge_id.setter
+    def enterprise_manager_bridge_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "enterprise_manager_bridge_id", value)
+
+    @property
+    @pulumi.getter(name="enterpriseManagerEntityIdentifier")
+    def enterprise_manager_entity_identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        Enterprise Manager Entity Unique Identifier
+        """
+        return pulumi.get(self, "enterprise_manager_entity_identifier")
+
+    @enterprise_manager_entity_identifier.setter
+    def enterprise_manager_entity_identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "enterprise_manager_entity_identifier", value)
+
+    @property
+    @pulumi.getter(name="enterpriseManagerIdentifier")
+    def enterprise_manager_identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        Enterprise Manager Unique Identifier
+        """
+        return pulumi.get(self, "enterprise_manager_identifier")
+
+    @enterprise_manager_identifier.setter
+    def enterprise_manager_identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "enterprise_manager_identifier", value)
+
+    @property
+    @pulumi.getter(name="exadataInfraId")
+    def exadata_infra_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "exadata_infra_id")
+
+    @exadata_infra_id.setter
+    def exadata_infra_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exadata_infra_id", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -144,6 +164,15 @@ class ExadataInsightArgs:
     @is_auto_sync_enabled.setter
     def is_auto_sync_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_auto_sync_enabled", value)
+
+    @property
+    @pulumi.getter(name="memberVmClusterDetails")
+    def member_vm_cluster_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]:
+        return pulumi.get(self, "member_vm_cluster_details")
+
+    @member_vm_cluster_details.setter
+    def member_vm_cluster_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]):
+        pulumi.set(self, "member_vm_cluster_details", value)
 
     @property
     @pulumi.getter
@@ -171,13 +200,17 @@ class _ExadataInsightState:
                  enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
                  entity_source: Optional[pulumi.Input[str]] = None,
                  exadata_display_name: Optional[pulumi.Input[str]] = None,
+                 exadata_infra_id: Optional[pulumi.Input[str]] = None,
+                 exadata_infra_resource_type: Optional[pulumi.Input[str]] = None,
                  exadata_name: Optional[pulumi.Input[str]] = None,
                  exadata_rack_type: Optional[pulumi.Input[str]] = None,
+                 exadata_shape: Optional[pulumi.Input[str]] = None,
                  exadata_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
                  is_virtualized_exadata: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -228,10 +261,16 @@ class _ExadataInsightState:
             pulumi.set(__self__, "entity_source", entity_source)
         if exadata_display_name is not None:
             pulumi.set(__self__, "exadata_display_name", exadata_display_name)
+        if exadata_infra_id is not None:
+            pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
+        if exadata_infra_resource_type is not None:
+            pulumi.set(__self__, "exadata_infra_resource_type", exadata_infra_resource_type)
         if exadata_name is not None:
             pulumi.set(__self__, "exadata_name", exadata_name)
         if exadata_rack_type is not None:
             pulumi.set(__self__, "exadata_rack_type", exadata_rack_type)
+        if exadata_shape is not None:
+            pulumi.set(__self__, "exadata_shape", exadata_shape)
         if exadata_type is not None:
             pulumi.set(__self__, "exadata_type", exadata_type)
         if freeform_tags is not None:
@@ -242,6 +281,8 @@ class _ExadataInsightState:
             pulumi.set(__self__, "is_virtualized_exadata", is_virtualized_exadata)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if member_vm_cluster_details is not None:
+            pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if status is not None:
@@ -374,6 +415,24 @@ class _ExadataInsightState:
         pulumi.set(self, "exadata_display_name", value)
 
     @property
+    @pulumi.getter(name="exadataInfraId")
+    def exadata_infra_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "exadata_infra_id")
+
+    @exadata_infra_id.setter
+    def exadata_infra_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exadata_infra_id", value)
+
+    @property
+    @pulumi.getter(name="exadataInfraResourceType")
+    def exadata_infra_resource_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "exadata_infra_resource_type")
+
+    @exadata_infra_resource_type.setter
+    def exadata_infra_resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exadata_infra_resource_type", value)
+
+    @property
     @pulumi.getter(name="exadataName")
     def exadata_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -396,6 +455,15 @@ class _ExadataInsightState:
     @exadata_rack_type.setter
     def exadata_rack_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "exadata_rack_type", value)
+
+    @property
+    @pulumi.getter(name="exadataShape")
+    def exadata_shape(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "exadata_shape")
+
+    @exadata_shape.setter
+    def exadata_shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exadata_shape", value)
 
     @property
     @pulumi.getter(name="exadataType")
@@ -456,6 +524,15 @@ class _ExadataInsightState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="memberVmClusterDetails")
+    def member_vm_cluster_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]:
+        return pulumi.get(self, "member_vm_cluster_details")
+
+    @member_vm_cluster_details.setter
+    def member_vm_cluster_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]):
+        pulumi.set(self, "member_vm_cluster_details", value)
 
     @property
     @pulumi.getter
@@ -529,8 +606,10 @@ class ExadataInsight(pulumi.CustomResource):
                  enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
                  entity_source: Optional[pulumi.Input[str]] = None,
+                 exadata_infra_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
+                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadataInsightMemberVmClusterDetailArgs']]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -640,8 +719,10 @@ class ExadataInsight(pulumi.CustomResource):
                  enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
                  entity_source: Optional[pulumi.Input[str]] = None,
+                 exadata_infra_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
+                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadataInsightMemberVmClusterDetailArgs']]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -656,27 +737,25 @@ class ExadataInsight(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
-            if enterprise_manager_bridge_id is None and not opts.urn:
-                raise TypeError("Missing required property 'enterprise_manager_bridge_id'")
             __props__.__dict__["enterprise_manager_bridge_id"] = enterprise_manager_bridge_id
-            if enterprise_manager_entity_identifier is None and not opts.urn:
-                raise TypeError("Missing required property 'enterprise_manager_entity_identifier'")
             __props__.__dict__["enterprise_manager_entity_identifier"] = enterprise_manager_entity_identifier
-            if enterprise_manager_identifier is None and not opts.urn:
-                raise TypeError("Missing required property 'enterprise_manager_identifier'")
             __props__.__dict__["enterprise_manager_identifier"] = enterprise_manager_identifier
             if entity_source is None and not opts.urn:
                 raise TypeError("Missing required property 'entity_source'")
             __props__.__dict__["entity_source"] = entity_source
+            __props__.__dict__["exadata_infra_id"] = exadata_infra_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_auto_sync_enabled"] = is_auto_sync_enabled
+            __props__.__dict__["member_vm_cluster_details"] = member_vm_cluster_details
             __props__.__dict__["status"] = status
             __props__.__dict__["enterprise_manager_entity_display_name"] = None
             __props__.__dict__["enterprise_manager_entity_name"] = None
             __props__.__dict__["enterprise_manager_entity_type"] = None
             __props__.__dict__["exadata_display_name"] = None
+            __props__.__dict__["exadata_infra_resource_type"] = None
             __props__.__dict__["exadata_name"] = None
             __props__.__dict__["exadata_rack_type"] = None
+            __props__.__dict__["exadata_shape"] = None
             __props__.__dict__["exadata_type"] = None
             __props__.__dict__["is_virtualized_exadata"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -704,13 +783,17 @@ class ExadataInsight(pulumi.CustomResource):
             enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
             entity_source: Optional[pulumi.Input[str]] = None,
             exadata_display_name: Optional[pulumi.Input[str]] = None,
+            exadata_infra_id: Optional[pulumi.Input[str]] = None,
+            exadata_infra_resource_type: Optional[pulumi.Input[str]] = None,
             exadata_name: Optional[pulumi.Input[str]] = None,
             exadata_rack_type: Optional[pulumi.Input[str]] = None,
+            exadata_shape: Optional[pulumi.Input[str]] = None,
             exadata_type: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
             is_virtualized_exadata: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadataInsightMemberVmClusterDetailArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -760,13 +843,17 @@ class ExadataInsight(pulumi.CustomResource):
         __props__.__dict__["enterprise_manager_identifier"] = enterprise_manager_identifier
         __props__.__dict__["entity_source"] = entity_source
         __props__.__dict__["exadata_display_name"] = exadata_display_name
+        __props__.__dict__["exadata_infra_id"] = exadata_infra_id
+        __props__.__dict__["exadata_infra_resource_type"] = exadata_infra_resource_type
         __props__.__dict__["exadata_name"] = exadata_name
         __props__.__dict__["exadata_rack_type"] = exadata_rack_type
+        __props__.__dict__["exadata_shape"] = exadata_shape
         __props__.__dict__["exadata_type"] = exadata_type
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_auto_sync_enabled"] = is_auto_sync_enabled
         __props__.__dict__["is_virtualized_exadata"] = is_virtualized_exadata
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["member_vm_cluster_details"] = member_vm_cluster_details
         __props__.__dict__["state"] = state
         __props__.__dict__["status"] = status
         __props__.__dict__["system_tags"] = system_tags
@@ -855,6 +942,16 @@ class ExadataInsight(pulumi.CustomResource):
         return pulumi.get(self, "exadata_display_name")
 
     @property
+    @pulumi.getter(name="exadataInfraId")
+    def exadata_infra_id(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "exadata_infra_id")
+
+    @property
+    @pulumi.getter(name="exadataInfraResourceType")
+    def exadata_infra_resource_type(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "exadata_infra_resource_type")
+
+    @property
     @pulumi.getter(name="exadataName")
     def exadata_name(self) -> pulumi.Output[str]:
         """
@@ -869,6 +966,11 @@ class ExadataInsight(pulumi.CustomResource):
         Exadata rack type.
         """
         return pulumi.get(self, "exadata_rack_type")
+
+    @property
+    @pulumi.getter(name="exadataShape")
+    def exadata_shape(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "exadata_shape")
 
     @property
     @pulumi.getter(name="exadataType")
@@ -909,6 +1011,11 @@ class ExadataInsight(pulumi.CustomResource):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="memberVmClusterDetails")
+    def member_vm_cluster_details(self) -> pulumi.Output[Sequence['outputs.ExadataInsightMemberVmClusterDetail']]:
+        return pulumi.get(self, "member_vm_cluster_details")
 
     @property
     @pulumi.getter

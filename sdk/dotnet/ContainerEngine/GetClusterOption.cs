@@ -39,7 +39,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetClusterOptionResult> InvokeAsync(GetClusterOptionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetClusterOptionResult>("oci:ContainerEngine/getClusterOption:getClusterOption", args ?? new GetClusterOptionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetClusterOptionResult>("oci:ContainerEngine/getClusterOption:getClusterOption", args ?? new GetClusterOptionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetClusterOptionResult> Invoke(GetClusterOptionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetClusterOptionResult>("oci:ContainerEngine/getClusterOption:getClusterOption", args ?? new GetClusterOptionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterOptionResult>("oci:ContainerEngine/getClusterOption:getClusterOption", args ?? new GetClusterOptionInvokeArgs(), options.WithDefaults());
     }
 
 

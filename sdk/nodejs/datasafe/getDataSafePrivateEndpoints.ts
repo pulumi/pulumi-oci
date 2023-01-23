@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSafePrivateEndpoints(args: GetDataSafePrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSafePrivateEndpointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -106,9 +104,29 @@ export interface GetDataSafePrivateEndpointsResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Data Safe Private Endpoints in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of Data Safe private endpoints.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataSafePrivateEndpoints = oci.DataSafe.getDataSafePrivateEndpoints({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.data_safe_private_endpoint_access_level,
+ *     compartmentIdInSubtree: _var.data_safe_private_endpoint_compartment_id_in_subtree,
+ *     displayName: _var.data_safe_private_endpoint_display_name,
+ *     state: _var.data_safe_private_endpoint_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getDataSafePrivateEndpointsOutput(args: GetDataSafePrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafePrivateEndpointsResult> {
-    return pulumi.output(args).apply(a => getDataSafePrivateEndpoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataSafePrivateEndpoints(a, opts))
 }
 
 /**

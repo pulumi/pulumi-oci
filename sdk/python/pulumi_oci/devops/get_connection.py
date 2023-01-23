@@ -98,7 +98,7 @@ class GetConnectionResult:
     @pulumi.getter(name="baseUrl")
     def base_url(self) -> str:
         """
-        The Base URL of the hosted BitbucketServer.
+        The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
         """
         return pulumi.get(self, "base_url")
 

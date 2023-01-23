@@ -40,7 +40,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTopUtilizedResourcesResult> InvokeAsync(GetTopUtilizedResourcesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTopUtilizedResourcesResult>("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args ?? new GetTopUtilizedResourcesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTopUtilizedResourcesResult>("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args ?? new GetTopUtilizedResourcesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Top Utilized Resources in Oracle Cloud Infrastructure License Manager service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTopUtilizedResourcesResult> Invoke(GetTopUtilizedResourcesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTopUtilizedResourcesResult>("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args ?? new GetTopUtilizedResourcesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTopUtilizedResourcesResult>("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args ?? new GetTopUtilizedResourcesInvokeArgs(), options.WithDefaults());
     }
 
 

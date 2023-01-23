@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecurityListsResult> InvokeAsync(GetSecurityListsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecurityListsResult>("oci:Core/getSecurityLists:getSecurityLists", args ?? new GetSecurityListsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityListsResult>("oci:Core/getSecurityLists:getSecurityLists", args ?? new GetSecurityListsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecurityListsResult> Invoke(GetSecurityListsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecurityListsResult>("oci:Core/getSecurityLists:getSecurityLists", args ?? new GetSecurityListsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityListsResult>("oci:Core/getSecurityLists:getSecurityLists", args ?? new GetSecurityListsInvokeArgs(), options.WithDefaults());
     }
 
 

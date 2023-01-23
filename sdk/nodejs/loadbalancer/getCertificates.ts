@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificates(args: GetCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificatesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getCertificates:getCertificates", {
         "filters": args.filters,
         "loadBalancerId": args.loadBalancerId,
@@ -59,9 +57,24 @@ export interface GetCertificatesResult {
     readonly id: string;
     readonly loadBalancerId: string;
 }
-
+/**
+ * This data source provides the list of Certificates in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Lists all SSL certificates bundles associated with a given load balancer.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificates = oci.LoadBalancer.getCertificates({
+ *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * });
+ * ```
+ */
 export function getCertificatesOutput(args: GetCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificatesResult> {
-    return pulumi.output(args).apply(a => getCertificates(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificates(a, opts))
 }
 
 /**

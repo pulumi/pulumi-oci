@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -42,11 +43,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditPolicies(args: GetAuditPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditPoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditPolicies:getAuditPolicies", {
         "accessLevel": args.accessLevel,
         "auditPolicyId": args.auditPolicyId,
@@ -127,9 +125,44 @@ export interface GetAuditPoliciesResult {
      */
     readonly targetId?: string;
 }
-
+/**
+ * This data source provides the list of Audit Policies in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Retrieves a list of all audited targets with their corresponding provisioned audit policies, and their provisioning conditions.
+ *
+ * The ListAuditPolicies operation returns only the audit policies in the specified `compartmentId`.
+ * The list does not include any subcompartments of the compartmentId passed.
+ *
+ * The parameter `accessLevel` specifies whether to return only those compartments for which the
+ * requestor has INSPECT permissions on at least one resource directly
+ * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+ * Principal doesn't have access to even one of the child compartments. This is valid only when
+ * `compartmentIdInSubtree` is set to `true`.
+ *
+ * The parameter `compartmentIdInSubtree` applies when you perform ListAuditPolicies on the
+ * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+ * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditPolicies = oci.DataSafe.getAuditPolicies({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.audit_policy_access_level,
+ *     auditPolicyId: oci_data_safe_audit_policy.test_audit_policy.id,
+ *     compartmentIdInSubtree: _var.audit_policy_compartment_id_in_subtree,
+ *     displayName: _var.audit_policy_display_name,
+ *     state: _var.audit_policy_state,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ * });
+ * ```
+ */
 export function getAuditPoliciesOutput(args: GetAuditPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditPoliciesResult> {
-    return pulumi.output(args).apply(a => getAuditPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditPolicies(a, opts))
 }
 
 /**

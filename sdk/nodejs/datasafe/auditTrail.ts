@@ -110,6 +110,10 @@ export class AuditTrail extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     */
+    public /*out*/ readonly timeLastCollected!: pulumi.Output<string>;
+    /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -151,6 +155,7 @@ export class AuditTrail extends pulumi.CustomResource {
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["targetId"] = state ? state.targetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeLastCollected"] = state ? state.timeLastCollected : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["trailLocation"] = state ? state.trailLocation : undefined;
             resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
@@ -175,6 +180,7 @@ export class AuditTrail extends pulumi.CustomResource {
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["targetId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeLastCollected"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["trailLocation"] = undefined /*out*/;
             resourceInputs["workRequestId"] = undefined /*out*/;
@@ -252,6 +258,10 @@ export interface AuditTrailState {
      * The date and time the audit trail was created, in the format defined by RFC3339.
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     */
+    timeLastCollected?: pulumi.Input<string>;
     /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      */

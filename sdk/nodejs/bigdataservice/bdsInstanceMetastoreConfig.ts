@@ -149,9 +149,9 @@ export class BdsInstanceMetastoreConfig extends pulumi.CustomResource {
             }
             resourceInputs["activateTrigger"] = args ? args.activateTrigger : undefined;
             resourceInputs["bdsApiKeyId"] = args ? args.bdsApiKeyId : undefined;
-            resourceInputs["bdsApiKeyPassphrase"] = args ? args.bdsApiKeyPassphrase : undefined;
+            resourceInputs["bdsApiKeyPassphrase"] = args?.bdsApiKeyPassphrase ? pulumi.secret(args.bdsApiKeyPassphrase) : undefined;
             resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = args ? args.clusterAdminPassword : undefined;
+            resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["metastoreId"] = args ? args.metastoreId : undefined;
             resourceInputs["metastoreType"] = undefined /*out*/;
@@ -160,6 +160,8 @@ export class BdsInstanceMetastoreConfig extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["bdsApiKeyPassphrase", "clusterAdminPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(BdsInstanceMetastoreConfig.__pulumiType, name, resourceInputs, opts);
     }
 }

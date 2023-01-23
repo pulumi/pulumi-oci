@@ -25,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResolverEndpoint(args: GetResolverEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetResolverEndpointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getResolverEndpoint:getResolverEndpoint", {
         "resolverEndpointName": args.resolverEndpointName,
         "resolverId": args.resolverId,
@@ -116,9 +113,28 @@ export interface GetResolverEndpointResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
+ * in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
+ * API. Requires a `PRIVATE` scope query parameter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResolverEndpoint = oci.Dns.getResolverEndpoint({
+ *     resolverEndpointName: oci_dns_resolver_endpoint.test_resolver_endpoint.name,
+ *     resolverId: oci_dns_resolver.test_resolver.id,
+ *     scope: "PRIVATE",
+ * });
+ * ```
+ */
 export function getResolverEndpointOutput(args: GetResolverEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolverEndpointResult> {
-    return pulumi.output(args).apply(a => getResolverEndpoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getResolverEndpoint(a, opts))
 }
 
 /**

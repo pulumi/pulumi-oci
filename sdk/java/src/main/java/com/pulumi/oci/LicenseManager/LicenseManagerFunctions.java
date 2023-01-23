@@ -51,7 +51,7 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
-     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -90,7 +90,7 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
-     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -129,7 +129,7 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
-     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -168,7 +168,7 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
-     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

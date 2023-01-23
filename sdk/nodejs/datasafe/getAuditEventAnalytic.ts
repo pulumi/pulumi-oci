@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -35,11 +36,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditEventAnalytic(args: GetAuditEventAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditEventAnalyticResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -123,9 +121,37 @@ export interface GetAuditEventAnalyticResult {
      */
     readonly timeStarted?: string;
 }
-
+/**
+ * This data source provides details about a specific Audit Event Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * By default ListAuditEventAnalytics operation will return all of the summary columns. To filter desired summary columns, specify
+ * it in the `summaryOf` query parameter.
+ *
+ * **Example:** /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
+ *              &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
+ *              &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditEventAnalytic = oci.DataSafe.getAuditEventAnalytic({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.audit_event_analytic_access_level,
+ *     compartmentIdInSubtree: _var.audit_event_analytic_compartment_id_in_subtree,
+ *     groupBies: _var.audit_event_analytic_group_by,
+ *     queryTimeZone: _var.audit_event_analytic_query_time_zone,
+ *     scimQuery: _var.audit_event_analytic_scim_query,
+ *     summaryFields: _var.audit_event_analytic_summary_field,
+ *     timeEnded: _var.audit_event_analytic_time_ended,
+ *     timeStarted: _var.audit_event_analytic_time_started,
+ * });
+ * ```
+ */
 export function getAuditEventAnalyticOutput(args: GetAuditEventAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditEventAnalyticResult> {
-    return pulumi.output(args).apply(a => getAuditEventAnalytic(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditEventAnalytic(a, opts))
 }
 
 /**

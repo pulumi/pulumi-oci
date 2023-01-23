@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCpeDeviceShapesResult> InvokeAsync(GetCpeDeviceShapesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCpeDeviceShapesResult>("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", args ?? new GetCpeDeviceShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCpeDeviceShapesResult>("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", args ?? new GetCpeDeviceShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCpeDeviceShapesResult> Invoke(GetCpeDeviceShapesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCpeDeviceShapesResult>("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", args ?? new GetCpeDeviceShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpeDeviceShapesResult>("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", args ?? new GetCpeDeviceShapesInvokeArgs(), options.WithDefaults());
     }
 
 

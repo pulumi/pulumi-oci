@@ -193,6 +193,8 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
                  id: str,
                  lifecycle_details: str,
                  ons_topic_id: str,
+                 preferred_language: str,
+                 preferred_time_zone: str,
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
@@ -207,6 +209,8 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
         :param str id: The OCID of the announcement subscription.
         :param str lifecycle_details: A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
         :param str ons_topic_id: The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
+        :param str preferred_language: (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        :param str preferred_time_zone: The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
         :param str state: A filter to return only announcement subscriptions that match the given lifecycle state.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -221,6 +225,8 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        pulumi.set(__self__, "preferred_language", preferred_language)
+        pulumi.set(__self__, "preferred_time_zone", preferred_time_zone)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -297,6 +303,22 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
         The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
         """
         return pulumi.get(self, "ons_topic_id")
+
+    @property
+    @pulumi.getter(name="preferredLanguage")
+    def preferred_language(self) -> str:
+        """
+        (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        """
+        return pulumi.get(self, "preferred_language")
+
+    @property
+    @pulumi.getter(name="preferredTimeZone")
+    def preferred_time_zone(self) -> str:
+        """
+        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        """
+        return pulumi.get(self, "preferred_time_zone")
 
     @property
     @pulumi.getter

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -16,21 +17,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = pulumi.output(oci.ApiGateway.getCertificates({
- *     //Required
- *     compartmentId: var_compartment_id,
- *     //Optional
- *     displayName: var_certificate_display_name,
- *     state: var_certificate_state,
- * }));
+ * const testCertificates = oci.ApiGateway.getCertificates({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.certificate_display_name,
+ *     state: _var.certificate_state,
+ * });
  * ```
  */
 export function getCertificates(args: GetCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificatesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getCertificates:getCertificates", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -84,9 +80,26 @@ export interface GetCertificatesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Certificates in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Returns a list of certificates.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificates = oci.ApiGateway.getCertificates({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.certificate_display_name,
+ *     state: _var.certificate_state,
+ * });
+ * ```
+ */
 export function getCertificatesOutput(args: GetCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificatesResult> {
-    return pulumi.output(args).apply(a => getCertificates(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificates(a, opts))
 }
 
 /**

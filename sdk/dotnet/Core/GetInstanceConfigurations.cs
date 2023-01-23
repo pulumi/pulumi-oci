@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstanceConfigurationsResult> InvokeAsync(GetInstanceConfigurationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstanceConfigurationsResult>("oci:Core/getInstanceConfigurations:getInstanceConfigurations", args ?? new GetInstanceConfigurationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceConfigurationsResult>("oci:Core/getInstanceConfigurations:getInstanceConfigurations", args ?? new GetInstanceConfigurationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstanceConfigurationsResult> Invoke(GetInstanceConfigurationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstanceConfigurationsResult>("oci:Core/getInstanceConfigurations:getInstanceConfigurations", args ?? new GetInstanceConfigurationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceConfigurationsResult>("oci:Core/getInstanceConfigurations:getInstanceConfigurations", args ?? new GetInstanceConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

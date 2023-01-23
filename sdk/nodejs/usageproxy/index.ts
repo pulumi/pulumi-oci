@@ -5,18 +5,51 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getSubscriptionProduct";
-export * from "./getSubscriptionProducts";
-export * from "./getSubscriptionRedeemableUser";
-export * from "./getSubscriptionRedeemableUsers";
-export * from "./getSubscriptionRedemption";
-export * from "./getSubscriptionRedemptions";
-export * from "./getSubscriptionReward";
-export * from "./getSubscriptionRewards";
-export * from "./subscriptionRedeemableUser";
+export { GetSubscriptionProductArgs, GetSubscriptionProductResult, GetSubscriptionProductOutputArgs } from "./getSubscriptionProduct";
+export const getSubscriptionProduct: typeof import("./getSubscriptionProduct").getSubscriptionProduct = null as any;
+export const getSubscriptionProductOutput: typeof import("./getSubscriptionProduct").getSubscriptionProductOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptionProduct","getSubscriptionProductOutput"], () => require("./getSubscriptionProduct"));
 
-// Import resources to register:
-import { SubscriptionRedeemableUser } from "./subscriptionRedeemableUser";
+export { GetSubscriptionProductsArgs, GetSubscriptionProductsResult, GetSubscriptionProductsOutputArgs } from "./getSubscriptionProducts";
+export const getSubscriptionProducts: typeof import("./getSubscriptionProducts").getSubscriptionProducts = null as any;
+export const getSubscriptionProductsOutput: typeof import("./getSubscriptionProducts").getSubscriptionProductsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptionProducts","getSubscriptionProductsOutput"], () => require("./getSubscriptionProducts"));
+
+export { GetSubscriptionRedeemableUserArgs, GetSubscriptionRedeemableUserResult, GetSubscriptionRedeemableUserOutputArgs } from "./getSubscriptionRedeemableUser";
+export const getSubscriptionRedeemableUser: typeof import("./getSubscriptionRedeemableUser").getSubscriptionRedeemableUser = null as any;
+export const getSubscriptionRedeemableUserOutput: typeof import("./getSubscriptionRedeemableUser").getSubscriptionRedeemableUserOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptionRedeemableUser","getSubscriptionRedeemableUserOutput"], () => require("./getSubscriptionRedeemableUser"));
+
+export { GetSubscriptionRedeemableUsersArgs, GetSubscriptionRedeemableUsersResult, GetSubscriptionRedeemableUsersOutputArgs } from "./getSubscriptionRedeemableUsers";
+export const getSubscriptionRedeemableUsers: typeof import("./getSubscriptionRedeemableUsers").getSubscriptionRedeemableUsers = null as any;
+export const getSubscriptionRedeemableUsersOutput: typeof import("./getSubscriptionRedeemableUsers").getSubscriptionRedeemableUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptionRedeemableUsers","getSubscriptionRedeemableUsersOutput"], () => require("./getSubscriptionRedeemableUsers"));
+
+export { GetSubscriptionRedemptionArgs, GetSubscriptionRedemptionResult, GetSubscriptionRedemptionOutputArgs } from "./getSubscriptionRedemption";
+export const getSubscriptionRedemption: typeof import("./getSubscriptionRedemption").getSubscriptionRedemption = null as any;
+export const getSubscriptionRedemptionOutput: typeof import("./getSubscriptionRedemption").getSubscriptionRedemptionOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptionRedemption","getSubscriptionRedemptionOutput"], () => require("./getSubscriptionRedemption"));
+
+export { GetSubscriptionRedemptionsArgs, GetSubscriptionRedemptionsResult, GetSubscriptionRedemptionsOutputArgs } from "./getSubscriptionRedemptions";
+export const getSubscriptionRedemptions: typeof import("./getSubscriptionRedemptions").getSubscriptionRedemptions = null as any;
+export const getSubscriptionRedemptionsOutput: typeof import("./getSubscriptionRedemptions").getSubscriptionRedemptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptionRedemptions","getSubscriptionRedemptionsOutput"], () => require("./getSubscriptionRedemptions"));
+
+export { GetSubscriptionRewardArgs, GetSubscriptionRewardResult, GetSubscriptionRewardOutputArgs } from "./getSubscriptionReward";
+export const getSubscriptionReward: typeof import("./getSubscriptionReward").getSubscriptionReward = null as any;
+export const getSubscriptionRewardOutput: typeof import("./getSubscriptionReward").getSubscriptionRewardOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptionReward","getSubscriptionRewardOutput"], () => require("./getSubscriptionReward"));
+
+export { GetSubscriptionRewardsArgs, GetSubscriptionRewardsResult, GetSubscriptionRewardsOutputArgs } from "./getSubscriptionRewards";
+export const getSubscriptionRewards: typeof import("./getSubscriptionRewards").getSubscriptionRewards = null as any;
+export const getSubscriptionRewardsOutput: typeof import("./getSubscriptionRewards").getSubscriptionRewardsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptionRewards","getSubscriptionRewardsOutput"], () => require("./getSubscriptionRewards"));
+
+export { SubscriptionRedeemableUserArgs, SubscriptionRedeemableUserState } from "./subscriptionRedeemableUser";
+export type SubscriptionRedeemableUser = import("./subscriptionRedeemableUser").SubscriptionRedeemableUser;
+export const SubscriptionRedeemableUser: typeof import("./subscriptionRedeemableUser").SubscriptionRedeemableUser = null as any;
+utilities.lazyLoad(exports, ["SubscriptionRedeemableUser"], () => require("./subscriptionRedeemableUser"));
+
 
 const _module = {
     version: utilities.getVersion(),

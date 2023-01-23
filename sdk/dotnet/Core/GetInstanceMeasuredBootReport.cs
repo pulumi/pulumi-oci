@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstanceMeasuredBootReportResult> InvokeAsync(GetInstanceMeasuredBootReportArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstanceMeasuredBootReportResult>("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", args ?? new GetInstanceMeasuredBootReportArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceMeasuredBootReportResult>("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", args ?? new GetInstanceMeasuredBootReportArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstanceMeasuredBootReportResult> Invoke(GetInstanceMeasuredBootReportInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstanceMeasuredBootReportResult>("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", args ?? new GetInstanceMeasuredBootReportInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMeasuredBootReportResult>("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", args ?? new GetInstanceMeasuredBootReportInvokeArgs(), options.WithDefaults());
     }
 
 

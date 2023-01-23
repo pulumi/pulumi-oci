@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgRouteRule(args: GetDrgRouteRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteRuleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgRouteRule:getDrgRouteRule", {
         "drgRouteTableId": args.drgRouteTableId,
     }, opts);
@@ -88,9 +85,24 @@ export interface GetDrgRouteRuleResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Drg Route Table resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified DRG route table's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDrgRouteTable = oci.Core.getDrgRouteRule({
+ *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
+ * });
+ * ```
+ */
 export function getDrgRouteRuleOutput(args: GetDrgRouteRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteRuleResult> {
-    return pulumi.output(args).apply(a => getDrgRouteRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getDrgRouteRule(a, opts))
 }
 
 /**

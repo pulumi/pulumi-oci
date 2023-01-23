@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceConfigurations(args: GetInstanceConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceConfigurationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceConfigurations:getInstanceConfigurations", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -62,9 +60,24 @@ export interface GetInstanceConfigurationsResult {
      */
     readonly instanceConfigurations: outputs.Core.GetInstanceConfigurationsInstanceConfiguration[];
 }
-
+/**
+ * This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the instance configurations in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstanceConfigurations = oci.Core.getInstanceConfigurations({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getInstanceConfigurationsOutput(args: GetInstanceConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConfigurationsResult> {
-    return pulumi.output(args).apply(a => getInstanceConfigurations(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstanceConfigurations(a, opts))
 }
 
 /**

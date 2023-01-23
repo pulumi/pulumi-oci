@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Apm
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetApmDomainResult> InvokeAsync(GetApmDomainArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetApmDomainResult>("oci:Apm/getApmDomain:getApmDomain", args ?? new GetApmDomainArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetApmDomainResult>("oci:Apm/getApmDomain:getApmDomain", args ?? new GetApmDomainArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Apm Domain resource in Oracle Cloud Infrastructure Apm service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Apm
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetApmDomainResult> Invoke(GetApmDomainInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetApmDomainResult>("oci:Apm/getApmDomain:getApmDomain", args ?? new GetApmDomainInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetApmDomainResult>("oci:Apm/getApmDomain:getApmDomain", args ?? new GetApmDomainInvokeArgs(), options.WithDefaults());
     }
 
 

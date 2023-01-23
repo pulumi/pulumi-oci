@@ -5,26 +5,81 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./caBundle";
-export * from "./certificate";
-export * from "./certificateAuthority";
-export * from "./getAssociation";
-export * from "./getAssociations";
-export * from "./getCaBundle";
-export * from "./getCaBundles";
-export * from "./getCertificate";
-export * from "./getCertificateAuthorities";
-export * from "./getCertificateAuthority";
-export * from "./getCertificateAuthorityVersion";
-export * from "./getCertificateAuthorityVersions";
-export * from "./getCertificateVersion";
-export * from "./getCertificateVersions";
-export * from "./getCertificates";
+export { CaBundleArgs, CaBundleState } from "./caBundle";
+export type CaBundle = import("./caBundle").CaBundle;
+export const CaBundle: typeof import("./caBundle").CaBundle = null as any;
+utilities.lazyLoad(exports, ["CaBundle"], () => require("./caBundle"));
 
-// Import resources to register:
-import { CaBundle } from "./caBundle";
-import { Certificate } from "./certificate";
-import { CertificateAuthority } from "./certificateAuthority";
+export { CertificateArgs, CertificateState } from "./certificate";
+export type Certificate = import("./certificate").Certificate;
+export const Certificate: typeof import("./certificate").Certificate = null as any;
+utilities.lazyLoad(exports, ["Certificate"], () => require("./certificate"));
+
+export { CertificateAuthorityArgs, CertificateAuthorityState } from "./certificateAuthority";
+export type CertificateAuthority = import("./certificateAuthority").CertificateAuthority;
+export const CertificateAuthority: typeof import("./certificateAuthority").CertificateAuthority = null as any;
+utilities.lazyLoad(exports, ["CertificateAuthority"], () => require("./certificateAuthority"));
+
+export { GetAssociationArgs, GetAssociationResult, GetAssociationOutputArgs } from "./getAssociation";
+export const getAssociation: typeof import("./getAssociation").getAssociation = null as any;
+export const getAssociationOutput: typeof import("./getAssociation").getAssociationOutput = null as any;
+utilities.lazyLoad(exports, ["getAssociation","getAssociationOutput"], () => require("./getAssociation"));
+
+export { GetAssociationsArgs, GetAssociationsResult, GetAssociationsOutputArgs } from "./getAssociations";
+export const getAssociations: typeof import("./getAssociations").getAssociations = null as any;
+export const getAssociationsOutput: typeof import("./getAssociations").getAssociationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAssociations","getAssociationsOutput"], () => require("./getAssociations"));
+
+export { GetCaBundleArgs, GetCaBundleResult, GetCaBundleOutputArgs } from "./getCaBundle";
+export const getCaBundle: typeof import("./getCaBundle").getCaBundle = null as any;
+export const getCaBundleOutput: typeof import("./getCaBundle").getCaBundleOutput = null as any;
+utilities.lazyLoad(exports, ["getCaBundle","getCaBundleOutput"], () => require("./getCaBundle"));
+
+export { GetCaBundlesArgs, GetCaBundlesResult, GetCaBundlesOutputArgs } from "./getCaBundles";
+export const getCaBundles: typeof import("./getCaBundles").getCaBundles = null as any;
+export const getCaBundlesOutput: typeof import("./getCaBundles").getCaBundlesOutput = null as any;
+utilities.lazyLoad(exports, ["getCaBundles","getCaBundlesOutput"], () => require("./getCaBundles"));
+
+export { GetCertificateArgs, GetCertificateResult, GetCertificateOutputArgs } from "./getCertificate";
+export const getCertificate: typeof import("./getCertificate").getCertificate = null as any;
+export const getCertificateOutput: typeof import("./getCertificate").getCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificate","getCertificateOutput"], () => require("./getCertificate"));
+
+export { GetCertificateAuthoritiesArgs, GetCertificateAuthoritiesResult, GetCertificateAuthoritiesOutputArgs } from "./getCertificateAuthorities";
+export const getCertificateAuthorities: typeof import("./getCertificateAuthorities").getCertificateAuthorities = null as any;
+export const getCertificateAuthoritiesOutput: typeof import("./getCertificateAuthorities").getCertificateAuthoritiesOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificateAuthorities","getCertificateAuthoritiesOutput"], () => require("./getCertificateAuthorities"));
+
+export { GetCertificateAuthorityArgs, GetCertificateAuthorityResult, GetCertificateAuthorityOutputArgs } from "./getCertificateAuthority";
+export const getCertificateAuthority: typeof import("./getCertificateAuthority").getCertificateAuthority = null as any;
+export const getCertificateAuthorityOutput: typeof import("./getCertificateAuthority").getCertificateAuthorityOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificateAuthority","getCertificateAuthorityOutput"], () => require("./getCertificateAuthority"));
+
+export { GetCertificateAuthorityVersionArgs, GetCertificateAuthorityVersionResult, GetCertificateAuthorityVersionOutputArgs } from "./getCertificateAuthorityVersion";
+export const getCertificateAuthorityVersion: typeof import("./getCertificateAuthorityVersion").getCertificateAuthorityVersion = null as any;
+export const getCertificateAuthorityVersionOutput: typeof import("./getCertificateAuthorityVersion").getCertificateAuthorityVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificateAuthorityVersion","getCertificateAuthorityVersionOutput"], () => require("./getCertificateAuthorityVersion"));
+
+export { GetCertificateAuthorityVersionsArgs, GetCertificateAuthorityVersionsResult, GetCertificateAuthorityVersionsOutputArgs } from "./getCertificateAuthorityVersions";
+export const getCertificateAuthorityVersions: typeof import("./getCertificateAuthorityVersions").getCertificateAuthorityVersions = null as any;
+export const getCertificateAuthorityVersionsOutput: typeof import("./getCertificateAuthorityVersions").getCertificateAuthorityVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificateAuthorityVersions","getCertificateAuthorityVersionsOutput"], () => require("./getCertificateAuthorityVersions"));
+
+export { GetCertificateVersionArgs, GetCertificateVersionResult, GetCertificateVersionOutputArgs } from "./getCertificateVersion";
+export const getCertificateVersion: typeof import("./getCertificateVersion").getCertificateVersion = null as any;
+export const getCertificateVersionOutput: typeof import("./getCertificateVersion").getCertificateVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificateVersion","getCertificateVersionOutput"], () => require("./getCertificateVersion"));
+
+export { GetCertificateVersionsArgs, GetCertificateVersionsResult, GetCertificateVersionsOutputArgs } from "./getCertificateVersions";
+export const getCertificateVersions: typeof import("./getCertificateVersions").getCertificateVersions = null as any;
+export const getCertificateVersionsOutput: typeof import("./getCertificateVersions").getCertificateVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificateVersions","getCertificateVersionsOutput"], () => require("./getCertificateVersions"));
+
+export { GetCertificatesArgs, GetCertificatesResult, GetCertificatesOutputArgs } from "./getCertificates";
+export const getCertificates: typeof import("./getCertificates").getCertificates = null as any;
+export const getCertificatesOutput: typeof import("./getCertificates").getCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificates","getCertificatesOutput"], () => require("./getCertificates"));
+
 
 const _module = {
     version: utilities.getVersion(),

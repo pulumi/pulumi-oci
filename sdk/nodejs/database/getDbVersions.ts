@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbVersions(args: GetDbVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbVersionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbVersions:getDbVersions", {
         "compartmentId": args.compartmentId,
         "dbSystemId": args.dbSystemId,
@@ -99,9 +97,29 @@ export interface GetDbVersionsResult {
     readonly isUpgradeSupported?: boolean;
     readonly storageManagement?: string;
 }
-
+/**
+ * This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of supported Oracle Database versions.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbVersions = oci.Database.getDbVersions({
+ *     compartmentId: _var.compartment_id,
+ *     dbSystemId: oci_database_db_system.test_db_system.id,
+ *     dbSystemShape: _var.db_version_db_system_shape,
+ *     isDatabaseSoftwareImageSupported: _var.db_version_is_database_software_image_supported,
+ *     isUpgradeSupported: _var.db_version_is_upgrade_supported,
+ *     storageManagement: _var.db_version_storage_management,
+ * });
+ * ```
+ */
 export function getDbVersionsOutput(args: GetDbVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbVersionsResult> {
-    return pulumi.output(args).apply(a => getDbVersions(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbVersions(a, opts))
 }
 
 /**

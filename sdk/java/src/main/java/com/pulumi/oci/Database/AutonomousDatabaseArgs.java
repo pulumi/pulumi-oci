@@ -844,6 +844,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Clone from latest available backup timestamp.
+     * 
+     */
+    @Import(name="useLatestAvailableBackupTimeStamp")
+    private @Nullable Output<Boolean> useLatestAvailableBackupTimeStamp;
+
+    /**
+     * @return Clone from latest available backup timestamp.
+     * 
+     */
+    public Optional<Output<Boolean>> useLatestAvailableBackupTimeStamp() {
+        return Optional.ofNullable(this.useLatestAvailableBackupTimeStamp);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
@@ -930,6 +945,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.switchoverTo = $.switchoverTo;
         this.switchoverToRemotePeerId = $.switchoverToRemotePeerId;
         this.timestamp = $.timestamp;
+        this.useLatestAvailableBackupTimeStamp = $.useLatestAvailableBackupTimeStamp;
         this.vaultId = $.vaultId;
         this.whitelistedIps = $.whitelistedIps;
     }
@@ -2135,6 +2151,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder timestamp(String timestamp) {
             return timestamp(Output.of(timestamp));
+        }
+
+        /**
+         * @param useLatestAvailableBackupTimeStamp Clone from latest available backup timestamp.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder useLatestAvailableBackupTimeStamp(@Nullable Output<Boolean> useLatestAvailableBackupTimeStamp) {
+            $.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
+            return this;
+        }
+
+        /**
+         * @param useLatestAvailableBackupTimeStamp Clone from latest available backup timestamp.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
+            return useLatestAvailableBackupTimeStamp(Output.of(useLatestAvailableBackupTimeStamp));
         }
 
         /**

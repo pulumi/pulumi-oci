@@ -37,6 +37,7 @@ namespace Pulumi.Oci.Database
     ///             { "Department", "Finance" },
     ///         },
     ///         IsLocalBackupEnabled = @var.Autonomous_vm_cluster_is_local_backup_enabled,
+    ///         IsMtlsEnabled = @var.Autonomous_vm_cluster_is_mtls_enabled,
     ///         LicenseModel = @var.Autonomous_vm_cluster_license_model,
     ///         MaintenanceWindowDetails = new[]
     ///         {
@@ -63,6 +64,8 @@ namespace Pulumi.Oci.Database
     ///             },
     ///         },
     ///         MemoryPerOracleComputeUnitInGbs = @var.Autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
+    ///         ScanListenerPortNonTls = @var.Autonomous_vm_cluster_scan_listener_port_non_tls,
+    ///         ScanListenerPortTls = @var.Autonomous_vm_cluster_scan_listener_port_tls,
     ///         TimeZone = @var.Autonomous_vm_cluster_time_zone,
     ///         TotalContainerDatabases = @var.Autonomous_vm_cluster_total_container_databases,
     ///     });
@@ -118,7 +121,7 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The number of OCPU cores to enable per VM cluster node.
+        /// The number of CPU cores to enable per VM cluster node.
         /// </summary>
         [Output("cpuCoreCountPerNode")]
         public Output<int> CpuCoreCountPerNode { get; private set; } = null!;
@@ -173,6 +176,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("isLocalBackupEnabled")]
         public Output<bool> IsLocalBackupEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        /// </summary>
+        [Output("isMtlsEnabled")]
+        public Output<bool> IsMtlsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -233,6 +242,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("reclaimableCpus")]
         public Output<int> ReclaimableCpus { get; private set; } = null!;
+
+        /// <summary>
+        /// The SCAN Listener Non TLS port number. Default value is 1521.
+        /// </summary>
+        [Output("scanListenerPortNonTls")]
+        public Output<int> ScanListenerPortNonTls { get; private set; } = null!;
+
+        /// <summary>
+        /// The SCAN Listener TLS port number. Default value is 2484.
+        /// </summary>
+        [Output("scanListenerPortTls")]
+        public Output<int> ScanListenerPortTls { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Autonomous VM cluster.
@@ -323,7 +344,7 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The number of OCPU cores to enable per VM cluster node.
+        /// The number of CPU cores to enable per VM cluster node.
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
@@ -371,6 +392,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsLocalBackupEnabled { get; set; }
 
         /// <summary>
+        /// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        /// </summary>
+        [Input("isMtlsEnabled")]
+        public Input<bool>? IsMtlsEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         /// </summary>
         [Input("licenseModel")]
@@ -393,6 +420,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
+
+        /// <summary>
+        /// The SCAN Listener Non TLS port number. Default value is 1521.
+        /// </summary>
+        [Input("scanListenerPortNonTls")]
+        public Input<int>? ScanListenerPortNonTls { get; set; }
+
+        /// <summary>
+        /// The SCAN Listener TLS port number. Default value is 2484.
+        /// </summary>
+        [Input("scanListenerPortTls")]
+        public Input<int>? ScanListenerPortTls { get; set; }
 
         /// <summary>
         /// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -457,7 +496,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The number of OCPU cores to enable per VM cluster node.
+        /// The number of CPU cores to enable per VM cluster node.
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
@@ -524,6 +563,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isLocalBackupEnabled")]
         public Input<bool>? IsLocalBackupEnabled { get; set; }
+
+        /// <summary>
+        /// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        /// </summary>
+        [Input("isMtlsEnabled")]
+        public Input<bool>? IsMtlsEnabled { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -596,6 +641,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("reclaimableCpus")]
         public Input<int>? ReclaimableCpus { get; set; }
+
+        /// <summary>
+        /// The SCAN Listener Non TLS port number. Default value is 1521.
+        /// </summary>
+        [Input("scanListenerPortNonTls")]
+        public Input<int>? ScanListenerPortNonTls { get; set; }
+
+        /// <summary>
+        /// The SCAN Listener TLS port number. Default value is 2484.
+        /// </summary>
+        [Input("scanListenerPortTls")]
+        public Input<int>? ScanListenerPortTls { get; set; }
 
         /// <summary>
         /// The current state of the Autonomous VM cluster.

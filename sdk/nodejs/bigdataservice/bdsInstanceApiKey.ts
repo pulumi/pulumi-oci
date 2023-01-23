@@ -141,7 +141,7 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
             resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
             resourceInputs["defaultRegion"] = args ? args.defaultRegion : undefined;
             resourceInputs["keyAlias"] = args ? args.keyAlias : undefined;
-            resourceInputs["passphrase"] = args ? args.passphrase : undefined;
+            resourceInputs["passphrase"] = args?.passphrase ? pulumi.secret(args.passphrase) : undefined;
             resourceInputs["userId"] = args ? args.userId : undefined;
             resourceInputs["fingerprint"] = undefined /*out*/;
             resourceInputs["pemfilepath"] = undefined /*out*/;
@@ -150,6 +150,8 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["passphrase"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(BdsInstanceApiKey.__pulumiType, name, resourceInputs, opts);
     }
 }

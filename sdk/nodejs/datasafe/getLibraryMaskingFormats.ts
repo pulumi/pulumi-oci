@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLibraryMaskingFormats(args: GetLibraryMaskingFormatsArgs, opts?: pulumi.InvokeOptions): Promise<GetLibraryMaskingFormatsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -127,9 +125,32 @@ export interface GetLibraryMaskingFormatsResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of library masking formats based on the specified query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLibraryMaskingFormats = oci.DataSafe.getLibraryMaskingFormats({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.library_masking_format_access_level,
+ *     compartmentIdInSubtree: _var.library_masking_format_compartment_id_in_subtree,
+ *     displayName: _var.library_masking_format_display_name,
+ *     libraryMaskingFormatId: oci_data_safe_library_masking_format.test_library_masking_format.id,
+ *     libraryMaskingFormatSource: _var.library_masking_format_library_masking_format_source,
+ *     state: _var.library_masking_format_state,
+ *     timeCreatedGreaterThanOrEqualTo: _var.library_masking_format_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.library_masking_format_time_created_less_than,
+ * });
+ * ```
+ */
 export function getLibraryMaskingFormatsOutput(args: GetLibraryMaskingFormatsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLibraryMaskingFormatsResult> {
-    return pulumi.output(args).apply(a => getLibraryMaskingFormats(a, opts))
+    return pulumi.output(args).apply((a: any) => getLibraryMaskingFormats(a, opts))
 }
 
 /**

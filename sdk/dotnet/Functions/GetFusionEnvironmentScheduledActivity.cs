@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentScheduledActivityResult> InvokeAsync(GetFusionEnvironmentScheduledActivityArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentScheduledActivityResult>("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", args ?? new GetFusionEnvironmentScheduledActivityArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentScheduledActivityResult>("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", args ?? new GetFusionEnvironmentScheduledActivityArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentScheduledActivityResult> Invoke(GetFusionEnvironmentScheduledActivityInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentScheduledActivityResult>("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", args ?? new GetFusionEnvironmentScheduledActivityInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentScheduledActivityResult>("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", args ?? new GetFusionEnvironmentScheduledActivityInvokeArgs(), options.WithDefaults());
     }
 
 

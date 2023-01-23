@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBootVolumeBackupsResult> InvokeAsync(GetBootVolumeBackupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeBackupsResult>("oci:Core/getBootVolumeBackups:getBootVolumeBackups", args ?? new GetBootVolumeBackupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeBackupsResult>("oci:Core/getBootVolumeBackups:getBootVolumeBackups", args ?? new GetBootVolumeBackupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Boot Volume Backups in Oracle Cloud Infrastructure Core service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBootVolumeBackupsResult> Invoke(GetBootVolumeBackupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBootVolumeBackupsResult>("oci:Core/getBootVolumeBackups:getBootVolumeBackups", args ?? new GetBootVolumeBackupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeBackupsResult>("oci:Core/getBootVolumeBackups:getBootVolumeBackups", args ?? new GetBootVolumeBackupsInvokeArgs(), options.WithDefaults());
     }
 
 

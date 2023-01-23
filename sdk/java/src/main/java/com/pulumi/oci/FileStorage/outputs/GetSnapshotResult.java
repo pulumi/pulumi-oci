@@ -33,12 +33,12 @@ public final class GetSnapshotResult {
      */
     private String id;
     /**
-     * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     private Boolean isCloneSource;
     /**
-     * @return Additional information about the current &#39;lifecycleState&#39;.
+     * @return Additional information about the current `lifecycleState`.
      * 
      */
     private String lifecycleDetails;
@@ -48,11 +48,24 @@ public final class GetSnapshotResult {
      */
     private String name;
     /**
-     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     private String provenanceId;
     private String snapshotId;
+    /**
+     * @return The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+     * * If the snapshot is created in the original file system directory.
+     * * If the snapshot is cloned from a file system.
+     * * If the snapshot is replicated from a file system.
+     * 
+     */
+    private String snapshotTime;
+    /**
+     * @return Specifies the generation type of the snapshot.
+     * 
+     */
+    private String snapshotType;
     /**
      * @return The current state of the snapshot.
      * 
@@ -94,14 +107,14 @@ public final class GetSnapshotResult {
         return this.id;
     }
     /**
-     * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     public Boolean isCloneSource() {
         return this.isCloneSource;
     }
     /**
-     * @return Additional information about the current &#39;lifecycleState&#39;.
+     * @return Additional information about the current `lifecycleState`.
      * 
      */
     public String lifecycleDetails() {
@@ -115,7 +128,7 @@ public final class GetSnapshotResult {
         return this.name;
     }
     /**
-     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     public String provenanceId() {
@@ -123,6 +136,23 @@ public final class GetSnapshotResult {
     }
     public String snapshotId() {
         return this.snapshotId;
+    }
+    /**
+     * @return The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+     * * If the snapshot is created in the original file system directory.
+     * * If the snapshot is cloned from a file system.
+     * * If the snapshot is replicated from a file system.
+     * 
+     */
+    public String snapshotTime() {
+        return this.snapshotTime;
+    }
+    /**
+     * @return Specifies the generation type of the snapshot.
+     * 
+     */
+    public String snapshotType() {
+        return this.snapshotType;
     }
     /**
      * @return The current state of the snapshot.
@@ -157,6 +187,8 @@ public final class GetSnapshotResult {
         private String name;
         private String provenanceId;
         private String snapshotId;
+        private String snapshotTime;
+        private String snapshotType;
         private String state;
         private String timeCreated;
         public Builder() {}
@@ -171,6 +203,8 @@ public final class GetSnapshotResult {
     	      this.name = defaults.name;
     	      this.provenanceId = defaults.provenanceId;
     	      this.snapshotId = defaults.snapshotId;
+    	      this.snapshotTime = defaults.snapshotTime;
+    	      this.snapshotType = defaults.snapshotType;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
         }
@@ -221,6 +255,16 @@ public final class GetSnapshotResult {
             return this;
         }
         @CustomType.Setter
+        public Builder snapshotTime(String snapshotTime) {
+            this.snapshotTime = Objects.requireNonNull(snapshotTime);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder snapshotType(String snapshotType) {
+            this.snapshotType = Objects.requireNonNull(snapshotType);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -241,6 +285,8 @@ public final class GetSnapshotResult {
             o.name = name;
             o.provenanceId = provenanceId;
             o.snapshotId = snapshotId;
+            o.snapshotTime = snapshotTime;
+            o.snapshotType = snapshotType;
             o.state = state;
             o.timeCreated = timeCreated;
             return o;

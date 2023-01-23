@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBootVolumeReplica(args: GetBootVolumeReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeReplicaResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeReplica:getBootVolumeReplica", {
         "bootVolumeReplicaId": args.bootVolumeReplicaId,
     }, opts);
@@ -96,9 +93,24 @@ export interface GetBootVolumeReplicaResult {
     readonly timeLastSynced: string;
     readonly volumeGroupReplicaId: string;
 }
-
+/**
+ * This data source provides details about a specific Boot Volume Replica resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information for the specified boot volume replica.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBootVolumeReplica = oci.Core.getBootVolumeReplica({
+ *     bootVolumeReplicaId: oci_core_boot_volume_replica.test_boot_volume_replica.id,
+ * });
+ * ```
+ */
 export function getBootVolumeReplicaOutput(args: GetBootVolumeReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeReplicaResult> {
-    return pulumi.output(args).apply(a => getBootVolumeReplica(a, opts))
+    return pulumi.output(args).apply((a: any) => getBootVolumeReplica(a, opts))
 }
 
 /**

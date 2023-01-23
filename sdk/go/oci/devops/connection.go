@@ -117,6 +117,13 @@ func NewConnection(ctx *pulumi.Context,
 	if args.ProjectId == nil {
 		return nil, errors.New("invalid value for required argument 'ProjectId'")
 	}
+	if args.AppPassword != nil {
+		args.AppPassword = pulumi.ToSecret(args.AppPassword).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"appPassword",
+	})
+	opts = append(opts, secrets)
 	var resource Connection
 	err := ctx.RegisterResource("oci:DevOps/connection:Connection", name, args, &resource, opts...)
 	if err != nil {

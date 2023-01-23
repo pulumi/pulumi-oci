@@ -2,15 +2,13 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getAutoScalingConfigurations(args: GetAutoScalingConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutoScalingConfigurationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", {
         "bdsInstanceId": args.bdsInstanceId,
         "compartmentId": args.compartmentId,
@@ -46,9 +44,8 @@ export interface GetAutoScalingConfigurationsResult {
     readonly id: string;
     readonly state?: string;
 }
-
 export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {
-    return pulumi.output(args).apply(a => getAutoScalingConfigurations(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutoScalingConfigurations(a, opts))
 }
 
 /**

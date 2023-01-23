@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -42,11 +43,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSources(args: GetDataSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSourcesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDataSources:getDataSources", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -130,9 +128,44 @@ export interface GetDataSourcesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Returns a list of all Data Sources in a compartment
+ *
+ * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+ * The list does not include any subcompartments of the compartmentId passed.
+ *
+ * The parameter `accessLevel` specifies whether to return only those compartments for which the
+ * requestor has INSPECT permissions on at least one resource directly
+ * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+ * Principal doesn't have access to even one of the child compartments. This is valid only when
+ * `compartmentIdInSubtree` is set to `true`.
+ *
+ * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+ * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+ * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataSources = oci.CloudGuard.getDataSources({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.data_source_access_level,
+ *     compartmentIdInSubtree: _var.data_source_compartment_id_in_subtree,
+ *     dataSourceFeedProvider: _var.data_source_data_source_feed_provider,
+ *     displayName: _var.data_source_display_name,
+ *     loggingQueryType: _var.data_source_logging_query_type,
+ *     state: _var.data_source_state,
+ * });
+ * ```
+ */
 export function getDataSourcesOutput(args: GetDataSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourcesResult> {
-    return pulumi.output(args).apply(a => getDataSources(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataSources(a, opts))
 }
 
 /**

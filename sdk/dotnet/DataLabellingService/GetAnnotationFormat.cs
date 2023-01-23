@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAnnotationFormatResult> InvokeAsync(GetAnnotationFormatArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAnnotationFormatResult>("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args ?? new GetAnnotationFormatArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnnotationFormatResult>("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args ?? new GetAnnotationFormatArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAnnotationFormatResult> Invoke(GetAnnotationFormatInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAnnotationFormatResult>("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args ?? new GetAnnotationFormatInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnnotationFormatResult>("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args ?? new GetAnnotationFormatInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFastLaunchJobConfigs(args: GetFastLaunchJobConfigsArgs, opts?: pulumi.InvokeOptions): Promise<GetFastLaunchJobConfigsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetFastLaunchJobConfigsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.
+ *
+ * List fast launch capable job configs in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFastLaunchJobConfigs = oci.DataScience.getFastLaunchJobConfigs({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getFastLaunchJobConfigsOutput(args: GetFastLaunchJobConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastLaunchJobConfigsResult> {
-    return pulumi.output(args).apply(a => getFastLaunchJobConfigs(a, opts))
+    return pulumi.output(args).apply((a: any) => getFastLaunchJobConfigs(a, opts))
 }
 
 /**

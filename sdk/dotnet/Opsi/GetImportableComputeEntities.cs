@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetImportableComputeEntitiesResult> InvokeAsync(GetImportableComputeEntitiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetImportableComputeEntitiesResult>("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", args ?? new GetImportableComputeEntitiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetImportableComputeEntitiesResult>("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", args ?? new GetImportableComputeEntitiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetImportableComputeEntitiesResult> Invoke(GetImportableComputeEntitiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetImportableComputeEntitiesResult>("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", args ?? new GetImportableComputeEntitiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetImportableComputeEntitiesResult>("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", args ?? new GetImportableComputeEntitiesInvokeArgs(), options.WithDefaults());
     }
 
 

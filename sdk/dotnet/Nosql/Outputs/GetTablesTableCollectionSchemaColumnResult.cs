@@ -13,26 +13,23 @@ namespace Pulumi.Oci.Nosql.Outputs
     [OutputType]
     public sealed class GetTablesTableCollectionSchemaColumnResult
     {
-        /// <summary>
-        /// The column default value.
-        /// </summary>
         public readonly string DefaultValue;
-        /// <summary>
-        /// The column nullable flag.
-        /// </summary>
+        public readonly bool IsAsUuid;
+        public readonly bool IsGenerated;
         public readonly bool IsNullable;
         /// <summary>
         /// A shell-globbing-style (*?[]) filter for names.
         /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// The column type.
-        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]
         private GetTablesTableCollectionSchemaColumnResult(
             string defaultValue,
+
+            bool isAsUuid,
+
+            bool isGenerated,
 
             bool isNullable,
 
@@ -41,6 +38,8 @@ namespace Pulumi.Oci.Nosql.Outputs
             string type)
         {
             DefaultValue = defaultValue;
+            IsAsUuid = isAsUuid;
+            IsGenerated = isGenerated;
             IsNullable = isNullable;
             Name = name;
             Type = type;

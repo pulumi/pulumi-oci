@@ -5,16 +5,41 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./alarm";
-export * from "./getAlarm";
-export * from "./getAlarmHistoryCollection";
-export * from "./getAlarmStatuses";
-export * from "./getAlarms";
-export * from "./getMetricData";
-export * from "./getMetrics";
+export { AlarmArgs, AlarmState } from "./alarm";
+export type Alarm = import("./alarm").Alarm;
+export const Alarm: typeof import("./alarm").Alarm = null as any;
+utilities.lazyLoad(exports, ["Alarm"], () => require("./alarm"));
 
-// Import resources to register:
-import { Alarm } from "./alarm";
+export { GetAlarmArgs, GetAlarmResult, GetAlarmOutputArgs } from "./getAlarm";
+export const getAlarm: typeof import("./getAlarm").getAlarm = null as any;
+export const getAlarmOutput: typeof import("./getAlarm").getAlarmOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarm","getAlarmOutput"], () => require("./getAlarm"));
+
+export { GetAlarmHistoryCollectionArgs, GetAlarmHistoryCollectionResult, GetAlarmHistoryCollectionOutputArgs } from "./getAlarmHistoryCollection";
+export const getAlarmHistoryCollection: typeof import("./getAlarmHistoryCollection").getAlarmHistoryCollection = null as any;
+export const getAlarmHistoryCollectionOutput: typeof import("./getAlarmHistoryCollection").getAlarmHistoryCollectionOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmHistoryCollection","getAlarmHistoryCollectionOutput"], () => require("./getAlarmHistoryCollection"));
+
+export { GetAlarmStatusesArgs, GetAlarmStatusesResult, GetAlarmStatusesOutputArgs } from "./getAlarmStatuses";
+export const getAlarmStatuses: typeof import("./getAlarmStatuses").getAlarmStatuses = null as any;
+export const getAlarmStatusesOutput: typeof import("./getAlarmStatuses").getAlarmStatusesOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmStatuses","getAlarmStatusesOutput"], () => require("./getAlarmStatuses"));
+
+export { GetAlarmsArgs, GetAlarmsResult, GetAlarmsOutputArgs } from "./getAlarms";
+export const getAlarms: typeof import("./getAlarms").getAlarms = null as any;
+export const getAlarmsOutput: typeof import("./getAlarms").getAlarmsOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarms","getAlarmsOutput"], () => require("./getAlarms"));
+
+export { GetMetricDataArgs, GetMetricDataResult, GetMetricDataOutputArgs } from "./getMetricData";
+export const getMetricData: typeof import("./getMetricData").getMetricData = null as any;
+export const getMetricDataOutput: typeof import("./getMetricData").getMetricDataOutput = null as any;
+utilities.lazyLoad(exports, ["getMetricData","getMetricDataOutput"], () => require("./getMetricData"));
+
+export { GetMetricsArgs, GetMetricsResult, GetMetricsOutputArgs } from "./getMetrics";
+export const getMetrics: typeof import("./getMetrics").getMetrics = null as any;
+export const getMetricsOutput: typeof import("./getMetrics").getMetricsOutput = null as any;
+utilities.lazyLoad(exports, ["getMetrics","getMetricsOutput"], () => require("./getMetrics"));
+
 
 const _module = {
     version: utilities.getVersion(),

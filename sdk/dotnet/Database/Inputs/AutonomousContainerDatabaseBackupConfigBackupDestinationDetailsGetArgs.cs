@@ -30,11 +30,21 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
+        [Input("vpcPassword")]
+        private Input<string>? _vpcPassword;
+
         /// <summary>
         /// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         /// </summary>
-        [Input("vpcPassword")]
-        public Input<string>? VpcPassword { get; set; }
+        public Input<string>? VpcPassword
+        {
+            get => _vpcPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _vpcPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.

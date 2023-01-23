@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecurityRecipeResult> InvokeAsync(GetSecurityRecipeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecurityRecipeResult>("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", args ?? new GetSecurityRecipeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityRecipeResult>("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", args ?? new GetSecurityRecipeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecurityRecipeResult> Invoke(GetSecurityRecipeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecurityRecipeResult>("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", args ?? new GetSecurityRecipeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityRecipeResult>("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", args ?? new GetSecurityRecipeInvokeArgs(), options.WithDefaults());
     }
 
 

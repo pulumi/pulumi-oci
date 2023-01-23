@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudExadataInfrastructures(args: GetCloudExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudExadataInfrastructuresResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetCloudExadataInfrastructuresResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudExadataInfrastructures = oci.Database.getCloudExadataInfrastructures({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.cloud_exadata_infrastructure_display_name,
+ *     state: _var.cloud_exadata_infrastructure_state,
+ * });
+ * ```
+ */
 export function getCloudExadataInfrastructuresOutput(args: GetCloudExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudExadataInfrastructuresResult> {
-    return pulumi.output(args).apply(a => getCloudExadataInfrastructures(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudExadataInfrastructures(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWaasPolicies(args: GetWaasPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetWaasPoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getWaasPolicies:getWaasPolicies", {
         "compartmentId": args.compartmentId,
         "displayNames": args.displayNames,
@@ -97,9 +95,29 @@ export interface GetWaasPoliciesResult {
      */
     readonly waasPolicies: outputs.Waas.GetWaasPoliciesWaasPolicy[];
 }
-
+/**
+ * This data source provides the list of Waas Policies in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets a list of WAAS policies.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWaasPolicies = oci.Waas.getWaasPolicies({
+ *     compartmentId: _var.compartment_id,
+ *     displayNames: _var.waas_policy_display_names,
+ *     ids: _var.waas_policy_ids,
+ *     states: _var.waas_policy_states,
+ *     timeCreatedGreaterThanOrEqualTo: _var.waas_policy_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.waas_policy_time_created_less_than,
+ * });
+ * ```
+ */
 export function getWaasPoliciesOutput(args: GetWaasPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWaasPoliciesResult> {
-    return pulumi.output(args).apply(a => getWaasPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getWaasPolicies(a, opts))
 }
 
 /**

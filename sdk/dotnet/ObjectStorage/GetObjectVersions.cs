@@ -53,7 +53,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetObjectVersionsResult> InvokeAsync(GetObjectVersionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetObjectVersionsResult>("oci:ObjectStorage/getObjectVersions:getObjectVersions", args ?? new GetObjectVersionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectVersionsResult>("oci:ObjectStorage/getObjectVersions:getObjectVersions", args ?? new GetObjectVersionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetObjectVersionsResult> Invoke(GetObjectVersionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetObjectVersionsResult>("oci:ObjectStorage/getObjectVersions:getObjectVersions", args ?? new GetObjectVersionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetObjectVersionsResult>("oci:ObjectStorage/getObjectVersions:getObjectVersions", args ?? new GetObjectVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

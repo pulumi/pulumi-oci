@@ -42,7 +42,7 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubscriptionProductsResult> InvokeAsync(GetSubscriptionProductsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionProductsResult>("oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts", args ?? new GetSubscriptionProductsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionProductsResult>("oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts", args ?? new GetSubscriptionProductsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Subscription Products in Oracle Cloud Infrastructure Usage Proxy service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubscriptionProductsResult> Invoke(GetSubscriptionProductsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubscriptionProductsResult>("oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts", args ?? new GetSubscriptionProductsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionProductsResult>("oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts", args ?? new GetSubscriptionProductsInvokeArgs(), options.WithDefaults());
     }
 
 

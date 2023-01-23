@@ -5,18 +5,46 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./databaseToolsConnection";
-export * from "./databaseToolsPrivateEndpoint";
-export * from "./getDatabaseToolsConnection";
-export * from "./getDatabaseToolsConnections";
-export * from "./getDatabaseToolsEndpointService";
-export * from "./getDatabaseToolsEndpointServices";
-export * from "./getDatabaseToolsPrivateEndpoint";
-export * from "./getDatabaseToolsPrivateEndpoints";
+export { DatabaseToolsConnectionArgs, DatabaseToolsConnectionState } from "./databaseToolsConnection";
+export type DatabaseToolsConnection = import("./databaseToolsConnection").DatabaseToolsConnection;
+export const DatabaseToolsConnection: typeof import("./databaseToolsConnection").DatabaseToolsConnection = null as any;
+utilities.lazyLoad(exports, ["DatabaseToolsConnection"], () => require("./databaseToolsConnection"));
 
-// Import resources to register:
-import { DatabaseToolsConnection } from "./databaseToolsConnection";
-import { DatabaseToolsPrivateEndpoint } from "./databaseToolsPrivateEndpoint";
+export { DatabaseToolsPrivateEndpointArgs, DatabaseToolsPrivateEndpointState } from "./databaseToolsPrivateEndpoint";
+export type DatabaseToolsPrivateEndpoint = import("./databaseToolsPrivateEndpoint").DatabaseToolsPrivateEndpoint;
+export const DatabaseToolsPrivateEndpoint: typeof import("./databaseToolsPrivateEndpoint").DatabaseToolsPrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["DatabaseToolsPrivateEndpoint"], () => require("./databaseToolsPrivateEndpoint"));
+
+export { GetDatabaseToolsConnectionArgs, GetDatabaseToolsConnectionResult, GetDatabaseToolsConnectionOutputArgs } from "./getDatabaseToolsConnection";
+export const getDatabaseToolsConnection: typeof import("./getDatabaseToolsConnection").getDatabaseToolsConnection = null as any;
+export const getDatabaseToolsConnectionOutput: typeof import("./getDatabaseToolsConnection").getDatabaseToolsConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsConnection","getDatabaseToolsConnectionOutput"], () => require("./getDatabaseToolsConnection"));
+
+export { GetDatabaseToolsConnectionsArgs, GetDatabaseToolsConnectionsResult, GetDatabaseToolsConnectionsOutputArgs } from "./getDatabaseToolsConnections";
+export const getDatabaseToolsConnections: typeof import("./getDatabaseToolsConnections").getDatabaseToolsConnections = null as any;
+export const getDatabaseToolsConnectionsOutput: typeof import("./getDatabaseToolsConnections").getDatabaseToolsConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsConnections","getDatabaseToolsConnectionsOutput"], () => require("./getDatabaseToolsConnections"));
+
+export { GetDatabaseToolsEndpointServiceArgs, GetDatabaseToolsEndpointServiceResult, GetDatabaseToolsEndpointServiceOutputArgs } from "./getDatabaseToolsEndpointService";
+export const getDatabaseToolsEndpointService: typeof import("./getDatabaseToolsEndpointService").getDatabaseToolsEndpointService = null as any;
+export const getDatabaseToolsEndpointServiceOutput: typeof import("./getDatabaseToolsEndpointService").getDatabaseToolsEndpointServiceOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsEndpointService","getDatabaseToolsEndpointServiceOutput"], () => require("./getDatabaseToolsEndpointService"));
+
+export { GetDatabaseToolsEndpointServicesArgs, GetDatabaseToolsEndpointServicesResult, GetDatabaseToolsEndpointServicesOutputArgs } from "./getDatabaseToolsEndpointServices";
+export const getDatabaseToolsEndpointServices: typeof import("./getDatabaseToolsEndpointServices").getDatabaseToolsEndpointServices = null as any;
+export const getDatabaseToolsEndpointServicesOutput: typeof import("./getDatabaseToolsEndpointServices").getDatabaseToolsEndpointServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsEndpointServices","getDatabaseToolsEndpointServicesOutput"], () => require("./getDatabaseToolsEndpointServices"));
+
+export { GetDatabaseToolsPrivateEndpointArgs, GetDatabaseToolsPrivateEndpointResult, GetDatabaseToolsPrivateEndpointOutputArgs } from "./getDatabaseToolsPrivateEndpoint";
+export const getDatabaseToolsPrivateEndpoint: typeof import("./getDatabaseToolsPrivateEndpoint").getDatabaseToolsPrivateEndpoint = null as any;
+export const getDatabaseToolsPrivateEndpointOutput: typeof import("./getDatabaseToolsPrivateEndpoint").getDatabaseToolsPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsPrivateEndpoint","getDatabaseToolsPrivateEndpointOutput"], () => require("./getDatabaseToolsPrivateEndpoint"));
+
+export { GetDatabaseToolsPrivateEndpointsArgs, GetDatabaseToolsPrivateEndpointsResult, GetDatabaseToolsPrivateEndpointsOutputArgs } from "./getDatabaseToolsPrivateEndpoints";
+export const getDatabaseToolsPrivateEndpoints: typeof import("./getDatabaseToolsPrivateEndpoints").getDatabaseToolsPrivateEndpoints = null as any;
+export const getDatabaseToolsPrivateEndpointsOutput: typeof import("./getDatabaseToolsPrivateEndpoints").getDatabaseToolsPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsPrivateEndpoints","getDatabaseToolsPrivateEndpointsOutput"], () => require("./getDatabaseToolsPrivateEndpoints"));
+
 
 const _module = {
     version: utilities.getVersion(),

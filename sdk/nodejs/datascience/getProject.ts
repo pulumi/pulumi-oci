@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProject(args: GetProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetProjectResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getProject:getProject", {
         "projectId": args.projectId,
     }, opts);
@@ -83,9 +80,24 @@ export interface GetProjectResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Data Science service.
+ *
+ * Gets the specified project's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProject = oci.DataScience.getProject({
+ *     projectId: oci_datascience_project.test_project.id,
+ * });
+ * ```
+ */
 export function getProjectOutput(args: GetProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProjectResult> {
-    return pulumi.output(args).apply(a => getProject(a, opts))
+    return pulumi.output(args).apply((a: any) => getProject(a, opts))
 }
 
 /**

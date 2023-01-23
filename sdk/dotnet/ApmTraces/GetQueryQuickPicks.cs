@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetQueryQuickPicksResult> InvokeAsync(GetQueryQuickPicksArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetQueryQuickPicksResult>("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args ?? new GetQueryQuickPicksArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetQueryQuickPicksResult>("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args ?? new GetQueryQuickPicksArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetQueryQuickPicksResult> Invoke(GetQueryQuickPicksInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetQueryQuickPicksResult>("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args ?? new GetQueryQuickPicksInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetQueryQuickPicksResult>("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args ?? new GetQueryQuickPicksInvokeArgs(), options.WithDefaults());
     }
 
 

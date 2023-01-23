@@ -59,7 +59,7 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
      */
     public readonly autonomousDatabaseId!: pulumi.Output<string>;
     /**
-     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      */
     public readonly gracePeriod!: pulumi.Output<number>;
     /**
@@ -118,7 +118,7 @@ export interface AutonomousDatabaseInstanceWalletManagementState {
      */
     autonomousDatabaseId?: pulumi.Input<string>;
     /**
-     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      */
     gracePeriod?: pulumi.Input<number>;
     /**
@@ -144,7 +144,7 @@ export interface AutonomousDatabaseInstanceWalletManagementArgs {
      */
     autonomousDatabaseId: pulumi.Input<string>;
     /**
-     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      */
     gracePeriod?: pulumi.Input<number>;
     /**

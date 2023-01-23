@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutions(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", {
         "endTimeLessThanOrEqualTo": args.endTimeLessThanOrEqualTo,
         "filters": args.filters,
@@ -75,9 +73,28 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult {
     readonly optimizerStatisticsAdvisorExecutionsCollections: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection[];
     readonly startTimeGreaterThanOrEqualTo?: string;
 }
-
+/**
+ * This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+ * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+ * If the date-time range is not specified, then the executions in the last seven days are listed.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     endTimeLessThanOrEqualTo: _var.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
+ *     startTimeGreaterThanOrEqualTo: _var.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to,
+ * });
+ * ```
+ */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseOptimizerStatisticsAdvisorExecutions(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsAdvisorExecutions(a, opts))
 }
 
 /**

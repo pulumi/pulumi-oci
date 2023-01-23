@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTenancy(args: GetTenancyArgs, opts?: pulumi.InvokeOptions): Promise<GetTenancyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTenancy:getTenancy", {
         "tenancyId": args.tenancyId,
     }, opts);
@@ -75,9 +72,24 @@ export interface GetTenancyResult {
      */
     readonly upiIdcsCompatibilityLayerEndpoint: string;
 }
-
+/**
+ * This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Get the specified tenancy's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTenancy = oci.Identity.getTenancy({
+ *     tenancyId: _var.tenancy_ocid,
+ * });
+ * ```
+ */
 export function getTenancyOutput(args: GetTenancyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTenancyResult> {
-    return pulumi.output(args).apply(a => getTenancy(a, opts))
+    return pulumi.output(args).apply((a: any) => getTenancy(a, opts))
 }
 
 /**

@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Oda
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOdaInstancesResult> InvokeAsync(GetOdaInstancesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOdaInstancesResult>("oci:Oda/getOdaInstances:getOdaInstances", args ?? new GetOdaInstancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOdaInstancesResult>("oci:Oda/getOdaInstances:getOdaInstances", args ?? new GetOdaInstancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Oda
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOdaInstancesResult> Invoke(GetOdaInstancesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOdaInstancesResult>("oci:Oda/getOdaInstances:getOdaInstances", args ?? new GetOdaInstancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaInstancesResult>("oci:Oda/getOdaInstances:getOdaInstances", args ?? new GetOdaInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -71,9 +72,13 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly deployPipelineId!: pulumi.Output<string>;
     /**
-     * Specifies the OCID of the stage to be redeployed.
+     * The OCID of the stage.
      */
     public readonly deployStageId!: pulumi.Output<string>;
+    /**
+     * Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     */
+    public readonly deployStageOverrideArguments!: pulumi.Output<outputs.DevOps.DeploymentDeployStageOverrideArguments>;
     /**
      * Specifies list of arguments passed along with the deployment.
      */
@@ -122,6 +127,10 @@ export class Deployment extends pulumi.CustomResource {
      * Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    /**
+     * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+     */
+    public readonly triggerNewDevopsDeployment!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a Deployment resource with the given unique name, arguments, and options.
@@ -143,6 +152,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["deployPipelineEnvironments"] = state ? state.deployPipelineEnvironments : undefined;
             resourceInputs["deployPipelineId"] = state ? state.deployPipelineId : undefined;
             resourceInputs["deployStageId"] = state ? state.deployStageId : undefined;
+            resourceInputs["deployStageOverrideArguments"] = state ? state.deployStageOverrideArguments : undefined;
             resourceInputs["deploymentArguments"] = state ? state.deploymentArguments : undefined;
             resourceInputs["deploymentExecutionProgresses"] = state ? state.deploymentExecutionProgresses : undefined;
             resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
@@ -155,6 +165,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["triggerNewDevopsDeployment"] = state ? state.triggerNewDevopsDeployment : undefined;
         } else {
             const args = argsOrState as DeploymentArgs | undefined;
             if ((!args || args.deployPipelineId === undefined) && !opts.urn) {
@@ -167,11 +178,13 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["deployArtifactOverrideArguments"] = args ? args.deployArtifactOverrideArguments : undefined;
             resourceInputs["deployPipelineId"] = args ? args.deployPipelineId : undefined;
             resourceInputs["deployStageId"] = args ? args.deployStageId : undefined;
+            resourceInputs["deployStageOverrideArguments"] = args ? args.deployStageOverrideArguments : undefined;
             resourceInputs["deploymentArguments"] = args ? args.deploymentArguments : undefined;
             resourceInputs["deploymentType"] = args ? args.deploymentType : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["previousDeploymentId"] = args ? args.previousDeploymentId : undefined;
+            resourceInputs["triggerNewDevopsDeployment"] = args ? args.triggerNewDevopsDeployment : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["deployPipelineArtifacts"] = undefined /*out*/;
             resourceInputs["deployPipelineEnvironments"] = undefined /*out*/;
@@ -217,9 +230,13 @@ export interface DeploymentState {
      */
     deployPipelineId?: pulumi.Input<string>;
     /**
-     * Specifies the OCID of the stage to be redeployed.
+     * The OCID of the stage.
      */
     deployStageId?: pulumi.Input<string>;
+    /**
+     * Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     */
+    deployStageOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployStageOverrideArguments>;
     /**
      * Specifies list of arguments passed along with the deployment.
      */
@@ -268,6 +285,10 @@ export interface DeploymentState {
      * Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     timeUpdated?: pulumi.Input<string>;
+    /**
+     * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+     */
+    triggerNewDevopsDeployment?: pulumi.Input<boolean>;
 }
 
 /**
@@ -287,9 +308,13 @@ export interface DeploymentArgs {
      */
     deployPipelineId: pulumi.Input<string>;
     /**
-     * Specifies the OCID of the stage to be redeployed.
+     * The OCID of the stage.
      */
     deployStageId?: pulumi.Input<string>;
+    /**
+     * Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     */
+    deployStageOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployStageOverrideArguments>;
     /**
      * Specifies list of arguments passed along with the deployment.
      */
@@ -310,4 +335,8 @@ export interface DeploymentArgs {
      * Specifies the OCID of the previous deployment to be redeployed.
      */
     previousDeploymentId?: pulumi.Input<string>;
+    /**
+     * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+     */
+    triggerNewDevopsDeployment?: pulumi.Input<boolean>;
 }

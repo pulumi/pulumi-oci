@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateApplicationPackage(args: GetPrivateApplicationPackageArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateApplicationPackageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getPrivateApplicationPackage:getPrivateApplicationPackage", {
         "privateApplicationPackageId": args.privateApplicationPackageId,
     }, opts);
@@ -73,9 +70,24 @@ export interface GetPrivateApplicationPackageResult {
      */
     readonly version: string;
 }
-
+/**
+ * This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.
+ *
+ * Gets the details of a specific package within a given private application.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateApplicationPackage = oci.ServiceCatalog.getPrivateApplicationPackage({
+ *     privateApplicationPackageId: oci_service_catalog_private_application_package.test_private_application_package.id,
+ * });
+ * ```
+ */
 export function getPrivateApplicationPackageOutput(args: GetPrivateApplicationPackageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateApplicationPackageResult> {
-    return pulumi.output(args).apply(a => getPrivateApplicationPackage(a, opts))
+    return pulumi.output(args).apply((a: any) => getPrivateApplicationPackage(a, opts))
 }
 
 /**

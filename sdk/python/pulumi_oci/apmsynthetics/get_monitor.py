@@ -22,10 +22,13 @@ class GetMonitorResult:
     """
     A collection of values returned by getMonitor.
     """
-    def __init__(__self__, apm_domain_id=None, batch_interval_in_seconds=None, configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_run_now=None, is_run_once=None, monitor_id=None, monitor_type=None, repeat_interval_in_seconds=None, scheduling_policy=None, script_id=None, script_name=None, script_parameters=None, status=None, target=None, time_created=None, time_updated=None, timeout_in_seconds=None, vantage_point_count=None, vantage_points=None):
+    def __init__(__self__, apm_domain_id=None, availability_configurations=None, batch_interval_in_seconds=None, configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_run_now=None, is_run_once=None, maintenance_window_schedules=None, monitor_id=None, monitor_type=None, repeat_interval_in_seconds=None, scheduling_policy=None, script_id=None, script_name=None, script_parameters=None, status=None, target=None, time_created=None, time_updated=None, timeout_in_seconds=None, vantage_point_count=None, vantage_points=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        if availability_configurations and not isinstance(availability_configurations, list):
+            raise TypeError("Expected argument 'availability_configurations' to be a list")
+        pulumi.set(__self__, "availability_configurations", availability_configurations)
         if batch_interval_in_seconds and not isinstance(batch_interval_in_seconds, int):
             raise TypeError("Expected argument 'batch_interval_in_seconds' to be a int")
         pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
@@ -50,6 +53,9 @@ class GetMonitorResult:
         if is_run_once and not isinstance(is_run_once, bool):
             raise TypeError("Expected argument 'is_run_once' to be a bool")
         pulumi.set(__self__, "is_run_once", is_run_once)
+        if maintenance_window_schedules and not isinstance(maintenance_window_schedules, list):
+            raise TypeError("Expected argument 'maintenance_window_schedules' to be a list")
+        pulumi.set(__self__, "maintenance_window_schedules", maintenance_window_schedules)
         if monitor_id and not isinstance(monitor_id, str):
             raise TypeError("Expected argument 'monitor_id' to be a str")
         pulumi.set(__self__, "monitor_id", monitor_id)
@@ -97,6 +103,14 @@ class GetMonitorResult:
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> str:
         return pulumi.get(self, "apm_domain_id")
+
+    @property
+    @pulumi.getter(name="availabilityConfigurations")
+    def availability_configurations(self) -> Sequence['outputs.GetMonitorAvailabilityConfigurationResult']:
+        """
+        Monitor availability configuration details.
+        """
+        return pulumi.get(self, "availability_configurations")
 
     @property
     @pulumi.getter(name="batchIntervalInSeconds")
@@ -161,6 +175,14 @@ class GetMonitorResult:
         If runOnce is enabled, then the monitor will run once.
         """
         return pulumi.get(self, "is_run_once")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowSchedules")
+    def maintenance_window_schedules(self) -> Sequence['outputs.GetMonitorMaintenanceWindowScheduleResult']:
+        """
+        Details used to schedule maintenance window.
+        """
+        return pulumi.get(self, "maintenance_window_schedules")
 
     @property
     @pulumi.getter(name="monitorId")
@@ -251,7 +273,7 @@ class GetMonitorResult:
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> int:
         """
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -279,6 +301,7 @@ class AwaitableGetMonitorResult(GetMonitorResult):
             yield self
         return GetMonitorResult(
             apm_domain_id=self.apm_domain_id,
+            availability_configurations=self.availability_configurations,
             batch_interval_in_seconds=self.batch_interval_in_seconds,
             configurations=self.configurations,
             defined_tags=self.defined_tags,
@@ -287,6 +310,7 @@ class AwaitableGetMonitorResult(GetMonitorResult):
             id=self.id,
             is_run_now=self.is_run_now,
             is_run_once=self.is_run_once,
+            maintenance_window_schedules=self.maintenance_window_schedules,
             monitor_id=self.monitor_id,
             monitor_type=self.monitor_type,
             repeat_interval_in_seconds=self.repeat_interval_in_seconds,
@@ -333,6 +357,7 @@ def get_monitor(apm_domain_id: Optional[str] = None,
 
     return AwaitableGetMonitorResult(
         apm_domain_id=__ret__.apm_domain_id,
+        availability_configurations=__ret__.availability_configurations,
         batch_interval_in_seconds=__ret__.batch_interval_in_seconds,
         configurations=__ret__.configurations,
         defined_tags=__ret__.defined_tags,
@@ -341,6 +366,7 @@ def get_monitor(apm_domain_id: Optional[str] = None,
         id=__ret__.id,
         is_run_now=__ret__.is_run_now,
         is_run_once=__ret__.is_run_once,
+        maintenance_window_schedules=__ret__.maintenance_window_schedules,
         monitor_id=__ret__.monitor_id,
         monitor_type=__ret__.monitor_type,
         repeat_interval_in_seconds=__ret__.repeat_interval_in_seconds,

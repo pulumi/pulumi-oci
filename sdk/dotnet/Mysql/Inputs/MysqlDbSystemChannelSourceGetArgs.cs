@@ -12,6 +12,18 @@ namespace Pulumi.Oci.Mysql.Inputs
 
     public sealed class MysqlDbSystemChannelSourceGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("anonymousTransactionsHandlings")]
+        private InputList<Inputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandlingGetArgs>? _anonymousTransactionsHandlings;
+
+        /// <summary>
+        /// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        /// </summary>
+        public InputList<Inputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandlingGetArgs> AnonymousTransactionsHandlings
+        {
+            get => _anonymousTransactionsHandlings ?? (_anonymousTransactionsHandlings = new InputList<Inputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandlingGetArgs>());
+            set => _anonymousTransactionsHandlings = value;
+        }
+
         /// <summary>
         /// The network address of the DB System.
         /// </summary>
@@ -25,7 +37,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+        /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }

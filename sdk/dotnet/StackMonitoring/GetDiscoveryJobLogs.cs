@@ -40,7 +40,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDiscoveryJobLogsResult> InvokeAsync(GetDiscoveryJobLogsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryJobLogsResult>("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", args ?? new GetDiscoveryJobLogsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryJobLogsResult>("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", args ?? new GetDiscoveryJobLogsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Discovery Job Logs in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDiscoveryJobLogsResult> Invoke(GetDiscoveryJobLogsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobLogsResult>("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", args ?? new GetDiscoveryJobLogsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobLogsResult>("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", args ?? new GetDiscoveryJobLogsInvokeArgs(), options.WithDefaults());
     }
 
 

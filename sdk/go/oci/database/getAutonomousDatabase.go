@@ -84,7 +84,7 @@ type LookupAutonomousDatabaseResult struct {
 	ConnectionStrings []GetAutonomousDatabaseConnectionString `pulumi:"connectionStrings"`
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
 	ConnectionUrls []GetAutonomousDatabaseConnectionUrl `pulumi:"connectionUrls"`
-	// The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+	// The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
 	// Customer Contacts.
 	CustomerContacts []GetAutonomousDatabaseCustomerContact `pulumi:"customerContacts"`
@@ -246,8 +246,9 @@ type LookupAutonomousDatabaseResult struct {
 	// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
 	TimeReclamationOfFreeAutonomousDatabase string `pulumi:"timeReclamationOfFreeAutonomousDatabase"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
-	TimeUntilReconnectCloneEnabled string `pulumi:"timeUntilReconnectCloneEnabled"`
-	Timestamp                      string `pulumi:"timestamp"`
+	TimeUntilReconnectCloneEnabled    string `pulumi:"timeUntilReconnectCloneEnabled"`
+	Timestamp                         string `pulumi:"timestamp"`
+	UseLatestAvailableBackupTimeStamp bool   `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -372,7 +373,7 @@ func (o LookupAutonomousDatabaseResultOutput) ConnectionUrls() GetAutonomousData
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseConnectionUrl { return v.ConnectionUrls }).(GetAutonomousDatabaseConnectionUrlArrayOutput)
 }
 
-// The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+// The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 func (o LookupAutonomousDatabaseResultOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
@@ -789,6 +790,10 @@ func (o LookupAutonomousDatabaseResultOutput) TimeUntilReconnectCloneEnabled() p
 
 func (o LookupAutonomousDatabaseResultOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) UseLatestAvailableBackupTimeStamp() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.UseLatestAvailableBackupTimeStamp }).(pulumi.BoolOutput)
 }
 
 // The amount of storage that has been used, in terabytes.

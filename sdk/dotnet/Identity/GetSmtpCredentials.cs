@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSmtpCredentialsResult> InvokeAsync(GetSmtpCredentialsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSmtpCredentialsResult>("oci:Identity/getSmtpCredentials:getSmtpCredentials", args ?? new GetSmtpCredentialsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSmtpCredentialsResult>("oci:Identity/getSmtpCredentials:getSmtpCredentials", args ?? new GetSmtpCredentialsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSmtpCredentialsResult> Invoke(GetSmtpCredentialsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSmtpCredentialsResult>("oci:Identity/getSmtpCredentials:getSmtpCredentials", args ?? new GetSmtpCredentialsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSmtpCredentialsResult>("oci:Identity/getSmtpCredentials:getSmtpCredentials", args ?? new GetSmtpCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

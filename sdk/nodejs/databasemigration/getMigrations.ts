@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMigrations(args: GetMigrationsArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getMigrations:getMigrations", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetMigrationsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+ *
+ * List all Migrations.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMigrations = oci.DatabaseMigration.getMigrations({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.migration_display_name,
+ *     lifecycleDetails: _var.migration_lifecycle_details,
+ *     state: _var.migration_state,
+ * });
+ * ```
+ */
 export function getMigrationsOutput(args: GetMigrationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationsResult> {
-    return pulumi.output(args).apply(a => getMigrations(a, opts))
+    return pulumi.output(args).apply((a: any) => getMigrations(a, opts))
 }
 
 /**

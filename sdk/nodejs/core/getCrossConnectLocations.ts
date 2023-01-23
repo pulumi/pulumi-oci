@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCrossConnectLocations(args: GetCrossConnectLocationsArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectLocationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCrossConnectLocations:getCrossConnectLocations", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -60,9 +58,25 @@ export interface GetCrossConnectLocationsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the available FastConnect locations for cross-connect installation. You need
+ * this information so you can specify your desired location when you create a cross-connect.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCrossConnectLocations = oci.Core.getCrossConnectLocations({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getCrossConnectLocationsOutput(args: GetCrossConnectLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectLocationsResult> {
-    return pulumi.output(args).apply(a => getCrossConnectLocations(a, opts))
+    return pulumi.output(args).apply((a: any) => getCrossConnectLocations(a, opts))
 }
 
 /**

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryDiffsResult> InvokeAsync(GetRepositoryDiffsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryDiffsResult>("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", args ?? new GetRepositoryDiffsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryDiffsResult>("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", args ?? new GetRepositoryDiffsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryDiffsResult> Invoke(GetRepositoryDiffsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffsResult>("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", args ?? new GetRepositoryDiffsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffsResult>("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", args ?? new GetRepositoryDiffsInvokeArgs(), options.WithDefaults());
     }
 
 

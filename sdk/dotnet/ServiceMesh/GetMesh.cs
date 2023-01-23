@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMeshResult> InvokeAsync(GetMeshArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMeshResult>("oci:ServiceMesh/getMesh:getMesh", args ?? new GetMeshArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMeshResult>("oci:ServiceMesh/getMesh:getMesh", args ?? new GetMeshArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMeshResult> Invoke(GetMeshInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMeshResult>("oci:ServiceMesh/getMesh:getMesh", args ?? new GetMeshInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMeshResult>("oci:ServiceMesh/getMesh:getMesh", args ?? new GetMeshInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -104,7 +104,7 @@ namespace Pulumi.Oci.ServiceMesh
     public sealed class GetMeshResult
     {
         /// <summary>
-        /// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+        /// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMeshCertificateAuthorityResult> CertificateAuthorities;
         /// <summary>

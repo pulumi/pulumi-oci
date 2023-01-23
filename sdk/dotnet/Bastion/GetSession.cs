@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Bastion
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSessionResult> InvokeAsync(GetSessionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSessionResult>("oci:Bastion/getSession:getSession", args ?? new GetSessionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSessionResult>("oci:Bastion/getSession:getSession", args ?? new GetSessionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Session resource in Oracle Cloud Infrastructure Bastion service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Bastion
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSessionResult> Invoke(GetSessionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSessionResult>("oci:Bastion/getSession:getSession", args ?? new GetSessionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSessionResult>("oci:Bastion/getSession:getSession", args ?? new GetSessionInvokeArgs(), options.WithDefaults());
     }
 
 

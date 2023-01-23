@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  */
 export function getCategories(args?: GetCategoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoriesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getCategories:getCategories", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -61,9 +59,25 @@ export interface GetCategoriesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Gets the list of all the categories for listings published to Oracle Cloud Infrastructure Marketplace. Categories apply
+ * to the software product provided by the listing.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCategories = oci.Marketplace.getCategories({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getCategoriesOutput(args?: GetCategoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoriesResult> {
-    return pulumi.output(args).apply(a => getCategories(a, opts))
+    return pulumi.output(args).apply((a: any) => getCategories(a, opts))
 }
 
 /**

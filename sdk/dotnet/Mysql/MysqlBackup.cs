@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Mysql
         public Output<string> BackupType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment the backup exists in.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? BackupType { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment the backup exists in.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? BackupType { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment the backup exists in.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

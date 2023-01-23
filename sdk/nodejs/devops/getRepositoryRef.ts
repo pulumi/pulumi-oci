@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryRef(args: GetRepositoryRefArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryRefResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryRef:getRepositoryRef", {
         "refName": args.refName,
         "repositoryId": args.repositoryId,
@@ -85,9 +82,25 @@ export interface GetRepositoryRefResult {
      */
     readonly repositoryId: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like "heads/<name>" or "tags/<name>".
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryRef = oci.DevOps.getRepositoryRef({
+ *     refName: _var.repository_ref_ref_name,
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ * });
+ * ```
+ */
 export function getRepositoryRefOutput(args: GetRepositoryRefOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryRefResult> {
-    return pulumi.output(args).apply(a => getRepositoryRef(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryRef(a, opts))
 }
 
 /**

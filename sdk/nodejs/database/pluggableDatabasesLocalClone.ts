@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -106,6 +107,10 @@ export class PluggableDatabasesLocalClone extends pulumi.CustomResource {
      */
     public readonly pluggableDatabaseId!: pulumi.Output<string>;
     /**
+     * The configuration of the Pluggable Database Management service.
+     */
+    public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabasesLocalClonePluggableDatabaseManagementConfig[]>;
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
     public readonly shouldPdbAdminAccountBeLocked!: pulumi.Output<boolean>;
@@ -147,6 +152,7 @@ export class PluggableDatabasesLocalClone extends pulumi.CustomResource {
             resourceInputs["pdbAdminPassword"] = state ? state.pdbAdminPassword : undefined;
             resourceInputs["pdbName"] = state ? state.pdbName : undefined;
             resourceInputs["pluggableDatabaseId"] = state ? state.pluggableDatabaseId : undefined;
+            resourceInputs["pluggableDatabaseManagementConfigs"] = state ? state.pluggableDatabaseManagementConfigs : undefined;
             resourceInputs["shouldPdbAdminAccountBeLocked"] = state ? state.shouldPdbAdminAccountBeLocked : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["targetTdeWalletPassword"] = state ? state.targetTdeWalletPassword : undefined;
@@ -160,10 +166,10 @@ export class PluggableDatabasesLocalClone extends pulumi.CustomResource {
                 throw new Error("Missing required property 'pluggableDatabaseId'");
             }
             resourceInputs["clonedPdbName"] = args ? args.clonedPdbName : undefined;
-            resourceInputs["pdbAdminPassword"] = args ? args.pdbAdminPassword : undefined;
+            resourceInputs["pdbAdminPassword"] = args?.pdbAdminPassword ? pulumi.secret(args.pdbAdminPassword) : undefined;
             resourceInputs["pluggableDatabaseId"] = args ? args.pluggableDatabaseId : undefined;
             resourceInputs["shouldPdbAdminAccountBeLocked"] = args ? args.shouldPdbAdminAccountBeLocked : undefined;
-            resourceInputs["targetTdeWalletPassword"] = args ? args.targetTdeWalletPassword : undefined;
+            resourceInputs["targetTdeWalletPassword"] = args?.targetTdeWalletPassword ? pulumi.secret(args.targetTdeWalletPassword) : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["containerDatabaseId"] = undefined /*out*/;
@@ -173,10 +179,13 @@ export class PluggableDatabasesLocalClone extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["openMode"] = undefined /*out*/;
             resourceInputs["pdbName"] = undefined /*out*/;
+            resourceInputs["pluggableDatabaseManagementConfigs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["pdbAdminPassword", "targetTdeWalletPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(PluggableDatabasesLocalClone.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -233,6 +242,10 @@ export interface PluggableDatabasesLocalCloneState {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     pluggableDatabaseId?: pulumi.Input<string>;
+    /**
+     * The configuration of the Pluggable Database Management service.
+     */
+    pluggableDatabaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesLocalClonePluggableDatabaseManagementConfig>[]>;
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */

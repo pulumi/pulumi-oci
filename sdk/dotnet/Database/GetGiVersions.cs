@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetGiVersionsResult> InvokeAsync(GetGiVersionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetGiVersionsResult>("oci:Database/getGiVersions:getGiVersions", args ?? new GetGiVersionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetGiVersionsResult>("oci:Database/getGiVersions:getGiVersions", args ?? new GetGiVersionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetGiVersionsResult> Invoke(GetGiVersionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetGiVersionsResult>("oci:Database/getGiVersions:getGiVersions", args ?? new GetGiVersionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetGiVersionsResult>("oci:Database/getGiVersions:getGiVersions", args ?? new GetGiVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

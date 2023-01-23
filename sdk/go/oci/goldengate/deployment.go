@@ -31,11 +31,13 @@ type Deployment struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringOutput `pulumi:"deploymentBackupId"`
-	// The deployment type.
+	// Information regarding the deployment diagnostic collection
+	DeploymentDiagnosticDatas DeploymentDeploymentDiagnosticDataArrayOutput `pulumi:"deploymentDiagnosticDatas"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
 	DeploymentType pulumi.StringOutput `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl pulumi.StringOutput `pulumi:"deploymentUrl"`
@@ -45,7 +47,7 @@ type Deployment struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolOutput `pulumi:"isAutoScalingEnabled"`
@@ -63,7 +65,7 @@ type Deployment struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
-	// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataOutput `pulumi:"oggData"`
@@ -77,7 +79,7 @@ type Deployment struct {
 	StorageUtilizationInBytes pulumi.StringOutput `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -141,11 +143,13 @@ type deploymentState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
-	// The deployment type.
+	// Information regarding the deployment diagnostic collection
+	DeploymentDiagnosticDatas []DeploymentDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
 	DeploymentType *string `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl *string `pulumi:"deploymentUrl"`
@@ -155,7 +159,7 @@ type deploymentState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
@@ -173,7 +177,7 @@ type deploymentState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
-	// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData *DeploymentOggData `pulumi:"oggData"`
@@ -187,7 +191,7 @@ type deploymentState struct {
 	StorageUtilizationInBytes *string `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId *string `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -202,11 +206,13 @@ type DeploymentState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntPtrInput
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringPtrInput
-	// The deployment type.
+	// Information regarding the deployment diagnostic collection
+	DeploymentDiagnosticDatas DeploymentDeploymentDiagnosticDataArrayInput
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
 	DeploymentType pulumi.StringPtrInput
 	// The URL of a resource.
 	DeploymentUrl pulumi.StringPtrInput
@@ -216,7 +222,7 @@ type DeploymentState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolPtrInput
@@ -234,7 +240,7 @@ type DeploymentState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState pulumi.StringPtrInput
-	// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataPtrInput
@@ -248,7 +254,7 @@ type DeploymentState struct {
 	StorageUtilizationInBytes pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringPtrInput
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringPtrInput
@@ -267,11 +273,11 @@ type deploymentArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
-	// The deployment type.
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
 	DeploymentType string `pulumi:"deploymentType"`
 	// (Updatable) Metadata about this specific object.
 	Description *string `pulumi:"description"`
@@ -279,7 +285,7 @@ type deploymentArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
@@ -287,7 +293,7 @@ type deploymentArgs struct {
 	IsPublic *bool `pulumi:"isPublic"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel string `pulumi:"licenseModel"`
-	// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData *DeploymentOggData `pulumi:"oggData"`
@@ -301,11 +307,11 @@ type DeploymentArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntInput
-	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringPtrInput
-	// The deployment type.
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
 	DeploymentType pulumi.StringInput
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringPtrInput
@@ -313,7 +319,7 @@ type DeploymentArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
-	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolInput
@@ -321,7 +327,7 @@ type DeploymentArgs struct {
 	IsPublic pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringInput
-	// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataPtrInput
@@ -426,7 +432,7 @@ func (o DeploymentOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
 
-// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o DeploymentOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -436,7 +442,12 @@ func (o DeploymentOutput) DeploymentBackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeploymentBackupId }).(pulumi.StringOutput)
 }
 
-// The deployment type.
+// Information regarding the deployment diagnostic collection
+func (o DeploymentOutput) DeploymentDiagnosticDatas() DeploymentDeploymentDiagnosticDataArrayOutput {
+	return o.ApplyT(func(v *Deployment) DeploymentDeploymentDiagnosticDataArrayOutput { return v.DeploymentDiagnosticDatas }).(DeploymentDeploymentDiagnosticDataArrayOutput)
+}
+
+// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
 func (o DeploymentOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeploymentType }).(pulumi.StringOutput)
 }
@@ -461,7 +472,7 @@ func (o DeploymentOutput) Fqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.Fqdn }).(pulumi.StringOutput)
 }
 
-// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o DeploymentOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -506,7 +517,7 @@ func (o DeploymentOutput) LifecycleSubState() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LifecycleSubState }).(pulumi.StringOutput)
 }
 
-// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 func (o DeploymentOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -541,7 +552,7 @@ func (o DeploymentOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o DeploymentOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }

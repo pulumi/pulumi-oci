@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -15,6 +16,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
+    /**
+     * @return The requested number of additional storage servers activated for the Exadata infrastructure.
+     * 
+     */
+    private Integer activatedStorageCount;
+    /**
+     * @return The requested number of additional storage servers for the Exadata infrastructure.
+     * 
+     */
+    private Integer additionalStorageCount;
     /**
      * @return The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      * 
@@ -36,10 +47,25 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private Integer computeCount;
     /**
+     * @return The total number of CPU cores allocated.
+     * 
+     */
+    private Integer cpuCount;
+    /**
      * @return The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
      * 
      */
     private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact> customerContacts;
+    /**
+     * @return Size, in terabytes, of the DATA disk group.
+     * 
+     */
+    private Double dataStorageSizeInTbs;
+    /**
+     * @return The local node storage allocated in GBs.
+     * 
+     */
+    private Integer dbNodeStorageSizeInGbs;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -76,6 +102,31 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
     /**
+     * @return The total number of CPU cores available.
+     * 
+     */
+    private Integer maxCpuCount;
+    /**
+     * @return The total available DATA disk group size.
+     * 
+     */
+    private Double maxDataStorageInTbs;
+    /**
+     * @return The total local node storage available in GBs.
+     * 
+     */
+    private Integer maxDbNodeStorageInGbs;
+    /**
+     * @return The total memory available in GBs.
+     * 
+     */
+    private Integer maxMemoryInGbs;
+    /**
+     * @return The memory allocated in GBs.
+     * 
+     */
+    private Integer memorySizeInGbs;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
@@ -108,6 +159,20 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
 
     private GetCloudExadataInfrastructuresCloudExadataInfrastructure() {}
     /**
+     * @return The requested number of additional storage servers activated for the Exadata infrastructure.
+     * 
+     */
+    public Integer activatedStorageCount() {
+        return this.activatedStorageCount;
+    }
+    /**
+     * @return The requested number of additional storage servers for the Exadata infrastructure.
+     * 
+     */
+    public Integer additionalStorageCount() {
+        return this.additionalStorageCount;
+    }
+    /**
      * @return The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      * 
      */
@@ -136,11 +201,32 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.computeCount;
     }
     /**
+     * @return The total number of CPU cores allocated.
+     * 
+     */
+    public Integer cpuCount() {
+        return this.cpuCount;
+    }
+    /**
      * @return The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
      * 
      */
     public List<GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact> customerContacts() {
         return this.customerContacts;
+    }
+    /**
+     * @return Size, in terabytes, of the DATA disk group.
+     * 
+     */
+    public Double dataStorageSizeInTbs() {
+        return this.dataStorageSizeInTbs;
+    }
+    /**
+     * @return The local node storage allocated in GBs.
+     * 
+     */
+    public Integer dbNodeStorageSizeInGbs() {
+        return this.dbNodeStorageSizeInGbs;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -190,6 +276,41 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     public List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows() {
         return this.maintenanceWindows;
+    }
+    /**
+     * @return The total number of CPU cores available.
+     * 
+     */
+    public Integer maxCpuCount() {
+        return this.maxCpuCount;
+    }
+    /**
+     * @return The total available DATA disk group size.
+     * 
+     */
+    public Double maxDataStorageInTbs() {
+        return this.maxDataStorageInTbs;
+    }
+    /**
+     * @return The total local node storage available in GBs.
+     * 
+     */
+    public Integer maxDbNodeStorageInGbs() {
+        return this.maxDbNodeStorageInGbs;
+    }
+    /**
+     * @return The total memory available in GBs.
+     * 
+     */
+    public Integer maxMemoryInGbs() {
+        return this.maxMemoryInGbs;
+    }
+    /**
+     * @return The memory allocated in GBs.
+     * 
+     */
+    public Integer memorySizeInGbs() {
+        return this.memorySizeInGbs;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -243,11 +364,16 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer activatedStorageCount;
+        private Integer additionalStorageCount;
         private String availabilityDomain;
         private Integer availableStorageSizeInGbs;
         private String compartmentId;
         private Integer computeCount;
+        private Integer cpuCount;
         private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact> customerContacts;
+        private Double dataStorageSizeInTbs;
+        private Integer dbNodeStorageSizeInGbs;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
@@ -255,6 +381,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private String lastMaintenanceRunId;
         private String lifecycleDetails;
         private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
+        private Integer maxCpuCount;
+        private Double maxDataStorageInTbs;
+        private Integer maxDbNodeStorageInGbs;
+        private Integer maxMemoryInGbs;
+        private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
         private String shape;
         private String state;
@@ -264,11 +395,16 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         public Builder() {}
         public Builder(GetCloudExadataInfrastructuresCloudExadataInfrastructure defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.activatedStorageCount = defaults.activatedStorageCount;
+    	      this.additionalStorageCount = defaults.additionalStorageCount;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableStorageSizeInGbs = defaults.availableStorageSizeInGbs;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
+    	      this.cpuCount = defaults.cpuCount;
     	      this.customerContacts = defaults.customerContacts;
+    	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
+    	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -276,6 +412,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
+    	      this.maxCpuCount = defaults.maxCpuCount;
+    	      this.maxDataStorageInTbs = defaults.maxDataStorageInTbs;
+    	      this.maxDbNodeStorageInGbs = defaults.maxDbNodeStorageInGbs;
+    	      this.maxMemoryInGbs = defaults.maxMemoryInGbs;
+    	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
@@ -284,6 +425,16 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.totalStorageSizeInGbs = defaults.totalStorageSizeInGbs;
         }
 
+        @CustomType.Setter
+        public Builder activatedStorageCount(Integer activatedStorageCount) {
+            this.activatedStorageCount = Objects.requireNonNull(activatedStorageCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder additionalStorageCount(Integer additionalStorageCount) {
+            this.additionalStorageCount = Objects.requireNonNull(additionalStorageCount);
+            return this;
+        }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
@@ -305,12 +456,27 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder cpuCount(Integer cpuCount) {
+            this.cpuCount = Objects.requireNonNull(cpuCount);
+            return this;
+        }
+        @CustomType.Setter
         public Builder customerContacts(List<GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact> customerContacts) {
             this.customerContacts = Objects.requireNonNull(customerContacts);
             return this;
         }
         public Builder customerContacts(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact... customerContacts) {
             return customerContacts(List.of(customerContacts));
+        }
+        @CustomType.Setter
+        public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
+            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -351,6 +517,31 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
+        public Builder maxCpuCount(Integer maxCpuCount) {
+            this.maxCpuCount = Objects.requireNonNull(maxCpuCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxDataStorageInTbs(Double maxDataStorageInTbs) {
+            this.maxDataStorageInTbs = Objects.requireNonNull(maxDataStorageInTbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
+            this.maxDbNodeStorageInGbs = Objects.requireNonNull(maxDbNodeStorageInGbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
+            this.maxMemoryInGbs = Objects.requireNonNull(maxMemoryInGbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
+            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
             return this;
@@ -382,11 +573,16 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         }
         public GetCloudExadataInfrastructuresCloudExadataInfrastructure build() {
             final var o = new GetCloudExadataInfrastructuresCloudExadataInfrastructure();
+            o.activatedStorageCount = activatedStorageCount;
+            o.additionalStorageCount = additionalStorageCount;
             o.availabilityDomain = availabilityDomain;
             o.availableStorageSizeInGbs = availableStorageSizeInGbs;
             o.compartmentId = compartmentId;
             o.computeCount = computeCount;
+            o.cpuCount = cpuCount;
             o.customerContacts = customerContacts;
+            o.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
@@ -394,6 +590,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             o.lastMaintenanceRunId = lastMaintenanceRunId;
             o.lifecycleDetails = lifecycleDetails;
             o.maintenanceWindows = maintenanceWindows;
+            o.maxCpuCount = maxCpuCount;
+            o.maxDataStorageInTbs = maxDataStorageInTbs;
+            o.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
+            o.maxMemoryInGbs = maxMemoryInGbs;
+            o.memorySizeInGbs = memorySizeInGbs;
             o.nextMaintenanceRunId = nextMaintenanceRunId;
             o.shape = shape;
             o.state = state;

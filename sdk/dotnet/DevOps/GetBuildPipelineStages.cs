@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBuildPipelineStagesResult> InvokeAsync(GetBuildPipelineStagesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBuildPipelineStagesResult>("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", args ?? new GetBuildPipelineStagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBuildPipelineStagesResult>("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", args ?? new GetBuildPipelineStagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Build Pipeline Stages in Oracle Cloud Infrastructure Devops service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBuildPipelineStagesResult> Invoke(GetBuildPipelineStagesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBuildPipelineStagesResult>("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", args ?? new GetBuildPipelineStagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBuildPipelineStagesResult>("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", args ?? new GetBuildPipelineStagesInvokeArgs(), options.WithDefaults());
     }
 
 

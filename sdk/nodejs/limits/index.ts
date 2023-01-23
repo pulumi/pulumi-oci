@@ -5,16 +5,41 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getLimitDefinitions";
-export * from "./getLimitValues";
-export * from "./getQuota";
-export * from "./getQuotas";
-export * from "./getResourceAvailability";
-export * from "./getServices";
-export * from "./quota";
+export { GetLimitDefinitionsArgs, GetLimitDefinitionsResult, GetLimitDefinitionsOutputArgs } from "./getLimitDefinitions";
+export const getLimitDefinitions: typeof import("./getLimitDefinitions").getLimitDefinitions = null as any;
+export const getLimitDefinitionsOutput: typeof import("./getLimitDefinitions").getLimitDefinitionsOutput = null as any;
+utilities.lazyLoad(exports, ["getLimitDefinitions","getLimitDefinitionsOutput"], () => require("./getLimitDefinitions"));
 
-// Import resources to register:
-import { Quota } from "./quota";
+export { GetLimitValuesArgs, GetLimitValuesResult, GetLimitValuesOutputArgs } from "./getLimitValues";
+export const getLimitValues: typeof import("./getLimitValues").getLimitValues = null as any;
+export const getLimitValuesOutput: typeof import("./getLimitValues").getLimitValuesOutput = null as any;
+utilities.lazyLoad(exports, ["getLimitValues","getLimitValuesOutput"], () => require("./getLimitValues"));
+
+export { GetQuotaArgs, GetQuotaResult, GetQuotaOutputArgs } from "./getQuota";
+export const getQuota: typeof import("./getQuota").getQuota = null as any;
+export const getQuotaOutput: typeof import("./getQuota").getQuotaOutput = null as any;
+utilities.lazyLoad(exports, ["getQuota","getQuotaOutput"], () => require("./getQuota"));
+
+export { GetQuotasArgs, GetQuotasResult, GetQuotasOutputArgs } from "./getQuotas";
+export const getQuotas: typeof import("./getQuotas").getQuotas = null as any;
+export const getQuotasOutput: typeof import("./getQuotas").getQuotasOutput = null as any;
+utilities.lazyLoad(exports, ["getQuotas","getQuotasOutput"], () => require("./getQuotas"));
+
+export { GetResourceAvailabilityArgs, GetResourceAvailabilityResult, GetResourceAvailabilityOutputArgs } from "./getResourceAvailability";
+export const getResourceAvailability: typeof import("./getResourceAvailability").getResourceAvailability = null as any;
+export const getResourceAvailabilityOutput: typeof import("./getResourceAvailability").getResourceAvailabilityOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceAvailability","getResourceAvailabilityOutput"], () => require("./getResourceAvailability"));
+
+export { GetServicesArgs, GetServicesResult, GetServicesOutputArgs } from "./getServices";
+export const getServices: typeof import("./getServices").getServices = null as any;
+export const getServicesOutput: typeof import("./getServices").getServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getServices","getServicesOutput"], () => require("./getServices"));
+
+export { QuotaArgs, QuotaState } from "./quota";
+export type Quota = import("./quota").Quota;
+export const Quota: typeof import("./quota").Quota = null as any;
+utilities.lazyLoad(exports, ["Quota"], () => require("./quota"));
+
 
 const _module = {
     version: utilities.getVersion(),

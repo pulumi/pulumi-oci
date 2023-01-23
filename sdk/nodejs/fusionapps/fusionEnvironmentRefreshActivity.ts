@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -69,6 +71,11 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly refreshActivityId!: pulumi.Output<string>;
+    /**
+     * Details of refresh investigation information, each item represents a different issue.
+     */
+    public /*out*/ readonly refreshIssueDetailsLists!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefreshActivityRefreshIssueDetailsList[]>;
     /**
      * Service availability / impact during refresh activity execution up down
      */
@@ -98,10 +105,6 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeOfRestorationPoint!: pulumi.Output<string>;
     /**
-     * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     */
-    public /*out*/ readonly timeScheduledStart!: pulumi.Output<string>;
-    /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -122,6 +125,8 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["fusionEnvironmentId"] = state ? state.fusionEnvironmentId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["refreshActivityId"] = state ? state.refreshActivityId : undefined;
+            resourceInputs["refreshIssueDetailsLists"] = state ? state.refreshIssueDetailsLists : undefined;
             resourceInputs["serviceAvailability"] = state ? state.serviceAvailability : undefined;
             resourceInputs["sourceFusionEnvironmentId"] = state ? state.sourceFusionEnvironmentId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -129,7 +134,6 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
             resourceInputs["timeExpectedFinish"] = state ? state.timeExpectedFinish : undefined;
             resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
             resourceInputs["timeOfRestorationPoint"] = state ? state.timeOfRestorationPoint : undefined;
-            resourceInputs["timeScheduledStart"] = state ? state.timeScheduledStart : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
             const args = argsOrState as FusionEnvironmentRefreshActivityArgs | undefined;
@@ -143,13 +147,14 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
             resourceInputs["sourceFusionEnvironmentId"] = args ? args.sourceFusionEnvironmentId : undefined;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["refreshActivityId"] = undefined /*out*/;
+            resourceInputs["refreshIssueDetailsLists"] = undefined /*out*/;
             resourceInputs["serviceAvailability"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeAccepted"] = undefined /*out*/;
             resourceInputs["timeExpectedFinish"] = undefined /*out*/;
             resourceInputs["timeFinished"] = undefined /*out*/;
             resourceInputs["timeOfRestorationPoint"] = undefined /*out*/;
-            resourceInputs["timeScheduledStart"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -173,6 +178,11 @@ export interface FusionEnvironmentRefreshActivityState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    refreshActivityId?: pulumi.Input<string>;
+    /**
+     * Details of refresh investigation information, each item represents a different issue.
+     */
+    refreshIssueDetailsLists?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRefreshActivityRefreshIssueDetailsList>[]>;
     /**
      * Service availability / impact during refresh activity execution up down
      */
@@ -201,10 +211,6 @@ export interface FusionEnvironmentRefreshActivityState {
      * The date and time of the most recent source environment backup used for the environment refresh.
      */
     timeOfRestorationPoint?: pulumi.Input<string>;
-    /**
-     * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     */
-    timeScheduledStart?: pulumi.Input<string>;
     /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      */

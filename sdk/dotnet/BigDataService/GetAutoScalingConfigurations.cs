@@ -12,10 +12,10 @@ namespace Pulumi.Oci.BigDataService
     public static class GetAutoScalingConfigurations
     {
         public static Task<GetAutoScalingConfigurationsResult> InvokeAsync(GetAutoScalingConfigurationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutoScalingConfigurationsResult>("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutoScalingConfigurationsResult>("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsArgs(), options.WithDefaults());
 
         public static Output<GetAutoScalingConfigurationsResult> Invoke(GetAutoScalingConfigurationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationsResult>("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationsResult>("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

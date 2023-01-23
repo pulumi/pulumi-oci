@@ -3907,8 +3907,7 @@ class GetRuleSetsRuleSetItemResult(dict):
         """
         :param str action: The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         :param Sequence[str] allowed_methods: The list of HTTP methods allowed for this listener.
-        :param bool are_invalid_characters_allowed: Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header 
-               * `conditions` -
+        :param bool are_invalid_characters_allowed: Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
         :param str description: A brief description of the access control rule. Avoid entering confidential information.
         :param str header: A header name that conforms to RFC 7230.  Example: `example_header_name`
         :param int http_large_header_size_in_kb: The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
@@ -3959,8 +3958,7 @@ class GetRuleSetsRuleSetItemResult(dict):
     @pulumi.getter(name="areInvalidCharactersAllowed")
     def are_invalid_characters_allowed(self) -> bool:
         """
-        Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header 
-        * `conditions` -
+        Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
         """
         return pulumi.get(self, "are_invalid_characters_allowed")
 

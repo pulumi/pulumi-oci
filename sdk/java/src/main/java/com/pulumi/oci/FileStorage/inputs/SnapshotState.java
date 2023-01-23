@@ -64,14 +64,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     @Import(name="isCloneSource")
     private @Nullable Output<Boolean> isCloneSource;
 
     /**
-     * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     public Optional<Output<Boolean>> isCloneSource() {
@@ -79,14 +79,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Additional information about the current &#39;lifecycleState&#39;.
+     * Additional information about the current `lifecycleState`.
      * 
      */
     @Import(name="lifecycleDetails")
     private @Nullable Output<String> lifecycleDetails;
 
     /**
-     * @return Additional information about the current &#39;lifecycleState&#39;.
+     * @return Additional information about the current `lifecycleState`.
      * 
      */
     public Optional<Output<String>> lifecycleDetails() {
@@ -109,18 +109,54 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     @Import(name="provenanceId")
     private @Nullable Output<String> provenanceId;
 
     /**
-     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     public Optional<Output<String>> provenanceId() {
         return Optional.ofNullable(this.provenanceId);
+    }
+
+    /**
+     * The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+     * * If the snapshot is created in the original file system directory.
+     * * If the snapshot is cloned from a file system.
+     * * If the snapshot is replicated from a file system.
+     * 
+     */
+    @Import(name="snapshotTime")
+    private @Nullable Output<String> snapshotTime;
+
+    /**
+     * @return The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+     * * If the snapshot is created in the original file system directory.
+     * * If the snapshot is cloned from a file system.
+     * * If the snapshot is replicated from a file system.
+     * 
+     */
+    public Optional<Output<String>> snapshotTime() {
+        return Optional.ofNullable(this.snapshotTime);
+    }
+
+    /**
+     * Specifies the generation type of the snapshot.
+     * 
+     */
+    @Import(name="snapshotType")
+    private @Nullable Output<String> snapshotType;
+
+    /**
+     * @return Specifies the generation type of the snapshot.
+     * 
+     */
+    public Optional<Output<String>> snapshotType() {
+        return Optional.ofNullable(this.snapshotType);
     }
 
     /**
@@ -163,6 +199,8 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleDetails = $.lifecycleDetails;
         this.name = $.name;
         this.provenanceId = $.provenanceId;
+        this.snapshotTime = $.snapshotTime;
+        this.snapshotType = $.snapshotType;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
     }
@@ -249,7 +287,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCloneSource Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * @param isCloneSource Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
          * @return builder
          * 
@@ -260,7 +298,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCloneSource Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * @param isCloneSource Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
          * @return builder
          * 
@@ -270,7 +308,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleDetails Additional information about the current &#39;lifecycleState&#39;.
+         * @param lifecycleDetails Additional information about the current `lifecycleState`.
          * 
          * @return builder
          * 
@@ -281,7 +319,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleDetails Additional information about the current &#39;lifecycleState&#39;.
+         * @param lifecycleDetails Additional information about the current `lifecycleState`.
          * 
          * @return builder
          * 
@@ -312,7 +350,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param provenanceId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * @param provenanceId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
          * @return builder
          * 
@@ -323,13 +361,61 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param provenanceId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * @param provenanceId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
          * @return builder
          * 
          */
         public Builder provenanceId(String provenanceId) {
             return provenanceId(Output.of(provenanceId));
+        }
+
+        /**
+         * @param snapshotTime The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+         * * If the snapshot is created in the original file system directory.
+         * * If the snapshot is cloned from a file system.
+         * * If the snapshot is replicated from a file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder snapshotTime(@Nullable Output<String> snapshotTime) {
+            $.snapshotTime = snapshotTime;
+            return this;
+        }
+
+        /**
+         * @param snapshotTime The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+         * * If the snapshot is created in the original file system directory.
+         * * If the snapshot is cloned from a file system.
+         * * If the snapshot is replicated from a file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder snapshotTime(String snapshotTime) {
+            return snapshotTime(Output.of(snapshotTime));
+        }
+
+        /**
+         * @param snapshotType Specifies the generation type of the snapshot.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder snapshotType(@Nullable Output<String> snapshotType) {
+            $.snapshotType = snapshotType;
+            return this;
+        }
+
+        /**
+         * @param snapshotType Specifies the generation type of the snapshot.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder snapshotType(String snapshotType) {
+            return snapshotType(Output.of(snapshotType));
         }
 
         /**

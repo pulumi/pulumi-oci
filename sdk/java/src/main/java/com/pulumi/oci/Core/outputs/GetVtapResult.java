@@ -50,8 +50,6 @@ public final class GetVtapResult {
     private String id;
     /**
      * @return Used to start or stop a `Vtap` resource.
-     * * `TRUE` directs the VTAP to start mirroring traffic.
-     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      * 
      */
     private Boolean isVtapEnabled;
@@ -179,8 +177,6 @@ public final class GetVtapResult {
     }
     /**
      * @return Used to start or stop a `Vtap` resource.
-     * * `TRUE` directs the VTAP to start mirroring traffic.
-     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      * 
      */
     public Boolean isVtapEnabled() {

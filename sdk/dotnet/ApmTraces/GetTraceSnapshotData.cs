@@ -43,7 +43,7 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTraceSnapshotDataResult> InvokeAsync(GetTraceSnapshotDataArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTraceSnapshotDataResult>("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args ?? new GetTraceSnapshotDataArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTraceSnapshotDataResult>("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args ?? new GetTraceSnapshotDataArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTraceSnapshotDataResult> Invoke(GetTraceSnapshotDataInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTraceSnapshotDataResult>("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args ?? new GetTraceSnapshotDataInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTraceSnapshotDataResult>("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args ?? new GetTraceSnapshotDataInvokeArgs(), options.WithDefaults());
     }
 
 

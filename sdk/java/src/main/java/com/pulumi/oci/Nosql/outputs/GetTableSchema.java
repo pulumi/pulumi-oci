@@ -5,6 +5,7 @@ package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Nosql.outputs.GetTableSchemaColumn;
+import com.pulumi.oci.Nosql.outputs.GetTableSchemaIdentity;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -17,6 +18,11 @@ public final class GetTableSchema {
      * 
      */
     private List<GetTableSchemaColumn> columns;
+    /**
+     * @return The identity properties of a table, if any.
+     * 
+     */
+    private List<GetTableSchemaIdentity> identities;
     /**
      * @return A list of column names that make up a key.
      * 
@@ -40,6 +46,13 @@ public final class GetTableSchema {
      */
     public List<GetTableSchemaColumn> columns() {
         return this.columns;
+    }
+    /**
+     * @return The identity properties of a table, if any.
+     * 
+     */
+    public List<GetTableSchemaIdentity> identities() {
+        return this.identities;
     }
     /**
      * @return A list of column names that make up a key.
@@ -73,6 +86,7 @@ public final class GetTableSchema {
     @CustomType.Builder
     public static final class Builder {
         private List<GetTableSchemaColumn> columns;
+        private List<GetTableSchemaIdentity> identities;
         private List<String> primaryKeys;
         private List<String> shardKeys;
         private Integer ttl;
@@ -80,6 +94,7 @@ public final class GetTableSchema {
         public Builder(GetTableSchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columns = defaults.columns;
+    	      this.identities = defaults.identities;
     	      this.primaryKeys = defaults.primaryKeys;
     	      this.shardKeys = defaults.shardKeys;
     	      this.ttl = defaults.ttl;
@@ -92,6 +107,14 @@ public final class GetTableSchema {
         }
         public Builder columns(GetTableSchemaColumn... columns) {
             return columns(List.of(columns));
+        }
+        @CustomType.Setter
+        public Builder identities(List<GetTableSchemaIdentity> identities) {
+            this.identities = Objects.requireNonNull(identities);
+            return this;
+        }
+        public Builder identities(GetTableSchemaIdentity... identities) {
+            return identities(List.of(identities));
         }
         @CustomType.Setter
         public Builder primaryKeys(List<String> primaryKeys) {
@@ -117,6 +140,7 @@ public final class GetTableSchema {
         public GetTableSchema build() {
             final var o = new GetTableSchema();
             o.columns = columns;
+            o.identities = identities;
             o.primaryKeys = primaryKeys;
             o.shardKeys = shardKeys;
             o.ttl = ttl;

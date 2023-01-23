@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificates(args: GetCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificatesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getCertificates:getCertificates", {
         "compartmentId": args.compartmentId,
         "displayNames": args.displayNames,
@@ -97,9 +95,29 @@ export interface GetCertificatesResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Certificates in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets a list of SSL certificates that can be used in a WAAS policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificates = oci.Waas.getCertificates({
+ *     compartmentId: _var.compartment_id,
+ *     displayNames: _var.certificate_display_names,
+ *     ids: _var.certificate_ids,
+ *     states: _var.certificate_states,
+ *     timeCreatedGreaterThanOrEqualTo: _var.certificate_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.certificate_time_created_less_than,
+ * });
+ * ```
+ */
 export function getCertificatesOutput(args: GetCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificatesResult> {
-    return pulumi.output(args).apply(a => getCertificates(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificates(a, opts))
 }
 
 /**

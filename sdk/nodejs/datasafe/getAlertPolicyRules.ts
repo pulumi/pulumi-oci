@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertPolicyRules(args: GetAlertPolicyRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertPolicyRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlertPolicyRules:getAlertPolicyRules", {
         "alertPolicyId": args.alertPolicyId,
         "filters": args.filters,
@@ -60,9 +58,25 @@ export interface GetAlertPolicyRulesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
+ * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlertPolicyRules = oci.DataSafe.getAlertPolicyRules({
+ *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
+ * });
+ * ```
+ */
 export function getAlertPolicyRulesOutput(args: GetAlertPolicyRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertPolicyRulesResult> {
-    return pulumi.output(args).apply(a => getAlertPolicyRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlertPolicyRules(a, opts))
 }
 
 /**

@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateEndpointReachableIp(args: GetPrivateEndpointReachableIpArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointReachableIpResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", {
         "privateEndpointId": args.privateEndpointId,
         "privateIp": args.privateIp,
@@ -62,9 +59,25 @@ export interface GetPrivateEndpointReachableIpResult {
     readonly privateEndpointId: string;
     readonly privateIp: string;
 }
-
+/**
+ * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
+ *
+ * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateEndpointReachableIp = oci.ResourceManager.getPrivateEndpointReachableIp({
+ *     privateEndpointId: oci_resourcemanager_private_endpoint.test_private_endpoint.id,
+ *     privateIp: _var.private_endpoint_reachable_ip_private_ip,
+ * });
+ * ```
+ */
 export function getPrivateEndpointReachableIpOutput(args: GetPrivateEndpointReachableIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointReachableIpResult> {
-    return pulumi.output(args).apply(a => getPrivateEndpointReachableIp(a, opts))
+    return pulumi.output(args).apply((a: any) => getPrivateEndpointReachableIp(a, opts))
 }
 
 /**

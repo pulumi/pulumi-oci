@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomains(args: GetDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomains:getDomains", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -140,9 +138,33 @@ export interface GetDomainsResult {
      */
     readonly url?: string;
 }
-
+/**
+ * This data source provides the list of Domains in Oracle Cloud Infrastructure Identity service.
+ *
+ * List all domains that are homed or have a replica region in current region.
+ * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDomains = oci.Identity.getDomains({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.domain_display_name,
+ *     homeRegionUrl: _var.domain_home_region_url,
+ *     isHiddenOnLogin: _var.domain_is_hidden_on_login,
+ *     licenseType: _var.domain_license_type,
+ *     name: _var.domain_name,
+ *     state: _var.domain_state,
+ *     type: _var.domain_type,
+ *     url: _var.domain_url,
+ * });
+ * ```
+ */
 export function getDomainsOutput(args: GetDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsResult> {
-    return pulumi.output(args).apply(a => getDomains(a, opts))
+    return pulumi.output(args).apply((a: any) => getDomains(a, opts))
 }
 
 /**

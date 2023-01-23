@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepoFileLine(args: GetRepoFileLineArgs, opts?: pulumi.InvokeOptions): Promise<GetRepoFileLineResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepoFileLine:getRepoFileLine", {
         "filePath": args.filePath,
         "repositoryId": args.repositoryId,
@@ -77,9 +75,27 @@ export interface GetRepoFileLineResult {
     readonly revision: string;
     readonly startLineNumber?: number;
 }
-
+/**
+ * This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieve lines of a specified file. Supports starting line number and limit.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepoFileLine = oci.DevOps.getRepoFileLine({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     revision: _var.repo_file_line_revision,
+ *     filePath: _var.repo_file_line_file_path,
+ *     startLineNumber: _var.repo_file_line_start_line_number,
+ * });
+ * ```
+ */
 export function getRepoFileLineOutput(args: GetRepoFileLineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepoFileLineResult> {
-    return pulumi.output(args).apply(a => getRepoFileLine(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepoFileLine(a, opts))
 }
 
 /**

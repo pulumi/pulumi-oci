@@ -15,8 +15,8 @@ namespace Pulumi.Oci.BigDataService.Inputs
         /// <summary>
         /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
-        [Input("blockVolumeSizeInGbs", required: true)]
-        public Input<string> BlockVolumeSizeInGbs { get; set; } = null!;
+        [Input("blockVolumeSizeInGbs")]
+        public Input<string>? BlockVolumeSizeInGbs { get; set; }
 
         /// <summary>
         /// IP address of the node
@@ -41,6 +41,24 @@ namespace Pulumi.Oci.BigDataService.Inputs
             get => _kerberosDetails ?? (_kerberosDetails = new InputList<Inputs.BdsInstanceCloudSqlDetailKerberosDetailGetArgs>());
             set => _kerberosDetails = value;
         }
+
+        /// <summary>
+        /// The total amount of memory available to the node, in gigabytes
+        /// </summary>
+        [Input("memoryInGbs")]
+        public Input<int>? MemoryInGbs { get; set; }
+
+        /// <summary>
+        /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        /// </summary>
+        [Input("nvmes")]
+        public Input<int>? Nvmes { get; set; }
+
+        /// <summary>
+        /// The total number of OCPUs available to the node.
+        /// </summary>
+        [Input("ocpus")]
+        public Input<int>? Ocpus { get; set; }
 
         /// <summary>
         /// Shape of the node

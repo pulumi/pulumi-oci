@@ -32,6 +32,8 @@ namespace Pulumi.Oci.ApmSynthetics
         ///     {
         ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
         ///         DisplayName = @var.Monitor_display_name,
+        ///         IsMaintenanceWindowActive = @var.Monitor_is_maintenance_window_active,
+        ///         IsMaintenanceWindowSet = @var.Monitor_is_maintenance_window_set,
         ///         MonitorType = @var.Monitor_monitor_type,
         ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
         ///         Status = @var.Monitor_status,
@@ -44,7 +46,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMonitorsResult> InvokeAsync(GetMonitorsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMonitorsResult>("oci:ApmSynthetics/getMonitors:getMonitors", args ?? new GetMonitorsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitorsResult>("oci:ApmSynthetics/getMonitors:getMonitors", args ?? new GetMonitorsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -67,6 +69,8 @@ namespace Pulumi.Oci.ApmSynthetics
         ///     {
         ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
         ///         DisplayName = @var.Monitor_display_name,
+        ///         IsMaintenanceWindowActive = @var.Monitor_is_maintenance_window_active,
+        ///         IsMaintenanceWindowSet = @var.Monitor_is_maintenance_window_set,
         ///         MonitorType = @var.Monitor_monitor_type,
         ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
         ///         Status = @var.Monitor_status,
@@ -79,7 +83,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMonitorsResult> Invoke(GetMonitorsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMonitorsResult>("oci:ApmSynthetics/getMonitors:getMonitors", args ?? new GetMonitorsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMonitorsResult>("oci:ApmSynthetics/getMonitors:getMonitors", args ?? new GetMonitorsInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -104,6 +108,18 @@ namespace Pulumi.Oci.ApmSynthetics
             get => _filters ?? (_filters = new List<Inputs.GetMonitorsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return the monitors whose maintenance window is currently active.
+        /// </summary>
+        [Input("isMaintenanceWindowActive")]
+        public bool? IsMaintenanceWindowActive { get; set; }
+
+        /// <summary>
+        /// A filter to return the monitors whose maintenance window is set.
+        /// </summary>
+        [Input("isMaintenanceWindowSet")]
+        public bool? IsMaintenanceWindowSet { get; set; }
 
         /// <summary>
         /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
@@ -158,6 +174,18 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
+        /// A filter to return the monitors whose maintenance window is currently active.
+        /// </summary>
+        [Input("isMaintenanceWindowActive")]
+        public Input<bool>? IsMaintenanceWindowActive { get; set; }
+
+        /// <summary>
+        /// A filter to return the monitors whose maintenance window is set.
+        /// </summary>
+        [Input("isMaintenanceWindowSet")]
+        public Input<bool>? IsMaintenanceWindowSet { get; set; }
+
+        /// <summary>
         /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
         /// </summary>
         [Input("monitorType")]
@@ -201,6 +229,8 @@ namespace Pulumi.Oci.ApmSynthetics
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsMaintenanceWindowActive;
+        public readonly bool? IsMaintenanceWindowSet;
         /// <summary>
         /// The list of monitor_collection.
         /// </summary>
@@ -229,6 +259,10 @@ namespace Pulumi.Oci.ApmSynthetics
 
             string id,
 
+            bool? isMaintenanceWindowActive,
+
+            bool? isMaintenanceWindowSet,
+
             ImmutableArray<Outputs.GetMonitorsMonitorCollectionResult> monitorCollections,
 
             string? monitorType,
@@ -243,6 +277,8 @@ namespace Pulumi.Oci.ApmSynthetics
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            IsMaintenanceWindowActive = isMaintenanceWindowActive;
+            IsMaintenanceWindowSet = isMaintenanceWindowSet;
             MonitorCollections = monitorCollections;
             MonitorType = monitorType;
             ScriptId = scriptId;

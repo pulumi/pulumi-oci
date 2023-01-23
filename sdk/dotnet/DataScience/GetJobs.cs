@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJobsResult> InvokeAsync(GetJobsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJobsResult>("oci:DataScience/getJobs:getJobs", args ?? new GetJobsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobsResult>("oci:DataScience/getJobs:getJobs", args ?? new GetJobsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Jobs in Oracle Cloud Infrastructure Data Science service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJobsResult> Invoke(GetJobsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJobsResult>("oci:DataScience/getJobs:getJobs", args ?? new GetJobsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobsResult>("oci:DataScience/getJobs:getJobs", args ?? new GetJobsInvokeArgs(), options.WithDefaults());
     }
 
 

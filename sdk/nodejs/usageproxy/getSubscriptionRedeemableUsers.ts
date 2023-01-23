@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptionRedeemableUsers(args: GetSubscriptionRedeemableUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionRedeemableUsersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", {
         "filters": args.filters,
         "subscriptionId": args.subscriptionId,
@@ -66,9 +64,25 @@ export interface GetSubscriptionRedeemableUsersResult {
     readonly subscriptionId: string;
     readonly tenancyId: string;
 }
-
+/**
+ * This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
+ *
+ * Provides the list of user summary that can redeem rewards for the given subscription ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscriptionRedeemableUsers = oci.UsageProxy.getSubscriptionRedeemableUsers({
+ *     subscriptionId: oci_ons_subscription.test_subscription.id,
+ *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ * });
+ * ```
+ */
 export function getSubscriptionRedeemableUsersOutput(args: GetSubscriptionRedeemableUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRedeemableUsersResult> {
-    return pulumi.output(args).apply(a => getSubscriptionRedeemableUsers(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscriptionRedeemableUsers(a, opts))
 }
 
 /**

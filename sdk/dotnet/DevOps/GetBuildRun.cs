@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBuildRunResult> InvokeAsync(GetBuildRunArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBuildRunResult>("oci:DevOps/getBuildRun:getBuildRun", args ?? new GetBuildRunArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBuildRunResult>("oci:DevOps/getBuildRun:getBuildRun", args ?? new GetBuildRunArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Build Run resource in Oracle Cloud Infrastructure Devops service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBuildRunResult> Invoke(GetBuildRunInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBuildRunResult>("oci:DevOps/getBuildRun:getBuildRun", args ?? new GetBuildRunInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBuildRunResult>("oci:DevOps/getBuildRun:getBuildRun", args ?? new GetBuildRunInvokeArgs(), options.WithDefaults());
     }
 
 

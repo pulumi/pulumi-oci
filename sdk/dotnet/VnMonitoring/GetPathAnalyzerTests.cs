@@ -41,7 +41,7 @@ namespace Pulumi.Oci.VnMonitoring
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPathAnalyzerTestsResult> InvokeAsync(GetPathAnalyzerTestsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPathAnalyzerTestsResult>("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args ?? new GetPathAnalyzerTestsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPathAnalyzerTestsResult>("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args ?? new GetPathAnalyzerTestsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Path Analyzer Tests in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.VnMonitoring
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPathAnalyzerTestsResult> Invoke(GetPathAnalyzerTestsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPathAnalyzerTestsResult>("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args ?? new GetPathAnalyzerTestsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPathAnalyzerTestsResult>("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args ?? new GetPathAnalyzerTestsInvokeArgs(), options.WithDefaults());
     }
 
 

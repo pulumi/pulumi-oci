@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousPatch(args: GetAutonomousPatchArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousPatchResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousPatch:getAutonomousPatch", {
         "autonomousPatchId": args.autonomousPatchId,
     }, opts);
@@ -87,9 +84,24 @@ export interface GetAutonomousPatchResult {
      */
     readonly year: string;
 }
-
+/**
+ * This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about a specific autonomous patch.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousPatch = oci.Database.getAutonomousPatch({
+ *     autonomousPatchId: oci_database_autonomous_patch.test_autonomous_patch.id,
+ * });
+ * ```
+ */
 export function getAutonomousPatchOutput(args: GetAutonomousPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousPatchResult> {
-    return pulumi.output(args).apply(a => getAutonomousPatch(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousPatch(a, opts))
 }
 
 /**

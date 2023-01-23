@@ -5,17 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./analyticsInstance";
-export * from "./analyticsInstancePrivateAccessChannel";
-export * from "./analyticsInstanceVanityUrl";
-export * from "./getAnalyticsInstance";
-export * from "./getAnalyticsInstancePrivateAccessChannel";
-export * from "./getAnalyticsInstances";
+export { AnalyticsInstanceArgs, AnalyticsInstanceState } from "./analyticsInstance";
+export type AnalyticsInstance = import("./analyticsInstance").AnalyticsInstance;
+export const AnalyticsInstance: typeof import("./analyticsInstance").AnalyticsInstance = null as any;
+utilities.lazyLoad(exports, ["AnalyticsInstance"], () => require("./analyticsInstance"));
 
-// Import resources to register:
-import { AnalyticsInstance } from "./analyticsInstance";
-import { AnalyticsInstancePrivateAccessChannel } from "./analyticsInstancePrivateAccessChannel";
-import { AnalyticsInstanceVanityUrl } from "./analyticsInstanceVanityUrl";
+export { AnalyticsInstancePrivateAccessChannelArgs, AnalyticsInstancePrivateAccessChannelState } from "./analyticsInstancePrivateAccessChannel";
+export type AnalyticsInstancePrivateAccessChannel = import("./analyticsInstancePrivateAccessChannel").AnalyticsInstancePrivateAccessChannel;
+export const AnalyticsInstancePrivateAccessChannel: typeof import("./analyticsInstancePrivateAccessChannel").AnalyticsInstancePrivateAccessChannel = null as any;
+utilities.lazyLoad(exports, ["AnalyticsInstancePrivateAccessChannel"], () => require("./analyticsInstancePrivateAccessChannel"));
+
+export { AnalyticsInstanceVanityUrlArgs, AnalyticsInstanceVanityUrlState } from "./analyticsInstanceVanityUrl";
+export type AnalyticsInstanceVanityUrl = import("./analyticsInstanceVanityUrl").AnalyticsInstanceVanityUrl;
+export const AnalyticsInstanceVanityUrl: typeof import("./analyticsInstanceVanityUrl").AnalyticsInstanceVanityUrl = null as any;
+utilities.lazyLoad(exports, ["AnalyticsInstanceVanityUrl"], () => require("./analyticsInstanceVanityUrl"));
+
+export { GetAnalyticsInstanceArgs, GetAnalyticsInstanceResult, GetAnalyticsInstanceOutputArgs } from "./getAnalyticsInstance";
+export const getAnalyticsInstance: typeof import("./getAnalyticsInstance").getAnalyticsInstance = null as any;
+export const getAnalyticsInstanceOutput: typeof import("./getAnalyticsInstance").getAnalyticsInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getAnalyticsInstance","getAnalyticsInstanceOutput"], () => require("./getAnalyticsInstance"));
+
+export { GetAnalyticsInstancePrivateAccessChannelArgs, GetAnalyticsInstancePrivateAccessChannelResult, GetAnalyticsInstancePrivateAccessChannelOutputArgs } from "./getAnalyticsInstancePrivateAccessChannel";
+export const getAnalyticsInstancePrivateAccessChannel: typeof import("./getAnalyticsInstancePrivateAccessChannel").getAnalyticsInstancePrivateAccessChannel = null as any;
+export const getAnalyticsInstancePrivateAccessChannelOutput: typeof import("./getAnalyticsInstancePrivateAccessChannel").getAnalyticsInstancePrivateAccessChannelOutput = null as any;
+utilities.lazyLoad(exports, ["getAnalyticsInstancePrivateAccessChannel","getAnalyticsInstancePrivateAccessChannelOutput"], () => require("./getAnalyticsInstancePrivateAccessChannel"));
+
+export { GetAnalyticsInstancesArgs, GetAnalyticsInstancesResult, GetAnalyticsInstancesOutputArgs } from "./getAnalyticsInstances";
+export const getAnalyticsInstances: typeof import("./getAnalyticsInstances").getAnalyticsInstances = null as any;
+export const getAnalyticsInstancesOutput: typeof import("./getAnalyticsInstances").getAnalyticsInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getAnalyticsInstances","getAnalyticsInstancesOutput"], () => require("./getAnalyticsInstances"));
+
 
 const _module = {
     version: utilities.getVersion(),

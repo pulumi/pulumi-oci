@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConnection(args: GetConnectionArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getConnection:getConnection", {
         "catalogId": args.catalogId,
         "connectionKey": args.connectionKey,
@@ -129,9 +126,27 @@ export interface GetConnectionResult {
      */
     readonly uri: string;
 }
-
+/**
+ * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Gets a specific data asset connection by key.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConnection = oci.DataCatalog.getConnection({
+ *     catalogId: oci_datacatalog_catalog.test_catalog.id,
+ *     connectionKey: _var.connection_connection_key,
+ *     dataAssetKey: _var.connection_data_asset_key,
+ *     fields: _var.connection_fields,
+ * });
+ * ```
+ */
 export function getConnectionOutput(args: GetConnectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionResult> {
-    return pulumi.output(args).apply(a => getConnection(a, opts))
+    return pulumi.output(args).apply((a: any) => getConnection(a, opts))
 }
 
 /**

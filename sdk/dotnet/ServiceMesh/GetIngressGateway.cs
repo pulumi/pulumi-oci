@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIngressGatewayResult> InvokeAsync(GetIngressGatewayArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIngressGatewayResult>("oci:ServiceMesh/getIngressGateway:getIngressGateway", args ?? new GetIngressGatewayArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIngressGatewayResult>("oci:ServiceMesh/getIngressGateway:getIngressGateway", args ?? new GetIngressGatewayArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIngressGatewayResult> Invoke(GetIngressGatewayInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIngressGatewayResult>("oci:ServiceMesh/getIngressGateway:getIngressGateway", args ?? new GetIngressGatewayInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIngressGatewayResult>("oci:ServiceMesh/getIngressGateway:getIngressGateway", args ?? new GetIngressGatewayInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -44,7 +44,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRatecardsResult> InvokeAsync(GetRatecardsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRatecardsResult>("oci:OneSubsription/getRatecards:getRatecards", args ?? new GetRatecardsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRatecardsResult>("oci:OneSubsription/getRatecards:getRatecards", args ?? new GetRatecardsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Ratecards in Oracle Cloud Infrastructure Onesubscription service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRatecardsResult> Invoke(GetRatecardsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRatecardsResult>("oci:OneSubsription/getRatecards:getRatecards", args ?? new GetRatecardsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRatecardsResult>("oci:OneSubsription/getRatecards:getRatecards", args ?? new GetRatecardsInvokeArgs(), options.WithDefaults());
     }
 
 

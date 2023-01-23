@@ -40,7 +40,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVantagePointsResult> InvokeAsync(GetVantagePointsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVantagePointsResult>("oci:HealthChecks/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVantagePointsResult>("oci:HealthChecks/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVantagePointsResult> Invoke(GetVantagePointsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVantagePointsResult>("oci:HealthChecks/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVantagePointsResult>("oci:HealthChecks/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsInvokeArgs(), options.WithDefaults());
     }
 
 

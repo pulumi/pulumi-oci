@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBackendSetHealth(args: GetBackendSetHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetHealthResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", {
         "backendSetName": args.backendSetName,
         "loadBalancerId": args.loadBalancerId,
@@ -82,9 +79,25 @@ export interface GetBackendSetHealthResult {
      */
     readonly warningStateBackendNames: string[];
 }
-
+/**
+ * This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Gets the health status for the specified backend set.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBackendSetHealth = oci.LoadBalancer.getBackendSetHealth({
+ *     backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
+ *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * });
+ * ```
+ */
 export function getBackendSetHealthOutput(args: GetBackendSetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetHealthResult> {
-    return pulumi.output(args).apply(a => getBackendSetHealth(a, opts))
+    return pulumi.output(args).apply((a: any) => getBackendSetHealth(a, opts))
 }
 
 /**

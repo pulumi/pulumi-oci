@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetConnectionResult> InvokeAsync(GetConnectionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConnectionResult>("oci:DatabaseMigration/getConnection:getConnection", args ?? new GetConnectionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConnectionResult>("oci:DatabaseMigration/getConnection:getConnection", args ?? new GetConnectionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetConnectionResult> Invoke(GetConnectionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DatabaseMigration/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DatabaseMigration/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
     }
 
 

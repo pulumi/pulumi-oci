@@ -630,7 +630,9 @@ public final class AdmFunctions {
      *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
      *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -673,7 +675,9 @@ public final class AdmFunctions {
      *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
      *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -716,7 +720,9 @@ public final class AdmFunctions {
      *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
      *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -759,7 +765,9 @@ public final class AdmFunctions {
      *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
      *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -802,7 +810,9 @@ public final class AdmFunctions {
      *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
      *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -845,7 +855,9 @@ public final class AdmFunctions {
      *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
      *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -888,7 +900,9 @@ public final class AdmFunctions {
      *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
      *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -931,7 +945,9 @@ public final class AdmFunctions {
      *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
      *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 

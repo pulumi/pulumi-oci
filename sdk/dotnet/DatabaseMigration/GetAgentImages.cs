@@ -35,7 +35,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAgentImagesResult> InvokeAsync(GetAgentImagesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAgentImagesResult>("oci:DatabaseMigration/getAgentImages:getAgentImages", args ?? new GetAgentImagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAgentImagesResult>("oci:DatabaseMigration/getAgentImages:getAgentImages", args ?? new GetAgentImagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Agent Images in Oracle Cloud Infrastructure Database Migration service.
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAgentImagesResult> Invoke(GetAgentImagesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAgentImagesResult>("oci:DatabaseMigration/getAgentImages:getAgentImages", args ?? new GetAgentImagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentImagesResult>("oci:DatabaseMigration/getAgentImages:getAgentImages", args ?? new GetAgentImagesInvokeArgs(), options.WithDefaults());
     }
 
 

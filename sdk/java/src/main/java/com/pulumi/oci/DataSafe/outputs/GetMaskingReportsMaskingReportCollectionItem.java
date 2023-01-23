@@ -30,10 +30,20 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
      */
     private String maskingWorkRequestId;
     /**
+     * @return The current state of the masking report.
+     * 
+     */
+    private String state;
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
     private String targetId;
+    /**
+     * @return The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timeCreated;
     /**
      * @return The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
@@ -100,11 +110,25 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
         return this.maskingWorkRequestId;
     }
     /**
+     * @return The current state of the masking report.
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
     public String targetId() {
         return this.targetId;
+    }
+    /**
+     * @return The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timeCreated() {
+        return this.timeCreated;
     }
     /**
      * @return The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -169,7 +193,9 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
         private String id;
         private String maskingPolicyId;
         private String maskingWorkRequestId;
+        private String state;
         private String targetId;
+        private String timeCreated;
         private String timeMaskingFinished;
         private String timeMaskingStarted;
         private String totalMaskedColumns;
@@ -184,7 +210,9 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
     	      this.id = defaults.id;
     	      this.maskingPolicyId = defaults.maskingPolicyId;
     	      this.maskingWorkRequestId = defaults.maskingWorkRequestId;
+    	      this.state = defaults.state;
     	      this.targetId = defaults.targetId;
+    	      this.timeCreated = defaults.timeCreated;
     	      this.timeMaskingFinished = defaults.timeMaskingFinished;
     	      this.timeMaskingStarted = defaults.timeMaskingStarted;
     	      this.totalMaskedColumns = defaults.totalMaskedColumns;
@@ -215,8 +243,18 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder state(String state) {
+            this.state = Objects.requireNonNull(state);
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeCreated(String timeCreated) {
+            this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
         @CustomType.Setter
@@ -260,7 +298,9 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
             o.id = id;
             o.maskingPolicyId = maskingPolicyId;
             o.maskingWorkRequestId = maskingWorkRequestId;
+            o.state = state;
             o.targetId = targetId;
+            o.timeCreated = timeCreated;
             o.timeMaskingFinished = timeMaskingFinished;
             o.timeMaskingStarted = timeMaskingStarted;
             o.totalMaskedColumns = totalMaskedColumns;

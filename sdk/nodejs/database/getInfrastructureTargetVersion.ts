@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInfrastructureTargetVersion(args: GetInfrastructureTargetVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetInfrastructureTargetVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", {
         "compartmentId": args.compartmentId,
         "targetResourceId": args.targetResourceId,
@@ -80,9 +77,27 @@ export interface GetInfrastructureTargetVersionResult {
      */
     readonly targetStorageVersionHistoryEntries: string[];
 }
-
+/**
+ * This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
+ * Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInfrastructureTargetVersion = oci.Database.getInfrastructureTargetVersion({
+ *     compartmentId: _var.compartment_id,
+ *     targetResourceId: oci_database_target_resource.test_target_resource.id,
+ *     targetResourceType: _var.infrastructure_target_version_target_resource_type,
+ * });
+ * ```
+ */
 export function getInfrastructureTargetVersionOutput(args: GetInfrastructureTargetVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInfrastructureTargetVersionResult> {
-    return pulumi.output(args).apply(a => getInfrastructureTargetVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getInfrastructureTargetVersion(a, opts))
 }
 
 /**

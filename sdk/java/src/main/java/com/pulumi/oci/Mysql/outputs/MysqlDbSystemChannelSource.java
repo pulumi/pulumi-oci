@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemChannelSourceSslCaCertificate;
 import java.lang.Integer;
 import java.lang.String;
@@ -15,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MysqlDbSystemChannelSource {
     /**
+     * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    private @Nullable List<MysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
+    /**
      * @return The network address of the DB System.
      * 
      */
@@ -25,7 +31,7 @@ public final class MysqlDbSystemChannelSource {
      */
     private @Nullable Integer port;
     /**
-     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
      */
     private @Nullable String sourceType;
@@ -47,6 +53,13 @@ public final class MysqlDbSystemChannelSource {
 
     private MysqlDbSystemChannelSource() {}
     /**
+     * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    public List<MysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings() {
+        return this.anonymousTransactionsHandlings == null ? List.of() : this.anonymousTransactionsHandlings;
+    }
+    /**
      * @return The network address of the DB System.
      * 
      */
@@ -61,7 +74,7 @@ public final class MysqlDbSystemChannelSource {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
      */
     public Optional<String> sourceType() {
@@ -98,6 +111,7 @@ public final class MysqlDbSystemChannelSource {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<MysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
         private @Nullable String hostname;
         private @Nullable Integer port;
         private @Nullable String sourceType;
@@ -107,6 +121,7 @@ public final class MysqlDbSystemChannelSource {
         public Builder() {}
         public Builder(MysqlDbSystemChannelSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.anonymousTransactionsHandlings = defaults.anonymousTransactionsHandlings;
     	      this.hostname = defaults.hostname;
     	      this.port = defaults.port;
     	      this.sourceType = defaults.sourceType;
@@ -115,6 +130,14 @@ public final class MysqlDbSystemChannelSource {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
+        public Builder anonymousTransactionsHandlings(@Nullable List<MysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
+            this.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
+            return this;
+        }
+        public Builder anonymousTransactionsHandlings(MysqlDbSystemChannelSourceAnonymousTransactionsHandling... anonymousTransactionsHandlings) {
+            return anonymousTransactionsHandlings(List.of(anonymousTransactionsHandlings));
+        }
         @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
             this.hostname = hostname;
@@ -150,6 +173,7 @@ public final class MysqlDbSystemChannelSource {
         }
         public MysqlDbSystemChannelSource build() {
             final var o = new MysqlDbSystemChannelSource();
+            o.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             o.hostname = hostname;
             o.port = port;
             o.sourceType = sourceType;

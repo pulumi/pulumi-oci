@@ -193,7 +193,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) True if active Data Guard is enabled.
         /// </summary>
         [Output("isActiveDataGuardEnabled")]
-        public Output<bool> IsActiveDataGuardEnabled { get; private set; } = null!;
+        public Output<bool?> IsActiveDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
@@ -355,6 +355,10 @@ namespace Pulumi.Oci.Database
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "databaseAdminPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -417,11 +421,21 @@ namespace Pulumi.Oci.Database
         [Input("dataCollectionOptions")]
         public Input<Inputs.DataGuardAssociationDataCollectionOptionsArgs>? DataCollectionOptions { get; set; }
 
+        [Input("databaseAdminPassword", required: true)]
+        private Input<string>? _databaseAdminPassword;
+
         /// <summary>
         /// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
         /// </summary>
-        [Input("databaseAdminPassword", required: true)]
-        public Input<string> DatabaseAdminPassword { get; set; } = null!;
+        public Input<string>? DatabaseAdminPassword
+        {
+            get => _databaseAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _databaseAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("databaseDefinedTags")]
         private InputMap<object>? _databaseDefinedTags;
@@ -676,11 +690,21 @@ namespace Pulumi.Oci.Database
         [Input("dataCollectionOptions")]
         public Input<Inputs.DataGuardAssociationDataCollectionOptionsGetArgs>? DataCollectionOptions { get; set; }
 
+        [Input("databaseAdminPassword")]
+        private Input<string>? _databaseAdminPassword;
+
         /// <summary>
         /// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
         /// </summary>
-        [Input("databaseAdminPassword")]
-        public Input<string>? DatabaseAdminPassword { get; set; }
+        public Input<string>? DatabaseAdminPassword
+        {
+            get => _databaseAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _databaseAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("databaseDefinedTags")]
         private InputMap<object>? _databaseDefinedTags;

@@ -891,7 +891,7 @@ class BlockchainPlatform(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             if idcs_access_token is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_access_token'")
-            __props__.__dict__["idcs_access_token"] = idcs_access_token
+            __props__.__dict__["idcs_access_token"] = None if idcs_access_token is None else pulumi.Output.secret(idcs_access_token)
             __props__.__dict__["is_byol"] = is_byol
             __props__.__dict__["load_balancer_shape"] = load_balancer_shape
             if platform_role is None and not opts.urn:
@@ -912,6 +912,8 @@ class BlockchainPlatform(pulumi.CustomResource):
             __props__.__dict__["storage_used_in_tbs"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["idcsAccessToken"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(BlockchainPlatform, __self__).__init__(
             'oci:Blockchain/blockchainPlatform:BlockchainPlatform',
             resource_name,

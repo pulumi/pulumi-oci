@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceCredentials(args: GetInstanceCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceCredentialsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceCredentials:getInstanceCredentials", {
         "instanceId": args.instanceId,
     }, opts);
@@ -60,9 +57,25 @@ export interface GetInstanceCredentialsResult {
      */
     readonly username: string;
 }
-
+/**
+ * This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
+ * For certain operating systems, users will be forced to change the initial credentials.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstanceCredential = oci.Core.getInstanceCredentials({
+ *     instanceId: oci_core_instance.test_instance.id,
+ * });
+ * ```
+ */
 export function getInstanceCredentialsOutput(args: GetInstanceCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceCredentialsResult> {
-    return pulumi.output(args).apply(a => getInstanceCredentials(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstanceCredentials(a, opts))
 }
 
 /**

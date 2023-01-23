@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
     public sealed class VirtualDeploymentListener
     {
         /// <summary>
+        /// (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+        /// </summary>
+        public readonly string? IdleTimeoutInMs;
+        /// <summary>
         /// (Updatable) Port in which virtual deployment is running.
         /// </summary>
         public readonly int Port;
@@ -21,15 +25,25 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// (Updatable) Type of protocol used in virtual deployment.
         /// </summary>
         public readonly string Protocol;
+        /// <summary>
+        /// (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+        /// </summary>
+        public readonly string? RequestTimeoutInMs;
 
         [OutputConstructor]
         private VirtualDeploymentListener(
+            string? idleTimeoutInMs,
+
             int port,
 
-            string protocol)
+            string protocol,
+
+            string? requestTimeoutInMs)
         {
+            IdleTimeoutInMs = idleTimeoutInMs;
             Port = port;
             Protocol = protocol;
+            RequestTimeoutInMs = requestTimeoutInMs;
         }
     }
 }

@@ -29,6 +29,7 @@ public final class GetMysqlDbSystemSource {
      * 
      */
     private String sourceType;
+    private String sourceUrl;
 
     private GetMysqlDbSystemSource() {}
     /**
@@ -59,6 +60,9 @@ public final class GetMysqlDbSystemSource {
     public String sourceType() {
         return this.sourceType;
     }
+    public String sourceUrl() {
+        return this.sourceUrl;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -73,6 +77,7 @@ public final class GetMysqlDbSystemSource {
         private String dbSystemId;
         private String recoveryPoint;
         private String sourceType;
+        private String sourceUrl;
         public Builder() {}
         public Builder(GetMysqlDbSystemSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -80,6 +85,7 @@ public final class GetMysqlDbSystemSource {
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.recoveryPoint = defaults.recoveryPoint;
     	      this.sourceType = defaults.sourceType;
+    	      this.sourceUrl = defaults.sourceUrl;
         }
 
         @CustomType.Setter
@@ -102,12 +108,18 @@ public final class GetMysqlDbSystemSource {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
+        public Builder sourceUrl(String sourceUrl) {
+            this.sourceUrl = Objects.requireNonNull(sourceUrl);
+            return this;
+        }
         public GetMysqlDbSystemSource build() {
             final var o = new GetMysqlDbSystemSource();
             o.backupId = backupId;
             o.dbSystemId = dbSystemId;
             o.recoveryPoint = recoveryPoint;
             o.sourceType = sourceType;
+            o.sourceUrl = sourceUrl;
             return o;
         }
     }

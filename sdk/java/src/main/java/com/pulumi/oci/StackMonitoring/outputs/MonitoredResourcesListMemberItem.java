@@ -19,6 +19,11 @@ public final class MonitoredResourcesListMemberItem {
      */
     private @Nullable Map<String,Object> definedTags;
     /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    private @Nullable String externalId;
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -71,6 +76,13 @@ public final class MonitoredResourcesListMemberItem {
      */
     public Map<String,Object> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
+    }
+    /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -146,6 +158,7 @@ public final class MonitoredResourcesListMemberItem {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> definedTags;
+        private @Nullable String externalId;
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String hostName;
         private @Nullable String parentId;
@@ -159,6 +172,7 @@ public final class MonitoredResourcesListMemberItem {
         public Builder(MonitoredResourcesListMemberItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
+    	      this.externalId = defaults.externalId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
     	      this.parentId = defaults.parentId;
@@ -173,6 +187,11 @@ public final class MonitoredResourcesListMemberItem {
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
@@ -223,6 +242,7 @@ public final class MonitoredResourcesListMemberItem {
         public MonitoredResourcesListMemberItem build() {
             final var o = new MonitoredResourcesListMemberItem();
             o.definedTags = definedTags;
+            o.externalId = externalId;
             o.freeformTags = freeformTags;
             o.hostName = hostName;
             o.parentId = parentId;

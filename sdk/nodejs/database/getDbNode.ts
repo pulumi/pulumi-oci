@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbNode(args: GetDbNodeArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbNode:getDbNode", {
         "dbNodeId": args.dbNodeId,
     }, opts);
@@ -131,9 +128,24 @@ export interface GetDbNodeResult {
      */
     readonly vnicId: string;
 }
-
+/**
+ * This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified database node.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbNode = oci.Database.getDbNode({
+ *     dbNodeId: _var.db_node_id,
+ * });
+ * ```
+ */
 export function getDbNodeOutput(args: GetDbNodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeResult> {
-    return pulumi.output(args).apply(a => getDbNode(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbNode(a, opts))
 }
 
 /**

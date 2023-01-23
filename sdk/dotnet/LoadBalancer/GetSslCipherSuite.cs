@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSslCipherSuiteResult> InvokeAsync(GetSslCipherSuiteArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSslCipherSuiteResult>("oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite", args ?? new GetSslCipherSuiteArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSslCipherSuiteResult>("oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite", args ?? new GetSslCipherSuiteArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSslCipherSuiteResult> Invoke(GetSslCipherSuiteInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSslCipherSuiteResult>("oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite", args ?? new GetSslCipherSuiteInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSslCipherSuiteResult>("oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite", args ?? new GetSslCipherSuiteInvokeArgs(), options.WithDefaults());
     }
 
 

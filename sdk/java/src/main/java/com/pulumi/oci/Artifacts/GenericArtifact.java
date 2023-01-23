@@ -52,7 +52,11 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * Import is not supported for this resource.
+ * GenericArtifacts can be imported using the `id`, e.g.
+ * 
+ * ```sh
+ *  $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact &#34;generic/artifacts/{artifactId}&#34;
+ * ```
  * 
  */
 @ResourceType(type="oci:Artifacts/genericArtifact:GenericArtifact")

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLimitValuesResult> InvokeAsync(GetLimitValuesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLimitValuesResult>("oci:Limits/getLimitValues:getLimitValues", args ?? new GetLimitValuesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLimitValuesResult>("oci:Limits/getLimitValues:getLimitValues", args ?? new GetLimitValuesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLimitValuesResult> Invoke(GetLimitValuesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLimitValuesResult>("oci:Limits/getLimitValues:getLimitValues", args ?? new GetLimitValuesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLimitValuesResult>("oci:Limits/getLimitValues:getLimitValues", args ?? new GetLimitValuesInvokeArgs(), options.WithDefaults());
     }
 
 

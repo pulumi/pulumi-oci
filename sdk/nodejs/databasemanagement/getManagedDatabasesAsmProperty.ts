@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabasesAsmProperty(args: GetManagedDatabasesAsmPropertyArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesAsmPropertyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", {
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
@@ -63,9 +61,25 @@ export interface GetManagedDatabasesAsmPropertyResult {
     readonly managedDatabaseId: string;
     readonly name?: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Databases Asm Property resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of ASM properties for the specified managedDatabaseId.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabasesAsmProperty = oci.DatabaseManagement.getManagedDatabasesAsmProperty({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     name: _var.managed_databases_asm_property_name,
+ * });
+ * ```
+ */
 export function getManagedDatabasesAsmPropertyOutput(args: GetManagedDatabasesAsmPropertyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesAsmPropertyResult> {
-    return pulumi.output(args).apply(a => getManagedDatabasesAsmProperty(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabasesAsmProperty(a, opts))
 }
 
 /**

@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSummarizeResourceInventoryResult> InvokeAsync(GetSummarizeResourceInventoryArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSummarizeResourceInventoryResult>("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args ?? new GetSummarizeResourceInventoryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSummarizeResourceInventoryResult>("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args ?? new GetSummarizeResourceInventoryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSummarizeResourceInventoryResult> Invoke(GetSummarizeResourceInventoryInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSummarizeResourceInventoryResult>("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args ?? new GetSummarizeResourceInventoryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSummarizeResourceInventoryResult>("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args ?? new GetSummarizeResourceInventoryInvokeArgs(), options.WithDefaults());
     }
 
 

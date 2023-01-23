@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Audit
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEventsResult> InvokeAsync(GetEventsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEventsResult>("oci:Audit/getEvents:getEvents", args ?? new GetEventsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEventsResult>("oci:Audit/getEvents:getEvents", args ?? new GetEventsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Audit
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEventsResult>("oci:Audit/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("oci:Audit/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());
     }
 
 

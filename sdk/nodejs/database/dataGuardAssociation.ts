@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -168,7 +169,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * (Updatable) True if active Data Guard is enabled.
      */
-    public readonly isActiveDataGuardEnabled!: pulumi.Output<boolean>;
+    public readonly isActiveDataGuardEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
      */
@@ -344,7 +345,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["createAsync"] = args ? args.createAsync : undefined;
             resourceInputs["creationType"] = args ? args.creationType : undefined;
             resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
-            resourceInputs["databaseAdminPassword"] = args ? args.databaseAdminPassword : undefined;
+            resourceInputs["databaseAdminPassword"] = args?.databaseAdminPassword ? pulumi.secret(args.databaseAdminPassword) : undefined;
             resourceInputs["databaseDefinedTags"] = args ? args.databaseDefinedTags : undefined;
             resourceInputs["databaseFreeformTags"] = args ? args.databaseFreeformTags : undefined;
             resourceInputs["databaseId"] = args ? args.databaseId : undefined;
@@ -382,6 +383,8 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["databaseAdminPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(DataGuardAssociation.__pulumiType, name, resourceInputs, opts);
     }
 }

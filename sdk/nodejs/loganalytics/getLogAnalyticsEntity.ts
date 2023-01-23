@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsEntity(args: GetLogAnalyticsEntityArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntityResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", {
         "logAnalyticsEntityId": args.logAnalyticsEntityId,
         "namespace": args.namespace,
@@ -134,9 +131,25 @@ export interface GetLogAnalyticsEntityResult {
      */
     readonly timezoneRegion: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Retrieve the log analytics entity with the given id.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
+ *     logAnalyticsEntityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
+ *     namespace: _var.log_analytics_entity_namespace,
+ * });
+ * ```
+ */
 export function getLogAnalyticsEntityOutput(args: GetLogAnalyticsEntityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntityResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsEntity(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsEntity(a, opts))
 }
 
 /**

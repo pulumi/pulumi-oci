@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataFlow.PrivateEndpointArgs;
 import com.pulumi.oci.DataFlow.inputs.PrivateEndpointState;
+import com.pulumi.oci.DataFlow.outputs.PrivateEndpointScanDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.Object;
@@ -182,6 +183,20 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      */
     public Output<String> ownerUserName() {
         return this.ownerUserName;
+    }
+    /**
+     * (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+     * 
+     */
+    @Export(name="scanDetails", type=List.class, parameters={PrivateEndpointScanDetail.class})
+    private Output<List<PrivateEndpointScanDetail>> scanDetails;
+
+    /**
+     * @return (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+     * 
+     */
+    public Output<List<PrivateEndpointScanDetail>> scanDetails() {
+        return this.scanDetails;
     }
     /**
      * The current state of this private endpoint.

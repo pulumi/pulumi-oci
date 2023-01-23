@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKnowledgebase(args: GetKnowledgebaseArgs, opts?: pulumi.InvokeOptions): Promise<GetKnowledgebaseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Adm/getKnowledgebase:getKnowledgebase", {
         "knowledgeBaseId": args.knowledgeBaseId,
     }, opts);
@@ -83,9 +80,24 @@ export interface GetKnowledgebaseResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure ADM service.
+ *
+ * Returns the details of the specified Knowledge Base.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testKnowledgeBase = oci.Adm.getKnowledgebase({
+ *     knowledgeBaseId: oci_adm_knowledge_base.test_knowledge_base.id,
+ * });
+ * ```
+ */
 export function getKnowledgebaseOutput(args: GetKnowledgebaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKnowledgebaseResult> {
-    return pulumi.output(args).apply(a => getKnowledgebase(a, opts))
+    return pulumi.output(args).apply((a: any) => getKnowledgebase(a, opts))
 }
 
 /**

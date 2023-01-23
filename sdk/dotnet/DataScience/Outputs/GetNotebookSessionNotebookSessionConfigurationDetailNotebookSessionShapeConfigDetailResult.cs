@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult
     {
         /// <summary>
-        /// A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        /// The total amount of memory available to the notebook session instance, in gigabytes.
         /// </summary>
         public readonly double MemoryInGbs;
         /// <summary>
-        /// A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        /// The total number of OCPUs available to the notebook session instance.
         /// </summary>
         public readonly double Ocpus;
 

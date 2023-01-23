@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstancePatchHistories(args: GetBdsInstancePatchHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstancePatchHistoriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", {
         "bdsInstanceId": args.bdsInstanceId,
         "filters": args.filters,
@@ -76,9 +74,26 @@ export interface GetBdsInstancePatchHistoriesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
+ *
+ * List the patch history of this cluster.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
+ *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
+ *     patchVersion: _var.bds_instance_patch_history_patch_version,
+ *     state: _var.bds_instance_patch_history_state,
+ * });
+ * ```
+ */
 export function getBdsInstancePatchHistoriesOutput(args: GetBdsInstancePatchHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstancePatchHistoriesResult> {
-    return pulumi.output(args).apply(a => getBdsInstancePatchHistories(a, opts))
+    return pulumi.output(args).apply((a: any) => getBdsInstancePatchHistories(a, opts))
 }
 
 /**

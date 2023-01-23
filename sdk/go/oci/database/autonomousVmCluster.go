@@ -41,6 +41,7 @@ import (
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsLocalBackupEnabled: pulumi.Any(_var.Autonomous_vm_cluster_is_local_backup_enabled),
+//				IsMtlsEnabled:        pulumi.Any(_var.Autonomous_vm_cluster_is_mtls_enabled),
 //				LicenseModel:         pulumi.Any(_var.Autonomous_vm_cluster_license_model),
 //				MaintenanceWindowDetails: database.AutonomousVmClusterMaintenanceWindowDetailArray{
 //					&database.AutonomousVmClusterMaintenanceWindowDetailArgs{
@@ -61,6 +62,8 @@ import (
 //					},
 //				},
 //				MemoryPerOracleComputeUnitInGbs: pulumi.Any(_var.Autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
+//				ScanListenerPortNonTls:          pulumi.Any(_var.Autonomous_vm_cluster_scan_listener_port_non_tls),
+//				ScanListenerPortTls:             pulumi.Any(_var.Autonomous_vm_cluster_scan_listener_port_tls),
 //				TimeZone:                        pulumi.Any(_var.Autonomous_vm_cluster_time_zone),
 //				TotalContainerDatabases:         pulumi.Any(_var.Autonomous_vm_cluster_total_container_databases),
 //			})
@@ -97,7 +100,7 @@ type AutonomousVmCluster struct {
 	AvailableDataStorageSizeInTbs pulumi.Float64Output `pulumi:"availableDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The number of OCPU cores to enable per VM cluster node.
+	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntOutput `pulumi:"cpuCoreCountPerNode"`
 	// The number of enabled CPU cores.
 	CpusEnabled         pulumi.IntOutput     `pulumi:"cpusEnabled"`
@@ -116,6 +119,8 @@ type AutonomousVmCluster struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
 	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
+	// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+	IsMtlsEnabled pulumi.BoolOutput `pulumi:"isMtlsEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -136,6 +141,10 @@ type AutonomousVmCluster struct {
 	OcpusEnabled pulumi.Float64Output `pulumi:"ocpusEnabled"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 	ReclaimableCpus pulumi.IntOutput `pulumi:"reclaimableCpus"`
+	// The SCAN Listener Non TLS port number. Default value is 1521.
+	ScanListenerPortNonTls pulumi.IntOutput `pulumi:"scanListenerPortNonTls"`
+	// The SCAN Listener TLS port number. Default value is 2484.
+	ScanListenerPortTls pulumi.IntOutput `pulumi:"scanListenerPortTls"`
 	// The current state of the Autonomous VM cluster.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
@@ -201,7 +210,7 @@ type autonomousVmClusterState struct {
 	AvailableDataStorageSizeInTbs *float64 `pulumi:"availableDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The number of OCPU cores to enable per VM cluster node.
+	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
 	// The number of enabled CPU cores.
 	CpusEnabled         *int     `pulumi:"cpusEnabled"`
@@ -220,6 +229,8 @@ type autonomousVmClusterState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
+	// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+	IsMtlsEnabled *bool `pulumi:"isMtlsEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -240,6 +251,10 @@ type autonomousVmClusterState struct {
 	OcpusEnabled *float64 `pulumi:"ocpusEnabled"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 	ReclaimableCpus *int `pulumi:"reclaimableCpus"`
+	// The SCAN Listener Non TLS port number. Default value is 1521.
+	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
+	// The SCAN Listener TLS port number. Default value is 2484.
+	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
 	// The current state of the Autonomous VM cluster.
 	State *string `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
@@ -265,7 +280,7 @@ type AutonomousVmClusterState struct {
 	AvailableDataStorageSizeInTbs pulumi.Float64PtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	// The number of OCPU cores to enable per VM cluster node.
+	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	// The number of enabled CPU cores.
 	CpusEnabled         pulumi.IntPtrInput
@@ -284,6 +299,8 @@ type AutonomousVmClusterState struct {
 	FreeformTags pulumi.MapInput
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
+	// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+	IsMtlsEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringPtrInput
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -304,6 +321,10 @@ type AutonomousVmClusterState struct {
 	OcpusEnabled pulumi.Float64PtrInput
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 	ReclaimableCpus pulumi.IntPtrInput
+	// The SCAN Listener Non TLS port number. Default value is 1521.
+	ScanListenerPortNonTls pulumi.IntPtrInput
+	// The SCAN Listener TLS port number. Default value is 2484.
+	ScanListenerPortTls pulumi.IntPtrInput
 	// The current state of the Autonomous VM cluster.
 	State pulumi.StringPtrInput
 	// The date and time that the Autonomous VM cluster was created.
@@ -325,7 +346,7 @@ type autonomousVmClusterArgs struct {
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The number of OCPU cores to enable per VM cluster node.
+	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -337,12 +358,18 @@ type autonomousVmClusterArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
+	// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+	IsMtlsEnabled *bool `pulumi:"isMtlsEnabled"`
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
 	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails []AutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The amount of memory (in GBs) to be enabled per each OCPU core.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	// The SCAN Listener Non TLS port number. Default value is 1521.
+	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
+	// The SCAN Listener TLS port number. Default value is 2484.
+	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
 	// The total number of Autonomous Container Databases that can be created.
@@ -357,7 +384,7 @@ type AutonomousVmClusterArgs struct {
 	AutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
-	// The number of OCPU cores to enable per VM cluster node.
+	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
@@ -369,12 +396,18 @@ type AutonomousVmClusterArgs struct {
 	FreeformTags pulumi.MapInput
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
+	// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+	IsMtlsEnabled pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
 	LicenseModel pulumi.StringPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails AutonomousVmClusterMaintenanceWindowDetailArrayInput
 	// The amount of memory (in GBs) to be enabled per each OCPU core.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
+	// The SCAN Listener Non TLS port number. Default value is 1521.
+	ScanListenerPortNonTls pulumi.IntPtrInput
+	// The SCAN Listener TLS port number. Default value is 2484.
+	ScanListenerPortTls pulumi.IntPtrInput
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
 	// The total number of Autonomous Container Databases that can be created.
@@ -500,7 +533,7 @@ func (o AutonomousVmClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The number of OCPU cores to enable per VM cluster node.
+// The number of CPU cores to enable per VM cluster node.
 func (o AutonomousVmClusterOutput) CpuCoreCountPerNode() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.CpuCoreCountPerNode }).(pulumi.IntOutput)
 }
@@ -547,6 +580,11 @@ func (o AutonomousVmClusterOutput) FreeformTags() pulumi.MapOutput {
 // If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
 func (o AutonomousVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.BoolOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+}
+
+// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+func (o AutonomousVmClusterOutput) IsMtlsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.BoolOutput { return v.IsMtlsEnabled }).(pulumi.BoolOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -601,6 +639,16 @@ func (o AutonomousVmClusterOutput) OcpusEnabled() pulumi.Float64Output {
 // CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 func (o AutonomousVmClusterOutput) ReclaimableCpus() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ReclaimableCpus }).(pulumi.IntOutput)
+}
+
+// The SCAN Listener Non TLS port number. Default value is 1521.
+func (o AutonomousVmClusterOutput) ScanListenerPortNonTls() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ScanListenerPortNonTls }).(pulumi.IntOutput)
+}
+
+// The SCAN Listener TLS port number. Default value is 2484.
+func (o AutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ScanListenerPortTls }).(pulumi.IntOutput)
 }
 
 // The current state of the Autonomous VM cluster.

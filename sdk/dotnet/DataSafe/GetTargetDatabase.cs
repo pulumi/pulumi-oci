@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTargetDatabaseResult> InvokeAsync(GetTargetDatabaseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabaseResult>("oci:DataSafe/getTargetDatabase:getTargetDatabase", args ?? new GetTargetDatabaseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabaseResult>("oci:DataSafe/getTargetDatabase:getTargetDatabase", args ?? new GetTargetDatabaseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Target Database resource in Oracle Cloud Infrastructure Data Safe service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTargetDatabaseResult> Invoke(GetTargetDatabaseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseResult>("oci:DataSafe/getTargetDatabase:getTargetDatabase", args ?? new GetTargetDatabaseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseResult>("oci:DataSafe/getTargetDatabase:getTargetDatabase", args ?? new GetTargetDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

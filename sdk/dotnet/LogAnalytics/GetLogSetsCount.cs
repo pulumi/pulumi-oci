@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogSetsCountResult> InvokeAsync(GetLogSetsCountArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogSetsCountResult> Invoke(GetLogSetsCountInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountInvokeArgs(), options.WithDefaults());
     }
 
 

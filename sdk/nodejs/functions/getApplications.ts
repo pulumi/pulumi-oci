@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApplications(args: GetApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getApplications:getApplications", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -88,9 +86,27 @@ export interface GetApplicationsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Applications in Oracle Cloud Infrastructure Functions service.
+ *
+ * Lists applications for a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApplications = oci.Functions.getApplications({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.application_display_name,
+ *     id: _var.application_id,
+ *     state: _var.application_state,
+ * });
+ * ```
+ */
 export function getApplicationsOutput(args: GetApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationsResult> {
-    return pulumi.output(args).apply(a => getApplications(a, opts))
+    return pulumi.output(args).apply((a: any) => getApplications(a, opts))
 }
 
 /**

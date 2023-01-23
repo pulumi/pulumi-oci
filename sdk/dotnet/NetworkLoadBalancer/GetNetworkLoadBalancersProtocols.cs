@@ -37,7 +37,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkLoadBalancersProtocolsResult> InvokeAsync(GetNetworkLoadBalancersProtocolsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkLoadBalancersProtocolsResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", args ?? new GetNetworkLoadBalancersProtocolsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkLoadBalancersProtocolsResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", args ?? new GetNetworkLoadBalancersProtocolsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkLoadBalancersProtocolsResult> Invoke(GetNetworkLoadBalancersProtocolsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancersProtocolsResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", args ?? new GetNetworkLoadBalancersProtocolsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancersProtocolsResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", args ?? new GetNetworkLoadBalancersProtocolsInvokeArgs(), options.WithDefaults());
     }
 
 

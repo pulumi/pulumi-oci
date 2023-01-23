@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabaseBackup(args: GetAutonomousDatabaseBackupArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseBackupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseBackup:getAutonomousDatabaseBackup", {
         "autonomousDatabaseBackupId": args.autonomousDatabaseBackupId,
     }, opts);
@@ -115,9 +112,24 @@ export interface GetAutonomousDatabaseBackupResult {
      */
     readonly vaultId: string;
 }
-
+/**
+ * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified Autonomous Database backup.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseBackup = oci.Database.getAutonomousDatabaseBackup({
+ *     autonomousDatabaseBackupId: oci_database_autonomous_database_backup.test_autonomous_database_backup.id,
+ * });
+ * ```
+ */
 export function getAutonomousDatabaseBackupOutput(args: GetAutonomousDatabaseBackupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseBackupResult> {
-    return pulumi.output(args).apply(a => getAutonomousDatabaseBackup(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseBackup(a, opts))
 }
 
 /**

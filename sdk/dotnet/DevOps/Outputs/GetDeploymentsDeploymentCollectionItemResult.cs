@@ -42,6 +42,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string DeployStageId;
         /// <summary>
+        /// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult> DeployStageOverrideArguments;
+        /// <summary>
         /// Specifies list of arguments passed along with the deployment.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult> DeploymentArguments;
@@ -93,6 +97,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
+        public readonly bool TriggerNewDevopsDeployment;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemResult(
@@ -109,6 +114,8 @@ namespace Pulumi.Oci.DevOps.Outputs
             string deployPipelineId,
 
             string deployStageId,
+
+            ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult> deployStageOverrideArguments,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult> deploymentArguments,
 
@@ -134,7 +141,9 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            bool triggerNewDevopsDeployment)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -143,6 +152,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             DeployPipelineEnvironments = deployPipelineEnvironments;
             DeployPipelineId = deployPipelineId;
             DeployStageId = deployStageId;
+            DeployStageOverrideArguments = deployStageOverrideArguments;
             DeploymentArguments = deploymentArguments;
             DeploymentExecutionProgresses = deploymentExecutionProgresses;
             DeploymentType = deploymentType;
@@ -156,6 +166,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            TriggerNewDevopsDeployment = triggerNewDevopsDeployment;
         }
     }
 }

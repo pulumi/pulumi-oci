@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemOggData;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -16,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -26,7 +27,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private Integer cpuCoreCount;
     /**
-     * @return Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private Map<String,Object> definedTags;
@@ -36,7 +37,12 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String deploymentBackupId;
     /**
-     * @return The deployment type.
+     * @return Information regarding the deployment diagnostic collection
+     * 
+     */
+    private List<GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData> deploymentDiagnosticDatas;
+    /**
+     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
      * 
      */
     private String deploymentType;
@@ -61,7 +67,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String fqdn;
     /**
-     * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private Map<String,Object> freeformTags;
@@ -111,7 +117,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String lifecycleSubState;
     /**
-     * @return An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
     private List<String> nsgIds;
@@ -146,7 +152,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String subnetId;
     /**
-     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     private Map<String,Object> systemTags;
@@ -168,7 +174,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
 
     private GetDeploymentsDeploymentCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -182,7 +188,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.cpuCoreCount;
     }
     /**
-     * @return Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
@@ -196,7 +202,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.deploymentBackupId;
     }
     /**
-     * @return The deployment type.
+     * @return Information regarding the deployment diagnostic collection
+     * 
+     */
+    public List<GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData> deploymentDiagnosticDatas() {
+        return this.deploymentDiagnosticDatas;
+    }
+    /**
+     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
      * 
      */
     public String deploymentType() {
@@ -231,7 +244,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.fqdn;
     }
     /**
-     * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
@@ -301,7 +314,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.lifecycleSubState;
     }
     /**
-     * @return An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
     public List<String> nsgIds() {
@@ -350,7 +363,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.subnetId;
     }
     /**
-     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Map<String,Object> systemTags() {
@@ -391,6 +404,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private Integer cpuCoreCount;
         private Map<String,Object> definedTags;
         private String deploymentBackupId;
+        private List<GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData> deploymentDiagnosticDatas;
         private String deploymentType;
         private String deploymentUrl;
         private String description;
@@ -424,6 +438,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.definedTags = defaults.definedTags;
     	      this.deploymentBackupId = defaults.deploymentBackupId;
+    	      this.deploymentDiagnosticDatas = defaults.deploymentDiagnosticDatas;
     	      this.deploymentType = defaults.deploymentType;
     	      this.deploymentUrl = defaults.deploymentUrl;
     	      this.description = defaults.description;
@@ -471,6 +486,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
         public Builder deploymentBackupId(String deploymentBackupId) {
             this.deploymentBackupId = Objects.requireNonNull(deploymentBackupId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder deploymentDiagnosticDatas(List<GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData> deploymentDiagnosticDatas) {
+            this.deploymentDiagnosticDatas = Objects.requireNonNull(deploymentDiagnosticDatas);
+            return this;
+        }
+        public Builder deploymentDiagnosticDatas(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData... deploymentDiagnosticDatas) {
+            return deploymentDiagnosticDatas(List.of(deploymentDiagnosticDatas));
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
@@ -614,6 +637,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             o.cpuCoreCount = cpuCoreCount;
             o.definedTags = definedTags;
             o.deploymentBackupId = deploymentBackupId;
+            o.deploymentDiagnosticDatas = deploymentDiagnosticDatas;
             o.deploymentType = deploymentType;
             o.deploymentUrl = deploymentUrl;
             o.description = description;

@@ -93,7 +93,7 @@ public final class FunctionsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -132,7 +132,7 @@ public final class FunctionsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -171,7 +171,7 @@ public final class FunctionsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -210,7 +210,7 @@ public final class FunctionsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -249,7 +249,7 @@ public final class FunctionsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -291,7 +291,7 @@ public final class FunctionsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -333,7 +333,7 @@ public final class FunctionsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -375,7 +375,7 @@ public final class FunctionsFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
-     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

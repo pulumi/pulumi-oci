@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbSystemComputePerformancesResult> InvokeAsync(GetDbSystemComputePerformancesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemComputePerformancesResult>("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args ?? new GetDbSystemComputePerformancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemComputePerformancesResult>("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args ?? new GetDbSystemComputePerformancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbSystemComputePerformancesResult> Invoke(GetDbSystemComputePerformancesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbSystemComputePerformancesResult>("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args ?? new GetDbSystemComputePerformancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemComputePerformancesResult>("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args ?? new GetDbSystemComputePerformancesInvokeArgs(), options.WithDefaults());
     }
 
 

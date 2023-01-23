@@ -17,7 +17,7 @@ namespace Pulumi.Oci.OsubUsage
         /// This is a collection API which returns a list of Computed Usages for given filters.
         /// </summary>
         public static Task<GetComputedUsagesResult> InvokeAsync(GetComputedUsagesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetComputedUsagesResult>("oci:OsubUsage/getComputedUsages:getComputedUsages", args ?? new GetComputedUsagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputedUsagesResult>("oci:OsubUsage/getComputedUsages:getComputedUsages", args ?? new GetComputedUsagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Osub Usage service.
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.OsubUsage
         /// This is a collection API which returns a list of Computed Usages for given filters.
         /// </summary>
         public static Output<GetComputedUsagesResult> Invoke(GetComputedUsagesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetComputedUsagesResult>("oci:OsubUsage/getComputedUsages:getComputedUsages", args ?? new GetComputedUsagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputedUsagesResult>("oci:OsubUsage/getComputedUsages:getComputedUsages", args ?? new GetComputedUsagesInvokeArgs(), options.WithDefaults());
     }
 
 

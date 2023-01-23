@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentServiceAttachment(args: GetFusionEnvironmentServiceAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentServiceAttachmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", {
         "fusionEnvironmentId": args.fusionEnvironmentId,
         "serviceAttachmentId": args.serviceAttachmentId,
@@ -106,9 +103,25 @@ export interface GetFusionEnvironmentServiceAttachmentResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Gets a Service Attachment by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentServiceAttachment = oci.Functions.getFusionEnvironmentServiceAttachment({
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ *     serviceAttachmentId: oci_fusion_apps_service_attachment.test_service_attachment.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentServiceAttachmentOutput(args: GetFusionEnvironmentServiceAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentServiceAttachmentResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentServiceAttachment(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentServiceAttachment(a, opts))
 }
 
 /**

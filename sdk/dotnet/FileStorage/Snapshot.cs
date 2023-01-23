@@ -70,13 +70,13 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Output("isCloneSource")]
         public Output<bool> IsCloneSource { get; private set; } = null!;
 
         /// <summary>
-        /// Additional information about the current 'lifecycleState'.
+        /// Additional information about the current `lifecycleState`.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
@@ -88,10 +88,25 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Output("provenanceId")]
         public Output<string> ProvenanceId { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+        /// * If the snapshot is created in the original file system directory.
+        /// * If the snapshot is cloned from a file system.
+        /// * If the snapshot is replicated from a file system.
+        /// </summary>
+        [Output("snapshotTime")]
+        public Output<string> SnapshotTime { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the generation type of the snapshot.
+        /// </summary>
+        [Output("snapshotType")]
+        public Output<string> SnapshotType { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the snapshot.
@@ -226,13 +241,13 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Input("isCloneSource")]
         public Input<bool>? IsCloneSource { get; set; }
 
         /// <summary>
-        /// Additional information about the current 'lifecycleState'.
+        /// Additional information about the current `lifecycleState`.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
@@ -244,10 +259,25 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Input("provenanceId")]
         public Input<string>? ProvenanceId { get; set; }
+
+        /// <summary>
+        /// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+        /// * If the snapshot is created in the original file system directory.
+        /// * If the snapshot is cloned from a file system.
+        /// * If the snapshot is replicated from a file system.
+        /// </summary>
+        [Input("snapshotTime")]
+        public Input<string>? SnapshotTime { get; set; }
+
+        /// <summary>
+        /// Specifies the generation type of the snapshot.
+        /// </summary>
+        [Input("snapshotType")]
+        public Input<string>? SnapshotType { get; set; }
 
         /// <summary>
         /// The current state of the snapshot.

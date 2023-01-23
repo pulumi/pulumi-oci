@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetByoipRangesResult> InvokeAsync(GetByoipRangesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetByoipRangesResult>("oci:Core/getByoipRanges:getByoipRanges", args ?? new GetByoipRangesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetByoipRangesResult>("oci:Core/getByoipRanges:getByoipRanges", args ?? new GetByoipRangesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Byoip Ranges in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetByoipRangesResult> Invoke(GetByoipRangesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetByoipRangesResult>("oci:Core/getByoipRanges:getByoipRanges", args ?? new GetByoipRangesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetByoipRangesResult>("oci:Core/getByoipRanges:getByoipRanges", args ?? new GetByoipRangesInvokeArgs(), options.WithDefaults());
     }
 
 

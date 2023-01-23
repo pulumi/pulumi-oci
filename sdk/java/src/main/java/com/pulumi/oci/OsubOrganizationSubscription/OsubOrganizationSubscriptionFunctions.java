@@ -27,7 +27,7 @@ public final class OsubOrganizationSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubOrganizationSubscription.OsubOrganizationSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import com.pulumi.oci.OsubOrganizationSubscription.inputs.GetOrganizationSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -68,7 +68,7 @@ public final class OsubOrganizationSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubOrganizationSubscription.OsubOrganizationSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import com.pulumi.oci.OsubOrganizationSubscription.inputs.GetOrganizationSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -109,7 +109,7 @@ public final class OsubOrganizationSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubOrganizationSubscription.OsubOrganizationSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import com.pulumi.oci.OsubOrganizationSubscription.inputs.GetOrganizationSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -150,7 +150,7 @@ public final class OsubOrganizationSubscriptionFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubOrganizationSubscription.OsubOrganizationSubscriptionFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import com.pulumi.oci.OsubOrganizationSubscription.inputs.GetOrganizationSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

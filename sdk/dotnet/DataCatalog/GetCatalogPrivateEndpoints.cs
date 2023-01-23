@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCatalogPrivateEndpointsResult> InvokeAsync(GetCatalogPrivateEndpointsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCatalogPrivateEndpointsResult>("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", args ?? new GetCatalogPrivateEndpointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCatalogPrivateEndpointsResult>("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", args ?? new GetCatalogPrivateEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCatalogPrivateEndpointsResult> Invoke(GetCatalogPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointsResult>("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", args ?? new GetCatalogPrivateEndpointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointsResult>("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", args ?? new GetCatalogPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

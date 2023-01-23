@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMysqlBackupResult> InvokeAsync(GetMysqlBackupArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMysqlBackupResult>("oci:Mysql/getMysqlBackup:getMysqlBackup", args ?? new GetMysqlBackupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMysqlBackupResult>("oci:Mysql/getMysqlBackup:getMysqlBackup", args ?? new GetMysqlBackupArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMysqlBackupResult> Invoke(GetMysqlBackupInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMysqlBackupResult>("oci:Mysql/getMysqlBackup:getMysqlBackup", args ?? new GetMysqlBackupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlBackupResult>("oci:Mysql/getMysqlBackup:getMysqlBackup", args ?? new GetMysqlBackupInvokeArgs(), options.WithDefaults());
     }
 
 

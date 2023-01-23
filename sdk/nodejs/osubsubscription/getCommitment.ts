@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCommitment(args: GetCommitmentArgs, opts?: pulumi.InvokeOptions): Promise<GetCommitmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubSubscription/getCommitment:getCommitment", {
         "commitmentId": args.commitmentId,
         "xOneGatewaySubscriptionId": args.xOneGatewaySubscriptionId,
@@ -89,9 +86,26 @@ export interface GetCommitmentResult {
     readonly xOneGatewaySubscriptionId?: string;
     readonly xOneOriginRegion?: string;
 }
-
+/**
+ * This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Osub Subscription service.
+ *
+ * This API returns the commitment details corresponding to the id provided
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCommitment = oci.OsubSubscription.getCommitment({
+ *     commitmentId: oci_osub_subscription_commitment.test_commitment.id,
+ *     xOneGatewaySubscriptionId: _var.commitment_x_one_gateway_subscription_id,
+ *     xOneOriginRegion: _var.commitment_x_one_origin_region,
+ * });
+ * ```
+ */
 export function getCommitmentOutput(args: GetCommitmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCommitmentResult> {
-    return pulumi.output(args).apply(a => getCommitment(a, opts))
+    return pulumi.output(args).apply((a: any) => getCommitment(a, opts))
 }
 
 /**

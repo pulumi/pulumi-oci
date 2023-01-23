@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaceScheduledTask(args: GetNamespaceScheduledTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceScheduledTaskResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask", {
         "namespace": args.namespace,
         "scheduledTaskId": args.scheduledTaskId,
@@ -116,9 +114,25 @@ export interface GetNamespaceScheduledTaskResult {
      */
     readonly workRequestId: string;
 }
-
+/**
+ * This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Get the scheduled task for the specified task identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNamespaceScheduledTask = oci.LogAnalytics.getNamespaceScheduledTask({
+ *     namespace: _var.namespace_scheduled_task_namespace,
+ *     scheduledTaskId: oci_log_analytics_scheduled_task.test_scheduled_task.id,
+ * });
+ * ```
+ */
 export function getNamespaceScheduledTaskOutput(args: GetNamespaceScheduledTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceScheduledTaskResult> {
-    return pulumi.output(args).apply(a => getNamespaceScheduledTask(a, opts))
+    return pulumi.output(args).apply((a: any) => getNamespaceScheduledTask(a, opts))
 }
 
 /**

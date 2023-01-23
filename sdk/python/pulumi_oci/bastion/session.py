@@ -376,6 +376,7 @@ class Session(pulumi.CustomResource):
             ),
             target_resource_details=oci.bastion.SessionTargetResourceDetailsArgs(
                 session_type=var["session_target_resource_details_session_type"],
+                target_resource_fqdn=var["session_target_resource_details_target_resource_fqdn"],
                 target_resource_id=oci_bastion_target_resource["test_target_resource"]["id"],
                 target_resource_operating_system_user_name=oci_identity_user["test_user"]["name"],
                 target_resource_port=var["session_target_resource_details_target_resource_port"],
@@ -427,6 +428,7 @@ class Session(pulumi.CustomResource):
             ),
             target_resource_details=oci.bastion.SessionTargetResourceDetailsArgs(
                 session_type=var["session_target_resource_details_session_type"],
+                target_resource_fqdn=var["session_target_resource_details_target_resource_fqdn"],
                 target_resource_id=oci_bastion_target_resource["test_target_resource"]["id"],
                 target_resource_operating_system_user_name=oci_identity_user["test_user"]["name"],
                 target_resource_port=var["session_target_resource_details_target_resource_port"],

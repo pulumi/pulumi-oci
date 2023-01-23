@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -37,11 +38,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditProfileAnalytic(args: GetAuditProfileAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfileAnalyticResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -89,9 +87,39 @@ export interface GetAuditProfileAnalyticResult {
      */
     readonly items: outputs.DataSafe.GetAuditProfileAnalyticItem[];
 }
-
+/**
+ * This data source provides details about a specific Audit Profile Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of audit profile aggregated details . A audit profile  aggregation helps understand the overall  state of audit profile profiles.
+ * As an example, it helps understand how many audit profiles have paid usage. It is especially useful to create dashboards or to support analytics.
+ *
+ * The parameter `accessLevel` specifies whether to return only those compartments for which the
+ * requestor has INSPECT permissions on at least one resource directly
+ * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+ * Principal doesn't have access to even one of the child compartments. This is valid only when
+ * `compartmentIdInSubtree` is set to `true`.
+ *
+ * The parameter `compartmentIdInSubtree` applies when you perform AuditProfileAnalytics on the
+ * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+ * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditProfileAnalytic = oci.DataSafe.getAuditProfileAnalytic({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.audit_profile_analytic_access_level,
+ *     compartmentIdInSubtree: _var.audit_profile_analytic_compartment_id_in_subtree,
+ *     groupBies: _var.audit_profile_analytic_group_by,
+ * });
+ * ```
+ */
 export function getAuditProfileAnalyticOutput(args: GetAuditProfileAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileAnalyticResult> {
-    return pulumi.output(args).apply(a => getAuditProfileAnalytic(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditProfileAnalytic(a, opts))
 }
 
 /**

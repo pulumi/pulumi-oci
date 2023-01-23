@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceMaintenanceReboot(args: GetInstanceMaintenanceRebootArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceMaintenanceRebootResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", {
         "instanceId": args.instanceId,
     }, opts);
@@ -55,9 +52,24 @@ export interface GetInstanceMaintenanceRebootResult {
      */
     readonly timeMaintenanceRebootDueMax: string;
 }
-
+/**
+ * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the maximum possible date that a maintenance reboot can be extended.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstanceMaintenanceReboot = oci.Core.getInstanceMaintenanceReboot({
+ *     instanceId: oci_core_instance.test_instance.id,
+ * });
+ * ```
+ */
 export function getInstanceMaintenanceRebootOutput(args: GetInstanceMaintenanceRebootOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMaintenanceRebootResult> {
-    return pulumi.output(args).apply(a => getInstanceMaintenanceReboot(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstanceMaintenanceReboot(a, opts))
 }
 
 /**

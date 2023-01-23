@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Monitoring
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAlarmResult> InvokeAsync(GetAlarmArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAlarmResult>("oci:Monitoring/getAlarm:getAlarm", args ?? new GetAlarmArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlarmResult>("oci:Monitoring/getAlarm:getAlarm", args ?? new GetAlarmArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Monitoring
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAlarmResult> Invoke(GetAlarmInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAlarmResult>("oci:Monitoring/getAlarm:getAlarm", args ?? new GetAlarmInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlarmResult>("oci:Monitoring/getAlarm:getAlarm", args ?? new GetAlarmInvokeArgs(), options.WithDefaults());
     }
 
 

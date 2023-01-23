@@ -228,6 +228,8 @@ type AutonomousDatabase struct {
 	TimeUntilReconnectCloneEnabled pulumi.StringOutput `pulumi:"timeUntilReconnectCloneEnabled"`
 	// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 	Timestamp pulumi.StringOutput `pulumi:"timestamp"`
+	// Clone from latest available backup timestamp.
+	UseLatestAvailableBackupTimeStamp pulumi.BoolOutput `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs pulumi.IntOutput `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -249,6 +251,13 @@ func NewAutonomousDatabase(ctx *pulumi.Context,
 	if args.DbName == nil {
 		return nil, errors.New("invalid value for required argument 'DbName'")
 	}
+	if args.AdminPassword != nil {
+		args.AdminPassword = pulumi.ToSecret(args.AdminPassword).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"adminPassword",
+	})
+	opts = append(opts, secrets)
 	var resource AutonomousDatabase
 	err := ctx.RegisterResource("oci:Database/autonomousDatabase:AutonomousDatabase", name, args, &resource, opts...)
 	if err != nil {
@@ -472,6 +481,8 @@ type autonomousDatabaseState struct {
 	TimeUntilReconnectCloneEnabled *string `pulumi:"timeUntilReconnectCloneEnabled"`
 	// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 	Timestamp *string `pulumi:"timestamp"`
+	// Clone from latest available backup timestamp.
+	UseLatestAvailableBackupTimeStamp *bool `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs *int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -682,6 +693,8 @@ type AutonomousDatabaseState struct {
 	TimeUntilReconnectCloneEnabled pulumi.StringPtrInput
 	// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 	Timestamp pulumi.StringPtrInput
+	// Clone from latest available backup timestamp.
+	UseLatestAvailableBackupTimeStamp pulumi.BoolPtrInput
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -808,6 +821,8 @@ type autonomousDatabaseArgs struct {
 	SwitchoverToRemotePeerId *string `pulumi:"switchoverToRemotePeerId"`
 	// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 	Timestamp *string `pulumi:"timestamp"`
+	// Clone from latest available backup timestamp.
+	UseLatestAvailableBackupTimeStamp *bool `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId *string `pulumi:"vaultId"`
 	// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -929,6 +944,8 @@ type AutonomousDatabaseArgs struct {
 	SwitchoverToRemotePeerId pulumi.StringPtrInput
 	// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 	Timestamp pulumi.StringPtrInput
+	// Clone from latest available backup timestamp.
+	UseLatestAvailableBackupTimeStamp pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringPtrInput
 	// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -1517,6 +1534,11 @@ func (o AutonomousDatabaseOutput) TimeUntilReconnectCloneEnabled() pulumi.String
 // The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 func (o AutonomousDatabaseOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+// Clone from latest available backup timestamp.
+func (o AutonomousDatabaseOutput) UseLatestAvailableBackupTimeStamp() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolOutput { return v.UseLatestAvailableBackupTimeStamp }).(pulumi.BoolOutput)
 }
 
 // The amount of storage that has been used, in terabytes.

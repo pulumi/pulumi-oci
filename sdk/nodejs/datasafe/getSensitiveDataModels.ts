@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveDataModels(args: GetSensitiveDataModelsArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -127,9 +125,32 @@ export interface GetSensitiveDataModelsResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Sensitive Data Models in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of sensitive data models based on the specified query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSensitiveDataModels = oci.DataSafe.getSensitiveDataModels({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.sensitive_data_model_access_level,
+ *     compartmentIdInSubtree: _var.sensitive_data_model_compartment_id_in_subtree,
+ *     displayName: _var.sensitive_data_model_display_name,
+ *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ *     state: _var.sensitive_data_model_state,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ *     timeCreatedGreaterThanOrEqualTo: _var.sensitive_data_model_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.sensitive_data_model_time_created_less_than,
+ * });
+ * ```
+ */
 export function getSensitiveDataModelsOutput(args: GetSensitiveDataModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsResult> {
-    return pulumi.output(args).apply(a => getSensitiveDataModels(a, opts))
+    return pulumi.output(args).apply((a: any) => getSensitiveDataModels(a, opts))
 }
 
 /**

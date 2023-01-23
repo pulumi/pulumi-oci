@@ -25,9 +25,13 @@ namespace Pulumi.Oci.Bastion.Inputs
         public Input<string>? TargetResourceDisplayName { get; set; }
 
         /// <summary>
-        /// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-        /// * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-        /// * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        /// The Fully Qualified Domain Name of the target resource that the session connects to.
+        /// </summary>
+        [Input("targetResourceFqdn")]
+        public Input<string>? TargetResourceFqdn { get; set; }
+
+        /// <summary>
+        /// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         /// </summary>
         [Input("targetResourceId")]
         public Input<string>? TargetResourceId { get; set; }
@@ -45,7 +49,7 @@ namespace Pulumi.Oci.Bastion.Inputs
         public Input<int>? TargetResourcePort { get; set; }
 
         /// <summary>
-        /// The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        /// The private IP address of the target resource that the session connects to.
         /// </summary>
         [Input("targetResourcePrivateIpAddress")]
         public Input<string>? TargetResourcePrivateIpAddress { get; set; }

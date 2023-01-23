@@ -6,7 +6,13 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .get_workspace import *
+from .get_workspace_folder import *
+from .get_workspace_folders import *
+from .get_workspace_project import *
+from .get_workspace_projects import *
 from .get_workspaces import *
 from .workspace import *
+from .workspace_folder import *
+from .workspace_project import *
 from ._inputs import *
 from . import outputs

@@ -16,16 +16,32 @@ public final class NetworkFirewallPolicyIpAddressListArgs extends com.pulumi.res
 
     public static final NetworkFirewallPolicyIpAddressListArgs Empty = new NetworkFirewallPolicyIpAddressListArgs();
 
+    /**
+     * (Updatable) The identifier by which the IP address list is referenced.
+     * 
+     */
     @Import(name="ipAddressListName", required=true)
     private Output<String> ipAddressListName;
 
+    /**
+     * @return (Updatable) The identifier by which the IP address list is referenced.
+     * 
+     */
     public Output<String> ipAddressListName() {
         return this.ipAddressListName;
     }
 
+    /**
+     * (Updatable) List of IP address lists of the policy.
+     * 
+     */
     @Import(name="ipAddressListValues")
     private @Nullable Output<List<String>> ipAddressListValues;
 
+    /**
+     * @return (Updatable) List of IP address lists of the policy.
+     * 
+     */
     public Optional<Output<List<String>>> ipAddressListValues() {
         return Optional.ofNullable(this.ipAddressListValues);
     }
@@ -55,24 +71,54 @@ public final class NetworkFirewallPolicyIpAddressListArgs extends com.pulumi.res
             $ = new NetworkFirewallPolicyIpAddressListArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param ipAddressListName (Updatable) The identifier by which the IP address list is referenced.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAddressListName(Output<String> ipAddressListName) {
             $.ipAddressListName = ipAddressListName;
             return this;
         }
 
+        /**
+         * @param ipAddressListName (Updatable) The identifier by which the IP address list is referenced.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAddressListName(String ipAddressListName) {
             return ipAddressListName(Output.of(ipAddressListName));
         }
 
+        /**
+         * @param ipAddressListValues (Updatable) List of IP address lists of the policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAddressListValues(@Nullable Output<List<String>> ipAddressListValues) {
             $.ipAddressListValues = ipAddressListValues;
             return this;
         }
 
+        /**
+         * @param ipAddressListValues (Updatable) List of IP address lists of the policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAddressListValues(List<String> ipAddressListValues) {
             return ipAddressListValues(Output.of(ipAddressListValues));
         }
 
+        /**
+         * @param ipAddressListValues (Updatable) List of IP address lists of the policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAddressListValues(String... ipAddressListValues) {
             return ipAddressListValues(List.of(ipAddressListValues));
         }

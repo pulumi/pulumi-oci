@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAppCatalogListingsResult> InvokeAsync(GetAppCatalogListingsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogListingsResult>("oci:Core/getAppCatalogListings:getAppCatalogListings", args ?? new GetAppCatalogListingsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogListingsResult>("oci:Core/getAppCatalogListings:getAppCatalogListings", args ?? new GetAppCatalogListingsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of App Catalog Listings in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAppCatalogListingsResult> Invoke(GetAppCatalogListingsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppCatalogListingsResult>("oci:Core/getAppCatalogListings:getAppCatalogListings", args ?? new GetAppCatalogListingsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppCatalogListingsResult>("oci:Core/getAppCatalogListings:getAppCatalogListings", args ?? new GetAppCatalogListingsInvokeArgs(), options.WithDefaults());
     }
 
 

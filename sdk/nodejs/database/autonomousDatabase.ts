@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -444,6 +445,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly timestamp!: pulumi.Output<string>;
     /**
+     * Clone from latest available backup timestamp.
+     */
+    public readonly useLatestAvailableBackupTimeStamp!: pulumi.Output<boolean>;
+    /**
      * The amount of storage that has been used, in terabytes.
      */
     public /*out*/ readonly usedDataStorageSizeInTbs!: pulumi.Output<number>;
@@ -567,6 +572,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeReclamationOfFreeAutonomousDatabase"] = state ? state.timeReclamationOfFreeAutonomousDatabase : undefined;
             resourceInputs["timeUntilReconnectCloneEnabled"] = state ? state.timeUntilReconnectCloneEnabled : undefined;
             resourceInputs["timestamp"] = state ? state.timestamp : undefined;
+            resourceInputs["useLatestAvailableBackupTimeStamp"] = state ? state.useLatestAvailableBackupTimeStamp : undefined;
             resourceInputs["usedDataStorageSizeInTbs"] = state ? state.usedDataStorageSizeInTbs : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
             resourceInputs["whitelistedIps"] = state ? state.whitelistedIps : undefined;
@@ -578,7 +584,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             if ((!args || args.dbName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'dbName'");
             }
-            resourceInputs["adminPassword"] = args ? args.adminPassword : undefined;
+            resourceInputs["adminPassword"] = args?.adminPassword ? pulumi.secret(args.adminPassword) : undefined;
             resourceInputs["arePrimaryWhitelistedIpsUsed"] = args ? args.arePrimaryWhitelistedIpsUsed : undefined;
             resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
             resourceInputs["autonomousDatabaseBackupId"] = args ? args.autonomousDatabaseBackupId : undefined;
@@ -632,6 +638,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["switchoverTo"] = args ? args.switchoverTo : undefined;
             resourceInputs["switchoverToRemotePeerId"] = args ? args.switchoverToRemotePeerId : undefined;
             resourceInputs["timestamp"] = args ? args.timestamp : undefined;
+            resourceInputs["useLatestAvailableBackupTimeStamp"] = args ? args.useLatestAvailableBackupTimeStamp : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["whitelistedIps"] = args ? args.whitelistedIps : undefined;
             resourceInputs["actualUsedDataStorageSizeInTbs"] = undefined /*out*/;
@@ -681,6 +688,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["usedDataStorageSizeInTbs"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["adminPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(AutonomousDatabase.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -1087,6 +1096,10 @@ export interface AutonomousDatabaseState {
      */
     timestamp?: pulumi.Input<string>;
     /**
+     * Clone from latest available backup timestamp.
+     */
+    useLatestAvailableBackupTimeStamp?: pulumi.Input<boolean>;
+    /**
      * The amount of storage that has been used, in terabytes.
      */
     usedDataStorageSizeInTbs?: pulumi.Input<number>;
@@ -1325,6 +1338,10 @@ export interface AutonomousDatabaseArgs {
      * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
      */
     timestamp?: pulumi.Input<string>;
+    /**
+     * Clone from latest available backup timestamp.
+     */
+    useLatestAvailableBackupTimeStamp?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */

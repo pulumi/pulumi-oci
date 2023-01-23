@@ -26,6 +26,9 @@ namespace Pulumi.Oci.StackMonitoring
     ///     var testMonitoredResourcesSearch = new Oci.StackMonitoring.MonitoredResourcesSearch("testMonitoredResourcesSearch", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         ExcludeFields = @var.Monitored_resources_search_exclude_fields,
+    ///         ExternalId = oci_stack_monitoring_external.Test_external.Id,
+    ///         Fields = @var.Monitored_resources_search_fields,
     ///         HostName = @var.Monitored_resources_search_host_name,
     ///         HostNameContains = @var.Monitored_resources_search_host_name_contains,
     ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
@@ -59,6 +62,24 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+        /// </summary>
+        [Output("excludeFields")]
+        public Output<ImmutableArray<string>> ExcludeFields { get; private set; } = null!;
+
+        /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        [Output("externalId")]
+        public Output<string?> ExternalId { get; private set; } = null!;
+
+        /// <summary>
+        /// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+        /// </summary>
+        [Output("fields")]
+        public Output<ImmutableArray<string>> Fields { get; private set; } = null!;
 
         /// <summary>
         /// A filter to return resources with host name match
@@ -196,6 +217,36 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("excludeFields")]
+        private InputList<string>? _excludeFields;
+
+        /// <summary>
+        /// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+        /// </summary>
+        public InputList<string> ExcludeFields
+        {
+            get => _excludeFields ?? (_excludeFields = new InputList<string>());
+            set => _excludeFields = value;
+        }
+
+        /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        [Input("externalId")]
+        public Input<string>? ExternalId { get; set; }
+
+        [Input("fields")]
+        private InputList<string>? _fields;
+
+        /// <summary>
+        /// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+        /// </summary>
+        public InputList<string> Fields
+        {
+            get => _fields ?? (_fields = new InputList<string>());
+            set => _fields = value;
+        }
+
         /// <summary>
         /// A filter to return resources with host name match
         /// </summary>
@@ -293,6 +344,36 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("excludeFields")]
+        private InputList<string>? _excludeFields;
+
+        /// <summary>
+        /// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+        /// </summary>
+        public InputList<string> ExcludeFields
+        {
+            get => _excludeFields ?? (_excludeFields = new InputList<string>());
+            set => _excludeFields = value;
+        }
+
+        /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        [Input("externalId")]
+        public Input<string>? ExternalId { get; set; }
+
+        [Input("fields")]
+        private InputList<string>? _fields;
+
+        /// <summary>
+        /// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+        /// </summary>
+        public InputList<string> Fields
+        {
+            get => _fields ?? (_fields = new InputList<string>());
+            set => _fields = value;
+        }
 
         /// <summary>
         /// A filter to return resources with host name match

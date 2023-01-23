@@ -55,7 +55,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditTrailAnalyticResult> InvokeAsync(GetAuditTrailAnalyticArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditTrailAnalyticResult>("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", args ?? new GetAuditTrailAnalyticArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditTrailAnalyticResult>("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", args ?? new GetAuditTrailAnalyticArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Audit Trail Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -101,7 +101,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditTrailAnalyticResult> Invoke(GetAuditTrailAnalyticInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditTrailAnalyticResult>("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", args ?? new GetAuditTrailAnalyticInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditTrailAnalyticResult>("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", args ?? new GetAuditTrailAnalyticInvokeArgs(), options.WithDefaults());
     }
 
 

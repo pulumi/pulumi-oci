@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *
  * All Oracle Cloud Infrastructure Services resources, including
  * mount targets, get an Oracle-assigned, unique ID called an
- * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).\
+ * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
  * When you create a resource, you can find its OCID in the response.
  * You can also retrieve a resource's OCID by using a List API operation on that resource
  * type, or by viewing the resource in the Console.
@@ -128,7 +128,7 @@ export class MountTarget extends pulumi.CustomResource {
      */
     public readonly hostnameLabel!: pulumi.Output<string>;
     /**
-     * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+     * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
      */
     public readonly ipAddress!: pulumi.Output<string>;
     /**
@@ -247,7 +247,7 @@ export interface MountTargetState {
      */
     hostnameLabel?: pulumi.Input<string>;
     /**
-     * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+     * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
      */
     ipAddress?: pulumi.Input<string>;
     /**
@@ -305,7 +305,7 @@ export interface MountTargetArgs {
      */
     hostnameLabel?: pulumi.Input<string>;
     /**
-     * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+     * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
      */
     ipAddress?: pulumi.Input<string>;
     /**

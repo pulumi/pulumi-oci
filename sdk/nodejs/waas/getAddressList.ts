@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAddressList(args: GetAddressListArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressListResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getAddressList:getAddressList", {
         "addressListId": args.addressListId,
     }, opts);
@@ -83,9 +80,24 @@ export interface GetAddressListResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets the details of an address list.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAddressList = oci.Waas.getAddressList({
+ *     addressListId: oci_waas_address_list.test_address_list.id,
+ * });
+ * ```
+ */
 export function getAddressListOutput(args: GetAddressListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressListResult> {
-    return pulumi.output(args).apply(a => getAddressList(a, opts))
+    return pulumi.output(args).apply((a: any) => getAddressList(a, opts))
 }
 
 /**

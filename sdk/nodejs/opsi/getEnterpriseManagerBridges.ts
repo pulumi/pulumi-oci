@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  */
 export function getEnterpriseManagerBridges(args?: GetEnterpriseManagerBridgesArgs, opts?: pulumi.InvokeOptions): Promise<GetEnterpriseManagerBridgesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -97,9 +95,29 @@ export interface GetEnterpriseManagerBridgesResult {
      */
     readonly states?: string[];
 }
-
+/**
+ * This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+ * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEnterpriseManagerBridges = oci.Opsi.getEnterpriseManagerBridges({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.enterprise_manager_bridge_compartment_id_in_subtree,
+ *     displayName: _var.enterprise_manager_bridge_display_name,
+ *     id: _var.enterprise_manager_bridge_id,
+ *     states: _var.enterprise_manager_bridge_state,
+ * });
+ * ```
+ */
 export function getEnterpriseManagerBridgesOutput(args?: GetEnterpriseManagerBridgesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnterpriseManagerBridgesResult> {
-    return pulumi.output(args).apply(a => getEnterpriseManagerBridges(a, opts))
+    return pulumi.output(args).apply((a: any) => getEnterpriseManagerBridges(a, opts))
 }
 
 /**

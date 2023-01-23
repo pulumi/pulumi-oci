@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabasesDatabaseParameters(args: GetManagedDatabasesDatabaseParametersArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesDatabaseParametersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters", {
         "filters": args.filters,
         "isAllowedValuesIncluded": args.isAllowedValuesIncluded,
@@ -83,9 +81,27 @@ export interface GetManagedDatabasesDatabaseParametersResult {
     readonly name?: string;
     readonly source?: string;
 }
-
+/**
+ * This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabasesDatabaseParameters = oci.DatabaseManagement.getManagedDatabasesDatabaseParameters({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     isAllowedValuesIncluded: _var.managed_databases_database_parameter_is_allowed_values_included,
+ *     name: _var.managed_databases_database_parameter_name,
+ *     source: _var.managed_databases_database_parameter_source,
+ * });
+ * ```
+ */
 export function getManagedDatabasesDatabaseParametersOutput(args: GetManagedDatabasesDatabaseParametersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesDatabaseParametersResult> {
-    return pulumi.output(args).apply(a => getManagedDatabasesDatabaseParameters(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabasesDatabaseParameters(a, opts))
 }
 
 /**

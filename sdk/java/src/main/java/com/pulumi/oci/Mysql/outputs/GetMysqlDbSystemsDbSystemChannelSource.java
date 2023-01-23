@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate;
 import java.lang.Integer;
 import java.lang.String;
@@ -12,6 +13,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMysqlDbSystemsDbSystemChannelSource {
+    /**
+     * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
     /**
      * @return The network address of the DB System.
      * 
@@ -44,6 +50,13 @@ public final class GetMysqlDbSystemsDbSystemChannelSource {
     private String username;
 
     private GetMysqlDbSystemsDbSystemChannelSource() {}
+    /**
+     * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings() {
+        return this.anonymousTransactionsHandlings;
+    }
     /**
      * @return The network address of the DB System.
      * 
@@ -96,6 +109,7 @@ public final class GetMysqlDbSystemsDbSystemChannelSource {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
         private String hostname;
         private Integer port;
         private String sourceType;
@@ -105,6 +119,7 @@ public final class GetMysqlDbSystemsDbSystemChannelSource {
         public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemChannelSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.anonymousTransactionsHandlings = defaults.anonymousTransactionsHandlings;
     	      this.hostname = defaults.hostname;
     	      this.port = defaults.port;
     	      this.sourceType = defaults.sourceType;
@@ -113,6 +128,14 @@ public final class GetMysqlDbSystemsDbSystemChannelSource {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
+        public Builder anonymousTransactionsHandlings(List<GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
+            this.anonymousTransactionsHandlings = Objects.requireNonNull(anonymousTransactionsHandlings);
+            return this;
+        }
+        public Builder anonymousTransactionsHandlings(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling... anonymousTransactionsHandlings) {
+            return anonymousTransactionsHandlings(List.of(anonymousTransactionsHandlings));
+        }
         @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
@@ -148,6 +171,7 @@ public final class GetMysqlDbSystemsDbSystemChannelSource {
         }
         public GetMysqlDbSystemsDbSystemChannelSource build() {
             final var o = new GetMysqlDbSystemsDbSystemChannelSource();
+            o.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             o.hostname = hostname;
             o.port = port;
             o.sourceType = sourceType;

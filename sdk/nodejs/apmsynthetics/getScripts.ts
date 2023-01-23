@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getScripts(args: GetScriptsArgs, opts?: pulumi.InvokeOptions): Promise<GetScriptsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getScripts:getScripts", {
         "apmDomainId": args.apmDomainId,
         "contentType": args.contentType,
@@ -79,9 +77,26 @@ export interface GetScriptsResult {
      */
     readonly scriptCollections: outputs.ApmSynthetics.GetScriptsScriptCollection[];
 }
-
+/**
+ * This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+ *
+ * Returns a list of scripts.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testScripts = oci.ApmSynthetics.getScripts({
+ *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
+ *     contentType: _var.script_content_type,
+ *     displayName: _var.script_display_name,
+ * });
+ * ```
+ */
 export function getScriptsOutput(args: GetScriptsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScriptsResult> {
-    return pulumi.output(args).apply(a => getScripts(a, opts))
+    return pulumi.output(args).apply((a: any) => getScripts(a, opts))
 }
 
 /**

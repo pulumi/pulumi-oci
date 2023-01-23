@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsPreferenceResult> InvokeAsync(GetLogAnalyticsPreferenceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsPreferenceResult>("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args ?? new GetLogAnalyticsPreferenceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsPreferenceResult>("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args ?? new GetLogAnalyticsPreferenceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsPreferenceResult> Invoke(GetLogAnalyticsPreferenceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsPreferenceResult>("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args ?? new GetLogAnalyticsPreferenceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsPreferenceResult>("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args ?? new GetLogAnalyticsPreferenceInvokeArgs(), options.WithDefaults());
     }
 
 

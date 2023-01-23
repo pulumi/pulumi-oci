@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Bastion
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
+    ///         DnsProxyStatus = @var.Bastion_dns_proxy_status,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -79,6 +80,12 @@ namespace Pulumi.Oci.Bastion
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        /// </summary>
+        [Output("dnsProxyStatus")]
+        public Output<string> DnsProxyStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -246,6 +253,12 @@ namespace Pulumi.Oci.Bastion
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        /// </summary>
+        [Input("dnsProxyStatus")]
+        public Input<string>? DnsProxyStatus { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -337,6 +350,12 @@ namespace Pulumi.Oci.Bastion
             get => _definedTags ?? (_definedTags = new InputMap<object>());
             set => _definedTags = value;
         }
+
+        /// <summary>
+        /// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        /// </summary>
+        [Input("dnsProxyStatus")]
+        public Input<string>? DnsProxyStatus { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

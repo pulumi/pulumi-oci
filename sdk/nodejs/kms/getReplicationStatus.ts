@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReplicationStatus(args: GetReplicationStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationStatusResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getReplicationStatus:getReplicationStatus", {
         "managementEndpoint": args.managementEndpoint,
         "replicationId": args.replicationId,
@@ -63,9 +61,28 @@ export interface GetReplicationStatusResult {
     readonly replicaDetails: outputs.Kms.GetReplicationStatusReplicaDetail[];
     readonly replicationId: string;
 }
-
+/**
+ * This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
+ *
+ * When a vault has a replica, each operation on the vault or its resources, such as
+ * keys, is replicated and has an associated replicationId. Replication status provides
+ * details about whether the operation associated with the given replicationId has been
+ * successfully applied across replicas.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testReplicationStatus = oci.Kms.getReplicationStatus({
+ *     replicationId: oci_kms_replication.test_replication.id,
+ *     managementEndpoint: _var.replication_status_management_endpoint,
+ * });
+ * ```
+ */
 export function getReplicationStatusOutput(args: GetReplicationStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationStatusResult> {
-    return pulumi.output(args).apply(a => getReplicationStatus(a, opts))
+    return pulumi.output(args).apply((a: any) => getReplicationStatus(a, opts))
 }
 
 /**

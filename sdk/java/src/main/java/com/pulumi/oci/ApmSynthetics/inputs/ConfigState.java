@@ -5,7 +5,9 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ApmSynthetics.inputs.ConfigAvailabilityConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.ConfigMaintenanceWindowScheduleArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigScriptParameterArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -24,7 +26,6 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) The APM domain ID the request is intended for.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="apmDomainId")
@@ -32,7 +33,6 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) The APM domain ID the request is intended for.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<String>> apmDomainId() {
@@ -40,8 +40,22 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Monitor availability configuration details.
+     * 
+     */
+    @Import(name="availabilityConfiguration")
+    private @Nullable Output<ConfigAvailabilityConfigurationArgs> availabilityConfiguration;
+
+    /**
+     * @return (Updatable) Monitor availability configuration details.
+     * 
+     */
+    public Optional<Output<ConfigAvailabilityConfigurationArgs>> availabilityConfiguration() {
+        return Optional.ofNullable(this.availabilityConfiguration);
+    }
+
+    /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-     * ===
      * 
      */
     @Import(name="batchIntervalInSeconds")
@@ -49,7 +63,6 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-     * ===
      * 
      */
     public Optional<Output<Integer>> batchIntervalInSeconds() {
@@ -144,6 +157,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> isRunOnce() {
         return Optional.ofNullable(this.isRunOnce);
+    }
+
+    /**
+     * (Updatable) Details used to schedule maintenance window.
+     * 
+     */
+    @Import(name="maintenanceWindowSchedule")
+    private @Nullable Output<ConfigMaintenanceWindowScheduleArgs> maintenanceWindowSchedule;
+
+    /**
+     * @return (Updatable) Details used to schedule maintenance window.
+     * 
+     */
+    public Optional<Output<ConfigMaintenanceWindowScheduleArgs>> maintenanceWindowSchedule() {
+        return Optional.ofNullable(this.maintenanceWindowSchedule);
     }
 
     /**
@@ -297,14 +325,14 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     @Import(name="timeoutInSeconds")
     private @Nullable Output<Integer> timeoutInSeconds;
 
     /**
-     * @return (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * @return (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     public Optional<Output<Integer>> timeoutInSeconds() {
@@ -345,6 +373,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
     private ConfigState(ConfigState $) {
         this.apmDomainId = $.apmDomainId;
+        this.availabilityConfiguration = $.availabilityConfiguration;
         this.batchIntervalInSeconds = $.batchIntervalInSeconds;
         this.configuration = $.configuration;
         this.definedTags = $.definedTags;
@@ -352,6 +381,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.isRunNow = $.isRunNow;
         this.isRunOnce = $.isRunOnce;
+        this.maintenanceWindowSchedule = $.maintenanceWindowSchedule;
         this.monitorType = $.monitorType;
         this.repeatIntervalInSeconds = $.repeatIntervalInSeconds;
         this.schedulingPolicy = $.schedulingPolicy;
@@ -387,7 +417,6 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param apmDomainId (Updatable) The APM domain ID the request is intended for.
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -399,7 +428,6 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param apmDomainId (Updatable) The APM domain ID the request is intended for.
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -409,8 +437,28 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param availabilityConfiguration (Updatable) Monitor availability configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityConfiguration(@Nullable Output<ConfigAvailabilityConfigurationArgs> availabilityConfiguration) {
+            $.availabilityConfiguration = availabilityConfiguration;
+            return this;
+        }
+
+        /**
+         * @param availabilityConfiguration (Updatable) Monitor availability configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityConfiguration(ConfigAvailabilityConfigurationArgs availabilityConfiguration) {
+            return availabilityConfiguration(Output.of(availabilityConfiguration));
+        }
+
+        /**
          * @param batchIntervalInSeconds (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-         * ===
          * 
          * @return builder
          * 
@@ -422,7 +470,6 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param batchIntervalInSeconds (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-         * ===
          * 
          * @return builder
          * 
@@ -555,6 +602,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isRunOnce(Boolean isRunOnce) {
             return isRunOnce(Output.of(isRunOnce));
+        }
+
+        /**
+         * @param maintenanceWindowSchedule (Updatable) Details used to schedule maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowSchedule(@Nullable Output<ConfigMaintenanceWindowScheduleArgs> maintenanceWindowSchedule) {
+            $.maintenanceWindowSchedule = maintenanceWindowSchedule;
+            return this;
+        }
+
+        /**
+         * @param maintenanceWindowSchedule (Updatable) Details used to schedule maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowSchedule(ConfigMaintenanceWindowScheduleArgs maintenanceWindowSchedule) {
+            return maintenanceWindowSchedule(Output.of(maintenanceWindowSchedule));
         }
 
         /**
@@ -778,7 +846,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeoutInSeconds (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+         * @param timeoutInSeconds (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
          * 
          * @return builder
          * 
@@ -789,7 +857,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeoutInSeconds (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+         * @param timeoutInSeconds (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
          * 
          * @return builder
          * 

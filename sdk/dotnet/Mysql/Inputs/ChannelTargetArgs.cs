@@ -30,6 +30,18 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("dbSystemId", required: true)]
         public Input<string> DbSystemId { get; set; } = null!;
 
+        [Input("filters")]
+        private InputList<Inputs.ChannelTargetFilterArgs>? _filters;
+
+        /// <summary>
+        /// (Updatable) Replication filter rules to be applied at the DB System Channel target.
+        /// </summary>
+        public InputList<Inputs.ChannelTargetFilterArgs> Filters
+        {
+            get => _filters ?? (_filters = new InputList<Inputs.ChannelTargetFilterArgs>());
+            set => _filters = value;
+        }
+
         /// <summary>
         /// (Updatable) The specific target identifier.
         /// </summary>

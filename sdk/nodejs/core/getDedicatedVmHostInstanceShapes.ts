@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVmHostInstanceShapes(args: GetDedicatedVmHostInstanceShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostInstanceShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -77,9 +75,27 @@ export interface GetDedicatedVmHostInstanceShapesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the shapes that can be used to launch a virtual machine instance on a dedicated virtual machine host within the specified compartment.
+ * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDedicatedVmHostInstanceShapes = oci.Core.getDedicatedVmHostInstanceShapes({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.dedicated_vm_host_instance_shape_availability_domain,
+ *     dedicatedVmHostShape: _var.dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
+ * });
+ * ```
+ */
 export function getDedicatedVmHostInstanceShapesOutput(args: GetDedicatedVmHostInstanceShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostInstanceShapesResult> {
-    return pulumi.output(args).apply(a => getDedicatedVmHostInstanceShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getDedicatedVmHostInstanceShapes(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -171,7 +172,7 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
                 throw new Error("Missing required property 'nodeType'");
             }
             resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = args ? args.clusterAdminPassword : undefined;
+            resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
             resourceInputs["nodeType"] = args ? args.nodeType : undefined;
@@ -182,6 +183,8 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["clusterAdminPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(AutoScalingConfiguration.__pulumiType, name, resourceInputs, opts);
     }
 }

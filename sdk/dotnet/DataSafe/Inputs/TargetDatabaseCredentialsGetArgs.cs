@@ -12,11 +12,21 @@ namespace Pulumi.Oci.DataSafe.Inputs
 
     public sealed class TargetDatabaseCredentialsGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("password", required: true)]
+        private Input<string>? _password;
+
         /// <summary>
         /// (Updatable) The password of the database user.
         /// </summary>
-        [Input("password", required: true)]
-        public Input<string> Password { get; set; } = null!;
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The database user name.

@@ -5,28 +5,81 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./autoScalingConfiguration";
-export * from "./bdsInstance";
-export * from "./bdsInstanceApiKey";
-export * from "./bdsInstanceMetastoreConfig";
-export * from "./bdsInstancePatchAction";
-export * from "./getAutoScalingConfiguration";
-export * from "./getAutoScalingConfigurations";
-export * from "./getBdsInstance";
-export * from "./getBdsInstanceApiKey";
-export * from "./getBdsInstanceApiKeys";
-export * from "./getBdsInstanceMetastoreConfig";
-export * from "./getBdsInstanceMetastoreConfigs";
-export * from "./getBdsInstancePatchHistories";
-export * from "./getBdsInstancePatches";
-export * from "./getBdsInstances";
+export { AutoScalingConfigurationArgs, AutoScalingConfigurationState } from "./autoScalingConfiguration";
+export type AutoScalingConfiguration = import("./autoScalingConfiguration").AutoScalingConfiguration;
+export const AutoScalingConfiguration: typeof import("./autoScalingConfiguration").AutoScalingConfiguration = null as any;
+utilities.lazyLoad(exports, ["AutoScalingConfiguration"], () => require("./autoScalingConfiguration"));
 
-// Import resources to register:
-import { AutoScalingConfiguration } from "./autoScalingConfiguration";
-import { BdsInstance } from "./bdsInstance";
-import { BdsInstanceApiKey } from "./bdsInstanceApiKey";
-import { BdsInstanceMetastoreConfig } from "./bdsInstanceMetastoreConfig";
-import { BdsInstancePatchAction } from "./bdsInstancePatchAction";
+export { BdsInstanceArgs, BdsInstanceState } from "./bdsInstance";
+export type BdsInstance = import("./bdsInstance").BdsInstance;
+export const BdsInstance: typeof import("./bdsInstance").BdsInstance = null as any;
+utilities.lazyLoad(exports, ["BdsInstance"], () => require("./bdsInstance"));
+
+export { BdsInstanceApiKeyArgs, BdsInstanceApiKeyState } from "./bdsInstanceApiKey";
+export type BdsInstanceApiKey = import("./bdsInstanceApiKey").BdsInstanceApiKey;
+export const BdsInstanceApiKey: typeof import("./bdsInstanceApiKey").BdsInstanceApiKey = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceApiKey"], () => require("./bdsInstanceApiKey"));
+
+export { BdsInstanceMetastoreConfigArgs, BdsInstanceMetastoreConfigState } from "./bdsInstanceMetastoreConfig";
+export type BdsInstanceMetastoreConfig = import("./bdsInstanceMetastoreConfig").BdsInstanceMetastoreConfig;
+export const BdsInstanceMetastoreConfig: typeof import("./bdsInstanceMetastoreConfig").BdsInstanceMetastoreConfig = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceMetastoreConfig"], () => require("./bdsInstanceMetastoreConfig"));
+
+export { BdsInstancePatchActionArgs, BdsInstancePatchActionState } from "./bdsInstancePatchAction";
+export type BdsInstancePatchAction = import("./bdsInstancePatchAction").BdsInstancePatchAction;
+export const BdsInstancePatchAction: typeof import("./bdsInstancePatchAction").BdsInstancePatchAction = null as any;
+utilities.lazyLoad(exports, ["BdsInstancePatchAction"], () => require("./bdsInstancePatchAction"));
+
+export { GetAutoScalingConfigurationArgs, GetAutoScalingConfigurationResult, GetAutoScalingConfigurationOutputArgs } from "./getAutoScalingConfiguration";
+export const getAutoScalingConfiguration: typeof import("./getAutoScalingConfiguration").getAutoScalingConfiguration = null as any;
+export const getAutoScalingConfigurationOutput: typeof import("./getAutoScalingConfiguration").getAutoScalingConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getAutoScalingConfiguration","getAutoScalingConfigurationOutput"], () => require("./getAutoScalingConfiguration"));
+
+export { GetAutoScalingConfigurationsArgs, GetAutoScalingConfigurationsResult, GetAutoScalingConfigurationsOutputArgs } from "./getAutoScalingConfigurations";
+export const getAutoScalingConfigurations: typeof import("./getAutoScalingConfigurations").getAutoScalingConfigurations = null as any;
+export const getAutoScalingConfigurationsOutput: typeof import("./getAutoScalingConfigurations").getAutoScalingConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutoScalingConfigurations","getAutoScalingConfigurationsOutput"], () => require("./getAutoScalingConfigurations"));
+
+export { GetBdsInstanceArgs, GetBdsInstanceResult, GetBdsInstanceOutputArgs } from "./getBdsInstance";
+export const getBdsInstance: typeof import("./getBdsInstance").getBdsInstance = null as any;
+export const getBdsInstanceOutput: typeof import("./getBdsInstance").getBdsInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstance","getBdsInstanceOutput"], () => require("./getBdsInstance"));
+
+export { GetBdsInstanceApiKeyArgs, GetBdsInstanceApiKeyResult, GetBdsInstanceApiKeyOutputArgs } from "./getBdsInstanceApiKey";
+export const getBdsInstanceApiKey: typeof import("./getBdsInstanceApiKey").getBdsInstanceApiKey = null as any;
+export const getBdsInstanceApiKeyOutput: typeof import("./getBdsInstanceApiKey").getBdsInstanceApiKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceApiKey","getBdsInstanceApiKeyOutput"], () => require("./getBdsInstanceApiKey"));
+
+export { GetBdsInstanceApiKeysArgs, GetBdsInstanceApiKeysResult, GetBdsInstanceApiKeysOutputArgs } from "./getBdsInstanceApiKeys";
+export const getBdsInstanceApiKeys: typeof import("./getBdsInstanceApiKeys").getBdsInstanceApiKeys = null as any;
+export const getBdsInstanceApiKeysOutput: typeof import("./getBdsInstanceApiKeys").getBdsInstanceApiKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceApiKeys","getBdsInstanceApiKeysOutput"], () => require("./getBdsInstanceApiKeys"));
+
+export { GetBdsInstanceMetastoreConfigArgs, GetBdsInstanceMetastoreConfigResult, GetBdsInstanceMetastoreConfigOutputArgs } from "./getBdsInstanceMetastoreConfig";
+export const getBdsInstanceMetastoreConfig: typeof import("./getBdsInstanceMetastoreConfig").getBdsInstanceMetastoreConfig = null as any;
+export const getBdsInstanceMetastoreConfigOutput: typeof import("./getBdsInstanceMetastoreConfig").getBdsInstanceMetastoreConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceMetastoreConfig","getBdsInstanceMetastoreConfigOutput"], () => require("./getBdsInstanceMetastoreConfig"));
+
+export { GetBdsInstanceMetastoreConfigsArgs, GetBdsInstanceMetastoreConfigsResult, GetBdsInstanceMetastoreConfigsOutputArgs } from "./getBdsInstanceMetastoreConfigs";
+export const getBdsInstanceMetastoreConfigs: typeof import("./getBdsInstanceMetastoreConfigs").getBdsInstanceMetastoreConfigs = null as any;
+export const getBdsInstanceMetastoreConfigsOutput: typeof import("./getBdsInstanceMetastoreConfigs").getBdsInstanceMetastoreConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceMetastoreConfigs","getBdsInstanceMetastoreConfigsOutput"], () => require("./getBdsInstanceMetastoreConfigs"));
+
+export { GetBdsInstancePatchHistoriesArgs, GetBdsInstancePatchHistoriesResult, GetBdsInstancePatchHistoriesOutputArgs } from "./getBdsInstancePatchHistories";
+export const getBdsInstancePatchHistories: typeof import("./getBdsInstancePatchHistories").getBdsInstancePatchHistories = null as any;
+export const getBdsInstancePatchHistoriesOutput: typeof import("./getBdsInstancePatchHistories").getBdsInstancePatchHistoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstancePatchHistories","getBdsInstancePatchHistoriesOutput"], () => require("./getBdsInstancePatchHistories"));
+
+export { GetBdsInstancePatchesArgs, GetBdsInstancePatchesResult, GetBdsInstancePatchesOutputArgs } from "./getBdsInstancePatches";
+export const getBdsInstancePatches: typeof import("./getBdsInstancePatches").getBdsInstancePatches = null as any;
+export const getBdsInstancePatchesOutput: typeof import("./getBdsInstancePatches").getBdsInstancePatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstancePatches","getBdsInstancePatchesOutput"], () => require("./getBdsInstancePatches"));
+
+export { GetBdsInstancesArgs, GetBdsInstancesResult, GetBdsInstancesOutputArgs } from "./getBdsInstances";
+export const getBdsInstances: typeof import("./getBdsInstances").getBdsInstances = null as any;
+export const getBdsInstancesOutput: typeof import("./getBdsInstances").getBdsInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstances","getBdsInstancesOutput"], () => require("./getBdsInstances"));
+
 
 const _module = {
     version: utilities.getVersion(),

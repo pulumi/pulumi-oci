@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabasesColumns(args: GetTargetDatabasesColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesColumnsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", {
         "columnNameContains": args.columnNameContains,
         "columnNames": args.columnNames,
@@ -117,9 +115,31 @@ export interface GetTargetDatabasesColumnsResult {
     readonly tableNames?: string[];
     readonly targetDatabaseId: string;
 }
-
+/**
+ * This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Returns a list of column metadata objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetDatabasesColumns = oci.DataSafe.getTargetDatabasesColumns({
+ *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ *     columnNames: _var.target_databases_column_column_name,
+ *     columnNameContains: _var.target_databases_column_column_name_contains,
+ *     datatypes: _var.target_databases_column_datatype,
+ *     schemaNames: _var.target_databases_column_schema_name,
+ *     schemaNameContains: _var.target_databases_column_schema_name_contains,
+ *     tableNames: oci_nosql_table.test_table.name,
+ *     tableNameContains: _var.target_databases_column_table_name_contains,
+ * });
+ * ```
+ */
 export function getTargetDatabasesColumnsOutput(args: GetTargetDatabasesColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesColumnsResult> {
-    return pulumi.output(args).apply(a => getTargetDatabasesColumns(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetDatabasesColumns(a, opts))
 }
 
 /**

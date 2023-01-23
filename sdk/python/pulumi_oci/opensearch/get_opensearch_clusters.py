@@ -123,6 +123,9 @@ def get_opensearch_clusters(compartment_id: Optional[str] = None,
     import pulumi
     ```
 
+    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
+    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+
     ## Example Usage
 
     ```python
@@ -179,6 +182,9 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
     ```python
     import pulumi
     ```
+
+    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
+    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
     ## Example Usage
 

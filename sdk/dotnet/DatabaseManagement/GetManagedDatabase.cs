@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseResult> InvokeAsync(GetManagedDatabaseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseResult>("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", args ?? new GetManagedDatabaseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseResult>("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", args ?? new GetManagedDatabaseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseResult> Invoke(GetManagedDatabaseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseResult>("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", args ?? new GetManagedDatabaseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseResult>("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", args ?? new GetManagedDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAuthenticationArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesCorsArgs;
+import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesMutualTlsArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesRateLimitingArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesUsagePlansArgs;
@@ -47,6 +48,21 @@ public final class DeploymentSpecificationRequestPoliciesArgs extends com.pulumi
      */
     public Optional<Output<DeploymentSpecificationRequestPoliciesCorsArgs>> cors() {
         return Optional.ofNullable(this.cors);
+    }
+
+    /**
+     * (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+     * 
+     */
+    @Import(name="dynamicAuthentication")
+    private @Nullable Output<DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs> dynamicAuthentication;
+
+    /**
+     * @return (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+     * 
+     */
+    public Optional<Output<DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs>> dynamicAuthentication() {
+        return Optional.ofNullable(this.dynamicAuthentication);
     }
 
     /**
@@ -99,6 +115,7 @@ public final class DeploymentSpecificationRequestPoliciesArgs extends com.pulumi
     private DeploymentSpecificationRequestPoliciesArgs(DeploymentSpecificationRequestPoliciesArgs $) {
         this.authentication = $.authentication;
         this.cors = $.cors;
+        this.dynamicAuthentication = $.dynamicAuthentication;
         this.mutualTls = $.mutualTls;
         this.rateLimiting = $.rateLimiting;
         this.usagePlans = $.usagePlans;
@@ -162,6 +179,27 @@ public final class DeploymentSpecificationRequestPoliciesArgs extends com.pulumi
          */
         public Builder cors(DeploymentSpecificationRequestPoliciesCorsArgs cors) {
             return cors(Output.of(cors));
+        }
+
+        /**
+         * @param dynamicAuthentication (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dynamicAuthentication(@Nullable Output<DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs> dynamicAuthentication) {
+            $.dynamicAuthentication = dynamicAuthentication;
+            return this;
+        }
+
+        /**
+         * @param dynamicAuthentication (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dynamicAuthentication(DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs dynamicAuthentication) {
+            return dynamicAuthentication(Output.of(dynamicAuthentication));
         }
 
         /**

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.GetChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.GetChannelSourceSslCaCertificate;
 import java.lang.Integer;
 import java.lang.String;
@@ -12,6 +13,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetChannelSource {
+    /**
+     * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    private List<GetChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
     /**
      * @return The network address of the MySQL instance.
      * 
@@ -45,6 +51,13 @@ public final class GetChannelSource {
     private String username;
 
     private GetChannelSource() {}
+    /**
+     * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    public List<GetChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings() {
+        return this.anonymousTransactionsHandlings;
+    }
     /**
      * @return The network address of the MySQL instance.
      * 
@@ -100,6 +113,7 @@ public final class GetChannelSource {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
         private String hostname;
         private String password;
         private Integer port;
@@ -110,6 +124,7 @@ public final class GetChannelSource {
         public Builder() {}
         public Builder(GetChannelSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.anonymousTransactionsHandlings = defaults.anonymousTransactionsHandlings;
     	      this.hostname = defaults.hostname;
     	      this.password = defaults.password;
     	      this.port = defaults.port;
@@ -119,6 +134,14 @@ public final class GetChannelSource {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
+        public Builder anonymousTransactionsHandlings(List<GetChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
+            this.anonymousTransactionsHandlings = Objects.requireNonNull(anonymousTransactionsHandlings);
+            return this;
+        }
+        public Builder anonymousTransactionsHandlings(GetChannelSourceAnonymousTransactionsHandling... anonymousTransactionsHandlings) {
+            return anonymousTransactionsHandlings(List.of(anonymousTransactionsHandlings));
+        }
         @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
@@ -159,6 +182,7 @@ public final class GetChannelSource {
         }
         public GetChannelSource build() {
             final var o = new GetChannelSource();
+            o.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             o.hostname = hostname;
             o.password = password;
             o.port = port;

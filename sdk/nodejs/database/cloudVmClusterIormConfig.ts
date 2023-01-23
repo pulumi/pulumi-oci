@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,6 +27,14 @@ import * as utilities from "../utilities";
  *     cloudVmClusterId: oci_database_cloud_vm_cluster.test_cloud_vm_cluster.id,
  *     objective: "AUTO",
  * });
+ * ```
+ *
+ * ## Import
+ *
+ * CloudVmClusterIormConfigs can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
  * ```
  */
 export class CloudVmClusterIormConfig extends pulumi.CustomResource {
@@ -73,7 +82,7 @@ export class CloudVmClusterIormConfig extends pulumi.CustomResource {
      */
     public readonly objective!: pulumi.Output<string>;
     /**
-     * The current state of IORM configuration for the Cloud Vm Cluster.
+     * The current state of IORM configuration for the Exadata DB system.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
 
@@ -135,7 +144,7 @@ export interface CloudVmClusterIormConfigState {
      */
     objective?: pulumi.Input<string>;
     /**
-     * The current state of IORM configuration for the Cloud Vm Cluster.
+     * The current state of IORM configuration for the Exadata DB system.
      */
     state?: pulumi.Input<string>;
 }

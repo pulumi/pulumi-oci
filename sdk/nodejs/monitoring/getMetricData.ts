@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -33,11 +34,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMetricData(args: GetMetricDataArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricDataResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Monitoring/getMetricData:getMetricData", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -124,9 +122,35 @@ export interface GetMetricDataResult {
     readonly resourceGroup?: string;
     readonly startTime?: string;
 }
-
+/**
+ * This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
+ *
+ * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
+ * For information on metric queries, see [Building Metric Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
+ * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+ *
+ * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMetricData = oci.Monitoring.getMetricData({
+ *     compartmentId: _var.compartment_id,
+ *     namespace: _var.metric_data_namespace,
+ *     query: _var.metric_data_query,
+ *     compartmentIdInSubtree: _var.metric_data_compartment_id_in_subtree,
+ *     endTime: _var.metric_data_end_time,
+ *     resolution: _var.metric_data_resolution,
+ *     resourceGroup: _var.metric_data_resource_group,
+ *     startTime: _var.metric_data_start_time,
+ * });
+ * ```
+ */
 export function getMetricDataOutput(args: GetMetricDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricDataResult> {
-    return pulumi.output(args).apply(a => getMetricData(a, opts))
+    return pulumi.output(args).apply((a: any) => getMetricData(a, opts))
 }
 
 /**

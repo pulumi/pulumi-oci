@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRegistryFolderResult> InvokeAsync(GetRegistryFolderArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRegistryFolderResult>("oci:DataConnectivity/getRegistryFolder:getRegistryFolder", args ?? new GetRegistryFolderArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRegistryFolderResult>("oci:DataConnectivity/getRegistryFolder:getRegistryFolder", args ?? new GetRegistryFolderArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Registry Folder resource in Oracle Cloud Infrastructure Data Connectivity service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRegistryFolderResult> Invoke(GetRegistryFolderInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRegistryFolderResult>("oci:DataConnectivity/getRegistryFolder:getRegistryFolder", args ?? new GetRegistryFolderInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRegistryFolderResult>("oci:DataConnectivity/getRegistryFolder:getRegistryFolder", args ?? new GetRegistryFolderInvokeArgs(), options.WithDefaults());
     }
 
 

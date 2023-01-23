@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -16,16 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancersPolicies = pulumi.output(oci.NetworkLoadBalancer.getNetworkLoadBalancersPolicies());
+ * const testNetworkLoadBalancersPolicies = oci.NetworkLoadBalancer.getNetworkLoadBalancersPolicies({});
  * ```
  */
 export function getNetworkLoadBalancersPolicies(args?: GetNetworkLoadBalancersPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkLoadBalancersPoliciesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies", {
         "filters": args.filters,
     }, opts);
@@ -52,9 +50,22 @@ export interface GetNetworkLoadBalancersPoliciesResult {
      */
     readonly networkLoadBalancersPolicyCollections: outputs.NetworkLoadBalancer.GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection[];
 }
-
+/**
+ * This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
+ *
+ * Lists the available network load balancer policies.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkLoadBalancersPolicies = oci.NetworkLoadBalancer.getNetworkLoadBalancersPolicies({});
+ * ```
+ */
 export function getNetworkLoadBalancersPoliciesOutput(args?: GetNetworkLoadBalancersPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancersPoliciesResult> {
-    return pulumi.output(args).apply(a => getNetworkLoadBalancersPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkLoadBalancersPolicies(a, opts))
 }
 
 /**

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsEntityTopologyResult> InvokeAsync(GetLogAnalyticsEntityTopologyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsEntityTopologyResult> Invoke(GetLogAnalyticsEntityTopologyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyInvokeArgs(), options.WithDefaults());
     }
 
 

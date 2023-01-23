@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbNodeConsoleConnectionsResult> InvokeAsync(GetDbNodeConsoleConnectionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbNodeConsoleConnectionsResult>("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args ?? new GetDbNodeConsoleConnectionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbNodeConsoleConnectionsResult>("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args ?? new GetDbNodeConsoleConnectionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbNodeConsoleConnectionsResult> Invoke(GetDbNodeConsoleConnectionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleConnectionsResult>("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args ?? new GetDbNodeConsoleConnectionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleConnectionsResult>("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args ?? new GetDbNodeConsoleConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

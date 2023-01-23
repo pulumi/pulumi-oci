@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetCloudAutonomousVmClusterResult',
@@ -21,7 +22,7 @@ class GetCloudAutonomousVmClusterResult:
     """
     A collection of values returned by getCloudAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, cpu_core_count=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, description=None, display_name=None, domain=None, freeform_tags=None, hostname=None, id=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, nsg_ids=None, ocpu_count=None, reclaimable_cpus=None, rotate_ords_certs_trigger=None, rotate_ssl_certs_trigger=None, shape=None, state=None, subnet_id=None, time_created=None, time_updated=None, total_container_databases=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, cpu_core_count=None, cpu_core_count_per_node=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, freeform_tags=None, hostname=None, id=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, nsg_ids=None, ocpu_count=None, reclaimable_cpus=None, shape=None, state=None, subnet_id=None, time_created=None, time_updated=None, total_container_databases=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -52,6 +53,9 @@ class GetCloudAutonomousVmClusterResult:
         if cpu_core_count and not isinstance(cpu_core_count, int):
             raise TypeError("Expected argument 'cpu_core_count' to be a int")
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        if cpu_core_count_per_node and not isinstance(cpu_core_count_per_node, int):
+            raise TypeError("Expected argument 'cpu_core_count_per_node' to be a int")
+        pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
         if data_storage_size_in_gb and not isinstance(data_storage_size_in_gb, float):
             raise TypeError("Expected argument 'data_storage_size_in_gb' to be a float")
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
@@ -61,6 +65,9 @@ class GetCloudAutonomousVmClusterResult:
         if db_node_storage_size_in_gbs and not isinstance(db_node_storage_size_in_gbs, int):
             raise TypeError("Expected argument 'db_node_storage_size_in_gbs' to be a int")
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        if db_servers and not isinstance(db_servers, list):
+            raise TypeError("Expected argument 'db_servers' to be a list")
+        pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -94,6 +101,12 @@ class GetCloudAutonomousVmClusterResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if maintenance_window_details and not isinstance(maintenance_window_details, list):
+            raise TypeError("Expected argument 'maintenance_window_details' to be a list")
+        pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
+        if maintenance_windows and not isinstance(maintenance_windows, list):
+            raise TypeError("Expected argument 'maintenance_windows' to be a list")
+        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         if memory_per_oracle_compute_unit_in_gbs and not isinstance(memory_per_oracle_compute_unit_in_gbs, int):
             raise TypeError("Expected argument 'memory_per_oracle_compute_unit_in_gbs' to be a int")
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
@@ -115,12 +128,6 @@ class GetCloudAutonomousVmClusterResult:
         if reclaimable_cpus and not isinstance(reclaimable_cpus, float):
             raise TypeError("Expected argument 'reclaimable_cpus' to be a float")
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
-        if rotate_ords_certs_trigger and not isinstance(rotate_ords_certs_trigger, bool):
-            raise TypeError("Expected argument 'rotate_ords_certs_trigger' to be a bool")
-        pulumi.set(__self__, "rotate_ords_certs_trigger", rotate_ords_certs_trigger)
-        if rotate_ssl_certs_trigger and not isinstance(rotate_ssl_certs_trigger, bool):
-            raise TypeError("Expected argument 'rotate_ssl_certs_trigger' to be a bool")
-        pulumi.set(__self__, "rotate_ssl_certs_trigger", rotate_ssl_certs_trigger)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -213,9 +220,17 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> int:
         """
-        The number of CPU cores enabled on the cloud Autonomous VM cluster.
+        The number of CPU cores on the cloud Autonomous VM cluster.
         """
         return pulumi.get(self, "cpu_core_count")
+
+    @property
+    @pulumi.getter(name="cpuCoreCountPerNode")
+    def cpu_core_count_per_node(self) -> int:
+        """
+        The number of OCPU cores enabled per VM cluster node.
+        """
+        return pulumi.get(self, "cpu_core_count_per_node")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -240,6 +255,11 @@ class GetCloudAutonomousVmClusterResult:
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Sequence[str]:
+        return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -330,6 +350,19 @@ class GetCloudAutonomousVmClusterResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="maintenanceWindowDetails")
+    def maintenance_window_details(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailResult']:
+        return pulumi.get(self, "maintenance_window_details")
+
+    @property
+    @pulumi.getter(name="maintenanceWindows")
+    def maintenance_windows(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult']:
+        """
+        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        """
+        return pulumi.get(self, "maintenance_windows")
+
+    @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
@@ -374,7 +407,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="ocpuCount")
     def ocpu_count(self) -> float:
         """
-        The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
 
@@ -385,16 +418,6 @@ class GetCloudAutonomousVmClusterResult:
         CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
-
-    @property
-    @pulumi.getter(name="rotateOrdsCertsTrigger")
-    def rotate_ords_certs_trigger(self) -> bool:
-        return pulumi.get(self, "rotate_ords_certs_trigger")
-
-    @property
-    @pulumi.getter(name="rotateSslCertsTrigger")
-    def rotate_ssl_certs_trigger(self) -> bool:
-        return pulumi.get(self, "rotate_ssl_certs_trigger")
 
     @property
     @pulumi.getter
@@ -461,9 +484,11 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             cluster_time_zone=self.cluster_time_zone,
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
+            cpu_core_count_per_node=self.cpu_core_count_per_node,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
+            db_servers=self.db_servers,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
@@ -475,6 +500,8 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             last_update_history_entry_id=self.last_update_history_entry_id,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
+            maintenance_window_details=self.maintenance_window_details,
+            maintenance_windows=self.maintenance_windows,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
             next_maintenance_run_id=self.next_maintenance_run_id,
@@ -482,8 +509,6 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
             reclaimable_cpus=self.reclaimable_cpus,
-            rotate_ords_certs_trigger=self.rotate_ords_certs_trigger,
-            rotate_ssl_certs_trigger=self.rotate_ssl_certs_trigger,
             shape=self.shape,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -527,9 +552,11 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
         cluster_time_zone=__ret__.cluster_time_zone,
         compartment_id=__ret__.compartment_id,
         cpu_core_count=__ret__.cpu_core_count,
+        cpu_core_count_per_node=__ret__.cpu_core_count_per_node,
         data_storage_size_in_gb=__ret__.data_storage_size_in_gb,
         data_storage_size_in_tbs=__ret__.data_storage_size_in_tbs,
         db_node_storage_size_in_gbs=__ret__.db_node_storage_size_in_gbs,
+        db_servers=__ret__.db_servers,
         defined_tags=__ret__.defined_tags,
         description=__ret__.description,
         display_name=__ret__.display_name,
@@ -541,6 +568,8 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
         last_update_history_entry_id=__ret__.last_update_history_entry_id,
         license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
+        maintenance_window_details=__ret__.maintenance_window_details,
+        maintenance_windows=__ret__.maintenance_windows,
         memory_per_oracle_compute_unit_in_gbs=__ret__.memory_per_oracle_compute_unit_in_gbs,
         memory_size_in_gbs=__ret__.memory_size_in_gbs,
         next_maintenance_run_id=__ret__.next_maintenance_run_id,
@@ -548,8 +577,6 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
         nsg_ids=__ret__.nsg_ids,
         ocpu_count=__ret__.ocpu_count,
         reclaimable_cpus=__ret__.reclaimable_cpus,
-        rotate_ords_certs_trigger=__ret__.rotate_ords_certs_trigger,
-        rotate_ssl_certs_trigger=__ret__.rotate_ssl_certs_trigger,
         shape=__ret__.shape,
         state=__ret__.state,
         subnet_id=__ret__.subnet_id,

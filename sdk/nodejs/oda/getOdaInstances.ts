@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOdaInstances(args: GetOdaInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetOdaInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Oda/getOdaInstances:getOdaInstances", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -87,9 +85,31 @@ export interface GetOdaInstancesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
+ *
+ * Returns a page of Digital Assistant instances that belong to the specified
+ * compartment.
+ *
+ * If the `opc-next-page` header appears in the response, then
+ * there are more items to retrieve. To get the next page in the subsequent
+ * GET request, include the header's value as the `page` query parameter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOdaInstances = oci.Oda.getOdaInstances({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.oda_instance_display_name,
+ *     state: _var.oda_instance_state,
+ * });
+ * ```
+ */
 export function getOdaInstancesOutput(args: GetOdaInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaInstancesResult> {
-    return pulumi.output(args).apply(a => getOdaInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getOdaInstances(a, opts))
 }
 
 /**

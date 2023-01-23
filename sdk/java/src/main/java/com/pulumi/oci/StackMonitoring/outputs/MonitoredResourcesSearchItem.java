@@ -4,8 +4,10 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourcesSearchItemProperty;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -23,6 +25,11 @@ public final class MonitoredResourcesSearchItem {
      * 
      */
     private @Nullable String displayName;
+    /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    private @Nullable String externalId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -48,6 +55,11 @@ public final class MonitoredResourcesSearchItem {
      * 
      */
     private @Nullable String name;
+    /**
+     * @return List of monitored resource properties
+     * 
+     */
+    private @Nullable List<MonitoredResourcesSearchItemProperty> properties;
     /**
      * @return A filter to return resources with matching lifecycle state.
      * 
@@ -90,6 +102,13 @@ public final class MonitoredResourcesSearchItem {
         return Optional.ofNullable(this.displayName);
     }
     /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
+    }
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -123,6 +142,13 @@ public final class MonitoredResourcesSearchItem {
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
+    }
+    /**
+     * @return List of monitored resource properties
+     * 
+     */
+    public List<MonitoredResourcesSearchItemProperty> properties() {
+        return this.properties == null ? List.of() : this.properties;
     }
     /**
      * @return A filter to return resources with matching lifecycle state.
@@ -171,11 +197,13 @@ public final class MonitoredResourcesSearchItem {
     public static final class Builder {
         private @Nullable Map<String,Object> definedTags;
         private @Nullable String displayName;
+        private @Nullable String externalId;
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String hostName;
         private @Nullable String id;
         private @Nullable String managementAgentId;
         private @Nullable String name;
+        private @Nullable List<MonitoredResourcesSearchItemProperty> properties;
         private @Nullable String state;
         private @Nullable Map<String,Object> systemTags;
         private @Nullable String timeCreated;
@@ -186,11 +214,13 @@ public final class MonitoredResourcesSearchItem {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.externalId = defaults.externalId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
     	      this.managementAgentId = defaults.managementAgentId;
     	      this.name = defaults.name;
+    	      this.properties = defaults.properties;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -206,6 +236,11 @@ public final class MonitoredResourcesSearchItem {
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
@@ -232,6 +267,14 @@ public final class MonitoredResourcesSearchItem {
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
+        }
+        @CustomType.Setter
+        public Builder properties(@Nullable List<MonitoredResourcesSearchItemProperty> properties) {
+            this.properties = properties;
+            return this;
+        }
+        public Builder properties(MonitoredResourcesSearchItemProperty... properties) {
+            return properties(List.of(properties));
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
@@ -262,11 +305,13 @@ public final class MonitoredResourcesSearchItem {
             final var o = new MonitoredResourcesSearchItem();
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.externalId = externalId;
             o.freeformTags = freeformTags;
             o.hostName = hostName;
             o.id = id;
             o.managementAgentId = managementAgentId;
             o.name = name;
+            o.properties = properties;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;

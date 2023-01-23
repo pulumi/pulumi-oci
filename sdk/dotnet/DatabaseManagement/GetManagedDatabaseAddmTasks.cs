@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseAddmTasksResult> InvokeAsync(GetManagedDatabaseAddmTasksArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseAddmTasksResult>("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args ?? new GetManagedDatabaseAddmTasksArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseAddmTasksResult>("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args ?? new GetManagedDatabaseAddmTasksArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseAddmTasksResult> Invoke(GetManagedDatabaseAddmTasksInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAddmTasksResult>("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args ?? new GetManagedDatabaseAddmTasksInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAddmTasksResult>("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args ?? new GetManagedDatabaseAddmTasksInvokeArgs(), options.WithDefaults());
     }
 
 

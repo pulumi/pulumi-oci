@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabaseInstanceWalletManagement(args: GetAutonomousDatabaseInstanceWalletManagementArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseInstanceWalletManagementResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
     }, opts);
@@ -64,9 +61,24 @@ export interface GetAutonomousDatabaseInstanceWalletManagementResult {
      */
     readonly timeRotated: string;
 }
-
+/**
+ * This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the wallet details for the specified Autonomous Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseInstanceWalletManagement = oci.Database.getAutonomousDatabaseInstanceWalletManagement({
+ *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
+ * });
+ * ```
+ */
 export function getAutonomousDatabaseInstanceWalletManagementOutput(args: GetAutonomousDatabaseInstanceWalletManagementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseInstanceWalletManagementResult> {
-    return pulumi.output(args).apply(a => getAutonomousDatabaseInstanceWalletManagement(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseInstanceWalletManagement(a, opts))
 }
 
 /**

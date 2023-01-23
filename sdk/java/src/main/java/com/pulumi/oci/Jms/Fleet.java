@@ -115,6 +115,20 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.approximateInstallationCount;
     }
     /**
+     * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * 
+     */
+    @Export(name="approximateJavaServerCount", type=Integer.class, parameters={})
+    private Output<Integer> approximateJavaServerCount;
+
+    /**
+     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * 
+     */
+    public Output<Integer> approximateJavaServerCount() {
+        return this.approximateJavaServerCount;
+    }
+    /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      * 
      */
@@ -227,14 +241,14 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.inventoryLog;
     }
     /**
-     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      * 
      */
     @Export(name="isAdvancedFeaturesEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isAdvancedFeaturesEnabled;
 
     /**
-     * @return (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * @return (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      * 
      */
     public Output<Boolean> isAdvancedFeaturesEnabled() {

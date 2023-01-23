@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryArchiveContentResult> InvokeAsync(GetRepositoryArchiveContentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryArchiveContentResult>("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", args ?? new GetRepositoryArchiveContentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryArchiveContentResult>("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", args ?? new GetRepositoryArchiveContentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryArchiveContentResult> Invoke(GetRepositoryArchiveContentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryArchiveContentResult>("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", args ?? new GetRepositoryArchiveContentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryArchiveContentResult>("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", args ?? new GetRepositoryArchiveContentInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class DrgAttachmentManagementNetworkDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;
@@ -25,14 +25,13 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? IpsecConnectionId { get; set; }
 
         /// <summary>
-        /// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+        /// The OCID of the route table the DRG attachment is using.
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
         /// The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-        /// * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

@@ -155,14 +155,14 @@ public final class DatabaseSoftwareImageState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The patches included in the image and the version of the image
+     * The patches included in the image and the version of the image.
      * 
      */
     @Import(name="includedPatchesSummary")
     private @Nullable Output<String> includedPatchesSummary;
 
     /**
-     * @return The patches included in the image and the version of the image
+     * @return The patches included in the image and the version of the image.
      * 
      */
     public Optional<Output<String>> includedPatchesSummary() {
@@ -524,7 +524,7 @@ public final class DatabaseSoftwareImageState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param includedPatchesSummary The patches included in the image and the version of the image
+         * @param includedPatchesSummary The patches included in the image and the version of the image.
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class DatabaseSoftwareImageState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param includedPatchesSummary The patches included in the image and the version of the image
+         * @param includedPatchesSummary The patches included in the image and the version of the image.
          * 
          * @return builder
          * 

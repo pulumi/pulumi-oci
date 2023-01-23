@@ -22,6 +22,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        public readonly string? ExternalId;
+        /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? FreeformTags;
@@ -41,6 +45,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// A filter to return resources that match exact resource name
         /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// List of monitored resource properties
+        /// </summary>
+        public readonly ImmutableArray<Outputs.MonitoredResourcesSearchItemProperty> Properties;
         /// <summary>
         /// A filter to return resources with matching lifecycle state.
         /// </summary>
@@ -68,6 +76,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string? displayName,
 
+            string? externalId,
+
             ImmutableDictionary<string, object>? freeformTags,
 
             string? hostName,
@@ -77,6 +87,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             string? managementAgentId,
 
             string? name,
+
+            ImmutableArray<Outputs.MonitoredResourcesSearchItemProperty> properties,
 
             string? state,
 
@@ -90,11 +102,13 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         {
             DefinedTags = definedTags;
             DisplayName = displayName;
+            ExternalId = externalId;
             FreeformTags = freeformTags;
             HostName = hostName;
             Id = id;
             ManagementAgentId = managementAgentId;
             Name = name;
+            Properties = properties;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

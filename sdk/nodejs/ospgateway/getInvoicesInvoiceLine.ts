@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvoicesInvoiceLine(args: GetInvoicesInvoiceLineArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoicesInvoiceLineResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OspGateway/getInvoicesInvoiceLine:getInvoicesInvoiceLine", {
         "compartmentId": args.compartmentId,
         "internalInvoiceId": args.internalInvoiceId,
@@ -70,9 +68,26 @@ export interface GetInvoicesInvoiceLineResult {
     readonly items: outputs.OspGateway.GetInvoicesInvoiceLineItem[];
     readonly ospHomeRegion: string;
 }
-
+/**
+ * This data source provides details about a specific Invoices Invoice Line resource in Oracle Cloud Infrastructure Osp Gateway service.
+ *
+ * Returns the invoice product list by invoice id
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInvoicesInvoiceLine = oci.OspGateway.getInvoicesInvoiceLine({
+ *     compartmentId: _var.compartment_id,
+ *     internalInvoiceId: oci_osp_gateway_invoice.test_invoice.id,
+ *     ospHomeRegion: _var.invoices_invoice_line_osp_home_region,
+ * });
+ * ```
+ */
 export function getInvoicesInvoiceLineOutput(args: GetInvoicesInvoiceLineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoicesInvoiceLineResult> {
-    return pulumi.output(args).apply(a => getInvoicesInvoiceLine(a, opts))
+    return pulumi.output(args).apply((a: any) => getInvoicesInvoiceLine(a, opts))
 }
 
 /**

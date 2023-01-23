@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscription(args: GetSubscriptionArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ons/getSubscription:getSubscription", {
         "subscriptionId": args.subscriptionId,
     }, opts);
@@ -93,9 +90,26 @@ export interface GetSubscriptionResult {
      */
     readonly topicId: string;
 }
-
+/**
+ * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Notifications service.
+ *
+ * Gets the specified subscription's configuration information.
+ *
+ * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscription = oci.Ons.getSubscription({
+ *     subscriptionId: oci_ons_subscription.test_subscription.id,
+ * });
+ * ```
+ */
 export function getSubscriptionOutput(args: GetSubscriptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionResult> {
-    return pulumi.output(args).apply(a => getSubscription(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscription(a, opts))
 }
 
 /**

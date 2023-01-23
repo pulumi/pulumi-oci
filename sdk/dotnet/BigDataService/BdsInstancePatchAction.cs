@@ -81,6 +81,10 @@ namespace Pulumi.Oci.BigDataService
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "clusterAdminPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -110,11 +114,21 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
 
+        [Input("clusterAdminPassword", required: true)]
+        private Input<string>? _clusterAdminPassword;
+
         /// <summary>
         /// Base-64 encoded password for the cluster admin user.
         /// </summary>
-        [Input("clusterAdminPassword", required: true)]
-        public Input<string> ClusterAdminPassword { get; set; } = null!;
+        public Input<string>? ClusterAdminPassword
+        {
+            get => _clusterAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clusterAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The version of the patch to be installed.
@@ -136,11 +150,21 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsInstanceId")]
         public Input<string>? BdsInstanceId { get; set; }
 
+        [Input("clusterAdminPassword")]
+        private Input<string>? _clusterAdminPassword;
+
         /// <summary>
         /// Base-64 encoded password for the cluster admin user.
         /// </summary>
-        [Input("clusterAdminPassword")]
-        public Input<string>? ClusterAdminPassword { get; set; }
+        public Input<string>? ClusterAdminPassword
+        {
+            get => _clusterAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clusterAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The version of the patch to be installed.

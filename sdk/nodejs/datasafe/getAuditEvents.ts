@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -37,11 +38,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditEvents(args: GetAuditEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditEventsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditEvents:getAuditEvents", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -95,9 +93,39 @@ export interface GetAuditEventsResult {
     readonly id: string;
     readonly scimQuery?: string;
 }
-
+/**
+ * This data source provides the list of Audit Events in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * The ListAuditEvents operation returns specified `compartmentId` audit Events only.
+ * The list does not include any audit Events associated with the `subcompartments` of the specified `compartmentId`.
+ *
+ * The parameter `accessLevel` specifies whether to return only those compartments for which the
+ * requestor has INSPECT permissions on at least one resource directly
+ * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+ * Principal doesn't have access to even one of the child compartments. This is valid only when
+ * `compartmentIdInSubtree` is set to `true`.
+ *
+ * The parameter `compartmentIdInSubtree` applies when you perform ListAuditEvents on the
+ * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+ * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditEvents = oci.DataSafe.getAuditEvents({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.audit_event_access_level,
+ *     compartmentIdInSubtree: _var.audit_event_compartment_id_in_subtree,
+ *     scimQuery: _var.audit_event_scim_query,
+ * });
+ * ```
+ */
 export function getAuditEventsOutput(args: GetAuditEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditEventsResult> {
-    return pulumi.output(args).apply(a => getAuditEvents(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditEvents(a, opts))
 }
 
 /**

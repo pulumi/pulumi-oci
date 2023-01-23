@@ -475,7 +475,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database.
-        :param pulumi.Input[float] available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        :param pulumi.Input[float] available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -505,7 +505,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
         :param pulumi.Input[float] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
-        :param pulumi.Input[str] role: The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
         :param pulumi.Input[str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
         :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
@@ -643,7 +643,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> Optional[pulumi.Input[float]]:
         """
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -1030,7 +1030,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -1193,7 +1193,6 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             key_store_id=oci_database_key_store["test_key_store"]["id"],
             kms_key_id=oci_kms_key["test_key"]["id"],
             maintenance_window_details=oci.database.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs(
-                preference=var["autonomous_container_database_maintenance_window_details_preference"],
                 custom_action_timeout_in_mins=var["autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs(
                     name=var["autonomous_container_database_maintenance_window_details_days_of_week_name"],
@@ -1206,6 +1205,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                     name=var["autonomous_container_database_maintenance_window_details_months_name"],
                 )],
                 patching_mode=var["autonomous_container_database_maintenance_window_details_patching_mode"],
+                preference=var["autonomous_container_database_maintenance_window_details_preference"],
                 weeks_of_months=var["autonomous_container_database_maintenance_window_details_weeks_of_month"],
             ),
             peer_autonomous_container_database_display_name=var["autonomous_container_database_peer_autonomous_container_database_display_name"],
@@ -1307,7 +1307,6 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             key_store_id=oci_database_key_store["test_key_store"]["id"],
             kms_key_id=oci_kms_key["test_key"]["id"],
             maintenance_window_details=oci.database.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs(
-                preference=var["autonomous_container_database_maintenance_window_details_preference"],
                 custom_action_timeout_in_mins=var["autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs(
                     name=var["autonomous_container_database_maintenance_window_details_days_of_week_name"],
@@ -1320,6 +1319,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                     name=var["autonomous_container_database_maintenance_window_details_months_name"],
                 )],
                 patching_mode=var["autonomous_container_database_maintenance_window_details_patching_mode"],
+                preference=var["autonomous_container_database_maintenance_window_details_preference"],
                 weeks_of_months=var["autonomous_container_database_maintenance_window_details_weeks_of_month"],
             ),
             peer_autonomous_container_database_display_name=var["autonomous_container_database_peer_autonomous_container_database_display_name"],
@@ -1513,7 +1513,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database.
-        :param pulumi.Input[float] available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        :param pulumi.Input[float] available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -1543,7 +1543,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
         :param pulumi.Input[float] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
-        :param pulumi.Input[str] role: The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
         :param pulumi.Input[str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
         :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
@@ -1630,7 +1630,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> pulumi.Output[float]:
         """
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -1885,7 +1885,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter
     def role(self) -> pulumi.Output[str]:
         """
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 

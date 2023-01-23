@@ -42,7 +42,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetWorkRequestsResult> InvokeAsync(GetWorkRequestsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetWorkRequestsResult>("oci:ContainerEngine/getWorkRequests:getWorkRequests", args ?? new GetWorkRequestsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkRequestsResult>("oci:ContainerEngine/getWorkRequests:getWorkRequests", args ?? new GetWorkRequestsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetWorkRequestsResult> Invoke(GetWorkRequestsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetWorkRequestsResult>("oci:ContainerEngine/getWorkRequests:getWorkRequests", args ?? new GetWorkRequestsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkRequestsResult>("oci:ContainerEngine/getWorkRequests:getWorkRequests", args ?? new GetWorkRequestsInvokeArgs(), options.WithDefaults());
     }
 
 

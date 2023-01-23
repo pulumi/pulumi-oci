@@ -19,6 +19,9 @@ __all__ = [
     'InvokeRunDriverShapeConfig',
     'InvokeRunExecutorShapeConfig',
     'InvokeRunParameter',
+    'PrivateEndpointScanDetail',
+    'RunStatementOutput',
+    'RunStatementOutputData',
     'GetApplicationApplicationLogConfigResult',
     'GetApplicationDriverShapeConfigResult',
     'GetApplicationExecutorShapeConfigResult',
@@ -39,11 +42,20 @@ __all__ = [
     'GetInvokeRunsRunDriverShapeConfigResult',
     'GetInvokeRunsRunExecutorShapeConfigResult',
     'GetInvokeRunsRunParameterResult',
+    'GetPrivateEndpointScanDetailResult',
     'GetPrivateEndpointsFilterResult',
     'GetPrivateEndpointsPrivateEndpointCollectionResult',
     'GetPrivateEndpointsPrivateEndpointCollectionItemResult',
+    'GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult',
     'GetRunLogsFilterResult',
     'GetRunLogsRunLogResult',
+    'GetRunStatementOutputResult',
+    'GetRunStatementOutputDataResult',
+    'GetRunStatementsFilterResult',
+    'GetRunStatementsStatementCollectionResult',
+    'GetRunStatementsStatementCollectionItemResult',
+    'GetRunStatementsStatementCollectionItemOutputResult',
+    'GetRunStatementsStatementCollectionItemOutputDataResult',
 ]
 
 @pulumi.output_type
@@ -393,6 +405,154 @@ class InvokeRunParameter(dict):
 
 
 @pulumi.output_type
+class PrivateEndpointScanDetail(dict):
+    def __init__(__self__, *,
+                 fqdn: Optional[str] = None,
+                 port: Optional[str] = None):
+        """
+        :param str fqdn: (Updatable) A fully-qualified domain name (FQDN).
+        :param str port: (Updatable) The port number of the FQDN
+        """
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> Optional[str]:
+        """
+        (Updatable) A fully-qualified domain name (FQDN).
+        """
+        return pulumi.get(self, "fqdn")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[str]:
+        """
+        (Updatable) The port number of the FQDN
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class RunStatementOutput(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorName":
+            suggest = "error_name"
+        elif key == "errorValue":
+            suggest = "error_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunStatementOutput. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunStatementOutput.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunStatementOutput.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 datas: Optional[Sequence['outputs.RunStatementOutputData']] = None,
+                 error_name: Optional[str] = None,
+                 error_value: Optional[str] = None,
+                 status: Optional[str] = None,
+                 tracebacks: Optional[Sequence[str]] = None):
+        """
+        :param Sequence['RunStatementOutputDataArgs'] datas: An object representing execution output of a statement.
+        :param str error_name: The name of the error in the statement output.
+        :param str error_value: The value of the error in the statement output.
+        :param str status: Status of the statement output.
+        :param Sequence[str] tracebacks: The traceback of the statement output.
+        """
+        if datas is not None:
+            pulumi.set(__self__, "datas", datas)
+        if error_name is not None:
+            pulumi.set(__self__, "error_name", error_name)
+        if error_value is not None:
+            pulumi.set(__self__, "error_value", error_value)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tracebacks is not None:
+            pulumi.set(__self__, "tracebacks", tracebacks)
+
+    @property
+    @pulumi.getter
+    def datas(self) -> Optional[Sequence['outputs.RunStatementOutputData']]:
+        """
+        An object representing execution output of a statement.
+        """
+        return pulumi.get(self, "datas")
+
+    @property
+    @pulumi.getter(name="errorName")
+    def error_name(self) -> Optional[str]:
+        """
+        The name of the error in the statement output.
+        """
+        return pulumi.get(self, "error_name")
+
+    @property
+    @pulumi.getter(name="errorValue")
+    def error_value(self) -> Optional[str]:
+        """
+        The value of the error in the statement output.
+        """
+        return pulumi.get(self, "error_value")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        Status of the statement output.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def tracebacks(self) -> Optional[Sequence[str]]:
+        """
+        The traceback of the statement output.
+        """
+        return pulumi.get(self, "tracebacks")
+
+
+@pulumi.output_type
+class RunStatementOutputData(dict):
+    def __init__(__self__, *,
+                 type: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+        :param str value: The statement code execution output in html format.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The statement code execution output in html format.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetApplicationApplicationLogConfigResult(dict):
     def __init__(__self__, *,
                  log_group_id: str,
@@ -528,8 +688,10 @@ class GetApplicationsApplicationResult(dict):
                  file_uri: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 idle_timeout_in_minutes: str,
                  language: str,
                  logs_bucket_uri: str,
+                 max_duration_in_minutes: str,
                  metastore_id: str,
                  num_executors: int,
                  owner_principal_id: str,
@@ -544,7 +706,7 @@ class GetApplicationsApplicationResult(dict):
                  warehouse_bucket_uri: str):
         """
         :param Sequence['GetApplicationsApplicationApplicationLogConfigArgs'] application_log_configs: Logging details of Application logs for Data Flow Run.
-        :param str archive_uri: An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        :param str archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param Sequence[str] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param str class_name: The class for the application.
         :param str compartment_id: The OCID of the compartment.
@@ -560,8 +722,10 @@ class GetApplicationsApplicationResult(dict):
         :param str file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The application ID.
+        :param str idle_timeout_in_minutes: The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param str language: The Spark language.
         :param str logs_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        :param str max_duration_in_minutes: The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         :param str metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param int num_executors: The number of executor VMs requested.
         :param str owner_principal_id: The OCID of the user who created the resource.
@@ -592,8 +756,10 @@ class GetApplicationsApplicationResult(dict):
         pulumi.set(__self__, "file_uri", file_uri)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
         pulumi.set(__self__, "language", language)
         pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+        pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
         pulumi.set(__self__, "metastore_id", metastore_id)
         pulumi.set(__self__, "num_executors", num_executors)
         pulumi.set(__self__, "owner_principal_id", owner_principal_id)
@@ -619,7 +785,7 @@ class GetApplicationsApplicationResult(dict):
     @pulumi.getter(name="archiveUri")
     def archive_uri(self) -> str:
         """
-        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "archive_uri")
 
@@ -744,6 +910,14 @@ class GetApplicationsApplicationResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="idleTimeoutInMinutes")
+    def idle_timeout_in_minutes(self) -> str:
+        """
+        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+        """
+        return pulumi.get(self, "idle_timeout_in_minutes")
+
+    @property
     @pulumi.getter
     def language(self) -> str:
         """
@@ -758,6 +932,14 @@ class GetApplicationsApplicationResult(dict):
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "logs_bucket_uri")
+
+    @property
+    @pulumi.getter(name="maxDurationInMinutes")
+    def max_duration_in_minutes(self) -> str:
+        """
+        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+        """
+        return pulumi.get(self, "max_duration_in_minutes")
 
     @property
     @pulumi.getter(name="metastoreId")
@@ -1177,9 +1359,11 @@ class GetInvokeRunsRunResult(dict):
                  file_uri: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 idle_timeout_in_minutes: str,
                  language: str,
                  lifecycle_details: str,
                  logs_bucket_uri: str,
+                 max_duration_in_minutes: str,
                  metastore_id: str,
                  num_executors: int,
                  opc_request_id: str,
@@ -1202,7 +1386,7 @@ class GetInvokeRunsRunResult(dict):
         """
         :param str application_id: The ID of the application.
         :param Sequence['GetInvokeRunsRunApplicationLogConfigArgs'] application_log_configs: Logging details of Application logs for Data Flow Run.
-        :param str archive_uri: An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        :param str archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param Sequence[str] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param str class_name: The class for the application.
         :param str compartment_id: The OCID of the compartment.
@@ -1219,9 +1403,11 @@ class GetInvokeRunsRunResult(dict):
         :param str file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The ID of a run.
+        :param str idle_timeout_in_minutes: The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param str language: The Spark language.
         :param str lifecycle_details: The detailed messages about the lifecycle state.
         :param str logs_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        :param str max_duration_in_minutes: The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         :param str metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param int num_executors: The number of executor VMs requested.
         :param str opc_request_id: Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1262,9 +1448,11 @@ class GetInvokeRunsRunResult(dict):
         pulumi.set(__self__, "file_uri", file_uri)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
         pulumi.set(__self__, "language", language)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+        pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
         pulumi.set(__self__, "metastore_id", metastore_id)
         pulumi.set(__self__, "num_executors", num_executors)
         pulumi.set(__self__, "opc_request_id", opc_request_id)
@@ -1305,7 +1493,7 @@ class GetInvokeRunsRunResult(dict):
     @pulumi.getter(name="archiveUri")
     def archive_uri(self) -> str:
         """
-        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "archive_uri")
 
@@ -1443,6 +1631,14 @@ class GetInvokeRunsRunResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="idleTimeoutInMinutes")
+    def idle_timeout_in_minutes(self) -> str:
+        """
+        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+        """
+        return pulumi.get(self, "idle_timeout_in_minutes")
+
+    @property
     @pulumi.getter
     def language(self) -> str:
         """
@@ -1465,6 +1661,14 @@ class GetInvokeRunsRunResult(dict):
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "logs_bucket_uri")
+
+    @property
+    @pulumi.getter(name="maxDurationInMinutes")
+    def max_duration_in_minutes(self) -> str:
+        """
+        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+        """
+        return pulumi.get(self, "max_duration_in_minutes")
 
     @property
     @pulumi.getter(name="metastoreId")
@@ -1736,6 +1940,35 @@ class GetInvokeRunsRunParameterResult(dict):
 
 
 @pulumi.output_type
+class GetPrivateEndpointScanDetailResult(dict):
+    def __init__(__self__, *,
+                 fqdn: str,
+                 port: str):
+        """
+        :param str fqdn: A fully-qualified domain name (FQDN).
+        :param str port: The port number of the FQDN
+        """
+        pulumi.set(__self__, "fqdn", fqdn)
+        pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> str:
+        """
+        A fully-qualified domain name (FQDN).
+        """
+        return pulumi.get(self, "fqdn")
+
+    @property
+    @pulumi.getter
+    def port(self) -> str:
+        """
+        The port number of the FQDN
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
 class GetPrivateEndpointsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -1789,6 +2022,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
                  nsg_ids: Sequence[str],
                  owner_principal_id: str,
                  owner_user_name: str,
+                 scan_details: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult'],
                  state: str,
                  subnet_id: str,
                  time_created: str,
@@ -1806,6 +2040,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         :param Sequence[str] nsg_ids: An array of network security group OCIDs.
         :param str owner_principal_id: The OCID of the user who created the resource.
         :param str owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+        :param Sequence['GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs'] scan_details: An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         :param str state: The LifecycleState of the private endpoint.
         :param str subnet_id: The OCID of a subnet.
         :param str time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -1823,6 +2058,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "owner_principal_id", owner_principal_id)
         pulumi.set(__self__, "owner_user_name", owner_user_name)
+        pulumi.set(__self__, "scan_details", scan_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
@@ -1925,6 +2161,14 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         return pulumi.get(self, "owner_user_name")
 
     @property
+    @pulumi.getter(name="scanDetails")
+    def scan_details(self) -> Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult']:
+        """
+        An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        """
+        return pulumi.get(self, "scan_details")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -1955,6 +2199,35 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult(dict):
+    def __init__(__self__, *,
+                 fqdn: str,
+                 port: str):
+        """
+        :param str fqdn: A fully-qualified domain name (FQDN).
+        :param str port: The port number of the FQDN
+        """
+        pulumi.set(__self__, "fqdn", fqdn)
+        pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> str:
+        """
+        A fully-qualified domain name (FQDN).
+        """
+        return pulumi.get(self, "fqdn")
+
+    @property
+    @pulumi.getter
+    def port(self) -> str:
+        """
+        The port number of the FQDN
+        """
+        return pulumi.get(self, "port")
 
 
 @pulumi.output_type
@@ -2035,5 +2308,321 @@ class GetRunLogsRunLogResult(dict):
     @pulumi.getter
     def type(self) -> str:
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRunStatementOutputResult(dict):
+    def __init__(__self__, *,
+                 datas: Sequence['outputs.GetRunStatementOutputDataResult'],
+                 error_name: str,
+                 error_value: str,
+                 status: str,
+                 tracebacks: Sequence[str]):
+        """
+        :param Sequence['GetRunStatementOutputDataArgs'] datas: An object representing execution output of a statement.
+        :param str error_name: The name of the error in the statement output.
+        :param str error_value: The value of the error in the statement output.
+        :param str status: Status of the statement output.
+        :param Sequence[str] tracebacks: The traceback of the statement output.
+        """
+        pulumi.set(__self__, "datas", datas)
+        pulumi.set(__self__, "error_name", error_name)
+        pulumi.set(__self__, "error_value", error_value)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tracebacks", tracebacks)
+
+    @property
+    @pulumi.getter
+    def datas(self) -> Sequence['outputs.GetRunStatementOutputDataResult']:
+        """
+        An object representing execution output of a statement.
+        """
+        return pulumi.get(self, "datas")
+
+    @property
+    @pulumi.getter(name="errorName")
+    def error_name(self) -> str:
+        """
+        The name of the error in the statement output.
+        """
+        return pulumi.get(self, "error_name")
+
+    @property
+    @pulumi.getter(name="errorValue")
+    def error_value(self) -> str:
+        """
+        The value of the error in the statement output.
+        """
+        return pulumi.get(self, "error_value")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status of the statement output.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def tracebacks(self) -> Sequence[str]:
+        """
+        The traceback of the statement output.
+        """
+        return pulumi.get(self, "tracebacks")
+
+
+@pulumi.output_type
+class GetRunStatementOutputDataResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 value: str):
+        """
+        :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+        :param str value: The statement code execution output in html format.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The statement code execution output in html format.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetRunStatementsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRunStatementsStatementCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRunStatementsStatementCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRunStatementsStatementCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRunStatementsStatementCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 code: str,
+                 id: str,
+                 outputs: Sequence['outputs.GetRunStatementsStatementCollectionItemOutputResult'],
+                 progress: float,
+                 run_id: str,
+                 state: str,
+                 time_completed: str,
+                 time_created: str):
+        """
+        :param str code: The statement code to execute. Example: `println(sc.version)`
+        :param str id: The statement ID.
+        :param Sequence['GetRunStatementsStatementCollectionItemOutputArgs'] outputs: The execution output of a statement.
+        :param float progress: The execution progress.
+        :param str run_id: The unique ID for the run
+        :param str state: The LifecycleState of the statement.
+        :param str time_completed: The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
+        :param str time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "outputs", outputs)
+        pulumi.set(__self__, "progress", progress)
+        pulumi.set(__self__, "run_id", run_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_completed", time_completed)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def code(self) -> str:
+        """
+        The statement code to execute. Example: `println(sc.version)`
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The statement ID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def outputs(self) -> Sequence['outputs.GetRunStatementsStatementCollectionItemOutputResult']:
+        """
+        The execution output of a statement.
+        """
+        return pulumi.get(self, "outputs")
+
+    @property
+    @pulumi.getter
+    def progress(self) -> float:
+        """
+        The execution progress.
+        """
+        return pulumi.get(self, "progress")
+
+    @property
+    @pulumi.getter(name="runId")
+    def run_id(self) -> str:
+        """
+        The unique ID for the run
+        """
+        return pulumi.get(self, "run_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The LifecycleState of the statement.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCompleted")
+    def time_completed(self) -> str:
+        """
+        The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_completed")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetRunStatementsStatementCollectionItemOutputResult(dict):
+    def __init__(__self__, *,
+                 datas: Sequence['outputs.GetRunStatementsStatementCollectionItemOutputDataResult'],
+                 error_name: str,
+                 error_value: str,
+                 status: str,
+                 tracebacks: Sequence[str]):
+        """
+        :param Sequence['GetRunStatementsStatementCollectionItemOutputDataArgs'] datas: An object representing execution output of a statement.
+        :param str error_name: The name of the error in the statement output.
+        :param str error_value: The value of the error in the statement output.
+        :param str status: Status of the statement output.
+        :param Sequence[str] tracebacks: The traceback of the statement output.
+        """
+        pulumi.set(__self__, "datas", datas)
+        pulumi.set(__self__, "error_name", error_name)
+        pulumi.set(__self__, "error_value", error_value)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tracebacks", tracebacks)
+
+    @property
+    @pulumi.getter
+    def datas(self) -> Sequence['outputs.GetRunStatementsStatementCollectionItemOutputDataResult']:
+        """
+        An object representing execution output of a statement.
+        """
+        return pulumi.get(self, "datas")
+
+    @property
+    @pulumi.getter(name="errorName")
+    def error_name(self) -> str:
+        """
+        The name of the error in the statement output.
+        """
+        return pulumi.get(self, "error_name")
+
+    @property
+    @pulumi.getter(name="errorValue")
+    def error_value(self) -> str:
+        """
+        The value of the error in the statement output.
+        """
+        return pulumi.get(self, "error_value")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status of the statement output.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def tracebacks(self) -> Sequence[str]:
+        """
+        The traceback of the statement output.
+        """
+        return pulumi.get(self, "tracebacks")
+
+
+@pulumi.output_type
+class GetRunStatementsStatementCollectionItemOutputDataResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 value: str):
+        """
+        :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+        :param str value: The statement code execution output in html format.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The statement code execution output in html format.
+        """
+        return pulumi.get(self, "value")
 
 

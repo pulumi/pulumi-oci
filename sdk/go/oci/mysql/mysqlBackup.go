@@ -67,7 +67,7 @@ type MysqlBackup struct {
 	BackupSizeInGbs pulumi.IntOutput `pulumi:"backupSizeInGbs"`
 	// The type of backup.
 	BackupType pulumi.StringOutput `pulumi:"backupType"`
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
 	CreationType pulumi.StringOutput `pulumi:"creationType"`
@@ -137,7 +137,7 @@ type mysqlBackupState struct {
 	BackupSizeInGbs *int `pulumi:"backupSizeInGbs"`
 	// The type of backup.
 	BackupType *string `pulumi:"backupType"`
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
 	CreationType *string `pulumi:"creationType"`
@@ -176,7 +176,7 @@ type MysqlBackupState struct {
 	BackupSizeInGbs pulumi.IntPtrInput
 	// The type of backup.
 	BackupType pulumi.StringPtrInput
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId pulumi.StringPtrInput
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
 	CreationType pulumi.StringPtrInput
@@ -217,7 +217,7 @@ func (MysqlBackupState) ElementType() reflect.Type {
 type mysqlBackupArgs struct {
 	// The type of backup.
 	BackupType *string `pulumi:"backupType"`
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the DB System the Backup is associated with.
 	DbSystemId string `pulumi:"dbSystemId"`
@@ -237,7 +237,7 @@ type mysqlBackupArgs struct {
 type MysqlBackupArgs struct {
 	// The type of backup.
 	BackupType pulumi.StringPtrInput
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId pulumi.StringPtrInput
 	// The OCID of the DB System the Backup is associated with.
 	DbSystemId pulumi.StringInput
@@ -350,7 +350,7 @@ func (o MysqlBackupOutput) BackupType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.BackupType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the compartment.
+// (Updatable) The OCID of the compartment the backup exists in.
 func (o MysqlBackupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

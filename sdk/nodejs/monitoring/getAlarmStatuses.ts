@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlarmStatuses(args: GetAlarmStatusesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmStatusesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -81,9 +79,31 @@ export interface GetAlarmStatusesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
+ *
+ * List the status of each alarm in the specified compartment.
+ * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+ *
+ * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+ * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+ * or transactions, per second (TPS) for a given tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlarmStatuses = oci.Monitoring.getAlarmStatuses({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.alarm_status_compartment_id_in_subtree,
+ *     displayName: _var.alarm_status_display_name,
+ * });
+ * ```
+ */
 export function getAlarmStatusesOutput(args: GetAlarmStatusesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmStatusesResult> {
-    return pulumi.output(args).apply(a => getAlarmStatuses(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlarmStatuses(a, opts))
 }
 
 /**

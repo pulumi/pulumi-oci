@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Logging
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogSavedSearchesResult> InvokeAsync(GetLogSavedSearchesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogSavedSearchesResult>("oci:Logging/getLogSavedSearches:getLogSavedSearches", args ?? new GetLogSavedSearchesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogSavedSearchesResult>("oci:Logging/getLogSavedSearches:getLogSavedSearches", args ?? new GetLogSavedSearchesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Logging
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogSavedSearchesResult> Invoke(GetLogSavedSearchesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogSavedSearchesResult>("oci:Logging/getLogSavedSearches:getLogSavedSearches", args ?? new GetLogSavedSearchesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogSavedSearchesResult>("oci:Logging/getLogSavedSearches:getLogSavedSearches", args ?? new GetLogSavedSearchesInvokeArgs(), options.WithDefaults());
     }
 
 

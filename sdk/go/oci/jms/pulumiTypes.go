@@ -322,6 +322,1125 @@ func (o FleetOperationLogPtrOutput) LogId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking struct {
+	// Lcm flag to store enabled or disabled status
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput is an input type that accepts GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs and GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{...}
+type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput
+	ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs struct {
+	// Lcm flag to store enabled or disabled status
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray and GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray{ GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{...} }
+type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray []GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput
+
+func (GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return o
+}
+
+// Lcm flag to store enabled or disabled status
+func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis struct {
+	// Lcm flag to store enabled or disabled status
+	IsEnabled bool `pulumi:"isEnabled"`
+	// Summarized events log for advanced feature.
+	SummarizedEventsLogs []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog `pulumi:"summarizedEventsLogs"`
+}
+
+// GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{...}
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput
+	ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs struct {
+	// Lcm flag to store enabled or disabled status
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Summarized events log for advanced feature.
+	SummarizedEventsLogs GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput `pulumi:"summarizedEventsLogs"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray{ GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{...} }
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput
+
+func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return o
+}
+
+// Lcm flag to store enabled or disabled status
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// Summarized events log for advanced feature.
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) SummarizedEventsLogs() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis) []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog {
+		return v.SummarizedEventsLogs
+	}).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{...}
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput
+	ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray{ GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{...} }
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput
+
+func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) string {
+		return v.LogId
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationJfrRecording struct {
+	// Lcm flag to store enabled or disabled status
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetFleetAdvancedFeatureConfigurationJfrRecordingInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJfrRecordingArgs and GetFleetAdvancedFeatureConfigurationJfrRecordingOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationJfrRecordingInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationJfrRecordingArgs{...}
+type GetFleetAdvancedFeatureConfigurationJfrRecordingInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutput() GetFleetAdvancedFeatureConfigurationJfrRecordingOutput
+	ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationJfrRecordingArgs struct {
+	// Lcm flag to store enabled or disabled status
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJfrRecording)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutput() GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJfrRecordingOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationJfrRecordingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJfrRecordingArray and GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationJfrRecordingArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationJfrRecordingArray{ GetFleetAdvancedFeatureConfigurationJfrRecordingArgs{...} }
+type GetFleetAdvancedFeatureConfigurationJfrRecordingArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput() GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationJfrRecordingArray []GetFleetAdvancedFeatureConfigurationJfrRecordingInput
+
+func (GetFleetAdvancedFeatureConfigurationJfrRecordingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationJfrRecording)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArray) ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput() GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArray) ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationJfrRecordingOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJfrRecording)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutput() GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return o
+}
+
+// Lcm flag to store enabled or disabled status
+func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJfrRecording) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationJfrRecording)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput() GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationJfrRecording {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationJfrRecording)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationJfrRecordingOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcm struct {
+	// Lcm flag to store enabled or disabled status
+	IsEnabled bool `pulumi:"isEnabled"`
+	// List of available post actions you can execute after the successful Java installation.
+	PostInstallationActions []GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction `pulumi:"postInstallationActions"`
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmArgs and GetFleetAdvancedFeatureConfigurationLcmOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmArgs{...}
+type GetFleetAdvancedFeatureConfigurationLcmInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmOutput() GetFleetAdvancedFeatureConfigurationLcmOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmArgs struct {
+	// Lcm flag to store enabled or disabled status
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// List of available post actions you can execute after the successful Java installation.
+	PostInstallationActions GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput `pulumi:"postInstallationActions"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationLcmArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcm)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmArgs) ToGetFleetAdvancedFeatureConfigurationLcmOutput() GetFleetAdvancedFeatureConfigurationLcmOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmArgs) ToGetFleetAdvancedFeatureConfigurationLcmOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmArray and GetFleetAdvancedFeatureConfigurationLcmArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmArray{ GetFleetAdvancedFeatureConfigurationLcmArgs{...} }
+type GetFleetAdvancedFeatureConfigurationLcmArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmArrayOutput() GetFleetAdvancedFeatureConfigurationLcmArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmArray []GetFleetAdvancedFeatureConfigurationLcmInput
+
+func (GetFleetAdvancedFeatureConfigurationLcmArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcm)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmArray) ToGetFleetAdvancedFeatureConfigurationLcmArrayOutput() GetFleetAdvancedFeatureConfigurationLcmArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmArray) ToGetFleetAdvancedFeatureConfigurationLcmArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcm)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToGetFleetAdvancedFeatureConfigurationLcmOutput() GetFleetAdvancedFeatureConfigurationLcmOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToGetFleetAdvancedFeatureConfigurationLcmOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmOutput {
+	return o
+}
+
+// Lcm flag to store enabled or disabled status
+func (o GetFleetAdvancedFeatureConfigurationLcmOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcm) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// List of available post actions you can execute after the successful Java installation.
+func (o GetFleetAdvancedFeatureConfigurationLcmOutput) PostInstallationActions() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcm) []GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction {
+		return v.PostInstallationActions
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcm)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmArrayOutput() GetFleetAdvancedFeatureConfigurationLcmArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcm {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcm)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationLcmOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction struct {
+	// The following post JRE installation actions are supported by the field:
+	// * Disable TLS 1.0 , TLS 1.1
+	DisabledTlsVersions []string `pulumi:"disabledTlsVersions"`
+	// test
+	MinimumKeySizeSettings []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting `pulumi:"minimumKeySizeSettings"`
+	// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+	// * Replace JDK root certificates with a list provided by the operating system
+	ShouldReplaceCertificatesOperatingSystem bool `pulumi:"shouldReplaceCertificatesOperatingSystem"`
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs{...}
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs struct {
+	// The following post JRE installation actions are supported by the field:
+	// * Disable TLS 1.0 , TLS 1.1
+	DisabledTlsVersions pulumi.StringArrayInput `pulumi:"disabledTlsVersions"`
+	// test
+	MinimumKeySizeSettings GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput `pulumi:"minimumKeySizeSettings"`
+	// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+	// * Replace JDK root certificates with a list provided by the operating system
+	ShouldReplaceCertificatesOperatingSystem pulumi.BoolInput `pulumi:"shouldReplaceCertificatesOperatingSystem"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray{ GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs{...} }
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionInput
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
+	return o
+}
+
+// The following post JRE installation actions are supported by the field:
+// * Disable TLS 1.0 , TLS 1.1
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) DisabledTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) []string {
+		return v.DisabledTlsVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+// test
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) MinimumKeySizeSettings() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting {
+		return v.MinimumKeySizeSettings
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput)
+}
+
+// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+// * Replace JDK root certificates with a list provided by the operating system
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ShouldReplaceCertificatesOperatingSystem() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) bool {
+		return v.ShouldReplaceCertificatesOperatingSystem
+	}).(pulumi.BoolOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting struct {
+	// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for RSA signed jars
+	// * Changing minimum key length for EC
+	// * Changing minimum key length for DSA
+	Certpaths []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath `pulumi:"certpaths"`
+	// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for RSA signed jars
+	// * Changing minimum key length for EC
+	// * Changing minimum key length for DSA
+	Jars []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar `pulumi:"jars"`
+	// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for Diffie-Hellman
+	Tls []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl `pulumi:"tls"`
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs{...}
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs struct {
+	// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for RSA signed jars
+	// * Changing minimum key length for EC
+	// * Changing minimum key length for DSA
+	Certpaths GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayInput `pulumi:"certpaths"`
+	// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for RSA signed jars
+	// * Changing minimum key length for EC
+	// * Changing minimum key length for DSA
+	Jars GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput `pulumi:"jars"`
+	// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for Diffie-Hellman
+	Tls GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput `pulumi:"tls"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray{ GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs{...} }
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingInput
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
+	return o
+}
+
+// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for RSA signed jars
+// * Changing minimum key length for EC
+// * Changing minimum key length for DSA
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) Certpaths() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting) []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath {
+		return v.Certpaths
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput)
+}
+
+// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for RSA signed jars
+// * Changing minimum key length for EC
+// * Changing minimum key length for DSA
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) Jars() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting) []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar {
+		return v.Jars
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput)
+}
+
+// Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for Diffie-Hellman
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) Tls() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting) []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl {
+		return v.Tls
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath struct {
+	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize int `pulumi:"keySize"`
+	// The algorithm name.
+	Name string `pulumi:"name"`
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs{...}
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs struct {
+	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize pulumi.IntInput `pulumi:"keySize"`
+	// The algorithm name.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray{ GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs{...} }
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathInput
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
+	return o
+}
+
+// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) KeySize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath) int {
+		return v.KeySize
+	}).(pulumi.IntOutput)
+}
+
+// The algorithm name.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar struct {
+	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize int `pulumi:"keySize"`
+	// The algorithm name.
+	Name string `pulumi:"name"`
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs{...}
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs struct {
+	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize pulumi.IntInput `pulumi:"keySize"`
+	// The algorithm name.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray{ GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs{...} }
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarInput
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
+	return o
+}
+
+// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) KeySize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar) int {
+		return v.KeySize
+	}).(pulumi.IntOutput)
+}
+
+// The algorithm name.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl struct {
+	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize int `pulumi:"keySize"`
+	// The algorithm name.
+	Name string `pulumi:"name"`
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs{...}
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs struct {
+	// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize pulumi.IntInput `pulumi:"keySize"`
+	// The algorithm name.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray{ GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs{...} }
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlInput
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
+	return o
+}
+
+// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) KeySize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl) int {
+		return v.KeySize
+	}).(pulumi.IntOutput)
+}
+
+// The algorithm name.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput)
+}
+
 type GetFleetBlocklistsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -665,6 +1784,461 @@ func (o GetFleetBlocklistsItemTargetArrayOutput) Index(i pulumi.IntInput) GetFle
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetBlocklistsItemTarget {
 		return vs[0].([]GetFleetBlocklistsItemTarget)[vs[1].(int)]
 	}).(GetFleetBlocklistsItemTargetOutput)
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection struct {
+	Items []GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem `pulumi:"items"`
+}
+
+// GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput values.
+// You can construct a concrete instance of `GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionInput` via:
+//
+//	GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs{...}
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput
+	ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputWithContext(context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs struct {
+	Items GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection)(nil)).Elem()
+}
+
+func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
+	return i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput)
+}
+
+// GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput` via:
+//
+//	GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray{ GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs{...} }
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput
+	ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutputWithContext(context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray []GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionInput
+
+func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection)(nil)).Elem()
+}
+
+func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput {
+	return i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput)
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection)(nil)).Elem()
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) Items() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection) []GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem {
+		return v.Items
+	}).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput)
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection)(nil)).Elem()
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection {
+		return vs[0].([]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection)[vs[1].(int)]
+	}).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput)
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem struct {
+	// The aggregation mode of the crypto event analysis result.
+	AggregationMode string `pulumi:"aggregationMode"`
+	// The Object Storage bucket name of this analysis result.
+	Bucket string `pulumi:"bucket"`
+	// The Crypto Roadmap version used to perform the analysis.
+	CryptoRoadmapVersion string `pulumi:"cryptoRoadmapVersion"`
+	// Total number of findings with the analysis.
+	FindingCount int `pulumi:"findingCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+	FleetId string `pulumi:"fleetId"`
+	// The hostname of the managed instance.
+	HostName string `pulumi:"hostName"`
+	// The OCID to identify this analysis results.
+	Id string `pulumi:"id"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The Object Storage namespace of this analysis result.
+	Namespace string `pulumi:"namespace"`
+	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+	NonCompliantFindingCount int `pulumi:"nonCompliantFindingCount"`
+	// The Object Storage object name of this analysis result.
+	Object string `pulumi:"object"`
+	// Total number of summarized events. Summarized events are deduplicated events of interest.
+	SummarizedEventCount int `pulumi:"summarizedEventCount"`
+	// The time the result is compiled.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time of the first event in the analysis.
+	TimeFirstEvent string `pulumi:"timeFirstEvent"`
+	// Time of the last event in the analysis.
+	TimeLastEvent string `pulumi:"timeLastEvent"`
+	// Total number of events in the analysis.
+	TotalEventCount int `pulumi:"totalEventCount"`
+	// The OCID of the work request to start the analysis.
+	WorkRequestId string `pulumi:"workRequestId"`
+}
+
+// GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemInput` via:
+//
+//	GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs{...}
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput
+	ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutputWithContext(context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs struct {
+	// The aggregation mode of the crypto event analysis result.
+	AggregationMode pulumi.StringInput `pulumi:"aggregationMode"`
+	// The Object Storage bucket name of this analysis result.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Crypto Roadmap version used to perform the analysis.
+	CryptoRoadmapVersion pulumi.StringInput `pulumi:"cryptoRoadmapVersion"`
+	// Total number of findings with the analysis.
+	FindingCount pulumi.IntInput `pulumi:"findingCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// The hostname of the managed instance.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The OCID to identify this analysis results.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The Object Storage namespace of this analysis result.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+	NonCompliantFindingCount pulumi.IntInput `pulumi:"nonCompliantFindingCount"`
+	// The Object Storage object name of this analysis result.
+	Object pulumi.StringInput `pulumi:"object"`
+	// Total number of summarized events. Summarized events are deduplicated events of interest.
+	SummarizedEventCount pulumi.IntInput `pulumi:"summarizedEventCount"`
+	// The time the result is compiled.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time of the first event in the analysis.
+	TimeFirstEvent pulumi.StringInput `pulumi:"timeFirstEvent"`
+	// Time of the last event in the analysis.
+	TimeLastEvent pulumi.StringInput `pulumi:"timeLastEvent"`
+	// Total number of events in the analysis.
+	TotalEventCount pulumi.IntInput `pulumi:"totalEventCount"`
+	// The OCID of the work request to start the analysis.
+	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+}
+
+func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
+	return i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput)
+}
+
+// GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput` via:
+//
+//	GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray{ GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs{...} }
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput
+	ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutputWithContext(context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray []GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemInput
+
+func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput {
+	return i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput)
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
+	return o
+}
+
+// The aggregation mode of the crypto event analysis result.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) AggregationMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
+		return v.AggregationMode
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage bucket name of this analysis result.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Crypto Roadmap version used to perform the analysis.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) CryptoRoadmapVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
+		return v.CryptoRoadmapVersion
+	}).(pulumi.StringOutput)
+}
+
+// Total number of findings with the analysis.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) FindingCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int { return v.FindingCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) FleetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.FleetId }).(pulumi.StringOutput)
+}
+
+// The hostname of the managed instance.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// The OCID to identify this analysis results.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace of this analysis result.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) NonCompliantFindingCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int {
+		return v.NonCompliantFindingCount
+	}).(pulumi.IntOutput)
+}
+
+// The Object Storage object name of this analysis result.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// Total number of summarized events. Summarized events are deduplicated events of interest.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) SummarizedEventCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int {
+		return v.SummarizedEventCount
+	}).(pulumi.IntOutput)
+}
+
+// The time the result is compiled.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time of the first event in the analysis.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeFirstEvent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
+		return v.TimeFirstEvent
+	}).(pulumi.StringOutput)
+}
+
+// Time of the last event in the analysis.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeLastEvent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.TimeLastEvent }).(pulumi.StringOutput)
+}
+
+// Total number of events in the analysis.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TotalEventCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int { return v.TotalEventCount }).(pulumi.IntOutput)
+}
+
+// The OCID of the work request to start the analysis.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.WorkRequestId }).(pulumi.StringOutput)
+}
+
+type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem {
+		return vs[0].([]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem)[vs[1].(int)]
+	}).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput)
+}
+
+type GetFleetCryptoAnalysisResultsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetCryptoAnalysisResultsFilterInput is an input type that accepts GetFleetCryptoAnalysisResultsFilterArgs and GetFleetCryptoAnalysisResultsFilterOutput values.
+// You can construct a concrete instance of `GetFleetCryptoAnalysisResultsFilterInput` via:
+//
+//	GetFleetCryptoAnalysisResultsFilterArgs{...}
+type GetFleetCryptoAnalysisResultsFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetCryptoAnalysisResultsFilterOutput() GetFleetCryptoAnalysisResultsFilterOutput
+	ToGetFleetCryptoAnalysisResultsFilterOutputWithContext(context.Context) GetFleetCryptoAnalysisResultsFilterOutput
+}
+
+type GetFleetCryptoAnalysisResultsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetCryptoAnalysisResultsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetCryptoAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (i GetFleetCryptoAnalysisResultsFilterArgs) ToGetFleetCryptoAnalysisResultsFilterOutput() GetFleetCryptoAnalysisResultsFilterOutput {
+	return i.ToGetFleetCryptoAnalysisResultsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetCryptoAnalysisResultsFilterArgs) ToGetFleetCryptoAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsFilterOutput)
+}
+
+// GetFleetCryptoAnalysisResultsFilterArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsFilterArray and GetFleetCryptoAnalysisResultsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetCryptoAnalysisResultsFilterArrayInput` via:
+//
+//	GetFleetCryptoAnalysisResultsFilterArray{ GetFleetCryptoAnalysisResultsFilterArgs{...} }
+type GetFleetCryptoAnalysisResultsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetCryptoAnalysisResultsFilterArrayOutput() GetFleetCryptoAnalysisResultsFilterArrayOutput
+	ToGetFleetCryptoAnalysisResultsFilterArrayOutputWithContext(context.Context) GetFleetCryptoAnalysisResultsFilterArrayOutput
+}
+
+type GetFleetCryptoAnalysisResultsFilterArray []GetFleetCryptoAnalysisResultsFilterInput
+
+func (GetFleetCryptoAnalysisResultsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetCryptoAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (i GetFleetCryptoAnalysisResultsFilterArray) ToGetFleetCryptoAnalysisResultsFilterArrayOutput() GetFleetCryptoAnalysisResultsFilterArrayOutput {
+	return i.ToGetFleetCryptoAnalysisResultsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetCryptoAnalysisResultsFilterArray) ToGetFleetCryptoAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsFilterArrayOutput)
+}
+
+type GetFleetCryptoAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetCryptoAnalysisResultsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetCryptoAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (o GetFleetCryptoAnalysisResultsFilterOutput) ToGetFleetCryptoAnalysisResultsFilterOutput() GetFleetCryptoAnalysisResultsFilterOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsFilterOutput) ToGetFleetCryptoAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsFilterOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetCryptoAnalysisResultsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetCryptoAnalysisResultsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetCryptoAnalysisResultsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetCryptoAnalysisResultsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetCryptoAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) ToGetFleetCryptoAnalysisResultsFilterArrayOutput() GetFleetCryptoAnalysisResultsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) ToGetFleetCryptoAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetCryptoAnalysisResultsFilter {
+		return vs[0].([]GetFleetCryptoAnalysisResultsFilter)[vs[1].(int)]
+	}).(GetFleetCryptoAnalysisResultsFilterOutput)
 }
 
 type GetFleetInventoryLog struct {
@@ -1084,6 +2658,8 @@ type GetFleetsFleetCollectionItem struct {
 	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateInstallationCount int `pulumi:"approximateInstallationCount"`
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	ApproximateJavaServerCount int `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateJreCount int `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -1102,7 +2678,7 @@ type GetFleetsFleetCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetsFleetCollectionItemInventoryLog `pulumi:"inventoryLogs"`
-	// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetsFleetCollectionItemOperationLog `pulumi:"operationLogs"`
@@ -1130,6 +2706,8 @@ type GetFleetsFleetCollectionItemArgs struct {
 	ApproximateApplicationCount pulumi.IntInput `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateInstallationCount pulumi.IntInput `pulumi:"approximateInstallationCount"`
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	ApproximateJavaServerCount pulumi.IntInput `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateJreCount pulumi.IntInput `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -1148,7 +2726,7 @@ type GetFleetsFleetCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs GetFleetsFleetCollectionItemInventoryLogArrayInput `pulumi:"inventoryLogs"`
-	// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 	IsAdvancedFeaturesEnabled pulumi.BoolInput `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs GetFleetsFleetCollectionItemOperationLogArrayInput `pulumi:"operationLogs"`
@@ -1221,6 +2799,11 @@ func (o GetFleetsFleetCollectionItemOutput) ApproximateInstallationCount() pulum
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
 }
 
+// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+func (o GetFleetsFleetCollectionItemOutput) ApproximateJavaServerCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateJavaServerCount }).(pulumi.IntOutput)
+}
+
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 func (o GetFleetsFleetCollectionItemOutput) ApproximateJreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateJreCount }).(pulumi.IntOutput)
@@ -1268,7 +2851,7 @@ func (o GetFleetsFleetCollectionItemOutput) InventoryLogs() GetFleetsFleetCollec
 	}).(GetFleetsFleetCollectionItemInventoryLogArrayOutput)
 }
 
-// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 func (o GetFleetsFleetCollectionItemOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
 }
@@ -3845,9 +5428,11 @@ func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetJavaReleasesJavaReleaseCollectionItem struct {
+	// Artifact content types for the Java version.
+	ArtifactContentTypes []string `pulumi:"artifactContentTypes"`
 	// List of Java artifacts.
 	Artifacts []GetJavaReleasesJavaReleaseCollectionItemArtifact `pulumi:"artifacts"`
-	// Complete information of a specific Java release family.
+	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails []GetJavaReleasesJavaReleaseCollectionItemFamilyDetail `pulumi:"familyDetails"`
 	// The version identifier for the Java family.
 	FamilyVersion string `pulumi:"familyVersion"`
@@ -3881,9 +5466,11 @@ type GetJavaReleasesJavaReleaseCollectionItemInput interface {
 }
 
 type GetJavaReleasesJavaReleaseCollectionItemArgs struct {
+	// Artifact content types for the Java version.
+	ArtifactContentTypes pulumi.StringArrayInput `pulumi:"artifactContentTypes"`
 	// List of Java artifacts.
 	Artifacts GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput `pulumi:"artifacts"`
-	// Complete information of a specific Java release family.
+	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput `pulumi:"familyDetails"`
 	// The version identifier for the Java family.
 	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
@@ -3956,6 +5543,11 @@ func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToGetJavaReleasesJavaRel
 	return o
 }
 
+// Artifact content types for the Java version.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ArtifactContentTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) []string { return v.ArtifactContentTypes }).(pulumi.StringArrayOutput)
+}
+
 // List of Java artifacts.
 func (o GetJavaReleasesJavaReleaseCollectionItemOutput) Artifacts() GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) []GetJavaReleasesJavaReleaseCollectionItemArtifact {
@@ -3963,7 +5555,7 @@ func (o GetJavaReleasesJavaReleaseCollectionItemOutput) Artifacts() GetJavaRelea
 	}).(GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput)
 }
 
-// Complete information of a specific Java release family.
+// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 func (o GetJavaReleasesJavaReleaseCollectionItemOutput) FamilyDetails() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) []GetJavaReleasesJavaReleaseCollectionItemFamilyDetail {
 		return v.FamilyDetails
@@ -4815,12 +6407,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetInventoryLogPtrInput)(nil)).Elem(), FleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetOperationLogInput)(nil)).Elem(), FleetOperationLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetOperationLogPtrInput)(nil)).Elem(), FleetOperationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJfrRecordingInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationJfrRecordingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJfrRecordingArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationJfrRecordingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsFilterInput)(nil)).Elem(), GetFleetBlocklistsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsFilterArrayInput)(nil)).Elem(), GetFleetBlocklistsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemInput)(nil)).Elem(), GetFleetBlocklistsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemArrayInput)(nil)).Elem(), GetFleetBlocklistsItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemTargetInput)(nil)).Elem(), GetFleetBlocklistsItemTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemTargetArrayInput)(nil)).Elem(), GetFleetBlocklistsItemTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsFilterInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsFilterArrayInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogInput)(nil)).Elem(), GetFleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogArrayInput)(nil)).Elem(), GetFleetInventoryLogArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetOperationLogInput)(nil)).Elem(), GetFleetOperationLogArgs{})
@@ -4889,12 +6507,38 @@ func init() {
 	pulumi.RegisterOutputType(FleetInventoryLogPtrOutput{})
 	pulumi.RegisterOutputType(FleetOperationLogOutput{})
 	pulumi.RegisterOutputType(FleetOperationLogPtrOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationJfrRecordingOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsFilterOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemTargetOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetOperationLogOutput{})

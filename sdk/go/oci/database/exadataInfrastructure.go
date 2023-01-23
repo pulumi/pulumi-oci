@@ -60,8 +60,8 @@ import (
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsCpsOfflineReportEnabled: pulumi.Any(_var.Exadata_infrastructure_is_cps_offline_report_enabled),
+//				IsMultiRackDeployment:     pulumi.Any(_var.Exadata_infrastructure_is_multi_rack_deployment),
 //				MaintenanceWindow: &database.ExadataInfrastructureMaintenanceWindowArgs{
-//					Preference:                pulumi.Any(_var.Exadata_infrastructure_maintenance_window_preference),
 //					CustomActionTimeoutInMins: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
 //					DaysOfWeeks: database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
 //						&database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{
@@ -78,9 +78,11 @@ import (
 //						},
 //					},
 //					PatchingMode:  pulumi.Any(_var.Exadata_infrastructure_maintenance_window_patching_mode),
+//					Preference:    pulumi.Any(_var.Exadata_infrastructure_maintenance_window_preference),
 //					WeeksOfMonths: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_weeks_of_month),
 //				},
-//				StorageCount: pulumi.Any(_var.Exadata_infrastructure_storage_count),
+//				MultiRackConfigurationFile: pulumi.Any(_var.Exadata_infrastructure_multi_rack_configuration_file),
+//				StorageCount:               pulumi.Any(_var.Exadata_infrastructure_storage_count),
 //			})
 //			if err != nil {
 //				return err
@@ -107,6 +109,10 @@ type ExadataInfrastructure struct {
 	ActivatedStorageCount pulumi.IntOutput `pulumi:"activatedStorageCount"`
 	// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
 	ActivationFile pulumi.StringPtrOutput `pulumi:"activationFile"`
+	// The requested number of additional compute servers for the Exadata infrastructure.
+	AdditionalComputeCount pulumi.IntOutput `pulumi:"additionalComputeCount"`
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	AdditionalComputeSystemModel pulumi.StringOutput `pulumi:"additionalComputeSystemModel"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
 	AdditionalStorageCount pulumi.IntOutput `pulumi:"additionalStorageCount"`
 	// (Updatable) The CIDR block for the Exadata administration network.
@@ -148,6 +154,8 @@ type ExadataInfrastructure struct {
 	InfiniBandNetworkCidr pulumi.StringOutput `pulumi:"infiniBandNetworkCidr"`
 	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
 	IsCpsOfflineReportEnabled pulumi.BoolOutput `pulumi:"isCpsOfflineReportEnabled"`
+	// (Updatable) Indicates if deployment is Multi-Rack or not.
+	IsMultiRackDeployment pulumi.BoolOutput `pulumi:"isMultiRackDeployment"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -166,6 +174,8 @@ type ExadataInfrastructure struct {
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
 	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
 	MonthlyDbServerVersion pulumi.StringOutput `pulumi:"monthlyDbServerVersion"`
+	// (Updatable) The base64 encoded Multi-Rack configuration json file.
+	MultiRackConfigurationFile pulumi.StringPtrOutput `pulumi:"multiRackConfigurationFile"`
 	// (Updatable) The netmask for the control plane network.
 	Netmask pulumi.StringOutput `pulumi:"netmask"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -253,6 +263,10 @@ type exadataInfrastructureState struct {
 	ActivatedStorageCount *int `pulumi:"activatedStorageCount"`
 	// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
 	ActivationFile *string `pulumi:"activationFile"`
+	// The requested number of additional compute servers for the Exadata infrastructure.
+	AdditionalComputeCount *int `pulumi:"additionalComputeCount"`
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	AdditionalComputeSystemModel *string `pulumi:"additionalComputeSystemModel"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
 	AdditionalStorageCount *int `pulumi:"additionalStorageCount"`
 	// (Updatable) The CIDR block for the Exadata administration network.
@@ -294,6 +308,8 @@ type exadataInfrastructureState struct {
 	InfiniBandNetworkCidr *string `pulumi:"infiniBandNetworkCidr"`
 	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
 	IsCpsOfflineReportEnabled *bool `pulumi:"isCpsOfflineReportEnabled"`
+	// (Updatable) Indicates if deployment is Multi-Rack or not.
+	IsMultiRackDeployment *bool `pulumi:"isMultiRackDeployment"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -312,6 +328,8 @@ type exadataInfrastructureState struct {
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
 	MonthlyDbServerVersion *string `pulumi:"monthlyDbServerVersion"`
+	// (Updatable) The base64 encoded Multi-Rack configuration json file.
+	MultiRackConfigurationFile *string `pulumi:"multiRackConfigurationFile"`
 	// (Updatable) The netmask for the control plane network.
 	Netmask *string `pulumi:"netmask"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -335,6 +353,10 @@ type ExadataInfrastructureState struct {
 	ActivatedStorageCount pulumi.IntPtrInput
 	// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
 	ActivationFile pulumi.StringPtrInput
+	// The requested number of additional compute servers for the Exadata infrastructure.
+	AdditionalComputeCount pulumi.IntPtrInput
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	AdditionalComputeSystemModel pulumi.StringPtrInput
 	// The requested number of additional storage servers for the Exadata infrastructure.
 	AdditionalStorageCount pulumi.IntPtrInput
 	// (Updatable) The CIDR block for the Exadata administration network.
@@ -376,6 +398,8 @@ type ExadataInfrastructureState struct {
 	InfiniBandNetworkCidr pulumi.StringPtrInput
 	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
 	IsCpsOfflineReportEnabled pulumi.BoolPtrInput
+	// (Updatable) Indicates if deployment is Multi-Rack or not.
+	IsMultiRackDeployment pulumi.BoolPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -394,6 +418,8 @@ type ExadataInfrastructureState struct {
 	MemorySizeInGbs pulumi.IntPtrInput
 	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
 	MonthlyDbServerVersion pulumi.StringPtrInput
+	// (Updatable) The base64 encoded Multi-Rack configuration json file.
+	MultiRackConfigurationFile pulumi.StringPtrInput
 	// (Updatable) The netmask for the control plane network.
 	Netmask pulumi.StringPtrInput
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -450,8 +476,12 @@ type exadataInfrastructureArgs struct {
 	InfiniBandNetworkCidr string `pulumi:"infiniBandNetworkCidr"`
 	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
 	IsCpsOfflineReportEnabled *bool `pulumi:"isCpsOfflineReportEnabled"`
+	// (Updatable) Indicates if deployment is Multi-Rack or not.
+	IsMultiRackDeployment *bool `pulumi:"isMultiRackDeployment"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow *ExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindow"`
+	// (Updatable) The base64 encoded Multi-Rack configuration json file.
+	MultiRackConfigurationFile *string `pulumi:"multiRackConfigurationFile"`
 	// (Updatable) The netmask for the control plane network.
 	Netmask string `pulumi:"netmask"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -499,8 +529,12 @@ type ExadataInfrastructureArgs struct {
 	InfiniBandNetworkCidr pulumi.StringInput
 	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
 	IsCpsOfflineReportEnabled pulumi.BoolPtrInput
+	// (Updatable) Indicates if deployment is Multi-Rack or not.
+	IsMultiRackDeployment pulumi.BoolPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow ExadataInfrastructureMaintenanceWindowPtrInput
+	// (Updatable) The base64 encoded Multi-Rack configuration json file.
+	MultiRackConfigurationFile pulumi.StringPtrInput
 	// (Updatable) The netmask for the control plane network.
 	Netmask pulumi.StringInput
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -610,6 +644,16 @@ func (o ExadataInfrastructureOutput) ActivationFile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringPtrOutput { return v.ActivationFile }).(pulumi.StringPtrOutput)
 }
 
+// The requested number of additional compute servers for the Exadata infrastructure.
+func (o ExadataInfrastructureOutput) AdditionalComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.IntOutput { return v.AdditionalComputeCount }).(pulumi.IntOutput)
+}
+
+// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+func (o ExadataInfrastructureOutput) AdditionalComputeSystemModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.AdditionalComputeSystemModel }).(pulumi.StringOutput)
+}
+
 // The requested number of additional storage servers for the Exadata infrastructure.
 func (o ExadataInfrastructureOutput) AdditionalStorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.IntOutput { return v.AdditionalStorageCount }).(pulumi.IntOutput)
@@ -714,6 +758,11 @@ func (o ExadataInfrastructureOutput) IsCpsOfflineReportEnabled() pulumi.BoolOutp
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.BoolOutput { return v.IsCpsOfflineReportEnabled }).(pulumi.BoolOutput)
 }
 
+// (Updatable) Indicates if deployment is Multi-Rack or not.
+func (o ExadataInfrastructureOutput) IsMultiRackDeployment() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.BoolOutput { return v.IsMultiRackDeployment }).(pulumi.BoolOutput)
+}
+
 // Additional information about the current lifecycle state.
 func (o ExadataInfrastructureOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -759,6 +808,11 @@ func (o ExadataInfrastructureOutput) MemorySizeInGbs() pulumi.IntOutput {
 // The monthly software version of the database servers (dom0) in the Exadata infrastructure.
 func (o ExadataInfrastructureOutput) MonthlyDbServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.MonthlyDbServerVersion }).(pulumi.StringOutput)
+}
+
+// (Updatable) The base64 encoded Multi-Rack configuration json file.
+func (o ExadataInfrastructureOutput) MultiRackConfigurationFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringPtrOutput { return v.MultiRackConfigurationFile }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The netmask for the control plane network.

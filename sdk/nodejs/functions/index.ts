@@ -5,37 +5,136 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./application";
-export * from "./function";
-export * from "./getApplication";
-export * from "./getApplications";
-export * from "./getFunction";
-export * from "./getFunctions";
-export * from "./getFusionEnvironment";
-export * from "./getFusionEnvironmentAdminUser";
-export * from "./getFusionEnvironmentAdminUsers";
-export * from "./getFusionEnvironmentDataMaskingActivities";
-export * from "./getFusionEnvironmentDataMaskingActivity";
-export * from "./getFusionEnvironmentFamilies";
-export * from "./getFusionEnvironmentFamily";
-export * from "./getFusionEnvironmentFamilyLimitsAndUsage";
-export * from "./getFusionEnvironmentFamilySubscriptionDetail";
-export * from "./getFusionEnvironmentRefreshActivities";
-export * from "./getFusionEnvironmentRefreshActivity";
-export * from "./getFusionEnvironmentScheduledActivities";
-export * from "./getFusionEnvironmentScheduledActivity";
-export * from "./getFusionEnvironmentServiceAttachment";
-export * from "./getFusionEnvironmentServiceAttachments";
-export * from "./getFusionEnvironmentStatus";
-export * from "./getFusionEnvironmentTimeAvailableForRefresh";
-export * from "./getFusionEnvironmentTimeAvailableForRefreshs";
-export * from "./getFusionEnvironments";
-export * from "./invokeFunction";
+export { ApplicationArgs, ApplicationState } from "./application";
+export type Application = import("./application").Application;
+export const Application: typeof import("./application").Application = null as any;
+utilities.lazyLoad(exports, ["Application"], () => require("./application"));
 
-// Import resources to register:
-import { Application } from "./application";
-import { Function } from "./function";
-import { InvokeFunction } from "./invokeFunction";
+export { FunctionArgs, FunctionState } from "./function";
+export type Function = import("./function").Function;
+export const Function: typeof import("./function").Function = null as any;
+utilities.lazyLoad(exports, ["Function"], () => require("./function"));
+
+export { GetApplicationArgs, GetApplicationResult, GetApplicationOutputArgs } from "./getApplication";
+export const getApplication: typeof import("./getApplication").getApplication = null as any;
+export const getApplicationOutput: typeof import("./getApplication").getApplicationOutput = null as any;
+utilities.lazyLoad(exports, ["getApplication","getApplicationOutput"], () => require("./getApplication"));
+
+export { GetApplicationsArgs, GetApplicationsResult, GetApplicationsOutputArgs } from "./getApplications";
+export const getApplications: typeof import("./getApplications").getApplications = null as any;
+export const getApplicationsOutput: typeof import("./getApplications").getApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getApplications","getApplicationsOutput"], () => require("./getApplications"));
+
+export { GetFunctionArgs, GetFunctionResult, GetFunctionOutputArgs } from "./getFunction";
+export const getFunction: typeof import("./getFunction").getFunction = null as any;
+export const getFunctionOutput: typeof import("./getFunction").getFunctionOutput = null as any;
+utilities.lazyLoad(exports, ["getFunction","getFunctionOutput"], () => require("./getFunction"));
+
+export { GetFunctionsArgs, GetFunctionsResult, GetFunctionsOutputArgs } from "./getFunctions";
+export const getFunctions: typeof import("./getFunctions").getFunctions = null as any;
+export const getFunctionsOutput: typeof import("./getFunctions").getFunctionsOutput = null as any;
+utilities.lazyLoad(exports, ["getFunctions","getFunctionsOutput"], () => require("./getFunctions"));
+
+export { GetFusionEnvironmentArgs, GetFusionEnvironmentResult, GetFusionEnvironmentOutputArgs } from "./getFusionEnvironment";
+export const getFusionEnvironment: typeof import("./getFusionEnvironment").getFusionEnvironment = null as any;
+export const getFusionEnvironmentOutput: typeof import("./getFusionEnvironment").getFusionEnvironmentOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironment","getFusionEnvironmentOutput"], () => require("./getFusionEnvironment"));
+
+export { GetFusionEnvironmentAdminUserArgs, GetFusionEnvironmentAdminUserResult, GetFusionEnvironmentAdminUserOutputArgs } from "./getFusionEnvironmentAdminUser";
+export const getFusionEnvironmentAdminUser: typeof import("./getFusionEnvironmentAdminUser").getFusionEnvironmentAdminUser = null as any;
+export const getFusionEnvironmentAdminUserOutput: typeof import("./getFusionEnvironmentAdminUser").getFusionEnvironmentAdminUserOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentAdminUser","getFusionEnvironmentAdminUserOutput"], () => require("./getFusionEnvironmentAdminUser"));
+
+export { GetFusionEnvironmentAdminUsersArgs, GetFusionEnvironmentAdminUsersResult, GetFusionEnvironmentAdminUsersOutputArgs } from "./getFusionEnvironmentAdminUsers";
+export const getFusionEnvironmentAdminUsers: typeof import("./getFusionEnvironmentAdminUsers").getFusionEnvironmentAdminUsers = null as any;
+export const getFusionEnvironmentAdminUsersOutput: typeof import("./getFusionEnvironmentAdminUsers").getFusionEnvironmentAdminUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentAdminUsers","getFusionEnvironmentAdminUsersOutput"], () => require("./getFusionEnvironmentAdminUsers"));
+
+export { GetFusionEnvironmentDataMaskingActivitiesArgs, GetFusionEnvironmentDataMaskingActivitiesResult, GetFusionEnvironmentDataMaskingActivitiesOutputArgs } from "./getFusionEnvironmentDataMaskingActivities";
+export const getFusionEnvironmentDataMaskingActivities: typeof import("./getFusionEnvironmentDataMaskingActivities").getFusionEnvironmentDataMaskingActivities = null as any;
+export const getFusionEnvironmentDataMaskingActivitiesOutput: typeof import("./getFusionEnvironmentDataMaskingActivities").getFusionEnvironmentDataMaskingActivitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentDataMaskingActivities","getFusionEnvironmentDataMaskingActivitiesOutput"], () => require("./getFusionEnvironmentDataMaskingActivities"));
+
+export { GetFusionEnvironmentDataMaskingActivityArgs, GetFusionEnvironmentDataMaskingActivityResult, GetFusionEnvironmentDataMaskingActivityOutputArgs } from "./getFusionEnvironmentDataMaskingActivity";
+export const getFusionEnvironmentDataMaskingActivity: typeof import("./getFusionEnvironmentDataMaskingActivity").getFusionEnvironmentDataMaskingActivity = null as any;
+export const getFusionEnvironmentDataMaskingActivityOutput: typeof import("./getFusionEnvironmentDataMaskingActivity").getFusionEnvironmentDataMaskingActivityOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentDataMaskingActivity","getFusionEnvironmentDataMaskingActivityOutput"], () => require("./getFusionEnvironmentDataMaskingActivity"));
+
+export { GetFusionEnvironmentFamiliesArgs, GetFusionEnvironmentFamiliesResult, GetFusionEnvironmentFamiliesOutputArgs } from "./getFusionEnvironmentFamilies";
+export const getFusionEnvironmentFamilies: typeof import("./getFusionEnvironmentFamilies").getFusionEnvironmentFamilies = null as any;
+export const getFusionEnvironmentFamiliesOutput: typeof import("./getFusionEnvironmentFamilies").getFusionEnvironmentFamiliesOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentFamilies","getFusionEnvironmentFamiliesOutput"], () => require("./getFusionEnvironmentFamilies"));
+
+export { GetFusionEnvironmentFamilyArgs, GetFusionEnvironmentFamilyResult, GetFusionEnvironmentFamilyOutputArgs } from "./getFusionEnvironmentFamily";
+export const getFusionEnvironmentFamily: typeof import("./getFusionEnvironmentFamily").getFusionEnvironmentFamily = null as any;
+export const getFusionEnvironmentFamilyOutput: typeof import("./getFusionEnvironmentFamily").getFusionEnvironmentFamilyOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentFamily","getFusionEnvironmentFamilyOutput"], () => require("./getFusionEnvironmentFamily"));
+
+export { GetFusionEnvironmentFamilyLimitsAndUsageArgs, GetFusionEnvironmentFamilyLimitsAndUsageResult, GetFusionEnvironmentFamilyLimitsAndUsageOutputArgs } from "./getFusionEnvironmentFamilyLimitsAndUsage";
+export const getFusionEnvironmentFamilyLimitsAndUsage: typeof import("./getFusionEnvironmentFamilyLimitsAndUsage").getFusionEnvironmentFamilyLimitsAndUsage = null as any;
+export const getFusionEnvironmentFamilyLimitsAndUsageOutput: typeof import("./getFusionEnvironmentFamilyLimitsAndUsage").getFusionEnvironmentFamilyLimitsAndUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentFamilyLimitsAndUsage","getFusionEnvironmentFamilyLimitsAndUsageOutput"], () => require("./getFusionEnvironmentFamilyLimitsAndUsage"));
+
+export { GetFusionEnvironmentFamilySubscriptionDetailArgs, GetFusionEnvironmentFamilySubscriptionDetailResult, GetFusionEnvironmentFamilySubscriptionDetailOutputArgs } from "./getFusionEnvironmentFamilySubscriptionDetail";
+export const getFusionEnvironmentFamilySubscriptionDetail: typeof import("./getFusionEnvironmentFamilySubscriptionDetail").getFusionEnvironmentFamilySubscriptionDetail = null as any;
+export const getFusionEnvironmentFamilySubscriptionDetailOutput: typeof import("./getFusionEnvironmentFamilySubscriptionDetail").getFusionEnvironmentFamilySubscriptionDetailOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentFamilySubscriptionDetail","getFusionEnvironmentFamilySubscriptionDetailOutput"], () => require("./getFusionEnvironmentFamilySubscriptionDetail"));
+
+export { GetFusionEnvironmentRefreshActivitiesArgs, GetFusionEnvironmentRefreshActivitiesResult, GetFusionEnvironmentRefreshActivitiesOutputArgs } from "./getFusionEnvironmentRefreshActivities";
+export const getFusionEnvironmentRefreshActivities: typeof import("./getFusionEnvironmentRefreshActivities").getFusionEnvironmentRefreshActivities = null as any;
+export const getFusionEnvironmentRefreshActivitiesOutput: typeof import("./getFusionEnvironmentRefreshActivities").getFusionEnvironmentRefreshActivitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentRefreshActivities","getFusionEnvironmentRefreshActivitiesOutput"], () => require("./getFusionEnvironmentRefreshActivities"));
+
+export { GetFusionEnvironmentRefreshActivityArgs, GetFusionEnvironmentRefreshActivityResult, GetFusionEnvironmentRefreshActivityOutputArgs } from "./getFusionEnvironmentRefreshActivity";
+export const getFusionEnvironmentRefreshActivity: typeof import("./getFusionEnvironmentRefreshActivity").getFusionEnvironmentRefreshActivity = null as any;
+export const getFusionEnvironmentRefreshActivityOutput: typeof import("./getFusionEnvironmentRefreshActivity").getFusionEnvironmentRefreshActivityOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentRefreshActivity","getFusionEnvironmentRefreshActivityOutput"], () => require("./getFusionEnvironmentRefreshActivity"));
+
+export { GetFusionEnvironmentScheduledActivitiesArgs, GetFusionEnvironmentScheduledActivitiesResult, GetFusionEnvironmentScheduledActivitiesOutputArgs } from "./getFusionEnvironmentScheduledActivities";
+export const getFusionEnvironmentScheduledActivities: typeof import("./getFusionEnvironmentScheduledActivities").getFusionEnvironmentScheduledActivities = null as any;
+export const getFusionEnvironmentScheduledActivitiesOutput: typeof import("./getFusionEnvironmentScheduledActivities").getFusionEnvironmentScheduledActivitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentScheduledActivities","getFusionEnvironmentScheduledActivitiesOutput"], () => require("./getFusionEnvironmentScheduledActivities"));
+
+export { GetFusionEnvironmentScheduledActivityArgs, GetFusionEnvironmentScheduledActivityResult, GetFusionEnvironmentScheduledActivityOutputArgs } from "./getFusionEnvironmentScheduledActivity";
+export const getFusionEnvironmentScheduledActivity: typeof import("./getFusionEnvironmentScheduledActivity").getFusionEnvironmentScheduledActivity = null as any;
+export const getFusionEnvironmentScheduledActivityOutput: typeof import("./getFusionEnvironmentScheduledActivity").getFusionEnvironmentScheduledActivityOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentScheduledActivity","getFusionEnvironmentScheduledActivityOutput"], () => require("./getFusionEnvironmentScheduledActivity"));
+
+export { GetFusionEnvironmentServiceAttachmentArgs, GetFusionEnvironmentServiceAttachmentResult, GetFusionEnvironmentServiceAttachmentOutputArgs } from "./getFusionEnvironmentServiceAttachment";
+export const getFusionEnvironmentServiceAttachment: typeof import("./getFusionEnvironmentServiceAttachment").getFusionEnvironmentServiceAttachment = null as any;
+export const getFusionEnvironmentServiceAttachmentOutput: typeof import("./getFusionEnvironmentServiceAttachment").getFusionEnvironmentServiceAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentServiceAttachment","getFusionEnvironmentServiceAttachmentOutput"], () => require("./getFusionEnvironmentServiceAttachment"));
+
+export { GetFusionEnvironmentServiceAttachmentsArgs, GetFusionEnvironmentServiceAttachmentsResult, GetFusionEnvironmentServiceAttachmentsOutputArgs } from "./getFusionEnvironmentServiceAttachments";
+export const getFusionEnvironmentServiceAttachments: typeof import("./getFusionEnvironmentServiceAttachments").getFusionEnvironmentServiceAttachments = null as any;
+export const getFusionEnvironmentServiceAttachmentsOutput: typeof import("./getFusionEnvironmentServiceAttachments").getFusionEnvironmentServiceAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentServiceAttachments","getFusionEnvironmentServiceAttachmentsOutput"], () => require("./getFusionEnvironmentServiceAttachments"));
+
+export { GetFusionEnvironmentStatusArgs, GetFusionEnvironmentStatusResult, GetFusionEnvironmentStatusOutputArgs } from "./getFusionEnvironmentStatus";
+export const getFusionEnvironmentStatus: typeof import("./getFusionEnvironmentStatus").getFusionEnvironmentStatus = null as any;
+export const getFusionEnvironmentStatusOutput: typeof import("./getFusionEnvironmentStatus").getFusionEnvironmentStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentStatus","getFusionEnvironmentStatusOutput"], () => require("./getFusionEnvironmentStatus"));
+
+export { GetFusionEnvironmentTimeAvailableForRefreshArgs, GetFusionEnvironmentTimeAvailableForRefreshResult, GetFusionEnvironmentTimeAvailableForRefreshOutputArgs } from "./getFusionEnvironmentTimeAvailableForRefresh";
+export const getFusionEnvironmentTimeAvailableForRefresh: typeof import("./getFusionEnvironmentTimeAvailableForRefresh").getFusionEnvironmentTimeAvailableForRefresh = null as any;
+export const getFusionEnvironmentTimeAvailableForRefreshOutput: typeof import("./getFusionEnvironmentTimeAvailableForRefresh").getFusionEnvironmentTimeAvailableForRefreshOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentTimeAvailableForRefresh","getFusionEnvironmentTimeAvailableForRefreshOutput"], () => require("./getFusionEnvironmentTimeAvailableForRefresh"));
+
+export { GetFusionEnvironmentTimeAvailableForRefreshsArgs, GetFusionEnvironmentTimeAvailableForRefreshsResult, GetFusionEnvironmentTimeAvailableForRefreshsOutputArgs } from "./getFusionEnvironmentTimeAvailableForRefreshs";
+export const getFusionEnvironmentTimeAvailableForRefreshs: typeof import("./getFusionEnvironmentTimeAvailableForRefreshs").getFusionEnvironmentTimeAvailableForRefreshs = null as any;
+export const getFusionEnvironmentTimeAvailableForRefreshsOutput: typeof import("./getFusionEnvironmentTimeAvailableForRefreshs").getFusionEnvironmentTimeAvailableForRefreshsOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironmentTimeAvailableForRefreshs","getFusionEnvironmentTimeAvailableForRefreshsOutput"], () => require("./getFusionEnvironmentTimeAvailableForRefreshs"));
+
+export { GetFusionEnvironmentsArgs, GetFusionEnvironmentsResult, GetFusionEnvironmentsOutputArgs } from "./getFusionEnvironments";
+export const getFusionEnvironments: typeof import("./getFusionEnvironments").getFusionEnvironments = null as any;
+export const getFusionEnvironmentsOutput: typeof import("./getFusionEnvironments").getFusionEnvironmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getFusionEnvironments","getFusionEnvironmentsOutput"], () => require("./getFusionEnvironments"));
+
+export { InvokeFunctionArgs, InvokeFunctionState } from "./invokeFunction";
+export type InvokeFunction = import("./invokeFunction").InvokeFunction;
+export const InvokeFunction: typeof import("./invokeFunction").InvokeFunction = null as any;
+utilities.lazyLoad(exports, ["InvokeFunction"], () => require("./invokeFunction"));
+
 
 const _module = {
     version: utilities.getVersion(),

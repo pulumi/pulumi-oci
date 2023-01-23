@@ -81,6 +81,8 @@ __all__ = [
     'DeploymentDeployPipelineEnvironmentItem',
     'DeploymentDeployPipelineEnvironmentItemDeployPipelineStage',
     'DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem',
+    'DeploymentDeployStageOverrideArguments',
+    'DeploymentDeployStageOverrideArgumentsItem',
     'DeploymentDeploymentArguments',
     'DeploymentDeploymentArgumentsItem',
     'DeploymentDeploymentExecutionProgress',
@@ -235,6 +237,8 @@ __all__ = [
     'GetDeploymentDeployPipelineEnvironmentItemResult',
     'GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageResult',
     'GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemResult',
+    'GetDeploymentDeployStageOverrideArgumentResult',
+    'GetDeploymentDeployStageOverrideArgumentItemResult',
     'GetDeploymentDeploymentArgumentResult',
     'GetDeploymentDeploymentArgumentItemResult',
     'GetDeploymentDeploymentExecutionProgressResult',
@@ -250,6 +254,8 @@ __all__ = [
     'GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemResult',
     'GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageResult',
     'GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemResult',
+    'GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult',
+    'GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult',
@@ -1615,6 +1621,8 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
             suggest = "file_filters"
         elif key == "headRef":
             suggest = "head_ref"
+        elif key == "repositoryName":
+            suggest = "repository_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in BuildRunBuildRunSourceTriggerInfoActionFilterInclude. Access the value via the '{suggest}' property getter instead.")
@@ -1630,10 +1638,12 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
     def __init__(__self__, *,
                  base_ref: Optional[str] = None,
                  file_filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter']] = None,
-                 head_ref: Optional[str] = None):
+                 head_ref: Optional[str] = None,
+                 repository_name: Optional[str] = None):
         """
         :param str base_ref: The target branch for pull requests; not applicable for push requests.
         :param str head_ref: Branch for push event; source branch for pull requests.
+        :param str repository_name: The repository name for trigger events.
         """
         if base_ref is not None:
             pulumi.set(__self__, "base_ref", base_ref)
@@ -1641,6 +1651,8 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
             pulumi.set(__self__, "file_filters", file_filters)
         if head_ref is not None:
             pulumi.set(__self__, "head_ref", head_ref)
+        if repository_name is not None:
+            pulumi.set(__self__, "repository_name", repository_name)
 
     @property
     @pulumi.getter(name="baseRef")
@@ -1662,6 +1674,14 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
         Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+    @property
+    @pulumi.getter(name="repositoryName")
+    def repository_name(self) -> Optional[str]:
+        """
+        The repository name for trigger events.
+        """
+        return pulumi.get(self, "repository_name")
 
 
 @pulumi.output_type
@@ -3399,7 +3419,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItem(dict):
                  deploy_stage_id: Optional[str] = None,
                  display_name: Optional[str] = None):
         """
-        :param str deploy_stage_id: Specifies the OCID of the stage to be redeployed.
+        :param str deploy_stage_id: The OCID of the stage.
         :param str display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         """
         if deploy_stage_id is not None:
@@ -3411,7 +3431,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItem(dict):
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[str]:
         """
-        Specifies the OCID of the stage to be redeployed.
+        The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -3551,7 +3571,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
                  deploy_stage_id: Optional[str] = None,
                  display_name: Optional[str] = None):
         """
-        :param str deploy_stage_id: Specifies the OCID of the stage to be redeployed.
+        :param str deploy_stage_id: The OCID of the stage.
         :param str display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         """
         if deploy_stage_id is not None:
@@ -3563,7 +3583,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[str]:
         """
-        Specifies the OCID of the stage to be redeployed.
+        The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -3574,6 +3594,85 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
         (Updatable) Deployment display name. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class DeploymentDeployStageOverrideArguments(dict):
+    def __init__(__self__, *,
+                 items: Optional[Sequence['outputs.DeploymentDeployStageOverrideArgumentsItem']] = None):
+        """
+        :param Sequence['DeploymentDeployStageOverrideArgumentsItemArgs'] items: List of arguments provided at the time of deployment.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[Sequence['outputs.DeploymentDeployStageOverrideArgumentsItem']]:
+        """
+        List of arguments provided at the time of deployment.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class DeploymentDeployStageOverrideArgumentsItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "deployStageId":
+            suggest = "deploy_stage_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentDeployStageOverrideArgumentsItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentDeployStageOverrideArgumentsItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentDeployStageOverrideArgumentsItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 deploy_stage_id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str deploy_stage_id: The OCID of the stage.
+        :param str name: Name of the parameter (case-sensitive).
+        :param str value: value of the argument.
+        """
+        if deploy_stage_id is not None:
+            pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="deployStageId")
+    def deploy_stage_id(self) -> Optional[str]:
+        """
+        The OCID of the stage.
+        """
+        return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        value of the argument.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -3921,8 +4020,9 @@ class TriggerActionFilter(dict):
                  exclude: Optional['outputs.TriggerActionFilterExclude'] = None,
                  include: Optional['outputs.TriggerActionFilterInclude'] = None):
         """
-        :param str trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        :param str trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         :param Sequence[str] events: (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+        :param 'TriggerActionFilterExcludeArgs' exclude: (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
         :param 'TriggerActionFilterIncludeArgs' include: (Updatable) Attributes to filter GitLab self-hosted server events.
         """
         pulumi.set(__self__, "trigger_source", trigger_source)
@@ -3937,7 +4037,7 @@ class TriggerActionFilter(dict):
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> str:
         """
-        (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         """
         return pulumi.get(self, "trigger_source")
 
@@ -3952,6 +4052,9 @@ class TriggerActionFilter(dict):
     @property
     @pulumi.getter
     def exclude(self) -> Optional['outputs.TriggerActionFilterExclude']:
+        """
+        (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        """
         return pulumi.get(self, "exclude")
 
     @property
@@ -3984,12 +4087,18 @@ class TriggerActionFilterExclude(dict):
 
     def __init__(__self__, *,
                  file_filter: Optional['outputs.TriggerActionFilterExcludeFileFilter'] = None):
+        """
+        :param 'TriggerActionFilterExcludeFileFilterArgs' file_filter: (Updatable) Attributes to support include/exclude files for triggering build runs.
+        """
         if file_filter is not None:
             pulumi.set(__self__, "file_filter", file_filter)
 
     @property
     @pulumi.getter(name="fileFilter")
     def file_filter(self) -> Optional['outputs.TriggerActionFilterExcludeFileFilter']:
+        """
+        (Updatable) Attributes to support include/exclude files for triggering build runs.
+        """
         return pulumi.get(self, "file_filter")
 
 
@@ -4014,12 +4123,18 @@ class TriggerActionFilterExcludeFileFilter(dict):
 
     def __init__(__self__, *,
                  file_paths: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] file_paths: (Updatable) The file paths/glob pattern for files.
+        """
         if file_paths is not None:
             pulumi.set(__self__, "file_paths", file_paths)
 
     @property
     @pulumi.getter(name="filePaths")
     def file_paths(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The file paths/glob pattern for files.
+        """
         return pulumi.get(self, "file_paths")
 
 
@@ -4034,6 +4149,8 @@ class TriggerActionFilterInclude(dict):
             suggest = "file_filter"
         elif key == "headRef":
             suggest = "head_ref"
+        elif key == "repositoryName":
+            suggest = "repository_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in TriggerActionFilterInclude. Access the value via the '{suggest}' property getter instead.")
@@ -4049,10 +4166,13 @@ class TriggerActionFilterInclude(dict):
     def __init__(__self__, *,
                  base_ref: Optional[str] = None,
                  file_filter: Optional['outputs.TriggerActionFilterIncludeFileFilter'] = None,
-                 head_ref: Optional[str] = None):
+                 head_ref: Optional[str] = None,
+                 repository_name: Optional[str] = None):
         """
         :param str base_ref: (Updatable) The target branch for pull requests; not applicable for push requests.
+        :param 'TriggerActionFilterIncludeFileFilterArgs' file_filter: (Updatable) Attributes to support include/exclude files for triggering build runs.
         :param str head_ref: (Updatable) Branch for push event; source branch for pull requests.
+        :param str repository_name: (Updatable) The repository name for trigger events.
         """
         if base_ref is not None:
             pulumi.set(__self__, "base_ref", base_ref)
@@ -4060,6 +4180,8 @@ class TriggerActionFilterInclude(dict):
             pulumi.set(__self__, "file_filter", file_filter)
         if head_ref is not None:
             pulumi.set(__self__, "head_ref", head_ref)
+        if repository_name is not None:
+            pulumi.set(__self__, "repository_name", repository_name)
 
     @property
     @pulumi.getter(name="baseRef")
@@ -4072,6 +4194,9 @@ class TriggerActionFilterInclude(dict):
     @property
     @pulumi.getter(name="fileFilter")
     def file_filter(self) -> Optional['outputs.TriggerActionFilterIncludeFileFilter']:
+        """
+        (Updatable) Attributes to support include/exclude files for triggering build runs.
+        """
         return pulumi.get(self, "file_filter")
 
     @property
@@ -4081,6 +4206,14 @@ class TriggerActionFilterInclude(dict):
         (Updatable) Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+    @property
+    @pulumi.getter(name="repositoryName")
+    def repository_name(self) -> Optional[str]:
+        """
+        (Updatable) The repository name for trigger events.
+        """
+        return pulumi.get(self, "repository_name")
 
 
 @pulumi.output_type
@@ -4104,12 +4237,18 @@ class TriggerActionFilterIncludeFileFilter(dict):
 
     def __init__(__self__, *,
                  file_paths: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] file_paths: (Updatable) The file paths/glob pattern for files.
+        """
         if file_paths is not None:
             pulumi.set(__self__, "file_paths", file_paths)
 
     @property
     @pulumi.getter(name="filePaths")
     def file_paths(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The file paths/glob pattern for files.
+        """
         return pulumi.get(self, "file_paths")
 
 
@@ -5881,14 +6020,17 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult(dict):
     def __init__(__self__, *,
                  base_ref: str,
                  file_filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult'],
-                 head_ref: str):
+                 head_ref: str,
+                 repository_name: str):
         """
         :param str base_ref: The target branch for pull requests; not applicable for push requests.
         :param str head_ref: Branch for push event; source branch for pull requests.
+        :param str repository_name: The repository name for trigger events.
         """
         pulumi.set(__self__, "base_ref", base_ref)
         pulumi.set(__self__, "file_filters", file_filters)
         pulumi.set(__self__, "head_ref", head_ref)
+        pulumi.set(__self__, "repository_name", repository_name)
 
     @property
     @pulumi.getter(name="baseRef")
@@ -5910,6 +6052,14 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult(dict):
         Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+    @property
+    @pulumi.getter(name="repositoryName")
+    def repository_name(self) -> str:
+        """
+        The repository name for trigger events.
+        """
+        return pulumi.get(self, "repository_name")
 
 
 @pulumi.output_type
@@ -6563,7 +6713,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         """
         :param str access_token: The OCID of personal access token saved in secret store.
         :param str app_password: OCID of personal Bitbucket Cloud AppPassword saved in secret store
-        :param str base_url: The Base URL of the hosted BitbucketServer.
+        :param str base_url: The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param str connection_type: A filter to return only resources that match the given connection type.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -6617,7 +6767,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="baseUrl")
     def base_url(self) -> str:
         """
-        The Base URL of the hosted BitbucketServer.
+        The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
         """
         return pulumi.get(self, "base_url")
 
@@ -10310,6 +10460,64 @@ class GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemResult(di
 
 
 @pulumi.output_type
+class GetDeploymentDeployStageOverrideArgumentResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeploymentDeployStageOverrideArgumentItemResult']):
+        """
+        :param Sequence['GetDeploymentDeployStageOverrideArgumentItemArgs'] items: A list of stage predecessors for a stage.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeploymentDeployStageOverrideArgumentItemResult']:
+        """
+        A list of stage predecessors for a stage.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeploymentDeployStageOverrideArgumentItemResult(dict):
+    def __init__(__self__, *,
+                 deploy_stage_id: str,
+                 name: str,
+                 value: str):
+        """
+        :param str deploy_stage_id: The OCID of the stage.
+        :param str name: Name of the step.
+        :param str value: value of the argument.
+        """
+        pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="deployStageId")
+    def deploy_stage_id(self) -> str:
+        """
+        The OCID of the stage.
+        """
+        return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the step.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        value of the argument.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetDeploymentDeploymentArgumentResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentDeploymentArgumentItemResult']):
@@ -10424,6 +10632,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  deploy_pipeline_environments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentResult'],
                  deploy_pipeline_id: str,
                  deploy_stage_id: str,
+                 deploy_stage_override_arguments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult'],
                  deployment_arguments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult'],
                  deployment_execution_progresses: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult'],
                  deployment_type: str,
@@ -10436,7 +10645,8 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 trigger_new_devops_deployment: bool):
         """
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -10445,6 +10655,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArgs'] deploy_pipeline_environments: List of all environments used in the pipeline.
         :param str deploy_pipeline_id: The ID of the parent pipeline.
         :param str deploy_stage_id: The OCID of the stage.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs'] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentArgumentArgs'] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs'] deployment_execution_progresses: The execution progress details of a deployment.
         :param str deployment_type: Specifies type of Deployment
@@ -10466,6 +10677,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "deploy_pipeline_environments", deploy_pipeline_environments)
         pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
         pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        pulumi.set(__self__, "deploy_stage_override_arguments", deploy_stage_override_arguments)
         pulumi.set(__self__, "deployment_arguments", deployment_arguments)
         pulumi.set(__self__, "deployment_execution_progresses", deployment_execution_progresses)
         pulumi.set(__self__, "deployment_type", deployment_type)
@@ -10479,6 +10691,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "trigger_new_devops_deployment", trigger_new_devops_deployment)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -10535,6 +10748,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         The OCID of the stage.
         """
         return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter(name="deployStageOverrideArguments")
+    def deploy_stage_override_arguments(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult']:
+        """
+        Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        """
+        return pulumi.get(self, "deploy_stage_override_arguments")
 
     @property
     @pulumi.getter(name="deploymentArguments")
@@ -10639,6 +10860,11 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="triggerNewDevopsDeployment")
+    def trigger_new_devops_deployment(self) -> bool:
+        return pulumi.get(self, "trigger_new_devops_deployment")
 
 
 @pulumi.output_type
@@ -10907,6 +11133,64 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployP
         A filter to return only resources that match the entire display name given.
         """
         return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResult']):
+        """
+        :param Sequence['GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs'] items: A list of stage predecessors for a stage.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResult']:
+        """
+        A list of stage predecessors for a stage.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResult(dict):
+    def __init__(__self__, *,
+                 deploy_stage_id: str,
+                 name: str,
+                 value: str):
+        """
+        :param str deploy_stage_id: The OCID of the stage.
+        :param str name: Name of the step.
+        :param str value: value of the argument.
+        """
+        pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="deployStageId")
+    def deploy_stage_id(self) -> str:
+        """
+        The OCID of the stage.
+        """
+        return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the step.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        value of the argument.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -13214,14 +13498,17 @@ class GetTriggerActionFilterIncludeResult(dict):
     def __init__(__self__, *,
                  base_ref: str,
                  file_filters: Sequence['outputs.GetTriggerActionFilterIncludeFileFilterResult'],
-                 head_ref: str):
+                 head_ref: str,
+                 repository_name: str):
         """
         :param str base_ref: The target branch for pull requests; not applicable for push requests.
         :param str head_ref: Branch for push event; source branch for pull requests.
+        :param str repository_name: The repository name for trigger events.
         """
         pulumi.set(__self__, "base_ref", base_ref)
         pulumi.set(__self__, "file_filters", file_filters)
         pulumi.set(__self__, "head_ref", head_ref)
+        pulumi.set(__self__, "repository_name", repository_name)
 
     @property
     @pulumi.getter(name="baseRef")
@@ -13243,6 +13530,14 @@ class GetTriggerActionFilterIncludeResult(dict):
         Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+    @property
+    @pulumi.getter(name="repositoryName")
+    def repository_name(self) -> str:
+        """
+        The repository name for trigger events.
+        """
+        return pulumi.get(self, "repository_name")
 
 
 @pulumi.output_type
@@ -13602,14 +13897,17 @@ class GetTriggersTriggerCollectionItemActionFilterIncludeResult(dict):
     def __init__(__self__, *,
                  base_ref: str,
                  file_filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult'],
-                 head_ref: str):
+                 head_ref: str,
+                 repository_name: str):
         """
         :param str base_ref: The target branch for pull requests; not applicable for push requests.
         :param str head_ref: Branch for push event; source branch for pull requests.
+        :param str repository_name: The repository name for trigger events.
         """
         pulumi.set(__self__, "base_ref", base_ref)
         pulumi.set(__self__, "file_filters", file_filters)
         pulumi.set(__self__, "head_ref", head_ref)
+        pulumi.set(__self__, "repository_name", repository_name)
 
     @property
     @pulumi.getter(name="baseRef")
@@ -13631,6 +13929,14 @@ class GetTriggersTriggerCollectionItemActionFilterIncludeResult(dict):
         Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+    @property
+    @pulumi.getter(name="repositoryName")
+    def repository_name(self) -> str:
+        """
+        The repository name for trigger events.
+        """
+        return pulumi.get(self, "repository_name")
 
 
 @pulumi.output_type

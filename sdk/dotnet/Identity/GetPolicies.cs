@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPoliciesResult> InvokeAsync(GetPoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPoliciesResult>("oci:Identity/getPolicies:getPolicies", args ?? new GetPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPoliciesResult>("oci:Identity/getPolicies:getPolicies", args ?? new GetPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Policies in Oracle Cloud Infrastructure Identity service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPoliciesResult> Invoke(GetPoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPoliciesResult>("oci:Identity/getPolicies:getPolicies", args ?? new GetPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPoliciesResult>("oci:Identity/getPolicies:getPolicies", args ?? new GetPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

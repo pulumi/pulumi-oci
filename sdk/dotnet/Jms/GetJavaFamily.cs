@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
         /// 
-        /// Returns details of a Java release family based on specified version.
+        /// Returns metadata associated with a specific Java release family.
         /// 
         /// 
         /// {{% examples %}}
@@ -39,12 +39,12 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJavaFamilyResult> InvokeAsync(GetJavaFamilyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJavaFamilyResult>("oci:Jms/getJavaFamily:getJavaFamily", args ?? new GetJavaFamilyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaFamilyResult>("oci:Jms/getJavaFamily:getJavaFamily", args ?? new GetJavaFamilyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
         /// 
-        /// Returns details of a Java release family based on specified version.
+        /// Returns metadata associated with a specific Java release family.
         /// 
         /// 
         /// {{% examples %}}
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJavaFamilyResult> Invoke(GetJavaFamilyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJavaFamilyResult>("oci:Jms/getJavaFamily:getJavaFamily", args ?? new GetJavaFamilyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaFamilyResult>("oci:Jms/getJavaFamily:getJavaFamily", args ?? new GetJavaFamilyInvokeArgs(), options.WithDefaults());
     }
 
 

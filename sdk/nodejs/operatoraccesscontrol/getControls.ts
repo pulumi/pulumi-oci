@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getControls(args: GetControlsArgs, opts?: pulumi.InvokeOptions): Promise<GetControlsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getControls:getControls", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -89,9 +87,27 @@ export interface GetControlsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
+ *
+ * Lists the operator controls in the compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperatorControls = oci.OperatorAccessControl.getControls({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.operator_control_display_name,
+ *     resourceType: _var.operator_control_resource_type,
+ *     state: _var.operator_control_state,
+ * });
+ * ```
+ */
 export function getControlsOutput(args: GetControlsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlsResult> {
-    return pulumi.output(args).apply(a => getControls(a, opts))
+    return pulumi.output(args).apply((a: any) => getControls(a, opts))
 }
 
 /**

@@ -35,6 +35,7 @@ import (
 //				DisplayName:            pulumi.StringRef(_var.Report_display_name),
 //				ReportDefinitionId:     pulumi.StringRef(oci_data_safe_report_definition.Test_report_definition.Id),
 //				State:                  pulumi.StringRef(_var.Report_state),
+//				Type:                   pulumi.StringRef(_var.Report_type),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -68,6 +69,8 @@ type GetReportsArgs struct {
 	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
 	// An optional filter to return only resources that match the specified lifecycle state.
 	State *string `pulumi:"state"`
+	// An optional filter to return only resources that match the specified type.
+	Type *string `pulumi:"type"`
 }
 
 // A collection of values returned by getReports.
@@ -87,6 +90,8 @@ type GetReportsResult struct {
 	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
 	// The current state of the report.
 	State *string `pulumi:"state"`
+	// The type of the report.
+	Type *string `pulumi:"type"`
 }
 
 func GetReportsOutput(ctx *pulumi.Context, args GetReportsOutputArgs, opts ...pulumi.InvokeOption) GetReportsResultOutput {
@@ -117,6 +122,8 @@ type GetReportsOutputArgs struct {
 	ReportDefinitionId pulumi.StringPtrInput `pulumi:"reportDefinitionId"`
 	// An optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// An optional filter to return only resources that match the specified type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetReportsOutputArgs) ElementType() reflect.Type {
@@ -178,6 +185,11 @@ func (o GetReportsResultOutput) ReportDefinitionId() pulumi.StringPtrOutput {
 // The current state of the report.
 func (o GetReportsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetReportsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The type of the report.
+func (o GetReportsResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVantagePointResult> InvokeAsync(GetVantagePointArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVantagePointResult>("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args ?? new GetVantagePointArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVantagePointResult>("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args ?? new GetVantagePointArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVantagePointResult> Invoke(GetVantagePointInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVantagePointResult>("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args ?? new GetVantagePointInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVantagePointResult>("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args ?? new GetVantagePointInvokeArgs(), options.WithDefaults());
     }
 
 

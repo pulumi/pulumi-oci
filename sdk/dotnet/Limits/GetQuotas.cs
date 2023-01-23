@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetQuotasResult> InvokeAsync(GetQuotasArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetQuotasResult>("oci:Limits/getQuotas:getQuotas", args ?? new GetQuotasArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetQuotasResult>("oci:Limits/getQuotas:getQuotas", args ?? new GetQuotasArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Quotas in Oracle Cloud Infrastructure Limits service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetQuotasResult> Invoke(GetQuotasInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetQuotasResult>("oci:Limits/getQuotas:getQuotas", args ?? new GetQuotasInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetQuotasResult>("oci:Limits/getQuotas:getQuotas", args ?? new GetQuotasInvokeArgs(), options.WithDefaults());
     }
 
 

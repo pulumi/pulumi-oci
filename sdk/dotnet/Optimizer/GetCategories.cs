@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCategoriesResult> InvokeAsync(GetCategoriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCategoriesResult>("oci:Optimizer/getCategories:getCategories", args ?? new GetCategoriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCategoriesResult>("oci:Optimizer/getCategories:getCategories", args ?? new GetCategoriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCategoriesResult> Invoke(GetCategoriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCategoriesResult>("oci:Optimizer/getCategories:getCategories", args ?? new GetCategoriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCategoriesResult>("oci:Optimizer/getCategories:getCategories", args ?? new GetCategoriesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerConfiguration(args: GetContainerConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerConfigurationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -56,9 +53,24 @@ export interface GetContainerConfigurationResult {
      */
     readonly namespace: string;
 }
-
+/**
+ * This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
+ *
+ * Get container configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testContainerConfiguration = oci.Artifacts.getContainerConfiguration({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getContainerConfigurationOutput(args: GetContainerConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerConfigurationResult> {
-    return pulumi.output(args).apply(a => getContainerConfiguration(a, opts))
+    return pulumi.output(args).apply((a: any) => getContainerConfiguration(a, opts))
 }
 
 /**

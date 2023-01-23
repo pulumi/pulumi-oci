@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowArgs;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -20,6 +21,36 @@ import javax.annotation.Nullable;
 public final class CloudExadataInfrastructureState extends com.pulumi.resources.ResourceArgs {
 
     public static final CloudExadataInfrastructureState Empty = new CloudExadataInfrastructureState();
+
+    /**
+     * The requested number of additional storage servers activated for the Exadata infrastructure.
+     * 
+     */
+    @Import(name="activatedStorageCount")
+    private @Nullable Output<Integer> activatedStorageCount;
+
+    /**
+     * @return The requested number of additional storage servers activated for the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<Integer>> activatedStorageCount() {
+        return Optional.ofNullable(this.activatedStorageCount);
+    }
+
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     * 
+     */
+    @Import(name="additionalStorageCount")
+    private @Nullable Output<Integer> additionalStorageCount;
+
+    /**
+     * @return The requested number of additional storage servers for the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<Integer>> additionalStorageCount() {
+        return Optional.ofNullable(this.additionalStorageCount);
+    }
 
     /**
      * The availability domain where the cloud Exadata infrastructure is located.
@@ -82,6 +113,21 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     }
 
     /**
+     * The total number of CPU cores allocated.
+     * 
+     */
+    @Import(name="cpuCount")
+    private @Nullable Output<Integer> cpuCount;
+
+    /**
+     * @return The total number of CPU cores allocated.
+     * 
+     */
+    public Optional<Output<Integer>> cpuCount() {
+        return Optional.ofNullable(this.cpuCount);
+    }
+
+    /**
      * (Updatable) Customer contacts.
      * 
      */
@@ -94,6 +140,36 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
      */
     public Optional<Output<List<CloudExadataInfrastructureCustomerContactArgs>>> customerContacts() {
         return Optional.ofNullable(this.customerContacts);
+    }
+
+    /**
+     * Size, in terabytes, of the DATA disk group.
+     * 
+     */
+    @Import(name="dataStorageSizeInTbs")
+    private @Nullable Output<Double> dataStorageSizeInTbs;
+
+    /**
+     * @return Size, in terabytes, of the DATA disk group.
+     * 
+     */
+    public Optional<Output<Double>> dataStorageSizeInTbs() {
+        return Optional.ofNullable(this.dataStorageSizeInTbs);
+    }
+
+    /**
+     * The local node storage allocated in GBs.
+     * 
+     */
+    @Import(name="dbNodeStorageSizeInGbs")
+    private @Nullable Output<Integer> dbNodeStorageSizeInGbs;
+
+    /**
+     * @return The local node storage allocated in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
 
     /**
@@ -184,6 +260,81 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
      */
     public Optional<Output<CloudExadataInfrastructureMaintenanceWindowArgs>> maintenanceWindow() {
         return Optional.ofNullable(this.maintenanceWindow);
+    }
+
+    /**
+     * The total number of CPU cores available.
+     * 
+     */
+    @Import(name="maxCpuCount")
+    private @Nullable Output<Integer> maxCpuCount;
+
+    /**
+     * @return The total number of CPU cores available.
+     * 
+     */
+    public Optional<Output<Integer>> maxCpuCount() {
+        return Optional.ofNullable(this.maxCpuCount);
+    }
+
+    /**
+     * The total available DATA disk group size.
+     * 
+     */
+    @Import(name="maxDataStorageInTbs")
+    private @Nullable Output<Double> maxDataStorageInTbs;
+
+    /**
+     * @return The total available DATA disk group size.
+     * 
+     */
+    public Optional<Output<Double>> maxDataStorageInTbs() {
+        return Optional.ofNullable(this.maxDataStorageInTbs);
+    }
+
+    /**
+     * The total local node storage available in GBs.
+     * 
+     */
+    @Import(name="maxDbNodeStorageInGbs")
+    private @Nullable Output<Integer> maxDbNodeStorageInGbs;
+
+    /**
+     * @return The total local node storage available in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> maxDbNodeStorageInGbs() {
+        return Optional.ofNullable(this.maxDbNodeStorageInGbs);
+    }
+
+    /**
+     * The total memory available in GBs.
+     * 
+     */
+    @Import(name="maxMemoryInGbs")
+    private @Nullable Output<Integer> maxMemoryInGbs;
+
+    /**
+     * @return The total memory available in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> maxMemoryInGbs() {
+        return Optional.ofNullable(this.maxMemoryInGbs);
+    }
+
+    /**
+     * The memory allocated in GBs.
+     * 
+     */
+    @Import(name="memorySizeInGbs")
+    private @Nullable Output<Integer> memorySizeInGbs;
+
+    /**
+     * @return The memory allocated in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
 
     /**
@@ -279,17 +430,27 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     private CloudExadataInfrastructureState() {}
 
     private CloudExadataInfrastructureState(CloudExadataInfrastructureState $) {
+        this.activatedStorageCount = $.activatedStorageCount;
+        this.additionalStorageCount = $.additionalStorageCount;
         this.availabilityDomain = $.availabilityDomain;
         this.availableStorageSizeInGbs = $.availableStorageSizeInGbs;
         this.compartmentId = $.compartmentId;
         this.computeCount = $.computeCount;
+        this.cpuCount = $.cpuCount;
         this.customerContacts = $.customerContacts;
+        this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
+        this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenanceWindow = $.maintenanceWindow;
+        this.maxCpuCount = $.maxCpuCount;
+        this.maxDataStorageInTbs = $.maxDataStorageInTbs;
+        this.maxDbNodeStorageInGbs = $.maxDbNodeStorageInGbs;
+        this.maxMemoryInGbs = $.maxMemoryInGbs;
+        this.memorySizeInGbs = $.memorySizeInGbs;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
         this.shape = $.shape;
         this.state = $.state;
@@ -314,6 +475,48 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
 
         public Builder(CloudExadataInfrastructureState defaults) {
             $ = new CloudExadataInfrastructureState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param activatedStorageCount The requested number of additional storage servers activated for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder activatedStorageCount(@Nullable Output<Integer> activatedStorageCount) {
+            $.activatedStorageCount = activatedStorageCount;
+            return this;
+        }
+
+        /**
+         * @param activatedStorageCount The requested number of additional storage servers activated for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder activatedStorageCount(Integer activatedStorageCount) {
+            return activatedStorageCount(Output.of(activatedStorageCount));
+        }
+
+        /**
+         * @param additionalStorageCount The requested number of additional storage servers for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalStorageCount(@Nullable Output<Integer> additionalStorageCount) {
+            $.additionalStorageCount = additionalStorageCount;
+            return this;
+        }
+
+        /**
+         * @param additionalStorageCount The requested number of additional storage servers for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalStorageCount(Integer additionalStorageCount) {
+            return additionalStorageCount(Output.of(additionalStorageCount));
         }
 
         /**
@@ -401,6 +604,27 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         }
 
         /**
+         * @param cpuCount The total number of CPU cores allocated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCount(@Nullable Output<Integer> cpuCount) {
+            $.cpuCount = cpuCount;
+            return this;
+        }
+
+        /**
+         * @param cpuCount The total number of CPU cores allocated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCount(Integer cpuCount) {
+            return cpuCount(Output.of(cpuCount));
+        }
+
+        /**
          * @param customerContacts (Updatable) Customer contacts.
          * 
          * @return builder
@@ -429,6 +653,48 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder customerContacts(CloudExadataInfrastructureCustomerContactArgs... customerContacts) {
             return customerContacts(List.of(customerContacts));
+        }
+
+        /**
+         * @param dataStorageSizeInTbs Size, in terabytes, of the DATA disk group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorageSizeInTbs(@Nullable Output<Double> dataStorageSizeInTbs) {
+            $.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            return this;
+        }
+
+        /**
+         * @param dataStorageSizeInTbs Size, in terabytes, of the DATA disk group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
+            return dataStorageSizeInTbs(Output.of(dataStorageSizeInTbs));
+        }
+
+        /**
+         * @param dbNodeStorageSizeInGbs The local node storage allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbNodeStorageSizeInGbs(@Nullable Output<Integer> dbNodeStorageSizeInGbs) {
+            $.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param dbNodeStorageSizeInGbs The local node storage allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
+            return dbNodeStorageSizeInGbs(Output.of(dbNodeStorageSizeInGbs));
         }
 
         /**
@@ -555,6 +821,111 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder maintenanceWindow(CloudExadataInfrastructureMaintenanceWindowArgs maintenanceWindow) {
             return maintenanceWindow(Output.of(maintenanceWindow));
+        }
+
+        /**
+         * @param maxCpuCount The total number of CPU cores available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxCpuCount(@Nullable Output<Integer> maxCpuCount) {
+            $.maxCpuCount = maxCpuCount;
+            return this;
+        }
+
+        /**
+         * @param maxCpuCount The total number of CPU cores available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxCpuCount(Integer maxCpuCount) {
+            return maxCpuCount(Output.of(maxCpuCount));
+        }
+
+        /**
+         * @param maxDataStorageInTbs The total available DATA disk group size.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxDataStorageInTbs(@Nullable Output<Double> maxDataStorageInTbs) {
+            $.maxDataStorageInTbs = maxDataStorageInTbs;
+            return this;
+        }
+
+        /**
+         * @param maxDataStorageInTbs The total available DATA disk group size.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxDataStorageInTbs(Double maxDataStorageInTbs) {
+            return maxDataStorageInTbs(Output.of(maxDataStorageInTbs));
+        }
+
+        /**
+         * @param maxDbNodeStorageInGbs The total local node storage available in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxDbNodeStorageInGbs(@Nullable Output<Integer> maxDbNodeStorageInGbs) {
+            $.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
+            return this;
+        }
+
+        /**
+         * @param maxDbNodeStorageInGbs The total local node storage available in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
+            return maxDbNodeStorageInGbs(Output.of(maxDbNodeStorageInGbs));
+        }
+
+        /**
+         * @param maxMemoryInGbs The total memory available in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxMemoryInGbs(@Nullable Output<Integer> maxMemoryInGbs) {
+            $.maxMemoryInGbs = maxMemoryInGbs;
+            return this;
+        }
+
+        /**
+         * @param maxMemoryInGbs The total memory available in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
+            return maxMemoryInGbs(Output.of(maxMemoryInGbs));
+        }
+
+        /**
+         * @param memorySizeInGbs The memory allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memorySizeInGbs(@Nullable Output<Integer> memorySizeInGbs) {
+            $.memorySizeInGbs = memorySizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param memorySizeInGbs The memory allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
+            return memorySizeInGbs(Output.of(memorySizeInGbs));
         }
 
         /**

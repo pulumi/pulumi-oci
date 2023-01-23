@@ -17,6 +17,11 @@ public final class BdsInstanceWorkerNodeShapeConfig {
      */
     private @Nullable Integer memoryInGbs;
     /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    private @Nullable Integer nvmes;
+    /**
      * @return The total number of OCPUs available to the node.
      * 
      */
@@ -29,6 +34,13 @@ public final class BdsInstanceWorkerNodeShapeConfig {
      */
     public Optional<Integer> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
+    }
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Integer> nvmes() {
+        return Optional.ofNullable(this.nvmes);
     }
     /**
      * @return The total number of OCPUs available to the node.
@@ -48,17 +60,24 @@ public final class BdsInstanceWorkerNodeShapeConfig {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer memoryInGbs;
+        private @Nullable Integer nvmes;
         private @Nullable Integer ocpus;
         public Builder() {}
         public Builder(BdsInstanceWorkerNodeShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
+    	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
         }
 
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nvmes(@Nullable Integer nvmes) {
+            this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
@@ -69,6 +88,7 @@ public final class BdsInstanceWorkerNodeShapeConfig {
         public BdsInstanceWorkerNodeShapeConfig build() {
             final var o = new BdsInstanceWorkerNodeShapeConfig();
             o.memoryInGbs = memoryInGbs;
+            o.nvmes = nvmes;
             o.ocpus = ocpus;
             return o;
         }

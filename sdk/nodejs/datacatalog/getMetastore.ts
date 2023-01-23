@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMetastore(args: GetMetastoreArgs, opts?: pulumi.InvokeOptions): Promise<GetMetastoreResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getMetastore:getMetastore", {
         "metastoreId": args.metastoreId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetMetastoreResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Gets a metastore by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMetastore = oci.DataCatalog.getMetastore({
+ *     metastoreId: oci_datacatalog_metastore.test_metastore.id,
+ * });
+ * ```
+ */
 export function getMetastoreOutput(args: GetMetastoreOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetastoreResult> {
-    return pulumi.output(args).apply(a => getMetastore(a, opts))
+    return pulumi.output(args).apply((a: any) => getMetastore(a, opts))
 }
 
 /**

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryJob(args: GetDiscoveryJobArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", {
         "discoveryJobId": args.discoveryJobId,
     }, opts);
@@ -143,9 +140,24 @@ export interface GetDiscoveryJobResult {
      */
     readonly totalSchemasScanned: string;
 }
-
+/**
+ * This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified discovery job.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDiscoveryJob = oci.DataSafe.getDiscoveryJob({
+ *     discoveryJobId: oci_data_safe_discovery_job.test_discovery_job.id,
+ * });
+ * ```
+ */
 export function getDiscoveryJobOutput(args: GetDiscoveryJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobResult> {
-    return pulumi.output(args).apply(a => getDiscoveryJob(a, opts))
+    return pulumi.output(args).apply((a: any) => getDiscoveryJob(a, opts))
 }
 
 /**

@@ -242,7 +242,7 @@ class _HostInsightState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         :param pulumi.Input[str] platform_name: Platform name.
-        :param pulumi.Input[str] platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        :param pulumi.Input[str] platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         :param pulumi.Input[str] platform_version: Platform version.
         :param pulumi.Input[int] processor_count: Processor count.
         :param pulumi.Input[str] state: The current state of the host.
@@ -524,7 +524,7 @@ class _HostInsightState:
     @pulumi.getter(name="platformType")
     def platform_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         return pulumi.get(self, "platform_type")
 
@@ -806,7 +806,7 @@ class HostInsight(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         :param pulumi.Input[str] platform_name: Platform name.
-        :param pulumi.Input[str] platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        :param pulumi.Input[str] platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         :param pulumi.Input[str] platform_version: Platform version.
         :param pulumi.Input[int] processor_count: Processor count.
         :param pulumi.Input[str] state: The current state of the host.
@@ -995,7 +995,7 @@ class HostInsight(pulumi.CustomResource):
     @pulumi.getter(name="platformType")
     def platform_type(self) -> pulumi.Output[str]:
         """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         return pulumi.get(self, "platform_type")
 

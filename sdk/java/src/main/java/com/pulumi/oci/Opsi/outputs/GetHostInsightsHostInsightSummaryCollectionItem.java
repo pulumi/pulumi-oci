@@ -64,7 +64,6 @@ public final class GetHostInsightsHostInsightSummaryCollectionItem {
     private String entitySource;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     private String exadataInsightId;
@@ -84,8 +83,7 @@ public final class GetHostInsightsHostInsightSummaryCollectionItem {
      */
     private String hostName;
     /**
-     * @return Filter by one or more host types. Possible value is EXTERNAL-HOST.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * @return Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
      * 
      */
     private String hostType;
@@ -110,7 +108,7 @@ public final class GetHostInsightsHostInsightSummaryCollectionItem {
      */
     private String platformName;
     /**
-     * @return Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * @return Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
      * 
      */
     private String platformType;
@@ -223,7 +221,6 @@ public final class GetHostInsightsHostInsightSummaryCollectionItem {
     }
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public String exadataInsightId() {
@@ -251,8 +248,7 @@ public final class GetHostInsightsHostInsightSummaryCollectionItem {
         return this.hostName;
     }
     /**
-     * @return Filter by one or more host types. Possible value is EXTERNAL-HOST.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * @return Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
      * 
      */
     public String hostType() {
@@ -287,7 +283,7 @@ public final class GetHostInsightsHostInsightSummaryCollectionItem {
         return this.platformName;
     }
     /**
-     * @return Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * @return Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
      * 
      */
     public String platformType() {

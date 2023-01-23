@@ -36,7 +36,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProxyDetailResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProxyDetailResult>("oci:ServiceMesh/getProxyDetail:getProxyDetail", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProxyDetailResult>("oci:ServiceMesh/getProxyDetail:getProxyDetail", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

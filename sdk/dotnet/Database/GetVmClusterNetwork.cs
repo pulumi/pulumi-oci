@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVmClusterNetworkResult> InvokeAsync(GetVmClusterNetworkArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterNetworkResult>("oci:Database/getVmClusterNetwork:getVmClusterNetwork", args ?? new GetVmClusterNetworkArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterNetworkResult>("oci:Database/getVmClusterNetwork:getVmClusterNetwork", args ?? new GetVmClusterNetworkArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVmClusterNetworkResult> Invoke(GetVmClusterNetworkInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkResult>("oci:Database/getVmClusterNetwork:getVmClusterNetwork", args ?? new GetVmClusterNetworkInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkResult>("oci:Database/getVmClusterNetwork:getVmClusterNetwork", args ?? new GetVmClusterNetworkInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -121,6 +121,7 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetVmClusterNetworkResult
     {
+        public readonly string Action;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -162,7 +163,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVmClusterNetworkScanResult> Scans;
         /// <summary>
-        /// The current state of the VM cluster network.
+        /// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -182,6 +183,8 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetVmClusterNetworkResult(
+            string action,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -214,6 +217,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetVmClusterNetworkVmNetworkResult> vmNetworks)
         {
+            Action = action;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

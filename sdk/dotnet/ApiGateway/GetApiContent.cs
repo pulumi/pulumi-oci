@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetApiContentResult> InvokeAsync(GetApiContentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetApiContentResult>("oci:ApiGateway/getApiContent:getApiContent", args ?? new GetApiContentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiContentResult>("oci:ApiGateway/getApiContent:getApiContent", args ?? new GetApiContentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetApiContentResult> Invoke(GetApiContentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetApiContentResult>("oci:ApiGateway/getApiContent:getApiContent", args ?? new GetApiContentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiContentResult>("oci:ApiGateway/getApiContent:getApiContent", args ?? new GetApiContentInvokeArgs(), options.WithDefaults());
     }
 
 

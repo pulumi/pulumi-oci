@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImportableComputeEntities(args: GetImportableComputeEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetImportableComputeEntitiesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -65,9 +63,30 @@ export interface GetImportableComputeEntitiesResult {
      */
     readonly items: outputs.Opsi.GetImportableComputeEntitiesItem[];
 }
-
+/**
+ * This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is "available"
+ * and will be shown if all the following conditions are true:
+ *    1. Compute is running OCA
+ *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+ *       2.1 The agent OCID is not already being used for an existing hostInsight.
+ *       2.2 The agent availabilityStatus = 'ACTIVE'
+ *       2.3 The agent lifecycleState = 'ACTIVE'
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testImportableComputeEntities = oci.Opsi.getImportableComputeEntities({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getImportableComputeEntitiesOutput(args: GetImportableComputeEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImportableComputeEntitiesResult> {
-    return pulumi.output(args).apply(a => getImportableComputeEntities(a, opts))
+    return pulumi.output(args).apply((a: any) => getImportableComputeEntities(a, opts))
 }
 
 /**

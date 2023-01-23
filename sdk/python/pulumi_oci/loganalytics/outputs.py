@@ -14,6 +14,9 @@ __all__ = [
     'LogAnalyticsImportCustomContentChangeList',
     'LogAnalyticsObjectCollectionRuleOverride',
     'LogAnalyticsPreferencesManagementItem',
+    'NamespaceIngestTimeRuleAction',
+    'NamespaceIngestTimeRuleConditions',
+    'NamespaceIngestTimeRuleConditionsAdditionalCondition',
     'NamespaceScheduledTaskAction',
     'NamespaceScheduledTaskSchedules',
     'NamespaceScheduledTaskSchedulesSchedule',
@@ -37,6 +40,15 @@ __all__ = [
     'GetLogAnalyticsPreferenceItemResult',
     'GetLogAnalyticsResourceCategoriesListCategoryResult',
     'GetLogAnalyticsResourceCategoriesListItemResult',
+    'GetNamespaceIngestTimeRuleActionResult',
+    'GetNamespaceIngestTimeRuleConditionResult',
+    'GetNamespaceIngestTimeRuleConditionAdditionalConditionResult',
+    'GetNamespaceIngestTimeRulesFilterResult',
+    'GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionResult',
+    'GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult',
+    'GetNamespaceRulesFilterResult',
+    'GetNamespaceRulesRuleSummaryCollectionResult',
+    'GetNamespaceRulesRuleSummaryCollectionItemResult',
     'GetNamespaceScheduledTaskActionResult',
     'GetNamespaceScheduledTaskScheduleResult',
     'GetNamespaceScheduledTaskScheduleScheduleResult',
@@ -46,6 +58,7 @@ __all__ = [
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult',
+    'GetNamespaceStorageEncryptionKeyInfoItemResult',
     'GetNamespacesFilterResult',
     'GetNamespacesNamespaceCollectionResult',
     'GetNamespacesNamespaceCollectionItemResult',
@@ -288,6 +301,249 @@ class LogAnalyticsPreferencesManagementItem(dict):
         The preference value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class NamespaceIngestTimeRuleAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "metricName":
+            suggest = "metric_name"
+        elif key == "resourceGroup":
+            suggest = "resource_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceIngestTimeRuleAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceIngestTimeRuleAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceIngestTimeRuleAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 metric_name: str,
+                 namespace: str,
+                 type: str,
+                 dimensions: Optional[Sequence[str]] = None,
+                 resource_group: Optional[str] = None):
+        """
+        :param str compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param str namespace: The Logging Analytics namespace used for the request.
+        :param str type: (Updatable) Discriminator.
+        :param Sequence[str] dimensions: (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+        :param str resource_group: (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "type", type)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> str:
+        """
+        (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "metric_name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The Logging Analytics namespace used for the request.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) Discriminator.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+        """
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[str]:
+        """
+        (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "resource_group")
+
+
+@pulumi.output_type
+class NamespaceIngestTimeRuleConditions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fieldName":
+            suggest = "field_name"
+        elif key == "fieldOperator":
+            suggest = "field_operator"
+        elif key == "fieldValue":
+            suggest = "field_value"
+        elif key == "additionalConditions":
+            suggest = "additional_conditions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceIngestTimeRuleConditions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceIngestTimeRuleConditions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceIngestTimeRuleConditions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 field_name: str,
+                 field_operator: str,
+                 field_value: str,
+                 kind: str,
+                 additional_conditions: Optional[Sequence['outputs.NamespaceIngestTimeRuleConditionsAdditionalCondition']] = None):
+        """
+        :param str field_name: (Updatable) The field name to be evaluated.
+        :param str field_operator: (Updatable) The operator to be used for evaluating the field.
+        :param str field_value: (Updatable) The field value to be evaluated.
+        :param str kind: (Updatable) Discriminator.
+        :param Sequence['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs'] additional_conditions: (Updatable) Optional additional condition(s) to be evaluated.
+        """
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "field_operator", field_operator)
+        pulumi.set(__self__, "field_value", field_value)
+        pulumi.set(__self__, "kind", kind)
+        if additional_conditions is not None:
+            pulumi.set(__self__, "additional_conditions", additional_conditions)
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> str:
+        """
+        (Updatable) The field name to be evaluated.
+        """
+        return pulumi.get(self, "field_name")
+
+    @property
+    @pulumi.getter(name="fieldOperator")
+    def field_operator(self) -> str:
+        """
+        (Updatable) The operator to be used for evaluating the field.
+        """
+        return pulumi.get(self, "field_operator")
+
+    @property
+    @pulumi.getter(name="fieldValue")
+    def field_value(self) -> str:
+        """
+        (Updatable) The field value to be evaluated.
+        """
+        return pulumi.get(self, "field_value")
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        (Updatable) Discriminator.
+        """
+        return pulumi.get(self, "kind")
+
+    @property
+    @pulumi.getter(name="additionalConditions")
+    def additional_conditions(self) -> Optional[Sequence['outputs.NamespaceIngestTimeRuleConditionsAdditionalCondition']]:
+        """
+        (Updatable) Optional additional condition(s) to be evaluated.
+        """
+        return pulumi.get(self, "additional_conditions")
+
+
+@pulumi.output_type
+class NamespaceIngestTimeRuleConditionsAdditionalCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionField":
+            suggest = "condition_field"
+        elif key == "conditionOperator":
+            suggest = "condition_operator"
+        elif key == "conditionValue":
+            suggest = "condition_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceIngestTimeRuleConditionsAdditionalCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceIngestTimeRuleConditionsAdditionalCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceIngestTimeRuleConditionsAdditionalCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_field: str,
+                 condition_operator: str,
+                 condition_value: str):
+        """
+        :param str condition_field: (Updatable) The additional field name to be evaluated.
+        :param str condition_operator: (Updatable) The operator to be used for evaluating the additional field.
+        :param str condition_value: (Updatable) The additional field value to be evaluated.
+        """
+        pulumi.set(__self__, "condition_field", condition_field)
+        pulumi.set(__self__, "condition_operator", condition_operator)
+        pulumi.set(__self__, "condition_value", condition_value)
+
+    @property
+    @pulumi.getter(name="conditionField")
+    def condition_field(self) -> str:
+        """
+        (Updatable) The additional field name to be evaluated.
+        """
+        return pulumi.get(self, "condition_field")
+
+    @property
+    @pulumi.getter(name="conditionOperator")
+    def condition_operator(self) -> str:
+        """
+        (Updatable) The operator to be used for evaluating the additional field.
+        """
+        return pulumi.get(self, "condition_operator")
+
+    @property
+    @pulumi.getter(name="conditionValue")
+    def condition_value(self) -> str:
+        """
+        (Updatable) The additional field value to be evaluated.
+        """
+        return pulumi.get(self, "condition_value")
 
 
 @pulumi.output_type
@@ -1378,6 +1634,9 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
                  id: str,
                  lifecycle_details: str,
                  log_group_id: str,
+                 log_set: str,
+                 log_set_ext_regex: str,
+                 log_set_key: str,
                  log_source_name: str,
                  name: str,
                  namespace: str,
@@ -1389,7 +1648,8 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
                  poll_till: str,
                  state: str,
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 timezone: str):
         """
         :param str char_encoding: An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
         :param str collection_type: The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
@@ -1401,6 +1661,9 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
         :param str lifecycle_details: A detailed status of the life cycle state.
         :param str log_group_id: Logging Analytics Log group OCID to associate the processed logs with.
+        :param str log_set: The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        :param str log_set_ext_regex: The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        :param str log_set_key: An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param str log_source_name: Name of the Logging Analytics Source to use for the processing.
         :param str name: A filter to return rules only matching with this name.
         :param str namespace: The Logging Analytics namespace used for the request.
@@ -1413,6 +1676,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         :param str state: Lifecycle state filter.
         :param str time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
+        :param str timezone: Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
         """
         pulumi.set(__self__, "char_encoding", char_encoding)
         pulumi.set(__self__, "collection_type", collection_type)
@@ -1424,6 +1688,9 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_set", log_set)
+        pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
+        pulumi.set(__self__, "log_set_key", log_set_key)
         pulumi.set(__self__, "log_source_name", log_source_name)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
@@ -1436,6 +1703,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "timezone", timezone)
 
     @property
     @pulumi.getter(name="charEncoding")
@@ -1516,6 +1784,30 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         Logging Analytics Log group OCID to associate the processed logs with.
         """
         return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logSet")
+    def log_set(self) -> str:
+        """
+        The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        """
+        return pulumi.get(self, "log_set")
+
+    @property
+    @pulumi.getter(name="logSetExtRegex")
+    def log_set_ext_regex(self) -> str:
+        """
+        The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        """
+        return pulumi.get(self, "log_set_ext_regex")
+
+    @property
+    @pulumi.getter(name="logSetKey")
+    def log_set_key(self) -> str:
+        """
+        An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+        """
+        return pulumi.get(self, "log_set_key")
 
     @property
     @pulumi.getter(name="logSourceName")
@@ -1612,6 +1904,14 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         The time when this rule was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def timezone(self) -> str:
+        """
+        Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        """
+        return pulumi.get(self, "timezone")
 
 
 @pulumi.output_type
@@ -1787,6 +2087,565 @@ class GetLogAnalyticsResourceCategoriesListItemResult(dict):
         The resource type.
         """
         return pulumi.get(self, "resource_type")
+
+
+@pulumi.output_type
+class GetNamespaceIngestTimeRuleActionResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 dimensions: Sequence[str],
+                 metric_name: str,
+                 namespace: str,
+                 resource_group: str,
+                 type: str):
+        """
+        :param str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence[str] dimensions: Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+        :param str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param str namespace: The Logging Analytics namespace used for the request.
+        :param str resource_group: The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param str type: Discriminator.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "resource_group", resource_group)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Sequence[str]:
+        """
+        Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+        """
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> str:
+        """
+        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "metric_name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The Logging Analytics namespace used for the request.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> str:
+        """
+        The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Discriminator.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNamespaceIngestTimeRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 additional_conditions: Sequence['outputs.GetNamespaceIngestTimeRuleConditionAdditionalConditionResult'],
+                 field_name: str,
+                 field_operator: str,
+                 field_value: str,
+                 kind: str):
+        """
+        :param Sequence['GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs'] additional_conditions: Optional additional condition(s) to be evaluated.
+        :param str field_name: The field name to be evaluated.
+        :param str field_operator: The operator to be used for evaluating the field.
+        :param str field_value: The field value to be evaluated.
+        :param str kind: Discriminator.
+        """
+        pulumi.set(__self__, "additional_conditions", additional_conditions)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "field_operator", field_operator)
+        pulumi.set(__self__, "field_value", field_value)
+        pulumi.set(__self__, "kind", kind)
+
+    @property
+    @pulumi.getter(name="additionalConditions")
+    def additional_conditions(self) -> Sequence['outputs.GetNamespaceIngestTimeRuleConditionAdditionalConditionResult']:
+        """
+        Optional additional condition(s) to be evaluated.
+        """
+        return pulumi.get(self, "additional_conditions")
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> str:
+        """
+        The field name to be evaluated.
+        """
+        return pulumi.get(self, "field_name")
+
+    @property
+    @pulumi.getter(name="fieldOperator")
+    def field_operator(self) -> str:
+        """
+        The operator to be used for evaluating the field.
+        """
+        return pulumi.get(self, "field_operator")
+
+    @property
+    @pulumi.getter(name="fieldValue")
+    def field_value(self) -> str:
+        """
+        The field value to be evaluated.
+        """
+        return pulumi.get(self, "field_value")
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        Discriminator.
+        """
+        return pulumi.get(self, "kind")
+
+
+@pulumi.output_type
+class GetNamespaceIngestTimeRuleConditionAdditionalConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_field: str,
+                 condition_operator: str,
+                 condition_value: str):
+        """
+        :param str condition_field: The additional field name to be evaluated.
+        :param str condition_operator: The operator to be used for evaluating the additional field.
+        :param str condition_value: The additional field value to be evaluated.
+        """
+        pulumi.set(__self__, "condition_field", condition_field)
+        pulumi.set(__self__, "condition_operator", condition_operator)
+        pulumi.set(__self__, "condition_value", condition_value)
+
+    @property
+    @pulumi.getter(name="conditionField")
+    def condition_field(self) -> str:
+        """
+        The additional field name to be evaluated.
+        """
+        return pulumi.get(self, "condition_field")
+
+    @property
+    @pulumi.getter(name="conditionOperator")
+    def condition_operator(self) -> str:
+        """
+        The operator to be used for evaluating the additional field.
+        """
+        return pulumi.get(self, "condition_operator")
+
+    @property
+    @pulumi.getter(name="conditionValue")
+    def condition_value(self) -> str:
+        """
+        The additional field value to be evaluated.
+        """
+        return pulumi.get(self, "condition_value")
+
+
+@pulumi.output_type
+class GetNamespaceIngestTimeRulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 condition_kind: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 field_name: str,
+                 field_value: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_enabled: bool,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str condition_kind: The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: Description for this resource.
+        :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+        :param str field_name: The field name used for filtering. Only rules using the specified field name will be returned.
+        :param str field_value: The field value used for filtering. Only rules using the specified field value will be returned.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+        :param bool is_enabled: A flag indicating whether or not the ingest time rule is enabled.
+        :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+        :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
+        :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "condition_kind", condition_kind)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "field_value", field_value)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="conditionKind")
+    def condition_kind(self) -> str:
+        """
+        The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
+        """
+        return pulumi.get(self, "condition_kind")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description for this resource.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> str:
+        """
+        The field name used for filtering. Only rules using the specified field name will be returned.
+        """
+        return pulumi.get(self, "field_name")
+
+    @property
+    @pulumi.getter(name="fieldValue")
+    def field_value(self) -> str:
+        """
+        The field value used for filtering. Only rules using the specified field value will be returned.
+        """
+        return pulumi.get(self, "field_value")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        A flag indicating whether or not the ingest time rule is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the resource was created, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the resource was last updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetNamespaceRulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamespaceRulesRuleSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetNamespaceRulesRuleSummaryCollectionItemArgs'] items: An array of rule summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionItemResult']:
+        """
+        An array of rule summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_enabled: bool,
+                 kind: str,
+                 last_execution_status: str,
+                 state: str,
+                 time_created: str,
+                 time_last_executed: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: Description for this resource.
+        :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+        :param bool is_enabled: A flag indicating whether or not the ingest time rule or scheduled task is enabled.
+        :param str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
+        :param str last_execution_status: The most recent task execution status.
+        :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+        :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
+        :param str time_last_executed: The date and time the scheduled task last executed, in the format defined by RFC3339.
+        :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "last_execution_status", last_execution_status)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_executed", time_last_executed)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description for this resource.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        A flag indicating whether or not the ingest time rule or scheduled task is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        The rule kind used for filtering. Only rules of the specified kind will be returned.
+        """
+        return pulumi.get(self, "kind")
+
+    @property
+    @pulumi.getter(name="lastExecutionStatus")
+    def last_execution_status(self) -> str:
+        """
+        The most recent task execution status.
+        """
+        return pulumi.get(self, "last_execution_status")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the resource was created, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastExecuted")
+    def time_last_executed(self) -> str:
+        """
+        The date and time the scheduled task last executed, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_executed")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the resource was last updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
@@ -2361,6 +3220,46 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
         Schedule type discriminator.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNamespaceStorageEncryptionKeyInfoItemResult(dict):
+    def __init__(__self__, *,
+                 key_id: str,
+                 key_source: str,
+                 key_type: str):
+        """
+        :param str key_id: This is the key OCID of the encryption key (null if Oracle-managed).
+        :param str key_source: This is the source of the encryption key.
+        :param str key_type: This is the type of data to be encrypted. It can be either active or archival.
+        """
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "key_source", key_source)
+        pulumi.set(__self__, "key_type", key_type)
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> str:
+        """
+        This is the key OCID of the encryption key (null if Oracle-managed).
+        """
+        return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter(name="keySource")
+    def key_source(self) -> str:
+        """
+        This is the source of the encryption key.
+        """
+        return pulumi.get(self, "key_source")
+
+    @property
+    @pulumi.getter(name="keyType")
+    def key_type(self) -> str:
+        """
+        This is the type of data to be encrypted. It can be either active or archival.
+        """
+        return pulumi.get(self, "key_type")
 
 
 @pulumi.output_type

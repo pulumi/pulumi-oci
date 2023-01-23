@@ -114,6 +114,13 @@ func NewCertificate(ctx *pulumi.Context,
 	if args.PrivateKeyData == nil {
 		return nil, errors.New("invalid value for required argument 'PrivateKeyData'")
 	}
+	if args.PrivateKeyData != nil {
+		args.PrivateKeyData = pulumi.ToSecret(args.PrivateKeyData).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"privateKeyData",
+	})
+	opts = append(opts, secrets)
 	var resource Certificate
 	err := ctx.RegisterResource("oci:Waas/certificate:Certificate", name, args, &resource, opts...)
 	if err != nil {

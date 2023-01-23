@@ -31,10 +31,13 @@ namespace Pulumi.Oci.GoldenGate
         ///     var testDeployments = Oci.GoldenGate.GetDeployments.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         AssignableConnectionId = oci_golden_gate_connection.Test_connection.Id,
+        ///         AssignedConnectionId = oci_golden_gate_connection.Test_connection.Id,
         ///         DisplayName = @var.Deployment_display_name,
         ///         Fqdn = @var.Deployment_fqdn,
         ///         LifecycleSubState = @var.Deployment_lifecycle_sub_state,
         ///         State = @var.Deployment_state,
+        ///         SupportedConnectionType = @var.Deployment_supported_connection_type,
         ///     });
         /// 
         /// });
@@ -43,7 +46,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeploymentsResult> InvokeAsync(GetDeploymentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentsResult>("oci:GoldenGate/getDeployments:getDeployments", args ?? new GetDeploymentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentsResult>("oci:GoldenGate/getDeployments:getDeployments", args ?? new GetDeploymentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
@@ -65,10 +68,13 @@ namespace Pulumi.Oci.GoldenGate
         ///     var testDeployments = Oci.GoldenGate.GetDeployments.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         AssignableConnectionId = oci_golden_gate_connection.Test_connection.Id,
+        ///         AssignedConnectionId = oci_golden_gate_connection.Test_connection.Id,
         ///         DisplayName = @var.Deployment_display_name,
         ///         Fqdn = @var.Deployment_fqdn,
         ///         LifecycleSubState = @var.Deployment_lifecycle_sub_state,
         ///         State = @var.Deployment_state,
+        ///         SupportedConnectionType = @var.Deployment_supported_connection_type,
         ///     });
         /// 
         /// });
@@ -77,14 +83,26 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeploymentsResult> Invoke(GetDeploymentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeploymentsResult>("oci:GoldenGate/getDeployments:getDeployments", args ?? new GetDeploymentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentsResult>("oci:GoldenGate/getDeployments:getDeployments", args ?? new GetDeploymentsInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetDeploymentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+        /// </summary>
+        [Input("assignableConnectionId")]
+        public string? AssignableConnectionId { get; set; }
+
+        /// <summary>
+        /// The OCID of the connection which for the deployment must be assigned.
+        /// </summary>
+        [Input("assignedConnectionId")]
+        public string? AssignedConnectionId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -121,6 +139,12 @@ namespace Pulumi.Oci.GoldenGate
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// The connection type which the deployment must support.
+        /// </summary>
+        [Input("supportedConnectionType")]
+        public string? SupportedConnectionType { get; set; }
+
         public GetDeploymentsArgs()
         {
         }
@@ -130,7 +154,19 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDeploymentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+        /// </summary>
+        [Input("assignableConnectionId")]
+        public Input<string>? AssignableConnectionId { get; set; }
+
+        /// <summary>
+        /// The OCID of the connection which for the deployment must be assigned.
+        /// </summary>
+        [Input("assignedConnectionId")]
+        public Input<string>? AssignedConnectionId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -167,6 +203,12 @@ namespace Pulumi.Oci.GoldenGate
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// The connection type which the deployment must support.
+        /// </summary>
+        [Input("supportedConnectionType")]
+        public Input<string>? SupportedConnectionType { get; set; }
+
         public GetDeploymentsInvokeArgs()
         {
         }
@@ -177,6 +219,8 @@ namespace Pulumi.Oci.GoldenGate
     [OutputType]
     public sealed class GetDeploymentsResult
     {
+        public readonly string? AssignableConnectionId;
+        public readonly string? AssignedConnectionId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
@@ -206,9 +250,14 @@ namespace Pulumi.Oci.GoldenGate
         /// Possible lifecycle states.
         /// </summary>
         public readonly string? State;
+        public readonly string? SupportedConnectionType;
 
         [OutputConstructor]
         private GetDeploymentsResult(
+            string? assignableConnectionId,
+
+            string? assignedConnectionId,
+
             string compartmentId,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionResult> deploymentCollections,
@@ -223,8 +272,12 @@ namespace Pulumi.Oci.GoldenGate
 
             string? lifecycleSubState,
 
-            string? state)
+            string? state,
+
+            string? supportedConnectionType)
         {
+            AssignableConnectionId = assignableConnectionId;
+            AssignedConnectionId = assignedConnectionId;
             CompartmentId = compartmentId;
             DeploymentCollections = deploymentCollections;
             DisplayName = displayName;
@@ -233,6 +286,7 @@ namespace Pulumi.Oci.GoldenGate
             Id = id;
             LifecycleSubState = lifecycleSubState;
             State = state;
+            SupportedConnectionType = supportedConnectionType;
         }
     }
 }

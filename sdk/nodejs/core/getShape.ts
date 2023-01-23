@@ -2,15 +2,13 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getShape(args: GetShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetShapeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getShape:getShape", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -43,9 +41,8 @@ export interface GetShapeResult {
     readonly imageId?: string;
     readonly shapes: outputs.Core.GetShapeShape[];
 }
-
 export function getShapeOutput(args: GetShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapeResult> {
-    return pulumi.output(args).apply(a => getShape(a, opts))
+    return pulumi.output(args).apply((a: any) => getShape(a, opts))
 }
 
 /**

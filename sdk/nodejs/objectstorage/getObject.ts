@@ -30,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getObject(args: GetObjectArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObject:getObject", {
         "base64EncodeContent": args.base64EncodeContent,
         "bucket": args.bucket,
@@ -166,9 +163,33 @@ export interface GetObjectResult {
     readonly storageTier: string;
     readonly versionId: string;
 }
-
+/**
+ * This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Gets the metadata and body of an object.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testObject = oci.ObjectStorage.getObject({
+ *     bucket: _var.object_bucket,
+ *     namespace: _var.object_namespace,
+ *     object: _var.object_object,
+ *     httpResponseCacheControl: _var.object_http_response_cache_control,
+ *     httpResponseContentDisposition: _var.object_http_response_content_disposition,
+ *     httpResponseContentEncoding: _var.object_http_response_content_encoding,
+ *     httpResponseContentLanguage: _var.object_http_response_content_language,
+ *     httpResponseContentType: _var.object_http_response_content_type,
+ *     httpResponseExpires: _var.object_http_response_expires,
+ *     versionId: oci_objectstorage_version.test_version.id,
+ * });
+ * ```
+ */
 export function getObjectOutput(args: GetObjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectResult> {
-    return pulumi.output(args).apply(a => getObject(a, opts))
+    return pulumi.output(args).apply((a: any) => getObject(a, opts))
 }
 
 /**

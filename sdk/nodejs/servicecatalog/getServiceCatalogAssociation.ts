@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceCatalogAssociation(args: GetServiceCatalogAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceCatalogAssociationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", {
         "serviceCatalogAssociationId": args.serviceCatalogAssociationId,
     }, opts);
@@ -67,9 +64,24 @@ export interface GetServiceCatalogAssociationResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
+ *
+ * Gets detailed information about specific service catalog association.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testServiceCatalogAssociation = oci.ServiceCatalog.getServiceCatalogAssociation({
+ *     serviceCatalogAssociationId: oci_service_catalog_service_catalog_association.test_service_catalog_association.id,
+ * });
+ * ```
+ */
 export function getServiceCatalogAssociationOutput(args: GetServiceCatalogAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogAssociationResult> {
-    return pulumi.output(args).apply(a => getServiceCatalogAssociation(a, opts))
+    return pulumi.output(args).apply((a: any) => getServiceCatalogAssociation(a, opts))
 }
 
 /**

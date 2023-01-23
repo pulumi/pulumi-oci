@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementDashboardsExport(args: GetManagementDashboardsExportArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementDashboardsExportResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", {
         "exportDashboardId": args.exportDashboardId,
     }, opts);
@@ -57,9 +54,26 @@ export interface GetManagementDashboardsExportResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
+ *
+ * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
+ * Here's an example of how you can use CLI to export a dashboard:
+ * `$oci management-dashboard dashboard export --query data --export-dashboard-id "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}"  > dashboards.json`
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementDashboardsExport = oci.ManagementDashboard.getManagementDashboardsExport({
+ *     exportDashboardId: oci_management_dashboard_export_dashboard.test_export_dashboard.id,
+ * });
+ * ```
+ */
 export function getManagementDashboardsExportOutput(args: GetManagementDashboardsExportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementDashboardsExportResult> {
-    return pulumi.output(args).apply(a => getManagementDashboardsExport(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementDashboardsExport(a, opts))
 }
 
 /**

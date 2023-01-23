@@ -41,7 +41,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkLoadBalancersResult> InvokeAsync(GetNetworkLoadBalancersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkLoadBalancersResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancers:getNetworkLoadBalancers", args ?? new GetNetworkLoadBalancersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkLoadBalancersResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancers:getNetworkLoadBalancers", args ?? new GetNetworkLoadBalancersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Network Load Balancers in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkLoadBalancersResult> Invoke(GetNetworkLoadBalancersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancersResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancers:getNetworkLoadBalancers", args ?? new GetNetworkLoadBalancersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancersResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancers:getNetworkLoadBalancers", args ?? new GetNetworkLoadBalancersInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryCommitsResult> InvokeAsync(GetRepositoryCommitsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryCommitsResult>("oci:DevOps/getRepositoryCommits:getRepositoryCommits", args ?? new GetRepositoryCommitsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryCommitsResult>("oci:DevOps/getRepositoryCommits:getRepositoryCommits", args ?? new GetRepositoryCommitsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Repository Commits in Oracle Cloud Infrastructure Devops service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryCommitsResult> Invoke(GetRepositoryCommitsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryCommitsResult>("oci:DevOps/getRepositoryCommits:getRepositoryCommits", args ?? new GetRepositoryCommitsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryCommitsResult>("oci:DevOps/getRepositoryCommits:getRepositoryCommits", args ?? new GetRepositoryCommitsInvokeArgs(), options.WithDefaults());
     }
 
 

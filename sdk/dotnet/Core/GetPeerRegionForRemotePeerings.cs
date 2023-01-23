@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPeerRegionForRemotePeeringsResult> InvokeAsync(GetPeerRegionForRemotePeeringsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPeerRegionForRemotePeeringsResult>("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args ?? new GetPeerRegionForRemotePeeringsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPeerRegionForRemotePeeringsResult>("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args ?? new GetPeerRegionForRemotePeeringsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPeerRegionForRemotePeeringsResult> Invoke(GetPeerRegionForRemotePeeringsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPeerRegionForRemotePeeringsResult>("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args ?? new GetPeerRegionForRemotePeeringsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPeerRegionForRemotePeeringsResult>("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args ?? new GetPeerRegionForRemotePeeringsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -657,13 +657,13 @@ class ScheduleQueryProperties(dict):
                  query_type: Optional[str] = None):
         """
         :param 'ScheduleQueryPropertiesDateRangeArgs' date_range: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         :param float compartment_depth: The depth level of the compartment.
         :param str filter: The filter object for query usage.
         :param Sequence[str] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
         :param Sequence['ScheduleQueryPropertiesGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
         pulumi.set(__self__, "date_range", date_range)
         pulumi.set(__self__, "granularity", granularity)
@@ -692,7 +692,7 @@ class ScheduleQueryProperties(dict):
     @pulumi.getter
     def granularity(self) -> str:
         """
-        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         """
         return pulumi.get(self, "granularity")
 
@@ -732,7 +732,7 @@ class ScheduleQueryProperties(dict):
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> Optional[bool]:
         """
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
@@ -740,7 +740,7 @@ class ScheduleQueryProperties(dict):
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[str]:
         """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
         return pulumi.get(self, "query_type")
 
@@ -776,7 +776,7 @@ class ScheduleQueryPropertiesDateRange(dict):
                  time_usage_ended: Optional[str] = None,
                  time_usage_started: Optional[str] = None):
         """
-        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC
+        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC.
         :param str time_usage_ended: The usage end time.
         :param str time_usage_started: The usage start time.
         """
@@ -792,7 +792,7 @@ class ScheduleQueryPropertiesDateRange(dict):
     @pulumi.getter(name="dateRangeType")
     def date_range_type(self) -> str:
         """
-        Defines whether the schedule date range is STATIC or DYNAMIC
+        Defines whether the schedule date range is STATIC or DYNAMIC.
         """
         return pulumi.get(self, "date_range_type")
 
@@ -826,7 +826,7 @@ class ScheduleQueryPropertiesGroupByTag(dict):
                  value: Optional[str] = None):
         """
         :param str key: The tag key.
-        :param str namespace: The namespace needed to determine object storage bucket.
+        :param str namespace: (Updatable) The namespace needed to determine the object storage bucket.
         :param str value: The tag value.
         """
         if key is not None:
@@ -848,7 +848,7 @@ class ScheduleQueryPropertiesGroupByTag(dict):
     @pulumi.getter
     def namespace(self) -> Optional[str]:
         """
-        The namespace needed to determine object storage bucket.
+        (Updatable) The namespace needed to determine the object storage bucket.
         """
         return pulumi.get(self, "namespace")
 
@@ -886,10 +886,10 @@ class ScheduleResultLocation(dict):
                  namespace: str,
                  region: str):
         """
-        :param str bucket: The bucket name where usage/cost CSVs will be uploaded
-        :param str location_type: Defines the type of location where the usage/cost CSVs will be stored
-        :param str namespace: The namespace needed to determine object storage bucket.
-        :param str region: The destination Object Store Region specified by customer
+        :param str bucket: (Updatable) The bucket name where usage or cost CSVs will be uploaded.
+        :param str location_type: (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
+        :param str namespace: (Updatable) The namespace needed to determine the object storage bucket.
+        :param str region: (Updatable) The destination Object Store Region specified by the customer.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
@@ -900,7 +900,7 @@ class ScheduleResultLocation(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The bucket name where usage/cost CSVs will be uploaded
+        (Updatable) The bucket name where usage or cost CSVs will be uploaded.
         """
         return pulumi.get(self, "bucket")
 
@@ -908,7 +908,7 @@ class ScheduleResultLocation(dict):
     @pulumi.getter(name="locationType")
     def location_type(self) -> str:
         """
-        Defines the type of location where the usage/cost CSVs will be stored
+        (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
         """
         return pulumi.get(self, "location_type")
 
@@ -916,7 +916,7 @@ class ScheduleResultLocation(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace needed to determine object storage bucket.
+        (Updatable) The namespace needed to determine the object storage bucket.
         """
         return pulumi.get(self, "namespace")
 
@@ -924,7 +924,7 @@ class ScheduleResultLocation(dict):
     @pulumi.getter
     def region(self) -> str:
         """
-        The destination Object Store Region specified by customer
+        (Updatable) The destination Object Store Region specified by the customer.
         """
         return pulumi.get(self, "region")
 
@@ -2521,11 +2521,11 @@ class GetScheduleQueryPropertyResult(dict):
         :param float compartment_depth: The depth level of the compartment.
         :param Sequence['GetScheduleQueryPropertyDateRangeArgs'] date_ranges: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
         :param str filter: The filter object for query usage.
-        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         :param Sequence[str] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
         :param Sequence['GetScheduleQueryPropertyGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
         pulumi.set(__self__, "compartment_depth", compartment_depth)
         pulumi.set(__self__, "date_ranges", date_ranges)
@@ -2564,7 +2564,7 @@ class GetScheduleQueryPropertyResult(dict):
     @pulumi.getter
     def granularity(self) -> str:
         """
-        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         """
         return pulumi.get(self, "granularity")
 
@@ -2588,7 +2588,7 @@ class GetScheduleQueryPropertyResult(dict):
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> bool:
         """
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
@@ -2596,7 +2596,7 @@ class GetScheduleQueryPropertyResult(dict):
     @pulumi.getter(name="queryType")
     def query_type(self) -> str:
         """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
         return pulumi.get(self, "query_type")
 
@@ -2609,7 +2609,7 @@ class GetScheduleQueryPropertyDateRangeResult(dict):
                  time_usage_ended: str,
                  time_usage_started: str):
         """
-        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC
+        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC.
         :param str time_usage_ended: The usage end time.
         :param str time_usage_started: The usage start time.
         """
@@ -2622,7 +2622,7 @@ class GetScheduleQueryPropertyDateRangeResult(dict):
     @pulumi.getter(name="dateRangeType")
     def date_range_type(self) -> str:
         """
-        Defines whether the schedule date range is STATIC or DYNAMIC
+        Defines whether the schedule date range is STATIC or DYNAMIC.
         """
         return pulumi.get(self, "date_range_type")
 
@@ -2656,7 +2656,7 @@ class GetScheduleQueryPropertyGroupByTagResult(dict):
                  value: str):
         """
         :param str key: The tag key.
-        :param str namespace: The namespace needed to determine object storage bucket.
+        :param str namespace: The namespace needed to determine the object storage bucket.
         :param str value: The tag value.
         """
         pulumi.set(__self__, "key", key)
@@ -2675,7 +2675,7 @@ class GetScheduleQueryPropertyGroupByTagResult(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace needed to determine object storage bucket.
+        The namespace needed to determine the object storage bucket.
         """
         return pulumi.get(self, "namespace")
 
@@ -2696,10 +2696,10 @@ class GetScheduleResultLocationResult(dict):
                  namespace: str,
                  region: str):
         """
-        :param str bucket: The bucket name where usage/cost CSVs will be uploaded
-        :param str location_type: Defines the type of location where the usage/cost CSVs will be stored
-        :param str namespace: The namespace needed to determine object storage bucket.
-        :param str region: The destination Object Store Region specified by customer
+        :param str bucket: The bucket name where usage or cost CSVs will be uploaded.
+        :param str location_type: Defines the type of location where the usage or cost CSVs will be stored.
+        :param str namespace: The namespace needed to determine the object storage bucket.
+        :param str region: The destination Object Store Region specified by the customer.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
@@ -2710,7 +2710,7 @@ class GetScheduleResultLocationResult(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The bucket name where usage/cost CSVs will be uploaded
+        The bucket name where usage or cost CSVs will be uploaded.
         """
         return pulumi.get(self, "bucket")
 
@@ -2718,7 +2718,7 @@ class GetScheduleResultLocationResult(dict):
     @pulumi.getter(name="locationType")
     def location_type(self) -> str:
         """
-        Defines the type of location where the usage/cost CSVs will be stored
+        Defines the type of location where the usage or cost CSVs will be stored.
         """
         return pulumi.get(self, "location_type")
 
@@ -2726,7 +2726,7 @@ class GetScheduleResultLocationResult(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace needed to determine object storage bucket.
+        The namespace needed to determine the object storage bucket.
         """
         return pulumi.get(self, "namespace")
 
@@ -2734,7 +2734,7 @@ class GetScheduleResultLocationResult(dict):
     @pulumi.getter
     def region(self) -> str:
         """
-        The destination Object Store Region specified by customer
+        The destination Object Store Region specified by the customer.
         """
         return pulumi.get(self, "region")
 
@@ -2901,41 +2901,53 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
+                 description: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  name: str,
+                 output_file_format: str,
                  query_properties: Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyResult'],
                  result_locations: Sequence['outputs.GetSchedulesScheduleCollectionItemResultLocationResult'],
+                 saved_report_id: str,
                  schedule_recurrences: str,
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
+                 time_next_run: str,
                  time_scheduled: str):
         """
         :param str compartment_id: The compartment ID in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param str id: The OCID representing unique shedule
+        :param str description: The description of the schedule.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param str id: The OCID representing a unique shedule.
         :param str name: Query parameter for filtering by name
+        :param str output_file_format: Specifies supported output file format.
         :param Sequence['GetSchedulesScheduleCollectionItemQueryPropertyArgs'] query_properties: The query properties.
-        :param Sequence['GetSchedulesScheduleCollectionItemResultLocationArgs'] result_locations: The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param str schedule_recurrences: In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
-        :param str state: The lifecycle state of the schedule
+        :param Sequence['GetSchedulesScheduleCollectionItemResultLocationArgs'] result_locations: The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        :param str saved_report_id: The saved report id which can also be used to generate query.
+        :param str schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param str state: The schedule lifecycle state.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The date and time of when the schedule was created
-        :param str time_scheduled: The date and time of the first time job execution
+        :param str time_created: The date and time the schedule was created.
+        :param str time_next_run: The date and time of the next job execution.
+        :param str time_scheduled: The date and time of the first time job execution.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "output_file_format", output_file_format)
         pulumi.set(__self__, "query_properties", query_properties)
         pulumi.set(__self__, "result_locations", result_locations)
+        pulumi.set(__self__, "saved_report_id", saved_report_id)
         pulumi.set(__self__, "schedule_recurrences", schedule_recurrences)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_next_run", time_next_run)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
 
     @property
@@ -2955,10 +2967,18 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the schedule.
+        """
+        return pulumi.get(self, "description")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -2966,7 +2986,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID representing unique shedule
+        The OCID representing a unique shedule.
         """
         return pulumi.get(self, "id")
 
@@ -2977,6 +2997,14 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         Query parameter for filtering by name
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="outputFileFormat")
+    def output_file_format(self) -> str:
+        """
+        Specifies supported output file format.
+        """
+        return pulumi.get(self, "output_file_format")
 
     @property
     @pulumi.getter(name="queryProperties")
@@ -2990,15 +3018,23 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     @pulumi.getter(name="resultLocations")
     def result_locations(self) -> Sequence['outputs.GetSchedulesScheduleCollectionItemResultLocationResult']:
         """
-        The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         """
         return pulumi.get(self, "result_locations")
+
+    @property
+    @pulumi.getter(name="savedReportId")
+    def saved_report_id(self) -> str:
+        """
+        The saved report id which can also be used to generate query.
+        """
+        return pulumi.get(self, "saved_report_id")
 
     @property
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> str:
         """
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 
@@ -3006,7 +3042,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The lifecycle state of the schedule
+        The schedule lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -3022,15 +3058,23 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time of when the schedule was created
+        The date and time the schedule was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeNextRun")
+    def time_next_run(self) -> str:
+        """
+        The date and time of the next job execution.
+        """
+        return pulumi.get(self, "time_next_run")
 
     @property
     @pulumi.getter(name="timeScheduled")
     def time_scheduled(self) -> str:
         """
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
         """
         return pulumi.get(self, "time_scheduled")
 
@@ -3050,11 +3094,11 @@ class GetSchedulesScheduleCollectionItemQueryPropertyResult(dict):
         :param float compartment_depth: The depth level of the compartment.
         :param Sequence['GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs'] date_ranges: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
         :param str filter: The filter object for query usage.
-        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         :param Sequence[str] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
         :param Sequence['GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
         pulumi.set(__self__, "compartment_depth", compartment_depth)
         pulumi.set(__self__, "date_ranges", date_ranges)
@@ -3093,7 +3137,7 @@ class GetSchedulesScheduleCollectionItemQueryPropertyResult(dict):
     @pulumi.getter
     def granularity(self) -> str:
         """
-        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         """
         return pulumi.get(self, "granularity")
 
@@ -3117,7 +3161,7 @@ class GetSchedulesScheduleCollectionItemQueryPropertyResult(dict):
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> bool:
         """
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
@@ -3125,7 +3169,7 @@ class GetSchedulesScheduleCollectionItemQueryPropertyResult(dict):
     @pulumi.getter(name="queryType")
     def query_type(self) -> str:
         """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
         return pulumi.get(self, "query_type")
 
@@ -3138,7 +3182,7 @@ class GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult(dict):
                  time_usage_ended: str,
                  time_usage_started: str):
         """
-        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC
+        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC.
         :param str time_usage_ended: The usage end time.
         :param str time_usage_started: The usage start time.
         """
@@ -3151,7 +3195,7 @@ class GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult(dict):
     @pulumi.getter(name="dateRangeType")
     def date_range_type(self) -> str:
         """
-        Defines whether the schedule date range is STATIC or DYNAMIC
+        Defines whether the schedule date range is STATIC or DYNAMIC.
         """
         return pulumi.get(self, "date_range_type")
 
@@ -3185,7 +3229,7 @@ class GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult(dict):
                  value: str):
         """
         :param str key: The tag key.
-        :param str namespace: The namespace needed to determine object storage bucket.
+        :param str namespace: The namespace needed to determine the object storage bucket.
         :param str value: The tag value.
         """
         pulumi.set(__self__, "key", key)
@@ -3204,7 +3248,7 @@ class GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace needed to determine object storage bucket.
+        The namespace needed to determine the object storage bucket.
         """
         return pulumi.get(self, "namespace")
 
@@ -3225,10 +3269,10 @@ class GetSchedulesScheduleCollectionItemResultLocationResult(dict):
                  namespace: str,
                  region: str):
         """
-        :param str bucket: The bucket name where usage/cost CSVs will be uploaded
-        :param str location_type: Defines the type of location where the usage/cost CSVs will be stored
-        :param str namespace: The namespace needed to determine object storage bucket.
-        :param str region: The destination Object Store Region specified by customer
+        :param str bucket: The bucket name where usage or cost CSVs will be uploaded.
+        :param str location_type: Defines the type of location where the usage or cost CSVs will be stored.
+        :param str namespace: The namespace needed to determine the object storage bucket.
+        :param str region: The destination Object Store Region specified by the customer.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
@@ -3239,7 +3283,7 @@ class GetSchedulesScheduleCollectionItemResultLocationResult(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The bucket name where usage/cost CSVs will be uploaded
+        The bucket name where usage or cost CSVs will be uploaded.
         """
         return pulumi.get(self, "bucket")
 
@@ -3247,7 +3291,7 @@ class GetSchedulesScheduleCollectionItemResultLocationResult(dict):
     @pulumi.getter(name="locationType")
     def location_type(self) -> str:
         """
-        Defines the type of location where the usage/cost CSVs will be stored
+        Defines the type of location where the usage or cost CSVs will be stored.
         """
         return pulumi.get(self, "location_type")
 
@@ -3255,7 +3299,7 @@ class GetSchedulesScheduleCollectionItemResultLocationResult(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace needed to determine object storage bucket.
+        The namespace needed to determine the object storage bucket.
         """
         return pulumi.get(self, "namespace")
 
@@ -3263,7 +3307,7 @@ class GetSchedulesScheduleCollectionItemResultLocationResult(dict):
     @pulumi.getter
     def region(self) -> str:
         """
-        The destination Object Store Region specified by customer
+        The destination Object Store Region specified by the customer.
         """
         return pulumi.get(self, "region")
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentFamilyLimitsAndUsage(args: GetFusionEnvironmentFamilyLimitsAndUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentFamilyLimitsAndUsageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", {
         "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,
     }, opts);
@@ -64,9 +62,24 @@ export interface GetFusionEnvironmentFamilyLimitsAndUsageResult {
      */
     readonly testLimitAndUsages: outputs.Functions.GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage[];
 }
-
+/**
+ * This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that's allowed to be created based on the group's associated subscriptions.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentFamilyLimitsAndUsage = oci.Functions.getFusionEnvironmentFamilyLimitsAndUsage({
+ *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentFamilyLimitsAndUsageOutput(args: GetFusionEnvironmentFamilyLimitsAndUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentFamilyLimitsAndUsage(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentFamilyLimitsAndUsage(a, opts))
 }
 
 /**

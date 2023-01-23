@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImage(args: GetImageArgs, opts?: pulumi.InvokeOptions): Promise<GetImageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getImage:getImage", {
         "imageId": args.imageId,
     }, opts);
@@ -118,9 +116,24 @@ export interface GetImageResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Image resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified image.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testImage = oci.Core.getImage({
+ *     imageId: oci_core_image.test_image.id,
+ * });
+ * ```
+ */
 export function getImageOutput(args: GetImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImageResult> {
-    return pulumi.output(args).apply(a => getImage(a, opts))
+    return pulumi.output(args).apply((a: any) => getImage(a, opts))
 }
 
 /**

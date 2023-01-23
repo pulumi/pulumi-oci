@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  */
 export function getAutonomousCharacterSets(args?: GetAutonomousCharacterSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousCharacterSetsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", {
         "characterSetType": args.characterSetType,
         "filters": args.filters,
@@ -67,9 +65,25 @@ export interface GetAutonomousCharacterSetsResult {
     readonly id: string;
     readonly isShared?: boolean;
 }
-
+/**
+ * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of supported character sets.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseCharacterSets = oci.Database.getAutonomousCharacterSets({
+ *     characterSetType: _var.autonomous_database_character_set_character_set_type,
+ *     isShared: _var.autonomous_database_character_set_is_shared,
+ * });
+ * ```
+ */
 export function getAutonomousCharacterSetsOutput(args?: GetAutonomousCharacterSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousCharacterSetsResult> {
-    return pulumi.output(args).apply(a => getAutonomousCharacterSets(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousCharacterSets(a, opts))
 }
 
 /**

@@ -6,6 +6,7 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsFilter;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -26,6 +27,8 @@ public final class GetMonitorsResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isMaintenanceWindowActive;
+    private @Nullable Boolean isMaintenanceWindowSet;
     /**
      * @return The list of monitor_collection.
      * 
@@ -68,6 +71,12 @@ public final class GetMonitorsResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> isMaintenanceWindowActive() {
+        return Optional.ofNullable(this.isMaintenanceWindowActive);
+    }
+    public Optional<Boolean> isMaintenanceWindowSet() {
+        return Optional.ofNullable(this.isMaintenanceWindowSet);
     }
     /**
      * @return The list of monitor_collection.
@@ -114,6 +123,8 @@ public final class GetMonitorsResult {
         private @Nullable String displayName;
         private @Nullable List<GetMonitorsFilter> filters;
         private String id;
+        private @Nullable Boolean isMaintenanceWindowActive;
+        private @Nullable Boolean isMaintenanceWindowSet;
         private List<GetMonitorsMonitorCollection> monitorCollections;
         private @Nullable String monitorType;
         private @Nullable String scriptId;
@@ -126,6 +137,8 @@ public final class GetMonitorsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isMaintenanceWindowActive = defaults.isMaintenanceWindowActive;
+    	      this.isMaintenanceWindowSet = defaults.isMaintenanceWindowSet;
     	      this.monitorCollections = defaults.monitorCollections;
     	      this.monitorType = defaults.monitorType;
     	      this.scriptId = defaults.scriptId;
@@ -154,6 +167,16 @@ public final class GetMonitorsResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMaintenanceWindowActive(@Nullable Boolean isMaintenanceWindowActive) {
+            this.isMaintenanceWindowActive = isMaintenanceWindowActive;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMaintenanceWindowSet(@Nullable Boolean isMaintenanceWindowSet) {
+            this.isMaintenanceWindowSet = isMaintenanceWindowSet;
             return this;
         }
         @CustomType.Setter
@@ -190,6 +213,8 @@ public final class GetMonitorsResult {
             o.displayName = displayName;
             o.filters = filters;
             o.id = id;
+            o.isMaintenanceWindowActive = isMaintenanceWindowActive;
+            o.isMaintenanceWindowSet = isMaintenanceWindowSet;
             o.monitorCollections = monitorCollections;
             o.monitorType = monitorType;
             o.scriptId = scriptId;

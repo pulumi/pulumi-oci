@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryCommits(args: GetRepositoryCommitsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryCommitsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryCommits:getRepositoryCommits", {
         "authorName": args.authorName,
         "commitMessage": args.commitMessage,
@@ -114,9 +112,31 @@ export interface GetRepositoryCommitsResult {
     readonly timestampGreaterThanOrEqualTo?: string;
     readonly timestampLessThanOrEqualTo?: string;
 }
-
+/**
+ * This data source provides the list of Repository Commits in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of commits.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryCommits = oci.DevOps.getRepositoryCommits({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     authorName: _var.repository_commit_author_name,
+ *     commitMessage: _var.repository_commit_commit_message,
+ *     excludeRefName: _var.repository_commit_exclude_ref_name,
+ *     filePath: _var.repository_commit_file_path,
+ *     refName: _var.repository_commit_ref_name,
+ *     timestampGreaterThanOrEqualTo: _var.repository_commit_timestamp_greater_than_or_equal_to,
+ *     timestampLessThanOrEqualTo: _var.repository_commit_timestamp_less_than_or_equal_to,
+ * });
+ * ```
+ */
 export function getRepositoryCommitsOutput(args: GetRepositoryCommitsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryCommitsResult> {
-    return pulumi.output(args).apply(a => getRepositoryCommits(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryCommits(a, opts))
 }
 
 /**

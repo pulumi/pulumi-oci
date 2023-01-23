@@ -70,14 +70,14 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -295,14 +295,14 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
-     * The Maintenance Policy for the DB System.
+     * The Maintenance Policy for the DB System or Read Replica that this model is included in.
      * 
      */
     @Import(name="maintenances")
     private @Nullable Output<List<MysqlBackupDbSystemSnapshotMaintenanceArgs>> maintenances;
 
     /**
-     * @return The Maintenance Policy for the DB System.
+     * @return The Maintenance Policy for the DB System or Read Replica that this model is included in.
      * 
      */
     public Optional<Output<List<MysqlBackupDbSystemSnapshotMaintenanceArgs>>> maintenances() {
@@ -505,7 +505,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment the backup exists in.
          * 
          * @return builder
          * 
@@ -516,7 +516,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment the backup exists in.
          * 
          * @return builder
          * 
@@ -840,7 +840,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param maintenances The Maintenance Policy for the DB System.
+         * @param maintenances The Maintenance Policy for the DB System or Read Replica that this model is included in.
          * 
          * @return builder
          * 
@@ -851,7 +851,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param maintenances The Maintenance Policy for the DB System.
+         * @param maintenances The Maintenance Policy for the DB System or Read Replica that this model is included in.
          * 
          * @return builder
          * 
@@ -861,7 +861,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param maintenances The Maintenance Policy for the DB System.
+         * @param maintenances The Maintenance Policy for the DB System or Read Replica that this model is included in.
          * 
          * @return builder
          * 

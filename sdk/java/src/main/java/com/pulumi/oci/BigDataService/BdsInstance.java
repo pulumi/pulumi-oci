@@ -12,6 +12,7 @@ import com.pulumi.oci.BigDataService.inputs.BdsInstanceState;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceClusterDetail;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceComputeOnlyWorkerNode;
+import com.pulumi.oci.BigDataService.outputs.BdsInstanceEdgeNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNode;
@@ -49,6 +50,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceWorkerNodeShapeConfigArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeShapeConfigArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -74,44 +77,60 @@ import javax.annotation.Nullable;
  *             .masterNode(BdsInstanceMasterNodeArgs.builder()
  *                 .shape(var_.bds_instance_nodes_shape())
  *                 .subnetId(oci_core_subnet.test_subnet().id())
- *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .shapeConfig(BdsInstanceMasterNodeShapeConfigArgs.builder()
  *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .nvmes(var_.bds_instance_nodes_shape_config_nvmes())
  *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
  *                     .build())
  *                 .build())
  *             .utilNode(BdsInstanceUtilNodeArgs.builder()
  *                 .shape(var_.bds_instance_nodes_shape())
  *                 .subnetId(oci_core_subnet.test_subnet().id())
- *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .shapeConfig(BdsInstanceUtilNodeShapeConfigArgs.builder()
  *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .nvmes(var_.bds_instance_nodes_shape_config_nvmes())
  *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
  *                     .build())
  *                 .build())
  *             .workerNode(BdsInstanceWorkerNodeArgs.builder()
  *                 .shape(var_.bds_instance_nodes_shape())
  *                 .subnetId(oci_core_subnet.test_subnet().id())
- *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .shapeConfig(BdsInstanceWorkerNodeShapeConfigArgs.builder()
  *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .nvmes(var_.bds_instance_nodes_shape_config_nvmes())
  *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
  *                     .build())
  *                 .build())
  *             .computeOnlyWorkerNode(BdsInstanceComputeOnlyWorkerNodeArgs.builder()
  *                 .shape(var_.bds_instance_nodes_shape())
  *                 .subnetId(oci_core_subnet.test_subnet().id())
- *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .shapeConfig(BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs.builder()
  *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .nvmes(var_.bds_instance_nodes_shape_config_nvmes())
+ *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
+ *                     .build())
+ *                 .build())
+ *             .edgeNode(BdsInstanceEdgeNodeArgs.builder()
+ *                 .shape(var_.bds_instance_nodes_shape())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
+ *                 .shapeConfig(BdsInstanceEdgeNodeShapeConfigArgs.builder()
+ *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .nvmes(var_.bds_instance_nodes_shape_config_nvmes())
  *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
  *                     .build())
  *                 .build())
  *             .bootstrapScriptUrl(var_.bds_instance_bootstrap_script_url())
+ *             .clusterProfile(var_.bds_instance_cluster_profile())
  *             .definedTags(var_.bds_instance_defined_tags())
  *             .freeformTags(var_.bds_instance_freeform_tags())
  *             .kerberosRealmName(var_.bds_instance_kerberos_realm_name())
@@ -152,28 +171,28 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.bootstrapScriptUrl;
     }
     /**
-     * -(Optional) The information about added Cloud SQL capability
+     * The information about added Cloud SQL capability
      * 
      */
     @Export(name="cloudSqlDetails", type=List.class, parameters={BdsInstanceCloudSqlDetail.class})
     private Output<List<BdsInstanceCloudSqlDetail>> cloudSqlDetails;
 
     /**
-     * @return -(Optional) The information about added Cloud SQL capability
+     * @return The information about added Cloud SQL capability
      * 
      */
     public Output<List<BdsInstanceCloudSqlDetail>> cloudSqlDetails() {
         return this.cloudSqlDetails;
     }
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * 
      */
     @Export(name="clusterAdminPassword", type=String.class, parameters={})
     private Output<String> clusterAdminPassword;
 
     /**
-     * @return Base-64 encoded password for Cloudera Manager admin user
+     * @return Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * 
      */
     public Output<String> clusterAdminPassword() {
@@ -192,6 +211,20 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<BdsInstanceClusterDetail>> clusterDetails() {
         return this.clusterDetails;
+    }
+    /**
+     * Profile of the Big Data Service cluster.
+     * 
+     */
+    @Export(name="clusterProfile", type=String.class, parameters={})
+    private Output<String> clusterProfile;
+
+    /**
+     * @return Profile of the Big Data Service cluster.
+     * 
+     */
+    public Output<String> clusterProfile() {
+        return this.clusterProfile;
     }
     /**
      * The SSH public key used to authenticate the cluster connection.
@@ -242,14 +275,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.computeOnlyWorkerNode);
     }
     /**
-     * The user who created the BDS instance.
+     * The user who created the cluster.
      * 
      */
     @Export(name="createdBy", type=String.class, parameters={})
     private Output<String> createdBy;
 
     /**
-     * @return The user who created the BDS instance.
+     * @return The user who created the cluster.
      * 
      */
     public Output<String> createdBy() {
@@ -283,6 +316,12 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     public Output<String> displayName() {
         return this.displayName;
     }
+    @Export(name="edgeNode", type=BdsInstanceEdgeNode.class, parameters={})
+    private Output</* @Nullable */ BdsInstanceEdgeNode> edgeNode;
+
+    public Output<Optional<BdsInstanceEdgeNode>> edgeNode() {
+        return Codegen.optional(this.edgeNode);
+    }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -298,18 +337,32 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+     * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     @Export(name="isCloudSqlConfigured", type=Boolean.class, parameters={})
     private Output<Boolean> isCloudSqlConfigured;
 
     /**
-     * @return -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+     * @return (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     public Output<Boolean> isCloudSqlConfigured() {
         return this.isCloudSqlConfigured;
+    }
+    /**
+     * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+     * 
+     */
+    @Export(name="isForceStopJobs", type=Boolean.class, parameters={})
+    private Output</* @Nullable */ Boolean> isForceStopJobs;
+
+    /**
+     * @return (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+     * 
+     */
+    public Output<Optional<Boolean>> isForceStopJobs() {
+        return Codegen.optional(this.isForceStopJobs);
     }
     /**
      * Boolean flag specifying whether or not the cluster is HA
@@ -424,14 +477,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.numberOfNodes;
     }
     /**
-     * The state of the BDS instance
+     * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The state of the BDS instance
+     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
     public Output<String> state() {
@@ -518,6 +571,9 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "clusterAdminPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

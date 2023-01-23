@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBlockchainPlatformPatches(args: GetBlockchainPlatformPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockchainPlatformPatchesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches", {
         "blockchainPlatformId": args.blockchainPlatformId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetBlockchainPlatformPatchesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
+ *
+ * List Blockchain Platform Patches
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBlockchainPlatformPatches = oci.Blockchain.getBlockchainPlatformPatches({
+ *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
+ * });
+ * ```
+ */
 export function getBlockchainPlatformPatchesOutput(args: GetBlockchainPlatformPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformPatchesResult> {
-    return pulumi.output(args).apply(a => getBlockchainPlatformPatches(a, opts))
+    return pulumi.output(args).apply((a: any) => getBlockchainPlatformPatches(a, opts))
 }
 
 /**

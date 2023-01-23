@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMysqlConfigurationResult> InvokeAsync(GetMysqlConfigurationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMysqlConfigurationResult>("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", args ?? new GetMysqlConfigurationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMysqlConfigurationResult>("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", args ?? new GetMysqlConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMysqlConfigurationResult> Invoke(GetMysqlConfigurationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMysqlConfigurationResult>("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", args ?? new GetMysqlConfigurationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlConfigurationResult>("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", args ?? new GetMysqlConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

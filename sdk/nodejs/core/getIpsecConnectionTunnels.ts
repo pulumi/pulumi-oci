@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecConnectionTunnels(args: GetIpsecConnectionTunnelsArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionTunnelsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels", {
         "filters": args.filters,
         "ipsecId": args.ipsecId,
@@ -59,9 +57,24 @@ export interface GetIpsecConnectionTunnelsResult {
     readonly ipSecConnectionTunnels: outputs.Core.GetIpsecConnectionTunnelsIpSecConnectionTunnel[];
     readonly ipsecId: string;
 }
-
+/**
+ * This data source provides the list of Ip Sec Connection Tunnels in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the tunnel information for the specified IPSec connection.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpSecConnectionTunnels = oci.Core.getIpsecConnectionTunnels({
+ *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ * });
+ * ```
+ */
 export function getIpsecConnectionTunnelsOutput(args: GetIpsecConnectionTunnelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelsResult> {
-    return pulumi.output(args).apply(a => getIpsecConnectionTunnels(a, opts))
+    return pulumi.output(args).apply((a: any) => getIpsecConnectionTunnels(a, opts))
 }
 
 /**

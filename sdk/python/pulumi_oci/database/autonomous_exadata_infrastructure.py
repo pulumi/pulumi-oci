@@ -599,7 +599,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             },
             license_model=var["autonomous_exadata_infrastructure_license_model"],
             maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
                 custom_action_timeout_in_mins=var["autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
                     name=var["autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name"],
@@ -612,6 +611,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                     name=var["autonomous_exadata_infrastructure_maintenance_window_details_months_name"],
                 )],
                 patching_mode=var["autonomous_exadata_infrastructure_maintenance_window_details_patching_mode"],
+                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
                 weeks_of_months=var["autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month"],
             ),
             nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
@@ -672,7 +672,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             },
             license_model=var["autonomous_exadata_infrastructure_license_model"],
             maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
                 custom_action_timeout_in_mins=var["autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
                     name=var["autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name"],
@@ -685,6 +684,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                     name=var["autonomous_exadata_infrastructure_maintenance_window_details_months_name"],
                 )],
                 patching_mode=var["autonomous_exadata_infrastructure_maintenance_window_details_patching_mode"],
+                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
                 weeks_of_months=var["autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month"],
             ),
             nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogGroup(args: GetLogGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetLogGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getLogGroup:getLogGroup", {
         "logGroupId": args.logGroupId,
     }, opts);
@@ -83,9 +80,24 @@ export interface GetLogGroupResult {
      */
     readonly timeLastModified: string;
 }
-
+/**
+ * This data source provides details about a specific Log Group resource in Oracle Cloud Infrastructure Logging service.
+ *
+ * Get the specified log group's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogGroup = oci.Logging.getLogGroup({
+ *     logGroupId: oci_logging_log_group.test_log_group.id,
+ * });
+ * ```
+ */
 export function getLogGroupOutput(args: GetLogGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogGroupResult> {
-    return pulumi.output(args).apply(a => getLogGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogGroup(a, opts))
 }
 
 /**

@@ -16,6 +16,8 @@ from .get_model_deployment import *
 from .get_model_deployment_shapes import *
 from .get_model_deployments import *
 from .get_model_provenance import *
+from .get_model_version_set import *
+from .get_model_version_sets import *
 from .get_models import *
 from .get_notebook_session import *
 from .get_notebook_session_shapes import *
@@ -25,8 +27,11 @@ from .get_projects import *
 from .job import *
 from .job_run import *
 from .model import *
+from .model_artifact_export import *
+from .model_artifact_import import *
 from .model_deployment import *
 from .model_provenance import *
+from .model_version_set import *
 from .notebook_session import *
 from .project import *
 from ._inputs import *

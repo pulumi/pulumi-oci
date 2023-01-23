@@ -42,7 +42,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMeshesResult> InvokeAsync(GetMeshesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMeshesResult>("oci:ServiceMesh/getMeshes:getMeshes", args ?? new GetMeshesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMeshesResult>("oci:ServiceMesh/getMeshes:getMeshes", args ?? new GetMeshesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Meshes in Oracle Cloud Infrastructure Service Mesh service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMeshesResult> Invoke(GetMeshesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMeshesResult>("oci:ServiceMesh/getMeshes:getMeshes", args ?? new GetMeshesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMeshesResult>("oci:ServiceMesh/getMeshes:getMeshes", args ?? new GetMeshesInvokeArgs(), options.WithDefaults());
     }
 
 

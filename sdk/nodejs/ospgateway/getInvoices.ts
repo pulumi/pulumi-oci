@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvoices(args: GetInvoicesArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoicesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OspGateway/getInvoices:getInvoices", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -125,9 +123,33 @@ export interface GetInvoicesResult {
     readonly timePaymentStart?: string;
     readonly types?: string[];
 }
-
+/**
+ * This data source provides the list of Invoices in Oracle Cloud Infrastructure Osp Gateway service.
+ *
+ * Returns a list of invoices
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInvoices = oci.OspGateway.getInvoices({
+ *     compartmentId: _var.compartment_id,
+ *     ospHomeRegion: _var.invoice_osp_home_region,
+ *     invoiceId: oci_osp_gateway_invoice.test_invoice.id,
+ *     searchText: _var.invoice_search_text,
+ *     statuses: _var.invoice_status,
+ *     timeInvoiceEnd: _var.invoice_time_invoice_end,
+ *     timeInvoiceStart: _var.invoice_time_invoice_start,
+ *     timePaymentEnd: _var.invoice_time_payment_end,
+ *     timePaymentStart: _var.invoice_time_payment_start,
+ *     types: _var.invoice_type,
+ * });
+ * ```
+ */
 export function getInvoicesOutput(args: GetInvoicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoicesResult> {
-    return pulumi.output(args).apply(a => getInvoices(a, opts))
+    return pulumi.output(args).apply((a: any) => getInvoices(a, opts))
 }
 
 /**

@@ -81,7 +81,7 @@ class _CloudVmClusterIormConfigState:
         :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
         :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
         :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
-        :param pulumi.Input[str] state: The current state of IORM configuration for the Cloud Vm Cluster.
+        :param pulumi.Input[str] state: The current state of IORM configuration for the Exadata DB system.
         """
         if cloud_vm_cluster_id is not None:
             pulumi.set(__self__, "cloud_vm_cluster_id", cloud_vm_cluster_id)
@@ -146,7 +146,7 @@ class _CloudVmClusterIormConfigState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of IORM configuration for the Cloud Vm Cluster.
+        The current state of IORM configuration for the Exadata DB system.
         """
         return pulumi.get(self, "state")
 
@@ -186,6 +186,14 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
             objective="AUTO")
         ```
 
+        ## Import
+
+        CloudVmClusterIormConfigs can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cloud_vm_cluster_id: The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -218,6 +226,14 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
             )],
             cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
             objective="AUTO")
+        ```
+
+        ## Import
+
+        CloudVmClusterIormConfigs can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         ```
 
         :param str resource_name: The name of the resource.
@@ -282,7 +298,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigDbPlanArgs']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
         :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
         :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
-        :param pulumi.Input[str] state: The current state of IORM configuration for the Cloud Vm Cluster.
+        :param pulumi.Input[str] state: The current state of IORM configuration for the Exadata DB system.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -331,7 +347,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of IORM configuration for the Cloud Vm Cluster.
+        The current state of IORM configuration for the Exadata DB system.
         """
         return pulumi.get(self, "state")
 

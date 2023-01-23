@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingReports(args: GetMaskingReportsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingReportsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingReports:getMaskingReports", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -96,9 +94,28 @@ export interface GetMaskingReportsResult {
      */
     readonly targetId?: string;
 }
-
+/**
+ * This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of masking reports based on the specified query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaskingReports = oci.DataSafe.getMaskingReports({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.masking_report_access_level,
+ *     compartmentIdInSubtree: _var.masking_report_compartment_id_in_subtree,
+ *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ * });
+ * ```
+ */
 export function getMaskingReportsOutput(args: GetMaskingReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingReportsResult> {
-    return pulumi.output(args).apply(a => getMaskingReports(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaskingReports(a, opts))
 }
 
 /**

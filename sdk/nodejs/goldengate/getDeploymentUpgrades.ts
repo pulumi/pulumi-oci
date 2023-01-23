@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeploymentUpgrades(args: GetDeploymentUpgradesArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentUpgradesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", {
         "compartmentId": args.compartmentId,
         "deploymentId": args.deploymentId,
@@ -44,11 +42,11 @@ export function getDeploymentUpgrades(args: GetDeploymentUpgradesArgs, opts?: pu
  */
 export interface GetDeploymentUpgradesArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
-     * The ID of the deployment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      */
     deploymentId?: string;
     /**
@@ -92,9 +90,27 @@ export interface GetDeploymentUpgradesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Deployment Upgrades in Oracle Cloud Infrastructure Golden Gate service.
+ *
+ * Lists the Deployment Upgrades in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeploymentUpgrades = oci.GoldenGate.getDeploymentUpgrades({
+ *     compartmentId: _var.compartment_id,
+ *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
+ *     displayName: _var.deployment_upgrade_display_name,
+ *     state: _var.deployment_upgrade_state,
+ * });
+ * ```
+ */
 export function getDeploymentUpgradesOutput(args: GetDeploymentUpgradesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentUpgradesResult> {
-    return pulumi.output(args).apply(a => getDeploymentUpgrades(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeploymentUpgrades(a, opts))
 }
 
 /**
@@ -102,11 +118,11 @@ export function getDeploymentUpgradesOutput(args: GetDeploymentUpgradesOutputArg
  */
 export interface GetDeploymentUpgradesOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The ID of the deployment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      */
     deploymentId?: pulumi.Input<string>;
     /**

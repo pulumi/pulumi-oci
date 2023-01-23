@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeAttachments(args: GetVolumeAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeAttachmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeAttachments:getVolumeAttachments", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -96,9 +94,31 @@ export interface GetVolumeAttachmentsResult {
      */
     readonly volumeId?: string;
 }
-
+/**
+ * This data source provides the list of Volume Attachments in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the volume attachments in the specified compartment. You can filter the
+ * list by specifying an instance OCID, volume OCID, or both.
+ *
+ * Currently, the only supported volume attachment type are [IScsiVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IScsiVolumeAttachment/) and
+ * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolumeAttachments = oci.Core.getVolumeAttachments({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.volume_attachment_availability_domain,
+ *     instanceId: oci_core_instance.test_instance.id,
+ *     volumeId: oci_core_volume.test_volume.id,
+ * });
+ * ```
+ */
 export function getVolumeAttachmentsOutput(args: GetVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeAttachmentsResult> {
-    return pulumi.output(args).apply(a => getVolumeAttachments(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolumeAttachments(a, opts))
 }
 
 /**

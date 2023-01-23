@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscribedServices(args: GetSubscribedServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscribedServicesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getSubscribedServices:getSubscribedServices", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -89,9 +87,27 @@ export interface GetSubscribedServicesResult {
      */
     readonly subscriptionId: string;
 }
-
+/**
+ * This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
+ *
+ * This list API returns all subscribed services for given Subscription ID
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscribedServices = oci.OneSubsription.getSubscribedServices({
+ *     compartmentId: _var.compartment_id,
+ *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
+ *     orderLineId: oci_onesubscription_order_line.test_order_line.id,
+ *     status: _var.subscribed_service_status,
+ * });
+ * ```
+ */
 export function getSubscribedServicesOutput(args: GetSubscribedServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscribedServicesResult> {
-    return pulumi.output(args).apply(a => getSubscribedServices(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscribedServices(a, opts))
 }
 
 /**

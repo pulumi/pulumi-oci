@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserProxiedForUsers(args: GetManagedDatabaseUserProxiedForUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserProxiedForUsersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", {
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
@@ -76,9 +74,26 @@ export interface GetManagedDatabaseUserProxiedForUsersResult {
     readonly proxiedForUserCollections: outputs.DatabaseManagement.GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection[];
     readonly userName: string;
 }
-
+/**
+ * This data source provides the list of Managed Database User Proxied For Users in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of users on whose behalf the current user acts as proxy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseUserProxiedForUsers = oci.DatabaseManagement.getManagedDatabaseUserProxiedForUsers({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     userName: oci_identity_user.test_user.name,
+ *     name: _var.managed_database_user_proxied_for_user_name,
+ * });
+ * ```
+ */
 export function getManagedDatabaseUserProxiedForUsersOutput(args: GetManagedDatabaseUserProxiedForUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserProxiedForUsersResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseUserProxiedForUsers(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserProxiedForUsers(a, opts))
 }
 
 /**

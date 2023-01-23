@@ -420,6 +420,7 @@ class AuditProfileAuditTrailArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_last_collected: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  trail_location: Optional[pulumi.Input[str]] = None,
                  work_request_id: Optional[pulumi.Input[str]] = None):
@@ -439,6 +440,7 @@ class AuditProfileAuditTrailArgs:
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the Data Safe target for which the audit profile is created.
         :param pulumi.Input[str] time_created: The date and time the audit profile was created, in the format defined by RFC3339.
+        :param pulumi.Input[str] time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param pulumi.Input[str] trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param pulumi.Input[str] work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -473,6 +475,8 @@ class AuditProfileAuditTrailArgs:
             pulumi.set(__self__, "target_id", target_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_last_collected is not None:
+            pulumi.set(__self__, "time_last_collected", time_last_collected)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if trail_location is not None:
@@ -659,6 +663,18 @@ class AuditProfileAuditTrailArgs:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeLastCollected")
+    def time_last_collected(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_collected")
+
+    @time_last_collected.setter
+    def time_last_collected(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_collected", value)
 
     @property
     @pulumi.getter(name="timeUpdated")

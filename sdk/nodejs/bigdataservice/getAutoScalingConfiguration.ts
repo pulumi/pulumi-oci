@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutoScalingConfiguration(args: GetAutoScalingConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetAutoScalingConfigurationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getAutoScalingConfiguration:getAutoScalingConfiguration", {
         "autoScalingConfigurationId": args.autoScalingConfigurationId,
         "bdsInstanceId": args.bdsInstanceId,
@@ -89,9 +87,25 @@ export interface GetAutoScalingConfigurationResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+ *
+ * Returns details of the autoscale configuration identified by the given ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutoScalingConfiguration = oci.BigDataService.getAutoScalingConfiguration({
+ *     autoScalingConfigurationId: oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration.id,
+ *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
+ * });
+ * ```
+ */
 export function getAutoScalingConfigurationOutput(args: GetAutoScalingConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationResult> {
-    return pulumi.output(args).apply(a => getAutoScalingConfiguration(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutoScalingConfiguration(a, opts))
 }
 
 /**

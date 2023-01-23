@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTagDefaultsResult> InvokeAsync(GetTagDefaultsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTagDefaultsResult>("oci:Identity/getTagDefaults:getTagDefaults", args ?? new GetTagDefaultsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTagDefaultsResult>("oci:Identity/getTagDefaults:getTagDefaults", args ?? new GetTagDefaultsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Tag Defaults in Oracle Cloud Infrastructure Identity service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTagDefaultsResult> Invoke(GetTagDefaultsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTagDefaultsResult>("oci:Identity/getTagDefaults:getTagDefaults", args ?? new GetTagDefaultsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTagDefaultsResult>("oci:Identity/getTagDefaults:getTagDefaults", args ?? new GetTagDefaultsInvokeArgs(), options.WithDefaults());
     }
 
 

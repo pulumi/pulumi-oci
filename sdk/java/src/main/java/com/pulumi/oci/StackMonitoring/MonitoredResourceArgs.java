@@ -96,6 +96,21 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    @Import(name="externalId")
+    private @Nullable Output<String> externalId;
+
+    /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    public Optional<Output<String>> externalId() {
+        return Optional.ofNullable(this.externalId);
+    }
+
+    /**
      * Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
      * 
      */
@@ -208,6 +223,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         this.credentials = $.credentials;
         this.databaseConnectionDetails = $.databaseConnectionDetails;
         this.displayName = $.displayName;
+        this.externalId = $.externalId;
         this.externalResourceId = $.externalResourceId;
         this.hostName = $.hostName;
         this.managementAgentId = $.managementAgentId;
@@ -338,6 +354,27 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalId(@Nullable Output<String> externalId) {
+            $.externalId = externalId;
+            return this;
+        }
+
+        /**
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalId(String externalId) {
+            return externalId(Output.of(externalId));
         }
 
         /**

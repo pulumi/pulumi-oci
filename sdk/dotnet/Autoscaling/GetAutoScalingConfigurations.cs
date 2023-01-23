@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Autoscaling
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutoScalingConfigurationsResult> InvokeAsync(GetAutoScalingConfigurationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutoScalingConfigurationsResult>("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutoScalingConfigurationsResult>("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Autoscaling
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutoScalingConfigurationsResult> Invoke(GetAutoScalingConfigurationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationsResult>("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationsResult>("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

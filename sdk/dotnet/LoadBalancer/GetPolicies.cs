@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPoliciesResult> InvokeAsync(GetPoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPoliciesResult>("oci:LoadBalancer/getPolicies:getPolicies", args ?? new GetPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPoliciesResult>("oci:LoadBalancer/getPolicies:getPolicies", args ?? new GetPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPoliciesResult> Invoke(GetPoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPoliciesResult>("oci:LoadBalancer/getPolicies:getPolicies", args ?? new GetPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPoliciesResult>("oci:LoadBalancer/getPolicies:getPolicies", args ?? new GetPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

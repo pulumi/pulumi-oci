@@ -54,6 +54,36 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
+    @Import(name="additionalComputeCount")
+    private @Nullable Output<Integer> additionalComputeCount;
+
+    /**
+     * @return The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<Integer>> additionalComputeCount() {
+        return Optional.ofNullable(this.additionalComputeCount);
+    }
+
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
+    @Import(name="additionalComputeSystemModel")
+    private @Nullable Output<String> additionalComputeSystemModel;
+
+    /**
+     * @return Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
+    public Optional<Output<String>> additionalComputeSystemModel() {
+        return Optional.ofNullable(this.additionalComputeSystemModel);
+    }
+
+    /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      * 
      */
@@ -361,6 +391,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * (Updatable) Indicates if deployment is Multi-Rack or not.
+     * 
+     */
+    @Import(name="isMultiRackDeployment")
+    private @Nullable Output<Boolean> isMultiRackDeployment;
+
+    /**
+     * @return (Updatable) Indicates if deployment is Multi-Rack or not.
+     * 
+     */
+    public Optional<Output<Boolean>> isMultiRackDeployment() {
+        return Optional.ofNullable(this.isMultiRackDeployment);
+    }
+
+    /**
      * Additional information about the current lifecycle state.
      * 
      */
@@ -496,6 +541,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * (Updatable) The base64 encoded Multi-Rack configuration json file.
+     * 
+     */
+    @Import(name="multiRackConfigurationFile")
+    private @Nullable Output<String> multiRackConfigurationFile;
+
+    /**
+     * @return (Updatable) The base64 encoded Multi-Rack configuration json file.
+     * 
+     */
+    public Optional<Output<String>> multiRackConfigurationFile() {
+        return Optional.ofNullable(this.multiRackConfigurationFile);
+    }
+
+    /**
      * (Updatable) The netmask for the control plane network.
      * 
      */
@@ -620,6 +680,8 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     private ExadataInfrastructureState(ExadataInfrastructureState $) {
         this.activatedStorageCount = $.activatedStorageCount;
         this.activationFile = $.activationFile;
+        this.additionalComputeCount = $.additionalComputeCount;
+        this.additionalComputeSystemModel = $.additionalComputeSystemModel;
         this.additionalStorageCount = $.additionalStorageCount;
         this.adminNetworkCidr = $.adminNetworkCidr;
         this.cloudControlPlaneServer1 = $.cloudControlPlaneServer1;
@@ -641,6 +703,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.gateway = $.gateway;
         this.infiniBandNetworkCidr = $.infiniBandNetworkCidr;
         this.isCpsOfflineReportEnabled = $.isCpsOfflineReportEnabled;
+        this.isMultiRackDeployment = $.isMultiRackDeployment;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenanceSloStatus = $.maintenanceSloStatus;
         this.maintenanceWindow = $.maintenanceWindow;
@@ -650,6 +713,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.maxMemoryInGbs = $.maxMemoryInGbs;
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.monthlyDbServerVersion = $.monthlyDbServerVersion;
+        this.multiRackConfigurationFile = $.multiRackConfigurationFile;
         this.netmask = $.netmask;
         this.ntpServers = $.ntpServers;
         this.shape = $.shape;
@@ -718,6 +782,48 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder activationFile(String activationFile) {
             return activationFile(Output.of(activationFile));
+        }
+
+        /**
+         * @param additionalComputeCount The requested number of additional compute servers for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalComputeCount(@Nullable Output<Integer> additionalComputeCount) {
+            $.additionalComputeCount = additionalComputeCount;
+            return this;
+        }
+
+        /**
+         * @param additionalComputeCount The requested number of additional compute servers for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalComputeCount(Integer additionalComputeCount) {
+            return additionalComputeCount(Output.of(additionalComputeCount));
+        }
+
+        /**
+         * @param additionalComputeSystemModel Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalComputeSystemModel(@Nullable Output<String> additionalComputeSystemModel) {
+            $.additionalComputeSystemModel = additionalComputeSystemModel;
+            return this;
+        }
+
+        /**
+         * @param additionalComputeSystemModel Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalComputeSystemModel(String additionalComputeSystemModel) {
+            return additionalComputeSystemModel(Output.of(additionalComputeSystemModel));
         }
 
         /**
@@ -1170,6 +1276,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param isMultiRackDeployment (Updatable) Indicates if deployment is Multi-Rack or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMultiRackDeployment(@Nullable Output<Boolean> isMultiRackDeployment) {
+            $.isMultiRackDeployment = isMultiRackDeployment;
+            return this;
+        }
+
+        /**
+         * @param isMultiRackDeployment (Updatable) Indicates if deployment is Multi-Rack or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMultiRackDeployment(Boolean isMultiRackDeployment) {
+            return isMultiRackDeployment(Output.of(isMultiRackDeployment));
+        }
+
+        /**
          * @param lifecycleDetails Additional information about the current lifecycle state.
          * 
          * @return builder
@@ -1356,6 +1483,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
             return monthlyDbServerVersion(Output.of(monthlyDbServerVersion));
+        }
+
+        /**
+         * @param multiRackConfigurationFile (Updatable) The base64 encoded Multi-Rack configuration json file.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiRackConfigurationFile(@Nullable Output<String> multiRackConfigurationFile) {
+            $.multiRackConfigurationFile = multiRackConfigurationFile;
+            return this;
+        }
+
+        /**
+         * @param multiRackConfigurationFile (Updatable) The base64 encoded Multi-Rack configuration json file.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiRackConfigurationFile(String multiRackConfigurationFile) {
+            return multiRackConfigurationFile(Output.of(multiRackConfigurationFile));
         }
 
         /**

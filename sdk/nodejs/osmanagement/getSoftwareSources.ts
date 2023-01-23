@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSources(args: GetSoftwareSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourcesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getSoftwareSources:getSoftwareSources", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetSoftwareSourcesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Software Sources in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Returns a list of all Software Sources.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSoftwareSources = oci.OsManagement.getSoftwareSources({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.software_source_display_name,
+ *     state: _var.software_source_state,
+ * });
+ * ```
+ */
 export function getSoftwareSourcesOutput(args: GetSoftwareSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourcesResult> {
-    return pulumi.output(args).apply(a => getSoftwareSources(a, opts))
+    return pulumi.output(args).apply((a: any) => getSoftwareSources(a, opts))
 }
 
 /**

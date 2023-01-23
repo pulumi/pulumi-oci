@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseUserRolesResult> InvokeAsync(GetManagedDatabaseUserRolesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserRolesResult>("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", args ?? new GetManagedDatabaseUserRolesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserRolesResult>("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", args ?? new GetManagedDatabaseUserRolesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database User Roles in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseUserRolesResult> Invoke(GetManagedDatabaseUserRolesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserRolesResult>("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", args ?? new GetManagedDatabaseUserRolesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserRolesResult>("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", args ?? new GetManagedDatabaseUserRolesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetViewResult> InvokeAsync(GetViewArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetViewResult>("oci:Dns/getView:getView", args ?? new GetViewArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetViewResult>("oci:Dns/getView:getView", args ?? new GetViewArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetViewResult> Invoke(GetViewInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetViewResult>("oci:Dns/getView:getView", args ?? new GetViewInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetViewResult>("oci:Dns/getView:getView", args ?? new GetViewInvokeArgs(), options.WithDefaults());
     }
 
 

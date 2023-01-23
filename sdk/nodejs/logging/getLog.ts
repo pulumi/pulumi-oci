@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLog(args: GetLogArgs, opts?: pulumi.InvokeOptions): Promise<GetLogResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getLog:getLog", {
         "logGroupId": args.logGroupId,
         "logId": args.logId,
@@ -110,9 +108,25 @@ export interface GetLogResult {
      */
     readonly timeLastModified: string;
 }
-
+/**
+ * This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.
+ *
+ * Gets the log object configuration for the log object OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLog = oci.Logging.getLog({
+ *     logGroupId: oci_logging_log_group.test_log_group.id,
+ *     logId: oci_logging_log.test_log.id,
+ * });
+ * ```
+ */
 export function getLogOutput(args: GetLogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogResult> {
-    return pulumi.output(args).apply(a => getLog(a, opts))
+    return pulumi.output(args).apply((a: any) => getLog(a, opts))
 }
 
 /**

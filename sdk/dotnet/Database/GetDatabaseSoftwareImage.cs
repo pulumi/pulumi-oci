@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseSoftwareImageResult> InvokeAsync(GetDatabaseSoftwareImageArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseSoftwareImageResult>("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args ?? new GetDatabaseSoftwareImageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseSoftwareImageResult>("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args ?? new GetDatabaseSoftwareImageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseSoftwareImageResult> Invoke(GetDatabaseSoftwareImageInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseSoftwareImageResult>("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args ?? new GetDatabaseSoftwareImageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseSoftwareImageResult>("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args ?? new GetDatabaseSoftwareImageInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string ImageType;
         /// <summary>
-        /// The patches included in the image and the version of the image
+        /// The patches included in the image and the version of the image.
         /// </summary>
         public readonly string IncludedPatchesSummary;
         /// <summary>

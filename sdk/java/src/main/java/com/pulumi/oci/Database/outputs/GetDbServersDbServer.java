@@ -90,6 +90,11 @@ public final class GetDbServersDbServer {
      */
     private Integer memorySizeInGbs;
     /**
+     * @return The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+     * 
+     */
+    private String shape;
+    /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -212,6 +217,13 @@ public final class GetDbServersDbServer {
         return this.memorySizeInGbs;
     }
     /**
+     * @return The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+     * 
+     */
+    public String shape() {
+        return this.shape;
+    }
+    /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -257,6 +269,7 @@ public final class GetDbServersDbServer {
         private Integer maxDbNodeStorageInGbs;
         private Integer maxMemoryInGbs;
         private Integer memorySizeInGbs;
+        private String shape;
         private String state;
         private String timeCreated;
         private List<String> vmClusterIds;
@@ -278,6 +291,7 @@ public final class GetDbServersDbServer {
     	      this.maxDbNodeStorageInGbs = defaults.maxDbNodeStorageInGbs;
     	      this.maxMemoryInGbs = defaults.maxMemoryInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
+    	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vmClusterIds = defaults.vmClusterIds;
@@ -365,6 +379,11 @@ public final class GetDbServersDbServer {
             return this;
         }
         @CustomType.Setter
+        public Builder shape(String shape) {
+            this.shape = Objects.requireNonNull(shape);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -399,6 +418,7 @@ public final class GetDbServersDbServer {
             o.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             o.maxMemoryInGbs = maxMemoryInGbs;
             o.memorySizeInGbs = memorySizeInGbs;
+            o.shape = shape;
             o.state = state;
             o.timeCreated = timeCreated;
             o.vmClusterIds = vmClusterIds;

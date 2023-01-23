@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
     public partial class AutonomousDatabaseRegionalWalletManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        /// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         /// </summary>
         [Output("gracePeriod")]
         public Output<int> GracePeriod { get; private set; } = null!;
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Database
     public sealed class AutonomousDatabaseRegionalWalletManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        /// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         /// </summary>
         [Input("gracePeriod")]
         public Input<int>? GracePeriod { get; set; }
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Database
     public sealed class AutonomousDatabaseRegionalWalletManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        /// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         /// </summary>
         [Input("gracePeriod")]
         public Input<int>? GracePeriod { get; set; }

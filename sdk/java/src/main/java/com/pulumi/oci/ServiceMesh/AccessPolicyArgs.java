@@ -113,15 +113,15 @@ public final class AccessPolicyArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) List of applicable rules
      * 
      */
-    @Import(name="rules")
-    private @Nullable Output<List<AccessPolicyRuleArgs>> rules;
+    @Import(name="rules", required=true)
+    private Output<List<AccessPolicyRuleArgs>> rules;
 
     /**
      * @return (Updatable) List of applicable rules
      * 
      */
-    public Optional<Output<List<AccessPolicyRuleArgs>>> rules() {
-        return Optional.ofNullable(this.rules);
+    public Output<List<AccessPolicyRuleArgs>> rules() {
+        return this.rules;
     }
 
     private AccessPolicyArgs() {}
@@ -286,7 +286,7 @@ public final class AccessPolicyArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder rules(@Nullable Output<List<AccessPolicyRuleArgs>> rules) {
+        public Builder rules(Output<List<AccessPolicyRuleArgs>> rules) {
             $.rules = rules;
             return this;
         }
@@ -314,6 +314,7 @@ public final class AccessPolicyArgs extends com.pulumi.resources.ResourceArgs {
         public AccessPolicyArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.meshId = Objects.requireNonNull($.meshId, "expected parameter 'meshId' to be non-null");
+            $.rules = Objects.requireNonNull($.rules, "expected parameter 'rules' to be non-null");
             return $;
         }
     }

@@ -29,6 +29,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -42,7 +44,9 @@ public final class VnMonitoringFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest();
+     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
+     *             .pathAnalyzerTestId(oci_vn_monitoring_path_analyzer_test.test_path_analyzer_test().id())
+     *             .build());
      * 
      *     }
      * }
@@ -64,6 +68,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -77,7 +83,9 @@ public final class VnMonitoringFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest();
+     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
+     *             .pathAnalyzerTestId(oci_vn_monitoring_path_analyzer_test.test_path_analyzer_test().id())
+     *             .build());
      * 
      *     }
      * }
@@ -99,6 +107,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -112,7 +122,9 @@ public final class VnMonitoringFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest();
+     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
+     *             .pathAnalyzerTestId(oci_vn_monitoring_path_analyzer_test.test_path_analyzer_test().id())
+     *             .build());
      * 
      *     }
      * }
@@ -134,6 +146,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -147,7 +161,9 @@ public final class VnMonitoringFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest();
+     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
+     *             .pathAnalyzerTestId(oci_vn_monitoring_path_analyzer_test.test_path_analyzer_test().id())
+     *             .build());
      * 
      *     }
      * }
@@ -169,6 +185,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -182,7 +200,11 @@ public final class VnMonitoringFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests();
+     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests(GetPathAnalyzerTestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.path_analyzer_test_display_name())
+     *             .state(var_.path_analyzer_test_state())
+     *             .build());
      * 
      *     }
      * }
@@ -204,6 +226,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -217,7 +241,11 @@ public final class VnMonitoringFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests();
+     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests(GetPathAnalyzerTestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.path_analyzer_test_display_name())
+     *             .state(var_.path_analyzer_test_state())
+     *             .build());
      * 
      *     }
      * }
@@ -239,6 +267,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -252,7 +282,11 @@ public final class VnMonitoringFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests();
+     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests(GetPathAnalyzerTestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.path_analyzer_test_display_name())
+     *             .state(var_.path_analyzer_test_state())
+     *             .build());
      * 
      *     }
      * }
@@ -274,6 +308,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -287,7 +323,11 @@ public final class VnMonitoringFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests();
+     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests(GetPathAnalyzerTestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.path_analyzer_test_display_name())
+     *             .state(var_.path_analyzer_test_state())
+     *             .build());
      * 
      *     }
      * }

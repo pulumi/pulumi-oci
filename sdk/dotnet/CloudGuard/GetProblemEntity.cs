@@ -39,7 +39,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProblemEntityResult> InvokeAsync(GetProblemEntityArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProblemEntityResult>("oci:CloudGuard/getProblemEntity:getProblemEntity", args ?? new GetProblemEntityArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProblemEntityResult>("oci:CloudGuard/getProblemEntity:getProblemEntity", args ?? new GetProblemEntityArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProblemEntityResult> Invoke(GetProblemEntityInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProblemEntityResult>("oci:CloudGuard/getProblemEntity:getProblemEntity", args ?? new GetProblemEntityInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProblemEntityResult>("oci:CloudGuard/getProblemEntity:getProblemEntity", args ?? new GetProblemEntityInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPathRouteSetsResult> InvokeAsync(GetPathRouteSetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPathRouteSetsResult>("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args ?? new GetPathRouteSetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPathRouteSetsResult>("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args ?? new GetPathRouteSetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPathRouteSetsResult> Invoke(GetPathRouteSetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPathRouteSetsResult>("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args ?? new GetPathRouteSetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPathRouteSetsResult>("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args ?? new GetPathRouteSetsInvokeArgs(), options.WithDefaults());
     }
 
 

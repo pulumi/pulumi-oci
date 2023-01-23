@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDrgAttachmentsResult> InvokeAsync(GetDrgAttachmentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDrgAttachmentsResult>("oci:Core/getDrgAttachments:getDrgAttachments", args ?? new GetDrgAttachmentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrgAttachmentsResult>("oci:Core/getDrgAttachments:getDrgAttachments", args ?? new GetDrgAttachmentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Drg Attachments in Oracle Cloud Infrastructure Core service.
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDrgAttachmentsResult> Invoke(GetDrgAttachmentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDrgAttachmentsResult>("oci:Core/getDrgAttachments:getDrgAttachments", args ?? new GetDrgAttachmentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrgAttachmentsResult>("oci:Core/getDrgAttachments:getDrgAttachments", args ?? new GetDrgAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

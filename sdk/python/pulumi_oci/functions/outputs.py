@@ -49,12 +49,15 @@ __all__ = [
     'GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageResult',
     'GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult',
     'GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult',
+    'GetFusionEnvironmentKmsKeyInfoResult',
     'GetFusionEnvironmentMaintenancePolicyResult',
     'GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult',
     'GetFusionEnvironmentRefreshResult',
     'GetFusionEnvironmentRefreshActivitiesFilterResult',
     'GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionResult',
     'GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult',
+    'GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult',
+    'GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult',
     'GetFusionEnvironmentRuleResult',
     'GetFusionEnvironmentRuleConditionResult',
     'GetFusionEnvironmentScheduledActivitiesFilterResult',
@@ -73,6 +76,7 @@ __all__ = [
     'GetFusionEnvironmentsFusionEnvironmentCollectionResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult',
@@ -1763,6 +1767,60 @@ class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult(dict):
 
 
 @pulumi.output_type
+class GetFusionEnvironmentKmsKeyInfoResult(dict):
+    def __init__(__self__, *,
+                 active_key_id: str,
+                 active_key_version: str,
+                 current_key_lifecycle_state: str,
+                 scheduled_key_id: str,
+                 scheduled_key_status: str,
+                 scheduled_key_version: str,
+                 scheduled_lifecycle_state: str):
+        pulumi.set(__self__, "active_key_id", active_key_id)
+        pulumi.set(__self__, "active_key_version", active_key_version)
+        pulumi.set(__self__, "current_key_lifecycle_state", current_key_lifecycle_state)
+        pulumi.set(__self__, "scheduled_key_id", scheduled_key_id)
+        pulumi.set(__self__, "scheduled_key_status", scheduled_key_status)
+        pulumi.set(__self__, "scheduled_key_version", scheduled_key_version)
+        pulumi.set(__self__, "scheduled_lifecycle_state", scheduled_lifecycle_state)
+
+    @property
+    @pulumi.getter(name="activeKeyId")
+    def active_key_id(self) -> str:
+        return pulumi.get(self, "active_key_id")
+
+    @property
+    @pulumi.getter(name="activeKeyVersion")
+    def active_key_version(self) -> str:
+        return pulumi.get(self, "active_key_version")
+
+    @property
+    @pulumi.getter(name="currentKeyLifecycleState")
+    def current_key_lifecycle_state(self) -> str:
+        return pulumi.get(self, "current_key_lifecycle_state")
+
+    @property
+    @pulumi.getter(name="scheduledKeyId")
+    def scheduled_key_id(self) -> str:
+        return pulumi.get(self, "scheduled_key_id")
+
+    @property
+    @pulumi.getter(name="scheduledKeyStatus")
+    def scheduled_key_status(self) -> str:
+        return pulumi.get(self, "scheduled_key_status")
+
+    @property
+    @pulumi.getter(name="scheduledKeyVersion")
+    def scheduled_key_version(self) -> str:
+        return pulumi.get(self, "scheduled_key_version")
+
+    @property
+    @pulumi.getter(name="scheduledLifecycleState")
+    def scheduled_lifecycle_state(self) -> str:
+        return pulumi.get(self, "scheduled_lifecycle_state")
+
+
+@pulumi.output_type
 class GetFusionEnvironmentMaintenancePolicyResult(dict):
     def __init__(__self__, *,
                  environment_maintenance_override: str,
@@ -1917,6 +1975,8 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
                  fusion_environment_id: str,
                  id: str,
                  lifecycle_details: str,
+                 refresh_activity_id: str,
+                 refresh_issue_details_lists: Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult'],
                  service_availability: str,
                  source_fusion_environment_id: str,
                  state: str,
@@ -1924,13 +1984,13 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
                  time_expected_finish: str,
                  time_finished: str,
                  time_of_restoration_point: str,
-                 time_scheduled_start: str,
                  time_updated: str):
         """
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str fusion_environment_id: unique FusionEnvironment identifier
         :param str id: The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs'] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param str service_availability: Service availability / impact during refresh activity execution up down
         :param str source_fusion_environment_id: The OCID of the Fusion environment that is the source environment for the refresh.
         :param str state: A filter that returns all resources that match the specified status
@@ -1938,13 +1998,14 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
         :param str time_expected_finish: The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
         :param str time_finished: The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
         :param str time_of_restoration_point: The date and time of the most recent source environment backup used for the environment refresh.
-        :param str time_scheduled_start: The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
         :param str time_updated: The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "refresh_activity_id", refresh_activity_id)
+        pulumi.set(__self__, "refresh_issue_details_lists", refresh_issue_details_lists)
         pulumi.set(__self__, "service_availability", service_availability)
         pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
         pulumi.set(__self__, "state", state)
@@ -1952,7 +2013,6 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
         pulumi.set(__self__, "time_expected_finish", time_expected_finish)
         pulumi.set(__self__, "time_finished", time_finished)
         pulumi.set(__self__, "time_of_restoration_point", time_of_restoration_point)
-        pulumi.set(__self__, "time_scheduled_start", time_scheduled_start)
         pulumi.set(__self__, "time_updated", time_updated)
 
     @property
@@ -1986,6 +2046,19 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="refreshActivityId")
+    def refresh_activity_id(self) -> str:
+        return pulumi.get(self, "refresh_activity_id")
+
+    @property
+    @pulumi.getter(name="refreshIssueDetailsLists")
+    def refresh_issue_details_lists(self) -> Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult']:
+        """
+        Details of refresh investigation information, each item represents a different issue.
+        """
+        return pulumi.get(self, "refresh_issue_details_lists")
 
     @property
     @pulumi.getter(name="serviceAvailability")
@@ -2044,20 +2117,48 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
         return pulumi.get(self, "time_of_restoration_point")
 
     @property
-    @pulumi.getter(name="timeScheduledStart")
-    def time_scheduled_start(self) -> str:
-        """
-        The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-        """
-        return pulumi.get(self, "time_scheduled_start")
-
-    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
         The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult(dict):
+    def __init__(__self__, *,
+                 refresh_issues: str):
+        """
+        :param str refresh_issues: Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+        """
+        pulumi.set(__self__, "refresh_issues", refresh_issues)
+
+    @property
+    @pulumi.getter(name="refreshIssues")
+    def refresh_issues(self) -> str:
+        """
+        Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+        """
+        return pulumi.get(self, "refresh_issues")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult(dict):
+    def __init__(__self__, *,
+                 refresh_issues: str):
+        """
+        :param str refresh_issues: Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+        """
+        pulumi.set(__self__, "refresh_issues", refresh_issues)
+
+    @property
+    @pulumi.getter(name="refreshIssues")
+    def refresh_issues(self) -> str:
+        """
+        Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+        """
+        return pulumi.get(self, "refresh_issues")
 
 
 @pulumi.output_type
@@ -2865,9 +2966,11 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
                  fusion_environment_type: str,
                  id: str,
                  idcs_domain_url: str,
+                 is_break_glass_enabled: bool,
                  kms_key_id: str,
-                 kms_key_infos: Sequence[str],
+                 kms_key_infos: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult'],
                  lifecycle_details: str,
+                 lockbox_id: str,
                  maintenance_policies: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult'],
                  public_url: str,
                  refreshes: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult'],
@@ -2892,9 +2995,11 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         :param str fusion_environment_type: Type of the FusionEnvironment.
         :param str id: Unique identifier that is immutable on creation
         :param str idcs_domain_url: The IDCS Domain URL
+        :param bool is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
         :param str kms_key_id: BYOK key id
-        :param Sequence[str] kms_key_infos: BYOK key info
+        :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs'] kms_key_infos: BYOK key info
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str lockbox_id: The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
         :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs'] maintenance_policies: The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param str public_url: Public URL
         :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs'] refreshes: Describes a refresh of a fusion environment
@@ -2920,9 +3025,11 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         pulumi.set(__self__, "fusion_environment_type", fusion_environment_type)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "idcs_domain_url", idcs_domain_url)
+        pulumi.set(__self__, "is_break_glass_enabled", is_break_glass_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_infos", kms_key_infos)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lockbox_id", lockbox_id)
         pulumi.set(__self__, "maintenance_policies", maintenance_policies)
         pulumi.set(__self__, "public_url", public_url)
         pulumi.set(__self__, "refreshes", refreshes)
@@ -3037,6 +3144,14 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         return pulumi.get(self, "idcs_domain_url")
 
     @property
+    @pulumi.getter(name="isBreakGlassEnabled")
+    def is_break_glass_enabled(self) -> bool:
+        """
+        If it's true, then the Break Glass feature is enabled
+        """
+        return pulumi.get(self, "is_break_glass_enabled")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
@@ -3046,7 +3161,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="kmsKeyInfos")
-    def kms_key_infos(self) -> Sequence[str]:
+    def kms_key_infos(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult']:
         """
         BYOK key info
         """
@@ -3059,6 +3174,14 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lockboxId")
+    def lockbox_id(self) -> str:
+        """
+        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+        """
+        return pulumi.get(self, "lockbox_id")
 
     @property
     @pulumi.getter(name="maintenancePolicies")
@@ -3187,6 +3310,60 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmen
     @pulumi.getter
     def username(self) -> str:
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult(dict):
+    def __init__(__self__, *,
+                 active_key_id: str,
+                 active_key_version: str,
+                 current_key_lifecycle_state: str,
+                 scheduled_key_id: str,
+                 scheduled_key_status: str,
+                 scheduled_key_version: str,
+                 scheduled_lifecycle_state: str):
+        pulumi.set(__self__, "active_key_id", active_key_id)
+        pulumi.set(__self__, "active_key_version", active_key_version)
+        pulumi.set(__self__, "current_key_lifecycle_state", current_key_lifecycle_state)
+        pulumi.set(__self__, "scheduled_key_id", scheduled_key_id)
+        pulumi.set(__self__, "scheduled_key_status", scheduled_key_status)
+        pulumi.set(__self__, "scheduled_key_version", scheduled_key_version)
+        pulumi.set(__self__, "scheduled_lifecycle_state", scheduled_lifecycle_state)
+
+    @property
+    @pulumi.getter(name="activeKeyId")
+    def active_key_id(self) -> str:
+        return pulumi.get(self, "active_key_id")
+
+    @property
+    @pulumi.getter(name="activeKeyVersion")
+    def active_key_version(self) -> str:
+        return pulumi.get(self, "active_key_version")
+
+    @property
+    @pulumi.getter(name="currentKeyLifecycleState")
+    def current_key_lifecycle_state(self) -> str:
+        return pulumi.get(self, "current_key_lifecycle_state")
+
+    @property
+    @pulumi.getter(name="scheduledKeyId")
+    def scheduled_key_id(self) -> str:
+        return pulumi.get(self, "scheduled_key_id")
+
+    @property
+    @pulumi.getter(name="scheduledKeyStatus")
+    def scheduled_key_status(self) -> str:
+        return pulumi.get(self, "scheduled_key_status")
+
+    @property
+    @pulumi.getter(name="scheduledKeyVersion")
+    def scheduled_key_version(self) -> str:
+        return pulumi.get(self, "scheduled_key_version")
+
+    @property
+    @pulumi.getter(name="scheduledLifecycleState")
+    def scheduled_lifecycle_state(self) -> str:
+        return pulumi.get(self, "scheduled_lifecycle_state")
 
 
 @pulumi.output_type

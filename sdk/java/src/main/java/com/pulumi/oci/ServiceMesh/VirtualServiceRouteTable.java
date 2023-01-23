@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *                 .isGrpc(var_.virtual_service_route_table_route_rules_is_grpc())
  *                 .path(var_.virtual_service_route_table_route_rules_path())
  *                 .pathType(var_.virtual_service_route_table_route_rules_path_type())
+ *                 .requestTimeoutInMs(var_.virtual_service_route_table_route_rules_request_timeout_in_ms())
  *                 .build())
  *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))

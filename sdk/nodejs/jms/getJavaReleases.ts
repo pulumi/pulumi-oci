@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getJavaReleases(args?: GetJavaReleasesArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaReleasesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaReleases:getJavaReleases", {
         "familyVersion": args.familyVersion,
         "filters": args.filters,
@@ -100,9 +98,28 @@ export interface GetJavaReleasesResult {
      */
     readonly releaseVersion?: string;
 }
-
+/**
+ * This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
+ *
+ * Returns a list of Java releases.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJavaReleases = oci.Jms.getJavaReleases({
+ *     familyVersion: _var.java_release_family_version,
+ *     jreSecurityStatus: _var.java_release_jre_security_status,
+ *     licenseType: _var.java_release_license_type,
+ *     releaseType: _var.java_release_release_type,
+ *     releaseVersion: _var.java_release_release_version,
+ * });
+ * ```
+ */
 export function getJavaReleasesOutput(args?: GetJavaReleasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaReleasesResult> {
-    return pulumi.output(args).apply(a => getJavaReleases(a, opts))
+    return pulumi.output(args).apply((a: any) => getJavaReleases(a, opts))
 }
 
 /**

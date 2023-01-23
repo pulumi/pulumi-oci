@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogGroups(args: GetLogGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetLogGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getLogGroups:getLogGroups", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -79,9 +77,26 @@ export interface GetLogGroupsResult {
      */
     readonly logGroups: outputs.Logging.GetLogGroupsLogGroup[];
 }
-
+/**
+ * This data source provides the list of Log Groups in Oracle Cloud Infrastructure Logging service.
+ *
+ * Lists all log groups for the specified compartment or tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogGroups = oci.Logging.getLogGroups({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.log_group_display_name,
+ *     isCompartmentIdInSubtree: _var.log_group_is_compartment_id_in_subtree,
+ * });
+ * ```
+ */
 export function getLogGroupsOutput(args: GetLogGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogGroupsResult> {
-    return pulumi.output(args).apply(a => getLogGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogGroups(a, opts))
 }
 
 /**

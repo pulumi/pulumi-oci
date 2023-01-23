@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceMesh.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class VirtualDeploymentServiceDiscovery {
@@ -13,7 +15,7 @@ public final class VirtualDeploymentServiceDiscovery {
      * @return (Updatable) The hostname of the virtual deployments.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return (Updatable) Type of service discovery.
      * 
@@ -25,8 +27,8 @@ public final class VirtualDeploymentServiceDiscovery {
      * @return (Updatable) The hostname of the virtual deployments.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return (Updatable) Type of service discovery.
@@ -45,7 +47,7 @@ public final class VirtualDeploymentServiceDiscovery {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
+        private @Nullable String hostname;
         private String type;
         public Builder() {}
         public Builder(VirtualDeploymentServiceDiscovery defaults) {
@@ -55,8 +57,8 @@ public final class VirtualDeploymentServiceDiscovery {
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter

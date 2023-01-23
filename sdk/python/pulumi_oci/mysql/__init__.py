@@ -18,10 +18,13 @@ from .get_mysql_configurations import *
 from .get_mysql_db_system import *
 from .get_mysql_db_systems import *
 from .get_mysql_version import *
+from .get_replica import *
+from .get_replicas import *
 from .get_shapes import *
 from .heat_wave_cluster import *
 from .mysql_backup import *
 from .mysql_configuration import *
 from .mysql_db_system import *
+from .replica import *
 from ._inputs import *
 from . import outputs

@@ -124,14 +124,14 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+     * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+     * @return A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -413,7 +413,7 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+         * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+         * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
          * 
          * @return builder
          * 

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCloudAutonomousVmClustersResult> InvokeAsync(GetCloudAutonomousVmClustersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudAutonomousVmClustersResult>("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", args ?? new GetCloudAutonomousVmClustersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudAutonomousVmClustersResult>("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", args ?? new GetCloudAutonomousVmClustersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCloudAutonomousVmClustersResult> Invoke(GetCloudAutonomousVmClustersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClustersResult>("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", args ?? new GetCloudAutonomousVmClustersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClustersResult>("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", args ?? new GetCloudAutonomousVmClustersInvokeArgs(), options.WithDefaults());
     }
 
 

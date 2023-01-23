@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTargetDatabasesColumnsResult> InvokeAsync(GetTargetDatabasesColumnsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabasesColumnsResult>("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args ?? new GetTargetDatabasesColumnsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabasesColumnsResult>("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args ?? new GetTargetDatabasesColumnsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTargetDatabasesColumnsResult> Invoke(GetTargetDatabasesColumnsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesColumnsResult>("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args ?? new GetTargetDatabasesColumnsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesColumnsResult>("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args ?? new GetTargetDatabasesColumnsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Vault
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecretResult> InvokeAsync(GetSecretArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecretResult>("oci:Vault/getSecret:getSecret", args ?? new GetSecretArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecretResult>("oci:Vault/getSecret:getSecret", args ?? new GetSecretArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Secret resource in Oracle Cloud Infrastructure Vault service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Vault
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecretResult> Invoke(GetSecretInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecretResult>("oci:Vault/getSecret:getSecret", args ?? new GetSecretInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecretResult>("oci:Vault/getSecret:getSecret", args ?? new GetSecretInvokeArgs(), options.WithDefaults());
     }
 
 

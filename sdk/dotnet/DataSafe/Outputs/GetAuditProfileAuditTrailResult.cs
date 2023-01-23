@@ -74,6 +74,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        /// </summary>
+        public readonly string TimeLastCollected;
+        /// <summary>
         /// The date and time the audit profile was updated, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
@@ -118,6 +122,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string timeCreated,
 
+            string timeLastCollected,
+
             string timeUpdated,
 
             string trailLocation,
@@ -139,6 +145,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             SystemTags = systemTags;
             TargetId = targetId;
             TimeCreated = timeCreated;
+            TimeLastCollected = timeLastCollected;
             TimeUpdated = timeUpdated;
             TrailLocation = trailLocation;
             WorkRequestId = workRequestId;

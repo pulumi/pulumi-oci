@@ -13,7 +13,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
     public sealed class ScheduleQueryPropertiesDateRangeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Defines whether the schedule date range is STATIC or DYNAMIC
+        /// Defines whether the schedule date range is STATIC or DYNAMIC.
         /// </summary>
         [Input("dateRangeType", required: true)]
         public Input<string> DateRangeType { get; set; } = null!;

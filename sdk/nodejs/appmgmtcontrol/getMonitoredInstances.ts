@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitoredInstances(args: GetMonitoredInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -72,9 +70,25 @@ export interface GetMonitoredInstancesResult {
      */
     readonly monitoredInstanceCollections: outputs.AppMgmtControl.GetMonitoredInstancesMonitoredInstanceCollection[];
 }
-
+/**
+ * This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
+ *
+ * Returns a list of monitored instances.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMonitoredInstances = oci.AppMgmtControl.getMonitoredInstances({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.monitored_instance_display_name,
+ * });
+ * ```
+ */
 export function getMonitoredInstancesOutput(args: GetMonitoredInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredInstancesResult> {
-    return pulumi.output(args).apply(a => getMonitoredInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getMonitoredInstances(a, opts))
 }
 
 /**

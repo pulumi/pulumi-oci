@@ -52,7 +52,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditEventAnalyticResult> InvokeAsync(GetAuditEventAnalyticArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditEventAnalyticResult>("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", args ?? new GetAuditEventAnalyticArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditEventAnalyticResult>("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", args ?? new GetAuditEventAnalyticArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Audit Event Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditEventAnalyticResult> Invoke(GetAuditEventAnalyticInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditEventAnalyticResult>("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", args ?? new GetAuditEventAnalyticInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditEventAnalyticResult>("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", args ?? new GetAuditEventAnalyticInvokeArgs(), options.WithDefaults());
     }
 
 

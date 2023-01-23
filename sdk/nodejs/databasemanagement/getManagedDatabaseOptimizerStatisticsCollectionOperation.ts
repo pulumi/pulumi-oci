@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsCollectionOperation(args: GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", {
         "managedDatabaseId": args.managedDatabaseId,
         "optimizerStatisticsCollectionOperationId": args.optimizerStatisticsCollectionOperationId,
@@ -115,9 +113,25 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationResult 
      */
     readonly totalObjectsCount: number;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseOptimizerStatisticsCollectionOperation = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionOperation({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     optimizerStatisticsCollectionOperationId: oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation.id,
+ * });
+ * ```
+ */
 export function getManagedDatabaseOptimizerStatisticsCollectionOperationOutput(args: GetManagedDatabaseOptimizerStatisticsCollectionOperationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseOptimizerStatisticsCollectionOperation(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsCollectionOperation(a, opts))
 }
 
 /**

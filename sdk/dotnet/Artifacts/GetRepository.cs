@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryResult> InvokeAsync(GetRepositoryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryResult>("oci:Artifacts/getRepository:getRepository", args ?? new GetRepositoryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryResult>("oci:Artifacts/getRepository:getRepository", args ?? new GetRepositoryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryResult> Invoke(GetRepositoryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryResult>("oci:Artifacts/getRepository:getRepository", args ?? new GetRepositoryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryResult>("oci:Artifacts/getRepository:getRepository", args ?? new GetRepositoryInvokeArgs(), options.WithDefaults());
     }
 
 

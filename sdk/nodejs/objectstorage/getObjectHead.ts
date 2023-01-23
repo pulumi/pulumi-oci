@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getObjectHead(args: GetObjectHeadArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectHeadResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObjectHead:getObjectHead", {
         "bucket": args.bucket,
         "namespace": args.namespace,
@@ -87,9 +84,26 @@ export interface GetObjectHeadResult {
      */
     readonly storageTier: string;
 }
-
+/**
+ * This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Gets the metadata of an object.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testObjectHead = oci.ObjectStorage.getObjectHead({
+ *     bucket: _var.object_bucket,
+ *     namespace: _var.object_namespace,
+ *     object: _var.object_object,
+ * });
+ * ```
+ */
 export function getObjectHeadOutput(args: GetObjectHeadOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectHeadResult> {
-    return pulumi.output(args).apply(a => getObjectHead(a, opts))
+    return pulumi.output(args).apply((a: any) => getObjectHead(a, opts))
 }
 
 /**

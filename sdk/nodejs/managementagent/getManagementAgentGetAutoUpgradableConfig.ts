@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentGetAutoUpgradableConfig(args: GetManagementAgentGetAutoUpgradableConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentGetAutoUpgradableConfigResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -56,9 +53,25 @@ export interface GetManagementAgentGetAutoUpgradableConfigResult {
      */
     readonly isAgentAutoUpgradable: boolean;
 }
-
+/**
+ * This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Get the AutoUpgradable configuration for all agents in a tenancy.
+ * The supplied compartmentId must be a tenancy root.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgentGetAutoUpgradableConfig = oci.ManagementAgent.getManagementAgentGetAutoUpgradableConfig({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getManagementAgentGetAutoUpgradableConfigOutput(args: GetManagementAgentGetAutoUpgradableConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentGetAutoUpgradableConfigResult> {
-    return pulumi.output(args).apply(a => getManagementAgentGetAutoUpgradableConfig(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgentGetAutoUpgradableConfig(a, opts))
 }
 
 /**

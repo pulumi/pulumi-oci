@@ -144,6 +144,7 @@ class _PluggableDatabaseState:
                  open_mode: Optional[pulumi.Input[str]] = None,
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
+                 pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]] = None,
                  should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  tde_wallet_password: Optional[pulumi.Input[str]] = None,
@@ -160,6 +161,7 @@ class _PluggableDatabaseState:
         :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+        :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] state: The current state of the pluggable database.
         :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
@@ -185,6 +187,8 @@ class _PluggableDatabaseState:
             pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
         if pdb_name is not None:
             pulumi.set(__self__, "pdb_name", pdb_name)
+        if pluggable_database_management_configs is not None:
+            pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
         if should_pdb_admin_account_be_locked is not None:
             pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if state is not None:
@@ -313,6 +317,18 @@ class _PluggableDatabaseState:
     @pdb_name.setter
     def pdb_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "pdb_name", value)
+
+    @property
+    @pulumi.getter(name="pluggableDatabaseManagementConfigs")
+    def pluggable_database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]:
+        """
+        The configuration of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "pluggable_database_management_configs")
+
+    @pluggable_database_management_configs.setter
+    def pluggable_database_management_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]):
+        pulumi.set(self, "pluggable_database_management_configs", value)
 
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
@@ -492,19 +508,22 @@ class PluggableDatabase(pulumi.CustomResource):
             __props__.__dict__["container_database_id"] = container_database_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
-            __props__.__dict__["pdb_admin_password"] = pdb_admin_password
+            __props__.__dict__["pdb_admin_password"] = None if pdb_admin_password is None else pulumi.Output.secret(pdb_admin_password)
             if pdb_name is None and not opts.urn:
                 raise TypeError("Missing required property 'pdb_name'")
             __props__.__dict__["pdb_name"] = pdb_name
             __props__.__dict__["should_pdb_admin_account_be_locked"] = should_pdb_admin_account_be_locked
-            __props__.__dict__["tde_wallet_password"] = tde_wallet_password
+            __props__.__dict__["tde_wallet_password"] = None if tde_wallet_password is None else pulumi.Output.secret(tde_wallet_password)
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["connection_strings"] = None
             __props__.__dict__["is_restricted"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["open_mode"] = None
+            __props__.__dict__["pluggable_database_management_configs"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["pdbAdminPassword", "tdeWalletPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(PluggableDatabase, __self__).__init__(
             'oci:Database/pluggableDatabase:PluggableDatabase',
             resource_name,
@@ -525,6 +544,7 @@ class PluggableDatabase(pulumi.CustomResource):
             open_mode: Optional[pulumi.Input[str]] = None,
             pdb_admin_password: Optional[pulumi.Input[str]] = None,
             pdb_name: Optional[pulumi.Input[str]] = None,
+            pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]] = None,
             should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
             state: Optional[pulumi.Input[str]] = None,
             tde_wallet_password: Optional[pulumi.Input[str]] = None,
@@ -546,6 +566,7 @@ class PluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] state: The current state of the pluggable database.
         :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
@@ -565,6 +586,7 @@ class PluggableDatabase(pulumi.CustomResource):
         __props__.__dict__["open_mode"] = open_mode
         __props__.__dict__["pdb_admin_password"] = pdb_admin_password
         __props__.__dict__["pdb_name"] = pdb_name
+        __props__.__dict__["pluggable_database_management_configs"] = pluggable_database_management_configs
         __props__.__dict__["should_pdb_admin_account_be_locked"] = should_pdb_admin_account_be_locked
         __props__.__dict__["state"] = state
         __props__.__dict__["tde_wallet_password"] = tde_wallet_password
@@ -650,6 +672,14 @@ class PluggableDatabase(pulumi.CustomResource):
         The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         """
         return pulumi.get(self, "pdb_name")
+
+    @property
+    @pulumi.getter(name="pluggableDatabaseManagementConfigs")
+    def pluggable_database_management_configs(self) -> pulumi.Output[Sequence['outputs.PluggableDatabasePluggableDatabaseManagementConfig']]:
+        """
+        The configuration of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "pluggable_database_management_configs")
 
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")

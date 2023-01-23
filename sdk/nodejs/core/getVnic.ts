@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVnic(args: GetVnicArgs, opts?: pulumi.InvokeOptions): Promise<GetVnicResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVnic:getVnic", {
         "vnicId": args.vnicId,
     }, opts);
@@ -118,9 +115,27 @@ export interface GetVnicResult {
     readonly vlanId: string;
     readonly vnicId: string;
 }
-
+/**
+ * This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the information for the specified virtual network interface card (VNIC).
+ * You can get the VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from the
+ * [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+ * operation.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVnic = oci.Core.getVnic({
+ *     vnicId: oci_core_vnic.test_vnic.id,
+ * });
+ * ```
+ */
 export function getVnicOutput(args: GetVnicOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVnicResult> {
-    return pulumi.output(args).apply(a => getVnic(a, opts))
+    return pulumi.output(args).apply((a: any) => getVnic(a, opts))
 }
 
 /**

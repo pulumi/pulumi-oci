@@ -16,14 +16,14 @@ public final class ScheduleQueryPropertiesDateRangeArgs extends com.pulumi.resou
     public static final ScheduleQueryPropertiesDateRangeArgs Empty = new ScheduleQueryPropertiesDateRangeArgs();
 
     /**
-     * Defines whether the schedule date range is STATIC or DYNAMIC
+     * Defines whether the schedule date range is STATIC or DYNAMIC.
      * 
      */
     @Import(name="dateRangeType", required=true)
     private Output<String> dateRangeType;
 
     /**
-     * @return Defines whether the schedule date range is STATIC or DYNAMIC
+     * @return Defines whether the schedule date range is STATIC or DYNAMIC.
      * 
      */
     public Output<String> dateRangeType() {
@@ -95,7 +95,7 @@ public final class ScheduleQueryPropertiesDateRangeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dateRangeType Defines whether the schedule date range is STATIC or DYNAMIC
+         * @param dateRangeType Defines whether the schedule date range is STATIC or DYNAMIC.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class ScheduleQueryPropertiesDateRangeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dateRangeType Defines whether the schedule date range is STATIC or DYNAMIC
+         * @param dateRangeType Defines whether the schedule date range is STATIC or DYNAMIC.
          * 
          * @return builder
          * 

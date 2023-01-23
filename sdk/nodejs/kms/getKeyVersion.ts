@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getKeyVersion(args: GetKeyVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetKeyVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getKeyVersion:getKeyVersion", {
         "keyId": args.keyId,
         "keyVersionId": args.keyVersionId,
@@ -114,9 +112,31 @@ export interface GetKeyVersionResult {
      */
     readonly vaultId: string;
 }
-
+/**
+ * This data source provides details about a specific Key Version resource in Oracle Cloud Infrastructure Kms service.
+ *
+ * Gets information about the specified key version.
+ *
+ * As a management operation, this call is subject to a Key Management limit that applies to the total number
+ * of requests across all management read operations. Key Management might throttle this call to reject an
+ * otherwise valid request when the total rate of management read operations exceeds 10 requests per second
+ * for a given tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testKeyVersion = oci.Kms.getKeyVersion({
+ *     keyId: oci_kms_key.test_key.id,
+ *     keyVersionId: oci_kms_key_version.test_key_version.id,
+ *     managementEndpoint: _var.key_version_management_endpoint,
+ * });
+ * ```
+ */
 export function getKeyVersionOutput(args: GetKeyVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyVersionResult> {
-    return pulumi.output(args).apply(a => getKeyVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getKeyVersion(a, opts))
 }
 
 /**

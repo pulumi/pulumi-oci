@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -80,7 +81,13 @@ export class Model extends pulumi.CustomResource {
         return obj['__pulumiType'] === Model.__pulumiType;
     }
 
+    /**
+     * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+     */
     public readonly artifactContentDisposition!: pulumi.Output<string>;
+    /**
+     * The content length of the model_artifact.
+     */
     public readonly artifactContentLength!: pulumi.Output<string>;
     public /*out*/ readonly artifactContentMd5!: pulumi.Output<string>;
     public /*out*/ readonly artifactLastModified!: pulumi.Output<string>;
@@ -121,6 +128,9 @@ export class Model extends pulumi.CustomResource {
      * Input schema file content in String format
      */
     public readonly inputSchema!: pulumi.Output<string>;
+    /**
+     * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+     */
     public readonly modelArtifact!: pulumi.Output<string>;
     /**
      * Output schema file content in String format
@@ -214,7 +224,13 @@ export class Model extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Model resources.
  */
 export interface ModelState {
+    /**
+     * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+     */
     artifactContentDisposition?: pulumi.Input<string>;
+    /**
+     * The content length of the model_artifact.
+     */
     artifactContentLength?: pulumi.Input<string>;
     artifactContentMd5?: pulumi.Input<string>;
     artifactLastModified?: pulumi.Input<string>;
@@ -255,6 +271,9 @@ export interface ModelState {
      * Input schema file content in String format
      */
     inputSchema?: pulumi.Input<string>;
+    /**
+     * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+     */
     modelArtifact?: pulumi.Input<string>;
     /**
      * Output schema file content in String format
@@ -278,7 +297,13 @@ export interface ModelState {
  * The set of arguments for constructing a Model resource.
  */
 export interface ModelArgs {
+    /**
+     * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+     */
     artifactContentDisposition?: pulumi.Input<string>;
+    /**
+     * The content length of the model_artifact.
+     */
     artifactContentLength: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -312,6 +337,9 @@ export interface ModelArgs {
      * Input schema file content in String format
      */
     inputSchema?: pulumi.Input<string>;
+    /**
+     * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+     */
     modelArtifact: pulumi.Input<string>;
     /**
      * Output schema file content in String format

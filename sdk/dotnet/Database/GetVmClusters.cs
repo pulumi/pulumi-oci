@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVmClustersResult> InvokeAsync(GetVmClustersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVmClustersResult>("oci:Database/getVmClusters:getVmClusters", args ?? new GetVmClustersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClustersResult>("oci:Database/getVmClusters:getVmClusters", args ?? new GetVmClustersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVmClustersResult> Invoke(GetVmClustersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVmClustersResult>("oci:Database/getVmClusters:getVmClusters", args ?? new GetVmClustersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClustersResult>("oci:Database/getVmClusters:getVmClusters", args ?? new GetVmClustersInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRegistries(args: GetRegistriesArgs, opts?: pulumi.InvokeOptions): Promise<GetRegistriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataConnectivity/getRegistries:getRegistries", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -86,9 +84,27 @@ export interface GetRegistriesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
+ *
+ * Retrieves a list of Data Connectivity Management registries.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRegistries = oci.DataConnectivity.getRegistries({
+ *     compartmentId: _var.compartment_id,
+ *     isDeepLookup: _var.registry_is_deep_lookup,
+ *     name: _var.registry_name,
+ *     state: _var.registry_state,
+ * });
+ * ```
+ */
 export function getRegistriesOutput(args: GetRegistriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegistriesResult> {
-    return pulumi.output(args).apply(a => getRegistries(a, opts))
+    return pulumi.output(args).apply((a: any) => getRegistries(a, opts))
 }
 
 /**

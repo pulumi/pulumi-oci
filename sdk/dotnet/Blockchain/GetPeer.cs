@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Blockchain
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPeerResult> InvokeAsync(GetPeerArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPeerResult>("oci:Blockchain/getPeer:getPeer", args ?? new GetPeerArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPeerResult>("oci:Blockchain/getPeer:getPeer", args ?? new GetPeerArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Blockchain
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPeerResult> Invoke(GetPeerInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPeerResult>("oci:Blockchain/getPeer:getPeer", args ?? new GetPeerInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPeerResult>("oci:Blockchain/getPeer:getPeer", args ?? new GetPeerInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentOggData {
     /**
-     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
      * 
      */
     private String adminPassword;
@@ -44,7 +44,7 @@ public final class DeploymentOggData {
 
     private DeploymentOggData() {}
     /**
-     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
      * 
      */
     public String adminPassword() {

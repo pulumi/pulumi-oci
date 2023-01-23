@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.PluggableDatabasesLocalCloneConnectionStringArgs;
+import com.pulumi.oci.Database.inputs.PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -201,6 +202,21 @@ public final class PluggableDatabasesLocalCloneState extends com.pulumi.resource
     }
 
     /**
+     * The configuration of the Pluggable Database Management service.
+     * 
+     */
+    @Import(name="pluggableDatabaseManagementConfigs")
+    private @Nullable Output<List<PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs>> pluggableDatabaseManagementConfigs;
+
+    /**
+     * @return The configuration of the Pluggable Database Management service.
+     * 
+     */
+    public Optional<Output<List<PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs>>> pluggableDatabaseManagementConfigs() {
+        return Optional.ofNullable(this.pluggableDatabaseManagementConfigs);
+    }
+
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
@@ -275,6 +291,7 @@ public final class PluggableDatabasesLocalCloneState extends com.pulumi.resource
         this.pdbAdminPassword = $.pdbAdminPassword;
         this.pdbName = $.pdbName;
         this.pluggableDatabaseId = $.pluggableDatabaseId;
+        this.pluggableDatabaseManagementConfigs = $.pluggableDatabaseManagementConfigs;
         this.shouldPdbAdminAccountBeLocked = $.shouldPdbAdminAccountBeLocked;
         this.state = $.state;
         this.targetTdeWalletPassword = $.targetTdeWalletPassword;
@@ -559,6 +576,37 @@ public final class PluggableDatabasesLocalCloneState extends com.pulumi.resource
          */
         public Builder pluggableDatabaseId(String pluggableDatabaseId) {
             return pluggableDatabaseId(Output.of(pluggableDatabaseId));
+        }
+
+        /**
+         * @param pluggableDatabaseManagementConfigs The configuration of the Pluggable Database Management service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluggableDatabaseManagementConfigs(@Nullable Output<List<PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs>> pluggableDatabaseManagementConfigs) {
+            $.pluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
+            return this;
+        }
+
+        /**
+         * @param pluggableDatabaseManagementConfigs The configuration of the Pluggable Database Management service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluggableDatabaseManagementConfigs(List<PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs> pluggableDatabaseManagementConfigs) {
+            return pluggableDatabaseManagementConfigs(Output.of(pluggableDatabaseManagementConfigs));
+        }
+
+        /**
+         * @param pluggableDatabaseManagementConfigs The configuration of the Pluggable Database Management service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluggableDatabaseManagementConfigs(PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs... pluggableDatabaseManagementConfigs) {
+            return pluggableDatabaseManagementConfigs(List.of(pluggableDatabaseManagementConfigs));
         }
 
         /**

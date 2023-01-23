@@ -5,13 +5,26 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getSecret";
-export * from "./getSecretVersion";
-export * from "./getSecrets";
-export * from "./secret";
+export { GetSecretArgs, GetSecretResult, GetSecretOutputArgs } from "./getSecret";
+export const getSecret: typeof import("./getSecret").getSecret = null as any;
+export const getSecretOutput: typeof import("./getSecret").getSecretOutput = null as any;
+utilities.lazyLoad(exports, ["getSecret","getSecretOutput"], () => require("./getSecret"));
 
-// Import resources to register:
-import { Secret } from "./secret";
+export { GetSecretVersionArgs, GetSecretVersionResult, GetSecretVersionOutputArgs } from "./getSecretVersion";
+export const getSecretVersion: typeof import("./getSecretVersion").getSecretVersion = null as any;
+export const getSecretVersionOutput: typeof import("./getSecretVersion").getSecretVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getSecretVersion","getSecretVersionOutput"], () => require("./getSecretVersion"));
+
+export { GetSecretsArgs, GetSecretsResult, GetSecretsOutputArgs } from "./getSecrets";
+export const getSecrets: typeof import("./getSecrets").getSecrets = null as any;
+export const getSecretsOutput: typeof import("./getSecrets").getSecretsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecrets","getSecretsOutput"], () => require("./getSecrets"));
+
+export { SecretArgs, SecretState } from "./secret";
+export type Secret = import("./secret").Secret;
+export const Secret: typeof import("./secret").Secret = null as any;
+utilities.lazyLoad(exports, ["Secret"], () => require("./secret"));
+
 
 const _module = {
     version: utilities.getVersion(),

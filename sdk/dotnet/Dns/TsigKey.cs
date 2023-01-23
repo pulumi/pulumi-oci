@@ -130,6 +130,10 @@ namespace Pulumi.Oci.Dns
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "secret",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -195,11 +199,21 @@ namespace Pulumi.Oci.Dns
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("secret", required: true)]
+        private Input<string>? _secret;
+
         /// <summary>
         /// A base64 string encoding the binary shared secret.
         /// </summary>
-        [Input("secret", required: true)]
-        public Input<string> Secret { get; set; } = null!;
+        public Input<string>? Secret
+        {
+            get => _secret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public TsigKeyArgs()
         {
@@ -251,11 +265,21 @@ namespace Pulumi.Oci.Dns
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("secret")]
+        private Input<string>? _secret;
+
         /// <summary>
         /// A base64 string encoding the binary shared secret.
         /// </summary>
-        [Input("secret")]
-        public Input<string>? Secret { get; set; }
+        public Input<string>? Secret
+        {
+            get => _secret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The canonical absolute URL of the resource.

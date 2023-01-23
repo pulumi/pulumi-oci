@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<bool>? IsRequired { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the claim.
+        /// (Updatable) Information around the values for selector of an authentication/ routing branch.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

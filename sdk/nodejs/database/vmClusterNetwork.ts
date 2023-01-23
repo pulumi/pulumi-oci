@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,16 +30,18 @@ import * as utilities from "../utilities";
  *         scanListenerPortTcpSsl: _var.vm_cluster_network_scans_scan_listener_port_tcp_ssl,
  *     }],
  *     vmNetworks: [{
- *         domainName: _var.vm_cluster_network_vm_networks_domain_name,
- *         gateway: _var.vm_cluster_network_vm_networks_gateway,
- *         netmask: _var.vm_cluster_network_vm_networks_netmask,
  *         networkType: _var.vm_cluster_network_vm_networks_network_type,
  *         nodes: [{
  *             hostname: _var.vm_cluster_network_vm_networks_nodes_hostname,
  *             ip: _var.vm_cluster_network_vm_networks_nodes_ip,
+ *             dbServerId: oci_database_db_server.test_db_server.id,
+ *             state: _var.vm_cluster_network_vm_networks_nodes_state,
  *             vip: _var.vm_cluster_network_vm_networks_nodes_vip,
  *             vipHostname: _var.vm_cluster_network_vm_networks_nodes_vip_hostname,
  *         }],
+ *         domainName: oci_identity_domain.test_domain.name,
+ *         gateway: _var.vm_cluster_network_vm_networks_gateway,
+ *         netmask: _var.vm_cluster_network_vm_networks_netmask,
  *         vlanId: _var.vm_cluster_network_vm_networks_vlan_id,
  *     }],
  *     definedTags: _var.vm_cluster_network_defined_tags,
@@ -87,6 +90,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmClusterNetwork.__pulumiType;
     }
 
+    public readonly action!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -124,7 +128,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
      */
     public readonly scans!: pulumi.Output<outputs.Database.VmClusterNetworkScan[]>;
     /**
-     * The current state of the VM cluster network.
+     * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -154,6 +158,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmClusterNetworkState | undefined;
+            resourceInputs["action"] = state ? state.action : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -185,6 +190,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
             if ((!args || args.vmNetworks === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'vmNetworks'");
             }
+            resourceInputs["action"] = args ? args.action : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -209,6 +215,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmClusterNetwork resources.
  */
 export interface VmClusterNetworkState {
+    action?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -246,7 +253,7 @@ export interface VmClusterNetworkState {
      */
     scans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkScan>[]>;
     /**
-     * The current state of the VM cluster network.
+     * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      */
     state?: pulumi.Input<string>;
     /**
@@ -268,6 +275,7 @@ export interface VmClusterNetworkState {
  * The set of arguments for constructing a VmClusterNetwork resource.
  */
 export interface VmClusterNetworkArgs {
+    action?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPrivateEndpointResult> InvokeAsync(GetPrivateEndpointArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointResult>("oci:DataFlow/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointResult>("oci:DataFlow/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPrivateEndpointResult> Invoke(GetPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointResult>("oci:DataFlow/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointResult>("oci:DataFlow/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -155,6 +155,10 @@ namespace Pulumi.Oci.DataFlow
         public readonly string OwnerUserName;
         public readonly string PrivateEndpointId;
         /// <summary>
+        /// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPrivateEndpointScanDetailResult> ScanDetails;
+        /// <summary>
         /// The current state of this private endpoint.
         /// </summary>
         public readonly string State;
@@ -199,6 +203,8 @@ namespace Pulumi.Oci.DataFlow
 
             string privateEndpointId,
 
+            ImmutableArray<Outputs.GetPrivateEndpointScanDetailResult> scanDetails,
+
             string state,
 
             string subnetId,
@@ -220,6 +226,7 @@ namespace Pulumi.Oci.DataFlow
             OwnerPrincipalId = ownerPrincipalId;
             OwnerUserName = ownerUserName;
             PrivateEndpointId = privateEndpointId;
+            ScanDetails = scanDetails;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;

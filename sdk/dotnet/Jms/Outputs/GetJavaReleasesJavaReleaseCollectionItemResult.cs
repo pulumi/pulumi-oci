@@ -14,11 +14,15 @@ namespace Pulumi.Oci.Jms.Outputs
     public sealed class GetJavaReleasesJavaReleaseCollectionItemResult
     {
         /// <summary>
+        /// Artifact content types for the Java version.
+        /// </summary>
+        public readonly ImmutableArray<string> ArtifactContentTypes;
+        /// <summary>
         /// List of Java artifacts.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult> Artifacts;
         /// <summary>
-        /// Complete information of a specific Java release family.
+        /// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult> FamilyDetails;
         /// <summary>
@@ -60,6 +64,8 @@ namespace Pulumi.Oci.Jms.Outputs
 
         [OutputConstructor]
         private GetJavaReleasesJavaReleaseCollectionItemResult(
+            ImmutableArray<string> artifactContentTypes,
+
             ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult> artifacts,
 
             ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult> familyDetails,
@@ -82,6 +88,7 @@ namespace Pulumi.Oci.Jms.Outputs
 
             string securityStatus)
         {
+            ArtifactContentTypes = artifactContentTypes;
             Artifacts = artifacts;
             FamilyDetails = familyDetails;
             FamilyVersion = familyVersion;

@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetHistoriesResult> InvokeAsync(GetHistoriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetHistoriesResult>("oci:Optimizer/getHistories:getHistories", args ?? new GetHistoriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetHistoriesResult>("oci:Optimizer/getHistories:getHistories", args ?? new GetHistoriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetHistoriesResult> Invoke(GetHistoriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetHistoriesResult>("oci:Optimizer/getHistories:getHistories", args ?? new GetHistoriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetHistoriesResult>("oci:Optimizer/getHistories:getHistories", args ?? new GetHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

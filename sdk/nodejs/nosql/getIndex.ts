@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIndex(args: GetIndexArgs, opts?: pulumi.InvokeOptions): Promise<GetIndexResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Nosql/getIndex:getIndex", {
         "compartmentId": args.compartmentId,
         "indexName": args.indexName,
@@ -91,9 +89,26 @@ export interface GetIndexResult {
     readonly tableName: string;
     readonly tableNameOrId: string;
 }
-
+/**
+ * This data source provides details about a specific Index resource in Oracle Cloud Infrastructure NoSQL Database service.
+ *
+ * Get information about a single index.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIndex = oci.Nosql.getIndex({
+ *     indexName: oci_nosql_index.test_index.name,
+ *     tableNameOrId: oci_nosql_table_name_or.test_table_name_or.id,
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getIndexOutput(args: GetIndexOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIndexResult> {
-    return pulumi.output(args).apply(a => getIndex(a, opts))
+    return pulumi.output(args).apply((a: any) => getIndex(a, opts))
 }
 
 /**

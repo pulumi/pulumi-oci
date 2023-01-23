@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Sql Execution Plan resource in Oracle Cloud Infrastructure Database Management service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs(), options.WithDefaults());
     }
 
 

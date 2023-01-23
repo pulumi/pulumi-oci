@@ -82,12 +82,16 @@ type GetFusionEnvironmentResult struct {
 	Id string `pulumi:"id"`
 	// The IDCS Domain URL
 	IdcsDomainUrl string `pulumi:"idcsDomainUrl"`
+	// If it's true, then the Break Glass feature is enabled
+	IsBreakGlassEnabled bool `pulumi:"isBreakGlassEnabled"`
 	// BYOK key id
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// BYOK key info
-	KmsKeyInfos []string `pulumi:"kmsKeyInfos"`
+	KmsKeyInfos []GetFusionEnvironmentKmsKeyInfo `pulumi:"kmsKeyInfos"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+	LockboxId string `pulumi:"lockboxId"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	MaintenancePolicies []GetFusionEnvironmentMaintenancePolicy `pulumi:"maintenancePolicies"`
 	// Public URL
@@ -220,19 +224,29 @@ func (o GetFusionEnvironmentResultOutput) IdcsDomainUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentResult) string { return v.IdcsDomainUrl }).(pulumi.StringOutput)
 }
 
+// If it's true, then the Break Glass feature is enabled
+func (o GetFusionEnvironmentResultOutput) IsBreakGlassEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentResult) bool { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
+}
+
 // BYOK key id
 func (o GetFusionEnvironmentResultOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // BYOK key info
-func (o GetFusionEnvironmentResultOutput) KmsKeyInfos() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentResult) []string { return v.KmsKeyInfos }).(pulumi.StringArrayOutput)
+func (o GetFusionEnvironmentResultOutput) KmsKeyInfos() GetFusionEnvironmentKmsKeyInfoArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentResult) []GetFusionEnvironmentKmsKeyInfo { return v.KmsKeyInfos }).(GetFusionEnvironmentKmsKeyInfoArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetFusionEnvironmentResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+func (o GetFusionEnvironmentResultOutput) LockboxId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentResult) string { return v.LockboxId }).(pulumi.StringOutput)
 }
 
 // The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).

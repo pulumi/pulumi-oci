@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmCluster(args: GetVmClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmCluster:getVmCluster", {
         "vmClusterId": args.vmClusterId,
     }, opts);
@@ -155,9 +153,24 @@ export interface GetVmClusterResult {
      */
     readonly vmClusterNetworkId: string;
 }
-
+/**
+ * This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmCluster = oci.Database.getVmCluster({
+ *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ * });
+ * ```
+ */
 export function getVmClusterOutput(args: GetVmClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterResult> {
-    return pulumi.output(args).apply(a => getVmCluster(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmCluster(a, opts))
 }
 
 /**

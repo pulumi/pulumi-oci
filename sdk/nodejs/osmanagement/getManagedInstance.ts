@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstance(args: GetManagedInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getManagedInstance:getManagedInstance", {
         "managedInstanceId": args.managedInstanceId,
     }, opts);
@@ -152,9 +150,24 @@ export interface GetManagedInstanceResult {
      */
     readonly workRequestCount: number;
 }
-
+/**
+ * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Returns a specific Managed Instance.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedInstance = oci.OsManagement.getManagedInstance({
+ *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
+ * });
+ * ```
+ */
 export function getManagedInstanceOutput(args: GetManagedInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceResult> {
-    return pulumi.output(args).apply(a => getManagedInstance(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedInstance(a, opts))
 }
 
 /**

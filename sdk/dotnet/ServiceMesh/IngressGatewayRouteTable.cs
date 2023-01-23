@@ -51,6 +51,7 @@ namespace Pulumi.Oci.ServiceMesh
     ///                 IsPathRewriteEnabled = @var.Ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
     ///                 Path = @var.Ingress_gateway_route_table_route_rules_path,
     ///                 PathType = @var.Ingress_gateway_route_table_route_rules_path_type,
+    ///                 RequestTimeoutInMs = @var.Ingress_gateway_route_table_route_rules_request_timeout_in_ms,
     ///             },
     ///         },
     ///         DefinedTags = 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeGroupReplicas(args: GetVolumeGroupReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupReplicasResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -93,9 +91,28 @@ export interface GetVolumeGroupReplicasResult {
      */
     readonly volumeGroupReplicas: outputs.Core.GetVolumeGroupReplicasVolumeGroupReplica[];
 }
-
+/**
+ * This data source provides the list of Volume Group Replicas in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
+ * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolumeGroupReplicas = oci.Core.getVolumeGroupReplicas({
+ *     availabilityDomain: _var.volume_group_replica_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.volume_group_replica_display_name,
+ *     state: _var.volume_group_replica_state,
+ * });
+ * ```
+ */
 export function getVolumeGroupReplicasOutput(args: GetVolumeGroupReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupReplicasResult> {
-    return pulumi.output(args).apply(a => getVolumeGroupReplicas(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolumeGroupReplicas(a, opts))
 }
 
 /**

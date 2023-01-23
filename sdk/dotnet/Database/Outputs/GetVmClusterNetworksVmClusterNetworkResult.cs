@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetVmClusterNetworksVmClusterNetworkResult
     {
+        public readonly string Action;
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -73,6 +74,8 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetVmClusterNetworksVmClusterNetworkResult(
+            string action,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -103,6 +106,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetVmClusterNetworksVmClusterNetworkVmNetworkResult> vmNetworks)
         {
+            Action = action;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

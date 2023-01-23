@@ -22,7 +22,7 @@ class GetFusionEnvironmentResult:
     """
     A collection of values returned by getFusionEnvironment.
     """
-    def __init__(__self__, additional_language_packs=None, applied_patch_bundles=None, compartment_id=None, create_fusion_environment_admin_user_details=None, defined_tags=None, display_name=None, dns_prefix=None, domain_id=None, freeform_tags=None, fusion_environment_family_id=None, fusion_environment_id=None, fusion_environment_type=None, id=None, idcs_domain_url=None, kms_key_id=None, kms_key_infos=None, lifecycle_details=None, maintenance_policies=None, public_url=None, refreshes=None, rules=None, state=None, subscription_ids=None, system_name=None, time_created=None, time_upcoming_maintenance=None, time_updated=None, version=None):
+    def __init__(__self__, additional_language_packs=None, applied_patch_bundles=None, compartment_id=None, create_fusion_environment_admin_user_details=None, defined_tags=None, display_name=None, dns_prefix=None, domain_id=None, freeform_tags=None, fusion_environment_family_id=None, fusion_environment_id=None, fusion_environment_type=None, id=None, idcs_domain_url=None, is_break_glass_enabled=None, kms_key_id=None, kms_key_infos=None, lifecycle_details=None, lockbox_id=None, maintenance_policies=None, public_url=None, refreshes=None, rules=None, state=None, subscription_ids=None, system_name=None, time_created=None, time_upcoming_maintenance=None, time_updated=None, version=None):
         if additional_language_packs and not isinstance(additional_language_packs, list):
             raise TypeError("Expected argument 'additional_language_packs' to be a list")
         pulumi.set(__self__, "additional_language_packs", additional_language_packs)
@@ -65,6 +65,9 @@ class GetFusionEnvironmentResult:
         if idcs_domain_url and not isinstance(idcs_domain_url, str):
             raise TypeError("Expected argument 'idcs_domain_url' to be a str")
         pulumi.set(__self__, "idcs_domain_url", idcs_domain_url)
+        if is_break_glass_enabled and not isinstance(is_break_glass_enabled, bool):
+            raise TypeError("Expected argument 'is_break_glass_enabled' to be a bool")
+        pulumi.set(__self__, "is_break_glass_enabled", is_break_glass_enabled)
         if kms_key_id and not isinstance(kms_key_id, str):
             raise TypeError("Expected argument 'kms_key_id' to be a str")
         pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -74,6 +77,9 @@ class GetFusionEnvironmentResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if lockbox_id and not isinstance(lockbox_id, str):
+            raise TypeError("Expected argument 'lockbox_id' to be a str")
+        pulumi.set(__self__, "lockbox_id", lockbox_id)
         if maintenance_policies and not isinstance(maintenance_policies, list):
             raise TypeError("Expected argument 'maintenance_policies' to be a list")
         pulumi.set(__self__, "maintenance_policies", maintenance_policies)
@@ -215,6 +221,14 @@ class GetFusionEnvironmentResult:
         return pulumi.get(self, "idcs_domain_url")
 
     @property
+    @pulumi.getter(name="isBreakGlassEnabled")
+    def is_break_glass_enabled(self) -> bool:
+        """
+        If it's true, then the Break Glass feature is enabled
+        """
+        return pulumi.get(self, "is_break_glass_enabled")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
@@ -224,7 +238,7 @@ class GetFusionEnvironmentResult:
 
     @property
     @pulumi.getter(name="kmsKeyInfos")
-    def kms_key_infos(self) -> Sequence[str]:
+    def kms_key_infos(self) -> Sequence['outputs.GetFusionEnvironmentKmsKeyInfoResult']:
         """
         BYOK key info
         """
@@ -237,6 +251,14 @@ class GetFusionEnvironmentResult:
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lockboxId")
+    def lockbox_id(self) -> str:
+        """
+        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+        """
+        return pulumi.get(self, "lockbox_id")
 
     @property
     @pulumi.getter(name="maintenancePolicies")
@@ -347,9 +369,11 @@ class AwaitableGetFusionEnvironmentResult(GetFusionEnvironmentResult):
             fusion_environment_type=self.fusion_environment_type,
             id=self.id,
             idcs_domain_url=self.idcs_domain_url,
+            is_break_glass_enabled=self.is_break_glass_enabled,
             kms_key_id=self.kms_key_id,
             kms_key_infos=self.kms_key_infos,
             lifecycle_details=self.lifecycle_details,
+            lockbox_id=self.lockbox_id,
             maintenance_policies=self.maintenance_policies,
             public_url=self.public_url,
             refreshes=self.refreshes,
@@ -402,9 +426,11 @@ def get_fusion_environment(fusion_environment_id: Optional[str] = None,
         fusion_environment_type=__ret__.fusion_environment_type,
         id=__ret__.id,
         idcs_domain_url=__ret__.idcs_domain_url,
+        is_break_glass_enabled=__ret__.is_break_glass_enabled,
         kms_key_id=__ret__.kms_key_id,
         kms_key_infos=__ret__.kms_key_infos,
         lifecycle_details=__ret__.lifecycle_details,
+        lockbox_id=__ret__.lockbox_id,
         maintenance_policies=__ret__.maintenance_policies,
         public_url=__ret__.public_url,
         refreshes=__ret__.refreshes,

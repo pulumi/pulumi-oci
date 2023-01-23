@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getModels(args?: GetModelsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiVision/getModels:getModels", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -99,9 +97,28 @@ export interface GetModelsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
+ *
+ * Returns a list of Models.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModels = oci.AiVision.getModels({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.model_display_name,
+ *     id: _var.model_id,
+ *     projectId: oci_ai_vision_project.test_project.id,
+ *     state: _var.model_state,
+ * });
+ * ```
+ */
 export function getModelsOutput(args?: GetModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelsResult> {
-    return pulumi.output(args).apply(a => getModels(a, opts))
+    return pulumi.output(args).apply((a: any) => getModels(a, opts))
 }
 
 /**

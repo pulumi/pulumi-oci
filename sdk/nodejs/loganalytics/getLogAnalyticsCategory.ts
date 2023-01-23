@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsCategory(args: GetLogAnalyticsCategoryArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsCategoryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsCategory:getLogAnalyticsCategory", {
         "name": args.name,
         "namespace": args.namespace,
@@ -77,9 +74,25 @@ export interface GetLogAnalyticsCategoryResult {
      */
     readonly type: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Gets detailed information about the category with the specified name.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsCategory = oci.LogAnalytics.getLogAnalyticsCategory({
+ *     name: _var.log_analytics_category_name,
+ *     namespace: _var.log_analytics_category_namespace,
+ * });
+ * ```
+ */
 export function getLogAnalyticsCategoryOutput(args: GetLogAnalyticsCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsCategoryResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsCategory(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsCategory(a, opts))
 }
 
 /**

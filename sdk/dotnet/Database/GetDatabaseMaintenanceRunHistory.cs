@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseMaintenanceRunHistoryResult> InvokeAsync(GetDatabaseMaintenanceRunHistoryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseMaintenanceRunHistoryResult>("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", args ?? new GetDatabaseMaintenanceRunHistoryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseMaintenanceRunHistoryResult>("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", args ?? new GetDatabaseMaintenanceRunHistoryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseMaintenanceRunHistoryResult> Invoke(GetDatabaseMaintenanceRunHistoryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseMaintenanceRunHistoryResult>("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", args ?? new GetDatabaseMaintenanceRunHistoryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseMaintenanceRunHistoryResult>("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", args ?? new GetDatabaseMaintenanceRunHistoryInvokeArgs(), options.WithDefaults());
     }
 
 

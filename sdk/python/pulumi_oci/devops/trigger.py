@@ -29,7 +29,8 @@ class TriggerArgs:
         The set of arguments for constructing a Trigger resource.
         :param pulumi.Input[Sequence[pulumi.Input['TriggerActionArgs']]] actions: (Updatable) The list of actions that are to be performed for this trigger.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project to which the trigger belongs to.
-        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+        :param pulumi.Input[str] connection_id: (Updatable) The OCID of the connection resource used to get details for triggered events.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the trigger.
         :param pulumi.Input[str] display_name: (Updatable) Trigger display name. Avoid entering confidential information.
@@ -80,7 +81,7 @@ class TriggerArgs:
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> pulumi.Input[str]:
         """
-        (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         """
         return pulumi.get(self, "trigger_source")
 
@@ -91,6 +92,9 @@ class TriggerArgs:
     @property
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the connection resource used to get details for triggered events.
+        """
         return pulumi.get(self, "connection_id")
 
     @connection_id.setter
@@ -181,6 +185,7 @@ class _TriggerState:
         Input properties used for looking up and filtering Trigger resources.
         :param pulumi.Input[Sequence[pulumi.Input['TriggerActionArgs']]] actions: (Updatable) The list of actions that are to be performed for this trigger.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the trigger.
+        :param pulumi.Input[str] connection_id: (Updatable) The OCID of the connection resource used to get details for triggered events.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the trigger.
         :param pulumi.Input[str] display_name: (Updatable) Trigger display name. Avoid entering confidential information.
@@ -192,7 +197,7 @@ class _TriggerState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         :param pulumi.Input[str] trigger_url: The endpoint that listens to trigger events.
         """
         if actions is not None:
@@ -255,6 +260,9 @@ class _TriggerState:
     @property
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the connection resource used to get details for triggered events.
+        """
         return pulumi.get(self, "connection_id")
 
     @connection_id.setter
@@ -397,7 +405,7 @@ class _TriggerState:
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         """
         return pulumi.get(self, "trigger_source")
 
@@ -454,6 +462,7 @@ class Trigger(pulumi.CustomResource):
                     include=oci.dev_ops.TriggerActionFilterIncludeArgs(
                         base_ref=var["trigger_actions_filter_include_base_ref"],
                         head_ref=var["trigger_actions_filter_include_head_ref"],
+                        repository_name=oci_devops_repository["test_repository"]["name"],
                     ),
                 ),
             )],
@@ -481,13 +490,14 @@ class Trigger(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]] actions: (Updatable) The list of actions that are to be performed for this trigger.
+        :param pulumi.Input[str] connection_id: (Updatable) The OCID of the connection resource used to get details for triggered events.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the trigger.
         :param pulumi.Input[str] display_name: (Updatable) Trigger display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] project_id: The OCID of the DevOps project to which the trigger belongs to.
         :param pulumi.Input[str] repository_id: (Updatable) The OCID of the DevOps code repository.
-        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         """
         ...
     @overload
@@ -516,6 +526,7 @@ class Trigger(pulumi.CustomResource):
                     include=oci.dev_ops.TriggerActionFilterIncludeArgs(
                         base_ref=var["trigger_actions_filter_include_base_ref"],
                         head_ref=var["trigger_actions_filter_include_head_ref"],
+                        repository_name=oci_devops_repository["test_repository"]["name"],
                     ),
                 ),
             )],
@@ -630,6 +641,7 @@ class Trigger(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]] actions: (Updatable) The list of actions that are to be performed for this trigger.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the trigger.
+        :param pulumi.Input[str] connection_id: (Updatable) The OCID of the connection resource used to get details for triggered events.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the trigger.
         :param pulumi.Input[str] display_name: (Updatable) Trigger display name. Avoid entering confidential information.
@@ -641,7 +653,7 @@ class Trigger(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         :param pulumi.Input[str] trigger_url: The endpoint that listens to trigger events.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -685,6 +697,9 @@ class Trigger(pulumi.CustomResource):
     @property
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The OCID of the connection resource used to get details for triggered events.
+        """
         return pulumi.get(self, "connection_id")
 
     @property
@@ -779,7 +794,7 @@ class Trigger(pulumi.CustomResource):
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> pulumi.Output[str]:
         """
-        (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         """
         return pulumi.get(self, "trigger_source")
 

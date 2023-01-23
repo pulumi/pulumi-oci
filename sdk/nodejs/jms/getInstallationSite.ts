@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -33,11 +34,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstallationSite(args: GetInstallationSiteArgs, opts?: pulumi.InvokeOptions): Promise<GetInstallationSiteResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getInstallationSite:getInstallationSite", {
         "applicationId": args.applicationId,
         "fleetId": args.fleetId,
@@ -136,9 +134,35 @@ export interface GetInstallationSiteResult {
     readonly timeEnd?: string;
     readonly timeStart?: string;
 }
-
+/**
+ * This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
+ *
+ * List Java installation sites in a Fleet filtered by query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFleetInstallationSite = oci.Jms.getInstallationSite({
+ *     fleetId: oci_jms_fleet.test_fleet.id,
+ *     applicationId: oci_dataflow_application.test_application.id,
+ *     installationPath: _var.fleet_installation_site_installation_path,
+ *     jreDistribution: _var.fleet_installation_site_jre_distribution,
+ *     jreSecurityStatus: _var.fleet_installation_site_jre_security_status,
+ *     jreVendor: _var.fleet_installation_site_jre_vendor,
+ *     jreVersion: _var.fleet_installation_site_jre_version,
+ *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
+ *     osFamilies: _var.fleet_installation_site_os_family,
+ *     pathContains: _var.fleet_installation_site_path_contains,
+ *     timeEnd: _var.fleet_installation_site_time_end,
+ *     timeStart: _var.fleet_installation_site_time_start,
+ * });
+ * ```
+ */
 export function getInstallationSiteOutput(args: GetInstallationSiteOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstallationSiteResult> {
-    return pulumi.output(args).apply(a => getInstallationSite(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstallationSite(a, opts))
 }
 
 /**

@@ -41,7 +41,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVbInstancesResult> InvokeAsync(GetVbInstancesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVbInstancesResult>("oci:VisualBuilder/getVbInstances:getVbInstances", args ?? new GetVbInstancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVbInstancesResult>("oci:VisualBuilder/getVbInstances:getVbInstances", args ?? new GetVbInstancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVbInstancesResult> Invoke(GetVbInstancesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVbInstancesResult>("oci:VisualBuilder/getVbInstances:getVbInstances", args ?? new GetVbInstancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVbInstancesResult>("oci:VisualBuilder/getVbInstances:getVbInstances", args ?? new GetVbInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkRequests(args: GetWorkRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkRequestsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getWorkRequests:getWorkRequests", {
         "clusterId": args.clusterId,
         "compartmentId": args.compartmentId,
@@ -93,9 +91,28 @@ export interface GetWorkRequestsResult {
      */
     readonly workRequests: outputs.ContainerEngine.GetWorkRequestsWorkRequest[];
 }
-
+/**
+ * This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
+ *
+ * List all work requests in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWorkRequests = oci.ContainerEngine.getWorkRequests({
+ *     compartmentId: _var.compartment_id,
+ *     clusterId: oci_containerengine_cluster.test_cluster.id,
+ *     resourceId: oci_containerengine_resource.test_resource.id,
+ *     resourceType: _var.work_request_resource_type,
+ *     statuses: _var.work_request_status,
+ * });
+ * ```
+ */
 export function getWorkRequestsOutput(args: GetWorkRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkRequestsResult> {
-    return pulumi.output(args).apply(a => getWorkRequests(a, opts))
+    return pulumi.output(args).apply((a: any) => getWorkRequests(a, opts))
 }
 
 /**

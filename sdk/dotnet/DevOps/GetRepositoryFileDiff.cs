@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryFileDiffResult> InvokeAsync(GetRepositoryFileDiffArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryFileDiffResult>("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", args ?? new GetRepositoryFileDiffArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryFileDiffResult>("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", args ?? new GetRepositoryFileDiffArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository File Diff resource in Oracle Cloud Infrastructure Devops service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryFileDiffResult> Invoke(GetRepositoryFileDiffInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryFileDiffResult>("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", args ?? new GetRepositoryFileDiffInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryFileDiffResult>("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", args ?? new GetRepositoryFileDiffInvokeArgs(), options.WithDefaults());
     }
 
 

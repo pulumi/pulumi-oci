@@ -22,18 +22,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## ]
- * 
- * ***
- * subcategory: &#34;Core&#34;
- * layout: &#34;oci&#34;
- * page_title: &#34;Oracle Cloud Infrastructure: oci.Core.BootVolume&#34;
- * sidebar_current: &#34;docs-oci-resource-core-boot_volume&#34;
- * description: |-
- *   Provides the Boot Volume resource in Oracle Cloud Infrastructure Core service
- * ---
- * 
- * # oci.Core.BootVolume
  * This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
  * 
  * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.

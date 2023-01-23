@@ -22,6 +22,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyCorResult> Cors;
         /// <summary>
+        /// Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationResult> DynamicAuthentications;
+        /// <summary>
         /// Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyMutualTlResult> MutualTls;
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyCorResult> cors,
 
+            ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationResult> dynamicAuthentications,
+
             ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyMutualTlResult> mutualTls,
 
             ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyRateLimitingResult> rateLimitings,
@@ -48,6 +54,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         {
             Authentications = authentications;
             Cors = cors;
+            DynamicAuthentications = dynamicAuthentications;
             MutualTls = mutualTls;
             RateLimitings = rateLimitings;
             UsagePlans = usagePlans;

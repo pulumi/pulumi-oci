@@ -39,7 +39,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedInstanceGroupResult> InvokeAsync(GetManagedInstanceGroupArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceGroupResult>("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", args ?? new GetManagedInstanceGroupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceGroupResult>("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", args ?? new GetManagedInstanceGroupArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Instance Group resource in Oracle Cloud Infrastructure OS Management service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedInstanceGroupResult> Invoke(GetManagedInstanceGroupInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupResult>("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", args ?? new GetManagedInstanceGroupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupResult>("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", args ?? new GetManagedInstanceGroupInvokeArgs(), options.WithDefaults());
     }
 
 

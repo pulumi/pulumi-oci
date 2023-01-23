@@ -63,8 +63,10 @@ type LookupBdsInstanceResult struct {
 	CloudSqlDetails      []GetBdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
 	ClusterAdminPassword string                         `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
-	ClusterDetails   []GetBdsInstanceClusterDetail `pulumi:"clusterDetails"`
-	ClusterPublicKey string                        `pulumi:"clusterPublicKey"`
+	ClusterDetails []GetBdsInstanceClusterDetail `pulumi:"clusterDetails"`
+	// Profile of the Big Data Service cluster.
+	ClusterProfile   string `pulumi:"clusterProfile"`
+	ClusterPublicKey string `pulumi:"clusterPublicKey"`
 	// Version of the Hadoop distribution.
 	ClusterVersion string `pulumi:"clusterVersion"`
 	// The OCID of the compartment.
@@ -75,13 +77,15 @@ type LookupBdsInstanceResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the node.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName string                   `pulumi:"displayName"`
+	EdgeNodes   []GetBdsInstanceEdgeNode `pulumi:"edgeNodes"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
 	Id string `pulumi:"id"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
 	IsCloudSqlConfigured bool `pulumi:"isCloudSqlConfigured"`
+	IsForceStopJobs      bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
@@ -167,6 +171,11 @@ func (o LookupBdsInstanceResultOutput) ClusterDetails() GetBdsInstanceClusterDet
 	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceClusterDetail { return v.ClusterDetails }).(GetBdsInstanceClusterDetailArrayOutput)
 }
 
+// Profile of the Big Data Service cluster.
+func (o LookupBdsInstanceResultOutput) ClusterProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.ClusterProfile }).(pulumi.StringOutput)
+}
+
 func (o LookupBdsInstanceResultOutput) ClusterPublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.ClusterPublicKey }).(pulumi.StringOutput)
 }
@@ -200,6 +209,10 @@ func (o LookupBdsInstanceResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o LookupBdsInstanceResultOutput) EdgeNodes() GetBdsInstanceEdgeNodeArrayOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceEdgeNode { return v.EdgeNodes }).(GetBdsInstanceEdgeNodeArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 func (o LookupBdsInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -213,6 +226,10 @@ func (o LookupBdsInstanceResultOutput) Id() pulumi.StringOutput {
 // Boolean flag specifying whether or not Cloud SQL should be configured.
 func (o LookupBdsInstanceResultOutput) IsCloudSqlConfigured() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsCloudSqlConfigured }).(pulumi.BoolOutput)
+}
+
+func (o LookupBdsInstanceResultOutput) IsForceStopJobs() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsForceStopJobs }).(pulumi.BoolOutput)
 }
 
 // Boolean flag specifying whether or not the cluster is highly available (HA)

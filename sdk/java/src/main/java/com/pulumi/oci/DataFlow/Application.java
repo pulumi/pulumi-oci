@@ -58,7 +58,6 @@ import javax.annotation.Nullable;
  *             .displayName(var_.application_display_name())
  *             .driverShape(var_.application_driver_shape())
  *             .executorShape(var_.application_executor_shape())
- *             .fileUri(var_.application_file_uri())
  *             .language(var_.application_language())
  *             .numExecutors(var_.application_num_executors())
  *             .sparkVersion(var_.application_spark_version())
@@ -81,8 +80,11 @@ import javax.annotation.Nullable;
  *                 .memoryInGbs(var_.application_executor_shape_config_memory_in_gbs())
  *                 .ocpus(var_.application_executor_shape_config_ocpus())
  *                 .build())
+ *             .fileUri(var_.application_file_uri())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .idleTimeoutInMinutes(var_.application_idle_timeout_in_minutes())
  *             .logsBucketUri(var_.application_logs_bucket_uri())
+ *             .maxDurationInMinutes(var_.application_max_duration_in_minutes())
  *             .metastoreId(var_.metastore_id())
  *             .parameters(ApplicationParameterArgs.builder()
  *                 .name(var_.application_parameters_name())
@@ -123,14 +125,14 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.applicationLogConfig;
     }
     /**
-     * (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     @Export(name="archiveUri", type=String.class, parameters={})
     private Output</* @Nullable */ String> archiveUri;
 
     /**
-     * @return (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     public Output<Optional<String>> archiveUri() {
@@ -333,6 +335,20 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     * 
+     */
+    @Export(name="idleTimeoutInMinutes", type=String.class, parameters={})
+    private Output<String> idleTimeoutInMinutes;
+
+    /**
+     * @return (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     * 
+     */
+    public Output<String> idleTimeoutInMinutes() {
+        return this.idleTimeoutInMinutes;
+    }
+    /**
      * (Updatable) The Spark language.
      * 
      */
@@ -359,6 +375,20 @@ public class Application extends com.pulumi.resources.CustomResource {
      */
     public Output<String> logsBucketUri() {
         return this.logsBucketUri;
+    }
+    /**
+     * (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     * 
+     */
+    @Export(name="maxDurationInMinutes", type=String.class, parameters={})
+    private Output<String> maxDurationInMinutes;
+
+    /**
+     * @return (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     * 
+     */
+    public Output<String> maxDurationInMinutes() {
+        return this.maxDurationInMinutes;
     }
     /**
      * (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.

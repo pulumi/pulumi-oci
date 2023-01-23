@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeploymentsResult> InvokeAsync(GetDeploymentsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentsResult>("oci:DevOps/getDeployments:getDeployments", args ?? new GetDeploymentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentsResult>("oci:DevOps/getDeployments:getDeployments", args ?? new GetDeploymentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Deployments in Oracle Cloud Infrastructure Devops service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeploymentsResult> Invoke(GetDeploymentsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeploymentsResult>("oci:DevOps/getDeployments:getDeployments", args ?? new GetDeploymentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentsResult>("oci:DevOps/getDeployments:getDeployments", args ?? new GetDeploymentsInvokeArgs(), options.WithDefaults());
     }
 
 

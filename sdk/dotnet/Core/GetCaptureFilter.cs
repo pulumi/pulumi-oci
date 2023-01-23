@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCaptureFilterResult> InvokeAsync(GetCaptureFilterArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCaptureFilterResult>("oci:Core/getCaptureFilter:getCaptureFilter", args ?? new GetCaptureFilterArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCaptureFilterResult>("oci:Core/getCaptureFilter:getCaptureFilter", args ?? new GetCaptureFilterArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCaptureFilterResult> Invoke(GetCaptureFilterInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCaptureFilterResult>("oci:Core/getCaptureFilter:getCaptureFilter", args ?? new GetCaptureFilterInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCaptureFilterResult>("oci:Core/getCaptureFilter:getCaptureFilter", args ?? new GetCaptureFilterInvokeArgs(), options.WithDefaults());
     }
 
 

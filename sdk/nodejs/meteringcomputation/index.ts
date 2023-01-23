@@ -5,25 +5,71 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./customTable";
-export * from "./getConfiguration";
-export * from "./getCustomTable";
-export * from "./getCustomTables";
-export * from "./getQueries";
-export * from "./getQuery";
-export * from "./getSchedule";
-export * from "./getScheduledRun";
-export * from "./getScheduledRuns";
-export * from "./getSchedules";
-export * from "./query";
-export * from "./schedule";
-export * from "./usage";
+export { CustomTableArgs, CustomTableState } from "./customTable";
+export type CustomTable = import("./customTable").CustomTable;
+export const CustomTable: typeof import("./customTable").CustomTable = null as any;
+utilities.lazyLoad(exports, ["CustomTable"], () => require("./customTable"));
 
-// Import resources to register:
-import { CustomTable } from "./customTable";
-import { Query } from "./query";
-import { Schedule } from "./schedule";
-import { Usage } from "./usage";
+export { GetConfigurationArgs, GetConfigurationResult, GetConfigurationOutputArgs } from "./getConfiguration";
+export const getConfiguration: typeof import("./getConfiguration").getConfiguration = null as any;
+export const getConfigurationOutput: typeof import("./getConfiguration").getConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getConfiguration","getConfigurationOutput"], () => require("./getConfiguration"));
+
+export { GetCustomTableArgs, GetCustomTableResult, GetCustomTableOutputArgs } from "./getCustomTable";
+export const getCustomTable: typeof import("./getCustomTable").getCustomTable = null as any;
+export const getCustomTableOutput: typeof import("./getCustomTable").getCustomTableOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomTable","getCustomTableOutput"], () => require("./getCustomTable"));
+
+export { GetCustomTablesArgs, GetCustomTablesResult, GetCustomTablesOutputArgs } from "./getCustomTables";
+export const getCustomTables: typeof import("./getCustomTables").getCustomTables = null as any;
+export const getCustomTablesOutput: typeof import("./getCustomTables").getCustomTablesOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomTables","getCustomTablesOutput"], () => require("./getCustomTables"));
+
+export { GetQueriesArgs, GetQueriesResult, GetQueriesOutputArgs } from "./getQueries";
+export const getQueries: typeof import("./getQueries").getQueries = null as any;
+export const getQueriesOutput: typeof import("./getQueries").getQueriesOutput = null as any;
+utilities.lazyLoad(exports, ["getQueries","getQueriesOutput"], () => require("./getQueries"));
+
+export { GetQueryArgs, GetQueryResult, GetQueryOutputArgs } from "./getQuery";
+export const getQuery: typeof import("./getQuery").getQuery = null as any;
+export const getQueryOutput: typeof import("./getQuery").getQueryOutput = null as any;
+utilities.lazyLoad(exports, ["getQuery","getQueryOutput"], () => require("./getQuery"));
+
+export { GetScheduleArgs, GetScheduleResult, GetScheduleOutputArgs } from "./getSchedule";
+export const getSchedule: typeof import("./getSchedule").getSchedule = null as any;
+export const getScheduleOutput: typeof import("./getSchedule").getScheduleOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedule","getScheduleOutput"], () => require("./getSchedule"));
+
+export { GetScheduledRunArgs, GetScheduledRunResult, GetScheduledRunOutputArgs } from "./getScheduledRun";
+export const getScheduledRun: typeof import("./getScheduledRun").getScheduledRun = null as any;
+export const getScheduledRunOutput: typeof import("./getScheduledRun").getScheduledRunOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduledRun","getScheduledRunOutput"], () => require("./getScheduledRun"));
+
+export { GetScheduledRunsArgs, GetScheduledRunsResult, GetScheduledRunsOutputArgs } from "./getScheduledRuns";
+export const getScheduledRuns: typeof import("./getScheduledRuns").getScheduledRuns = null as any;
+export const getScheduledRunsOutput: typeof import("./getScheduledRuns").getScheduledRunsOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduledRuns","getScheduledRunsOutput"], () => require("./getScheduledRuns"));
+
+export { GetSchedulesArgs, GetSchedulesResult, GetSchedulesOutputArgs } from "./getSchedules";
+export const getSchedules: typeof import("./getSchedules").getSchedules = null as any;
+export const getSchedulesOutput: typeof import("./getSchedules").getSchedulesOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedules","getSchedulesOutput"], () => require("./getSchedules"));
+
+export { QueryArgs, QueryState } from "./query";
+export type Query = import("./query").Query;
+export const Query: typeof import("./query").Query = null as any;
+utilities.lazyLoad(exports, ["Query"], () => require("./query"));
+
+export { ScheduleArgs, ScheduleState } from "./schedule";
+export type Schedule = import("./schedule").Schedule;
+export const Schedule: typeof import("./schedule").Schedule = null as any;
+utilities.lazyLoad(exports, ["Schedule"], () => require("./schedule"));
+
+export { UsageArgs, UsageState } from "./usage";
+export type Usage = import("./usage").Usage;
+export const Usage: typeof import("./usage").Usage = null as any;
+utilities.lazyLoad(exports, ["Usage"], () => require("./usage"));
+
 
 const _module = {
     version: utilities.getVersion(),

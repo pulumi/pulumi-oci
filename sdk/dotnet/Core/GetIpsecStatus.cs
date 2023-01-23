@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIpsecStatusResult> InvokeAsync(GetIpsecStatusArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIpsecStatusResult>("oci:Core/getIpsecStatus:getIpsecStatus", args ?? new GetIpsecStatusArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecStatusResult>("oci:Core/getIpsecStatus:getIpsecStatus", args ?? new GetIpsecStatusArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ip Sec Connection Device Status resource in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIpsecStatusResult> Invoke(GetIpsecStatusInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIpsecStatusResult>("oci:Core/getIpsecStatus:getIpsecStatus", args ?? new GetIpsecStatusInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecStatusResult>("oci:Core/getIpsecStatus:getIpsecStatus", args ?? new GetIpsecStatusInvokeArgs(), options.WithDefaults());
     }
 
 

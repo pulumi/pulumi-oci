@@ -397,6 +397,21 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * 
+     */
+    @Import(name="parentId")
+    private @Nullable Output<String> parentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * 
+     */
+    public Optional<Output<String>> parentId() {
+        return Optional.ofNullable(this.parentId);
+    }
+
+    /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
@@ -409,6 +424,21 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<Integer>> processorCount() {
         return Optional.ofNullable(this.processorCount);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
+    @Import(name="rootId")
+    private @Nullable Output<String> rootId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
+    public Optional<Output<String>> rootId() {
+        return Optional.ofNullable(this.rootId);
     }
 
     /**
@@ -529,7 +559,9 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
         this.opsiPrivateEndpointId = $.opsiPrivateEndpointId;
+        this.parentId = $.parentId;
         this.processorCount = $.processorCount;
+        this.rootId = $.rootId;
         this.serviceName = $.serviceName;
         this.state = $.state;
         this.status = $.status;
@@ -1082,6 +1114,27 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param parentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parentId(@Nullable Output<String> parentId) {
+            $.parentId = parentId;
+            return this;
+        }
+
+        /**
+         * @param parentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parentId(String parentId) {
+            return parentId(Output.of(parentId));
+        }
+
+        /**
          * @param processorCount Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
          * 
          * @return builder
@@ -1100,6 +1153,27 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
          */
         public Builder processorCount(Integer processorCount) {
             return processorCount(Output.of(processorCount));
+        }
+
+        /**
+         * @param rootId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rootId(@Nullable Output<String> rootId) {
+            $.rootId = rootId;
+            return this;
+        }
+
+        /**
+         * @param rootId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rootId(String rootId) {
+            return rootId(Output.of(rootId));
         }
 
         /**

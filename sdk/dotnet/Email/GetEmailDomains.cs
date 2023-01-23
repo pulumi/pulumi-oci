@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEmailDomainsResult> InvokeAsync(GetEmailDomainsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEmailDomainsResult>("oci:Email/getEmailDomains:getEmailDomains", args ?? new GetEmailDomainsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEmailDomainsResult>("oci:Email/getEmailDomains:getEmailDomains", args ?? new GetEmailDomainsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Email Domains in Oracle Cloud Infrastructure Email service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEmailDomainsResult> Invoke(GetEmailDomainsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEmailDomainsResult>("oci:Email/getEmailDomains:getEmailDomains", args ?? new GetEmailDomainsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEmailDomainsResult>("oci:Email/getEmailDomains:getEmailDomains", args ?? new GetEmailDomainsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeBackupPolicyAssignments(args: GetVolumeBackupPolicyAssignmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeBackupPolicyAssignmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", {
         "assetId": args.assetId,
         "filters": args.filters,
@@ -64,9 +62,26 @@ export interface GetVolumeBackupPolicyAssignmentsResult {
      */
     readonly volumeBackupPolicyAssignments: outputs.Core.GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment[];
 }
-
+/**
+ * This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the volume backup policy assignment for the specified volume. The
+ * `assetId` query parameter is required, and the returned list will contain at most
+ * one item, since volume can only have one volume backup policy assigned at a time.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolumeBackupPolicyAssignments = oci.Core.getVolumeBackupPolicyAssignments({
+ *     assetId: oci_core_volume.test_volume.id,
+ * });
+ * ```
+ */
 export function getVolumeBackupPolicyAssignmentsOutput(args: GetVolumeBackupPolicyAssignmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeBackupPolicyAssignmentsResult> {
-    return pulumi.output(args).apply(a => getVolumeBackupPolicyAssignments(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolumeBackupPolicyAssignments(a, opts))
 }
 
 /**

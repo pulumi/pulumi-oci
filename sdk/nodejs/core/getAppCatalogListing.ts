@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppCatalogListing(args: GetAppCatalogListingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getAppCatalogListing:getAppCatalogListing", {
         "listingId": args.listingId,
     }, opts);
@@ -82,9 +79,24 @@ export interface GetAppCatalogListingResult {
      */
     readonly timePublished: string;
 }
-
+/**
+ * This data source provides details about a specific App Catalog Listing resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified listing.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAppCatalogListing = oci.Core.getAppCatalogListing({
+ *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
+ * });
+ * ```
+ */
 export function getAppCatalogListingOutput(args: GetAppCatalogListingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResult> {
-    return pulumi.output(args).apply(a => getAppCatalogListing(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppCatalogListing(a, opts))
 }
 
 /**

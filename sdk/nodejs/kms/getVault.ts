@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVault(args: GetVaultArgs, opts?: pulumi.InvokeOptions): Promise<GetVaultResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getVault:getVault", {
         "vaultId": args.vaultId,
     }, opts);
@@ -121,9 +119,29 @@ export interface GetVaultResult {
      */
     readonly vaultType: string;
 }
-
+/**
+ * This data source provides details about a specific Vault resource in Oracle Cloud Infrastructure Kms service.
+ *
+ * Gets the specified vault's configuration information.
+ *
+ * As a provisioning operation, this call is subject to a Key Management limit that applies to
+ * the total number of requests across all provisioning read operations. Key Management might
+ * throttle this call to reject an otherwise valid request when the total rate of provisioning
+ * read operations exceeds 10 requests per second for a given tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVault = oci.Kms.getVault({
+ *     vaultId: oci_kms_vault.test_vault.id,
+ * });
+ * ```
+ */
 export function getVaultOutput(args: GetVaultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVaultResult> {
-    return pulumi.output(args).apply(a => getVault(a, opts))
+    return pulumi.output(args).apply((a: any) => getVault(a, opts))
 }
 
 /**

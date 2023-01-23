@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPublicationPackages(args: GetPublicationPackagesArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicationPackagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getPublicationPackages:getPublicationPackages", {
         "filters": args.filters,
         "packageType": args.packageType,
@@ -76,9 +74,26 @@ export interface GetPublicationPackagesResult {
      */
     readonly publicationPackages: outputs.Marketplace.GetPublicationPackagesPublicationPackage[];
 }
-
+/**
+ * This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Lists the packages in the specified publication.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPublicationPackages = oci.Marketplace.getPublicationPackages({
+ *     publicationId: oci_marketplace_publication.test_publication.id,
+ *     packageType: _var.publication_package_package_type,
+ *     packageVersion: _var.publication_package_package_version,
+ * });
+ * ```
+ */
 export function getPublicationPackagesOutput(args: GetPublicationPackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicationPackagesResult> {
-    return pulumi.output(args).apply(a => getPublicationPackages(a, opts))
+    return pulumi.output(args).apply((a: any) => getPublicationPackages(a, opts))
 }
 
 /**

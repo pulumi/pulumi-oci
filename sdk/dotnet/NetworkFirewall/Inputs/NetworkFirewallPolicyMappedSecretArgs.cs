@@ -12,13 +12,14 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
 
     public sealed class NetworkFirewallPolicyMappedSecretArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Source of the secrets, where the secrets are stored.
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of the secrets mapped based on the policy.
-        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        /// (Updatable) Type of the url lists based on the policy
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

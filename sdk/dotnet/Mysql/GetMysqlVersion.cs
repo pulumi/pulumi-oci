@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMysqlVersionResult> InvokeAsync(GetMysqlVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMysqlVersionResult>("oci:Mysql/getMysqlVersion:getMysqlVersion", args ?? new GetMysqlVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMysqlVersionResult>("oci:Mysql/getMysqlVersion:getMysqlVersion", args ?? new GetMysqlVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMysqlVersionResult> Invoke(GetMysqlVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMysqlVersionResult>("oci:Mysql/getMysqlVersion:getMysqlVersion", args ?? new GetMysqlVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlVersionResult>("oci:Mysql/getMysqlVersion:getMysqlVersion", args ?? new GetMysqlVersionInvokeArgs(), options.WithDefaults());
     }
 
 

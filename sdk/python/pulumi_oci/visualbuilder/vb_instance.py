@@ -606,7 +606,7 @@ class VbInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            __props__.__dict__["idcs_open_id"] = idcs_open_id
+            __props__.__dict__["idcs_open_id"] = None if idcs_open_id is None else pulumi.Output.secret(idcs_open_id)
             __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
             if node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'node_count'")
@@ -617,6 +617,8 @@ class VbInstance(pulumi.CustomResource):
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["idcsOpenId"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(VbInstance, __self__).__init__(
             'oci:VisualBuilder/vbInstance:VbInstance',
             resource_name,

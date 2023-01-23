@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadataIormConfig(args: GetExadataIormConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataIormConfigResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadataIormConfig:getExadataIormConfig", {
         "dbSystemId": args.dbSystemId,
     }, opts);
@@ -73,9 +71,32 @@ export interface GetExadataIormConfigResult {
      */
     readonly state: string;
 }
-
+/**
+ * This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the IORM configuration settings for the specified cloud Exadata DB system.
+ * All Exadata service instances have default IORM settings.
+ *
+ * **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+ *
+ * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+ *
+ * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Exadata systems using the
+ * new resource model.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExadataIormConfig = oci.Database.getExadataIormConfig({
+ *     dbSystemId: oci_database_db_system.test_db_system.id,
+ * });
+ * ```
+ */
 export function getExadataIormConfigOutput(args: GetExadataIormConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataIormConfigResult> {
-    return pulumi.output(args).apply(a => getExadataIormConfig(a, opts))
+    return pulumi.output(args).apply((a: any) => getExadataIormConfig(a, opts))
 }
 
 /**

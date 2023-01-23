@@ -42,7 +42,7 @@ namespace Pulumi.Oci.OsubSubscription
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCommitmentsResult> InvokeAsync(GetCommitmentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCommitmentsResult>("oci:OsubSubscription/getCommitments:getCommitments", args ?? new GetCommitmentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCommitmentsResult>("oci:OsubSubscription/getCommitments:getCommitments", args ?? new GetCommitmentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.OsubSubscription
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCommitmentsResult> Invoke(GetCommitmentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCommitmentsResult>("oci:OsubSubscription/getCommitments:getCommitments", args ?? new GetCommitmentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCommitmentsResult>("oci:OsubSubscription/getCommitments:getCommitments", args ?? new GetCommitmentsInvokeArgs(), options.WithDefaults());
     }
 
 

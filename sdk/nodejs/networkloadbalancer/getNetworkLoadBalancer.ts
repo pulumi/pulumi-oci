@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkLoadBalancer(args: GetNetworkLoadBalancerArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkLoadBalancerResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", {
         "networkLoadBalancerId": args.networkLoadBalancerId,
     }, opts);
@@ -113,9 +111,24 @@ export interface GetNetworkLoadBalancerResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
+ *
+ * Retrieves network load balancer configuration information by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkLoadBalancer = oci.NetworkLoadBalancer.getNetworkLoadBalancer({
+ *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
+ * });
+ * ```
+ */
 export function getNetworkLoadBalancerOutput(args: GetNetworkLoadBalancerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancerResult> {
-    return pulumi.output(args).apply(a => getNetworkLoadBalancer(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkLoadBalancer(a, opts))
 }
 
 /**

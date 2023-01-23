@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
 //
-// Creates a new Data Integration workspace ready for performing data integration tasks.
+// Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the [GetWorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/data-integration/latest/WorkRequest/GetWorkRequest) API.
 //
 // ## Example Usage
 //
@@ -35,13 +35,19 @@ import (
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description:   pulumi.Any(_var.Workspace_description),
-//				DnsServerIp:   pulumi.Any(_var.Workspace_dns_server_ip),
-//				DnsServerZone: pulumi.Any(_var.Workspace_dns_server_zone),
+//				Description:           pulumi.Any(_var.Workspace_description),
+//				DnsServerIp:           pulumi.Any(_var.Workspace_dns_server_ip),
+//				DnsServerZone:         pulumi.Any(_var.Workspace_dns_server_zone),
+//				EndpointCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+//				EndpointId:            pulumi.Any(oci_dataintegration_endpoint.Test_endpoint.Id),
+//				EndpointName:          pulumi.Any(_var.Workspace_endpoint_name),
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsPrivateNetworkEnabled: pulumi.Any(_var.Workspace_is_private_network_enabled),
+//				RegistryCompartmentId:   pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+//				RegistryId:              pulumi.Any(oci_data_connectivity_registry.Test_registry.Id),
+//				RegistryName:            pulumi.Any(oci_data_connectivity_registry.Test_registry.Name),
 //				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				VcnId:                   pulumi.Any(oci_core_vcn.Test_vcn.Id),
 //			})
@@ -78,12 +84,24 @@ type Workspace struct {
 	DnsServerIp pulumi.StringOutput `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
 	DnsServerZone pulumi.StringOutput `pulumi:"dnsServerZone"`
+	// DCMS PRivate Endpoint Compartment Identifier
+	EndpointCompartmentId pulumi.StringOutput `pulumi:"endpointCompartmentId"`
+	// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+	EndpointId pulumi.StringOutput `pulumi:"endpointId"`
+	// DCMS Private Endpoint Name
+	EndpointName pulumi.StringOutput `pulumi:"endpointName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags     pulumi.MapOutput     `pulumi:"freeformTags"`
 	IsForceOperation pulumi.BoolPtrOutput `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
-	IsPrivateNetworkEnabled pulumi.BoolOutput   `pulumi:"isPrivateNetworkEnabled"`
-	QuiesceTimeout          pulumi.IntPtrOutput `pulumi:"quiesceTimeout"`
+	IsPrivateNetworkEnabled pulumi.BoolOutput `pulumi:"isPrivateNetworkEnabled"`
+	QuiesceTimeout          pulumi.IntOutput  `pulumi:"quiesceTimeout"`
+	// DCMS Data Asset Registry Compartment Identifier
+	RegistryCompartmentId pulumi.StringOutput `pulumi:"registryCompartmentId"`
+	// DCMS Data Asset Registry ID to which the workspace is associated
+	RegistryId pulumi.StringOutput `pulumi:"registryId"`
+	// DCMS Data Asset Registry display name
+	RegistryName pulumi.StringOutput `pulumi:"registryName"`
 	// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
 	State pulumi.StringOutput `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -145,12 +163,24 @@ type workspaceState struct {
 	DnsServerIp *string `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
 	DnsServerZone *string `pulumi:"dnsServerZone"`
+	// DCMS PRivate Endpoint Compartment Identifier
+	EndpointCompartmentId *string `pulumi:"endpointCompartmentId"`
+	// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+	EndpointId *string `pulumi:"endpointId"`
+	// DCMS Private Endpoint Name
+	EndpointName *string `pulumi:"endpointName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags     map[string]interface{} `pulumi:"freeformTags"`
 	IsForceOperation *bool                  `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled *bool `pulumi:"isPrivateNetworkEnabled"`
 	QuiesceTimeout          *int  `pulumi:"quiesceTimeout"`
+	// DCMS Data Asset Registry Compartment Identifier
+	RegistryCompartmentId *string `pulumi:"registryCompartmentId"`
+	// DCMS Data Asset Registry ID to which the workspace is associated
+	RegistryId *string `pulumi:"registryId"`
+	// DCMS Data Asset Registry display name
+	RegistryName *string `pulumi:"registryName"`
 	// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
 	State *string `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -178,12 +208,24 @@ type WorkspaceState struct {
 	DnsServerIp pulumi.StringPtrInput
 	// The DNS zone of the custom DNS to use to resolve names.
 	DnsServerZone pulumi.StringPtrInput
+	// DCMS PRivate Endpoint Compartment Identifier
+	EndpointCompartmentId pulumi.StringPtrInput
+	// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+	EndpointId pulumi.StringPtrInput
+	// DCMS Private Endpoint Name
+	EndpointName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags     pulumi.MapInput
 	IsForceOperation pulumi.BoolPtrInput
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled pulumi.BoolPtrInput
 	QuiesceTimeout          pulumi.IntPtrInput
+	// DCMS Data Asset Registry Compartment Identifier
+	RegistryCompartmentId pulumi.StringPtrInput
+	// DCMS Data Asset Registry ID to which the workspace is associated
+	RegistryId pulumi.StringPtrInput
+	// DCMS Data Asset Registry display name
+	RegistryName pulumi.StringPtrInput
 	// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
 	State pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -215,12 +257,24 @@ type workspaceArgs struct {
 	DnsServerIp *string `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
 	DnsServerZone *string `pulumi:"dnsServerZone"`
+	// DCMS PRivate Endpoint Compartment Identifier
+	EndpointCompartmentId *string `pulumi:"endpointCompartmentId"`
+	// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+	EndpointId *string `pulumi:"endpointId"`
+	// DCMS Private Endpoint Name
+	EndpointName *string `pulumi:"endpointName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags     map[string]interface{} `pulumi:"freeformTags"`
 	IsForceOperation *bool                  `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled *bool `pulumi:"isPrivateNetworkEnabled"`
 	QuiesceTimeout          *int  `pulumi:"quiesceTimeout"`
+	// DCMS Data Asset Registry Compartment Identifier
+	RegistryCompartmentId *string `pulumi:"registryCompartmentId"`
+	// DCMS Data Asset Registry ID to which the workspace is associated
+	RegistryId *string `pulumi:"registryId"`
+	// DCMS Data Asset Registry display name
+	RegistryName *string `pulumi:"registryName"`
 	// The OCID of the subnet for customer connected databases.
 	SubnetId *string `pulumi:"subnetId"`
 	// The OCID of the VCN the subnet is in.
@@ -241,12 +295,24 @@ type WorkspaceArgs struct {
 	DnsServerIp pulumi.StringPtrInput
 	// The DNS zone of the custom DNS to use to resolve names.
 	DnsServerZone pulumi.StringPtrInput
+	// DCMS PRivate Endpoint Compartment Identifier
+	EndpointCompartmentId pulumi.StringPtrInput
+	// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+	EndpointId pulumi.StringPtrInput
+	// DCMS Private Endpoint Name
+	EndpointName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags     pulumi.MapInput
 	IsForceOperation pulumi.BoolPtrInput
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled pulumi.BoolPtrInput
 	QuiesceTimeout          pulumi.IntPtrInput
+	// DCMS Data Asset Registry Compartment Identifier
+	RegistryCompartmentId pulumi.StringPtrInput
+	// DCMS Data Asset Registry ID to which the workspace is associated
+	RegistryId pulumi.StringPtrInput
+	// DCMS Data Asset Registry display name
+	RegistryName pulumi.StringPtrInput
 	// The OCID of the subnet for customer connected databases.
 	SubnetId pulumi.StringPtrInput
 	// The OCID of the VCN the subnet is in.
@@ -370,6 +436,21 @@ func (o WorkspaceOutput) DnsServerZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.DnsServerZone }).(pulumi.StringOutput)
 }
 
+// DCMS PRivate Endpoint Compartment Identifier
+func (o WorkspaceOutput) EndpointCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.EndpointCompartmentId }).(pulumi.StringOutput)
+}
+
+// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+func (o WorkspaceOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.EndpointId }).(pulumi.StringOutput)
+}
+
+// DCMS Private Endpoint Name
+func (o WorkspaceOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.EndpointName }).(pulumi.StringOutput)
+}
+
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o WorkspaceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Workspace) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
@@ -384,8 +465,23 @@ func (o WorkspaceOutput) IsPrivateNetworkEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Workspace) pulumi.BoolOutput { return v.IsPrivateNetworkEnabled }).(pulumi.BoolOutput)
 }
 
-func (o WorkspaceOutput) QuiesceTimeout() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.IntPtrOutput { return v.QuiesceTimeout }).(pulumi.IntPtrOutput)
+func (o WorkspaceOutput) QuiesceTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.IntOutput { return v.QuiesceTimeout }).(pulumi.IntOutput)
+}
+
+// DCMS Data Asset Registry Compartment Identifier
+func (o WorkspaceOutput) RegistryCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.RegistryCompartmentId }).(pulumi.StringOutput)
+}
+
+// DCMS Data Asset Registry ID to which the workspace is associated
+func (o WorkspaceOutput) RegistryId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.RegistryId }).(pulumi.StringOutput)
+}
+
+// DCMS Data Asset Registry display name
+func (o WorkspaceOutput) RegistryName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.RegistryName }).(pulumi.StringOutput)
 }
 
 // Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNotificationTopics(args: GetNotificationTopicsArgs, opts?: pulumi.InvokeOptions): Promise<GetNotificationTopicsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ons/getNotificationTopics:getNotificationTopics", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -87,9 +85,29 @@ export interface GetNotificationTopicsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Notification Topics in Oracle Cloud Infrastructure Notifications service.
+ *
+ * Lists topics in the specified compartment.
+ *
+ * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNotificationTopics = oci.Ons.getNotificationTopics({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.notification_topic_id,
+ *     name: _var.notification_topic_name,
+ *     state: _var.notification_topic_state,
+ * });
+ * ```
+ */
 export function getNotificationTopicsOutput(args: GetNotificationTopicsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotificationTopicsResult> {
-    return pulumi.output(args).apply(a => getNotificationTopics(a, opts))
+    return pulumi.output(args).apply((a: any) => getNotificationTopics(a, opts))
 }
 
 /**

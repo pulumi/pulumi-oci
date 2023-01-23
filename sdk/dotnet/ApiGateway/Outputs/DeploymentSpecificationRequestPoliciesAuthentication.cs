@@ -18,6 +18,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Audiences;
         /// <summary>
+        /// (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
+        /// </summary>
+        public readonly ImmutableArray<string> CacheKeys;
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         /// </summary>
         public readonly string? FunctionId;
@@ -33,6 +37,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
         /// </summary>
         public readonly double? MaxClockSkewInSeconds;
+        /// <summary>
+        /// (Updatable)
+        /// </summary>
+        public readonly ImmutableDictionary<string, object>? Parameters;
         /// <summary>
         /// (Updatable) A set of Public Keys that will be used to verify the JWT signature.
         /// </summary>
@@ -54,6 +62,14 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
+        /// (Updatable) Policy for defining behaviour on validation failure.
+        /// </summary>
+        public readonly Outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy? ValidationFailurePolicy;
+        /// <summary>
+        /// (Updatable) Authentication Policies for the Token Authentication types.
+        /// </summary>
+        public readonly Outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy? ValidationPolicy;
+        /// <summary>
         /// (Updatable) A list of claims which should be validated to consider the token valid.
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> VerifyClaims;
@@ -62,6 +78,8 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         private DeploymentSpecificationRequestPoliciesAuthentication(
             ImmutableArray<string> audiences,
 
+            ImmutableArray<string> cacheKeys,
+
             string? functionId,
 
             bool? isAnonymousAccessAllowed,
@@ -69,6 +87,8 @@ namespace Pulumi.Oci.ApiGateway.Outputs
             ImmutableArray<string> issuers,
 
             double? maxClockSkewInSeconds,
+
+            ImmutableDictionary<string, object>? parameters,
 
             Outputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys? publicKeys,
 
@@ -80,18 +100,26 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             string type,
 
+            Outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy? validationFailurePolicy,
+
+            Outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy? validationPolicy,
+
             ImmutableArray<Outputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> verifyClaims)
         {
             Audiences = audiences;
+            CacheKeys = cacheKeys;
             FunctionId = functionId;
             IsAnonymousAccessAllowed = isAnonymousAccessAllowed;
             Issuers = issuers;
             MaxClockSkewInSeconds = maxClockSkewInSeconds;
+            Parameters = parameters;
             PublicKeys = publicKeys;
             TokenAuthScheme = tokenAuthScheme;
             TokenHeader = tokenHeader;
             TokenQueryParam = tokenQueryParam;
             Type = type;
+            ValidationFailurePolicy = validationFailurePolicy;
+            ValidationPolicy = validationPolicy;
             VerifyClaims = verifyClaims;
         }
     }

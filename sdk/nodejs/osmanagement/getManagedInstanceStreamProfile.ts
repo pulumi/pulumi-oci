@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -50,11 +51,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceStreamProfile(args: GetManagedInstanceStreamProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceStreamProfileResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -126,9 +124,52 @@ export interface GetManagedInstanceStreamProfileResult {
      */
     readonly streamName?: string;
 }
-
+/**
+ * This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Retrieve a list of module stream profiles, along with a summary of their
+ * of their status, from a managed instance.  Filters may be applied to
+ * select a subset of profiles based on the filter criteria.
+ *
+ * The "moduleName", "streamName", and "profileName" attributes combine
+ * to form a set of filters on the list of module stream profiles.  If
+ * a "modulName" is provided, only profiles that belong to that module
+ * are returned.  If both a "moduleName" and "streamName" are given,
+ * only profiles belonging to that module stream are returned.  Finally,
+ * if all three are given then only the particular profile indicated
+ * by the triple is returned.  It is not valid to supply a "streamName"
+ * without a "moduleName".  It is also not valid to supply a "profileName"
+ * without a "streamName".
+ *
+ * The "status" attribute filters against the state of a module stream
+ * profile.  Valid values are "INSTALLED" and "AVAILABLE".  If the
+ * attribute is set to "INSTALLED", only module stream profiles that
+ * are installed are included in the result set.  If the attribute is
+ * set to "AVAILABLE", only module stream profiles that are not
+ * installed are included in the result set.  If the attribute is not
+ * defined, the request is not subject to this filter.
+ *
+ * When sorting by display name, the result set is sorted first by
+ * module name, then by stream name, and finally by profile name.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedInstanceStreamProfiles = oci.OsManagement.getManagedInstanceStreamProfile({
+ *     managedInstanceId: _var.managed_instance_id,
+ *     compartmentId: _var.compartment_id,
+ *     moduleName: _var.managed_instance_module_name,
+ *     profileName: _var.managed_instance_module_stream_profile_name,
+ *     profileStatus: _var.managed_instance_profile_status,
+ *     streamName: _var.managed_instance_module_stream_name,
+ * });
+ * ```
+ */
 export function getManagedInstanceStreamProfileOutput(args: GetManagedInstanceStreamProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceStreamProfileResult> {
-    return pulumi.output(args).apply(a => getManagedInstanceStreamProfile(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedInstanceStreamProfile(a, opts))
 }
 
 /**

@@ -36,7 +36,7 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     private @Nullable List<MysqlBackupDbSystemSnapshotBackupPolicy> backupPolicies;
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     private @Nullable String compartmentId;
@@ -111,7 +111,7 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     private @Nullable Boolean isHighlyAvailable;
     /**
-     * @return The Maintenance Policy for the DB System.
+     * @return The Maintenance Policy for the DB System or Read Replica that this model is included in.
      * 
      */
     private @Nullable List<MysqlBackupDbSystemSnapshotMaintenance> maintenances;
@@ -164,7 +164,7 @@ public final class MysqlBackupDbSystemSnapshot {
         return this.backupPolicies == null ? List.of() : this.backupPolicies;
     }
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     public Optional<String> compartmentId() {
@@ -269,7 +269,7 @@ public final class MysqlBackupDbSystemSnapshot {
         return Optional.ofNullable(this.isHighlyAvailable);
     }
     /**
-     * @return The Maintenance Policy for the DB System.
+     * @return The Maintenance Policy for the DB System or Read Replica that this model is included in.
      * 
      */
     public List<MysqlBackupDbSystemSnapshotMaintenance> maintenances() {

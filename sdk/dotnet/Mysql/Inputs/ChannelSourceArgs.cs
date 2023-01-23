@@ -13,16 +13,32 @@ namespace Pulumi.Oci.Mysql.Inputs
     public sealed class ChannelSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        /// </summary>
+        [Input("anonymousTransactionsHandling")]
+        public Input<Inputs.ChannelSourceAnonymousTransactionsHandlingArgs>? AnonymousTransactionsHandling { get; set; }
+
+        /// <summary>
         /// (Updatable) The network address of the MySQL instance.
         /// </summary>
         [Input("hostname", required: true)]
         public Input<string> Hostname { get; set; } = null!;
 
+        [Input("password", required: true)]
+        private Input<string>? _password;
+
         /// <summary>
         /// (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         /// </summary>
-        [Input("password", required: true)]
-        public Input<string> Password { get; set; } = null!;
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The port the source MySQL instance listens on.

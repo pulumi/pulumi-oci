@@ -195,7 +195,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -434,7 +434,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter
     def role(self) -> str:
         """
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 

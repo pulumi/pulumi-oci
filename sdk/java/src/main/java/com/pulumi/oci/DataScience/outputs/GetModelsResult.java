@@ -35,6 +35,7 @@ public final class GetModelsResult {
      * 
      */
     private @Nullable String id;
+    private String modelVersionSetName;
     /**
      * @return The list of models.
      * 
@@ -50,6 +51,7 @@ public final class GetModelsResult {
      * 
      */
     private @Nullable String state;
+    private String versionLabel;
 
     private GetModelsResult() {}
     /**
@@ -83,6 +85,9 @@ public final class GetModelsResult {
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
+    public String modelVersionSetName() {
+        return this.modelVersionSetName;
+    }
     /**
      * @return The list of models.
      * 
@@ -104,6 +109,9 @@ public final class GetModelsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public String versionLabel() {
+        return this.versionLabel;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -119,9 +127,11 @@ public final class GetModelsResult {
         private @Nullable String displayName;
         private @Nullable List<GetModelsFilter> filters;
         private @Nullable String id;
+        private String modelVersionSetName;
         private List<GetModelsModel> models;
         private @Nullable String projectId;
         private @Nullable String state;
+        private String versionLabel;
         public Builder() {}
         public Builder(GetModelsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -130,9 +140,11 @@ public final class GetModelsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.modelVersionSetName = defaults.modelVersionSetName;
     	      this.models = defaults.models;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
+    	      this.versionLabel = defaults.versionLabel;
         }
 
         @CustomType.Setter
@@ -164,6 +176,11 @@ public final class GetModelsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder modelVersionSetName(String modelVersionSetName) {
+            this.modelVersionSetName = Objects.requireNonNull(modelVersionSetName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder models(List<GetModelsModel> models) {
             this.models = Objects.requireNonNull(models);
             return this;
@@ -181,6 +198,11 @@ public final class GetModelsResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder versionLabel(String versionLabel) {
+            this.versionLabel = Objects.requireNonNull(versionLabel);
+            return this;
+        }
         public GetModelsResult build() {
             final var o = new GetModelsResult();
             o.compartmentId = compartmentId;
@@ -188,9 +210,11 @@ public final class GetModelsResult {
             o.displayName = displayName;
             o.filters = filters;
             o.id = id;
+            o.modelVersionSetName = modelVersionSetName;
             o.models = models;
             o.projectId = projectId;
             o.state = state;
+            o.versionLabel = versionLabel;
             return o;
         }
     }

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  */
 export function getCertificates(args?: GetCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificatesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificates:getCertificates", {
         "certificateId": args.certificateId,
         "compartmentId": args.compartmentId,
@@ -104,9 +102,29 @@ export interface GetCertificatesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Certificates in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Lists all certificates that match the query parameters.
+ * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificates = oci.CertificatesManagement.getCertificates({
+ *     certificateId: oci_certificates_management_certificate.test_certificate.id,
+ *     compartmentId: _var.compartment_id,
+ *     issuerCertificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
+ *     name: _var.certificate_name,
+ *     state: _var.certificate_state,
+ * });
+ * ```
+ */
 export function getCertificatesOutput(args?: GetCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificatesResult> {
-    return pulumi.output(args).apply(a => getCertificates(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificates(a, opts))
 }
 
 /**

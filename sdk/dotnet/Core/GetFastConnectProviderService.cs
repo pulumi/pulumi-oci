@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFastConnectProviderServiceResult> InvokeAsync(GetFastConnectProviderServiceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFastConnectProviderServiceResult>("oci:Core/getFastConnectProviderService:getFastConnectProviderService", args ?? new GetFastConnectProviderServiceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFastConnectProviderServiceResult>("oci:Core/getFastConnectProviderService:getFastConnectProviderService", args ?? new GetFastConnectProviderServiceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFastConnectProviderServiceResult> Invoke(GetFastConnectProviderServiceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFastConnectProviderServiceResult>("oci:Core/getFastConnectProviderService:getFastConnectProviderService", args ?? new GetFastConnectProviderServiceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFastConnectProviderServiceResult>("oci:Core/getFastConnectProviderService:getFastConnectProviderService", args ?? new GetFastConnectProviderServiceInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabases(args: GetDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabasesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabases:getDatabases", {
         "compartmentId": args.compartmentId,
         "dbHomeId": args.dbHomeId,
@@ -99,9 +97,28 @@ export interface GetDatabasesResult {
     readonly state?: string;
     readonly systemId?: string;
 }
-
+/**
+ * This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the databases in the specified Database Home.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabases = oci.Database.getDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     dbHomeId: oci_database_db_home.test_db_home.id,
+ *     dbName: _var.database_db_name,
+ *     state: _var.database_state,
+ *     systemId: oci_database_system.test_system.id,
+ * });
+ * ```
+ */
 export function getDatabasesOutput(args: GetDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabasesResult> {
-    return pulumi.output(args).apply(a => getDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabases(a, opts))
 }
 
 /**

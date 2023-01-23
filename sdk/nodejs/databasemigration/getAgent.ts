@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAgent(args: GetAgentArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getAgent:getAgent", {
         "agentId": args.agentId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetAgentResult {
      */
     readonly version: string;
 }
-
+/**
+ * This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Database Migration service.
+ *
+ * Display the ODMS Agent configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAgent = oci.DatabaseMigration.getAgent({
+ *     agentId: oci_database_migration_agent.test_agent.id,
+ * });
+ * ```
+ */
 export function getAgentOutput(args: GetAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentResult> {
-    return pulumi.output(args).apply(a => getAgent(a, opts))
+    return pulumi.output(args).apply((a: any) => getAgent(a, opts))
 }
 
 /**

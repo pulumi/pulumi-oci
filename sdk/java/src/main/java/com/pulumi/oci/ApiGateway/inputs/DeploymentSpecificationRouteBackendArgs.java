@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRouteBackendHeaderArgs;
+import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRouteBackendRoutingBackendArgs;
+import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRouteBackendSelectionSourceArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -19,6 +21,21 @@ import javax.annotation.Nullable;
 public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DeploymentSpecificationRouteBackendArgs Empty = new DeploymentSpecificationRouteBackendArgs();
+
+    /**
+     * (Updatable)
+     * 
+     */
+    @Import(name="allowedPostLogoutUris")
+    private @Nullable Output<List<String>> allowedPostLogoutUris;
+
+    /**
+     * @return (Updatable)
+     * 
+     */
+    public Optional<Output<List<String>>> allowedPostLogoutUris() {
+        return Optional.ofNullable(this.allowedPostLogoutUris);
+    }
 
     /**
      * (Updatable) The body of the stock response from the mock backend.
@@ -96,6 +113,21 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
     }
 
     /**
+     * (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
+     * 
+     */
+    @Import(name="postLogoutState")
+    private @Nullable Output<String> postLogoutState;
+
+    /**
+     * @return (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
+     * 
+     */
+    public Optional<Output<String>> postLogoutState() {
+        return Optional.ofNullable(this.postLogoutState);
+    }
+
+    /**
      * (Updatable) Defines a timeout for reading a response from the proxied server.
      * 
      */
@@ -108,6 +140,36 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
      */
     public Optional<Output<Double>> readTimeoutInSeconds() {
         return Optional.ofNullable(this.readTimeoutInSeconds);
+    }
+
+    /**
+     * (Updatable) List of backends to chose from for Dynamic Routing.
+     * 
+     */
+    @Import(name="routingBackends")
+    private @Nullable Output<List<DeploymentSpecificationRouteBackendRoutingBackendArgs>> routingBackends;
+
+    /**
+     * @return (Updatable) List of backends to chose from for Dynamic Routing.
+     * 
+     */
+    public Optional<Output<List<DeploymentSpecificationRouteBackendRoutingBackendArgs>>> routingBackends() {
+        return Optional.ofNullable(this.routingBackends);
+    }
+
+    /**
+     * (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * 
+     */
+    @Import(name="selectionSource")
+    private @Nullable Output<DeploymentSpecificationRouteBackendSelectionSourceArgs> selectionSource;
+
+    /**
+     * @return (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * 
+     */
+    public Optional<Output<DeploymentSpecificationRouteBackendSelectionSourceArgs>> selectionSource() {
+        return Optional.ofNullable(this.selectionSource);
     }
 
     /**
@@ -173,12 +235,16 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
     private DeploymentSpecificationRouteBackendArgs() {}
 
     private DeploymentSpecificationRouteBackendArgs(DeploymentSpecificationRouteBackendArgs $) {
+        this.allowedPostLogoutUris = $.allowedPostLogoutUris;
         this.body = $.body;
         this.connectTimeoutInSeconds = $.connectTimeoutInSeconds;
         this.functionId = $.functionId;
         this.headers = $.headers;
         this.isSslVerifyDisabled = $.isSslVerifyDisabled;
+        this.postLogoutState = $.postLogoutState;
         this.readTimeoutInSeconds = $.readTimeoutInSeconds;
+        this.routingBackends = $.routingBackends;
+        this.selectionSource = $.selectionSource;
         this.sendTimeoutInSeconds = $.sendTimeoutInSeconds;
         this.status = $.status;
         this.type = $.type;
@@ -201,6 +267,37 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
 
         public Builder(DeploymentSpecificationRouteBackendArgs defaults) {
             $ = new DeploymentSpecificationRouteBackendArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param allowedPostLogoutUris (Updatable)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedPostLogoutUris(@Nullable Output<List<String>> allowedPostLogoutUris) {
+            $.allowedPostLogoutUris = allowedPostLogoutUris;
+            return this;
+        }
+
+        /**
+         * @param allowedPostLogoutUris (Updatable)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedPostLogoutUris(List<String> allowedPostLogoutUris) {
+            return allowedPostLogoutUris(Output.of(allowedPostLogoutUris));
+        }
+
+        /**
+         * @param allowedPostLogoutUris (Updatable)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedPostLogoutUris(String... allowedPostLogoutUris) {
+            return allowedPostLogoutUris(List.of(allowedPostLogoutUris));
         }
 
         /**
@@ -319,6 +416,27 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
+         * @param postLogoutState (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder postLogoutState(@Nullable Output<String> postLogoutState) {
+            $.postLogoutState = postLogoutState;
+            return this;
+        }
+
+        /**
+         * @param postLogoutState (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder postLogoutState(String postLogoutState) {
+            return postLogoutState(Output.of(postLogoutState));
+        }
+
+        /**
          * @param readTimeoutInSeconds (Updatable) Defines a timeout for reading a response from the proxied server.
          * 
          * @return builder
@@ -337,6 +455,58 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
          */
         public Builder readTimeoutInSeconds(Double readTimeoutInSeconds) {
             return readTimeoutInSeconds(Output.of(readTimeoutInSeconds));
+        }
+
+        /**
+         * @param routingBackends (Updatable) List of backends to chose from for Dynamic Routing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routingBackends(@Nullable Output<List<DeploymentSpecificationRouteBackendRoutingBackendArgs>> routingBackends) {
+            $.routingBackends = routingBackends;
+            return this;
+        }
+
+        /**
+         * @param routingBackends (Updatable) List of backends to chose from for Dynamic Routing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routingBackends(List<DeploymentSpecificationRouteBackendRoutingBackendArgs> routingBackends) {
+            return routingBackends(Output.of(routingBackends));
+        }
+
+        /**
+         * @param routingBackends (Updatable) List of backends to chose from for Dynamic Routing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routingBackends(DeploymentSpecificationRouteBackendRoutingBackendArgs... routingBackends) {
+            return routingBackends(List.of(routingBackends));
+        }
+
+        /**
+         * @param selectionSource (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder selectionSource(@Nullable Output<DeploymentSpecificationRouteBackendSelectionSourceArgs> selectionSource) {
+            $.selectionSource = selectionSource;
+            return this;
+        }
+
+        /**
+         * @param selectionSource (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder selectionSource(DeploymentSpecificationRouteBackendSelectionSourceArgs selectionSource) {
+            return selectionSource(Output.of(selectionSource));
         }
 
         /**

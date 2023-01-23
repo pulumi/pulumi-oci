@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDynamicGroups(args: GetDynamicGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDynamicGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDynamicGroups:getDynamicGroups", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -84,9 +82,28 @@ export interface GetDynamicGroupsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Dynamic Groups in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
+ * the compartment ID (remember that the tenancy is simply the root compartment).
+ * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDynamicGroups = oci.Identity.getDynamicGroups({
+ *     compartmentId: _var.tenancy_ocid,
+ *     name: _var.dynamic_group_name,
+ *     state: _var.dynamic_group_state,
+ * });
+ * ```
+ */
 export function getDynamicGroupsOutput(args: GetDynamicGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDynamicGroupsResult> {
-    return pulumi.output(args).apply(a => getDynamicGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getDynamicGroups(a, opts))
 }
 
 /**

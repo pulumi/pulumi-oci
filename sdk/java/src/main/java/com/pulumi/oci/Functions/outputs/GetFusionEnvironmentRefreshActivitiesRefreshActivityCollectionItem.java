@@ -4,7 +4,9 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -29,6 +31,12 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
      * 
      */
     private String lifecycleDetails;
+    private String refreshActivityId;
+    /**
+     * @return Details of refresh investigation information, each item represents a different issue.
+     * 
+     */
+    private List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList> refreshIssueDetailsLists;
     /**
      * @return Service availability / impact during refresh activity execution up down
      * 
@@ -65,11 +73,6 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
      */
     private String timeOfRestorationPoint;
     /**
-     * @return The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     * 
-     */
-    private String timeScheduledStart;
-    /**
      * @return The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
@@ -103,6 +106,16 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public String refreshActivityId() {
+        return this.refreshActivityId;
+    }
+    /**
+     * @return Details of refresh investigation information, each item represents a different issue.
+     * 
+     */
+    public List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList> refreshIssueDetailsLists() {
+        return this.refreshIssueDetailsLists;
     }
     /**
      * @return Service availability / impact during refresh activity execution up down
@@ -154,13 +167,6 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
         return this.timeOfRestorationPoint;
     }
     /**
-     * @return The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     * 
-     */
-    public String timeScheduledStart() {
-        return this.timeScheduledStart;
-    }
-    /**
      * @return The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
@@ -181,6 +187,8 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
         private String fusionEnvironmentId;
         private String id;
         private String lifecycleDetails;
+        private String refreshActivityId;
+        private List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList> refreshIssueDetailsLists;
         private String serviceAvailability;
         private String sourceFusionEnvironmentId;
         private String state;
@@ -188,7 +196,6 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
         private String timeExpectedFinish;
         private String timeFinished;
         private String timeOfRestorationPoint;
-        private String timeScheduledStart;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem defaults) {
@@ -197,6 +204,8 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
     	      this.fusionEnvironmentId = defaults.fusionEnvironmentId;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.refreshActivityId = defaults.refreshActivityId;
+    	      this.refreshIssueDetailsLists = defaults.refreshIssueDetailsLists;
     	      this.serviceAvailability = defaults.serviceAvailability;
     	      this.sourceFusionEnvironmentId = defaults.sourceFusionEnvironmentId;
     	      this.state = defaults.state;
@@ -204,7 +213,6 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
     	      this.timeExpectedFinish = defaults.timeExpectedFinish;
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeOfRestorationPoint = defaults.timeOfRestorationPoint;
-    	      this.timeScheduledStart = defaults.timeScheduledStart;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
@@ -227,6 +235,19 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
+        }
+        @CustomType.Setter
+        public Builder refreshActivityId(String refreshActivityId) {
+            this.refreshActivityId = Objects.requireNonNull(refreshActivityId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder refreshIssueDetailsLists(List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList> refreshIssueDetailsLists) {
+            this.refreshIssueDetailsLists = Objects.requireNonNull(refreshIssueDetailsLists);
+            return this;
+        }
+        public Builder refreshIssueDetailsLists(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList... refreshIssueDetailsLists) {
+            return refreshIssueDetailsLists(List.of(refreshIssueDetailsLists));
         }
         @CustomType.Setter
         public Builder serviceAvailability(String serviceAvailability) {
@@ -264,11 +285,6 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
             return this;
         }
         @CustomType.Setter
-        public Builder timeScheduledStart(String timeScheduledStart) {
-            this.timeScheduledStart = Objects.requireNonNull(timeScheduledStart);
-            return this;
-        }
-        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
@@ -279,6 +295,8 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
             o.fusionEnvironmentId = fusionEnvironmentId;
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;
+            o.refreshActivityId = refreshActivityId;
+            o.refreshIssueDetailsLists = refreshIssueDetailsLists;
             o.serviceAvailability = serviceAvailability;
             o.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             o.state = state;
@@ -286,7 +304,6 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
             o.timeExpectedFinish = timeExpectedFinish;
             o.timeFinished = timeFinished;
             o.timeOfRestorationPoint = timeOfRestorationPoint;
-            o.timeScheduledStart = timeScheduledStart;
             o.timeUpdated = timeUpdated;
             return o;
         }

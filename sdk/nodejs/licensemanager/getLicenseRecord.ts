@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLicenseRecord(args: GetLicenseRecordArgs, opts?: pulumi.InvokeOptions): Promise<GetLicenseRecordResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getLicenseRecord:getLicenseRecord", {
         "licenseRecordId": args.licenseRecordId,
     }, opts);
@@ -119,9 +116,24 @@ export interface GetLicenseRecordResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.
+ *
+ * Retrieves license record details by the license record ID in a given compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLicenseRecord = oci.LicenseManager.getLicenseRecord({
+ *     licenseRecordId: oci_license_manager_license_record.test_license_record.id,
+ * });
+ * ```
+ */
 export function getLicenseRecordOutput(args: GetLicenseRecordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseRecordResult> {
-    return pulumi.output(args).apply(a => getLicenseRecord(a, opts))
+    return pulumi.output(args).apply((a: any) => getLicenseRecord(a, opts))
 }
 
 /**

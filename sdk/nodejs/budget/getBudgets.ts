@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -32,11 +33,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBudgets(args: GetBudgetsArgs, opts?: pulumi.InvokeOptions): Promise<GetBudgetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Budget/getBudgets:getBudgets", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -102,9 +100,34 @@ export interface GetBudgetsResult {
      */
     readonly targetType?: string;
 }
-
+/**
+ * This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
+ *
+ * Gets a list of budgets in a compartment.
+ *
+ * By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
+ *
+ * To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
+ *
+ * Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+ * or upgrade to the latest version of the client SDK to handle new targetTypes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBudgets = oci.Budget.getBudgets({
+ *     compartmentId: _var.tenancy_ocid,
+ *     displayName: _var.budget_display_name,
+ *     state: _var.budget_state,
+ *     targetType: _var.budget_target_type,
+ * });
+ * ```
+ */
 export function getBudgetsOutput(args: GetBudgetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBudgetsResult> {
-    return pulumi.output(args).apply(a => getBudgets(a, opts))
+    return pulumi.output(args).apply((a: any) => getBudgets(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkFirewallPolicy(args: GetNetworkFirewallPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewallPolicy:getNetworkFirewallPolicy", {
         "networkFirewallPolicyId": args.networkFirewallPolicyId,
     }, opts);
@@ -120,9 +118,24 @@ export interface GetNetworkFirewallPolicyResult {
      */
     readonly urlLists: outputs.NetworkFirewall.GetNetworkFirewallPolicyUrlList[];
 }
-
+/**
+ * This data source provides details about a specific Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
+ *
+ * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicy = oci.NetworkFirewall.getNetworkFirewallPolicy({
+ *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
+ * });
+ * ```
+ */
 export function getNetworkFirewallPolicyOutput(args: GetNetworkFirewallPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyResult> {
-    return pulumi.output(args).apply(a => getNetworkFirewallPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicy(a, opts))
 }
 
 /**

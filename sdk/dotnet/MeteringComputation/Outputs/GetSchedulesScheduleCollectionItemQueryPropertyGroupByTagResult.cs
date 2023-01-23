@@ -18,7 +18,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// The namespace needed to determine object storage bucket.
+        /// The namespace needed to determine the object storage bucket.
         /// </summary>
         public readonly string Namespace;
         /// <summary>

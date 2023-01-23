@@ -20,10 +20,16 @@ class WorkspaceArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  dns_server_ip: Optional[pulumi.Input[str]] = None,
                  dns_server_zone: Optional[pulumi.Input[str]] = None,
+                 endpoint_compartment_id: Optional[pulumi.Input[str]] = None,
+                 endpoint_id: Optional[pulumi.Input[str]] = None,
+                 endpoint_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_force_operation: Optional[pulumi.Input[bool]] = None,
                  is_private_network_enabled: Optional[pulumi.Input[bool]] = None,
                  quiesce_timeout: Optional[pulumi.Input[int]] = None,
+                 registry_compartment_id: Optional[pulumi.Input[str]] = None,
+                 registry_id: Optional[pulumi.Input[str]] = None,
+                 registry_name: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
@@ -34,8 +40,14 @@ class WorkspaceArgs:
         :param pulumi.Input[str] description: (Updatable) A user defined description for the workspace.
         :param pulumi.Input[str] dns_server_ip: The IP of the custom DNS.
         :param pulumi.Input[str] dns_server_zone: The DNS zone of the custom DNS to use to resolve names.
+        :param pulumi.Input[str] endpoint_compartment_id: DCMS PRivate Endpoint Compartment Identifier
+        :param pulumi.Input[str] endpoint_id: DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        :param pulumi.Input[str] endpoint_name: DCMS Private Endpoint Name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_private_network_enabled: Specifies whether the private network connection is enabled or disabled.
+        :param pulumi.Input[str] registry_compartment_id: DCMS Data Asset Registry Compartment Identifier
+        :param pulumi.Input[str] registry_id: DCMS Data Asset Registry ID to which the workspace is associated
+        :param pulumi.Input[str] registry_name: DCMS Data Asset Registry display name
         :param pulumi.Input[str] subnet_id: The OCID of the subnet for customer connected databases.
         :param pulumi.Input[str] vcn_id: The OCID of the VCN the subnet is in.
         """
@@ -49,6 +61,12 @@ class WorkspaceArgs:
             pulumi.set(__self__, "dns_server_ip", dns_server_ip)
         if dns_server_zone is not None:
             pulumi.set(__self__, "dns_server_zone", dns_server_zone)
+        if endpoint_compartment_id is not None:
+            pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
+        if endpoint_id is not None:
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_name is not None:
+            pulumi.set(__self__, "endpoint_name", endpoint_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_force_operation is not None:
@@ -57,6 +75,12 @@ class WorkspaceArgs:
             pulumi.set(__self__, "is_private_network_enabled", is_private_network_enabled)
         if quiesce_timeout is not None:
             pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
+        if registry_compartment_id is not None:
+            pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
+        if registry_id is not None:
+            pulumi.set(__self__, "registry_id", registry_id)
+        if registry_name is not None:
+            pulumi.set(__self__, "registry_name", registry_name)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if vcn_id is not None:
@@ -135,6 +159,42 @@ class WorkspaceArgs:
         pulumi.set(self, "dns_server_zone", value)
 
     @property
+    @pulumi.getter(name="endpointCompartmentId")
+    def endpoint_compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS PRivate Endpoint Compartment Identifier
+        """
+        return pulumi.get(self, "endpoint_compartment_id")
+
+    @endpoint_compartment_id.setter
+    def endpoint_compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "endpoint_compartment_id", value)
+
+    @property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @endpoint_id.setter
+    def endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "endpoint_id", value)
+
+    @property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Private Endpoint Name
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @endpoint_name.setter
+    def endpoint_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "endpoint_name", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -177,6 +237,42 @@ class WorkspaceArgs:
         pulumi.set(self, "quiesce_timeout", value)
 
     @property
+    @pulumi.getter(name="registryCompartmentId")
+    def registry_compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Data Asset Registry Compartment Identifier
+        """
+        return pulumi.get(self, "registry_compartment_id")
+
+    @registry_compartment_id.setter
+    def registry_compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "registry_compartment_id", value)
+
+    @property
+    @pulumi.getter(name="registryId")
+    def registry_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Data Asset Registry ID to which the workspace is associated
+        """
+        return pulumi.get(self, "registry_id")
+
+    @registry_id.setter
+    def registry_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "registry_id", value)
+
+    @property
+    @pulumi.getter(name="registryName")
+    def registry_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Data Asset Registry display name
+        """
+        return pulumi.get(self, "registry_name")
+
+    @registry_name.setter
+    def registry_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "registry_name", value)
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -210,10 +306,16 @@ class _WorkspaceState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_server_ip: Optional[pulumi.Input[str]] = None,
                  dns_server_zone: Optional[pulumi.Input[str]] = None,
+                 endpoint_compartment_id: Optional[pulumi.Input[str]] = None,
+                 endpoint_id: Optional[pulumi.Input[str]] = None,
+                 endpoint_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_force_operation: Optional[pulumi.Input[bool]] = None,
                  is_private_network_enabled: Optional[pulumi.Input[bool]] = None,
                  quiesce_timeout: Optional[pulumi.Input[int]] = None,
+                 registry_compartment_id: Optional[pulumi.Input[str]] = None,
+                 registry_id: Optional[pulumi.Input[str]] = None,
+                 registry_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  state_message: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -228,8 +330,14 @@ class _WorkspaceState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
         :param pulumi.Input[str] dns_server_ip: The IP of the custom DNS.
         :param pulumi.Input[str] dns_server_zone: The DNS zone of the custom DNS to use to resolve names.
+        :param pulumi.Input[str] endpoint_compartment_id: DCMS PRivate Endpoint Compartment Identifier
+        :param pulumi.Input[str] endpoint_id: DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        :param pulumi.Input[str] endpoint_name: DCMS Private Endpoint Name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_private_network_enabled: Specifies whether the private network connection is enabled or disabled.
+        :param pulumi.Input[str] registry_compartment_id: DCMS Data Asset Registry Compartment Identifier
+        :param pulumi.Input[str] registry_id: DCMS Data Asset Registry ID to which the workspace is associated
+        :param pulumi.Input[str] registry_name: DCMS Data Asset Registry display name
         :param pulumi.Input[str] state: Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
         :param pulumi.Input[str] state_message: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet for customer connected databases.
@@ -249,6 +357,12 @@ class _WorkspaceState:
             pulumi.set(__self__, "dns_server_ip", dns_server_ip)
         if dns_server_zone is not None:
             pulumi.set(__self__, "dns_server_zone", dns_server_zone)
+        if endpoint_compartment_id is not None:
+            pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
+        if endpoint_id is not None:
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_name is not None:
+            pulumi.set(__self__, "endpoint_name", endpoint_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_force_operation is not None:
@@ -257,6 +371,12 @@ class _WorkspaceState:
             pulumi.set(__self__, "is_private_network_enabled", is_private_network_enabled)
         if quiesce_timeout is not None:
             pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
+        if registry_compartment_id is not None:
+            pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
+        if registry_id is not None:
+            pulumi.set(__self__, "registry_id", registry_id)
+        if registry_name is not None:
+            pulumi.set(__self__, "registry_name", registry_name)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if state_message is not None:
@@ -343,6 +463,42 @@ class _WorkspaceState:
         pulumi.set(self, "dns_server_zone", value)
 
     @property
+    @pulumi.getter(name="endpointCompartmentId")
+    def endpoint_compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS PRivate Endpoint Compartment Identifier
+        """
+        return pulumi.get(self, "endpoint_compartment_id")
+
+    @endpoint_compartment_id.setter
+    def endpoint_compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "endpoint_compartment_id", value)
+
+    @property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @endpoint_id.setter
+    def endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "endpoint_id", value)
+
+    @property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Private Endpoint Name
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @endpoint_name.setter
+    def endpoint_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "endpoint_name", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -383,6 +539,42 @@ class _WorkspaceState:
     @quiesce_timeout.setter
     def quiesce_timeout(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "quiesce_timeout", value)
+
+    @property
+    @pulumi.getter(name="registryCompartmentId")
+    def registry_compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Data Asset Registry Compartment Identifier
+        """
+        return pulumi.get(self, "registry_compartment_id")
+
+    @registry_compartment_id.setter
+    def registry_compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "registry_compartment_id", value)
+
+    @property
+    @pulumi.getter(name="registryId")
+    def registry_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Data Asset Registry ID to which the workspace is associated
+        """
+        return pulumi.get(self, "registry_id")
+
+    @registry_id.setter
+    def registry_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "registry_id", value)
+
+    @property
+    @pulumi.getter(name="registryName")
+    def registry_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        DCMS Data Asset Registry display name
+        """
+        return pulumi.get(self, "registry_name")
+
+    @registry_name.setter
+    def registry_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "registry_name", value)
 
     @property
     @pulumi.getter
@@ -468,17 +660,23 @@ class Workspace(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_server_ip: Optional[pulumi.Input[str]] = None,
                  dns_server_zone: Optional[pulumi.Input[str]] = None,
+                 endpoint_compartment_id: Optional[pulumi.Input[str]] = None,
+                 endpoint_id: Optional[pulumi.Input[str]] = None,
+                 endpoint_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_force_operation: Optional[pulumi.Input[bool]] = None,
                  is_private_network_enabled: Optional[pulumi.Input[bool]] = None,
                  quiesce_timeout: Optional[pulumi.Input[int]] = None,
+                 registry_compartment_id: Optional[pulumi.Input[str]] = None,
+                 registry_id: Optional[pulumi.Input[str]] = None,
+                 registry_name: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
 
-        Creates a new Data Integration workspace ready for performing data integration tasks.
+        Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the [GetWorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/data-integration/latest/WorkRequest/GetWorkRequest) API.
 
         ## Example Usage
 
@@ -495,10 +693,16 @@ class Workspace(pulumi.CustomResource):
             description=var["workspace_description"],
             dns_server_ip=var["workspace_dns_server_ip"],
             dns_server_zone=var["workspace_dns_server_zone"],
+            endpoint_compartment_id=oci_identity_compartment["test_compartment"]["id"],
+            endpoint_id=oci_dataintegration_endpoint["test_endpoint"]["id"],
+            endpoint_name=var["workspace_endpoint_name"],
             freeform_tags={
                 "Department": "Finance",
             },
             is_private_network_enabled=var["workspace_is_private_network_enabled"],
+            registry_compartment_id=oci_identity_compartment["test_compartment"]["id"],
+            registry_id=oci_data_connectivity_registry["test_registry"]["id"],
+            registry_name=oci_data_connectivity_registry["test_registry"]["name"],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             vcn_id=oci_core_vcn["test_vcn"]["id"])
         ```
@@ -519,8 +723,14 @@ class Workspace(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
         :param pulumi.Input[str] dns_server_ip: The IP of the custom DNS.
         :param pulumi.Input[str] dns_server_zone: The DNS zone of the custom DNS to use to resolve names.
+        :param pulumi.Input[str] endpoint_compartment_id: DCMS PRivate Endpoint Compartment Identifier
+        :param pulumi.Input[str] endpoint_id: DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        :param pulumi.Input[str] endpoint_name: DCMS Private Endpoint Name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_private_network_enabled: Specifies whether the private network connection is enabled or disabled.
+        :param pulumi.Input[str] registry_compartment_id: DCMS Data Asset Registry Compartment Identifier
+        :param pulumi.Input[str] registry_id: DCMS Data Asset Registry ID to which the workspace is associated
+        :param pulumi.Input[str] registry_name: DCMS Data Asset Registry display name
         :param pulumi.Input[str] subnet_id: The OCID of the subnet for customer connected databases.
         :param pulumi.Input[str] vcn_id: The OCID of the VCN the subnet is in.
         """
@@ -533,7 +743,7 @@ class Workspace(pulumi.CustomResource):
         """
         This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
 
-        Creates a new Data Integration workspace ready for performing data integration tasks.
+        Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the [GetWorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/data-integration/latest/WorkRequest/GetWorkRequest) API.
 
         ## Example Usage
 
@@ -550,10 +760,16 @@ class Workspace(pulumi.CustomResource):
             description=var["workspace_description"],
             dns_server_ip=var["workspace_dns_server_ip"],
             dns_server_zone=var["workspace_dns_server_zone"],
+            endpoint_compartment_id=oci_identity_compartment["test_compartment"]["id"],
+            endpoint_id=oci_dataintegration_endpoint["test_endpoint"]["id"],
+            endpoint_name=var["workspace_endpoint_name"],
             freeform_tags={
                 "Department": "Finance",
             },
             is_private_network_enabled=var["workspace_is_private_network_enabled"],
+            registry_compartment_id=oci_identity_compartment["test_compartment"]["id"],
+            registry_id=oci_data_connectivity_registry["test_registry"]["id"],
+            registry_name=oci_data_connectivity_registry["test_registry"]["name"],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             vcn_id=oci_core_vcn["test_vcn"]["id"])
         ```
@@ -587,10 +803,16 @@ class Workspace(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_server_ip: Optional[pulumi.Input[str]] = None,
                  dns_server_zone: Optional[pulumi.Input[str]] = None,
+                 endpoint_compartment_id: Optional[pulumi.Input[str]] = None,
+                 endpoint_id: Optional[pulumi.Input[str]] = None,
+                 endpoint_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_force_operation: Optional[pulumi.Input[bool]] = None,
                  is_private_network_enabled: Optional[pulumi.Input[bool]] = None,
                  quiesce_timeout: Optional[pulumi.Input[int]] = None,
+                 registry_compartment_id: Optional[pulumi.Input[str]] = None,
+                 registry_id: Optional[pulumi.Input[str]] = None,
+                 registry_name: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -612,10 +834,16 @@ class Workspace(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["dns_server_ip"] = dns_server_ip
             __props__.__dict__["dns_server_zone"] = dns_server_zone
+            __props__.__dict__["endpoint_compartment_id"] = endpoint_compartment_id
+            __props__.__dict__["endpoint_id"] = endpoint_id
+            __props__.__dict__["endpoint_name"] = endpoint_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_force_operation"] = is_force_operation
             __props__.__dict__["is_private_network_enabled"] = is_private_network_enabled
             __props__.__dict__["quiesce_timeout"] = quiesce_timeout
+            __props__.__dict__["registry_compartment_id"] = registry_compartment_id
+            __props__.__dict__["registry_id"] = registry_id
+            __props__.__dict__["registry_name"] = registry_name
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["vcn_id"] = vcn_id
             __props__.__dict__["state"] = None
@@ -638,10 +866,16 @@ class Workspace(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             dns_server_ip: Optional[pulumi.Input[str]] = None,
             dns_server_zone: Optional[pulumi.Input[str]] = None,
+            endpoint_compartment_id: Optional[pulumi.Input[str]] = None,
+            endpoint_id: Optional[pulumi.Input[str]] = None,
+            endpoint_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_force_operation: Optional[pulumi.Input[bool]] = None,
             is_private_network_enabled: Optional[pulumi.Input[bool]] = None,
             quiesce_timeout: Optional[pulumi.Input[int]] = None,
+            registry_compartment_id: Optional[pulumi.Input[str]] = None,
+            registry_id: Optional[pulumi.Input[str]] = None,
+            registry_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             state_message: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
@@ -661,8 +895,14 @@ class Workspace(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
         :param pulumi.Input[str] dns_server_ip: The IP of the custom DNS.
         :param pulumi.Input[str] dns_server_zone: The DNS zone of the custom DNS to use to resolve names.
+        :param pulumi.Input[str] endpoint_compartment_id: DCMS PRivate Endpoint Compartment Identifier
+        :param pulumi.Input[str] endpoint_id: DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        :param pulumi.Input[str] endpoint_name: DCMS Private Endpoint Name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_private_network_enabled: Specifies whether the private network connection is enabled or disabled.
+        :param pulumi.Input[str] registry_compartment_id: DCMS Data Asset Registry Compartment Identifier
+        :param pulumi.Input[str] registry_id: DCMS Data Asset Registry ID to which the workspace is associated
+        :param pulumi.Input[str] registry_name: DCMS Data Asset Registry display name
         :param pulumi.Input[str] state: Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
         :param pulumi.Input[str] state_message: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet for customer connected databases.
@@ -680,10 +920,16 @@ class Workspace(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["dns_server_ip"] = dns_server_ip
         __props__.__dict__["dns_server_zone"] = dns_server_zone
+        __props__.__dict__["endpoint_compartment_id"] = endpoint_compartment_id
+        __props__.__dict__["endpoint_id"] = endpoint_id
+        __props__.__dict__["endpoint_name"] = endpoint_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_force_operation"] = is_force_operation
         __props__.__dict__["is_private_network_enabled"] = is_private_network_enabled
         __props__.__dict__["quiesce_timeout"] = quiesce_timeout
+        __props__.__dict__["registry_compartment_id"] = registry_compartment_id
+        __props__.__dict__["registry_id"] = registry_id
+        __props__.__dict__["registry_name"] = registry_name
         __props__.__dict__["state"] = state
         __props__.__dict__["state_message"] = state_message
         __props__.__dict__["subnet_id"] = subnet_id
@@ -741,6 +987,30 @@ class Workspace(pulumi.CustomResource):
         return pulumi.get(self, "dns_server_zone")
 
     @property
+    @pulumi.getter(name="endpointCompartmentId")
+    def endpoint_compartment_id(self) -> pulumi.Output[str]:
+        """
+        DCMS PRivate Endpoint Compartment Identifier
+        """
+        return pulumi.get(self, "endpoint_compartment_id")
+
+    @property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> pulumi.Output[str]:
+        """
+        DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> pulumi.Output[str]:
+        """
+        DCMS Private Endpoint Name
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
@@ -763,8 +1033,32 @@ class Workspace(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="quiesceTimeout")
-    def quiesce_timeout(self) -> pulumi.Output[Optional[int]]:
+    def quiesce_timeout(self) -> pulumi.Output[int]:
         return pulumi.get(self, "quiesce_timeout")
+
+    @property
+    @pulumi.getter(name="registryCompartmentId")
+    def registry_compartment_id(self) -> pulumi.Output[str]:
+        """
+        DCMS Data Asset Registry Compartment Identifier
+        """
+        return pulumi.get(self, "registry_compartment_id")
+
+    @property
+    @pulumi.getter(name="registryId")
+    def registry_id(self) -> pulumi.Output[str]:
+        """
+        DCMS Data Asset Registry ID to which the workspace is associated
+        """
+        return pulumi.get(self, "registry_id")
+
+    @property
+    @pulumi.getter(name="registryName")
+    def registry_name(self) -> pulumi.Output[str]:
+        """
+        DCMS Data Asset Registry display name
+        """
+        return pulumi.get(self, "registry_name")
 
     @property
     @pulumi.getter

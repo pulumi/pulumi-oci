@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getShapes(args: GetShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getShapes:getShapes", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetShapesResult {
      */
     readonly shapes: outputs.LoadBalancer.GetShapesShape[];
 }
-
+/**
+ * This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Lists the valid load balancer shapes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLoadBalancerShapes = oci.LoadBalancer.getShapes({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getShapesOutput(args: GetShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapesResult> {
-    return pulumi.output(args).apply(a => getShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getShapes(a, opts))
 }
 
 /**

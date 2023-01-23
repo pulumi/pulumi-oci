@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironment(args: GetFusionEnvironmentArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironment:getFusionEnvironment", {
         "fusionEnvironmentId": args.fusionEnvironmentId,
     }, opts);
@@ -97,17 +95,25 @@ export interface GetFusionEnvironmentResult {
      */
     readonly idcsDomainUrl: string;
     /**
+     * If it's true, then the Break Glass feature is enabled
+     */
+    readonly isBreakGlassEnabled: boolean;
+    /**
      * BYOK key id
      */
     readonly kmsKeyId: string;
     /**
      * BYOK key info
      */
-    readonly kmsKeyInfos: string[];
+    readonly kmsKeyInfos: outputs.Functions.GetFusionEnvironmentKmsKeyInfo[];
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+     */
+    readonly lockboxId: string;
     /**
      * The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
@@ -153,9 +159,24 @@ export interface GetFusionEnvironmentResult {
      */
     readonly version: string;
 }
-
+/**
+ * This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Gets a FusionEnvironment by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironment = oci.Functions.getFusionEnvironment({
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentOutput(args: GetFusionEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironment(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironment(a, opts))
 }
 
 /**

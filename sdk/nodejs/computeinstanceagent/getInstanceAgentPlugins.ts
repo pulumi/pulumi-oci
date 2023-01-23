@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceAgentPlugins(args: GetInstanceAgentPluginsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceAgentPluginsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -82,9 +80,26 @@ export interface GetInstanceAgentPluginsResult {
      */
     readonly status?: string;
 }
-
+/**
+ * This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
+ *
+ * The API to get one or more plugin information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstanceAgentPlugins = oci.ComputeInstanceAgent.getInstanceAgentPlugins({
+ *     instanceagentId: oci_computeinstanceagent_instanceagent.test_instanceagent.id,
+ *     name: _var.instance_agent_plugin_name,
+ *     status: _var.instance_agent_plugin_status,
+ * });
+ * ```
+ */
 export function getInstanceAgentPluginsOutput(args: GetInstanceAgentPluginsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceAgentPluginsResult> {
-    return pulumi.output(args).apply(a => getInstanceAgentPlugins(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstanceAgentPlugins(a, opts))
 }
 
 /**

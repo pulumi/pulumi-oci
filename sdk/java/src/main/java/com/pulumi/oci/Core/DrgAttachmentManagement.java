@@ -156,14 +156,14 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
         return this.drgRouteTableId;
     }
     /**
-     * - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * 
      */
     @Export(name="exportDrgRouteDistributionId", type=String.class, parameters={})
     private Output<String> exportDrgRouteDistributionId;
 
     /**
-     * @return - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * 
      */
     public Output<String> exportDrgRouteDistributionId() {
@@ -240,14 +240,14 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
         return Codegen.optional(this.removeExportDrgRouteDistributionTrigger);
     }
     /**
-     * (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * The OCID of the route table the DRG attachment is using.
      * 
      */
     @Export(name="routeTableId", type=String.class, parameters={})
     private Output<String> routeTableId;
 
     /**
-     * @return (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * @return The OCID of the route table the DRG attachment is using.
      * 
      */
     public Output<String> routeTableId() {

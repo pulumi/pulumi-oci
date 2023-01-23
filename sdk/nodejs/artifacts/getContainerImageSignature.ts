@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerImageSignature(args: GetContainerImageSignatureArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerImageSignatureResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", {
         "imageSignatureId": args.imageSignatureId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetContainerImageSignatureResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
+ *
+ * Get container image signature metadata.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testContainerImageSignature = oci.Artifacts.getContainerImageSignature({
+ *     imageSignatureId: oci_artifacts_image_signature.test_image_signature.id,
+ * });
+ * ```
+ */
 export function getContainerImageSignatureOutput(args: GetContainerImageSignatureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImageSignatureResult> {
-    return pulumi.output(args).apply(a => getContainerImageSignature(a, opts))
+    return pulumi.output(args).apply((a: any) => getContainerImageSignature(a, opts))
 }
 
 /**

@@ -68,14 +68,19 @@ import javax.annotation.Nullable;
  *                 .isIncidentLogsEnabled(var_.cloud_vm_cluster_data_collection_options_is_incident_logs_enabled())
  *                 .build())
  *             .dataStoragePercentage(var_.cloud_vm_cluster_data_storage_percentage())
+ *             .dataStorageSizeInTbs(var_.cloud_vm_cluster_data_storage_size_in_tbs())
+ *             .dbNodeStorageSizeInGbs(var_.cloud_vm_cluster_db_node_storage_size_in_gbs())
+ *             .dbServers(var_.cloud_vm_cluster_db_servers())
  *             .definedTags(var_.cloud_vm_cluster_defined_tags())
  *             .domain(var_.cloud_vm_cluster_domain())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isLocalBackupEnabled(var_.cloud_vm_cluster_is_local_backup_enabled())
  *             .isSparseDiskgroupEnabled(var_.cloud_vm_cluster_is_sparse_diskgroup_enabled())
  *             .licenseModel(var_.cloud_vm_cluster_license_model())
+ *             .memorySizeInGbs(var_.cloud_vm_cluster_memory_size_in_gbs())
  *             .nsgIds(var_.cloud_vm_cluster_nsg_ids())
  *             .ocpuCount(var_.cloud_vm_cluster_ocpu_count())
+ *             .privateZoneId(oci_dns_zone.test_zone().id())
  *             .scanListenerPortTcp(var_.cloud_vm_cluster_scan_listener_port_tcp())
  *             .scanListenerPortTcpSsl(var_.cloud_vm_cluster_scan_listener_port_tcp_ssl())
  *             .timeZone(var_.cloud_vm_cluster_time_zone())
@@ -241,6 +246,48 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> dataStoragePercentage() {
         return this.dataStoragePercentage;
+    }
+    /**
+     * (Updatable) The data disk group size to be allocated in TBs.
+     * 
+     */
+    @Export(name="dataStorageSizeInTbs", type=Double.class, parameters={})
+    private Output<Double> dataStorageSizeInTbs;
+
+    /**
+     * @return (Updatable) The data disk group size to be allocated in TBs.
+     * 
+     */
+    public Output<Double> dataStorageSizeInTbs() {
+        return this.dataStorageSizeInTbs;
+    }
+    /**
+     * (Updatable) The local node storage to be allocated in GBs.
+     * 
+     */
+    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    private Output<Integer> dbNodeStorageSizeInGbs;
+
+    /**
+     * @return (Updatable) The local node storage to be allocated in GBs.
+     * 
+     */
+    public Output<Integer> dbNodeStorageSizeInGbs() {
+        return this.dbNodeStorageSizeInGbs;
+    }
+    /**
+     * The list of DB servers.
+     * 
+     */
+    @Export(name="dbServers", type=List.class, parameters={String.class})
+    private Output<List<String>> dbServers;
+
+    /**
+     * @return The list of DB servers.
+     * 
+     */
+    public Output<List<String>> dbServers() {
+        return this.dbServers;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -439,6 +486,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
         return this.listenerPort;
     }
     /**
+     * (Updatable) The memory to be allocated in GBs.
+     * 
+     */
+    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    private Output<Integer> memorySizeInGbs;
+
+    /**
+     * @return (Updatable) The memory to be allocated in GBs.
+     * 
+     */
+    public Output<Integer> memorySizeInGbs() {
+        return this.memorySizeInGbs;
+    }
+    /**
      * The number of nodes in the cloud VM cluster.
      * 
      */
@@ -481,6 +542,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> ocpuCount() {
         return this.ocpuCount;
+    }
+    /**
+     * The private zone id in which DNS records need to be created.
+     * 
+     */
+    @Export(name="privateZoneId", type=String.class, parameters={})
+    private Output<String> privateZoneId;
+
+    /**
+     * @return The private zone id in which DNS records need to be created.
+     * 
+     */
+    public Output<String> privateZoneId() {
+        return this.privateZoneId;
     }
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBucket(args: GetBucketArgs, opts?: pulumi.InvokeOptions): Promise<GetBucketResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getBucket:getBucket", {
         "name": args.name,
         "namespace": args.namespace,
@@ -142,9 +140,25 @@ export interface GetBucketResult {
      */
     readonly versioning: string;
 }
-
+/**
+ * This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Gets the current representation of the given bucket in the given Object Storage namespace.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBucket = oci.ObjectStorage.getBucket({
+ *     name: _var.bucket_name,
+ *     namespace: _var.bucket_namespace,
+ * });
+ * ```
+ */
 export function getBucketOutput(args: GetBucketOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBucketResult> {
-    return pulumi.output(args).apply(a => getBucket(a, opts))
+    return pulumi.output(args).apply((a: any) => getBucket(a, opts))
 }
 
 /**

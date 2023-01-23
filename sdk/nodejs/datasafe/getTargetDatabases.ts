@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabases(args: GetTargetDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabases:getTargetDatabases", {
         "accessLevel": args.accessLevel,
         "associatedResourceId": args.associatedResourceId,
@@ -130,9 +128,32 @@ export interface GetTargetDatabasesResult {
      */
     readonly targetDatabases: outputs.DataSafe.GetTargetDatabasesTargetDatabase[];
 }
-
+/**
+ * This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Returns the list of registered target databases in Data Safe.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetDatabases = oci.DataSafe.getTargetDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.target_database_access_level,
+ *     associatedResourceId: oci_data_safe_associated_resource.test_associated_resource.id,
+ *     compartmentIdInSubtree: _var.target_database_compartment_id_in_subtree,
+ *     databaseType: _var.target_database_database_type,
+ *     displayName: _var.target_database_display_name,
+ *     infrastructureType: _var.target_database_infrastructure_type,
+ *     state: _var.target_database_state,
+ *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ * });
+ * ```
+ */
 export function getTargetDatabasesOutput(args: GetTargetDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesResult> {
-    return pulumi.output(args).apply(a => getTargetDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetDatabases(a, opts))
 }
 
 /**

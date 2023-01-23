@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIntegrationInstance(args: GetIntegrationInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetIntegrationInstanceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Integration/getIntegrationInstance:getIntegrationInstance", {
         "integrationInstanceId": args.integrationInstanceId,
     }, opts);
@@ -133,9 +131,24 @@ export interface GetIntegrationInstanceResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.
+ *
+ * Gets a IntegrationInstance by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIntegrationInstance = oci.Integration.getIntegrationInstance({
+ *     integrationInstanceId: oci_integration_integration_instance.test_integration_instance.id,
+ * });
+ * ```
+ */
 export function getIntegrationInstanceOutput(args: GetIntegrationInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIntegrationInstanceResult> {
-    return pulumi.output(args).apply(a => getIntegrationInstance(a, opts))
+    return pulumi.output(args).apply((a: any) => getIntegrationInstance(a, opts))
 }
 
 /**

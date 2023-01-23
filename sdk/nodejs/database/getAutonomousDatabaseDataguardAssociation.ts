@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabaseDataguardAssociation(args: GetAutonomousDatabaseDataguardAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseDataguardAssociationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", {
         "autonomousDatabaseDataguardAssociationId": args.autonomousDatabaseDataguardAssociationId,
         "autonomousDatabaseId": args.autonomousDatabaseId,
@@ -105,9 +102,25 @@ export interface GetAutonomousDatabaseDataguardAssociationResult {
      */
     readonly timeLastRoleChanged: string;
 }
-
+/**
+ * This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseDataguardAssociation = oci.Database.getAutonomousDatabaseDataguardAssociation({
+ *     autonomousDatabaseDataguardAssociationId: oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association.id,
+ *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
+ * });
+ * ```
+ */
 export function getAutonomousDatabaseDataguardAssociationOutput(args: GetAutonomousDatabaseDataguardAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseDataguardAssociationResult> {
-    return pulumi.output(args).apply(a => getAutonomousDatabaseDataguardAssociation(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseDataguardAssociation(a, opts))
 }
 
 /**

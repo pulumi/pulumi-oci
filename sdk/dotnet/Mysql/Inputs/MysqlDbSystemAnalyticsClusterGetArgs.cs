@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? ClusterSize { get; set; }
 
         /// <summary>
-        /// The name of the shape. The shape determines the resources allocated
+        /// (Updatable) The name of the shape. The shape determines the resources allocated
         /// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         [Input("shapeName")]

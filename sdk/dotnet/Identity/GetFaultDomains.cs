@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFaultDomainsResult> InvokeAsync(GetFaultDomainsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFaultDomainsResult>("oci:Identity/getFaultDomains:getFaultDomains", args ?? new GetFaultDomainsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFaultDomainsResult>("oci:Identity/getFaultDomains:getFaultDomains", args ?? new GetFaultDomainsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFaultDomainsResult> Invoke(GetFaultDomainsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFaultDomainsResult>("oci:Identity/getFaultDomains:getFaultDomains", args ?? new GetFaultDomainsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFaultDomainsResult>("oci:Identity/getFaultDomains:getFaultDomains", args ?? new GetFaultDomainsInvokeArgs(), options.WithDefaults());
     }
 
 

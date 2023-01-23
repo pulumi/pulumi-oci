@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSuppression(args: GetSuppressionArgs, opts?: pulumi.InvokeOptions): Promise<GetSuppressionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getSuppression:getSuppression", {
         "suppressionId": args.suppressionId,
     }, opts);
@@ -84,9 +81,25 @@ export interface GetSuppressionResult {
      */
     readonly timeLastSuppressed: string;
 }
-
+/**
+ * This data source provides details about a specific Suppression resource in Oracle Cloud Infrastructure Email service.
+ *
+ * Gets the details of a suppressed recipient email address for a given
+ * `suppressionId`. Each suppression is given a unique OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSuppression = oci.Email.getSuppression({
+ *     suppressionId: oci_email_suppression.test_suppression.id,
+ * });
+ * ```
+ */
 export function getSuppressionOutput(args: GetSuppressionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSuppressionResult> {
-    return pulumi.output(args).apply(a => getSuppression(a, opts))
+    return pulumi.output(args).apply((a: any) => getSuppression(a, opts))
 }
 
 /**

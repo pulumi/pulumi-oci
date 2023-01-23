@@ -88,6 +88,12 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> OwnerUserName { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        /// </summary>
+        [Output("scanDetails")]
+        public Output<ImmutableArray<Outputs.PrivateEndpointScanDetail>> ScanDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The current state of this private endpoint.
         /// </summary>
         [Output("state")]
@@ -229,6 +235,18 @@ namespace Pulumi.Oci.DataFlow
             set => _nsgIds = value;
         }
 
+        [Input("scanDetails")]
+        private InputList<Inputs.PrivateEndpointScanDetailArgs>? _scanDetails;
+
+        /// <summary>
+        /// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        /// </summary>
+        public InputList<Inputs.PrivateEndpointScanDetailArgs> ScanDetails
+        {
+            get => _scanDetails ?? (_scanDetails = new InputList<Inputs.PrivateEndpointScanDetailArgs>());
+            set => _scanDetails = value;
+        }
+
         /// <summary>
         /// The OCID of a subnet.
         /// </summary>
@@ -332,6 +350,18 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Input("ownerUserName")]
         public Input<string>? OwnerUserName { get; set; }
+
+        [Input("scanDetails")]
+        private InputList<Inputs.PrivateEndpointScanDetailGetArgs>? _scanDetails;
+
+        /// <summary>
+        /// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        /// </summary>
+        public InputList<Inputs.PrivateEndpointScanDetailGetArgs> ScanDetails
+        {
+            get => _scanDetails ?? (_scanDetails = new InputList<Inputs.PrivateEndpointScanDetailGetArgs>());
+            set => _scanDetails = value;
+        }
 
         /// <summary>
         /// The current state of this private endpoint.

@@ -24,6 +24,18 @@ namespace Pulumi.Oci.Nosql.Inputs
             set => _columns = value;
         }
 
+        [Input("identities")]
+        private InputList<Inputs.TableSchemaIdentityArgs>? _identities;
+
+        /// <summary>
+        /// The identity properties of a table, if any.
+        /// </summary>
+        public InputList<Inputs.TableSchemaIdentityArgs> Identities
+        {
+            get => _identities ?? (_identities = new InputList<Inputs.TableSchemaIdentityArgs>());
+            set => _identities = value;
+        }
+
         [Input("primaryKeys")]
         private InputList<string>? _primaryKeys;
 

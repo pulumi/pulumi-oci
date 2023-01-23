@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeCapacityReservationInstances(args: GetComputeCapacityReservationInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityReservationInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", {
         "availabilityDomain": args.availabilityDomain,
         "capacityReservationId": args.capacityReservationId,
@@ -79,9 +77,26 @@ export interface GetComputeCapacityReservationInstancesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testComputeCapacityReservationInstances = oci.Core.getComputeCapacityReservationInstances({
+ *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
+ *     availabilityDomain: _var.compute_capacity_reservation_instance_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getComputeCapacityReservationInstancesOutput(args: GetComputeCapacityReservationInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityReservationInstancesResult> {
-    return pulumi.output(args).apply(a => getComputeCapacityReservationInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getComputeCapacityReservationInstances(a, opts))
 }
 
 /**

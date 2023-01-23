@@ -70,6 +70,13 @@ func NewAutonomousDatabaseWallet(ctx *pulumi.Context,
 	if args.Password == nil {
 		return nil, errors.New("invalid value for required argument 'Password'")
 	}
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
 	var resource AutonomousDatabaseWallet
 	err := ctx.RegisterResource("oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet", name, args, &resource, opts...)
 	if err != nil {

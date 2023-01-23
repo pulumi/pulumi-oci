@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReportDefinitions(args: GetReportDefinitionsArgs, opts?: pulumi.InvokeOptions): Promise<GetReportDefinitionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getReportDefinitions:getReportDefinitions", {
         "accessLevel": args.accessLevel,
         "category": args.category,
@@ -128,9 +126,33 @@ export interface GetReportDefinitionsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Report Definitions in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of report definitions.
+ * The ListReportDefinitions operation returns only the report definitions in the specified `compartmentId`.
+ * It also returns the seeded report definitions which are available to all the compartments.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testReportDefinitions = oci.DataSafe.getReportDefinitions({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.report_definition_access_level,
+ *     category: _var.report_definition_category,
+ *     compartmentIdInSubtree: _var.report_definition_compartment_id_in_subtree,
+ *     dataSource: _var.report_definition_data_source,
+ *     displayName: _var.report_definition_display_name,
+ *     isSeeded: _var.report_definition_is_seeded,
+ *     state: _var.report_definition_state,
+ * });
+ * ```
+ */
 export function getReportDefinitionsOutput(args: GetReportDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportDefinitionsResult> {
-    return pulumi.output(args).apply(a => getReportDefinitions(a, opts))
+    return pulumi.output(args).apply((a: any) => getReportDefinitions(a, opts))
 }
 
 /**

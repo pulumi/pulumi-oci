@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCertificatesResult> InvokeAsync(GetCertificatesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCertificatesResult>("oci:LoadBalancer/getCertificates:getCertificates", args ?? new GetCertificatesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificatesResult>("oci:LoadBalancer/getCertificates:getCertificates", args ?? new GetCertificatesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Certificates in Oracle Cloud Infrastructure Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCertificatesResult> Invoke(GetCertificatesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCertificatesResult>("oci:LoadBalancer/getCertificates:getCertificates", args ?? new GetCertificatesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificatesResult>("oci:LoadBalancer/getCertificates:getCertificates", args ?? new GetCertificatesInvokeArgs(), options.WithDefaults());
     }
 
 

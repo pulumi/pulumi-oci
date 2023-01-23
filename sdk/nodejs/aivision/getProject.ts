@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProject(args: GetProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetProjectResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiVision/getProject:getProject", {
         "projectId": args.projectId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetProjectResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
+ *
+ * Gets a Project by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProject = oci.AiVision.getProject({
+ *     projectId: oci_ai_vision_project.test_project.id,
+ * });
+ * ```
+ */
 export function getProjectOutput(args: GetProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProjectResult> {
-    return pulumi.output(args).apply(a => getProject(a, opts))
+    return pulumi.output(args).apply((a: any) => getProject(a, opts))
 }
 
 /**

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBastion(args: GetBastionArgs, opts?: pulumi.InvokeOptions): Promise<GetBastionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Bastion/getBastion:getBastion", {
         "bastionId": args.bastionId,
     }, opts);
@@ -62,6 +59,10 @@ export interface GetBastionResult {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: any};
+    /**
+     * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     */
+    readonly dnsProxyStatus: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -123,9 +124,24 @@ export interface GetBastionResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.
+ *
+ * Retrieves a bastion identified by the bastion ID. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBastion = oci.Bastion.getBastion({
+ *     bastionId: oci_bastion_bastion.test_bastion.id,
+ * });
+ * ```
+ */
 export function getBastionOutput(args: GetBastionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBastionResult> {
-    return pulumi.output(args).apply(a => getBastion(a, opts))
+    return pulumi.output(args).apply((a: any) => getBastion(a, opts))
 }
 
 /**

@@ -31,9 +31,17 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.baseRef);
     }
 
+    /**
+     * (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     @Import(name="fileFilter")
     private @Nullable Output<TriggerActionFilterIncludeFileFilterArgs> fileFilter;
 
+    /**
+     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     public Optional<Output<TriggerActionFilterIncludeFileFilterArgs>> fileFilter() {
         return Optional.ofNullable(this.fileFilter);
     }
@@ -53,12 +61,28 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.headRef);
     }
 
+    /**
+     * (Updatable) The repository name for trigger events.
+     * 
+     */
+    @Import(name="repositoryName")
+    private @Nullable Output<String> repositoryName;
+
+    /**
+     * @return (Updatable) The repository name for trigger events.
+     * 
+     */
+    public Optional<Output<String>> repositoryName() {
+        return Optional.ofNullable(this.repositoryName);
+    }
+
     private TriggerActionFilterIncludeArgs() {}
 
     private TriggerActionFilterIncludeArgs(TriggerActionFilterIncludeArgs $) {
         this.baseRef = $.baseRef;
         this.fileFilter = $.fileFilter;
         this.headRef = $.headRef;
+        this.repositoryName = $.repositoryName;
     }
 
     public static Builder builder() {
@@ -100,11 +124,23 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
             return baseRef(Output.of(baseRef));
         }
 
+        /**
+         * @param fileFilter (Updatable) Attributes to support include/exclude files for triggering build runs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fileFilter(@Nullable Output<TriggerActionFilterIncludeFileFilterArgs> fileFilter) {
             $.fileFilter = fileFilter;
             return this;
         }
 
+        /**
+         * @param fileFilter (Updatable) Attributes to support include/exclude files for triggering build runs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fileFilter(TriggerActionFilterIncludeFileFilterArgs fileFilter) {
             return fileFilter(Output.of(fileFilter));
         }
@@ -128,6 +164,27 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
          */
         public Builder headRef(String headRef) {
             return headRef(Output.of(headRef));
+        }
+
+        /**
+         * @param repositoryName (Updatable) The repository name for trigger events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder repositoryName(@Nullable Output<String> repositoryName) {
+            $.repositoryName = repositoryName;
+            return this;
+        }
+
+        /**
+         * @param repositoryName (Updatable) The repository name for trigger events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder repositoryName(String repositoryName) {
+            return repositoryName(Output.of(repositoryName));
         }
 
         public TriggerActionFilterIncludeArgs build() {

@@ -86,15 +86,31 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DataScience/model:Model")
 public class Model extends com.pulumi.resources.CustomResource {
+    /**
+     * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+     * 
+     */
     @Export(name="artifactContentDisposition", type=String.class, parameters={})
     private Output<String> artifactContentDisposition;
 
+    /**
+     * @return This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+     * 
+     */
     public Output<String> artifactContentDisposition() {
         return this.artifactContentDisposition;
     }
+    /**
+     * The content length of the model_artifact.
+     * 
+     */
     @Export(name="artifactContentLength", type=String.class, parameters={})
     private Output<String> artifactContentLength;
 
+    /**
+     * @return The content length of the model_artifact.
+     * 
+     */
     public Output<String> artifactContentLength() {
         return this.artifactContentLength;
     }
@@ -242,9 +258,17 @@ public class Model extends com.pulumi.resources.CustomResource {
     public Output<String> inputSchema() {
         return this.inputSchema;
     }
+    /**
+     * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
+     * 
+     */
     @Export(name="modelArtifact", type=String.class, parameters={})
     private Output<String> modelArtifact;
 
+    /**
+     * @return The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
+     * 
+     */
     public Output<String> modelArtifact() {
         return this.modelArtifact;
     }

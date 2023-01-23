@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIdpGroupMappings(args: GetIdpGroupMappingsArgs, opts?: pulumi.InvokeOptions): Promise<GetIdpGroupMappingsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", {
         "filters": args.filters,
         "identityProviderId": args.identityProviderId,
@@ -64,9 +62,26 @@ export interface GetIdpGroupMappingsResult {
      */
     readonly idpGroupMappings: outputs.Identity.GetIdpGroupMappingsIdpGroupMapping[];
 }
-
+/**
+ * This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.
+ *
+ * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
+ *
+ * Lists the group mappings for the specified identity provider.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIdpGroupMappings = oci.Identity.getIdpGroupMappings({
+ *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
+ * });
+ * ```
+ */
 export function getIdpGroupMappingsOutput(args: GetIdpGroupMappingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdpGroupMappingsResult> {
-    return pulumi.output(args).apply(a => getIdpGroupMappings(a, opts))
+    return pulumi.output(args).apply((a: any) => getIdpGroupMappings(a, opts))
 }
 
 /**

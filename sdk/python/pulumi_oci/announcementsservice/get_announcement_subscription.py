@@ -22,7 +22,7 @@ class GetAnnouncementSubscriptionResult:
     """
     A collection of values returned by getAnnouncementSubscription.
     """
-    def __init__(__self__, announcement_subscription_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, filter_groups=None, freeform_tags=None, id=None, lifecycle_details=None, ons_topic_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, announcement_subscription_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, filter_groups=None, freeform_tags=None, id=None, lifecycle_details=None, ons_topic_id=None, preferred_language=None, preferred_time_zone=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if announcement_subscription_id and not isinstance(announcement_subscription_id, str):
             raise TypeError("Expected argument 'announcement_subscription_id' to be a str")
         pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
@@ -53,6 +53,12 @@ class GetAnnouncementSubscriptionResult:
         if ons_topic_id and not isinstance(ons_topic_id, str):
             raise TypeError("Expected argument 'ons_topic_id' to be a str")
         pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        if preferred_language and not isinstance(preferred_language, str):
+            raise TypeError("Expected argument 'preferred_language' to be a str")
+        pulumi.set(__self__, "preferred_language", preferred_language)
+        if preferred_time_zone and not isinstance(preferred_time_zone, str):
+            raise TypeError("Expected argument 'preferred_time_zone' to be a str")
+        pulumi.set(__self__, "preferred_time_zone", preferred_time_zone)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -144,6 +150,22 @@ class GetAnnouncementSubscriptionResult:
         return pulumi.get(self, "ons_topic_id")
 
     @property
+    @pulumi.getter(name="preferredLanguage")
+    def preferred_language(self) -> str:
+        """
+        (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        """
+        return pulumi.get(self, "preferred_language")
+
+    @property
+    @pulumi.getter(name="preferredTimeZone")
+    def preferred_time_zone(self) -> str:
+        """
+        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        """
+        return pulumi.get(self, "preferred_time_zone")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -192,6 +214,8 @@ class AwaitableGetAnnouncementSubscriptionResult(GetAnnouncementSubscriptionResu
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             ons_topic_id=self.ons_topic_id,
+            preferred_language=self.preferred_language,
+            preferred_time_zone=self.preferred_time_zone,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -235,6 +259,8 @@ def get_announcement_subscription(announcement_subscription_id: Optional[str] = 
         id=__ret__.id,
         lifecycle_details=__ret__.lifecycle_details,
         ons_topic_id=__ret__.ons_topic_id,
+        preferred_language=__ret__.preferred_language,
+        preferred_time_zone=__ret__.preferred_time_zone,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,

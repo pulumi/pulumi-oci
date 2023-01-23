@@ -5,22 +5,61 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./appFirewall";
-export * from "./appFirewallPolicy";
-export * from "./getFirewalls";
-export * from "./getNetworkAddressList";
-export * from "./getNetworkAddressLists";
-export * from "./getProtectionCapabilities";
-export * from "./getProtectionCapabilityGroupTags";
-export * from "./getWebAppFirewall";
-export * from "./getWebAppFirewallPolicies";
-export * from "./getWebAppFirewallPolicy";
-export * from "./networkAddressList";
+export { AppFirewallArgs, AppFirewallState } from "./appFirewall";
+export type AppFirewall = import("./appFirewall").AppFirewall;
+export const AppFirewall: typeof import("./appFirewall").AppFirewall = null as any;
+utilities.lazyLoad(exports, ["AppFirewall"], () => require("./appFirewall"));
 
-// Import resources to register:
-import { AppFirewall } from "./appFirewall";
-import { AppFirewallPolicy } from "./appFirewallPolicy";
-import { NetworkAddressList } from "./networkAddressList";
+export { AppFirewallPolicyArgs, AppFirewallPolicyState } from "./appFirewallPolicy";
+export type AppFirewallPolicy = import("./appFirewallPolicy").AppFirewallPolicy;
+export const AppFirewallPolicy: typeof import("./appFirewallPolicy").AppFirewallPolicy = null as any;
+utilities.lazyLoad(exports, ["AppFirewallPolicy"], () => require("./appFirewallPolicy"));
+
+export { GetFirewallsArgs, GetFirewallsResult, GetFirewallsOutputArgs } from "./getFirewalls";
+export const getFirewalls: typeof import("./getFirewalls").getFirewalls = null as any;
+export const getFirewallsOutput: typeof import("./getFirewalls").getFirewallsOutput = null as any;
+utilities.lazyLoad(exports, ["getFirewalls","getFirewallsOutput"], () => require("./getFirewalls"));
+
+export { GetNetworkAddressListArgs, GetNetworkAddressListResult, GetNetworkAddressListOutputArgs } from "./getNetworkAddressList";
+export const getNetworkAddressList: typeof import("./getNetworkAddressList").getNetworkAddressList = null as any;
+export const getNetworkAddressListOutput: typeof import("./getNetworkAddressList").getNetworkAddressListOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkAddressList","getNetworkAddressListOutput"], () => require("./getNetworkAddressList"));
+
+export { GetNetworkAddressListsArgs, GetNetworkAddressListsResult, GetNetworkAddressListsOutputArgs } from "./getNetworkAddressLists";
+export const getNetworkAddressLists: typeof import("./getNetworkAddressLists").getNetworkAddressLists = null as any;
+export const getNetworkAddressListsOutput: typeof import("./getNetworkAddressLists").getNetworkAddressListsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkAddressLists","getNetworkAddressListsOutput"], () => require("./getNetworkAddressLists"));
+
+export { GetProtectionCapabilitiesArgs, GetProtectionCapabilitiesResult, GetProtectionCapabilitiesOutputArgs } from "./getProtectionCapabilities";
+export const getProtectionCapabilities: typeof import("./getProtectionCapabilities").getProtectionCapabilities = null as any;
+export const getProtectionCapabilitiesOutput: typeof import("./getProtectionCapabilities").getProtectionCapabilitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getProtectionCapabilities","getProtectionCapabilitiesOutput"], () => require("./getProtectionCapabilities"));
+
+export { GetProtectionCapabilityGroupTagsArgs, GetProtectionCapabilityGroupTagsResult, GetProtectionCapabilityGroupTagsOutputArgs } from "./getProtectionCapabilityGroupTags";
+export const getProtectionCapabilityGroupTags: typeof import("./getProtectionCapabilityGroupTags").getProtectionCapabilityGroupTags = null as any;
+export const getProtectionCapabilityGroupTagsOutput: typeof import("./getProtectionCapabilityGroupTags").getProtectionCapabilityGroupTagsOutput = null as any;
+utilities.lazyLoad(exports, ["getProtectionCapabilityGroupTags","getProtectionCapabilityGroupTagsOutput"], () => require("./getProtectionCapabilityGroupTags"));
+
+export { GetWebAppFirewallArgs, GetWebAppFirewallResult, GetWebAppFirewallOutputArgs } from "./getWebAppFirewall";
+export const getWebAppFirewall: typeof import("./getWebAppFirewall").getWebAppFirewall = null as any;
+export const getWebAppFirewallOutput: typeof import("./getWebAppFirewall").getWebAppFirewallOutput = null as any;
+utilities.lazyLoad(exports, ["getWebAppFirewall","getWebAppFirewallOutput"], () => require("./getWebAppFirewall"));
+
+export { GetWebAppFirewallPoliciesArgs, GetWebAppFirewallPoliciesResult, GetWebAppFirewallPoliciesOutputArgs } from "./getWebAppFirewallPolicies";
+export const getWebAppFirewallPolicies: typeof import("./getWebAppFirewallPolicies").getWebAppFirewallPolicies = null as any;
+export const getWebAppFirewallPoliciesOutput: typeof import("./getWebAppFirewallPolicies").getWebAppFirewallPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getWebAppFirewallPolicies","getWebAppFirewallPoliciesOutput"], () => require("./getWebAppFirewallPolicies"));
+
+export { GetWebAppFirewallPolicyArgs, GetWebAppFirewallPolicyResult, GetWebAppFirewallPolicyOutputArgs } from "./getWebAppFirewallPolicy";
+export const getWebAppFirewallPolicy: typeof import("./getWebAppFirewallPolicy").getWebAppFirewallPolicy = null as any;
+export const getWebAppFirewallPolicyOutput: typeof import("./getWebAppFirewallPolicy").getWebAppFirewallPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getWebAppFirewallPolicy","getWebAppFirewallPolicyOutput"], () => require("./getWebAppFirewallPolicy"));
+
+export { NetworkAddressListArgs, NetworkAddressListState } from "./networkAddressList";
+export type NetworkAddressList = import("./networkAddressList").NetworkAddressList;
+export const NetworkAddressList: typeof import("./networkAddressList").NetworkAddressList = null as any;
+utilities.lazyLoad(exports, ["NetworkAddressList"], () => require("./networkAddressList"));
+
 
 const _module = {
     version: utilities.getVersion(),

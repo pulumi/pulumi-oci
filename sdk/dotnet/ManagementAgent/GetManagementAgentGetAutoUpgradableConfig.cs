@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementAgentGetAutoUpgradableConfigResult> InvokeAsync(GetManagementAgentGetAutoUpgradableConfigArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentGetAutoUpgradableConfigResult>("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args ?? new GetManagementAgentGetAutoUpgradableConfigArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentGetAutoUpgradableConfigResult>("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args ?? new GetManagementAgentGetAutoUpgradableConfigArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementAgentGetAutoUpgradableConfigResult> Invoke(GetManagementAgentGetAutoUpgradableConfigInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementAgentGetAutoUpgradableConfigResult>("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args ?? new GetManagementAgentGetAutoUpgradableConfigInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentGetAutoUpgradableConfigResult>("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args ?? new GetManagementAgentGetAutoUpgradableConfigInvokeArgs(), options.WithDefaults());
     }
 
 

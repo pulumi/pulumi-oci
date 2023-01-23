@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDataGuardAssociationsResult> InvokeAsync(GetDataGuardAssociationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDataGuardAssociationsResult>("oci:Database/getDataGuardAssociations:getDataGuardAssociations", args ?? new GetDataGuardAssociationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataGuardAssociationsResult>("oci:Database/getDataGuardAssociations:getDataGuardAssociations", args ?? new GetDataGuardAssociationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDataGuardAssociationsResult> Invoke(GetDataGuardAssociationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDataGuardAssociationsResult>("oci:Database/getDataGuardAssociations:getDataGuardAssociations", args ?? new GetDataGuardAssociationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataGuardAssociationsResult>("oci:Database/getDataGuardAssociations:getDataGuardAssociations", args ?? new GetDataGuardAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWebAppFirewall(args: GetWebAppFirewallArgs, opts?: pulumi.InvokeOptions): Promise<GetWebAppFirewallResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getWebAppFirewall:getWebAppFirewall", {
         "webAppFirewallId": args.webAppFirewallId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetWebAppFirewallResult {
      */
     readonly webAppFirewallPolicyId: string;
 }
-
+/**
+ * This data source provides details about a specific Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
+ *
+ * Gets a WebAppFirewall by OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWebAppFirewall = oci.Waf.getWebAppFirewall({
+ *     webAppFirewallId: oci_waf_web_app_firewall.test_web_app_firewall.id,
+ * });
+ * ```
+ */
 export function getWebAppFirewallOutput(args: GetWebAppFirewallOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWebAppFirewallResult> {
-    return pulumi.output(args).apply(a => getWebAppFirewall(a, opts))
+    return pulumi.output(args).apply((a: any) => getWebAppFirewall(a, opts))
 }
 
 /**

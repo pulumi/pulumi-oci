@@ -31,6 +31,21 @@ public final class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs extends com.p
     }
 
     /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    @Import(name="nvmes")
+    private @Nullable Output<Integer> nvmes;
+
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Output<Integer>> nvmes() {
+        return Optional.ofNullable(this.nvmes);
+    }
+
+    /**
      * The total number of OCPUs available to the node.
      * 
      */
@@ -49,6 +64,7 @@ public final class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs extends com.p
 
     private BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs(BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs $) {
         this.memoryInGbs = $.memoryInGbs;
+        this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
     }
 
@@ -89,6 +105,27 @@ public final class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs extends com.p
          */
         public Builder memoryInGbs(Integer memoryInGbs) {
             return memoryInGbs(Output.of(memoryInGbs));
+        }
+
+        /**
+         * @param nvmes The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(@Nullable Output<Integer> nvmes) {
+            $.nvmes = nvmes;
+            return this;
+        }
+
+        /**
+         * @param nvmes The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(Integer nvmes) {
+            return nvmes(Output.of(nvmes));
         }
 
         /**

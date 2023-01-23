@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getByoipAllocatedRanges(args: GetByoipAllocatedRangesArgs, opts?: pulumi.InvokeOptions): Promise<GetByoipAllocatedRangesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", {
         "byoipRangeId": args.byoipRangeId,
         "filters": args.filters,
@@ -60,9 +58,25 @@ export interface GetByoipAllocatedRangesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
+ * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testByoipAllocatedRanges = oci.Core.getByoipAllocatedRanges({
+ *     byoipRangeId: oci_core_byoip_range.test_byoip_range.id,
+ * });
+ * ```
+ */
 export function getByoipAllocatedRangesOutput(args: GetByoipAllocatedRangesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipAllocatedRangesResult> {
-    return pulumi.output(args).apply(a => getByoipAllocatedRanges(a, opts))
+    return pulumi.output(args).apply((a: any) => getByoipAllocatedRanges(a, opts))
 }
 
 /**

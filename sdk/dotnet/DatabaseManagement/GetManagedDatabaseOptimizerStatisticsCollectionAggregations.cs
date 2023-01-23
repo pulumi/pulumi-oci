@@ -48,7 +48,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> InvokeAsync(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> Invoke(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs(), options.WithDefaults());
     }
 
 

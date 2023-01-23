@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -11,11 +12,8 @@ import * as utilities from "../utilities";
  * This is a collection API which returns a list of Computed Usages for given filters.
  */
 export function getComputedUsages(args: GetComputedUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetComputedUsagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubUsage/getComputedUsages:getComputedUsages", {
         "compartmentId": args.compartmentId,
         "computedProduct": args.computedProduct,
@@ -87,9 +85,13 @@ export interface GetComputedUsagesResult {
     readonly timeTo: string;
     readonly xOneOriginRegion?: string;
 }
-
+/**
+ * This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Osub Usage service.
+ *
+ * This is a collection API which returns a list of Computed Usages for given filters.
+ */
 export function getComputedUsagesOutput(args: GetComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputedUsagesResult> {
-    return pulumi.output(args).apply(a => getComputedUsages(a, opts))
+    return pulumi.output(args).apply((a: any) => getComputedUsages(a, opts))
 }
 
 /**

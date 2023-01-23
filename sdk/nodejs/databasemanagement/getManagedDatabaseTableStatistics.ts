@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseTableStatistics(args: GetManagedDatabaseTableStatisticsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseTableStatisticsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", {
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
@@ -60,9 +58,25 @@ export interface GetManagedDatabaseTableStatisticsResult {
      */
     readonly tableStatisticsCollections: outputs.DatabaseManagement.GetManagedDatabaseTableStatisticsTableStatisticsCollection[];
 }
-
+/**
+ * This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the number of database table objects grouped by different statuses such as
+ * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseTableStatistics = oci.DatabaseManagement.getManagedDatabaseTableStatistics({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ * });
+ * ```
+ */
 export function getManagedDatabaseTableStatisticsOutput(args: GetManagedDatabaseTableStatisticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseTableStatisticsResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseTableStatistics(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseTableStatistics(a, opts))
 }
 
 /**

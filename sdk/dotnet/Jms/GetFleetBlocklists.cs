@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFleetBlocklistsResult> InvokeAsync(GetFleetBlocklistsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFleetBlocklistsResult>("oci:Jms/getFleetBlocklists:getFleetBlocklists", args ?? new GetFleetBlocklistsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetBlocklistsResult>("oci:Jms/getFleetBlocklists:getFleetBlocklists", args ?? new GetFleetBlocklistsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFleetBlocklistsResult> Invoke(GetFleetBlocklistsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFleetBlocklistsResult>("oci:Jms/getFleetBlocklists:getFleetBlocklists", args ?? new GetFleetBlocklistsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetBlocklistsResult>("oci:Jms/getFleetBlocklists:getFleetBlocklists", args ?? new GetFleetBlocklistsInvokeArgs(), options.WithDefaults());
     }
 
 

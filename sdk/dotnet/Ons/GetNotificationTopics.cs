@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Ons
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNotificationTopicsResult> InvokeAsync(GetNotificationTopicsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNotificationTopicsResult>("oci:Ons/getNotificationTopics:getNotificationTopics", args ?? new GetNotificationTopicsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNotificationTopicsResult>("oci:Ons/getNotificationTopics:getNotificationTopics", args ?? new GetNotificationTopicsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Notification Topics in Oracle Cloud Infrastructure Notifications service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Ons
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNotificationTopicsResult> Invoke(GetNotificationTopicsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNotificationTopicsResult>("oci:Ons/getNotificationTopics:getNotificationTopics", args ?? new GetNotificationTopicsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNotificationTopicsResult>("oci:Ons/getNotificationTopics:getNotificationTopics", args ?? new GetNotificationTopicsInvokeArgs(), options.WithDefaults());
     }
 
 

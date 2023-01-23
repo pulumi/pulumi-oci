@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousDbPreviewVersionsResult> InvokeAsync(GetAutonomousDbPreviewVersionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDbPreviewVersionsResult>("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args ?? new GetAutonomousDbPreviewVersionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDbPreviewVersionsResult>("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args ?? new GetAutonomousDbPreviewVersionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousDbPreviewVersionsResult> Invoke(GetAutonomousDbPreviewVersionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousDbPreviewVersionsResult>("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args ?? new GetAutonomousDbPreviewVersionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDbPreviewVersionsResult>("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args ?? new GetAutonomousDbPreviewVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

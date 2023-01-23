@@ -12,12 +12,14 @@ import com.pulumi.oci.GoldenGate.inputs.DatabaseRegistrationState;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
  * 
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Creates a new DatabaseRegistration.
  * 
  * ## Example Usage
@@ -135,14 +137,14 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
         return this.databaseId;
     }
     /**
-     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -191,14 +193,14 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
         return this.fqdn;
     }
     /**
-     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
@@ -303,14 +305,14 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
         return this.secretId;
     }
     /**
-     * (Updatable) The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
     @Export(name="sessionMode", type=String.class, parameters={})
     private Output<String> sessionMode;
 
     /**
-     * @return (Updatable) The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * @return (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
     public Output<String> sessionMode() {
@@ -345,14 +347,14 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
         return this.subnetId;
     }
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> systemTags;
 
     /**
-     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Output<Map<String,Object>> systemTags() {
@@ -461,6 +463,9 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "password"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

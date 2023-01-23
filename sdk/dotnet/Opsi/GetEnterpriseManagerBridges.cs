@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEnterpriseManagerBridgesResult> InvokeAsync(GetEnterpriseManagerBridgesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEnterpriseManagerBridgesResult>("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", args ?? new GetEnterpriseManagerBridgesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEnterpriseManagerBridgesResult>("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", args ?? new GetEnterpriseManagerBridgesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEnterpriseManagerBridgesResult> Invoke(GetEnterpriseManagerBridgesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEnterpriseManagerBridgesResult>("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", args ?? new GetEnterpriseManagerBridgesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEnterpriseManagerBridgesResult>("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", args ?? new GetEnterpriseManagerBridgesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemStoragePerformances(args: GetDbSystemStoragePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemStoragePerformancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", {
         "filters": args.filters,
         "shapeType": args.shapeType,
@@ -71,9 +69,25 @@ export interface GetDbSystemStoragePerformancesResult {
     readonly shapeType?: string;
     readonly storageManagement: string;
 }
-
+/**
+ * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystemStoragePerformances = oci.Database.getDbSystemStoragePerformances({
+ *     storageManagement: _var.db_system_storage_performance_storage_management,
+ *     shapeType: _var.db_system_storage_performance_shape_type,
+ * });
+ * ```
+ */
 export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePerformancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemStoragePerformancesResult> {
-    return pulumi.output(args).apply(a => getDbSystemStoragePerformances(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbSystemStoragePerformances(a, opts))
 }
 
 /**

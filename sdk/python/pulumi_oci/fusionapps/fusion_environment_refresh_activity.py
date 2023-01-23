@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['FusionEnvironmentRefreshActivityArgs', 'FusionEnvironmentRefreshActivity']
 
@@ -55,6 +57,8 @@ class _FusionEnvironmentRefreshActivityState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  fusion_environment_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 refresh_activity_id: Optional[pulumi.Input[str]] = None,
+                 refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]] = None,
                  service_availability: Optional[pulumi.Input[str]] = None,
                  source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -62,13 +66,13 @@ class _FusionEnvironmentRefreshActivityState:
                  time_expected_finish: Optional[pulumi.Input[str]] = None,
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_of_restoration_point: Optional[pulumi.Input[str]] = None,
-                 time_scheduled_start: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentRefreshActivity resources.
         :param pulumi.Input[str] display_name: A friendly name for the refresh activity. Can be changed later.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
         :param pulumi.Input[str] state: The current state of the refreshActivity.
@@ -76,7 +80,6 @@ class _FusionEnvironmentRefreshActivityState:
         :param pulumi.Input[str] time_expected_finish: The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_finished: The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_of_restoration_point: The date and time of the most recent source environment backup used for the environment refresh.
-        :param pulumi.Input[str] time_scheduled_start: The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         """
         if display_name is not None:
@@ -85,6 +88,10 @@ class _FusionEnvironmentRefreshActivityState:
             pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if refresh_activity_id is not None:
+            pulumi.set(__self__, "refresh_activity_id", refresh_activity_id)
+        if refresh_issue_details_lists is not None:
+            pulumi.set(__self__, "refresh_issue_details_lists", refresh_issue_details_lists)
         if service_availability is not None:
             pulumi.set(__self__, "service_availability", service_availability)
         if source_fusion_environment_id is not None:
@@ -99,8 +106,6 @@ class _FusionEnvironmentRefreshActivityState:
             pulumi.set(__self__, "time_finished", time_finished)
         if time_of_restoration_point is not None:
             pulumi.set(__self__, "time_of_restoration_point", time_of_restoration_point)
-        if time_scheduled_start is not None:
-            pulumi.set(__self__, "time_scheduled_start", time_scheduled_start)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
 
@@ -139,6 +144,27 @@ class _FusionEnvironmentRefreshActivityState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="refreshActivityId")
+    def refresh_activity_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "refresh_activity_id")
+
+    @refresh_activity_id.setter
+    def refresh_activity_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "refresh_activity_id", value)
+
+    @property
+    @pulumi.getter(name="refreshIssueDetailsLists")
+    def refresh_issue_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]]:
+        """
+        Details of refresh investigation information, each item represents a different issue.
+        """
+        return pulumi.get(self, "refresh_issue_details_lists")
+
+    @refresh_issue_details_lists.setter
+    def refresh_issue_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]]):
+        pulumi.set(self, "refresh_issue_details_lists", value)
 
     @property
     @pulumi.getter(name="serviceAvailability")
@@ -223,18 +249,6 @@ class _FusionEnvironmentRefreshActivityState:
     @time_of_restoration_point.setter
     def time_of_restoration_point(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_of_restoration_point", value)
-
-    @property
-    @pulumi.getter(name="timeScheduledStart")
-    def time_scheduled_start(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-        """
-        return pulumi.get(self, "time_scheduled_start")
-
-    @time_scheduled_start.setter
-    def time_scheduled_start(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "time_scheduled_start", value)
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -350,13 +364,14 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             __props__.__dict__["source_fusion_environment_id"] = source_fusion_environment_id
             __props__.__dict__["display_name"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["refresh_activity_id"] = None
+            __props__.__dict__["refresh_issue_details_lists"] = None
             __props__.__dict__["service_availability"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_accepted"] = None
             __props__.__dict__["time_expected_finish"] = None
             __props__.__dict__["time_finished"] = None
             __props__.__dict__["time_of_restoration_point"] = None
-            __props__.__dict__["time_scheduled_start"] = None
             __props__.__dict__["time_updated"] = None
         super(FusionEnvironmentRefreshActivity, __self__).__init__(
             'oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity',
@@ -371,6 +386,8 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             fusion_environment_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            refresh_activity_id: Optional[pulumi.Input[str]] = None,
+            refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]]] = None,
             service_availability: Optional[pulumi.Input[str]] = None,
             source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -378,7 +395,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             time_expected_finish: Optional[pulumi.Input[str]] = None,
             time_finished: Optional[pulumi.Input[str]] = None,
             time_of_restoration_point: Optional[pulumi.Input[str]] = None,
-            time_scheduled_start: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'FusionEnvironmentRefreshActivity':
         """
         Get an existing FusionEnvironmentRefreshActivity resource's state with the given name, id, and optional extra
@@ -390,6 +406,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: A friendly name for the refresh activity. Can be changed later.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
         :param pulumi.Input[str] state: The current state of the refreshActivity.
@@ -397,7 +414,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.Input[str] time_expected_finish: The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_finished: The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_of_restoration_point: The date and time of the most recent source environment backup used for the environment refresh.
-        :param pulumi.Input[str] time_scheduled_start: The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -407,6 +423,8 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fusion_environment_id"] = fusion_environment_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["refresh_activity_id"] = refresh_activity_id
+        __props__.__dict__["refresh_issue_details_lists"] = refresh_issue_details_lists
         __props__.__dict__["service_availability"] = service_availability
         __props__.__dict__["source_fusion_environment_id"] = source_fusion_environment_id
         __props__.__dict__["state"] = state
@@ -414,7 +432,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         __props__.__dict__["time_expected_finish"] = time_expected_finish
         __props__.__dict__["time_finished"] = time_finished
         __props__.__dict__["time_of_restoration_point"] = time_of_restoration_point
-        __props__.__dict__["time_scheduled_start"] = time_scheduled_start
         __props__.__dict__["time_updated"] = time_updated
         return FusionEnvironmentRefreshActivity(resource_name, opts=opts, __props__=__props__)
 
@@ -441,6 +458,19 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="refreshActivityId")
+    def refresh_activity_id(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "refresh_activity_id")
+
+    @property
+    @pulumi.getter(name="refreshIssueDetailsLists")
+    def refresh_issue_details_lists(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsList']]:
+        """
+        Details of refresh investigation information, each item represents a different issue.
+        """
+        return pulumi.get(self, "refresh_issue_details_lists")
 
     @property
     @pulumi.getter(name="serviceAvailability")
@@ -497,14 +527,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         The date and time of the most recent source environment backup used for the environment refresh.
         """
         return pulumi.get(self, "time_of_restoration_point")
-
-    @property
-    @pulumi.getter(name="timeScheduledStart")
-    def time_scheduled_start(self) -> pulumi.Output[str]:
-        """
-        The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-        """
-        return pulumi.get(self, "time_scheduled_start")
 
     @property
     @pulumi.getter(name="timeUpdated")

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.OspGateway
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubscriptionResult> InvokeAsync(GetSubscriptionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionResult>("oci:OspGateway/getSubscription:getSubscription", args ?? new GetSubscriptionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionResult>("oci:OspGateway/getSubscription:getSubscription", args ?? new GetSubscriptionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.OspGateway
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubscriptionResult> Invoke(GetSubscriptionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubscriptionResult>("oci:OspGateway/getSubscription:getSubscription", args ?? new GetSubscriptionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionResult>("oci:OspGateway/getSubscription:getSubscription", args ?? new GetSubscriptionInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.FileStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExportSetsResult> InvokeAsync(GetExportSetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExportSetsResult>("oci:FileStorage/getExportSets:getExportSets", args ?? new GetExportSetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExportSetsResult>("oci:FileStorage/getExportSets:getExportSets", args ?? new GetExportSetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Export Sets in Oracle Cloud Infrastructure File Storage service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.FileStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExportSetsResult> Invoke(GetExportSetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExportSetsResult>("oci:FileStorage/getExportSets:getExportSets", args ?? new GetExportSetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExportSetsResult>("oci:FileStorage/getExportSets:getExportSets", args ?? new GetExportSetsInvokeArgs(), options.WithDefaults());
     }
 
 

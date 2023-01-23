@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveDataModelsSensitiveColumn(args: GetSensitiveDataModelsSensitiveColumnArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelsSensitiveColumnResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", {
         "sensitiveColumnKey": args.sensitiveColumnKey,
         "sensitiveDataModelId": args.sensitiveDataModelId,
@@ -142,9 +139,25 @@ export interface GetSensitiveDataModelsSensitiveColumnResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified sensitive column.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSensitiveDataModelsSensitiveColumn = oci.DataSafe.getSensitiveDataModelsSensitiveColumn({
+ *     sensitiveColumnKey: _var.sensitive_data_models_sensitive_column_sensitive_column_key,
+ *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ * });
+ * ```
+ */
 export function getSensitiveDataModelsSensitiveColumnOutput(args: GetSensitiveDataModelsSensitiveColumnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsSensitiveColumnResult> {
-    return pulumi.output(args).apply(a => getSensitiveDataModelsSensitiveColumn(a, opts))
+    return pulumi.output(args).apply((a: any) => getSensitiveDataModelsSensitiveColumn(a, opts))
 }
 
 /**

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVolumeBackupPoliciesResult> InvokeAsync(GetVolumeBackupPoliciesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVolumeBackupPoliciesResult>("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", args ?? new GetVolumeBackupPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeBackupPoliciesResult>("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", args ?? new GetVolumeBackupPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVolumeBackupPoliciesResult> Invoke(GetVolumeBackupPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVolumeBackupPoliciesResult>("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", args ?? new GetVolumeBackupPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeBackupPoliciesResult>("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", args ?? new GetVolumeBackupPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

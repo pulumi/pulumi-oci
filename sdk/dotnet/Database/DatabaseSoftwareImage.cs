@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ImageType { get; private set; } = null!;
 
         /// <summary>
-        /// The patches included in the image and the version of the image
+        /// The patches included in the image and the version of the image.
         /// </summary>
         [Output("includedPatchesSummary")]
         public Output<string> IncludedPatchesSummary { get; private set; } = null!;
@@ -374,7 +374,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ImageType { get; set; }
 
         /// <summary>
-        /// The patches included in the image and the version of the image
+        /// The patches included in the image and the version of the image.
         /// </summary>
         [Input("includedPatchesSummary")]
         public Input<string>? IncludedPatchesSummary { get; set; }

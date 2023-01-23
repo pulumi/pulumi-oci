@@ -65,11 +65,9 @@ type GetHostInsightsArgs struct {
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-	// <<<<<<< ours
 	ExadataInsightId *string                 `pulumi:"exadataInsightId"`
 	Filters          []GetHostInsightsFilter `pulumi:"filters"`
-	// Filter by one or more host types. Possible value is EXTERNAL-HOST.
-	// > > > > > > > theirs
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
 	HostTypes []string `pulumi:"hostTypes"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id *string `pulumi:"id"`
@@ -123,11 +121,9 @@ type GetHostInsightsOutputArgs struct {
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId pulumi.StringPtrInput `pulumi:"enterpriseManagerBridgeId"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-	// <<<<<<< ours
 	ExadataInsightId pulumi.StringPtrInput           `pulumi:"exadataInsightId"`
 	Filters          GetHostInsightsFilterArrayInput `pulumi:"filters"`
-	// Filter by one or more host types. Possible value is EXTERNAL-HOST.
-	// > > > > > > > theirs
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
 	HostTypes pulumi.StringArrayInput `pulumi:"hostTypes"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringPtrInput `pulumi:"id"`

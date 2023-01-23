@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedPreferredCredential(args: GetManagedPreferredCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedPreferredCredentialResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", {
         "credentialName": args.credentialName,
         "managedDatabaseId": args.managedDatabaseId,
@@ -85,9 +82,25 @@ export interface GetManagedPreferredCredentialResult {
      */
     readonly userName: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the preferred credential details for a Managed Database based on credentialName.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabasePreferredCredential = oci.Database.getManagedPreferredCredential({
+ *     credentialName: _var.managed_database_preferred_credential_credential_name,
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ * });
+ * ```
+ */
 export function getManagedPreferredCredentialOutput(args: GetManagedPreferredCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedPreferredCredentialResult> {
-    return pulumi.output(args).apply(a => getManagedPreferredCredential(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedPreferredCredential(a, opts))
 }
 
 /**

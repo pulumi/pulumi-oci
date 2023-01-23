@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgRouteDistributionStatements(args: GetDrgRouteDistributionStatementsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteDistributionStatementsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", {
         "drgRouteDistributionId": args.drgRouteDistributionId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetDrgRouteDistributionStatementsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the statements for the specified route distribution.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDrgRouteDistributionStatements = oci.Core.getDrgRouteDistributionStatements({
+ *     drgRouteDistributionId: oci_core_drg_route_distribution.test_drg_route_distribution.id,
+ * });
+ * ```
+ */
 export function getDrgRouteDistributionStatementsOutput(args: GetDrgRouteDistributionStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteDistributionStatementsResult> {
-    return pulumi.output(args).apply(a => getDrgRouteDistributionStatements(a, opts))
+    return pulumi.output(args).apply((a: any) => getDrgRouteDistributionStatements(a, opts))
 }
 
 /**

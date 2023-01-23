@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getObjectLifecyclePolicy(args: GetObjectLifecyclePolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectLifecyclePolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", {
         "bucket": args.bucket,
         "namespace": args.namespace,
@@ -64,9 +62,25 @@ export interface GetObjectLifecyclePolicyResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Gets the object lifecycle policy for the bucket.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testObjectLifecyclePolicy = oci.ObjectStorage.getObjectLifecyclePolicy({
+ *     bucket: _var.object_lifecycle_policy_bucket,
+ *     namespace: _var.object_lifecycle_policy_namespace,
+ * });
+ * ```
+ */
 export function getObjectLifecyclePolicyOutput(args: GetObjectLifecyclePolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectLifecyclePolicyResult> {
-    return pulumi.output(args).apply(a => getObjectLifecyclePolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getObjectLifecyclePolicy(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -16,16 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentImages = pulumi.output(oci.DatabaseMigration.getAgentImages());
+ * const testAgentImages = oci.DatabaseMigration.getAgentImages({});
  * ```
  */
 export function getAgentImages(args?: GetAgentImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentImagesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getAgentImages:getAgentImages", {
         "filters": args.filters,
     }, opts);
@@ -52,9 +50,22 @@ export interface GetAgentImagesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Agent Images in Oracle Cloud Infrastructure Database Migration service.
+ *
+ * Get details of the ODMS Agent Images available to install on-premises.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAgentImages = oci.DatabaseMigration.getAgentImages({});
+ * ```
+ */
 export function getAgentImagesOutput(args?: GetAgentImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentImagesResult> {
-    return pulumi.output(args).apply(a => getAgentImages(a, opts))
+    return pulumi.output(args).apply((a: any) => getAgentImages(a, opts))
 }
 
 /**

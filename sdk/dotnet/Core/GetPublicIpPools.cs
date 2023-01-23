@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPublicIpPoolsResult> InvokeAsync(GetPublicIpPoolsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPublicIpPoolsResult>("oci:Core/getPublicIpPools:getPublicIpPools", args ?? new GetPublicIpPoolsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPublicIpPoolsResult>("oci:Core/getPublicIpPools:getPublicIpPools", args ?? new GetPublicIpPoolsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPublicIpPoolsResult> Invoke(GetPublicIpPoolsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPublicIpPoolsResult>("oci:Core/getPublicIpPools:getPublicIpPools", args ?? new GetPublicIpPoolsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpPoolsResult>("oci:Core/getPublicIpPools:getPublicIpPools", args ?? new GetPublicIpPoolsInvokeArgs(), options.WithDefaults());
     }
 
 

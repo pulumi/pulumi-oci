@@ -37,7 +37,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String availabilityDomain;
     /**
-     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      * 
      */
     private Double availableCpus;
@@ -163,7 +163,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private Double reclaimableCpus;
     /**
-     * @return The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String role;
@@ -225,7 +225,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.availabilityDomain;
     }
     /**
-     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      * 
      */
     public Double availableCpus() {
@@ -419,7 +419,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.reclaimableCpus;
     }
     /**
-     * @return The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String role() {

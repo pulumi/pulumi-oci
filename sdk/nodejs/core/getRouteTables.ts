@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRouteTables(args: GetRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetRouteTablesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getRouteTables:getRouteTables", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -95,9 +93,30 @@ export interface GetRouteTablesResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Route Tables in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the route tables in the specified VCN and specified compartment.
+ * If the VCN ID is not provided, then the list includes the route tables from all VCNs in the specified compartment.
+ * The response includes the default route table that automatically comes with
+ * each VCN in the specified compartment, plus any route tables you've created.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRouteTables = oci.Core.getRouteTables({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.route_table_display_name,
+ *     state: _var.route_table_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getRouteTablesOutput(args: GetRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRouteTablesResult> {
-    return pulumi.output(args).apply(a => getRouteTables(a, opts))
+    return pulumi.output(args).apply((a: any) => getRouteTables(a, opts))
 }
 
 /**

@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadataInfrastructureDownloadConfigFile(args: GetExadataInfrastructureDownloadConfigFileArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructureDownloadConfigFileResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", {
         "base64EncodeContent": args.base64EncodeContent,
         "exadataInfrastructureId": args.exadataInfrastructureId,
@@ -59,9 +56,25 @@ export interface GetExadataInfrastructureDownloadConfigFileResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExadataInfrastructureDownloadConfigFile = oci.Database.getExadataInfrastructureDownloadConfigFile({
+ *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ *     base64EncodeContent: false,
+ * });
+ * ```
+ */
 export function getExadataInfrastructureDownloadConfigFileOutput(args: GetExadataInfrastructureDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureDownloadConfigFileResult> {
-    return pulumi.output(args).apply(a => getExadataInfrastructureDownloadConfigFile(a, opts))
+    return pulumi.output(args).apply((a: any) => getExadataInfrastructureDownloadConfigFile(a, opts))
 }
 
 /**

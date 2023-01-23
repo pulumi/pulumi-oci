@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStreamPools(args: GetStreamPoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamPoolsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Streaming/getStreamPools:getStreamPools", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -88,9 +86,27 @@ export interface GetStreamPoolsResult {
      */
     readonly streamPools: outputs.Streaming.GetStreamPoolsStreamPool[];
 }
-
+/**
+ * This data source provides the list of Stream Pools in Oracle Cloud Infrastructure Streaming service.
+ *
+ * List the stream pools for a given compartment ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testStreamPools = oci.Streaming.getStreamPools({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.stream_pool_id,
+ *     name: _var.stream_pool_name,
+ *     state: _var.stream_pool_state,
+ * });
+ * ```
+ */
 export function getStreamPoolsOutput(args: GetStreamPoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamPoolsResult> {
-    return pulumi.output(args).apply(a => getStreamPools(a, opts))
+    return pulumi.output(args).apply((a: any) => getStreamPools(a, opts))
 }
 
 /**

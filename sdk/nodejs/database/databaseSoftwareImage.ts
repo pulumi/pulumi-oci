@@ -105,7 +105,7 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
      */
     public readonly imageType!: pulumi.Output<string>;
     /**
-     * The patches included in the image and the version of the image
+     * The patches included in the image and the version of the image.
      */
     public /*out*/ readonly includedPatchesSummary!: pulumi.Output<string>;
     /**
@@ -239,7 +239,7 @@ export interface DatabaseSoftwareImageState {
      */
     imageType?: pulumi.Input<string>;
     /**
-     * The patches included in the image and the version of the image
+     * The patches included in the image and the version of the image.
      */
     includedPatchesSummary?: pulumi.Input<string>;
     /**

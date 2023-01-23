@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSupportedSkus(args: GetSupportedSkusArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedSkusResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedSkus:getSupportedSkus", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetSupportedSkusResult {
      */
     readonly items: outputs.Ocvp.GetSupportedSkusItem[];
 }
-
+/**
+ * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ *
+ * Lists supported SKUs.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSupportedSkus = oci.Ocvp.getSupportedSkus({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getSupportedSkusOutput(args: GetSupportedSkusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedSkusResult> {
-    return pulumi.output(args).apply(a => getSupportedSkus(a, opts))
+    return pulumi.output(args).apply((a: any) => getSupportedSkus(a, opts))
 }
 
 /**

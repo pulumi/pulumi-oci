@@ -92,8 +92,6 @@ public final class ImageImageSourceDetailsArgs extends com.pulumi.resources.Reso
 
     /**
      * The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-     * * `QCOW2`
-     * * `VMDK`
      * 
      */
     @Import(name="sourceImageType")
@@ -101,8 +99,6 @@ public final class ImageImageSourceDetailsArgs extends com.pulumi.resources.Reso
 
     /**
      * @return The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-     * * `QCOW2`
-     * * `VMDK`
      * 
      */
     public Optional<Output<String>> sourceImageType() {
@@ -277,8 +273,6 @@ public final class ImageImageSourceDetailsArgs extends com.pulumi.resources.Reso
 
         /**
          * @param sourceImageType The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-         * * `QCOW2`
-         * * `VMDK`
          * 
          * @return builder
          * 
@@ -290,8 +284,6 @@ public final class ImageImageSourceDetailsArgs extends com.pulumi.resources.Reso
 
         /**
          * @param sourceImageType The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-         * * `QCOW2`
-         * * `VMDK`
          * 
          * @return builder
          * 

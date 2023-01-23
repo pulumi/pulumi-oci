@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVolumeGroupReplicasResult> InvokeAsync(GetVolumeGroupReplicasArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupReplicasResult>("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", args ?? new GetVolumeGroupReplicasArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupReplicasResult>("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", args ?? new GetVolumeGroupReplicasArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Volume Group Replicas in Oracle Cloud Infrastructure Core service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVolumeGroupReplicasResult> Invoke(GetVolumeGroupReplicasInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVolumeGroupReplicasResult>("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", args ?? new GetVolumeGroupReplicasInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupReplicasResult>("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", args ?? new GetVolumeGroupReplicasInvokeArgs(), options.WithDefaults());
     }
 
 

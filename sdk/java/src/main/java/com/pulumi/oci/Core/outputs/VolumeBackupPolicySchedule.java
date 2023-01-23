@@ -60,8 +60,6 @@ public final class VolumeBackupPolicySchedule {
     /**
      * @return (Updatable) Specifies what time zone is the schedule in
      * enum:
-     * - `UTC`
-     * - `REGIONAL_DATA_CENTER_TIME`
      * 
      */
     private @Nullable String timeZone;
@@ -133,8 +131,6 @@ public final class VolumeBackupPolicySchedule {
     /**
      * @return (Updatable) Specifies what time zone is the schedule in
      * enum:
-     * - `UTC`
-     * - `REGIONAL_DATA_CENTER_TIME`
      * 
      */
     public Optional<String> timeZone() {

@@ -13,25 +13,25 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
     public sealed class ScheduleResultLocationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The bucket name where usage/cost CSVs will be uploaded
+        /// (Updatable) The bucket name where usage or cost CSVs will be uploaded.
         /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
         /// <summary>
-        /// Defines the type of location where the usage/cost CSVs will be stored
+        /// (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
         /// </summary>
         [Input("locationType", required: true)]
         public Input<string> LocationType { get; set; } = null!;
 
         /// <summary>
-        /// The namespace needed to determine object storage bucket.
+        /// (Updatable) The namespace needed to determine the object storage bucket.
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// The destination Object Store Region specified by customer
+        /// (Updatable) The destination Object Store Region specified by the customer.
         /// </summary>
         [Input("region", required: true)]
         public Input<string> Region { get; set; } = null!;

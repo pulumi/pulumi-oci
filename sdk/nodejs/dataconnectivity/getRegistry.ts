@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRegistry(args: GetRegistryArgs, opts?: pulumi.InvokeOptions): Promise<GetRegistryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataConnectivity/getRegistry:getRegistry", {
         "registryId": args.registryId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetRegistryResult {
      */
     readonly updatedBy: string;
 }
-
+/**
+ * This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
+ *
+ * Retrieves a Data Connectivity Management registry using the specified identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRegistry = oci.DataConnectivity.getRegistry({
+ *     registryId: oci_data_connectivity_registry.test_registry.id,
+ * });
+ * ```
+ */
 export function getRegistryOutput(args: GetRegistryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegistryResult> {
-    return pulumi.output(args).apply(a => getRegistry(a, opts))
+    return pulumi.output(args).apply((a: any) => getRegistry(a, opts))
 }
 
 /**

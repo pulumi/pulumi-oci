@@ -180,6 +180,51 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) The data disk group size to be allocated in TBs.
+     * 
+     */
+    @Import(name="dataStorageSizeInTbs")
+    private @Nullable Output<Double> dataStorageSizeInTbs;
+
+    /**
+     * @return (Updatable) The data disk group size to be allocated in TBs.
+     * 
+     */
+    public Optional<Output<Double>> dataStorageSizeInTbs() {
+        return Optional.ofNullable(this.dataStorageSizeInTbs);
+    }
+
+    /**
+     * (Updatable) The local node storage to be allocated in GBs.
+     * 
+     */
+    @Import(name="dbNodeStorageSizeInGbs")
+    private @Nullable Output<Integer> dbNodeStorageSizeInGbs;
+
+    /**
+     * @return (Updatable) The local node storage to be allocated in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
+    }
+
+    /**
+     * The list of DB servers.
+     * 
+     */
+    @Import(name="dbServers")
+    private @Nullable Output<List<String>> dbServers;
+
+    /**
+     * @return The list of DB servers.
+     * 
+     */
+    public Optional<Output<List<String>>> dbServers() {
+        return Optional.ofNullable(this.dbServers);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -390,6 +435,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) The memory to be allocated in GBs.
+     * 
+     */
+    @Import(name="memorySizeInGbs")
+    private @Nullable Output<Integer> memorySizeInGbs;
+
+    /**
+     * @return (Updatable) The memory to be allocated in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
+    }
+
+    /**
      * The number of nodes in the cloud VM cluster.
      * 
      */
@@ -434,6 +494,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<Double>> ocpuCount() {
         return Optional.ofNullable(this.ocpuCount);
+    }
+
+    /**
+     * The private zone id in which DNS records need to be created.
+     * 
+     */
+    @Import(name="privateZoneId")
+    private @Nullable Output<String> privateZoneId;
+
+    /**
+     * @return The private zone id in which DNS records need to be created.
+     * 
+     */
+    public Optional<Output<String>> privateZoneId() {
+        return Optional.ofNullable(this.privateZoneId);
     }
 
     /**
@@ -674,6 +749,9 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.createAsync = $.createAsync;
         this.dataCollectionOptions = $.dataCollectionOptions;
         this.dataStoragePercentage = $.dataStoragePercentage;
+        this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
+        this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
+        this.dbServers = $.dbServers;
         this.definedTags = $.definedTags;
         this.diskRedundancy = $.diskRedundancy;
         this.displayName = $.displayName;
@@ -688,9 +766,11 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
         this.listenerPort = $.listenerPort;
+        this.memorySizeInGbs = $.memorySizeInGbs;
         this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
+        this.privateZoneId = $.privateZoneId;
         this.scanDnsName = $.scanDnsName;
         this.scanDnsRecordId = $.scanDnsRecordId;
         this.scanIpIds = $.scanIpIds;
@@ -946,6 +1026,79 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder dataStoragePercentage(Integer dataStoragePercentage) {
             return dataStoragePercentage(Output.of(dataStoragePercentage));
+        }
+
+        /**
+         * @param dataStorageSizeInTbs (Updatable) The data disk group size to be allocated in TBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorageSizeInTbs(@Nullable Output<Double> dataStorageSizeInTbs) {
+            $.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            return this;
+        }
+
+        /**
+         * @param dataStorageSizeInTbs (Updatable) The data disk group size to be allocated in TBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
+            return dataStorageSizeInTbs(Output.of(dataStorageSizeInTbs));
+        }
+
+        /**
+         * @param dbNodeStorageSizeInGbs (Updatable) The local node storage to be allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbNodeStorageSizeInGbs(@Nullable Output<Integer> dbNodeStorageSizeInGbs) {
+            $.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param dbNodeStorageSizeInGbs (Updatable) The local node storage to be allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
+            return dbNodeStorageSizeInGbs(Output.of(dbNodeStorageSizeInGbs));
+        }
+
+        /**
+         * @param dbServers The list of DB servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(@Nullable Output<List<String>> dbServers) {
+            $.dbServers = dbServers;
+            return this;
+        }
+
+        /**
+         * @param dbServers The list of DB servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(List<String> dbServers) {
+            return dbServers(Output.of(dbServers));
+        }
+
+        /**
+         * @param dbServers The list of DB servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
 
         /**
@@ -1253,6 +1406,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param memorySizeInGbs (Updatable) The memory to be allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memorySizeInGbs(@Nullable Output<Integer> memorySizeInGbs) {
+            $.memorySizeInGbs = memorySizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param memorySizeInGbs (Updatable) The memory to be allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
+            return memorySizeInGbs(Output.of(memorySizeInGbs));
+        }
+
+        /**
          * @param nodeCount The number of nodes in the cloud VM cluster.
          * 
          * @return builder
@@ -1326,6 +1500,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder ocpuCount(Double ocpuCount) {
             return ocpuCount(Output.of(ocpuCount));
+        }
+
+        /**
+         * @param privateZoneId The private zone id in which DNS records need to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateZoneId(@Nullable Output<String> privateZoneId) {
+            $.privateZoneId = privateZoneId;
+            return this;
+        }
+
+        /**
+         * @param privateZoneId The private zone id in which DNS records need to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateZoneId(String privateZoneId) {
+            return privateZoneId(Output.of(privateZoneId));
         }
 
         /**

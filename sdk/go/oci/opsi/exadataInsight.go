@@ -83,11 +83,14 @@ type ExadataInsight struct {
 	// (Updatable) Source of the Exadata system.
 	EntitySource pulumi.StringOutput `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName pulumi.StringOutput `pulumi:"exadataDisplayName"`
+	ExadataDisplayName       pulumi.StringOutput `pulumi:"exadataDisplayName"`
+	ExadataInfraId           pulumi.StringOutput `pulumi:"exadataInfraId"`
+	ExadataInfraResourceType pulumi.StringOutput `pulumi:"exadataInfraResourceType"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
 	ExadataName pulumi.StringOutput `pulumi:"exadataName"`
 	// Exadata rack type.
 	ExadataRackType pulumi.StringOutput `pulumi:"exadataRackType"`
+	ExadataShape    pulumi.StringOutput `pulumi:"exadataShape"`
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType pulumi.StringOutput `pulumi:"exadataType"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -97,7 +100,8 @@ type ExadataInsight struct {
 	// true if virtualization is used in the Exadata system
 	IsVirtualizedExadata pulumi.BoolOutput `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails       pulumi.StringOutput                            `pulumi:"lifecycleDetails"`
+	MemberVmClusterDetails ExadataInsightMemberVmClusterDetailArrayOutput `pulumi:"memberVmClusterDetails"`
 	// The current state of the Exadata insight.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -119,15 +123,6 @@ func NewExadataInsight(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.EnterpriseManagerBridgeId == nil {
-		return nil, errors.New("invalid value for required argument 'EnterpriseManagerBridgeId'")
-	}
-	if args.EnterpriseManagerEntityIdentifier == nil {
-		return nil, errors.New("invalid value for required argument 'EnterpriseManagerEntityIdentifier'")
-	}
-	if args.EnterpriseManagerIdentifier == nil {
-		return nil, errors.New("invalid value for required argument 'EnterpriseManagerIdentifier'")
 	}
 	if args.EntitySource == nil {
 		return nil, errors.New("invalid value for required argument 'EntitySource'")
@@ -173,11 +168,14 @@ type exadataInsightState struct {
 	// (Updatable) Source of the Exadata system.
 	EntitySource *string `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName *string `pulumi:"exadataDisplayName"`
+	ExadataDisplayName       *string `pulumi:"exadataDisplayName"`
+	ExadataInfraId           *string `pulumi:"exadataInfraId"`
+	ExadataInfraResourceType *string `pulumi:"exadataInfraResourceType"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
 	ExadataName *string `pulumi:"exadataName"`
 	// Exadata rack type.
 	ExadataRackType *string `pulumi:"exadataRackType"`
+	ExadataShape    *string `pulumi:"exadataShape"`
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType *string `pulumi:"exadataType"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -187,7 +185,8 @@ type exadataInsightState struct {
 	// true if virtualization is used in the Exadata system
 	IsVirtualizedExadata *bool `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails       *string                               `pulumi:"lifecycleDetails"`
+	MemberVmClusterDetails []ExadataInsightMemberVmClusterDetail `pulumi:"memberVmClusterDetails"`
 	// The current state of the Exadata insight.
 	State *string `pulumi:"state"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -220,11 +219,14 @@ type ExadataInsightState struct {
 	// (Updatable) Source of the Exadata system.
 	EntitySource pulumi.StringPtrInput
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName pulumi.StringPtrInput
+	ExadataDisplayName       pulumi.StringPtrInput
+	ExadataInfraId           pulumi.StringPtrInput
+	ExadataInfraResourceType pulumi.StringPtrInput
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
 	ExadataName pulumi.StringPtrInput
 	// Exadata rack type.
 	ExadataRackType pulumi.StringPtrInput
+	ExadataShape    pulumi.StringPtrInput
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -234,7 +236,8 @@ type ExadataInsightState struct {
 	// true if virtualization is used in the Exadata system
 	IsVirtualizedExadata pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringPtrInput
+	LifecycleDetails       pulumi.StringPtrInput
+	MemberVmClusterDetails ExadataInsightMemberVmClusterDetailArrayInput
 	// The current state of the Exadata insight.
 	State pulumi.StringPtrInput
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -257,17 +260,19 @@ type exadataInsightArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
-	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier string `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier *string `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Unique Identifier
-	EnterpriseManagerIdentifier string `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
 	// (Updatable) Source of the Exadata system.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource   string  `pulumi:"entitySource"`
+	ExadataInfraId *string `pulumi:"exadataInfraId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
-	IsAutoSyncEnabled *bool `pulumi:"isAutoSyncEnabled"`
+	IsAutoSyncEnabled      *bool                                 `pulumi:"isAutoSyncEnabled"`
+	MemberVmClusterDetails []ExadataInsightMemberVmClusterDetail `pulumi:"memberVmClusterDetails"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 	Status *string `pulumi:"status"`
 }
@@ -279,17 +284,19 @@ type ExadataInsightArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// OPSI Enterprise Manager Bridge OCID
-	EnterpriseManagerBridgeId pulumi.StringInput
+	EnterpriseManagerBridgeId pulumi.StringPtrInput
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier pulumi.StringInput
+	EnterpriseManagerEntityIdentifier pulumi.StringPtrInput
 	// Enterprise Manager Unique Identifier
-	EnterpriseManagerIdentifier pulumi.StringInput
+	EnterpriseManagerIdentifier pulumi.StringPtrInput
 	// (Updatable) Source of the Exadata system.
-	EntitySource pulumi.StringInput
+	EntitySource   pulumi.StringInput
+	ExadataInfraId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
-	IsAutoSyncEnabled pulumi.BoolPtrInput
+	IsAutoSyncEnabled      pulumi.BoolPtrInput
+	MemberVmClusterDetails ExadataInsightMemberVmClusterDetailArrayInput
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 	Status pulumi.StringPtrInput
 }
@@ -431,6 +438,14 @@ func (o ExadataInsightOutput) ExadataDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataDisplayName }).(pulumi.StringOutput)
 }
 
+func (o ExadataInsightOutput) ExadataInfraId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataInfraId }).(pulumi.StringOutput)
+}
+
+func (o ExadataInsightOutput) ExadataInfraResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataInfraResourceType }).(pulumi.StringOutput)
+}
+
 // The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
 func (o ExadataInsightOutput) ExadataName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataName }).(pulumi.StringOutput)
@@ -439,6 +454,10 @@ func (o ExadataInsightOutput) ExadataName() pulumi.StringOutput {
 // Exadata rack type.
 func (o ExadataInsightOutput) ExadataRackType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataRackType }).(pulumi.StringOutput)
+}
+
+func (o ExadataInsightOutput) ExadataShape() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataShape }).(pulumi.StringOutput)
 }
 
 // Operations Insights internal representation of the the Exadata system type.
@@ -464,6 +483,12 @@ func (o ExadataInsightOutput) IsVirtualizedExadata() pulumi.BoolOutput {
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o ExadataInsightOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o ExadataInsightOutput) MemberVmClusterDetails() ExadataInsightMemberVmClusterDetailArrayOutput {
+	return o.ApplyT(func(v *ExadataInsight) ExadataInsightMemberVmClusterDetailArrayOutput {
+		return v.MemberVmClusterDetails
+	}).(ExadataInsightMemberVmClusterDetailArrayOutput)
 }
 
 // The current state of the Exadata insight.

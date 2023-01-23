@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnalyticsInstance(args: GetAnalyticsInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetAnalyticsInstanceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", {
         "analyticsInstanceId": args.analyticsInstanceId,
     }, opts);
@@ -113,9 +111,24 @@ export interface GetAnalyticsInstanceResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
+ *
+ * Info for a specific Analytics instance.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAnalyticsInstance = oci.Analytics.getAnalyticsInstance({
+ *     analyticsInstanceId: oci_analytics_analytics_instance.test_analytics_instance.id,
+ * });
+ * ```
+ */
 export function getAnalyticsInstanceOutput(args: GetAnalyticsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstanceResult> {
-    return pulumi.output(args).apply(a => getAnalyticsInstance(a, opts))
+    return pulumi.output(args).apply((a: any) => getAnalyticsInstance(a, opts))
 }
 
 /**

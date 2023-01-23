@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -18,6 +19,22 @@ import * as utilities from "../utilities";
  *
  * const testSchedule = new oci.meteringcomputation.Schedule("testSchedule", {
  *     compartmentId: _var.compartment_id,
+ *     resultLocation: {
+ *         bucket: _var.schedule_result_location_bucket,
+ *         locationType: _var.schedule_result_location_location_type,
+ *         namespace: _var.schedule_result_location_namespace,
+ *         region: _var.schedule_result_location_region,
+ *     },
+ *     scheduleRecurrences: _var.schedule_schedule_recurrences,
+ *     timeScheduled: _var.schedule_time_scheduled,
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     description: _var.schedule_description,
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
+ *     outputFileFormat: _var.schedule_output_file_format,
  *     queryProperties: {
  *         dateRange: {
  *             dateRangeType: _var.schedule_query_properties_date_range_date_range_type,
@@ -37,20 +54,7 @@ import * as utilities from "../utilities";
  *         isAggregateByTime: _var.schedule_query_properties_is_aggregate_by_time,
  *         queryType: _var.schedule_query_properties_query_type,
  *     },
- *     resultLocation: {
- *         bucket: _var.schedule_result_location_bucket,
- *         locationType: _var.schedule_result_location_location_type,
- *         namespace: _var.schedule_result_location_namespace,
- *         region: _var.schedule_result_location_region,
- *     },
- *     scheduleRecurrences: _var.schedule_schedule_recurrences,
- *     timeScheduled: _var.schedule_time_scheduled,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
+ *     savedReportId: oci_data_safe_report.test_report.id,
  * });
  * ```
  *
@@ -91,7 +95,7 @@ export class Schedule extends pulumi.CustomResource {
     }
 
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -99,27 +103,39 @@ export class Schedule extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+     * (Updatable) The description of the schedule.
+     */
+    public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * (Updatable) Specifies supported output file format.
+     */
+    public readonly outputFileFormat!: pulumi.Output<string>;
     /**
      * The query properties.
      */
     public readonly queryProperties!: pulumi.Output<outputs.MeteringComputation.ScheduleQueryProperties>;
     /**
-     * The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
     public readonly resultLocation!: pulumi.Output<outputs.MeteringComputation.ScheduleResultLocation>;
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * The saved report id which can also be used to generate query.
+     */
+    public readonly savedReportId!: pulumi.Output<string>;
+    /**
+     * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */
     public readonly scheduleRecurrences!: pulumi.Output<string>;
     /**
-     * The lifecycle state of the schedule
+     * The schedule lifecycle state.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -127,11 +143,15 @@ export class Schedule extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The date and time of when the schedule was created
+     * The date and time the schedule was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time of the first time job execution
+     * The date and time of the next job execution.
+     */
+    public /*out*/ readonly timeNextRun!: pulumi.Output<string>;
+    /**
+     * The date and time of the first time job execution.
      */
     public readonly timeScheduled!: pulumi.Output<string>;
 
@@ -150,22 +170,23 @@ export class Schedule extends pulumi.CustomResource {
             const state = argsOrState as ScheduleState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["outputFileFormat"] = state ? state.outputFileFormat : undefined;
             resourceInputs["queryProperties"] = state ? state.queryProperties : undefined;
             resourceInputs["resultLocation"] = state ? state.resultLocation : undefined;
+            resourceInputs["savedReportId"] = state ? state.savedReportId : undefined;
             resourceInputs["scheduleRecurrences"] = state ? state.scheduleRecurrences : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeNextRun"] = state ? state.timeNextRun : undefined;
             resourceInputs["timeScheduled"] = state ? state.timeScheduled : undefined;
         } else {
             const args = argsOrState as ScheduleArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
-            }
-            if ((!args || args.queryProperties === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'queryProperties'");
             }
             if ((!args || args.resultLocation === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'resultLocation'");
@@ -178,15 +199,19 @@ export class Schedule extends pulumi.CustomResource {
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["outputFileFormat"] = args ? args.outputFileFormat : undefined;
             resourceInputs["queryProperties"] = args ? args.queryProperties : undefined;
             resourceInputs["resultLocation"] = args ? args.resultLocation : undefined;
+            resourceInputs["savedReportId"] = args ? args.savedReportId : undefined;
             resourceInputs["scheduleRecurrences"] = args ? args.scheduleRecurrences : undefined;
             resourceInputs["timeScheduled"] = args ? args.timeScheduled : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeNextRun"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Schedule.__pulumiType, name, resourceInputs, opts);
@@ -198,7 +223,7 @@ export class Schedule extends pulumi.CustomResource {
  */
 export interface ScheduleState {
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -206,27 +231,39 @@ export interface ScheduleState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+     * (Updatable) The description of the schedule.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      */
     name?: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies supported output file format.
+     */
+    outputFileFormat?: pulumi.Input<string>;
     /**
      * The query properties.
      */
     queryProperties?: pulumi.Input<inputs.MeteringComputation.ScheduleQueryProperties>;
     /**
-     * The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
     resultLocation?: pulumi.Input<inputs.MeteringComputation.ScheduleResultLocation>;
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * The saved report id which can also be used to generate query.
+     */
+    savedReportId?: pulumi.Input<string>;
+    /**
+     * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */
     scheduleRecurrences?: pulumi.Input<string>;
     /**
-     * The lifecycle state of the schedule
+     * The schedule lifecycle state.
      */
     state?: pulumi.Input<string>;
     /**
@@ -234,11 +271,15 @@ export interface ScheduleState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The date and time of when the schedule was created
+     * The date and time the schedule was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time of the first time job execution
+     * The date and time of the next job execution.
+     */
+    timeNextRun?: pulumi.Input<string>;
+    /**
+     * The date and time of the first time job execution.
      */
     timeScheduled?: pulumi.Input<string>;
 }
@@ -248,7 +289,7 @@ export interface ScheduleState {
  */
 export interface ScheduleArgs {
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -256,27 +297,39 @@ export interface ScheduleArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+     * (Updatable) The description of the schedule.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      */
     name?: pulumi.Input<string>;
     /**
+     * (Updatable) Specifies supported output file format.
+     */
+    outputFileFormat?: pulumi.Input<string>;
+    /**
      * The query properties.
      */
-    queryProperties: pulumi.Input<inputs.MeteringComputation.ScheduleQueryProperties>;
+    queryProperties?: pulumi.Input<inputs.MeteringComputation.ScheduleQueryProperties>;
     /**
-     * The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
     resultLocation: pulumi.Input<inputs.MeteringComputation.ScheduleResultLocation>;
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * The saved report id which can also be used to generate query.
+     */
+    savedReportId?: pulumi.Input<string>;
+    /**
+     * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */
     scheduleRecurrences: pulumi.Input<string>;
     /**
-     * The date and time of the first time job execution
+     * The date and time of the first time job execution.
      */
     timeScheduled: pulumi.Input<string>;
 }

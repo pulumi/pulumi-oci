@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCertificatesResult> InvokeAsync(GetCertificatesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCertificatesResult>("oci:Waas/getCertificates:getCertificates", args ?? new GetCertificatesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificatesResult>("oci:Waas/getCertificates:getCertificates", args ?? new GetCertificatesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Certificates in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCertificatesResult> Invoke(GetCertificatesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCertificatesResult>("oci:Waas/getCertificates:getCertificates", args ?? new GetCertificatesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificatesResult>("oci:Waas/getCertificates:getCertificates", args ?? new GetCertificatesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEnrollmentStatusResult> InvokeAsync(GetEnrollmentStatusArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEnrollmentStatusResult>("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", args ?? new GetEnrollmentStatusArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEnrollmentStatusResult>("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", args ?? new GetEnrollmentStatusArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEnrollmentStatusResult> Invoke(GetEnrollmentStatusInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEnrollmentStatusResult>("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", args ?? new GetEnrollmentStatusInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEnrollmentStatusResult>("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", args ?? new GetEnrollmentStatusInvokeArgs(), options.WithDefaults());
     }
 
 

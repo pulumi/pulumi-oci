@@ -25,11 +25,8 @@ import * as utilities from "../utilities";
  */
 export function getView(args?: GetViewArgs, opts?: pulumi.InvokeOptions): Promise<GetViewResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getView:getView", {
         "scope": args.scope,
         "viewId": args.viewId,
@@ -97,9 +94,27 @@ export interface GetViewResult {
     readonly timeUpdated: string;
     readonly viewId?: string;
 }
-
+/**
+ * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets information about a specific view. Note that attempting to get a
+ * view in the DELETED lifecycleState will result in a `404` response to be
+ * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testView = oci.Dns.getView({
+ *     viewId: oci_dns_view.test_view.id,
+ *     scope: "PRIVATE",
+ * });
+ * ```
+ */
 export function getViewOutput(args?: GetViewOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetViewResult> {
-    return pulumi.output(args).apply(a => getView(a, opts))
+    return pulumi.output(args).apply((a: any) => getView(a, opts))
 }
 
 /**

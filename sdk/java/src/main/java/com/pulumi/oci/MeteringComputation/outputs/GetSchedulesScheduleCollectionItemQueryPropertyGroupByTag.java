@@ -15,7 +15,7 @@ public final class GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag {
      */
     private String key;
     /**
-     * @return The namespace needed to determine object storage bucket.
+     * @return The namespace needed to determine the object storage bucket.
      * 
      */
     private String namespace;
@@ -34,7 +34,7 @@ public final class GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag {
         return this.key;
     }
     /**
-     * @return The namespace needed to determine object storage bucket.
+     * @return The namespace needed to determine the object storage bucket.
      * 
      */
     public String namespace() {

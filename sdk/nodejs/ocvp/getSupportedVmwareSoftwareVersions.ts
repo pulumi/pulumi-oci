@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSupportedVmwareSoftwareVersions(args: GetSupportedVmwareSoftwareVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedVmwareSoftwareVersionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -60,9 +58,25 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
      */
     readonly items: outputs.Ocvp.GetSupportedVmwareSoftwareVersionsItem[];
 }
-
+/**
+ * This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ *
+ * Lists the versions of bundled VMware software supported by the Oracle Cloud
+ * VMware Solution.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSupportedVmwareSoftwareVersions = oci.Ocvp.getSupportedVmwareSoftwareVersions({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getSupportedVmwareSoftwareVersionsOutput(args: GetSupportedVmwareSoftwareVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedVmwareSoftwareVersionsResult> {
-    return pulumi.output(args).apply(a => getSupportedVmwareSoftwareVersions(a, opts))
+    return pulumi.output(args).apply((a: any) => getSupportedVmwareSoftwareVersions(a, opts))
 }
 
 /**

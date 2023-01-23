@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIpsecConnectionTunnelErrorResult> InvokeAsync(GetIpsecConnectionTunnelErrorArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionTunnelErrorResult>("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args ?? new GetIpsecConnectionTunnelErrorArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionTunnelErrorResult>("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args ?? new GetIpsecConnectionTunnelErrorArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIpsecConnectionTunnelErrorResult> Invoke(GetIpsecConnectionTunnelErrorInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelErrorResult>("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args ?? new GetIpsecConnectionTunnelErrorInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelErrorResult>("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args ?? new GetIpsecConnectionTunnelErrorInvokeArgs(), options.WithDefaults());
     }
 
 

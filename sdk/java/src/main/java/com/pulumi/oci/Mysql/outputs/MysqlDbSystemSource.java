@@ -27,10 +27,15 @@ public final class MysqlDbSystemSource {
      */
     private @Nullable String recoveryPoint;
     /**
-     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
      */
     private String sourceType;
+    /**
+     * @return The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a @.manifest.json object PAR.
+     * 
+     */
+    private @Nullable String sourceUrl;
 
     private MysqlDbSystemSource() {}
     /**
@@ -55,11 +60,18 @@ public final class MysqlDbSystemSource {
         return Optional.ofNullable(this.recoveryPoint);
     }
     /**
-     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
      */
     public String sourceType() {
         return this.sourceType;
+    }
+    /**
+     * @return The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a @.manifest.json object PAR.
+     * 
+     */
+    public Optional<String> sourceUrl() {
+        return Optional.ofNullable(this.sourceUrl);
     }
 
     public static Builder builder() {
@@ -75,6 +87,7 @@ public final class MysqlDbSystemSource {
         private @Nullable String dbSystemId;
         private @Nullable String recoveryPoint;
         private String sourceType;
+        private @Nullable String sourceUrl;
         public Builder() {}
         public Builder(MysqlDbSystemSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -82,6 +95,7 @@ public final class MysqlDbSystemSource {
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.recoveryPoint = defaults.recoveryPoint;
     	      this.sourceType = defaults.sourceType;
+    	      this.sourceUrl = defaults.sourceUrl;
         }
 
         @CustomType.Setter
@@ -104,12 +118,18 @@ public final class MysqlDbSystemSource {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
+        public Builder sourceUrl(@Nullable String sourceUrl) {
+            this.sourceUrl = sourceUrl;
+            return this;
+        }
         public MysqlDbSystemSource build() {
             final var o = new MysqlDbSystemSource();
             o.backupId = backupId;
             o.dbSystemId = dbSystemId;
             o.recoveryPoint = recoveryPoint;
             o.sourceType = sourceType;
+            o.sourceUrl = sourceUrl;
             return o;
         }
     }

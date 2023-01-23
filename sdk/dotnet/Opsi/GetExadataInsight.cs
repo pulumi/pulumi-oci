@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExadataInsightResult> InvokeAsync(GetExadataInsightArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExadataInsightResult>("oci:Opsi/getExadataInsight:getExadataInsight", args ?? new GetExadataInsightArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataInsightResult>("oci:Opsi/getExadataInsight:getExadataInsight", args ?? new GetExadataInsightArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExadataInsightResult> Invoke(GetExadataInsightInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExadataInsightResult>("oci:Opsi/getExadataInsight:getExadataInsight", args ?? new GetExadataInsightInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInsightResult>("oci:Opsi/getExadataInsight:getExadataInsight", args ?? new GetExadataInsightInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -143,6 +143,14 @@ namespace Pulumi.Oci.Opsi
         /// The user-friendly name for the Exadata system. The name does not have to be unique.
         /// </summary>
         public readonly string ExadataDisplayName;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string ExadataInfraId;
+        /// <summary>
+        /// Oracle Cloud Infrastructure exadata infrastructure resource type
+        /// </summary>
+        public readonly string ExadataInfraResourceType;
         public readonly string ExadataInsightId;
         /// <summary>
         /// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
@@ -152,6 +160,10 @@ namespace Pulumi.Oci.Opsi
         /// Exadata rack type.
         /// </summary>
         public readonly string ExadataRackType;
+        /// <summary>
+        /// The shape of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string ExadataShape;
         /// <summary>
         /// Operations Insights internal representation of the the Exadata system type.
         /// </summary>
@@ -173,6 +185,7 @@ namespace Pulumi.Oci.Opsi
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailResult> MemberVmClusterDetails;
         /// <summary>
         /// The current state of the Exadata insight.
         /// </summary>
@@ -216,11 +229,17 @@ namespace Pulumi.Oci.Opsi
 
             string exadataDisplayName,
 
+            string exadataInfraId,
+
+            string exadataInfraResourceType,
+
             string exadataInsightId,
 
             string exadataName,
 
             string exadataRackType,
+
+            string exadataShape,
 
             string exadataType,
 
@@ -233,6 +252,8 @@ namespace Pulumi.Oci.Opsi
             bool isVirtualizedExadata,
 
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailResult> memberVmClusterDetails,
 
             string state,
 
@@ -254,15 +275,19 @@ namespace Pulumi.Oci.Opsi
             EnterpriseManagerIdentifier = enterpriseManagerIdentifier;
             EntitySource = entitySource;
             ExadataDisplayName = exadataDisplayName;
+            ExadataInfraId = exadataInfraId;
+            ExadataInfraResourceType = exadataInfraResourceType;
             ExadataInsightId = exadataInsightId;
             ExadataName = exadataName;
             ExadataRackType = exadataRackType;
+            ExadataShape = exadataShape;
             ExadataType = exadataType;
             FreeformTags = freeformTags;
             Id = id;
             IsAutoSyncEnabled = isAutoSyncEnabled;
             IsVirtualizedExadata = isVirtualizedExadata;
             LifecycleDetails = lifecycleDetails;
+            MemberVmClusterDetails = memberVmClusterDetails;
             State = state;
             Status = status;
             SystemTags = systemTags;

@@ -47,6 +47,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMonitoredResourcesSearch = new MonitoredResourcesSearch(&#34;testMonitoredResourcesSearch&#34;, MonitoredResourcesSearchArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .excludeFields(var_.monitored_resources_search_exclude_fields())
+ *             .externalId(oci_stack_monitoring_external.test_external().id())
+ *             .fields(var_.monitored_resources_search_fields())
  *             .hostName(var_.monitored_resources_search_host_name())
  *             .hostNameContains(var_.monitored_resources_search_host_name_contains())
  *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
@@ -89,6 +92,48 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called &#34;excludeFields&#34; of an array type, provide the values as enums, and use collectionFormat.
+     * 
+     */
+    @Export(name="excludeFields", type=List.class, parameters={String.class})
+    private Output</* @Nullable */ List<String>> excludeFields;
+
+    /**
+     * @return Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called &#34;excludeFields&#34; of an array type, provide the values as enums, and use collectionFormat.
+     * 
+     */
+    public Output<Optional<List<String>>> excludeFields() {
+        return Codegen.optional(this.excludeFields);
+    }
+    /**
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    @Export(name="externalId", type=String.class, parameters={})
+    private Output</* @Nullable */ String> externalId;
+
+    /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    public Output<Optional<String>> externalId() {
+        return Codegen.optional(this.externalId);
+    }
+    /**
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called &#34;fields&#34; of an array type, provide the values as enums, and use collectionFormat.
+     * 
+     */
+    @Export(name="fields", type=List.class, parameters={String.class})
+    private Output</* @Nullable */ List<String>> fields;
+
+    /**
+     * @return Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called &#34;fields&#34; of an array type, provide the values as enums, and use collectionFormat.
+     * 
+     */
+    public Output<Optional<List<String>>> fields() {
+        return Codegen.optional(this.fields);
     }
     /**
      * A filter to return resources with host name match

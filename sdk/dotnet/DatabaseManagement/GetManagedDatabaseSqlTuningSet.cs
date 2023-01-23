@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningSetResult> InvokeAsync(GetManagedDatabaseSqlTuningSetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningSetResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", args ?? new GetManagedDatabaseSqlTuningSetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningSetResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", args ?? new GetManagedDatabaseSqlTuningSetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningSetResult> Invoke(GetManagedDatabaseSqlTuningSetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningSetResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", args ?? new GetManagedDatabaseSqlTuningSetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningSetResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", args ?? new GetManagedDatabaseSqlTuningSetInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -167,7 +167,7 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
                 throw new Error("Missing required property 'operationsInsightsWarehouseId'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionPassword"] = args ? args.connectionPassword : undefined;
+            resourceInputs["connectionPassword"] = args?.connectionPassword ? pulumi.secret(args.connectionPassword) : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAwrDataAccess"] = args ? args.isAwrDataAccess : undefined;
@@ -182,6 +182,8 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["connectionPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(OperationsInsightsWarehouseUser.__pulumiType, name, resourceInputs, opts);
     }
 }

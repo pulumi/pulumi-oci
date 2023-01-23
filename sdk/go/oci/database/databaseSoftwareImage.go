@@ -83,7 +83,7 @@ type DatabaseSoftwareImage struct {
 	ImageShapeFamily pulumi.StringOutput `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
 	ImageType pulumi.StringOutput `pulumi:"imageType"`
-	// The patches included in the image and the version of the image
+	// The patches included in the image and the version of the image.
 	IncludedPatchesSummary pulumi.StringOutput `pulumi:"includedPatchesSummary"`
 	// True if this Database software image is supported for Upgrade.
 	IsUpgradeSupported pulumi.BoolOutput `pulumi:"isUpgradeSupported"`
@@ -154,7 +154,7 @@ type databaseSoftwareImageState struct {
 	ImageShapeFamily *string `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
 	ImageType *string `pulumi:"imageType"`
-	// The patches included in the image and the version of the image
+	// The patches included in the image and the version of the image.
 	IncludedPatchesSummary *string `pulumi:"includedPatchesSummary"`
 	// True if this Database software image is supported for Upgrade.
 	IsUpgradeSupported *bool `pulumi:"isUpgradeSupported"`
@@ -191,7 +191,7 @@ type DatabaseSoftwareImageState struct {
 	ImageShapeFamily pulumi.StringPtrInput
 	// The type of software image. Can be grid or database.
 	ImageType pulumi.StringPtrInput
-	// The patches included in the image and the version of the image
+	// The patches included in the image and the version of the image.
 	IncludedPatchesSummary pulumi.StringPtrInput
 	// True if this Database software image is supported for Upgrade.
 	IsUpgradeSupported pulumi.BoolPtrInput
@@ -396,7 +396,7 @@ func (o DatabaseSoftwareImageOutput) ImageType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.ImageType }).(pulumi.StringOutput)
 }
 
-// The patches included in the image and the version of the image
+// The patches included in the image and the version of the image.
 func (o DatabaseSoftwareImageOutput) IncludedPatchesSummary() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.IncludedPatchesSummary }).(pulumi.StringOutput)
 }

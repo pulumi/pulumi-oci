@@ -43,6 +43,17 @@ public final class GetWorkspacesWorkspace {
      * 
      */
     private String dnsServerZone;
+    private String endpointCompartmentId;
+    /**
+     * @return DCMS endpoint associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    private String endpointId;
+    /**
+     * @return Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    private String endpointName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -60,6 +71,13 @@ public final class GetWorkspacesWorkspace {
      */
     private Boolean isPrivateNetworkEnabled;
     private Integer quiesceTimeout;
+    private String registryCompartmentId;
+    /**
+     * @return DCMS registry associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    private String registryId;
+    private String registryName;
     /**
      * @return The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
      * 
@@ -134,6 +152,23 @@ public final class GetWorkspacesWorkspace {
     public String dnsServerZone() {
         return this.dnsServerZone;
     }
+    public String endpointCompartmentId() {
+        return this.endpointCompartmentId;
+    }
+    /**
+     * @return DCMS endpoint associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    public String endpointId() {
+        return this.endpointId;
+    }
+    /**
+     * @return Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    public String endpointName() {
+        return this.endpointName;
+    }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -160,6 +195,19 @@ public final class GetWorkspacesWorkspace {
     }
     public Integer quiesceTimeout() {
         return this.quiesceTimeout;
+    }
+    public String registryCompartmentId() {
+        return this.registryCompartmentId;
+    }
+    /**
+     * @return DCMS registry associated with the container/workspace. Returns null if there is none.
+     * 
+     */
+    public String registryId() {
+        return this.registryId;
+    }
+    public String registryName() {
+        return this.registryName;
     }
     /**
      * @return The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
@@ -219,11 +267,17 @@ public final class GetWorkspacesWorkspace {
         private String displayName;
         private String dnsServerIp;
         private String dnsServerZone;
+        private String endpointCompartmentId;
+        private String endpointId;
+        private String endpointName;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isForceOperation;
         private Boolean isPrivateNetworkEnabled;
         private Integer quiesceTimeout;
+        private String registryCompartmentId;
+        private String registryId;
+        private String registryName;
         private String state;
         private String stateMessage;
         private String subnetId;
@@ -239,11 +293,17 @@ public final class GetWorkspacesWorkspace {
     	      this.displayName = defaults.displayName;
     	      this.dnsServerIp = defaults.dnsServerIp;
     	      this.dnsServerZone = defaults.dnsServerZone;
+    	      this.endpointCompartmentId = defaults.endpointCompartmentId;
+    	      this.endpointId = defaults.endpointId;
+    	      this.endpointName = defaults.endpointName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isForceOperation = defaults.isForceOperation;
     	      this.isPrivateNetworkEnabled = defaults.isPrivateNetworkEnabled;
     	      this.quiesceTimeout = defaults.quiesceTimeout;
+    	      this.registryCompartmentId = defaults.registryCompartmentId;
+    	      this.registryId = defaults.registryId;
+    	      this.registryName = defaults.registryName;
     	      this.state = defaults.state;
     	      this.stateMessage = defaults.stateMessage;
     	      this.subnetId = defaults.subnetId;
@@ -283,6 +343,21 @@ public final class GetWorkspacesWorkspace {
             return this;
         }
         @CustomType.Setter
+        public Builder endpointCompartmentId(String endpointCompartmentId) {
+            this.endpointCompartmentId = Objects.requireNonNull(endpointCompartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder endpointId(String endpointId) {
+            this.endpointId = Objects.requireNonNull(endpointId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder endpointName(String endpointName) {
+            this.endpointName = Objects.requireNonNull(endpointName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
@@ -305,6 +380,21 @@ public final class GetWorkspacesWorkspace {
         @CustomType.Setter
         public Builder quiesceTimeout(Integer quiesceTimeout) {
             this.quiesceTimeout = Objects.requireNonNull(quiesceTimeout);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder registryCompartmentId(String registryCompartmentId) {
+            this.registryCompartmentId = Objects.requireNonNull(registryCompartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder registryId(String registryId) {
+            this.registryId = Objects.requireNonNull(registryId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder registryName(String registryName) {
+            this.registryName = Objects.requireNonNull(registryName);
             return this;
         }
         @CustomType.Setter
@@ -345,11 +435,17 @@ public final class GetWorkspacesWorkspace {
             o.displayName = displayName;
             o.dnsServerIp = dnsServerIp;
             o.dnsServerZone = dnsServerZone;
+            o.endpointCompartmentId = endpointCompartmentId;
+            o.endpointId = endpointId;
+            o.endpointName = endpointName;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isForceOperation = isForceOperation;
             o.isPrivateNetworkEnabled = isPrivateNetworkEnabled;
             o.quiesceTimeout = quiesceTimeout;
+            o.registryCompartmentId = registryCompartmentId;
+            o.registryId = registryId;
+            o.registryName = registryName;
             o.state = state;
             o.stateMessage = stateMessage;
             o.subnetId = subnetId;

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<int> CpuCoreCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
@@ -50,7 +50,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> DeploymentBackupId { get; private set; } = null!;
 
         /// <summary>
-        /// The deployment type.
+        /// Information regarding the deployment diagnostic collection
+        /// </summary>
+        [Output("deploymentDiagnosticDatas")]
+        public Output<ImmutableArray<Outputs.DeploymentDeploymentDiagnosticData>> DeploymentDiagnosticDatas { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
         /// </summary>
         [Output("deploymentType")]
         public Output<string> DeploymentType { get; private set; } = null!;
@@ -80,7 +86,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> Fqdn { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -134,7 +140,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> LifecycleSubState { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+        /// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
@@ -176,7 +182,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
@@ -261,7 +267,7 @@ namespace Pulumi.Oci.GoldenGate
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -276,7 +282,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? DeploymentBackupId { get; set; }
 
         /// <summary>
-        /// The deployment type.
+        /// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
         /// </summary>
         [Input("deploymentType", required: true)]
         public Input<string> DeploymentType { get; set; } = null!;
@@ -303,7 +309,7 @@ namespace Pulumi.Oci.GoldenGate
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -333,7 +339,7 @@ namespace Pulumi.Oci.GoldenGate
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+        /// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -377,7 +383,7 @@ namespace Pulumi.Oci.GoldenGate
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -391,8 +397,20 @@ namespace Pulumi.Oci.GoldenGate
         [Input("deploymentBackupId")]
         public Input<string>? DeploymentBackupId { get; set; }
 
+        [Input("deploymentDiagnosticDatas")]
+        private InputList<Inputs.DeploymentDeploymentDiagnosticDataGetArgs>? _deploymentDiagnosticDatas;
+
         /// <summary>
-        /// The deployment type.
+        /// Information regarding the deployment diagnostic collection
+        /// </summary>
+        public InputList<Inputs.DeploymentDeploymentDiagnosticDataGetArgs> DeploymentDiagnosticDatas
+        {
+            get => _deploymentDiagnosticDatas ?? (_deploymentDiagnosticDatas = new InputList<Inputs.DeploymentDeploymentDiagnosticDataGetArgs>());
+            set => _deploymentDiagnosticDatas = value;
+        }
+
+        /// <summary>
+        /// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
         /// </summary>
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
@@ -425,7 +443,7 @@ namespace Pulumi.Oci.GoldenGate
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -485,7 +503,7 @@ namespace Pulumi.Oci.GoldenGate
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+        /// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -533,7 +551,7 @@ namespace Pulumi.Oci.GoldenGate
         private InputMap<object>? _systemTags;
 
         /// <summary>
-        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         public InputMap<object> SystemTags
         {

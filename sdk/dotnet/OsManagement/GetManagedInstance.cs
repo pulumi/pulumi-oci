@@ -39,7 +39,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedInstanceResult> InvokeAsync(GetManagedInstanceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceResult>("oci:OsManagement/getManagedInstance:getManagedInstance", args ?? new GetManagedInstanceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceResult>("oci:OsManagement/getManagedInstance:getManagedInstance", args ?? new GetManagedInstanceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedInstanceResult> Invoke(GetManagedInstanceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedInstanceResult>("oci:OsManagement/getManagedInstance:getManagedInstance", args ?? new GetManagedInstanceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceResult>("oci:OsManagement/getManagedInstance:getManagedInstance", args ?? new GetManagedInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

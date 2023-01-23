@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCustomerSecretKeys(args: GetCustomerSecretKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomerSecretKeysResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", {
         "filters": args.filters,
         "userId": args.userId,
@@ -63,9 +61,25 @@ export interface GetCustomerSecretKeysResult {
      */
     readonly userId: string;
 }
-
+/**
+ * This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
+ * the secret key itself. The actual secret key is returned only upon creation.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCustomerSecretKeys = oci.Identity.getCustomerSecretKeys({
+ *     userId: oci_identity_user.test_user.id,
+ * });
+ * ```
+ */
 export function getCustomerSecretKeysOutput(args: GetCustomerSecretKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomerSecretKeysResult> {
-    return pulumi.output(args).apply(a => getCustomerSecretKeys(a, opts))
+    return pulumi.output(args).apply((a: any) => getCustomerSecretKeys(a, opts))
 }
 
 /**

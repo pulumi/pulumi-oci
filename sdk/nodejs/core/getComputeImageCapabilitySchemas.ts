@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  */
 export function getComputeImageCapabilitySchemas(args?: GetComputeImageCapabilitySchemasArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeImageCapabilitySchemasResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeImageCapabilitySchemas:getComputeImageCapabilitySchemas", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -83,9 +81,26 @@ export interface GetComputeImageCapabilitySchemasResult {
      */
     readonly imageId?: string;
 }
-
+/**
+ * This data source provides the list of Compute Image Capability Schemas in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testComputeImageCapabilitySchemas = oci.Core.getComputeImageCapabilitySchemas({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.compute_image_capability_schema_display_name,
+ *     imageId: oci_core_image.test_image.id,
+ * });
+ * ```
+ */
 export function getComputeImageCapabilitySchemasOutput(args?: GetComputeImageCapabilitySchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeImageCapabilitySchemasResult> {
-    return pulumi.output(args).apply(a => getComputeImageCapabilitySchemas(a, opts))
+    return pulumi.output(args).apply((a: any) => getComputeImageCapabilitySchemas(a, opts))
 }
 
 /**

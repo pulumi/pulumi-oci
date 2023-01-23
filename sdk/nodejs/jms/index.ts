@@ -5,21 +5,81 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./fleet";
-export * from "./getFleet";
-export * from "./getFleetBlocklists";
-export * from "./getFleets";
-export * from "./getInstallationSite";
-export * from "./getInstallationSites";
-export * from "./getJavaFamilies";
-export * from "./getJavaFamily";
-export * from "./getJavaRelease";
-export * from "./getJavaReleases";
-export * from "./getListJreUsage";
-export * from "./getSummarizeResourceInventory";
+export { FleetArgs, FleetState } from "./fleet";
+export type Fleet = import("./fleet").Fleet;
+export const Fleet: typeof import("./fleet").Fleet = null as any;
+utilities.lazyLoad(exports, ["Fleet"], () => require("./fleet"));
 
-// Import resources to register:
-import { Fleet } from "./fleet";
+export { GetFleetArgs, GetFleetResult, GetFleetOutputArgs } from "./getFleet";
+export const getFleet: typeof import("./getFleet").getFleet = null as any;
+export const getFleetOutput: typeof import("./getFleet").getFleetOutput = null as any;
+utilities.lazyLoad(exports, ["getFleet","getFleetOutput"], () => require("./getFleet"));
+
+export { GetFleetAdvancedFeatureConfigurationArgs, GetFleetAdvancedFeatureConfigurationResult, GetFleetAdvancedFeatureConfigurationOutputArgs } from "./getFleetAdvancedFeatureConfiguration";
+export const getFleetAdvancedFeatureConfiguration: typeof import("./getFleetAdvancedFeatureConfiguration").getFleetAdvancedFeatureConfiguration = null as any;
+export const getFleetAdvancedFeatureConfigurationOutput: typeof import("./getFleetAdvancedFeatureConfiguration").getFleetAdvancedFeatureConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetAdvancedFeatureConfiguration","getFleetAdvancedFeatureConfigurationOutput"], () => require("./getFleetAdvancedFeatureConfiguration"));
+
+export { GetFleetBlocklistsArgs, GetFleetBlocklistsResult, GetFleetBlocklistsOutputArgs } from "./getFleetBlocklists";
+export const getFleetBlocklists: typeof import("./getFleetBlocklists").getFleetBlocklists = null as any;
+export const getFleetBlocklistsOutput: typeof import("./getFleetBlocklists").getFleetBlocklistsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetBlocklists","getFleetBlocklistsOutput"], () => require("./getFleetBlocklists"));
+
+export { GetFleetCryptoAnalysisResultArgs, GetFleetCryptoAnalysisResultResult, GetFleetCryptoAnalysisResultOutputArgs } from "./getFleetCryptoAnalysisResult";
+export const getFleetCryptoAnalysisResult: typeof import("./getFleetCryptoAnalysisResult").getFleetCryptoAnalysisResult = null as any;
+export const getFleetCryptoAnalysisResultOutput: typeof import("./getFleetCryptoAnalysisResult").getFleetCryptoAnalysisResultOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetCryptoAnalysisResult","getFleetCryptoAnalysisResultOutput"], () => require("./getFleetCryptoAnalysisResult"));
+
+export { GetFleetCryptoAnalysisResultsArgs, GetFleetCryptoAnalysisResultsResult, GetFleetCryptoAnalysisResultsOutputArgs } from "./getFleetCryptoAnalysisResults";
+export const getFleetCryptoAnalysisResults: typeof import("./getFleetCryptoAnalysisResults").getFleetCryptoAnalysisResults = null as any;
+export const getFleetCryptoAnalysisResultsOutput: typeof import("./getFleetCryptoAnalysisResults").getFleetCryptoAnalysisResultsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetCryptoAnalysisResults","getFleetCryptoAnalysisResultsOutput"], () => require("./getFleetCryptoAnalysisResults"));
+
+export { GetFleetsArgs, GetFleetsResult, GetFleetsOutputArgs } from "./getFleets";
+export const getFleets: typeof import("./getFleets").getFleets = null as any;
+export const getFleetsOutput: typeof import("./getFleets").getFleetsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleets","getFleetsOutput"], () => require("./getFleets"));
+
+export { GetInstallationSiteArgs, GetInstallationSiteResult, GetInstallationSiteOutputArgs } from "./getInstallationSite";
+export const getInstallationSite: typeof import("./getInstallationSite").getInstallationSite = null as any;
+export const getInstallationSiteOutput: typeof import("./getInstallationSite").getInstallationSiteOutput = null as any;
+utilities.lazyLoad(exports, ["getInstallationSite","getInstallationSiteOutput"], () => require("./getInstallationSite"));
+
+export { GetInstallationSitesArgs, GetInstallationSitesResult, GetInstallationSitesOutputArgs } from "./getInstallationSites";
+export const getInstallationSites: typeof import("./getInstallationSites").getInstallationSites = null as any;
+export const getInstallationSitesOutput: typeof import("./getInstallationSites").getInstallationSitesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstallationSites","getInstallationSitesOutput"], () => require("./getInstallationSites"));
+
+export { GetJavaFamiliesArgs, GetJavaFamiliesResult, GetJavaFamiliesOutputArgs } from "./getJavaFamilies";
+export const getJavaFamilies: typeof import("./getJavaFamilies").getJavaFamilies = null as any;
+export const getJavaFamiliesOutput: typeof import("./getJavaFamilies").getJavaFamiliesOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaFamilies","getJavaFamiliesOutput"], () => require("./getJavaFamilies"));
+
+export { GetJavaFamilyArgs, GetJavaFamilyResult, GetJavaFamilyOutputArgs } from "./getJavaFamily";
+export const getJavaFamily: typeof import("./getJavaFamily").getJavaFamily = null as any;
+export const getJavaFamilyOutput: typeof import("./getJavaFamily").getJavaFamilyOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaFamily","getJavaFamilyOutput"], () => require("./getJavaFamily"));
+
+export { GetJavaReleaseArgs, GetJavaReleaseResult, GetJavaReleaseOutputArgs } from "./getJavaRelease";
+export const getJavaRelease: typeof import("./getJavaRelease").getJavaRelease = null as any;
+export const getJavaReleaseOutput: typeof import("./getJavaRelease").getJavaReleaseOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaRelease","getJavaReleaseOutput"], () => require("./getJavaRelease"));
+
+export { GetJavaReleasesArgs, GetJavaReleasesResult, GetJavaReleasesOutputArgs } from "./getJavaReleases";
+export const getJavaReleases: typeof import("./getJavaReleases").getJavaReleases = null as any;
+export const getJavaReleasesOutput: typeof import("./getJavaReleases").getJavaReleasesOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaReleases","getJavaReleasesOutput"], () => require("./getJavaReleases"));
+
+export { GetListJreUsageArgs, GetListJreUsageResult, GetListJreUsageOutputArgs } from "./getListJreUsage";
+export const getListJreUsage: typeof import("./getListJreUsage").getListJreUsage = null as any;
+export const getListJreUsageOutput: typeof import("./getListJreUsage").getListJreUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getListJreUsage","getListJreUsageOutput"], () => require("./getListJreUsage"));
+
+export { GetSummarizeResourceInventoryArgs, GetSummarizeResourceInventoryResult, GetSummarizeResourceInventoryOutputArgs } from "./getSummarizeResourceInventory";
+export const getSummarizeResourceInventory: typeof import("./getSummarizeResourceInventory").getSummarizeResourceInventory = null as any;
+export const getSummarizeResourceInventoryOutput: typeof import("./getSummarizeResourceInventory").getSummarizeResourceInventoryOutput = null as any;
+utilities.lazyLoad(exports, ["getSummarizeResourceInventory","getSummarizeResourceInventoryOutput"], () => require("./getSummarizeResourceInventory"));
+
 
 const _module = {
     version: utilities.getVersion(),

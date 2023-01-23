@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIdpGroupMappingsResult> InvokeAsync(GetIdpGroupMappingsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIdpGroupMappingsResult>("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", args ?? new GetIdpGroupMappingsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIdpGroupMappingsResult>("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", args ?? new GetIdpGroupMappingsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIdpGroupMappingsResult> Invoke(GetIdpGroupMappingsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIdpGroupMappingsResult>("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", args ?? new GetIdpGroupMappingsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIdpGroupMappingsResult>("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", args ?? new GetIdpGroupMappingsInvokeArgs(), options.WithDefaults());
     }
 
 

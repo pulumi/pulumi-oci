@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogs(args: GetLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetLogsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getLogs:getLogs", {
         "displayName": args.displayName,
         "filters": args.filters,
@@ -106,9 +104,29 @@ export interface GetLogsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Logs in Oracle Cloud Infrastructure Logging service.
+ *
+ * Lists the specified log group's log objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogs = oci.Logging.getLogs({
+ *     logGroupId: oci_logging_log_group.test_log_group.id,
+ *     displayName: _var.log_display_name,
+ *     logType: _var.log_log_type,
+ *     sourceResource: _var.log_source_resource,
+ *     sourceService: _var.log_source_service,
+ *     state: _var.log_state,
+ * });
+ * ```
+ */
 export function getLogsOutput(args: GetLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogsResult> {
-    return pulumi.output(args).apply(a => getLogs(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogs(a, opts))
 }
 
 /**

@@ -31,6 +31,8 @@ import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociations
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
@@ -67,6 +69,8 @@ import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
 import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersPlainArgs;
 import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
 import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructurePlainArgs;
+import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
+import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs;
 import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
 import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresPlainArgs;
 import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
@@ -222,6 +226,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDataguardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDataguardAssociationsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseInstanceWalletManagementResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRefreshableClonesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRegionalWalletManagementResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseWalletResult;
@@ -242,6 +247,7 @@ import com.pulumi.oci.Database.outputs.GetBackupsResult;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterResult;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClustersResult;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureResult;
+import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureUnAllocatedResourceResult;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresResult;
 import com.pulumi.oci.Database.outputs.GetCloudVmClusterIormConfigResult;
 import com.pulumi.oci.Database.outputs.GetCloudVmClusterResult;
@@ -2414,6 +2420,162 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagementPlain(GetAutonomousDatabaseInstanceWalletManagementPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", TypeShape.of(GetAutonomousDatabaseInstanceWalletManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs args) {
+        return getAutonomousDatabaseRefreshableClones(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClonesPlain(GetAutonomousDatabaseRefreshableClonesPlainArgs args) {
+        return getAutonomousDatabaseRefreshableClonesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", TypeShape.of(GetAutonomousDatabaseRefreshableClonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClonesPlain(GetAutonomousDatabaseRefreshableClonesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", TypeShape.of(GetAutonomousDatabaseRefreshableClonesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -5628,6 +5790,162 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", TypeShape.of(GetCloudExadataInfrastructureResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs args) {
+        return getCloudExadataInfrastructureUnAllocatedResource(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResourcePlain(GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs args) {
+        return getCloudExadataInfrastructureUnAllocatedResourcePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource", TypeShape.of(GetCloudExadataInfrastructureUnAllocatedResourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResourcePlain(GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource", TypeShape.of(GetCloudExadataInfrastructureUnAllocatedResourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
@@ -6612,7 +6930,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -6626,7 +6944,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testDatabase = DatabaseFunctions.getDatabase(GetTargetDatabaseArgs.builder()
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
      *             .databaseId(var_.database_id())
      *             .build());
      * 
@@ -6651,7 +6969,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -6665,7 +6983,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testDatabase = DatabaseFunctions.getDatabase(GetTargetDatabaseArgs.builder()
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
      *             .databaseId(var_.database_id())
      *             .build());
      * 
@@ -6690,7 +7008,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -6704,7 +7022,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testDatabase = DatabaseFunctions.getDatabase(GetTargetDatabaseArgs.builder()
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
      *             .databaseId(var_.database_id())
      *             .build());
      * 
@@ -6729,7 +7047,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -6743,7 +7061,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testDatabase = DatabaseFunctions.getDatabase(GetTargetDatabaseArgs.builder()
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
      *             .databaseId(var_.database_id())
      *             .build());
      * 
@@ -8080,7 +8398,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -8094,7 +8412,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testDatabases = DatabaseFunctions.getDatabases(GetTargetDatabasesArgs.builder()
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .dbHomeId(oci_database_db_home.test_db_home().id())
      *             .dbName(var_.database_db_name())
@@ -8123,7 +8441,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -8137,7 +8455,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testDatabases = DatabaseFunctions.getDatabases(GetTargetDatabasesArgs.builder()
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .dbHomeId(oci_database_db_home.test_db_home().id())
      *             .dbName(var_.database_db_name())
@@ -8166,7 +8484,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -8180,7 +8498,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testDatabases = DatabaseFunctions.getDatabases(GetTargetDatabasesArgs.builder()
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .dbHomeId(oci_database_db_home.test_db_home().id())
      *             .dbName(var_.database_db_name())
@@ -8209,7 +8527,7 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -8223,7 +8541,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testDatabases = DatabaseFunctions.getDatabases(GetTargetDatabasesArgs.builder()
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .dbHomeId(oci_database_db_home.test_db_home().id())
      *             .dbName(var_.database_db_name())
@@ -11276,6 +11594,7 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11299,6 +11618,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
      *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
      *             .build());
      * 
      *     }
@@ -11316,6 +11636,7 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11339,6 +11660,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
      *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
      *             .build());
      * 
      *     }
@@ -11356,6 +11678,7 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11379,6 +11702,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
      *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
      *             .build());
      * 
      *     }
@@ -11396,6 +11720,7 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11419,6 +11744,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
      *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
      *             .build());
      * 
      *     }
@@ -11596,6 +11922,7 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11620,6 +11947,7 @@ public final class DatabaseFunctions {
      *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.exadata_infrastructure_display_name())
+     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
      *             .state(var_.exadata_infrastructure_state())
      *             .build());
      * 
@@ -11638,6 +11966,7 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11662,6 +11991,7 @@ public final class DatabaseFunctions {
      *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.exadata_infrastructure_display_name())
+     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
      *             .state(var_.exadata_infrastructure_state())
      *             .build());
      * 
@@ -11680,6 +12010,7 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11704,6 +12035,7 @@ public final class DatabaseFunctions {
      *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.exadata_infrastructure_display_name())
+     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
      *             .state(var_.exadata_infrastructure_state())
      *             .build());
      * 
@@ -11722,6 +12054,7 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11746,6 +12079,7 @@ public final class DatabaseFunctions {
      *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.exadata_infrastructure_display_name())
+     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
      *             .state(var_.exadata_infrastructure_state())
      *             .build());
      * 

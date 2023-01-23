@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVnicAttachments(args: GetVnicAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetVnicAttachmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVnicAttachments:getVnicAttachments", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -94,9 +92,29 @@ export interface GetVnicAttachmentsResult {
      */
     readonly vnicId?: string;
 }
-
+/**
+ * This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the VNIC attachments in the specified compartment. A VNIC attachment
+ * resides in the same compartment as the attached instance. The list can be
+ * filtered by instance, VNIC, or availability domain.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVnicAttachments = oci.Core.getVnicAttachments({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.vnic_attachment_availability_domain,
+ *     instanceId: oci_core_instance.test_instance.id,
+ *     vnicId: oci_core_vnic.test_vnic.id,
+ * });
+ * ```
+ */
 export function getVnicAttachmentsOutput(args: GetVnicAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVnicAttachmentsResult> {
-    return pulumi.output(args).apply(a => getVnicAttachments(a, opts))
+    return pulumi.output(args).apply((a: any) => getVnicAttachments(a, opts))
 }
 
 /**

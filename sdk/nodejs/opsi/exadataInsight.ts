@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -107,6 +109,8 @@ export class ExadataInsight extends pulumi.CustomResource {
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
     public /*out*/ readonly exadataDisplayName!: pulumi.Output<string>;
+    public readonly exadataInfraId!: pulumi.Output<string>;
+    public /*out*/ readonly exadataInfraResourceType!: pulumi.Output<string>;
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      */
@@ -115,6 +119,7 @@ export class ExadataInsight extends pulumi.CustomResource {
      * Exadata rack type.
      */
     public /*out*/ readonly exadataRackType!: pulumi.Output<string>;
+    public /*out*/ readonly exadataShape!: pulumi.Output<string>;
     /**
      * Operations Insights internal representation of the the Exadata system type.
      */
@@ -135,6 +140,7 @@ export class ExadataInsight extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public readonly memberVmClusterDetails!: pulumi.Output<outputs.Opsi.ExadataInsightMemberVmClusterDetail[]>;
     /**
      * The current state of the Exadata insight.
      */
@@ -179,13 +185,17 @@ export class ExadataInsight extends pulumi.CustomResource {
             resourceInputs["enterpriseManagerIdentifier"] = state ? state.enterpriseManagerIdentifier : undefined;
             resourceInputs["entitySource"] = state ? state.entitySource : undefined;
             resourceInputs["exadataDisplayName"] = state ? state.exadataDisplayName : undefined;
+            resourceInputs["exadataInfraId"] = state ? state.exadataInfraId : undefined;
+            resourceInputs["exadataInfraResourceType"] = state ? state.exadataInfraResourceType : undefined;
             resourceInputs["exadataName"] = state ? state.exadataName : undefined;
             resourceInputs["exadataRackType"] = state ? state.exadataRackType : undefined;
+            resourceInputs["exadataShape"] = state ? state.exadataShape : undefined;
             resourceInputs["exadataType"] = state ? state.exadataType : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isAutoSyncEnabled"] = state ? state.isAutoSyncEnabled : undefined;
             resourceInputs["isVirtualizedExadata"] = state ? state.isVirtualizedExadata : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["memberVmClusterDetails"] = state ? state.memberVmClusterDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -196,15 +206,6 @@ export class ExadataInsight extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.enterpriseManagerBridgeId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'enterpriseManagerBridgeId'");
-            }
-            if ((!args || args.enterpriseManagerEntityIdentifier === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'enterpriseManagerEntityIdentifier'");
-            }
-            if ((!args || args.enterpriseManagerIdentifier === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'enterpriseManagerIdentifier'");
-            }
             if ((!args || args.entitySource === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'entitySource'");
             }
@@ -214,15 +215,19 @@ export class ExadataInsight extends pulumi.CustomResource {
             resourceInputs["enterpriseManagerEntityIdentifier"] = args ? args.enterpriseManagerEntityIdentifier : undefined;
             resourceInputs["enterpriseManagerIdentifier"] = args ? args.enterpriseManagerIdentifier : undefined;
             resourceInputs["entitySource"] = args ? args.entitySource : undefined;
+            resourceInputs["exadataInfraId"] = args ? args.exadataInfraId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutoSyncEnabled"] = args ? args.isAutoSyncEnabled : undefined;
+            resourceInputs["memberVmClusterDetails"] = args ? args.memberVmClusterDetails : undefined;
             resourceInputs["status"] = args ? args.status : undefined;
             resourceInputs["enterpriseManagerEntityDisplayName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityType"] = undefined /*out*/;
             resourceInputs["exadataDisplayName"] = undefined /*out*/;
+            resourceInputs["exadataInfraResourceType"] = undefined /*out*/;
             resourceInputs["exadataName"] = undefined /*out*/;
             resourceInputs["exadataRackType"] = undefined /*out*/;
+            resourceInputs["exadataShape"] = undefined /*out*/;
             resourceInputs["exadataType"] = undefined /*out*/;
             resourceInputs["isVirtualizedExadata"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -280,6 +285,8 @@ export interface ExadataInsightState {
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
     exadataDisplayName?: pulumi.Input<string>;
+    exadataInfraId?: pulumi.Input<string>;
+    exadataInfraResourceType?: pulumi.Input<string>;
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      */
@@ -288,6 +295,7 @@ export interface ExadataInsightState {
      * Exadata rack type.
      */
     exadataRackType?: pulumi.Input<string>;
+    exadataShape?: pulumi.Input<string>;
     /**
      * Operations Insights internal representation of the the Exadata system type.
      */
@@ -308,6 +316,7 @@ export interface ExadataInsightState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[]>;
     /**
      * The current state of the Exadata insight.
      */
@@ -345,19 +354,20 @@ export interface ExadataInsightArgs {
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    enterpriseManagerBridgeId: pulumi.Input<string>;
+    enterpriseManagerBridgeId?: pulumi.Input<string>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    enterpriseManagerEntityIdentifier: pulumi.Input<string>;
+    enterpriseManagerEntityIdentifier?: pulumi.Input<string>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    enterpriseManagerIdentifier: pulumi.Input<string>;
+    enterpriseManagerIdentifier?: pulumi.Input<string>;
     /**
      * (Updatable) Source of the Exadata system.
      */
     entitySource: pulumi.Input<string>;
+    exadataInfraId?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -366,6 +376,7 @@ export interface ExadataInsightArgs {
      * (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
      */
     isAutoSyncEnabled?: pulumi.Input<boolean>;
+    memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[]>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      */

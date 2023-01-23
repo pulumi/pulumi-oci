@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRegistryConnectionResult> InvokeAsync(GetRegistryConnectionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRegistryConnectionResult>("oci:DataConnectivity/getRegistryConnection:getRegistryConnection", args ?? new GetRegistryConnectionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRegistryConnectionResult>("oci:DataConnectivity/getRegistryConnection:getRegistryConnection", args ?? new GetRegistryConnectionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Registry Connection resource in Oracle Cloud Infrastructure Data Connectivity service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRegistryConnectionResult> Invoke(GetRegistryConnectionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRegistryConnectionResult>("oci:DataConnectivity/getRegistryConnection:getRegistryConnection", args ?? new GetRegistryConnectionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRegistryConnectionResult>("oci:DataConnectivity/getRegistryConnection:getRegistryConnection", args ?? new GetRegistryConnectionInvokeArgs(), options.WithDefaults());
     }
 
 

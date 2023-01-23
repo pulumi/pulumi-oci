@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Logging
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogResult> InvokeAsync(GetLogArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogResult>("oci:Logging/getLog:getLog", args ?? new GetLogArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogResult>("oci:Logging/getLog:getLog", args ?? new GetLogArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Logging
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogResult> Invoke(GetLogInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogResult>("oci:Logging/getLog:getLog", args ?? new GetLogInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogResult>("oci:Logging/getLog:getLog", args ?? new GetLogInvokeArgs(), options.WithDefaults());
     }
 
 

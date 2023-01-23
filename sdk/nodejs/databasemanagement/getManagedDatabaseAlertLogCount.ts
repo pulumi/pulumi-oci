@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseAlertLogCount(args: GetManagedDatabaseAlertLogCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAlertLogCountResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", {
         "groupBy": args.groupBy,
         "isRegularExpression": args.isRegularExpression,
@@ -108,9 +106,31 @@ export interface GetManagedDatabaseAlertLogCountResult {
     readonly timeLessThanOrEqualTo?: string;
     readonly typeFilter?: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Get the counts of alert logs for the specified Managed Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseAlertLogCount = oci.DatabaseManagement.getManagedDatabaseAlertLogCount({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     groupBy: _var.managed_database_alert_log_count_group_by,
+ *     isRegularExpression: _var.managed_database_alert_log_count_is_regular_expression,
+ *     levelFilter: _var.managed_database_alert_log_count_level_filter,
+ *     logSearchText: _var.managed_database_alert_log_count_log_search_text,
+ *     timeGreaterThanOrEqualTo: _var.managed_database_alert_log_count_time_greater_than_or_equal_to,
+ *     timeLessThanOrEqualTo: _var.managed_database_alert_log_count_time_less_than_or_equal_to,
+ *     typeFilter: _var.managed_database_alert_log_count_type_filter,
+ * });
+ * ```
+ */
 export function getManagedDatabaseAlertLogCountOutput(args: GetManagedDatabaseAlertLogCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAlertLogCountResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseAlertLogCount(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseAlertLogCount(a, opts))
 }
 
 /**

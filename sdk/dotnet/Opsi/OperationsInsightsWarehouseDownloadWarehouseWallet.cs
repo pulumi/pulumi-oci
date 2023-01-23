@@ -78,6 +78,10 @@ namespace Pulumi.Oci.Opsi
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "operationsInsightsWarehouseWalletPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -107,11 +111,21 @@ namespace Pulumi.Oci.Opsi
         [Input("operationsInsightsWarehouseId", required: true)]
         public Input<string> OperationsInsightsWarehouseId { get; set; } = null!;
 
+        [Input("operationsInsightsWarehouseWalletPassword", required: true)]
+        private Input<string>? _operationsInsightsWarehouseWalletPassword;
+
         /// <summary>
         /// User provided ADW wallet password for the Operations Insights Warehouse.
         /// </summary>
-        [Input("operationsInsightsWarehouseWalletPassword", required: true)]
-        public Input<string> OperationsInsightsWarehouseWalletPassword { get; set; } = null!;
+        public Input<string>? OperationsInsightsWarehouseWalletPassword
+        {
+            get => _operationsInsightsWarehouseWalletPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _operationsInsightsWarehouseWalletPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public OperationsInsightsWarehouseDownloadWarehouseWalletArgs()
         {
@@ -127,11 +141,21 @@ namespace Pulumi.Oci.Opsi
         [Input("operationsInsightsWarehouseId")]
         public Input<string>? OperationsInsightsWarehouseId { get; set; }
 
+        [Input("operationsInsightsWarehouseWalletPassword")]
+        private Input<string>? _operationsInsightsWarehouseWalletPassword;
+
         /// <summary>
         /// User provided ADW wallet password for the Operations Insights Warehouse.
         /// </summary>
-        [Input("operationsInsightsWarehouseWalletPassword")]
-        public Input<string>? OperationsInsightsWarehouseWalletPassword { get; set; }
+        public Input<string>? OperationsInsightsWarehouseWalletPassword
+        {
+            get => _operationsInsightsWarehouseWalletPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _operationsInsightsWarehouseWalletPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public OperationsInsightsWarehouseDownloadWarehouseWalletState()
         {

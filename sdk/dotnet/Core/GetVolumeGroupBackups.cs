@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVolumeGroupBackupsResult> InvokeAsync(GetVolumeGroupBackupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupBackupsResult>("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", args ?? new GetVolumeGroupBackupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupBackupsResult>("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", args ?? new GetVolumeGroupBackupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Volume Group Backups in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVolumeGroupBackupsResult> Invoke(GetVolumeGroupBackupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVolumeGroupBackupsResult>("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", args ?? new GetVolumeGroupBackupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupBackupsResult>("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", args ?? new GetVolumeGroupBackupsInvokeArgs(), options.WithDefaults());
     }
 
 

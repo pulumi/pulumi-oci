@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogPrivateEndpoints(args: GetCatalogPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogPrivateEndpointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetCatalogPrivateEndpointsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Returns a list of all the catalog private endpoints in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCatalogPrivateEndpoints = oci.DataCatalog.getCatalogPrivateEndpoints({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.catalog_private_endpoint_display_name,
+ *     state: _var.catalog_private_endpoint_state,
+ * });
+ * ```
+ */
 export function getCatalogPrivateEndpointsOutput(args: GetCatalogPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogPrivateEndpointsResult> {
-    return pulumi.output(args).apply(a => getCatalogPrivateEndpoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getCatalogPrivateEndpoints(a, opts))
 }
 
 /**

@@ -144,6 +144,7 @@ class _PluggableDatabasesRemoteCloneState:
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
                  pluggable_database_id: Optional[pulumi.Input[str]] = None,
+                 pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]]] = None,
                  should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
                  source_container_db_admin_password: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -164,6 +165,7 @@ class _PluggableDatabasesRemoteCloneState:
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] source_container_db_admin_password: The DB system administrator password of the source CDB.
         :param pulumi.Input[str] state: The current state of the pluggable database.
@@ -195,6 +197,8 @@ class _PluggableDatabasesRemoteCloneState:
             pulumi.set(__self__, "pdb_name", pdb_name)
         if pluggable_database_id is not None:
             pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
+        if pluggable_database_management_configs is not None:
+            pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
         if should_pdb_admin_account_be_locked is not None:
             pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if source_container_db_admin_password is not None:
@@ -353,6 +357,18 @@ class _PluggableDatabasesRemoteCloneState:
         pulumi.set(self, "pluggable_database_id", value)
 
     @property
+    @pulumi.getter(name="pluggableDatabaseManagementConfigs")
+    def pluggable_database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]]]:
+        """
+        The configuration of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "pluggable_database_management_configs")
+
+    @pluggable_database_management_configs.setter
+    def pluggable_database_management_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]]]):
+        pulumi.set(self, "pluggable_database_management_configs", value)
+
+    @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
     def should_pdb_admin_account_be_locked(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -442,6 +458,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         This resource provides the Pluggable Databases Remote Clone resource in Oracle Cloud Infrastructure Database service.
 
         Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+        For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
 
         ## Example Usage
 
@@ -483,6 +500,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         This resource provides the Pluggable Databases Remote Clone resource in Oracle Cloud Infrastructure Database service.
 
         Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+        For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
 
         ## Example Usage
 
@@ -538,18 +556,18 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             if cloned_pdb_name is None and not opts.urn:
                 raise TypeError("Missing required property 'cloned_pdb_name'")
             __props__.__dict__["cloned_pdb_name"] = cloned_pdb_name
-            __props__.__dict__["pdb_admin_password"] = pdb_admin_password
+            __props__.__dict__["pdb_admin_password"] = None if pdb_admin_password is None else pulumi.Output.secret(pdb_admin_password)
             if pluggable_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'pluggable_database_id'")
             __props__.__dict__["pluggable_database_id"] = pluggable_database_id
             __props__.__dict__["should_pdb_admin_account_be_locked"] = should_pdb_admin_account_be_locked
             if source_container_db_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'source_container_db_admin_password'")
-            __props__.__dict__["source_container_db_admin_password"] = source_container_db_admin_password
+            __props__.__dict__["source_container_db_admin_password"] = None if source_container_db_admin_password is None else pulumi.Output.secret(source_container_db_admin_password)
             if target_container_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'target_container_database_id'")
             __props__.__dict__["target_container_database_id"] = target_container_database_id
-            __props__.__dict__["target_tde_wallet_password"] = target_tde_wallet_password
+            __props__.__dict__["target_tde_wallet_password"] = None if target_tde_wallet_password is None else pulumi.Output.secret(target_tde_wallet_password)
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["connection_strings"] = None
             __props__.__dict__["container_database_id"] = None
@@ -559,8 +577,11 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["open_mode"] = None
             __props__.__dict__["pdb_name"] = None
+            __props__.__dict__["pluggable_database_management_configs"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["pdbAdminPassword", "sourceContainerDbAdminPassword", "targetTdeWalletPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(PluggableDatabasesRemoteClone, __self__).__init__(
             'oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone',
             resource_name,
@@ -583,6 +604,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             pdb_admin_password: Optional[pulumi.Input[str]] = None,
             pdb_name: Optional[pulumi.Input[str]] = None,
             pluggable_database_id: Optional[pulumi.Input[str]] = None,
+            pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]]]] = None,
             should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
             source_container_db_admin_password: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -608,6 +630,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] source_container_db_admin_password: The DB system administrator password of the source CDB.
         :param pulumi.Input[str] state: The current state of the pluggable database.
@@ -631,6 +654,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         __props__.__dict__["pdb_admin_password"] = pdb_admin_password
         __props__.__dict__["pdb_name"] = pdb_name
         __props__.__dict__["pluggable_database_id"] = pluggable_database_id
+        __props__.__dict__["pluggable_database_management_configs"] = pluggable_database_management_configs
         __props__.__dict__["should_pdb_admin_account_be_locked"] = should_pdb_admin_account_be_locked
         __props__.__dict__["source_container_db_admin_password"] = source_container_db_admin_password
         __props__.__dict__["state"] = state
@@ -734,6 +758,14 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "pluggable_database_id")
+
+    @property
+    @pulumi.getter(name="pluggableDatabaseManagementConfigs")
+    def pluggable_database_management_configs(self) -> pulumi.Output[Sequence['outputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig']]:
+        """
+        The configuration of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "pluggable_database_management_configs")
 
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")

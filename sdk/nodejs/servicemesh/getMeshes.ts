@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMeshes(args: GetMeshesArgs, opts?: pulumi.InvokeOptions): Promise<GetMeshesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getMeshes:getMeshes", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -88,9 +86,27 @@ export interface GetMeshesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Meshes in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Returns a list of Mesh objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMeshes = oci.ServiceMesh.getMeshes({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.mesh_display_name,
+ *     id: _var.mesh_id,
+ *     state: _var.mesh_state,
+ * });
+ * ```
+ */
 export function getMeshesOutput(args: GetMeshesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMeshesResult> {
-    return pulumi.output(args).apply(a => getMeshes(a, opts))
+    return pulumi.output(args).apply((a: any) => getMeshes(a, opts))
 }
 
 /**

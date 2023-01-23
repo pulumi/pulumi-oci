@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// Branch for push event; source branch for pull requests.
         /// </summary>
         public readonly string? HeadRef;
+        /// <summary>
+        /// The repository name for trigger events.
+        /// </summary>
+        public readonly string? RepositoryName;
 
         [OutputConstructor]
         private BuildRunBuildRunSourceTriggerInfoActionFilterInclude(
@@ -29,11 +33,14 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters,
 
-            string? headRef)
+            string? headRef,
+
+            string? repositoryName)
         {
             BaseRef = baseRef;
             FileFilters = fileFilters;
             HeadRef = headRef;
+            RepositoryName = repositoryName;
         }
     }
 }

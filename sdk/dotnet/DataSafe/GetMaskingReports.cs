@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMaskingReportsResult> InvokeAsync(GetMaskingReportsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMaskingReportsResult>("oci:DataSafe/getMaskingReports:getMaskingReports", args ?? new GetMaskingReportsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingReportsResult>("oci:DataSafe/getMaskingReports:getMaskingReports", args ?? new GetMaskingReportsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMaskingReportsResult> Invoke(GetMaskingReportsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMaskingReportsResult>("oci:DataSafe/getMaskingReports:getMaskingReports", args ?? new GetMaskingReportsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingReportsResult>("oci:DataSafe/getMaskingReports:getMaskingReports", args ?? new GetMaskingReportsInvokeArgs(), options.WithDefaults());
     }
 
 

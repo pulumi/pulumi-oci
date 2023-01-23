@@ -100,6 +100,21 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * 
+     */
+    @Import(name="complianceStandards")
+    private @Nullable Output<List<String>> complianceStandards;
+
+    /**
+     * @return The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * 
+     */
+    public Optional<Output<List<String>>> complianceStandards() {
+        return Optional.ofNullable(this.complianceStandards);
+    }
+
+    /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
@@ -220,6 +235,96 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * 
+     */
+    @Import(name="recordTimeSpan")
+    private @Nullable Output<String> recordTimeSpan;
+
+    /**
+     * @return The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * 
+     */
+    public Optional<Output<String>> recordTimeSpan() {
+        return Optional.ofNullable(this.recordTimeSpan);
+    }
+
+    /**
+     * Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * 
+     */
+    @Import(name="schedule")
+    private @Nullable Output<String> schedule;
+
+    /**
+     * @return Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * 
+     */
+    public Optional<Output<String>> schedule() {
+        return Optional.ofNullable(this.schedule);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * 
+     */
+    @Import(name="scheduledReportCompartmentId")
+    private @Nullable Output<String> scheduledReportCompartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * 
+     */
+    public Optional<Output<String>> scheduledReportCompartmentId() {
+        return Optional.ofNullable(this.scheduledReportCompartmentId);
+    }
+
+    /**
+     * Specifies the format of report to be excel or pdf
+     * 
+     */
+    @Import(name="scheduledReportMimeType")
+    private @Nullable Output<String> scheduledReportMimeType;
+
+    /**
+     * @return Specifies the format of report to be excel or pdf
+     * 
+     */
+    public Optional<Output<String>> scheduledReportMimeType() {
+        return Optional.ofNullable(this.scheduledReportMimeType);
+    }
+
+    /**
+     * The name of the report to be scheduled.
+     * 
+     */
+    @Import(name="scheduledReportName")
+    private @Nullable Output<String> scheduledReportName;
+
+    /**
+     * @return The name of the report to be scheduled.
+     * 
+     */
+    public Optional<Output<String>> scheduledReportName() {
+        return Optional.ofNullable(this.scheduledReportName);
+    }
+
+    /**
+     * Specifies the limit on number of rows in report.
+     * 
+     */
+    @Import(name="scheduledReportRowLimit")
+    private @Nullable Output<Integer> scheduledReportRowLimit;
+
+    /**
+     * @return Specifies the limit on number of rows in report.
+     * 
+     */
+    public Optional<Output<Integer>> scheduledReportRowLimit() {
+        return Optional.ofNullable(this.scheduledReportRowLimit);
+    }
+
+    /**
      * (Updatable) Additional scim filters used to get the specific summary.
      * 
      */
@@ -317,6 +422,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         this.columnInfos = $.columnInfos;
         this.columnSortings = $.columnSortings;
         this.compartmentId = $.compartmentId;
+        this.complianceStandards = $.complianceStandards;
         this.dataSource = $.dataSource;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -325,6 +431,12 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         this.freeformTags = $.freeformTags;
         this.isSeeded = $.isSeeded;
         this.parentId = $.parentId;
+        this.recordTimeSpan = $.recordTimeSpan;
+        this.schedule = $.schedule;
+        this.scheduledReportCompartmentId = $.scheduledReportCompartmentId;
+        this.scheduledReportMimeType = $.scheduledReportMimeType;
+        this.scheduledReportName = $.scheduledReportName;
+        this.scheduledReportRowLimit = $.scheduledReportRowLimit;
         this.scimFilter = $.scimFilter;
         this.state = $.state;
         this.summaries = $.summaries;
@@ -484,6 +596,37 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param complianceStandards The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder complianceStandards(@Nullable Output<List<String>> complianceStandards) {
+            $.complianceStandards = complianceStandards;
+            return this;
+        }
+
+        /**
+         * @param complianceStandards The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder complianceStandards(List<String> complianceStandards) {
+            return complianceStandards(Output.of(complianceStandards));
+        }
+
+        /**
+         * @param complianceStandards The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder complianceStandards(String... complianceStandards) {
+            return complianceStandards(List.of(complianceStandards));
         }
 
         /**
@@ -652,6 +795,132 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
          */
         public Builder parentId(String parentId) {
             return parentId(Output.of(parentId));
+        }
+
+        /**
+         * @param recordTimeSpan The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recordTimeSpan(@Nullable Output<String> recordTimeSpan) {
+            $.recordTimeSpan = recordTimeSpan;
+            return this;
+        }
+
+        /**
+         * @param recordTimeSpan The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recordTimeSpan(String recordTimeSpan) {
+            return recordTimeSpan(Output.of(recordTimeSpan));
+        }
+
+        /**
+         * @param schedule Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schedule(@Nullable Output<String> schedule) {
+            $.schedule = schedule;
+            return this;
+        }
+
+        /**
+         * @param schedule Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schedule(String schedule) {
+            return schedule(Output.of(schedule));
+        }
+
+        /**
+         * @param scheduledReportCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledReportCompartmentId(@Nullable Output<String> scheduledReportCompartmentId) {
+            $.scheduledReportCompartmentId = scheduledReportCompartmentId;
+            return this;
+        }
+
+        /**
+         * @param scheduledReportCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledReportCompartmentId(String scheduledReportCompartmentId) {
+            return scheduledReportCompartmentId(Output.of(scheduledReportCompartmentId));
+        }
+
+        /**
+         * @param scheduledReportMimeType Specifies the format of report to be excel or pdf
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledReportMimeType(@Nullable Output<String> scheduledReportMimeType) {
+            $.scheduledReportMimeType = scheduledReportMimeType;
+            return this;
+        }
+
+        /**
+         * @param scheduledReportMimeType Specifies the format of report to be excel or pdf
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledReportMimeType(String scheduledReportMimeType) {
+            return scheduledReportMimeType(Output.of(scheduledReportMimeType));
+        }
+
+        /**
+         * @param scheduledReportName The name of the report to be scheduled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledReportName(@Nullable Output<String> scheduledReportName) {
+            $.scheduledReportName = scheduledReportName;
+            return this;
+        }
+
+        /**
+         * @param scheduledReportName The name of the report to be scheduled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledReportName(String scheduledReportName) {
+            return scheduledReportName(Output.of(scheduledReportName));
+        }
+
+        /**
+         * @param scheduledReportRowLimit Specifies the limit on number of rows in report.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledReportRowLimit(@Nullable Output<Integer> scheduledReportRowLimit) {
+            $.scheduledReportRowLimit = scheduledReportRowLimit;
+            return this;
+        }
+
+        /**
+         * @param scheduledReportRowLimit Specifies the limit on number of rows in report.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledReportRowLimit(Integer scheduledReportRowLimit) {
+            return scheduledReportRowLimit(Output.of(scheduledReportRowLimit));
         }
 
         /**

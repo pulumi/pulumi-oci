@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlDbSystems(args: GetMysqlDbSystemsArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlDbSystemsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", {
         "compartmentId": args.compartmentId,
         "configurationId": args.configurationId,
@@ -130,9 +128,32 @@ export interface GetMysqlDbSystemsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
+ *
+ * Get a list of DB Systems in the specified compartment.
+ * The default sort order is by timeUpdated, descending.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
+ *     compartmentId: _var.compartment_id,
+ *     configurationId: _var.mysql_configuration_id,
+ *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
+ *     displayName: _var.mysql_db_system_display_name,
+ *     isAnalyticsClusterAttached: _var.mysql_db_system_is_analytics_cluster_attached,
+ *     isHeatWaveClusterAttached: _var.mysql_db_system_is_heat_wave_cluster_attached,
+ *     isUpToDate: _var.mysql_db_system_is_up_to_date,
+ *     state: _var.mysql_db_system_state,
+ * });
+ * ```
+ */
 export function getMysqlDbSystemsOutput(args: GetMysqlDbSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlDbSystemsResult> {
-    return pulumi.output(args).apply(a => getMysqlDbSystems(a, opts))
+    return pulumi.output(args).apply((a: any) => getMysqlDbSystems(a, opts))
 }
 
 /**

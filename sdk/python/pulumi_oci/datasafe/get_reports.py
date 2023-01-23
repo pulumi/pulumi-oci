@@ -23,7 +23,7 @@ class GetReportsResult:
     """
     A collection of values returned by getReports.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, report_collections=None, report_definition_id=None, state=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, report_collections=None, report_definition_id=None, state=None, type=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -51,6 +51,9 @@ class GetReportsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="accessLevel")
@@ -115,6 +118,14 @@ class GetReportsResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of the report.
+        """
+        return pulumi.get(self, "type")
+
 
 class AwaitableGetReportsResult(GetReportsResult):
     # pylint: disable=using-constant-test
@@ -130,7 +141,8 @@ class AwaitableGetReportsResult(GetReportsResult):
             id=self.id,
             report_collections=self.report_collections,
             report_definition_id=self.report_definition_id,
-            state=self.state)
+            state=self.state,
+            type=self.type)
 
 
 def get_reports(access_level: Optional[str] = None,
@@ -140,6 +152,7 @@ def get_reports(access_level: Optional[str] = None,
                 filters: Optional[Sequence[pulumi.InputType['GetReportsFilterArgs']]] = None,
                 report_definition_id: Optional[str] = None,
                 state: Optional[str] = None,
+                type: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportsResult:
     """
     This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -157,7 +170,8 @@ def get_reports(access_level: Optional[str] = None,
         compartment_id_in_subtree=var["report_compartment_id_in_subtree"],
         display_name=var["report_display_name"],
         report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"],
-        state=var["report_state"])
+        state=var["report_state"],
+        type=var["report_type"])
     ```
 
 
@@ -167,6 +181,7 @@ def get_reports(access_level: Optional[str] = None,
     :param str display_name: The name of the report definition to query.
     :param str report_definition_id: The ID of the report definition to filter the list of reports
     :param str state: An optional filter to return only resources that match the specified lifecycle state.
+    :param str type: An optional filter to return only resources that match the specified type.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -176,6 +191,7 @@ def get_reports(access_level: Optional[str] = None,
     __args__['filters'] = filters
     __args__['reportDefinitionId'] = report_definition_id
     __args__['state'] = state
+    __args__['type'] = type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getReports:getReports', __args__, opts=opts, typ=GetReportsResult).value
 
@@ -188,7 +204,8 @@ def get_reports(access_level: Optional[str] = None,
         id=__ret__.id,
         report_collections=__ret__.report_collections,
         report_definition_id=__ret__.report_definition_id,
-        state=__ret__.state)
+        state=__ret__.state,
+        type=__ret__.type)
 
 
 @_utilities.lift_output_func(get_reports)
@@ -199,6 +216,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetReportsFilterArgs']]]]] = None,
                        report_definition_id: Optional[pulumi.Input[Optional[str]]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
+                       type: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportsResult]:
     """
     This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -216,7 +234,8 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
         compartment_id_in_subtree=var["report_compartment_id_in_subtree"],
         display_name=var["report_display_name"],
         report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"],
-        state=var["report_state"])
+        state=var["report_state"],
+        type=var["report_type"])
     ```
 
 
@@ -226,5 +245,6 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
     :param str display_name: The name of the report definition to query.
     :param str report_definition_id: The ID of the report definition to filter the list of reports
     :param str state: An optional filter to return only resources that match the specified lifecycle state.
+    :param str type: An optional filter to return only resources that match the specified type.
     """
     ...

@@ -277,6 +277,7 @@ __all__ = [
     'GetCloudExadataInfrastructureMaintenanceWindowResult',
     'GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetCloudExadataInfrastructureMaintenanceWindowMonthResult',
+    'GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowResult',
@@ -392,7 +393,6 @@ __all__ = [
     'GetExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructureMaintenanceWindowMonthResult',
-    'GetExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterResult',
     'GetExadataInfrastructuresExadataInfrastructureResult',
     'GetExadataInfrastructuresExadataInfrastructureContactResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult',
@@ -19827,6 +19827,35 @@ class GetCloudExadataInfrastructureMaintenanceWindowMonthResult(dict):
 
 
 @pulumi.output_type
+class GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 un_allocated_adb_storage_in_tbs: float):
+        """
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+        :param float un_allocated_adb_storage_in_tbs: Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "un_allocated_adb_storage_in_tbs", un_allocated_adb_storage_in_tbs)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="unAllocatedAdbStorageInTbs")
+    def un_allocated_adb_storage_in_tbs(self) -> float:
+        """
+        Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
+        """
+        return pulumi.get(self, "un_allocated_adb_storage_in_tbs")
+
+
+@pulumi.output_type
 class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
     def __init__(__self__, *,
                  activated_storage_count: int,
@@ -29027,35 +29056,6 @@ class GetExadataInfrastructureMaintenanceWindowMonthResult(dict):
         Name of the month of the year.
         """
         return pulumi.get(self, "name")
-
-
-@pulumi.output_type
-class GetExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterResult(dict):
-    def __init__(__self__, *,
-                 id: str,
-                 un_allocated_adb_storage_in_tbs: float):
-        """
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
-        :param float un_allocated_adb_storage_in_tbs: Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
-        """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "un_allocated_adb_storage_in_tbs", un_allocated_adb_storage_in_tbs)
-
-    @property
-    @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
-        """
-        return pulumi.get(self, "id")
-
-    @property
-    @pulumi.getter(name="unAllocatedAdbStorageInTbs")
-    def un_allocated_adb_storage_in_tbs(self) -> float:
-        """
-        Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
-        """
-        return pulumi.get(self, "un_allocated_adb_storage_in_tbs")
 
 
 @pulumi.output_type

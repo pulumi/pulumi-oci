@@ -17505,6 +17505,362 @@ func (o GetMysqlVersionVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMy
 	}).(GetMysqlVersionVersionVersionOutput)
 }
 
+type GetReplicasFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetReplicasFilterInput is an input type that accepts GetReplicasFilterArgs and GetReplicasFilterOutput values.
+// You can construct a concrete instance of `GetReplicasFilterInput` via:
+//
+//	GetReplicasFilterArgs{...}
+type GetReplicasFilterInput interface {
+	pulumi.Input
+
+	ToGetReplicasFilterOutput() GetReplicasFilterOutput
+	ToGetReplicasFilterOutputWithContext(context.Context) GetReplicasFilterOutput
+}
+
+type GetReplicasFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetReplicasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasFilter)(nil)).Elem()
+}
+
+func (i GetReplicasFilterArgs) ToGetReplicasFilterOutput() GetReplicasFilterOutput {
+	return i.ToGetReplicasFilterOutputWithContext(context.Background())
+}
+
+func (i GetReplicasFilterArgs) ToGetReplicasFilterOutputWithContext(ctx context.Context) GetReplicasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasFilterOutput)
+}
+
+// GetReplicasFilterArrayInput is an input type that accepts GetReplicasFilterArray and GetReplicasFilterArrayOutput values.
+// You can construct a concrete instance of `GetReplicasFilterArrayInput` via:
+//
+//	GetReplicasFilterArray{ GetReplicasFilterArgs{...} }
+type GetReplicasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasFilterArrayOutput() GetReplicasFilterArrayOutput
+	ToGetReplicasFilterArrayOutputWithContext(context.Context) GetReplicasFilterArrayOutput
+}
+
+type GetReplicasFilterArray []GetReplicasFilterInput
+
+func (GetReplicasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasFilter)(nil)).Elem()
+}
+
+func (i GetReplicasFilterArray) ToGetReplicasFilterArrayOutput() GetReplicasFilterArrayOutput {
+	return i.ToGetReplicasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasFilterArray) ToGetReplicasFilterArrayOutputWithContext(ctx context.Context) GetReplicasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasFilterArrayOutput)
+}
+
+type GetReplicasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasFilter)(nil)).Elem()
+}
+
+func (o GetReplicasFilterOutput) ToGetReplicasFilterOutput() GetReplicasFilterOutput {
+	return o
+}
+
+func (o GetReplicasFilterOutput) ToGetReplicasFilterOutputWithContext(ctx context.Context) GetReplicasFilterOutput {
+	return o
+}
+
+func (o GetReplicasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetReplicasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetReplicasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetReplicasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetReplicasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasFilter)(nil)).Elem()
+}
+
+func (o GetReplicasFilterArrayOutput) ToGetReplicasFilterArrayOutput() GetReplicasFilterArrayOutput {
+	return o
+}
+
+func (o GetReplicasFilterArrayOutput) ToGetReplicasFilterArrayOutputWithContext(ctx context.Context) GetReplicasFilterArrayOutput {
+	return o
+}
+
+func (o GetReplicasFilterArrayOutput) Index(i pulumi.IntInput) GetReplicasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasFilter {
+		return vs[0].([]GetReplicasFilter)[vs[1].(int)]
+	}).(GetReplicasFilterOutput)
+}
+
+type GetReplicasReplica struct {
+	// The name of the Availability Domain the read replica is located in.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId string `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// User provided description of the read replica.
+	Description string `pulumi:"description"`
+	// A filter to return only the resource matching the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The name of the Fault Domain the read replica is located in.
+	FaultDomain string `pulumi:"faultDomain"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the read replica.
+	Id string `pulumi:"id"`
+	// The IP address the read replica is configured to listen on.
+	IpAddress string `pulumi:"ipAddress"`
+	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
+	// A message describing the state of the read replica.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The MySQL version used by the read replica.
+	MysqlVersion string `pulumi:"mysqlVersion"`
+	// The port the read replica is configured to listen on.
+	Port int `pulumi:"port"`
+	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+	PortX int `pulumi:"portX"`
+	// The LifecycleState of the read replica.
+	State string `pulumi:"state"`
+	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetReplicasReplicaInput is an input type that accepts GetReplicasReplicaArgs and GetReplicasReplicaOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaInput` via:
+//
+//	GetReplicasReplicaArgs{...}
+type GetReplicasReplicaInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaOutput() GetReplicasReplicaOutput
+	ToGetReplicasReplicaOutputWithContext(context.Context) GetReplicasReplicaOutput
+}
+
+type GetReplicasReplicaArgs struct {
+	// The name of the Availability Domain the read replica is located in.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// User provided description of the read replica.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resource matching the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The name of the Fault Domain the read replica is located in.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the read replica.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The IP address the read replica is configured to listen on.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
+	// A message describing the state of the read replica.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The MySQL version used by the read replica.
+	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// The port the read replica is configured to listen on.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+	PortX pulumi.IntInput `pulumi:"portX"`
+	// The LifecycleState of the read replica.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetReplicasReplicaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplica)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaArgs) ToGetReplicasReplicaOutput() GetReplicasReplicaOutput {
+	return i.ToGetReplicasReplicaOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaArgs) ToGetReplicasReplicaOutputWithContext(ctx context.Context) GetReplicasReplicaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaOutput)
+}
+
+// GetReplicasReplicaArrayInput is an input type that accepts GetReplicasReplicaArray and GetReplicasReplicaArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaArrayInput` via:
+//
+//	GetReplicasReplicaArray{ GetReplicasReplicaArgs{...} }
+type GetReplicasReplicaArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaArrayOutput() GetReplicasReplicaArrayOutput
+	ToGetReplicasReplicaArrayOutputWithContext(context.Context) GetReplicasReplicaArrayOutput
+}
+
+type GetReplicasReplicaArray []GetReplicasReplicaInput
+
+func (GetReplicasReplicaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplica)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaArray) ToGetReplicasReplicaArrayOutput() GetReplicasReplicaArrayOutput {
+	return i.ToGetReplicasReplicaArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaArray) ToGetReplicasReplicaArrayOutputWithContext(ctx context.Context) GetReplicasReplicaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaArrayOutput)
+}
+
+type GetReplicasReplicaOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplica)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaOutput) ToGetReplicasReplicaOutput() GetReplicasReplicaOutput {
+	return o
+}
+
+func (o GetReplicasReplicaOutput) ToGetReplicasReplicaOutputWithContext(ctx context.Context) GetReplicasReplicaOutput {
+	return o
+}
+
+// The name of the Availability Domain the read replica is located in.
+func (o GetReplicasReplicaOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetReplicasReplicaOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetReplicasReplicaOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetReplicasReplicaOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetReplicasReplica) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// User provided description of the read replica.
+func (o GetReplicasReplicaOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resource matching the given display name exactly.
+func (o GetReplicasReplicaOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The name of the Fault Domain the read replica is located in.
+func (o GetReplicasReplicaOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.FaultDomain }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetReplicasReplicaOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetReplicasReplica) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the read replica.
+func (o GetReplicasReplicaOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The IP address the read replica is configured to listen on.
+func (o GetReplicasReplicaOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+func (o GetReplicasReplicaOutput) IsDeleteProtected() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetReplicasReplica) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
+}
+
+// A message describing the state of the read replica.
+func (o GetReplicasReplicaOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The MySQL version used by the read replica.
+func (o GetReplicasReplicaOutput) MysqlVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// The port the read replica is configured to listen on.
+func (o GetReplicasReplicaOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetReplicasReplica) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+func (o GetReplicasReplicaOutput) PortX() pulumi.IntOutput {
+	return o.ApplyT(func(v GetReplicasReplica) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// The LifecycleState of the read replica.
+func (o GetReplicasReplicaOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetReplicasReplicaOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetReplicasReplicaOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetReplicasReplicaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplica)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaArrayOutput) ToGetReplicasReplicaArrayOutput() GetReplicasReplicaArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaArrayOutput) ToGetReplicasReplicaArrayOutputWithContext(ctx context.Context) GetReplicasReplicaArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplica {
+		return vs[0].([]GetReplicasReplica)[vs[1].(int)]
+	}).(GetReplicasReplicaOutput)
+}
+
 type GetShapesFilter struct {
 	// Name
 	Name   string   `pulumi:"name"`
@@ -17738,362 +18094,6 @@ func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput
 	}).(GetShapesShapeOutput)
 }
 
-type GetrRplicasFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
-	Values []string `pulumi:"values"`
-}
-
-// GetrRplicasFilterInput is an input type that accepts GetrRplicasFilterArgs and GetrRplicasFilterOutput values.
-// You can construct a concrete instance of `GetrRplicasFilterInput` via:
-//
-//	GetrRplicasFilterArgs{...}
-type GetrRplicasFilterInput interface {
-	pulumi.Input
-
-	ToGetrRplicasFilterOutput() GetrRplicasFilterOutput
-	ToGetrRplicasFilterOutputWithContext(context.Context) GetrRplicasFilterOutput
-}
-
-type GetrRplicasFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetrRplicasFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetrRplicasFilter)(nil)).Elem()
-}
-
-func (i GetrRplicasFilterArgs) ToGetrRplicasFilterOutput() GetrRplicasFilterOutput {
-	return i.ToGetrRplicasFilterOutputWithContext(context.Background())
-}
-
-func (i GetrRplicasFilterArgs) ToGetrRplicasFilterOutputWithContext(ctx context.Context) GetrRplicasFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetrRplicasFilterOutput)
-}
-
-// GetrRplicasFilterArrayInput is an input type that accepts GetrRplicasFilterArray and GetrRplicasFilterArrayOutput values.
-// You can construct a concrete instance of `GetrRplicasFilterArrayInput` via:
-//
-//	GetrRplicasFilterArray{ GetrRplicasFilterArgs{...} }
-type GetrRplicasFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetrRplicasFilterArrayOutput() GetrRplicasFilterArrayOutput
-	ToGetrRplicasFilterArrayOutputWithContext(context.Context) GetrRplicasFilterArrayOutput
-}
-
-type GetrRplicasFilterArray []GetrRplicasFilterInput
-
-func (GetrRplicasFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetrRplicasFilter)(nil)).Elem()
-}
-
-func (i GetrRplicasFilterArray) ToGetrRplicasFilterArrayOutput() GetrRplicasFilterArrayOutput {
-	return i.ToGetrRplicasFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetrRplicasFilterArray) ToGetrRplicasFilterArrayOutputWithContext(ctx context.Context) GetrRplicasFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetrRplicasFilterArrayOutput)
-}
-
-type GetrRplicasFilterOutput struct{ *pulumi.OutputState }
-
-func (GetrRplicasFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetrRplicasFilter)(nil)).Elem()
-}
-
-func (o GetrRplicasFilterOutput) ToGetrRplicasFilterOutput() GetrRplicasFilterOutput {
-	return o
-}
-
-func (o GetrRplicasFilterOutput) ToGetrRplicasFilterOutputWithContext(ctx context.Context) GetrRplicasFilterOutput {
-	return o
-}
-
-func (o GetrRplicasFilterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasFilter) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetrRplicasFilterOutput) Regex() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetrRplicasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
-}
-
-func (o GetrRplicasFilterOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetrRplicasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type GetrRplicasFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetrRplicasFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetrRplicasFilter)(nil)).Elem()
-}
-
-func (o GetrRplicasFilterArrayOutput) ToGetrRplicasFilterArrayOutput() GetrRplicasFilterArrayOutput {
-	return o
-}
-
-func (o GetrRplicasFilterArrayOutput) ToGetrRplicasFilterArrayOutputWithContext(ctx context.Context) GetrRplicasFilterArrayOutput {
-	return o
-}
-
-func (o GetrRplicasFilterArrayOutput) Index(i pulumi.IntInput) GetrRplicasFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetrRplicasFilter {
-		return vs[0].([]GetrRplicasFilter)[vs[1].(int)]
-	}).(GetrRplicasFilterOutput)
-}
-
-type GetrRplicasReplica struct {
-	// The name of the Availability Domain the read replica is located in.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
-	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId string `pulumi:"dbSystemId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// User provided description of the read replica.
-	Description string `pulumi:"description"`
-	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
-	// The name of the Fault Domain the read replica is located in.
-	FaultDomain string `pulumi:"faultDomain"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the read replica.
-	Id string `pulumi:"id"`
-	// The IP address the read replica is configured to listen on.
-	IpAddress string `pulumi:"ipAddress"`
-	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
-	// A message describing the state of the read replica.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The MySQL version used by the read replica.
-	MysqlVersion string `pulumi:"mysqlVersion"`
-	// The port the read replica is configured to listen on.
-	Port int `pulumi:"port"`
-	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
-	// The LifecycleState of the read replica.
-	State string `pulumi:"state"`
-	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
-	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetrRplicasReplicaInput is an input type that accepts GetrRplicasReplicaArgs and GetrRplicasReplicaOutput values.
-// You can construct a concrete instance of `GetrRplicasReplicaInput` via:
-//
-//	GetrRplicasReplicaArgs{...}
-type GetrRplicasReplicaInput interface {
-	pulumi.Input
-
-	ToGetrRplicasReplicaOutput() GetrRplicasReplicaOutput
-	ToGetrRplicasReplicaOutputWithContext(context.Context) GetrRplicasReplicaOutput
-}
-
-type GetrRplicasReplicaArgs struct {
-	// The name of the Availability Domain the read replica is located in.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// User provided description of the read replica.
-	Description pulumi.StringInput `pulumi:"description"`
-	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The name of the Fault Domain the read replica is located in.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID of the read replica.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The IP address the read replica is configured to listen on.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
-	// A message describing the state of the read replica.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The MySQL version used by the read replica.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
-	// The port the read replica is configured to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
-	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
-	// The LifecycleState of the read replica.
-	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetrRplicasReplicaArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetrRplicasReplica)(nil)).Elem()
-}
-
-func (i GetrRplicasReplicaArgs) ToGetrRplicasReplicaOutput() GetrRplicasReplicaOutput {
-	return i.ToGetrRplicasReplicaOutputWithContext(context.Background())
-}
-
-func (i GetrRplicasReplicaArgs) ToGetrRplicasReplicaOutputWithContext(ctx context.Context) GetrRplicasReplicaOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetrRplicasReplicaOutput)
-}
-
-// GetrRplicasReplicaArrayInput is an input type that accepts GetrRplicasReplicaArray and GetrRplicasReplicaArrayOutput values.
-// You can construct a concrete instance of `GetrRplicasReplicaArrayInput` via:
-//
-//	GetrRplicasReplicaArray{ GetrRplicasReplicaArgs{...} }
-type GetrRplicasReplicaArrayInput interface {
-	pulumi.Input
-
-	ToGetrRplicasReplicaArrayOutput() GetrRplicasReplicaArrayOutput
-	ToGetrRplicasReplicaArrayOutputWithContext(context.Context) GetrRplicasReplicaArrayOutput
-}
-
-type GetrRplicasReplicaArray []GetrRplicasReplicaInput
-
-func (GetrRplicasReplicaArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetrRplicasReplica)(nil)).Elem()
-}
-
-func (i GetrRplicasReplicaArray) ToGetrRplicasReplicaArrayOutput() GetrRplicasReplicaArrayOutput {
-	return i.ToGetrRplicasReplicaArrayOutputWithContext(context.Background())
-}
-
-func (i GetrRplicasReplicaArray) ToGetrRplicasReplicaArrayOutputWithContext(ctx context.Context) GetrRplicasReplicaArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetrRplicasReplicaArrayOutput)
-}
-
-type GetrRplicasReplicaOutput struct{ *pulumi.OutputState }
-
-func (GetrRplicasReplicaOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetrRplicasReplica)(nil)).Elem()
-}
-
-func (o GetrRplicasReplicaOutput) ToGetrRplicasReplicaOutput() GetrRplicasReplicaOutput {
-	return o
-}
-
-func (o GetrRplicasReplicaOutput) ToGetrRplicasReplicaOutputWithContext(ctx context.Context) GetrRplicasReplicaOutput {
-	return o
-}
-
-// The name of the Availability Domain the read replica is located in.
-func (o GetrRplicasReplicaOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
-}
-
-// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetrRplicasReplicaOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.CompartmentId }).(pulumi.StringOutput)
-}
-
-// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetrRplicasReplicaOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.DbSystemId }).(pulumi.StringOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetrRplicasReplicaOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
-}
-
-// User provided description of the read replica.
-func (o GetrRplicasReplicaOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// A filter to return only the resource matching the given display name exactly.
-func (o GetrRplicasReplicaOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// The name of the Fault Domain the read replica is located in.
-func (o GetrRplicasReplicaOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.FaultDomain }).(pulumi.StringOutput)
-}
-
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetrRplicasReplicaOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
-}
-
-// The OCID of the read replica.
-func (o GetrRplicasReplicaOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The IP address the read replica is configured to listen on.
-func (o GetrRplicasReplicaOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.IpAddress }).(pulumi.StringOutput)
-}
-
-// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-func (o GetrRplicasReplicaOutput) IsDeleteProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
-}
-
-// A message describing the state of the read replica.
-func (o GetrRplicasReplicaOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.LifecycleDetails }).(pulumi.StringOutput)
-}
-
-// The MySQL version used by the read replica.
-func (o GetrRplicasReplicaOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.MysqlVersion }).(pulumi.StringOutput)
-}
-
-// The port the read replica is configured to listen on.
-func (o GetrRplicasReplicaOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) int { return v.Port }).(pulumi.IntOutput)
-}
-
-// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-func (o GetrRplicasReplicaOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) int { return v.PortX }).(pulumi.IntOutput)
-}
-
-// The LifecycleState of the read replica.
-func (o GetrRplicasReplicaOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.State }).(pulumi.StringOutput)
-}
-
-// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetrRplicasReplicaOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.TimeCreated }).(pulumi.StringOutput)
-}
-
-// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetrRplicasReplicaOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetrRplicasReplica) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-type GetrRplicasReplicaArrayOutput struct{ *pulumi.OutputState }
-
-func (GetrRplicasReplicaArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetrRplicasReplica)(nil)).Elem()
-}
-
-func (o GetrRplicasReplicaArrayOutput) ToGetrRplicasReplicaArrayOutput() GetrRplicasReplicaArrayOutput {
-	return o
-}
-
-func (o GetrRplicasReplicaArrayOutput) ToGetrRplicasReplicaArrayOutputWithContext(ctx context.Context) GetrRplicasReplicaArrayOutput {
-	return o
-}
-
-func (o GetrRplicasReplicaArrayOutput) Index(i pulumi.IntInput) GetrRplicasReplicaOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetrRplicasReplica {
-		return vs[0].([]GetrRplicasReplica)[vs[1].(int)]
-	}).(GetrRplicasReplicaOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsClusterClusterNodeInput)(nil)).Elem(), AnalyticsClusterClusterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsClusterClusterNodeArrayInput)(nil)).Elem(), AnalyticsClusterClusterNodeArray{})
@@ -18299,14 +18299,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionArrayInput)(nil)).Elem(), GetMysqlVersionVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionVersionInput)(nil)).Elem(), GetMysqlVersionVersionVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionVersionArrayInput)(nil)).Elem(), GetMysqlVersionVersionVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterInput)(nil)).Elem(), GetReplicasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterArrayInput)(nil)).Elem(), GetReplicasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaInput)(nil)).Elem(), GetReplicasReplicaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaArrayInput)(nil)).Elem(), GetReplicasReplicaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterInput)(nil)).Elem(), GetShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeArrayInput)(nil)).Elem(), GetShapesShapeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetrRplicasFilterInput)(nil)).Elem(), GetrRplicasFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetrRplicasFilterArrayInput)(nil)).Elem(), GetrRplicasFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetrRplicasReplicaInput)(nil)).Elem(), GetrRplicasReplicaArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetrRplicasReplicaArrayInput)(nil)).Elem(), GetrRplicasReplicaArray{})
 	pulumi.RegisterOutputType(AnalyticsClusterClusterNodeOutput{})
 	pulumi.RegisterOutputType(AnalyticsClusterClusterNodeArrayOutput{})
 	pulumi.RegisterOutputType(ChannelSourceOutput{})
@@ -18511,12 +18511,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlVersionVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlVersionVersionVersionOutput{})
 	pulumi.RegisterOutputType(GetMysqlVersionVersionVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasFilterOutput{})
+	pulumi.RegisterOutputType(GetReplicasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeArrayOutput{})
-	pulumi.RegisterOutputType(GetrRplicasFilterOutput{})
-	pulumi.RegisterOutputType(GetrRplicasFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetrRplicasReplicaOutput{})
-	pulumi.RegisterOutputType(GetrRplicasReplicaArrayOutput{})
 }

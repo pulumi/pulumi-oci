@@ -27474,6 +27474,18 @@ export namespace Mysql {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetReplicasFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetReplicasFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetShapesFilter {
         /**
          * Name
@@ -27487,18 +27499,6 @@ export namespace Mysql {
         /**
          * Name
          */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetrRplicasFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetrRplicasFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

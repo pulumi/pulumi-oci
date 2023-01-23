@@ -19,8 +19,8 @@ from .get_mysql_db_system import *
 from .get_mysql_db_systems import *
 from .get_mysql_version import *
 from .get_replica import *
+from .get_replicas import *
 from .get_shapes import *
-from .getr_rplicas import *
 from .heat_wave_cluster import *
 from .mysql_backup import *
 from .mysql_configuration import *

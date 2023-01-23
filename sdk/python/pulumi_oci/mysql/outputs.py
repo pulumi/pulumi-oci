@@ -113,10 +113,10 @@ __all__ = [
     'GetMysqlVersionFilterResult',
     'GetMysqlVersionVersionResult',
     'GetMysqlVersionVersionVersionResult',
+    'GetReplicasFilterResult',
+    'GetReplicasReplicaResult',
     'GetShapesFilterResult',
     'GetShapesShapeResult',
-    'GetrRplicasFilterResult',
-    'GetrRplicasReplicaResult',
 ]
 
 @pulumi.output_type
@@ -10217,91 +10217,7 @@ class GetMysqlVersionVersionVersionResult(dict):
 
 
 @pulumi.output_type
-class GetShapesFilterResult(dict):
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        """
-        :param str name: Name
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        """
-        Name
-        """
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetShapesShapeResult(dict):
-    def __init__(__self__, *,
-                 cpu_core_count: int,
-                 is_supported_fors: Sequence[str],
-                 memory_size_in_gbs: int,
-                 name: str):
-        """
-        :param int cpu_core_count: The number of CPU Cores the Instance provides. These are "OCPU"s.
-        :param Sequence[str] is_supported_fors: Return shapes that are supported by the service feature.
-        :param int memory_size_in_gbs: The amount of RAM the Instance provides. This is an IEC base-2 number.
-        :param str name: Name
-        """
-        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
-        pulumi.set(__self__, "is_supported_fors", is_supported_fors)
-        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
-        pulumi.set(__self__, "name", name)
-
-    @property
-    @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
-        """
-        The number of CPU Cores the Instance provides. These are "OCPU"s.
-        """
-        return pulumi.get(self, "cpu_core_count")
-
-    @property
-    @pulumi.getter(name="isSupportedFors")
-    def is_supported_fors(self) -> Sequence[str]:
-        """
-        Return shapes that are supported by the service feature.
-        """
-        return pulumi.get(self, "is_supported_fors")
-
-    @property
-    @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> int:
-        """
-        The amount of RAM the Instance provides. This is an IEC base-2 number.
-        """
-        return pulumi.get(self, "memory_size_in_gbs")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        """
-        Name
-        """
-        return pulumi.get(self, "name")
-
-
-@pulumi.output_type
-class GetrRplicasFilterResult(dict):
+class GetReplicasFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -10328,7 +10244,7 @@ class GetrRplicasFilterResult(dict):
 
 
 @pulumi.output_type
-class GetrRplicasReplicaResult(dict):
+class GetReplicasReplicaResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  compartment_id: str,
@@ -10530,5 +10446,89 @@ class GetrRplicasReplicaResult(dict):
         The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetShapesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetShapesShapeResult(dict):
+    def __init__(__self__, *,
+                 cpu_core_count: int,
+                 is_supported_fors: Sequence[str],
+                 memory_size_in_gbs: int,
+                 name: str):
+        """
+        :param int cpu_core_count: The number of CPU Cores the Instance provides. These are "OCPU"s.
+        :param Sequence[str] is_supported_fors: Return shapes that are supported by the service feature.
+        :param int memory_size_in_gbs: The amount of RAM the Instance provides. This is an IEC base-2 number.
+        :param str name: Name
+        """
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "is_supported_fors", is_supported_fors)
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> int:
+        """
+        The number of CPU Cores the Instance provides. These are "OCPU"s.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @property
+    @pulumi.getter(name="isSupportedFors")
+    def is_supported_fors(self) -> Sequence[str]:
+        """
+        Return shapes that are supported by the service feature.
+        """
+        return pulumi.get(self, "is_supported_fors")
+
+    @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> int:
+        """
+        The amount of RAM the Instance provides. This is an IEC base-2 number.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name
+        """
+        return pulumi.get(self, "name")
 
 

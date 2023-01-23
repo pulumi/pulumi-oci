@@ -369,6 +369,11 @@ export const getCloudExadataInfrastructure: typeof import("./getCloudExadataInfr
 export const getCloudExadataInfrastructureOutput: typeof import("./getCloudExadataInfrastructure").getCloudExadataInfrastructureOutput = null as any;
 utilities.lazyLoad(exports, ["getCloudExadataInfrastructure","getCloudExadataInfrastructureOutput"], () => require("./getCloudExadataInfrastructure"));
 
+export { GetCloudExadataInfrastructureUnAllocatedResourceArgs, GetCloudExadataInfrastructureUnAllocatedResourceResult, GetCloudExadataInfrastructureUnAllocatedResourceOutputArgs } from "./getCloudExadataInfrastructureUnAllocatedResource";
+export const getCloudExadataInfrastructureUnAllocatedResource: typeof import("./getCloudExadataInfrastructureUnAllocatedResource").getCloudExadataInfrastructureUnAllocatedResource = null as any;
+export const getCloudExadataInfrastructureUnAllocatedResourceOutput: typeof import("./getCloudExadataInfrastructureUnAllocatedResource").getCloudExadataInfrastructureUnAllocatedResourceOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataInfrastructureUnAllocatedResource","getCloudExadataInfrastructureUnAllocatedResourceOutput"], () => require("./getCloudExadataInfrastructureUnAllocatedResource"));
+
 export { GetCloudExadataInfrastructuresArgs, GetCloudExadataInfrastructuresResult, GetCloudExadataInfrastructuresOutputArgs } from "./getCloudExadataInfrastructures";
 export const getCloudExadataInfrastructures: typeof import("./getCloudExadataInfrastructures").getCloudExadataInfrastructures = null as any;
 export const getCloudExadataInfrastructuresOutput: typeof import("./getCloudExadataInfrastructures").getCloudExadataInfrastructuresOutput = null as any;
@@ -553,11 +558,6 @@ export { GetExadataInfrastructureDownloadConfigFileArgs, GetExadataInfrastructur
 export const getExadataInfrastructureDownloadConfigFile: typeof import("./getExadataInfrastructureDownloadConfigFile").getExadataInfrastructureDownloadConfigFile = null as any;
 export const getExadataInfrastructureDownloadConfigFileOutput: typeof import("./getExadataInfrastructureDownloadConfigFile").getExadataInfrastructureDownloadConfigFileOutput = null as any;
 utilities.lazyLoad(exports, ["getExadataInfrastructureDownloadConfigFile","getExadataInfrastructureDownloadConfigFileOutput"], () => require("./getExadataInfrastructureDownloadConfigFile"));
-
-export { GetExadataInfrastructureUnAllocatedResourceArgs, GetExadataInfrastructureUnAllocatedResourceResult, GetExadataInfrastructureUnAllocatedResourceOutputArgs } from "./getExadataInfrastructureUnAllocatedResource";
-export const getExadataInfrastructureUnAllocatedResource: typeof import("./getExadataInfrastructureUnAllocatedResource").getExadataInfrastructureUnAllocatedResource = null as any;
-export const getExadataInfrastructureUnAllocatedResourceOutput: typeof import("./getExadataInfrastructureUnAllocatedResource").getExadataInfrastructureUnAllocatedResourceOutput = null as any;
-utilities.lazyLoad(exports, ["getExadataInfrastructureUnAllocatedResource","getExadataInfrastructureUnAllocatedResourceOutput"], () => require("./getExadataInfrastructureUnAllocatedResource"));
 
 export { GetExadataInfrastructuresArgs, GetExadataInfrastructuresResult, GetExadataInfrastructuresOutputArgs } from "./getExadataInfrastructures";
 export const getExadataInfrastructures: typeof import("./getExadataInfrastructures").getExadataInfrastructures = null as any;

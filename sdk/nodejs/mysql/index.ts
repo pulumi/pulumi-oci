@@ -75,15 +75,15 @@ export const getReplica: typeof import("./getReplica").getReplica = null as any;
 export const getReplicaOutput: typeof import("./getReplica").getReplicaOutput = null as any;
 utilities.lazyLoad(exports, ["getReplica","getReplicaOutput"], () => require("./getReplica"));
 
+export { GetReplicasArgs, GetReplicasResult, GetReplicasOutputArgs } from "./getReplicas";
+export const getReplicas: typeof import("./getReplicas").getReplicas = null as any;
+export const getReplicasOutput: typeof import("./getReplicas").getReplicasOutput = null as any;
+utilities.lazyLoad(exports, ["getReplicas","getReplicasOutput"], () => require("./getReplicas"));
+
 export { GetShapesArgs, GetShapesResult, GetShapesOutputArgs } from "./getShapes";
 export const getShapes: typeof import("./getShapes").getShapes = null as any;
 export const getShapesOutput: typeof import("./getShapes").getShapesOutput = null as any;
 utilities.lazyLoad(exports, ["getShapes","getShapesOutput"], () => require("./getShapes"));
-
-export { GetrRplicasArgs, GetrRplicasResult, GetrRplicasOutputArgs } from "./getrRplicas";
-export const getrRplicas: typeof import("./getrRplicas").getrRplicas = null as any;
-export const getrRplicasOutput: typeof import("./getrRplicas").getrRplicasOutput = null as any;
-utilities.lazyLoad(exports, ["getrRplicas","getrRplicasOutput"], () => require("./getrRplicas"));
 
 export { HeatWaveClusterArgs, HeatWaveClusterState } from "./heatWaveCluster";
 export type HeatWaveCluster = import("./heatWaveCluster").HeatWaveCluster;

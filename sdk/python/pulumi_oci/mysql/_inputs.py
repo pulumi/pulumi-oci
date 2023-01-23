@@ -46,8 +46,8 @@ __all__ = [
     'GetMysqlConfigurationsFilterArgs',
     'GetMysqlDbSystemsFilterArgs',
     'GetMysqlVersionFilterArgs',
+    'GetReplicasFilterArgs',
     'GetShapesFilterArgs',
-    'GetrRplicasFilterArgs',
 ]
 
 @pulumi.input_type
@@ -4066,14 +4066,11 @@ class GetMysqlVersionFilterArgs:
 
 
 @pulumi.input_type
-class GetShapesFilterArgs:
+class GetReplicasFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4082,9 +4079,6 @@ class GetShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4111,11 +4105,14 @@ class GetShapesFilterArgs:
 
 
 @pulumi.input_type
-class GetrRplicasFilterArgs:
+class GetShapesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4124,6 +4121,9 @@ class GetrRplicasFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name
+        """
         return pulumi.get(self, "name")
 
     @name.setter

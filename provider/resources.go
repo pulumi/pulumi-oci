@@ -50,7 +50,7 @@ const (
 	blockchainMod                   = "Blockchain"                   // Blockchain
 	budgetMod                       = "Budget"                       // Budget
 	certificatesManagementMod       = "CertificatesManagement"       // Certificates Management
-	cloudBridgeMod                  = "CloudBridge"                  // Cloud Guard
+	cloudBridgeMod                  = "CloudBridge"                  // Cloud Bridge
 	cloudGuardMod                   = "CloudGuard"                   // Cloud Guard
 	cloudMigrationsMod              = "CloudMigrations"              // Cloud Migrations
 	computeInstanceAgent            = "ComputeInstanceAgent"         // Compute Instance Agent
@@ -1374,7 +1374,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_cloud_autonomous_vm_clusters":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudAutonomousVmClusters")},
 			"oci_database_cloud_exadata_infrastructure":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudExadataInfrastructure")},
 			"oci_database_cloud_exadata_infrastructures":                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudExadataInfrastructures")},
-			"oci_database_cloud_exadata_infrastructure_un_allocated_resource":   {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getExadataInfrastructureUnAllocatedResource")},
+			"oci_database_cloud_exadata_infrastructure_un_allocated_resource":   {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudExadataInfrastructureUnAllocatedResource")},
 			"oci_database_cloud_vm_cluster":                                     {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudVmCluster")},
 			"oci_database_cloud_vm_cluster_iorm_config":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudVmClusterIormConfig")},
 			"oci_database_cloud_vm_clusters":                                    {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getCloudVmClusters")},
@@ -1950,7 +1950,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_mysql_shapes":                        {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getShapes")},
 
 			"oci_mysql_replica":  {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getReplica")},
-			"oci_mysql_replicas": {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getrRplicas")},
+			"oci_mysql_replicas": {Tok: tfbridge.MakeDataSource(mainPkg, mysqlMod, "getReplicas")},
 
 			"oci_network_load_balancer_backend_health": {Tok: tfbridge.MakeDataSource(mainPkg, networkLoadBalancerMod, "getBackendHealth")},
 			"oci_network_load_balancer_backend_set":    {Tok: tfbridge.MakeDataSource(mainPkg, networkLoadBalancerMod, "getBackendSet")},

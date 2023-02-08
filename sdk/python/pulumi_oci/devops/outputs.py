@@ -61,6 +61,9 @@ __all__ = [
     'DeployStageBlueBackendIps',
     'DeployStageBlueGreenStrategy',
     'DeployStageCanaryStrategy',
+    'DeployStageContainerConfig',
+    'DeployStageContainerConfigNetworkChannel',
+    'DeployStageContainerConfigShapeConfig',
     'DeployStageDeployStagePredecessorCollection',
     'DeployStageDeployStagePredecessorCollectionItem',
     'DeployStageFailurePolicy',
@@ -200,6 +203,9 @@ __all__ = [
     'GetDeployStageBlueBackendIpResult',
     'GetDeployStageBlueGreenStrategyResult',
     'GetDeployStageCanaryStrategyResult',
+    'GetDeployStageContainerConfigResult',
+    'GetDeployStageContainerConfigNetworkChannelResult',
+    'GetDeployStageContainerConfigShapeConfigResult',
     'GetDeployStageDeployStagePredecessorCollectionResult',
     'GetDeployStageDeployStagePredecessorCollectionItemResult',
     'GetDeployStageFailurePolicyResult',
@@ -216,6 +222,9 @@ __all__ = [
     'GetDeployStagesDeployStageCollectionItemBlueBackendIpResult',
     'GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult',
     'GetDeployStagesDeployStageCollectionItemCanaryStrategyResult',
+    'GetDeployStagesDeployStageCollectionItemContainerConfigResult',
+    'GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResult',
+    'GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult',
     'GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionResult',
     'GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemResult',
     'GetDeployStagesDeployStageCollectionItemFailurePolicyResult',
@@ -2592,7 +2601,7 @@ class DeployStageBlueGreenStrategy(dict):
         :param str ingress_name: Name of the Ingress resource.
         :param str namespace_a: First Namespace for deployment.
         :param str namespace_b: Second Namespace for deployment.
-        :param str strategy_type: Canary strategy type
+        :param str strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace_a", namespace_a)
@@ -2627,7 +2636,7 @@ class DeployStageBlueGreenStrategy(dict):
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> str:
         """
-        Canary strategy type
+        Canary strategy type.
         """
         return pulumi.get(self, "strategy_type")
 
@@ -2660,7 +2669,7 @@ class DeployStageCanaryStrategy(dict):
         """
         :param str ingress_name: Name of the Ingress resource.
         :param str namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        :param str strategy_type: Canary strategy type
+        :param str strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace", namespace)
@@ -2686,9 +2695,220 @@ class DeployStageCanaryStrategy(dict):
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> str:
         """
-        Canary strategy type
+        Canary strategy type.
         """
         return pulumi.get(self, "strategy_type")
+
+
+@pulumi.output_type
+class DeployStageContainerConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "containerConfigType":
+            suggest = "container_config_type"
+        elif key == "networkChannel":
+            suggest = "network_channel"
+        elif key == "shapeConfig":
+            suggest = "shape_config"
+        elif key == "shapeName":
+            suggest = "shape_name"
+        elif key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "compartmentId":
+            suggest = "compartment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeployStageContainerConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeployStageContainerConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeployStageContainerConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 container_config_type: str,
+                 network_channel: 'outputs.DeployStageContainerConfigNetworkChannel',
+                 shape_config: 'outputs.DeployStageContainerConfigShapeConfig',
+                 shape_name: str,
+                 availability_domain: Optional[str] = None,
+                 compartment_id: Optional[str] = None):
+        """
+        :param str container_config_type: (Updatable) Container configuration type.
+        :param 'DeployStageContainerConfigNetworkChannelArgs' network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param 'DeployStageContainerConfigShapeConfigArgs' shape_config: (Updatable) Determines the size and amount of resources available to the instance.
+        :param str shape_name: (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        :param str availability_domain: (Updatable) Availability domain where the ContainerInstance will be created.
+        :param str compartment_id: (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        """
+        pulumi.set(__self__, "container_config_type", container_config_type)
+        pulumi.set(__self__, "network_channel", network_channel)
+        pulumi.set(__self__, "shape_config", shape_config)
+        pulumi.set(__self__, "shape_name", shape_name)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+
+    @property
+    @pulumi.getter(name="containerConfigType")
+    def container_config_type(self) -> str:
+        """
+        (Updatable) Container configuration type.
+        """
+        return pulumi.get(self, "container_config_type")
+
+    @property
+    @pulumi.getter(name="networkChannel")
+    def network_channel(self) -> 'outputs.DeployStageContainerConfigNetworkChannel':
+        """
+        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "network_channel")
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> 'outputs.DeployStageContainerConfigShapeConfig':
+        """
+        (Updatable) Determines the size and amount of resources available to the instance.
+        """
+        return pulumi.get(self, "shape_config")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        """
+        (Updatable) Availability domain where the ContainerInstance will be created.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        """
+        return pulumi.get(self, "compartment_id")
+
+
+@pulumi.output_type
+class DeployStageContainerConfigNetworkChannel(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkChannelType":
+            suggest = "network_channel_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeployStageContainerConfigNetworkChannel. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeployStageContainerConfigNetworkChannel.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeployStageContainerConfigNetworkChannel.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_channel_type: str,
+                 subnet_id: str,
+                 nsg_ids: Optional[Sequence[str]] = None):
+        """
+        :param str network_channel_type: (Updatable) Network channel type.
+        :param str subnet_id: (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        :param Sequence[str] nsg_ids: (Updatable) An array of network security group OCIDs.
+        """
+        pulumi.set(__self__, "network_channel_type", network_channel_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+
+    @property
+    @pulumi.getter(name="networkChannelType")
+    def network_channel_type(self) -> str:
+        """
+        (Updatable) Network channel type.
+        """
+        return pulumi.get(self, "network_channel_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array of network security group OCIDs.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+
+@pulumi.output_type
+class DeployStageContainerConfigShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeployStageContainerConfigShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeployStageContainerConfigShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeployStageContainerConfigShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ocpus: float,
+                 memory_in_gbs: Optional[float] = None):
+        """
+        :param float ocpus: (Updatable) The total number of OCPUs available to the instance.
+        :param float memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
+        """
+        pulumi.set(__self__, "ocpus", ocpus)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        (Updatable) The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        (Updatable) The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
 
 
 @pulumi.output_type
@@ -8615,7 +8835,7 @@ class GetDeployStageBlueGreenStrategyResult(dict):
         :param str ingress_name: Name of the Ingress resource.
         :param str namespace_a: First Namespace for deployment.
         :param str namespace_b: Second Namespace for deployment.
-        :param str strategy_type: Canary strategy type
+        :param str strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace_a", namespace_a)
@@ -8650,7 +8870,7 @@ class GetDeployStageBlueGreenStrategyResult(dict):
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> str:
         """
-        Canary strategy type
+        Canary strategy type.
         """
         return pulumi.get(self, "strategy_type")
 
@@ -8664,7 +8884,7 @@ class GetDeployStageCanaryStrategyResult(dict):
         """
         :param str ingress_name: Name of the Ingress resource.
         :param str namespace: Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
-        :param str strategy_type: Canary strategy type
+        :param str strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace", namespace)
@@ -8690,9 +8910,151 @@ class GetDeployStageCanaryStrategyResult(dict):
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> str:
         """
-        Canary strategy type
+        Canary strategy type.
         """
         return pulumi.get(self, "strategy_type")
+
+
+@pulumi.output_type
+class GetDeployStageContainerConfigResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 container_config_type: str,
+                 network_channels: Sequence['outputs.GetDeployStageContainerConfigNetworkChannelResult'],
+                 shape_configs: Sequence['outputs.GetDeployStageContainerConfigShapeConfigResult'],
+                 shape_name: str):
+        """
+        :param str availability_domain: Availability domain where the ContainerInstance will be created.
+        :param str compartment_id: The OCID of the compartment where the ContainerInstance will be created.
+        :param str container_config_type: Container configuration type.
+        :param Sequence['GetDeployStageContainerConfigNetworkChannelArgs'] network_channels: Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param Sequence['GetDeployStageContainerConfigShapeConfigArgs'] shape_configs: Determines the size and amount of resources available to the instance.
+        :param str shape_name: The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "container_config_type", container_config_type)
+        pulumi.set(__self__, "network_channels", network_channels)
+        pulumi.set(__self__, "shape_configs", shape_configs)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        Availability domain where the ContainerInstance will be created.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment where the ContainerInstance will be created.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="containerConfigType")
+    def container_config_type(self) -> str:
+        """
+        Container configuration type.
+        """
+        return pulumi.get(self, "container_config_type")
+
+    @property
+    @pulumi.getter(name="networkChannels")
+    def network_channels(self) -> Sequence['outputs.GetDeployStageContainerConfigNetworkChannelResult']:
+        """
+        Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "network_channels")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetDeployStageContainerConfigShapeConfigResult']:
+        """
+        Determines the size and amount of resources available to the instance.
+        """
+        return pulumi.get(self, "shape_configs")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetDeployStageContainerConfigNetworkChannelResult(dict):
+    def __init__(__self__, *,
+                 network_channel_type: str,
+                 nsg_ids: Sequence[str],
+                 subnet_id: str):
+        """
+        :param str network_channel_type: Network channel type.
+        :param Sequence[str] nsg_ids: An array of network security group OCIDs.
+        :param str subnet_id: The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        pulumi.set(__self__, "network_channel_type", network_channel_type)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="networkChannelType")
+    def network_channel_type(self) -> str:
+        """
+        Network channel type.
+        """
+        return pulumi.get(self, "network_channel_type")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        An array of network security group OCIDs.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDeployStageContainerConfigShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the instance.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -9076,12 +9438,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  blue_backend_ips: Sequence['outputs.GetDeployStagesDeployStageCollectionItemBlueBackendIpResult'],
                  blue_green_strategies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult'],
                  canary_strategies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemCanaryStrategyResult'],
+                 command_spec_deploy_artifact_id: str,
                  compartment_id: str,
                  compute_instance_group_blue_green_deployment_deploy_stage_id: str,
                  compute_instance_group_canary_deploy_stage_id: str,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: str,
                  compute_instance_group_deploy_environment_id: str,
                  config: Mapping[str, Any],
+                 container_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigResult'],
                  defined_tags: Mapping[str, Any],
                  deploy_artifact_id: str,
                  deploy_artifact_ids: Sequence[str],
@@ -9131,12 +9495,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param Sequence['GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs'] blue_backend_ips: Collection of backend environment IP addresses.
         :param Sequence['GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs'] blue_green_strategies: Specifies the required blue green release strategy for OKE deployment.
         :param Sequence['GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs'] canary_strategies: Specifies the required canary release strategy for OKE deployment.
+        :param str command_spec_deploy_artifact_id: The OCID of the artifact that contains the command specification.
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param str compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         :param str compute_instance_group_canary_deploy_stage_id: The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
         :param str compute_instance_group_canary_traffic_shift_deploy_stage_id: A compute instance group canary traffic shift stage OCID for load balancer.
         :param str compute_instance_group_deploy_environment_id: A compute instance group environment OCID for rolling deployment.
         :param Mapping[str, Any] config: User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param Sequence['GetDeployStagesDeployStageCollectionItemContainerConfigArgs'] container_configs: Specifies the container configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str deploy_artifact_id: Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param Sequence[str] deploy_artifact_ids: The list of file artifact OCIDs to deploy.
@@ -9177,7 +9543,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param Sequence['GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs'] test_load_balancer_configs: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param str time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param int timeout_in_seconds: Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        :param int timeout_in_seconds: Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param str traffic_shift_target: Specifies the target or destination backend set.
         :param Sequence[str] values_artifact_ids: List of values.yaml file artifact OCIDs.
         :param Sequence['GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs'] wait_criterias: Specifies wait criteria for the Wait stage.
@@ -9186,12 +9552,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         pulumi.set(__self__, "blue_backend_ips", blue_backend_ips)
         pulumi.set(__self__, "blue_green_strategies", blue_green_strategies)
         pulumi.set(__self__, "canary_strategies", canary_strategies)
+        pulumi.set(__self__, "command_spec_deploy_artifact_id", command_spec_deploy_artifact_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_instance_group_blue_green_deployment_deploy_stage_id", compute_instance_group_blue_green_deployment_deploy_stage_id)
         pulumi.set(__self__, "compute_instance_group_canary_deploy_stage_id", compute_instance_group_canary_deploy_stage_id)
         pulumi.set(__self__, "compute_instance_group_canary_traffic_shift_deploy_stage_id", compute_instance_group_canary_traffic_shift_deploy_stage_id)
         pulumi.set(__self__, "compute_instance_group_deploy_environment_id", compute_instance_group_deploy_environment_id)
         pulumi.set(__self__, "config", config)
+        pulumi.set(__self__, "container_configs", container_configs)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deploy_artifact_id", deploy_artifact_id)
         pulumi.set(__self__, "deploy_artifact_ids", deploy_artifact_ids)
@@ -9270,6 +9638,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         return pulumi.get(self, "canary_strategies")
 
     @property
+    @pulumi.getter(name="commandSpecDeployArtifactId")
+    def command_spec_deploy_artifact_id(self) -> str:
+        """
+        The OCID of the artifact that contains the command specification.
+        """
+        return pulumi.get(self, "command_spec_deploy_artifact_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -9316,6 +9692,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         User provided key and value pair configuration, which is assigned through constants or parameter.
         """
         return pulumi.get(self, "config")
+
+    @property
+    @pulumi.getter(name="containerConfigs")
+    def container_configs(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigResult']:
+        """
+        Specifies the container configuration.
+        """
+        return pulumi.get(self, "container_configs")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -9641,7 +10025,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> int:
         """
-        Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -9728,7 +10112,7 @@ class GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult(dict):
         :param str ingress_name: Name of the Ingress resource.
         :param str namespace_a: First Namespace for deployment.
         :param str namespace_b: Second Namespace for deployment.
-        :param str strategy_type: Canary strategy type
+        :param str strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace_a", namespace_a)
@@ -9763,7 +10147,7 @@ class GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult(dict):
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> str:
         """
-        Canary strategy type
+        Canary strategy type.
         """
         return pulumi.get(self, "strategy_type")
 
@@ -9777,7 +10161,7 @@ class GetDeployStagesDeployStageCollectionItemCanaryStrategyResult(dict):
         """
         :param str ingress_name: Name of the Ingress resource.
         :param str namespace: Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
-        :param str strategy_type: Canary strategy type
+        :param str strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace", namespace)
@@ -9803,9 +10187,151 @@ class GetDeployStagesDeployStageCollectionItemCanaryStrategyResult(dict):
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> str:
         """
-        Canary strategy type
+        Canary strategy type.
         """
         return pulumi.get(self, "strategy_type")
+
+
+@pulumi.output_type
+class GetDeployStagesDeployStageCollectionItemContainerConfigResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 container_config_type: str,
+                 network_channels: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResult'],
+                 shape_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult'],
+                 shape_name: str):
+        """
+        :param str availability_domain: Availability domain where the ContainerInstance will be created.
+        :param str compartment_id: The OCID of the compartment in which to list resources.
+        :param str container_config_type: Container configuration type.
+        :param Sequence['GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs'] network_channels: Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param Sequence['GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs'] shape_configs: Determines the size and amount of resources available to the instance.
+        :param str shape_name: The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "container_config_type", container_config_type)
+        pulumi.set(__self__, "network_channels", network_channels)
+        pulumi.set(__self__, "shape_configs", shape_configs)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        Availability domain where the ContainerInstance will be created.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="containerConfigType")
+    def container_config_type(self) -> str:
+        """
+        Container configuration type.
+        """
+        return pulumi.get(self, "container_config_type")
+
+    @property
+    @pulumi.getter(name="networkChannels")
+    def network_channels(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResult']:
+        """
+        Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "network_channels")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult']:
+        """
+        Determines the size and amount of resources available to the instance.
+        """
+        return pulumi.get(self, "shape_configs")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResult(dict):
+    def __init__(__self__, *,
+                 network_channel_type: str,
+                 nsg_ids: Sequence[str],
+                 subnet_id: str):
+        """
+        :param str network_channel_type: Network channel type.
+        :param Sequence[str] nsg_ids: An array of network security group OCIDs.
+        :param str subnet_id: The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        pulumi.set(__self__, "network_channel_type", network_channel_type)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="networkChannelType")
+    def network_channel_type(self) -> str:
+        """
+        Network channel type.
+        """
+        return pulumi.get(self, "network_channel_type")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        An array of network security group OCIDs.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the instance.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type

@@ -56,6 +56,7 @@ import javax.annotation.Nullable;
  *             .subnetId(oci_core_subnet.test_subnet().id())
  *             .autonomousDataStorageSizeInTbs(var_.cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs())
  *             .clusterTimeZone(var_.cloud_autonomous_vm_cluster_cluster_time_zone())
+ *             .computeModel(var_.cloud_autonomous_vm_cluster_compute_model())
  *             .cpuCoreCountPerNode(var_.cloud_autonomous_vm_cluster_cpu_core_count_per_node())
  *             .dbServers(var_.cloud_autonomous_vm_cluster_db_servers())
  *             .definedTags(var_.cloud_autonomous_vm_cluster_defined_tags())
@@ -209,6 +210,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="computeModel", type=String.class, parameters={})
+    private Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Cloud Autonomous VM Cluster.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
     }
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster.

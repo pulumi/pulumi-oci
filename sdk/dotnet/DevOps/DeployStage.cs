@@ -50,7 +50,13 @@ namespace Pulumi.Oci.DevOps
         public Output<Outputs.DeployStageCanaryStrategy> CanaryStrategy { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of a compartment.
+        /// (Updatable) The OCID of the artifact that contains the command specification.
+        /// </summary>
+        [Output("commandSpecDeployArtifactId")]
+        public Output<string> CommandSpecDeployArtifactId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -84,6 +90,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("config")]
         public Output<ImmutableDictionary<string, object>?> Config { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Specifies the container configuration.
+        /// </summary>
+        [Output("containerConfig")]
+        public Output<Outputs.DeployStageContainerConfig> ContainerConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -320,7 +332,7 @@ namespace Pulumi.Oci.DevOps
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        /// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         /// </summary>
         [Output("timeoutInSeconds")]
         public Output<int> TimeoutInSeconds { get; private set; } = null!;
@@ -414,6 +426,12 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.DeployStageCanaryStrategyArgs>? CanaryStrategy { get; set; }
 
         /// <summary>
+        /// (Updatable) The OCID of the artifact that contains the command specification.
+        /// </summary>
+        [Input("commandSpecDeployArtifactId")]
+        public Input<string>? CommandSpecDeployArtifactId { get; set; }
+
+        /// <summary>
         /// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         /// </summary>
         [Input("computeInstanceGroupBlueGreenDeploymentDeployStageId")]
@@ -448,6 +466,12 @@ namespace Pulumi.Oci.DevOps
             get => _config ?? (_config = new InputMap<object>());
             set => _config = value;
         }
+
+        /// <summary>
+        /// (Updatable) Specifies the container configuration.
+        /// </summary>
+        [Input("containerConfig")]
+        public Input<Inputs.DeployStageContainerConfigArgs>? ContainerConfig { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -672,7 +696,7 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.DeployStageTestLoadBalancerConfigArgs>? TestLoadBalancerConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        /// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         /// </summary>
         [Input("timeoutInSeconds")]
         public Input<int>? TimeoutInSeconds { get; set; }
@@ -734,7 +758,13 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.DeployStageCanaryStrategyGetArgs>? CanaryStrategy { get; set; }
 
         /// <summary>
-        /// The OCID of a compartment.
+        /// (Updatable) The OCID of the artifact that contains the command specification.
+        /// </summary>
+        [Input("commandSpecDeployArtifactId")]
+        public Input<string>? CommandSpecDeployArtifactId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -774,6 +804,12 @@ namespace Pulumi.Oci.DevOps
             get => _config ?? (_config = new InputMap<object>());
             set => _config = value;
         }
+
+        /// <summary>
+        /// (Updatable) Specifies the container configuration.
+        /// </summary>
+        [Input("containerConfig")]
+        public Input<Inputs.DeployStageContainerConfigGetArgs>? ContainerConfig { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -1040,7 +1076,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        /// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         /// </summary>
         [Input("timeoutInSeconds")]
         public Input<int>? TimeoutInSeconds { get; set; }

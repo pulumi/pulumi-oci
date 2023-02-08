@@ -41,6 +41,14 @@ import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
 import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
 import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
+import com.pulumi.oci.DataScience.inputs.GetPipelinePlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
+import com.pulumi.oci.DataScience.inputs.GetPipelineRunPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
+import com.pulumi.oci.DataScience.inputs.GetPipelineRunsPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
+import com.pulumi.oci.DataScience.inputs.GetPipelinesPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
@@ -62,6 +70,10 @@ import com.pulumi.oci.DataScience.outputs.GetModelsResult;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionResult;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionShapesResult;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionsResult;
+import com.pulumi.oci.DataScience.outputs.GetPipelineResult;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunResult;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunsResult;
+import com.pulumi.oci.DataScience.outputs.GetPipelinesResult;
 import com.pulumi.oci.DataScience.outputs.GetProjectResult;
 import com.pulumi.oci.DataScience.outputs.GetProjectsResult;
 import com.pulumi.oci.Utilities;
@@ -2843,6 +2855,670 @@ public final class DataScienceFunctions {
      */
     public static CompletableFuture<GetNotebookSessionsResult> getNotebookSessionsPlain(GetNotebookSessionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getNotebookSessions:getNotebookSessions", TypeShape.of(GetNotebookSessionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Pipeline by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args) {
+        return getPipeline(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Pipeline by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPipelineResult> getPipelinePlain(GetPipelinePlainArgs args) {
+        return getPipelinePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Pipeline by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPipeline:getPipeline", TypeShape.of(GetPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Pipeline by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPipelineResult> getPipelinePlain(GetPipelinePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getPipeline:getPipeline", TypeShape.of(GetPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a PipelineRun by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
+     *             .pipelineRunId(oci_datascience_pipeline_run.test_pipeline_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPipelineRunResult> getPipelineRun(GetPipelineRunArgs args) {
+        return getPipelineRun(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a PipelineRun by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
+     *             .pipelineRunId(oci_datascience_pipeline_run.test_pipeline_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPipelineRunResult> getPipelineRunPlain(GetPipelineRunPlainArgs args) {
+        return getPipelineRunPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a PipelineRun by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
+     *             .pipelineRunId(oci_datascience_pipeline_run.test_pipeline_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPipelineRunResult> getPipelineRun(GetPipelineRunArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPipelineRun:getPipelineRun", TypeShape.of(GetPipelineRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a PipelineRun by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
+     *             .pipelineRunId(oci_datascience_pipeline_run.test_pipeline_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPipelineRunResult> getPipelineRunPlain(GetPipelineRunPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getPipelineRun:getPipelineRun", TypeShape.of(GetPipelineRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Runs in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of PipelineRuns.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.pipeline_run_created_by())
+     *             .displayName(var_.pipeline_run_display_name())
+     *             .id(var_.pipeline_run_id())
+     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .state(var_.pipeline_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPipelineRunsResult> getPipelineRuns(GetPipelineRunsArgs args) {
+        return getPipelineRuns(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipeline Runs in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of PipelineRuns.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.pipeline_run_created_by())
+     *             .displayName(var_.pipeline_run_display_name())
+     *             .id(var_.pipeline_run_id())
+     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .state(var_.pipeline_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPipelineRunsResult> getPipelineRunsPlain(GetPipelineRunsPlainArgs args) {
+        return getPipelineRunsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipeline Runs in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of PipelineRuns.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.pipeline_run_created_by())
+     *             .displayName(var_.pipeline_run_display_name())
+     *             .id(var_.pipeline_run_id())
+     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .state(var_.pipeline_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPipelineRunsResult> getPipelineRuns(GetPipelineRunsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPipelineRuns:getPipelineRuns", TypeShape.of(GetPipelineRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Runs in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of PipelineRuns.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.pipeline_run_created_by())
+     *             .displayName(var_.pipeline_run_display_name())
+     *             .id(var_.pipeline_run_id())
+     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .state(var_.pipeline_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPipelineRunsResult> getPipelineRunsPlain(GetPipelineRunsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getPipelineRuns:getPipelineRuns", TypeShape.of(GetPipelineRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Pipelines.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.pipeline_created_by())
+     *             .displayName(var_.pipeline_display_name())
+     *             .id(var_.pipeline_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPipelinesResult> getPipelines(GetPipelinesArgs args) {
+        return getPipelines(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Pipelines.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.pipeline_created_by())
+     *             .displayName(var_.pipeline_display_name())
+     *             .id(var_.pipeline_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPipelinesResult> getPipelinesPlain(GetPipelinesPlainArgs args) {
+        return getPipelinesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Pipelines.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.pipeline_created_by())
+     *             .displayName(var_.pipeline_display_name())
+     *             .id(var_.pipeline_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPipelinesResult> getPipelines(GetPipelinesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPipelines:getPipelines", TypeShape.of(GetPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Pipelines.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.pipeline_created_by())
+     *             .displayName(var_.pipeline_display_name())
+     *             .id(var_.pipeline_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPipelinesResult> getPipelinesPlain(GetPipelinesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getPipelines:getPipelines", TypeShape.of(GetPipelinesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Data Science service.

@@ -70,6 +70,10 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly compartmentId: string;
     /**
+     * The compute model of the Autonomous VM Cluster.
+     */
+    readonly computeModel: string;
+    /**
      * The number of CPU cores enabled per VM cluster node.
      */
     readonly cpuCoreCountPerNode: number;

@@ -1872,6 +1872,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataScience/pipeline",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/pipeline:Pipeline": "Pipeline"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/pipelineRun",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/pipelineRun:PipelineRun": "PipelineRun"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataScience/project",
   "fqn": "pulumi_oci.datascience",
   "classes": {

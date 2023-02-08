@@ -26,6 +26,7 @@ class ConfigArgs:
                  filter_text: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  group: Optional[pulumi.Input[str]] = None,
+                 in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  opc_dry_run: Optional[pulumi.Input[str]] = None,
@@ -43,6 +44,7 @@ class ConfigArgs:
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]] metrics: (Updatable) The list of metrics in this group.
         :param pulumi.Input[str] namespace: (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         :param pulumi.Input[str] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -66,6 +68,8 @@ class ConfigArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if group is not None:
             pulumi.set(__self__, "group", group)
+        if in_use_bies is not None:
+            pulumi.set(__self__, "in_use_bies", in_use_bies)
         if metrics is not None:
             pulumi.set(__self__, "metrics", metrics)
         if namespace is not None:
@@ -198,6 +202,18 @@ class ConfigArgs:
         pulumi.set(self, "group", value)
 
     @property
+    @pulumi.getter(name="inUseBies")
+    def in_use_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]]:
+        """
+        The list of configuration items that reference the span filter.
+        """
+        return pulumi.get(self, "in_use_bies")
+
+    @in_use_bies.setter
+    def in_use_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]]):
+        pulumi.set(self, "in_use_bies", value)
+
+    @property
     @pulumi.getter
     def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]]:
         """
@@ -263,33 +279,40 @@ class _ConfigState:
     def __init__(__self__, *,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
+                 created_by: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 etag: Optional[pulumi.Input[str]] = None,
                  filter_id: Optional[pulumi.Input[str]] = None,
                  filter_text: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  group: Optional[pulumi.Input[str]] = None,
+                 in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  opc_dry_run: Optional[pulumi.Input[str]] = None,
                  options: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None):
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 updated_by: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Config resources.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
+        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A description of the metric.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
+        :param pulumi.Input[str] etag: For optimistic concurrency control. See `if-match`.
         :param pulumi.Input[str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]] metrics: (Updatable) The list of metrics in this group.
         :param pulumi.Input[str] namespace: (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         :param pulumi.Input[str] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -297,11 +320,14 @@ class _ConfigState:
         :param pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]] rules: (Updatable)
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        :param pulumi.Input[str] updated_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
         if apm_domain_id is not None:
             pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -310,6 +336,8 @@ class _ConfigState:
             pulumi.set(__self__, "dimensions", dimensions)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if etag is not None:
+            pulumi.set(__self__, "etag", etag)
         if filter_id is not None:
             pulumi.set(__self__, "filter_id", filter_id)
         if filter_text is not None:
@@ -318,6 +346,8 @@ class _ConfigState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if group is not None:
             pulumi.set(__self__, "group", group)
+        if in_use_bies is not None:
+            pulumi.set(__self__, "in_use_bies", in_use_bies)
         if metrics is not None:
             pulumi.set(__self__, "metrics", metrics)
         if namespace is not None:
@@ -332,6 +362,8 @@ class _ConfigState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -356,6 +388,18 @@ class _ConfigState:
     @config_type.setter
     def config_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "config_type", value)
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        """
+        return pulumi.get(self, "created_by")
+
+    @created_by.setter
+    def created_by(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created_by", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -406,6 +450,18 @@ class _ConfigState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter
+    def etag(self) -> Optional[pulumi.Input[str]]:
+        """
+        For optimistic concurrency control. See `if-match`.
+        """
+        return pulumi.get(self, "etag")
+
+    @etag.setter
+    def etag(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "etag", value)
+
+    @property
     @pulumi.getter(name="filterId")
     def filter_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -452,6 +508,18 @@ class _ConfigState:
     @group.setter
     def group(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "group", value)
+
+    @property
+    @pulumi.getter(name="inUseBies")
+    def in_use_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]]:
+        """
+        The list of configuration items that reference the span filter.
+        """
+        return pulumi.get(self, "in_use_bies")
+
+    @in_use_bies.setter
+    def in_use_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]]):
+        pulumi.set(self, "in_use_bies", value)
 
     @property
     @pulumi.getter
@@ -537,6 +605,18 @@ class _ConfigState:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @updated_by.setter
+    def updated_by(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "updated_by", value)
+
 
 class Config(pulumi.CustomResource):
     @overload
@@ -553,6 +633,7 @@ class Config(pulumi.CustomResource):
                  filter_text: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  group: Optional[pulumi.Input[str]] = None,
+                 in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigInUseByArgs']]]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigMetricArgs']]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  opc_dry_run: Optional[pulumi.Input[str]] = None,
@@ -628,6 +709,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigInUseByArgs']]]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigMetricArgs']]]] metrics: (Updatable) The list of metrics in this group.
         :param pulumi.Input[str] namespace: (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         :param pulumi.Input[str] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -722,6 +804,7 @@ class Config(pulumi.CustomResource):
                  filter_text: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  group: Optional[pulumi.Input[str]] = None,
+                 in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigInUseByArgs']]]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigMetricArgs']]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  opc_dry_run: Optional[pulumi.Input[str]] = None,
@@ -752,13 +835,17 @@ class Config(pulumi.CustomResource):
             __props__.__dict__["filter_text"] = filter_text
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["group"] = group
+            __props__.__dict__["in_use_bies"] = in_use_bies
             __props__.__dict__["metrics"] = metrics
             __props__.__dict__["namespace"] = namespace
             __props__.__dict__["opc_dry_run"] = opc_dry_run
             __props__.__dict__["options"] = options
             __props__.__dict__["rules"] = rules
+            __props__.__dict__["created_by"] = None
+            __props__.__dict__["etag"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+            __props__.__dict__["updated_by"] = None
         super(Config, __self__).__init__(
             'oci:ApmConfig/config:Config',
             resource_name,
@@ -771,21 +858,25 @@ class Config(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             apm_domain_id: Optional[pulumi.Input[str]] = None,
             config_type: Optional[pulumi.Input[str]] = None,
+            created_by: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigDimensionArgs']]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            etag: Optional[pulumi.Input[str]] = None,
             filter_id: Optional[pulumi.Input[str]] = None,
             filter_text: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             group: Optional[pulumi.Input[str]] = None,
+            in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigInUseByArgs']]]]] = None,
             metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigMetricArgs']]]]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             opc_dry_run: Optional[pulumi.Input[str]] = None,
             options: Optional[pulumi.Input[str]] = None,
             rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigRuleArgs']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_updated: Optional[pulumi.Input[str]] = None) -> 'Config':
+            time_updated: Optional[pulumi.Input[str]] = None,
+            updated_by: Optional[pulumi.Input[str]] = None) -> 'Config':
         """
         Get an existing Config resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -795,14 +886,17 @@ class Config(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
+        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A description of the metric.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigDimensionArgs']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
+        :param pulumi.Input[str] etag: For optimistic concurrency control. See `if-match`.
         :param pulumi.Input[str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigInUseByArgs']]]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigMetricArgs']]]] metrics: (Updatable) The list of metrics in this group.
         :param pulumi.Input[str] namespace: (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         :param pulumi.Input[str] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -810,6 +904,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigRuleArgs']]]] rules: (Updatable)
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        :param pulumi.Input[str] updated_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -817,14 +912,17 @@ class Config(pulumi.CustomResource):
 
         __props__.__dict__["apm_domain_id"] = apm_domain_id
         __props__.__dict__["config_type"] = config_type
+        __props__.__dict__["created_by"] = created_by
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["dimensions"] = dimensions
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["etag"] = etag
         __props__.__dict__["filter_id"] = filter_id
         __props__.__dict__["filter_text"] = filter_text
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["group"] = group
+        __props__.__dict__["in_use_bies"] = in_use_bies
         __props__.__dict__["metrics"] = metrics
         __props__.__dict__["namespace"] = namespace
         __props__.__dict__["opc_dry_run"] = opc_dry_run
@@ -832,6 +930,7 @@ class Config(pulumi.CustomResource):
         __props__.__dict__["rules"] = rules
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["updated_by"] = updated_by
         return Config(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -849,6 +948,14 @@ class Config(pulumi.CustomResource):
         (Updatable) The type of configuration item.
         """
         return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        """
+        return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -883,6 +990,14 @@ class Config(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter
+    def etag(self) -> pulumi.Output[str]:
+        """
+        For optimistic concurrency control. See `if-match`.
+        """
+        return pulumi.get(self, "etag")
+
+    @property
     @pulumi.getter(name="filterId")
     def filter_id(self) -> pulumi.Output[str]:
         """
@@ -913,6 +1028,14 @@ class Config(pulumi.CustomResource):
         (Updatable) A string that specifies the group that an OPTIONS item belongs to.
         """
         return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter(name="inUseBies")
+    def in_use_bies(self) -> pulumi.Output[Sequence['outputs.ConfigInUseBy']]:
+        """
+        The list of configuration items that reference the span filter.
+        """
+        return pulumi.get(self, "in_use_bies")
 
     @property
     @pulumi.getter
@@ -969,4 +1092,12 @@ class Config(pulumi.CustomResource):
         The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        """
+        return pulumi.get(self, "updated_by")
 

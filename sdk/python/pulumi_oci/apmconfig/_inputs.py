@@ -11,6 +11,7 @@ from .. import _utilities
 
 __all__ = [
     'ConfigDimensionArgs',
+    'ConfigInUseByArgs',
     'ConfigMetricArgs',
     'ConfigRuleArgs',
     'GetConfigsFilterArgs',
@@ -53,6 +54,77 @@ class ConfigDimensionArgs:
     @value_source.setter
     def value_source(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value_source", value)
+
+
+@pulumi.input_type
+class ConfigInUseByArgs:
+    def __init__(__self__, *,
+                 config_type: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 options_group: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
+        :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        :param pulumi.Input[str] options_group: A string that specifies the group that an OPTIONS item belongs to.
+        """
+        if config_type is not None:
+            pulumi.set(__self__, "config_type", config_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if options_group is not None:
+            pulumi.set(__self__, "options_group", options_group)
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of configuration item.
+        """
+        return pulumi.get(self, "config_type")
+
+    @config_type.setter
+    def config_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "config_type", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name by which a configuration entity is displayed to the end user.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="optionsGroup")
+    def options_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        A string that specifies the group that an OPTIONS item belongs to.
+        """
+        return pulumi.get(self, "options_group")
+
+    @options_group.setter
+    def options_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "options_group", value)
 
 
 @pulumi.input_type

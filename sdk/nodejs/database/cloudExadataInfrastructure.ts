@@ -127,6 +127,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
     /**
+     * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    public /*out*/ readonly dbServerVersion!: pulumi.Output<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
@@ -171,6 +175,14 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
     /**
+     * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string>;
+    /**
+     * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    public /*out*/ readonly monthlyStorageServerVersion!: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
@@ -186,6 +198,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      */
     public readonly storageCount!: pulumi.Output<number>;
+    /**
+     * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
     /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */
@@ -218,6 +234,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["customerContacts"] = state ? state.customerContacts : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
+            resourceInputs["dbServerVersion"] = state ? state.dbServerVersion : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -229,10 +246,13 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["maxDbNodeStorageInGbs"] = state ? state.maxDbNodeStorageInGbs : undefined;
             resourceInputs["maxMemoryInGbs"] = state ? state.maxMemoryInGbs : undefined;
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
+            resourceInputs["monthlyDbServerVersion"] = state ? state.monthlyDbServerVersion : undefined;
+            resourceInputs["monthlyStorageServerVersion"] = state ? state.monthlyStorageServerVersion : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["storageCount"] = state ? state.storageCount : undefined;
+            resourceInputs["storageServerVersion"] = state ? state.storageServerVersion : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["totalStorageSizeInGbs"] = state ? state.totalStorageSizeInGbs : undefined;
         } else {
@@ -265,6 +285,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["cpuCount"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
+            resourceInputs["dbServerVersion"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maxCpuCount"] = undefined /*out*/;
@@ -272,8 +293,11 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["maxDbNodeStorageInGbs"] = undefined /*out*/;
             resourceInputs["maxMemoryInGbs"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
+            resourceInputs["monthlyDbServerVersion"] = undefined /*out*/;
+            resourceInputs["monthlyStorageServerVersion"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["storageServerVersion"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["totalStorageSizeInGbs"] = undefined /*out*/;
         }
@@ -327,6 +351,10 @@ export interface CloudExadataInfrastructureState {
      */
     dbNodeStorageSizeInGbs?: pulumi.Input<number>;
     /**
+     * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    dbServerVersion?: pulumi.Input<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -371,6 +399,14 @@ export interface CloudExadataInfrastructureState {
      */
     memorySizeInGbs?: pulumi.Input<number>;
     /**
+     * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    monthlyDbServerVersion?: pulumi.Input<string>;
+    /**
+     * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    monthlyStorageServerVersion?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     nextMaintenanceRunId?: pulumi.Input<string>;
@@ -386,6 +422,10 @@ export interface CloudExadataInfrastructureState {
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      */
     storageCount?: pulumi.Input<number>;
+    /**
+     * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    storageServerVersion?: pulumi.Input<string>;
     /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */

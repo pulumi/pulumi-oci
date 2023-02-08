@@ -127,6 +127,7 @@ import * as utilities from "../utilities";
  *                 isAccessControlServiceEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled,
  *                 isInputOutputMemoryManagementUnitEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
  *                 isMeasuredBootEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled,
+ *                 isMemoryEncryptionEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled,
  *                 isSecureBootEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled,
  *                 isSymmetricMultiThreadingEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled,
  *                 isTrustedPlatformModuleEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled,

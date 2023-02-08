@@ -110,7 +110,7 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
                        key_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDecryptedDataResult:
     """
-    The `_kms.get_decrypted_data` data source provides details about a specific DecryptedData
+    The __kms_get_decrypted_data_ data source provides details about a specific DecryptedData
 
     Decrypts data using the given DecryptDataDetails resource.
 
@@ -157,7 +157,7 @@ def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
                               key_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDecryptedDataResult]:
     """
-    The `_kms.get_decrypted_data` data source provides details about a specific DecryptedData
+    The __kms_get_decrypted_data_ data source provides details about a specific DecryptedData
 
     Decrypts data using the given DecryptDataDetails resource.
 

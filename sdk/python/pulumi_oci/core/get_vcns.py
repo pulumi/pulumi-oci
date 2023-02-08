@@ -115,7 +115,7 @@ def get_vcns(compartment_id: Optional[str] = None,
 
     ## Supported Aliases
 
-    * `_core.get_virtual_networks`
+    * __core_get_virtual_networks_
 
     ## Example Usage
 
@@ -163,7 +163,7 @@ def get_vcns_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Supported Aliases
 
-    * `_core.get_virtual_networks`
+    * __core_get_virtual_networks_
 
     ## Example Usage
 

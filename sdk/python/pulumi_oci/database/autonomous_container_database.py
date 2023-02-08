@@ -433,6 +433,7 @@ class _AutonomousContainerDatabaseState:
                  backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -528,6 +529,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if db_unique_name is not None:
             pulumi.set(__self__, "db_unique_name", db_unique_name)
         if db_version is not None:
@@ -686,6 +689,15 @@ class _AutonomousContainerDatabaseState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_model", value)
 
     @property
     @pulumi.getter(name="dbUniqueName")
@@ -1433,6 +1445,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["available_cpus"] = None
+            __props__.__dict__["compute_model"] = None
             __props__.__dict__["db_version"] = None
             __props__.__dict__["infrastructure_type"] = None
             __props__.__dict__["key_history_entries"] = None
@@ -1466,6 +1479,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']]] = None,
             cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compute_model: Optional[pulumi.Input[str]] = None,
             db_unique_name: Optional[pulumi.Input[str]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1563,6 +1577,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["backup_config"] = backup_config
         __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["db_unique_name"] = db_unique_name
         __props__.__dict__["db_version"] = db_version
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1657,6 +1672,11 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="dbUniqueName")

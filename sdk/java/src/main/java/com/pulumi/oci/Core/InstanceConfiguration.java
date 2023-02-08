@@ -150,6 +150,7 @@ import javax.annotation.Nullable;
  *                         .isAccessControlServiceEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled())
  *                         .isInputOutputMemoryManagementUnitEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled())
  *                         .isMeasuredBootEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled())
+ *                         .isMemoryEncryptionEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled())
  *                         .isSecureBootEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled())
  *                         .isSymmetricMultiThreadingEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled())
  *                         .isTrustedPlatformModuleEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled())

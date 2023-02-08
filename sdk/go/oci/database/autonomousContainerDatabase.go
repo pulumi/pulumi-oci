@@ -132,6 +132,7 @@ type AutonomousContainerDatabase struct {
 	CloudAutonomousVmClusterId pulumi.StringOutput `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	ComputeModel  pulumi.StringOutput `pulumi:"computeModel"`
 	DbUniqueName  pulumi.StringOutput `pulumi:"dbUniqueName"`
 	// Oracle Database version of the Autonomous Container Database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
@@ -254,6 +255,7 @@ type autonomousContainerDatabaseState struct {
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
+	ComputeModel  *string `pulumi:"computeModel"`
 	DbUniqueName  *string `pulumi:"dbUniqueName"`
 	// Oracle Database version of the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
@@ -342,6 +344,7 @@ type AutonomousContainerDatabaseState struct {
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
+	ComputeModel  pulumi.StringPtrInput
 	DbUniqueName  pulumi.StringPtrInput
 	// Oracle Database version of the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
@@ -646,6 +649,10 @@ func (o AutonomousContainerDatabaseOutput) CloudAutonomousVmClusterId() pulumi.S
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 func (o AutonomousContainerDatabaseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o AutonomousContainerDatabaseOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 func (o AutonomousContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {

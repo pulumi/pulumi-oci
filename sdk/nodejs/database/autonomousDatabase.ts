@@ -104,6 +104,14 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     */
+    public readonly computeCount!: pulumi.Output<number>;
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     */
+    public readonly computeModel!: pulumi.Output<string>;
+    /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      */
     public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.AutonomousDatabaseConnectionString[]>;
@@ -315,7 +323,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
     /**
      * The private endpoint Ip address for the resource.
      */
-    public /*out*/ readonly privateEndpointIp!: pulumi.Output<string>;
+    public readonly privateEndpointIp!: pulumi.Output<string>;
     /**
      * (Updatable) The private endpoint label for the resource.
      */
@@ -344,6 +352,14 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * (Updatable) list of scheduled operations
      */
     public readonly scheduledOperations!: pulumi.Output<outputs.Database.AutonomousDatabaseScheduledOperation[]>;
+    /**
+     * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     */
+    public readonly secretId!: pulumi.Output<string>;
+    /**
+     * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+     */
+    public readonly secretVersionNumber!: pulumi.Output<number>;
     /**
      * The URL of the Service Console for the Autonomous Database.
      */
@@ -488,6 +504,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["characterSet"] = state ? state.characterSet : undefined;
             resourceInputs["cloneType"] = state ? state.cloneType : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["connectionStrings"] = state ? state.connectionStrings : undefined;
             resourceInputs["connectionUrls"] = state ? state.connectionUrls : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
@@ -547,6 +565,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["role"] = state ? state.role : undefined;
             resourceInputs["rotateKeyTrigger"] = state ? state.rotateKeyTrigger : undefined;
             resourceInputs["scheduledOperations"] = state ? state.scheduledOperations : undefined;
+            resourceInputs["secretId"] = state ? state.secretId : undefined;
+            resourceInputs["secretVersionNumber"] = state ? state.secretVersionNumber : undefined;
             resourceInputs["serviceConsoleUrl"] = state ? state.serviceConsoleUrl : undefined;
             resourceInputs["source"] = state ? state.source : undefined;
             resourceInputs["sourceId"] = state ? state.sourceId : undefined;
@@ -593,6 +613,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["characterSet"] = args ? args.characterSet : undefined;
             resourceInputs["cloneType"] = args ? args.cloneType : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
+            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["customerContacts"] = args ? args.customerContacts : undefined;
             resourceInputs["dataSafeStatus"] = args ? args.dataSafeStatus : undefined;
@@ -626,10 +648,13 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["openMode"] = args ? args.openMode : undefined;
             resourceInputs["operationsInsightsStatus"] = args ? args.operationsInsightsStatus : undefined;
             resourceInputs["permissionLevel"] = args ? args.permissionLevel : undefined;
+            resourceInputs["privateEndpointIp"] = args ? args.privateEndpointIp : undefined;
             resourceInputs["privateEndpointLabel"] = args ? args.privateEndpointLabel : undefined;
             resourceInputs["refreshableMode"] = args ? args.refreshableMode : undefined;
             resourceInputs["rotateKeyTrigger"] = args ? args.rotateKeyTrigger : undefined;
             resourceInputs["scheduledOperations"] = args ? args.scheduledOperations : undefined;
+            resourceInputs["secretId"] = args ? args.secretId : undefined;
+            resourceInputs["secretVersionNumber"] = args ? args.secretVersionNumber : undefined;
             resourceInputs["source"] = args ? args.source : undefined;
             resourceInputs["sourceId"] = args ? args.sourceId : undefined;
             resourceInputs["standbyWhitelistedIps"] = args ? args.standbyWhitelistedIps : undefined;
@@ -664,7 +689,6 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["peerDbIds"] = undefined /*out*/;
             resourceInputs["privateEndpoint"] = undefined /*out*/;
-            resourceInputs["privateEndpointIp"] = undefined /*out*/;
             resourceInputs["provisionableCpuses"] = undefined /*out*/;
             resourceInputs["refreshableStatus"] = undefined /*out*/;
             resourceInputs["role"] = undefined /*out*/;
@@ -754,6 +778,14 @@ export interface AutonomousDatabaseState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     */
+    computeCount?: pulumi.Input<number>;
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     */
+    computeModel?: pulumi.Input<string>;
     /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      */
@@ -996,6 +1028,14 @@ export interface AutonomousDatabaseState {
      */
     scheduledOperations?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseScheduledOperation>[]>;
     /**
+     * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     */
+    secretId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+     */
+    secretVersionNumber?: pulumi.Input<number>;
+    /**
      * The URL of the Service Console for the Autonomous Database.
      */
     serviceConsoleUrl?: pulumi.Input<string>;
@@ -1154,6 +1194,14 @@ export interface AutonomousDatabaseArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     */
+    computeCount?: pulumi.Input<number>;
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     */
+    computeModel?: pulumi.Input<string>;
+    /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      */
     cpuCoreCount?: pulumi.Input<number>;
@@ -1291,6 +1339,10 @@ export interface AutonomousDatabaseArgs {
      */
     permissionLevel?: pulumi.Input<string>;
     /**
+     * The private endpoint Ip address for the resource.
+     */
+    privateEndpointIp?: pulumi.Input<string>;
+    /**
      * (Updatable) The private endpoint label for the resource.
      */
     privateEndpointLabel?: pulumi.Input<string>;
@@ -1306,6 +1358,14 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) list of scheduled operations
      */
     scheduledOperations?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseScheduledOperation>[]>;
+    /**
+     * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     */
+    secretId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+     */
+    secretVersionNumber?: pulumi.Input<number>;
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      */

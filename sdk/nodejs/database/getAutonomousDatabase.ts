@@ -89,6 +89,14 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly compartmentId: string;
     /**
+     * The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     */
+    readonly computeCount: number;
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     */
+    readonly computeModel: string;
+    /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      */
     readonly connectionStrings: outputs.Database.GetAutonomousDatabaseConnectionString[];
@@ -324,6 +332,8 @@ export interface GetAutonomousDatabaseResult {
      * list of scheduled operations
      */
     readonly scheduledOperations: outputs.Database.GetAutonomousDatabaseScheduledOperation[];
+    readonly secretId: string;
+    readonly secretVersionNumber: number;
     /**
      * The URL of the Service Console for the Autonomous Database.
      */

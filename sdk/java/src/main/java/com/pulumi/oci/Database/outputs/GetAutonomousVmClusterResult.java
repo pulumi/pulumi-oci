@@ -49,6 +49,11 @@ public final class GetAutonomousVmClusterResult {
      */
     private String compartmentId;
     /**
+     * @return The compute model of the Autonomous VM Cluster.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The number of CPU cores enabled per VM cluster node.
      * 
      */
@@ -235,6 +240,13 @@ public final class GetAutonomousVmClusterResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The compute model of the Autonomous VM Cluster.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     /**
      * @return The number of CPU cores enabled per VM cluster node.
@@ -452,6 +464,7 @@ public final class GetAutonomousVmClusterResult {
         private Integer availableCpus;
         private Double availableDataStorageSizeInTbs;
         private String compartmentId;
+        private String computeModel;
         private Integer cpuCoreCountPerNode;
         private Integer cpusEnabled;
         private Double dataStorageSizeInGb;
@@ -491,6 +504,7 @@ public final class GetAutonomousVmClusterResult {
     	      this.availableCpus = defaults.availableCpus;
     	      this.availableDataStorageSizeInTbs = defaults.availableDataStorageSizeInTbs;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCountPerNode = defaults.cpuCoreCountPerNode;
     	      this.cpusEnabled = defaults.cpusEnabled;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
@@ -555,6 +569,11 @@ public final class GetAutonomousVmClusterResult {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            this.computeModel = Objects.requireNonNull(computeModel);
             return this;
         }
         @CustomType.Setter
@@ -717,6 +736,7 @@ public final class GetAutonomousVmClusterResult {
             o.availableCpus = availableCpus;
             o.availableDataStorageSizeInTbs = availableDataStorageSizeInTbs;
             o.compartmentId = compartmentId;
+            o.computeModel = computeModel;
             o.cpuCoreCountPerNode = cpuCoreCountPerNode;
             o.cpusEnabled = cpusEnabled;
             o.dataStorageSizeInGb = dataStorageSizeInGb;

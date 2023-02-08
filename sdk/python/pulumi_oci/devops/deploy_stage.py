@@ -23,11 +23,13 @@ class DeployStageArgs:
                  blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
                  blue_green_strategy: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']] = None,
                  canary_strategy: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']] = None,
+                 command_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 container_config: Optional[pulumi.Input['DeployStageContainerConfigArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -71,11 +73,13 @@ class DeployStageArgs:
         :param pulumi.Input['DeployStageBlueBackendIpsArgs'] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input['DeployStageBlueGreenStrategyArgs'] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input['DeployStageCanaryStrategyArgs'] canary_strategy: Specifies the required canary release strategy for OKE deployment.
+        :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
         :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param pulumi.Input['DeployStageContainerConfigArgs'] container_config: (Updatable) Specifies the container configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
@@ -106,7 +110,7 @@ class DeployStageArgs:
         :param pulumi.Input['DeployStageRollbackPolicyArgs'] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input['DeployStageRolloutPolicyArgs'] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
         :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input['DeployStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
@@ -122,6 +126,8 @@ class DeployStageArgs:
             pulumi.set(__self__, "blue_green_strategy", blue_green_strategy)
         if canary_strategy is not None:
             pulumi.set(__self__, "canary_strategy", canary_strategy)
+        if command_spec_deploy_artifact_id is not None:
+            pulumi.set(__self__, "command_spec_deploy_artifact_id", command_spec_deploy_artifact_id)
         if compute_instance_group_blue_green_deployment_deploy_stage_id is not None:
             pulumi.set(__self__, "compute_instance_group_blue_green_deployment_deploy_stage_id", compute_instance_group_blue_green_deployment_deploy_stage_id)
         if compute_instance_group_canary_deploy_stage_id is not None:
@@ -132,6 +138,8 @@ class DeployStageArgs:
             pulumi.set(__self__, "compute_instance_group_deploy_environment_id", compute_instance_group_deploy_environment_id)
         if config is not None:
             pulumi.set(__self__, "config", config)
+        if container_config is not None:
+            pulumi.set(__self__, "container_config", container_config)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deploy_artifact_id is not None:
@@ -286,6 +294,18 @@ class DeployStageArgs:
         pulumi.set(self, "canary_strategy", value)
 
     @property
+    @pulumi.getter(name="commandSpecDeployArtifactId")
+    def command_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the artifact that contains the command specification.
+        """
+        return pulumi.get(self, "command_spec_deploy_artifact_id")
+
+    @command_spec_deploy_artifact_id.setter
+    def command_spec_deploy_artifact_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "command_spec_deploy_artifact_id", value)
+
+    @property
     @pulumi.getter(name="computeInstanceGroupBlueGreenDeploymentDeployStageId")
     def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -344,6 +364,18 @@ class DeployStageArgs:
     @config.setter
     def config(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "config", value)
+
+    @property
+    @pulumi.getter(name="containerConfig")
+    def container_config(self) -> Optional[pulumi.Input['DeployStageContainerConfigArgs']]:
+        """
+        (Updatable) Specifies the container configuration.
+        """
+        return pulumi.get(self, "container_config")
+
+    @container_config.setter
+    def container_config(self, value: Optional[pulumi.Input['DeployStageContainerConfigArgs']]):
+        pulumi.set(self, "container_config", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -709,7 +741,7 @@ class DeployStageArgs:
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -761,12 +793,14 @@ class _DeployStageState:
                  blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
                  blue_green_strategy: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']] = None,
                  canary_strategy: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']] = None,
+                 command_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 container_config: Optional[pulumi.Input['DeployStageContainerConfigArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -816,12 +850,14 @@ class _DeployStageState:
         :param pulumi.Input['DeployStageBlueBackendIpsArgs'] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input['DeployStageBlueGreenStrategyArgs'] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input['DeployStageCanaryStrategyArgs'] canary_strategy: Specifies the required canary release strategy for OKE deployment.
-        :param pulumi.Input[str] compartment_id: The OCID of a compartment.
+        :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the ContainerInstance will be created.
         :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param pulumi.Input['DeployStageContainerConfigArgs'] container_config: (Updatable) Specifies the container configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
@@ -861,7 +897,7 @@ class _DeployStageState:
         :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input['DeployStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
@@ -874,6 +910,8 @@ class _DeployStageState:
             pulumi.set(__self__, "blue_green_strategy", blue_green_strategy)
         if canary_strategy is not None:
             pulumi.set(__self__, "canary_strategy", canary_strategy)
+        if command_spec_deploy_artifact_id is not None:
+            pulumi.set(__self__, "command_spec_deploy_artifact_id", command_spec_deploy_artifact_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_instance_group_blue_green_deployment_deploy_stage_id is not None:
@@ -886,6 +924,8 @@ class _DeployStageState:
             pulumi.set(__self__, "compute_instance_group_deploy_environment_id", compute_instance_group_deploy_environment_id)
         if config is not None:
             pulumi.set(__self__, "config", config)
+        if container_config is not None:
+            pulumi.set(__self__, "container_config", container_config)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deploy_artifact_id is not None:
@@ -1022,10 +1062,22 @@ class _DeployStageState:
         pulumi.set(self, "canary_strategy", value)
 
     @property
+    @pulumi.getter(name="commandSpecDeployArtifactId")
+    def command_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the artifact that contains the command specification.
+        """
+        return pulumi.get(self, "command_spec_deploy_artifact_id")
+
+    @command_spec_deploy_artifact_id.setter
+    def command_spec_deploy_artifact_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "command_spec_deploy_artifact_id", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of a compartment.
+        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1092,6 +1144,18 @@ class _DeployStageState:
     @config.setter
     def config(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "config", value)
+
+    @property
+    @pulumi.getter(name="containerConfig")
+    def container_config(self) -> Optional[pulumi.Input['DeployStageContainerConfigArgs']]:
+        """
+        (Updatable) Specifies the container configuration.
+        """
+        return pulumi.get(self, "container_config")
+
+    @container_config.setter
+    def container_config(self, value: Optional[pulumi.Input['DeployStageContainerConfigArgs']]):
+        pulumi.set(self, "container_config", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1565,7 +1629,7 @@ class _DeployStageState:
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -1619,11 +1683,13 @@ class DeployStage(pulumi.CustomResource):
                  blue_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']]] = None,
                  blue_green_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']]] = None,
                  canary_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']]] = None,
+                 command_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 container_config: Optional[pulumi.Input[pulumi.InputType['DeployStageContainerConfigArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1681,11 +1747,13 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
+        :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
         :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param pulumi.Input[pulumi.InputType['DeployStageContainerConfigArgs']] container_config: (Updatable) Specifies the container configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
@@ -1719,7 +1787,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
         :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
@@ -1762,11 +1830,13 @@ class DeployStage(pulumi.CustomResource):
                  blue_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']]] = None,
                  blue_green_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']]] = None,
                  canary_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']]] = None,
+                 command_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 container_config: Optional[pulumi.Input[pulumi.InputType['DeployStageContainerConfigArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1817,11 +1887,13 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["blue_backend_ips"] = blue_backend_ips
             __props__.__dict__["blue_green_strategy"] = blue_green_strategy
             __props__.__dict__["canary_strategy"] = canary_strategy
+            __props__.__dict__["command_spec_deploy_artifact_id"] = command_spec_deploy_artifact_id
             __props__.__dict__["compute_instance_group_blue_green_deployment_deploy_stage_id"] = compute_instance_group_blue_green_deployment_deploy_stage_id
             __props__.__dict__["compute_instance_group_canary_deploy_stage_id"] = compute_instance_group_canary_deploy_stage_id
             __props__.__dict__["compute_instance_group_canary_traffic_shift_deploy_stage_id"] = compute_instance_group_canary_traffic_shift_deploy_stage_id
             __props__.__dict__["compute_instance_group_deploy_environment_id"] = compute_instance_group_deploy_environment_id
             __props__.__dict__["config"] = config
+            __props__.__dict__["container_config"] = container_config
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["deploy_artifact_id"] = deploy_artifact_id
             __props__.__dict__["deploy_artifact_ids"] = deploy_artifact_ids
@@ -1886,12 +1958,14 @@ class DeployStage(pulumi.CustomResource):
             blue_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']]] = None,
             blue_green_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']]] = None,
             canary_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']]] = None,
+            command_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[str]] = None,
             compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
             compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
             compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
             config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            container_config: Optional[pulumi.Input[pulumi.InputType['DeployStageContainerConfigArgs']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             deploy_artifact_id: Optional[pulumi.Input[str]] = None,
             deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1946,12 +2020,14 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
-        :param pulumi.Input[str] compartment_id: The OCID of a compartment.
+        :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the ContainerInstance will be created.
         :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param pulumi.Input[pulumi.InputType['DeployStageContainerConfigArgs']] container_config: (Updatable) Specifies the container configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
@@ -1991,7 +2067,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
@@ -2004,12 +2080,14 @@ class DeployStage(pulumi.CustomResource):
         __props__.__dict__["blue_backend_ips"] = blue_backend_ips
         __props__.__dict__["blue_green_strategy"] = blue_green_strategy
         __props__.__dict__["canary_strategy"] = canary_strategy
+        __props__.__dict__["command_spec_deploy_artifact_id"] = command_spec_deploy_artifact_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_instance_group_blue_green_deployment_deploy_stage_id"] = compute_instance_group_blue_green_deployment_deploy_stage_id
         __props__.__dict__["compute_instance_group_canary_deploy_stage_id"] = compute_instance_group_canary_deploy_stage_id
         __props__.__dict__["compute_instance_group_canary_traffic_shift_deploy_stage_id"] = compute_instance_group_canary_traffic_shift_deploy_stage_id
         __props__.__dict__["compute_instance_group_deploy_environment_id"] = compute_instance_group_deploy_environment_id
         __props__.__dict__["config"] = config
+        __props__.__dict__["container_config"] = container_config
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["deploy_artifact_id"] = deploy_artifact_id
         __props__.__dict__["deploy_artifact_ids"] = deploy_artifact_ids
@@ -2088,10 +2166,18 @@ class DeployStage(pulumi.CustomResource):
         return pulumi.get(self, "canary_strategy")
 
     @property
+    @pulumi.getter(name="commandSpecDeployArtifactId")
+    def command_spec_deploy_artifact_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The OCID of the artifact that contains the command specification.
+        """
+        return pulumi.get(self, "command_spec_deploy_artifact_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        The OCID of a compartment.
+        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2134,6 +2220,14 @@ class DeployStage(pulumi.CustomResource):
         (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         """
         return pulumi.get(self, "config")
+
+    @property
+    @pulumi.getter(name="containerConfig")
+    def container_config(self) -> pulumi.Output['outputs.DeployStageContainerConfig']:
+        """
+        (Updatable) Specifies the container configuration.
+        """
+        return pulumi.get(self, "container_config")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -2451,7 +2545,7 @@ class DeployStage(pulumi.CustomResource):
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> pulumi.Output[int]:
         """
-        (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         """
         return pulumi.get(self, "timeout_in_seconds")
 

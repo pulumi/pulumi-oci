@@ -91,7 +91,8 @@ type GetConfigsResult struct {
 	FreeformTagEquals []string           `pulumi:"freeformTagEquals"`
 	FreeformTagExists []string           `pulumi:"freeformTagExists"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string  `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// A string that specifies the group that an OPTIONS item belongs to.
 	OptionsGroup *string `pulumi:"optionsGroup"`
 }
 
@@ -192,6 +193,7 @@ func (o GetConfigsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// A string that specifies the group that an OPTIONS item belongs to.
 func (o GetConfigsResultOutput) OptionsGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigsResult) *string { return v.OptionsGroup }).(pulumi.StringPtrOutput)
 }

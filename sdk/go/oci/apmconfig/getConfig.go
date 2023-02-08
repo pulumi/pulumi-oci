@@ -63,6 +63,8 @@ type LookupConfigResult struct {
 	ConfigId    string `pulumi:"configId"`
 	// The type of configuration item.
 	ConfigType string `pulumi:"configType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the metric.
@@ -71,6 +73,8 @@ type LookupConfigResult struct {
 	Dimensions []GetConfigDimension `pulumi:"dimensions"`
 	// The name by which a configuration entity is displayed to the end user.
 	DisplayName string `pulumi:"displayName"`
+	// For optimistic concurrency control. See `if-match`.
+	Etag string `pulumi:"etag"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId string `pulumi:"filterId"`
 	// The string that defines the Span Filter expression.
@@ -81,6 +85,8 @@ type LookupConfigResult struct {
 	Group string `pulumi:"group"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
 	Id string `pulumi:"id"`
+	// The list of configuration items that reference the span filter.
+	InUseBies []GetConfigInUseBy `pulumi:"inUseBies"`
 	// The list of metrics in this group.
 	Metrics []GetConfigMetric `pulumi:"metrics"`
 	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -93,6 +99,8 @@ type LookupConfigResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	UpdatedBy string `pulumi:"updatedBy"`
 }
 
 func LookupConfigOutput(ctx *pulumi.Context, args LookupConfigOutputArgs, opts ...pulumi.InvokeOption) LookupConfigResultOutput {
@@ -148,6 +156,11 @@ func (o LookupConfigResultOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.ConfigType }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+func (o LookupConfigResultOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o LookupConfigResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupConfigResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -166,6 +179,11 @@ func (o LookupConfigResultOutput) Dimensions() GetConfigDimensionArrayOutput {
 // The name by which a configuration entity is displayed to the end user.
 func (o LookupConfigResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// For optimistic concurrency control. See `if-match`.
+func (o LookupConfigResultOutput) Etag() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.Etag }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
@@ -191,6 +209,11 @@ func (o LookupConfigResultOutput) Group() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
 func (o LookupConfigResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The list of configuration items that reference the span filter.
+func (o LookupConfigResultOutput) InUseBies() GetConfigInUseByArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []GetConfigInUseBy { return v.InUseBies }).(GetConfigInUseByArrayOutput)
 }
 
 // The list of metrics in this group.
@@ -224,6 +247,11 @@ func (o LookupConfigResultOutput) TimeCreated() pulumi.StringOutput {
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 func (o LookupConfigResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+func (o LookupConfigResultOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.UpdatedBy }).(pulumi.StringOutput)
 }
 
 func init() {

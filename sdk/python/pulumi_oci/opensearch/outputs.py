@@ -88,6 +88,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  opendashboard_private_ip: str,
                  opensearch_fqdn: str,
                  opensearch_private_ip: str,
+                 security_master_user_name: str,
+                 security_master_user_password_hash: str,
+                 security_mode: str,
                  software_version: str,
                  state: str,
                  subnet_compartment_id: str,
@@ -126,6 +129,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param str opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param str opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param str opensearch_private_ip: The cluster's private IP address.
+        :param str security_master_user_name: The name of the master user that are used to manage security config
+        :param str security_master_user_password_hash: The password hash of the master user that are used to manage security config
+        :param str security_mode: The security mode of the cluster.
         :param str software_version: The software version the cluster is running.
         :param str state: A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
         :param str subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
@@ -164,6 +170,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
         pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
         pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
+        pulumi.set(__self__, "security_master_user_name", security_master_user_name)
+        pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
+        pulumi.set(__self__, "security_mode", security_mode)
         pulumi.set(__self__, "software_version", software_version)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
@@ -383,6 +392,30 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The cluster's private IP address.
         """
         return pulumi.get(self, "opensearch_private_ip")
+
+    @property
+    @pulumi.getter(name="securityMasterUserName")
+    def security_master_user_name(self) -> str:
+        """
+        The name of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_name")
+
+    @property
+    @pulumi.getter(name="securityMasterUserPasswordHash")
+    def security_master_user_password_hash(self) -> str:
+        """
+        The password hash of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_password_hash")
+
+    @property
+    @pulumi.getter(name="securityMode")
+    def security_mode(self) -> str:
+        """
+        The security mode of the cluster.
+        """
+        return pulumi.get(self, "security_mode")
 
     @property
     @pulumi.getter(name="softwareVersion")

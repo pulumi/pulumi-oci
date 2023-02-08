@@ -228,6 +228,12 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    @Export(name="computeModel", type=String.class, parameters={})
+    private Output<String> computeModel;
+
+    public Output<String> computeModel() {
+        return this.computeModel;
+    }
     @Export(name="dbUniqueName", type=String.class, parameters={})
     private Output<String> dbUniqueName;
 

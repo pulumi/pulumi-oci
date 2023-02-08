@@ -2600,6 +2600,25 @@ export namespace ApmConfig {
         valueSource?: pulumi.Input<string>;
     }
 
+    export interface ConfigInUseBy {
+        /**
+         * (Updatable) The type of configuration item.
+         */
+        configType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name by which a configuration entity is displayed to the end user.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * A string that specifies the group that an OPTIONS item belongs to.
+         */
+        optionsGroup?: pulumi.Input<string>;
+    }
+
     export interface ConfigMetric {
         /**
          * (Updatable) A description of the metric.
@@ -11237,6 +11256,10 @@ export namespace Core {
          */
         isMeasuredBootEnabled?: pulumi.Input<boolean>;
         /**
+         * Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+         */
+        isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
+        /**
          * Whether Secure Boot is enabled on the instance.
          */
         isSecureBootEnabled?: pulumi.Input<boolean>;
@@ -11478,6 +11501,10 @@ export namespace Core {
          * Whether the Measured Boot feature is enabled on the instance.
          */
         isMeasuredBootEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+         */
+        isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
         /**
          * Whether Secure Boot is enabled on the instance.
          */
@@ -16188,6 +16215,30 @@ export namespace DataScience {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetPipelineRunsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPipelineRunsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPipelinesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPipelinesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetProjectsFilter {
         name: string;
         regex?: boolean;
@@ -16584,6 +16635,283 @@ export namespace DataScience {
          * (Updatable) The repository URL
          */
         url: pulumi.Input<string>;
+    }
+
+    export interface PipelineConfigurationDetails {
+        /**
+         * (Updatable) The command line arguments to set for step.
+         */
+        commandLineArguments?: pulumi.Input<string>;
+        /**
+         * (Updatable) Environment variables to set for step.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) A time bound for the execution of the step.
+         */
+        maximumRuntimeInMinutes?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of pipeline.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface PipelineInfrastructureConfigurationDetails {
+        /**
+         * The size of the block storage volume to attach to the instance.
+         */
+        blockStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         */
+        shapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetailsShapeConfigDetails>;
+        /**
+         * The shape used to launch the instance for all step runs in the pipeline.
+         */
+        shapeName: pulumi.Input<string>;
+    }
+
+    export interface PipelineInfrastructureConfigurationDetailsShapeConfigDetails {
+        /**
+         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
+    export interface PipelineLogConfigurationDetails {
+        /**
+         * (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+         */
+        enableAutoLogCreation?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If customer logging is enabled for pipeline.
+         */
+        enableLogging?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunConfigurationDetail {
+        /**
+         * The command line arguments to set for step.
+         */
+        commandLineArguments?: pulumi.Input<string>;
+        /**
+         * Environment variables to set for step.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A time bound for the execution of the step.
+         */
+        maximumRuntimeInMinutes?: pulumi.Input<string>;
+        /**
+         * The type of pipeline.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunConfigurationOverrideDetails {
+        /**
+         * The command line arguments to set for step.
+         */
+        commandLineArguments?: pulumi.Input<string>;
+        /**
+         * Environment variables to set for step.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A time bound for the execution of the step.
+         */
+        maximumRuntimeInMinutes?: pulumi.Input<string>;
+        /**
+         * The type of pipeline.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunLogConfigurationOverrideDetails {
+        /**
+         * If automatic on-behalf-of log object creation is enabled for pipeline runs.
+         */
+        enableAutoLogCreation?: pulumi.Input<boolean>;
+        /**
+         * If customer logging is enabled for pipeline.
+         */
+        enableLogging?: pulumi.Input<boolean>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunLogDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunStepOverrideDetail {
+        /**
+         * The configuration details of a step.
+         */
+        stepConfigurationDetails: pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetailStepConfigurationDetails>;
+        /**
+         * The name of the step.
+         */
+        stepName: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunStepOverrideDetailStepConfigurationDetails {
+        /**
+         * The command line arguments to set for step.
+         */
+        commandLineArguments?: pulumi.Input<string>;
+        /**
+         * Environment variables to set for step.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A time bound for the execution of the step.
+         */
+        maximumRuntimeInMinutes?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunStepRun {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
+         */
+        jobRunId?: pulumi.Input<string>;
+        /**
+         * Details of the state of the step run.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The state of the step run.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The name of the step.
+         */
+        stepName?: pulumi.Input<string>;
+        /**
+         * The type of step.
+         */
+        stepType?: pulumi.Input<string>;
+        /**
+         * The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeFinished?: pulumi.Input<string>;
+        /**
+         * The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeStarted?: pulumi.Input<string>;
+    }
+
+    export interface PipelineStepArtifact {
+        artifactContentDisposition?: pulumi.Input<string>;
+        artifactContentLength: pulumi.Input<string>;
+        artifactContentMd5?: pulumi.Input<string>;
+        artifactLastModified?: pulumi.Input<string>;
+        pipelineStepArtifact: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+         */
+        stepName: pulumi.Input<string>;
+    }
+
+    export interface PipelineStepDetail {
+        /**
+         * The list of step names this current step depends on for execution.
+         */
+        dependsOns?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) A short description of the step.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A flag to indicate whether the artifact has been uploaded for this step or not.
+         */
+        isArtifactUploaded?: pulumi.Input<boolean>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
+         */
+        jobId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The configuration details of a step.
+         */
+        stepConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepConfigurationDetails>;
+        /**
+         * The infrastructure configuration details of a pipeline or a step.
+         */
+        stepInfrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepInfrastructureConfigurationDetails>;
+        /**
+         * (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+         */
+        stepName: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of step.
+         */
+        stepType: pulumi.Input<string>;
+    }
+
+    export interface PipelineStepDetailStepConfigurationDetails {
+        /**
+         * (Updatable) The command line arguments to set for step.
+         */
+        commandLineArguments?: pulumi.Input<string>;
+        /**
+         * (Updatable) Environment variables to set for step.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) A time bound for the execution of the step.
+         */
+        maximumRuntimeInMinutes?: pulumi.Input<string>;
+    }
+
+    export interface PipelineStepDetailStepInfrastructureConfigurationDetails {
+        /**
+         * The size of the block storage volume to attach to the instance.
+         */
+        blockStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         */
+        shapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails>;
+        /**
+         * The shape used to launch the instance for all step runs in the pipeline.
+         */
+        shapeName: pulumi.Input<string>;
+    }
+
+    export interface PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails {
+        /**
+         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus?: pulumi.Input<number>;
     }
 }
 
@@ -21590,7 +21918,7 @@ export namespace DevOps {
          */
         namespaceB: pulumi.Input<string>;
         /**
-         * Canary strategy type
+         * Canary strategy type.
          */
         strategyType: pulumi.Input<string>;
     }
@@ -21605,9 +21933,62 @@ export namespace DevOps {
          */
         namespace: pulumi.Input<string>;
         /**
-         * Canary strategy type
+         * Canary strategy type.
          */
         strategyType: pulumi.Input<string>;
+    }
+
+    export interface DeployStageContainerConfig {
+        /**
+         * (Updatable) Availability domain where the ContainerInstance will be created.
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Container configuration type.
+         */
+        containerConfigType: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+         */
+        networkChannel: pulumi.Input<inputs.DevOps.DeployStageContainerConfigNetworkChannel>;
+        /**
+         * (Updatable) Determines the size and amount of resources available to the instance.
+         */
+        shapeConfig: pulumi.Input<inputs.DevOps.DeployStageContainerConfigShapeConfig>;
+        /**
+         * (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+         */
+        shapeName: pulumi.Input<string>;
+    }
+
+    export interface DeployStageContainerConfigNetworkChannel {
+        /**
+         * (Updatable) Network channel type.
+         */
+        networkChannelType: pulumi.Input<string>;
+        /**
+         * (Updatable) An array of network security group OCIDs.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface DeployStageContainerConfigShapeConfig {
+        /**
+         * (Updatable) The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs available to the instance.
+         */
+        ocpus: pulumi.Input<number>;
     }
 
     export interface DeployStageDeployStagePredecessorCollection {

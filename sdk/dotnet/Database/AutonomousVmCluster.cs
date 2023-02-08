@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Database
     ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
     ///         VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
     ///         AutonomousDataStorageSizeInTbs = @var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
+    ///         ComputeModel = @var.Autonomous_vm_cluster_compute_model,
     ///         CpuCoreCountPerNode = @var.Autonomous_vm_cluster_cpu_core_count_per_node,
     ///         DefinedTags = @var.Autonomous_vm_cluster_defined_tags,
     ///         FreeformTags = 
@@ -119,6 +120,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute model of the Autonomous VM Cluster.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPU cores to enable per VM cluster node.
@@ -344,6 +351,12 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// The compute model of the Autonomous VM Cluster.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
         /// The number of CPU cores to enable per VM cluster node.
         /// </summary>
         [Input("cpuCoreCountPerNode")]
@@ -494,6 +507,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The compute model of the Autonomous VM Cluster.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
         /// The number of CPU cores to enable per VM cluster node.

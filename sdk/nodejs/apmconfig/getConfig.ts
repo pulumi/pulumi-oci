@@ -57,6 +57,10 @@ export interface GetConfigResult {
      */
     readonly configType: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     */
+    readonly createdBy: string;
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: any};
@@ -72,6 +76,10 @@ export interface GetConfigResult {
      * The name by which a configuration entity is displayed to the end user.
      */
     readonly displayName: string;
+    /**
+     * For optimistic concurrency control. See `if-match`.
+     */
+    readonly etag: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
@@ -92,6 +100,10 @@ export interface GetConfigResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      */
     readonly id: string;
+    /**
+     * The list of configuration items that reference the span filter.
+     */
+    readonly inUseBies: outputs.ApmConfig.GetConfigInUseBy[];
     /**
      * The list of metrics in this group.
      */
@@ -114,6 +126,10 @@ export interface GetConfigResult {
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
     readonly timeUpdated: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     */
+    readonly updatedBy: string;
 }
 /**
  * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.

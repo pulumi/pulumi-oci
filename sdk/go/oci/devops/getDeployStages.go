@@ -69,7 +69,7 @@ type GetDeployStagesArgs struct {
 
 // A collection of values returned by getDeployStages.
 type GetDeployStagesResult struct {
-	// The OCID of a compartment.
+	// The OCID of the compartment where the ContainerInstance will be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of a pipeline.
 	DeployPipelineId *string `pulumi:"deployPipelineId"`
@@ -131,7 +131,7 @@ func (o GetDeployStagesResultOutput) ToGetDeployStagesResultOutputWithContext(ct
 	return o
 }
 
-// The OCID of a compartment.
+// The OCID of the compartment where the ContainerInstance will be created.
 func (o GetDeployStagesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDeployStagesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

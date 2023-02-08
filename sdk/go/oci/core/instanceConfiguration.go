@@ -145,6 +145,7 @@ import (
 //							IsAccessControlServiceEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled),
 //							IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled),
 //							IsMeasuredBootEnabled:                    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled),
+//							IsMemoryEncryptionEnabled:                pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled),
 //							IsSecureBootEnabled:                      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled),
 //							IsSymmetricMultiThreadingEnabled:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled),
 //							IsTrustedPlatformModuleEnabled:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled),

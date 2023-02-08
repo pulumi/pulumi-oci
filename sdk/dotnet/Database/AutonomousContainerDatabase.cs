@@ -161,6 +161,9 @@ namespace Pulumi.Oci.Database
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
+
         [Output("dbUniqueName")]
         public Output<string> DbUniqueName { get; private set; } = null!;
 
@@ -628,6 +631,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
 
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }

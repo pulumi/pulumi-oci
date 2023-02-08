@@ -67,6 +67,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private Integer dbNodeStorageSizeInGbs;
     /**
+     * @return The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    private String dbServerVersion;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -127,6 +132,16 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private Integer memorySizeInGbs;
     /**
+     * @return The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    private String monthlyDbServerVersion;
+    /**
+     * @return The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    private String monthlyStorageServerVersion;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
@@ -146,6 +161,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      * 
      */
     private Integer storageCount;
+    /**
+     * @return The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    private String storageServerVersion;
     /**
      * @return The date and time the cloud Exadata infrastructure resource was created.
      * 
@@ -227,6 +247,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     public Integer dbNodeStorageSizeInGbs() {
         return this.dbNodeStorageSizeInGbs;
+    }
+    /**
+     * @return The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    public String dbServerVersion() {
+        return this.dbServerVersion;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -313,6 +340,20 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.memorySizeInGbs;
     }
     /**
+     * @return The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    public String monthlyDbServerVersion() {
+        return this.monthlyDbServerVersion;
+    }
+    /**
+     * @return The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    public String monthlyStorageServerVersion() {
+        return this.monthlyStorageServerVersion;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
@@ -339,6 +380,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     public Integer storageCount() {
         return this.storageCount;
+    }
+    /**
+     * @return The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    public String storageServerVersion() {
+        return this.storageServerVersion;
     }
     /**
      * @return The date and time the cloud Exadata infrastructure resource was created.
@@ -374,6 +422,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact> customerContacts;
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
+        private String dbServerVersion;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
@@ -386,10 +435,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private Integer maxDbNodeStorageInGbs;
         private Integer maxMemoryInGbs;
         private Integer memorySizeInGbs;
+        private String monthlyDbServerVersion;
+        private String monthlyStorageServerVersion;
         private String nextMaintenanceRunId;
         private String shape;
         private String state;
         private Integer storageCount;
+        private String storageServerVersion;
         private String timeCreated;
         private Integer totalStorageSizeInGbs;
         public Builder() {}
@@ -405,6 +457,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.customerContacts = defaults.customerContacts;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
+    	      this.dbServerVersion = defaults.dbServerVersion;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -417,10 +470,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.maxDbNodeStorageInGbs = defaults.maxDbNodeStorageInGbs;
     	      this.maxMemoryInGbs = defaults.maxMemoryInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
+    	      this.monthlyDbServerVersion = defaults.monthlyDbServerVersion;
+    	      this.monthlyStorageServerVersion = defaults.monthlyStorageServerVersion;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.storageCount = defaults.storageCount;
+    	      this.storageServerVersion = defaults.storageServerVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.totalStorageSizeInGbs = defaults.totalStorageSizeInGbs;
         }
@@ -476,6 +532,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbServerVersion(String dbServerVersion) {
+            this.dbServerVersion = Objects.requireNonNull(dbServerVersion);
             return this;
         }
         @CustomType.Setter
@@ -542,6 +603,16 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
+            this.monthlyDbServerVersion = Objects.requireNonNull(monthlyDbServerVersion);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder monthlyStorageServerVersion(String monthlyStorageServerVersion) {
+            this.monthlyStorageServerVersion = Objects.requireNonNull(monthlyStorageServerVersion);
+            return this;
+        }
+        @CustomType.Setter
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
             return this;
@@ -559,6 +630,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         @CustomType.Setter
         public Builder storageCount(Integer storageCount) {
             this.storageCount = Objects.requireNonNull(storageCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder storageServerVersion(String storageServerVersion) {
+            this.storageServerVersion = Objects.requireNonNull(storageServerVersion);
             return this;
         }
         @CustomType.Setter
@@ -583,6 +659,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             o.customerContacts = customerContacts;
             o.dataStorageSizeInTbs = dataStorageSizeInTbs;
             o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.dbServerVersion = dbServerVersion;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
@@ -595,10 +672,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             o.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             o.maxMemoryInGbs = maxMemoryInGbs;
             o.memorySizeInGbs = memorySizeInGbs;
+            o.monthlyDbServerVersion = monthlyDbServerVersion;
+            o.monthlyStorageServerVersion = monthlyStorageServerVersion;
             o.nextMaintenanceRunId = nextMaintenanceRunId;
             o.shape = shape;
             o.state = state;
             o.storageCount = storageCount;
+            o.storageServerVersion = storageServerVersion;
             o.timeCreated = timeCreated;
             o.totalStorageSizeInGbs = totalStorageSizeInGbs;
             return o;

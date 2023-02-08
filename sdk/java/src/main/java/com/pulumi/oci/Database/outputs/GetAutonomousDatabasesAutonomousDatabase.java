@@ -79,6 +79,16 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String compartmentId;
     /**
+     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * 
+     */
+    private Double computeCount;
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
@@ -367,6 +377,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations;
+    private String secretId;
+    private Integer secretVersionNumber;
     /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
@@ -575,6 +587,20 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * 
+     */
+    public Double computeCount() {
+        return this.computeCount;
+    }
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     /**
      * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -985,6 +1011,12 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations() {
         return this.scheduledOperations;
     }
+    public String secretId() {
+        return this.secretId;
+    }
+    public Integer secretVersionNumber() {
+        return this.secretVersionNumber;
+    }
     /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
@@ -1192,6 +1224,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String characterSet;
         private String cloneType;
         private String compartmentId;
+        private Double computeCount;
+        private String computeModel;
         private List<GetAutonomousDatabasesAutonomousDatabaseConnectionString> connectionStrings;
         private List<GetAutonomousDatabasesAutonomousDatabaseConnectionUrl> connectionUrls;
         private Integer cpuCoreCount;
@@ -1252,6 +1286,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String role;
         private Boolean rotateKeyTrigger;
         private List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations;
+        private String secretId;
+        private Integer secretVersionNumber;
         private String serviceConsoleUrl;
         private String source;
         private String sourceId;
@@ -1298,6 +1334,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.characterSet = defaults.characterSet;
     	      this.cloneType = defaults.cloneType;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeCount = defaults.computeCount;
+    	      this.computeModel = defaults.computeModel;
     	      this.connectionStrings = defaults.connectionStrings;
     	      this.connectionUrls = defaults.connectionUrls;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -1358,6 +1396,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.scheduledOperations = defaults.scheduledOperations;
+    	      this.secretId = defaults.secretId;
+    	      this.secretVersionNumber = defaults.secretVersionNumber;
     	      this.serviceConsoleUrl = defaults.serviceConsoleUrl;
     	      this.source = defaults.source;
     	      this.sourceId = defaults.sourceId;
@@ -1466,6 +1506,16 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeCount(Double computeCount) {
+            this.computeCount = Objects.requireNonNull(computeCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            this.computeModel = Objects.requireNonNull(computeModel);
             return this;
         }
         @CustomType.Setter
@@ -1796,6 +1846,16 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return scheduledOperations(List.of(scheduledOperations));
         }
         @CustomType.Setter
+        public Builder secretId(String secretId) {
+            this.secretId = Objects.requireNonNull(secretId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secretVersionNumber(Integer secretVersionNumber) {
+            this.secretVersionNumber = Objects.requireNonNull(secretVersionNumber);
+            return this;
+        }
+        @CustomType.Setter
         public Builder serviceConsoleUrl(String serviceConsoleUrl) {
             this.serviceConsoleUrl = Objects.requireNonNull(serviceConsoleUrl);
             return this;
@@ -1968,6 +2028,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             o.characterSet = characterSet;
             o.cloneType = cloneType;
             o.compartmentId = compartmentId;
+            o.computeCount = computeCount;
+            o.computeModel = computeModel;
             o.connectionStrings = connectionStrings;
             o.connectionUrls = connectionUrls;
             o.cpuCoreCount = cpuCoreCount;
@@ -2028,6 +2090,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             o.role = role;
             o.rotateKeyTrigger = rotateKeyTrigger;
             o.scheduledOperations = scheduledOperations;
+            o.secretId = secretId;
+            o.secretVersionNumber = secretVersionNumber;
             o.serviceConsoleUrl = serviceConsoleUrl;
             o.source = source;
             o.sourceId = sourceId;

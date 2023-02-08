@@ -131,6 +131,13 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         return Optional.ofNullable(this.compartmentId);
     }
 
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
     @Import(name="dbUniqueName")
     private @Nullable Output<String> dbUniqueName;
 
@@ -672,6 +679,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.backupConfig = $.backupConfig;
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
+        this.computeModel = $.computeModel;
         this.dbUniqueName = $.dbUniqueName;
         this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
@@ -874,6 +882,15 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
         }
 
         public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {

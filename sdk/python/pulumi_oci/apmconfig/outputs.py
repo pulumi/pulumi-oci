@@ -12,14 +12,17 @@ from . import outputs
 
 __all__ = [
     'ConfigDimension',
+    'ConfigInUseBy',
     'ConfigMetric',
     'ConfigRule',
     'GetConfigDimensionResult',
+    'GetConfigInUseByResult',
     'GetConfigMetricResult',
     'GetConfigRuleResult',
     'GetConfigsConfigCollectionResult',
     'GetConfigsConfigCollectionItemResult',
     'GetConfigsConfigCollectionItemDimensionResult',
+    'GetConfigsConfigCollectionItemInUseByResult',
     'GetConfigsConfigCollectionItemMetricResult',
     'GetConfigsConfigCollectionItemRuleResult',
     'GetConfigsFilterResult',
@@ -71,6 +74,82 @@ class ConfigDimension(dict):
         (Updatable) This must not be set.
         """
         return pulumi.get(self, "value_source")
+
+
+@pulumi.output_type
+class ConfigInUseBy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configType":
+            suggest = "config_type"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "optionsGroup":
+            suggest = "options_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigInUseBy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigInUseBy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigInUseBy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_type: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 options_group: Optional[str] = None):
+        """
+        :param str config_type: (Updatable) The type of configuration item.
+        :param str display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        :param str options_group: A string that specifies the group that an OPTIONS item belongs to.
+        """
+        if config_type is not None:
+            pulumi.set(__self__, "config_type", config_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if options_group is not None:
+            pulumi.set(__self__, "options_group", options_group)
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of configuration item.
+        """
+        return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) The name by which a configuration entity is displayed to the end user.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="optionsGroup")
+    def options_group(self) -> Optional[str]:
+        """
+        A string that specifies the group that an OPTIONS item belongs to.
+        """
+        return pulumi.get(self, "options_group")
 
 
 @pulumi.output_type
@@ -293,6 +372,57 @@ class GetConfigDimensionResult(dict):
 
 
 @pulumi.output_type
+class GetConfigInUseByResult(dict):
+    def __init__(__self__, *,
+                 config_type: str,
+                 display_name: str,
+                 id: str,
+                 options_group: str):
+        """
+        :param str config_type: The type of configuration item.
+        :param str display_name: The name by which a configuration entity is displayed to the end user.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        :param str options_group: A string that specifies the group that an OPTIONS item belongs to.
+        """
+        pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "options_group", options_group)
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> str:
+        """
+        The type of configuration item.
+        """
+        return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name by which a configuration entity is displayed to the end user.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="optionsGroup")
+    def options_group(self) -> str:
+        """
+        A string that specifies the group that an OPTIONS item belongs to.
+        """
+        return pulumi.get(self, "options_group")
+
+
+@pulumi.output_type
 class GetConfigMetricResult(dict):
     def __init__(__self__, *,
                  description: str,
@@ -444,51 +574,62 @@ class GetConfigsConfigCollectionItemResult(dict):
     def __init__(__self__, *,
                  apm_domain_id: str,
                  config_type: str,
+                 created_by: str,
                  defined_tags: Mapping[str, Any],
                  description: str,
                  dimensions: Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult'],
                  display_name: str,
+                 etag: str,
                  filter_id: str,
                  filter_text: str,
                  freeform_tags: Mapping[str, Any],
                  group: str,
                  id: str,
+                 in_use_bies: Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult'],
                  metrics: Sequence['outputs.GetConfigsConfigCollectionItemMetricResult'],
                  namespace: str,
                  opc_dry_run: str,
                  options: str,
                  rules: Sequence['outputs.GetConfigsConfigCollectionItemRuleResult'],
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 updated_by: str):
         """
         :param str apm_domain_id: The APM Domain ID the request is intended for.
         :param str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        :param str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description of the metric.
         :param Sequence['GetConfigsConfigCollectionItemDimensionArgs'] dimensions: A list of dimensions for the metric. This variable should not be used.
         :param str display_name: A filter to return resources that match the given display name.
+        :param str etag: For optimistic concurrency control. See `if-match`.
         :param str filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param str filter_text: The string that defines the Span Filter expression.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str group: A string that specifies the group that an OPTIONS item belongs to.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        :param Sequence['GetConfigsConfigCollectionItemInUseByArgs'] in_use_bies: The list of configuration items that reference the span filter.
         :param Sequence['GetConfigsConfigCollectionItemMetricArgs'] metrics: The list of metrics in this group.
         :param str namespace: The namespace to which the metrics are published. It must be one of several predefined namespaces.
         :param str options: The options are stored here as JSON.
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        :param str updated_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "dimensions", dimensions)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "etag", etag)
         pulumi.set(__self__, "filter_id", filter_id)
         pulumi.set(__self__, "filter_text", filter_text)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "group", group)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "in_use_bies", in_use_bies)
         pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "opc_dry_run", opc_dry_run)
@@ -496,6 +637,7 @@ class GetConfigsConfigCollectionItemResult(dict):
         pulumi.set(__self__, "rules", rules)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -512,6 +654,14 @@ class GetConfigsConfigCollectionItemResult(dict):
         A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
         """
         return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        """
+        return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -544,6 +694,14 @@ class GetConfigsConfigCollectionItemResult(dict):
         A filter to return resources that match the given display name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def etag(self) -> str:
+        """
+        For optimistic concurrency control. See `if-match`.
+        """
+        return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="filterId")
@@ -584,6 +742,14 @@ class GetConfigsConfigCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="inUseBies")
+    def in_use_bies(self) -> Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult']:
+        """
+        The list of configuration items that reference the span filter.
+        """
+        return pulumi.get(self, "in_use_bies")
 
     @property
     @pulumi.getter
@@ -635,6 +801,14 @@ class GetConfigsConfigCollectionItemResult(dict):
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        """
+        return pulumi.get(self, "updated_by")
+
 
 @pulumi.output_type
 class GetConfigsConfigCollectionItemDimensionResult(dict):
@@ -663,6 +837,57 @@ class GetConfigsConfigCollectionItemDimensionResult(dict):
         This must not be set.
         """
         return pulumi.get(self, "value_source")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemInUseByResult(dict):
+    def __init__(__self__, *,
+                 config_type: str,
+                 display_name: str,
+                 id: str,
+                 options_group: str):
+        """
+        :param str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        :param str display_name: A filter to return resources that match the given display name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        :param str options_group: A filter to return OPTIONS resources that match the given group.
+        """
+        pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "options_group", options_group)
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> str:
+        """
+        A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        """
+        return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return resources that match the given display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="optionsGroup")
+    def options_group(self) -> str:
+        """
+        A filter to return OPTIONS resources that match the given group.
+        """
+        return pulumi.get(self, "options_group")
 
 
 @pulumi.output_type

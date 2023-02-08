@@ -22,7 +22,7 @@ class GetConfigResult:
     """
     A collection of values returned by getConfig.
     """
-    def __init__(__self__, apm_domain_id=None, config_id=None, config_type=None, defined_tags=None, description=None, dimensions=None, display_name=None, filter_id=None, filter_text=None, freeform_tags=None, group=None, id=None, metrics=None, namespace=None, opc_dry_run=None, options=None, rules=None, time_created=None, time_updated=None):
+    def __init__(__self__, apm_domain_id=None, config_id=None, config_type=None, created_by=None, defined_tags=None, description=None, dimensions=None, display_name=None, etag=None, filter_id=None, filter_text=None, freeform_tags=None, group=None, id=None, in_use_bies=None, metrics=None, namespace=None, opc_dry_run=None, options=None, rules=None, time_created=None, time_updated=None, updated_by=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -32,6 +32,9 @@ class GetConfigResult:
         if config_type and not isinstance(config_type, str):
             raise TypeError("Expected argument 'config_type' to be a str")
         pulumi.set(__self__, "config_type", config_type)
+        if created_by and not isinstance(created_by, str):
+            raise TypeError("Expected argument 'created_by' to be a str")
+        pulumi.set(__self__, "created_by", created_by)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -44,6 +47,9 @@ class GetConfigResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if etag and not isinstance(etag, str):
+            raise TypeError("Expected argument 'etag' to be a str")
+        pulumi.set(__self__, "etag", etag)
         if filter_id and not isinstance(filter_id, str):
             raise TypeError("Expected argument 'filter_id' to be a str")
         pulumi.set(__self__, "filter_id", filter_id)
@@ -59,6 +65,9 @@ class GetConfigResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if in_use_bies and not isinstance(in_use_bies, list):
+            raise TypeError("Expected argument 'in_use_bies' to be a list")
+        pulumi.set(__self__, "in_use_bies", in_use_bies)
         if metrics and not isinstance(metrics, list):
             raise TypeError("Expected argument 'metrics' to be a list")
         pulumi.set(__self__, "metrics", metrics)
@@ -80,6 +89,9 @@ class GetConfigResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by and not isinstance(updated_by, str):
+            raise TypeError("Expected argument 'updated_by' to be a str")
+        pulumi.set(__self__, "updated_by", updated_by)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -98,6 +110,14 @@ class GetConfigResult:
         The type of configuration item.
         """
         return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        """
+        return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -130,6 +150,14 @@ class GetConfigResult:
         The name by which a configuration entity is displayed to the end user.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def etag(self) -> str:
+        """
+        For optimistic concurrency control. See `if-match`.
+        """
+        return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="filterId")
@@ -170,6 +198,14 @@ class GetConfigResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="inUseBies")
+    def in_use_bies(self) -> Sequence['outputs.GetConfigInUseByResult']:
+        """
+        The list of configuration items that reference the span filter.
+        """
+        return pulumi.get(self, "in_use_bies")
 
     @property
     @pulumi.getter
@@ -221,6 +257,14 @@ class GetConfigResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        """
+        return pulumi.get(self, "updated_by")
+
 
 class AwaitableGetConfigResult(GetConfigResult):
     # pylint: disable=using-constant-test
@@ -231,22 +275,26 @@ class AwaitableGetConfigResult(GetConfigResult):
             apm_domain_id=self.apm_domain_id,
             config_id=self.config_id,
             config_type=self.config_type,
+            created_by=self.created_by,
             defined_tags=self.defined_tags,
             description=self.description,
             dimensions=self.dimensions,
             display_name=self.display_name,
+            etag=self.etag,
             filter_id=self.filter_id,
             filter_text=self.filter_text,
             freeform_tags=self.freeform_tags,
             group=self.group,
             id=self.id,
+            in_use_bies=self.in_use_bies,
             metrics=self.metrics,
             namespace=self.namespace,
             opc_dry_run=self.opc_dry_run,
             options=self.options,
             rules=self.rules,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            updated_by=self.updated_by)
 
 
 def get_config(apm_domain_id: Optional[str] = None,
@@ -281,22 +329,26 @@ def get_config(apm_domain_id: Optional[str] = None,
         apm_domain_id=__ret__.apm_domain_id,
         config_id=__ret__.config_id,
         config_type=__ret__.config_type,
+        created_by=__ret__.created_by,
         defined_tags=__ret__.defined_tags,
         description=__ret__.description,
         dimensions=__ret__.dimensions,
         display_name=__ret__.display_name,
+        etag=__ret__.etag,
         filter_id=__ret__.filter_id,
         filter_text=__ret__.filter_text,
         freeform_tags=__ret__.freeform_tags,
         group=__ret__.group,
         id=__ret__.id,
+        in_use_bies=__ret__.in_use_bies,
         metrics=__ret__.metrics,
         namespace=__ret__.namespace,
         opc_dry_run=__ret__.opc_dry_run,
         options=__ret__.options,
         rules=__ret__.rules,
         time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        time_updated=__ret__.time_updated,
+        updated_by=__ret__.updated_by)
 
 
 @_utilities.lift_output_func(get_config)

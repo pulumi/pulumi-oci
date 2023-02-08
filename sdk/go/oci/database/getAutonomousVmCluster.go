@@ -69,6 +69,8 @@ type LookupAutonomousVmClusterResult struct {
 	AvailableDataStorageSizeInTbs float64 `pulumi:"availableDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The compute model of the Autonomous VM Cluster.
+	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores enabled per VM cluster node.
 	CpuCoreCountPerNode int `pulumi:"cpuCoreCountPerNode"`
 	// The number of enabled CPU cores.
@@ -198,6 +200,11 @@ func (o LookupAutonomousVmClusterResultOutput) AvailableDataStorageSizeInTbs() p
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o LookupAutonomousVmClusterResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The compute model of the Autonomous VM Cluster.
+func (o LookupAutonomousVmClusterResultOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 // The number of CPU cores enabled per VM cluster node.

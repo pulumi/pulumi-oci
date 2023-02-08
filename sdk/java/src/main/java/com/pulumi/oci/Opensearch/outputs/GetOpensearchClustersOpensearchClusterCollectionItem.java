@@ -144,6 +144,21 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      */
     private String opensearchPrivateIp;
     /**
+     * @return The name of the master user that are used to manage security config
+     * 
+     */
+    private String securityMasterUserName;
+    /**
+     * @return The password hash of the master user that are used to manage security config
+     * 
+     */
+    private String securityMasterUserPasswordHash;
+    /**
+     * @return The security mode of the cluster.
+     * 
+     */
+    private String securityMode;
+    /**
      * @return The software version the cluster is running.
      * 
      */
@@ -383,6 +398,27 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         return this.opensearchPrivateIp;
     }
     /**
+     * @return The name of the master user that are used to manage security config
+     * 
+     */
+    public String securityMasterUserName() {
+        return this.securityMasterUserName;
+    }
+    /**
+     * @return The password hash of the master user that are used to manage security config
+     * 
+     */
+    public String securityMasterUserPasswordHash() {
+        return this.securityMasterUserPasswordHash;
+    }
+    /**
+     * @return The security mode of the cluster.
+     * 
+     */
+    public String securityMode() {
+        return this.securityMode;
+    }
+    /**
      * @return The software version the cluster is running.
      * 
      */
@@ -495,6 +531,9 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         private String opendashboardPrivateIp;
         private String opensearchFqdn;
         private String opensearchPrivateIp;
+        private String securityMasterUserName;
+        private String securityMasterUserPasswordHash;
+        private String securityMode;
         private String softwareVersion;
         private String state;
         private String subnetCompartmentId;
@@ -535,6 +574,9 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
     	      this.opendashboardPrivateIp = defaults.opendashboardPrivateIp;
     	      this.opensearchFqdn = defaults.opensearchFqdn;
     	      this.opensearchPrivateIp = defaults.opensearchPrivateIp;
+    	      this.securityMasterUserName = defaults.securityMasterUserName;
+    	      this.securityMasterUserPasswordHash = defaults.securityMasterUserPasswordHash;
+    	      this.securityMode = defaults.securityMode;
     	      this.softwareVersion = defaults.softwareVersion;
     	      this.state = defaults.state;
     	      this.subnetCompartmentId = defaults.subnetCompartmentId;
@@ -682,6 +724,21 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder securityMasterUserName(String securityMasterUserName) {
+            this.securityMasterUserName = Objects.requireNonNull(securityMasterUserName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityMasterUserPasswordHash(String securityMasterUserPasswordHash) {
+            this.securityMasterUserPasswordHash = Objects.requireNonNull(securityMasterUserPasswordHash);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityMode(String securityMode) {
+            this.securityMode = Objects.requireNonNull(securityMode);
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareVersion(String softwareVersion) {
             this.softwareVersion = Objects.requireNonNull(softwareVersion);
             return this;
@@ -764,6 +821,9 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             o.opendashboardPrivateIp = opendashboardPrivateIp;
             o.opensearchFqdn = opensearchFqdn;
             o.opensearchPrivateIp = opensearchPrivateIp;
+            o.securityMasterUserName = securityMasterUserName;
+            o.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+            o.securityMode = securityMode;
             o.softwareVersion = softwareVersion;
             o.state = state;
             o.subnetCompartmentId = subnetCompartmentId;

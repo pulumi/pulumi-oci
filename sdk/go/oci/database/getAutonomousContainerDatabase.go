@@ -71,6 +71,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	CloudAutonomousVmClusterId string `pulumi:"cloudAutonomousVmClusterId"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	ComputeModel  string `pulumi:"computeModel"`
 	DbUniqueName  string `pulumi:"dbUniqueName"`
 	// Oracle Database version of the Autonomous Container Database.
 	DbVersion string `pulumi:"dbVersion"`
@@ -214,6 +215,10 @@ func (o LookupAutonomousContainerDatabaseResultOutput) CloudAutonomousVmClusterI
 // The OCID of the compartment.
 func (o LookupAutonomousContainerDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseResultOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 func (o LookupAutonomousContainerDatabaseResultOutput) DbUniqueName() pulumi.StringOutput {

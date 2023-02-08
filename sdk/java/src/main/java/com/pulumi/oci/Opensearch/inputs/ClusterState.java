@@ -395,6 +395,51 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The name of the master user that are used to manage security config
+     * 
+     */
+    @Import(name="securityMasterUserName")
+    private @Nullable Output<String> securityMasterUserName;
+
+    /**
+     * @return (Updatable) The name of the master user that are used to manage security config
+     * 
+     */
+    public Optional<Output<String>> securityMasterUserName() {
+        return Optional.ofNullable(this.securityMasterUserName);
+    }
+
+    /**
+     * (Updatable) The password hash of the master user that are used to manage security config
+     * 
+     */
+    @Import(name="securityMasterUserPasswordHash")
+    private @Nullable Output<String> securityMasterUserPasswordHash;
+
+    /**
+     * @return (Updatable) The password hash of the master user that are used to manage security config
+     * 
+     */
+    public Optional<Output<String>> securityMasterUserPasswordHash() {
+        return Optional.ofNullable(this.securityMasterUserPasswordHash);
+    }
+
+    /**
+     * (Updatable) The security mode of the cluster.
+     * 
+     */
+    @Import(name="securityMode")
+    private @Nullable Output<String> securityMode;
+
+    /**
+     * @return (Updatable) The security mode of the cluster.
+     * 
+     */
+    public Optional<Output<String>> securityMode() {
+        return Optional.ofNullable(this.securityMode);
+    }
+
+    /**
      * (Updatable) The version of the software the cluster is running.
      * 
      */
@@ -587,6 +632,9 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.opendashboardPrivateIp = $.opendashboardPrivateIp;
         this.opensearchFqdn = $.opensearchFqdn;
         this.opensearchPrivateIp = $.opensearchPrivateIp;
+        this.securityMasterUserName = $.securityMasterUserName;
+        this.securityMasterUserPasswordHash = $.securityMasterUserPasswordHash;
+        this.securityMode = $.securityMode;
         this.softwareVersion = $.softwareVersion;
         this.state = $.state;
         this.subnetCompartmentId = $.subnetCompartmentId;
@@ -1151,6 +1199,69 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder opensearchPrivateIp(String opensearchPrivateIp) {
             return opensearchPrivateIp(Output.of(opensearchPrivateIp));
+        }
+
+        /**
+         * @param securityMasterUserName (Updatable) The name of the master user that are used to manage security config
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityMasterUserName(@Nullable Output<String> securityMasterUserName) {
+            $.securityMasterUserName = securityMasterUserName;
+            return this;
+        }
+
+        /**
+         * @param securityMasterUserName (Updatable) The name of the master user that are used to manage security config
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityMasterUserName(String securityMasterUserName) {
+            return securityMasterUserName(Output.of(securityMasterUserName));
+        }
+
+        /**
+         * @param securityMasterUserPasswordHash (Updatable) The password hash of the master user that are used to manage security config
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityMasterUserPasswordHash(@Nullable Output<String> securityMasterUserPasswordHash) {
+            $.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+            return this;
+        }
+
+        /**
+         * @param securityMasterUserPasswordHash (Updatable) The password hash of the master user that are used to manage security config
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityMasterUserPasswordHash(String securityMasterUserPasswordHash) {
+            return securityMasterUserPasswordHash(Output.of(securityMasterUserPasswordHash));
+        }
+
+        /**
+         * @param securityMode (Updatable) The security mode of the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityMode(@Nullable Output<String> securityMode) {
+            $.securityMode = securityMode;
+            return this;
+        }
+
+        /**
+         * @param securityMode (Updatable) The security mode of the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityMode(String securityMode) {
+            return securityMode(Output.of(securityMode));
         }
 
         /**

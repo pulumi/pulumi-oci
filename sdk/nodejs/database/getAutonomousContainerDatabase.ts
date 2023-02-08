@@ -73,6 +73,7 @@ export interface GetAutonomousContainerDatabaseResult {
      * The OCID of the compartment.
      */
     readonly compartmentId: string;
+    readonly computeModel: string;
     readonly dbUniqueName: string;
     /**
      * Oracle Database version of the Autonomous Container Database.

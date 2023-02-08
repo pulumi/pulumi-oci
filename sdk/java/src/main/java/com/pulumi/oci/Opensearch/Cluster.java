@@ -99,6 +99,9 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .masterNodeHostBareMetalShape(var_.opensearch_cluster_master_node_host_bare_metal_shape())
+ *             .securityMasterUserName(oci_identity_user.test_user().name())
+ *             .securityMasterUserPasswordHash(var_.opensearch_cluster_security_master_user_password_hash())
+ *             .securityMode(var_.opensearch_cluster_security_mode())
  *             .systemTags(var_.opensearch_cluster_system_tags())
  *             .build());
  * 
@@ -468,6 +471,48 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.opensearchPrivateIp;
     }
     /**
+     * (Updatable) The name of the master user that are used to manage security config
+     * 
+     */
+    @Export(name="securityMasterUserName", type=String.class, parameters={})
+    private Output<String> securityMasterUserName;
+
+    /**
+     * @return (Updatable) The name of the master user that are used to manage security config
+     * 
+     */
+    public Output<String> securityMasterUserName() {
+        return this.securityMasterUserName;
+    }
+    /**
+     * (Updatable) The password hash of the master user that are used to manage security config
+     * 
+     */
+    @Export(name="securityMasterUserPasswordHash", type=String.class, parameters={})
+    private Output<String> securityMasterUserPasswordHash;
+
+    /**
+     * @return (Updatable) The password hash of the master user that are used to manage security config
+     * 
+     */
+    public Output<String> securityMasterUserPasswordHash() {
+        return this.securityMasterUserPasswordHash;
+    }
+    /**
+     * (Updatable) The security mode of the cluster.
+     * 
+     */
+    @Export(name="securityMode", type=String.class, parameters={})
+    private Output<String> securityMode;
+
+    /**
+     * @return (Updatable) The security mode of the cluster.
+     * 
+     */
+    public Output<String> securityMode() {
+        return this.securityMode;
+    }
+    /**
      * (Updatable) The version of the software the cluster is running.
      * 
      */
@@ -654,6 +699,9 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "securityMasterUserPasswordHash"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

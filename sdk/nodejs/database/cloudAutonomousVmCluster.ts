@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     subnetId: oci_core_subnet.test_subnet.id,
  *     autonomousDataStorageSizeInTbs: _var.cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
  *     clusterTimeZone: _var.cloud_autonomous_vm_cluster_cluster_time_zone,
+ *     computeModel: _var.cloud_autonomous_vm_cluster_compute_model,
  *     cpuCoreCountPerNode: _var.cloud_autonomous_vm_cluster_cpu_core_count_per_node,
  *     dbServers: _var.cloud_autonomous_vm_cluster_db_servers,
  *     definedTags: _var.cloud_autonomous_vm_cluster_defined_tags,
@@ -122,6 +123,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     */
+    public readonly computeModel!: pulumi.Output<string>;
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster.
      */
@@ -269,6 +274,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["cloudExadataInfrastructureId"] = state ? state.cloudExadataInfrastructureId : undefined;
             resourceInputs["clusterTimeZone"] = state ? state.clusterTimeZone : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["cpuCoreCountPerNode"] = state ? state.cpuCoreCountPerNode : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
@@ -318,6 +324,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["cloudExadataInfrastructureId"] = args ? args.cloudExadataInfrastructureId : undefined;
             resourceInputs["clusterTimeZone"] = args ? args.clusterTimeZone : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
             resourceInputs["cpuCoreCountPerNode"] = args ? args.cpuCoreCountPerNode : undefined;
             resourceInputs["dbServers"] = args ? args.dbServers : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -395,6 +402,10 @@ export interface CloudAutonomousVmClusterState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     */
+    computeModel?: pulumi.Input<string>;
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster.
      */
@@ -542,6 +553,10 @@ export interface CloudAutonomousVmClusterArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     */
+    computeModel?: pulumi.Input<string>;
     /**
      * The number of OCPU cores to be enabled per VM cluster node.
      */

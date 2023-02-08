@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
+        public readonly string ComputeModel;
         public readonly string DbUniqueName;
         /// <summary>
         /// Oracle Database version of the Autonomous Container Database.
@@ -174,6 +175,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string compartmentId,
 
+            string computeModel,
+
             string dbUniqueName,
 
             string dbVersion,
@@ -257,6 +260,7 @@ namespace Pulumi.Oci.Database.Outputs
             BackupConfigs = backupConfigs;
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             CompartmentId = compartmentId;
+            ComputeModel = computeModel;
             DbUniqueName = dbUniqueName;
             DbVersion = dbVersion;
             DefinedTags = definedTags;

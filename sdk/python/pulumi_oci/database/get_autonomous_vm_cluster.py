@@ -22,7 +22,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, ocpus_enabled=None, reclaimable_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, ocpus_enabled=None, reclaimable_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -44,6 +44,9 @@ class GetAutonomousVmClusterResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count_per_node and not isinstance(cpu_core_count_per_node, int):
             raise TypeError("Expected argument 'cpu_core_count_per_node' to be a int")
         pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
@@ -184,6 +187,14 @@ class GetAutonomousVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCountPerNode")
@@ -428,6 +439,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             available_cpus=self.available_cpus,
             available_data_storage_size_in_tbs=self.available_data_storage_size_in_tbs,
             compartment_id=self.compartment_id,
+            compute_model=self.compute_model,
             cpu_core_count_per_node=self.cpu_core_count_per_node,
             cpus_enabled=self.cpus_enabled,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
@@ -491,6 +503,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         available_cpus=__ret__.available_cpus,
         available_data_storage_size_in_tbs=__ret__.available_data_storage_size_in_tbs,
         compartment_id=__ret__.compartment_id,
+        compute_model=__ret__.compute_model,
         cpu_core_count_per_node=__ret__.cpu_core_count_per_node,
         cpus_enabled=__ret__.cpus_enabled,
         data_storage_size_in_gb=__ret__.data_storage_size_in_gb,

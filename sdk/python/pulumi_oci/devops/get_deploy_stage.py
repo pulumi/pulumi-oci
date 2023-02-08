@@ -22,7 +22,7 @@ class GetDeployStageResult:
     """
     A collection of values returned by getDeployStage.
     """
-    def __init__(__self__, approval_policies=None, blue_backend_ips=None, blue_green_strategies=None, canary_strategies=None, compartment_id=None, compute_instance_group_blue_green_deployment_deploy_stage_id=None, compute_instance_group_canary_deploy_stage_id=None, compute_instance_group_canary_traffic_shift_deploy_stage_id=None, compute_instance_group_deploy_environment_id=None, config=None, defined_tags=None, deploy_artifact_id=None, deploy_artifact_ids=None, deploy_environment_id_a=None, deploy_environment_id_b=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_predecessor_collections=None, deploy_stage_type=None, deployment_spec_deploy_artifact_id=None, description=None, display_name=None, docker_image_deploy_artifact_id=None, failure_policies=None, freeform_tags=None, function_deploy_environment_id=None, function_timeout_in_seconds=None, green_backend_ips=None, helm_chart_deploy_artifact_id=None, id=None, is_async=None, is_validation_enabled=None, kubernetes_manifest_deploy_artifact_ids=None, lifecycle_details=None, load_balancer_configs=None, max_memory_in_mbs=None, namespace=None, oke_blue_green_deploy_stage_id=None, oke_canary_deploy_stage_id=None, oke_canary_traffic_shift_deploy_stage_id=None, oke_cluster_deploy_environment_id=None, production_load_balancer_configs=None, project_id=None, release_name=None, rollback_policies=None, rollout_policies=None, state=None, system_tags=None, test_load_balancer_configs=None, time_created=None, time_updated=None, timeout_in_seconds=None, traffic_shift_target=None, values_artifact_ids=None, wait_criterias=None):
+    def __init__(__self__, approval_policies=None, blue_backend_ips=None, blue_green_strategies=None, canary_strategies=None, command_spec_deploy_artifact_id=None, compartment_id=None, compute_instance_group_blue_green_deployment_deploy_stage_id=None, compute_instance_group_canary_deploy_stage_id=None, compute_instance_group_canary_traffic_shift_deploy_stage_id=None, compute_instance_group_deploy_environment_id=None, config=None, container_configs=None, defined_tags=None, deploy_artifact_id=None, deploy_artifact_ids=None, deploy_environment_id_a=None, deploy_environment_id_b=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_predecessor_collections=None, deploy_stage_type=None, deployment_spec_deploy_artifact_id=None, description=None, display_name=None, docker_image_deploy_artifact_id=None, failure_policies=None, freeform_tags=None, function_deploy_environment_id=None, function_timeout_in_seconds=None, green_backend_ips=None, helm_chart_deploy_artifact_id=None, id=None, is_async=None, is_validation_enabled=None, kubernetes_manifest_deploy_artifact_ids=None, lifecycle_details=None, load_balancer_configs=None, max_memory_in_mbs=None, namespace=None, oke_blue_green_deploy_stage_id=None, oke_canary_deploy_stage_id=None, oke_canary_traffic_shift_deploy_stage_id=None, oke_cluster_deploy_environment_id=None, production_load_balancer_configs=None, project_id=None, release_name=None, rollback_policies=None, rollout_policies=None, state=None, system_tags=None, test_load_balancer_configs=None, time_created=None, time_updated=None, timeout_in_seconds=None, traffic_shift_target=None, values_artifact_ids=None, wait_criterias=None):
         if approval_policies and not isinstance(approval_policies, list):
             raise TypeError("Expected argument 'approval_policies' to be a list")
         pulumi.set(__self__, "approval_policies", approval_policies)
@@ -35,6 +35,9 @@ class GetDeployStageResult:
         if canary_strategies and not isinstance(canary_strategies, list):
             raise TypeError("Expected argument 'canary_strategies' to be a list")
         pulumi.set(__self__, "canary_strategies", canary_strategies)
+        if command_spec_deploy_artifact_id and not isinstance(command_spec_deploy_artifact_id, str):
+            raise TypeError("Expected argument 'command_spec_deploy_artifact_id' to be a str")
+        pulumi.set(__self__, "command_spec_deploy_artifact_id", command_spec_deploy_artifact_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,6 +56,9 @@ class GetDeployStageResult:
         if config and not isinstance(config, dict):
             raise TypeError("Expected argument 'config' to be a dict")
         pulumi.set(__self__, "config", config)
+        if container_configs and not isinstance(container_configs, list):
+            raise TypeError("Expected argument 'container_configs' to be a list")
+        pulumi.set(__self__, "container_configs", container_configs)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -222,10 +228,18 @@ class GetDeployStageResult:
         return pulumi.get(self, "canary_strategies")
 
     @property
+    @pulumi.getter(name="commandSpecDeployArtifactId")
+    def command_spec_deploy_artifact_id(self) -> str:
+        """
+        The OCID of the artifact that contains the command specification.
+        """
+        return pulumi.get(self, "command_spec_deploy_artifact_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of a compartment.
+        The OCID of the compartment where the ContainerInstance will be created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -268,6 +282,14 @@ class GetDeployStageResult:
         User provided key and value pair configuration, which is assigned through constants or parameter.
         """
         return pulumi.get(self, "config")
+
+    @property
+    @pulumi.getter(name="containerConfigs")
+    def container_configs(self) -> Sequence['outputs.GetDeployStageContainerConfigResult']:
+        """
+        Specifies the container configuration.
+        """
+        return pulumi.get(self, "container_configs")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -598,7 +620,7 @@ class GetDeployStageResult:
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> int:
         """
-        Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -637,12 +659,14 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             blue_backend_ips=self.blue_backend_ips,
             blue_green_strategies=self.blue_green_strategies,
             canary_strategies=self.canary_strategies,
+            command_spec_deploy_artifact_id=self.command_spec_deploy_artifact_id,
             compartment_id=self.compartment_id,
             compute_instance_group_blue_green_deployment_deploy_stage_id=self.compute_instance_group_blue_green_deployment_deploy_stage_id,
             compute_instance_group_canary_deploy_stage_id=self.compute_instance_group_canary_deploy_stage_id,
             compute_instance_group_canary_traffic_shift_deploy_stage_id=self.compute_instance_group_canary_traffic_shift_deploy_stage_id,
             compute_instance_group_deploy_environment_id=self.compute_instance_group_deploy_environment_id,
             config=self.config,
+            container_configs=self.container_configs,
             defined_tags=self.defined_tags,
             deploy_artifact_id=self.deploy_artifact_id,
             deploy_artifact_ids=self.deploy_artifact_ids,
@@ -719,12 +743,14 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         blue_backend_ips=__ret__.blue_backend_ips,
         blue_green_strategies=__ret__.blue_green_strategies,
         canary_strategies=__ret__.canary_strategies,
+        command_spec_deploy_artifact_id=__ret__.command_spec_deploy_artifact_id,
         compartment_id=__ret__.compartment_id,
         compute_instance_group_blue_green_deployment_deploy_stage_id=__ret__.compute_instance_group_blue_green_deployment_deploy_stage_id,
         compute_instance_group_canary_deploy_stage_id=__ret__.compute_instance_group_canary_deploy_stage_id,
         compute_instance_group_canary_traffic_shift_deploy_stage_id=__ret__.compute_instance_group_canary_traffic_shift_deploy_stage_id,
         compute_instance_group_deploy_environment_id=__ret__.compute_instance_group_deploy_environment_id,
         config=__ret__.config,
+        container_configs=__ret__.container_configs,
         defined_tags=__ret__.defined_tags,
         deploy_artifact_id=__ret__.deploy_artifact_id,
         deploy_artifact_ids=__ret__.deploy_artifact_ids,

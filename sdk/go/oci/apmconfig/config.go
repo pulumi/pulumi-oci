@@ -97,6 +97,8 @@ type Config struct {
 	ApmDomainId pulumi.StringOutput `pulumi:"apmDomainId"`
 	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A description of the metric.
@@ -105,6 +107,8 @@ type Config struct {
 	Dimensions ConfigDimensionArrayOutput `pulumi:"dimensions"`
 	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// For optimistic concurrency control. See `if-match`.
+	Etag pulumi.StringOutput `pulumi:"etag"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId pulumi.StringOutput `pulumi:"filterId"`
 	// (Updatable) The string that defines the Span Filter expression.
@@ -113,6 +117,8 @@ type Config struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group pulumi.StringOutput `pulumi:"group"`
+	// The list of configuration items that reference the span filter.
+	InUseBies ConfigInUseByArrayOutput `pulumi:"inUseBies"`
 	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayOutput `pulumi:"metrics"`
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -127,6 +133,8 @@ type Config struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	UpdatedBy pulumi.StringOutput `pulumi:"updatedBy"`
 }
 
 // NewConfig registers a new resource with the given unique name, arguments, and options.
@@ -171,6 +179,8 @@ type configState struct {
 	ApmDomainId *string `pulumi:"apmDomainId"`
 	// (Updatable) The type of configuration item.
 	ConfigType *string `pulumi:"configType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A description of the metric.
@@ -179,6 +189,8 @@ type configState struct {
 	Dimensions []ConfigDimension `pulumi:"dimensions"`
 	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName *string `pulumi:"displayName"`
+	// For optimistic concurrency control. See `if-match`.
+	Etag *string `pulumi:"etag"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId *string `pulumi:"filterId"`
 	// (Updatable) The string that defines the Span Filter expression.
@@ -187,6 +199,8 @@ type configState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group *string `pulumi:"group"`
+	// The list of configuration items that reference the span filter.
+	InUseBies []ConfigInUseBy `pulumi:"inUseBies"`
 	// (Updatable) The list of metrics in this group.
 	Metrics []ConfigMetric `pulumi:"metrics"`
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -201,6 +215,8 @@ type configState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	UpdatedBy *string `pulumi:"updatedBy"`
 }
 
 type ConfigState struct {
@@ -208,6 +224,8 @@ type ConfigState struct {
 	ApmDomainId pulumi.StringPtrInput
 	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) A description of the metric.
@@ -216,6 +234,8 @@ type ConfigState struct {
 	Dimensions ConfigDimensionArrayInput
 	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName pulumi.StringPtrInput
+	// For optimistic concurrency control. See `if-match`.
+	Etag pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId pulumi.StringPtrInput
 	// (Updatable) The string that defines the Span Filter expression.
@@ -224,6 +244,8 @@ type ConfigState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group pulumi.StringPtrInput
+	// The list of configuration items that reference the span filter.
+	InUseBies ConfigInUseByArrayInput
 	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayInput
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -238,6 +260,8 @@ type ConfigState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	UpdatedBy pulumi.StringPtrInput
 }
 
 func (ConfigState) ElementType() reflect.Type {
@@ -265,6 +289,8 @@ type configArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group *string `pulumi:"group"`
+	// The list of configuration items that reference the span filter.
+	InUseBies []ConfigInUseBy `pulumi:"inUseBies"`
 	// (Updatable) The list of metrics in this group.
 	Metrics []ConfigMetric `pulumi:"metrics"`
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -299,6 +325,8 @@ type ConfigArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group pulumi.StringPtrInput
+	// The list of configuration items that reference the span filter.
+	InUseBies ConfigInUseByArrayInput
 	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayInput
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -408,6 +436,11 @@ func (o ConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ConfigType }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+func (o ConfigOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
@@ -428,6 +461,11 @@ func (o ConfigOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// For optimistic concurrency control. See `if-match`.
+func (o ConfigOutput) Etag() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Etag }).(pulumi.StringOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 func (o ConfigOutput) FilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.FilterId }).(pulumi.StringOutput)
@@ -446,6 +484,11 @@ func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
 // (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 func (o ConfigOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
+}
+
+// The list of configuration items that reference the span filter.
+func (o ConfigOutput) InUseBies() ConfigInUseByArrayOutput {
+	return o.ApplyT(func(v *Config) ConfigInUseByArrayOutput { return v.InUseBies }).(ConfigInUseByArrayOutput)
 }
 
 // (Updatable) The list of metrics in this group.
@@ -481,6 +524,11 @@ func (o ConfigOutput) TimeCreated() pulumi.StringOutput {
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 func (o ConfigOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+func (o ConfigOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.UpdatedBy }).(pulumi.StringOutput)
 }
 
 type ConfigArrayOutput struct{ *pulumi.OutputState }

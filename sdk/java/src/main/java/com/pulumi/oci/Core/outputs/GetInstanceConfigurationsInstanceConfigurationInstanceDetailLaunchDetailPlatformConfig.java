@@ -32,6 +32,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private Boolean isMeasuredBootEnabled;
     /**
+     * @return Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+     * 
+     */
+    private Boolean isMemoryEncryptionEnabled;
+    /**
      * @return Whether Secure Boot is enabled on the instance.
      * 
      */
@@ -92,6 +97,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         return this.isMeasuredBootEnabled;
     }
     /**
+     * @return Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+     * 
+     */
+    public Boolean isMemoryEncryptionEnabled() {
+        return this.isMemoryEncryptionEnabled;
+    }
+    /**
      * @return Whether Secure Boot is enabled on the instance.
      * 
      */
@@ -147,6 +159,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         private Boolean isAccessControlServiceEnabled;
         private Boolean isInputOutputMemoryManagementUnitEnabled;
         private Boolean isMeasuredBootEnabled;
+        private Boolean isMemoryEncryptionEnabled;
         private Boolean isSecureBootEnabled;
         private Boolean isSymmetricMultiThreadingEnabled;
         private Boolean isTrustedPlatformModuleEnabled;
@@ -160,6 +173,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      this.isAccessControlServiceEnabled = defaults.isAccessControlServiceEnabled;
     	      this.isInputOutputMemoryManagementUnitEnabled = defaults.isInputOutputMemoryManagementUnitEnabled;
     	      this.isMeasuredBootEnabled = defaults.isMeasuredBootEnabled;
+    	      this.isMemoryEncryptionEnabled = defaults.isMemoryEncryptionEnabled;
     	      this.isSecureBootEnabled = defaults.isSecureBootEnabled;
     	      this.isSymmetricMultiThreadingEnabled = defaults.isSymmetricMultiThreadingEnabled;
     	      this.isTrustedPlatformModuleEnabled = defaults.isTrustedPlatformModuleEnabled;
@@ -186,6 +200,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         @CustomType.Setter
         public Builder isMeasuredBootEnabled(Boolean isMeasuredBootEnabled) {
             this.isMeasuredBootEnabled = Objects.requireNonNull(isMeasuredBootEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = Objects.requireNonNull(isMemoryEncryptionEnabled);
             return this;
         }
         @CustomType.Setter
@@ -224,6 +243,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             o.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
             o.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
             o.isMeasuredBootEnabled = isMeasuredBootEnabled;
+            o.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             o.isSecureBootEnabled = isSecureBootEnabled;
             o.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
             o.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;

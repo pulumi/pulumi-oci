@@ -20,7 +20,7 @@ public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
      */
     private String namespace;
     /**
-     * @return Canary strategy type
+     * @return Canary strategy type.
      * 
      */
     private String strategyType;
@@ -41,7 +41,7 @@ public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
         return this.namespace;
     }
     /**
-     * @return Canary strategy type
+     * @return Canary strategy type.
      * 
      */
     public String strategyType() {

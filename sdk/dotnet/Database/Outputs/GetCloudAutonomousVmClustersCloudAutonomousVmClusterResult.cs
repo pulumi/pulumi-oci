@@ -46,6 +46,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The compute model of the Cloud Autonomous VM Cluster.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The number of CPU cores on the cloud Autonomous VM cluster.
         /// </summary>
         public readonly int CpuCoreCount;
@@ -187,6 +191,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string compartmentId,
 
+            string computeModel,
+
             int cpuCoreCount,
 
             int cpuCoreCountPerNode,
@@ -259,6 +265,7 @@ namespace Pulumi.Oci.Database.Outputs
             CloudExadataInfrastructureId = cloudExadataInfrastructureId;
             ClusterTimeZone = clusterTimeZone;
             CompartmentId = compartmentId;
+            ComputeModel = computeModel;
             CpuCoreCount = cpuCoreCount;
             CpuCoreCountPerNode = cpuCoreCountPerNode;
             DataStorageSizeInGb = dataStorageSizeInGb;

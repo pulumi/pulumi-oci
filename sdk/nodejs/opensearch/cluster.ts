@@ -55,6 +55,9 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     masterNodeHostBareMetalShape: _var.opensearch_cluster_master_node_host_bare_metal_shape,
+ *     securityMasterUserName: oci_identity_user.test_user.name,
+ *     securityMasterUserPasswordHash: _var.opensearch_cluster_security_master_user_password_hash,
+ *     securityMode: _var.opensearch_cluster_security_mode,
  *     systemTags: _var.opensearch_cluster_system_tags,
  * });
  * ```
@@ -196,6 +199,18 @@ export class Cluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly opensearchPrivateIp!: pulumi.Output<string>;
     /**
+     * (Updatable) The name of the master user that are used to manage security config
+     */
+    public readonly securityMasterUserName!: pulumi.Output<string>;
+    /**
+     * (Updatable) The password hash of the master user that are used to manage security config
+     */
+    public readonly securityMasterUserPasswordHash!: pulumi.Output<string>;
+    /**
+     * (Updatable) The security mode of the cluster.
+     */
+    public readonly securityMode!: pulumi.Output<string>;
+    /**
      * (Updatable) The version of the software the cluster is running.
      */
     public readonly softwareVersion!: pulumi.Output<string>;
@@ -278,6 +293,9 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["opendashboardPrivateIp"] = state ? state.opendashboardPrivateIp : undefined;
             resourceInputs["opensearchFqdn"] = state ? state.opensearchFqdn : undefined;
             resourceInputs["opensearchPrivateIp"] = state ? state.opensearchPrivateIp : undefined;
+            resourceInputs["securityMasterUserName"] = state ? state.securityMasterUserName : undefined;
+            resourceInputs["securityMasterUserPasswordHash"] = state ? state.securityMasterUserPasswordHash : undefined;
+            resourceInputs["securityMode"] = state ? state.securityMode : undefined;
             resourceInputs["softwareVersion"] = state ? state.softwareVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetCompartmentId"] = state ? state.subnetCompartmentId : undefined;
@@ -366,6 +384,9 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["opendashboardNodeCount"] = args ? args.opendashboardNodeCount : undefined;
             resourceInputs["opendashboardNodeHostMemoryGb"] = args ? args.opendashboardNodeHostMemoryGb : undefined;
             resourceInputs["opendashboardNodeHostOcpuCount"] = args ? args.opendashboardNodeHostOcpuCount : undefined;
+            resourceInputs["securityMasterUserName"] = args ? args.securityMasterUserName : undefined;
+            resourceInputs["securityMasterUserPasswordHash"] = args?.securityMasterUserPasswordHash ? pulumi.secret(args.securityMasterUserPasswordHash) : undefined;
+            resourceInputs["securityMode"] = args ? args.securityMode : undefined;
             resourceInputs["softwareVersion"] = args ? args.softwareVersion : undefined;
             resourceInputs["subnetCompartmentId"] = args ? args.subnetCompartmentId : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -386,6 +407,8 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["totalStorageGb"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["securityMasterUserPasswordHash"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Cluster.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -494,6 +517,18 @@ export interface ClusterState {
      * The cluster's private IP address.
      */
     opensearchPrivateIp?: pulumi.Input<string>;
+    /**
+     * (Updatable) The name of the master user that are used to manage security config
+     */
+    securityMasterUserName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The password hash of the master user that are used to manage security config
+     */
+    securityMasterUserPasswordHash?: pulumi.Input<string>;
+    /**
+     * (Updatable) The security mode of the cluster.
+     */
+    securityMode?: pulumi.Input<string>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */
@@ -616,6 +651,18 @@ export interface ClusterArgs {
      * The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
     opendashboardNodeHostOcpuCount: pulumi.Input<number>;
+    /**
+     * (Updatable) The name of the master user that are used to manage security config
+     */
+    securityMasterUserName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The password hash of the master user that are used to manage security config
+     */
+    securityMasterUserPasswordHash?: pulumi.Input<string>;
+    /**
+     * (Updatable) The security mode of the cluster.
+     */
+    securityMode?: pulumi.Input<string>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */

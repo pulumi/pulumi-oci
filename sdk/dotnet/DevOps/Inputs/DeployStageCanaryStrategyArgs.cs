@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// Canary strategy type
+        /// Canary strategy type.
         /// </summary>
         [Input("strategyType", required: true)]
         public Input<string> StrategyType { get; set; } = null!;

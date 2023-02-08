@@ -176,7 +176,7 @@ namespace Pulumi.Oci.DevOps
     public sealed class GetDeployStagesResult
     {
         /// <summary>
-        /// The OCID of a compartment.
+        /// The OCID of the compartment where the ContainerInstance will be created.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

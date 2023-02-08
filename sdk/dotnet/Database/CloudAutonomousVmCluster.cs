@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Database
     ///         SubnetId = oci_core_subnet.Test_subnet.Id,
     ///         AutonomousDataStorageSizeInTbs = @var.Cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
     ///         ClusterTimeZone = @var.Cloud_autonomous_vm_cluster_cluster_time_zone,
+    ///         ComputeModel = @var.Cloud_autonomous_vm_cluster_compute_model,
     ///         CpuCoreCountPerNode = @var.Cloud_autonomous_vm_cluster_cpu_core_count_per_node,
     ///         DbServers = @var.Cloud_autonomous_vm_cluster_db_servers,
     ///         DefinedTags = @var.Cloud_autonomous_vm_cluster_defined_tags,
@@ -131,6 +132,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute model of the Cloud Autonomous VM Cluster.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPU cores on the cloud Autonomous VM cluster.
@@ -390,6 +397,12 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// The compute model of the Cloud Autonomous VM Cluster.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
         /// The number of OCPU cores to be enabled per VM cluster node.
         /// </summary>
         [Input("cpuCoreCountPerNode")]
@@ -547,6 +560,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The compute model of the Cloud Autonomous VM Cluster.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
         /// The number of CPU cores on the cloud Autonomous VM cluster.

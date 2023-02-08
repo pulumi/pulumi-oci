@@ -81,8 +81,11 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				MasterNodeHostBareMetalShape: pulumi.Any(_var.Opensearch_cluster_master_node_host_bare_metal_shape),
-//				SystemTags:                   pulumi.Any(_var.Opensearch_cluster_system_tags),
+//				MasterNodeHostBareMetalShape:   pulumi.Any(_var.Opensearch_cluster_master_node_host_bare_metal_shape),
+//				SecurityMasterUserName:         pulumi.Any(oci_identity_user.Test_user.Name),
+//				SecurityMasterUserPasswordHash: pulumi.Any(_var.Opensearch_cluster_security_master_user_password_hash),
+//				SecurityMode:                   pulumi.Any(_var.Opensearch_cluster_security_mode),
+//				SystemTags:                     pulumi.Any(_var.Opensearch_cluster_system_tags),
 //			})
 //			if err != nil {
 //				return err
@@ -155,6 +158,12 @@ type Cluster struct {
 	OpensearchFqdn pulumi.StringOutput `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp pulumi.StringOutput `pulumi:"opensearchPrivateIp"`
+	// (Updatable) The name of the master user that are used to manage security config
+	SecurityMasterUserName pulumi.StringOutput `pulumi:"securityMasterUserName"`
+	// (Updatable) The password hash of the master user that are used to manage security config
+	SecurityMasterUserPasswordHash pulumi.StringOutput `pulumi:"securityMasterUserPasswordHash"`
+	// (Updatable) The security mode of the cluster.
+	SecurityMode pulumi.StringOutput `pulumi:"securityMode"`
 	// (Updatable) The version of the software the cluster is running.
 	SoftwareVersion pulumi.StringOutput `pulumi:"softwareVersion"`
 	// The current state of the cluster.
@@ -243,6 +252,13 @@ func NewCluster(ctx *pulumi.Context,
 	if args.VcnId == nil {
 		return nil, errors.New("invalid value for required argument 'VcnId'")
 	}
+	if args.SecurityMasterUserPasswordHash != nil {
+		args.SecurityMasterUserPasswordHash = pulumi.ToSecret(args.SecurityMasterUserPasswordHash).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"securityMasterUserPasswordHash",
+	})
+	opts = append(opts, secrets)
 	var resource Cluster
 	err := ctx.RegisterResource("oci:Opensearch/cluster:Cluster", name, args, &resource, opts...)
 	if err != nil {
@@ -315,6 +331,12 @@ type clusterState struct {
 	OpensearchFqdn *string `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp *string `pulumi:"opensearchPrivateIp"`
+	// (Updatable) The name of the master user that are used to manage security config
+	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
+	// (Updatable) The password hash of the master user that are used to manage security config
+	SecurityMasterUserPasswordHash *string `pulumi:"securityMasterUserPasswordHash"`
+	// (Updatable) The security mode of the cluster.
+	SecurityMode *string `pulumi:"securityMode"`
 	// (Updatable) The version of the software the cluster is running.
 	SoftwareVersion *string `pulumi:"softwareVersion"`
 	// The current state of the cluster.
@@ -390,6 +412,12 @@ type ClusterState struct {
 	OpensearchFqdn pulumi.StringPtrInput
 	// The cluster's private IP address.
 	OpensearchPrivateIp pulumi.StringPtrInput
+	// (Updatable) The name of the master user that are used to manage security config
+	SecurityMasterUserName pulumi.StringPtrInput
+	// (Updatable) The password hash of the master user that are used to manage security config
+	SecurityMasterUserPasswordHash pulumi.StringPtrInput
+	// (Updatable) The security mode of the cluster.
+	SecurityMode pulumi.StringPtrInput
 	// (Updatable) The version of the software the cluster is running.
 	SoftwareVersion pulumi.StringPtrInput
 	// The current state of the cluster.
@@ -455,6 +483,12 @@ type clusterArgs struct {
 	OpendashboardNodeHostMemoryGb int `pulumi:"opendashboardNodeHostMemoryGb"`
 	// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount int `pulumi:"opendashboardNodeHostOcpuCount"`
+	// (Updatable) The name of the master user that are used to manage security config
+	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
+	// (Updatable) The password hash of the master user that are used to manage security config
+	SecurityMasterUserPasswordHash *string `pulumi:"securityMasterUserPasswordHash"`
+	// (Updatable) The security mode of the cluster.
+	SecurityMode *string `pulumi:"securityMode"`
 	// (Updatable) The version of the software the cluster is running.
 	SoftwareVersion string `pulumi:"softwareVersion"`
 	// The OCID for the compartment where the cluster's subnet is located.
@@ -507,6 +541,12 @@ type ClusterArgs struct {
 	OpendashboardNodeHostMemoryGb pulumi.IntInput
 	// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount pulumi.IntInput
+	// (Updatable) The name of the master user that are used to manage security config
+	SecurityMasterUserName pulumi.StringPtrInput
+	// (Updatable) The password hash of the master user that are used to manage security config
+	SecurityMasterUserPasswordHash pulumi.StringPtrInput
+	// (Updatable) The security mode of the cluster.
+	SecurityMode pulumi.StringPtrInput
 	// (Updatable) The version of the software the cluster is running.
 	SoftwareVersion pulumi.StringInput
 	// The OCID for the compartment where the cluster's subnet is located.
@@ -731,6 +771,21 @@ func (o ClusterOutput) OpensearchFqdn() pulumi.StringOutput {
 // The cluster's private IP address.
 func (o ClusterOutput) OpensearchPrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.OpensearchPrivateIp }).(pulumi.StringOutput)
+}
+
+// (Updatable) The name of the master user that are used to manage security config
+func (o ClusterOutput) SecurityMasterUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.SecurityMasterUserName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The password hash of the master user that are used to manage security config
+func (o ClusterOutput) SecurityMasterUserPasswordHash() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.SecurityMasterUserPasswordHash }).(pulumi.StringOutput)
+}
+
+// (Updatable) The security mode of the cluster.
+func (o ClusterOutput) SecurityMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.SecurityMode }).(pulumi.StringOutput)
 }
 
 // (Updatable) The version of the software the cluster is running.

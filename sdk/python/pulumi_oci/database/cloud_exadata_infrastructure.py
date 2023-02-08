@@ -190,6 +190,7 @@ class _CloudExadataInfrastructureState:
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 db_server_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -201,10 +202,13 @@ class _CloudExadataInfrastructureState:
                  max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
                  max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 monthly_db_server_version: Optional[pulumi.Input[str]] = None,
+                 monthly_storage_server_version: Optional[pulumi.Input[str]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
+                 storage_server_version: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None):
         """
@@ -219,6 +223,7 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
+        :param pulumi.Input[str] db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -230,10 +235,13 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[int] max_db_node_storage_in_gbs: The total local node storage available in GBs.
         :param pulumi.Input[int] max_memory_in_gbs: The total memory available in GBs.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
+        :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param pulumi.Input[str] monthly_storage_server_version: The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] state: The current lifecycle state of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[int] total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
@@ -257,6 +265,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
             pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        if db_server_version is not None:
+            pulumi.set(__self__, "db_server_version", db_server_version)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -279,6 +289,10 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
         if memory_size_in_gbs is not None:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if monthly_db_server_version is not None:
+            pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
+        if monthly_storage_server_version is not None:
+            pulumi.set(__self__, "monthly_storage_server_version", monthly_storage_server_version)
         if next_maintenance_run_id is not None:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         if shape is not None:
@@ -287,6 +301,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "state", state)
         if storage_count is not None:
             pulumi.set(__self__, "storage_count", storage_count)
+        if storage_server_version is not None:
+            pulumi.set(__self__, "storage_server_version", storage_server_version)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if total_storage_size_in_gbs is not None:
@@ -411,6 +427,18 @@ class _CloudExadataInfrastructureState:
     @db_node_storage_size_in_gbs.setter
     def db_node_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "db_node_storage_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="dbServerVersion")
+    def db_server_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "db_server_version")
+
+    @db_server_version.setter
+    def db_server_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_server_version", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -545,6 +573,30 @@ class _CloudExadataInfrastructureState:
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @property
+    @pulumi.getter(name="monthlyDbServerVersion")
+    def monthly_db_server_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "monthly_db_server_version")
+
+    @monthly_db_server_version.setter
+    def monthly_db_server_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "monthly_db_server_version", value)
+
+    @property
+    @pulumi.getter(name="monthlyStorageServerVersion")
+    def monthly_storage_server_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "monthly_storage_server_version")
+
+    @monthly_storage_server_version.setter
+    def monthly_storage_server_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "monthly_storage_server_version", value)
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -591,6 +643,18 @@ class _CloudExadataInfrastructureState:
     @storage_count.setter
     def storage_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "storage_count", value)
+
+    @property
+    @pulumi.getter(name="storageServerVersion")
+    def storage_server_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "storage_server_version")
+
+    @storage_server_version.setter
+    def storage_server_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_server_version", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -812,6 +876,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["cpu_count"] = None
             __props__.__dict__["data_storage_size_in_tbs"] = None
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
+            __props__.__dict__["db_server_version"] = None
             __props__.__dict__["last_maintenance_run_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["max_cpu_count"] = None
@@ -819,8 +884,11 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["max_db_node_storage_in_gbs"] = None
             __props__.__dict__["max_memory_in_gbs"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
+            __props__.__dict__["monthly_db_server_version"] = None
+            __props__.__dict__["monthly_storage_server_version"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["storage_server_version"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["total_storage_size_in_gbs"] = None
         super(CloudExadataInfrastructure, __self__).__init__(
@@ -843,6 +911,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+            db_server_version: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -854,10 +923,13 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
             max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+            monthly_db_server_version: Optional[pulumi.Input[str]] = None,
+            monthly_storage_server_version: Optional[pulumi.Input[str]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             storage_count: Optional[pulumi.Input[int]] = None,
+            storage_server_version: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None) -> 'CloudExadataInfrastructure':
         """
@@ -877,6 +949,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
+        :param pulumi.Input[str] db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -888,10 +961,13 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[int] max_db_node_storage_in_gbs: The total local node storage available in GBs.
         :param pulumi.Input[int] max_memory_in_gbs: The total memory available in GBs.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
+        :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param pulumi.Input[str] monthly_storage_server_version: The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] state: The current lifecycle state of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[int] total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
@@ -909,6 +985,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["customer_contacts"] = customer_contacts
         __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
         __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
+        __props__.__dict__["db_server_version"] = db_server_version
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -920,10 +997,13 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["max_db_node_storage_in_gbs"] = max_db_node_storage_in_gbs
         __props__.__dict__["max_memory_in_gbs"] = max_memory_in_gbs
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
+        __props__.__dict__["monthly_db_server_version"] = monthly_db_server_version
+        __props__.__dict__["monthly_storage_server_version"] = monthly_storage_server_version
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_count"] = storage_count
+        __props__.__dict__["storage_server_version"] = storage_server_version
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["total_storage_size_in_gbs"] = total_storage_size_in_gbs
         return CloudExadataInfrastructure(resource_name, opts=opts, __props__=__props__)
@@ -1007,6 +1087,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServerVersion")
+    def db_server_version(self) -> pulumi.Output[str]:
+        """
+        The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "db_server_version")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1097,6 +1185,22 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
+    @pulumi.getter(name="monthlyDbServerVersion")
+    def monthly_db_server_version(self) -> pulumi.Output[str]:
+        """
+        The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "monthly_db_server_version")
+
+    @property
+    @pulumi.getter(name="monthlyStorageServerVersion")
+    def monthly_storage_server_version(self) -> pulumi.Output[str]:
+        """
+        The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "monthly_storage_server_version")
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> pulumi.Output[str]:
         """
@@ -1127,6 +1231,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "storage_count")
+
+    @property
+    @pulumi.getter(name="storageServerVersion")
+    def storage_server_version(self) -> pulumi.Output[str]:
+        """
+        The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "storage_server_version")
 
     @property
     @pulumi.getter(name="timeCreated")

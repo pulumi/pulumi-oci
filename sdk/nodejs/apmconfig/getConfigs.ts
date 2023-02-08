@@ -110,6 +110,9 @@ export interface GetConfigsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * A string that specifies the group that an OPTIONS item belongs to.
+     */
     readonly optionsGroup?: string;
 }
 /**

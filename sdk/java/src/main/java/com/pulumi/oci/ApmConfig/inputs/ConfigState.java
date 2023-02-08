@@ -6,6 +6,7 @@ package com.pulumi.oci.ApmConfig.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApmConfig.inputs.ConfigDimensionArgs;
+import com.pulumi.oci.ApmConfig.inputs.ConfigInUseByArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigMetricArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigRuleArgs;
 import java.lang.Object;
@@ -49,6 +50,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> configType() {
         return Optional.ofNullable(this.configType);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    @Import(name="createdBy")
+    private @Nullable Output<String> createdBy;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    public Optional<Output<String>> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
 
     /**
@@ -112,6 +128,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * For optimistic concurrency control. See `if-match`.
+     * 
+     */
+    @Import(name="etag")
+    private @Nullable Output<String> etag;
+
+    /**
+     * @return For optimistic concurrency control. See `if-match`.
+     * 
+     */
+    public Optional<Output<String>> etag() {
+        return Optional.ofNullable(this.etag);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
@@ -169,6 +200,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> group() {
         return Optional.ofNullable(this.group);
+    }
+
+    /**
+     * The list of configuration items that reference the span filter.
+     * 
+     */
+    @Import(name="inUseBies")
+    private @Nullable Output<List<ConfigInUseByArgs>> inUseBies;
+
+    /**
+     * @return The list of configuration items that reference the span filter.
+     * 
+     */
+    public Optional<Output<List<ConfigInUseByArgs>>> inUseBies() {
+        return Optional.ofNullable(this.inUseBies);
     }
 
     /**
@@ -276,19 +322,37 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    @Import(name="updatedBy")
+    private @Nullable Output<String> updatedBy;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    public Optional<Output<String>> updatedBy() {
+        return Optional.ofNullable(this.updatedBy);
+    }
+
     private ConfigState() {}
 
     private ConfigState(ConfigState $) {
         this.apmDomainId = $.apmDomainId;
         this.configType = $.configType;
+        this.createdBy = $.createdBy;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.dimensions = $.dimensions;
         this.displayName = $.displayName;
+        this.etag = $.etag;
         this.filterId = $.filterId;
         this.filterText = $.filterText;
         this.freeformTags = $.freeformTags;
         this.group = $.group;
+        this.inUseBies = $.inUseBies;
         this.metrics = $.metrics;
         this.namespace = $.namespace;
         this.opcDryRun = $.opcDryRun;
@@ -296,6 +360,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         this.rules = $.rules;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.updatedBy = $.updatedBy;
     }
 
     public static Builder builder() {
@@ -356,6 +421,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder configType(String configType) {
             return configType(Output.of(configType));
+        }
+
+        /**
+         * @param createdBy The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdBy(@Nullable Output<String> createdBy) {
+            $.createdBy = createdBy;
+            return this;
+        }
+
+        /**
+         * @param createdBy The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdBy(String createdBy) {
+            return createdBy(Output.of(createdBy));
         }
 
         /**
@@ -453,6 +539,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param etag For optimistic concurrency control. See `if-match`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder etag(@Nullable Output<String> etag) {
+            $.etag = etag;
+            return this;
+        }
+
+        /**
+         * @param etag For optimistic concurrency control. See `if-match`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder etag(String etag) {
+            return etag(Output.of(etag));
+        }
+
+        /**
          * @param filterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
          * 
          * @return builder
@@ -534,6 +641,37 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder group(String group) {
             return group(Output.of(group));
+        }
+
+        /**
+         * @param inUseBies The list of configuration items that reference the span filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inUseBies(@Nullable Output<List<ConfigInUseByArgs>> inUseBies) {
+            $.inUseBies = inUseBies;
+            return this;
+        }
+
+        /**
+         * @param inUseBies The list of configuration items that reference the span filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inUseBies(List<ConfigInUseByArgs> inUseBies) {
+            return inUseBies(Output.of(inUseBies));
+        }
+
+        /**
+         * @param inUseBies The list of configuration items that reference the span filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inUseBies(ConfigInUseByArgs... inUseBies) {
+            return inUseBies(List.of(inUseBies));
         }
 
         /**
@@ -701,6 +839,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param updatedBy The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updatedBy(@Nullable Output<String> updatedBy) {
+            $.updatedBy = updatedBy;
+            return this;
+        }
+
+        /**
+         * @param updatedBy The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updatedBy(String updatedBy) {
+            return updatedBy(Output.of(updatedBy));
         }
 
         public ConfigState build() {

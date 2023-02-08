@@ -145,6 +145,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
      */
     public readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly computeModel!: pulumi.Output<string>;
     public readonly dbUniqueName!: pulumi.Output<string>;
     /**
      * Oracle Database version of the Autonomous Container Database.
@@ -305,6 +306,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["backupConfig"] = state ? state.backupConfig : undefined;
             resourceInputs["cloudAutonomousVmClusterId"] = state ? state.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -378,6 +380,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableCpus"] = undefined /*out*/;
+            resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["dbVersion"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
             resourceInputs["keyHistoryEntries"] = undefined /*out*/;
@@ -432,6 +435,7 @@ export interface AutonomousContainerDatabaseState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
      */
     compartmentId?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string>;
     dbUniqueName?: pulumi.Input<string>;
     /**
      * Oracle Database version of the Autonomous Container Database.

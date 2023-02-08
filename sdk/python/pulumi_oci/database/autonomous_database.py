@@ -26,6 +26,8 @@ class AutonomousDatabaseArgs:
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
+                 compute_count: Optional[pulumi.Input[float]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]] = None,
                  data_safe_status: Optional[pulumi.Input[str]] = None,
@@ -58,10 +60,13 @@ class AutonomousDatabaseArgs:
                  open_mode: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None,
                  permission_level: Optional[pulumi.Input[str]] = None,
+                 private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
                  refreshable_mode: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
+                 secret_id: Optional[pulumi.Input[str]] = None,
+                 secret_version_number: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -85,6 +90,8 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
+        :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]] customer_contacts: (Updatable) Customer Contacts.
         :param pulumi.Input[str] data_safe_status: (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
@@ -122,10 +129,13 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[str] open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
         :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) The private endpoint label for the resource.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) list of scheduled operations
+        :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] standby_whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -156,6 +166,10 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "character_set", character_set)
         if clone_type is not None:
             pulumi.set(__self__, "clone_type", clone_type)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if customer_contacts is not None:
@@ -220,6 +234,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "operations_insights_status", operations_insights_status)
         if permission_level is not None:
             pulumi.set(__self__, "permission_level", permission_level)
+        if private_endpoint_ip is not None:
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         if private_endpoint_label is not None:
             pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
         if refreshable_mode is not None:
@@ -228,6 +244,10 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         if scheduled_operations is not None:
             pulumi.set(__self__, "scheduled_operations", scheduled_operations)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if secret_version_number is not None:
+            pulumi.set(__self__, "secret_version_number", secret_version_number)
         if source is not None:
             pulumi.set(__self__, "source", source)
         if source_id is not None:
@@ -370,6 +390,30 @@ class AutonomousDatabaseArgs:
     @clone_type.setter
     def clone_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "clone_type", value)
+
+    @property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "compute_count", value)
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_model", value)
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -761,6 +805,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "permission_level", value)
 
     @property
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        The private endpoint Ip address for the resource.
+        """
+        return pulumi.get(self, "private_endpoint_ip")
+
+    @private_endpoint_ip.setter
+    def private_endpoint_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_endpoint_ip", value)
+
+    @property
     @pulumi.getter(name="privateEndpointLabel")
     def private_endpoint_label(self) -> Optional[pulumi.Input[str]]:
         """
@@ -807,6 +863,30 @@ class AutonomousDatabaseArgs:
     @scheduled_operations.setter
     def scheduled_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]):
         pulumi.set(self, "scheduled_operations", value)
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @property
+    @pulumi.getter(name="secretVersionNumber")
+    def secret_version_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        """
+        return pulumi.get(self, "secret_version_number")
+
+    @secret_version_number.setter
+    def secret_version_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "secret_version_number", value)
 
     @property
     @pulumi.getter
@@ -958,6 +1038,8 @@ class _AutonomousDatabaseState:
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_count: Optional[pulumi.Input[float]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]]] = None,
                  connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -1017,6 +1099,8 @@ class _AutonomousDatabaseState:
                  role: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
+                 secret_id: Optional[pulumi.Input[str]] = None,
+                 secret_version_number: Optional[pulumi.Input[int]] = None,
                  service_console_url: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
@@ -1062,6 +1146,8 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
+        :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -1126,6 +1212,8 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) list of scheduled operations
+        :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] service_console_url: The URL of the Service Console for the Autonomous Database.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
@@ -1184,6 +1272,10 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "clone_type", clone_type)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
         if connection_urls is not None:
@@ -1302,6 +1394,10 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         if scheduled_operations is not None:
             pulumi.set(__self__, "scheduled_operations", scheduled_operations)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if secret_version_number is not None:
+            pulumi.set(__self__, "secret_version_number", secret_version_number)
         if service_console_url is not None:
             pulumi.set(__self__, "service_console_url", service_console_url)
         if source is not None:
@@ -1528,6 +1624,30 @@ class _AutonomousDatabaseState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "compute_count", value)
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_model", value)
 
     @property
     @pulumi.getter(name="connectionStrings")
@@ -2243,6 +2363,30 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "scheduled_operations", value)
 
     @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @property
+    @pulumi.getter(name="secretVersionNumber")
+    def secret_version_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        """
+        return pulumi.get(self, "secret_version_number")
+
+    @secret_version_number.setter
+    def secret_version_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "secret_version_number", value)
+
+    @property
     @pulumi.getter(name="serviceConsoleUrl")
     def service_console_url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -2605,6 +2749,8 @@ class AutonomousDatabase(pulumi.CustomResource):
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_count: Optional[pulumi.Input[float]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseCustomerContactArgs']]]]] = None,
                  data_safe_status: Optional[pulumi.Input[str]] = None,
@@ -2638,10 +2784,13 @@ class AutonomousDatabase(pulumi.CustomResource):
                  open_mode: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None,
                  permission_level: Optional[pulumi.Input[str]] = None,
+                 private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
                  refreshable_mode: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]]] = None,
+                 secret_id: Optional[pulumi.Input[str]] = None,
+                 secret_version_number: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -2678,6 +2827,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
+        :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseCustomerContactArgs']]]] customer_contacts: (Updatable) Customer Contacts.
         :param pulumi.Input[str] data_safe_status: (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
@@ -2716,10 +2867,13 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
         :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) The private endpoint label for the resource.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]] scheduled_operations: (Updatable) list of scheduled operations
+        :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] standby_whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -2775,6 +2929,8 @@ class AutonomousDatabase(pulumi.CustomResource):
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_count: Optional[pulumi.Input[float]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseCustomerContactArgs']]]]] = None,
                  data_safe_status: Optional[pulumi.Input[str]] = None,
@@ -2808,10 +2964,13 @@ class AutonomousDatabase(pulumi.CustomResource):
                  open_mode: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None,
                  permission_level: Optional[pulumi.Input[str]] = None,
+                 private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
                  refreshable_mode: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]]] = None,
+                 secret_id: Optional[pulumi.Input[str]] = None,
+                 secret_version_number: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -2843,6 +3002,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compute_count"] = compute_count
+            __props__.__dict__["compute_model"] = compute_model
             __props__.__dict__["cpu_core_count"] = cpu_core_count
             __props__.__dict__["customer_contacts"] = customer_contacts
             __props__.__dict__["data_safe_status"] = data_safe_status
@@ -2878,10 +3039,13 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["open_mode"] = open_mode
             __props__.__dict__["operations_insights_status"] = operations_insights_status
             __props__.__dict__["permission_level"] = permission_level
+            __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
             __props__.__dict__["private_endpoint_label"] = private_endpoint_label
             __props__.__dict__["refreshable_mode"] = refreshable_mode
             __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
             __props__.__dict__["scheduled_operations"] = scheduled_operations
+            __props__.__dict__["secret_id"] = secret_id
+            __props__.__dict__["secret_version_number"] = secret_version_number
             __props__.__dict__["source"] = source
             __props__.__dict__["source_id"] = source_id
             __props__.__dict__["standby_whitelisted_ips"] = standby_whitelisted_ips
@@ -2916,7 +3080,6 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = None
             __props__.__dict__["peer_db_ids"] = None
             __props__.__dict__["private_endpoint"] = None
-            __props__.__dict__["private_endpoint_ip"] = None
             __props__.__dict__["provisionable_cpuses"] = None
             __props__.__dict__["refreshable_status"] = None
             __props__.__dict__["role"] = None
@@ -2964,6 +3127,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             character_set: Optional[pulumi.Input[str]] = None,
             clone_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compute_count: Optional[pulumi.Input[float]] = None,
+            compute_model: Optional[pulumi.Input[str]] = None,
             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseConnectionStringArgs']]]]] = None,
             connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseConnectionUrlArgs']]]]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -3023,6 +3188,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             role: Optional[pulumi.Input[str]] = None,
             rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
             scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]]] = None,
+            secret_id: Optional[pulumi.Input[str]] = None,
+            secret_version_number: Optional[pulumi.Input[int]] = None,
             service_console_url: Optional[pulumi.Input[str]] = None,
             source: Optional[pulumi.Input[str]] = None,
             source_id: Optional[pulumi.Input[str]] = None,
@@ -3073,6 +3240,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
+        :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseConnectionStringArgs']]]] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseConnectionUrlArgs']]]] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -3137,6 +3306,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]] scheduled_operations: (Updatable) list of scheduled operations
+        :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] service_console_url: The URL of the Service Console for the Autonomous Database.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
@@ -3185,6 +3356,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["character_set"] = character_set
         __props__.__dict__["clone_type"] = clone_type
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_count"] = compute_count
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["connection_strings"] = connection_strings
         __props__.__dict__["connection_urls"] = connection_urls
         __props__.__dict__["cpu_core_count"] = cpu_core_count
@@ -3244,6 +3417,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["role"] = role
         __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
         __props__.__dict__["scheduled_operations"] = scheduled_operations
+        __props__.__dict__["secret_id"] = secret_id
+        __props__.__dict__["secret_version_number"] = secret_version_number
         __props__.__dict__["service_console_url"] = service_console_url
         __props__.__dict__["source"] = source
         __props__.__dict__["source_id"] = source_id
@@ -3386,6 +3561,22 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Output[float]:
+        """
+        (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[str]:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="connectionStrings")
@@ -3863,6 +4054,22 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) list of scheduled operations
         """
         return pulumi.get(self, "scheduled_operations")
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter(name="secretVersionNumber")
+    def secret_version_number(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        """
+        return pulumi.get(self, "secret_version_number")
 
     @property
     @pulumi.getter(name="serviceConsoleUrl")

@@ -235,6 +235,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
         return this.dbNodeStorageSizeInGbs;
     }
     /**
+     * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    @Export(name="dbServerVersion", type=String.class, parameters={})
+    private Output<String> dbServerVersion;
+
+    /**
+     * @return The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    public Output<String> dbServerVersion() {
+        return this.dbServerVersion;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -389,6 +403,34 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
         return this.memorySizeInGbs;
     }
     /**
+     * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    @Export(name="monthlyDbServerVersion", type=String.class, parameters={})
+    private Output<String> monthlyDbServerVersion;
+
+    /**
+     * @return The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    public Output<String> monthlyDbServerVersion() {
+        return this.monthlyDbServerVersion;
+    }
+    /**
+     * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    @Export(name="monthlyStorageServerVersion", type=String.class, parameters={})
+    private Output<String> monthlyStorageServerVersion;
+
+    /**
+     * @return The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    public Output<String> monthlyStorageServerVersion() {
+        return this.monthlyStorageServerVersion;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
@@ -443,6 +485,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<Integer> storageCount() {
         return this.storageCount;
+    }
+    /**
+     * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    @Export(name="storageServerVersion", type=String.class, parameters={})
+    private Output<String> storageServerVersion;
+
+    /**
+     * @return The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     * 
+     */
+    public Output<String> storageServerVersion() {
+        return this.storageServerVersion;
     }
     /**
      * The date and time the cloud Exadata infrastructure resource was created.

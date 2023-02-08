@@ -55,6 +55,10 @@ type AutonomousDatabase struct {
 	CloneType pulumi.StringOutput `pulumi:"cloneType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+	ComputeCount pulumi.Float64Output `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
 	ConnectionStrings AutonomousDatabaseConnectionStringArrayOutput `pulumi:"connectionStrings"`
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -178,6 +182,10 @@ type AutonomousDatabase struct {
 	RotateKeyTrigger pulumi.BoolPtrOutput `pulumi:"rotateKeyTrigger"`
 	// (Updatable) list of scheduled operations
 	ScheduledOperations AutonomousDatabaseScheduledOperationArrayOutput `pulumi:"scheduledOperations"`
+	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+	SecretId pulumi.StringOutput `pulumi:"secretId"`
+	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber pulumi.IntOutput `pulumi:"secretVersionNumber"`
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl pulumi.StringOutput `pulumi:"serviceConsoleUrl"`
 	// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -308,6 +316,10 @@ type autonomousDatabaseState struct {
 	CloneType *string `pulumi:"cloneType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+	ComputeCount *float64 `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
 	ConnectionStrings []AutonomousDatabaseConnectionString `pulumi:"connectionStrings"`
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -431,6 +443,10 @@ type autonomousDatabaseState struct {
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// (Updatable) list of scheduled operations
 	ScheduledOperations []AutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
+	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+	SecretId *string `pulumi:"secretId"`
+	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber *int `pulumi:"secretVersionNumber"`
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl *string `pulumi:"serviceConsoleUrl"`
 	// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -520,6 +536,10 @@ type AutonomousDatabaseState struct {
 	CloneType pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+	ComputeCount pulumi.Float64PtrInput
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+	ComputeModel pulumi.StringPtrInput
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
 	ConnectionStrings AutonomousDatabaseConnectionStringArrayInput
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -643,6 +663,10 @@ type AutonomousDatabaseState struct {
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// (Updatable) list of scheduled operations
 	ScheduledOperations AutonomousDatabaseScheduledOperationArrayInput
+	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+	SecretId pulumi.StringPtrInput
+	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber pulumi.IntPtrInput
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl pulumi.StringPtrInput
 	// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -726,6 +750,10 @@ type autonomousDatabaseArgs struct {
 	CloneType *string `pulumi:"cloneType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+	ComputeCount *float64 `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+	ComputeModel *string `pulumi:"computeModel"`
 	// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// (Updatable) Customer Contacts.
@@ -797,6 +825,8 @@ type autonomousDatabaseArgs struct {
 	OperationsInsightsStatus *string `pulumi:"operationsInsightsStatus"`
 	// The Autonomous Database permission level. Restricted mode allows access only to admin users.
 	PermissionLevel *string `pulumi:"permissionLevel"`
+	// The private endpoint Ip address for the resource.
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// (Updatable) The private endpoint label for the resource.
 	PrivateEndpointLabel *string `pulumi:"privateEndpointLabel"`
 	// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
@@ -805,6 +835,10 @@ type autonomousDatabaseArgs struct {
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// (Updatable) list of scheduled operations
 	ScheduledOperations []AutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
+	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+	SecretId *string `pulumi:"secretId"`
+	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber *int `pulumi:"secretVersionNumber"`
 	// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
 	Source *string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
@@ -849,6 +883,10 @@ type AutonomousDatabaseArgs struct {
 	CloneType pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 	CompartmentId pulumi.StringInput
+	// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+	ComputeCount pulumi.Float64PtrInput
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+	ComputeModel pulumi.StringPtrInput
 	// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount pulumi.IntPtrInput
 	// (Updatable) Customer Contacts.
@@ -920,6 +958,8 @@ type AutonomousDatabaseArgs struct {
 	OperationsInsightsStatus pulumi.StringPtrInput
 	// The Autonomous Database permission level. Restricted mode allows access only to admin users.
 	PermissionLevel pulumi.StringPtrInput
+	// The private endpoint Ip address for the resource.
+	PrivateEndpointIp pulumi.StringPtrInput
 	// (Updatable) The private endpoint label for the resource.
 	PrivateEndpointLabel pulumi.StringPtrInput
 	// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
@@ -928,6 +968,10 @@ type AutonomousDatabaseArgs struct {
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// (Updatable) list of scheduled operations
 	ScheduledOperations AutonomousDatabaseScheduledOperationArrayInput
+	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+	SecretId pulumi.StringPtrInput
+	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber pulumi.IntPtrInput
 	// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
 	Source pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
@@ -1107,6 +1151,16 @@ func (o AutonomousDatabaseOutput) CloneType() pulumi.StringOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 func (o AutonomousDatabaseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+func (o AutonomousDatabaseOutput) ComputeCount() pulumi.Float64Output {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.Float64Output { return v.ComputeCount }).(pulumi.Float64Output)
+}
+
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+func (o AutonomousDatabaseOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 // The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -1409,6 +1463,16 @@ func (o AutonomousDatabaseOutput) ScheduledOperations() AutonomousDatabaseSchedu
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseScheduledOperationArrayOutput {
 		return v.ScheduledOperations
 	}).(AutonomousDatabaseScheduledOperationArrayOutput)
+}
+
+// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+func (o AutonomousDatabaseOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+func (o AutonomousDatabaseOutput) SecretVersionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.SecretVersionNumber }).(pulumi.IntOutput)
 }
 
 // The URL of the Service Console for the Autonomous Database.

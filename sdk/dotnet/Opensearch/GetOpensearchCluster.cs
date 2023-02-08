@@ -243,6 +243,18 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly string OpensearchPrivateIp;
         /// <summary>
+        /// The name of the master user that are used to manage security config
+        /// </summary>
+        public readonly string SecurityMasterUserName;
+        /// <summary>
+        /// The password hash of the master user that are used to manage security config
+        /// </summary>
+        public readonly string SecurityMasterUserPasswordHash;
+        /// <summary>
+        /// The security mode of the cluster.
+        /// </summary>
+        public readonly string SecurityMode;
+        /// <summary>
         /// The software version the cluster is running.
         /// </summary>
         public readonly string SoftwareVersion;
@@ -343,6 +355,12 @@ namespace Pulumi.Oci.Opensearch
 
             string opensearchPrivateIp,
 
+            string securityMasterUserName,
+
+            string securityMasterUserPasswordHash,
+
+            string securityMode,
+
             string softwareVersion,
 
             string state,
@@ -392,6 +410,9 @@ namespace Pulumi.Oci.Opensearch
             OpensearchClusterId = opensearchClusterId;
             OpensearchFqdn = opensearchFqdn;
             OpensearchPrivateIp = opensearchPrivateIp;
+            SecurityMasterUserName = securityMasterUserName;
+            SecurityMasterUserPasswordHash = securityMasterUserPasswordHash;
+            SecurityMode = securityMode;
             SoftwareVersion = softwareVersion;
             State = state;
             SubnetCompartmentId = subnetCompartmentId;

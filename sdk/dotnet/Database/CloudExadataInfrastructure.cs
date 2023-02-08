@@ -145,6 +145,12 @@ namespace Pulumi.Oci.Database
         public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
+        /// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        [Output("dbServerVersion")]
+        public Output<string> DbServerVersion { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
@@ -211,6 +217,18 @@ namespace Pulumi.Oci.Database
         public Output<int> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
+        /// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        [Output("monthlyDbServerVersion")]
+        public Output<string> MonthlyDbServerVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        [Output("monthlyStorageServerVersion")]
+        public Output<string> MonthlyStorageServerVersion { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Output("nextMaintenanceRunId")]
@@ -233,6 +251,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("storageCount")]
         public Output<int> StorageCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        [Output("storageServerVersion")]
+        public Output<string> StorageServerVersion { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the cloud Exadata infrastructure resource was created.
@@ -444,6 +468,12 @@ namespace Pulumi.Oci.Database
         [Input("dbNodeStorageSizeInGbs")]
         public Input<int>? DbNodeStorageSizeInGbs { get; set; }
 
+        /// <summary>
+        /// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        [Input("dbServerVersion")]
+        public Input<string>? DbServerVersion { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -523,6 +553,18 @@ namespace Pulumi.Oci.Database
         public Input<int>? MemorySizeInGbs { get; set; }
 
         /// <summary>
+        /// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        [Input("monthlyDbServerVersion")]
+        public Input<string>? MonthlyDbServerVersion { get; set; }
+
+        /// <summary>
+        /// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        [Input("monthlyStorageServerVersion")]
+        public Input<string>? MonthlyStorageServerVersion { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Input("nextMaintenanceRunId")]
@@ -545,6 +587,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("storageCount")]
         public Input<int>? StorageCount { get; set; }
+
+        /// <summary>
+        /// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        [Input("storageServerVersion")]
+        public Input<string>? StorageServerVersion { get; set; }
 
         /// <summary>
         /// The date and time the cloud Exadata infrastructure resource was created.

@@ -9,6 +9,7 @@ import com.pulumi.oci.DevOps.inputs.DeployStageApprovalPolicyArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageBlueBackendIpsArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageBlueGreenStrategyArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageCanaryStrategyArgs;
+import com.pulumi.oci.DevOps.inputs.DeployStageContainerConfigArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageDeployStagePredecessorCollectionArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageFailurePolicyArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageGreenBackendIpsArgs;
@@ -94,14 +95,29 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of a compartment.
+     * (Updatable) The OCID of the artifact that contains the command specification.
+     * 
+     */
+    @Import(name="commandSpecDeployArtifactId")
+    private @Nullable Output<String> commandSpecDeployArtifactId;
+
+    /**
+     * @return (Updatable) The OCID of the artifact that contains the command specification.
+     * 
+     */
+    public Optional<Output<String>> commandSpecDeployArtifactId() {
+        return Optional.ofNullable(this.commandSpecDeployArtifactId);
+    }
+
+    /**
+     * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of a compartment.
+     * @return (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -181,6 +197,21 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> config() {
         return Optional.ofNullable(this.config);
+    }
+
+    /**
+     * (Updatable) Specifies the container configuration.
+     * 
+     */
+    @Import(name="containerConfig")
+    private @Nullable Output<DeployStageContainerConfigArgs> containerConfig;
+
+    /**
+     * @return (Updatable) Specifies the container configuration.
+     * 
+     */
+    public Optional<Output<DeployStageContainerConfigArgs>> containerConfig() {
+        return Optional.ofNullable(this.containerConfig);
     }
 
     /**
@@ -769,14 +800,14 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
     @Import(name="timeoutInSeconds")
     private @Nullable Output<Integer> timeoutInSeconds;
 
     /**
-     * @return (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * @return (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
     public Optional<Output<Integer>> timeoutInSeconds() {
@@ -835,12 +866,14 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
         this.blueBackendIps = $.blueBackendIps;
         this.blueGreenStrategy = $.blueGreenStrategy;
         this.canaryStrategy = $.canaryStrategy;
+        this.commandSpecDeployArtifactId = $.commandSpecDeployArtifactId;
         this.compartmentId = $.compartmentId;
         this.computeInstanceGroupBlueGreenDeploymentDeployStageId = $.computeInstanceGroupBlueGreenDeploymentDeployStageId;
         this.computeInstanceGroupCanaryDeployStageId = $.computeInstanceGroupCanaryDeployStageId;
         this.computeInstanceGroupCanaryTrafficShiftDeployStageId = $.computeInstanceGroupCanaryTrafficShiftDeployStageId;
         this.computeInstanceGroupDeployEnvironmentId = $.computeInstanceGroupDeployEnvironmentId;
         this.config = $.config;
+        this.containerConfig = $.containerConfig;
         this.definedTags = $.definedTags;
         this.deployArtifactId = $.deployArtifactId;
         this.deployArtifactIds = $.deployArtifactIds;
@@ -989,7 +1022,28 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of a compartment.
+         * @param commandSpecDeployArtifactId (Updatable) The OCID of the artifact that contains the command specification.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder commandSpecDeployArtifactId(@Nullable Output<String> commandSpecDeployArtifactId) {
+            $.commandSpecDeployArtifactId = commandSpecDeployArtifactId;
+            return this;
+        }
+
+        /**
+         * @param commandSpecDeployArtifactId (Updatable) The OCID of the artifact that contains the command specification.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder commandSpecDeployArtifactId(String commandSpecDeployArtifactId) {
+            return commandSpecDeployArtifactId(Output.of(commandSpecDeployArtifactId));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The OCID of the compartment where the ContainerInstance will be created.
          * 
          * @return builder
          * 
@@ -1000,7 +1054,7 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of a compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment where the ContainerInstance will be created.
          * 
          * @return builder
          * 
@@ -1112,6 +1166,27 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder config(Map<String,Object> config) {
             return config(Output.of(config));
+        }
+
+        /**
+         * @param containerConfig (Updatable) Specifies the container configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder containerConfig(@Nullable Output<DeployStageContainerConfigArgs> containerConfig) {
+            $.containerConfig = containerConfig;
+            return this;
+        }
+
+        /**
+         * @param containerConfig (Updatable) Specifies the container configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder containerConfig(DeployStageContainerConfigArgs containerConfig) {
+            return containerConfig(Output.of(containerConfig));
         }
 
         /**
@@ -1954,7 +2029,7 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeoutInSeconds (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+         * @param timeoutInSeconds (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
          * 
          * @return builder
          * 
@@ -1965,7 +2040,7 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeoutInSeconds (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+         * @param timeoutInSeconds (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
          * 
          * @return builder
          * 

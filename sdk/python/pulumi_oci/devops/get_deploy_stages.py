@@ -50,7 +50,7 @@ class GetDeployStagesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The OCID of a compartment.
+        The OCID of the compartment where the ContainerInstance will be created.
         """
         return pulumi.get(self, "compartment_id")
 

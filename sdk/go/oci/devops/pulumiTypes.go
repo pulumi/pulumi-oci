@@ -6064,7 +6064,7 @@ type DeployStageBlueGreenStrategy struct {
 	NamespaceA string `pulumi:"namespaceA"`
 	// Second Namespace for deployment.
 	NamespaceB string `pulumi:"namespaceB"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType string `pulumi:"strategyType"`
 }
 
@@ -6086,7 +6086,7 @@ type DeployStageBlueGreenStrategyArgs struct {
 	NamespaceA pulumi.StringInput `pulumi:"namespaceA"`
 	// Second Namespace for deployment.
 	NamespaceB pulumi.StringInput `pulumi:"namespaceB"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType pulumi.StringInput `pulumi:"strategyType"`
 }
 
@@ -6182,7 +6182,7 @@ func (o DeployStageBlueGreenStrategyOutput) NamespaceB() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageBlueGreenStrategy) string { return v.NamespaceB }).(pulumi.StringOutput)
 }
 
-// Canary strategy type
+// Canary strategy type.
 func (o DeployStageBlueGreenStrategyOutput) StrategyType() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageBlueGreenStrategy) string { return v.StrategyType }).(pulumi.StringOutput)
 }
@@ -6241,7 +6241,7 @@ func (o DeployStageBlueGreenStrategyPtrOutput) NamespaceB() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// Canary strategy type
+// Canary strategy type.
 func (o DeployStageBlueGreenStrategyPtrOutput) StrategyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageBlueGreenStrategy) *string {
 		if v == nil {
@@ -6256,7 +6256,7 @@ type DeployStageCanaryStrategy struct {
 	IngressName string `pulumi:"ingressName"`
 	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
 	Namespace string `pulumi:"namespace"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType string `pulumi:"strategyType"`
 }
 
@@ -6276,7 +6276,7 @@ type DeployStageCanaryStrategyArgs struct {
 	IngressName pulumi.StringInput `pulumi:"ingressName"`
 	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType pulumi.StringInput `pulumi:"strategyType"`
 }
 
@@ -6367,7 +6367,7 @@ func (o DeployStageCanaryStrategyOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageCanaryStrategy) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// Canary strategy type
+// Canary strategy type.
 func (o DeployStageCanaryStrategyOutput) StrategyType() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageCanaryStrategy) string { return v.StrategyType }).(pulumi.StringOutput)
 }
@@ -6416,7 +6416,7 @@ func (o DeployStageCanaryStrategyPtrOutput) Namespace() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Canary strategy type
+// Canary strategy type.
 func (o DeployStageCanaryStrategyPtrOutput) StrategyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageCanaryStrategy) *string {
 		if v == nil {
@@ -6424,6 +6424,569 @@ func (o DeployStageCanaryStrategyPtrOutput) StrategyType() pulumi.StringPtrOutpu
 		}
 		return &v.StrategyType
 	}).(pulumi.StringPtrOutput)
+}
+
+type DeployStageContainerConfig struct {
+	// (Updatable) Availability domain where the ContainerInstance will be created.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Container configuration type.
+	ContainerConfigType string `pulumi:"containerConfigType"`
+	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	NetworkChannel DeployStageContainerConfigNetworkChannel `pulumi:"networkChannel"`
+	// (Updatable) Determines the size and amount of resources available to the instance.
+	ShapeConfig DeployStageContainerConfigShapeConfig `pulumi:"shapeConfig"`
+	// (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// DeployStageContainerConfigInput is an input type that accepts DeployStageContainerConfigArgs and DeployStageContainerConfigOutput values.
+// You can construct a concrete instance of `DeployStageContainerConfigInput` via:
+//
+//	DeployStageContainerConfigArgs{...}
+type DeployStageContainerConfigInput interface {
+	pulumi.Input
+
+	ToDeployStageContainerConfigOutput() DeployStageContainerConfigOutput
+	ToDeployStageContainerConfigOutputWithContext(context.Context) DeployStageContainerConfigOutput
+}
+
+type DeployStageContainerConfigArgs struct {
+	// (Updatable) Availability domain where the ContainerInstance will be created.
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
+	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) Container configuration type.
+	ContainerConfigType pulumi.StringInput `pulumi:"containerConfigType"`
+	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	NetworkChannel DeployStageContainerConfigNetworkChannelInput `pulumi:"networkChannel"`
+	// (Updatable) Determines the size and amount of resources available to the instance.
+	ShapeConfig DeployStageContainerConfigShapeConfigInput `pulumi:"shapeConfig"`
+	// (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (DeployStageContainerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageContainerConfig)(nil)).Elem()
+}
+
+func (i DeployStageContainerConfigArgs) ToDeployStageContainerConfigOutput() DeployStageContainerConfigOutput {
+	return i.ToDeployStageContainerConfigOutputWithContext(context.Background())
+}
+
+func (i DeployStageContainerConfigArgs) ToDeployStageContainerConfigOutputWithContext(ctx context.Context) DeployStageContainerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigOutput)
+}
+
+func (i DeployStageContainerConfigArgs) ToDeployStageContainerConfigPtrOutput() DeployStageContainerConfigPtrOutput {
+	return i.ToDeployStageContainerConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DeployStageContainerConfigArgs) ToDeployStageContainerConfigPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigOutput).ToDeployStageContainerConfigPtrOutputWithContext(ctx)
+}
+
+// DeployStageContainerConfigPtrInput is an input type that accepts DeployStageContainerConfigArgs, DeployStageContainerConfigPtr and DeployStageContainerConfigPtrOutput values.
+// You can construct a concrete instance of `DeployStageContainerConfigPtrInput` via:
+//
+//	        DeployStageContainerConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeployStageContainerConfigPtrInput interface {
+	pulumi.Input
+
+	ToDeployStageContainerConfigPtrOutput() DeployStageContainerConfigPtrOutput
+	ToDeployStageContainerConfigPtrOutputWithContext(context.Context) DeployStageContainerConfigPtrOutput
+}
+
+type deployStageContainerConfigPtrType DeployStageContainerConfigArgs
+
+func DeployStageContainerConfigPtr(v *DeployStageContainerConfigArgs) DeployStageContainerConfigPtrInput {
+	return (*deployStageContainerConfigPtrType)(v)
+}
+
+func (*deployStageContainerConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageContainerConfig)(nil)).Elem()
+}
+
+func (i *deployStageContainerConfigPtrType) ToDeployStageContainerConfigPtrOutput() DeployStageContainerConfigPtrOutput {
+	return i.ToDeployStageContainerConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *deployStageContainerConfigPtrType) ToDeployStageContainerConfigPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigPtrOutput)
+}
+
+type DeployStageContainerConfigOutput struct{ *pulumi.OutputState }
+
+func (DeployStageContainerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageContainerConfig)(nil)).Elem()
+}
+
+func (o DeployStageContainerConfigOutput) ToDeployStageContainerConfigOutput() DeployStageContainerConfigOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigOutput) ToDeployStageContainerConfigOutputWithContext(ctx context.Context) DeployStageContainerConfigOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigOutput) ToDeployStageContainerConfigPtrOutput() DeployStageContainerConfigPtrOutput {
+	return o.ToDeployStageContainerConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DeployStageContainerConfigOutput) ToDeployStageContainerConfigPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeployStageContainerConfig) *DeployStageContainerConfig {
+		return &v
+	}).(DeployStageContainerConfigPtrOutput)
+}
+
+// (Updatable) Availability domain where the ContainerInstance will be created.
+func (o DeployStageContainerConfigOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployStageContainerConfig) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+func (o DeployStageContainerConfigOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployStageContainerConfig) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Container configuration type.
+func (o DeployStageContainerConfigOutput) ContainerConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v DeployStageContainerConfig) string { return v.ContainerConfigType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+func (o DeployStageContainerConfigOutput) NetworkChannel() DeployStageContainerConfigNetworkChannelOutput {
+	return o.ApplyT(func(v DeployStageContainerConfig) DeployStageContainerConfigNetworkChannel { return v.NetworkChannel }).(DeployStageContainerConfigNetworkChannelOutput)
+}
+
+// (Updatable) Determines the size and amount of resources available to the instance.
+func (o DeployStageContainerConfigOutput) ShapeConfig() DeployStageContainerConfigShapeConfigOutput {
+	return o.ApplyT(func(v DeployStageContainerConfig) DeployStageContainerConfigShapeConfig { return v.ShapeConfig }).(DeployStageContainerConfigShapeConfigOutput)
+}
+
+// (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+func (o DeployStageContainerConfigOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v DeployStageContainerConfig) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type DeployStageContainerConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DeployStageContainerConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageContainerConfig)(nil)).Elem()
+}
+
+func (o DeployStageContainerConfigPtrOutput) ToDeployStageContainerConfigPtrOutput() DeployStageContainerConfigPtrOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigPtrOutput) ToDeployStageContainerConfigPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigPtrOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigPtrOutput) Elem() DeployStageContainerConfigOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfig) DeployStageContainerConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DeployStageContainerConfig
+		return ret
+	}).(DeployStageContainerConfigOutput)
+}
+
+// (Updatable) Availability domain where the ContainerInstance will be created.
+func (o DeployStageContainerConfigPtrOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AvailabilityDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+func (o DeployStageContainerConfigPtrOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Container configuration type.
+func (o DeployStageContainerConfigPtrOutput) ContainerConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ContainerConfigType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+func (o DeployStageContainerConfigPtrOutput) NetworkChannel() DeployStageContainerConfigNetworkChannelPtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfig) *DeployStageContainerConfigNetworkChannel {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkChannel
+	}).(DeployStageContainerConfigNetworkChannelPtrOutput)
+}
+
+// (Updatable) Determines the size and amount of resources available to the instance.
+func (o DeployStageContainerConfigPtrOutput) ShapeConfig() DeployStageContainerConfigShapeConfigPtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfig) *DeployStageContainerConfigShapeConfig {
+		if v == nil {
+			return nil
+		}
+		return &v.ShapeConfig
+	}).(DeployStageContainerConfigShapeConfigPtrOutput)
+}
+
+// (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+func (o DeployStageContainerConfigPtrOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ShapeName
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeployStageContainerConfigNetworkChannel struct {
+	// (Updatable) Network channel type.
+	NetworkChannelType string `pulumi:"networkChannelType"`
+	// (Updatable) An array of network security group OCIDs.
+	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// DeployStageContainerConfigNetworkChannelInput is an input type that accepts DeployStageContainerConfigNetworkChannelArgs and DeployStageContainerConfigNetworkChannelOutput values.
+// You can construct a concrete instance of `DeployStageContainerConfigNetworkChannelInput` via:
+//
+//	DeployStageContainerConfigNetworkChannelArgs{...}
+type DeployStageContainerConfigNetworkChannelInput interface {
+	pulumi.Input
+
+	ToDeployStageContainerConfigNetworkChannelOutput() DeployStageContainerConfigNetworkChannelOutput
+	ToDeployStageContainerConfigNetworkChannelOutputWithContext(context.Context) DeployStageContainerConfigNetworkChannelOutput
+}
+
+type DeployStageContainerConfigNetworkChannelArgs struct {
+	// (Updatable) Network channel type.
+	NetworkChannelType pulumi.StringInput `pulumi:"networkChannelType"`
+	// (Updatable) An array of network security group OCIDs.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (DeployStageContainerConfigNetworkChannelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (i DeployStageContainerConfigNetworkChannelArgs) ToDeployStageContainerConfigNetworkChannelOutput() DeployStageContainerConfigNetworkChannelOutput {
+	return i.ToDeployStageContainerConfigNetworkChannelOutputWithContext(context.Background())
+}
+
+func (i DeployStageContainerConfigNetworkChannelArgs) ToDeployStageContainerConfigNetworkChannelOutputWithContext(ctx context.Context) DeployStageContainerConfigNetworkChannelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigNetworkChannelOutput)
+}
+
+func (i DeployStageContainerConfigNetworkChannelArgs) ToDeployStageContainerConfigNetworkChannelPtrOutput() DeployStageContainerConfigNetworkChannelPtrOutput {
+	return i.ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(context.Background())
+}
+
+func (i DeployStageContainerConfigNetworkChannelArgs) ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigNetworkChannelPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigNetworkChannelOutput).ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(ctx)
+}
+
+// DeployStageContainerConfigNetworkChannelPtrInput is an input type that accepts DeployStageContainerConfigNetworkChannelArgs, DeployStageContainerConfigNetworkChannelPtr and DeployStageContainerConfigNetworkChannelPtrOutput values.
+// You can construct a concrete instance of `DeployStageContainerConfigNetworkChannelPtrInput` via:
+//
+//	        DeployStageContainerConfigNetworkChannelArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeployStageContainerConfigNetworkChannelPtrInput interface {
+	pulumi.Input
+
+	ToDeployStageContainerConfigNetworkChannelPtrOutput() DeployStageContainerConfigNetworkChannelPtrOutput
+	ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(context.Context) DeployStageContainerConfigNetworkChannelPtrOutput
+}
+
+type deployStageContainerConfigNetworkChannelPtrType DeployStageContainerConfigNetworkChannelArgs
+
+func DeployStageContainerConfigNetworkChannelPtr(v *DeployStageContainerConfigNetworkChannelArgs) DeployStageContainerConfigNetworkChannelPtrInput {
+	return (*deployStageContainerConfigNetworkChannelPtrType)(v)
+}
+
+func (*deployStageContainerConfigNetworkChannelPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (i *deployStageContainerConfigNetworkChannelPtrType) ToDeployStageContainerConfigNetworkChannelPtrOutput() DeployStageContainerConfigNetworkChannelPtrOutput {
+	return i.ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(context.Background())
+}
+
+func (i *deployStageContainerConfigNetworkChannelPtrType) ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigNetworkChannelPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigNetworkChannelPtrOutput)
+}
+
+type DeployStageContainerConfigNetworkChannelOutput struct{ *pulumi.OutputState }
+
+func (DeployStageContainerConfigNetworkChannelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (o DeployStageContainerConfigNetworkChannelOutput) ToDeployStageContainerConfigNetworkChannelOutput() DeployStageContainerConfigNetworkChannelOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigNetworkChannelOutput) ToDeployStageContainerConfigNetworkChannelOutputWithContext(ctx context.Context) DeployStageContainerConfigNetworkChannelOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigNetworkChannelOutput) ToDeployStageContainerConfigNetworkChannelPtrOutput() DeployStageContainerConfigNetworkChannelPtrOutput {
+	return o.ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(context.Background())
+}
+
+func (o DeployStageContainerConfigNetworkChannelOutput) ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigNetworkChannelPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeployStageContainerConfigNetworkChannel) *DeployStageContainerConfigNetworkChannel {
+		return &v
+	}).(DeployStageContainerConfigNetworkChannelPtrOutput)
+}
+
+// (Updatable) Network channel type.
+func (o DeployStageContainerConfigNetworkChannelOutput) NetworkChannelType() pulumi.StringOutput {
+	return o.ApplyT(func(v DeployStageContainerConfigNetworkChannel) string { return v.NetworkChannelType }).(pulumi.StringOutput)
+}
+
+// (Updatable) An array of network security group OCIDs.
+func (o DeployStageContainerConfigNetworkChannelOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DeployStageContainerConfigNetworkChannel) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+func (o DeployStageContainerConfigNetworkChannelOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v DeployStageContainerConfigNetworkChannel) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type DeployStageContainerConfigNetworkChannelPtrOutput struct{ *pulumi.OutputState }
+
+func (DeployStageContainerConfigNetworkChannelPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (o DeployStageContainerConfigNetworkChannelPtrOutput) ToDeployStageContainerConfigNetworkChannelPtrOutput() DeployStageContainerConfigNetworkChannelPtrOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigNetworkChannelPtrOutput) ToDeployStageContainerConfigNetworkChannelPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigNetworkChannelPtrOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigNetworkChannelPtrOutput) Elem() DeployStageContainerConfigNetworkChannelOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfigNetworkChannel) DeployStageContainerConfigNetworkChannel {
+		if v != nil {
+			return *v
+		}
+		var ret DeployStageContainerConfigNetworkChannel
+		return ret
+	}).(DeployStageContainerConfigNetworkChannelOutput)
+}
+
+// (Updatable) Network channel type.
+func (o DeployStageContainerConfigNetworkChannelPtrOutput) NetworkChannelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfigNetworkChannel) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkChannelType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array of network security group OCIDs.
+func (o DeployStageContainerConfigNetworkChannelPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfigNetworkChannel) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+func (o DeployStageContainerConfigNetworkChannelPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfigNetworkChannel) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeployStageContainerConfigShapeConfig struct {
+	// (Updatable) The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs available to the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// DeployStageContainerConfigShapeConfigInput is an input type that accepts DeployStageContainerConfigShapeConfigArgs and DeployStageContainerConfigShapeConfigOutput values.
+// You can construct a concrete instance of `DeployStageContainerConfigShapeConfigInput` via:
+//
+//	DeployStageContainerConfigShapeConfigArgs{...}
+type DeployStageContainerConfigShapeConfigInput interface {
+	pulumi.Input
+
+	ToDeployStageContainerConfigShapeConfigOutput() DeployStageContainerConfigShapeConfigOutput
+	ToDeployStageContainerConfigShapeConfigOutputWithContext(context.Context) DeployStageContainerConfigShapeConfigOutput
+}
+
+type DeployStageContainerConfigShapeConfigArgs struct {
+	// (Updatable) The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (DeployStageContainerConfigShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (i DeployStageContainerConfigShapeConfigArgs) ToDeployStageContainerConfigShapeConfigOutput() DeployStageContainerConfigShapeConfigOutput {
+	return i.ToDeployStageContainerConfigShapeConfigOutputWithContext(context.Background())
+}
+
+func (i DeployStageContainerConfigShapeConfigArgs) ToDeployStageContainerConfigShapeConfigOutputWithContext(ctx context.Context) DeployStageContainerConfigShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigShapeConfigOutput)
+}
+
+func (i DeployStageContainerConfigShapeConfigArgs) ToDeployStageContainerConfigShapeConfigPtrOutput() DeployStageContainerConfigShapeConfigPtrOutput {
+	return i.ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DeployStageContainerConfigShapeConfigArgs) ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigShapeConfigOutput).ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(ctx)
+}
+
+// DeployStageContainerConfigShapeConfigPtrInput is an input type that accepts DeployStageContainerConfigShapeConfigArgs, DeployStageContainerConfigShapeConfigPtr and DeployStageContainerConfigShapeConfigPtrOutput values.
+// You can construct a concrete instance of `DeployStageContainerConfigShapeConfigPtrInput` via:
+//
+//	        DeployStageContainerConfigShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeployStageContainerConfigShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToDeployStageContainerConfigShapeConfigPtrOutput() DeployStageContainerConfigShapeConfigPtrOutput
+	ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(context.Context) DeployStageContainerConfigShapeConfigPtrOutput
+}
+
+type deployStageContainerConfigShapeConfigPtrType DeployStageContainerConfigShapeConfigArgs
+
+func DeployStageContainerConfigShapeConfigPtr(v *DeployStageContainerConfigShapeConfigArgs) DeployStageContainerConfigShapeConfigPtrInput {
+	return (*deployStageContainerConfigShapeConfigPtrType)(v)
+}
+
+func (*deployStageContainerConfigShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (i *deployStageContainerConfigShapeConfigPtrType) ToDeployStageContainerConfigShapeConfigPtrOutput() DeployStageContainerConfigShapeConfigPtrOutput {
+	return i.ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *deployStageContainerConfigShapeConfigPtrType) ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageContainerConfigShapeConfigPtrOutput)
+}
+
+type DeployStageContainerConfigShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (DeployStageContainerConfigShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (o DeployStageContainerConfigShapeConfigOutput) ToDeployStageContainerConfigShapeConfigOutput() DeployStageContainerConfigShapeConfigOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigShapeConfigOutput) ToDeployStageContainerConfigShapeConfigOutputWithContext(ctx context.Context) DeployStageContainerConfigShapeConfigOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigShapeConfigOutput) ToDeployStageContainerConfigShapeConfigPtrOutput() DeployStageContainerConfigShapeConfigPtrOutput {
+	return o.ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DeployStageContainerConfigShapeConfigOutput) ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeployStageContainerConfigShapeConfig) *DeployStageContainerConfigShapeConfig {
+		return &v
+	}).(DeployStageContainerConfigShapeConfigPtrOutput)
+}
+
+// (Updatable) The total amount of memory available to the instance, in gigabytes.
+func (o DeployStageContainerConfigShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v DeployStageContainerConfigShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The total number of OCPUs available to the instance.
+func (o DeployStageContainerConfigShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v DeployStageContainerConfigShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type DeployStageContainerConfigShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DeployStageContainerConfigShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (o DeployStageContainerConfigShapeConfigPtrOutput) ToDeployStageContainerConfigShapeConfigPtrOutput() DeployStageContainerConfigShapeConfigPtrOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigShapeConfigPtrOutput) ToDeployStageContainerConfigShapeConfigPtrOutputWithContext(ctx context.Context) DeployStageContainerConfigShapeConfigPtrOutput {
+	return o
+}
+
+func (o DeployStageContainerConfigShapeConfigPtrOutput) Elem() DeployStageContainerConfigShapeConfigOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfigShapeConfig) DeployStageContainerConfigShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DeployStageContainerConfigShapeConfig
+		return ret
+	}).(DeployStageContainerConfigShapeConfigOutput)
+}
+
+// (Updatable) The total amount of memory available to the instance, in gigabytes.
+func (o DeployStageContainerConfigShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfigShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The total number of OCPUs available to the instance.
+func (o DeployStageContainerConfigShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *DeployStageContainerConfigShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.Ocpus
+	}).(pulumi.Float64PtrOutput)
 }
 
 type DeployStageDeployStagePredecessorCollection struct {
@@ -23178,7 +23741,7 @@ type GetDeployStageBlueGreenStrategy struct {
 	NamespaceA string `pulumi:"namespaceA"`
 	// Second Namespace for deployment.
 	NamespaceB string `pulumi:"namespaceB"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType string `pulumi:"strategyType"`
 }
 
@@ -23200,7 +23763,7 @@ type GetDeployStageBlueGreenStrategyArgs struct {
 	NamespaceA pulumi.StringInput `pulumi:"namespaceA"`
 	// Second Namespace for deployment.
 	NamespaceB pulumi.StringInput `pulumi:"namespaceB"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType pulumi.StringInput `pulumi:"strategyType"`
 }
 
@@ -23270,7 +23833,7 @@ func (o GetDeployStageBlueGreenStrategyOutput) NamespaceB() pulumi.StringOutput 
 	return o.ApplyT(func(v GetDeployStageBlueGreenStrategy) string { return v.NamespaceB }).(pulumi.StringOutput)
 }
 
-// Canary strategy type
+// Canary strategy type.
 func (o GetDeployStageBlueGreenStrategyOutput) StrategyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStageBlueGreenStrategy) string { return v.StrategyType }).(pulumi.StringOutput)
 }
@@ -23300,7 +23863,7 @@ type GetDeployStageCanaryStrategy struct {
 	IngressName string `pulumi:"ingressName"`
 	// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
 	Namespace string `pulumi:"namespace"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType string `pulumi:"strategyType"`
 }
 
@@ -23320,7 +23883,7 @@ type GetDeployStageCanaryStrategyArgs struct {
 	IngressName pulumi.StringInput `pulumi:"ingressName"`
 	// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType pulumi.StringInput `pulumi:"strategyType"`
 }
 
@@ -23385,7 +23948,7 @@ func (o GetDeployStageCanaryStrategyOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStageCanaryStrategy) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// Canary strategy type
+// Canary strategy type.
 func (o GetDeployStageCanaryStrategyOutput) StrategyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStageCanaryStrategy) string { return v.StrategyType }).(pulumi.StringOutput)
 }
@@ -23408,6 +23971,373 @@ func (o GetDeployStageCanaryStrategyArrayOutput) Index(i pulumi.IntInput) GetDep
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStageCanaryStrategy {
 		return vs[0].([]GetDeployStageCanaryStrategy)[vs[1].(int)]
 	}).(GetDeployStageCanaryStrategyOutput)
+}
+
+type GetDeployStageContainerConfig struct {
+	// Availability domain where the ContainerInstance will be created.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The OCID of the compartment where the ContainerInstance will be created.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Container configuration type.
+	ContainerConfigType string `pulumi:"containerConfigType"`
+	// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	NetworkChannels []GetDeployStageContainerConfigNetworkChannel `pulumi:"networkChannels"`
+	// Determines the size and amount of resources available to the instance.
+	ShapeConfigs []GetDeployStageContainerConfigShapeConfig `pulumi:"shapeConfigs"`
+	// The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetDeployStageContainerConfigInput is an input type that accepts GetDeployStageContainerConfigArgs and GetDeployStageContainerConfigOutput values.
+// You can construct a concrete instance of `GetDeployStageContainerConfigInput` via:
+//
+//	GetDeployStageContainerConfigArgs{...}
+type GetDeployStageContainerConfigInput interface {
+	pulumi.Input
+
+	ToGetDeployStageContainerConfigOutput() GetDeployStageContainerConfigOutput
+	ToGetDeployStageContainerConfigOutputWithContext(context.Context) GetDeployStageContainerConfigOutput
+}
+
+type GetDeployStageContainerConfigArgs struct {
+	// Availability domain where the ContainerInstance will be created.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The OCID of the compartment where the ContainerInstance will be created.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Container configuration type.
+	ContainerConfigType pulumi.StringInput `pulumi:"containerConfigType"`
+	// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	NetworkChannels GetDeployStageContainerConfigNetworkChannelArrayInput `pulumi:"networkChannels"`
+	// Determines the size and amount of resources available to the instance.
+	ShapeConfigs GetDeployStageContainerConfigShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetDeployStageContainerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageContainerConfig)(nil)).Elem()
+}
+
+func (i GetDeployStageContainerConfigArgs) ToGetDeployStageContainerConfigOutput() GetDeployStageContainerConfigOutput {
+	return i.ToGetDeployStageContainerConfigOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageContainerConfigArgs) ToGetDeployStageContainerConfigOutputWithContext(ctx context.Context) GetDeployStageContainerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageContainerConfigOutput)
+}
+
+// GetDeployStageContainerConfigArrayInput is an input type that accepts GetDeployStageContainerConfigArray and GetDeployStageContainerConfigArrayOutput values.
+// You can construct a concrete instance of `GetDeployStageContainerConfigArrayInput` via:
+//
+//	GetDeployStageContainerConfigArray{ GetDeployStageContainerConfigArgs{...} }
+type GetDeployStageContainerConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStageContainerConfigArrayOutput() GetDeployStageContainerConfigArrayOutput
+	ToGetDeployStageContainerConfigArrayOutputWithContext(context.Context) GetDeployStageContainerConfigArrayOutput
+}
+
+type GetDeployStageContainerConfigArray []GetDeployStageContainerConfigInput
+
+func (GetDeployStageContainerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageContainerConfig)(nil)).Elem()
+}
+
+func (i GetDeployStageContainerConfigArray) ToGetDeployStageContainerConfigArrayOutput() GetDeployStageContainerConfigArrayOutput {
+	return i.ToGetDeployStageContainerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageContainerConfigArray) ToGetDeployStageContainerConfigArrayOutputWithContext(ctx context.Context) GetDeployStageContainerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageContainerConfigArrayOutput)
+}
+
+type GetDeployStageContainerConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageContainerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageContainerConfig)(nil)).Elem()
+}
+
+func (o GetDeployStageContainerConfigOutput) ToGetDeployStageContainerConfigOutput() GetDeployStageContainerConfigOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigOutput) ToGetDeployStageContainerConfigOutputWithContext(ctx context.Context) GetDeployStageContainerConfigOutput {
+	return o
+}
+
+// Availability domain where the ContainerInstance will be created.
+func (o GetDeployStageContainerConfigOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfig) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment where the ContainerInstance will be created.
+func (o GetDeployStageContainerConfigOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfig) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Container configuration type.
+func (o GetDeployStageContainerConfigOutput) ContainerConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfig) string { return v.ContainerConfigType }).(pulumi.StringOutput)
+}
+
+// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+func (o GetDeployStageContainerConfigOutput) NetworkChannels() GetDeployStageContainerConfigNetworkChannelArrayOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfig) []GetDeployStageContainerConfigNetworkChannel {
+		return v.NetworkChannels
+	}).(GetDeployStageContainerConfigNetworkChannelArrayOutput)
+}
+
+// Determines the size and amount of resources available to the instance.
+func (o GetDeployStageContainerConfigOutput) ShapeConfigs() GetDeployStageContainerConfigShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfig) []GetDeployStageContainerConfigShapeConfig {
+		return v.ShapeConfigs
+	}).(GetDeployStageContainerConfigShapeConfigArrayOutput)
+}
+
+// The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+func (o GetDeployStageContainerConfigOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfig) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetDeployStageContainerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageContainerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageContainerConfig)(nil)).Elem()
+}
+
+func (o GetDeployStageContainerConfigArrayOutput) ToGetDeployStageContainerConfigArrayOutput() GetDeployStageContainerConfigArrayOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigArrayOutput) ToGetDeployStageContainerConfigArrayOutputWithContext(ctx context.Context) GetDeployStageContainerConfigArrayOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigArrayOutput) Index(i pulumi.IntInput) GetDeployStageContainerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStageContainerConfig {
+		return vs[0].([]GetDeployStageContainerConfig)[vs[1].(int)]
+	}).(GetDeployStageContainerConfigOutput)
+}
+
+type GetDeployStageContainerConfigNetworkChannel struct {
+	// Network channel type.
+	NetworkChannelType string `pulumi:"networkChannelType"`
+	// An array of network security group OCIDs.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetDeployStageContainerConfigNetworkChannelInput is an input type that accepts GetDeployStageContainerConfigNetworkChannelArgs and GetDeployStageContainerConfigNetworkChannelOutput values.
+// You can construct a concrete instance of `GetDeployStageContainerConfigNetworkChannelInput` via:
+//
+//	GetDeployStageContainerConfigNetworkChannelArgs{...}
+type GetDeployStageContainerConfigNetworkChannelInput interface {
+	pulumi.Input
+
+	ToGetDeployStageContainerConfigNetworkChannelOutput() GetDeployStageContainerConfigNetworkChannelOutput
+	ToGetDeployStageContainerConfigNetworkChannelOutputWithContext(context.Context) GetDeployStageContainerConfigNetworkChannelOutput
+}
+
+type GetDeployStageContainerConfigNetworkChannelArgs struct {
+	// Network channel type.
+	NetworkChannelType pulumi.StringInput `pulumi:"networkChannelType"`
+	// An array of network security group OCIDs.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetDeployStageContainerConfigNetworkChannelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (i GetDeployStageContainerConfigNetworkChannelArgs) ToGetDeployStageContainerConfigNetworkChannelOutput() GetDeployStageContainerConfigNetworkChannelOutput {
+	return i.ToGetDeployStageContainerConfigNetworkChannelOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageContainerConfigNetworkChannelArgs) ToGetDeployStageContainerConfigNetworkChannelOutputWithContext(ctx context.Context) GetDeployStageContainerConfigNetworkChannelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageContainerConfigNetworkChannelOutput)
+}
+
+// GetDeployStageContainerConfigNetworkChannelArrayInput is an input type that accepts GetDeployStageContainerConfigNetworkChannelArray and GetDeployStageContainerConfigNetworkChannelArrayOutput values.
+// You can construct a concrete instance of `GetDeployStageContainerConfigNetworkChannelArrayInput` via:
+//
+//	GetDeployStageContainerConfigNetworkChannelArray{ GetDeployStageContainerConfigNetworkChannelArgs{...} }
+type GetDeployStageContainerConfigNetworkChannelArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStageContainerConfigNetworkChannelArrayOutput() GetDeployStageContainerConfigNetworkChannelArrayOutput
+	ToGetDeployStageContainerConfigNetworkChannelArrayOutputWithContext(context.Context) GetDeployStageContainerConfigNetworkChannelArrayOutput
+}
+
+type GetDeployStageContainerConfigNetworkChannelArray []GetDeployStageContainerConfigNetworkChannelInput
+
+func (GetDeployStageContainerConfigNetworkChannelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (i GetDeployStageContainerConfigNetworkChannelArray) ToGetDeployStageContainerConfigNetworkChannelArrayOutput() GetDeployStageContainerConfigNetworkChannelArrayOutput {
+	return i.ToGetDeployStageContainerConfigNetworkChannelArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageContainerConfigNetworkChannelArray) ToGetDeployStageContainerConfigNetworkChannelArrayOutputWithContext(ctx context.Context) GetDeployStageContainerConfigNetworkChannelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageContainerConfigNetworkChannelArrayOutput)
+}
+
+type GetDeployStageContainerConfigNetworkChannelOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageContainerConfigNetworkChannelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (o GetDeployStageContainerConfigNetworkChannelOutput) ToGetDeployStageContainerConfigNetworkChannelOutput() GetDeployStageContainerConfigNetworkChannelOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigNetworkChannelOutput) ToGetDeployStageContainerConfigNetworkChannelOutputWithContext(ctx context.Context) GetDeployStageContainerConfigNetworkChannelOutput {
+	return o
+}
+
+// Network channel type.
+func (o GetDeployStageContainerConfigNetworkChannelOutput) NetworkChannelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfigNetworkChannel) string { return v.NetworkChannelType }).(pulumi.StringOutput)
+}
+
+// An array of network security group OCIDs.
+func (o GetDeployStageContainerConfigNetworkChannelOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfigNetworkChannel) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the subnet where VNIC resources will be created for private endpoint.
+func (o GetDeployStageContainerConfigNetworkChannelOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageContainerConfigNetworkChannel) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetDeployStageContainerConfigNetworkChannelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageContainerConfigNetworkChannelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (o GetDeployStageContainerConfigNetworkChannelArrayOutput) ToGetDeployStageContainerConfigNetworkChannelArrayOutput() GetDeployStageContainerConfigNetworkChannelArrayOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigNetworkChannelArrayOutput) ToGetDeployStageContainerConfigNetworkChannelArrayOutputWithContext(ctx context.Context) GetDeployStageContainerConfigNetworkChannelArrayOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigNetworkChannelArrayOutput) Index(i pulumi.IntInput) GetDeployStageContainerConfigNetworkChannelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStageContainerConfigNetworkChannel {
+		return vs[0].([]GetDeployStageContainerConfigNetworkChannel)[vs[1].(int)]
+	}).(GetDeployStageContainerConfigNetworkChannelOutput)
+}
+
+type GetDeployStageContainerConfigShapeConfig struct {
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetDeployStageContainerConfigShapeConfigInput is an input type that accepts GetDeployStageContainerConfigShapeConfigArgs and GetDeployStageContainerConfigShapeConfigOutput values.
+// You can construct a concrete instance of `GetDeployStageContainerConfigShapeConfigInput` via:
+//
+//	GetDeployStageContainerConfigShapeConfigArgs{...}
+type GetDeployStageContainerConfigShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetDeployStageContainerConfigShapeConfigOutput() GetDeployStageContainerConfigShapeConfigOutput
+	ToGetDeployStageContainerConfigShapeConfigOutputWithContext(context.Context) GetDeployStageContainerConfigShapeConfigOutput
+}
+
+type GetDeployStageContainerConfigShapeConfigArgs struct {
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetDeployStageContainerConfigShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (i GetDeployStageContainerConfigShapeConfigArgs) ToGetDeployStageContainerConfigShapeConfigOutput() GetDeployStageContainerConfigShapeConfigOutput {
+	return i.ToGetDeployStageContainerConfigShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageContainerConfigShapeConfigArgs) ToGetDeployStageContainerConfigShapeConfigOutputWithContext(ctx context.Context) GetDeployStageContainerConfigShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageContainerConfigShapeConfigOutput)
+}
+
+// GetDeployStageContainerConfigShapeConfigArrayInput is an input type that accepts GetDeployStageContainerConfigShapeConfigArray and GetDeployStageContainerConfigShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetDeployStageContainerConfigShapeConfigArrayInput` via:
+//
+//	GetDeployStageContainerConfigShapeConfigArray{ GetDeployStageContainerConfigShapeConfigArgs{...} }
+type GetDeployStageContainerConfigShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStageContainerConfigShapeConfigArrayOutput() GetDeployStageContainerConfigShapeConfigArrayOutput
+	ToGetDeployStageContainerConfigShapeConfigArrayOutputWithContext(context.Context) GetDeployStageContainerConfigShapeConfigArrayOutput
+}
+
+type GetDeployStageContainerConfigShapeConfigArray []GetDeployStageContainerConfigShapeConfigInput
+
+func (GetDeployStageContainerConfigShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (i GetDeployStageContainerConfigShapeConfigArray) ToGetDeployStageContainerConfigShapeConfigArrayOutput() GetDeployStageContainerConfigShapeConfigArrayOutput {
+	return i.ToGetDeployStageContainerConfigShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageContainerConfigShapeConfigArray) ToGetDeployStageContainerConfigShapeConfigArrayOutputWithContext(ctx context.Context) GetDeployStageContainerConfigShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageContainerConfigShapeConfigArrayOutput)
+}
+
+type GetDeployStageContainerConfigShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageContainerConfigShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (o GetDeployStageContainerConfigShapeConfigOutput) ToGetDeployStageContainerConfigShapeConfigOutput() GetDeployStageContainerConfigShapeConfigOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigShapeConfigOutput) ToGetDeployStageContainerConfigShapeConfigOutputWithContext(ctx context.Context) GetDeployStageContainerConfigShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o GetDeployStageContainerConfigShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDeployStageContainerConfigShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the instance.
+func (o GetDeployStageContainerConfigShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDeployStageContainerConfigShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetDeployStageContainerConfigShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageContainerConfigShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (o GetDeployStageContainerConfigShapeConfigArrayOutput) ToGetDeployStageContainerConfigShapeConfigArrayOutput() GetDeployStageContainerConfigShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigShapeConfigArrayOutput) ToGetDeployStageContainerConfigShapeConfigArrayOutputWithContext(ctx context.Context) GetDeployStageContainerConfigShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDeployStageContainerConfigShapeConfigArrayOutput) Index(i pulumi.IntInput) GetDeployStageContainerConfigShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStageContainerConfigShapeConfig {
+		return vs[0].([]GetDeployStageContainerConfigShapeConfig)[vs[1].(int)]
+	}).(GetDeployStageContainerConfigShapeConfigOutput)
 }
 
 type GetDeployStageDeployStagePredecessorCollection struct {
@@ -24634,6 +25564,8 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	BlueGreenStrategies []GetDeployStagesDeployStageCollectionItemBlueGreenStrategy `pulumi:"blueGreenStrategies"`
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategies []GetDeployStagesDeployStageCollectionItemCanaryStrategy `pulumi:"canaryStrategies"`
+	// The OCID of the artifact that contains the command specification.
+	CommandSpecDeployArtifactId string `pulumi:"commandSpecDeployArtifactId"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
@@ -24646,6 +25578,8 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	ComputeInstanceGroupDeployEnvironmentId string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config map[string]interface{} `pulumi:"config"`
+	// Specifies the container configuration.
+	ContainerConfigs []GetDeployStagesDeployStageCollectionItemContainerConfig `pulumi:"containerConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -24726,7 +25660,7 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	// Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Specifies the target or destination backend set.
 	TrafficShiftTarget string `pulumi:"trafficShiftTarget"`
@@ -24756,6 +25690,8 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	BlueGreenStrategies GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArrayInput `pulumi:"blueGreenStrategies"`
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategies GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayInput `pulumi:"canaryStrategies"`
+	// The OCID of the artifact that contains the command specification.
+	CommandSpecDeployArtifactId pulumi.StringInput `pulumi:"commandSpecDeployArtifactId"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
@@ -24768,6 +25704,8 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	ComputeInstanceGroupDeployEnvironmentId pulumi.StringInput `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config pulumi.MapInput `pulumi:"config"`
+	// Specifies the container configuration.
+	ContainerConfigs GetDeployStagesDeployStageCollectionItemContainerConfigArrayInput `pulumi:"containerConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -24848,7 +25786,7 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	// Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
 	// Specifies the target or destination backend set.
 	TrafficShiftTarget pulumi.StringInput `pulumi:"trafficShiftTarget"`
@@ -24937,6 +25875,11 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) CanaryStrategies() GetDe
 	}).(GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayOutput)
 }
 
+// The OCID of the artifact that contains the command specification.
+func (o GetDeployStagesDeployStageCollectionItemOutput) CommandSpecDeployArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.CommandSpecDeployArtifactId }).(pulumi.StringOutput)
+}
+
 // The OCID of the compartment in which to list resources.
 func (o GetDeployStagesDeployStageCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -24973,6 +25916,13 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) ComputeInstanceGroupDepl
 // User provided key and value pair configuration, which is assigned through constants or parameter.
 func (o GetDeployStagesDeployStageCollectionItemOutput) Config() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]interface{} { return v.Config }).(pulumi.MapOutput)
+}
+
+// Specifies the container configuration.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ContainerConfigs() GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []GetDeployStagesDeployStageCollectionItemContainerConfig {
+		return v.ContainerConfigs
+	}).(GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -25193,7 +26143,7 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) TimeUpdated() pulumi.Str
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+// Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 func (o GetDeployStagesDeployStageCollectionItemOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }
@@ -25445,7 +26395,7 @@ type GetDeployStagesDeployStageCollectionItemBlueGreenStrategy struct {
 	NamespaceA string `pulumi:"namespaceA"`
 	// Second Namespace for deployment.
 	NamespaceB string `pulumi:"namespaceB"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType string `pulumi:"strategyType"`
 }
 
@@ -25467,7 +26417,7 @@ type GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs struct {
 	NamespaceA pulumi.StringInput `pulumi:"namespaceA"`
 	// Second Namespace for deployment.
 	NamespaceB pulumi.StringInput `pulumi:"namespaceB"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType pulumi.StringInput `pulumi:"strategyType"`
 }
 
@@ -25537,7 +26487,7 @@ func (o GetDeployStagesDeployStageCollectionItemBlueGreenStrategyOutput) Namespa
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemBlueGreenStrategy) string { return v.NamespaceB }).(pulumi.StringOutput)
 }
 
-// Canary strategy type
+// Canary strategy type.
 func (o GetDeployStagesDeployStageCollectionItemBlueGreenStrategyOutput) StrategyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemBlueGreenStrategy) string { return v.StrategyType }).(pulumi.StringOutput)
 }
@@ -25567,7 +26517,7 @@ type GetDeployStagesDeployStageCollectionItemCanaryStrategy struct {
 	IngressName string `pulumi:"ingressName"`
 	// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
 	Namespace string `pulumi:"namespace"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType string `pulumi:"strategyType"`
 }
 
@@ -25587,7 +26537,7 @@ type GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs struct {
 	IngressName pulumi.StringInput `pulumi:"ingressName"`
 	// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// Canary strategy type
+	// Canary strategy type.
 	StrategyType pulumi.StringInput `pulumi:"strategyType"`
 }
 
@@ -25652,7 +26602,7 @@ func (o GetDeployStagesDeployStageCollectionItemCanaryStrategyOutput) Namespace(
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemCanaryStrategy) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// Canary strategy type
+// Canary strategy type.
 func (o GetDeployStagesDeployStageCollectionItemCanaryStrategyOutput) StrategyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemCanaryStrategy) string { return v.StrategyType }).(pulumi.StringOutput)
 }
@@ -25675,6 +26625,381 @@ func (o GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayOutput) Index
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStagesDeployStageCollectionItemCanaryStrategy {
 		return vs[0].([]GetDeployStagesDeployStageCollectionItemCanaryStrategy)[vs[1].(int)]
 	}).(GetDeployStagesDeployStageCollectionItemCanaryStrategyOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfig struct {
+	// Availability domain where the ContainerInstance will be created.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The OCID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Container configuration type.
+	ContainerConfigType string `pulumi:"containerConfigType"`
+	// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	NetworkChannels []GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel `pulumi:"networkChannels"`
+	// Determines the size and amount of resources available to the instance.
+	ShapeConfigs []GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig `pulumi:"shapeConfigs"`
+	// The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetDeployStagesDeployStageCollectionItemContainerConfigInput is an input type that accepts GetDeployStagesDeployStageCollectionItemContainerConfigArgs and GetDeployStagesDeployStageCollectionItemContainerConfigOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemContainerConfigInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemContainerConfigArgs{...}
+type GetDeployStagesDeployStageCollectionItemContainerConfigInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigOutput() GetDeployStagesDeployStageCollectionItemContainerConfigOutput
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigArgs struct {
+	// Availability domain where the ContainerInstance will be created.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The OCID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Container configuration type.
+	ContainerConfigType pulumi.StringInput `pulumi:"containerConfigType"`
+	// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	NetworkChannels GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayInput `pulumi:"networkChannels"`
+	// Determines the size and amount of resources available to the instance.
+	ShapeConfigs GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfig)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigArgs) ToGetDeployStagesDeployStageCollectionItemContainerConfigOutput() GetDeployStagesDeployStageCollectionItemContainerConfigOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemContainerConfigOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigArgs) ToGetDeployStagesDeployStageCollectionItemContainerConfigOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemContainerConfigOutput)
+}
+
+// GetDeployStagesDeployStageCollectionItemContainerConfigArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemContainerConfigArray and GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemContainerConfigArrayInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemContainerConfigArray{ GetDeployStagesDeployStageCollectionItemContainerConfigArgs{...} }
+type GetDeployStagesDeployStageCollectionItemContainerConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigArrayOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigArray []GetDeployStagesDeployStageCollectionItemContainerConfigInput
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemContainerConfig)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigArray) ToGetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemContainerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigArray) ToGetDeployStagesDeployStageCollectionItemContainerConfigArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfig)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigOutput() GetDeployStagesDeployStageCollectionItemContainerConfigOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigOutput {
+	return o
+}
+
+// Availability domain where the ContainerInstance will be created.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfig) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment in which to list resources.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfig) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Container configuration type.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigOutput) ContainerConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfig) string { return v.ContainerConfigType }).(pulumi.StringOutput)
+}
+
+// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigOutput) NetworkChannels() GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfig) []GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel {
+		return v.NetworkChannels
+	}).(GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput)
+}
+
+// Determines the size and amount of resources available to the instance.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigOutput) ShapeConfigs() GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfig) []GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig {
+		return v.ShapeConfigs
+	}).(GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput)
+}
+
+// The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfig) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemContainerConfig)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput) Index(i pulumi.IntInput) GetDeployStagesDeployStageCollectionItemContainerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStagesDeployStageCollectionItemContainerConfig {
+		return vs[0].([]GetDeployStagesDeployStageCollectionItemContainerConfig)[vs[1].(int)]
+	}).(GetDeployStagesDeployStageCollectionItemContainerConfigOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel struct {
+	// Network channel type.
+	NetworkChannelType string `pulumi:"networkChannelType"`
+	// An array of network security group OCIDs.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelInput is an input type that accepts GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs and GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs{...}
+type GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput() GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs struct {
+	// Network channel type.
+	NetworkChannelType pulumi.StringInput `pulumi:"networkChannelType"`
+	// An array of network security group OCIDs.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs) ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput() GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs) ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput)
+}
+
+// GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArray and GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArray{ GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs{...} }
+type GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArray []GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelInput
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArray) ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArray) ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput() GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput {
+	return o
+}
+
+// Network channel type.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput) NetworkChannelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel) string {
+		return v.NetworkChannelType
+	}).(pulumi.StringOutput)
+}
+
+// An array of network security group OCIDs.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the subnet where VNIC resources will be created for private endpoint.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput) Index(i pulumi.IntInput) GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel {
+		return vs[0].([]GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel)[vs[1].(int)]
+	}).(GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig struct {
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigInput is an input type that accepts GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs and GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs{...}
+type GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput() GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs struct {
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs) ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput() GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs) ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput)
+}
+
+// GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArray and GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArray{ GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs{...} }
+type GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput
+	ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArray []GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigInput
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArray) ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArray) ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput() GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the instance.
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput() GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput) ToGetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput) Index(i pulumi.IntInput) GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig {
+		return vs[0].([]GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig)[vs[1].(int)]
+	}).(GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput)
 }
 
 type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection struct {
@@ -37728,6 +39053,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageBlueGreenStrategyPtrInput)(nil)).Elem(), DeployStageBlueGreenStrategyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageCanaryStrategyInput)(nil)).Elem(), DeployStageCanaryStrategyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageCanaryStrategyPtrInput)(nil)).Elem(), DeployStageCanaryStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageContainerConfigInput)(nil)).Elem(), DeployStageContainerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageContainerConfigPtrInput)(nil)).Elem(), DeployStageContainerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageContainerConfigNetworkChannelInput)(nil)).Elem(), DeployStageContainerConfigNetworkChannelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageContainerConfigNetworkChannelPtrInput)(nil)).Elem(), DeployStageContainerConfigNetworkChannelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageContainerConfigShapeConfigInput)(nil)).Elem(), DeployStageContainerConfigShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageContainerConfigShapeConfigPtrInput)(nil)).Elem(), DeployStageContainerConfigShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageDeployStagePredecessorCollectionInput)(nil)).Elem(), DeployStageDeployStagePredecessorCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageDeployStagePredecessorCollectionPtrInput)(nil)).Elem(), DeployStageDeployStagePredecessorCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageDeployStagePredecessorCollectionItemInput)(nil)).Elem(), DeployStageDeployStagePredecessorCollectionItemArgs{})
@@ -38000,6 +39331,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageBlueGreenStrategyArrayInput)(nil)).Elem(), GetDeployStageBlueGreenStrategyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageCanaryStrategyInput)(nil)).Elem(), GetDeployStageCanaryStrategyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageCanaryStrategyArrayInput)(nil)).Elem(), GetDeployStageCanaryStrategyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageContainerConfigInput)(nil)).Elem(), GetDeployStageContainerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageContainerConfigArrayInput)(nil)).Elem(), GetDeployStageContainerConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageContainerConfigNetworkChannelInput)(nil)).Elem(), GetDeployStageContainerConfigNetworkChannelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageContainerConfigNetworkChannelArrayInput)(nil)).Elem(), GetDeployStageContainerConfigNetworkChannelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageContainerConfigShapeConfigInput)(nil)).Elem(), GetDeployStageContainerConfigShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageContainerConfigShapeConfigArrayInput)(nil)).Elem(), GetDeployStageContainerConfigShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageDeployStagePredecessorCollectionInput)(nil)).Elem(), GetDeployStageDeployStagePredecessorCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageDeployStagePredecessorCollectionArrayInput)(nil)).Elem(), GetDeployStageDeployStagePredecessorCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageDeployStagePredecessorCollectionItemInput)(nil)).Elem(), GetDeployStageDeployStagePredecessorCollectionItemArgs{})
@@ -38032,6 +39369,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemCanaryStrategyInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemCanaryStrategyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemContainerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemContainerConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArgs{})
@@ -38336,6 +39679,12 @@ func init() {
 	pulumi.RegisterOutputType(DeployStageBlueGreenStrategyPtrOutput{})
 	pulumi.RegisterOutputType(DeployStageCanaryStrategyOutput{})
 	pulumi.RegisterOutputType(DeployStageCanaryStrategyPtrOutput{})
+	pulumi.RegisterOutputType(DeployStageContainerConfigOutput{})
+	pulumi.RegisterOutputType(DeployStageContainerConfigPtrOutput{})
+	pulumi.RegisterOutputType(DeployStageContainerConfigNetworkChannelOutput{})
+	pulumi.RegisterOutputType(DeployStageContainerConfigNetworkChannelPtrOutput{})
+	pulumi.RegisterOutputType(DeployStageContainerConfigShapeConfigOutput{})
+	pulumi.RegisterOutputType(DeployStageContainerConfigShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(DeployStageDeployStagePredecessorCollectionOutput{})
 	pulumi.RegisterOutputType(DeployStageDeployStagePredecessorCollectionPtrOutput{})
 	pulumi.RegisterOutputType(DeployStageDeployStagePredecessorCollectionItemOutput{})
@@ -38608,6 +39957,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDeployStageBlueGreenStrategyArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStageCanaryStrategyOutput{})
 	pulumi.RegisterOutputType(GetDeployStageCanaryStrategyArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStageContainerConfigOutput{})
+	pulumi.RegisterOutputType(GetDeployStageContainerConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStageContainerConfigNetworkChannelOutput{})
+	pulumi.RegisterOutputType(GetDeployStageContainerConfigNetworkChannelArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStageContainerConfigShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetDeployStageContainerConfigShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStageDeployStagePredecessorCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeployStageDeployStagePredecessorCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStageDeployStagePredecessorCollectionItemOutput{})
@@ -38640,6 +39995,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemCanaryStrategyOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemContainerConfigOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemContainerConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemOutput{})

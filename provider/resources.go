@@ -537,6 +537,20 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_dataintegration_workspace_folder":  {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "WorkspaceFolder")},
 			"oci_dataintegration_workspace_project": {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "WorkspaceProject")},
 
+			"oci_datascience_pipeline": {
+				Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Pipeline"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"step_artifact": {
+						Elem: &tfbridge.SchemaInfo{
+							Fields: map[string]*tfbridge.SchemaInfo{
+								"pipeline_step_artifact": {
+									CSharpName: "StepArtifact",
+								},
+							},
+						},
+					},
+				},
+			},
 			"oci_datascience_job":                   {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Job")},
 			"oci_datascience_job_run":               {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "JobRun")},
 			"oci_datascience_model":                 {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Model")},
@@ -2274,6 +2288,19 @@ func Provider() tfbridge.ProviderInfo {
 			},
 		},
 	}
+
+	capMap := map[string]string{
+		"datascience": dataScienceMod,
+	}
+	prov.ComputeDefaults(tfbridge.TokensKnownModules("oci_", "", []string{
+		"datascience_",
+	}, func(module, name string) (string, error) {
+		mod, ok := capMap[module]
+		if !ok {
+			return "", fmt.Errorf("unmapped module '%s'", module)
+		}
+		return tfbridge.MakeStandardToken(mainPkg)(mod, name)
+	}))
 
 	prov.SetAutonaming(255, "-")
 

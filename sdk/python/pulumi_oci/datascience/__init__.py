@@ -22,6 +22,10 @@ from .get_models import *
 from .get_notebook_session import *
 from .get_notebook_session_shapes import *
 from .get_notebook_sessions import *
+from .get_pipeline import *
+from .get_pipeline_run import *
+from .get_pipeline_runs import *
+from .get_pipelines import *
 from .get_project import *
 from .get_projects import *
 from .job import *
@@ -33,6 +37,8 @@ from .model_deployment import *
 from .model_provenance import *
 from .model_version_set import *
 from .notebook_session import *
+from .pipeline import *
+from .pipeline_run import *
 from .project import *
 from ._inputs import *
 from . import outputs

@@ -75,6 +75,16 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String compartmentId;
     /**
+     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * 
+     */
+    private Double computeCount;
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
@@ -545,6 +555,20 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * 
+     */
+    public Double computeCount() {
+        return this.computeCount;
+    }
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     /**
      * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -1124,6 +1148,8 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs;
         private String characterSet;
         private String compartmentId;
+        private Double computeCount;
+        private String computeModel;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString> connectionStrings;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl> connectionUrls;
         private Integer cpuCoreCount;
@@ -1216,6 +1242,8 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.backupConfigs = defaults.backupConfigs;
     	      this.characterSet = defaults.characterSet;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeCount = defaults.computeCount;
+    	      this.computeModel = defaults.computeModel;
     	      this.connectionStrings = defaults.connectionStrings;
     	      this.connectionUrls = defaults.connectionUrls;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -1354,6 +1382,16 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeCount(Double computeCount) {
+            this.computeCount = Objects.requireNonNull(computeCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            this.computeModel = Objects.requireNonNull(computeModel);
             return this;
         }
         @CustomType.Setter
@@ -1802,6 +1840,8 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             o.backupConfigs = backupConfigs;
             o.characterSet = characterSet;
             o.compartmentId = compartmentId;
+            o.computeCount = computeCount;
+            o.computeModel = computeModel;
             o.connectionStrings = connectionStrings;
             o.connectionUrls = connectionUrls;
             o.cpuCoreCount = cpuCoreCount;

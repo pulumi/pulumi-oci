@@ -22,6 +22,10 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// </summary>
         public readonly string ConfigType;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        /// </summary>
+        public readonly string CreatedBy;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -37,6 +41,10 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// A filter to return resources that match the given display name.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// For optimistic concurrency control. See `if-match`.
+        /// </summary>
+        public readonly string Etag;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         /// </summary>
@@ -57,6 +65,10 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The list of configuration items that reference the span filter.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConfigsConfigCollectionItemInUseByResult> InUseBies;
         /// <summary>
         /// The list of metrics in this group.
         /// </summary>
@@ -79,12 +91,18 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        /// </summary>
+        public readonly string UpdatedBy;
 
         [OutputConstructor]
         private GetConfigsConfigCollectionItemResult(
             string apmDomainId,
 
             string configType,
+
+            string createdBy,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -93,6 +111,8 @@ namespace Pulumi.Oci.ApmConfig.Outputs
             ImmutableArray<Outputs.GetConfigsConfigCollectionItemDimensionResult> dimensions,
 
             string displayName,
+
+            string etag,
 
             string filterId,
 
@@ -103,6 +123,8 @@ namespace Pulumi.Oci.ApmConfig.Outputs
             string group,
 
             string id,
+
+            ImmutableArray<Outputs.GetConfigsConfigCollectionItemInUseByResult> inUseBies,
 
             ImmutableArray<Outputs.GetConfigsConfigCollectionItemMetricResult> metrics,
 
@@ -116,19 +138,24 @@ namespace Pulumi.Oci.ApmConfig.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string updatedBy)
         {
             ApmDomainId = apmDomainId;
             ConfigType = configType;
+            CreatedBy = createdBy;
             DefinedTags = definedTags;
             Description = description;
             Dimensions = dimensions;
             DisplayName = displayName;
+            Etag = etag;
             FilterId = filterId;
             FilterText = filterText;
             FreeformTags = freeformTags;
             Group = group;
             Id = id;
+            InUseBies = inUseBies;
             Metrics = metrics;
             Namespace = @namespace;
             OpcDryRun = opcDryRun;
@@ -136,6 +163,7 @@ namespace Pulumi.Oci.ApmConfig.Outputs
             Rules = rules;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            UpdatedBy = updatedBy;
         }
     }
 }

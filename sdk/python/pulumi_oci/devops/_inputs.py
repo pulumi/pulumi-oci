@@ -60,6 +60,9 @@ __all__ = [
     'DeployStageBlueBackendIpsArgs',
     'DeployStageBlueGreenStrategyArgs',
     'DeployStageCanaryStrategyArgs',
+    'DeployStageContainerConfigArgs',
+    'DeployStageContainerConfigNetworkChannelArgs',
+    'DeployStageContainerConfigShapeConfigArgs',
     'DeployStageDeployStagePredecessorCollectionArgs',
     'DeployStageDeployStagePredecessorCollectionItemArgs',
     'DeployStageFailurePolicyArgs',
@@ -2234,7 +2237,7 @@ class DeployStageBlueGreenStrategyArgs:
         :param pulumi.Input[str] ingress_name: Name of the Ingress resource.
         :param pulumi.Input[str] namespace_a: First Namespace for deployment.
         :param pulumi.Input[str] namespace_b: Second Namespace for deployment.
-        :param pulumi.Input[str] strategy_type: Canary strategy type
+        :param pulumi.Input[str] strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace_a", namespace_a)
@@ -2281,7 +2284,7 @@ class DeployStageBlueGreenStrategyArgs:
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> pulumi.Input[str]:
         """
-        Canary strategy type
+        Canary strategy type.
         """
         return pulumi.get(self, "strategy_type")
 
@@ -2299,7 +2302,7 @@ class DeployStageCanaryStrategyArgs:
         """
         :param pulumi.Input[str] ingress_name: Name of the Ingress resource.
         :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        :param pulumi.Input[str] strategy_type: Canary strategy type
+        :param pulumi.Input[str] strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace", namespace)
@@ -2333,13 +2336,203 @@ class DeployStageCanaryStrategyArgs:
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> pulumi.Input[str]:
         """
-        Canary strategy type
+        Canary strategy type.
         """
         return pulumi.get(self, "strategy_type")
 
     @strategy_type.setter
     def strategy_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "strategy_type", value)
+
+
+@pulumi.input_type
+class DeployStageContainerConfigArgs:
+    def __init__(__self__, *,
+                 container_config_type: pulumi.Input[str],
+                 network_channel: pulumi.Input['DeployStageContainerConfigNetworkChannelArgs'],
+                 shape_config: pulumi.Input['DeployStageContainerConfigShapeConfigArgs'],
+                 shape_name: pulumi.Input[str],
+                 availability_domain: Optional[pulumi.Input[str]] = None,
+                 compartment_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] container_config_type: (Updatable) Container configuration type.
+        :param pulumi.Input['DeployStageContainerConfigNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param pulumi.Input['DeployStageContainerConfigShapeConfigArgs'] shape_config: (Updatable) Determines the size and amount of resources available to the instance.
+        :param pulumi.Input[str] shape_name: (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        :param pulumi.Input[str] availability_domain: (Updatable) Availability domain where the ContainerInstance will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        """
+        pulumi.set(__self__, "container_config_type", container_config_type)
+        pulumi.set(__self__, "network_channel", network_channel)
+        pulumi.set(__self__, "shape_config", shape_config)
+        pulumi.set(__self__, "shape_name", shape_name)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+
+    @property
+    @pulumi.getter(name="containerConfigType")
+    def container_config_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Container configuration type.
+        """
+        return pulumi.get(self, "container_config_type")
+
+    @container_config_type.setter
+    def container_config_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "container_config_type", value)
+
+    @property
+    @pulumi.getter(name="networkChannel")
+    def network_channel(self) -> pulumi.Input['DeployStageContainerConfigNetworkChannelArgs']:
+        """
+        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "network_channel")
+
+    @network_channel.setter
+    def network_channel(self, value: pulumi.Input['DeployStageContainerConfigNetworkChannelArgs']):
+        pulumi.set(self, "network_channel", value)
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> pulumi.Input['DeployStageContainerConfigShapeConfigArgs']:
+        """
+        (Updatable) Determines the size and amount of resources available to the instance.
+        """
+        return pulumi.get(self, "shape_config")
+
+    @shape_config.setter
+    def shape_config(self, value: pulumi.Input['DeployStageContainerConfigShapeConfigArgs']):
+        pulumi.set(self, "shape_config", value)
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @shape_name.setter
+    def shape_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "shape_name", value)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Availability domain where the ContainerInstance will be created.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+
+@pulumi.input_type
+class DeployStageContainerConfigNetworkChannelArgs:
+    def __init__(__self__, *,
+                 network_channel_type: pulumi.Input[str],
+                 subnet_id: pulumi.Input[str],
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] network_channel_type: (Updatable) Network channel type.
+        :param pulumi.Input[str] subnet_id: (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
+        """
+        pulumi.set(__self__, "network_channel_type", network_channel_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+
+    @property
+    @pulumi.getter(name="networkChannelType")
+    def network_channel_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Network channel type.
+        """
+        return pulumi.get(self, "network_channel_type")
+
+    @network_channel_type.setter
+    def network_channel_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "network_channel_type", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) An array of network security group OCIDs.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+
+@pulumi.input_type
+class DeployStageContainerConfigShapeConfigArgs:
+    def __init__(__self__, *,
+                 ocpus: pulumi.Input[float],
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the instance.
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
+        """
+        pulumi.set(__self__, "ocpus", ocpus)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[float]:
+        """
+        (Updatable) The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[float]):
+        pulumi.set(self, "ocpus", value)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
 
 
 @pulumi.input_type

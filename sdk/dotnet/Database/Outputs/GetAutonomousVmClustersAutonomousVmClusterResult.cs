@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The compute model of the Autonomous VM Cluster.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The number of CPU cores enabled per VM cluster node.
         /// </summary>
         public readonly int CpuCoreCountPerNode;
@@ -165,6 +169,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string compartmentId,
 
+            string computeModel,
+
             int cpuCoreCountPerNode,
 
             int cpusEnabled,
@@ -229,6 +235,7 @@ namespace Pulumi.Oci.Database.Outputs
             AvailableCpus = availableCpus;
             AvailableDataStorageSizeInTbs = availableDataStorageSizeInTbs;
             CompartmentId = compartmentId;
+            ComputeModel = computeModel;
             CpuCoreCountPerNode = cpuCoreCountPerNode;
             CpusEnabled = cpusEnabled;
             DataStorageSizeInGb = dataStorageSizeInGb;

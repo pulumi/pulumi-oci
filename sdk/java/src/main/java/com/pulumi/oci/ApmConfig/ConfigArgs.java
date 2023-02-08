@@ -6,6 +6,7 @@ package com.pulumi.oci.ApmConfig;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApmConfig.inputs.ConfigDimensionArgs;
+import com.pulumi.oci.ApmConfig.inputs.ConfigInUseByArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigMetricArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigRuleArgs;
 import java.lang.Object;
@@ -172,6 +173,21 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The list of configuration items that reference the span filter.
+     * 
+     */
+    @Import(name="inUseBies")
+    private @Nullable Output<List<ConfigInUseByArgs>> inUseBies;
+
+    /**
+     * @return The list of configuration items that reference the span filter.
+     * 
+     */
+    public Optional<Output<List<ConfigInUseByArgs>>> inUseBies() {
+        return Optional.ofNullable(this.inUseBies);
+    }
+
+    /**
      * (Updatable) The list of metrics in this group.
      * 
      */
@@ -259,6 +275,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         this.filterText = $.filterText;
         this.freeformTags = $.freeformTags;
         this.group = $.group;
+        this.inUseBies = $.inUseBies;
         this.metrics = $.metrics;
         this.namespace = $.namespace;
         this.opcDryRun = $.opcDryRun;
@@ -502,6 +519,37 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder group(String group) {
             return group(Output.of(group));
+        }
+
+        /**
+         * @param inUseBies The list of configuration items that reference the span filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inUseBies(@Nullable Output<List<ConfigInUseByArgs>> inUseBies) {
+            $.inUseBies = inUseBies;
+            return this;
+        }
+
+        /**
+         * @param inUseBies The list of configuration items that reference the span filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inUseBies(List<ConfigInUseByArgs> inUseBies) {
+            return inUseBies(Output.of(inUseBies));
+        }
+
+        /**
+         * @param inUseBies The list of configuration items that reference the span filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inUseBies(ConfigInUseByArgs... inUseBies) {
+            return inUseBies(List.of(inUseBies));
         }
 
         /**

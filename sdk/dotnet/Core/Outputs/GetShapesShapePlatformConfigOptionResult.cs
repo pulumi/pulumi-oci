@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionMeasuredBootOptionResult> MeasuredBootOptions;
         /// <summary>
+        /// Configuration options for memory encryption.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionMemoryEncryptionOptionResult> MemoryEncryptionOptions;
+        /// <summary>
         /// Configuration options for NUMA nodes per socket.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult> NumaNodesPerSocketPlatformOptions;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionMeasuredBootOptionResult> measuredBootOptions,
 
+            ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionMemoryEncryptionOptionResult> memoryEncryptionOptions,
+
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult> numaNodesPerSocketPlatformOptions,
 
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult> percentageOfCoresEnabledOptions,
@@ -79,6 +85,7 @@ namespace Pulumi.Oci.Core.Outputs
             AccessControlServiceOptions = accessControlServiceOptions;
             InputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
             MeasuredBootOptions = measuredBootOptions;
+            MemoryEncryptionOptions = memoryEncryptionOptions;
             NumaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
             PercentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
             SecureBootOptions = secureBootOptions;

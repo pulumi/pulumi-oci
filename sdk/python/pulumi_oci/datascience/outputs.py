@@ -37,6 +37,22 @@ __all__ = [
     'NotebookSessionNotebookSessionRuntimeConfigDetails',
     'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails',
     'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection',
+    'PipelineConfigurationDetails',
+    'PipelineInfrastructureConfigurationDetails',
+    'PipelineInfrastructureConfigurationDetailsShapeConfigDetails',
+    'PipelineLogConfigurationDetails',
+    'PipelineRunConfigurationDetail',
+    'PipelineRunConfigurationOverrideDetails',
+    'PipelineRunLogConfigurationOverrideDetails',
+    'PipelineRunLogDetail',
+    'PipelineRunStepOverrideDetail',
+    'PipelineRunStepOverrideDetailStepConfigurationDetails',
+    'PipelineRunStepRun',
+    'PipelineStepArtifact',
+    'PipelineStepDetail',
+    'PipelineStepDetailStepConfigurationDetails',
+    'PipelineStepDetailStepInfrastructureConfigurationDetails',
+    'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails',
     'GetFastLaunchJobConfigsFastLaunchJobConfigResult',
     'GetFastLaunchJobConfigsFilterResult',
     'GetJobJobConfigurationDetailResult',
@@ -109,6 +125,42 @@ __all__ = [
     'GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult',
     'GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult',
     'GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult',
+    'GetPipelineConfigurationDetailResult',
+    'GetPipelineInfrastructureConfigurationDetailResult',
+    'GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult',
+    'GetPipelineLogConfigurationDetailResult',
+    'GetPipelineRunConfigurationDetailResult',
+    'GetPipelineRunConfigurationOverrideDetailResult',
+    'GetPipelineRunLogConfigurationOverrideDetailResult',
+    'GetPipelineRunLogDetailResult',
+    'GetPipelineRunStepOverrideDetailResult',
+    'GetPipelineRunStepOverrideDetailStepConfigurationDetailResult',
+    'GetPipelineRunStepRunResult',
+    'GetPipelineRunsFilterResult',
+    'GetPipelineRunsPipelineRunResult',
+    'GetPipelineRunsPipelineRunConfigurationDetailResult',
+    'GetPipelineRunsPipelineRunConfigurationOverrideDetailResult',
+    'GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult',
+    'GetPipelineRunsPipelineRunLogDetailResult',
+    'GetPipelineRunsPipelineRunStepOverrideDetailResult',
+    'GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult',
+    'GetPipelineRunsPipelineRunStepRunResult',
+    'GetPipelineStepArtifactResult',
+    'GetPipelineStepDetailResult',
+    'GetPipelineStepDetailStepConfigurationDetailResult',
+    'GetPipelineStepDetailStepInfrastructureConfigurationDetailResult',
+    'GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult',
+    'GetPipelinesFilterResult',
+    'GetPipelinesPipelineResult',
+    'GetPipelinesPipelineConfigurationDetailResult',
+    'GetPipelinesPipelineInfrastructureConfigurationDetailResult',
+    'GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult',
+    'GetPipelinesPipelineLogConfigurationDetailResult',
+    'GetPipelinesPipelineStepArtifactResult',
+    'GetPipelinesPipelineStepDetailResult',
+    'GetPipelinesPipelineStepDetailStepConfigurationDetailResult',
+    'GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult',
+    'GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult',
     'GetProjectsFilterResult',
     'GetProjectsProjectResult',
 ]
@@ -1627,6 +1679,1165 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         (Updatable) The repository URL
         """
         return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class PipelineConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        """
+        :param str type: (Updatable) The type of pipeline.
+        :param str command_line_arguments: (Updatable) The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "type", type)
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[str]:
+        """
+        (Updatable) The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
+        """
+        (Updatable) A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class PipelineInfrastructureConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockStorageSizeInGbs":
+            suggest = "block_storage_size_in_gbs"
+        elif key == "shapeName":
+            suggest = "shape_name"
+        elif key == "shapeConfigDetails":
+            suggest = "shape_config_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineInfrastructureConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineInfrastructureConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineInfrastructureConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: int,
+                 shape_name: str,
+                 shape_config_details: Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails'] = None):
+        """
+        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param 'PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_name", shape_name)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+
+@pulumi.output_type
+class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineInfrastructureConfigurationDetailsShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineInfrastructureConfigurationDetailsShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineInfrastructureConfigurationDetailsShapeConfigDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class PipelineLogConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableAutoLogCreation":
+            suggest = "enable_auto_log_creation"
+        elif key == "enableLogging":
+            suggest = "enable_logging"
+        elif key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineLogConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineLogConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineLogConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        """
+        :param bool enable_auto_log_creation: (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: (Updatable) If customer logging is enabled for pipeline.
+        :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> Optional[bool]:
+        """
+        (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[bool]:
+        """
+        (Updatable) If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class PipelineRunConfigurationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunConfigurationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunConfigurationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunConfigurationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[str]:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class PipelineRunConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        """
+        :param str type: The type of pipeline.
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "type", type)
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[str]:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class PipelineRunLogConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableAutoLogCreation":
+            suggest = "enable_auto_log_creation"
+        elif key == "enableLogging":
+            suggest = "enable_logging"
+        elif key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunLogConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunLogConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunLogConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> Optional[bool]:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[bool]:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class PipelineRunLogDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunLogDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunLogDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunLogDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        """
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class PipelineRunStepOverrideDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stepConfigurationDetails":
+            suggest = "step_configuration_details"
+        elif key == "stepName":
+            suggest = "step_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunStepOverrideDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunStepOverrideDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunStepOverrideDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 step_configuration_details: 'outputs.PipelineRunStepOverrideDetailStepConfigurationDetails',
+                 step_name: str):
+        """
+        :param 'PipelineRunStepOverrideDetailStepConfigurationDetailsArgs' step_configuration_details: The configuration details of a step.
+        :param str step_name: The name of the step.
+        """
+        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> 'outputs.PipelineRunStepOverrideDetailStepConfigurationDetails':
+        """
+        The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunStepOverrideDetailStepConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunStepOverrideDetailStepConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunStepOverrideDetailStepConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[str]:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class PipelineRunStepRun(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobRunId":
+            suggest = "job_run_id"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "stepName":
+            suggest = "step_name"
+        elif key == "stepType":
+            suggest = "step_type"
+        elif key == "timeFinished":
+            suggest = "time_finished"
+        elif key == "timeStarted":
+            suggest = "time_started"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunStepRun. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunStepRun.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunStepRun.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_run_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 step_name: Optional[str] = None,
+                 step_type: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        """
+        :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
+        :param str lifecycle_details: Details of the state of the step run.
+        :param str state: The state of the step run.
+        :param str step_name: The name of the step.
+        :param str step_type: The type of step.
+        :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        if job_run_id is not None:
+            pulumi.set(__self__, "job_run_id", job_run_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+        if step_type is not None:
+            pulumi.set(__self__, "step_type", step_type)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="jobRunId")
+    def job_run_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
+        """
+        return pulumi.get(self, "job_run_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Details of the state of the step run.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The state of the step run.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> Optional[str]:
+        """
+        The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="stepType")
+    def step_type(self) -> Optional[str]:
+        """
+        The type of step.
+        """
+        return pulumi.get(self, "step_type")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> Optional[str]:
+        """
+        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[str]:
+        """
+        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class PipelineStepArtifact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "artifactContentLength":
+            suggest = "artifact_content_length"
+        elif key == "pipelineStepArtifact":
+            suggest = "pipeline_step_artifact"
+        elif key == "stepName":
+            suggest = "step_name"
+        elif key == "artifactContentDisposition":
+            suggest = "artifact_content_disposition"
+        elif key == "artifactContentMd5":
+            suggest = "artifact_content_md5"
+        elif key == "artifactLastModified":
+            suggest = "artifact_last_modified"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineStepArtifact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineStepArtifact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineStepArtifact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 artifact_content_length: str,
+                 pipeline_step_artifact: str,
+                 step_name: str,
+                 artifact_content_disposition: Optional[str] = None,
+                 artifact_content_md5: Optional[str] = None,
+                 artifact_last_modified: Optional[str] = None):
+        """
+        :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
+        pulumi.set(__self__, "step_name", step_name)
+        if artifact_content_disposition is not None:
+            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+        if artifact_content_md5 is not None:
+            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+        if artifact_last_modified is not None:
+            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+
+    @property
+    @pulumi.getter(name="artifactContentLength")
+    def artifact_content_length(self) -> str:
+        return pulumi.get(self, "artifact_content_length")
+
+    @property
+    @pulumi.getter(name="pipelineStepArtifact")
+    def pipeline_step_artifact(self) -> str:
+        return pulumi.get(self, "pipeline_step_artifact")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="artifactContentDisposition")
+    def artifact_content_disposition(self) -> Optional[str]:
+        return pulumi.get(self, "artifact_content_disposition")
+
+    @property
+    @pulumi.getter(name="artifactContentMd5")
+    def artifact_content_md5(self) -> Optional[str]:
+        return pulumi.get(self, "artifact_content_md5")
+
+    @property
+    @pulumi.getter(name="artifactLastModified")
+    def artifact_last_modified(self) -> Optional[str]:
+        return pulumi.get(self, "artifact_last_modified")
+
+
+@pulumi.output_type
+class PipelineStepDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stepName":
+            suggest = "step_name"
+        elif key == "stepType":
+            suggest = "step_type"
+        elif key == "dependsOns":
+            suggest = "depends_ons"
+        elif key == "isArtifactUploaded":
+            suggest = "is_artifact_uploaded"
+        elif key == "jobId":
+            suggest = "job_id"
+        elif key == "stepConfigurationDetails":
+            suggest = "step_configuration_details"
+        elif key == "stepInfrastructureConfigurationDetails":
+            suggest = "step_infrastructure_configuration_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineStepDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineStepDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineStepDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 step_name: str,
+                 step_type: str,
+                 depends_ons: Optional[Sequence[str]] = None,
+                 description: Optional[str] = None,
+                 is_artifact_uploaded: Optional[bool] = None,
+                 job_id: Optional[str] = None,
+                 step_configuration_details: Optional['outputs.PipelineStepDetailStepConfigurationDetails'] = None,
+                 step_infrastructure_configuration_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails'] = None):
+        """
+        :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        :param str step_type: (Updatable) The type of step.
+        :param Sequence[str] depends_ons: The list of step names this current step depends on for execution.
+        :param str description: (Updatable) A short description of the step.
+        :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
+        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
+        :param 'PipelineStepDetailStepConfigurationDetailsArgs' step_configuration_details: (Updatable) The configuration details of a step.
+        :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsArgs' step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        """
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "step_type", step_type)
+        if depends_ons is not None:
+            pulumi.set(__self__, "depends_ons", depends_ons)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_artifact_uploaded is not None:
+            pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
+        if job_id is not None:
+            pulumi.set(__self__, "job_id", job_id)
+        if step_configuration_details is not None:
+            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        if step_infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="stepType")
+    def step_type(self) -> str:
+        """
+        (Updatable) The type of step.
+        """
+        return pulumi.get(self, "step_type")
+
+    @property
+    @pulumi.getter(name="dependsOns")
+    def depends_ons(self) -> Optional[Sequence[str]]:
+        """
+        The list of step names this current step depends on for execution.
+        """
+        return pulumi.get(self, "depends_ons")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) A short description of the step.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isArtifactUploaded")
+    def is_artifact_uploaded(self) -> Optional[bool]:
+        """
+        A flag to indicate whether the artifact has been uploaded for this step or not.
+        """
+        return pulumi.get(self, "is_artifact_uploaded")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Optional['outputs.PipelineStepDetailStepConfigurationDetails']:
+        """
+        (Updatable) The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepInfrastructureConfigurationDetails")
+    def step_infrastructure_configuration_details(self) -> Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "step_infrastructure_configuration_details")
+
+
+@pulumi.output_type
+class PipelineStepDetailStepConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineStepDetailStepConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineStepDetailStepConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineStepDetailStepConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        """
+        :param str command_line_arguments: (Updatable) The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
+        """
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[str]:
+        """
+        (Updatable) The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
+        """
+        (Updatable) A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockStorageSizeInGbs":
+            suggest = "block_storage_size_in_gbs"
+        elif key == "shapeName":
+            suggest = "shape_name"
+        elif key == "shapeConfigDetails":
+            suggest = "shape_config_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineStepDetailStepInfrastructureConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineStepDetailStepInfrastructureConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineStepDetailStepInfrastructureConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: int,
+                 shape_name: str,
+                 shape_config_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails'] = None):
+        """
+        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_name", shape_name)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+
+@pulumi.output_type
+class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -3442,8 +4653,8 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
-        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -3452,7 +4663,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -3460,7 +4671,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
 
@@ -3968,8 +5179,8 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
-        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -3978,7 +5189,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -3986,7 +5197,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
 
@@ -5257,6 +6468,2039 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebo
         The repository URL
         """
         return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetPipelineConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str,
+                 type: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPipelineInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: int,
+                 shape_config_details: Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
+                 shape_name: str):
+        """
+        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param Sequence['GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetPipelineLogConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 enable_auto_log_creation: bool,
+                 enable_logging: bool,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> bool:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> bool:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetPipelineRunConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str,
+                 type: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPipelineRunConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str,
+                 type: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPipelineRunLogConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 enable_auto_log_creation: bool,
+                 enable_logging: bool,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
+        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
+        """
+        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> bool:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> bool:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The log group id for where log objects will be for pipeline runs.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The log id of the log object the pipeline run logs will be shipped to.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetPipelineRunLogDetailResult(dict):
+    def __init__(__self__, *,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
+        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The log group id for where log objects will be for pipeline runs.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The log id of the log object the pipeline run logs will be shipped to.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetPipelineRunStepOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 step_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
+                 step_name: str):
+        """
+        :param Sequence['GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param str step_name: The name of the step.
+        """
+        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult']:
+        """
+        The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class GetPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetPipelineRunStepRunResult(dict):
+    def __init__(__self__, *,
+                 job_run_id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 step_name: str,
+                 step_type: str,
+                 time_finished: str,
+                 time_started: str):
+        """
+        :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
+        :param str lifecycle_details: Details of the state of the step run.
+        :param str state: The state of the step run.
+        :param str step_name: The name of the step.
+        :param str step_type: The type of step.
+        :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "job_run_id", job_run_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "step_type", step_type)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="jobRunId")
+    def job_run_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
+        """
+        return pulumi.get(self, "job_run_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details of the state of the step run.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the step run.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="stepType")
+    def step_type(self) -> str:
+        """
+        The type of step.
+        """
+        return pulumi.get(self, "step_type")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetPipelineRunsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult'],
+                 configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult'],
+                 created_by: str,
+                 defined_tags: Mapping[str, Any],
+                 delete_related_job_runs: bool,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 log_configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult'],
+                 log_details: Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult'],
+                 pipeline_id: str,
+                 project_id: str,
+                 state: str,
+                 step_override_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult'],
+                 step_runs: Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult'],
+                 system_tags: Mapping[str, Any],
+                 time_accepted: str,
+                 time_finished: str,
+                 time_started: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetPipelineRunsPipelineRunConfigurationDetailArgs'] configuration_details: The configuration details of a pipeline.
+        :param Sequence['GetPipelineRunsPipelineRunConfigurationOverrideDetailArgs'] configuration_override_details: The configuration details of a pipeline.
+        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        :param str lifecycle_details: Details of the state of the step run.
+        :param Sequence['GetPipelineRunsPipelineRunLogConfigurationOverrideDetailArgs'] log_configuration_override_details: The pipeline log configuration details.
+        :param Sequence['GetPipelineRunsPipelineRunLogDetailArgs'] log_details: Customer logging details for pipeline run.
+        :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+        :param str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+        :param str state: The current state of the PipelineRun.
+        :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailArgs'] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
+        :param Sequence['GetPipelineRunsPipelineRunStepRunArgs'] step_runs: Array of StepRun object for each step.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_accepted: The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_updated: The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configuration_details", configuration_details)
+        pulumi.set(__self__, "configuration_override_details", configuration_override_details)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+        pulumi.set(__self__, "log_details", log_details)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "step_override_details", step_override_details)
+        pulumi.set(__self__, "step_runs", step_runs)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_accepted", time_accepted)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configurationDetails")
+    def configuration_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult']:
+        """
+        The configuration details of a pipeline.
+        """
+        return pulumi.get(self, "configuration_details")
+
+    @property
+    @pulumi.getter(name="configurationOverrideDetails")
+    def configuration_override_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult']:
+        """
+        The configuration details of a pipeline.
+        """
+        return pulumi.get(self, "configuration_override_details")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="deleteRelatedJobRuns")
+    def delete_related_job_runs(self) -> bool:
+        return pulumi.get(self, "delete_related_job_runs")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details of the state of the step run.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="logConfigurationOverrideDetails")
+    def log_configuration_override_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult']:
+        """
+        The pipeline log configuration details.
+        """
+        return pulumi.get(self, "log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="logDetails")
+    def log_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult']:
+        """
+        Customer logging details for pipeline run.
+        """
+        return pulumi.get(self, "log_details")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the PipelineRun.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stepOverrideDetails")
+    def step_override_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult']:
+        """
+        Array of step override details. Only Step Configuration is allowed to be overridden.
+        """
+        return pulumi.get(self, "step_override_details")
+
+    @property
+    @pulumi.getter(name="stepRuns")
+    def step_runs(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult']:
+        """
+        Array of StepRun object for each step.
+        """
+        return pulumi.get(self, "step_runs")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeAccepted")
+    def time_accepted(self) -> str:
+        """
+        The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_accepted")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str,
+                 type: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str,
+                 type: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 enable_auto_log_creation: bool,
+                 enable_logging: bool,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
+        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
+        """
+        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> bool:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> bool:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The log group id for where log objects will be for pipeline runs.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The log id of the log object the pipeline run logs will be shipped to.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunLogDetailResult(dict):
+    def __init__(__self__, *,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
+        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The log group id for where log objects will be for pipeline runs.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The log id of the log object the pipeline run logs will be shipped to.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 step_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
+                 step_name: str):
+        """
+        :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param str step_name: The name of the step.
+        """
+        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult']:
+        """
+        The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunStepRunResult(dict):
+    def __init__(__self__, *,
+                 job_run_id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 step_name: str,
+                 step_type: str,
+                 time_finished: str,
+                 time_started: str):
+        """
+        :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
+        :param str lifecycle_details: Details of the state of the step run.
+        :param str state: The current state of the PipelineRun.
+        :param str step_name: The name of the step.
+        :param str step_type: The type of step.
+        :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "job_run_id", job_run_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "step_type", step_type)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="jobRunId")
+    def job_run_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
+        """
+        return pulumi.get(self, "job_run_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details of the state of the step run.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the PipelineRun.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="stepType")
+    def step_type(self) -> str:
+        """
+        The type of step.
+        """
+        return pulumi.get(self, "step_type")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetPipelineStepArtifactResult(dict):
+    def __init__(__self__, *,
+                 artifact_content_disposition: str,
+                 artifact_content_length: str,
+                 artifact_content_md5: str,
+                 artifact_last_modified: str,
+                 pipeline_step_artifact: str,
+                 step_name: str):
+        """
+        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
+        pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="artifactContentDisposition")
+    def artifact_content_disposition(self) -> str:
+        return pulumi.get(self, "artifact_content_disposition")
+
+    @property
+    @pulumi.getter(name="artifactContentLength")
+    def artifact_content_length(self) -> str:
+        return pulumi.get(self, "artifact_content_length")
+
+    @property
+    @pulumi.getter(name="artifactContentMd5")
+    def artifact_content_md5(self) -> str:
+        return pulumi.get(self, "artifact_content_md5")
+
+    @property
+    @pulumi.getter(name="artifactLastModified")
+    def artifact_last_modified(self) -> str:
+        return pulumi.get(self, "artifact_last_modified")
+
+    @property
+    @pulumi.getter(name="pipelineStepArtifact")
+    def pipeline_step_artifact(self) -> str:
+        return pulumi.get(self, "pipeline_step_artifact")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class GetPipelineStepDetailResult(dict):
+    def __init__(__self__, *,
+                 depends_ons: Sequence[str],
+                 description: str,
+                 is_artifact_uploaded: bool,
+                 job_id: str,
+                 step_configuration_details: Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult'],
+                 step_infrastructure_configuration_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
+                 step_name: str,
+                 step_type: str):
+        """
+        :param Sequence[str] depends_ons: The list of step names this current step depends on for execution.
+        :param str description: A short description of the step.
+        :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
+        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
+        :param Sequence['GetPipelineStepDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param Sequence['GetPipelineStepDetailStepInfrastructureConfigurationDetailArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        :param str step_type: The type of step.
+        """
+        pulumi.set(__self__, "depends_ons", depends_ons)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "step_type", step_type)
+
+    @property
+    @pulumi.getter(name="dependsOns")
+    def depends_ons(self) -> Sequence[str]:
+        """
+        The list of step names this current step depends on for execution.
+        """
+        return pulumi.get(self, "depends_ons")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A short description of the step.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isArtifactUploaded")
+    def is_artifact_uploaded(self) -> bool:
+        """
+        A flag to indicate whether the artifact has been uploaded for this step or not.
+        """
+        return pulumi.get(self, "is_artifact_uploaded")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult']:
+        """
+        The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepInfrastructureConfigurationDetails")
+    def step_infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "step_infrastructure_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="stepType")
+    def step_type(self) -> str:
+        """
+        The type of step.
+        """
+        return pulumi.get(self, "step_type")
+
+
+@pulumi.output_type
+class GetPipelineStepDetailStepConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: int,
+                 shape_config_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
+                 shape_name: str):
+        """
+        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param Sequence['GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetPipelinesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 configuration_details: Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult'],
+                 created_by: str,
+                 defined_tags: Mapping[str, Any],
+                 delete_related_pipeline_runs: bool,
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult'],
+                 lifecycle_details: str,
+                 log_configuration_details: Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult'],
+                 project_id: str,
+                 state: str,
+                 step_artifacts: Sequence['outputs.GetPipelinesPipelineStepArtifactResult'],
+                 step_details: Sequence['outputs.GetPipelinesPipelineStepDetailResult'],
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetPipelinesPipelineConfigurationDetailArgs'] configuration_details: The configuration details of a pipeline.
+        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: A short description of the step.
+        :param str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        :param Sequence['GetPipelinesPipelineInfrastructureConfigurationDetailArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+        :param Sequence['GetPipelinesPipelineLogConfigurationDetailArgs'] log_configuration_details: The pipeline log configuration details.
+        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        :param str state: The current state of the Pipeline.
+        :param Sequence['GetPipelinesPipelineStepDetailArgs'] step_details: Array of step details for each step.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
+        :param str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configuration_details", configuration_details)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "delete_related_pipeline_runs", delete_related_pipeline_runs)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "log_configuration_details", log_configuration_details)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "step_artifacts", step_artifacts)
+        pulumi.set(__self__, "step_details", step_details)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configurationDetails")
+    def configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult']:
+        """
+        The configuration details of a pipeline.
+        """
+        return pulumi.get(self, "configuration_details")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="deleteRelatedPipelineRuns")
+    def delete_related_pipeline_runs(self) -> bool:
+        return pulumi.get(self, "delete_related_pipeline_runs")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A short description of the step.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="infrastructureConfigurationDetails")
+    def infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "infrastructure_configuration_details")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="logConfigurationDetails")
+    def log_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult']:
+        """
+        The pipeline log configuration details.
+        """
+        return pulumi.get(self, "log_configuration_details")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Pipeline.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stepArtifacts")
+    def step_artifacts(self) -> Sequence['outputs.GetPipelinesPipelineStepArtifactResult']:
+        return pulumi.get(self, "step_artifacts")
+
+    @property
+    @pulumi.getter(name="stepDetails")
+    def step_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailResult']:
+        """
+        Array of step details for each step.
+        """
+        return pulumi.get(self, "step_details")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str,
+                 type: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: int,
+                 shape_config_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
+                 shape_name: str):
+        """
+        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param Sequence['GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineLogConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 enable_auto_log_creation: bool,
+                 enable_logging: bool,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> bool:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> bool:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineStepArtifactResult(dict):
+    def __init__(__self__, *,
+                 artifact_content_disposition: str,
+                 artifact_content_length: str,
+                 artifact_content_md5: str,
+                 artifact_last_modified: str,
+                 pipeline_step_artifact: str,
+                 step_name: str):
+        """
+        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
+        pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="artifactContentDisposition")
+    def artifact_content_disposition(self) -> str:
+        return pulumi.get(self, "artifact_content_disposition")
+
+    @property
+    @pulumi.getter(name="artifactContentLength")
+    def artifact_content_length(self) -> str:
+        return pulumi.get(self, "artifact_content_length")
+
+    @property
+    @pulumi.getter(name="artifactContentMd5")
+    def artifact_content_md5(self) -> str:
+        return pulumi.get(self, "artifact_content_md5")
+
+    @property
+    @pulumi.getter(name="artifactLastModified")
+    def artifact_last_modified(self) -> str:
+        return pulumi.get(self, "artifact_last_modified")
+
+    @property
+    @pulumi.getter(name="pipelineStepArtifact")
+    def pipeline_step_artifact(self) -> str:
+        return pulumi.get(self, "pipeline_step_artifact")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineStepDetailResult(dict):
+    def __init__(__self__, *,
+                 depends_ons: Sequence[str],
+                 description: str,
+                 is_artifact_uploaded: bool,
+                 job_id: str,
+                 step_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult'],
+                 step_infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
+                 step_name: str,
+                 step_type: str):
+        """
+        :param Sequence[str] depends_ons: The list of step names this current step depends on for execution.
+        :param str description: A short description of the step.
+        :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
+        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
+        :param Sequence['GetPipelinesPipelineStepDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param Sequence['GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        :param str step_type: The type of step.
+        """
+        pulumi.set(__self__, "depends_ons", depends_ons)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "step_type", step_type)
+
+    @property
+    @pulumi.getter(name="dependsOns")
+    def depends_ons(self) -> Sequence[str]:
+        """
+        The list of step names this current step depends on for execution.
+        """
+        return pulumi.get(self, "depends_ons")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A short description of the step.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isArtifactUploaded")
+    def is_artifact_uploaded(self) -> bool:
+        """
+        A flag to indicate whether the artifact has been uploaded for this step or not.
+        """
+        return pulumi.get(self, "is_artifact_uploaded")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult']:
+        """
+        The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepInfrastructureConfigurationDetails")
+    def step_infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "step_infrastructure_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="stepType")
+    def step_type(self) -> str:
+        """
+        The type of step.
+        """
+        return pulumi.get(self, "step_type")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineStepDetailStepConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, Any],
+                 maximum_runtime_in_minutes: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, Any]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: int,
+                 shape_config_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
+                 shape_name: str):
+        """
+        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param Sequence['GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type

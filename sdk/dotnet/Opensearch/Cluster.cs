@@ -71,6 +71,9 @@ namespace Pulumi.Oci.Opensearch
     ///             { "bar-key", "value" },
     ///         },
     ///         MasterNodeHostBareMetalShape = @var.Opensearch_cluster_master_node_host_bare_metal_shape,
+    ///         SecurityMasterUserName = oci_identity_user.Test_user.Name,
+    ///         SecurityMasterUserPasswordHash = @var.Opensearch_cluster_security_master_user_password_hash,
+    ///         SecurityMode = @var.Opensearch_cluster_security_mode,
     ///         SystemTags = @var.Opensearch_cluster_system_tags,
     ///     });
     /// 
@@ -239,6 +242,24 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> OpensearchPrivateIp { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The name of the master user that are used to manage security config
+        /// </summary>
+        [Output("securityMasterUserName")]
+        public Output<string> SecurityMasterUserName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The password hash of the master user that are used to manage security config
+        /// </summary>
+        [Output("securityMasterUserPasswordHash")]
+        public Output<string> SecurityMasterUserPasswordHash { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The security mode of the cluster.
+        /// </summary>
+        [Output("securityMode")]
+        public Output<string> SecurityMode { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The version of the software the cluster is running.
         /// </summary>
         [Output("softwareVersion")]
@@ -327,6 +348,10 @@ namespace Pulumi.Oci.Opensearch
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "securityMasterUserPasswordHash",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -469,6 +494,34 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("opendashboardNodeHostOcpuCount", required: true)]
         public Input<int> OpendashboardNodeHostOcpuCount { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The name of the master user that are used to manage security config
+        /// </summary>
+        [Input("securityMasterUserName")]
+        public Input<string>? SecurityMasterUserName { get; set; }
+
+        [Input("securityMasterUserPasswordHash")]
+        private Input<string>? _securityMasterUserPasswordHash;
+
+        /// <summary>
+        /// (Updatable) The password hash of the master user that are used to manage security config
+        /// </summary>
+        public Input<string>? SecurityMasterUserPasswordHash
+        {
+            get => _securityMasterUserPasswordHash;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _securityMasterUserPasswordHash = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// (Updatable) The security mode of the cluster.
+        /// </summary>
+        [Input("securityMode")]
+        public Input<string>? SecurityMode { get; set; }
 
         /// <summary>
         /// (Updatable) The version of the software the cluster is running.
@@ -687,6 +740,34 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("opensearchPrivateIp")]
         public Input<string>? OpensearchPrivateIp { get; set; }
+
+        /// <summary>
+        /// (Updatable) The name of the master user that are used to manage security config
+        /// </summary>
+        [Input("securityMasterUserName")]
+        public Input<string>? SecurityMasterUserName { get; set; }
+
+        [Input("securityMasterUserPasswordHash")]
+        private Input<string>? _securityMasterUserPasswordHash;
+
+        /// <summary>
+        /// (Updatable) The password hash of the master user that are used to manage security config
+        /// </summary>
+        public Input<string>? SecurityMasterUserPasswordHash
+        {
+            get => _securityMasterUserPasswordHash;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _securityMasterUserPasswordHash = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// (Updatable) The security mode of the cluster.
+        /// </summary>
+        [Input("securityMode")]
+        public Input<string>? SecurityMode { get; set; }
 
         /// <summary>
         /// (Updatable) The version of the software the cluster is running.

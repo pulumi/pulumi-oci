@@ -78,6 +78,21 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+     * 
+     */
+    @Import(name="isMemoryEncryptionEnabled")
+    private @Nullable Output<Boolean> isMemoryEncryptionEnabled;
+
+    /**
+     * @return Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+     * 
+     */
+    public Optional<Output<Boolean>> isMemoryEncryptionEnabled() {
+        return Optional.ofNullable(this.isMemoryEncryptionEnabled);
+    }
+
+    /**
      * Whether Secure Boot is enabled on the instance.
      * 
      */
@@ -174,6 +189,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         this.isAccessControlServiceEnabled = $.isAccessControlServiceEnabled;
         this.isInputOutputMemoryManagementUnitEnabled = $.isInputOutputMemoryManagementUnitEnabled;
         this.isMeasuredBootEnabled = $.isMeasuredBootEnabled;
+        this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
         this.isSecureBootEnabled = $.isSecureBootEnabled;
         this.isSymmetricMultiThreadingEnabled = $.isSymmetricMultiThreadingEnabled;
         this.isTrustedPlatformModuleEnabled = $.isTrustedPlatformModuleEnabled;
@@ -282,6 +298,27 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
          */
         public Builder isMeasuredBootEnabled(Boolean isMeasuredBootEnabled) {
             return isMeasuredBootEnabled(Output.of(isMeasuredBootEnabled));
+        }
+
+        /**
+         * @param isMemoryEncryptionEnabled Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(@Nullable Output<Boolean> isMemoryEncryptionEnabled) {
+            $.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isMemoryEncryptionEnabled Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            return isMemoryEncryptionEnabled(Output.of(isMemoryEncryptionEnabled));
         }
 
         /**

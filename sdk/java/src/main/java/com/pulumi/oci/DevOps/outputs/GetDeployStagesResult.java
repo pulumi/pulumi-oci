@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDeployStagesResult {
     /**
-     * @return The OCID of a compartment.
+     * @return The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     private @Nullable String compartmentId;
@@ -48,7 +48,7 @@ public final class GetDeployStagesResult {
 
     private GetDeployStagesResult() {}
     /**
-     * @return The OCID of a compartment.
+     * @return The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     public Optional<String> compartmentId() {

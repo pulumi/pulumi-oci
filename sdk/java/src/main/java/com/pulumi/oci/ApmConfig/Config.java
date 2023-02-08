@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ApmConfig.ConfigArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigState;
 import com.pulumi.oci.ApmConfig.outputs.ConfigDimension;
+import com.pulumi.oci.ApmConfig.outputs.ConfigInUseBy;
 import com.pulumi.oci.ApmConfig.outputs.ConfigMetric;
 import com.pulumi.oci.ApmConfig.outputs.ConfigRule;
 import com.pulumi.oci.Utilities;
@@ -127,6 +128,20 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.configType;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    @Export(name="createdBy", type=String.class, parameters={})
+    private Output<String> createdBy;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    public Output<String> createdBy() {
+        return this.createdBy;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -183,6 +198,20 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * For optimistic concurrency control. See `if-match`.
+     * 
+     */
+    @Export(name="etag", type=String.class, parameters={})
+    private Output<String> etag;
+
+    /**
+     * @return For optimistic concurrency control. See `if-match`.
+     * 
+     */
+    public Output<String> etag() {
+        return this.etag;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
@@ -237,6 +266,20 @@ public class Config extends com.pulumi.resources.CustomResource {
      */
     public Output<String> group() {
         return this.group;
+    }
+    /**
+     * The list of configuration items that reference the span filter.
+     * 
+     */
+    @Export(name="inUseBies", type=List.class, parameters={ConfigInUseBy.class})
+    private Output<List<ConfigInUseBy>> inUseBies;
+
+    /**
+     * @return The list of configuration items that reference the span filter.
+     * 
+     */
+    public Output<List<ConfigInUseBy>> inUseBies() {
+        return this.inUseBies;
     }
     /**
      * (Updatable) The list of metrics in this group.
@@ -335,6 +378,20 @@ public class Config extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    @Export(name="updatedBy", type=String.class, parameters={})
+    private Output<String> updatedBy;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    public Output<String> updatedBy() {
+        return this.updatedBy;
     }
 
     /**

@@ -103,6 +103,12 @@ namespace Pulumi.Oci.ApmConfig
         public Output<string> ConfigType { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        /// </summary>
+        [Output("createdBy")]
+        public Output<string> CreatedBy { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
@@ -127,6 +133,12 @@ namespace Pulumi.Oci.ApmConfig
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// For optimistic concurrency control. See `if-match`.
+        /// </summary>
+        [Output("etag")]
+        public Output<string> Etag { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         /// </summary>
         [Output("filterId")]
@@ -149,6 +161,12 @@ namespace Pulumi.Oci.ApmConfig
         /// </summary>
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of configuration items that reference the span filter.
+        /// </summary>
+        [Output("inUseBies")]
+        public Output<ImmutableArray<Outputs.ConfigInUseBy>> InUseBies { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of metrics in this group.
@@ -191,6 +209,12 @@ namespace Pulumi.Oci.ApmConfig
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        /// </summary>
+        [Output("updatedBy")]
+        public Output<string> UpdatedBy { get; private set; } = null!;
 
 
         /// <summary>
@@ -316,6 +340,18 @@ namespace Pulumi.Oci.ApmConfig
         [Input("group")]
         public Input<string>? Group { get; set; }
 
+        [Input("inUseBies")]
+        private InputList<Inputs.ConfigInUseByArgs>? _inUseBies;
+
+        /// <summary>
+        /// The list of configuration items that reference the span filter.
+        /// </summary>
+        public InputList<Inputs.ConfigInUseByArgs> InUseBies
+        {
+            get => _inUseBies ?? (_inUseBies = new InputList<Inputs.ConfigInUseByArgs>());
+            set => _inUseBies = value;
+        }
+
         [Input("metrics")]
         private InputList<Inputs.ConfigMetricArgs>? _metrics;
 
@@ -378,6 +414,12 @@ namespace Pulumi.Oci.ApmConfig
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        /// </summary>
+        [Input("createdBy")]
+        public Input<string>? CreatedBy { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -415,6 +457,12 @@ namespace Pulumi.Oci.ApmConfig
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// For optimistic concurrency control. See `if-match`.
+        /// </summary>
+        [Input("etag")]
+        public Input<string>? Etag { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         /// </summary>
         [Input("filterId")]
@@ -443,6 +491,18 @@ namespace Pulumi.Oci.ApmConfig
         /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
+
+        [Input("inUseBies")]
+        private InputList<Inputs.ConfigInUseByGetArgs>? _inUseBies;
+
+        /// <summary>
+        /// The list of configuration items that reference the span filter.
+        /// </summary>
+        public InputList<Inputs.ConfigInUseByGetArgs> InUseBies
+        {
+            get => _inUseBies ?? (_inUseBies = new InputList<Inputs.ConfigInUseByGetArgs>());
+            set => _inUseBies = value;
+        }
 
         [Input("metrics")]
         private InputList<Inputs.ConfigMetricGetArgs>? _metrics;
@@ -497,6 +557,12 @@ namespace Pulumi.Oci.ApmConfig
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+        /// </summary>
+        [Input("updatedBy")]
+        public Input<string>? UpdatedBy { get; set; }
 
         public ConfigState()
         {

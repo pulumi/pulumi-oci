@@ -147,6 +147,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int DbNodeStorageSizeInGbs;
         /// <summary>
+        /// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        public readonly string DbServerVersion;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -195,6 +199,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int MemorySizeInGbs;
         /// <summary>
+        /// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        public readonly string MonthlyDbServerVersion;
+        /// <summary>
+        /// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        public readonly string MonthlyStorageServerVersion;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         public readonly string NextMaintenanceRunId;
@@ -210,6 +222,10 @@ namespace Pulumi.Oci.Database
         /// The number of storage servers for the cloud Exadata infrastructure.
         /// </summary>
         public readonly int StorageCount;
+        /// <summary>
+        /// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        /// </summary>
+        public readonly string StorageServerVersion;
         /// <summary>
         /// The date and time the cloud Exadata infrastructure resource was created.
         /// </summary>
@@ -243,6 +259,8 @@ namespace Pulumi.Oci.Database
 
             int dbNodeStorageSizeInGbs,
 
+            string dbServerVersion,
+
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
@@ -267,6 +285,10 @@ namespace Pulumi.Oci.Database
 
             int memorySizeInGbs,
 
+            string monthlyDbServerVersion,
+
+            string monthlyStorageServerVersion,
+
             string nextMaintenanceRunId,
 
             string shape,
@@ -274,6 +296,8 @@ namespace Pulumi.Oci.Database
             string state,
 
             int storageCount,
+
+            string storageServerVersion,
 
             string timeCreated,
 
@@ -290,6 +314,7 @@ namespace Pulumi.Oci.Database
             CustomerContacts = customerContacts;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            DbServerVersion = dbServerVersion;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
@@ -302,10 +327,13 @@ namespace Pulumi.Oci.Database
             MaxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             MaxMemoryInGbs = maxMemoryInGbs;
             MemorySizeInGbs = memorySizeInGbs;
+            MonthlyDbServerVersion = monthlyDbServerVersion;
+            MonthlyStorageServerVersion = monthlyStorageServerVersion;
             NextMaintenanceRunId = nextMaintenanceRunId;
             Shape = shape;
             State = state;
             StorageCount = storageCount;
+            StorageServerVersion = storageServerVersion;
             TimeCreated = timeCreated;
             TotalStorageSizeInGbs = totalStorageSizeInGbs;
         }

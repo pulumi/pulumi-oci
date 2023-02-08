@@ -22,7 +22,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, character_set=None, clone_type=None, compartment_id=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_standby_dbs=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_standby_dbs=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -65,6 +65,12 @@ class GetAutonomousDatabaseResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_count and not isinstance(compute_count, float):
+            raise TypeError("Expected argument 'compute_count' to be a float")
+        pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if connection_strings and not isinstance(connection_strings, list):
             raise TypeError("Expected argument 'connection_strings' to be a list")
         pulumi.set(__self__, "connection_strings", connection_strings)
@@ -245,6 +251,12 @@ class GetAutonomousDatabaseResult:
         if scheduled_operations and not isinstance(scheduled_operations, list):
             raise TypeError("Expected argument 'scheduled_operations' to be a list")
         pulumi.set(__self__, "scheduled_operations", scheduled_operations)
+        if secret_id and not isinstance(secret_id, str):
+            raise TypeError("Expected argument 'secret_id' to be a str")
+        pulumi.set(__self__, "secret_id", secret_id)
+        if secret_version_number and not isinstance(secret_version_number, int):
+            raise TypeError("Expected argument 'secret_version_number' to be a int")
+        pulumi.set(__self__, "secret_version_number", secret_version_number)
         if service_console_url and not isinstance(service_console_url, str):
             raise TypeError("Expected argument 'service_console_url' to be a str")
         pulumi.set(__self__, "service_console_url", service_console_url)
@@ -432,6 +444,22 @@ class GetAutonomousDatabaseResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> float:
+        """
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="connectionStrings")
@@ -910,6 +938,16 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "scheduled_operations")
 
     @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter(name="secretVersionNumber")
+    def secret_version_number(self) -> int:
+        return pulumi.get(self, "secret_version_number")
+
+    @property
     @pulumi.getter(name="serviceConsoleUrl")
     def service_console_url(self) -> str:
         """
@@ -1147,6 +1185,8 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             character_set=self.character_set,
             clone_type=self.clone_type,
             compartment_id=self.compartment_id,
+            compute_count=self.compute_count,
+            compute_model=self.compute_model,
             connection_strings=self.connection_strings,
             connection_urls=self.connection_urls,
             cpu_core_count=self.cpu_core_count,
@@ -1207,6 +1247,8 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             role=self.role,
             rotate_key_trigger=self.rotate_key_trigger,
             scheduled_operations=self.scheduled_operations,
+            secret_id=self.secret_id,
+            secret_version_number=self.secret_version_number,
             service_console_url=self.service_console_url,
             source=self.source,
             source_id=self.source_id,
@@ -1277,6 +1319,8 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         character_set=__ret__.character_set,
         clone_type=__ret__.clone_type,
         compartment_id=__ret__.compartment_id,
+        compute_count=__ret__.compute_count,
+        compute_model=__ret__.compute_model,
         connection_strings=__ret__.connection_strings,
         connection_urls=__ret__.connection_urls,
         cpu_core_count=__ret__.cpu_core_count,
@@ -1337,6 +1381,8 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         role=__ret__.role,
         rotate_key_trigger=__ret__.rotate_key_trigger,
         scheduled_operations=__ret__.scheduled_operations,
+        secret_id=__ret__.secret_id,
+        secret_version_number=__ret__.secret_version_number,
         service_console_url=__ret__.service_console_url,
         source=__ret__.source,
         source_id=__ret__.source_id,

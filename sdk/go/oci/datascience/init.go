@@ -39,6 +39,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ModelVersionSet{}
 	case "oci:DataScience/notebookSession:NotebookSession":
 		r = &NotebookSession{}
+	case "oci:DataScience/pipeline:Pipeline":
+		r = &Pipeline{}
+	case "oci:DataScience/pipelineRun:PipelineRun":
+		r = &PipelineRun{}
 	case "oci:DataScience/project:Project":
 		r = &Project{}
 	default:
@@ -97,6 +101,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataScience/notebookSession",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/pipeline",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/pipelineRun",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

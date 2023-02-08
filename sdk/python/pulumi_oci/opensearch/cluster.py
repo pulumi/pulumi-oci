@@ -37,6 +37,9 @@ class ClusterArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
+                 security_master_user_name: Optional[pulumi.Input[str]] = None,
+                 security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
+                 security_mode: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Cluster resource.
@@ -63,6 +66,9 @@ class ClusterArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
+        :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
+        :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
+        :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -92,6 +98,12 @@ class ClusterArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if master_node_host_bare_metal_shape is not None:
             pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
+        if security_master_user_name is not None:
+            pulumi.set(__self__, "security_master_user_name", security_master_user_name)
+        if security_master_user_password_hash is not None:
+            pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
+        if security_mode is not None:
+            pulumi.set(__self__, "security_mode", security_mode)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
 
@@ -372,6 +384,42 @@ class ClusterArgs:
         pulumi.set(self, "master_node_host_bare_metal_shape", value)
 
     @property
+    @pulumi.getter(name="securityMasterUserName")
+    def security_master_user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_name")
+
+    @security_master_user_name.setter
+    def security_master_user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_master_user_name", value)
+
+    @property
+    @pulumi.getter(name="securityMasterUserPasswordHash")
+    def security_master_user_password_hash(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The password hash of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_password_hash")
+
+    @security_master_user_password_hash.setter
+    def security_master_user_password_hash(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_master_user_password_hash", value)
+
+    @property
+    @pulumi.getter(name="securityMode")
+    def security_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The security mode of the cluster.
+        """
+        return pulumi.get(self, "security_mode")
+
+    @security_mode.setter
+    def security_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_mode", value)
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -412,6 +460,9 @@ class _ClusterState:
                  opendashboard_private_ip: Optional[pulumi.Input[str]] = None,
                  opensearch_fqdn: Optional[pulumi.Input[str]] = None,
                  opensearch_private_ip: Optional[pulumi.Input[str]] = None,
+                 security_master_user_name: Optional[pulumi.Input[str]] = None,
+                 security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
+                 security_mode: Optional[pulumi.Input[str]] = None,
                  software_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[str]] = None,
@@ -450,6 +501,9 @@ class _ClusterState:
         :param pulumi.Input[str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[str] opensearch_private_ip: The cluster's private IP address.
+        :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
+        :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
+        :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
         :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[str] state: The current state of the cluster.
         :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
@@ -512,6 +566,12 @@ class _ClusterState:
             pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
         if opensearch_private_ip is not None:
             pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
+        if security_master_user_name is not None:
+            pulumi.set(__self__, "security_master_user_name", security_master_user_name)
+        if security_master_user_password_hash is not None:
+            pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
+        if security_mode is not None:
+            pulumi.set(__self__, "security_mode", security_mode)
         if software_version is not None:
             pulumi.set(__self__, "software_version", software_version)
         if state is not None:
@@ -836,6 +896,42 @@ class _ClusterState:
         pulumi.set(self, "opensearch_private_ip", value)
 
     @property
+    @pulumi.getter(name="securityMasterUserName")
+    def security_master_user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_name")
+
+    @security_master_user_name.setter
+    def security_master_user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_master_user_name", value)
+
+    @property
+    @pulumi.getter(name="securityMasterUserPasswordHash")
+    def security_master_user_password_hash(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The password hash of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_password_hash")
+
+    @security_master_user_password_hash.setter
+    def security_master_user_password_hash(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_master_user_password_hash", value)
+
+    @property
+    @pulumi.getter(name="securityMode")
+    def security_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The security mode of the cluster.
+        """
+        return pulumi.get(self, "security_mode")
+
+    @security_mode.setter
+    def security_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_mode", value)
+
+    @property
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -991,6 +1087,9 @@ class Cluster(pulumi.CustomResource):
                  opendashboard_node_count: Optional[pulumi.Input[int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+                 security_master_user_name: Optional[pulumi.Input[str]] = None,
+                 security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
+                 security_mode: Optional[pulumi.Input[str]] = None,
                  software_version: Optional[pulumi.Input[str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -1049,6 +1148,9 @@ class Cluster(pulumi.CustomResource):
                 "bar-key": "value",
             },
             master_node_host_bare_metal_shape=var["opensearch_cluster_master_node_host_bare_metal_shape"],
+            security_master_user_name=oci_identity_user["test_user"]["name"],
+            security_master_user_password_hash=var["opensearch_cluster_security_master_user_password_hash"],
+            security_mode=var["opensearch_cluster_security_mode"],
             system_tags=var["opensearch_cluster_system_tags"])
         ```
 
@@ -1080,6 +1182,9 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[int] opendashboard_node_count: The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[int] opendashboard_node_host_memory_gb: The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[int] opendashboard_node_host_ocpu_count: The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
+        :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
+        :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
         :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
@@ -1144,6 +1249,9 @@ class Cluster(pulumi.CustomResource):
                 "bar-key": "value",
             },
             master_node_host_bare_metal_shape=var["opensearch_cluster_master_node_host_bare_metal_shape"],
+            security_master_user_name=oci_identity_user["test_user"]["name"],
+            security_master_user_password_hash=var["opensearch_cluster_security_master_user_password_hash"],
+            security_mode=var["opensearch_cluster_security_mode"],
             system_tags=var["opensearch_cluster_system_tags"])
         ```
 
@@ -1188,6 +1296,9 @@ class Cluster(pulumi.CustomResource):
                  opendashboard_node_count: Optional[pulumi.Input[int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+                 security_master_user_name: Optional[pulumi.Input[str]] = None,
+                 security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
+                 security_mode: Optional[pulumi.Input[str]] = None,
                  software_version: Optional[pulumi.Input[str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -1249,6 +1360,9 @@ class Cluster(pulumi.CustomResource):
             if opendashboard_node_host_ocpu_count is None and not opts.urn:
                 raise TypeError("Missing required property 'opendashboard_node_host_ocpu_count'")
             __props__.__dict__["opendashboard_node_host_ocpu_count"] = opendashboard_node_host_ocpu_count
+            __props__.__dict__["security_master_user_name"] = security_master_user_name
+            __props__.__dict__["security_master_user_password_hash"] = None if security_master_user_password_hash is None else pulumi.Output.secret(security_master_user_password_hash)
+            __props__.__dict__["security_mode"] = security_mode
             if software_version is None and not opts.urn:
                 raise TypeError("Missing required property 'software_version'")
             __props__.__dict__["software_version"] = software_version
@@ -1277,6 +1391,8 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["time_deleted"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["total_storage_gb"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["securityMasterUserPasswordHash"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Cluster, __self__).__init__(
             'oci:Opensearch/cluster:Cluster',
             resource_name,
@@ -1312,6 +1428,9 @@ class Cluster(pulumi.CustomResource):
             opendashboard_private_ip: Optional[pulumi.Input[str]] = None,
             opensearch_fqdn: Optional[pulumi.Input[str]] = None,
             opensearch_private_ip: Optional[pulumi.Input[str]] = None,
+            security_master_user_name: Optional[pulumi.Input[str]] = None,
+            security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
+            security_mode: Optional[pulumi.Input[str]] = None,
             software_version: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1355,6 +1474,9 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[str] opensearch_private_ip: The cluster's private IP address.
+        :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
+        :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
+        :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
         :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[str] state: The current state of the cluster.
         :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
@@ -1396,6 +1518,9 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["opendashboard_private_ip"] = opendashboard_private_ip
         __props__.__dict__["opensearch_fqdn"] = opensearch_fqdn
         __props__.__dict__["opensearch_private_ip"] = opensearch_private_ip
+        __props__.__dict__["security_master_user_name"] = security_master_user_name
+        __props__.__dict__["security_master_user_password_hash"] = security_master_user_password_hash
+        __props__.__dict__["security_mode"] = security_mode
         __props__.__dict__["software_version"] = software_version
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_compartment_id"] = subnet_compartment_id
@@ -1608,6 +1733,30 @@ class Cluster(pulumi.CustomResource):
         The cluster's private IP address.
         """
         return pulumi.get(self, "opensearch_private_ip")
+
+    @property
+    @pulumi.getter(name="securityMasterUserName")
+    def security_master_user_name(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The name of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_name")
+
+    @property
+    @pulumi.getter(name="securityMasterUserPasswordHash")
+    def security_master_user_password_hash(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The password hash of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_password_hash")
+
+    @property
+    @pulumi.getter(name="securityMode")
+    def security_mode(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The security mode of the cluster.
+        """
+        return pulumi.get(self, "security_mode")
 
     @property
     @pulumi.getter(name="softwareVersion")

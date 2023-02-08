@@ -30,6 +30,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemCanaryStrategyResult> CanaryStrategies;
         /// <summary>
+        /// The OCID of the artifact that contains the command specification.
+        /// </summary>
+        public readonly string CommandSpecDeployArtifactId;
+        /// <summary>
         /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -53,6 +57,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// User provided key and value pair configuration, which is assigned through constants or parameter.
         /// </summary>
         public readonly ImmutableDictionary<string, object> Config;
+        /// <summary>
+        /// Specifies the container configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemContainerConfigResult> ContainerConfigs;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -214,7 +222,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        /// Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         /// </summary>
         public readonly int TimeoutInSeconds;
         /// <summary>
@@ -240,6 +248,8 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemCanaryStrategyResult> canaryStrategies,
 
+            string commandSpecDeployArtifactId,
+
             string compartmentId,
 
             string computeInstanceGroupBlueGreenDeploymentDeployStageId,
@@ -251,6 +261,8 @@ namespace Pulumi.Oci.DevOps.Outputs
             string computeInstanceGroupDeployEnvironmentId,
 
             ImmutableDictionary<string, object> config,
+
+            ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemContainerConfigResult> containerConfigs,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -344,12 +356,14 @@ namespace Pulumi.Oci.DevOps.Outputs
             BlueBackendIps = blueBackendIps;
             BlueGreenStrategies = blueGreenStrategies;
             CanaryStrategies = canaryStrategies;
+            CommandSpecDeployArtifactId = commandSpecDeployArtifactId;
             CompartmentId = compartmentId;
             ComputeInstanceGroupBlueGreenDeploymentDeployStageId = computeInstanceGroupBlueGreenDeploymentDeployStageId;
             ComputeInstanceGroupCanaryDeployStageId = computeInstanceGroupCanaryDeployStageId;
             ComputeInstanceGroupCanaryTrafficShiftDeployStageId = computeInstanceGroupCanaryTrafficShiftDeployStageId;
             ComputeInstanceGroupDeployEnvironmentId = computeInstanceGroupDeployEnvironmentId;
             Config = config;
+            ContainerConfigs = containerConfigs;
             DefinedTags = definedTags;
             DeployArtifactId = deployArtifactId;
             DeployArtifactIds = deployArtifactIds;

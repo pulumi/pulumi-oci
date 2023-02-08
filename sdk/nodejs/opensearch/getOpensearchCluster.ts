@@ -160,6 +160,18 @@ export interface GetOpensearchClusterResult {
      */
     readonly opensearchPrivateIp: string;
     /**
+     * The name of the master user that are used to manage security config
+     */
+    readonly securityMasterUserName: string;
+    /**
+     * The password hash of the master user that are used to manage security config
+     */
+    readonly securityMasterUserPasswordHash: string;
+    /**
+     * The security mode of the cluster.
+     */
+    readonly securityMode: string;
+    /**
      * The software version the cluster is running.
      */
     readonly softwareVersion: string;

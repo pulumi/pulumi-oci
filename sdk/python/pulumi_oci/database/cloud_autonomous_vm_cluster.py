@@ -22,6 +22,7 @@ class CloudAutonomousVmClusterArgs:
                  subnet_id: pulumi.Input[str],
                  autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  cluster_time_zone: Optional[pulumi.Input[str]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
                  db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -41,6 +42,7 @@ class CloudAutonomousVmClusterArgs:
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[float] autonomous_data_storage_size_in_tbs: The data disk group size to be allocated for Autonomous Databases, in TBs.
         :param pulumi.Input[str] cluster_time_zone: The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[str] compute_model: The compute model of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to be enabled per VM cluster node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of database servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -62,6 +64,8 @@ class CloudAutonomousVmClusterArgs:
             pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
         if cluster_time_zone is not None:
             pulumi.set(__self__, "cluster_time_zone", cluster_time_zone)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count_per_node is not None:
             pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
         if db_servers is not None:
@@ -156,6 +160,18 @@ class CloudAutonomousVmClusterArgs:
     @cluster_time_zone.setter
     def cluster_time_zone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "cluster_time_zone", value)
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute model of the Cloud Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_model", value)
 
     @property
     @pulumi.getter(name="cpuCoreCountPerNode")
@@ -302,6 +318,7 @@ class _CloudAutonomousVmClusterState:
                  cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  cluster_time_zone: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
@@ -343,6 +360,7 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         :param pulumi.Input[str] cluster_time_zone: The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[str] compute_model: The compute model of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to be enabled per VM cluster node.
         :param pulumi.Input[float] data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
@@ -392,6 +410,8 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "cluster_time_zone", cluster_time_zone)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if cpu_core_count_per_node is not None:
@@ -550,6 +570,18 @@ class _CloudAutonomousVmClusterState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute model of the Cloud Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_model", value)
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -934,6 +966,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  cluster_time_zone: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
                  db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -966,6 +999,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             autonomous_data_storage_size_in_tbs=var["cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs"],
             cluster_time_zone=var["cloud_autonomous_vm_cluster_cluster_time_zone"],
+            compute_model=var["cloud_autonomous_vm_cluster_compute_model"],
             cpu_core_count_per_node=var["cloud_autonomous_vm_cluster_cpu_core_count_per_node"],
             db_servers=var["cloud_autonomous_vm_cluster_db_servers"],
             defined_tags=var["cloud_autonomous_vm_cluster_defined_tags"],
@@ -1009,6 +1043,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         :param pulumi.Input[str] cluster_time_zone: The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[str] compute_model: The compute model of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to be enabled per VM cluster node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of database servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -1048,6 +1083,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             autonomous_data_storage_size_in_tbs=var["cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs"],
             cluster_time_zone=var["cloud_autonomous_vm_cluster_cluster_time_zone"],
+            compute_model=var["cloud_autonomous_vm_cluster_compute_model"],
             cpu_core_count_per_node=var["cloud_autonomous_vm_cluster_cpu_core_count_per_node"],
             db_servers=var["cloud_autonomous_vm_cluster_db_servers"],
             defined_tags=var["cloud_autonomous_vm_cluster_defined_tags"],
@@ -1104,6 +1140,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  cluster_time_zone: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
                  db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1134,6 +1171,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compute_model"] = compute_model
             __props__.__dict__["cpu_core_count_per_node"] = cpu_core_count_per_node
             __props__.__dict__["db_servers"] = db_servers
             __props__.__dict__["defined_tags"] = defined_tags
@@ -1191,6 +1229,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
             cluster_time_zone: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compute_model: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
@@ -1237,6 +1276,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         :param pulumi.Input[str] cluster_time_zone: The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[str] compute_model: The compute model of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to be enabled per VM cluster node.
         :param pulumi.Input[float] data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
@@ -1282,6 +1322,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["cloud_exadata_infrastructure_id"] = cloud_exadata_infrastructure_id
         __props__.__dict__["cluster_time_zone"] = cluster_time_zone
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["cpu_core_count_per_node"] = cpu_core_count_per_node
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
@@ -1378,6 +1419,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[str]:
+        """
+        The compute model of the Cloud Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")

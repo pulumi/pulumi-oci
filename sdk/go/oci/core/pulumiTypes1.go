@@ -10,6 +10,346 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type GetVolumeBackupPoliciesVolumeBackupPolicy struct {
+	// The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The paired destination region for copying scheduled backups to. Example `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
+	DestinationRegion string `pulumi:"destinationRegion"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the volume backup policy.
+	Id string `pulumi:"id"`
+	// The collection of schedules that this policy will apply.
+	Schedules []GetVolumeBackupPoliciesVolumeBackupPolicySchedule `pulumi:"schedules"`
+	// The date and time the volume backup policy was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetVolumeBackupPoliciesVolumeBackupPolicyInput is an input type that accepts GetVolumeBackupPoliciesVolumeBackupPolicyArgs and GetVolumeBackupPoliciesVolumeBackupPolicyOutput values.
+// You can construct a concrete instance of `GetVolumeBackupPoliciesVolumeBackupPolicyInput` via:
+//
+//	GetVolumeBackupPoliciesVolumeBackupPolicyArgs{...}
+type GetVolumeBackupPoliciesVolumeBackupPolicyInput interface {
+	pulumi.Input
+
+	ToGetVolumeBackupPoliciesVolumeBackupPolicyOutput() GetVolumeBackupPoliciesVolumeBackupPolicyOutput
+	ToGetVolumeBackupPoliciesVolumeBackupPolicyOutputWithContext(context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyOutput
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicyArgs struct {
+	// The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The paired destination region for copying scheduled backups to. Example `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
+	DestinationRegion pulumi.StringInput `pulumi:"destinationRegion"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the volume backup policy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The collection of schedules that this policy will apply.
+	Schedules GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayInput `pulumi:"schedules"`
+	// The date and time the volume backup policy was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetVolumeBackupPoliciesVolumeBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicy)(nil)).Elem()
+}
+
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyArgs) ToGetVolumeBackupPoliciesVolumeBackupPolicyOutput() GetVolumeBackupPoliciesVolumeBackupPolicyOutput {
+	return i.ToGetVolumeBackupPoliciesVolumeBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyArgs) ToGetVolumeBackupPoliciesVolumeBackupPolicyOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesVolumeBackupPolicyOutput)
+}
+
+// GetVolumeBackupPoliciesVolumeBackupPolicyArrayInput is an input type that accepts GetVolumeBackupPoliciesVolumeBackupPolicyArray and GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput values.
+// You can construct a concrete instance of `GetVolumeBackupPoliciesVolumeBackupPolicyArrayInput` via:
+//
+//	GetVolumeBackupPoliciesVolumeBackupPolicyArray{ GetVolumeBackupPoliciesVolumeBackupPolicyArgs{...} }
+type GetVolumeBackupPoliciesVolumeBackupPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput() GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput
+	ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutputWithContext(context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicyArray []GetVolumeBackupPoliciesVolumeBackupPolicyInput
+
+func (GetVolumeBackupPoliciesVolumeBackupPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeBackupPoliciesVolumeBackupPolicy)(nil)).Elem()
+}
+
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyArray) ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput() GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput {
+	return i.ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyArray) ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput)
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeBackupPoliciesVolumeBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicy)(nil)).Elem()
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyOutput() GetVolumeBackupPoliciesVolumeBackupPolicyOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyOutput {
+	return o
+}
+
+// The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The paired destination region for copying scheduled backups to. Example `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) DestinationRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicy) string { return v.DestinationRegion }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the volume backup policy.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The collection of schedules that this policy will apply.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) Schedules() GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicy) []GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
+		return v.Schedules
+	}).(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput)
+}
+
+// The date and time the volume backup policy was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeBackupPoliciesVolumeBackupPolicy)(nil)).Elem()
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput() GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupPoliciesVolumeBackupPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeBackupPoliciesVolumeBackupPolicy {
+		return vs[0].([]GetVolumeBackupPoliciesVolumeBackupPolicy)[vs[1].(int)]
+	}).(GetVolumeBackupPoliciesVolumeBackupPolicyOutput)
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicySchedule struct {
+	// The type of volume backup to create.
+	BackupType string `pulumi:"backupType"`
+	// The day of the month to schedule the volume backup.
+	DayOfMonth int `pulumi:"dayOfMonth"`
+	// The day of the week to schedule the volume backup.
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// The hour of the day to schedule the volume backup.
+	HourOfDay int `pulumi:"hourOfDay"`
+	// The month of the year to schedule the volume backup.
+	Month string `pulumi:"month"`
+	// The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
+	OffsetSeconds int `pulumi:"offsetSeconds"`
+	// Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+	OffsetType string `pulumi:"offsetType"`
+	// The volume backup frequency.
+	Period string `pulumi:"period"`
+	// How long, in seconds, to keep the volume backups created by this schedule.
+	RetentionSeconds int `pulumi:"retentionSeconds"`
+	// Specifies what time zone is the schedule in
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// GetVolumeBackupPoliciesVolumeBackupPolicyScheduleInput is an input type that accepts GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs and GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput values.
+// You can construct a concrete instance of `GetVolumeBackupPoliciesVolumeBackupPolicyScheduleInput` via:
+//
+//	GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs{...}
+type GetVolumeBackupPoliciesVolumeBackupPolicyScheduleInput interface {
+	pulumi.Input
+
+	ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput() GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput
+	ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutputWithContext(context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs struct {
+	// The type of volume backup to create.
+	BackupType pulumi.StringInput `pulumi:"backupType"`
+	// The day of the month to schedule the volume backup.
+	DayOfMonth pulumi.IntInput `pulumi:"dayOfMonth"`
+	// The day of the week to schedule the volume backup.
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// The hour of the day to schedule the volume backup.
+	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// The month of the year to schedule the volume backup.
+	Month pulumi.StringInput `pulumi:"month"`
+	// The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
+	OffsetSeconds pulumi.IntInput `pulumi:"offsetSeconds"`
+	// Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+	OffsetType pulumi.StringInput `pulumi:"offsetType"`
+	// The volume backup frequency.
+	Period pulumi.StringInput `pulumi:"period"`
+	// How long, in seconds, to keep the volume backups created by this schedule.
+	RetentionSeconds pulumi.IntInput `pulumi:"retentionSeconds"`
+	// Specifies what time zone is the schedule in
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicySchedule)(nil)).Elem()
+}
+
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput() GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput {
+	return i.ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput)
+}
+
+// GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayInput is an input type that accepts GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray and GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayInput` via:
+//
+//	GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray{ GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs{...} }
+type GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput() GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput
+	ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutputWithContext(context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray []GetVolumeBackupPoliciesVolumeBackupPolicyScheduleInput
+
+func (GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeBackupPoliciesVolumeBackupPolicySchedule)(nil)).Elem()
+}
+
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput() GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput {
+	return i.ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput)
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicySchedule)(nil)).Elem()
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput() GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput {
+	return o
+}
+
+// The type of volume backup to create.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// The day of the month to schedule the volume backup.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+// The day of the week to schedule the volume backup.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+// The hour of the day to schedule the volume backup.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) HourOfDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
+}
+
+// The month of the year to schedule the volume backup.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) Month() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
+}
+
+// The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) OffsetSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) int { return v.OffsetSeconds }).(pulumi.IntOutput)
+}
+
+// Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) OffsetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) string { return v.OffsetType }).(pulumi.StringOutput)
+}
+
+// The volume backup frequency.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) Period() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) string { return v.Period }).(pulumi.StringOutput)
+}
+
+// How long, in seconds, to keep the volume backups created by this schedule.
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) RetentionSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) int { return v.RetentionSeconds }).(pulumi.IntOutput)
+}
+
+// Specifies what time zone is the schedule in
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesVolumeBackupPolicySchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeBackupPoliciesVolumeBackupPolicySchedule)(nil)).Elem()
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput() GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
+		return vs[0].([]GetVolumeBackupPoliciesVolumeBackupPolicySchedule)[vs[1].(int)]
+	}).(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput)
+}
+
 type GetVolumeBackupPolicyAssignmentsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -3653,6 +3993,10 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicyInput)(nil)).Elem(), GetVolumeBackupPoliciesVolumeBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicyArrayInput)(nil)).Elem(), GetVolumeBackupPoliciesVolumeBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicyScheduleInput)(nil)).Elem(), GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayInput)(nil)).Elem(), GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPolicyAssignmentsFilterInput)(nil)).Elem(), GetVolumeBackupPolicyAssignmentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPolicyAssignmentsFilterArrayInput)(nil)).Elem(), GetVolumeBackupPolicyAssignmentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentInput)(nil)).Elem(), GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArgs{})
@@ -3703,6 +4047,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetVolumeBackupPoliciesVolumeBackupPolicyOutput{})
+	pulumi.RegisterOutputType(GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput{})
+	pulumi.RegisterOutputType(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeBackupPolicyAssignmentsFilterOutput{})
 	pulumi.RegisterOutputType(GetVolumeBackupPolicyAssignmentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput{})

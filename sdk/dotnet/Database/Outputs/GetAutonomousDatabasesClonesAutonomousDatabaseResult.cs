@@ -54,6 +54,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// </summary>
+        public readonly double ComputeCount;
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult> ConnectionStrings;
@@ -397,6 +405,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string compartmentId,
 
+            double computeCount,
+
+            string computeModel,
+
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult> connectionStrings,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult> connectionUrls,
@@ -565,6 +577,8 @@ namespace Pulumi.Oci.Database.Outputs
             BackupConfigs = backupConfigs;
             CharacterSet = characterSet;
             CompartmentId = compartmentId;
+            ComputeCount = computeCount;
+            ComputeModel = computeModel;
             ConnectionStrings = connectionStrings;
             ConnectionUrls = connectionUrls;
             CpuCoreCount = cpuCoreCount;

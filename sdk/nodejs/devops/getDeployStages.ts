@@ -72,7 +72,7 @@ export interface GetDeployStagesArgs {
  */
 export interface GetDeployStagesResult {
     /**
-     * The OCID of a compartment.
+     * The OCID of the compartment where the ContainerInstance will be created.
      */
     readonly compartmentId?: string;
     /**

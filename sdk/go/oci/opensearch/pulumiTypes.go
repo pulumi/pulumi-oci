@@ -265,6 +265,12 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	OpensearchFqdn string `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp string `pulumi:"opensearchPrivateIp"`
+	// The name of the master user that are used to manage security config
+	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
+	// The password hash of the master user that are used to manage security config
+	SecurityMasterUserPasswordHash string `pulumi:"securityMasterUserPasswordHash"`
+	// The security mode of the cluster.
+	SecurityMode string `pulumi:"securityMode"`
 	// The software version the cluster is running.
 	SoftwareVersion string `pulumi:"softwareVersion"`
 	// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
@@ -353,6 +359,12 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	OpensearchFqdn pulumi.StringInput `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp pulumi.StringInput `pulumi:"opensearchPrivateIp"`
+	// The name of the master user that are used to manage security config
+	SecurityMasterUserName pulumi.StringInput `pulumi:"securityMasterUserName"`
+	// The password hash of the master user that are used to manage security config
+	SecurityMasterUserPasswordHash pulumi.StringInput `pulumi:"securityMasterUserPasswordHash"`
+	// The security mode of the cluster.
+	SecurityMode pulumi.StringInput `pulumi:"securityMode"`
 	// The software version the cluster is running.
 	SoftwareVersion pulumi.StringInput `pulumi:"softwareVersion"`
 	// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
@@ -568,6 +580,23 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpensearchFq
 // The cluster's private IP address.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpensearchPrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.OpensearchPrivateIp }).(pulumi.StringOutput)
+}
+
+// The name of the master user that are used to manage security config
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMasterUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SecurityMasterUserName }).(pulumi.StringOutput)
+}
+
+// The password hash of the master user that are used to manage security config
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMasterUserPasswordHash() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string {
+		return v.SecurityMasterUserPasswordHash
+	}).(pulumi.StringOutput)
+}
+
+// The security mode of the cluster.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SecurityMode }).(pulumi.StringOutput)
 }
 
 // The software version the cluster is running.

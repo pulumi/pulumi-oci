@@ -73,6 +73,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	ClusterTimeZone string `pulumi:"clusterTimeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The compute model of the Cloud Autonomous VM Cluster.
+	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
 	// The number of OCPU cores enabled per VM cluster node.
@@ -218,6 +220,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ClusterTimeZone() pulumi.Str
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o LookupCloudAutonomousVmClusterResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The compute model of the Cloud Autonomous VM Cluster.
+func (o LookupCloudAutonomousVmClusterResultOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 // The number of CPU cores on the cloud Autonomous VM cluster.

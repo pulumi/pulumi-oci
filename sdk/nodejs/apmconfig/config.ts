@@ -101,6 +101,10 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly configType!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     */
+    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
@@ -117,6 +121,10 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * For optimistic concurrency control. See `if-match`.
+     */
+    public /*out*/ readonly etag!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
     public readonly filterId!: pulumi.Output<string>;
@@ -132,6 +140,10 @@ export class Config extends pulumi.CustomResource {
      * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
      */
     public readonly group!: pulumi.Output<string>;
+    /**
+     * The list of configuration items that reference the span filter.
+     */
+    public readonly inUseBies!: pulumi.Output<outputs.ApmConfig.ConfigInUseBy[]>;
     /**
      * (Updatable) The list of metrics in this group.
      */
@@ -160,6 +172,10 @@ export class Config extends pulumi.CustomResource {
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     */
+    public /*out*/ readonly updatedBy!: pulumi.Output<string>;
 
     /**
      * Create a Config resource with the given unique name, arguments, and options.
@@ -176,14 +192,17 @@ export class Config extends pulumi.CustomResource {
             const state = argsOrState as ConfigState | undefined;
             resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
             resourceInputs["configType"] = state ? state.configType : undefined;
+            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["dimensions"] = state ? state.dimensions : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["etag"] = state ? state.etag : undefined;
             resourceInputs["filterId"] = state ? state.filterId : undefined;
             resourceInputs["filterText"] = state ? state.filterText : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["group"] = state ? state.group : undefined;
+            resourceInputs["inUseBies"] = state ? state.inUseBies : undefined;
             resourceInputs["metrics"] = state ? state.metrics : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["opcDryRun"] = state ? state.opcDryRun : undefined;
@@ -191,6 +210,7 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["rules"] = state ? state.rules : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["updatedBy"] = state ? state.updatedBy : undefined;
         } else {
             const args = argsOrState as ConfigArgs | undefined;
             if ((!args || args.apmDomainId === undefined) && !opts.urn) {
@@ -212,13 +232,17 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["filterText"] = args ? args.filterText : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["group"] = args ? args.group : undefined;
+            resourceInputs["inUseBies"] = args ? args.inUseBies : undefined;
             resourceInputs["metrics"] = args ? args.metrics : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["opcDryRun"] = args ? args.opcDryRun : undefined;
             resourceInputs["options"] = args ? args.options : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["createdBy"] = undefined /*out*/;
+            resourceInputs["etag"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
+            resourceInputs["updatedBy"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Config.__pulumiType, name, resourceInputs, opts);
@@ -238,6 +262,10 @@ export interface ConfigState {
      */
     configType?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     */
+    createdBy?: pulumi.Input<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -254,6 +282,10 @@ export interface ConfigState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * For optimistic concurrency control. See `if-match`.
+     */
+    etag?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
     filterId?: pulumi.Input<string>;
@@ -269,6 +301,10 @@ export interface ConfigState {
      * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
      */
     group?: pulumi.Input<string>;
+    /**
+     * The list of configuration items that reference the span filter.
+     */
+    inUseBies?: pulumi.Input<pulumi.Input<inputs.ApmConfig.ConfigInUseBy>[]>;
     /**
      * (Updatable) The list of metrics in this group.
      */
@@ -297,6 +333,10 @@ export interface ConfigState {
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
     timeUpdated?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     */
+    updatedBy?: pulumi.Input<string>;
 }
 
 /**
@@ -343,6 +383,10 @@ export interface ConfigArgs {
      * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
      */
     group?: pulumi.Input<string>;
+    /**
+     * The list of configuration items that reference the span filter.
+     */
+    inUseBies?: pulumi.Input<pulumi.Input<inputs.ApmConfig.ConfigInUseBy>[]>;
     /**
      * (Updatable) The list of metrics in this group.
      */

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionAccessControlServiceOption;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionMeasuredBootOption;
+import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionMemoryEncryptionOption;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionSecureBootOption;
@@ -22,6 +23,7 @@ public final class GetShapeShapePlatformConfigOption {
     private List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions;
     private List<GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption> inputOutputMemoryManagementUnitOptions;
     private List<GetShapeShapePlatformConfigOptionMeasuredBootOption> measuredBootOptions;
+    private List<GetShapeShapePlatformConfigOptionMemoryEncryptionOption> memoryEncryptionOptions;
     private List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions;
     private List<GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption> percentageOfCoresEnabledOptions;
     private List<GetShapeShapePlatformConfigOptionSecureBootOption> secureBootOptions;
@@ -39,6 +41,9 @@ public final class GetShapeShapePlatformConfigOption {
     }
     public List<GetShapeShapePlatformConfigOptionMeasuredBootOption> measuredBootOptions() {
         return this.measuredBootOptions;
+    }
+    public List<GetShapeShapePlatformConfigOptionMemoryEncryptionOption> memoryEncryptionOptions() {
+        return this.memoryEncryptionOptions;
     }
     public List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions() {
         return this.numaNodesPerSocketPlatformOptions;
@@ -74,6 +79,7 @@ public final class GetShapeShapePlatformConfigOption {
         private List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions;
         private List<GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption> inputOutputMemoryManagementUnitOptions;
         private List<GetShapeShapePlatformConfigOptionMeasuredBootOption> measuredBootOptions;
+        private List<GetShapeShapePlatformConfigOptionMemoryEncryptionOption> memoryEncryptionOptions;
         private List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions;
         private List<GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption> percentageOfCoresEnabledOptions;
         private List<GetShapeShapePlatformConfigOptionSecureBootOption> secureBootOptions;
@@ -87,6 +93,7 @@ public final class GetShapeShapePlatformConfigOption {
     	      this.accessControlServiceOptions = defaults.accessControlServiceOptions;
     	      this.inputOutputMemoryManagementUnitOptions = defaults.inputOutputMemoryManagementUnitOptions;
     	      this.measuredBootOptions = defaults.measuredBootOptions;
+    	      this.memoryEncryptionOptions = defaults.memoryEncryptionOptions;
     	      this.numaNodesPerSocketPlatformOptions = defaults.numaNodesPerSocketPlatformOptions;
     	      this.percentageOfCoresEnabledOptions = defaults.percentageOfCoresEnabledOptions;
     	      this.secureBootOptions = defaults.secureBootOptions;
@@ -119,6 +126,14 @@ public final class GetShapeShapePlatformConfigOption {
         }
         public Builder measuredBootOptions(GetShapeShapePlatformConfigOptionMeasuredBootOption... measuredBootOptions) {
             return measuredBootOptions(List.of(measuredBootOptions));
+        }
+        @CustomType.Setter
+        public Builder memoryEncryptionOptions(List<GetShapeShapePlatformConfigOptionMemoryEncryptionOption> memoryEncryptionOptions) {
+            this.memoryEncryptionOptions = Objects.requireNonNull(memoryEncryptionOptions);
+            return this;
+        }
+        public Builder memoryEncryptionOptions(GetShapeShapePlatformConfigOptionMemoryEncryptionOption... memoryEncryptionOptions) {
+            return memoryEncryptionOptions(List.of(memoryEncryptionOptions));
         }
         @CustomType.Setter
         public Builder numaNodesPerSocketPlatformOptions(List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions) {
@@ -178,6 +193,7 @@ public final class GetShapeShapePlatformConfigOption {
             o.accessControlServiceOptions = accessControlServiceOptions;
             o.inputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
             o.measuredBootOptions = measuredBootOptions;
+            o.memoryEncryptionOptions = memoryEncryptionOptions;
             o.numaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
             o.percentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
             o.secureBootOptions = secureBootOptions;

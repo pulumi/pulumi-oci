@@ -123,6 +123,9 @@ class GetConfigsResult:
     @property
     @pulumi.getter(name="optionsGroup")
     def options_group(self) -> Optional[str]:
+        """
+        A string that specifies the group that an OPTIONS item belongs to.
+        """
         return pulumi.get(self, "options_group")
 
 

@@ -241,6 +241,36 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * 
+     */
+    @Import(name="computeCount")
+    private @Nullable Output<Double> computeCount;
+
+    /**
+     * @return (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * 
+     */
+    public Optional<Output<Double>> computeCount() {
+        return Optional.ofNullable(this.computeCount);
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * 
+     */
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * 
+     */
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
@@ -1136,6 +1166,36 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * 
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
+    /**
+     * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+     * 
+     */
+    @Import(name="secretVersionNumber")
+    private @Nullable Output<Integer> secretVersionNumber;
+
+    /**
+     * @return (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+     * 
+     */
+    public Optional<Output<Integer>> secretVersionNumber() {
+        return Optional.ofNullable(this.secretVersionNumber);
+    }
+
+    /**
      * The URL of the Service Console for the Autonomous Database.
      * 
      */
@@ -1587,6 +1647,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.characterSet = $.characterSet;
         this.cloneType = $.cloneType;
         this.compartmentId = $.compartmentId;
+        this.computeCount = $.computeCount;
+        this.computeModel = $.computeModel;
         this.connectionStrings = $.connectionStrings;
         this.connectionUrls = $.connectionUrls;
         this.cpuCoreCount = $.cpuCoreCount;
@@ -1646,6 +1708,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.role = $.role;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.scheduledOperations = $.scheduledOperations;
+        this.secretId = $.secretId;
+        this.secretVersionNumber = $.secretVersionNumber;
         this.serviceConsoleUrl = $.serviceConsoleUrl;
         this.source = $.source;
         this.sourceId = $.sourceId;
@@ -2017,6 +2081,48 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeCount (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeCount(@Nullable Output<Double> computeCount) {
+            $.computeCount = computeCount;
+            return this;
+        }
+
+        /**
+         * @param computeCount (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeCount(Double computeCount) {
+            return computeCount(Output.of(computeCount));
+        }
+
+        /**
+         * @param computeModel The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        /**
+         * @param computeModel The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
         }
 
         /**
@@ -3357,6 +3463,48 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder scheduledOperations(AutonomousDatabaseScheduledOperationArgs... scheduledOperations) {
             return scheduledOperations(List.of(scheduledOperations));
+        }
+
+        /**
+         * @param secretId (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
+        }
+
+        /**
+         * @param secretVersionNumber (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretVersionNumber(@Nullable Output<Integer> secretVersionNumber) {
+            $.secretVersionNumber = secretVersionNumber;
+            return this;
+        }
+
+        /**
+         * @param secretVersionNumber (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretVersionNumber(Integer secretVersionNumber) {
+            return secretVersionNumber(Output.of(secretVersionNumber));
         }
 
         /**

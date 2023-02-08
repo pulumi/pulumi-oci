@@ -64,7 +64,9 @@ type LookupDeployStageResult struct {
 	BlueGreenStrategies []GetDeployStageBlueGreenStrategy `pulumi:"blueGreenStrategies"`
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategies []GetDeployStageCanaryStrategy `pulumi:"canaryStrategies"`
-	// The OCID of a compartment.
+	// The OCID of the artifact that contains the command specification.
+	CommandSpecDeployArtifactId string `pulumi:"commandSpecDeployArtifactId"`
+	// The OCID of the compartment where the ContainerInstance will be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId string `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
@@ -76,6 +78,8 @@ type LookupDeployStageResult struct {
 	ComputeInstanceGroupDeployEnvironmentId string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config map[string]interface{} `pulumi:"config"`
+	// Specifies the container configuration.
+	ContainerConfigs []GetDeployStageContainerConfig `pulumi:"containerConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -157,7 +161,7 @@ type LookupDeployStageResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	// Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Specifies the target or destination backend set.
 	TrafficShiftTarget string `pulumi:"trafficShiftTarget"`
@@ -225,7 +229,12 @@ func (o LookupDeployStageResultOutput) CanaryStrategies() GetDeployStageCanarySt
 	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageCanaryStrategy { return v.CanaryStrategies }).(GetDeployStageCanaryStrategyArrayOutput)
 }
 
-// The OCID of a compartment.
+// The OCID of the artifact that contains the command specification.
+func (o LookupDeployStageResultOutput) CommandSpecDeployArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) string { return v.CommandSpecDeployArtifactId }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment where the ContainerInstance will be created.
 func (o LookupDeployStageResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -253,6 +262,11 @@ func (o LookupDeployStageResultOutput) ComputeInstanceGroupDeployEnvironmentId()
 // User provided key and value pair configuration, which is assigned through constants or parameter.
 func (o LookupDeployStageResultOutput) Config() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) map[string]interface{} { return v.Config }).(pulumi.MapOutput)
+}
+
+// Specifies the container configuration.
+func (o LookupDeployStageResultOutput) ContainerConfigs() GetDeployStageContainerConfigArrayOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageContainerConfig { return v.ContainerConfigs }).(GetDeployStageContainerConfigArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -465,7 +479,7 @@ func (o LookupDeployStageResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+// Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 func (o LookupDeployStageResultOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }

@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmConfig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollectionItemDimension;
+import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollectionItemInUseBy;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollectionItemMetric;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollectionItemRule;
 import java.lang.Object;
@@ -26,6 +27,11 @@ public final class GetConfigsConfigCollectionItem {
      */
     private String configType;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    private String createdBy;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -45,6 +51,11 @@ public final class GetConfigsConfigCollectionItem {
      * 
      */
     private String displayName;
+    /**
+     * @return For optimistic concurrency control. See `if-match`.
+     * 
+     */
+    private String etag;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
@@ -70,6 +81,11 @@ public final class GetConfigsConfigCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return The list of configuration items that reference the span filter.
+     * 
+     */
+    private List<GetConfigsConfigCollectionItemInUseBy> inUseBies;
     /**
      * @return The list of metrics in this group.
      * 
@@ -97,6 +113,11 @@ public final class GetConfigsConfigCollectionItem {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    private String updatedBy;
 
     private GetConfigsConfigCollectionItem() {}
     /**
@@ -112,6 +133,13 @@ public final class GetConfigsConfigCollectionItem {
      */
     public String configType() {
         return this.configType;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    public String createdBy() {
+        return this.createdBy;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -140,6 +168,13 @@ public final class GetConfigsConfigCollectionItem {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return For optimistic concurrency control. See `if-match`.
+     * 
+     */
+    public String etag() {
+        return this.etag;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
@@ -175,6 +210,13 @@ public final class GetConfigsConfigCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The list of configuration items that reference the span filter.
+     * 
+     */
+    public List<GetConfigsConfigCollectionItemInUseBy> inUseBies() {
+        return this.inUseBies;
     }
     /**
      * @return The list of metrics in this group.
@@ -217,6 +259,13 @@ public final class GetConfigsConfigCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+     * 
+     */
+    public String updatedBy() {
+        return this.updatedBy;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -229,15 +278,18 @@ public final class GetConfigsConfigCollectionItem {
     public static final class Builder {
         private String apmDomainId;
         private String configType;
+        private String createdBy;
         private Map<String,Object> definedTags;
         private String description;
         private List<GetConfigsConfigCollectionItemDimension> dimensions;
         private String displayName;
+        private String etag;
         private String filterId;
         private String filterText;
         private Map<String,Object> freeformTags;
         private String group;
         private String id;
+        private List<GetConfigsConfigCollectionItemInUseBy> inUseBies;
         private List<GetConfigsConfigCollectionItemMetric> metrics;
         private String namespace;
         private String opcDryRun;
@@ -245,20 +297,24 @@ public final class GetConfigsConfigCollectionItem {
         private List<GetConfigsConfigCollectionItemRule> rules;
         private String timeCreated;
         private String timeUpdated;
+        private String updatedBy;
         public Builder() {}
         public Builder(GetConfigsConfigCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
     	      this.configType = defaults.configType;
+    	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.dimensions = defaults.dimensions;
     	      this.displayName = defaults.displayName;
+    	      this.etag = defaults.etag;
     	      this.filterId = defaults.filterId;
     	      this.filterText = defaults.filterText;
     	      this.freeformTags = defaults.freeformTags;
     	      this.group = defaults.group;
     	      this.id = defaults.id;
+    	      this.inUseBies = defaults.inUseBies;
     	      this.metrics = defaults.metrics;
     	      this.namespace = defaults.namespace;
     	      this.opcDryRun = defaults.opcDryRun;
@@ -266,6 +322,7 @@ public final class GetConfigsConfigCollectionItem {
     	      this.rules = defaults.rules;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.updatedBy = defaults.updatedBy;
         }
 
         @CustomType.Setter
@@ -276,6 +333,11 @@ public final class GetConfigsConfigCollectionItem {
         @CustomType.Setter
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder createdBy(String createdBy) {
+            this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
         @CustomType.Setter
@@ -302,6 +364,11 @@ public final class GetConfigsConfigCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder etag(String etag) {
+            this.etag = Objects.requireNonNull(etag);
+            return this;
+        }
+        @CustomType.Setter
         public Builder filterId(String filterId) {
             this.filterId = Objects.requireNonNull(filterId);
             return this;
@@ -325,6 +392,14 @@ public final class GetConfigsConfigCollectionItem {
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
+        }
+        @CustomType.Setter
+        public Builder inUseBies(List<GetConfigsConfigCollectionItemInUseBy> inUseBies) {
+            this.inUseBies = Objects.requireNonNull(inUseBies);
+            return this;
+        }
+        public Builder inUseBies(GetConfigsConfigCollectionItemInUseBy... inUseBies) {
+            return inUseBies(List.of(inUseBies));
         }
         @CustomType.Setter
         public Builder metrics(List<GetConfigsConfigCollectionItemMetric> metrics) {
@@ -367,19 +442,27 @@ public final class GetConfigsConfigCollectionItem {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
+        public Builder updatedBy(String updatedBy) {
+            this.updatedBy = Objects.requireNonNull(updatedBy);
+            return this;
+        }
         public GetConfigsConfigCollectionItem build() {
             final var o = new GetConfigsConfigCollectionItem();
             o.apmDomainId = apmDomainId;
             o.configType = configType;
+            o.createdBy = createdBy;
             o.definedTags = definedTags;
             o.description = description;
             o.dimensions = dimensions;
             o.displayName = displayName;
+            o.etag = etag;
             o.filterId = filterId;
             o.filterText = filterText;
             o.freeformTags = freeformTags;
             o.group = group;
             o.id = id;
+            o.inUseBies = inUseBies;
             o.metrics = metrics;
             o.namespace = namespace;
             o.opcDryRun = opcDryRun;
@@ -387,6 +470,7 @@ public final class GetConfigsConfigCollectionItem {
             o.rules = rules;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
+            o.updatedBy = updatedBy;
             return o;
         }
     }

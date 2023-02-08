@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// Canary strategy type
+        /// Canary strategy type.
         /// </summary>
         public readonly string StrategyType;
 

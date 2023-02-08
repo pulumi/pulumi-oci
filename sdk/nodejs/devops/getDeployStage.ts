@@ -61,7 +61,11 @@ export interface GetDeployStageResult {
      */
     readonly canaryStrategies: outputs.DevOps.GetDeployStageCanaryStrategy[];
     /**
-     * The OCID of a compartment.
+     * The OCID of the artifact that contains the command specification.
+     */
+    readonly commandSpecDeployArtifactId: string;
+    /**
+     * The OCID of the compartment where the ContainerInstance will be created.
      */
     readonly compartmentId: string;
     /**
@@ -84,6 +88,10 @@ export interface GetDeployStageResult {
      * User provided key and value pair configuration, which is assigned through constants or parameter.
      */
     readonly config: {[key: string]: any};
+    /**
+     * Specifies the container configuration.
+     */
+    readonly containerConfigs: outputs.DevOps.GetDeployStageContainerConfig[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -246,7 +254,7 @@ export interface GetDeployStageResult {
      */
     readonly timeUpdated: string;
     /**
-     * Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      */
     readonly timeoutInSeconds: number;
     /**

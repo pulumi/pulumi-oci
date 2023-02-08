@@ -25,7 +25,7 @@ public final class DeployStageBlueGreenStrategy {
      */
     private String namespaceB;
     /**
-     * @return Canary strategy type
+     * @return Canary strategy type.
      * 
      */
     private String strategyType;
@@ -53,7 +53,7 @@ public final class DeployStageBlueGreenStrategy {
         return this.namespaceB;
     }
     /**
-     * @return Canary strategy type
+     * @return Canary strategy type.
      * 
      */
     public String strategyType() {

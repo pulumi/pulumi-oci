@@ -40,6 +40,10 @@ public final class GetConfigsResult {
      * 
      */
     private String id;
+    /**
+     * @return A string that specifies the group that an OPTIONS item belongs to.
+     * 
+     */
     private @Nullable String optionsGroup;
 
     private GetConfigsResult() {}
@@ -89,6 +93,10 @@ public final class GetConfigsResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return A string that specifies the group that an OPTIONS item belongs to.
+     * 
+     */
     public Optional<String> optionsGroup() {
         return Optional.ofNullable(this.optionsGroup);
     }

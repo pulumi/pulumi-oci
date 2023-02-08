@@ -36,6 +36,7 @@ import (
 //				SubnetId:                       pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				AutonomousDataStorageSizeInTbs: pulumi.Any(_var.Cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs),
 //				ClusterTimeZone:                pulumi.Any(_var.Cloud_autonomous_vm_cluster_cluster_time_zone),
+//				ComputeModel:                   pulumi.Any(_var.Cloud_autonomous_vm_cluster_compute_model),
 //				CpuCoreCountPerNode:            pulumi.Any(_var.Cloud_autonomous_vm_cluster_cpu_core_count_per_node),
 //				DbServers:                      pulumi.Any(_var.Cloud_autonomous_vm_cluster_db_servers),
 //				DefinedTags:                    pulumi.Any(_var.Cloud_autonomous_vm_cluster_defined_tags),
@@ -105,6 +106,8 @@ type CloudAutonomousVmCluster struct {
 	ClusterTimeZone pulumi.StringOutput `pulumi:"clusterTimeZone"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The compute model of the Cloud Autonomous VM Cluster.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
 	// The number of OCPU cores to be enabled per VM cluster node.
@@ -227,6 +230,8 @@ type cloudAutonomousVmClusterState struct {
 	ClusterTimeZone *string `pulumi:"clusterTimeZone"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The compute model of the Cloud Autonomous VM Cluster.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// The number of OCPU cores to be enabled per VM cluster node.
@@ -309,6 +314,8 @@ type CloudAutonomousVmClusterState struct {
 	ClusterTimeZone pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
+	// The compute model of the Cloud Autonomous VM Cluster.
+	ComputeModel pulumi.StringPtrInput
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount pulumi.IntPtrInput
 	// The number of OCPU cores to be enabled per VM cluster node.
@@ -387,6 +394,8 @@ type cloudAutonomousVmClusterArgs struct {
 	ClusterTimeZone *string `pulumi:"clusterTimeZone"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The compute model of the Cloud Autonomous VM Cluster.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The number of OCPU cores to be enabled per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
 	// The list of database servers.
@@ -426,6 +435,8 @@ type CloudAutonomousVmClusterArgs struct {
 	ClusterTimeZone pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
+	// The compute model of the Cloud Autonomous VM Cluster.
+	ComputeModel pulumi.StringPtrInput
 	// The number of OCPU cores to be enabled per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	// The list of database servers.
@@ -582,6 +593,11 @@ func (o CloudAutonomousVmClusterOutput) ClusterTimeZone() pulumi.StringOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o CloudAutonomousVmClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The compute model of the Cloud Autonomous VM Cluster.
+func (o CloudAutonomousVmClusterOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 // The number of CPU cores on the cloud Autonomous VM cluster.

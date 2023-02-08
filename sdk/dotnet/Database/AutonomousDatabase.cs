@@ -110,6 +110,18 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// </summary>
+        [Output("computeCount")]
+        public Output<double> ComputeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
+
+        /// <summary>
         /// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         /// </summary>
         [Output("connectionStrings")]
@@ -469,6 +481,18 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseScheduledOperation>> ScheduledOperations { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        /// </summary>
+        [Output("secretId")]
+        public Output<string> SecretId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        /// </summary>
+        [Output("secretVersionNumber")]
+        public Output<int> SecretVersionNumber { get; private set; } = null!;
+
+        /// <summary>
         /// The URL of the Service Console for the Autonomous Database.
         /// </summary>
         [Output("serviceConsoleUrl")]
@@ -757,6 +781,18 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<double>? ComputeCount { get; set; }
+
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// </summary>
         [Input("cpuCoreCount")]
@@ -984,6 +1020,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? PermissionLevel { get; set; }
 
         /// <summary>
+        /// The private endpoint Ip address for the resource.
+        /// </summary>
+        [Input("privateEndpointIp")]
+        public Input<string>? PrivateEndpointIp { get; set; }
+
+        /// <summary>
         /// (Updatable) The private endpoint label for the resource.
         /// </summary>
         [Input("privateEndpointLabel")]
@@ -1012,6 +1054,18 @@ namespace Pulumi.Oci.Database
             get => _scheduledOperations ?? (_scheduledOperations = new InputList<Inputs.AutonomousDatabaseScheduledOperationArgs>());
             set => _scheduledOperations = value;
         }
+
+        /// <summary>
+        /// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        /// </summary>
+        [Input("secretVersionNumber")]
+        public Input<int>? SecretVersionNumber { get; set; }
 
         /// <summary>
         /// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -1210,6 +1264,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<double>? ComputeCount { get; set; }
+
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
 
         [Input("connectionStrings")]
         private InputList<Inputs.AutonomousDatabaseConnectionStringGetArgs>? _connectionStrings;
@@ -1635,6 +1701,18 @@ namespace Pulumi.Oci.Database
             get => _scheduledOperations ?? (_scheduledOperations = new InputList<Inputs.AutonomousDatabaseScheduledOperationGetArgs>());
             set => _scheduledOperations = value;
         }
+
+        /// <summary>
+        /// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        /// </summary>
+        [Input("secretVersionNumber")]
+        public Input<int>? SecretVersionNumber { get; set; }
 
         /// <summary>
         /// The URL of the Service Console for the Autonomous Database.

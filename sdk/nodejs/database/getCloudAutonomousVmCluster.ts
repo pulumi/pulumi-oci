@@ -78,6 +78,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly compartmentId: string;
     /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     */
+    readonly computeModel: string;
+    /**
      * The number of CPU cores on the cloud Autonomous VM cluster.
      */
     readonly cpuCoreCount: number;

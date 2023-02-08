@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionAccessControlServiceOptionResult> AccessControlServiceOptions;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult> InputOutputMemoryManagementUnitOptions;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionMeasuredBootOptionResult> MeasuredBootOptions;
+        public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionMemoryEncryptionOptionResult> MemoryEncryptionOptions;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult> NumaNodesPerSocketPlatformOptions;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult> PercentageOfCoresEnabledOptions;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionSecureBootOptionResult> SecureBootOptions;
@@ -31,6 +32,8 @@ namespace Pulumi.Oci.Core.Outputs
             ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult> inputOutputMemoryManagementUnitOptions,
 
             ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionMeasuredBootOptionResult> measuredBootOptions,
+
+            ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionMemoryEncryptionOptionResult> memoryEncryptionOptions,
 
             ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult> numaNodesPerSocketPlatformOptions,
 
@@ -49,6 +52,7 @@ namespace Pulumi.Oci.Core.Outputs
             AccessControlServiceOptions = accessControlServiceOptions;
             InputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
             MeasuredBootOptions = measuredBootOptions;
+            MemoryEncryptionOptions = memoryEncryptionOptions;
             NumaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
             PercentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
             SecureBootOptions = secureBootOptions;

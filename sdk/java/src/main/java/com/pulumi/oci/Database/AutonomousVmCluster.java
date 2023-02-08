@@ -55,6 +55,7 @@ import javax.annotation.Nullable;
  *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
  *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
  *             .autonomousDataStorageSizeInTbs(var_.autonomous_vm_cluster_autonomous_data_storage_size_in_tbs())
+ *             .computeModel(var_.autonomous_vm_cluster_compute_model())
  *             .cpuCoreCountPerNode(var_.autonomous_vm_cluster_cpu_core_count_per_node())
  *             .definedTags(var_.autonomous_vm_cluster_defined_tags())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
@@ -178,6 +179,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The compute model of the Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="computeModel", type=String.class, parameters={})
+    private Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Autonomous VM Cluster.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
     }
     /**
      * The number of CPU cores to enable per VM cluster node.

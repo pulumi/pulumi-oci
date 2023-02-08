@@ -114,6 +114,21 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The compute model of the Autonomous VM Cluster.
+     * 
+     */
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Autonomous VM Cluster.
+     * 
+     */
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
      * The number of CPU cores to enable per VM cluster node.
      * 
      */
@@ -534,6 +549,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.availableCpus = $.availableCpus;
         this.availableDataStorageSizeInTbs = $.availableDataStorageSizeInTbs;
         this.compartmentId = $.compartmentId;
+        this.computeModel = $.computeModel;
         this.cpuCoreCountPerNode = $.cpuCoreCountPerNode;
         this.cpusEnabled = $.cpusEnabled;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
@@ -706,6 +722,27 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeModel The compute model of the Autonomous VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        /**
+         * @param computeModel The compute model of the Autonomous VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
         }
 
         /**

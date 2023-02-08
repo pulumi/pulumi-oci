@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsMeasuredBootEnabled;
         /// <summary>
+        /// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        /// </summary>
+        public readonly bool IsMemoryEncryptionEnabled;
+        /// <summary>
         /// Whether Secure Boot is enabled on the instance.
         /// </summary>
         public readonly bool IsSecureBootEnabled;
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isMeasuredBootEnabled,
 
+            bool isMemoryEncryptionEnabled,
+
             bool isSecureBootEnabled,
 
             bool isSymmetricMultiThreadingEnabled,
@@ -80,6 +86,7 @@ namespace Pulumi.Oci.Core.Outputs
             IsAccessControlServiceEnabled = isAccessControlServiceEnabled;
             IsInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
             IsMeasuredBootEnabled = isMeasuredBootEnabled;
+            IsMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             IsSecureBootEnabled = isSecureBootEnabled;
             IsSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
             IsTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;

@@ -35,6 +35,7 @@ import (
 //				ExadataInfrastructureId:        pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
 //				VmClusterNetworkId:             pulumi.Any(oci_database_vm_cluster_network.Test_vm_cluster_network.Id),
 //				AutonomousDataStorageSizeInTbs: pulumi.Any(_var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs),
+//				ComputeModel:                   pulumi.Any(_var.Autonomous_vm_cluster_compute_model),
 //				CpuCoreCountPerNode:            pulumi.Any(_var.Autonomous_vm_cluster_cpu_core_count_per_node),
 //				DefinedTags:                    pulumi.Any(_var.Autonomous_vm_cluster_defined_tags),
 //				FreeformTags: pulumi.AnyMap{
@@ -100,6 +101,8 @@ type AutonomousVmCluster struct {
 	AvailableDataStorageSizeInTbs pulumi.Float64Output `pulumi:"availableDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The compute model of the Autonomous VM Cluster.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntOutput `pulumi:"cpuCoreCountPerNode"`
 	// The number of enabled CPU cores.
@@ -210,6 +213,8 @@ type autonomousVmClusterState struct {
 	AvailableDataStorageSizeInTbs *float64 `pulumi:"availableDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The compute model of the Autonomous VM Cluster.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
 	// The number of enabled CPU cores.
@@ -280,6 +285,8 @@ type AutonomousVmClusterState struct {
 	AvailableDataStorageSizeInTbs pulumi.Float64PtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
+	// The compute model of the Autonomous VM Cluster.
+	ComputeModel pulumi.StringPtrInput
 	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	// The number of enabled CPU cores.
@@ -346,6 +353,8 @@ type autonomousVmClusterArgs struct {
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The compute model of the Autonomous VM Cluster.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -384,6 +393,8 @@ type AutonomousVmClusterArgs struct {
 	AutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
+	// The compute model of the Autonomous VM Cluster.
+	ComputeModel pulumi.StringPtrInput
 	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -531,6 +542,11 @@ func (o AutonomousVmClusterOutput) AvailableDataStorageSizeInTbs() pulumi.Float6
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o AutonomousVmClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The compute model of the Autonomous VM Cluster.
+func (o AutonomousVmClusterOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 // The number of CPU cores to enable per VM cluster node.

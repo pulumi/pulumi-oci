@@ -8,6 +8,7 @@ import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemApp
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemBlueBackendIp;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemBlueGreenStrategy;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemCanaryStrategy;
+import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemContainerConfig;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemFailurePolicy;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemGreenBackendIp;
@@ -48,6 +49,11 @@ public final class GetDeployStagesDeployStageCollectionItem {
      */
     private List<GetDeployStagesDeployStageCollectionItemCanaryStrategy> canaryStrategies;
     /**
+     * @return The OCID of the artifact that contains the command specification.
+     * 
+     */
+    private String commandSpecDeployArtifactId;
+    /**
      * @return The OCID of the compartment in which to list resources.
      * 
      */
@@ -77,6 +83,11 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * 
      */
     private Map<String,Object> config;
+    /**
+     * @return Specifies the container configuration.
+     * 
+     */
+    private List<GetDeployStagesDeployStageCollectionItemContainerConfig> containerConfigs;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -278,7 +289,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * @return Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
     private Integer timeoutInSeconds;
@@ -328,6 +339,13 @@ public final class GetDeployStagesDeployStageCollectionItem {
         return this.canaryStrategies;
     }
     /**
+     * @return The OCID of the artifact that contains the command specification.
+     * 
+     */
+    public String commandSpecDeployArtifactId() {
+        return this.commandSpecDeployArtifactId;
+    }
+    /**
      * @return The OCID of the compartment in which to list resources.
      * 
      */
@@ -368,6 +386,13 @@ public final class GetDeployStagesDeployStageCollectionItem {
      */
     public Map<String,Object> config() {
         return this.config;
+    }
+    /**
+     * @return Specifies the container configuration.
+     * 
+     */
+    public List<GetDeployStagesDeployStageCollectionItemContainerConfig> containerConfigs() {
+        return this.containerConfigs;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -650,7 +675,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * @return Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
     public Integer timeoutInSeconds() {
@@ -691,12 +716,14 @@ public final class GetDeployStagesDeployStageCollectionItem {
         private List<GetDeployStagesDeployStageCollectionItemBlueBackendIp> blueBackendIps;
         private List<GetDeployStagesDeployStageCollectionItemBlueGreenStrategy> blueGreenStrategies;
         private List<GetDeployStagesDeployStageCollectionItemCanaryStrategy> canaryStrategies;
+        private String commandSpecDeployArtifactId;
         private String compartmentId;
         private String computeInstanceGroupBlueGreenDeploymentDeployStageId;
         private String computeInstanceGroupCanaryDeployStageId;
         private String computeInstanceGroupCanaryTrafficShiftDeployStageId;
         private String computeInstanceGroupDeployEnvironmentId;
         private Map<String,Object> config;
+        private List<GetDeployStagesDeployStageCollectionItemContainerConfig> containerConfigs;
         private Map<String,Object> definedTags;
         private String deployArtifactId;
         private List<String> deployArtifactIds;
@@ -748,12 +775,14 @@ public final class GetDeployStagesDeployStageCollectionItem {
     	      this.blueBackendIps = defaults.blueBackendIps;
     	      this.blueGreenStrategies = defaults.blueGreenStrategies;
     	      this.canaryStrategies = defaults.canaryStrategies;
+    	      this.commandSpecDeployArtifactId = defaults.commandSpecDeployArtifactId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeInstanceGroupBlueGreenDeploymentDeployStageId = defaults.computeInstanceGroupBlueGreenDeploymentDeployStageId;
     	      this.computeInstanceGroupCanaryDeployStageId = defaults.computeInstanceGroupCanaryDeployStageId;
     	      this.computeInstanceGroupCanaryTrafficShiftDeployStageId = defaults.computeInstanceGroupCanaryTrafficShiftDeployStageId;
     	      this.computeInstanceGroupDeployEnvironmentId = defaults.computeInstanceGroupDeployEnvironmentId;
     	      this.config = defaults.config;
+    	      this.containerConfigs = defaults.containerConfigs;
     	      this.definedTags = defaults.definedTags;
     	      this.deployArtifactId = defaults.deployArtifactId;
     	      this.deployArtifactIds = defaults.deployArtifactIds;
@@ -833,6 +862,11 @@ public final class GetDeployStagesDeployStageCollectionItem {
             return canaryStrategies(List.of(canaryStrategies));
         }
         @CustomType.Setter
+        public Builder commandSpecDeployArtifactId(String commandSpecDeployArtifactId) {
+            this.commandSpecDeployArtifactId = Objects.requireNonNull(commandSpecDeployArtifactId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
@@ -861,6 +895,14 @@ public final class GetDeployStagesDeployStageCollectionItem {
         public Builder config(Map<String,Object> config) {
             this.config = Objects.requireNonNull(config);
             return this;
+        }
+        @CustomType.Setter
+        public Builder containerConfigs(List<GetDeployStagesDeployStageCollectionItemContainerConfig> containerConfigs) {
+            this.containerConfigs = Objects.requireNonNull(containerConfigs);
+            return this;
+        }
+        public Builder containerConfigs(GetDeployStagesDeployStageCollectionItemContainerConfig... containerConfigs) {
+            return containerConfigs(List.of(containerConfigs));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -1124,12 +1166,14 @@ public final class GetDeployStagesDeployStageCollectionItem {
             o.blueBackendIps = blueBackendIps;
             o.blueGreenStrategies = blueGreenStrategies;
             o.canaryStrategies = canaryStrategies;
+            o.commandSpecDeployArtifactId = commandSpecDeployArtifactId;
             o.compartmentId = compartmentId;
             o.computeInstanceGroupBlueGreenDeploymentDeployStageId = computeInstanceGroupBlueGreenDeploymentDeployStageId;
             o.computeInstanceGroupCanaryDeployStageId = computeInstanceGroupCanaryDeployStageId;
             o.computeInstanceGroupCanaryTrafficShiftDeployStageId = computeInstanceGroupCanaryTrafficShiftDeployStageId;
             o.computeInstanceGroupDeployEnvironmentId = computeInstanceGroupDeployEnvironmentId;
             o.config = config;
+            o.containerConfigs = containerConfigs;
             o.definedTags = definedTags;
             o.deployArtifactId = deployArtifactId;
             o.deployArtifactIds = deployArtifactIds;

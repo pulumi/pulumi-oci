@@ -86,6 +86,10 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly dbNodeStorageSizeInGbs: number;
     /**
+     * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    readonly dbServerVersion: string;
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     readonly definedTags: {[key: string]: any};
@@ -134,6 +138,14 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly memorySizeInGbs: number;
     /**
+     * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    readonly monthlyDbServerVersion: string;
+    /**
+     * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    readonly monthlyStorageServerVersion: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     readonly nextMaintenanceRunId: string;
@@ -149,6 +161,10 @@ export interface GetCloudExadataInfrastructureResult {
      * The number of storage servers for the cloud Exadata infrastructure.
      */
     readonly storageCount: number;
+    /**
+     * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+     */
+    readonly storageServerVersion: string;
     /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */

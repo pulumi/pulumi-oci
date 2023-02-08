@@ -10405,6 +10405,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  backup_configs: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult'],
                  cloud_autonomous_vm_cluster_id: str,
                  compartment_id: str,
+                 compute_model: str,
                  db_unique_name: str,
                  db_version: str,
                  defined_tags: Mapping[str, Any],
@@ -10485,6 +10486,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "db_unique_name", db_unique_name)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -10579,6 +10581,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="dbUniqueName")
@@ -12591,6 +12598,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  character_set: str,
                  clone_type: str,
                  compartment_id: str,
+                 compute_count: float,
+                 compute_model: str,
                  connection_strings: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionStringResult'],
                  connection_urls: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult'],
                  cpu_core_count: int,
@@ -12651,6 +12660,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  role: str,
                  rotate_key_trigger: bool,
                  scheduled_operations: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult'],
+                 secret_id: str,
+                 secret_version_number: int,
                  service_console_url: str,
                  source: str,
                  source_id: str,
@@ -12691,6 +12702,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
         :param int cpu_core_count: The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -12788,6 +12801,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "clone_type", clone_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "connection_strings", connection_strings)
         pulumi.set(__self__, "connection_urls", connection_urls)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -12848,6 +12863,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         pulumi.set(__self__, "scheduled_operations", scheduled_operations)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "secret_version_number", secret_version_number)
         pulumi.set(__self__, "service_console_url", service_console_url)
         pulumi.set(__self__, "source", source)
         pulumi.set(__self__, "source_id", source_id)
@@ -12977,6 +12994,22 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> float:
+        """
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="connectionStrings")
@@ -13449,6 +13482,16 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         list of scheduled operations
         """
         return pulumi.get(self, "scheduled_operations")
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter(name="secretVersionNumber")
+    def secret_version_number(self) -> int:
+        return pulumi.get(self, "secret_version_number")
 
     @property
     @pulumi.getter(name="serviceConsoleUrl")
@@ -14187,6 +14230,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult'],
                  character_set: str,
                  compartment_id: str,
+                 compute_count: float,
+                 compute_model: str,
                  connection_strings: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult'],
                  connection_urls: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult'],
                  cpu_core_count: int,
@@ -14277,6 +14322,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
         :param int cpu_core_count: The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -14372,6 +14419,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "connection_strings", connection_strings)
         pulumi.set(__self__, "connection_urls", connection_urls)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -14531,6 +14580,22 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> float:
+        """
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="connectionStrings")
@@ -17279,6 +17344,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  available_cpus: int,
                  available_data_storage_size_in_tbs: float,
                  compartment_id: str,
+                 compute_model: str,
                  cpu_core_count_per_node: int,
                  cpus_enabled: int,
                  data_storage_size_in_gb: float,
@@ -17315,6 +17381,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param int available_cpus: The numnber of CPU cores available.
         :param float available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compute_model: The compute model of the Autonomous VM Cluster.
         :param int cpu_core_count_per_node: The number of CPU cores enabled per VM cluster node.
         :param int cpus_enabled: The number of enabled CPU cores.
         :param float data_storage_size_in_gb: The total data storage allocated in GBs.
@@ -17350,6 +17417,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "available_cpus", available_cpus)
         pulumi.set(__self__, "available_data_storage_size_in_tbs", available_data_storage_size_in_tbs)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
         pulumi.set(__self__, "cpus_enabled", cpus_enabled)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
@@ -17427,6 +17495,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCountPerNode")
@@ -18880,6 +18956,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  cloud_exadata_infrastructure_id: str,
                  cluster_time_zone: str,
                  compartment_id: str,
+                 compute_model: str,
                  cpu_core_count: int,
                  cpu_core_count_per_node: int,
                  data_storage_size_in_gb: float,
@@ -18921,6 +18998,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
         :param str cluster_time_zone: The time zone of the Cloud Autonomous VM Cluster.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compute_model: The compute model of the Cloud Autonomous VM Cluster.
         :param int cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
         :param int cpu_core_count_per_node: The number of OCPU cores enabled per VM cluster node.
         :param float data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
@@ -18961,6 +19039,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         pulumi.set(__self__, "cluster_time_zone", cluster_time_zone)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
@@ -19057,6 +19136,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Cloud Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -19868,6 +19955,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  customer_contacts: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactResult'],
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
+                 db_server_version: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
@@ -19880,10 +19968,13 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  max_db_node_storage_in_gbs: int,
                  max_memory_in_gbs: int,
                  memory_size_in_gbs: int,
+                 monthly_db_server_version: str,
+                 monthly_storage_server_version: str,
                  next_maintenance_run_id: str,
                  shape: str,
                  state: str,
                  storage_count: int,
+                 storage_server_version: str,
                  time_created: str,
                  total_storage_size_in_gbs: int):
         """
@@ -19897,6 +19988,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs'] customer_contacts: The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
         :param float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
+        :param str db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -19909,10 +20001,13 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param int max_db_node_storage_in_gbs: The total local node storage available in GBs.
         :param int max_memory_in_gbs: The total memory available in GBs.
         :param int memory_size_in_gbs: The memory allocated in GBs.
+        :param str monthly_db_server_version: The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param str monthly_storage_server_version: The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param str shape: The model name of the cloud Exadata infrastructure resource.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param int storage_count: The number of storage servers for the cloud Exadata infrastructure.
+        :param str storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param str time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param int total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
@@ -19926,6 +20021,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "customer_contacts", customer_contacts)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        pulumi.set(__self__, "db_server_version", db_server_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -19938,10 +20034,13 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
         pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
+        pulumi.set(__self__, "monthly_storage_server_version", monthly_storage_server_version)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_count", storage_count)
+        pulumi.set(__self__, "storage_server_version", storage_server_version)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
 
@@ -20024,6 +20123,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServerVersion")
+    def db_server_version(self) -> str:
+        """
+        The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "db_server_version")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -20122,6 +20229,22 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
+    @pulumi.getter(name="monthlyDbServerVersion")
+    def monthly_db_server_version(self) -> str:
+        """
+        The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "monthly_db_server_version")
+
+    @property
+    @pulumi.getter(name="monthlyStorageServerVersion")
+    def monthly_storage_server_version(self) -> str:
+        """
+        The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "monthly_storage_server_version")
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> str:
         """
@@ -20152,6 +20275,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         The number of storage servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "storage_count")
+
+    @property
+    @pulumi.getter(name="storageServerVersion")
+    def storage_server_version(self) -> str:
+        """
+        The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "storage_server_version")
 
     @property
     @pulumi.getter(name="timeCreated")

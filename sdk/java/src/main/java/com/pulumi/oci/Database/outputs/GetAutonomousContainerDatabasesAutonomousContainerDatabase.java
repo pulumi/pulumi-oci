@@ -55,6 +55,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String compartmentId;
+    private String computeModel;
     private String dbUniqueName;
     /**
      * @return Oracle Database version of the Autonomous Container Database.
@@ -247,6 +248,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public String computeModel() {
+        return this.computeModel;
     }
     public String dbUniqueName() {
         return this.dbUniqueName;
@@ -483,6 +487,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs;
         private String cloudAutonomousVmClusterId;
         private String compartmentId;
+        private String computeModel;
         private String dbUniqueName;
         private String dbVersion;
         private Map<String,Object> definedTags;
@@ -531,6 +536,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.backupConfigs = defaults.backupConfigs;
     	      this.cloudAutonomousVmClusterId = defaults.cloudAutonomousVmClusterId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeModel = defaults.computeModel;
     	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.dbVersion = defaults.dbVersion;
     	      this.definedTags = defaults.definedTags;
@@ -607,6 +613,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            this.computeModel = Objects.requireNonNull(computeModel);
             return this;
         }
         @CustomType.Setter
@@ -823,6 +834,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             o.backupConfigs = backupConfigs;
             o.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             o.compartmentId = compartmentId;
+            o.computeModel = computeModel;
             o.dbUniqueName = dbUniqueName;
             o.dbVersion = dbVersion;
             o.definedTags = definedTags;

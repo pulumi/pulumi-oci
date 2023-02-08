@@ -242,6 +242,34 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * 
+     */
+    @Export(name="computeCount", type=Double.class, parameters={})
+    private Output<Double> computeCount;
+
+    /**
+     * @return (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * 
+     */
+    public Output<Double> computeCount() {
+        return this.computeCount;
+    }
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * 
+     */
+    @Export(name="computeModel", type=String.class, parameters={})
+    private Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
+    }
+    /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
@@ -1076,6 +1104,34 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<List<AutonomousDatabaseScheduledOperation>> scheduledOperations() {
         return this.scheduledOperations;
+    }
+    /**
+     * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * 
+     */
+    @Export(name="secretId", type=String.class, parameters={})
+    private Output<String> secretId;
+
+    /**
+     * @return (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * 
+     */
+    public Output<String> secretId() {
+        return this.secretId;
+    }
+    /**
+     * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+     * 
+     */
+    @Export(name="secretVersionNumber", type=Integer.class, parameters={})
+    private Output<Integer> secretVersionNumber;
+
+    /**
+     * @return (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+     * 
+     */
+    public Output<Integer> secretVersionNumber() {
+        return this.secretVersionNumber;
     }
     /**
      * The URL of the Service Console for the Autonomous Database.

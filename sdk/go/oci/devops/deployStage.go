@@ -35,7 +35,9 @@ type DeployStage struct {
 	BlueGreenStrategy DeployStageBlueGreenStrategyOutput `pulumi:"blueGreenStrategy"`
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategy DeployStageCanaryStrategyOutput `pulumi:"canaryStrategy"`
-	// The OCID of a compartment.
+	// (Updatable) The OCID of the artifact that contains the command specification.
+	CommandSpecDeployArtifactId pulumi.StringOutput `pulumi:"commandSpecDeployArtifactId"`
+	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId pulumi.StringOutput `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
@@ -47,6 +49,8 @@ type DeployStage struct {
 	ComputeInstanceGroupDeployEnvironmentId pulumi.StringOutput `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config pulumi.MapOutput `pulumi:"config"`
+	// (Updatable) Specifies the container configuration.
+	ContainerConfig DeployStageContainerConfigOutput `pulumi:"containerConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -125,7 +129,7 @@ type DeployStage struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget pulumi.StringOutput `pulumi:"trafficShiftTarget"`
@@ -181,7 +185,9 @@ type deployStageState struct {
 	BlueGreenStrategy *DeployStageBlueGreenStrategy `pulumi:"blueGreenStrategy"`
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategy *DeployStageCanaryStrategy `pulumi:"canaryStrategy"`
-	// The OCID of a compartment.
+	// (Updatable) The OCID of the artifact that contains the command specification.
+	CommandSpecDeployArtifactId *string `pulumi:"commandSpecDeployArtifactId"`
+	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId *string `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
@@ -193,6 +199,8 @@ type deployStageState struct {
 	ComputeInstanceGroupDeployEnvironmentId *string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config map[string]interface{} `pulumi:"config"`
+	// (Updatable) Specifies the container configuration.
+	ContainerConfig *DeployStageContainerConfig `pulumi:"containerConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -271,7 +279,7 @@ type deployStageState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget *string `pulumi:"trafficShiftTarget"`
@@ -290,7 +298,9 @@ type DeployStageState struct {
 	BlueGreenStrategy DeployStageBlueGreenStrategyPtrInput
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategy DeployStageCanaryStrategyPtrInput
-	// The OCID of a compartment.
+	// (Updatable) The OCID of the artifact that contains the command specification.
+	CommandSpecDeployArtifactId pulumi.StringPtrInput
+	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
 	CompartmentId pulumi.StringPtrInput
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId pulumi.StringPtrInput
@@ -302,6 +312,8 @@ type DeployStageState struct {
 	ComputeInstanceGroupDeployEnvironmentId pulumi.StringPtrInput
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config pulumi.MapInput
+	// (Updatable) Specifies the container configuration.
+	ContainerConfig DeployStageContainerConfigPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -380,7 +392,7 @@ type DeployStageState struct {
 	TimeCreated pulumi.StringPtrInput
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget pulumi.StringPtrInput
@@ -403,6 +415,8 @@ type deployStageArgs struct {
 	BlueGreenStrategy *DeployStageBlueGreenStrategy `pulumi:"blueGreenStrategy"`
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategy *DeployStageCanaryStrategy `pulumi:"canaryStrategy"`
+	// (Updatable) The OCID of the artifact that contains the command specification.
+	CommandSpecDeployArtifactId *string `pulumi:"commandSpecDeployArtifactId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId *string `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
 	// A compute instance group canary stage OCID for load balancer.
@@ -413,6 +427,8 @@ type deployStageArgs struct {
 	ComputeInstanceGroupDeployEnvironmentId *string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config map[string]interface{} `pulumi:"config"`
+	// (Updatable) Specifies the container configuration.
+	ContainerConfig *DeployStageContainerConfig `pulumi:"containerConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -479,7 +495,7 @@ type deployStageArgs struct {
 	RolloutPolicy *DeployStageRolloutPolicy `pulumi:"rolloutPolicy"`
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	TestLoadBalancerConfig *DeployStageTestLoadBalancerConfig `pulumi:"testLoadBalancerConfig"`
-	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget *string `pulumi:"trafficShiftTarget"`
@@ -499,6 +515,8 @@ type DeployStageArgs struct {
 	BlueGreenStrategy DeployStageBlueGreenStrategyPtrInput
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategy DeployStageCanaryStrategyPtrInput
+	// (Updatable) The OCID of the artifact that contains the command specification.
+	CommandSpecDeployArtifactId pulumi.StringPtrInput
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId pulumi.StringPtrInput
 	// A compute instance group canary stage OCID for load balancer.
@@ -509,6 +527,8 @@ type DeployStageArgs struct {
 	ComputeInstanceGroupDeployEnvironmentId pulumi.StringPtrInput
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config pulumi.MapInput
+	// (Updatable) Specifies the container configuration.
+	ContainerConfig DeployStageContainerConfigPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -575,7 +595,7 @@ type DeployStageArgs struct {
 	RolloutPolicy DeployStageRolloutPolicyPtrInput
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigPtrInput
-	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget pulumi.StringPtrInput
@@ -692,7 +712,12 @@ func (o DeployStageOutput) CanaryStrategy() DeployStageCanaryStrategyOutput {
 	return o.ApplyT(func(v *DeployStage) DeployStageCanaryStrategyOutput { return v.CanaryStrategy }).(DeployStageCanaryStrategyOutput)
 }
 
-// The OCID of a compartment.
+// (Updatable) The OCID of the artifact that contains the command specification.
+func (o DeployStageOutput) CommandSpecDeployArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.CommandSpecDeployArtifactId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
 func (o DeployStageOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -722,6 +747,11 @@ func (o DeployStageOutput) ComputeInstanceGroupDeployEnvironmentId() pulumi.Stri
 // (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
 func (o DeployStageOutput) Config() pulumi.MapOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.MapOutput { return v.Config }).(pulumi.MapOutput)
+}
+
+// (Updatable) Specifies the container configuration.
+func (o DeployStageOutput) ContainerConfig() DeployStageContainerConfigOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageContainerConfigOutput { return v.ContainerConfig }).(DeployStageContainerConfigOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -923,7 +953,7 @@ func (o DeployStageOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 func (o DeployStageOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }

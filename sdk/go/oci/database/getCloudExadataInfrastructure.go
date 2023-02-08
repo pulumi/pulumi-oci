@@ -77,6 +77,8 @@ type LookupCloudExadataInfrastructureResult struct {
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+	DbServerVersion string `pulumi:"dbServerVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -101,6 +103,10 @@ type LookupCloudExadataInfrastructureResult struct {
 	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+	MonthlyDbServerVersion string `pulumi:"monthlyDbServerVersion"`
+	// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+	MonthlyStorageServerVersion string `pulumi:"monthlyStorageServerVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The model name of the cloud Exadata infrastructure resource.
@@ -109,6 +115,8 @@ type LookupCloudExadataInfrastructureResult struct {
 	State string `pulumi:"state"`
 	// The number of storage servers for the cloud Exadata infrastructure.
 	StorageCount int `pulumi:"storageCount"`
+	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+	StorageServerVersion string `pulumi:"storageServerVersion"`
 	// The date and time the cloud Exadata infrastructure resource was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -209,6 +217,11 @@ func (o LookupCloudExadataInfrastructureResultOutput) DbNodeStorageSizeInGbs() p
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
+// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+func (o LookupCloudExadataInfrastructureResultOutput) DbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.DbServerVersion }).(pulumi.StringOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 func (o LookupCloudExadataInfrastructureResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -271,6 +284,16 @@ func (o LookupCloudExadataInfrastructureResultOutput) MemorySizeInGbs() pulumi.I
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
 }
 
+// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+func (o LookupCloudExadataInfrastructureResultOutput) MonthlyDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.MonthlyDbServerVersion }).(pulumi.StringOutput)
+}
+
+// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+func (o LookupCloudExadataInfrastructureResultOutput) MonthlyStorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.MonthlyStorageServerVersion }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 func (o LookupCloudExadataInfrastructureResultOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
@@ -289,6 +312,11 @@ func (o LookupCloudExadataInfrastructureResultOutput) State() pulumi.StringOutpu
 // The number of storage servers for the cloud Exadata infrastructure.
 func (o LookupCloudExadataInfrastructureResultOutput) StorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.StorageCount }).(pulumi.IntOutput)
+}
+
+// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+func (o LookupCloudExadataInfrastructureResultOutput) StorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.StorageServerVersion }).(pulumi.StringOutput)
 }
 
 // The date and time the cloud Exadata infrastructure resource was created.

@@ -116,6 +116,130 @@ func (o ConfigDimensionArrayOutput) Index(i pulumi.IntInput) ConfigDimensionOutp
 	}).(ConfigDimensionOutput)
 }
 
+type ConfigInUseBy struct {
+	// (Updatable) The type of configuration item.
+	ConfigType *string `pulumi:"configType"`
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
+	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id *string `pulumi:"id"`
+	// A string that specifies the group that an OPTIONS item belongs to.
+	OptionsGroup *string `pulumi:"optionsGroup"`
+}
+
+// ConfigInUseByInput is an input type that accepts ConfigInUseByArgs and ConfigInUseByOutput values.
+// You can construct a concrete instance of `ConfigInUseByInput` via:
+//
+//	ConfigInUseByArgs{...}
+type ConfigInUseByInput interface {
+	pulumi.Input
+
+	ToConfigInUseByOutput() ConfigInUseByOutput
+	ToConfigInUseByOutputWithContext(context.Context) ConfigInUseByOutput
+}
+
+type ConfigInUseByArgs struct {
+	// (Updatable) The type of configuration item.
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// A string that specifies the group that an OPTIONS item belongs to.
+	OptionsGroup pulumi.StringPtrInput `pulumi:"optionsGroup"`
+}
+
+func (ConfigInUseByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigInUseBy)(nil)).Elem()
+}
+
+func (i ConfigInUseByArgs) ToConfigInUseByOutput() ConfigInUseByOutput {
+	return i.ToConfigInUseByOutputWithContext(context.Background())
+}
+
+func (i ConfigInUseByArgs) ToConfigInUseByOutputWithContext(ctx context.Context) ConfigInUseByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigInUseByOutput)
+}
+
+// ConfigInUseByArrayInput is an input type that accepts ConfigInUseByArray and ConfigInUseByArrayOutput values.
+// You can construct a concrete instance of `ConfigInUseByArrayInput` via:
+//
+//	ConfigInUseByArray{ ConfigInUseByArgs{...} }
+type ConfigInUseByArrayInput interface {
+	pulumi.Input
+
+	ToConfigInUseByArrayOutput() ConfigInUseByArrayOutput
+	ToConfigInUseByArrayOutputWithContext(context.Context) ConfigInUseByArrayOutput
+}
+
+type ConfigInUseByArray []ConfigInUseByInput
+
+func (ConfigInUseByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigInUseBy)(nil)).Elem()
+}
+
+func (i ConfigInUseByArray) ToConfigInUseByArrayOutput() ConfigInUseByArrayOutput {
+	return i.ToConfigInUseByArrayOutputWithContext(context.Background())
+}
+
+func (i ConfigInUseByArray) ToConfigInUseByArrayOutputWithContext(ctx context.Context) ConfigInUseByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigInUseByArrayOutput)
+}
+
+type ConfigInUseByOutput struct{ *pulumi.OutputState }
+
+func (ConfigInUseByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigInUseBy)(nil)).Elem()
+}
+
+func (o ConfigInUseByOutput) ToConfigInUseByOutput() ConfigInUseByOutput {
+	return o
+}
+
+func (o ConfigInUseByOutput) ToConfigInUseByOutputWithContext(ctx context.Context) ConfigInUseByOutput {
+	return o
+}
+
+// (Updatable) The type of configuration item.
+func (o ConfigInUseByOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigInUseBy) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name by which a configuration entity is displayed to the end user.
+func (o ConfigInUseByOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigInUseBy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+func (o ConfigInUseByOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigInUseBy) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// A string that specifies the group that an OPTIONS item belongs to.
+func (o ConfigInUseByOutput) OptionsGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigInUseBy) *string { return v.OptionsGroup }).(pulumi.StringPtrOutput)
+}
+
+type ConfigInUseByArrayOutput struct{ *pulumi.OutputState }
+
+func (ConfigInUseByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigInUseBy)(nil)).Elem()
+}
+
+func (o ConfigInUseByArrayOutput) ToConfigInUseByArrayOutput() ConfigInUseByArrayOutput {
+	return o
+}
+
+func (o ConfigInUseByArrayOutput) ToConfigInUseByArrayOutputWithContext(ctx context.Context) ConfigInUseByArrayOutput {
+	return o
+}
+
+func (o ConfigInUseByArrayOutput) Index(i pulumi.IntInput) ConfigInUseByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigInUseBy {
+		return vs[0].([]ConfigInUseBy)[vs[1].(int)]
+	}).(ConfigInUseByOutput)
+}
+
 type ConfigMetric struct {
 	// (Updatable) A description of the metric.
 	Description *string `pulumi:"description"`
@@ -497,6 +621,130 @@ func (o GetConfigDimensionArrayOutput) Index(i pulumi.IntInput) GetConfigDimensi
 	}).(GetConfigDimensionOutput)
 }
 
+type GetConfigInUseBy struct {
+	// The type of configuration item.
+	ConfigType string `pulumi:"configType"`
+	// The name by which a configuration entity is displayed to the end user.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id string `pulumi:"id"`
+	// A string that specifies the group that an OPTIONS item belongs to.
+	OptionsGroup string `pulumi:"optionsGroup"`
+}
+
+// GetConfigInUseByInput is an input type that accepts GetConfigInUseByArgs and GetConfigInUseByOutput values.
+// You can construct a concrete instance of `GetConfigInUseByInput` via:
+//
+//	GetConfigInUseByArgs{...}
+type GetConfigInUseByInput interface {
+	pulumi.Input
+
+	ToGetConfigInUseByOutput() GetConfigInUseByOutput
+	ToGetConfigInUseByOutputWithContext(context.Context) GetConfigInUseByOutput
+}
+
+type GetConfigInUseByArgs struct {
+	// The type of configuration item.
+	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// The name by which a configuration entity is displayed to the end user.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A string that specifies the group that an OPTIONS item belongs to.
+	OptionsGroup pulumi.StringInput `pulumi:"optionsGroup"`
+}
+
+func (GetConfigInUseByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigInUseBy)(nil)).Elem()
+}
+
+func (i GetConfigInUseByArgs) ToGetConfigInUseByOutput() GetConfigInUseByOutput {
+	return i.ToGetConfigInUseByOutputWithContext(context.Background())
+}
+
+func (i GetConfigInUseByArgs) ToGetConfigInUseByOutputWithContext(ctx context.Context) GetConfigInUseByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigInUseByOutput)
+}
+
+// GetConfigInUseByArrayInput is an input type that accepts GetConfigInUseByArray and GetConfigInUseByArrayOutput values.
+// You can construct a concrete instance of `GetConfigInUseByArrayInput` via:
+//
+//	GetConfigInUseByArray{ GetConfigInUseByArgs{...} }
+type GetConfigInUseByArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigInUseByArrayOutput() GetConfigInUseByArrayOutput
+	ToGetConfigInUseByArrayOutputWithContext(context.Context) GetConfigInUseByArrayOutput
+}
+
+type GetConfigInUseByArray []GetConfigInUseByInput
+
+func (GetConfigInUseByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigInUseBy)(nil)).Elem()
+}
+
+func (i GetConfigInUseByArray) ToGetConfigInUseByArrayOutput() GetConfigInUseByArrayOutput {
+	return i.ToGetConfigInUseByArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigInUseByArray) ToGetConfigInUseByArrayOutputWithContext(ctx context.Context) GetConfigInUseByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigInUseByArrayOutput)
+}
+
+type GetConfigInUseByOutput struct{ *pulumi.OutputState }
+
+func (GetConfigInUseByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigInUseBy)(nil)).Elem()
+}
+
+func (o GetConfigInUseByOutput) ToGetConfigInUseByOutput() GetConfigInUseByOutput {
+	return o
+}
+
+func (o GetConfigInUseByOutput) ToGetConfigInUseByOutputWithContext(ctx context.Context) GetConfigInUseByOutput {
+	return o
+}
+
+// The type of configuration item.
+func (o GetConfigInUseByOutput) ConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigInUseBy) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+// The name by which a configuration entity is displayed to the end user.
+func (o GetConfigInUseByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigInUseBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+func (o GetConfigInUseByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigInUseBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A string that specifies the group that an OPTIONS item belongs to.
+func (o GetConfigInUseByOutput) OptionsGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigInUseBy) string { return v.OptionsGroup }).(pulumi.StringOutput)
+}
+
+type GetConfigInUseByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigInUseByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigInUseBy)(nil)).Elem()
+}
+
+func (o GetConfigInUseByArrayOutput) ToGetConfigInUseByArrayOutput() GetConfigInUseByArrayOutput {
+	return o
+}
+
+func (o GetConfigInUseByArrayOutput) ToGetConfigInUseByArrayOutputWithContext(ctx context.Context) GetConfigInUseByArrayOutput {
+	return o
+}
+
+func (o GetConfigInUseByArrayOutput) Index(i pulumi.IntInput) GetConfigInUseByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigInUseBy {
+		return vs[0].([]GetConfigInUseBy)[vs[1].(int)]
+	}).(GetConfigInUseByOutput)
+}
+
 type GetConfigMetric struct {
 	// A description of the metric.
 	Description string `pulumi:"description"`
@@ -871,6 +1119,8 @@ type GetConfigsConfigCollectionItem struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
 	ConfigType string `pulumi:"configType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the metric.
@@ -879,6 +1129,8 @@ type GetConfigsConfigCollectionItem struct {
 	Dimensions []GetConfigsConfigCollectionItemDimension `pulumi:"dimensions"`
 	// A filter to return resources that match the given display name.
 	DisplayName string `pulumi:"displayName"`
+	// For optimistic concurrency control. See `if-match`.
+	Etag string `pulumi:"etag"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId string `pulumi:"filterId"`
 	// The string that defines the Span Filter expression.
@@ -889,6 +1141,8 @@ type GetConfigsConfigCollectionItem struct {
 	Group string `pulumi:"group"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
 	Id string `pulumi:"id"`
+	// The list of configuration items that reference the span filter.
+	InUseBies []GetConfigsConfigCollectionItemInUseBy `pulumi:"inUseBies"`
 	// The list of metrics in this group.
 	Metrics []GetConfigsConfigCollectionItemMetric `pulumi:"metrics"`
 	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -901,6 +1155,8 @@ type GetConfigsConfigCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	UpdatedBy string `pulumi:"updatedBy"`
 }
 
 // GetConfigsConfigCollectionItemInput is an input type that accepts GetConfigsConfigCollectionItemArgs and GetConfigsConfigCollectionItemOutput values.
@@ -919,6 +1175,8 @@ type GetConfigsConfigCollectionItemArgs struct {
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
 	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A description of the metric.
@@ -927,6 +1185,8 @@ type GetConfigsConfigCollectionItemArgs struct {
 	Dimensions GetConfigsConfigCollectionItemDimensionArrayInput `pulumi:"dimensions"`
 	// A filter to return resources that match the given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// For optimistic concurrency control. See `if-match`.
+	Etag pulumi.StringInput `pulumi:"etag"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId pulumi.StringInput `pulumi:"filterId"`
 	// The string that defines the Span Filter expression.
@@ -937,6 +1197,8 @@ type GetConfigsConfigCollectionItemArgs struct {
 	Group pulumi.StringInput `pulumi:"group"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The list of configuration items that reference the span filter.
+	InUseBies GetConfigsConfigCollectionItemInUseByArrayInput `pulumi:"inUseBies"`
 	// The list of metrics in this group.
 	Metrics GetConfigsConfigCollectionItemMetricArrayInput `pulumi:"metrics"`
 	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -949,6 +1211,8 @@ type GetConfigsConfigCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
 }
 
 func (GetConfigsConfigCollectionItemArgs) ElementType() reflect.Type {
@@ -1012,6 +1276,11 @@ func (o GetConfigsConfigCollectionItemOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+func (o GetConfigsConfigCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetConfigsConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -1030,6 +1299,11 @@ func (o GetConfigsConfigCollectionItemOutput) Dimensions() GetConfigsConfigColle
 // A filter to return resources that match the given display name.
 func (o GetConfigsConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// For optimistic concurrency control. See `if-match`.
+func (o GetConfigsConfigCollectionItemOutput) Etag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Etag }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
@@ -1055,6 +1329,11 @@ func (o GetConfigsConfigCollectionItemOutput) Group() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
 func (o GetConfigsConfigCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The list of configuration items that reference the span filter.
+func (o GetConfigsConfigCollectionItemOutput) InUseBies() GetConfigsConfigCollectionItemInUseByArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemInUseBy { return v.InUseBies }).(GetConfigsConfigCollectionItemInUseByArrayOutput)
 }
 
 // The list of metrics in this group.
@@ -1088,6 +1367,11 @@ func (o GetConfigsConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 func (o GetConfigsConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
+func (o GetConfigsConfigCollectionItemOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.UpdatedBy }).(pulumi.StringOutput)
 }
 
 type GetConfigsConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1214,6 +1498,130 @@ func (o GetConfigsConfigCollectionItemDimensionArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemDimension {
 		return vs[0].([]GetConfigsConfigCollectionItemDimension)[vs[1].(int)]
 	}).(GetConfigsConfigCollectionItemDimensionOutput)
+}
+
+type GetConfigsConfigCollectionItemInUseBy struct {
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	ConfigType string `pulumi:"configType"`
+	// A filter to return resources that match the given display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id string `pulumi:"id"`
+	// A filter to return OPTIONS resources that match the given group.
+	OptionsGroup string `pulumi:"optionsGroup"`
+}
+
+// GetConfigsConfigCollectionItemInUseByInput is an input type that accepts GetConfigsConfigCollectionItemInUseByArgs and GetConfigsConfigCollectionItemInUseByOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemInUseByInput` via:
+//
+//	GetConfigsConfigCollectionItemInUseByArgs{...}
+type GetConfigsConfigCollectionItemInUseByInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemInUseByOutput() GetConfigsConfigCollectionItemInUseByOutput
+	ToGetConfigsConfigCollectionItemInUseByOutputWithContext(context.Context) GetConfigsConfigCollectionItemInUseByOutput
+}
+
+type GetConfigsConfigCollectionItemInUseByArgs struct {
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// A filter to return resources that match the given display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return OPTIONS resources that match the given group.
+	OptionsGroup pulumi.StringInput `pulumi:"optionsGroup"`
+}
+
+func (GetConfigsConfigCollectionItemInUseByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemInUseBy)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemInUseByArgs) ToGetConfigsConfigCollectionItemInUseByOutput() GetConfigsConfigCollectionItemInUseByOutput {
+	return i.ToGetConfigsConfigCollectionItemInUseByOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemInUseByArgs) ToGetConfigsConfigCollectionItemInUseByOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemInUseByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemInUseByOutput)
+}
+
+// GetConfigsConfigCollectionItemInUseByArrayInput is an input type that accepts GetConfigsConfigCollectionItemInUseByArray and GetConfigsConfigCollectionItemInUseByArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemInUseByArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemInUseByArray{ GetConfigsConfigCollectionItemInUseByArgs{...} }
+type GetConfigsConfigCollectionItemInUseByArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemInUseByArrayOutput() GetConfigsConfigCollectionItemInUseByArrayOutput
+	ToGetConfigsConfigCollectionItemInUseByArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemInUseByArrayOutput
+}
+
+type GetConfigsConfigCollectionItemInUseByArray []GetConfigsConfigCollectionItemInUseByInput
+
+func (GetConfigsConfigCollectionItemInUseByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemInUseBy)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemInUseByArray) ToGetConfigsConfigCollectionItemInUseByArrayOutput() GetConfigsConfigCollectionItemInUseByArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemInUseByArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemInUseByArray) ToGetConfigsConfigCollectionItemInUseByArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemInUseByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemInUseByArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemInUseByOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemInUseByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemInUseBy)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemInUseByOutput) ToGetConfigsConfigCollectionItemInUseByOutput() GetConfigsConfigCollectionItemInUseByOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemInUseByOutput) ToGetConfigsConfigCollectionItemInUseByOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemInUseByOutput {
+	return o
+}
+
+// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+func (o GetConfigsConfigCollectionItemInUseByOutput) ConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match the given display name.
+func (o GetConfigsConfigCollectionItemInUseByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+func (o GetConfigsConfigCollectionItemInUseByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return OPTIONS resources that match the given group.
+func (o GetConfigsConfigCollectionItemInUseByOutput) OptionsGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.OptionsGroup }).(pulumi.StringOutput)
+}
+
+type GetConfigsConfigCollectionItemInUseByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemInUseByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemInUseBy)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemInUseByArrayOutput) ToGetConfigsConfigCollectionItemInUseByArrayOutput() GetConfigsConfigCollectionItemInUseByArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemInUseByArrayOutput) ToGetConfigsConfigCollectionItemInUseByArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemInUseByArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemInUseByArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemInUseByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemInUseBy {
+		return vs[0].([]GetConfigsConfigCollectionItemInUseBy)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemInUseByOutput)
 }
 
 type GetConfigsConfigCollectionItemMetric struct {
@@ -1603,12 +2011,16 @@ func (o GetConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigsFilterOu
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigDimensionInput)(nil)).Elem(), ConfigDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigDimensionArrayInput)(nil)).Elem(), ConfigDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigInUseByInput)(nil)).Elem(), ConfigInUseByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigInUseByArrayInput)(nil)).Elem(), ConfigInUseByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigMetricInput)(nil)).Elem(), ConfigMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigMetricArrayInput)(nil)).Elem(), ConfigMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigRuleInput)(nil)).Elem(), ConfigRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigRuleArrayInput)(nil)).Elem(), ConfigRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigDimensionInput)(nil)).Elem(), GetConfigDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigDimensionArrayInput)(nil)).Elem(), GetConfigDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigInUseByInput)(nil)).Elem(), GetConfigInUseByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigInUseByArrayInput)(nil)).Elem(), GetConfigInUseByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigMetricInput)(nil)).Elem(), GetConfigMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigMetricArrayInput)(nil)).Elem(), GetConfigMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigRuleInput)(nil)).Elem(), GetConfigRuleArgs{})
@@ -1619,6 +2031,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemDimensionInput)(nil)).Elem(), GetConfigsConfigCollectionItemDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemDimensionArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemInUseByInput)(nil)).Elem(), GetConfigsConfigCollectionItemInUseByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemInUseByArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemInUseByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemMetricInput)(nil)).Elem(), GetConfigsConfigCollectionItemMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemMetricArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemRuleInput)(nil)).Elem(), GetConfigsConfigCollectionItemRuleArgs{})
@@ -1627,12 +2041,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterArrayInput)(nil)).Elem(), GetConfigsFilterArray{})
 	pulumi.RegisterOutputType(ConfigDimensionOutput{})
 	pulumi.RegisterOutputType(ConfigDimensionArrayOutput{})
+	pulumi.RegisterOutputType(ConfigInUseByOutput{})
+	pulumi.RegisterOutputType(ConfigInUseByArrayOutput{})
 	pulumi.RegisterOutputType(ConfigMetricOutput{})
 	pulumi.RegisterOutputType(ConfigMetricArrayOutput{})
 	pulumi.RegisterOutputType(ConfigRuleOutput{})
 	pulumi.RegisterOutputType(ConfigRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigDimensionOutput{})
 	pulumi.RegisterOutputType(GetConfigDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigInUseByOutput{})
+	pulumi.RegisterOutputType(GetConfigInUseByArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigMetricOutput{})
 	pulumi.RegisterOutputType(GetConfigMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigRuleOutput{})
@@ -1643,6 +2061,8 @@ func init() {
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemDimensionOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemInUseByOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemInUseByArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemMetricOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemRuleOutput{})

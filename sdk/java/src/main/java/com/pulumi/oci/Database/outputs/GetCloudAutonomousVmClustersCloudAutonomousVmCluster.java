@@ -57,6 +57,11 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
      */
     private String compartmentId;
     /**
+     * @return The compute model of the Cloud Autonomous VM Cluster.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
@@ -266,6 +271,13 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The compute model of the Cloud Autonomous VM Cluster.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     /**
      * @return The number of CPU cores on the cloud Autonomous VM cluster.
@@ -502,6 +514,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
         private String cloudExadataInfrastructureId;
         private String clusterTimeZone;
         private String compartmentId;
+        private String computeModel;
         private Integer cpuCoreCount;
         private Integer cpuCoreCountPerNode;
         private Double dataStorageSizeInGb;
@@ -545,6 +558,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
     	      this.cloudExadataInfrastructureId = defaults.cloudExadataInfrastructureId;
     	      this.clusterTimeZone = defaults.clusterTimeZone;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.cpuCoreCountPerNode = defaults.cpuCoreCountPerNode;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
@@ -617,6 +631,11 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            this.computeModel = Objects.requireNonNull(computeModel);
             return this;
         }
         @CustomType.Setter
@@ -801,6 +820,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
             o.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             o.clusterTimeZone = clusterTimeZone;
             o.compartmentId = compartmentId;
+            o.computeModel = computeModel;
             o.cpuCoreCount = cpuCoreCount;
             o.cpuCoreCountPerNode = cpuCoreCountPerNode;
             o.dataStorageSizeInGb = dataStorageSizeInGb;

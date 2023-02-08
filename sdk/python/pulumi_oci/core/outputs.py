@@ -454,6 +454,7 @@ __all__ = [
     'GetShapeShapePlatformConfigOptionAccessControlServiceOptionResult',
     'GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult',
     'GetShapeShapePlatformConfigOptionMeasuredBootOptionResult',
+    'GetShapeShapePlatformConfigOptionMemoryEncryptionOptionResult',
     'GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult',
     'GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult',
     'GetShapeShapePlatformConfigOptionSecureBootOptionResult',
@@ -471,6 +472,7 @@ __all__ = [
     'GetShapesShapePlatformConfigOptionAccessControlServiceOptionResult',
     'GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult',
     'GetShapesShapePlatformConfigOptionMeasuredBootOptionResult',
+    'GetShapesShapePlatformConfigOptionMemoryEncryptionOptionResult',
     'GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult',
     'GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult',
     'GetShapesShapePlatformConfigOptionSecureBootOptionResult',
@@ -4848,6 +4850,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
             suggest = "is_input_output_memory_management_unit_enabled"
         elif key == "isMeasuredBootEnabled":
             suggest = "is_measured_boot_enabled"
+        elif key == "isMemoryEncryptionEnabled":
+            suggest = "is_memory_encryption_enabled"
         elif key == "isSecureBootEnabled":
             suggest = "is_secure_boot_enabled"
         elif key == "isSymmetricMultiThreadingEnabled":
@@ -4876,6 +4880,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
                  is_access_control_service_enabled: Optional[bool] = None,
                  is_input_output_memory_management_unit_enabled: Optional[bool] = None,
                  is_measured_boot_enabled: Optional[bool] = None,
+                 is_memory_encryption_enabled: Optional[bool] = None,
                  is_secure_boot_enabled: Optional[bool] = None,
                  is_symmetric_multi_threading_enabled: Optional[bool] = None,
                  is_trusted_platform_module_enabled: Optional[bool] = None,
@@ -4887,6 +4892,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
+        :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
         :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
@@ -4902,6 +4908,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
             pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         if is_measured_boot_enabled is not None:
             pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
+        if is_memory_encryption_enabled is not None:
+            pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if is_secure_boot_enabled is not None:
             pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         if is_symmetric_multi_threading_enabled is not None:
@@ -4952,6 +4960,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         Whether the Measured Boot feature is enabled on the instance.
         """
         return pulumi.get(self, "is_measured_boot_enabled")
+
+    @property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> Optional[bool]:
+        """
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
 
     @property
     @pulumi.getter(name="isSecureBootEnabled")
@@ -5796,6 +5812,8 @@ class InstancePlatformConfig(dict):
             suggest = "is_input_output_memory_management_unit_enabled"
         elif key == "isMeasuredBootEnabled":
             suggest = "is_measured_boot_enabled"
+        elif key == "isMemoryEncryptionEnabled":
+            suggest = "is_memory_encryption_enabled"
         elif key == "isSecureBootEnabled":
             suggest = "is_secure_boot_enabled"
         elif key == "isSymmetricMultiThreadingEnabled":
@@ -5824,6 +5842,7 @@ class InstancePlatformConfig(dict):
                  is_access_control_service_enabled: Optional[bool] = None,
                  is_input_output_memory_management_unit_enabled: Optional[bool] = None,
                  is_measured_boot_enabled: Optional[bool] = None,
+                 is_memory_encryption_enabled: Optional[bool] = None,
                  is_secure_boot_enabled: Optional[bool] = None,
                  is_symmetric_multi_threading_enabled: Optional[bool] = None,
                  is_trusted_platform_module_enabled: Optional[bool] = None,
@@ -5835,6 +5854,7 @@ class InstancePlatformConfig(dict):
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
+        :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
         :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
@@ -5850,6 +5870,8 @@ class InstancePlatformConfig(dict):
             pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         if is_measured_boot_enabled is not None:
             pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
+        if is_memory_encryption_enabled is not None:
+            pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if is_secure_boot_enabled is not None:
             pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         if is_symmetric_multi_threading_enabled is not None:
@@ -5900,6 +5922,14 @@ class InstancePlatformConfig(dict):
         Whether the Measured Boot feature is enabled on the instance.
         """
         return pulumi.get(self, "is_measured_boot_enabled")
+
+    @property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> Optional[bool]:
+        """
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
 
     @property
     @pulumi.getter(name="isSecureBootEnabled")
@@ -18733,6 +18763,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dic
                  is_access_control_service_enabled: bool,
                  is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
+                 is_memory_encryption_enabled: bool,
                  is_secure_boot_enabled: bool,
                  is_symmetric_multi_threading_enabled: bool,
                  is_trusted_platform_module_enabled: bool,
@@ -18744,6 +18775,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dic
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
+        :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
         :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
@@ -18755,6 +18787,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dic
         pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
+        pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
@@ -18793,6 +18826,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dic
         Whether the Measured Boot feature is enabled on the instance.
         """
         return pulumi.get(self, "is_measured_boot_enabled")
+
+    @property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> bool:
+        """
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
 
     @property
     @pulumi.getter(name="isSecureBootEnabled")
@@ -20227,6 +20268,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPl
                  is_access_control_service_enabled: bool,
                  is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
+                 is_memory_encryption_enabled: bool,
                  is_secure_boot_enabled: bool,
                  is_symmetric_multi_threading_enabled: bool,
                  is_trusted_platform_module_enabled: bool,
@@ -20238,6 +20280,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPl
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
+        :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
         :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
@@ -20249,6 +20292,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPl
         pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
+        pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
@@ -20287,6 +20331,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPl
         Whether the Measured Boot feature is enabled on the instance.
         """
         return pulumi.get(self, "is_measured_boot_enabled")
+
+    @property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> bool:
+        """
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
 
     @property
     @pulumi.getter(name="isSecureBootEnabled")
@@ -21178,6 +21230,7 @@ class GetInstancePlatformConfigResult(dict):
                  is_access_control_service_enabled: bool,
                  is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
+                 is_memory_encryption_enabled: bool,
                  is_secure_boot_enabled: bool,
                  is_symmetric_multi_threading_enabled: bool,
                  is_trusted_platform_module_enabled: bool,
@@ -21189,6 +21242,7 @@ class GetInstancePlatformConfigResult(dict):
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot is to be enabled on the instance
+        :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether the Secure Boot is to be enabled on the instance.
         :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
@@ -21200,6 +21254,7 @@ class GetInstancePlatformConfigResult(dict):
         pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
+        pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
@@ -21238,6 +21293,14 @@ class GetInstancePlatformConfigResult(dict):
         Whether the Measured Boot is to be enabled on the instance
         """
         return pulumi.get(self, "is_measured_boot_enabled")
+
+    @property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> bool:
+        """
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
 
     @property
     @pulumi.getter(name="isSecureBootEnabled")
@@ -22993,6 +23056,7 @@ class GetInstancesInstancePlatformConfigResult(dict):
                  is_access_control_service_enabled: bool,
                  is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
+                 is_memory_encryption_enabled: bool,
                  is_secure_boot_enabled: bool,
                  is_symmetric_multi_threading_enabled: bool,
                  is_trusted_platform_module_enabled: bool,
@@ -23004,6 +23068,7 @@ class GetInstancesInstancePlatformConfigResult(dict):
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot is to be enabled on the instance.
+        :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether the Secure Boot is to be enabled on the instance.
         :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
@@ -23015,6 +23080,7 @@ class GetInstancesInstancePlatformConfigResult(dict):
         pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
+        pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
@@ -23053,6 +23119,14 @@ class GetInstancesInstancePlatformConfigResult(dict):
         Whether the Measured Boot is to be enabled on the instance.
         """
         return pulumi.get(self, "is_measured_boot_enabled")
+
+    @property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> bool:
+        """
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
 
     @property
     @pulumi.getter(name="isSecureBootEnabled")
@@ -28190,6 +28264,7 @@ class GetShapeShapePlatformConfigOptionResult(dict):
                  access_control_service_options: Sequence['outputs.GetShapeShapePlatformConfigOptionAccessControlServiceOptionResult'],
                  input_output_memory_management_unit_options: Sequence['outputs.GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult'],
                  measured_boot_options: Sequence['outputs.GetShapeShapePlatformConfigOptionMeasuredBootOptionResult'],
+                 memory_encryption_options: Sequence['outputs.GetShapeShapePlatformConfigOptionMemoryEncryptionOptionResult'],
                  numa_nodes_per_socket_platform_options: Sequence['outputs.GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult'],
                  percentage_of_cores_enabled_options: Sequence['outputs.GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult'],
                  secure_boot_options: Sequence['outputs.GetShapeShapePlatformConfigOptionSecureBootOptionResult'],
@@ -28200,6 +28275,7 @@ class GetShapeShapePlatformConfigOptionResult(dict):
         pulumi.set(__self__, "access_control_service_options", access_control_service_options)
         pulumi.set(__self__, "input_output_memory_management_unit_options", input_output_memory_management_unit_options)
         pulumi.set(__self__, "measured_boot_options", measured_boot_options)
+        pulumi.set(__self__, "memory_encryption_options", memory_encryption_options)
         pulumi.set(__self__, "numa_nodes_per_socket_platform_options", numa_nodes_per_socket_platform_options)
         pulumi.set(__self__, "percentage_of_cores_enabled_options", percentage_of_cores_enabled_options)
         pulumi.set(__self__, "secure_boot_options", secure_boot_options)
@@ -28222,6 +28298,11 @@ class GetShapeShapePlatformConfigOptionResult(dict):
     @pulumi.getter(name="measuredBootOptions")
     def measured_boot_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionMeasuredBootOptionResult']:
         return pulumi.get(self, "measured_boot_options")
+
+    @property
+    @pulumi.getter(name="memoryEncryptionOptions")
+    def memory_encryption_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionMemoryEncryptionOptionResult']:
+        return pulumi.get(self, "memory_encryption_options")
 
     @property
     @pulumi.getter(name="numaNodesPerSocketPlatformOptions")
@@ -28299,6 +28380,25 @@ class GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResu
 
 @pulumi.output_type
 class GetShapeShapePlatformConfigOptionMeasuredBootOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
+class GetShapeShapePlatformConfigOptionMemoryEncryptionOptionResult(dict):
     def __init__(__self__, *,
                  allowed_values: Sequence[bool],
                  is_default_enabled: bool):
@@ -28985,6 +29085,7 @@ class GetShapesShapePlatformConfigOptionResult(dict):
                  access_control_service_options: Sequence['outputs.GetShapesShapePlatformConfigOptionAccessControlServiceOptionResult'],
                  input_output_memory_management_unit_options: Sequence['outputs.GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult'],
                  measured_boot_options: Sequence['outputs.GetShapesShapePlatformConfigOptionMeasuredBootOptionResult'],
+                 memory_encryption_options: Sequence['outputs.GetShapesShapePlatformConfigOptionMemoryEncryptionOptionResult'],
                  numa_nodes_per_socket_platform_options: Sequence['outputs.GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult'],
                  percentage_of_cores_enabled_options: Sequence['outputs.GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult'],
                  secure_boot_options: Sequence['outputs.GetShapesShapePlatformConfigOptionSecureBootOptionResult'],
@@ -28996,6 +29097,7 @@ class GetShapesShapePlatformConfigOptionResult(dict):
         :param Sequence['GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs'] access_control_service_options: Configuration options for the Access Control Service.
         :param Sequence['GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs'] input_output_memory_management_unit_options: Configuration options for the input-output memory management unit.
         :param Sequence['GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs'] measured_boot_options: Configuration options for the Measured Boot feature.
+        :param Sequence['GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs'] memory_encryption_options: Configuration options for memory encryption.
         :param Sequence['GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs'] numa_nodes_per_socket_platform_options: Configuration options for NUMA nodes per socket.
         :param Sequence['GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs'] percentage_of_cores_enabled_options: Configuration options for the percentage of cores enabled.
         :param Sequence['GetShapesShapePlatformConfigOptionSecureBootOptionArgs'] secure_boot_options: Configuration options for Secure Boot.
@@ -29007,6 +29109,7 @@ class GetShapesShapePlatformConfigOptionResult(dict):
         pulumi.set(__self__, "access_control_service_options", access_control_service_options)
         pulumi.set(__self__, "input_output_memory_management_unit_options", input_output_memory_management_unit_options)
         pulumi.set(__self__, "measured_boot_options", measured_boot_options)
+        pulumi.set(__self__, "memory_encryption_options", memory_encryption_options)
         pulumi.set(__self__, "numa_nodes_per_socket_platform_options", numa_nodes_per_socket_platform_options)
         pulumi.set(__self__, "percentage_of_cores_enabled_options", percentage_of_cores_enabled_options)
         pulumi.set(__self__, "secure_boot_options", secure_boot_options)
@@ -29038,6 +29141,14 @@ class GetShapesShapePlatformConfigOptionResult(dict):
         Configuration options for the Measured Boot feature.
         """
         return pulumi.get(self, "measured_boot_options")
+
+    @property
+    @pulumi.getter(name="memoryEncryptionOptions")
+    def memory_encryption_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionMemoryEncryptionOptionResult']:
+        """
+        Configuration options for memory encryption.
+        """
+        return pulumi.get(self, "memory_encryption_options")
 
     @property
     @pulumi.getter(name="numaNodesPerSocketPlatformOptions")
@@ -29156,6 +29267,35 @@ class GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionRes
 
 @pulumi.output_type
 class GetShapesShapePlatformConfigOptionMeasuredBootOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        """
+        :param Sequence[bool] allowed_values: Whether virtualization instructions can be enabled.
+        :param bool is_default_enabled: Whether virtualization instructions are enabled by default.
+        """
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        """
+        Whether virtualization instructions can be enabled.
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are enabled by default.
+        """
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
+class GetShapesShapePlatformConfigOptionMemoryEncryptionOptionResult(dict):
     def __init__(__self__, *,
                  allowed_values: Sequence[bool],
                  is_default_enabled: bool):

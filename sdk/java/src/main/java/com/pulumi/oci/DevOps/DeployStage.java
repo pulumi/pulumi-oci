@@ -13,6 +13,7 @@ import com.pulumi.oci.DevOps.outputs.DeployStageApprovalPolicy;
 import com.pulumi.oci.DevOps.outputs.DeployStageBlueBackendIps;
 import com.pulumi.oci.DevOps.outputs.DeployStageBlueGreenStrategy;
 import com.pulumi.oci.DevOps.outputs.DeployStageCanaryStrategy;
+import com.pulumi.oci.DevOps.outputs.DeployStageContainerConfig;
 import com.pulumi.oci.DevOps.outputs.DeployStageDeployStagePredecessorCollection;
 import com.pulumi.oci.DevOps.outputs.DeployStageFailurePolicy;
 import com.pulumi.oci.DevOps.outputs.DeployStageGreenBackendIps;
@@ -105,14 +106,28 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.canaryStrategy;
     }
     /**
-     * The OCID of a compartment.
+     * (Updatable) The OCID of the artifact that contains the command specification.
+     * 
+     */
+    @Export(name="commandSpecDeployArtifactId", type=String.class, parameters={})
+    private Output<String> commandSpecDeployArtifactId;
+
+    /**
+     * @return (Updatable) The OCID of the artifact that contains the command specification.
+     * 
+     */
+    public Output<String> commandSpecDeployArtifactId() {
+        return this.commandSpecDeployArtifactId;
+    }
+    /**
+     * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of a compartment.
+     * @return (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     public Output<String> compartmentId() {
@@ -187,6 +202,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<Map<String,Object>>> config() {
         return Codegen.optional(this.config);
+    }
+    /**
+     * (Updatable) Specifies the container configuration.
+     * 
+     */
+    @Export(name="containerConfig", type=DeployStageContainerConfig.class, parameters={})
+    private Output<DeployStageContainerConfig> containerConfig;
+
+    /**
+     * @return (Updatable) Specifies the container configuration.
+     * 
+     */
+    public Output<DeployStageContainerConfig> containerConfig() {
+        return this.containerConfig;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -735,14 +764,14 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
     @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
     private Output<Integer> timeoutInSeconds;
 
     /**
-     * @return (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * @return (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
     public Output<Integer> timeoutInSeconds() {

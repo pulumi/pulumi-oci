@@ -21,7 +21,7 @@ class GetOpensearchClusterResult:
     """
     A collection of values returned by getOpensearchCluster.
     """
-    def __init__(__self__, availability_domains=None, compartment_id=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, lifecycle_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_type=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, vcn_compartment_id=None, vcn_id=None):
+    def __init__(__self__, availability_domains=None, compartment_id=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, lifecycle_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_type=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, vcn_compartment_id=None, vcn_id=None):
         if availability_domains and not isinstance(availability_domains, list):
             raise TypeError("Expected argument 'availability_domains' to be a list")
         pulumi.set(__self__, "availability_domains", availability_domains)
@@ -103,6 +103,15 @@ class GetOpensearchClusterResult:
         if opensearch_private_ip and not isinstance(opensearch_private_ip, str):
             raise TypeError("Expected argument 'opensearch_private_ip' to be a str")
         pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
+        if security_master_user_name and not isinstance(security_master_user_name, str):
+            raise TypeError("Expected argument 'security_master_user_name' to be a str")
+        pulumi.set(__self__, "security_master_user_name", security_master_user_name)
+        if security_master_user_password_hash and not isinstance(security_master_user_password_hash, str):
+            raise TypeError("Expected argument 'security_master_user_password_hash' to be a str")
+        pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
+        if security_mode and not isinstance(security_mode, str):
+            raise TypeError("Expected argument 'security_mode' to be a str")
+        pulumi.set(__self__, "security_mode", security_mode)
         if software_version and not isinstance(software_version, str):
             raise TypeError("Expected argument 'software_version' to be a str")
         pulumi.set(__self__, "software_version", software_version)
@@ -351,6 +360,30 @@ class GetOpensearchClusterResult:
         return pulumi.get(self, "opensearch_private_ip")
 
     @property
+    @pulumi.getter(name="securityMasterUserName")
+    def security_master_user_name(self) -> str:
+        """
+        The name of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_name")
+
+    @property
+    @pulumi.getter(name="securityMasterUserPasswordHash")
+    def security_master_user_password_hash(self) -> str:
+        """
+        The password hash of the master user that are used to manage security config
+        """
+        return pulumi.get(self, "security_master_user_password_hash")
+
+    @property
+    @pulumi.getter(name="securityMode")
+    def security_mode(self) -> str:
+        """
+        The security mode of the cluster.
+        """
+        return pulumi.get(self, "security_mode")
+
+    @property
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> str:
         """
@@ -472,6 +505,9 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             opensearch_cluster_id=self.opensearch_cluster_id,
             opensearch_fqdn=self.opensearch_fqdn,
             opensearch_private_ip=self.opensearch_private_ip,
+            security_master_user_name=self.security_master_user_name,
+            security_master_user_password_hash=self.security_master_user_password_hash,
+            security_mode=self.security_mode,
             software_version=self.software_version,
             state=self.state,
             subnet_compartment_id=self.subnet_compartment_id,
@@ -549,6 +585,9 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
         opensearch_cluster_id=__ret__.opensearch_cluster_id,
         opensearch_fqdn=__ret__.opensearch_fqdn,
         opensearch_private_ip=__ret__.opensearch_private_ip,
+        security_master_user_name=__ret__.security_master_user_name,
+        security_master_user_password_hash=__ret__.security_master_user_password_hash,
+        security_mode=__ret__.security_mode,
         software_version=__ret__.software_version,
         state=__ret__.state,
         subnet_compartment_id=__ret__.subnet_compartment_id,

@@ -150,6 +150,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// </summary>
+        public readonly double ComputeCount;
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseConnectionStringResult> ConnectionStrings;
@@ -385,6 +393,8 @@ namespace Pulumi.Oci.Database
         /// list of scheduled operations
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseScheduledOperationResult> ScheduledOperations;
+        public readonly string SecretId;
+        public readonly int SecretVersionNumber;
         /// <summary>
         /// The URL of the Service Console for the Autonomous Database.
         /// </summary>
@@ -517,6 +527,10 @@ namespace Pulumi.Oci.Database
 
             string compartmentId,
 
+            double computeCount,
+
+            string computeModel,
+
             ImmutableArray<Outputs.GetAutonomousDatabaseConnectionStringResult> connectionStrings,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseConnectionUrlResult> connectionUrls,
@@ -637,6 +651,10 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousDatabaseScheduledOperationResult> scheduledOperations,
 
+            string secretId,
+
+            int secretVersionNumber,
+
             string serviceConsoleUrl,
 
             string source,
@@ -709,6 +727,8 @@ namespace Pulumi.Oci.Database
             CharacterSet = characterSet;
             CloneType = cloneType;
             CompartmentId = compartmentId;
+            ComputeCount = computeCount;
+            ComputeModel = computeModel;
             ConnectionStrings = connectionStrings;
             ConnectionUrls = connectionUrls;
             CpuCoreCount = cpuCoreCount;
@@ -769,6 +789,8 @@ namespace Pulumi.Oci.Database
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
             ScheduledOperations = scheduledOperations;
+            SecretId = secretId;
+            SecretVersionNumber = secretVersionNumber;
             ServiceConsoleUrl = serviceConsoleUrl;
             Source = source;
             SourceId = sourceId;

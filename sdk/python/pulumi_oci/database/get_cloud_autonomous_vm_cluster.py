@@ -22,7 +22,7 @@ class GetCloudAutonomousVmClusterResult:
     """
     A collection of values returned by getCloudAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, cpu_core_count=None, cpu_core_count_per_node=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, freeform_tags=None, hostname=None, id=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, nsg_ids=None, ocpu_count=None, reclaimable_cpus=None, shape=None, state=None, subnet_id=None, time_created=None, time_updated=None, total_container_databases=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, freeform_tags=None, hostname=None, id=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, nsg_ids=None, ocpu_count=None, reclaimable_cpus=None, shape=None, state=None, subnet_id=None, time_created=None, time_updated=None, total_container_databases=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -50,6 +50,9 @@ class GetCloudAutonomousVmClusterResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count and not isinstance(cpu_core_count, int):
             raise TypeError("Expected argument 'cpu_core_count' to be a int")
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -215,6 +218,14 @@ class GetCloudAutonomousVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Cloud Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -483,6 +494,7 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             cloud_exadata_infrastructure_id=self.cloud_exadata_infrastructure_id,
             cluster_time_zone=self.cluster_time_zone,
             compartment_id=self.compartment_id,
+            compute_model=self.compute_model,
             cpu_core_count=self.cpu_core_count,
             cpu_core_count_per_node=self.cpu_core_count_per_node,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
@@ -551,6 +563,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
         cloud_exadata_infrastructure_id=__ret__.cloud_exadata_infrastructure_id,
         cluster_time_zone=__ret__.cluster_time_zone,
         compartment_id=__ret__.compartment_id,
+        compute_model=__ret__.compute_model,
         cpu_core_count=__ret__.cpu_core_count,
         cpu_core_count_per_node=__ret__.cpu_core_count_per_node,
         data_storage_size_in_gb=__ret__.data_storage_size_in_gb,

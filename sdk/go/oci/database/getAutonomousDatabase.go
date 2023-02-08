@@ -80,6 +80,10 @@ type LookupAutonomousDatabaseResult struct {
 	CloneType    string `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+	ComputeCount float64 `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+	ComputeModel string `pulumi:"computeModel"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
 	ConnectionStrings []GetAutonomousDatabaseConnectionString `pulumi:"connectionStrings"`
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -202,6 +206,8 @@ type LookupAutonomousDatabaseResult struct {
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
 	// list of scheduled operations
 	ScheduledOperations []GetAutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
+	SecretId            string                                    `pulumi:"secretId"`
+	SecretVersionNumber int                                       `pulumi:"secretVersionNumber"`
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
 	Source            string `pulumi:"source"`
@@ -359,6 +365,16 @@ func (o LookupAutonomousDatabaseResultOutput) CloneType() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o LookupAutonomousDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+func (o LookupAutonomousDatabaseResultOutput) ComputeCount() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.ComputeCount }).(pulumi.Float64Output)
+}
+
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+func (o LookupAutonomousDatabaseResultOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 // The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -669,6 +685,14 @@ func (o LookupAutonomousDatabaseResultOutput) ScheduledOperations() GetAutonomou
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseScheduledOperation {
 		return v.ScheduledOperations
 	}).(GetAutonomousDatabaseScheduledOperationArrayOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) SecretVersionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.SecretVersionNumber }).(pulumi.IntOutput)
 }
 
 // The URL of the Service Console for the Autonomous Database.

@@ -64,7 +64,11 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly canaryStrategy!: pulumi.Output<outputs.DevOps.DeployStageCanaryStrategy>;
     /**
-     * The OCID of a compartment.
+     * (Updatable) The OCID of the artifact that contains the command specification.
+     */
+    public readonly commandSpecDeployArtifactId!: pulumi.Output<string>;
+    /**
+     * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -87,6 +91,10 @@ export class DeployStage extends pulumi.CustomResource {
      * (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
      */
     public readonly config!: pulumi.Output<{[key: string]: any} | undefined>;
+    /**
+     * (Updatable) Specifies the container configuration.
+     */
+    public readonly containerConfig!: pulumi.Output<outputs.DevOps.DeployStageContainerConfig>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -244,7 +252,7 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      */
     public readonly timeoutInSeconds!: pulumi.Output<number>;
     /**
@@ -277,12 +285,14 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["blueBackendIps"] = state ? state.blueBackendIps : undefined;
             resourceInputs["blueGreenStrategy"] = state ? state.blueGreenStrategy : undefined;
             resourceInputs["canaryStrategy"] = state ? state.canaryStrategy : undefined;
+            resourceInputs["commandSpecDeployArtifactId"] = state ? state.commandSpecDeployArtifactId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeInstanceGroupBlueGreenDeploymentDeployStageId"] = state ? state.computeInstanceGroupBlueGreenDeploymentDeployStageId : undefined;
             resourceInputs["computeInstanceGroupCanaryDeployStageId"] = state ? state.computeInstanceGroupCanaryDeployStageId : undefined;
             resourceInputs["computeInstanceGroupCanaryTrafficShiftDeployStageId"] = state ? state.computeInstanceGroupCanaryTrafficShiftDeployStageId : undefined;
             resourceInputs["computeInstanceGroupDeployEnvironmentId"] = state ? state.computeInstanceGroupDeployEnvironmentId : undefined;
             resourceInputs["config"] = state ? state.config : undefined;
+            resourceInputs["containerConfig"] = state ? state.containerConfig : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deployArtifactId"] = state ? state.deployArtifactId : undefined;
             resourceInputs["deployArtifactIds"] = state ? state.deployArtifactIds : undefined;
@@ -341,11 +351,13 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["blueBackendIps"] = args ? args.blueBackendIps : undefined;
             resourceInputs["blueGreenStrategy"] = args ? args.blueGreenStrategy : undefined;
             resourceInputs["canaryStrategy"] = args ? args.canaryStrategy : undefined;
+            resourceInputs["commandSpecDeployArtifactId"] = args ? args.commandSpecDeployArtifactId : undefined;
             resourceInputs["computeInstanceGroupBlueGreenDeploymentDeployStageId"] = args ? args.computeInstanceGroupBlueGreenDeploymentDeployStageId : undefined;
             resourceInputs["computeInstanceGroupCanaryDeployStageId"] = args ? args.computeInstanceGroupCanaryDeployStageId : undefined;
             resourceInputs["computeInstanceGroupCanaryTrafficShiftDeployStageId"] = args ? args.computeInstanceGroupCanaryTrafficShiftDeployStageId : undefined;
             resourceInputs["computeInstanceGroupDeployEnvironmentId"] = args ? args.computeInstanceGroupDeployEnvironmentId : undefined;
             resourceInputs["config"] = args ? args.config : undefined;
+            resourceInputs["containerConfig"] = args ? args.containerConfig : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["deployArtifactId"] = args ? args.deployArtifactId : undefined;
             resourceInputs["deployArtifactIds"] = args ? args.deployArtifactIds : undefined;
@@ -417,7 +429,11 @@ export interface DeployStageState {
      */
     canaryStrategy?: pulumi.Input<inputs.DevOps.DeployStageCanaryStrategy>;
     /**
-     * The OCID of a compartment.
+     * (Updatable) The OCID of the artifact that contains the command specification.
+     */
+    commandSpecDeployArtifactId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -440,6 +456,10 @@ export interface DeployStageState {
      * (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
      */
     config?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Specifies the container configuration.
+     */
+    containerConfig?: pulumi.Input<inputs.DevOps.DeployStageContainerConfig>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -597,7 +617,7 @@ export interface DeployStageState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**
@@ -635,6 +655,10 @@ export interface DeployStageArgs {
      */
     canaryStrategy?: pulumi.Input<inputs.DevOps.DeployStageCanaryStrategy>;
     /**
+     * (Updatable) The OCID of the artifact that contains the command specification.
+     */
+    commandSpecDeployArtifactId?: pulumi.Input<string>;
+    /**
      * The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
      */
     computeInstanceGroupBlueGreenDeploymentDeployStageId?: pulumi.Input<string>;
@@ -654,6 +678,10 @@ export interface DeployStageArgs {
      * (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
      */
     config?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Specifies the container configuration.
+     */
+    containerConfig?: pulumi.Input<inputs.DevOps.DeployStageContainerConfig>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -787,7 +815,7 @@ export interface DeployStageArgs {
      */
     testLoadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageTestLoadBalancerConfig>;
     /**
-     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**

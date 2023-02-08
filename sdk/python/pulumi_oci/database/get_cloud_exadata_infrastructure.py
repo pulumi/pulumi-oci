@@ -22,7 +22,7 @@ class GetCloudExadataInfrastructureResult:
     """
     A collection of values returned by getCloudExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, time_created=None, total_storage_size_in_gbs=None):
+    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, total_storage_size_in_gbs=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -56,6 +56,9 @@ class GetCloudExadataInfrastructureResult:
         if db_node_storage_size_in_gbs and not isinstance(db_node_storage_size_in_gbs, int):
             raise TypeError("Expected argument 'db_node_storage_size_in_gbs' to be a int")
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        if db_server_version and not isinstance(db_server_version, str):
+            raise TypeError("Expected argument 'db_server_version' to be a str")
+        pulumi.set(__self__, "db_server_version", db_server_version)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -92,6 +95,12 @@ class GetCloudExadataInfrastructureResult:
         if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
             raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if monthly_db_server_version and not isinstance(monthly_db_server_version, str):
+            raise TypeError("Expected argument 'monthly_db_server_version' to be a str")
+        pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
+        if monthly_storage_server_version and not isinstance(monthly_storage_server_version, str):
+            raise TypeError("Expected argument 'monthly_storage_server_version' to be a str")
+        pulumi.set(__self__, "monthly_storage_server_version", monthly_storage_server_version)
         if next_maintenance_run_id and not isinstance(next_maintenance_run_id, str):
             raise TypeError("Expected argument 'next_maintenance_run_id' to be a str")
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
@@ -104,6 +113,9 @@ class GetCloudExadataInfrastructureResult:
         if storage_count and not isinstance(storage_count, int):
             raise TypeError("Expected argument 'storage_count' to be a int")
         pulumi.set(__self__, "storage_count", storage_count)
+        if storage_server_version and not isinstance(storage_server_version, str):
+            raise TypeError("Expected argument 'storage_server_version' to be a str")
+        pulumi.set(__self__, "storage_server_version", storage_server_version)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -195,6 +207,14 @@ class GetCloudExadataInfrastructureResult:
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServerVersion")
+    def db_server_version(self) -> str:
+        """
+        The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "db_server_version")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -293,6 +313,22 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
+    @pulumi.getter(name="monthlyDbServerVersion")
+    def monthly_db_server_version(self) -> str:
+        """
+        The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "monthly_db_server_version")
+
+    @property
+    @pulumi.getter(name="monthlyStorageServerVersion")
+    def monthly_storage_server_version(self) -> str:
+        """
+        The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "monthly_storage_server_version")
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> str:
         """
@@ -323,6 +359,14 @@ class GetCloudExadataInfrastructureResult:
         The number of storage servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "storage_count")
+
+    @property
+    @pulumi.getter(name="storageServerVersion")
+    def storage_server_version(self) -> str:
+        """
+        The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        """
+        return pulumi.get(self, "storage_server_version")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -358,6 +402,7 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             customer_contacts=self.customer_contacts,
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
+            db_server_version=self.db_server_version,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
@@ -370,10 +415,13 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             max_db_node_storage_in_gbs=self.max_db_node_storage_in_gbs,
             max_memory_in_gbs=self.max_memory_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
+            monthly_db_server_version=self.monthly_db_server_version,
+            monthly_storage_server_version=self.monthly_storage_server_version,
             next_maintenance_run_id=self.next_maintenance_run_id,
             shape=self.shape,
             state=self.state,
             storage_count=self.storage_count,
+            storage_server_version=self.storage_server_version,
             time_created=self.time_created,
             total_storage_size_in_gbs=self.total_storage_size_in_gbs)
 
@@ -414,6 +462,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         customer_contacts=__ret__.customer_contacts,
         data_storage_size_in_tbs=__ret__.data_storage_size_in_tbs,
         db_node_storage_size_in_gbs=__ret__.db_node_storage_size_in_gbs,
+        db_server_version=__ret__.db_server_version,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
@@ -426,10 +475,13 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         max_db_node_storage_in_gbs=__ret__.max_db_node_storage_in_gbs,
         max_memory_in_gbs=__ret__.max_memory_in_gbs,
         memory_size_in_gbs=__ret__.memory_size_in_gbs,
+        monthly_db_server_version=__ret__.monthly_db_server_version,
+        monthly_storage_server_version=__ret__.monthly_storage_server_version,
         next_maintenance_run_id=__ret__.next_maintenance_run_id,
         shape=__ret__.shape,
         state=__ret__.state,
         storage_count=__ret__.storage_count,
+        storage_server_version=__ret__.storage_server_version,
         time_created=__ret__.time_created,
         total_storage_size_in_gbs=__ret__.total_storage_size_in_gbs)
 

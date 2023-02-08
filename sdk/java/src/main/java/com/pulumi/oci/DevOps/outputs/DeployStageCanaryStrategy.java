@@ -20,7 +20,7 @@ public final class DeployStageCanaryStrategy {
      */
     private String namespace;
     /**
-     * @return Canary strategy type
+     * @return Canary strategy type.
      * 
      */
     private String strategyType;
@@ -41,7 +41,7 @@ public final class DeployStageCanaryStrategy {
         return this.namespace;
     }
     /**
-     * @return Canary strategy type
+     * @return Canary strategy type.
      * 
      */
     public String strategyType() {

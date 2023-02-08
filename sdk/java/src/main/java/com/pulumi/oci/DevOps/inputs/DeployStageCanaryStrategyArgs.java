@@ -44,14 +44,14 @@ public final class DeployStageCanaryStrategyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * Canary strategy type
+     * Canary strategy type.
      * 
      */
     @Import(name="strategyType", required=true)
     private Output<String> strategyType;
 
     /**
-     * @return Canary strategy type
+     * @return Canary strategy type.
      * 
      */
     public Output<String> strategyType() {
@@ -127,7 +127,7 @@ public final class DeployStageCanaryStrategyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param strategyType Canary strategy type
+         * @param strategyType Canary strategy type.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class DeployStageCanaryStrategyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param strategyType Canary strategy type
+         * @param strategyType Canary strategy type.
          * 
          * @return builder
          * 

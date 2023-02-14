@@ -34,6 +34,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string DeployArtifactVersion;
         /// <summary>
+        /// The source of the verification material.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult> HelmVerificationKeySources;
+        /// <summary>
         /// Specifies image digest for the version of the image.
         /// </summary>
         public readonly string ImageDigest;
@@ -58,6 +62,8 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string deployArtifactVersion,
 
+            ImmutableArray<Outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult> helmVerificationKeySources,
+
             string imageDigest,
 
             string imageUri,
@@ -69,6 +75,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             DeployArtifactPath = deployArtifactPath;
             DeployArtifactSourceType = deployArtifactSourceType;
             DeployArtifactVersion = deployArtifactVersion;
+            HelmVerificationKeySources = helmVerificationKeySources;
             ImageDigest = imageDigest;
             ImageUri = imageUri;
             RepositoryId = repositoryId;

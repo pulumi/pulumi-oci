@@ -29,6 +29,8 @@ type DeployStage struct {
 
 	// (Updatable) Specifies the approval policy.
 	ApprovalPolicy DeployStageApprovalPolicyOutput `pulumi:"approvalPolicy"`
+	// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+	AreHooksEnabled pulumi.BoolOutput `pulumi:"areHooksEnabled"`
 	// (Updatable) Collection of backend environment IP addresses.
 	BlueBackendIps DeployStageBlueBackendIpsOutput `pulumi:"blueBackendIps"`
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -89,6 +91,10 @@ type DeployStage struct {
 	HelmChartDeployArtifactId pulumi.StringOutput `pulumi:"helmChartDeployArtifactId"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolOutput `pulumi:"isAsync"`
+	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+	IsDebugEnabled pulumi.BoolOutput `pulumi:"isDebugEnabled"`
+	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+	IsForceEnabled pulumi.BoolOutput `pulumi:"isForceEnabled"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled pulumi.BoolOutput `pulumi:"isValidationEnabled"`
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -97,6 +103,8 @@ type DeployStage struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfig DeployStageLoadBalancerConfigOutput `pulumi:"loadBalancerConfig"`
+	// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+	MaxHistory pulumi.IntOutput `pulumi:"maxHistory"`
 	// (Updatable) Maximum usable memory for the Function (in MB).
 	MaxMemoryInMbs pulumi.StringOutput `pulumi:"maxMemoryInMbs"`
 	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -119,11 +127,27 @@ type DeployStage struct {
 	RollbackPolicy DeployStageRollbackPolicyOutput `pulumi:"rollbackPolicy"`
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicy DeployStageRolloutPolicyOutput `pulumi:"rolloutPolicy"`
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetString DeployStageSetStringOutput `pulumi:"setString"`
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetValues DeployStageSetValuesOutput `pulumi:"setValues"`
+	// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+	ShouldCleanupOnFail pulumi.BoolOutput `pulumi:"shouldCleanupOnFail"`
+	// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+	ShouldNotWait pulumi.BoolOutput `pulumi:"shouldNotWait"`
+	// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+	ShouldResetValues pulumi.BoolOutput `pulumi:"shouldResetValues"`
+	// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+	ShouldReuseValues pulumi.BoolOutput `pulumi:"shouldReuseValues"`
+	// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+	ShouldSkipCrds pulumi.BoolOutput `pulumi:"shouldSkipCrds"`
+	// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+	ShouldSkipRenderSubchartNotes pulumi.BoolOutput `pulumi:"shouldSkipRenderSubchartNotes"`
 	// The current state of the deployment stage.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigOutput `pulumi:"testLoadBalancerConfig"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -179,6 +203,8 @@ func GetDeployStage(ctx *pulumi.Context,
 type deployStageState struct {
 	// (Updatable) Specifies the approval policy.
 	ApprovalPolicy *DeployStageApprovalPolicy `pulumi:"approvalPolicy"`
+	// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+	AreHooksEnabled *bool `pulumi:"areHooksEnabled"`
 	// (Updatable) Collection of backend environment IP addresses.
 	BlueBackendIps *DeployStageBlueBackendIps `pulumi:"blueBackendIps"`
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -239,6 +265,10 @@ type deployStageState struct {
 	HelmChartDeployArtifactId *string `pulumi:"helmChartDeployArtifactId"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync *bool `pulumi:"isAsync"`
+	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+	IsDebugEnabled *bool `pulumi:"isDebugEnabled"`
+	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+	IsForceEnabled *bool `pulumi:"isForceEnabled"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled *bool `pulumi:"isValidationEnabled"`
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -247,6 +277,8 @@ type deployStageState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfig *DeployStageLoadBalancerConfig `pulumi:"loadBalancerConfig"`
+	// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+	MaxHistory *int `pulumi:"maxHistory"`
 	// (Updatable) Maximum usable memory for the Function (in MB).
 	MaxMemoryInMbs *string `pulumi:"maxMemoryInMbs"`
 	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -269,11 +301,27 @@ type deployStageState struct {
 	RollbackPolicy *DeployStageRollbackPolicy `pulumi:"rollbackPolicy"`
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicy *DeployStageRolloutPolicy `pulumi:"rolloutPolicy"`
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetString *DeployStageSetString `pulumi:"setString"`
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetValues *DeployStageSetValues `pulumi:"setValues"`
+	// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+	ShouldCleanupOnFail *bool `pulumi:"shouldCleanupOnFail"`
+	// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+	ShouldNotWait *bool `pulumi:"shouldNotWait"`
+	// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+	ShouldResetValues *bool `pulumi:"shouldResetValues"`
+	// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+	ShouldReuseValues *bool `pulumi:"shouldReuseValues"`
+	// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+	ShouldSkipCrds *bool `pulumi:"shouldSkipCrds"`
+	// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+	ShouldSkipRenderSubchartNotes *bool `pulumi:"shouldSkipRenderSubchartNotes"`
 	// The current state of the deployment stage.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	TestLoadBalancerConfig *DeployStageTestLoadBalancerConfig `pulumi:"testLoadBalancerConfig"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -292,6 +340,8 @@ type deployStageState struct {
 type DeployStageState struct {
 	// (Updatable) Specifies the approval policy.
 	ApprovalPolicy DeployStageApprovalPolicyPtrInput
+	// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+	AreHooksEnabled pulumi.BoolPtrInput
 	// (Updatable) Collection of backend environment IP addresses.
 	BlueBackendIps DeployStageBlueBackendIpsPtrInput
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -352,6 +402,10 @@ type DeployStageState struct {
 	HelmChartDeployArtifactId pulumi.StringPtrInput
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolPtrInput
+	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+	IsDebugEnabled pulumi.BoolPtrInput
+	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+	IsForceEnabled pulumi.BoolPtrInput
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled pulumi.BoolPtrInput
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -360,6 +414,8 @@ type DeployStageState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfig DeployStageLoadBalancerConfigPtrInput
+	// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+	MaxHistory pulumi.IntPtrInput
 	// (Updatable) Maximum usable memory for the Function (in MB).
 	MaxMemoryInMbs pulumi.StringPtrInput
 	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -382,11 +438,27 @@ type DeployStageState struct {
 	RollbackPolicy DeployStageRollbackPolicyPtrInput
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicy DeployStageRolloutPolicyPtrInput
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetString DeployStageSetStringPtrInput
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetValues DeployStageSetValuesPtrInput
+	// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+	ShouldCleanupOnFail pulumi.BoolPtrInput
+	// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+	ShouldNotWait pulumi.BoolPtrInput
+	// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+	ShouldResetValues pulumi.BoolPtrInput
+	// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+	ShouldReuseValues pulumi.BoolPtrInput
+	// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+	ShouldSkipCrds pulumi.BoolPtrInput
+	// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+	ShouldSkipRenderSubchartNotes pulumi.BoolPtrInput
 	// The current state of the deployment stage.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigPtrInput
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
@@ -409,6 +481,8 @@ func (DeployStageState) ElementType() reflect.Type {
 type deployStageArgs struct {
 	// (Updatable) Specifies the approval policy.
 	ApprovalPolicy *DeployStageApprovalPolicy `pulumi:"approvalPolicy"`
+	// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+	AreHooksEnabled *bool `pulumi:"areHooksEnabled"`
 	// (Updatable) Collection of backend environment IP addresses.
 	BlueBackendIps *DeployStageBlueBackendIps `pulumi:"blueBackendIps"`
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -467,12 +541,18 @@ type deployStageArgs struct {
 	HelmChartDeployArtifactId *string `pulumi:"helmChartDeployArtifactId"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync *bool `pulumi:"isAsync"`
+	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+	IsDebugEnabled *bool `pulumi:"isDebugEnabled"`
+	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+	IsForceEnabled *bool `pulumi:"isForceEnabled"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled *bool `pulumi:"isValidationEnabled"`
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
 	KubernetesManifestDeployArtifactIds []string `pulumi:"kubernetesManifestDeployArtifactIds"`
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfig *DeployStageLoadBalancerConfig `pulumi:"loadBalancerConfig"`
+	// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+	MaxHistory *int `pulumi:"maxHistory"`
 	// (Updatable) Maximum usable memory for the Function (in MB).
 	MaxMemoryInMbs *string `pulumi:"maxMemoryInMbs"`
 	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -493,7 +573,23 @@ type deployStageArgs struct {
 	RollbackPolicy *DeployStageRollbackPolicy `pulumi:"rollbackPolicy"`
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicy *DeployStageRolloutPolicy `pulumi:"rolloutPolicy"`
-	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetString *DeployStageSetString `pulumi:"setString"`
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetValues *DeployStageSetValues `pulumi:"setValues"`
+	// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+	ShouldCleanupOnFail *bool `pulumi:"shouldCleanupOnFail"`
+	// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+	ShouldNotWait *bool `pulumi:"shouldNotWait"`
+	// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+	ShouldResetValues *bool `pulumi:"shouldResetValues"`
+	// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+	ShouldReuseValues *bool `pulumi:"shouldReuseValues"`
+	// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+	ShouldSkipCrds *bool `pulumi:"shouldSkipCrds"`
+	// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+	ShouldSkipRenderSubchartNotes *bool `pulumi:"shouldSkipRenderSubchartNotes"`
+	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	TestLoadBalancerConfig *DeployStageTestLoadBalancerConfig `pulumi:"testLoadBalancerConfig"`
 	// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
@@ -509,6 +605,8 @@ type deployStageArgs struct {
 type DeployStageArgs struct {
 	// (Updatable) Specifies the approval policy.
 	ApprovalPolicy DeployStageApprovalPolicyPtrInput
+	// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+	AreHooksEnabled pulumi.BoolPtrInput
 	// (Updatable) Collection of backend environment IP addresses.
 	BlueBackendIps DeployStageBlueBackendIpsPtrInput
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -567,12 +665,18 @@ type DeployStageArgs struct {
 	HelmChartDeployArtifactId pulumi.StringPtrInput
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolPtrInput
+	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+	IsDebugEnabled pulumi.BoolPtrInput
+	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+	IsForceEnabled pulumi.BoolPtrInput
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled pulumi.BoolPtrInput
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
 	KubernetesManifestDeployArtifactIds pulumi.StringArrayInput
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfig DeployStageLoadBalancerConfigPtrInput
+	// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+	MaxHistory pulumi.IntPtrInput
 	// (Updatable) Maximum usable memory for the Function (in MB).
 	MaxMemoryInMbs pulumi.StringPtrInput
 	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -593,7 +697,23 @@ type DeployStageArgs struct {
 	RollbackPolicy DeployStageRollbackPolicyPtrInput
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicy DeployStageRolloutPolicyPtrInput
-	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetString DeployStageSetStringPtrInput
+	// (Updatable) Specifies the name and value pairs to set helm values.
+	SetValues DeployStageSetValuesPtrInput
+	// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+	ShouldCleanupOnFail pulumi.BoolPtrInput
+	// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+	ShouldNotWait pulumi.BoolPtrInput
+	// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+	ShouldResetValues pulumi.BoolPtrInput
+	// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+	ShouldReuseValues pulumi.BoolPtrInput
+	// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+	ShouldSkipCrds pulumi.BoolPtrInput
+	// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+	ShouldSkipRenderSubchartNotes pulumi.BoolPtrInput
+	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigPtrInput
 	// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
 	TimeoutInSeconds pulumi.IntPtrInput
@@ -695,6 +815,11 @@ func (o DeployStageOutput) ToDeployStageOutputWithContext(ctx context.Context) D
 // (Updatable) Specifies the approval policy.
 func (o DeployStageOutput) ApprovalPolicy() DeployStageApprovalPolicyOutput {
 	return o.ApplyT(func(v *DeployStage) DeployStageApprovalPolicyOutput { return v.ApprovalPolicy }).(DeployStageApprovalPolicyOutput)
+}
+
+// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+func (o DeployStageOutput) AreHooksEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.AreHooksEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Collection of backend environment IP addresses.
@@ -851,6 +976,16 @@ func (o DeployStageOutput) IsAsync() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsAsync }).(pulumi.BoolOutput)
 }
 
+// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+func (o DeployStageOutput) IsDebugEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsDebugEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+func (o DeployStageOutput) IsForceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsForceEnabled }).(pulumi.BoolOutput)
+}
+
 // (Updatable) A boolean flag specifies whether the invoked function should be validated.
 func (o DeployStageOutput) IsValidationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsValidationEnabled }).(pulumi.BoolOutput)
@@ -869,6 +1004,11 @@ func (o DeployStageOutput) LifecycleDetails() pulumi.StringOutput {
 // (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 func (o DeployStageOutput) LoadBalancerConfig() DeployStageLoadBalancerConfigOutput {
 	return o.ApplyT(func(v *DeployStage) DeployStageLoadBalancerConfigOutput { return v.LoadBalancerConfig }).(DeployStageLoadBalancerConfigOutput)
+}
+
+// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+func (o DeployStageOutput) MaxHistory() pulumi.IntOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.IntOutput { return v.MaxHistory }).(pulumi.IntOutput)
 }
 
 // (Updatable) Maximum usable memory for the Function (in MB).
@@ -928,6 +1068,46 @@ func (o DeployStageOutput) RolloutPolicy() DeployStageRolloutPolicyOutput {
 	return o.ApplyT(func(v *DeployStage) DeployStageRolloutPolicyOutput { return v.RolloutPolicy }).(DeployStageRolloutPolicyOutput)
 }
 
+// (Updatable) Specifies the name and value pairs to set helm values.
+func (o DeployStageOutput) SetString() DeployStageSetStringOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageSetStringOutput { return v.SetString }).(DeployStageSetStringOutput)
+}
+
+// (Updatable) Specifies the name and value pairs to set helm values.
+func (o DeployStageOutput) SetValues() DeployStageSetValuesOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageSetValuesOutput { return v.SetValues }).(DeployStageSetValuesOutput)
+}
+
+// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+func (o DeployStageOutput) ShouldCleanupOnFail() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldCleanupOnFail }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+func (o DeployStageOutput) ShouldNotWait() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldNotWait }).(pulumi.BoolOutput)
+}
+
+// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+func (o DeployStageOutput) ShouldResetValues() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldResetValues }).(pulumi.BoolOutput)
+}
+
+// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+func (o DeployStageOutput) ShouldReuseValues() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldReuseValues }).(pulumi.BoolOutput)
+}
+
+// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+func (o DeployStageOutput) ShouldSkipCrds() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldSkipCrds }).(pulumi.BoolOutput)
+}
+
+// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+func (o DeployStageOutput) ShouldSkipRenderSubchartNotes() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldSkipRenderSubchartNotes }).(pulumi.BoolOutput)
+}
+
 // The current state of the deployment stage.
 func (o DeployStageOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
@@ -938,7 +1118,7 @@ func (o DeployStageOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 func (o DeployStageOutput) TestLoadBalancerConfig() DeployStageTestLoadBalancerConfigOutput {
 	return o.ApplyT(func(v *DeployStage) DeployStageTestLoadBalancerConfigOutput { return v.TestLoadBalancerConfig }).(DeployStageTestLoadBalancerConfigOutput)
 }

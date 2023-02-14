@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemApprovalPolicyResult> ApprovalPolicies;
         /// <summary>
+        /// Disable pre/post upgrade hooks. Set to false by default.
+        /// </summary>
+        public readonly bool AreHooksEnabled;
+        /// <summary>
         /// Collection of backend environment IP addresses.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemBlueBackendIpResult> BlueBackendIps;
@@ -142,6 +146,14 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly bool IsAsync;
         /// <summary>
+        /// Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        /// </summary>
+        public readonly bool IsDebugEnabled;
+        /// <summary>
+        /// Force resource update through delete; or if required, recreate. Set to false by default.
+        /// </summary>
+        public readonly bool IsForceEnabled;
+        /// <summary>
         /// A boolean flag specifies whether the invoked function must be validated.
         /// </summary>
         public readonly bool IsValidationEnabled;
@@ -157,6 +169,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemLoadBalancerConfigResult> LoadBalancerConfigs;
+        /// <summary>
+        /// Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        /// </summary>
+        public readonly int MaxHistory;
         /// <summary>
         /// Maximum usable memory for the Function (in MB).
         /// </summary>
@@ -202,6 +218,38 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemRolloutPolicyResult> RolloutPolicies;
         /// <summary>
+        /// Specifies the name and value pairs to set helm values.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemSetStringResult> SetStrings;
+        /// <summary>
+        /// Specifies the name and value pairs to set helm values.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemSetValueResult> SetValues;
+        /// <summary>
+        /// Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        /// </summary>
+        public readonly bool ShouldCleanupOnFail;
+        /// <summary>
+        /// Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+        /// </summary>
+        public readonly bool ShouldNotWait;
+        /// <summary>
+        /// During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        /// </summary>
+        public readonly bool ShouldResetValues;
+        /// <summary>
+        /// During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        /// </summary>
+        public readonly bool ShouldReuseValues;
+        /// <summary>
+        /// If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        /// </summary>
+        public readonly bool ShouldSkipCrds;
+        /// <summary>
+        /// If set, renders subchart notes along with the parent. Set to false by default.
+        /// </summary>
+        public readonly bool ShouldSkipRenderSubchartNotes;
+        /// <summary>
         /// A filter to return only deployment stages that matches the given lifecycle state.
         /// </summary>
         public readonly string State;
@@ -241,6 +289,8 @@ namespace Pulumi.Oci.DevOps.Outputs
         [OutputConstructor]
         private GetDeployStagesDeployStageCollectionItemResult(
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemApprovalPolicyResult> approvalPolicies,
+
+            bool areHooksEnabled,
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemBlueBackendIpResult> blueBackendIps,
 
@@ -304,6 +354,10 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             bool isAsync,
 
+            bool isDebugEnabled,
+
+            bool isForceEnabled,
+
             bool isValidationEnabled,
 
             ImmutableArray<string> kubernetesManifestDeployArtifactIds,
@@ -311,6 +365,8 @@ namespace Pulumi.Oci.DevOps.Outputs
             string lifecycleDetails,
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemLoadBalancerConfigResult> loadBalancerConfigs,
+
+            int maxHistory,
 
             string maxMemoryInMbs,
 
@@ -334,6 +390,22 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemRolloutPolicyResult> rolloutPolicies,
 
+            ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemSetStringResult> setStrings,
+
+            ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemSetValueResult> setValues,
+
+            bool shouldCleanupOnFail,
+
+            bool shouldNotWait,
+
+            bool shouldResetValues,
+
+            bool shouldReuseValues,
+
+            bool shouldSkipCrds,
+
+            bool shouldSkipRenderSubchartNotes,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -353,6 +425,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemWaitCriteriaResult> waitCriterias)
         {
             ApprovalPolicies = approvalPolicies;
+            AreHooksEnabled = areHooksEnabled;
             BlueBackendIps = blueBackendIps;
             BlueGreenStrategies = blueGreenStrategies;
             CanaryStrategies = canaryStrategies;
@@ -384,10 +457,13 @@ namespace Pulumi.Oci.DevOps.Outputs
             HelmChartDeployArtifactId = helmChartDeployArtifactId;
             Id = id;
             IsAsync = isAsync;
+            IsDebugEnabled = isDebugEnabled;
+            IsForceEnabled = isForceEnabled;
             IsValidationEnabled = isValidationEnabled;
             KubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
             LifecycleDetails = lifecycleDetails;
             LoadBalancerConfigs = loadBalancerConfigs;
+            MaxHistory = maxHistory;
             MaxMemoryInMbs = maxMemoryInMbs;
             Namespace = @namespace;
             OkeBlueGreenDeployStageId = okeBlueGreenDeployStageId;
@@ -399,6 +475,14 @@ namespace Pulumi.Oci.DevOps.Outputs
             ReleaseName = releaseName;
             RollbackPolicies = rollbackPolicies;
             RolloutPolicies = rolloutPolicies;
+            SetStrings = setStrings;
+            SetValues = setValues;
+            ShouldCleanupOnFail = shouldCleanupOnFail;
+            ShouldNotWait = shouldNotWait;
+            ShouldResetValues = shouldResetValues;
+            ShouldReuseValues = shouldReuseValues;
+            ShouldSkipCrds = shouldSkipCrds;
+            ShouldSkipRenderSubchartNotes = shouldSkipRenderSubchartNotes;
             State = state;
             SystemTags = systemTags;
             TestLoadBalancerConfigs = testLoadBalancerConfigs;

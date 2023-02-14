@@ -62,11 +62,15 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
      */
     readonly autonomousContainerDatabaseId: string;
     /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     */
+    readonly fastStartFailOverLagLimitInSeconds: number;
+    /**
      * The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
      */
     readonly id: string;
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      */
     readonly isAutomaticFailoverEnabled: boolean;
     /**

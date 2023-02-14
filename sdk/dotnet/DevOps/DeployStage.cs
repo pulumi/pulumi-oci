@@ -32,6 +32,12 @@ namespace Pulumi.Oci.DevOps
         public Output<Outputs.DeployStageApprovalPolicy> ApprovalPolicy { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+        /// </summary>
+        [Output("areHooksEnabled")]
+        public Output<bool> AreHooksEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Collection of backend environment IP addresses.
         /// </summary>
         [Output("blueBackendIps")]
@@ -212,6 +218,18 @@ namespace Pulumi.Oci.DevOps
         public Output<bool> IsAsync { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        /// </summary>
+        [Output("isDebugEnabled")]
+        public Output<bool> IsDebugEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+        /// </summary>
+        [Output("isForceEnabled")]
+        public Output<bool> IsForceEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A boolean flag specifies whether the invoked function should be validated.
         /// </summary>
         [Output("isValidationEnabled")]
@@ -234,6 +252,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("loadBalancerConfig")]
         public Output<Outputs.DeployStageLoadBalancerConfig> LoadBalancerConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        /// </summary>
+        [Output("maxHistory")]
+        public Output<int> MaxHistory { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Maximum usable memory for the Function (in MB).
@@ -302,6 +326,54 @@ namespace Pulumi.Oci.DevOps
         public Output<Outputs.DeployStageRolloutPolicy> RolloutPolicy { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Specifies the name and value pairs to set helm values.
+        /// </summary>
+        [Output("setString")]
+        public Output<Outputs.DeployStageSetString> SetString { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Specifies the name and value pairs to set helm values.
+        /// </summary>
+        [Output("setValues")]
+        public Output<Outputs.DeployStageSetValues> SetValues { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        /// </summary>
+        [Output("shouldCleanupOnFail")]
+        public Output<bool> ShouldCleanupOnFail { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        /// </summary>
+        [Output("shouldNotWait")]
+        public Output<bool> ShouldNotWait { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        /// </summary>
+        [Output("shouldResetValues")]
+        public Output<bool> ShouldResetValues { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        /// </summary>
+        [Output("shouldReuseValues")]
+        public Output<bool> ShouldReuseValues { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        /// </summary>
+        [Output("shouldSkipCrds")]
+        public Output<bool> ShouldSkipCrds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+        /// </summary>
+        [Output("shouldSkipRenderSubchartNotes")]
+        public Output<bool> ShouldSkipRenderSubchartNotes { get; private set; } = null!;
+
+        /// <summary>
         /// The current state of the deployment stage.
         /// </summary>
         [Output("state")]
@@ -314,7 +386,7 @@ namespace Pulumi.Oci.DevOps
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        /// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         /// </summary>
         [Output("testLoadBalancerConfig")]
         public Output<Outputs.DeployStageTestLoadBalancerConfig> TestLoadBalancerConfig { get; private set; } = null!;
@@ -406,6 +478,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("approvalPolicy")]
         public Input<Inputs.DeployStageApprovalPolicyArgs>? ApprovalPolicy { get; set; }
+
+        /// <summary>
+        /// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+        /// </summary>
+        [Input("areHooksEnabled")]
+        public Input<bool>? AreHooksEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Collection of backend environment IP addresses.
@@ -606,6 +684,18 @@ namespace Pulumi.Oci.DevOps
         public Input<bool>? IsAsync { get; set; }
 
         /// <summary>
+        /// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        /// </summary>
+        [Input("isDebugEnabled")]
+        public Input<bool>? IsDebugEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+        /// </summary>
+        [Input("isForceEnabled")]
+        public Input<bool>? IsForceEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) A boolean flag specifies whether the invoked function should be validated.
         /// </summary>
         [Input("isValidationEnabled")]
@@ -628,6 +718,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("loadBalancerConfig")]
         public Input<Inputs.DeployStageLoadBalancerConfigArgs>? LoadBalancerConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        /// </summary>
+        [Input("maxHistory")]
+        public Input<int>? MaxHistory { get; set; }
 
         /// <summary>
         /// (Updatable) Maximum usable memory for the Function (in MB).
@@ -690,7 +786,55 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.DeployStageRolloutPolicyArgs>? RolloutPolicy { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        /// (Updatable) Specifies the name and value pairs to set helm values.
+        /// </summary>
+        [Input("setString")]
+        public Input<Inputs.DeployStageSetStringArgs>? SetString { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies the name and value pairs to set helm values.
+        /// </summary>
+        [Input("setValues")]
+        public Input<Inputs.DeployStageSetValuesArgs>? SetValues { get; set; }
+
+        /// <summary>
+        /// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        /// </summary>
+        [Input("shouldCleanupOnFail")]
+        public Input<bool>? ShouldCleanupOnFail { get; set; }
+
+        /// <summary>
+        /// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        /// </summary>
+        [Input("shouldNotWait")]
+        public Input<bool>? ShouldNotWait { get; set; }
+
+        /// <summary>
+        /// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        /// </summary>
+        [Input("shouldResetValues")]
+        public Input<bool>? ShouldResetValues { get; set; }
+
+        /// <summary>
+        /// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        /// </summary>
+        [Input("shouldReuseValues")]
+        public Input<bool>? ShouldReuseValues { get; set; }
+
+        /// <summary>
+        /// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        /// </summary>
+        [Input("shouldSkipCrds")]
+        public Input<bool>? ShouldSkipCrds { get; set; }
+
+        /// <summary>
+        /// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+        /// </summary>
+        [Input("shouldSkipRenderSubchartNotes")]
+        public Input<bool>? ShouldSkipRenderSubchartNotes { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         /// </summary>
         [Input("testLoadBalancerConfig")]
         public Input<Inputs.DeployStageTestLoadBalancerConfigArgs>? TestLoadBalancerConfig { get; set; }
@@ -738,6 +882,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("approvalPolicy")]
         public Input<Inputs.DeployStageApprovalPolicyGetArgs>? ApprovalPolicy { get; set; }
+
+        /// <summary>
+        /// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+        /// </summary>
+        [Input("areHooksEnabled")]
+        public Input<bool>? AreHooksEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Collection of backend environment IP addresses.
@@ -944,6 +1094,18 @@ namespace Pulumi.Oci.DevOps
         public Input<bool>? IsAsync { get; set; }
 
         /// <summary>
+        /// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        /// </summary>
+        [Input("isDebugEnabled")]
+        public Input<bool>? IsDebugEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+        /// </summary>
+        [Input("isForceEnabled")]
+        public Input<bool>? IsForceEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) A boolean flag specifies whether the invoked function should be validated.
         /// </summary>
         [Input("isValidationEnabled")]
@@ -972,6 +1134,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("loadBalancerConfig")]
         public Input<Inputs.DeployStageLoadBalancerConfigGetArgs>? LoadBalancerConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        /// </summary>
+        [Input("maxHistory")]
+        public Input<int>? MaxHistory { get; set; }
 
         /// <summary>
         /// (Updatable) Maximum usable memory for the Function (in MB).
@@ -1040,6 +1208,54 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.DeployStageRolloutPolicyGetArgs>? RolloutPolicy { get; set; }
 
         /// <summary>
+        /// (Updatable) Specifies the name and value pairs to set helm values.
+        /// </summary>
+        [Input("setString")]
+        public Input<Inputs.DeployStageSetStringGetArgs>? SetString { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies the name and value pairs to set helm values.
+        /// </summary>
+        [Input("setValues")]
+        public Input<Inputs.DeployStageSetValuesGetArgs>? SetValues { get; set; }
+
+        /// <summary>
+        /// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        /// </summary>
+        [Input("shouldCleanupOnFail")]
+        public Input<bool>? ShouldCleanupOnFail { get; set; }
+
+        /// <summary>
+        /// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        /// </summary>
+        [Input("shouldNotWait")]
+        public Input<bool>? ShouldNotWait { get; set; }
+
+        /// <summary>
+        /// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        /// </summary>
+        [Input("shouldResetValues")]
+        public Input<bool>? ShouldResetValues { get; set; }
+
+        /// <summary>
+        /// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        /// </summary>
+        [Input("shouldReuseValues")]
+        public Input<bool>? ShouldReuseValues { get; set; }
+
+        /// <summary>
+        /// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        /// </summary>
+        [Input("shouldSkipCrds")]
+        public Input<bool>? ShouldSkipCrds { get; set; }
+
+        /// <summary>
+        /// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+        /// </summary>
+        [Input("shouldSkipRenderSubchartNotes")]
+        public Input<bool>? ShouldSkipRenderSubchartNotes { get; set; }
+
+        /// <summary>
         /// The current state of the deployment stage.
         /// </summary>
         [Input("state")]
@@ -1058,7 +1274,7 @@ namespace Pulumi.Oci.DevOps
         }
 
         /// <summary>
-        /// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        /// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         /// </summary>
         [Input("testLoadBalancerConfig")]
         public Input<Inputs.DeployStageTestLoadBalancerConfigGetArgs>? TestLoadBalancerConfig { get; set; }

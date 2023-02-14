@@ -34,9 +34,11 @@ import * as utilities from "../utilities";
  *     },
  *     compartmentId: _var.compartment_id,
  *     dbUniqueName: _var.autonomous_container_database_db_unique_name,
+ *     dbVersion: _var.autonomous_container_database_db_version,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
+ *     fastStartFailOverLagLimitInSeconds: _var.autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -77,6 +79,7 @@ import * as utilities from "../utilities";
  *     peerDbUniqueName: _var.autonomous_container_database_peer_db_unique_name,
  *     serviceLevelAgreementType: _var.autonomous_container_database_service_level_agreement_type,
  *     vaultId: oci_kms_vault.test_vault.id,
+ *     versionPreference: _var.autonomous_container_database_version_preference,
  *     standbyMaintenanceBufferInDays: _var.autonomous_container_database_standby_maintenance_buffer_in_days,
  * });
  * ```
@@ -148,9 +151,9 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     public /*out*/ readonly computeModel!: pulumi.Output<string>;
     public readonly dbUniqueName!: pulumi.Output<string>;
     /**
-     * Oracle Database version of the Autonomous Container Database.
+     * The base version for the Autonomous Container Database.
      */
-    public /*out*/ readonly dbVersion!: pulumi.Output<string>;
+    public readonly dbVersion!: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -160,6 +163,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     */
+    public readonly fastStartFailOverLagLimitInSeconds!: pulumi.Output<number>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
@@ -168,7 +175,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly infrastructureType!: pulumi.Output<string>;
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      */
     public readonly isAutomaticFailoverEnabled!: pulumi.Output<boolean>;
     /**
@@ -278,6 +285,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     */
+    public /*out*/ readonly timeSnapshotStandbyRevert!: pulumi.Output<string>;
+    /**
      * The number of CPU cores allocated to the Autonomous VM cluster.
      */
     public /*out*/ readonly totalCpus!: pulumi.Output<number>;
@@ -285,6 +296,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     public readonly vaultId!: pulumi.Output<string>;
+    /**
+     * (Updatable) The next maintenance version preference.
+     */
+    public readonly versionPreference!: pulumi.Output<string>;
 
     /**
      * Create a AutonomousContainerDatabase resource with the given unique name, arguments, and options.
@@ -311,6 +326,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["fastStartFailOverLagLimitInSeconds"] = state ? state.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["infrastructureType"] = state ? state.infrastructureType : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = state ? state.isAutomaticFailoverEnabled : undefined;
@@ -342,8 +358,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["standbyMaintenanceBufferInDays"] = state ? state.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeSnapshotStandbyRevert"] = state ? state.timeSnapshotStandbyRevert : undefined;
             resourceInputs["totalCpus"] = state ? state.totalCpus : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
+            resourceInputs["versionPreference"] = state ? state.versionPreference : undefined;
         } else {
             const args = argsOrState as AutonomousContainerDatabaseArgs | undefined;
             if ((!args || args.displayName === undefined) && !opts.urn) {
@@ -358,8 +376,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["cloudAutonomousVmClusterId"] = args ? args.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["dbUniqueName"] = args ? args.dbUniqueName : undefined;
+            resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["fastStartFailOverLagLimitInSeconds"] = args ? args.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = args ? args.isAutomaticFailoverEnabled : undefined;
             resourceInputs["keyStoreId"] = args ? args.keyStoreId : undefined;
@@ -378,10 +398,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["serviceLevelAgreementType"] = args ? args.serviceLevelAgreementType : undefined;
             resourceInputs["standbyMaintenanceBufferInDays"] = args ? args.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
+            resourceInputs["versionPreference"] = args ? args.versionPreference : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableCpus"] = undefined /*out*/;
             resourceInputs["computeModel"] = undefined /*out*/;
-            resourceInputs["dbVersion"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
             resourceInputs["keyHistoryEntries"] = undefined /*out*/;
             resourceInputs["keyStoreWalletName"] = undefined /*out*/;
@@ -396,6 +416,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["role"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeSnapshotStandbyRevert"] = undefined /*out*/;
             resourceInputs["totalCpus"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -438,7 +459,7 @@ export interface AutonomousContainerDatabaseState {
     computeModel?: pulumi.Input<string>;
     dbUniqueName?: pulumi.Input<string>;
     /**
-     * Oracle Database version of the Autonomous Container Database.
+     * The base version for the Autonomous Container Database.
      */
     dbVersion?: pulumi.Input<string>;
     /**
@@ -450,6 +471,10 @@ export interface AutonomousContainerDatabaseState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     */
+    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
@@ -458,7 +483,7 @@ export interface AutonomousContainerDatabaseState {
      */
     infrastructureType?: pulumi.Input<string>;
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
     /**
@@ -568,6 +593,10 @@ export interface AutonomousContainerDatabaseState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
+     * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     */
+    timeSnapshotStandbyRevert?: pulumi.Input<string>;
+    /**
      * The number of CPU cores allocated to the Autonomous VM cluster.
      */
     totalCpus?: pulumi.Input<number>;
@@ -575,6 +604,10 @@ export interface AutonomousContainerDatabaseState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     vaultId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The next maintenance version preference.
+     */
+    versionPreference?: pulumi.Input<string>;
 }
 
 /**
@@ -603,6 +636,10 @@ export interface AutonomousContainerDatabaseArgs {
     compartmentId?: pulumi.Input<string>;
     dbUniqueName?: pulumi.Input<string>;
     /**
+     * The base version for the Autonomous Container Database.
+     */
+    dbVersion?: pulumi.Input<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -611,11 +648,15 @@ export interface AutonomousContainerDatabaseArgs {
      */
     displayName: pulumi.Input<string>;
     /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     */
+    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
     /**
@@ -676,4 +717,8 @@ export interface AutonomousContainerDatabaseArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     vaultId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The next maintenance version preference.
+     */
+    versionPreference?: pulumi.Input<string>;
 }

@@ -22,10 +22,13 @@ class GetDeployStageResult:
     """
     A collection of values returned by getDeployStage.
     """
-    def __init__(__self__, approval_policies=None, blue_backend_ips=None, blue_green_strategies=None, canary_strategies=None, command_spec_deploy_artifact_id=None, compartment_id=None, compute_instance_group_blue_green_deployment_deploy_stage_id=None, compute_instance_group_canary_deploy_stage_id=None, compute_instance_group_canary_traffic_shift_deploy_stage_id=None, compute_instance_group_deploy_environment_id=None, config=None, container_configs=None, defined_tags=None, deploy_artifact_id=None, deploy_artifact_ids=None, deploy_environment_id_a=None, deploy_environment_id_b=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_predecessor_collections=None, deploy_stage_type=None, deployment_spec_deploy_artifact_id=None, description=None, display_name=None, docker_image_deploy_artifact_id=None, failure_policies=None, freeform_tags=None, function_deploy_environment_id=None, function_timeout_in_seconds=None, green_backend_ips=None, helm_chart_deploy_artifact_id=None, id=None, is_async=None, is_validation_enabled=None, kubernetes_manifest_deploy_artifact_ids=None, lifecycle_details=None, load_balancer_configs=None, max_memory_in_mbs=None, namespace=None, oke_blue_green_deploy_stage_id=None, oke_canary_deploy_stage_id=None, oke_canary_traffic_shift_deploy_stage_id=None, oke_cluster_deploy_environment_id=None, production_load_balancer_configs=None, project_id=None, release_name=None, rollback_policies=None, rollout_policies=None, state=None, system_tags=None, test_load_balancer_configs=None, time_created=None, time_updated=None, timeout_in_seconds=None, traffic_shift_target=None, values_artifact_ids=None, wait_criterias=None):
+    def __init__(__self__, approval_policies=None, are_hooks_enabled=None, blue_backend_ips=None, blue_green_strategies=None, canary_strategies=None, command_spec_deploy_artifact_id=None, compartment_id=None, compute_instance_group_blue_green_deployment_deploy_stage_id=None, compute_instance_group_canary_deploy_stage_id=None, compute_instance_group_canary_traffic_shift_deploy_stage_id=None, compute_instance_group_deploy_environment_id=None, config=None, container_configs=None, defined_tags=None, deploy_artifact_id=None, deploy_artifact_ids=None, deploy_environment_id_a=None, deploy_environment_id_b=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_predecessor_collections=None, deploy_stage_type=None, deployment_spec_deploy_artifact_id=None, description=None, display_name=None, docker_image_deploy_artifact_id=None, failure_policies=None, freeform_tags=None, function_deploy_environment_id=None, function_timeout_in_seconds=None, green_backend_ips=None, helm_chart_deploy_artifact_id=None, id=None, is_async=None, is_debug_enabled=None, is_force_enabled=None, is_validation_enabled=None, kubernetes_manifest_deploy_artifact_ids=None, lifecycle_details=None, load_balancer_configs=None, max_history=None, max_memory_in_mbs=None, namespace=None, oke_blue_green_deploy_stage_id=None, oke_canary_deploy_stage_id=None, oke_canary_traffic_shift_deploy_stage_id=None, oke_cluster_deploy_environment_id=None, production_load_balancer_configs=None, project_id=None, release_name=None, rollback_policies=None, rollout_policies=None, set_strings=None, set_values=None, should_cleanup_on_fail=None, should_not_wait=None, should_reset_values=None, should_reuse_values=None, should_skip_crds=None, should_skip_render_subchart_notes=None, state=None, system_tags=None, test_load_balancer_configs=None, time_created=None, time_updated=None, timeout_in_seconds=None, traffic_shift_target=None, values_artifact_ids=None, wait_criterias=None):
         if approval_policies and not isinstance(approval_policies, list):
             raise TypeError("Expected argument 'approval_policies' to be a list")
         pulumi.set(__self__, "approval_policies", approval_policies)
+        if are_hooks_enabled and not isinstance(are_hooks_enabled, bool):
+            raise TypeError("Expected argument 'are_hooks_enabled' to be a bool")
+        pulumi.set(__self__, "are_hooks_enabled", are_hooks_enabled)
         if blue_backend_ips and not isinstance(blue_backend_ips, list):
             raise TypeError("Expected argument 'blue_backend_ips' to be a list")
         pulumi.set(__self__, "blue_backend_ips", blue_backend_ips)
@@ -122,6 +125,12 @@ class GetDeployStageResult:
         if is_async and not isinstance(is_async, bool):
             raise TypeError("Expected argument 'is_async' to be a bool")
         pulumi.set(__self__, "is_async", is_async)
+        if is_debug_enabled and not isinstance(is_debug_enabled, bool):
+            raise TypeError("Expected argument 'is_debug_enabled' to be a bool")
+        pulumi.set(__self__, "is_debug_enabled", is_debug_enabled)
+        if is_force_enabled and not isinstance(is_force_enabled, bool):
+            raise TypeError("Expected argument 'is_force_enabled' to be a bool")
+        pulumi.set(__self__, "is_force_enabled", is_force_enabled)
         if is_validation_enabled and not isinstance(is_validation_enabled, bool):
             raise TypeError("Expected argument 'is_validation_enabled' to be a bool")
         pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
@@ -134,6 +143,9 @@ class GetDeployStageResult:
         if load_balancer_configs and not isinstance(load_balancer_configs, list):
             raise TypeError("Expected argument 'load_balancer_configs' to be a list")
         pulumi.set(__self__, "load_balancer_configs", load_balancer_configs)
+        if max_history and not isinstance(max_history, int):
+            raise TypeError("Expected argument 'max_history' to be a int")
+        pulumi.set(__self__, "max_history", max_history)
         if max_memory_in_mbs and not isinstance(max_memory_in_mbs, str):
             raise TypeError("Expected argument 'max_memory_in_mbs' to be a str")
         pulumi.set(__self__, "max_memory_in_mbs", max_memory_in_mbs)
@@ -167,6 +179,30 @@ class GetDeployStageResult:
         if rollout_policies and not isinstance(rollout_policies, list):
             raise TypeError("Expected argument 'rollout_policies' to be a list")
         pulumi.set(__self__, "rollout_policies", rollout_policies)
+        if set_strings and not isinstance(set_strings, list):
+            raise TypeError("Expected argument 'set_strings' to be a list")
+        pulumi.set(__self__, "set_strings", set_strings)
+        if set_values and not isinstance(set_values, list):
+            raise TypeError("Expected argument 'set_values' to be a list")
+        pulumi.set(__self__, "set_values", set_values)
+        if should_cleanup_on_fail and not isinstance(should_cleanup_on_fail, bool):
+            raise TypeError("Expected argument 'should_cleanup_on_fail' to be a bool")
+        pulumi.set(__self__, "should_cleanup_on_fail", should_cleanup_on_fail)
+        if should_not_wait and not isinstance(should_not_wait, bool):
+            raise TypeError("Expected argument 'should_not_wait' to be a bool")
+        pulumi.set(__self__, "should_not_wait", should_not_wait)
+        if should_reset_values and not isinstance(should_reset_values, bool):
+            raise TypeError("Expected argument 'should_reset_values' to be a bool")
+        pulumi.set(__self__, "should_reset_values", should_reset_values)
+        if should_reuse_values and not isinstance(should_reuse_values, bool):
+            raise TypeError("Expected argument 'should_reuse_values' to be a bool")
+        pulumi.set(__self__, "should_reuse_values", should_reuse_values)
+        if should_skip_crds and not isinstance(should_skip_crds, bool):
+            raise TypeError("Expected argument 'should_skip_crds' to be a bool")
+        pulumi.set(__self__, "should_skip_crds", should_skip_crds)
+        if should_skip_render_subchart_notes and not isinstance(should_skip_render_subchart_notes, bool):
+            raise TypeError("Expected argument 'should_skip_render_subchart_notes' to be a bool")
+        pulumi.set(__self__, "should_skip_render_subchart_notes", should_skip_render_subchart_notes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -202,6 +238,14 @@ class GetDeployStageResult:
         Specifies the approval policy.
         """
         return pulumi.get(self, "approval_policies")
+
+    @property
+    @pulumi.getter(name="areHooksEnabled")
+    def are_hooks_enabled(self) -> bool:
+        """
+        Disable pre/post upgrade hooks. Set to false by default.
+        """
+        return pulumi.get(self, "are_hooks_enabled")
 
     @property
     @pulumi.getter(name="blueBackendIps")
@@ -457,6 +501,22 @@ class GetDeployStageResult:
         return pulumi.get(self, "is_async")
 
     @property
+    @pulumi.getter(name="isDebugEnabled")
+    def is_debug_enabled(self) -> bool:
+        """
+        Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        """
+        return pulumi.get(self, "is_debug_enabled")
+
+    @property
+    @pulumi.getter(name="isForceEnabled")
+    def is_force_enabled(self) -> bool:
+        """
+        Force resource update through delete; or if required, recreate. Set to false by default.
+        """
+        return pulumi.get(self, "is_force_enabled")
+
+    @property
     @pulumi.getter(name="isValidationEnabled")
     def is_validation_enabled(self) -> bool:
         """
@@ -487,6 +547,14 @@ class GetDeployStageResult:
         Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         """
         return pulumi.get(self, "load_balancer_configs")
+
+    @property
+    @pulumi.getter(name="maxHistory")
+    def max_history(self) -> int:
+        """
+        Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        """
+        return pulumi.get(self, "max_history")
 
     @property
     @pulumi.getter(name="maxMemoryInMbs")
@@ -577,6 +645,70 @@ class GetDeployStageResult:
         return pulumi.get(self, "rollout_policies")
 
     @property
+    @pulumi.getter(name="setStrings")
+    def set_strings(self) -> Sequence['outputs.GetDeployStageSetStringResult']:
+        """
+        Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_strings")
+
+    @property
+    @pulumi.getter(name="setValues")
+    def set_values(self) -> Sequence['outputs.GetDeployStageSetValueResult']:
+        """
+        Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_values")
+
+    @property
+    @pulumi.getter(name="shouldCleanupOnFail")
+    def should_cleanup_on_fail(self) -> bool:
+        """
+        Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        """
+        return pulumi.get(self, "should_cleanup_on_fail")
+
+    @property
+    @pulumi.getter(name="shouldNotWait")
+    def should_not_wait(self) -> bool:
+        """
+        Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+        """
+        return pulumi.get(self, "should_not_wait")
+
+    @property
+    @pulumi.getter(name="shouldResetValues")
+    def should_reset_values(self) -> bool:
+        """
+        During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        """
+        return pulumi.get(self, "should_reset_values")
+
+    @property
+    @pulumi.getter(name="shouldReuseValues")
+    def should_reuse_values(self) -> bool:
+        """
+        During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        """
+        return pulumi.get(self, "should_reuse_values")
+
+    @property
+    @pulumi.getter(name="shouldSkipCrds")
+    def should_skip_crds(self) -> bool:
+        """
+        If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_crds")
+
+    @property
+    @pulumi.getter(name="shouldSkipRenderSubchartNotes")
+    def should_skip_render_subchart_notes(self) -> bool:
+        """
+        If set, renders subchart notes along with the parent. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_render_subchart_notes")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -656,6 +788,7 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             yield self
         return GetDeployStageResult(
             approval_policies=self.approval_policies,
+            are_hooks_enabled=self.are_hooks_enabled,
             blue_backend_ips=self.blue_backend_ips,
             blue_green_strategies=self.blue_green_strategies,
             canary_strategies=self.canary_strategies,
@@ -688,10 +821,13 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             helm_chart_deploy_artifact_id=self.helm_chart_deploy_artifact_id,
             id=self.id,
             is_async=self.is_async,
+            is_debug_enabled=self.is_debug_enabled,
+            is_force_enabled=self.is_force_enabled,
             is_validation_enabled=self.is_validation_enabled,
             kubernetes_manifest_deploy_artifact_ids=self.kubernetes_manifest_deploy_artifact_ids,
             lifecycle_details=self.lifecycle_details,
             load_balancer_configs=self.load_balancer_configs,
+            max_history=self.max_history,
             max_memory_in_mbs=self.max_memory_in_mbs,
             namespace=self.namespace,
             oke_blue_green_deploy_stage_id=self.oke_blue_green_deploy_stage_id,
@@ -703,6 +839,14 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             release_name=self.release_name,
             rollback_policies=self.rollback_policies,
             rollout_policies=self.rollout_policies,
+            set_strings=self.set_strings,
+            set_values=self.set_values,
+            should_cleanup_on_fail=self.should_cleanup_on_fail,
+            should_not_wait=self.should_not_wait,
+            should_reset_values=self.should_reset_values,
+            should_reuse_values=self.should_reuse_values,
+            should_skip_crds=self.should_skip_crds,
+            should_skip_render_subchart_notes=self.should_skip_render_subchart_notes,
             state=self.state,
             system_tags=self.system_tags,
             test_load_balancer_configs=self.test_load_balancer_configs,
@@ -740,6 +884,7 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
 
     return AwaitableGetDeployStageResult(
         approval_policies=__ret__.approval_policies,
+        are_hooks_enabled=__ret__.are_hooks_enabled,
         blue_backend_ips=__ret__.blue_backend_ips,
         blue_green_strategies=__ret__.blue_green_strategies,
         canary_strategies=__ret__.canary_strategies,
@@ -772,10 +917,13 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         helm_chart_deploy_artifact_id=__ret__.helm_chart_deploy_artifact_id,
         id=__ret__.id,
         is_async=__ret__.is_async,
+        is_debug_enabled=__ret__.is_debug_enabled,
+        is_force_enabled=__ret__.is_force_enabled,
         is_validation_enabled=__ret__.is_validation_enabled,
         kubernetes_manifest_deploy_artifact_ids=__ret__.kubernetes_manifest_deploy_artifact_ids,
         lifecycle_details=__ret__.lifecycle_details,
         load_balancer_configs=__ret__.load_balancer_configs,
+        max_history=__ret__.max_history,
         max_memory_in_mbs=__ret__.max_memory_in_mbs,
         namespace=__ret__.namespace,
         oke_blue_green_deploy_stage_id=__ret__.oke_blue_green_deploy_stage_id,
@@ -787,6 +935,14 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         release_name=__ret__.release_name,
         rollback_policies=__ret__.rollback_policies,
         rollout_policies=__ret__.rollout_policies,
+        set_strings=__ret__.set_strings,
+        set_values=__ret__.set_values,
+        should_cleanup_on_fail=__ret__.should_cleanup_on_fail,
+        should_not_wait=__ret__.should_not_wait,
+        should_reset_values=__ret__.should_reset_values,
+        should_reuse_values=__ret__.should_reuse_values,
+        should_skip_crds=__ret__.should_skip_crds,
+        should_skip_render_subchart_notes=__ret__.should_skip_render_subchart_notes,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
         test_load_balancer_configs=__ret__.test_load_balancer_configs,

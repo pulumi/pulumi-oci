@@ -49,6 +49,10 @@ export interface GetDeployStageResult {
      */
     readonly approvalPolicies: outputs.DevOps.GetDeployStageApprovalPolicy[];
     /**
+     * Disable pre/post upgrade hooks. Set to false by default.
+     */
+    readonly areHooksEnabled: boolean;
+    /**
      * Collection of backend environment IP addresses.
      */
     readonly blueBackendIps: outputs.DevOps.GetDeployStageBlueBackendIp[];
@@ -174,6 +178,14 @@ export interface GetDeployStageResult {
      */
     readonly isAsync: boolean;
     /**
+     * Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     */
+    readonly isDebugEnabled: boolean;
+    /**
+     * Force resource update through delete; or if required, recreate. Set to false by default.
+     */
+    readonly isForceEnabled: boolean;
+    /**
      * A boolean flag specifies whether the invoked function must be validated.
      */
     readonly isValidationEnabled: boolean;
@@ -189,6 +201,10 @@ export interface GetDeployStageResult {
      * Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      */
     readonly loadBalancerConfigs: outputs.DevOps.GetDeployStageLoadBalancerConfig[];
+    /**
+     * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     */
+    readonly maxHistory: number;
     /**
      * Maximum usable memory for the Function (in MB).
      */
@@ -233,6 +249,38 @@ export interface GetDeployStageResult {
      * Description of rollout policy for load balancer traffic shift stage.
      */
     readonly rolloutPolicies: outputs.DevOps.GetDeployStageRolloutPolicy[];
+    /**
+     * Specifies the name and value pairs to set helm values.
+     */
+    readonly setStrings: outputs.DevOps.GetDeployStageSetString[];
+    /**
+     * Specifies the name and value pairs to set helm values.
+     */
+    readonly setValues: outputs.DevOps.GetDeployStageSetValue[];
+    /**
+     * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     */
+    readonly shouldCleanupOnFail: boolean;
+    /**
+     * Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+     */
+    readonly shouldNotWait: boolean;
+    /**
+     * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     */
+    readonly shouldResetValues: boolean;
+    /**
+     * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     */
+    readonly shouldReuseValues: boolean;
+    /**
+     * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     */
+    readonly shouldSkipCrds: boolean;
+    /**
+     * If set, renders subchart notes along with the parent. Set to false by default.
+     */
+    readonly shouldSkipRenderSubchartNotes: boolean;
     /**
      * The current state of the deployment stage.
      */

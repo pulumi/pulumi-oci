@@ -21,6 +21,8 @@ import com.pulumi.oci.DevOps.outputs.DeployStageLoadBalancerConfig;
 import com.pulumi.oci.DevOps.outputs.DeployStageProductionLoadBalancerConfig;
 import com.pulumi.oci.DevOps.outputs.DeployStageRollbackPolicy;
 import com.pulumi.oci.DevOps.outputs.DeployStageRolloutPolicy;
+import com.pulumi.oci.DevOps.outputs.DeployStageSetString;
+import com.pulumi.oci.DevOps.outputs.DeployStageSetValues;
 import com.pulumi.oci.DevOps.outputs.DeployStageTestLoadBalancerConfig;
 import com.pulumi.oci.DevOps.outputs.DeployStageWaitCriteria;
 import com.pulumi.oci.Utilities;
@@ -62,6 +64,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      */
     public Output<DeployStageApprovalPolicy> approvalPolicy() {
         return this.approvalPolicy;
+    }
+    /**
+     * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+     * 
+     */
+    @Export(name="areHooksEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> areHooksEnabled;
+
+    /**
+     * @return (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+     * 
+     */
+    public Output<Boolean> areHooksEnabled() {
+        return this.areHooksEnabled;
     }
     /**
      * (Updatable) Collection of backend environment IP addresses.
@@ -484,6 +500,34 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.isAsync;
     }
     /**
+     * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     * 
+     */
+    @Export(name="isDebugEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isDebugEnabled;
+
+    /**
+     * @return (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     * 
+     */
+    public Output<Boolean> isDebugEnabled() {
+        return this.isDebugEnabled;
+    }
+    /**
+     * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+     * 
+     */
+    @Export(name="isForceEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isForceEnabled;
+
+    /**
+     * @return (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+     * 
+     */
+    public Output<Boolean> isForceEnabled() {
+        return this.isForceEnabled;
+    }
+    /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      * 
      */
@@ -538,6 +582,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      */
     public Output<DeployStageLoadBalancerConfig> loadBalancerConfig() {
         return this.loadBalancerConfig;
+    }
+    /**
+     * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     * 
+     */
+    @Export(name="maxHistory", type=Integer.class, parameters={})
+    private Output<Integer> maxHistory;
+
+    /**
+     * @return (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     * 
+     */
+    public Output<Integer> maxHistory() {
+        return this.maxHistory;
     }
     /**
      * (Updatable) Maximum usable memory for the Function (in MB).
@@ -694,6 +752,118 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.rolloutPolicy;
     }
     /**
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     * 
+     */
+    @Export(name="setString", type=DeployStageSetString.class, parameters={})
+    private Output<DeployStageSetString> setString;
+
+    /**
+     * @return (Updatable) Specifies the name and value pairs to set helm values.
+     * 
+     */
+    public Output<DeployStageSetString> setString() {
+        return this.setString;
+    }
+    /**
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     * 
+     */
+    @Export(name="setValues", type=DeployStageSetValues.class, parameters={})
+    private Output<DeployStageSetValues> setValues;
+
+    /**
+     * @return (Updatable) Specifies the name and value pairs to set helm values.
+     * 
+     */
+    public Output<DeployStageSetValues> setValues() {
+        return this.setValues;
+    }
+    /**
+     * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     * 
+     */
+    @Export(name="shouldCleanupOnFail", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldCleanupOnFail;
+
+    /**
+     * @return (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     * 
+     */
+    public Output<Boolean> shouldCleanupOnFail() {
+        return this.shouldCleanupOnFail;
+    }
+    /**
+     * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     * 
+     */
+    @Export(name="shouldNotWait", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldNotWait;
+
+    /**
+     * @return (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     * 
+     */
+    public Output<Boolean> shouldNotWait() {
+        return this.shouldNotWait;
+    }
+    /**
+     * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     * 
+     */
+    @Export(name="shouldResetValues", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldResetValues;
+
+    /**
+     * @return (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     * 
+     */
+    public Output<Boolean> shouldResetValues() {
+        return this.shouldResetValues;
+    }
+    /**
+     * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     * 
+     */
+    @Export(name="shouldReuseValues", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldReuseValues;
+
+    /**
+     * @return (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     * 
+     */
+    public Output<Boolean> shouldReuseValues() {
+        return this.shouldReuseValues;
+    }
+    /**
+     * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     * 
+     */
+    @Export(name="shouldSkipCrds", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldSkipCrds;
+
+    /**
+     * @return (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     * 
+     */
+    public Output<Boolean> shouldSkipCrds() {
+        return this.shouldSkipCrds;
+    }
+    /**
+     * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+     * 
+     */
+    @Export(name="shouldSkipRenderSubchartNotes", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldSkipRenderSubchartNotes;
+
+    /**
+     * @return (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+     * 
+     */
+    public Output<Boolean> shouldSkipRenderSubchartNotes() {
+        return this.shouldSkipRenderSubchartNotes;
+    }
+    /**
      * The current state of the deployment stage.
      * 
      */
@@ -722,14 +892,14 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     @Export(name="testLoadBalancerConfig", type=DeployStageTestLoadBalancerConfig.class, parameters={})
     private Output<DeployStageTestLoadBalancerConfig> testLoadBalancerConfig;
 
     /**
-     * @return (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * @return (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     public Output<DeployStageTestLoadBalancerConfig> testLoadBalancerConfig() {

@@ -72,6 +72,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String displayName;
+    private Integer fastStartFailOverLagLimitInSeconds;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -189,6 +190,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String timeCreated;
     /**
+     * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     * 
+     */
+    private String timeSnapshotStandbyRevert;
+    /**
      * @return The number of CPU cores allocated to the Autonomous VM cluster.
      * 
      */
@@ -198,6 +204,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String vaultId;
+    /**
+     * @return The next maintenance version preference.
+     * 
+     */
+    private String versionPreference;
 
     private GetAutonomousContainerDatabasesAutonomousContainerDatabase() {}
     /**
@@ -275,6 +286,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     public String displayName() {
         return this.displayName;
+    }
+    public Integer fastStartFailOverLagLimitInSeconds() {
+        return this.fastStartFailOverLagLimitInSeconds;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -457,6 +471,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.timeCreated;
     }
     /**
+     * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     * 
+     */
+    public String timeSnapshotStandbyRevert() {
+        return this.timeSnapshotStandbyRevert;
+    }
+    /**
      * @return The number of CPU cores allocated to the Autonomous VM cluster.
      * 
      */
@@ -469,6 +490,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     public String vaultId() {
         return this.vaultId;
+    }
+    /**
+     * @return The next maintenance version preference.
+     * 
+     */
+    public String versionPreference() {
+        return this.versionPreference;
     }
 
     public static Builder builder() {
@@ -492,6 +520,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private String dbVersion;
         private Map<String,Object> definedTags;
         private String displayName;
+        private Integer fastStartFailOverLagLimitInSeconds;
         private Map<String,Object> freeformTags;
         private String id;
         private String infrastructureType;
@@ -524,8 +553,10 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private Integer standbyMaintenanceBufferInDays;
         private String state;
         private String timeCreated;
+        private String timeSnapshotStandbyRevert;
         private Integer totalCpus;
         private String vaultId;
+        private String versionPreference;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -541,6 +572,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.dbVersion = defaults.dbVersion;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.fastStartFailOverLagLimitInSeconds = defaults.fastStartFailOverLagLimitInSeconds;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.infrastructureType = defaults.infrastructureType;
@@ -573,8 +605,10 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.standbyMaintenanceBufferInDays = defaults.standbyMaintenanceBufferInDays;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeSnapshotStandbyRevert = defaults.timeSnapshotStandbyRevert;
     	      this.totalCpus = defaults.totalCpus;
     	      this.vaultId = defaults.vaultId;
+    	      this.versionPreference = defaults.versionPreference;
         }
 
         @CustomType.Setter
@@ -638,6 +672,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = Objects.requireNonNull(fastStartFailOverLagLimitInSeconds);
             return this;
         }
         @CustomType.Setter
@@ -816,6 +855,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeSnapshotStandbyRevert(String timeSnapshotStandbyRevert) {
+            this.timeSnapshotStandbyRevert = Objects.requireNonNull(timeSnapshotStandbyRevert);
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalCpus(Integer totalCpus) {
             this.totalCpus = Objects.requireNonNull(totalCpus);
             return this;
@@ -823,6 +867,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder versionPreference(String versionPreference) {
+            this.versionPreference = Objects.requireNonNull(versionPreference);
             return this;
         }
         public GetAutonomousContainerDatabasesAutonomousContainerDatabase build() {
@@ -839,6 +888,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             o.dbVersion = dbVersion;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             o.freeformTags = freeformTags;
             o.id = id;
             o.infrastructureType = infrastructureType;
@@ -871,8 +921,10 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             o.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             o.state = state;
             o.timeCreated = timeCreated;
+            o.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
             o.totalCpus = totalCpus;
             o.vaultId = vaultId;
+            o.versionPreference = versionPreference;
             return o;
         }
     }

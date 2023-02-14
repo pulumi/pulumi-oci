@@ -1035,6 +1035,7 @@ class _AutonomousDatabaseState:
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
                  available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]] = None,
+                 backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1126,6 +1127,7 @@ class _AutonomousDatabaseState:
                  time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
                  time_until_reconnect_clone_enabled: Optional[pulumi.Input[str]] = None,
                  timestamp: Optional[pulumi.Input[str]] = None,
+                 total_backup_storage_size_in_gbs: Optional[pulumi.Input[float]] = None,
                  use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
                  used_data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
@@ -1143,6 +1145,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        :param pulumi.Input[int] backup_retention_period_in_days: Retention period, in days, for backups.
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
@@ -1239,6 +1242,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param pulumi.Input[str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param pulumi.Input[str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+        :param pulumi.Input[float] total_backup_storage_size_in_gbs: The backup storage to the database.
         :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -1266,6 +1270,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         if backup_configs is not None:
             pulumi.set(__self__, "backup_configs", backup_configs)
+        if backup_retention_period_in_days is not None:
+            pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
         if clone_type is not None:
@@ -1448,6 +1454,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         if timestamp is not None:
             pulumi.set(__self__, "timestamp", timestamp)
+        if total_backup_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         if use_latest_available_backup_time_stamp is not None:
             pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         if used_data_storage_size_in_tbs is not None:
@@ -1588,6 +1596,18 @@ class _AutonomousDatabaseState:
     @backup_configs.setter
     def backup_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]]):
         pulumi.set(self, "backup_configs", value)
+
+    @property
+    @pulumi.getter(name="backupRetentionPeriodInDays")
+    def backup_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        Retention period, in days, for backups.
+        """
+        return pulumi.get(self, "backup_retention_period_in_days")
+
+    @backup_retention_period_in_days.setter
+    def backup_retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "backup_retention_period_in_days", value)
 
     @property
     @pulumi.getter(name="characterSet")
@@ -2687,6 +2707,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "timestamp", value)
 
     @property
+    @pulumi.getter(name="totalBackupStorageSizeInGbs")
+    def total_backup_storage_size_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The backup storage to the database.
+        """
+        return pulumi.get(self, "total_backup_storage_size_in_gbs")
+
+    @total_backup_storage_size_in_gbs.setter
+    def total_backup_storage_size_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "total_backup_storage_size_in_gbs", value)
+
+    @property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
     def use_latest_available_backup_time_stamp(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -3062,6 +3094,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["apex_details"] = None
             __props__.__dict__["available_upgrade_versions"] = None
             __props__.__dict__["backup_configs"] = None
+            __props__.__dict__["backup_retention_period_in_days"] = None
             __props__.__dict__["connection_strings"] = None
             __props__.__dict__["connection_urls"] = None
             __props__.__dict__["dataguard_region_type"] = None
@@ -3100,6 +3133,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["time_of_next_refresh"] = None
             __props__.__dict__["time_reclamation_of_free_autonomous_database"] = None
             __props__.__dict__["time_until_reconnect_clone_enabled"] = None
+            __props__.__dict__["total_backup_storage_size_in_gbs"] = None
             __props__.__dict__["used_data_storage_size_in_tbs"] = None
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["adminPassword"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
@@ -3124,6 +3158,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
             available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupConfigArgs']]]]] = None,
+            backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
             character_set: Optional[pulumi.Input[str]] = None,
             clone_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -3215,6 +3250,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
             time_until_reconnect_clone_enabled: Optional[pulumi.Input[str]] = None,
             timestamp: Optional[pulumi.Input[str]] = None,
+            total_backup_storage_size_in_gbs: Optional[pulumi.Input[float]] = None,
             use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
             used_data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
             vault_id: Optional[pulumi.Input[str]] = None,
@@ -3237,6 +3273,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupConfigArgs']]]] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        :param pulumi.Input[int] backup_retention_period_in_days: Retention period, in days, for backups.
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
@@ -3333,6 +3370,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param pulumi.Input[str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param pulumi.Input[str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+        :param pulumi.Input[float] total_backup_storage_size_in_gbs: The backup storage to the database.
         :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -3353,6 +3391,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["autonomous_maintenance_schedule_type"] = autonomous_maintenance_schedule_type
         __props__.__dict__["available_upgrade_versions"] = available_upgrade_versions
         __props__.__dict__["backup_configs"] = backup_configs
+        __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
         __props__.__dict__["character_set"] = character_set
         __props__.__dict__["clone_type"] = clone_type
         __props__.__dict__["compartment_id"] = compartment_id
@@ -3444,6 +3483,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_reclamation_of_free_autonomous_database"] = time_reclamation_of_free_autonomous_database
         __props__.__dict__["time_until_reconnect_clone_enabled"] = time_until_reconnect_clone_enabled
         __props__.__dict__["timestamp"] = timestamp
+        __props__.__dict__["total_backup_storage_size_in_gbs"] = total_backup_storage_size_in_gbs
         __props__.__dict__["use_latest_available_backup_time_stamp"] = use_latest_available_backup_time_stamp
         __props__.__dict__["used_data_storage_size_in_tbs"] = used_data_storage_size_in_tbs
         __props__.__dict__["vault_id"] = vault_id
@@ -3537,6 +3577,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
+
+    @property
+    @pulumi.getter(name="backupRetentionPeriodInDays")
+    def backup_retention_period_in_days(self) -> pulumi.Output[int]:
+        """
+        Retention period, in days, for backups.
+        """
+        return pulumi.get(self, "backup_retention_period_in_days")
 
     @property
     @pulumi.getter(name="characterSet")
@@ -4270,6 +4318,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
         """
         return pulumi.get(self, "timestamp")
+
+    @property
+    @pulumi.getter(name="totalBackupStorageSizeInGbs")
+    def total_backup_storage_size_in_gbs(self) -> pulumi.Output[float]:
+        """
+        The backup storage to the database.
+        """
+        return pulumi.get(self, "total_backup_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")

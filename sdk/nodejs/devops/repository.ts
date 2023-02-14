@@ -132,7 +132,7 @@ export class Repository extends pulumi.CustomResource {
      */
     public /*out*/ readonly projectName!: pulumi.Output<string>;
     /**
-     * (Updatable) Type of repository.
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
      */
     public readonly repositoryType!: pulumi.Output<string>;
     /**
@@ -296,7 +296,7 @@ export interface RepositoryState {
      */
     projectName?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of repository.
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
      */
     repositoryType?: pulumi.Input<string>;
     /**
@@ -362,7 +362,7 @@ export interface RepositoryArgs {
      */
     projectId: pulumi.Input<string>;
     /**
-     * (Updatable) Type of repository.
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
      */
     repositoryType: pulumi.Input<string>;
 }

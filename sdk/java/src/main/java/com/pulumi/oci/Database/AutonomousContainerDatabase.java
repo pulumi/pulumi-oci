@@ -73,7 +73,9 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .compartmentId(var_.compartment_id())
  *             .dbUniqueName(var_.autonomous_container_database_db_unique_name())
+ *             .dbVersion(var_.autonomous_container_database_db_version())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .fastStartFailOverLagLimitInSeconds(var_.autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isAutomaticFailoverEnabled(var_.autonomous_container_database_is_automatic_failover_enabled())
  *             .keyStoreId(oci_database_key_store.test_key_store().id())
@@ -112,6 +114,7 @@ import javax.annotation.Nullable;
  *             .peerDbUniqueName(var_.autonomous_container_database_peer_db_unique_name())
  *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
  *             .vaultId(oci_kms_vault.test_vault().id())
+ *             .versionPreference(var_.autonomous_container_database_version_preference())
  *             .standbyMaintenanceBufferInDays(var_.autonomous_container_database_standby_maintenance_buffer_in_days())
  *             .build());
  * 
@@ -241,14 +244,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.dbUniqueName;
     }
     /**
-     * Oracle Database version of the Autonomous Container Database.
+     * The base version for the Autonomous Container Database.
      * 
      */
     @Export(name="dbVersion", type=String.class, parameters={})
     private Output<String> dbVersion;
 
     /**
-     * @return Oracle Database version of the Autonomous Container Database.
+     * @return The base version for the Autonomous Container Database.
      * 
      */
     public Output<String> dbVersion() {
@@ -283,6 +286,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.displayName;
     }
     /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    @Export(name="fastStartFailOverLagLimitInSeconds", type=Integer.class, parameters={})
+    private Output<Integer> fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    public Output<Integer> fastStartFailOverLagLimitInSeconds() {
+        return this.fastStartFailOverLagLimitInSeconds;
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -311,14 +328,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.infrastructureType;
     }
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     @Export(name="isAutomaticFailoverEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     public Output<Boolean> isAutomaticFailoverEnabled() {
@@ -701,6 +718,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.timeCreated;
     }
     /**
+     * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     * 
+     */
+    @Export(name="timeSnapshotStandbyRevert", type=String.class, parameters={})
+    private Output<String> timeSnapshotStandbyRevert;
+
+    /**
+     * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     * 
+     */
+    public Output<String> timeSnapshotStandbyRevert() {
+        return this.timeSnapshotStandbyRevert;
+    }
+    /**
      * The number of CPU cores allocated to the Autonomous VM cluster.
      * 
      */
@@ -727,6 +758,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> vaultId() {
         return this.vaultId;
+    }
+    /**
+     * (Updatable) The next maintenance version preference.
+     * 
+     */
+    @Export(name="versionPreference", type=String.class, parameters={})
+    private Output<String> versionPreference;
+
+    /**
+     * @return (Updatable) The next maintenance version preference.
+     * 
+     */
+    public Output<String> versionPreference() {
+        return this.versionPreference;
     }
 
     /**

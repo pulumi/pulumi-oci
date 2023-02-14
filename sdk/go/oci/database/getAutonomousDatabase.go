@@ -75,6 +75,8 @@ type LookupAutonomousDatabaseResult struct {
 	AvailableUpgradeVersions []string `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs []GetAutonomousDatabaseBackupConfig `pulumi:"backupConfigs"`
+	// Retention period, in days, for backups.
+	BackupRetentionPeriodInDays int `pulumi:"backupRetentionPeriodInDays"`
 	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
 	CharacterSet string `pulumi:"characterSet"`
 	CloneType    string `pulumi:"cloneType"`
@@ -252,9 +254,11 @@ type LookupAutonomousDatabaseResult struct {
 	// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
 	TimeReclamationOfFreeAutonomousDatabase string `pulumi:"timeReclamationOfFreeAutonomousDatabase"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
-	TimeUntilReconnectCloneEnabled    string `pulumi:"timeUntilReconnectCloneEnabled"`
-	Timestamp                         string `pulumi:"timestamp"`
-	UseLatestAvailableBackupTimeStamp bool   `pulumi:"useLatestAvailableBackupTimeStamp"`
+	TimeUntilReconnectCloneEnabled string `pulumi:"timeUntilReconnectCloneEnabled"`
+	Timestamp                      string `pulumi:"timestamp"`
+	// The backup storage to the database.
+	TotalBackupStorageSizeInGbs       float64 `pulumi:"totalBackupStorageSizeInGbs"`
+	UseLatestAvailableBackupTimeStamp bool    `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -351,6 +355,11 @@ func (o LookupAutonomousDatabaseResultOutput) AvailableUpgradeVersions() pulumi.
 // Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 func (o LookupAutonomousDatabaseResultOutput) BackupConfigs() GetAutonomousDatabaseBackupConfigArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseBackupConfig { return v.BackupConfigs }).(GetAutonomousDatabaseBackupConfigArrayOutput)
+}
+
+// Retention period, in days, for backups.
+func (o LookupAutonomousDatabaseResultOutput) BackupRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.BackupRetentionPeriodInDays }).(pulumi.IntOutput)
 }
 
 // The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -814,6 +823,11 @@ func (o LookupAutonomousDatabaseResultOutput) TimeUntilReconnectCloneEnabled() p
 
 func (o LookupAutonomousDatabaseResultOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+// The backup storage to the database.
+func (o LookupAutonomousDatabaseResultOutput) TotalBackupStorageSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.TotalBackupStorageSizeInGbs }).(pulumi.Float64Output)
 }
 
 func (o LookupAutonomousDatabaseResultOutput) UseLatestAvailableBackupTimeStamp() pulumi.BoolOutput {

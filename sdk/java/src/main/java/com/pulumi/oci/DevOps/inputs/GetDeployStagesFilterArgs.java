@@ -17,9 +17,17 @@ public final class GetDeployStagesFilterArgs extends com.pulumi.resources.Resour
 
     public static final GetDeployStagesFilterArgs Empty = new GetDeployStagesFilterArgs();
 
+    /**
+     * Name of the parameter (case-sensitive).
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return Name of the parameter (case-sensitive).
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
@@ -64,11 +72,23 @@ public final class GetDeployStagesFilterArgs extends com.pulumi.resources.Resour
             $ = new GetDeployStagesFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of the parameter (case-sensitive).
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name Name of the parameter (case-sensitive).
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

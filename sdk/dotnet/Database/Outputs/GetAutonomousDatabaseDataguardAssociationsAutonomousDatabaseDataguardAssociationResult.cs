@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         /// </summary>
         public readonly bool IsAutomaticFailoverEnabled;
         /// <summary>

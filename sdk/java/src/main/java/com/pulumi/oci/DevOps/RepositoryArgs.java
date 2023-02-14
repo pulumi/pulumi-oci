@@ -124,14 +124,14 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Type of repository.
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
      * 
      */
     @Import(name="repositoryType", required=true)
     private Output<String> repositoryType;
 
     /**
-     * @return (Updatable) Type of repository.
+     * @return (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
      * 
      */
     public Output<String> repositoryType() {
@@ -317,7 +317,7 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param repositoryType (Updatable) Type of repository.
+         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param repositoryType (Updatable) Type of repository.
+         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
          * 
          * @return builder
          * 

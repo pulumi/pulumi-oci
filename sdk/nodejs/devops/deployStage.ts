@@ -52,6 +52,10 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly approvalPolicy!: pulumi.Output<outputs.DevOps.DeployStageApprovalPolicy>;
     /**
+     * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+     */
+    public readonly areHooksEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) Collection of backend environment IP addresses.
      */
     public readonly blueBackendIps!: pulumi.Output<outputs.DevOps.DeployStageBlueBackendIps>;
@@ -172,6 +176,14 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly isAsync!: pulumi.Output<boolean>;
     /**
+     * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     */
+    public readonly isDebugEnabled!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+     */
+    public readonly isForceEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      */
     public readonly isValidationEnabled!: pulumi.Output<boolean>;
@@ -187,6 +199,10 @@ export class DeployStage extends pulumi.CustomResource {
      * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      */
     public readonly loadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageLoadBalancerConfig>;
+    /**
+     * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     */
+    public readonly maxHistory!: pulumi.Output<number>;
     /**
      * (Updatable) Maximum usable memory for the Function (in MB).
      */
@@ -232,6 +248,38 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly rolloutPolicy!: pulumi.Output<outputs.DevOps.DeployStageRolloutPolicy>;
     /**
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     */
+    public readonly setString!: pulumi.Output<outputs.DevOps.DeployStageSetString>;
+    /**
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     */
+    public readonly setValues!: pulumi.Output<outputs.DevOps.DeployStageSetValues>;
+    /**
+     * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     */
+    public readonly shouldCleanupOnFail!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     */
+    public readonly shouldNotWait!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     */
+    public readonly shouldResetValues!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     */
+    public readonly shouldReuseValues!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     */
+    public readonly shouldSkipCrds!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+     */
+    public readonly shouldSkipRenderSubchartNotes!: pulumi.Output<boolean>;
+    /**
      * The current state of the deployment stage.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -240,7 +288,7 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
     public readonly testLoadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageTestLoadBalancerConfig>;
     /**
@@ -282,6 +330,7 @@ export class DeployStage extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DeployStageState | undefined;
             resourceInputs["approvalPolicy"] = state ? state.approvalPolicy : undefined;
+            resourceInputs["areHooksEnabled"] = state ? state.areHooksEnabled : undefined;
             resourceInputs["blueBackendIps"] = state ? state.blueBackendIps : undefined;
             resourceInputs["blueGreenStrategy"] = state ? state.blueGreenStrategy : undefined;
             resourceInputs["canaryStrategy"] = state ? state.canaryStrategy : undefined;
@@ -312,10 +361,13 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["greenBackendIps"] = state ? state.greenBackendIps : undefined;
             resourceInputs["helmChartDeployArtifactId"] = state ? state.helmChartDeployArtifactId : undefined;
             resourceInputs["isAsync"] = state ? state.isAsync : undefined;
+            resourceInputs["isDebugEnabled"] = state ? state.isDebugEnabled : undefined;
+            resourceInputs["isForceEnabled"] = state ? state.isForceEnabled : undefined;
             resourceInputs["isValidationEnabled"] = state ? state.isValidationEnabled : undefined;
             resourceInputs["kubernetesManifestDeployArtifactIds"] = state ? state.kubernetesManifestDeployArtifactIds : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["loadBalancerConfig"] = state ? state.loadBalancerConfig : undefined;
+            resourceInputs["maxHistory"] = state ? state.maxHistory : undefined;
             resourceInputs["maxMemoryInMbs"] = state ? state.maxMemoryInMbs : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["okeBlueGreenDeployStageId"] = state ? state.okeBlueGreenDeployStageId : undefined;
@@ -327,6 +379,14 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["releaseName"] = state ? state.releaseName : undefined;
             resourceInputs["rollbackPolicy"] = state ? state.rollbackPolicy : undefined;
             resourceInputs["rolloutPolicy"] = state ? state.rolloutPolicy : undefined;
+            resourceInputs["setString"] = state ? state.setString : undefined;
+            resourceInputs["setValues"] = state ? state.setValues : undefined;
+            resourceInputs["shouldCleanupOnFail"] = state ? state.shouldCleanupOnFail : undefined;
+            resourceInputs["shouldNotWait"] = state ? state.shouldNotWait : undefined;
+            resourceInputs["shouldResetValues"] = state ? state.shouldResetValues : undefined;
+            resourceInputs["shouldReuseValues"] = state ? state.shouldReuseValues : undefined;
+            resourceInputs["shouldSkipCrds"] = state ? state.shouldSkipCrds : undefined;
+            resourceInputs["shouldSkipRenderSubchartNotes"] = state ? state.shouldSkipRenderSubchartNotes : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["testLoadBalancerConfig"] = state ? state.testLoadBalancerConfig : undefined;
@@ -348,6 +408,7 @@ export class DeployStage extends pulumi.CustomResource {
                 throw new Error("Missing required property 'deployStageType'");
             }
             resourceInputs["approvalPolicy"] = args ? args.approvalPolicy : undefined;
+            resourceInputs["areHooksEnabled"] = args ? args.areHooksEnabled : undefined;
             resourceInputs["blueBackendIps"] = args ? args.blueBackendIps : undefined;
             resourceInputs["blueGreenStrategy"] = args ? args.blueGreenStrategy : undefined;
             resourceInputs["canaryStrategy"] = args ? args.canaryStrategy : undefined;
@@ -377,9 +438,12 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["greenBackendIps"] = args ? args.greenBackendIps : undefined;
             resourceInputs["helmChartDeployArtifactId"] = args ? args.helmChartDeployArtifactId : undefined;
             resourceInputs["isAsync"] = args ? args.isAsync : undefined;
+            resourceInputs["isDebugEnabled"] = args ? args.isDebugEnabled : undefined;
+            resourceInputs["isForceEnabled"] = args ? args.isForceEnabled : undefined;
             resourceInputs["isValidationEnabled"] = args ? args.isValidationEnabled : undefined;
             resourceInputs["kubernetesManifestDeployArtifactIds"] = args ? args.kubernetesManifestDeployArtifactIds : undefined;
             resourceInputs["loadBalancerConfig"] = args ? args.loadBalancerConfig : undefined;
+            resourceInputs["maxHistory"] = args ? args.maxHistory : undefined;
             resourceInputs["maxMemoryInMbs"] = args ? args.maxMemoryInMbs : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["okeBlueGreenDeployStageId"] = args ? args.okeBlueGreenDeployStageId : undefined;
@@ -390,6 +454,14 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["releaseName"] = args ? args.releaseName : undefined;
             resourceInputs["rollbackPolicy"] = args ? args.rollbackPolicy : undefined;
             resourceInputs["rolloutPolicy"] = args ? args.rolloutPolicy : undefined;
+            resourceInputs["setString"] = args ? args.setString : undefined;
+            resourceInputs["setValues"] = args ? args.setValues : undefined;
+            resourceInputs["shouldCleanupOnFail"] = args ? args.shouldCleanupOnFail : undefined;
+            resourceInputs["shouldNotWait"] = args ? args.shouldNotWait : undefined;
+            resourceInputs["shouldResetValues"] = args ? args.shouldResetValues : undefined;
+            resourceInputs["shouldReuseValues"] = args ? args.shouldReuseValues : undefined;
+            resourceInputs["shouldSkipCrds"] = args ? args.shouldSkipCrds : undefined;
+            resourceInputs["shouldSkipRenderSubchartNotes"] = args ? args.shouldSkipRenderSubchartNotes : undefined;
             resourceInputs["testLoadBalancerConfig"] = args ? args.testLoadBalancerConfig : undefined;
             resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
             resourceInputs["trafficShiftTarget"] = args ? args.trafficShiftTarget : undefined;
@@ -416,6 +488,10 @@ export interface DeployStageState {
      * (Updatable) Specifies the approval policy.
      */
     approvalPolicy?: pulumi.Input<inputs.DevOps.DeployStageApprovalPolicy>;
+    /**
+     * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+     */
+    areHooksEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) Collection of backend environment IP addresses.
      */
@@ -537,6 +613,14 @@ export interface DeployStageState {
      */
     isAsync?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     */
+    isDebugEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+     */
+    isForceEnabled?: pulumi.Input<boolean>;
+    /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      */
     isValidationEnabled?: pulumi.Input<boolean>;
@@ -552,6 +636,10 @@ export interface DeployStageState {
      * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      */
     loadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageLoadBalancerConfig>;
+    /**
+     * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     */
+    maxHistory?: pulumi.Input<number>;
     /**
      * (Updatable) Maximum usable memory for the Function (in MB).
      */
@@ -597,6 +685,38 @@ export interface DeployStageState {
      */
     rolloutPolicy?: pulumi.Input<inputs.DevOps.DeployStageRolloutPolicy>;
     /**
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     */
+    setString?: pulumi.Input<inputs.DevOps.DeployStageSetString>;
+    /**
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     */
+    setValues?: pulumi.Input<inputs.DevOps.DeployStageSetValues>;
+    /**
+     * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     */
+    shouldCleanupOnFail?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     */
+    shouldNotWait?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     */
+    shouldResetValues?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     */
+    shouldReuseValues?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     */
+    shouldSkipCrds?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+     */
+    shouldSkipRenderSubchartNotes?: pulumi.Input<boolean>;
+    /**
      * The current state of the deployment stage.
      */
     state?: pulumi.Input<string>;
@@ -605,7 +725,7 @@ export interface DeployStageState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
     testLoadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageTestLoadBalancerConfig>;
     /**
@@ -642,6 +762,10 @@ export interface DeployStageArgs {
      * (Updatable) Specifies the approval policy.
      */
     approvalPolicy?: pulumi.Input<inputs.DevOps.DeployStageApprovalPolicy>;
+    /**
+     * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+     */
+    areHooksEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) Collection of backend environment IP addresses.
      */
@@ -759,6 +883,14 @@ export interface DeployStageArgs {
      */
     isAsync?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     */
+    isDebugEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+     */
+    isForceEnabled?: pulumi.Input<boolean>;
+    /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      */
     isValidationEnabled?: pulumi.Input<boolean>;
@@ -770,6 +902,10 @@ export interface DeployStageArgs {
      * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      */
     loadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageLoadBalancerConfig>;
+    /**
+     * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     */
+    maxHistory?: pulumi.Input<number>;
     /**
      * (Updatable) Maximum usable memory for the Function (in MB).
      */
@@ -811,7 +947,39 @@ export interface DeployStageArgs {
      */
     rolloutPolicy?: pulumi.Input<inputs.DevOps.DeployStageRolloutPolicy>;
     /**
-     * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     */
+    setString?: pulumi.Input<inputs.DevOps.DeployStageSetString>;
+    /**
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     */
+    setValues?: pulumi.Input<inputs.DevOps.DeployStageSetValues>;
+    /**
+     * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     */
+    shouldCleanupOnFail?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     */
+    shouldNotWait?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     */
+    shouldResetValues?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     */
+    shouldReuseValues?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     */
+    shouldSkipCrds?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+     */
+    shouldSkipRenderSubchartNotes?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
     testLoadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageTestLoadBalancerConfig>;
     /**

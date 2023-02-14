@@ -2290,10 +2290,20 @@ func Provider() tfbridge.ProviderInfo {
 	}
 
 	capMap := map[string]string{
-		"datascience": dataScienceMod,
+		"datascience":        dataScienceMod,
+		"database":           databaseMod,
+		"databasemanagement": databaseManagementMod,
+		"databasemigration":  databaseMigrationMod,
+		"databasetools":      databaseToolsMod,
+		"opsi":               opsiMod,
 	}
 	prov.ComputeDefaults(tfbridge.TokensKnownModules("oci_", "", []string{
 		"datascience_",
+		"database_",
+		"database_management_",
+		"database_tools_",
+		"database_migration_",
+		"opsi_",
 	}, func(module, name string) (string, error) {
 		mod, ok := capMap[module]
 		if !ok {

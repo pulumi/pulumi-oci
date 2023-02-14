@@ -23,6 +23,7 @@ public final class DeploymentDeployArtifactOverrideArgumentsItem {
     private @Nullable String name;
     /**
      * @return value of the argument.
+     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
      * 
      */
     private @Nullable String value;
@@ -44,6 +45,7 @@ public final class DeploymentDeployArtifactOverrideArgumentsItem {
     }
     /**
      * @return value of the argument.
+     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
      * 
      */
     public Optional<String> value() {

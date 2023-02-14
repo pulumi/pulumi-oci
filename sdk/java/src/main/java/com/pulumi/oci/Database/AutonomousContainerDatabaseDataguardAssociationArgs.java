@@ -6,6 +6,7 @@ package com.pulumi.oci.Database;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -47,18 +48,48 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
     }
 
     /**
-     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    @Import(name="fastStartFailOverLagLimitInSeconds")
+    private @Nullable Output<Integer> fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * @return (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    public Optional<Output<Integer>> fastStartFailOverLagLimitInSeconds() {
+        return Optional.ofNullable(this.fastStartFailOverLagLimitInSeconds);
+    }
+
+    /**
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
      */
     @Import(name="isAutomaticFailoverEnabled")
     private @Nullable Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
      */
     public Optional<Output<Boolean>> isAutomaticFailoverEnabled() {
         return Optional.ofNullable(this.isAutomaticFailoverEnabled);
+    }
+
+    /**
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    @Import(name="protectionMode")
+    private @Nullable Output<String> protectionMode;
+
+    /**
+     * @return (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    public Optional<Output<String>> protectionMode() {
+        return Optional.ofNullable(this.protectionMode);
     }
 
     private AutonomousContainerDatabaseDataguardAssociationArgs() {}
@@ -66,7 +97,9 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
     private AutonomousContainerDatabaseDataguardAssociationArgs(AutonomousContainerDatabaseDataguardAssociationArgs $) {
         this.autonomousContainerDatabaseDataguardAssociationId = $.autonomousContainerDatabaseDataguardAssociationId;
         this.autonomousContainerDatabaseId = $.autonomousContainerDatabaseId;
+        this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
+        this.protectionMode = $.protectionMode;
     }
 
     public static Builder builder() {
@@ -130,7 +163,28 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         }
 
         /**
-         * @param isAutomaticFailoverEnabled (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * @param fastStartFailOverLagLimitInSeconds (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(@Nullable Output<Integer> fastStartFailOverLagLimitInSeconds) {
+            $.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            return this;
+        }
+
+        /**
+         * @param fastStartFailOverLagLimitInSeconds (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
+            return fastStartFailOverLagLimitInSeconds(Output.of(fastStartFailOverLagLimitInSeconds));
+        }
+
+        /**
+         * @param isAutomaticFailoverEnabled (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
          * 
          * @return builder
          * 
@@ -141,13 +195,34 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         }
 
         /**
-         * @param isAutomaticFailoverEnabled (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * @param isAutomaticFailoverEnabled (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
          * 
          * @return builder
          * 
          */
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             return isAutomaticFailoverEnabled(Output.of(isAutomaticFailoverEnabled));
+        }
+
+        /**
+         * @param protectionMode (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protectionMode(@Nullable Output<String> protectionMode) {
+            $.protectionMode = protectionMode;
+            return this;
+        }
+
+        /**
+         * @param protectionMode (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protectionMode(String protectionMode) {
+            return protectionMode(Output.of(protectionMode));
         }
 
         public AutonomousContainerDatabaseDataguardAssociationArgs build() {

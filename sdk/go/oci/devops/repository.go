@@ -98,7 +98,7 @@ type Repository struct {
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// Unique project name in a namespace.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// (Updatable) Type of repository.
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
 	RepositoryType pulumi.StringOutput `pulumi:"repositoryType"`
 	// The size of the repository in bytes.
 	SizeInBytes pulumi.StringOutput `pulumi:"sizeInBytes"`
@@ -179,7 +179,7 @@ type repositoryState struct {
 	ProjectId *string `pulumi:"projectId"`
 	// Unique project name in a namespace.
 	ProjectName *string `pulumi:"projectName"`
-	// (Updatable) Type of repository.
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
 	RepositoryType *string `pulumi:"repositoryType"`
 	// The size of the repository in bytes.
 	SizeInBytes *string `pulumi:"sizeInBytes"`
@@ -226,7 +226,7 @@ type RepositoryState struct {
 	ProjectId pulumi.StringPtrInput
 	// Unique project name in a namespace.
 	ProjectName pulumi.StringPtrInput
-	// (Updatable) Type of repository.
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
 	RepositoryType pulumi.StringPtrInput
 	// The size of the repository in bytes.
 	SizeInBytes pulumi.StringPtrInput
@@ -263,7 +263,7 @@ type repositoryArgs struct {
 	Name *string `pulumi:"name"`
 	// The OCID of the DevOps project containing the repository.
 	ProjectId string `pulumi:"projectId"`
-	// (Updatable) Type of repository.
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
 	RepositoryType string `pulumi:"repositoryType"`
 }
 
@@ -283,7 +283,7 @@ type RepositoryArgs struct {
 	Name pulumi.StringPtrInput
 	// The OCID of the DevOps project containing the repository.
 	ProjectId pulumi.StringInput
-	// (Updatable) Type of repository.
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
 	RepositoryType pulumi.StringInput
 }
 
@@ -444,7 +444,7 @@ func (o RepositoryOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Type of repository.
+// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
 func (o RepositoryOutput) RepositoryType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.RepositoryType }).(pulumi.StringOutput)
 }

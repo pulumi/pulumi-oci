@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDeployStagesDeployStageCollectionItemBlueBackendIp {
     /**
-     * @return The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * @return List of parameters defined to set helm value.
      * 
      */
     private List<String> items;
 
     private GetDeployStagesDeployStageCollectionItemBlueBackendIp() {}
     /**
-     * @return The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * @return List of parameters defined to set helm value.
      * 
      */
     public List<String> items() {

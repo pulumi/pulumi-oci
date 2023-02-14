@@ -19011,6 +19011,18 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetAutonomousContainerDatabaseVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutonomousContainerDatabaseVersionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetAutonomousContainerDatabasesFilter {
         /**
          * Name of the month of the year.
@@ -21730,6 +21742,10 @@ export namespace DevOps {
          */
         deployArtifactVersion?: pulumi.Input<string>;
         /**
+         * (Updatable) The source of the verification material.
+         */
+        helmVerificationKeySource?: pulumi.Input<inputs.DevOps.DeployArtifactDeployArtifactSourceHelmVerificationKeySource>;
+        /**
          * (Updatable) Specifies image digest for the version of the image.
          */
         imageDigest?: pulumi.Input<string>;
@@ -21741,6 +21757,25 @@ export namespace DevOps {
          * (Updatable) The OCID of a repository
          */
         repositoryId?: pulumi.Input<string>;
+    }
+
+    export interface DeployArtifactDeployArtifactSourceHelmVerificationKeySource {
+        /**
+         * (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+         */
+        currentPublicKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+         */
+        previousPublicKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the Vault Secret containing the verification key versions.
+         */
+        vaultSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies type of verification material.
+         */
+        verificationKeySourceType: pulumi.Input<string>;
     }
 
     export interface DeployEnvironmentComputeInstanceGroupSelectors {
@@ -21899,7 +21934,7 @@ export namespace DevOps {
 
     export interface DeployStageBlueBackendIps {
         /**
-         * (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+         * (Updatable) List of parameters defined to set helm value.
          */
         items?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -21993,7 +22028,7 @@ export namespace DevOps {
 
     export interface DeployStageDeployStagePredecessorCollection {
         /**
-         * (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+         * (Updatable) List of parameters defined to set helm value.
          */
         items: pulumi.Input<pulumi.Input<inputs.DevOps.DeployStageDeployStagePredecessorCollectionItem>[]>;
     }
@@ -22022,7 +22057,7 @@ export namespace DevOps {
 
     export interface DeployStageGreenBackendIps {
         /**
-         * (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+         * (Updatable) List of parameters defined to set helm value.
          */
         items?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -22095,6 +22130,42 @@ export namespace DevOps {
         rampLimitPercent?: pulumi.Input<number>;
     }
 
+    export interface DeployStageSetString {
+        /**
+         * (Updatable) List of parameters defined to set helm value.
+         */
+        items?: pulumi.Input<pulumi.Input<inputs.DevOps.DeployStageSetStringItem>[]>;
+    }
+
+    export interface DeployStageSetStringItem {
+        /**
+         * (Updatable) Name of the parameter (case-sensitive).
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the parameter.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DeployStageSetValues {
+        /**
+         * (Updatable) List of parameters defined to set helm value.
+         */
+        items?: pulumi.Input<pulumi.Input<inputs.DevOps.DeployStageSetValuesItem>[]>;
+    }
+
+    export interface DeployStageSetValuesItem {
+        /**
+         * (Updatable) Name of the parameter (case-sensitive).
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the parameter.
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface DeployStageTestLoadBalancerConfig {
         /**
          * (Updatable) Listen port for the backend server.
@@ -22143,6 +22214,7 @@ export namespace DevOps {
         name?: pulumi.Input<string>;
         /**
          * value of the argument.
+         * *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
          */
         value?: pulumi.Input<string>;
     }
@@ -22245,6 +22317,7 @@ export namespace DevOps {
         name?: pulumi.Input<string>;
         /**
          * value of the argument.
+         * *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
          */
         value?: pulumi.Input<string>;
     }
@@ -22263,6 +22336,7 @@ export namespace DevOps {
         name?: pulumi.Input<string>;
         /**
          * value of the argument.
+         * *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
          */
         value?: pulumi.Input<string>;
     }
@@ -22391,12 +22465,18 @@ export namespace DevOps {
     }
 
     export interface GetDeployStagesFilter {
+        /**
+         * Name of the parameter (case-sensitive).
+         */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
     export interface GetDeployStagesFilterArgs {
+        /**
+         * Name of the parameter (case-sensitive).
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -30374,6 +30454,107 @@ export namespace Opsi {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetOpsiConfigurationsFilter {
+        /**
+         * Name of configuration item.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOpsiConfigurationsFilterArgs {
+        /**
+         * Name of configuration item.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface OpsiConfigurationConfigItem {
+        /**
+         * List of contexts in Operations Insights where this configuration item is applicable.
+         */
+        applicableContexts?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Type of configuration item.
+         */
+        configItemType: pulumi.Input<string>;
+        /**
+         * Value of configuration item.
+         */
+        defaultValue?: pulumi.Input<string>;
+        /**
+         * Configuration item metadata.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.Opsi.OpsiConfigurationConfigItemMetadata>[]>;
+        /**
+         * (Updatable) Name of configuration item.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of configuration item.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface OpsiConfigurationConfigItemMetadata {
+        /**
+         * (Updatable) Type of configuration item.
+         */
+        configItemType?: pulumi.Input<string>;
+        /**
+         * Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+         */
+        dataType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Description of OPSI configuration.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Unit details of configuration item.
+         */
+        unitDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.OpsiConfigurationConfigItemMetadataUnitDetail>[]>;
+        /**
+         * Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+         */
+        valueInputDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.OpsiConfigurationConfigItemMetadataValueInputDetail>[]>;
+    }
+
+    export interface OpsiConfigurationConfigItemMetadataUnitDetail {
+        /**
+         * (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Unit of configuration item.
+         */
+        unit?: pulumi.Input<string>;
+    }
+
+    export interface OpsiConfigurationConfigItemMetadataValueInputDetail {
+        /**
+         * Allowed value type of configuration item.
+         */
+        allowedValueType?: pulumi.Input<string>;
+        /**
+         * Maximum value limit for the configuration item.
+         */
+        maxValue?: pulumi.Input<string>;
+        /**
+         * Minimum value limit for the configuration item.
+         */
+        minValue?: pulumi.Input<string>;
+        /**
+         * Allowed values to pick for the configuration item.
+         */
+        possibleValues?: pulumi.Input<pulumi.Input<string>[]>;
+    }
 }
 
 export namespace Optimizer {

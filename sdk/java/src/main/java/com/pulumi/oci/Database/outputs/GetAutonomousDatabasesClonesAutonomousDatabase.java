@@ -65,6 +65,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs;
     /**
+     * @return Retention period, in days, for backups.
+     * 
+     */
+    private Integer backupRetentionPeriodInDays;
+    /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
      * 
      */
@@ -470,6 +475,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String timeUntilReconnectCloneEnabled;
     /**
+     * @return The backup storage to the database.
+     * 
+     */
+    private Double totalBackupStorageSizeInGbs;
+    /**
      * @return The amount of storage that has been used, in terabytes.
      * 
      */
@@ -541,6 +551,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs() {
         return this.backupConfigs;
+    }
+    /**
+     * @return Retention period, in days, for backups.
+     * 
+     */
+    public Integer backupRetentionPeriodInDays() {
+        return this.backupRetentionPeriodInDays;
     }
     /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -1108,6 +1125,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.timeUntilReconnectCloneEnabled;
     }
     /**
+     * @return The backup storage to the database.
+     * 
+     */
+    public Double totalBackupStorageSizeInGbs() {
+        return this.totalBackupStorageSizeInGbs;
+    }
+    /**
      * @return The amount of storage that has been used, in terabytes.
      * 
      */
@@ -1146,6 +1170,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String autonomousMaintenanceScheduleType;
         private List<String> availableUpgradeVersions;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs;
+        private Integer backupRetentionPeriodInDays;
         private String characterSet;
         private String compartmentId;
         private Double computeCount;
@@ -1226,6 +1251,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String timeOfNextRefresh;
         private String timeReclamationOfFreeAutonomousDatabase;
         private String timeUntilReconnectCloneEnabled;
+        private Double totalBackupStorageSizeInGbs;
         private Integer usedDataStorageSizeInTbs;
         private String vaultId;
         private List<String> whitelistedIps;
@@ -1240,6 +1266,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.autonomousMaintenanceScheduleType = defaults.autonomousMaintenanceScheduleType;
     	      this.availableUpgradeVersions = defaults.availableUpgradeVersions;
     	      this.backupConfigs = defaults.backupConfigs;
+    	      this.backupRetentionPeriodInDays = defaults.backupRetentionPeriodInDays;
     	      this.characterSet = defaults.characterSet;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
@@ -1320,6 +1347,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.timeOfNextRefresh = defaults.timeOfNextRefresh;
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
+    	      this.totalBackupStorageSizeInGbs = defaults.totalBackupStorageSizeInGbs;
     	      this.usedDataStorageSizeInTbs = defaults.usedDataStorageSizeInTbs;
     	      this.vaultId = defaults.vaultId;
     	      this.whitelistedIps = defaults.whitelistedIps;
@@ -1373,6 +1401,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         }
         public Builder backupConfigs(GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
+        }
+        @CustomType.Setter
+        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
+            this.backupRetentionPeriodInDays = Objects.requireNonNull(backupRetentionPeriodInDays);
+            return this;
         }
         @CustomType.Setter
         public Builder characterSet(String characterSet) {
@@ -1811,6 +1844,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder totalBackupStorageSizeInGbs(Double totalBackupStorageSizeInGbs) {
+            this.totalBackupStorageSizeInGbs = Objects.requireNonNull(totalBackupStorageSizeInGbs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder usedDataStorageSizeInTbs(Integer usedDataStorageSizeInTbs) {
             this.usedDataStorageSizeInTbs = Objects.requireNonNull(usedDataStorageSizeInTbs);
             return this;
@@ -1838,6 +1876,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             o.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
             o.availableUpgradeVersions = availableUpgradeVersions;
             o.backupConfigs = backupConfigs;
+            o.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
             o.characterSet = characterSet;
             o.compartmentId = compartmentId;
             o.computeCount = computeCount;
@@ -1918,6 +1957,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             o.timeOfNextRefresh = timeOfNextRefresh;
             o.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             o.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
+            o.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             o.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             o.vaultId = vaultId;
             o.whitelistedIps = whitelistedIps;

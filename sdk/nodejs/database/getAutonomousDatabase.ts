@@ -80,6 +80,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly backupConfigs: outputs.Database.GetAutonomousDatabaseBackupConfig[];
     /**
+     * Retention period, in days, for backups.
+     */
+    readonly backupRetentionPeriodInDays: number;
+    /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
      */
     readonly characterSet: string;
@@ -422,6 +426,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly timeUntilReconnectCloneEnabled: string;
     readonly timestamp: string;
+    /**
+     * The backup storage to the database.
+     */
+    readonly totalBackupStorageSizeInGbs: number;
     readonly useLatestAvailableBackupTimeStamp: boolean;
     /**
      * The amount of storage that has been used, in terabytes.

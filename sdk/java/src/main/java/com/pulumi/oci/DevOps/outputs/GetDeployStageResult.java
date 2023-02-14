@@ -16,6 +16,8 @@ import com.pulumi.oci.DevOps.outputs.GetDeployStageLoadBalancerConfig;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageProductionLoadBalancerConfig;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageRollbackPolicy;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageRolloutPolicy;
+import com.pulumi.oci.DevOps.outputs.GetDeployStageSetString;
+import com.pulumi.oci.DevOps.outputs.GetDeployStageSetValue;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageTestLoadBalancerConfig;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageWaitCriteria;
 import java.lang.Boolean;
@@ -33,6 +35,11 @@ public final class GetDeployStageResult {
      * 
      */
     private List<GetDeployStageApprovalPolicy> approvalPolicies;
+    /**
+     * @return Disable pre/post upgrade hooks. Set to false by default.
+     * 
+     */
+    private Boolean areHooksEnabled;
     /**
      * @return Collection of backend environment IP addresses.
      * 
@@ -190,6 +197,16 @@ public final class GetDeployStageResult {
      */
     private Boolean isAsync;
     /**
+     * @return Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     * 
+     */
+    private Boolean isDebugEnabled;
+    /**
+     * @return Force resource update through delete; or if required, recreate. Set to false by default.
+     * 
+     */
+    private Boolean isForceEnabled;
+    /**
      * @return A boolean flag specifies whether the invoked function must be validated.
      * 
      */
@@ -209,6 +226,11 @@ public final class GetDeployStageResult {
      * 
      */
     private List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs;
+    /**
+     * @return Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     * 
+     */
+    private Integer maxHistory;
     /**
      * @return Maximum usable memory for the Function (in MB).
      * 
@@ -265,6 +287,46 @@ public final class GetDeployStageResult {
      */
     private List<GetDeployStageRolloutPolicy> rolloutPolicies;
     /**
+     * @return Specifies the name and value pairs to set helm values.
+     * 
+     */
+    private List<GetDeployStageSetString> setStrings;
+    /**
+     * @return Specifies the name and value pairs to set helm values.
+     * 
+     */
+    private List<GetDeployStageSetValue> setValues;
+    /**
+     * @return Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     * 
+     */
+    private Boolean shouldCleanupOnFail;
+    /**
+     * @return Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+     * 
+     */
+    private Boolean shouldNotWait;
+    /**
+     * @return During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     * 
+     */
+    private Boolean shouldResetValues;
+    /**
+     * @return During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     * 
+     */
+    private Boolean shouldReuseValues;
+    /**
+     * @return If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     * 
+     */
+    private Boolean shouldSkipCrds;
+    /**
+     * @return If set, renders subchart notes along with the parent. Set to false by default.
+     * 
+     */
+    private Boolean shouldSkipRenderSubchartNotes;
+    /**
      * @return The current state of the deployment stage.
      * 
      */
@@ -317,6 +379,13 @@ public final class GetDeployStageResult {
      */
     public List<GetDeployStageApprovalPolicy> approvalPolicies() {
         return this.approvalPolicies;
+    }
+    /**
+     * @return Disable pre/post upgrade hooks. Set to false by default.
+     * 
+     */
+    public Boolean areHooksEnabled() {
+        return this.areHooksEnabled;
     }
     /**
      * @return Collection of backend environment IP addresses.
@@ -539,6 +608,20 @@ public final class GetDeployStageResult {
         return this.isAsync;
     }
     /**
+     * @return Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     * 
+     */
+    public Boolean isDebugEnabled() {
+        return this.isDebugEnabled;
+    }
+    /**
+     * @return Force resource update through delete; or if required, recreate. Set to false by default.
+     * 
+     */
+    public Boolean isForceEnabled() {
+        return this.isForceEnabled;
+    }
+    /**
      * @return A boolean flag specifies whether the invoked function must be validated.
      * 
      */
@@ -565,6 +648,13 @@ public final class GetDeployStageResult {
      */
     public List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs() {
         return this.loadBalancerConfigs;
+    }
+    /**
+     * @return Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     * 
+     */
+    public Integer maxHistory() {
+        return this.maxHistory;
     }
     /**
      * @return Maximum usable memory for the Function (in MB).
@@ -644,6 +734,62 @@ public final class GetDeployStageResult {
         return this.rolloutPolicies;
     }
     /**
+     * @return Specifies the name and value pairs to set helm values.
+     * 
+     */
+    public List<GetDeployStageSetString> setStrings() {
+        return this.setStrings;
+    }
+    /**
+     * @return Specifies the name and value pairs to set helm values.
+     * 
+     */
+    public List<GetDeployStageSetValue> setValues() {
+        return this.setValues;
+    }
+    /**
+     * @return Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     * 
+     */
+    public Boolean shouldCleanupOnFail() {
+        return this.shouldCleanupOnFail;
+    }
+    /**
+     * @return Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+     * 
+     */
+    public Boolean shouldNotWait() {
+        return this.shouldNotWait;
+    }
+    /**
+     * @return During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     * 
+     */
+    public Boolean shouldResetValues() {
+        return this.shouldResetValues;
+    }
+    /**
+     * @return During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     * 
+     */
+    public Boolean shouldReuseValues() {
+        return this.shouldReuseValues;
+    }
+    /**
+     * @return If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     * 
+     */
+    public Boolean shouldSkipCrds() {
+        return this.shouldSkipCrds;
+    }
+    /**
+     * @return If set, renders subchart notes along with the parent. Set to false by default.
+     * 
+     */
+    public Boolean shouldSkipRenderSubchartNotes() {
+        return this.shouldSkipRenderSubchartNotes;
+    }
+    /**
      * @return The current state of the deployment stage.
      * 
      */
@@ -717,6 +863,7 @@ public final class GetDeployStageResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetDeployStageApprovalPolicy> approvalPolicies;
+        private Boolean areHooksEnabled;
         private List<GetDeployStageBlueBackendIp> blueBackendIps;
         private List<GetDeployStageBlueGreenStrategy> blueGreenStrategies;
         private List<GetDeployStageCanaryStrategy> canaryStrategies;
@@ -749,10 +896,13 @@ public final class GetDeployStageResult {
         private String helmChartDeployArtifactId;
         private String id;
         private Boolean isAsync;
+        private Boolean isDebugEnabled;
+        private Boolean isForceEnabled;
         private Boolean isValidationEnabled;
         private List<String> kubernetesManifestDeployArtifactIds;
         private String lifecycleDetails;
         private List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs;
+        private Integer maxHistory;
         private String maxMemoryInMbs;
         private String namespace;
         private String okeBlueGreenDeployStageId;
@@ -764,6 +914,14 @@ public final class GetDeployStageResult {
         private String releaseName;
         private List<GetDeployStageRollbackPolicy> rollbackPolicies;
         private List<GetDeployStageRolloutPolicy> rolloutPolicies;
+        private List<GetDeployStageSetString> setStrings;
+        private List<GetDeployStageSetValue> setValues;
+        private Boolean shouldCleanupOnFail;
+        private Boolean shouldNotWait;
+        private Boolean shouldResetValues;
+        private Boolean shouldReuseValues;
+        private Boolean shouldSkipCrds;
+        private Boolean shouldSkipRenderSubchartNotes;
         private String state;
         private Map<String,Object> systemTags;
         private List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs;
@@ -777,6 +935,7 @@ public final class GetDeployStageResult {
         public Builder(GetDeployStageResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approvalPolicies = defaults.approvalPolicies;
+    	      this.areHooksEnabled = defaults.areHooksEnabled;
     	      this.blueBackendIps = defaults.blueBackendIps;
     	      this.blueGreenStrategies = defaults.blueGreenStrategies;
     	      this.canaryStrategies = defaults.canaryStrategies;
@@ -809,10 +968,13 @@ public final class GetDeployStageResult {
     	      this.helmChartDeployArtifactId = defaults.helmChartDeployArtifactId;
     	      this.id = defaults.id;
     	      this.isAsync = defaults.isAsync;
+    	      this.isDebugEnabled = defaults.isDebugEnabled;
+    	      this.isForceEnabled = defaults.isForceEnabled;
     	      this.isValidationEnabled = defaults.isValidationEnabled;
     	      this.kubernetesManifestDeployArtifactIds = defaults.kubernetesManifestDeployArtifactIds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.loadBalancerConfigs = defaults.loadBalancerConfigs;
+    	      this.maxHistory = defaults.maxHistory;
     	      this.maxMemoryInMbs = defaults.maxMemoryInMbs;
     	      this.namespace = defaults.namespace;
     	      this.okeBlueGreenDeployStageId = defaults.okeBlueGreenDeployStageId;
@@ -824,6 +986,14 @@ public final class GetDeployStageResult {
     	      this.releaseName = defaults.releaseName;
     	      this.rollbackPolicies = defaults.rollbackPolicies;
     	      this.rolloutPolicies = defaults.rolloutPolicies;
+    	      this.setStrings = defaults.setStrings;
+    	      this.setValues = defaults.setValues;
+    	      this.shouldCleanupOnFail = defaults.shouldCleanupOnFail;
+    	      this.shouldNotWait = defaults.shouldNotWait;
+    	      this.shouldResetValues = defaults.shouldResetValues;
+    	      this.shouldReuseValues = defaults.shouldReuseValues;
+    	      this.shouldSkipCrds = defaults.shouldSkipCrds;
+    	      this.shouldSkipRenderSubchartNotes = defaults.shouldSkipRenderSubchartNotes;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.testLoadBalancerConfigs = defaults.testLoadBalancerConfigs;
@@ -842,6 +1012,11 @@ public final class GetDeployStageResult {
         }
         public Builder approvalPolicies(GetDeployStageApprovalPolicy... approvalPolicies) {
             return approvalPolicies(List.of(approvalPolicies));
+        }
+        @CustomType.Setter
+        public Builder areHooksEnabled(Boolean areHooksEnabled) {
+            this.areHooksEnabled = Objects.requireNonNull(areHooksEnabled);
+            return this;
         }
         @CustomType.Setter
         public Builder blueBackendIps(List<GetDeployStageBlueBackendIp> blueBackendIps) {
@@ -1028,6 +1203,16 @@ public final class GetDeployStageResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isDebugEnabled(Boolean isDebugEnabled) {
+            this.isDebugEnabled = Objects.requireNonNull(isDebugEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isForceEnabled(Boolean isForceEnabled) {
+            this.isForceEnabled = Objects.requireNonNull(isForceEnabled);
+            return this;
+        }
+        @CustomType.Setter
         public Builder isValidationEnabled(Boolean isValidationEnabled) {
             this.isValidationEnabled = Objects.requireNonNull(isValidationEnabled);
             return this;
@@ -1052,6 +1237,11 @@ public final class GetDeployStageResult {
         }
         public Builder loadBalancerConfigs(GetDeployStageLoadBalancerConfig... loadBalancerConfigs) {
             return loadBalancerConfigs(List.of(loadBalancerConfigs));
+        }
+        @CustomType.Setter
+        public Builder maxHistory(Integer maxHistory) {
+            this.maxHistory = Objects.requireNonNull(maxHistory);
+            return this;
         }
         @CustomType.Setter
         public Builder maxMemoryInMbs(String maxMemoryInMbs) {
@@ -1118,6 +1308,52 @@ public final class GetDeployStageResult {
             return rolloutPolicies(List.of(rolloutPolicies));
         }
         @CustomType.Setter
+        public Builder setStrings(List<GetDeployStageSetString> setStrings) {
+            this.setStrings = Objects.requireNonNull(setStrings);
+            return this;
+        }
+        public Builder setStrings(GetDeployStageSetString... setStrings) {
+            return setStrings(List.of(setStrings));
+        }
+        @CustomType.Setter
+        public Builder setValues(List<GetDeployStageSetValue> setValues) {
+            this.setValues = Objects.requireNonNull(setValues);
+            return this;
+        }
+        public Builder setValues(GetDeployStageSetValue... setValues) {
+            return setValues(List.of(setValues));
+        }
+        @CustomType.Setter
+        public Builder shouldCleanupOnFail(Boolean shouldCleanupOnFail) {
+            this.shouldCleanupOnFail = Objects.requireNonNull(shouldCleanupOnFail);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldNotWait(Boolean shouldNotWait) {
+            this.shouldNotWait = Objects.requireNonNull(shouldNotWait);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldResetValues(Boolean shouldResetValues) {
+            this.shouldResetValues = Objects.requireNonNull(shouldResetValues);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldReuseValues(Boolean shouldReuseValues) {
+            this.shouldReuseValues = Objects.requireNonNull(shouldReuseValues);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldSkipCrds(Boolean shouldSkipCrds) {
+            this.shouldSkipCrds = Objects.requireNonNull(shouldSkipCrds);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldSkipRenderSubchartNotes(Boolean shouldSkipRenderSubchartNotes) {
+            this.shouldSkipRenderSubchartNotes = Objects.requireNonNull(shouldSkipRenderSubchartNotes);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -1174,6 +1410,7 @@ public final class GetDeployStageResult {
         public GetDeployStageResult build() {
             final var o = new GetDeployStageResult();
             o.approvalPolicies = approvalPolicies;
+            o.areHooksEnabled = areHooksEnabled;
             o.blueBackendIps = blueBackendIps;
             o.blueGreenStrategies = blueGreenStrategies;
             o.canaryStrategies = canaryStrategies;
@@ -1206,10 +1443,13 @@ public final class GetDeployStageResult {
             o.helmChartDeployArtifactId = helmChartDeployArtifactId;
             o.id = id;
             o.isAsync = isAsync;
+            o.isDebugEnabled = isDebugEnabled;
+            o.isForceEnabled = isForceEnabled;
             o.isValidationEnabled = isValidationEnabled;
             o.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
             o.lifecycleDetails = lifecycleDetails;
             o.loadBalancerConfigs = loadBalancerConfigs;
+            o.maxHistory = maxHistory;
             o.maxMemoryInMbs = maxMemoryInMbs;
             o.namespace = namespace;
             o.okeBlueGreenDeployStageId = okeBlueGreenDeployStageId;
@@ -1221,6 +1461,14 @@ public final class GetDeployStageResult {
             o.releaseName = releaseName;
             o.rollbackPolicies = rollbackPolicies;
             o.rolloutPolicies = rolloutPolicies;
+            o.setStrings = setStrings;
+            o.setValues = setValues;
+            o.shouldCleanupOnFail = shouldCleanupOnFail;
+            o.shouldNotWait = shouldNotWait;
+            o.shouldResetValues = shouldResetValues;
+            o.shouldReuseValues = shouldReuseValues;
+            o.shouldSkipCrds = shouldSkipCrds;
+            o.shouldSkipRenderSubchartNotes = shouldSkipRenderSubchartNotes;
             o.state = state;
             o.systemTags = systemTags;
             o.testLoadBalancerConfigs = testLoadBalancerConfigs;

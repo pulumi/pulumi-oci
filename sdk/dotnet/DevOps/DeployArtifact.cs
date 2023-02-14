@@ -33,6 +33,13 @@ namespace Pulumi.Oci.DevOps
     ///             ChartUrl = @var.Deploy_artifact_deploy_artifact_source_chart_url,
     ///             DeployArtifactPath = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path,
     ///             DeployArtifactVersion = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version,
+    ///             HelmVerificationKeySource = new Oci.DevOps.Inputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs
+    ///             {
+    ///                 VerificationKeySourceType = @var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
+    ///                 CurrentPublicKey = @var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,
+    ///                 PreviousPublicKey = @var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key,
+    ///                 VaultSecretId = oci_vault_secret.Test_secret.Id,
+    ///             },
     ///             ImageDigest = @var.Deploy_artifact_deploy_artifact_source_image_digest,
     ///             ImageUri = @var.Deploy_artifact_deploy_artifact_source_image_uri,
     ///             RepositoryId = oci_devops_repository.Test_repository.Id,

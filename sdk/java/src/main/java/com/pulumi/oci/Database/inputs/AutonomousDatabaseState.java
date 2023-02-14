@@ -196,6 +196,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * Retention period, in days, for backups.
+     * 
+     */
+    @Import(name="backupRetentionPeriodInDays")
+    private @Nullable Output<Integer> backupRetentionPeriodInDays;
+
+    /**
+     * @return Retention period, in days, for backups.
+     * 
+     */
+    public Optional<Output<Integer>> backupRetentionPeriodInDays() {
+        return Optional.ofNullable(this.backupRetentionPeriodInDays);
+    }
+
+    /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      * 
      */
@@ -1571,6 +1586,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The backup storage to the database.
+     * 
+     */
+    @Import(name="totalBackupStorageSizeInGbs")
+    private @Nullable Output<Double> totalBackupStorageSizeInGbs;
+
+    /**
+     * @return The backup storage to the database.
+     * 
+     */
+    public Optional<Output<Double>> totalBackupStorageSizeInGbs() {
+        return Optional.ofNullable(this.totalBackupStorageSizeInGbs);
+    }
+
+    /**
      * Clone from latest available backup timestamp.
      * 
      */
@@ -1644,6 +1674,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.autonomousMaintenanceScheduleType = $.autonomousMaintenanceScheduleType;
         this.availableUpgradeVersions = $.availableUpgradeVersions;
         this.backupConfigs = $.backupConfigs;
+        this.backupRetentionPeriodInDays = $.backupRetentionPeriodInDays;
         this.characterSet = $.characterSet;
         this.cloneType = $.cloneType;
         this.compartmentId = $.compartmentId;
@@ -1735,6 +1766,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.timeReclamationOfFreeAutonomousDatabase = $.timeReclamationOfFreeAutonomousDatabase;
         this.timeUntilReconnectCloneEnabled = $.timeUntilReconnectCloneEnabled;
         this.timestamp = $.timestamp;
+        this.totalBackupStorageSizeInGbs = $.totalBackupStorageSizeInGbs;
         this.useLatestAvailableBackupTimeStamp = $.useLatestAvailableBackupTimeStamp;
         this.usedDataStorageSizeInTbs = $.usedDataStorageSizeInTbs;
         this.vaultId = $.vaultId;
@@ -2018,6 +2050,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder backupConfigs(AutonomousDatabaseBackupConfigArgs... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
+        }
+
+        /**
+         * @param backupRetentionPeriodInDays Retention period, in days, for backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupRetentionPeriodInDays(@Nullable Output<Integer> backupRetentionPeriodInDays) {
+            $.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            return this;
+        }
+
+        /**
+         * @param backupRetentionPeriodInDays Retention period, in days, for backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
+            return backupRetentionPeriodInDays(Output.of(backupRetentionPeriodInDays));
         }
 
         /**
@@ -4060,6 +4113,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder timestamp(String timestamp) {
             return timestamp(Output.of(timestamp));
+        }
+
+        /**
+         * @param totalBackupStorageSizeInGbs The backup storage to the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalBackupStorageSizeInGbs(@Nullable Output<Double> totalBackupStorageSizeInGbs) {
+            $.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param totalBackupStorageSizeInGbs The backup storage to the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalBackupStorageSizeInGbs(Double totalBackupStorageSizeInGbs) {
+            return totalBackupStorageSizeInGbs(Output.of(totalBackupStorageSizeInGbs));
         }
 
         /**

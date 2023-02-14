@@ -49,6 +49,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult> BackupConfigs;
         /// <summary>
+        /// Retention period, in days, for backups.
+        /// </summary>
+        public readonly int BackupRetentionPeriodInDays;
+        /// <summary>
         /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         /// </summary>
         public readonly string CharacterSet;
@@ -387,6 +391,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeUntilReconnectCloneEnabled;
         public readonly string Timestamp;
+        /// <summary>
+        /// The backup storage to the database.
+        /// </summary>
+        public readonly double TotalBackupStorageSizeInGbs;
         public readonly bool UseLatestAvailableBackupTimeStamp;
         /// <summary>
         /// The amount of storage that has been used, in terabytes.
@@ -424,6 +432,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableArray<string> availableUpgradeVersions,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult> backupConfigs,
+
+            int backupRetentionPeriodInDays,
 
             string characterSet,
 
@@ -609,6 +619,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timestamp,
 
+            double totalBackupStorageSizeInGbs,
+
             bool useLatestAvailableBackupTimeStamp,
 
             int usedDataStorageSizeInTbs,
@@ -628,6 +640,7 @@ namespace Pulumi.Oci.Database.Outputs
             AutonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
             AvailableUpgradeVersions = availableUpgradeVersions;
             BackupConfigs = backupConfigs;
+            BackupRetentionPeriodInDays = backupRetentionPeriodInDays;
             CharacterSet = characterSet;
             CloneType = cloneType;
             CompartmentId = compartmentId;
@@ -720,6 +733,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             Timestamp = timestamp;
+            TotalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             UseLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             UsedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             VaultId = vaultId;

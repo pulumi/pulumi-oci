@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeployStageGreenBackendIps {
     /**
-     * @return (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * @return (Updatable) List of parameters defined to set helm value.
      * 
      */
     private @Nullable List<String> items;
 
     private DeployStageGreenBackendIps() {}
     /**
-     * @return (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * @return (Updatable) List of parameters defined to set helm value.
      * 
      */
     public List<String> items() {

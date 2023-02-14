@@ -41,6 +41,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OperationsInsightsWarehouseRotateWarehouseWallet{}
 	case "oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser":
 		r = &OperationsInsightsWarehouseUser{}
+	case "oci:Opsi/opsiConfiguration:OpsiConfiguration":
+		r = &OpsiConfiguration{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -102,6 +104,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Opsi/operationsInsightsWarehouseUser",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Opsi/opsiConfiguration",
 		&module{version},
 	)
 }

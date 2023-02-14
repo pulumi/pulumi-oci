@@ -16,17 +16,25 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
     def __init__(__self__, *,
                  autonomous_container_database_dataguard_association_id: pulumi.Input[str],
                  autonomous_container_database_id: pulumi.Input[str],
-                 is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None):
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
+                 is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 protection_mode: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabaseDataguardAssociation resource.
         :param pulumi.Input[str] autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        :param pulumi.Input[str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
         pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if is_automatic_failover_enabled is not None:
             pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
@@ -53,16 +61,40 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
         pulumi.set(self, "autonomous_container_database_id", value)
 
     @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "fast_start_fail_over_lag_limit_in_seconds", value)
+
+    @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
     @is_automatic_failover_enabled.setter
     def is_automatic_failover_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_automatic_failover_enabled", value)
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protection_mode", value)
 
 
 @pulumi.input_type
@@ -72,6 +104,7 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
                  apply_rate: Optional[pulumi.Input[str]] = None,
                  autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                  autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
@@ -91,13 +124,14 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
         :param pulumi.Input[str] apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
         :param pulumi.Input[str] autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[str] peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param pulumi.Input[str] peer_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         :param pulumi.Input[str] peer_lifecycle_state: The current state of Autonomous Data Guard.
         :param pulumi.Input[str] peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param pulumi.Input[str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[str] state: The current state of Autonomous Data Guard.
         :param pulumi.Input[str] time_created: The date and time the Autonomous DataGuard association was created.
@@ -113,6 +147,8 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
             pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         if autonomous_container_database_id is not None:
             pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if is_automatic_failover_enabled is not None:
             pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
         if lifecycle_details is not None:
@@ -189,10 +225,22 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
         pulumi.set(self, "autonomous_container_database_id", value)
 
     @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "fast_start_fail_over_lag_limit_in_seconds", value)
+
+    @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -264,7 +312,7 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
         return pulumi.get(self, "protection_mode")
 
@@ -352,7 +400,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                  autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 protection_mode: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
@@ -371,7 +421,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        :param pulumi.Input[str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
         ...
     @overload
@@ -409,7 +461,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                  autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 protection_mode: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -425,7 +479,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             if autonomous_container_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'autonomous_container_database_id'")
             __props__.__dict__["autonomous_container_database_id"] = autonomous_container_database_id
+            __props__.__dict__["fast_start_fail_over_lag_limit_in_seconds"] = fast_start_fail_over_lag_limit_in_seconds
             __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
+            __props__.__dict__["protection_mode"] = protection_mode
             __props__.__dict__["apply_lag"] = None
             __props__.__dict__["apply_rate"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -433,7 +489,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             __props__.__dict__["peer_autonomous_container_database_id"] = None
             __props__.__dict__["peer_lifecycle_state"] = None
             __props__.__dict__["peer_role"] = None
-            __props__.__dict__["protection_mode"] = None
             __props__.__dict__["role"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -454,6 +509,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             apply_rate: Optional[pulumi.Input[str]] = None,
             autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
             autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+            fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             peer_autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
@@ -478,13 +534,14 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
         :param pulumi.Input[str] autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[str] peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param pulumi.Input[str] peer_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         :param pulumi.Input[str] peer_lifecycle_state: The current state of Autonomous Data Guard.
         :param pulumi.Input[str] peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param pulumi.Input[str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[str] state: The current state of Autonomous Data Guard.
         :param pulumi.Input[str] time_created: The date and time the Autonomous DataGuard association was created.
@@ -500,6 +557,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         __props__.__dict__["apply_rate"] = apply_rate
         __props__.__dict__["autonomous_container_database_dataguard_association_id"] = autonomous_container_database_dataguard_association_id
         __props__.__dict__["autonomous_container_database_id"] = autonomous_container_database_id
+        __props__.__dict__["fast_start_fail_over_lag_limit_in_seconds"] = fast_start_fail_over_lag_limit_in_seconds
         __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["peer_autonomous_container_database_dataguard_association_id"] = peer_autonomous_container_database_dataguard_association_id
@@ -548,10 +606,18 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "autonomous_container_database_id")
 
     @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -599,7 +665,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> pulumi.Output[str]:
         """
-        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
         return pulumi.get(self, "protection_mode")
 

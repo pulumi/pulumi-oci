@@ -1260,6 +1260,524 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(pulumi.StringPtrOutput)
 }
 
+type OpsiConfigurationConfigItem struct {
+	// List of contexts in Operations Insights where this configuration item is applicable.
+	ApplicableContexts []string `pulumi:"applicableContexts"`
+	// (Updatable) Type of configuration item.
+	ConfigItemType string `pulumi:"configItemType"`
+	// Value of configuration item.
+	DefaultValue *string `pulumi:"defaultValue"`
+	// Configuration item metadata.
+	Metadatas []OpsiConfigurationConfigItemMetadata `pulumi:"metadatas"`
+	// (Updatable) Name of configuration item.
+	Name *string `pulumi:"name"`
+	// (Updatable) Value of configuration item.
+	Value *string `pulumi:"value"`
+}
+
+// OpsiConfigurationConfigItemInput is an input type that accepts OpsiConfigurationConfigItemArgs and OpsiConfigurationConfigItemOutput values.
+// You can construct a concrete instance of `OpsiConfigurationConfigItemInput` via:
+//
+//	OpsiConfigurationConfigItemArgs{...}
+type OpsiConfigurationConfigItemInput interface {
+	pulumi.Input
+
+	ToOpsiConfigurationConfigItemOutput() OpsiConfigurationConfigItemOutput
+	ToOpsiConfigurationConfigItemOutputWithContext(context.Context) OpsiConfigurationConfigItemOutput
+}
+
+type OpsiConfigurationConfigItemArgs struct {
+	// List of contexts in Operations Insights where this configuration item is applicable.
+	ApplicableContexts pulumi.StringArrayInput `pulumi:"applicableContexts"`
+	// (Updatable) Type of configuration item.
+	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	// Value of configuration item.
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// Configuration item metadata.
+	Metadatas OpsiConfigurationConfigItemMetadataArrayInput `pulumi:"metadatas"`
+	// (Updatable) Name of configuration item.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Value of configuration item.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (OpsiConfigurationConfigItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpsiConfigurationConfigItem)(nil)).Elem()
+}
+
+func (i OpsiConfigurationConfigItemArgs) ToOpsiConfigurationConfigItemOutput() OpsiConfigurationConfigItemOutput {
+	return i.ToOpsiConfigurationConfigItemOutputWithContext(context.Background())
+}
+
+func (i OpsiConfigurationConfigItemArgs) ToOpsiConfigurationConfigItemOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemOutput)
+}
+
+// OpsiConfigurationConfigItemArrayInput is an input type that accepts OpsiConfigurationConfigItemArray and OpsiConfigurationConfigItemArrayOutput values.
+// You can construct a concrete instance of `OpsiConfigurationConfigItemArrayInput` via:
+//
+//	OpsiConfigurationConfigItemArray{ OpsiConfigurationConfigItemArgs{...} }
+type OpsiConfigurationConfigItemArrayInput interface {
+	pulumi.Input
+
+	ToOpsiConfigurationConfigItemArrayOutput() OpsiConfigurationConfigItemArrayOutput
+	ToOpsiConfigurationConfigItemArrayOutputWithContext(context.Context) OpsiConfigurationConfigItemArrayOutput
+}
+
+type OpsiConfigurationConfigItemArray []OpsiConfigurationConfigItemInput
+
+func (OpsiConfigurationConfigItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpsiConfigurationConfigItem)(nil)).Elem()
+}
+
+func (i OpsiConfigurationConfigItemArray) ToOpsiConfigurationConfigItemArrayOutput() OpsiConfigurationConfigItemArrayOutput {
+	return i.ToOpsiConfigurationConfigItemArrayOutputWithContext(context.Background())
+}
+
+func (i OpsiConfigurationConfigItemArray) ToOpsiConfigurationConfigItemArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemArrayOutput)
+}
+
+type OpsiConfigurationConfigItemOutput struct{ *pulumi.OutputState }
+
+func (OpsiConfigurationConfigItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpsiConfigurationConfigItem)(nil)).Elem()
+}
+
+func (o OpsiConfigurationConfigItemOutput) ToOpsiConfigurationConfigItemOutput() OpsiConfigurationConfigItemOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemOutput) ToOpsiConfigurationConfigItemOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemOutput {
+	return o
+}
+
+// List of contexts in Operations Insights where this configuration item is applicable.
+func (o OpsiConfigurationConfigItemOutput) ApplicableContexts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItem) []string { return v.ApplicableContexts }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Type of configuration item.
+func (o OpsiConfigurationConfigItemOutput) ConfigItemType() pulumi.StringOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItem) string { return v.ConfigItemType }).(pulumi.StringOutput)
+}
+
+// Value of configuration item.
+func (o OpsiConfigurationConfigItemOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItem) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
+}
+
+// Configuration item metadata.
+func (o OpsiConfigurationConfigItemOutput) Metadatas() OpsiConfigurationConfigItemMetadataArrayOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItem) []OpsiConfigurationConfigItemMetadata { return v.Metadatas }).(OpsiConfigurationConfigItemMetadataArrayOutput)
+}
+
+// (Updatable) Name of configuration item.
+func (o OpsiConfigurationConfigItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItem) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Value of configuration item.
+func (o OpsiConfigurationConfigItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type OpsiConfigurationConfigItemArrayOutput struct{ *pulumi.OutputState }
+
+func (OpsiConfigurationConfigItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpsiConfigurationConfigItem)(nil)).Elem()
+}
+
+func (o OpsiConfigurationConfigItemArrayOutput) ToOpsiConfigurationConfigItemArrayOutput() OpsiConfigurationConfigItemArrayOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemArrayOutput) ToOpsiConfigurationConfigItemArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemArrayOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationConfigItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpsiConfigurationConfigItem {
+		return vs[0].([]OpsiConfigurationConfigItem)[vs[1].(int)]
+	}).(OpsiConfigurationConfigItemOutput)
+}
+
+type OpsiConfigurationConfigItemMetadata struct {
+	// (Updatable) Type of configuration item.
+	ConfigItemType *string `pulumi:"configItemType"`
+	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+	DataType *string `pulumi:"dataType"`
+	// (Updatable) Description of OPSI configuration.
+	Description *string `pulumi:"description"`
+	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+	DisplayName *string `pulumi:"displayName"`
+	// Unit details of configuration item.
+	UnitDetails []OpsiConfigurationConfigItemMetadataUnitDetail `pulumi:"unitDetails"`
+	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+	ValueInputDetails []OpsiConfigurationConfigItemMetadataValueInputDetail `pulumi:"valueInputDetails"`
+}
+
+// OpsiConfigurationConfigItemMetadataInput is an input type that accepts OpsiConfigurationConfigItemMetadataArgs and OpsiConfigurationConfigItemMetadataOutput values.
+// You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataInput` via:
+//
+//	OpsiConfigurationConfigItemMetadataArgs{...}
+type OpsiConfigurationConfigItemMetadataInput interface {
+	pulumi.Input
+
+	ToOpsiConfigurationConfigItemMetadataOutput() OpsiConfigurationConfigItemMetadataOutput
+	ToOpsiConfigurationConfigItemMetadataOutputWithContext(context.Context) OpsiConfigurationConfigItemMetadataOutput
+}
+
+type OpsiConfigurationConfigItemMetadataArgs struct {
+	// (Updatable) Type of configuration item.
+	ConfigItemType pulumi.StringPtrInput `pulumi:"configItemType"`
+	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+	DataType pulumi.StringPtrInput `pulumi:"dataType"`
+	// (Updatable) Description of OPSI configuration.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Unit details of configuration item.
+	UnitDetails OpsiConfigurationConfigItemMetadataUnitDetailArrayInput `pulumi:"unitDetails"`
+	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+	ValueInputDetails OpsiConfigurationConfigItemMetadataValueInputDetailArrayInput `pulumi:"valueInputDetails"`
+}
+
+func (OpsiConfigurationConfigItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpsiConfigurationConfigItemMetadata)(nil)).Elem()
+}
+
+func (i OpsiConfigurationConfigItemMetadataArgs) ToOpsiConfigurationConfigItemMetadataOutput() OpsiConfigurationConfigItemMetadataOutput {
+	return i.ToOpsiConfigurationConfigItemMetadataOutputWithContext(context.Background())
+}
+
+func (i OpsiConfigurationConfigItemMetadataArgs) ToOpsiConfigurationConfigItemMetadataOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataOutput)
+}
+
+// OpsiConfigurationConfigItemMetadataArrayInput is an input type that accepts OpsiConfigurationConfigItemMetadataArray and OpsiConfigurationConfigItemMetadataArrayOutput values.
+// You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataArrayInput` via:
+//
+//	OpsiConfigurationConfigItemMetadataArray{ OpsiConfigurationConfigItemMetadataArgs{...} }
+type OpsiConfigurationConfigItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToOpsiConfigurationConfigItemMetadataArrayOutput() OpsiConfigurationConfigItemMetadataArrayOutput
+	ToOpsiConfigurationConfigItemMetadataArrayOutputWithContext(context.Context) OpsiConfigurationConfigItemMetadataArrayOutput
+}
+
+type OpsiConfigurationConfigItemMetadataArray []OpsiConfigurationConfigItemMetadataInput
+
+func (OpsiConfigurationConfigItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpsiConfigurationConfigItemMetadata)(nil)).Elem()
+}
+
+func (i OpsiConfigurationConfigItemMetadataArray) ToOpsiConfigurationConfigItemMetadataArrayOutput() OpsiConfigurationConfigItemMetadataArrayOutput {
+	return i.ToOpsiConfigurationConfigItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i OpsiConfigurationConfigItemMetadataArray) ToOpsiConfigurationConfigItemMetadataArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataArrayOutput)
+}
+
+type OpsiConfigurationConfigItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (OpsiConfigurationConfigItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpsiConfigurationConfigItemMetadata)(nil)).Elem()
+}
+
+func (o OpsiConfigurationConfigItemMetadataOutput) ToOpsiConfigurationConfigItemMetadataOutput() OpsiConfigurationConfigItemMetadataOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataOutput) ToOpsiConfigurationConfigItemMetadataOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataOutput {
+	return o
+}
+
+// (Updatable) Type of configuration item.
+func (o OpsiConfigurationConfigItemMetadataOutput) ConfigItemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadata) *string { return v.ConfigItemType }).(pulumi.StringPtrOutput)
+}
+
+// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+func (o OpsiConfigurationConfigItemMetadataOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadata) *string { return v.DataType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Description of OPSI configuration.
+func (o OpsiConfigurationConfigItemMetadataOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadata) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+func (o OpsiConfigurationConfigItemMetadataOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadata) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Unit details of configuration item.
+func (o OpsiConfigurationConfigItemMetadataOutput) UnitDetails() OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadata) []OpsiConfigurationConfigItemMetadataUnitDetail {
+		return v.UnitDetails
+	}).(OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput)
+}
+
+// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+func (o OpsiConfigurationConfigItemMetadataOutput) ValueInputDetails() OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadata) []OpsiConfigurationConfigItemMetadataValueInputDetail {
+		return v.ValueInputDetails
+	}).(OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput)
+}
+
+type OpsiConfigurationConfigItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (OpsiConfigurationConfigItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpsiConfigurationConfigItemMetadata)(nil)).Elem()
+}
+
+func (o OpsiConfigurationConfigItemMetadataArrayOutput) ToOpsiConfigurationConfigItemMetadataArrayOutput() OpsiConfigurationConfigItemMetadataArrayOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataArrayOutput) ToOpsiConfigurationConfigItemMetadataArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataArrayOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationConfigItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpsiConfigurationConfigItemMetadata {
+		return vs[0].([]OpsiConfigurationConfigItemMetadata)[vs[1].(int)]
+	}).(OpsiConfigurationConfigItemMetadataOutput)
+}
+
+type OpsiConfigurationConfigItemMetadataUnitDetail struct {
+	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+	DisplayName *string `pulumi:"displayName"`
+	// Unit of configuration item.
+	Unit *string `pulumi:"unit"`
+}
+
+// OpsiConfigurationConfigItemMetadataUnitDetailInput is an input type that accepts OpsiConfigurationConfigItemMetadataUnitDetailArgs and OpsiConfigurationConfigItemMetadataUnitDetailOutput values.
+// You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataUnitDetailInput` via:
+//
+//	OpsiConfigurationConfigItemMetadataUnitDetailArgs{...}
+type OpsiConfigurationConfigItemMetadataUnitDetailInput interface {
+	pulumi.Input
+
+	ToOpsiConfigurationConfigItemMetadataUnitDetailOutput() OpsiConfigurationConfigItemMetadataUnitDetailOutput
+	ToOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(context.Context) OpsiConfigurationConfigItemMetadataUnitDetailOutput
+}
+
+type OpsiConfigurationConfigItemMetadataUnitDetailArgs struct {
+	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Unit of configuration item.
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
+}
+
+func (OpsiConfigurationConfigItemMetadataUnitDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpsiConfigurationConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (i OpsiConfigurationConfigItemMetadataUnitDetailArgs) ToOpsiConfigurationConfigItemMetadataUnitDetailOutput() OpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return i.ToOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(context.Background())
+}
+
+func (i OpsiConfigurationConfigItemMetadataUnitDetailArgs) ToOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataUnitDetailOutput)
+}
+
+// OpsiConfigurationConfigItemMetadataUnitDetailArrayInput is an input type that accepts OpsiConfigurationConfigItemMetadataUnitDetailArray and OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput values.
+// You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataUnitDetailArrayInput` via:
+//
+//	OpsiConfigurationConfigItemMetadataUnitDetailArray{ OpsiConfigurationConfigItemMetadataUnitDetailArgs{...} }
+type OpsiConfigurationConfigItemMetadataUnitDetailArrayInput interface {
+	pulumi.Input
+
+	ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput() OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput
+	ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(context.Context) OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput
+}
+
+type OpsiConfigurationConfigItemMetadataUnitDetailArray []OpsiConfigurationConfigItemMetadataUnitDetailInput
+
+func (OpsiConfigurationConfigItemMetadataUnitDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpsiConfigurationConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (i OpsiConfigurationConfigItemMetadataUnitDetailArray) ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput() OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return i.ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(context.Background())
+}
+
+func (i OpsiConfigurationConfigItemMetadataUnitDetailArray) ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput)
+}
+
+type OpsiConfigurationConfigItemMetadataUnitDetailOutput struct{ *pulumi.OutputState }
+
+func (OpsiConfigurationConfigItemMetadataUnitDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpsiConfigurationConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (o OpsiConfigurationConfigItemMetadataUnitDetailOutput) ToOpsiConfigurationConfigItemMetadataUnitDetailOutput() OpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataUnitDetailOutput) ToOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return o
+}
+
+// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+func (o OpsiConfigurationConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadataUnitDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Unit of configuration item.
+func (o OpsiConfigurationConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadataUnitDetail) *string { return v.Unit }).(pulumi.StringPtrOutput)
+}
+
+type OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpsiConfigurationConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (o OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput() OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpsiConfigurationConfigItemMetadataUnitDetail {
+		return vs[0].([]OpsiConfigurationConfigItemMetadataUnitDetail)[vs[1].(int)]
+	}).(OpsiConfigurationConfigItemMetadataUnitDetailOutput)
+}
+
+type OpsiConfigurationConfigItemMetadataValueInputDetail struct {
+	// Allowed value type of configuration item.
+	AllowedValueType *string `pulumi:"allowedValueType"`
+	// Maximum value limit for the configuration item.
+	MaxValue *string `pulumi:"maxValue"`
+	// Minimum value limit for the configuration item.
+	MinValue *string `pulumi:"minValue"`
+	// Allowed values to pick for the configuration item.
+	PossibleValues []string `pulumi:"possibleValues"`
+}
+
+// OpsiConfigurationConfigItemMetadataValueInputDetailInput is an input type that accepts OpsiConfigurationConfigItemMetadataValueInputDetailArgs and OpsiConfigurationConfigItemMetadataValueInputDetailOutput values.
+// You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataValueInputDetailInput` via:
+//
+//	OpsiConfigurationConfigItemMetadataValueInputDetailArgs{...}
+type OpsiConfigurationConfigItemMetadataValueInputDetailInput interface {
+	pulumi.Input
+
+	ToOpsiConfigurationConfigItemMetadataValueInputDetailOutput() OpsiConfigurationConfigItemMetadataValueInputDetailOutput
+	ToOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(context.Context) OpsiConfigurationConfigItemMetadataValueInputDetailOutput
+}
+
+type OpsiConfigurationConfigItemMetadataValueInputDetailArgs struct {
+	// Allowed value type of configuration item.
+	AllowedValueType pulumi.StringPtrInput `pulumi:"allowedValueType"`
+	// Maximum value limit for the configuration item.
+	MaxValue pulumi.StringPtrInput `pulumi:"maxValue"`
+	// Minimum value limit for the configuration item.
+	MinValue pulumi.StringPtrInput `pulumi:"minValue"`
+	// Allowed values to pick for the configuration item.
+	PossibleValues pulumi.StringArrayInput `pulumi:"possibleValues"`
+}
+
+func (OpsiConfigurationConfigItemMetadataValueInputDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpsiConfigurationConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (i OpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToOpsiConfigurationConfigItemMetadataValueInputDetailOutput() OpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return i.ToOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(context.Background())
+}
+
+func (i OpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataValueInputDetailOutput)
+}
+
+// OpsiConfigurationConfigItemMetadataValueInputDetailArrayInput is an input type that accepts OpsiConfigurationConfigItemMetadataValueInputDetailArray and OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput values.
+// You can construct a concrete instance of `OpsiConfigurationConfigItemMetadataValueInputDetailArrayInput` via:
+//
+//	OpsiConfigurationConfigItemMetadataValueInputDetailArray{ OpsiConfigurationConfigItemMetadataValueInputDetailArgs{...} }
+type OpsiConfigurationConfigItemMetadataValueInputDetailArrayInput interface {
+	pulumi.Input
+
+	ToOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput() OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput
+	ToOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(context.Context) OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput
+}
+
+type OpsiConfigurationConfigItemMetadataValueInputDetailArray []OpsiConfigurationConfigItemMetadataValueInputDetailInput
+
+func (OpsiConfigurationConfigItemMetadataValueInputDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpsiConfigurationConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (i OpsiConfigurationConfigItemMetadataValueInputDetailArray) ToOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput() OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return i.ToOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(context.Background())
+}
+
+func (i OpsiConfigurationConfigItemMetadataValueInputDetailArray) ToOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput)
+}
+
+type OpsiConfigurationConfigItemMetadataValueInputDetailOutput struct{ *pulumi.OutputState }
+
+func (OpsiConfigurationConfigItemMetadataValueInputDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpsiConfigurationConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToOpsiConfigurationConfigItemMetadataValueInputDetailOutput() OpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return o
+}
+
+// Allowed value type of configuration item.
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadataValueInputDetail) *string { return v.AllowedValueType }).(pulumi.StringPtrOutput)
+}
+
+// Maximum value limit for the configuration item.
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadataValueInputDetail) *string { return v.MaxValue }).(pulumi.StringPtrOutput)
+}
+
+// Minimum value limit for the configuration item.
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadataValueInputDetail) *string { return v.MinValue }).(pulumi.StringPtrOutput)
+}
+
+// Allowed values to pick for the configuration item.
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailOutput) PossibleValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadataValueInputDetail) []string { return v.PossibleValues }).(pulumi.StringArrayOutput)
+}
+
+type OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpsiConfigurationConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ToOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput() OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ToOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return o
+}
+
+func (o OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpsiConfigurationConfigItemMetadataValueInputDetail {
+		return vs[0].([]OpsiConfigurationConfigItemMetadataValueInputDetail)[vs[1].(int)]
+	}).(OpsiConfigurationConfigItemMetadataValueInputDetailOutput)
+}
+
 type GetAwrHubAwrSnapshotItem struct {
 	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
 	AwrSourceDatabaseId string `pulumi:"awrSourceDatabaseId"`
@@ -8434,6 +8952,2051 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	}).(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput)
 }
 
+type GetOpsiConfigurationConfigItem struct {
+	// List of contexts in Operations Insights where this configuration item is applicable.
+	ApplicableContexts []string `pulumi:"applicableContexts"`
+	// Type of configuration item.
+	ConfigItemType string `pulumi:"configItemType"`
+	// Value of configuration item.
+	DefaultValue string `pulumi:"defaultValue"`
+	// Configuration item metadata.
+	Metadatas []GetOpsiConfigurationConfigItemMetadata `pulumi:"metadatas"`
+	// Name of configuration item.
+	Name string `pulumi:"name"`
+	// Value of configuration item.
+	Value string `pulumi:"value"`
+}
+
+// GetOpsiConfigurationConfigItemInput is an input type that accepts GetOpsiConfigurationConfigItemArgs and GetOpsiConfigurationConfigItemOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigItemInput` via:
+//
+//	GetOpsiConfigurationConfigItemArgs{...}
+type GetOpsiConfigurationConfigItemInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigItemOutput() GetOpsiConfigurationConfigItemOutput
+	ToGetOpsiConfigurationConfigItemOutputWithContext(context.Context) GetOpsiConfigurationConfigItemOutput
+}
+
+type GetOpsiConfigurationConfigItemArgs struct {
+	// List of contexts in Operations Insights where this configuration item is applicable.
+	ApplicableContexts pulumi.StringArrayInput `pulumi:"applicableContexts"`
+	// Type of configuration item.
+	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	// Value of configuration item.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// Configuration item metadata.
+	Metadatas GetOpsiConfigurationConfigItemMetadataArrayInput `pulumi:"metadatas"`
+	// Name of configuration item.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of configuration item.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetOpsiConfigurationConfigItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigItem)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigItemArgs) ToGetOpsiConfigurationConfigItemOutput() GetOpsiConfigurationConfigItemOutput {
+	return i.ToGetOpsiConfigurationConfigItemOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigItemArgs) ToGetOpsiConfigurationConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemOutput)
+}
+
+// GetOpsiConfigurationConfigItemArrayInput is an input type that accepts GetOpsiConfigurationConfigItemArray and GetOpsiConfigurationConfigItemArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigItemArrayInput` via:
+//
+//	GetOpsiConfigurationConfigItemArray{ GetOpsiConfigurationConfigItemArgs{...} }
+type GetOpsiConfigurationConfigItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigItemArrayOutput() GetOpsiConfigurationConfigItemArrayOutput
+	ToGetOpsiConfigurationConfigItemArrayOutputWithContext(context.Context) GetOpsiConfigurationConfigItemArrayOutput
+}
+
+type GetOpsiConfigurationConfigItemArray []GetOpsiConfigurationConfigItemInput
+
+func (GetOpsiConfigurationConfigItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigItem)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigItemArray) ToGetOpsiConfigurationConfigItemArrayOutput() GetOpsiConfigurationConfigItemArrayOutput {
+	return i.ToGetOpsiConfigurationConfigItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigItemArray) ToGetOpsiConfigurationConfigItemArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemArrayOutput)
+}
+
+type GetOpsiConfigurationConfigItemOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigItem)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigItemOutput) ToGetOpsiConfigurationConfigItemOutput() GetOpsiConfigurationConfigItemOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemOutput) ToGetOpsiConfigurationConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemOutput {
+	return o
+}
+
+// List of contexts in Operations Insights where this configuration item is applicable.
+func (o GetOpsiConfigurationConfigItemOutput) ApplicableContexts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) []string { return v.ApplicableContexts }).(pulumi.StringArrayOutput)
+}
+
+// Type of configuration item.
+func (o GetOpsiConfigurationConfigItemOutput) ConfigItemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) string { return v.ConfigItemType }).(pulumi.StringOutput)
+}
+
+// Value of configuration item.
+func (o GetOpsiConfigurationConfigItemOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// Configuration item metadata.
+func (o GetOpsiConfigurationConfigItemOutput) Metadatas() GetOpsiConfigurationConfigItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) []GetOpsiConfigurationConfigItemMetadata { return v.Metadatas }).(GetOpsiConfigurationConfigItemMetadataArrayOutput)
+}
+
+// Name of configuration item.
+func (o GetOpsiConfigurationConfigItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of configuration item.
+func (o GetOpsiConfigurationConfigItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetOpsiConfigurationConfigItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigItem)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigItemArrayOutput) ToGetOpsiConfigurationConfigItemArrayOutput() GetOpsiConfigurationConfigItemArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemArrayOutput) ToGetOpsiConfigurationConfigItemArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigItem {
+		return vs[0].([]GetOpsiConfigurationConfigItem)[vs[1].(int)]
+	}).(GetOpsiConfigurationConfigItemOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadata struct {
+	// Type of configuration item.
+	ConfigItemType string `pulumi:"configItemType"`
+	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+	DataType string `pulumi:"dataType"`
+	// Description of OPSI configuration.
+	Description string `pulumi:"description"`
+	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// Unit details of configuration item.
+	UnitDetails []GetOpsiConfigurationConfigItemMetadataUnitDetail `pulumi:"unitDetails"`
+	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+	ValueInputDetails []GetOpsiConfigurationConfigItemMetadataValueInputDetail `pulumi:"valueInputDetails"`
+}
+
+// GetOpsiConfigurationConfigItemMetadataInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataArgs and GetOpsiConfigurationConfigItemMetadataOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigItemMetadataInput` via:
+//
+//	GetOpsiConfigurationConfigItemMetadataArgs{...}
+type GetOpsiConfigurationConfigItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigItemMetadataOutput() GetOpsiConfigurationConfigItemMetadataOutput
+	ToGetOpsiConfigurationConfigItemMetadataOutputWithContext(context.Context) GetOpsiConfigurationConfigItemMetadataOutput
+}
+
+type GetOpsiConfigurationConfigItemMetadataArgs struct {
+	// Type of configuration item.
+	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Description of OPSI configuration.
+	Description pulumi.StringInput `pulumi:"description"`
+	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unit details of configuration item.
+	UnitDetails GetOpsiConfigurationConfigItemMetadataUnitDetailArrayInput `pulumi:"unitDetails"`
+	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+	ValueInputDetails GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayInput `pulumi:"valueInputDetails"`
+}
+
+func (GetOpsiConfigurationConfigItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadata)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataArgs) ToGetOpsiConfigurationConfigItemMetadataOutput() GetOpsiConfigurationConfigItemMetadataOutput {
+	return i.ToGetOpsiConfigurationConfigItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataArgs) ToGetOpsiConfigurationConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataOutput)
+}
+
+// GetOpsiConfigurationConfigItemMetadataArrayInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataArray and GetOpsiConfigurationConfigItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigItemMetadataArrayInput` via:
+//
+//	GetOpsiConfigurationConfigItemMetadataArray{ GetOpsiConfigurationConfigItemMetadataArgs{...} }
+type GetOpsiConfigurationConfigItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigItemMetadataArrayOutput() GetOpsiConfigurationConfigItemMetadataArrayOutput
+	ToGetOpsiConfigurationConfigItemMetadataArrayOutputWithContext(context.Context) GetOpsiConfigurationConfigItemMetadataArrayOutput
+}
+
+type GetOpsiConfigurationConfigItemMetadataArray []GetOpsiConfigurationConfigItemMetadataInput
+
+func (GetOpsiConfigurationConfigItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigItemMetadata)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataArray) ToGetOpsiConfigurationConfigItemMetadataArrayOutput() GetOpsiConfigurationConfigItemMetadataArrayOutput {
+	return i.ToGetOpsiConfigurationConfigItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataArray) ToGetOpsiConfigurationConfigItemMetadataArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataArrayOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadata)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataOutput) ToGetOpsiConfigurationConfigItemMetadataOutput() GetOpsiConfigurationConfigItemMetadataOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataOutput) ToGetOpsiConfigurationConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataOutput {
+	return o
+}
+
+// Type of configuration item.
+func (o GetOpsiConfigurationConfigItemMetadataOutput) ConfigItemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) string { return v.ConfigItemType }).(pulumi.StringOutput)
+}
+
+// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+func (o GetOpsiConfigurationConfigItemMetadataOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// Description of OPSI configuration.
+func (o GetOpsiConfigurationConfigItemMetadataOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// User-friendly display name for the OPSI configuration. The name does not have to be unique.
+func (o GetOpsiConfigurationConfigItemMetadataOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Unit details of configuration item.
+func (o GetOpsiConfigurationConfigItemMetadataOutput) UnitDetails() GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) []GetOpsiConfigurationConfigItemMetadataUnitDetail {
+		return v.UnitDetails
+	}).(GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput)
+}
+
+// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+func (o GetOpsiConfigurationConfigItemMetadataOutput) ValueInputDetails() GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadata) []GetOpsiConfigurationConfigItemMetadataValueInputDetail {
+		return v.ValueInputDetails
+	}).(GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigItemMetadata)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataArrayOutput) ToGetOpsiConfigurationConfigItemMetadataArrayOutput() GetOpsiConfigurationConfigItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataArrayOutput) ToGetOpsiConfigurationConfigItemMetadataArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigItemMetadata {
+		return vs[0].([]GetOpsiConfigurationConfigItemMetadata)[vs[1].(int)]
+	}).(GetOpsiConfigurationConfigItemMetadataOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadataUnitDetail struct {
+	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// Unit of configuration item.
+	Unit string `pulumi:"unit"`
+}
+
+// GetOpsiConfigurationConfigItemMetadataUnitDetailInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataUnitDetailArgs and GetOpsiConfigurationConfigItemMetadataUnitDetailOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigItemMetadataUnitDetailInput` via:
+//
+//	GetOpsiConfigurationConfigItemMetadataUnitDetailArgs{...}
+type GetOpsiConfigurationConfigItemMetadataUnitDetailInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationConfigItemMetadataUnitDetailOutput
+	ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(context.Context) GetOpsiConfigurationConfigItemMetadataUnitDetailOutput
+}
+
+type GetOpsiConfigurationConfigItemMetadataUnitDetailArgs struct {
+	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unit of configuration item.
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetOpsiConfigurationConfigItemMetadataUnitDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return i.ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataUnitDetailOutput)
+}
+
+// GetOpsiConfigurationConfigItemMetadataUnitDetailArrayInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataUnitDetailArray and GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigItemMetadataUnitDetailArrayInput` via:
+//
+//	GetOpsiConfigurationConfigItemMetadataUnitDetailArray{ GetOpsiConfigurationConfigItemMetadataUnitDetailArgs{...} }
+type GetOpsiConfigurationConfigItemMetadataUnitDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput
+	ToGetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(context.Context) GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput
+}
+
+type GetOpsiConfigurationConfigItemMetadataUnitDetailArray []GetOpsiConfigurationConfigItemMetadataUnitDetailInput
+
+func (GetOpsiConfigurationConfigItemMetadataUnitDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArray) ToGetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return i.ToGetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataUnitDetailArray) ToGetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadataUnitDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) ToGetOpsiConfigurationConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return o
+}
+
+// User-friendly display name for the OPSI configuration. The name does not have to be unique.
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataUnitDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Unit of configuration item.
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataUnitDetail) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToGetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) ToGetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigItemMetadataUnitDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigItemMetadataUnitDetail {
+		return vs[0].([]GetOpsiConfigurationConfigItemMetadataUnitDetail)[vs[1].(int)]
+	}).(GetOpsiConfigurationConfigItemMetadataUnitDetailOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadataValueInputDetail struct {
+	// Allowed value type of configuration item.
+	AllowedValueType string `pulumi:"allowedValueType"`
+	// Maximum value limit for the configuration item.
+	MaxValue string `pulumi:"maxValue"`
+	// Minimum value limit for the configuration item.
+	MinValue string `pulumi:"minValue"`
+	// Allowed values to pick for the configuration item.
+	PossibleValues []string `pulumi:"possibleValues"`
+}
+
+// GetOpsiConfigurationConfigItemMetadataValueInputDetailInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs and GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigItemMetadataValueInputDetailInput` via:
+//
+//	GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs{...}
+type GetOpsiConfigurationConfigItemMetadataValueInputDetailInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput
+	ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(context.Context) GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput
+}
+
+type GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs struct {
+	// Allowed value type of configuration item.
+	AllowedValueType pulumi.StringInput `pulumi:"allowedValueType"`
+	// Maximum value limit for the configuration item.
+	MaxValue pulumi.StringInput `pulumi:"maxValue"`
+	// Minimum value limit for the configuration item.
+	MinValue pulumi.StringInput `pulumi:"minValue"`
+	// Allowed values to pick for the configuration item.
+	PossibleValues pulumi.StringArrayInput `pulumi:"possibleValues"`
+}
+
+func (GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return i.ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput)
+}
+
+// GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayInput is an input type that accepts GetOpsiConfigurationConfigItemMetadataValueInputDetailArray and GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayInput` via:
+//
+//	GetOpsiConfigurationConfigItemMetadataValueInputDetailArray{ GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs{...} }
+type GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput
+	ToGetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(context.Context) GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput
+}
+
+type GetOpsiConfigurationConfigItemMetadataValueInputDetailArray []GetOpsiConfigurationConfigItemMetadataValueInputDetailInput
+
+func (GetOpsiConfigurationConfigItemMetadataValueInputDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArray) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return i.ToGetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigItemMetadataValueInputDetailArray) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return o
+}
+
+// Allowed value type of configuration item.
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) string { return v.AllowedValueType }).(pulumi.StringOutput)
+}
+
+// Maximum value limit for the configuration item.
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) string { return v.MaxValue }).(pulumi.StringOutput)
+}
+
+// Minimum value limit for the configuration item.
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) string { return v.MinValue }).(pulumi.StringOutput)
+}
+
+// Allowed values to pick for the configuration item.
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput) PossibleValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigItemMetadataValueInputDetail) []string { return v.PossibleValues }).(pulumi.StringArrayOutput)
+}
+
+type GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) ToGetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigItemMetadataValueInputDetail {
+		return vs[0].([]GetOpsiConfigurationConfigItemMetadataValueInputDetail)[vs[1].(int)]
+	}).(GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItem struct {
+	// List of contexts in Operations Insights where this configuration item is applicable.
+	ApplicableContexts []string `pulumi:"applicableContexts"`
+	// Type of configuration item.
+	ConfigItemType string `pulumi:"configItemType"`
+	// Value of configuration item.
+	DefaultValue string `pulumi:"defaultValue"`
+	// Configuration item metadata.
+	Metadatas []GetOpsiConfigurationConfigurationItemConfigItemMetadata `pulumi:"metadatas"`
+	// A filter to return only configuration items that match the entire name.
+	Name string `pulumi:"name"`
+	// Value of configuration item.
+	Value string `pulumi:"value"`
+	// Source configuration from where the value is taken for a configuration item.
+	ValueSourceConfig string `pulumi:"valueSourceConfig"`
+}
+
+// GetOpsiConfigurationConfigurationItemConfigItemInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemArgs and GetOpsiConfigurationConfigurationItemConfigItemOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigurationItemConfigItemInput` via:
+//
+//	GetOpsiConfigurationConfigurationItemConfigItemArgs{...}
+type GetOpsiConfigurationConfigurationItemConfigItemInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigurationItemConfigItemOutput() GetOpsiConfigurationConfigurationItemConfigItemOutput
+	ToGetOpsiConfigurationConfigurationItemConfigItemOutputWithContext(context.Context) GetOpsiConfigurationConfigurationItemConfigItemOutput
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemArgs struct {
+	// List of contexts in Operations Insights where this configuration item is applicable.
+	ApplicableContexts pulumi.StringArrayInput `pulumi:"applicableContexts"`
+	// Type of configuration item.
+	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	// Value of configuration item.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// Configuration item metadata.
+	Metadatas GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayInput `pulumi:"metadatas"`
+	// A filter to return only configuration items that match the entire name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of configuration item.
+	Value pulumi.StringInput `pulumi:"value"`
+	// Source configuration from where the value is taken for a configuration item.
+	ValueSourceConfig pulumi.StringInput `pulumi:"valueSourceConfig"`
+}
+
+func (GetOpsiConfigurationConfigurationItemConfigItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItem)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemArgs) ToGetOpsiConfigurationConfigurationItemConfigItemOutput() GetOpsiConfigurationConfigurationItemConfigItemOutput {
+	return i.ToGetOpsiConfigurationConfigurationItemConfigItemOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemArgs) ToGetOpsiConfigurationConfigurationItemConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemOutput)
+}
+
+// GetOpsiConfigurationConfigurationItemConfigItemArrayInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemArray and GetOpsiConfigurationConfigurationItemConfigItemArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigurationItemConfigItemArrayInput` via:
+//
+//	GetOpsiConfigurationConfigurationItemConfigItemArray{ GetOpsiConfigurationConfigurationItemConfigItemArgs{...} }
+type GetOpsiConfigurationConfigurationItemConfigItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigurationItemConfigItemArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemArrayOutput
+	ToGetOpsiConfigurationConfigurationItemConfigItemArrayOutputWithContext(context.Context) GetOpsiConfigurationConfigurationItemConfigItemArrayOutput
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemArray []GetOpsiConfigurationConfigurationItemConfigItemInput
+
+func (GetOpsiConfigurationConfigurationItemConfigItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigurationItemConfigItem)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemArray) ToGetOpsiConfigurationConfigurationItemConfigItemArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemArrayOutput {
+	return i.ToGetOpsiConfigurationConfigurationItemConfigItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemArray) ToGetOpsiConfigurationConfigurationItemConfigItemArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemArrayOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigurationItemConfigItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItem)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ToGetOpsiConfigurationConfigurationItemConfigItemOutput() GetOpsiConfigurationConfigurationItemConfigItemOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ToGetOpsiConfigurationConfigurationItemConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemOutput {
+	return o
+}
+
+// List of contexts in Operations Insights where this configuration item is applicable.
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ApplicableContexts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) []string { return v.ApplicableContexts }).(pulumi.StringArrayOutput)
+}
+
+// Type of configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ConfigItemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.ConfigItemType }).(pulumi.StringOutput)
+}
+
+// Value of configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// Configuration item metadata.
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) Metadatas() GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) []GetOpsiConfigurationConfigurationItemConfigItemMetadata {
+		return v.Metadatas
+	}).(GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput)
+}
+
+// A filter to return only configuration items that match the entire name.
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+// Source configuration from where the value is taken for a configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemOutput) ValueSourceConfig() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItem) string { return v.ValueSourceConfig }).(pulumi.StringOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigurationItemConfigItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigurationItemConfigItem)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigurationItemConfigItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigurationItemConfigItem {
+		return vs[0].([]GetOpsiConfigurationConfigurationItemConfigItem)[vs[1].(int)]
+	}).(GetOpsiConfigurationConfigurationItemConfigItemOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadata struct {
+	// Type of configuration item.
+	ConfigItemType string `pulumi:"configItemType"`
+	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+	DataType string `pulumi:"dataType"`
+	// Description of configuration item .
+	Description string `pulumi:"description"`
+	// User-friendly display name for the configuration item unit.
+	DisplayName string `pulumi:"displayName"`
+	// Unit details of configuration item.
+	UnitDetails []GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail `pulumi:"unitDetails"`
+	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+	ValueInputDetails []GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail `pulumi:"valueInputDetails"`
+}
+
+// GetOpsiConfigurationConfigurationItemConfigItemMetadataInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs and GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigurationItemConfigItemMetadataInput` via:
+//
+//	GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs{...}
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutputWithContext(context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs struct {
+	// Type of configuration item.
+	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Description of configuration item .
+	Description pulumi.StringInput `pulumi:"description"`
+	// User-friendly display name for the configuration item unit.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unit details of configuration item.
+	UnitDetails GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayInput `pulumi:"unitDetails"`
+	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+	ValueInputDetails GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayInput `pulumi:"valueInputDetails"`
+}
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadata)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput {
+	return i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput)
+}
+
+// GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataArray and GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayInput` via:
+//
+//	GetOpsiConfigurationConfigurationItemConfigItemMetadataArray{ GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs{...} }
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutputWithContext(context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataArray []GetOpsiConfigurationConfigurationItemConfigItemMetadataInput
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigurationItemConfigItemMetadata)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArray) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput {
+	return i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataArray) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadata)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput {
+	return o
+}
+
+// Type of configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ConfigItemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) string { return v.ConfigItemType }).(pulumi.StringOutput)
+}
+
+// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// Description of configuration item .
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// User-friendly display name for the configuration item unit.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Unit details of configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) UnitDetails() GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) []GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail {
+		return v.UnitDetails
+	}).(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput)
+}
+
+// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput) ValueInputDetails() GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadata) []GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail {
+		return v.ValueInputDetails
+	}).(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigurationItemConfigItemMetadata)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigurationItemConfigItemMetadata {
+		return vs[0].([]GetOpsiConfigurationConfigurationItemConfigItemMetadata)[vs[1].(int)]
+	}).(GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail struct {
+	// User-friendly display name for the configuration item unit.
+	DisplayName string `pulumi:"displayName"`
+	// Unit of configuration item.
+	Unit string `pulumi:"unit"`
+}
+
+// GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs and GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailInput` via:
+//
+//	GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs{...}
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutputWithContext(context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs struct {
+	// User-friendly display name for the configuration item unit.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unit of configuration item.
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput {
+	return i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput)
+}
+
+// GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray and GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayInput` via:
+//
+//	GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray{ GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs{...} }
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutputWithContext(context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray []GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailInput
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput {
+	return i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput {
+	return o
+}
+
+// User-friendly display name for the configuration item unit.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Unit of configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail {
+		return vs[0].([]GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail)[vs[1].(int)]
+	}).(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail struct {
+	// Allowed value type of configuration item.
+	AllowedValueType string `pulumi:"allowedValueType"`
+	// Maximum value limit for the configuration item.
+	MaxValue string `pulumi:"maxValue"`
+	// Minimum value limit for the configuration item.
+	MinValue string `pulumi:"minValue"`
+	// Allowed values to pick for the configuration item.
+	PossibleValues []string `pulumi:"possibleValues"`
+}
+
+// GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs and GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailInput` via:
+//
+//	GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs{...}
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutputWithContext(context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs struct {
+	// Allowed value type of configuration item.
+	AllowedValueType pulumi.StringInput `pulumi:"allowedValueType"`
+	// Maximum value limit for the configuration item.
+	MaxValue pulumi.StringInput `pulumi:"maxValue"`
+	// Minimum value limit for the configuration item.
+	MinValue pulumi.StringInput `pulumi:"minValue"`
+	// Allowed values to pick for the configuration item.
+	PossibleValues pulumi.StringArrayInput `pulumi:"possibleValues"`
+}
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput {
+	return i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput)
+}
+
+// GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayInput is an input type that accepts GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray and GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayInput` via:
+//
+//	GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray{ GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs{...} }
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput
+	ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutputWithContext(context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray []GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailInput
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput {
+	return i.ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput {
+	return o
+}
+
+// Allowed value type of configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) string {
+		return v.AllowedValueType
+	}).(pulumi.StringOutput)
+}
+
+// Maximum value limit for the configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) string {
+		return v.MaxValue
+	}).(pulumi.StringOutput)
+}
+
+// Minimum value limit for the configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) string {
+		return v.MinValue
+	}).(pulumi.StringOutput)
+}
+
+// Allowed values to pick for the configuration item.
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput) PossibleValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail) []string {
+		return v.PossibleValues
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput) ToGetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail {
+		return vs[0].([]GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail)[vs[1].(int)]
+	}).(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput)
+}
+
+type GetOpsiConfigurationsFilter struct {
+	// Name of configuration item.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOpsiConfigurationsFilterInput is an input type that accepts GetOpsiConfigurationsFilterArgs and GetOpsiConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsFilterInput` via:
+//
+//	GetOpsiConfigurationsFilterArgs{...}
+type GetOpsiConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsFilterOutput() GetOpsiConfigurationsFilterOutput
+	ToGetOpsiConfigurationsFilterOutputWithContext(context.Context) GetOpsiConfigurationsFilterOutput
+}
+
+type GetOpsiConfigurationsFilterArgs struct {
+	// Name of configuration item.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOpsiConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsFilterArgs) ToGetOpsiConfigurationsFilterOutput() GetOpsiConfigurationsFilterOutput {
+	return i.ToGetOpsiConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsFilterArgs) ToGetOpsiConfigurationsFilterOutputWithContext(ctx context.Context) GetOpsiConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsFilterOutput)
+}
+
+// GetOpsiConfigurationsFilterArrayInput is an input type that accepts GetOpsiConfigurationsFilterArray and GetOpsiConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsFilterArrayInput` via:
+//
+//	GetOpsiConfigurationsFilterArray{ GetOpsiConfigurationsFilterArgs{...} }
+type GetOpsiConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsFilterArrayOutput() GetOpsiConfigurationsFilterArrayOutput
+	ToGetOpsiConfigurationsFilterArrayOutputWithContext(context.Context) GetOpsiConfigurationsFilterArrayOutput
+}
+
+type GetOpsiConfigurationsFilterArray []GetOpsiConfigurationsFilterInput
+
+func (GetOpsiConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsFilterArray) ToGetOpsiConfigurationsFilterArrayOutput() GetOpsiConfigurationsFilterArrayOutput {
+	return i.ToGetOpsiConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsFilterArray) ToGetOpsiConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsFilterArrayOutput)
+}
+
+type GetOpsiConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsFilterOutput) ToGetOpsiConfigurationsFilterOutput() GetOpsiConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsFilterOutput) ToGetOpsiConfigurationsFilterOutputWithContext(ctx context.Context) GetOpsiConfigurationsFilterOutput {
+	return o
+}
+
+// Name of configuration item.
+func (o GetOpsiConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOpsiConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOpsiConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOpsiConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsFilterArrayOutput) ToGetOpsiConfigurationsFilterArrayOutput() GetOpsiConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsFilterArrayOutput) ToGetOpsiConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsFilter {
+		return vs[0].([]GetOpsiConfigurationsFilter)[vs[1].(int)]
+	}).(GetOpsiConfigurationsFilterOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollection struct {
+	Items []GetOpsiConfigurationsOpsiConfigurationsCollectionItem `pulumi:"items"`
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionArgs{...}
+type GetOpsiConfigurationsOpsiConfigurationsCollectionInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionArgs struct {
+	Items GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollection)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionOutput)
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionArray and GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionArrayInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionArray{ GetOpsiConfigurationsOpsiConfigurationsCollectionArgs{...} }
+type GetOpsiConfigurationsOpsiConfigurationsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionArray []GetOpsiConfigurationsOpsiConfigurationsCollectionInput
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollection)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollection)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionOutput) Items() GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollection) []GetOpsiConfigurationsOpsiConfigurationsCollectionItem {
+		return v.Items
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollection)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollection {
+		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollection)[vs[1].(int)]
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId            string   `pulumi:"compartmentId"`
+	ConfigItemCustomStatuses []string `pulumi:"configItemCustomStatuses"`
+	ConfigItemFields         []string `pulumi:"configItemFields"`
+	// Array of configuration item summary objects.
+	ConfigItems                   []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem `pulumi:"configItems"`
+	ConfigItemsApplicableContexts []string                                                          `pulumi:"configItemsApplicableContexts"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Description of OPSI configuration.
+	Description string `pulumi:"description"`
+	// Filter to return based on resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	OpsiConfigFields []string `pulumi:"opsiConfigFields"`
+	// Filter to return based on configuration type of OPSI configuration.
+	OpsiConfigType string `pulumi:"opsiConfigType"`
+	// Filter to return based on Lifecycle state of OPSI configuration.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time at which the resource was first created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time at which the resource was last updated. An RFC3339 formatted datetime string
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs{...}
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId            pulumi.StringInput      `pulumi:"compartmentId"`
+	ConfigItemCustomStatuses pulumi.StringArrayInput `pulumi:"configItemCustomStatuses"`
+	ConfigItemFields         pulumi.StringArrayInput `pulumi:"configItemFields"`
+	// Array of configuration item summary objects.
+	ConfigItems                   GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayInput `pulumi:"configItems"`
+	ConfigItemsApplicableContexts pulumi.StringArrayInput                                                   `pulumi:"configItemsApplicableContexts"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Description of OPSI configuration.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter to return based on resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	OpsiConfigFields pulumi.StringArrayInput `pulumi:"opsiConfigFields"`
+	// Filter to return based on configuration type of OPSI configuration.
+	OpsiConfigType pulumi.StringInput `pulumi:"opsiConfigType"`
+	// Filter to return based on Lifecycle state of OPSI configuration.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time at which the resource was first created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time at which the resource was last updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput)
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray{ GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs{...} }
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray []GetOpsiConfigurationsOpsiConfigurationsCollectionItemInput
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ConfigItemCustomStatuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) []string {
+		return v.ConfigItemCustomStatuses
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ConfigItemFields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) []string { return v.ConfigItemFields }).(pulumi.StringArrayOutput)
+}
+
+// Array of configuration item summary objects.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ConfigItems() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem {
+		return v.ConfigItems
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput)
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ConfigItemsApplicableContexts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) []string {
+		return v.ConfigItemsApplicableContexts
+	}).(pulumi.StringArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Description of OPSI configuration.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Filter to return based on resources that match the entire display name.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) OpsiConfigFields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) []string { return v.OpsiConfigFields }).(pulumi.StringArrayOutput)
+}
+
+// Filter to return based on configuration type of OPSI configuration.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) OpsiConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.OpsiConfigType }).(pulumi.StringOutput)
+}
+
+// Filter to return based on Lifecycle state of OPSI configuration.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The time at which the resource was first created. An RFC3339 formatted datetime string
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time at which the resource was last updated. An RFC3339 formatted datetime string
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItem {
+		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItem)[vs[1].(int)]
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem struct {
+	// List of contexts in Operations Insights where this configuration item is applicable.
+	ApplicableContexts []string `pulumi:"applicableContexts"`
+	// Type of configuration item.
+	ConfigItemType string `pulumi:"configItemType"`
+	// Value of configuration item.
+	DefaultValue string `pulumi:"defaultValue"`
+	// Configuration item metadata.
+	Metadatas []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata `pulumi:"metadatas"`
+	// Name of configuration item.
+	Name string `pulumi:"name"`
+	// Value of configuration item.
+	Value string `pulumi:"value"`
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs{...}
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs struct {
+	// List of contexts in Operations Insights where this configuration item is applicable.
+	ApplicableContexts pulumi.StringArrayInput `pulumi:"applicableContexts"`
+	// Type of configuration item.
+	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	// Value of configuration item.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// Configuration item metadata.
+	Metadatas GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayInput `pulumi:"metadatas"`
+	// Name of configuration item.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of configuration item.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput)
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray{ GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs{...} }
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemInput
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput {
+	return o
+}
+
+// List of contexts in Operations Insights where this configuration item is applicable.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ApplicableContexts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) []string {
+		return v.ApplicableContexts
+	}).(pulumi.StringArrayOutput)
+}
+
+// Type of configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) ConfigItemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) string {
+		return v.ConfigItemType
+	}).(pulumi.StringOutput)
+}
+
+// Value of configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// Configuration item metadata.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) Metadatas() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata {
+		return v.Metadatas
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput)
+}
+
+// Name of configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem {
+		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem)[vs[1].(int)]
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata struct {
+	// Type of configuration item.
+	ConfigItemType string `pulumi:"configItemType"`
+	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+	DataType string `pulumi:"dataType"`
+	// Description of OPSI configuration.
+	Description string `pulumi:"description"`
+	// Filter to return based on resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// Unit details of configuration item.
+	UnitDetails []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail `pulumi:"unitDetails"`
+	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+	ValueInputDetails []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail `pulumi:"valueInputDetails"`
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs{...}
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs struct {
+	// Type of configuration item.
+	ConfigItemType pulumi.StringInput `pulumi:"configItemType"`
+	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Description of OPSI configuration.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter to return based on resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unit details of configuration item.
+	UnitDetails GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayInput `pulumi:"unitDetails"`
+	// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+	ValueInputDetails GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayInput `pulumi:"valueInputDetails"`
+}
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput)
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray{ GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs{...} }
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataInput
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput {
+	return o
+}
+
+// Type of configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ConfigItemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) string {
+		return v.ConfigItemType
+	}).(pulumi.StringOutput)
+}
+
+// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) string {
+		return v.DataType
+	}).(pulumi.StringOutput)
+}
+
+// Description of OPSI configuration.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Filter to return based on resources that match the entire display name.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Unit details of configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) UnitDetails() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail {
+		return v.UnitDetails
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput)
+}
+
+// Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput) ValueInputDetails() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata) []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail {
+		return v.ValueInputDetails
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata {
+		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadata)[vs[1].(int)]
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail struct {
+	// Filter to return based on resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// Unit of configuration item.
+	Unit string `pulumi:"unit"`
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs{...}
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs struct {
+	// Filter to return based on resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unit of configuration item.
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput)
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray{ GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs{...} }
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailInput
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput {
+	return o
+}
+
+// Filter to return based on resources that match the entire display name.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Unit of configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail) string {
+		return v.Unit
+	}).(pulumi.StringOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail {
+		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail)[vs[1].(int)]
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail struct {
+	// Allowed value type of configuration item.
+	AllowedValueType string `pulumi:"allowedValueType"`
+	// Maximum value limit for the configuration item.
+	MaxValue string `pulumi:"maxValue"`
+	// Minimum value limit for the configuration item.
+	MinValue string `pulumi:"minValue"`
+	// Allowed values to pick for the configuration item.
+	PossibleValues []string `pulumi:"possibleValues"`
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs{...}
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs struct {
+	// Allowed value type of configuration item.
+	AllowedValueType pulumi.StringInput `pulumi:"allowedValueType"`
+	// Maximum value limit for the configuration item.
+	MaxValue pulumi.StringInput `pulumi:"maxValue"`
+	// Minimum value limit for the configuration item.
+	MinValue pulumi.StringInput `pulumi:"minValue"`
+	// Allowed values to pick for the configuration item.
+	PossibleValues pulumi.StringArrayInput `pulumi:"possibleValues"`
+}
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput)
+}
+
+// GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayInput is an input type that accepts GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray and GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayInput` via:
+//
+//	GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray{ GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs{...} }
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput
+	ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutputWithContext(context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailInput
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput {
+	return i.ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput {
+	return o
+}
+
+// Allowed value type of configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) AllowedValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) string {
+		return v.AllowedValueType
+	}).(pulumi.StringOutput)
+}
+
+// Maximum value limit for the configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) MaxValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) string {
+		return v.MaxValue
+	}).(pulumi.StringOutput)
+}
+
+// Minimum value limit for the configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) MinValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) string {
+		return v.MinValue
+	}).(pulumi.StringOutput)
+}
+
+// Allowed values to pick for the configuration item.
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput) PossibleValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail) []string {
+		return v.PossibleValues
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail)(nil)).Elem()
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput() GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput) ToGetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutputWithContext(ctx context.Context) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput {
+	return o
+}
+
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput) Index(i pulumi.IntInput) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail {
+		return vs[0].([]GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetail)[vs[1].(int)]
+	}).(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightConnectionCredentialDetailsInput)(nil)).Elem(), DatabaseInsightConnectionCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightConnectionCredentialDetailsPtrInput)(nil)).Elem(), DatabaseInsightConnectionCredentialDetailsArgs{})
@@ -8449,6 +11012,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemInput)(nil)).Elem(), OpsiConfigurationConfigItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemArrayInput)(nil)).Elem(), OpsiConfigurationConfigItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemMetadataInput)(nil)).Elem(), OpsiConfigurationConfigItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemMetadataArrayInput)(nil)).Elem(), OpsiConfigurationConfigItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemMetadataUnitDetailInput)(nil)).Elem(), OpsiConfigurationConfigItemMetadataUnitDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemMetadataUnitDetailArrayInput)(nil)).Elem(), OpsiConfigurationConfigItemMetadataUnitDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemMetadataValueInputDetailInput)(nil)).Elem(), OpsiConfigurationConfigItemMetadataValueInputDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemMetadataValueInputDetailArrayInput)(nil)).Elem(), OpsiConfigurationConfigItemMetadataValueInputDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSnapshotItemInput)(nil)).Elem(), GetAwrHubAwrSnapshotItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSnapshotItemArrayInput)(nil)).Elem(), GetAwrHubAwrSnapshotItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSnapshotsAwrSnapshotCollectionInput)(nil)).Elem(), GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs{})
@@ -8545,6 +11116,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayInput)(nil)).Elem(), GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemInput)(nil)).Elem(), GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayInput)(nil)).Elem(), GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigItemInput)(nil)).Elem(), GetOpsiConfigurationConfigItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigItemArrayInput)(nil)).Elem(), GetOpsiConfigurationConfigItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataInput)(nil)).Elem(), GetOpsiConfigurationConfigItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataArrayInput)(nil)).Elem(), GetOpsiConfigurationConfigItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataUnitDetailInput)(nil)).Elem(), GetOpsiConfigurationConfigItemMetadataUnitDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataUnitDetailArrayInput)(nil)).Elem(), GetOpsiConfigurationConfigItemMetadataUnitDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataValueInputDetailInput)(nil)).Elem(), GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayInput)(nil)).Elem(), GetOpsiConfigurationConfigItemMetadataValueInputDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemInput)(nil)).Elem(), GetOpsiConfigurationConfigurationItemConfigItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemArrayInput)(nil)).Elem(), GetOpsiConfigurationConfigurationItemConfigItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataInput)(nil)).Elem(), GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayInput)(nil)).Elem(), GetOpsiConfigurationConfigurationItemConfigItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailInput)(nil)).Elem(), GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayInput)(nil)).Elem(), GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailInput)(nil)).Elem(), GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayInput)(nil)).Elem(), GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsFilterInput)(nil)).Elem(), GetOpsiConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsFilterArrayInput)(nil)).Elem(), GetOpsiConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionArrayInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray{})
 	pulumi.RegisterOutputType(DatabaseInsightConnectionCredentialDetailsOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightConnectionCredentialDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightConnectionDetailsOutput{})
@@ -8559,6 +11160,14 @@ func init() {
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput{})
+	pulumi.RegisterOutputType(OpsiConfigurationConfigItemOutput{})
+	pulumi.RegisterOutputType(OpsiConfigurationConfigItemArrayOutput{})
+	pulumi.RegisterOutputType(OpsiConfigurationConfigItemMetadataOutput{})
+	pulumi.RegisterOutputType(OpsiConfigurationConfigItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(OpsiConfigurationConfigItemMetadataUnitDetailOutput{})
+	pulumi.RegisterOutputType(OpsiConfigurationConfigItemMetadataUnitDetailArrayOutput{})
+	pulumi.RegisterOutputType(OpsiConfigurationConfigItemMetadataValueInputDetailOutput{})
+	pulumi.RegisterOutputType(OpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetAwrHubAwrSnapshotItemOutput{})
 	pulumi.RegisterOutputType(GetAwrHubAwrSnapshotItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput{})
@@ -8655,4 +11264,34 @@ func init() {
 	pulumi.RegisterOutputType(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigItemOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigItemMetadataUnitDetailOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigItemMetadataUnitDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigItemMetadataValueInputDetailOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigItemMetadataValueInputDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigurationItemConfigItemOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigurationItemConfigItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigurationItemConfigItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigurationItemConfigItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailOutput{})
+	pulumi.RegisterOutputType(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayOutput{})
 }

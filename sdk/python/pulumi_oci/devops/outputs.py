@@ -44,6 +44,7 @@ __all__ = [
     'BuildRunCommitInfo',
     'ConnectionTlsVerifyConfig',
     'DeployArtifactDeployArtifactSource',
+    'DeployArtifactDeployArtifactSourceHelmVerificationKeySource',
     'DeployEnvironmentComputeInstanceGroupSelectors',
     'DeployEnvironmentComputeInstanceGroupSelectorsItem',
     'DeployEnvironmentNetworkChannel',
@@ -72,6 +73,10 @@ __all__ = [
     'DeployStageProductionLoadBalancerConfig',
     'DeployStageRollbackPolicy',
     'DeployStageRolloutPolicy',
+    'DeployStageSetString',
+    'DeployStageSetStringItem',
+    'DeployStageSetValues',
+    'DeployStageSetValuesItem',
     'DeployStageTestLoadBalancerConfig',
     'DeployStageWaitCriteria',
     'DeploymentDeployArtifactOverrideArguments',
@@ -163,9 +168,11 @@ __all__ = [
     'GetConnectionsConnectionCollectionItemTlsVerifyConfigResult',
     'GetConnectionsFilterResult',
     'GetDeployArtifactDeployArtifactSourceResult',
+    'GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult',
     'GetDeployArtifactsDeployArtifactCollectionResult',
     'GetDeployArtifactsDeployArtifactCollectionItemResult',
     'GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult',
+    'GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult',
     'GetDeployArtifactsFilterResult',
     'GetDeployEnvironmentComputeInstanceGroupSelectorResult',
     'GetDeployEnvironmentComputeInstanceGroupSelectorItemResult',
@@ -214,6 +221,10 @@ __all__ = [
     'GetDeployStageProductionLoadBalancerConfigResult',
     'GetDeployStageRollbackPolicyResult',
     'GetDeployStageRolloutPolicyResult',
+    'GetDeployStageSetStringResult',
+    'GetDeployStageSetStringItemResult',
+    'GetDeployStageSetValueResult',
+    'GetDeployStageSetValueItemResult',
     'GetDeployStageTestLoadBalancerConfigResult',
     'GetDeployStageWaitCriteriaResult',
     'GetDeployStagesDeployStageCollectionResult',
@@ -233,6 +244,10 @@ __all__ = [
     'GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigResult',
     'GetDeployStagesDeployStageCollectionItemRollbackPolicyResult',
     'GetDeployStagesDeployStageCollectionItemRolloutPolicyResult',
+    'GetDeployStagesDeployStageCollectionItemSetStringResult',
+    'GetDeployStagesDeployStageCollectionItemSetStringItemResult',
+    'GetDeployStagesDeployStageCollectionItemSetValueResult',
+    'GetDeployStagesDeployStageCollectionItemSetValueItemResult',
     'GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult',
     'GetDeployStagesDeployStageCollectionItemWaitCriteriaResult',
     'GetDeployStagesFilterResult',
@@ -1847,6 +1862,8 @@ class DeployArtifactDeployArtifactSource(dict):
             suggest = "deploy_artifact_path"
         elif key == "deployArtifactVersion":
             suggest = "deploy_artifact_version"
+        elif key == "helmVerificationKeySource":
+            suggest = "helm_verification_key_source"
         elif key == "imageDigest":
             suggest = "image_digest"
         elif key == "imageUri":
@@ -1871,6 +1888,7 @@ class DeployArtifactDeployArtifactSource(dict):
                  chart_url: Optional[str] = None,
                  deploy_artifact_path: Optional[str] = None,
                  deploy_artifact_version: Optional[str] = None,
+                 helm_verification_key_source: Optional['outputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySource'] = None,
                  image_digest: Optional[str] = None,
                  image_uri: Optional[str] = None,
                  repository_id: Optional[str] = None):
@@ -1880,6 +1898,7 @@ class DeployArtifactDeployArtifactSource(dict):
         :param str chart_url: (Updatable) The URL of an OCIR repository.
         :param str deploy_artifact_path: (Updatable) Specifies the artifact path in the repository.
         :param str deploy_artifact_version: (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        :param 'DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs' helm_verification_key_source: (Updatable) The source of the verification material.
         :param str image_digest: (Updatable) Specifies image digest for the version of the image.
         :param str image_uri: (Updatable) Specifies OCIR Image Path - optionally include tag.
         :param str repository_id: (Updatable) The OCID of a repository
@@ -1893,6 +1912,8 @@ class DeployArtifactDeployArtifactSource(dict):
             pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         if deploy_artifact_version is not None:
             pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
+        if helm_verification_key_source is not None:
+            pulumi.set(__self__, "helm_verification_key_source", helm_verification_key_source)
         if image_digest is not None:
             pulumi.set(__self__, "image_digest", image_digest)
         if image_uri is not None:
@@ -1941,6 +1962,14 @@ class DeployArtifactDeployArtifactSource(dict):
         return pulumi.get(self, "deploy_artifact_version")
 
     @property
+    @pulumi.getter(name="helmVerificationKeySource")
+    def helm_verification_key_source(self) -> Optional['outputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySource']:
+        """
+        (Updatable) The source of the verification material.
+        """
+        return pulumi.get(self, "helm_verification_key_source")
+
+    @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> Optional[str]:
         """
@@ -1963,6 +1992,83 @@ class DeployArtifactDeployArtifactSource(dict):
         (Updatable) The OCID of a repository
         """
         return pulumi.get(self, "repository_id")
+
+
+@pulumi.output_type
+class DeployArtifactDeployArtifactSourceHelmVerificationKeySource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "verificationKeySourceType":
+            suggest = "verification_key_source_type"
+        elif key == "currentPublicKey":
+            suggest = "current_public_key"
+        elif key == "previousPublicKey":
+            suggest = "previous_public_key"
+        elif key == "vaultSecretId":
+            suggest = "vault_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeployArtifactDeployArtifactSourceHelmVerificationKeySource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeployArtifactDeployArtifactSourceHelmVerificationKeySource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeployArtifactDeployArtifactSourceHelmVerificationKeySource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 verification_key_source_type: str,
+                 current_public_key: Optional[str] = None,
+                 previous_public_key: Optional[str] = None,
+                 vault_secret_id: Optional[str] = None):
+        """
+        :param str verification_key_source_type: (Updatable) Specifies type of verification material.
+        :param str current_public_key: (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        :param str previous_public_key: (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        :param str vault_secret_id: (Updatable) The OCID of the Vault Secret containing the verification key versions.
+        """
+        pulumi.set(__self__, "verification_key_source_type", verification_key_source_type)
+        if current_public_key is not None:
+            pulumi.set(__self__, "current_public_key", current_public_key)
+        if previous_public_key is not None:
+            pulumi.set(__self__, "previous_public_key", previous_public_key)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter(name="verificationKeySourceType")
+    def verification_key_source_type(self) -> str:
+        """
+        (Updatable) Specifies type of verification material.
+        """
+        return pulumi.get(self, "verification_key_source_type")
+
+    @property
+    @pulumi.getter(name="currentPublicKey")
+    def current_public_key(self) -> Optional[str]:
+        """
+        (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        """
+        return pulumi.get(self, "current_public_key")
+
+    @property
+    @pulumi.getter(name="previousPublicKey")
+    def previous_public_key(self) -> Optional[str]:
+        """
+        (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        """
+        return pulumi.get(self, "previous_public_key")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the Vault Secret containing the verification key versions.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type
@@ -2553,7 +2659,7 @@ class DeployStageBlueBackendIps(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence[str]] = None):
         """
-        :param Sequence[str] items: (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence[str] items: (Updatable) List of parameters defined to set helm value.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -2562,7 +2668,7 @@ class DeployStageBlueBackendIps(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        (Updatable) List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -2916,7 +3022,7 @@ class DeployStageDeployStagePredecessorCollection(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.DeployStageDeployStagePredecessorCollectionItem']):
         """
-        :param Sequence['DeployStageDeployStagePredecessorCollectionItemArgs'] items: (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence['DeployStageDeployStagePredecessorCollectionItemArgs'] items: (Updatable) List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -2924,7 +3030,7 @@ class DeployStageDeployStagePredecessorCollection(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.DeployStageDeployStagePredecessorCollectionItem']:
         """
-        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        (Updatable) List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -3015,7 +3121,7 @@ class DeployStageGreenBackendIps(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence[str]] = None):
         """
-        :param Sequence[str] items: (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence[str] items: (Updatable) List of parameters defined to set helm value.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -3024,7 +3130,7 @@ class DeployStageGreenBackendIps(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        (Updatable) List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -3310,6 +3416,106 @@ class DeployStageRolloutPolicy(dict):
 
 
 @pulumi.output_type
+class DeployStageSetString(dict):
+    def __init__(__self__, *,
+                 items: Optional[Sequence['outputs.DeployStageSetStringItem']] = None):
+        """
+        :param Sequence['DeployStageSetStringItemArgs'] items: (Updatable) List of parameters defined to set helm value.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[Sequence['outputs.DeployStageSetStringItem']]:
+        """
+        (Updatable) List of parameters defined to set helm value.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class DeployStageSetStringItem(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: (Updatable) Name of the parameter (case-sensitive).
+        :param str value: (Updatable) Value of the parameter.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) Value of the parameter.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DeployStageSetValues(dict):
+    def __init__(__self__, *,
+                 items: Optional[Sequence['outputs.DeployStageSetValuesItem']] = None):
+        """
+        :param Sequence['DeployStageSetValuesItemArgs'] items: (Updatable) List of parameters defined to set helm value.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[Sequence['outputs.DeployStageSetValuesItem']]:
+        """
+        (Updatable) List of parameters defined to set helm value.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class DeployStageSetValuesItem(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: (Updatable) Name of the parameter (case-sensitive).
+        :param str value: (Updatable) Value of the parameter.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) Value of the parameter.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class DeployStageTestLoadBalancerConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -3479,6 +3685,7 @@ class DeploymentDeployArtifactOverrideArgumentsItem(dict):
         :param str deploy_artifact_id: The OCID of the artifact to which this parameter applies.
         :param str name: Name of the parameter (case-sensitive).
         :param str value: value of the argument.
+               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         if deploy_artifact_id is not None:
             pulumi.set(__self__, "deploy_artifact_id", deploy_artifact_id)
@@ -3508,6 +3715,7 @@ class DeploymentDeployArtifactOverrideArgumentsItem(dict):
     def value(self) -> Optional[str]:
         """
         value of the argument.
+        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         return pulumi.get(self, "value")
 
@@ -3862,6 +4070,7 @@ class DeploymentDeployStageOverrideArgumentsItem(dict):
         :param str deploy_stage_id: The OCID of the stage.
         :param str name: Name of the parameter (case-sensitive).
         :param str value: value of the argument.
+               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         if deploy_stage_id is not None:
             pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
@@ -3891,6 +4100,7 @@ class DeploymentDeployStageOverrideArgumentsItem(dict):
     def value(self) -> Optional[str]:
         """
         value of the argument.
+        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         return pulumi.get(self, "value")
 
@@ -3922,6 +4132,7 @@ class DeploymentDeploymentArgumentsItem(dict):
         """
         :param str name: Name of the parameter (case-sensitive).
         :param str value: value of the argument.
+               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3941,6 +4152,7 @@ class DeploymentDeploymentArgumentsItem(dict):
     def value(self) -> Optional[str]:
         """
         value of the argument.
+        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         return pulumi.get(self, "value")
 
@@ -7168,6 +7380,7 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
                  deploy_artifact_path: str,
                  deploy_artifact_source_type: str,
                  deploy_artifact_version: str,
+                 helm_verification_key_sources: Sequence['outputs.GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult'],
                  image_digest: str,
                  image_uri: str,
                  repository_id: str):
@@ -7177,6 +7390,7 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
         :param str deploy_artifact_path: Specifies the artifact path in the repository.
         :param str deploy_artifact_source_type: Specifies types of artifact sources.
         :param str deploy_artifact_version: Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        :param Sequence['GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs'] helm_verification_key_sources: The source of the verification material.
         :param str image_digest: Specifies image digest for the version of the image.
         :param str image_uri: Specifies OCIR Image Path - optionally include tag.
         :param str repository_id: The OCID of a repository
@@ -7186,6 +7400,7 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
         pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         pulumi.set(__self__, "deploy_artifact_source_type", deploy_artifact_source_type)
         pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
+        pulumi.set(__self__, "helm_verification_key_sources", helm_verification_key_sources)
         pulumi.set(__self__, "image_digest", image_digest)
         pulumi.set(__self__, "image_uri", image_uri)
         pulumi.set(__self__, "repository_id", repository_id)
@@ -7231,6 +7446,14 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
         return pulumi.get(self, "deploy_artifact_version")
 
     @property
+    @pulumi.getter(name="helmVerificationKeySources")
+    def helm_verification_key_sources(self) -> Sequence['outputs.GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult']:
+        """
+        The source of the verification material.
+        """
+        return pulumi.get(self, "helm_verification_key_sources")
+
+    @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> str:
         """
@@ -7253,6 +7476,57 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
         The OCID of a repository
         """
         return pulumi.get(self, "repository_id")
+
+
+@pulumi.output_type
+class GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult(dict):
+    def __init__(__self__, *,
+                 current_public_key: str,
+                 previous_public_key: str,
+                 vault_secret_id: str,
+                 verification_key_source_type: str):
+        """
+        :param str current_public_key: Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        :param str previous_public_key: Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        :param str vault_secret_id: The OCID of the Vault Secret containing the verification key versions.
+        :param str verification_key_source_type: Specifies type of verification material.
+        """
+        pulumi.set(__self__, "current_public_key", current_public_key)
+        pulumi.set(__self__, "previous_public_key", previous_public_key)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+        pulumi.set(__self__, "verification_key_source_type", verification_key_source_type)
+
+    @property
+    @pulumi.getter(name="currentPublicKey")
+    def current_public_key(self) -> str:
+        """
+        Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        """
+        return pulumi.get(self, "current_public_key")
+
+    @property
+    @pulumi.getter(name="previousPublicKey")
+    def previous_public_key(self) -> str:
+        """
+        Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        """
+        return pulumi.get(self, "previous_public_key")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        The OCID of the Vault Secret containing the verification key versions.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+    @property
+    @pulumi.getter(name="verificationKeySourceType")
+    def verification_key_source_type(self) -> str:
+        """
+        Specifies type of verification material.
+        """
+        return pulumi.get(self, "verification_key_source_type")
 
 
 @pulumi.output_type
@@ -7447,6 +7721,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
                  deploy_artifact_path: str,
                  deploy_artifact_source_type: str,
                  deploy_artifact_version: str,
+                 helm_verification_key_sources: Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult'],
                  image_digest: str,
                  image_uri: str,
                  repository_id: str):
@@ -7456,6 +7731,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
         :param str deploy_artifact_path: Specifies the artifact path in the repository.
         :param str deploy_artifact_source_type: Specifies types of artifact sources.
         :param str deploy_artifact_version: Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        :param Sequence['GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs'] helm_verification_key_sources: The source of the verification material.
         :param str image_digest: Specifies image digest for the version of the image.
         :param str image_uri: Specifies OCIR Image Path - optionally include tag.
         :param str repository_id: The OCID of a repository
@@ -7465,6 +7741,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
         pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         pulumi.set(__self__, "deploy_artifact_source_type", deploy_artifact_source_type)
         pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
+        pulumi.set(__self__, "helm_verification_key_sources", helm_verification_key_sources)
         pulumi.set(__self__, "image_digest", image_digest)
         pulumi.set(__self__, "image_uri", image_uri)
         pulumi.set(__self__, "repository_id", repository_id)
@@ -7510,6 +7787,14 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
         return pulumi.get(self, "deploy_artifact_version")
 
     @property
+    @pulumi.getter(name="helmVerificationKeySources")
+    def helm_verification_key_sources(self) -> Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult']:
+        """
+        The source of the verification material.
+        """
+        return pulumi.get(self, "helm_verification_key_sources")
+
+    @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> str:
         """
@@ -7532,6 +7817,57 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
         The OCID of a repository
         """
         return pulumi.get(self, "repository_id")
+
+
+@pulumi.output_type
+class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult(dict):
+    def __init__(__self__, *,
+                 current_public_key: str,
+                 previous_public_key: str,
+                 vault_secret_id: str,
+                 verification_key_source_type: str):
+        """
+        :param str current_public_key: Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        :param str previous_public_key: Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        :param str vault_secret_id: The OCID of the Vault Secret containing the verification key versions.
+        :param str verification_key_source_type: Specifies type of verification material.
+        """
+        pulumi.set(__self__, "current_public_key", current_public_key)
+        pulumi.set(__self__, "previous_public_key", previous_public_key)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+        pulumi.set(__self__, "verification_key_source_type", verification_key_source_type)
+
+    @property
+    @pulumi.getter(name="currentPublicKey")
+    def current_public_key(self) -> str:
+        """
+        Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        """
+        return pulumi.get(self, "current_public_key")
+
+    @property
+    @pulumi.getter(name="previousPublicKey")
+    def previous_public_key(self) -> str:
+        """
+        Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        """
+        return pulumi.get(self, "previous_public_key")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        The OCID of the Vault Secret containing the verification key versions.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+    @property
+    @pulumi.getter(name="verificationKeySourceType")
+    def verification_key_source_type(self) -> str:
+        """
+        Specifies type of verification material.
+        """
+        return pulumi.get(self, "verification_key_source_type")
 
 
 @pulumi.output_type
@@ -8811,7 +9147,7 @@ class GetDeployStageBlueBackendIpResult(dict):
     def __init__(__self__, *,
                  items: Sequence[str]):
         """
-        :param Sequence[str] items: The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence[str] items: List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -8819,7 +9155,7 @@ class GetDeployStageBlueBackendIpResult(dict):
     @pulumi.getter
     def items(self) -> Sequence[str]:
         """
-        The IP address of the backend server. A server could be a compute instance or a load balancer.
+        List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -9062,7 +9398,7 @@ class GetDeployStageDeployStagePredecessorCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeployStageDeployStagePredecessorCollectionItemResult']):
         """
-        :param Sequence['GetDeployStageDeployStagePredecessorCollectionItemArgs'] items: The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence['GetDeployStageDeployStagePredecessorCollectionItemArgs'] items: List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -9070,7 +9406,7 @@ class GetDeployStageDeployStagePredecessorCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetDeployStageDeployStagePredecessorCollectionItemResult']:
         """
-        The IP address of the backend server. A server could be a compute instance or a load balancer.
+        List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -9138,7 +9474,7 @@ class GetDeployStageGreenBackendIpResult(dict):
     def __init__(__self__, *,
                  items: Sequence[str]):
         """
-        :param Sequence[str] items: The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence[str] items: List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -9146,7 +9482,7 @@ class GetDeployStageGreenBackendIpResult(dict):
     @pulumi.getter
     def items(self) -> Sequence[str]:
         """
-        The IP address of the backend server. A server could be a compute instance or a load balancer.
+        List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -9334,6 +9670,100 @@ class GetDeployStageRolloutPolicyResult(dict):
 
 
 @pulumi.output_type
+class GetDeployStageSetStringResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeployStageSetStringItemResult']):
+        """
+        :param Sequence['GetDeployStageSetStringItemArgs'] items: List of parameters defined to set helm value.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeployStageSetStringItemResult']:
+        """
+        List of parameters defined to set helm value.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeployStageSetStringItemResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the parameter (case-sensitive).
+        :param str value: Value of the parameter.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the parameter.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDeployStageSetValueResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeployStageSetValueItemResult']):
+        """
+        :param Sequence['GetDeployStageSetValueItemArgs'] items: List of parameters defined to set helm value.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeployStageSetValueItemResult']:
+        """
+        List of parameters defined to set helm value.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeployStageSetValueItemResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the parameter (case-sensitive).
+        :param str value: Value of the parameter.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the parameter.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetDeployStageTestLoadBalancerConfigResult(dict):
     def __init__(__self__, *,
                  backend_port: int,
@@ -9418,7 +9848,7 @@ class GetDeployStagesDeployStageCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemResult']):
         """
-        :param Sequence['GetDeployStagesDeployStageCollectionItemArgs'] items: The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence['GetDeployStagesDeployStageCollectionItemArgs'] items: List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -9426,7 +9856,7 @@ class GetDeployStagesDeployStageCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemResult']:
         """
-        The IP address of the backend server. A server could be a compute instance or a load balancer.
+        List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -9435,6 +9865,7 @@ class GetDeployStagesDeployStageCollectionResult(dict):
 class GetDeployStagesDeployStageCollectionItemResult(dict):
     def __init__(__self__, *,
                  approval_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemApprovalPolicyResult'],
+                 are_hooks_enabled: bool,
                  blue_backend_ips: Sequence['outputs.GetDeployStagesDeployStageCollectionItemBlueBackendIpResult'],
                  blue_green_strategies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult'],
                  canary_strategies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemCanaryStrategyResult'],
@@ -9466,10 +9897,13 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  helm_chart_deploy_artifact_id: str,
                  id: str,
                  is_async: bool,
+                 is_debug_enabled: bool,
+                 is_force_enabled: bool,
                  is_validation_enabled: bool,
                  kubernetes_manifest_deploy_artifact_ids: Sequence[str],
                  lifecycle_details: str,
                  load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemLoadBalancerConfigResult'],
+                 max_history: int,
                  max_memory_in_mbs: str,
                  namespace: str,
                  oke_blue_green_deploy_stage_id: str,
@@ -9481,6 +9915,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  release_name: str,
                  rollback_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemRollbackPolicyResult'],
                  rollout_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemRolloutPolicyResult'],
+                 set_strings: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringResult'],
+                 set_values: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueResult'],
+                 should_cleanup_on_fail: bool,
+                 should_not_wait: bool,
+                 should_reset_values: bool,
+                 should_reuse_values: bool,
+                 should_skip_crds: bool,
+                 should_skip_render_subchart_notes: bool,
                  state: str,
                  system_tags: Mapping[str, Any],
                  test_load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult'],
@@ -9492,6 +9934,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  wait_criterias: Sequence['outputs.GetDeployStagesDeployStageCollectionItemWaitCriteriaResult']):
         """
         :param Sequence['GetDeployStagesDeployStageCollectionItemApprovalPolicyArgs'] approval_policies: Specifies the approval policy.
+        :param bool are_hooks_enabled: Disable pre/post upgrade hooks. Set to false by default.
         :param Sequence['GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs'] blue_backend_ips: Collection of backend environment IP addresses.
         :param Sequence['GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs'] blue_green_strategies: Specifies the required blue green release strategy for OKE deployment.
         :param Sequence['GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs'] canary_strategies: Specifies the required canary release strategy for OKE deployment.
@@ -9523,10 +9966,13 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param str helm_chart_deploy_artifact_id: Helm chart artifact OCID.
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param bool is_async: A boolean flag specifies whether this stage executes asynchronously.
+        :param bool is_debug_enabled: Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        :param bool is_force_enabled: Force resource update through delete; or if required, recreate. Set to false by default.
         :param bool is_validation_enabled: A boolean flag specifies whether the invoked function must be validated.
         :param Sequence[str] kubernetes_manifest_deploy_artifact_ids: List of Kubernetes manifest artifact OCIDs.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArgs'] load_balancer_configs: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param int max_history: Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         :param str max_memory_in_mbs: Maximum usable memory for the Function (in MB).
         :param str namespace: Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
         :param str oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
@@ -9538,6 +9984,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param str release_name: Release name of the Helm chart.
         :param Sequence['GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs'] rollback_policies: Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param Sequence['GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs'] rollout_policies: Description of rollout policy for load balancer traffic shift stage.
+        :param Sequence['GetDeployStagesDeployStageCollectionItemSetStringArgs'] set_strings: Specifies the name and value pairs to set helm values.
+        :param Sequence['GetDeployStagesDeployStageCollectionItemSetValueArgs'] set_values: Specifies the name and value pairs to set helm values.
+        :param bool should_cleanup_on_fail: Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        :param bool should_not_wait: Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+        :param bool should_reset_values: During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        :param bool should_reuse_values: During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        :param bool should_skip_crds: If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        :param bool should_skip_render_subchart_notes: If set, renders subchart notes along with the parent. Set to false by default.
         :param str state: A filter to return only deployment stages that matches the given lifecycle state.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param Sequence['GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs'] test_load_balancer_configs: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
@@ -9549,6 +10003,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param Sequence['GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs'] wait_criterias: Specifies wait criteria for the Wait stage.
         """
         pulumi.set(__self__, "approval_policies", approval_policies)
+        pulumi.set(__self__, "are_hooks_enabled", are_hooks_enabled)
         pulumi.set(__self__, "blue_backend_ips", blue_backend_ips)
         pulumi.set(__self__, "blue_green_strategies", blue_green_strategies)
         pulumi.set(__self__, "canary_strategies", canary_strategies)
@@ -9580,10 +10035,13 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_async", is_async)
+        pulumi.set(__self__, "is_debug_enabled", is_debug_enabled)
+        pulumi.set(__self__, "is_force_enabled", is_force_enabled)
         pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
         pulumi.set(__self__, "kubernetes_manifest_deploy_artifact_ids", kubernetes_manifest_deploy_artifact_ids)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "load_balancer_configs", load_balancer_configs)
+        pulumi.set(__self__, "max_history", max_history)
         pulumi.set(__self__, "max_memory_in_mbs", max_memory_in_mbs)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "oke_blue_green_deploy_stage_id", oke_blue_green_deploy_stage_id)
@@ -9595,6 +10053,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         pulumi.set(__self__, "release_name", release_name)
         pulumi.set(__self__, "rollback_policies", rollback_policies)
         pulumi.set(__self__, "rollout_policies", rollout_policies)
+        pulumi.set(__self__, "set_strings", set_strings)
+        pulumi.set(__self__, "set_values", set_values)
+        pulumi.set(__self__, "should_cleanup_on_fail", should_cleanup_on_fail)
+        pulumi.set(__self__, "should_not_wait", should_not_wait)
+        pulumi.set(__self__, "should_reset_values", should_reset_values)
+        pulumi.set(__self__, "should_reuse_values", should_reuse_values)
+        pulumi.set(__self__, "should_skip_crds", should_skip_crds)
+        pulumi.set(__self__, "should_skip_render_subchart_notes", should_skip_render_subchart_notes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "test_load_balancer_configs", test_load_balancer_configs)
@@ -9612,6 +10078,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         Specifies the approval policy.
         """
         return pulumi.get(self, "approval_policies")
+
+    @property
+    @pulumi.getter(name="areHooksEnabled")
+    def are_hooks_enabled(self) -> bool:
+        """
+        Disable pre/post upgrade hooks. Set to false by default.
+        """
+        return pulumi.get(self, "are_hooks_enabled")
 
     @property
     @pulumi.getter(name="blueBackendIps")
@@ -9862,6 +10336,22 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         return pulumi.get(self, "is_async")
 
     @property
+    @pulumi.getter(name="isDebugEnabled")
+    def is_debug_enabled(self) -> bool:
+        """
+        Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        """
+        return pulumi.get(self, "is_debug_enabled")
+
+    @property
+    @pulumi.getter(name="isForceEnabled")
+    def is_force_enabled(self) -> bool:
+        """
+        Force resource update through delete; or if required, recreate. Set to false by default.
+        """
+        return pulumi.get(self, "is_force_enabled")
+
+    @property
     @pulumi.getter(name="isValidationEnabled")
     def is_validation_enabled(self) -> bool:
         """
@@ -9892,6 +10382,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         """
         return pulumi.get(self, "load_balancer_configs")
+
+    @property
+    @pulumi.getter(name="maxHistory")
+    def max_history(self) -> int:
+        """
+        Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        """
+        return pulumi.get(self, "max_history")
 
     @property
     @pulumi.getter(name="maxMemoryInMbs")
@@ -9980,6 +10478,70 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         Description of rollout policy for load balancer traffic shift stage.
         """
         return pulumi.get(self, "rollout_policies")
+
+    @property
+    @pulumi.getter(name="setStrings")
+    def set_strings(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringResult']:
+        """
+        Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_strings")
+
+    @property
+    @pulumi.getter(name="setValues")
+    def set_values(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueResult']:
+        """
+        Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_values")
+
+    @property
+    @pulumi.getter(name="shouldCleanupOnFail")
+    def should_cleanup_on_fail(self) -> bool:
+        """
+        Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        """
+        return pulumi.get(self, "should_cleanup_on_fail")
+
+    @property
+    @pulumi.getter(name="shouldNotWait")
+    def should_not_wait(self) -> bool:
+        """
+        Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+        """
+        return pulumi.get(self, "should_not_wait")
+
+    @property
+    @pulumi.getter(name="shouldResetValues")
+    def should_reset_values(self) -> bool:
+        """
+        During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        """
+        return pulumi.get(self, "should_reset_values")
+
+    @property
+    @pulumi.getter(name="shouldReuseValues")
+    def should_reuse_values(self) -> bool:
+        """
+        During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        """
+        return pulumi.get(self, "should_reuse_values")
+
+    @property
+    @pulumi.getter(name="shouldSkipCrds")
+    def should_skip_crds(self) -> bool:
+        """
+        If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_crds")
+
+    @property
+    @pulumi.getter(name="shouldSkipRenderSubchartNotes")
+    def should_skip_render_subchart_notes(self) -> bool:
+        """
+        If set, renders subchart notes along with the parent. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_render_subchart_notes")
 
     @property
     @pulumi.getter
@@ -10088,7 +10650,7 @@ class GetDeployStagesDeployStageCollectionItemBlueBackendIpResult(dict):
     def __init__(__self__, *,
                  items: Sequence[str]):
         """
-        :param Sequence[str] items: The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence[str] items: List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -10096,7 +10658,7 @@ class GetDeployStagesDeployStageCollectionItemBlueBackendIpResult(dict):
     @pulumi.getter
     def items(self) -> Sequence[str]:
         """
-        The IP address of the backend server. A server could be a compute instance or a load balancer.
+        List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -10339,7 +10901,7 @@ class GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionRe
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemResult']):
         """
-        :param Sequence['GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArgs'] items: The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence['GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArgs'] items: List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -10347,7 +10909,7 @@ class GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionRe
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemResult']:
         """
-        The IP address of the backend server. A server could be a compute instance or a load balancer.
+        List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -10415,7 +10977,7 @@ class GetDeployStagesDeployStageCollectionItemGreenBackendIpResult(dict):
     def __init__(__self__, *,
                  items: Sequence[str]):
         """
-        :param Sequence[str] items: The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param Sequence[str] items: List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -10423,7 +10985,7 @@ class GetDeployStagesDeployStageCollectionItemGreenBackendIpResult(dict):
     @pulumi.getter
     def items(self) -> Sequence[str]:
         """
-        The IP address of the backend server. A server could be a compute instance or a load balancer.
+        List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -10611,6 +11173,100 @@ class GetDeployStagesDeployStageCollectionItemRolloutPolicyResult(dict):
 
 
 @pulumi.output_type
+class GetDeployStagesDeployStageCollectionItemSetStringResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringItemResult']):
+        """
+        :param Sequence['GetDeployStagesDeployStageCollectionItemSetStringItemArgs'] items: List of parameters defined to set helm value.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringItemResult']:
+        """
+        List of parameters defined to set helm value.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeployStagesDeployStageCollectionItemSetStringItemResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the parameter (case-sensitive).
+        :param str value: Value of the parameter.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the parameter.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDeployStagesDeployStageCollectionItemSetValueResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueItemResult']):
+        """
+        :param Sequence['GetDeployStagesDeployStageCollectionItemSetValueItemArgs'] items: List of parameters defined to set helm value.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueItemResult']:
+        """
+        List of parameters defined to set helm value.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeployStagesDeployStageCollectionItemSetValueItemResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the parameter (case-sensitive).
+        :param str value: Value of the parameter.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the parameter.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult(dict):
     def __init__(__self__, *,
                  backend_port: int,
@@ -10696,6 +11352,9 @@ class GetDeployStagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of the parameter (case-sensitive).
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -10704,6 +11363,9 @@ class GetDeployStagesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of the parameter (case-sensitive).
+        """
         return pulumi.get(self, "name")
 
     @property

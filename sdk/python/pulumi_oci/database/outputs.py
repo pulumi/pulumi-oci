@@ -157,6 +157,9 @@ __all__ = [
     'GetAutonomousContainerDatabaseMaintenanceWindowMonthResult',
     'GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
+    'GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionResult',
+    'GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedAppResult',
+    'GetAutonomousContainerDatabaseVersionsFilterResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
@@ -9722,6 +9725,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
                  apply_rate: str,
                  autonomous_container_database_dataguard_association_id: str,
                  autonomous_container_database_id: str,
+                 fast_start_fail_over_lag_limit_in_seconds: int,
                  id: str,
                  is_automatic_failover_enabled: bool,
                  lifecycle_details: str,
@@ -9740,8 +9744,9 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
         :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
         :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param str id: The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
-        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
         :param str lifecycle_details: Additional information about the current lifecycleState, if available.
         :param str peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param str peer_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
@@ -9759,6 +9764,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         pulumi.set(__self__, "apply_rate", apply_rate)
         pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -9804,6 +9810,14 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         return pulumi.get(self, "autonomous_container_database_id")
 
     @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -9815,7 +9829,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> bool:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -10396,6 +10410,124 @@ class GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigB
 
 
 @pulumi.output_type
+class GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionResult(dict):
+    def __init__(__self__, *,
+                 details: str,
+                 supported_apps: Sequence['outputs.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedAppResult'],
+                 version: str):
+        """
+        :param str details: A URL that points to a detailed description of the Autonomous Container Database version.
+        :param Sequence['GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedAppArgs'] supported_apps: The list of applications supported for the given version.
+        :param str version: A valid Oracle Database version for provisioning an Autonomous Container Database.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "supported_apps", supported_apps)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def details(self) -> str:
+        """
+        A URL that points to a detailed description of the Autonomous Container Database version.
+        """
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter(name="supportedApps")
+    def supported_apps(self) -> Sequence['outputs.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedAppResult']:
+        """
+        The list of applications supported for the given version.
+        """
+        return pulumi.get(self, "supported_apps")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        A valid Oracle Database version for provisioning an Autonomous Container Database.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedAppResult(dict):
+    def __init__(__self__, *,
+                 end_of_support: str,
+                 is_certified: bool,
+                 release_date: str,
+                 supported_app_name: str):
+        """
+        :param str end_of_support: The Autonomous Container Database version end of support date.
+        :param bool is_certified: Indicates if the image is certified.
+        :param str release_date: The Autonomous Container Database version release date.
+        :param str supported_app_name: The name of the supported application.
+        """
+        pulumi.set(__self__, "end_of_support", end_of_support)
+        pulumi.set(__self__, "is_certified", is_certified)
+        pulumi.set(__self__, "release_date", release_date)
+        pulumi.set(__self__, "supported_app_name", supported_app_name)
+
+    @property
+    @pulumi.getter(name="endOfSupport")
+    def end_of_support(self) -> str:
+        """
+        The Autonomous Container Database version end of support date.
+        """
+        return pulumi.get(self, "end_of_support")
+
+    @property
+    @pulumi.getter(name="isCertified")
+    def is_certified(self) -> bool:
+        """
+        Indicates if the image is certified.
+        """
+        return pulumi.get(self, "is_certified")
+
+    @property
+    @pulumi.getter(name="releaseDate")
+    def release_date(self) -> str:
+        """
+        The Autonomous Container Database version release date.
+        """
+        return pulumi.get(self, "release_date")
+
+    @property
+    @pulumi.getter(name="supportedAppName")
+    def supported_app_name(self) -> str:
+        """
+        The name of the supported application.
+        """
+        return pulumi.get(self, "supported_app_name")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabaseVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     def __init__(__self__, *,
                  autonomous_exadata_infrastructure_id: str,
@@ -10410,6 +10542,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  db_version: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
+                 fast_start_fail_over_lag_limit_in_seconds: int,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  infrastructure_type: str,
@@ -10442,8 +10575,10 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  standby_maintenance_buffer_in_days: int,
                  state: str,
                  time_created: str,
+                 time_snapshot_standby_revert: str,
                  total_cpus: int,
-                 vault_id: str):
+                 vault_id: str,
+                 version_preference: str):
         """
         :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -10476,8 +10611,10 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param int standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         :param int total_cpus: The number of CPU cores allocated to the Autonomous VM cluster.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str version_preference: The next maintenance version preference.
         """
         pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
@@ -10491,6 +10628,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
@@ -10523,8 +10661,10 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
         pulumi.set(__self__, "total_cpus", total_cpus)
         pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "version_preference", version_preference)
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -10615,6 +10755,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -10840,6 +10985,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeSnapshotStandbyRevert")
+    def time_snapshot_standby_revert(self) -> str:
+        """
+        The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        """
+        return pulumi.get(self, "time_snapshot_standby_revert")
+
+    @property
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> int:
         """
@@ -10854,6 +11007,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> str:
+        """
+        The next maintenance version preference.
+        """
+        return pulumi.get(self, "version_preference")
 
 
 @pulumi.output_type
@@ -12116,7 +12277,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
         :param str apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str id: The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous Database resides in.
-        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         :param str lifecycle_details: Additional information about the current lifecycleState, if available.
         :param str peer_autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
         :param str peer_autonomous_database_life_cycle_state: The current state of Autonomous Data Guard.
@@ -12182,7 +12343,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> bool:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -12595,6 +12756,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  autonomous_maintenance_schedule_type: str,
                  available_upgrade_versions: Sequence[str],
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult'],
+                 backup_retention_period_in_days: int,
                  character_set: str,
                  clone_type: str,
                  compartment_id: str,
@@ -12687,6 +12849,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  time_reclamation_of_free_autonomous_database: str,
                  time_until_reconnect_clone_enabled: str,
                  timestamp: str,
+                 total_backup_storage_size_in_gbs: float,
                  use_latest_available_backup_time_stamp: bool,
                  used_data_storage_size_in_tbs: int,
                  vault_id: str,
@@ -12700,6 +12863,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
@@ -12783,6 +12947,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str time_of_next_refresh: The date and time of next refresh.
         :param str time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param str time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
+        :param float total_backup_storage_size_in_gbs: The backup storage to the database.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -12798,6 +12963,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         pulumi.set(__self__, "backup_configs", backup_configs)
+        pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "clone_type", clone_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -12890,6 +13056,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
         pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         pulumi.set(__self__, "timestamp", timestamp)
+        pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
         pulumi.set(__self__, "vault_id", vault_id)
@@ -12973,6 +13140,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
+
+    @property
+    @pulumi.getter(name="backupRetentionPeriodInDays")
+    def backup_retention_period_in_days(self) -> int:
+        """
+        Retention period, in days, for backups.
+        """
+        return pulumi.get(self, "backup_retention_period_in_days")
 
     @property
     @pulumi.getter(name="characterSet")
@@ -13682,6 +13857,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "timestamp")
 
     @property
+    @pulumi.getter(name="totalBackupStorageSizeInGbs")
+    def total_backup_storage_size_in_gbs(self) -> float:
+        """
+        The backup storage to the database.
+        """
+        return pulumi.get(self, "total_backup_storage_size_in_gbs")
+
+    @property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
     def use_latest_available_backup_time_stamp(self) -> bool:
         return pulumi.get(self, "use_latest_available_backup_time_stamp")
@@ -14228,6 +14411,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  autonomous_maintenance_schedule_type: str,
                  available_upgrade_versions: Sequence[str],
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult'],
+                 backup_retention_period_in_days: int,
                  character_set: str,
                  compartment_id: str,
                  compute_count: float,
@@ -14308,6 +14492,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  time_of_next_refresh: str,
                  time_reclamation_of_free_autonomous_database: str,
                  time_until_reconnect_clone_enabled: str,
+                 total_backup_storage_size_in_gbs: float,
                  used_data_storage_size_in_tbs: int,
                  vault_id: str,
                  whitelisted_ips: Sequence[str]):
@@ -14320,6 +14505,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
@@ -14405,6 +14591,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str time_of_next_refresh: The date and time of next refresh.
         :param str time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param str time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
+        :param float total_backup_storage_size_in_gbs: The backup storage to the database.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -14417,6 +14604,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         pulumi.set(__self__, "backup_configs", backup_configs)
+        pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
@@ -14497,6 +14685,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_of_next_refresh", time_of_next_refresh)
         pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
         pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
+        pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
@@ -14564,6 +14753,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
+
+    @property
+    @pulumi.getter(name="backupRetentionPeriodInDays")
+    def backup_retention_period_in_days(self) -> int:
+        """
+        Retention period, in days, for backups.
+        """
+        return pulumi.get(self, "backup_retention_period_in_days")
 
     @property
     @pulumi.getter(name="characterSet")
@@ -15209,6 +15406,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         """
         return pulumi.get(self, "time_until_reconnect_clone_enabled")
+
+    @property
+    @pulumi.getter(name="totalBackupStorageSizeInGbs")
+    def total_backup_storage_size_in_gbs(self) -> float:
+        """
+        The backup storage to the database.
+        """
+        return pulumi.get(self, "total_backup_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")

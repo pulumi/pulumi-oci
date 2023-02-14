@@ -1920,6 +1920,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/autonomousContainerDatabaseDataguardRoleChange",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange": "AutonomousContainerDatabaseDataguardRoleChange"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/autonomousDatabase",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -3820,6 +3828,14 @@ _utilities.register(
   "fqn": "pulumi_oci.opsi",
   "classes": {
    "oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser": "OperationsInsightsWarehouseUser"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Opsi/opsiConfiguration",
+  "fqn": "pulumi_oci.opsi",
+  "classes": {
+   "oci:Opsi/opsiConfiguration:OpsiConfiguration": "OpsiConfiguration"
   }
  },
  {

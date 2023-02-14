@@ -3965,6 +3965,8 @@ type DeployArtifactDeployArtifactSource struct {
 	DeployArtifactSourceType string `pulumi:"deployArtifactSourceType"`
 	// (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion *string `pulumi:"deployArtifactVersion"`
+	// (Updatable) The source of the verification material.
+	HelmVerificationKeySource *DeployArtifactDeployArtifactSourceHelmVerificationKeySource `pulumi:"helmVerificationKeySource"`
 	// (Updatable) Specifies image digest for the version of the image.
 	ImageDigest *string `pulumi:"imageDigest"`
 	// (Updatable) Specifies OCIR Image Path - optionally include tag.
@@ -3995,6 +3997,8 @@ type DeployArtifactDeployArtifactSourceArgs struct {
 	DeployArtifactSourceType pulumi.StringInput `pulumi:"deployArtifactSourceType"`
 	// (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion pulumi.StringPtrInput `pulumi:"deployArtifactVersion"`
+	// (Updatable) The source of the verification material.
+	HelmVerificationKeySource DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrInput `pulumi:"helmVerificationKeySource"`
 	// (Updatable) Specifies image digest for the version of the image.
 	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
 	// (Updatable) Specifies OCIR Image Path - optionally include tag.
@@ -4105,6 +4109,13 @@ func (o DeployArtifactDeployArtifactSourceOutput) DeployArtifactVersion() pulumi
 	return o.ApplyT(func(v DeployArtifactDeployArtifactSource) *string { return v.DeployArtifactVersion }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The source of the verification material.
+func (o DeployArtifactDeployArtifactSourceOutput) HelmVerificationKeySource() DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return o.ApplyT(func(v DeployArtifactDeployArtifactSource) *DeployArtifactDeployArtifactSourceHelmVerificationKeySource {
+		return v.HelmVerificationKeySource
+	}).(DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput)
+}
+
 // (Updatable) Specifies image digest for the version of the image.
 func (o DeployArtifactDeployArtifactSourceOutput) ImageDigest() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployArtifactDeployArtifactSource) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
@@ -4194,6 +4205,16 @@ func (o DeployArtifactDeployArtifactSourcePtrOutput) DeployArtifactVersion() pul
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The source of the verification material.
+func (o DeployArtifactDeployArtifactSourcePtrOutput) HelmVerificationKeySource() DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return o.ApplyT(func(v *DeployArtifactDeployArtifactSource) *DeployArtifactDeployArtifactSourceHelmVerificationKeySource {
+		if v == nil {
+			return nil
+		}
+		return v.HelmVerificationKeySource
+	}).(DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput)
+}
+
 // (Updatable) Specifies image digest for the version of the image.
 func (o DeployArtifactDeployArtifactSourcePtrOutput) ImageDigest() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployArtifactDeployArtifactSource) *string {
@@ -4221,6 +4242,204 @@ func (o DeployArtifactDeployArtifactSourcePtrOutput) RepositoryId() pulumi.Strin
 			return nil
 		}
 		return v.RepositoryId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeployArtifactDeployArtifactSourceHelmVerificationKeySource struct {
+	// (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+	CurrentPublicKey *string `pulumi:"currentPublicKey"`
+	// (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+	PreviousPublicKey *string `pulumi:"previousPublicKey"`
+	// (Updatable) The OCID of the Vault Secret containing the verification key versions.
+	VaultSecretId *string `pulumi:"vaultSecretId"`
+	// (Updatable) Specifies type of verification material.
+	VerificationKeySourceType string `pulumi:"verificationKeySourceType"`
+}
+
+// DeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput is an input type that accepts DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs and DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput values.
+// You can construct a concrete instance of `DeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput` via:
+//
+//	DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{...}
+type DeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput interface {
+	pulumi.Input
+
+	ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput() DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput
+	ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(context.Context) DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput
+}
+
+type DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs struct {
+	// (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+	CurrentPublicKey pulumi.StringPtrInput `pulumi:"currentPublicKey"`
+	// (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+	PreviousPublicKey pulumi.StringPtrInput `pulumi:"previousPublicKey"`
+	// (Updatable) The OCID of the Vault Secret containing the verification key versions.
+	VaultSecretId pulumi.StringPtrInput `pulumi:"vaultSecretId"`
+	// (Updatable) Specifies type of verification material.
+	VerificationKeySourceType pulumi.StringInput `pulumi:"verificationKeySourceType"`
+}
+
+func (DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployArtifactDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (i DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput() DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return i.ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(context.Background())
+}
+
+func (i DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(ctx context.Context) DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput)
+}
+
+func (i DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput() DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return i.ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(context.Background())
+}
+
+func (i DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(ctx context.Context) DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput).ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(ctx)
+}
+
+// DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrInput is an input type that accepts DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs, DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtr and DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput values.
+// You can construct a concrete instance of `DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrInput` via:
+//
+//	        DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrInput interface {
+	pulumi.Input
+
+	ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput() DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput
+	ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(context.Context) DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput
+}
+
+type deployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrType DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs
+
+func DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtr(v *DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrInput {
+	return (*deployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrType)(v)
+}
+
+func (*deployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployArtifactDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (i *deployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrType) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput() DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return i.ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(context.Background())
+}
+
+func (i *deployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrType) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(ctx context.Context) DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput)
+}
+
+type DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput struct{ *pulumi.OutputState }
+
+func (DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployArtifactDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput() DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return o
+}
+
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(ctx context.Context) DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return o
+}
+
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput() DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return o.ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(context.Background())
+}
+
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(ctx context.Context) DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeployArtifactDeployArtifactSourceHelmVerificationKeySource) *DeployArtifactDeployArtifactSourceHelmVerificationKeySource {
+		return &v
+	}).(DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput)
+}
+
+// (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) CurrentPublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployArtifactDeployArtifactSourceHelmVerificationKeySource) *string { return v.CurrentPublicKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) PreviousPublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployArtifactDeployArtifactSourceHelmVerificationKeySource) *string {
+		return v.PreviousPublicKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the Vault Secret containing the verification key versions.
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployArtifactDeployArtifactSourceHelmVerificationKeySource) *string { return v.VaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies type of verification material.
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) VerificationKeySourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v DeployArtifactDeployArtifactSourceHelmVerificationKeySource) string {
+		return v.VerificationKeySourceType
+	}).(pulumi.StringOutput)
+}
+
+type DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput struct{ *pulumi.OutputState }
+
+func (DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployArtifactDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput() DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return o
+}
+
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput) ToDeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutputWithContext(ctx context.Context) DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput {
+	return o
+}
+
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput) Elem() DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return o.ApplyT(func(v *DeployArtifactDeployArtifactSourceHelmVerificationKeySource) DeployArtifactDeployArtifactSourceHelmVerificationKeySource {
+		if v != nil {
+			return *v
+		}
+		var ret DeployArtifactDeployArtifactSourceHelmVerificationKeySource
+		return ret
+	}).(DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput)
+}
+
+// (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput) CurrentPublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifactDeployArtifactSourceHelmVerificationKeySource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CurrentPublicKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput) PreviousPublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifactDeployArtifactSourceHelmVerificationKeySource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PreviousPublicKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the Vault Secret containing the verification key versions.
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifactDeployArtifactSourceHelmVerificationKeySource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies type of verification material.
+func (o DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput) VerificationKeySourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifactDeployArtifactSourceHelmVerificationKeySource) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VerificationKeySourceType
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -5921,7 +6140,7 @@ func (o DeployStageApprovalPolicyPtrOutput) NumberOfApprovalsRequired() pulumi.I
 }
 
 type DeployStageBlueBackendIps struct {
-	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// (Updatable) List of parameters defined to set helm value.
 	Items []string `pulumi:"items"`
 }
 
@@ -5937,7 +6156,7 @@ type DeployStageBlueBackendIpsInput interface {
 }
 
 type DeployStageBlueBackendIpsArgs struct {
-	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// (Updatable) List of parameters defined to set helm value.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -6018,7 +6237,7 @@ func (o DeployStageBlueBackendIpsOutput) ToDeployStageBlueBackendIpsPtrOutputWit
 	}).(DeployStageBlueBackendIpsPtrOutput)
 }
 
-// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+// (Updatable) List of parameters defined to set helm value.
 func (o DeployStageBlueBackendIpsOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DeployStageBlueBackendIps) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -6047,7 +6266,7 @@ func (o DeployStageBlueBackendIpsPtrOutput) Elem() DeployStageBlueBackendIpsOutp
 	}).(DeployStageBlueBackendIpsOutput)
 }
 
-// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+// (Updatable) List of parameters defined to set helm value.
 func (o DeployStageBlueBackendIpsPtrOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DeployStageBlueBackendIps) []string {
 		if v == nil {
@@ -6990,7 +7209,7 @@ func (o DeployStageContainerConfigShapeConfigPtrOutput) Ocpus() pulumi.Float64Pt
 }
 
 type DeployStageDeployStagePredecessorCollection struct {
-	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// (Updatable) List of parameters defined to set helm value.
 	Items []DeployStageDeployStagePredecessorCollectionItem `pulumi:"items"`
 }
 
@@ -7006,7 +7225,7 @@ type DeployStageDeployStagePredecessorCollectionInput interface {
 }
 
 type DeployStageDeployStagePredecessorCollectionArgs struct {
-	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// (Updatable) List of parameters defined to set helm value.
 	Items DeployStageDeployStagePredecessorCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -7087,7 +7306,7 @@ func (o DeployStageDeployStagePredecessorCollectionOutput) ToDeployStageDeploySt
 	}).(DeployStageDeployStagePredecessorCollectionPtrOutput)
 }
 
-// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+// (Updatable) List of parameters defined to set helm value.
 func (o DeployStageDeployStagePredecessorCollectionOutput) Items() DeployStageDeployStagePredecessorCollectionItemArrayOutput {
 	return o.ApplyT(func(v DeployStageDeployStagePredecessorCollection) []DeployStageDeployStagePredecessorCollectionItem {
 		return v.Items
@@ -7118,7 +7337,7 @@ func (o DeployStageDeployStagePredecessorCollectionPtrOutput) Elem() DeployStage
 	}).(DeployStageDeployStagePredecessorCollectionOutput)
 }
 
-// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+// (Updatable) List of parameters defined to set helm value.
 func (o DeployStageDeployStagePredecessorCollectionPtrOutput) Items() DeployStageDeployStagePredecessorCollectionItemArrayOutput {
 	return o.ApplyT(func(v *DeployStageDeployStagePredecessorCollection) []DeployStageDeployStagePredecessorCollectionItem {
 		if v == nil {
@@ -7401,7 +7620,7 @@ func (o DeployStageFailurePolicyPtrOutput) PolicyType() pulumi.StringPtrOutput {
 }
 
 type DeployStageGreenBackendIps struct {
-	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// (Updatable) List of parameters defined to set helm value.
 	Items []string `pulumi:"items"`
 }
 
@@ -7417,7 +7636,7 @@ type DeployStageGreenBackendIpsInput interface {
 }
 
 type DeployStageGreenBackendIpsArgs struct {
-	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// (Updatable) List of parameters defined to set helm value.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -7498,7 +7717,7 @@ func (o DeployStageGreenBackendIpsOutput) ToDeployStageGreenBackendIpsPtrOutputW
 	}).(DeployStageGreenBackendIpsPtrOutput)
 }
 
-// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+// (Updatable) List of parameters defined to set helm value.
 func (o DeployStageGreenBackendIpsOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DeployStageGreenBackendIps) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -7527,7 +7746,7 @@ func (o DeployStageGreenBackendIpsPtrOutput) Elem() DeployStageGreenBackendIpsOu
 	}).(DeployStageGreenBackendIpsOutput)
 }
 
-// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+// (Updatable) List of parameters defined to set helm value.
 func (o DeployStageGreenBackendIpsPtrOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DeployStageGreenBackendIps) []string {
 		if v == nil {
@@ -8275,6 +8494,492 @@ func (o DeployStageRolloutPolicyPtrOutput) RampLimitPercent() pulumi.Float64PtrO
 	}).(pulumi.Float64PtrOutput)
 }
 
+type DeployStageSetString struct {
+	// (Updatable) List of parameters defined to set helm value.
+	Items []DeployStageSetStringItem `pulumi:"items"`
+}
+
+// DeployStageSetStringInput is an input type that accepts DeployStageSetStringArgs and DeployStageSetStringOutput values.
+// You can construct a concrete instance of `DeployStageSetStringInput` via:
+//
+//	DeployStageSetStringArgs{...}
+type DeployStageSetStringInput interface {
+	pulumi.Input
+
+	ToDeployStageSetStringOutput() DeployStageSetStringOutput
+	ToDeployStageSetStringOutputWithContext(context.Context) DeployStageSetStringOutput
+}
+
+type DeployStageSetStringArgs struct {
+	// (Updatable) List of parameters defined to set helm value.
+	Items DeployStageSetStringItemArrayInput `pulumi:"items"`
+}
+
+func (DeployStageSetStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageSetString)(nil)).Elem()
+}
+
+func (i DeployStageSetStringArgs) ToDeployStageSetStringOutput() DeployStageSetStringOutput {
+	return i.ToDeployStageSetStringOutputWithContext(context.Background())
+}
+
+func (i DeployStageSetStringArgs) ToDeployStageSetStringOutputWithContext(ctx context.Context) DeployStageSetStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetStringOutput)
+}
+
+func (i DeployStageSetStringArgs) ToDeployStageSetStringPtrOutput() DeployStageSetStringPtrOutput {
+	return i.ToDeployStageSetStringPtrOutputWithContext(context.Background())
+}
+
+func (i DeployStageSetStringArgs) ToDeployStageSetStringPtrOutputWithContext(ctx context.Context) DeployStageSetStringPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetStringOutput).ToDeployStageSetStringPtrOutputWithContext(ctx)
+}
+
+// DeployStageSetStringPtrInput is an input type that accepts DeployStageSetStringArgs, DeployStageSetStringPtr and DeployStageSetStringPtrOutput values.
+// You can construct a concrete instance of `DeployStageSetStringPtrInput` via:
+//
+//	        DeployStageSetStringArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeployStageSetStringPtrInput interface {
+	pulumi.Input
+
+	ToDeployStageSetStringPtrOutput() DeployStageSetStringPtrOutput
+	ToDeployStageSetStringPtrOutputWithContext(context.Context) DeployStageSetStringPtrOutput
+}
+
+type deployStageSetStringPtrType DeployStageSetStringArgs
+
+func DeployStageSetStringPtr(v *DeployStageSetStringArgs) DeployStageSetStringPtrInput {
+	return (*deployStageSetStringPtrType)(v)
+}
+
+func (*deployStageSetStringPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageSetString)(nil)).Elem()
+}
+
+func (i *deployStageSetStringPtrType) ToDeployStageSetStringPtrOutput() DeployStageSetStringPtrOutput {
+	return i.ToDeployStageSetStringPtrOutputWithContext(context.Background())
+}
+
+func (i *deployStageSetStringPtrType) ToDeployStageSetStringPtrOutputWithContext(ctx context.Context) DeployStageSetStringPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetStringPtrOutput)
+}
+
+type DeployStageSetStringOutput struct{ *pulumi.OutputState }
+
+func (DeployStageSetStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageSetString)(nil)).Elem()
+}
+
+func (o DeployStageSetStringOutput) ToDeployStageSetStringOutput() DeployStageSetStringOutput {
+	return o
+}
+
+func (o DeployStageSetStringOutput) ToDeployStageSetStringOutputWithContext(ctx context.Context) DeployStageSetStringOutput {
+	return o
+}
+
+func (o DeployStageSetStringOutput) ToDeployStageSetStringPtrOutput() DeployStageSetStringPtrOutput {
+	return o.ToDeployStageSetStringPtrOutputWithContext(context.Background())
+}
+
+func (o DeployStageSetStringOutput) ToDeployStageSetStringPtrOutputWithContext(ctx context.Context) DeployStageSetStringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeployStageSetString) *DeployStageSetString {
+		return &v
+	}).(DeployStageSetStringPtrOutput)
+}
+
+// (Updatable) List of parameters defined to set helm value.
+func (o DeployStageSetStringOutput) Items() DeployStageSetStringItemArrayOutput {
+	return o.ApplyT(func(v DeployStageSetString) []DeployStageSetStringItem { return v.Items }).(DeployStageSetStringItemArrayOutput)
+}
+
+type DeployStageSetStringPtrOutput struct{ *pulumi.OutputState }
+
+func (DeployStageSetStringPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageSetString)(nil)).Elem()
+}
+
+func (o DeployStageSetStringPtrOutput) ToDeployStageSetStringPtrOutput() DeployStageSetStringPtrOutput {
+	return o
+}
+
+func (o DeployStageSetStringPtrOutput) ToDeployStageSetStringPtrOutputWithContext(ctx context.Context) DeployStageSetStringPtrOutput {
+	return o
+}
+
+func (o DeployStageSetStringPtrOutput) Elem() DeployStageSetStringOutput {
+	return o.ApplyT(func(v *DeployStageSetString) DeployStageSetString {
+		if v != nil {
+			return *v
+		}
+		var ret DeployStageSetString
+		return ret
+	}).(DeployStageSetStringOutput)
+}
+
+// (Updatable) List of parameters defined to set helm value.
+func (o DeployStageSetStringPtrOutput) Items() DeployStageSetStringItemArrayOutput {
+	return o.ApplyT(func(v *DeployStageSetString) []DeployStageSetStringItem {
+		if v == nil {
+			return nil
+		}
+		return v.Items
+	}).(DeployStageSetStringItemArrayOutput)
+}
+
+type DeployStageSetStringItem struct {
+	// (Updatable) Name of the parameter (case-sensitive).
+	Name *string `pulumi:"name"`
+	// (Updatable) Value of the parameter.
+	Value *string `pulumi:"value"`
+}
+
+// DeployStageSetStringItemInput is an input type that accepts DeployStageSetStringItemArgs and DeployStageSetStringItemOutput values.
+// You can construct a concrete instance of `DeployStageSetStringItemInput` via:
+//
+//	DeployStageSetStringItemArgs{...}
+type DeployStageSetStringItemInput interface {
+	pulumi.Input
+
+	ToDeployStageSetStringItemOutput() DeployStageSetStringItemOutput
+	ToDeployStageSetStringItemOutputWithContext(context.Context) DeployStageSetStringItemOutput
+}
+
+type DeployStageSetStringItemArgs struct {
+	// (Updatable) Name of the parameter (case-sensitive).
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Value of the parameter.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DeployStageSetStringItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageSetStringItem)(nil)).Elem()
+}
+
+func (i DeployStageSetStringItemArgs) ToDeployStageSetStringItemOutput() DeployStageSetStringItemOutput {
+	return i.ToDeployStageSetStringItemOutputWithContext(context.Background())
+}
+
+func (i DeployStageSetStringItemArgs) ToDeployStageSetStringItemOutputWithContext(ctx context.Context) DeployStageSetStringItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetStringItemOutput)
+}
+
+// DeployStageSetStringItemArrayInput is an input type that accepts DeployStageSetStringItemArray and DeployStageSetStringItemArrayOutput values.
+// You can construct a concrete instance of `DeployStageSetStringItemArrayInput` via:
+//
+//	DeployStageSetStringItemArray{ DeployStageSetStringItemArgs{...} }
+type DeployStageSetStringItemArrayInput interface {
+	pulumi.Input
+
+	ToDeployStageSetStringItemArrayOutput() DeployStageSetStringItemArrayOutput
+	ToDeployStageSetStringItemArrayOutputWithContext(context.Context) DeployStageSetStringItemArrayOutput
+}
+
+type DeployStageSetStringItemArray []DeployStageSetStringItemInput
+
+func (DeployStageSetStringItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeployStageSetStringItem)(nil)).Elem()
+}
+
+func (i DeployStageSetStringItemArray) ToDeployStageSetStringItemArrayOutput() DeployStageSetStringItemArrayOutput {
+	return i.ToDeployStageSetStringItemArrayOutputWithContext(context.Background())
+}
+
+func (i DeployStageSetStringItemArray) ToDeployStageSetStringItemArrayOutputWithContext(ctx context.Context) DeployStageSetStringItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetStringItemArrayOutput)
+}
+
+type DeployStageSetStringItemOutput struct{ *pulumi.OutputState }
+
+func (DeployStageSetStringItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageSetStringItem)(nil)).Elem()
+}
+
+func (o DeployStageSetStringItemOutput) ToDeployStageSetStringItemOutput() DeployStageSetStringItemOutput {
+	return o
+}
+
+func (o DeployStageSetStringItemOutput) ToDeployStageSetStringItemOutputWithContext(ctx context.Context) DeployStageSetStringItemOutput {
+	return o
+}
+
+// (Updatable) Name of the parameter (case-sensitive).
+func (o DeployStageSetStringItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployStageSetStringItem) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Value of the parameter.
+func (o DeployStageSetStringItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployStageSetStringItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DeployStageSetStringItemArrayOutput struct{ *pulumi.OutputState }
+
+func (DeployStageSetStringItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeployStageSetStringItem)(nil)).Elem()
+}
+
+func (o DeployStageSetStringItemArrayOutput) ToDeployStageSetStringItemArrayOutput() DeployStageSetStringItemArrayOutput {
+	return o
+}
+
+func (o DeployStageSetStringItemArrayOutput) ToDeployStageSetStringItemArrayOutputWithContext(ctx context.Context) DeployStageSetStringItemArrayOutput {
+	return o
+}
+
+func (o DeployStageSetStringItemArrayOutput) Index(i pulumi.IntInput) DeployStageSetStringItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeployStageSetStringItem {
+		return vs[0].([]DeployStageSetStringItem)[vs[1].(int)]
+	}).(DeployStageSetStringItemOutput)
+}
+
+type DeployStageSetValues struct {
+	// (Updatable) List of parameters defined to set helm value.
+	Items []DeployStageSetValuesItem `pulumi:"items"`
+}
+
+// DeployStageSetValuesInput is an input type that accepts DeployStageSetValuesArgs and DeployStageSetValuesOutput values.
+// You can construct a concrete instance of `DeployStageSetValuesInput` via:
+//
+//	DeployStageSetValuesArgs{...}
+type DeployStageSetValuesInput interface {
+	pulumi.Input
+
+	ToDeployStageSetValuesOutput() DeployStageSetValuesOutput
+	ToDeployStageSetValuesOutputWithContext(context.Context) DeployStageSetValuesOutput
+}
+
+type DeployStageSetValuesArgs struct {
+	// (Updatable) List of parameters defined to set helm value.
+	Items DeployStageSetValuesItemArrayInput `pulumi:"items"`
+}
+
+func (DeployStageSetValuesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageSetValues)(nil)).Elem()
+}
+
+func (i DeployStageSetValuesArgs) ToDeployStageSetValuesOutput() DeployStageSetValuesOutput {
+	return i.ToDeployStageSetValuesOutputWithContext(context.Background())
+}
+
+func (i DeployStageSetValuesArgs) ToDeployStageSetValuesOutputWithContext(ctx context.Context) DeployStageSetValuesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetValuesOutput)
+}
+
+func (i DeployStageSetValuesArgs) ToDeployStageSetValuesPtrOutput() DeployStageSetValuesPtrOutput {
+	return i.ToDeployStageSetValuesPtrOutputWithContext(context.Background())
+}
+
+func (i DeployStageSetValuesArgs) ToDeployStageSetValuesPtrOutputWithContext(ctx context.Context) DeployStageSetValuesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetValuesOutput).ToDeployStageSetValuesPtrOutputWithContext(ctx)
+}
+
+// DeployStageSetValuesPtrInput is an input type that accepts DeployStageSetValuesArgs, DeployStageSetValuesPtr and DeployStageSetValuesPtrOutput values.
+// You can construct a concrete instance of `DeployStageSetValuesPtrInput` via:
+//
+//	        DeployStageSetValuesArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeployStageSetValuesPtrInput interface {
+	pulumi.Input
+
+	ToDeployStageSetValuesPtrOutput() DeployStageSetValuesPtrOutput
+	ToDeployStageSetValuesPtrOutputWithContext(context.Context) DeployStageSetValuesPtrOutput
+}
+
+type deployStageSetValuesPtrType DeployStageSetValuesArgs
+
+func DeployStageSetValuesPtr(v *DeployStageSetValuesArgs) DeployStageSetValuesPtrInput {
+	return (*deployStageSetValuesPtrType)(v)
+}
+
+func (*deployStageSetValuesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageSetValues)(nil)).Elem()
+}
+
+func (i *deployStageSetValuesPtrType) ToDeployStageSetValuesPtrOutput() DeployStageSetValuesPtrOutput {
+	return i.ToDeployStageSetValuesPtrOutputWithContext(context.Background())
+}
+
+func (i *deployStageSetValuesPtrType) ToDeployStageSetValuesPtrOutputWithContext(ctx context.Context) DeployStageSetValuesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetValuesPtrOutput)
+}
+
+type DeployStageSetValuesOutput struct{ *pulumi.OutputState }
+
+func (DeployStageSetValuesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageSetValues)(nil)).Elem()
+}
+
+func (o DeployStageSetValuesOutput) ToDeployStageSetValuesOutput() DeployStageSetValuesOutput {
+	return o
+}
+
+func (o DeployStageSetValuesOutput) ToDeployStageSetValuesOutputWithContext(ctx context.Context) DeployStageSetValuesOutput {
+	return o
+}
+
+func (o DeployStageSetValuesOutput) ToDeployStageSetValuesPtrOutput() DeployStageSetValuesPtrOutput {
+	return o.ToDeployStageSetValuesPtrOutputWithContext(context.Background())
+}
+
+func (o DeployStageSetValuesOutput) ToDeployStageSetValuesPtrOutputWithContext(ctx context.Context) DeployStageSetValuesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeployStageSetValues) *DeployStageSetValues {
+		return &v
+	}).(DeployStageSetValuesPtrOutput)
+}
+
+// (Updatable) List of parameters defined to set helm value.
+func (o DeployStageSetValuesOutput) Items() DeployStageSetValuesItemArrayOutput {
+	return o.ApplyT(func(v DeployStageSetValues) []DeployStageSetValuesItem { return v.Items }).(DeployStageSetValuesItemArrayOutput)
+}
+
+type DeployStageSetValuesPtrOutput struct{ *pulumi.OutputState }
+
+func (DeployStageSetValuesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeployStageSetValues)(nil)).Elem()
+}
+
+func (o DeployStageSetValuesPtrOutput) ToDeployStageSetValuesPtrOutput() DeployStageSetValuesPtrOutput {
+	return o
+}
+
+func (o DeployStageSetValuesPtrOutput) ToDeployStageSetValuesPtrOutputWithContext(ctx context.Context) DeployStageSetValuesPtrOutput {
+	return o
+}
+
+func (o DeployStageSetValuesPtrOutput) Elem() DeployStageSetValuesOutput {
+	return o.ApplyT(func(v *DeployStageSetValues) DeployStageSetValues {
+		if v != nil {
+			return *v
+		}
+		var ret DeployStageSetValues
+		return ret
+	}).(DeployStageSetValuesOutput)
+}
+
+// (Updatable) List of parameters defined to set helm value.
+func (o DeployStageSetValuesPtrOutput) Items() DeployStageSetValuesItemArrayOutput {
+	return o.ApplyT(func(v *DeployStageSetValues) []DeployStageSetValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Items
+	}).(DeployStageSetValuesItemArrayOutput)
+}
+
+type DeployStageSetValuesItem struct {
+	// (Updatable) Name of the parameter (case-sensitive).
+	Name *string `pulumi:"name"`
+	// (Updatable) Value of the parameter.
+	Value *string `pulumi:"value"`
+}
+
+// DeployStageSetValuesItemInput is an input type that accepts DeployStageSetValuesItemArgs and DeployStageSetValuesItemOutput values.
+// You can construct a concrete instance of `DeployStageSetValuesItemInput` via:
+//
+//	DeployStageSetValuesItemArgs{...}
+type DeployStageSetValuesItemInput interface {
+	pulumi.Input
+
+	ToDeployStageSetValuesItemOutput() DeployStageSetValuesItemOutput
+	ToDeployStageSetValuesItemOutputWithContext(context.Context) DeployStageSetValuesItemOutput
+}
+
+type DeployStageSetValuesItemArgs struct {
+	// (Updatable) Name of the parameter (case-sensitive).
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Value of the parameter.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DeployStageSetValuesItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageSetValuesItem)(nil)).Elem()
+}
+
+func (i DeployStageSetValuesItemArgs) ToDeployStageSetValuesItemOutput() DeployStageSetValuesItemOutput {
+	return i.ToDeployStageSetValuesItemOutputWithContext(context.Background())
+}
+
+func (i DeployStageSetValuesItemArgs) ToDeployStageSetValuesItemOutputWithContext(ctx context.Context) DeployStageSetValuesItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetValuesItemOutput)
+}
+
+// DeployStageSetValuesItemArrayInput is an input type that accepts DeployStageSetValuesItemArray and DeployStageSetValuesItemArrayOutput values.
+// You can construct a concrete instance of `DeployStageSetValuesItemArrayInput` via:
+//
+//	DeployStageSetValuesItemArray{ DeployStageSetValuesItemArgs{...} }
+type DeployStageSetValuesItemArrayInput interface {
+	pulumi.Input
+
+	ToDeployStageSetValuesItemArrayOutput() DeployStageSetValuesItemArrayOutput
+	ToDeployStageSetValuesItemArrayOutputWithContext(context.Context) DeployStageSetValuesItemArrayOutput
+}
+
+type DeployStageSetValuesItemArray []DeployStageSetValuesItemInput
+
+func (DeployStageSetValuesItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeployStageSetValuesItem)(nil)).Elem()
+}
+
+func (i DeployStageSetValuesItemArray) ToDeployStageSetValuesItemArrayOutput() DeployStageSetValuesItemArrayOutput {
+	return i.ToDeployStageSetValuesItemArrayOutputWithContext(context.Background())
+}
+
+func (i DeployStageSetValuesItemArray) ToDeployStageSetValuesItemArrayOutputWithContext(ctx context.Context) DeployStageSetValuesItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeployStageSetValuesItemArrayOutput)
+}
+
+type DeployStageSetValuesItemOutput struct{ *pulumi.OutputState }
+
+func (DeployStageSetValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeployStageSetValuesItem)(nil)).Elem()
+}
+
+func (o DeployStageSetValuesItemOutput) ToDeployStageSetValuesItemOutput() DeployStageSetValuesItemOutput {
+	return o
+}
+
+func (o DeployStageSetValuesItemOutput) ToDeployStageSetValuesItemOutputWithContext(ctx context.Context) DeployStageSetValuesItemOutput {
+	return o
+}
+
+// (Updatable) Name of the parameter (case-sensitive).
+func (o DeployStageSetValuesItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployStageSetValuesItem) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Value of the parameter.
+func (o DeployStageSetValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployStageSetValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DeployStageSetValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (DeployStageSetValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeployStageSetValuesItem)(nil)).Elem()
+}
+
+func (o DeployStageSetValuesItemArrayOutput) ToDeployStageSetValuesItemArrayOutput() DeployStageSetValuesItemArrayOutput {
+	return o
+}
+
+func (o DeployStageSetValuesItemArrayOutput) ToDeployStageSetValuesItemArrayOutputWithContext(ctx context.Context) DeployStageSetValuesItemArrayOutput {
+	return o
+}
+
+func (o DeployStageSetValuesItemArrayOutput) Index(i pulumi.IntInput) DeployStageSetValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeployStageSetValuesItem {
+		return vs[0].([]DeployStageSetValuesItem)[vs[1].(int)]
+	}).(DeployStageSetValuesItemOutput)
+}
+
 type DeployStageTestLoadBalancerConfig struct {
 	// (Updatable) Listen port for the backend server.
 	BackendPort *int `pulumi:"backendPort"`
@@ -8770,6 +9475,7 @@ type DeploymentDeployArtifactOverrideArgumentsItem struct {
 	// Name of the parameter (case-sensitive).
 	Name *string `pulumi:"name"`
 	// value of the argument.
+	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 	Value *string `pulumi:"value"`
 }
 
@@ -8790,6 +9496,7 @@ type DeploymentDeployArtifactOverrideArgumentsItemArgs struct {
 	// Name of the parameter (case-sensitive).
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// value of the argument.
+	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -8855,6 +9562,7 @@ func (o DeploymentDeployArtifactOverrideArgumentsItemOutput) Name() pulumi.Strin
 }
 
 // value of the argument.
+// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 func (o DeploymentDeployArtifactOverrideArgumentsItemOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployArtifactOverrideArgumentsItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -9862,6 +10570,7 @@ type DeploymentDeployStageOverrideArgumentsItem struct {
 	// Name of the parameter (case-sensitive).
 	Name *string `pulumi:"name"`
 	// value of the argument.
+	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 	Value *string `pulumi:"value"`
 }
 
@@ -9882,6 +10591,7 @@ type DeploymentDeployStageOverrideArgumentsItemArgs struct {
 	// Name of the parameter (case-sensitive).
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// value of the argument.
+	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -9947,6 +10657,7 @@ func (o DeploymentDeployStageOverrideArgumentsItemOutput) Name() pulumi.StringPt
 }
 
 // value of the argument.
+// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 func (o DeploymentDeployStageOverrideArgumentsItemOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployStageOverrideArgumentsItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -10112,6 +10823,7 @@ type DeploymentDeploymentArgumentsItem struct {
 	// Name of the parameter (case-sensitive).
 	Name *string `pulumi:"name"`
 	// value of the argument.
+	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 	Value *string `pulumi:"value"`
 }
 
@@ -10130,6 +10842,7 @@ type DeploymentDeploymentArgumentsItemArgs struct {
 	// Name of the parameter (case-sensitive).
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// value of the argument.
+	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -10190,6 +10903,7 @@ func (o DeploymentDeploymentArgumentsItemOutput) Name() pulumi.StringPtrOutput {
 }
 
 // value of the argument.
+// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
 func (o DeploymentDeploymentArgumentsItemOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeploymentArgumentsItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -19062,6 +19776,8 @@ type GetDeployArtifactDeployArtifactSource struct {
 	DeployArtifactSourceType string `pulumi:"deployArtifactSourceType"`
 	// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion string `pulumi:"deployArtifactVersion"`
+	// The source of the verification material.
+	HelmVerificationKeySources []GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource `pulumi:"helmVerificationKeySources"`
 	// Specifies image digest for the version of the image.
 	ImageDigest string `pulumi:"imageDigest"`
 	// Specifies OCIR Image Path - optionally include tag.
@@ -19092,6 +19808,8 @@ type GetDeployArtifactDeployArtifactSourceArgs struct {
 	DeployArtifactSourceType pulumi.StringInput `pulumi:"deployArtifactSourceType"`
 	// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion pulumi.StringInput `pulumi:"deployArtifactVersion"`
+	// The source of the verification material.
+	HelmVerificationKeySources GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayInput `pulumi:"helmVerificationKeySources"`
 	// Specifies image digest for the version of the image.
 	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
 	// Specifies OCIR Image Path - optionally include tag.
@@ -19176,6 +19894,13 @@ func (o GetDeployArtifactDeployArtifactSourceOutput) DeployArtifactVersion() pul
 	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSource) string { return v.DeployArtifactVersion }).(pulumi.StringOutput)
 }
 
+// The source of the verification material.
+func (o GetDeployArtifactDeployArtifactSourceOutput) HelmVerificationKeySources() GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSource) []GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource {
+		return v.HelmVerificationKeySources
+	}).(GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput)
+}
+
 // Specifies image digest for the version of the image.
 func (o GetDeployArtifactDeployArtifactSourceOutput) ImageDigest() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSource) string { return v.ImageDigest }).(pulumi.StringOutput)
@@ -19209,6 +19934,136 @@ func (o GetDeployArtifactDeployArtifactSourceArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployArtifactDeployArtifactSource {
 		return vs[0].([]GetDeployArtifactDeployArtifactSource)[vs[1].(int)]
 	}).(GetDeployArtifactDeployArtifactSourceOutput)
+}
+
+type GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource struct {
+	// Current version of Base64 encoding of the public key which is in binary GPG exported format.
+	CurrentPublicKey string `pulumi:"currentPublicKey"`
+	// Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+	PreviousPublicKey string `pulumi:"previousPublicKey"`
+	// The OCID of the Vault Secret containing the verification key versions.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+	// Specifies type of verification material.
+	VerificationKeySourceType string `pulumi:"verificationKeySourceType"`
+}
+
+// GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput is an input type that accepts GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs and GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput values.
+// You can construct a concrete instance of `GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput` via:
+//
+//	GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{...}
+type GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput interface {
+	pulumi.Input
+
+	ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput() GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput
+	ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(context.Context) GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput
+}
+
+type GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs struct {
+	// Current version of Base64 encoding of the public key which is in binary GPG exported format.
+	CurrentPublicKey pulumi.StringInput `pulumi:"currentPublicKey"`
+	// Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+	PreviousPublicKey pulumi.StringInput `pulumi:"previousPublicKey"`
+	// The OCID of the Vault Secret containing the verification key versions.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+	// Specifies type of verification material.
+	VerificationKeySourceType pulumi.StringInput `pulumi:"verificationKeySourceType"`
+}
+
+func (GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (i GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput() GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return i.ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(context.Background())
+}
+
+func (i GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs) ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(ctx context.Context) GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput)
+}
+
+// GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayInput is an input type that accepts GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArray and GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput values.
+// You can construct a concrete instance of `GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayInput` via:
+//
+//	GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArray{ GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{...} }
+type GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput() GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput
+	ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutputWithContext(context.Context) GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput
+}
+
+type GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArray []GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput
+
+func (GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (i GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArray) ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput() GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return i.ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArray) ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutputWithContext(ctx context.Context) GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput)
+}
+
+type GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput struct{ *pulumi.OutputState }
+
+func (GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput() GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return o
+}
+
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(ctx context.Context) GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return o
+}
+
+// Current version of Base64 encoding of the public key which is in binary GPG exported format.
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) CurrentPublicKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource) string {
+		return v.CurrentPublicKey
+	}).(pulumi.StringOutput)
+}
+
+// Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) PreviousPublicKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource) string {
+		return v.PreviousPublicKey
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault Secret containing the verification key versions.
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource) string { return v.VaultSecretId }).(pulumi.StringOutput)
+}
+
+// Specifies type of verification material.
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput) VerificationKeySourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource) string {
+		return v.VerificationKeySourceType
+	}).(pulumi.StringOutput)
+}
+
+type GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput) ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput() GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return o
+}
+
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput) ToGetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutputWithContext(ctx context.Context) GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return o
+}
+
+func (o GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput) Index(i pulumi.IntInput) GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource {
+		return vs[0].([]GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource)[vs[1].(int)]
+	}).(GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput)
 }
 
 type GetDeployArtifactsDeployArtifactCollection struct {
@@ -19543,6 +20398,8 @@ type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource struct {
 	DeployArtifactSourceType string `pulumi:"deployArtifactSourceType"`
 	// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion string `pulumi:"deployArtifactVersion"`
+	// The source of the verification material.
+	HelmVerificationKeySources []GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource `pulumi:"helmVerificationKeySources"`
 	// Specifies image digest for the version of the image.
 	ImageDigest string `pulumi:"imageDigest"`
 	// Specifies OCIR Image Path - optionally include tag.
@@ -19573,6 +20430,8 @@ type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs stru
 	DeployArtifactSourceType pulumi.StringInput `pulumi:"deployArtifactSourceType"`
 	// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion pulumi.StringInput `pulumi:"deployArtifactVersion"`
+	// The source of the verification material.
+	HelmVerificationKeySources GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayInput `pulumi:"helmVerificationKeySources"`
 	// Specifies image digest for the version of the image.
 	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
 	// Specifies OCIR Image Path - optionally include tag.
@@ -19665,6 +20524,13 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput
 	}).(pulumi.StringOutput)
 }
 
+// The source of the verification material.
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput) HelmVerificationKeySources() GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource) []GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource {
+		return v.HelmVerificationKeySources
+	}).(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput)
+}
+
 // Specifies image digest for the version of the image.
 func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput) ImageDigest() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource) string {
@@ -19702,6 +20568,138 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArrayO
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource {
 		return vs[0].([]GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource)[vs[1].(int)]
 	}).(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput)
+}
+
+type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource struct {
+	// Current version of Base64 encoding of the public key which is in binary GPG exported format.
+	CurrentPublicKey string `pulumi:"currentPublicKey"`
+	// Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+	PreviousPublicKey string `pulumi:"previousPublicKey"`
+	// The OCID of the Vault Secret containing the verification key versions.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+	// Specifies type of verification material.
+	VerificationKeySourceType string `pulumi:"verificationKeySourceType"`
+}
+
+// GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceInput is an input type that accepts GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs and GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput values.
+// You can construct a concrete instance of `GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceInput` via:
+//
+//	GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs{...}
+type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceInput interface {
+	pulumi.Input
+
+	ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput() GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput
+	ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(context.Context) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput
+}
+
+type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs struct {
+	// Current version of Base64 encoding of the public key which is in binary GPG exported format.
+	CurrentPublicKey pulumi.StringInput `pulumi:"currentPublicKey"`
+	// Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+	PreviousPublicKey pulumi.StringInput `pulumi:"previousPublicKey"`
+	// The OCID of the Vault Secret containing the verification key versions.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+	// Specifies type of verification material.
+	VerificationKeySourceType pulumi.StringInput `pulumi:"verificationKeySourceType"`
+}
+
+func (GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (i GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs) ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput() GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return i.ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(context.Background())
+}
+
+func (i GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs) ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(ctx context.Context) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput)
+}
+
+// GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayInput is an input type that accepts GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArray and GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput values.
+// You can construct a concrete instance of `GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayInput` via:
+//
+//	GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArray{ GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs{...} }
+type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput() GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput
+	ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutputWithContext(context.Context) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput
+}
+
+type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArray []GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceInput
+
+func (GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (i GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArray) ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput() GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return i.ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArray) ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutputWithContext(ctx context.Context) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput)
+}
+
+type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput struct{ *pulumi.OutputState }
+
+func (GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput) ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput() GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return o
+}
+
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput) ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutputWithContext(ctx context.Context) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return o
+}
+
+// Current version of Base64 encoding of the public key which is in binary GPG exported format.
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput) CurrentPublicKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource) string {
+		return v.CurrentPublicKey
+	}).(pulumi.StringOutput)
+}
+
+// Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput) PreviousPublicKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource) string {
+		return v.PreviousPublicKey
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault Secret containing the verification key versions.
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource) string {
+		return v.VaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+// Specifies type of verification material.
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput) VerificationKeySourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource) string {
+		return v.VerificationKeySourceType
+	}).(pulumi.StringOutput)
+}
+
+type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource)(nil)).Elem()
+}
+
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput) ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput() GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return o
+}
+
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput) ToGetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutputWithContext(ctx context.Context) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput {
+	return o
+}
+
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput) Index(i pulumi.IntInput) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource {
+		return vs[0].([]GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource)[vs[1].(int)]
+	}).(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput)
 }
 
 type GetDeployArtifactsFilter struct {
@@ -23638,7 +24636,7 @@ func (o GetDeployStageApprovalPolicyArrayOutput) Index(i pulumi.IntInput) GetDep
 }
 
 type GetDeployStageBlueBackendIp struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items []string `pulumi:"items"`
 }
 
@@ -23654,7 +24652,7 @@ type GetDeployStageBlueBackendIpInput interface {
 }
 
 type GetDeployStageBlueBackendIpArgs struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -23709,7 +24707,7 @@ func (o GetDeployStageBlueBackendIpOutput) ToGetDeployStageBlueBackendIpOutputWi
 	return o
 }
 
-// The IP address of the backend server. A server could be a compute instance or a load balancer.
+// List of parameters defined to set helm value.
 func (o GetDeployStageBlueBackendIpOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeployStageBlueBackendIp) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -24341,7 +25339,7 @@ func (o GetDeployStageContainerConfigShapeConfigArrayOutput) Index(i pulumi.IntI
 }
 
 type GetDeployStageDeployStagePredecessorCollection struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items []GetDeployStageDeployStagePredecessorCollectionItem `pulumi:"items"`
 }
 
@@ -24357,7 +25355,7 @@ type GetDeployStageDeployStagePredecessorCollectionInput interface {
 }
 
 type GetDeployStageDeployStagePredecessorCollectionArgs struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items GetDeployStageDeployStagePredecessorCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -24412,7 +25410,7 @@ func (o GetDeployStageDeployStagePredecessorCollectionOutput) ToGetDeployStageDe
 	return o
 }
 
-// The IP address of the backend server. A server could be a compute instance or a load balancer.
+// List of parameters defined to set helm value.
 func (o GetDeployStageDeployStagePredecessorCollectionOutput) Items() GetDeployStageDeployStagePredecessorCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetDeployStageDeployStagePredecessorCollection) []GetDeployStageDeployStagePredecessorCollectionItem {
 		return v.Items
@@ -24652,7 +25650,7 @@ func (o GetDeployStageFailurePolicyArrayOutput) Index(i pulumi.IntInput) GetDepl
 }
 
 type GetDeployStageGreenBackendIp struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items []string `pulumi:"items"`
 }
 
@@ -24668,7 +25666,7 @@ type GetDeployStageGreenBackendIpInput interface {
 }
 
 type GetDeployStageGreenBackendIpArgs struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -24723,7 +25721,7 @@ func (o GetDeployStageGreenBackendIpOutput) ToGetDeployStageGreenBackendIpOutput
 	return o
 }
 
-// The IP address of the backend server. A server could be a compute instance or a load balancer.
+// List of parameters defined to set helm value.
 func (o GetDeployStageGreenBackendIpOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeployStageGreenBackendIp) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -25226,6 +26224,412 @@ func (o GetDeployStageRolloutPolicyArrayOutput) Index(i pulumi.IntInput) GetDepl
 	}).(GetDeployStageRolloutPolicyOutput)
 }
 
+type GetDeployStageSetString struct {
+	// List of parameters defined to set helm value.
+	Items []GetDeployStageSetStringItem `pulumi:"items"`
+}
+
+// GetDeployStageSetStringInput is an input type that accepts GetDeployStageSetStringArgs and GetDeployStageSetStringOutput values.
+// You can construct a concrete instance of `GetDeployStageSetStringInput` via:
+//
+//	GetDeployStageSetStringArgs{...}
+type GetDeployStageSetStringInput interface {
+	pulumi.Input
+
+	ToGetDeployStageSetStringOutput() GetDeployStageSetStringOutput
+	ToGetDeployStageSetStringOutputWithContext(context.Context) GetDeployStageSetStringOutput
+}
+
+type GetDeployStageSetStringArgs struct {
+	// List of parameters defined to set helm value.
+	Items GetDeployStageSetStringItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeployStageSetStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageSetString)(nil)).Elem()
+}
+
+func (i GetDeployStageSetStringArgs) ToGetDeployStageSetStringOutput() GetDeployStageSetStringOutput {
+	return i.ToGetDeployStageSetStringOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageSetStringArgs) ToGetDeployStageSetStringOutputWithContext(ctx context.Context) GetDeployStageSetStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageSetStringOutput)
+}
+
+// GetDeployStageSetStringArrayInput is an input type that accepts GetDeployStageSetStringArray and GetDeployStageSetStringArrayOutput values.
+// You can construct a concrete instance of `GetDeployStageSetStringArrayInput` via:
+//
+//	GetDeployStageSetStringArray{ GetDeployStageSetStringArgs{...} }
+type GetDeployStageSetStringArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStageSetStringArrayOutput() GetDeployStageSetStringArrayOutput
+	ToGetDeployStageSetStringArrayOutputWithContext(context.Context) GetDeployStageSetStringArrayOutput
+}
+
+type GetDeployStageSetStringArray []GetDeployStageSetStringInput
+
+func (GetDeployStageSetStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageSetString)(nil)).Elem()
+}
+
+func (i GetDeployStageSetStringArray) ToGetDeployStageSetStringArrayOutput() GetDeployStageSetStringArrayOutput {
+	return i.ToGetDeployStageSetStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageSetStringArray) ToGetDeployStageSetStringArrayOutputWithContext(ctx context.Context) GetDeployStageSetStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageSetStringArrayOutput)
+}
+
+type GetDeployStageSetStringOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageSetStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageSetString)(nil)).Elem()
+}
+
+func (o GetDeployStageSetStringOutput) ToGetDeployStageSetStringOutput() GetDeployStageSetStringOutput {
+	return o
+}
+
+func (o GetDeployStageSetStringOutput) ToGetDeployStageSetStringOutputWithContext(ctx context.Context) GetDeployStageSetStringOutput {
+	return o
+}
+
+// List of parameters defined to set helm value.
+func (o GetDeployStageSetStringOutput) Items() GetDeployStageSetStringItemArrayOutput {
+	return o.ApplyT(func(v GetDeployStageSetString) []GetDeployStageSetStringItem { return v.Items }).(GetDeployStageSetStringItemArrayOutput)
+}
+
+type GetDeployStageSetStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageSetStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageSetString)(nil)).Elem()
+}
+
+func (o GetDeployStageSetStringArrayOutput) ToGetDeployStageSetStringArrayOutput() GetDeployStageSetStringArrayOutput {
+	return o
+}
+
+func (o GetDeployStageSetStringArrayOutput) ToGetDeployStageSetStringArrayOutputWithContext(ctx context.Context) GetDeployStageSetStringArrayOutput {
+	return o
+}
+
+func (o GetDeployStageSetStringArrayOutput) Index(i pulumi.IntInput) GetDeployStageSetStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStageSetString {
+		return vs[0].([]GetDeployStageSetString)[vs[1].(int)]
+	}).(GetDeployStageSetStringOutput)
+}
+
+type GetDeployStageSetStringItem struct {
+	// Name of the parameter (case-sensitive).
+	Name string `pulumi:"name"`
+	// Value of the parameter.
+	Value string `pulumi:"value"`
+}
+
+// GetDeployStageSetStringItemInput is an input type that accepts GetDeployStageSetStringItemArgs and GetDeployStageSetStringItemOutput values.
+// You can construct a concrete instance of `GetDeployStageSetStringItemInput` via:
+//
+//	GetDeployStageSetStringItemArgs{...}
+type GetDeployStageSetStringItemInput interface {
+	pulumi.Input
+
+	ToGetDeployStageSetStringItemOutput() GetDeployStageSetStringItemOutput
+	ToGetDeployStageSetStringItemOutputWithContext(context.Context) GetDeployStageSetStringItemOutput
+}
+
+type GetDeployStageSetStringItemArgs struct {
+	// Name of the parameter (case-sensitive).
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the parameter.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDeployStageSetStringItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageSetStringItem)(nil)).Elem()
+}
+
+func (i GetDeployStageSetStringItemArgs) ToGetDeployStageSetStringItemOutput() GetDeployStageSetStringItemOutput {
+	return i.ToGetDeployStageSetStringItemOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageSetStringItemArgs) ToGetDeployStageSetStringItemOutputWithContext(ctx context.Context) GetDeployStageSetStringItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageSetStringItemOutput)
+}
+
+// GetDeployStageSetStringItemArrayInput is an input type that accepts GetDeployStageSetStringItemArray and GetDeployStageSetStringItemArrayOutput values.
+// You can construct a concrete instance of `GetDeployStageSetStringItemArrayInput` via:
+//
+//	GetDeployStageSetStringItemArray{ GetDeployStageSetStringItemArgs{...} }
+type GetDeployStageSetStringItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStageSetStringItemArrayOutput() GetDeployStageSetStringItemArrayOutput
+	ToGetDeployStageSetStringItemArrayOutputWithContext(context.Context) GetDeployStageSetStringItemArrayOutput
+}
+
+type GetDeployStageSetStringItemArray []GetDeployStageSetStringItemInput
+
+func (GetDeployStageSetStringItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageSetStringItem)(nil)).Elem()
+}
+
+func (i GetDeployStageSetStringItemArray) ToGetDeployStageSetStringItemArrayOutput() GetDeployStageSetStringItemArrayOutput {
+	return i.ToGetDeployStageSetStringItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageSetStringItemArray) ToGetDeployStageSetStringItemArrayOutputWithContext(ctx context.Context) GetDeployStageSetStringItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageSetStringItemArrayOutput)
+}
+
+type GetDeployStageSetStringItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageSetStringItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageSetStringItem)(nil)).Elem()
+}
+
+func (o GetDeployStageSetStringItemOutput) ToGetDeployStageSetStringItemOutput() GetDeployStageSetStringItemOutput {
+	return o
+}
+
+func (o GetDeployStageSetStringItemOutput) ToGetDeployStageSetStringItemOutputWithContext(ctx context.Context) GetDeployStageSetStringItemOutput {
+	return o
+}
+
+// Name of the parameter (case-sensitive).
+func (o GetDeployStageSetStringItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageSetStringItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the parameter.
+func (o GetDeployStageSetStringItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageSetStringItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDeployStageSetStringItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageSetStringItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageSetStringItem)(nil)).Elem()
+}
+
+func (o GetDeployStageSetStringItemArrayOutput) ToGetDeployStageSetStringItemArrayOutput() GetDeployStageSetStringItemArrayOutput {
+	return o
+}
+
+func (o GetDeployStageSetStringItemArrayOutput) ToGetDeployStageSetStringItemArrayOutputWithContext(ctx context.Context) GetDeployStageSetStringItemArrayOutput {
+	return o
+}
+
+func (o GetDeployStageSetStringItemArrayOutput) Index(i pulumi.IntInput) GetDeployStageSetStringItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStageSetStringItem {
+		return vs[0].([]GetDeployStageSetStringItem)[vs[1].(int)]
+	}).(GetDeployStageSetStringItemOutput)
+}
+
+type GetDeployStageSetValue struct {
+	// List of parameters defined to set helm value.
+	Items []GetDeployStageSetValueItem `pulumi:"items"`
+}
+
+// GetDeployStageSetValueInput is an input type that accepts GetDeployStageSetValueArgs and GetDeployStageSetValueOutput values.
+// You can construct a concrete instance of `GetDeployStageSetValueInput` via:
+//
+//	GetDeployStageSetValueArgs{...}
+type GetDeployStageSetValueInput interface {
+	pulumi.Input
+
+	ToGetDeployStageSetValueOutput() GetDeployStageSetValueOutput
+	ToGetDeployStageSetValueOutputWithContext(context.Context) GetDeployStageSetValueOutput
+}
+
+type GetDeployStageSetValueArgs struct {
+	// List of parameters defined to set helm value.
+	Items GetDeployStageSetValueItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeployStageSetValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageSetValue)(nil)).Elem()
+}
+
+func (i GetDeployStageSetValueArgs) ToGetDeployStageSetValueOutput() GetDeployStageSetValueOutput {
+	return i.ToGetDeployStageSetValueOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageSetValueArgs) ToGetDeployStageSetValueOutputWithContext(ctx context.Context) GetDeployStageSetValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageSetValueOutput)
+}
+
+// GetDeployStageSetValueArrayInput is an input type that accepts GetDeployStageSetValueArray and GetDeployStageSetValueArrayOutput values.
+// You can construct a concrete instance of `GetDeployStageSetValueArrayInput` via:
+//
+//	GetDeployStageSetValueArray{ GetDeployStageSetValueArgs{...} }
+type GetDeployStageSetValueArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStageSetValueArrayOutput() GetDeployStageSetValueArrayOutput
+	ToGetDeployStageSetValueArrayOutputWithContext(context.Context) GetDeployStageSetValueArrayOutput
+}
+
+type GetDeployStageSetValueArray []GetDeployStageSetValueInput
+
+func (GetDeployStageSetValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageSetValue)(nil)).Elem()
+}
+
+func (i GetDeployStageSetValueArray) ToGetDeployStageSetValueArrayOutput() GetDeployStageSetValueArrayOutput {
+	return i.ToGetDeployStageSetValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageSetValueArray) ToGetDeployStageSetValueArrayOutputWithContext(ctx context.Context) GetDeployStageSetValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageSetValueArrayOutput)
+}
+
+type GetDeployStageSetValueOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageSetValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageSetValue)(nil)).Elem()
+}
+
+func (o GetDeployStageSetValueOutput) ToGetDeployStageSetValueOutput() GetDeployStageSetValueOutput {
+	return o
+}
+
+func (o GetDeployStageSetValueOutput) ToGetDeployStageSetValueOutputWithContext(ctx context.Context) GetDeployStageSetValueOutput {
+	return o
+}
+
+// List of parameters defined to set helm value.
+func (o GetDeployStageSetValueOutput) Items() GetDeployStageSetValueItemArrayOutput {
+	return o.ApplyT(func(v GetDeployStageSetValue) []GetDeployStageSetValueItem { return v.Items }).(GetDeployStageSetValueItemArrayOutput)
+}
+
+type GetDeployStageSetValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageSetValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageSetValue)(nil)).Elem()
+}
+
+func (o GetDeployStageSetValueArrayOutput) ToGetDeployStageSetValueArrayOutput() GetDeployStageSetValueArrayOutput {
+	return o
+}
+
+func (o GetDeployStageSetValueArrayOutput) ToGetDeployStageSetValueArrayOutputWithContext(ctx context.Context) GetDeployStageSetValueArrayOutput {
+	return o
+}
+
+func (o GetDeployStageSetValueArrayOutput) Index(i pulumi.IntInput) GetDeployStageSetValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStageSetValue {
+		return vs[0].([]GetDeployStageSetValue)[vs[1].(int)]
+	}).(GetDeployStageSetValueOutput)
+}
+
+type GetDeployStageSetValueItem struct {
+	// Name of the parameter (case-sensitive).
+	Name string `pulumi:"name"`
+	// Value of the parameter.
+	Value string `pulumi:"value"`
+}
+
+// GetDeployStageSetValueItemInput is an input type that accepts GetDeployStageSetValueItemArgs and GetDeployStageSetValueItemOutput values.
+// You can construct a concrete instance of `GetDeployStageSetValueItemInput` via:
+//
+//	GetDeployStageSetValueItemArgs{...}
+type GetDeployStageSetValueItemInput interface {
+	pulumi.Input
+
+	ToGetDeployStageSetValueItemOutput() GetDeployStageSetValueItemOutput
+	ToGetDeployStageSetValueItemOutputWithContext(context.Context) GetDeployStageSetValueItemOutput
+}
+
+type GetDeployStageSetValueItemArgs struct {
+	// Name of the parameter (case-sensitive).
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the parameter.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDeployStageSetValueItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageSetValueItem)(nil)).Elem()
+}
+
+func (i GetDeployStageSetValueItemArgs) ToGetDeployStageSetValueItemOutput() GetDeployStageSetValueItemOutput {
+	return i.ToGetDeployStageSetValueItemOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageSetValueItemArgs) ToGetDeployStageSetValueItemOutputWithContext(ctx context.Context) GetDeployStageSetValueItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageSetValueItemOutput)
+}
+
+// GetDeployStageSetValueItemArrayInput is an input type that accepts GetDeployStageSetValueItemArray and GetDeployStageSetValueItemArrayOutput values.
+// You can construct a concrete instance of `GetDeployStageSetValueItemArrayInput` via:
+//
+//	GetDeployStageSetValueItemArray{ GetDeployStageSetValueItemArgs{...} }
+type GetDeployStageSetValueItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStageSetValueItemArrayOutput() GetDeployStageSetValueItemArrayOutput
+	ToGetDeployStageSetValueItemArrayOutputWithContext(context.Context) GetDeployStageSetValueItemArrayOutput
+}
+
+type GetDeployStageSetValueItemArray []GetDeployStageSetValueItemInput
+
+func (GetDeployStageSetValueItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageSetValueItem)(nil)).Elem()
+}
+
+func (i GetDeployStageSetValueItemArray) ToGetDeployStageSetValueItemArrayOutput() GetDeployStageSetValueItemArrayOutput {
+	return i.ToGetDeployStageSetValueItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStageSetValueItemArray) ToGetDeployStageSetValueItemArrayOutputWithContext(ctx context.Context) GetDeployStageSetValueItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStageSetValueItemArrayOutput)
+}
+
+type GetDeployStageSetValueItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageSetValueItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStageSetValueItem)(nil)).Elem()
+}
+
+func (o GetDeployStageSetValueItemOutput) ToGetDeployStageSetValueItemOutput() GetDeployStageSetValueItemOutput {
+	return o
+}
+
+func (o GetDeployStageSetValueItemOutput) ToGetDeployStageSetValueItemOutputWithContext(ctx context.Context) GetDeployStageSetValueItemOutput {
+	return o
+}
+
+// Name of the parameter (case-sensitive).
+func (o GetDeployStageSetValueItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageSetValueItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the parameter.
+func (o GetDeployStageSetValueItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStageSetValueItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDeployStageSetValueItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStageSetValueItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStageSetValueItem)(nil)).Elem()
+}
+
+func (o GetDeployStageSetValueItemArrayOutput) ToGetDeployStageSetValueItemArrayOutput() GetDeployStageSetValueItemArrayOutput {
+	return o
+}
+
+func (o GetDeployStageSetValueItemArrayOutput) ToGetDeployStageSetValueItemArrayOutputWithContext(ctx context.Context) GetDeployStageSetValueItemArrayOutput {
+	return o
+}
+
+func (o GetDeployStageSetValueItemArrayOutput) Index(i pulumi.IntInput) GetDeployStageSetValueItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStageSetValueItem {
+		return vs[0].([]GetDeployStageSetValueItem)[vs[1].(int)]
+	}).(GetDeployStageSetValueItemOutput)
+}
+
 type GetDeployStageTestLoadBalancerConfig struct {
 	// Listen port for the backend server.
 	BackendPort int `pulumi:"backendPort"`
@@ -25457,7 +26861,7 @@ func (o GetDeployStageWaitCriteriaArrayOutput) Index(i pulumi.IntInput) GetDeplo
 }
 
 type GetDeployStagesDeployStageCollection struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items []GetDeployStagesDeployStageCollectionItem `pulumi:"items"`
 }
 
@@ -25473,7 +26877,7 @@ type GetDeployStagesDeployStageCollectionInput interface {
 }
 
 type GetDeployStagesDeployStageCollectionArgs struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items GetDeployStagesDeployStageCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -25528,7 +26932,7 @@ func (o GetDeployStagesDeployStageCollectionOutput) ToGetDeployStagesDeployStage
 	return o
 }
 
-// The IP address of the backend server. A server could be a compute instance or a load balancer.
+// List of parameters defined to set helm value.
 func (o GetDeployStagesDeployStageCollectionOutput) Items() GetDeployStagesDeployStageCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollection) []GetDeployStagesDeployStageCollectionItem {
 		return v.Items
@@ -25558,6 +26962,8 @@ func (o GetDeployStagesDeployStageCollectionArrayOutput) Index(i pulumi.IntInput
 type GetDeployStagesDeployStageCollectionItem struct {
 	// Specifies the approval policy.
 	ApprovalPolicies []GetDeployStagesDeployStageCollectionItemApprovalPolicy `pulumi:"approvalPolicies"`
+	// Disable pre/post upgrade hooks. Set to false by default.
+	AreHooksEnabled bool `pulumi:"areHooksEnabled"`
 	// Collection of backend environment IP addresses.
 	BlueBackendIps []GetDeployStagesDeployStageCollectionItemBlueBackendIp `pulumi:"blueBackendIps"`
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -25620,6 +27026,10 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync bool `pulumi:"isAsync"`
+	// Enables helm --debug option to stream output to tf stdout. Set to false by default.
+	IsDebugEnabled bool `pulumi:"isDebugEnabled"`
+	// Force resource update through delete; or if required, recreate. Set to false by default.
+	IsForceEnabled bool `pulumi:"isForceEnabled"`
 	// A boolean flag specifies whether the invoked function must be validated.
 	IsValidationEnabled bool `pulumi:"isValidationEnabled"`
 	// List of Kubernetes manifest artifact OCIDs.
@@ -25628,6 +27038,8 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfigs []GetDeployStagesDeployStageCollectionItemLoadBalancerConfig `pulumi:"loadBalancerConfigs"`
+	// Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+	MaxHistory int `pulumi:"maxHistory"`
 	// Maximum usable memory for the Function (in MB).
 	MaxMemoryInMbs string `pulumi:"maxMemoryInMbs"`
 	// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -25650,6 +27062,22 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	RollbackPolicies []GetDeployStagesDeployStageCollectionItemRollbackPolicy `pulumi:"rollbackPolicies"`
 	// Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicies []GetDeployStagesDeployStageCollectionItemRolloutPolicy `pulumi:"rolloutPolicies"`
+	// Specifies the name and value pairs to set helm values.
+	SetStrings []GetDeployStagesDeployStageCollectionItemSetString `pulumi:"setStrings"`
+	// Specifies the name and value pairs to set helm values.
+	SetValues []GetDeployStagesDeployStageCollectionItemSetValue `pulumi:"setValues"`
+	// Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+	ShouldCleanupOnFail bool `pulumi:"shouldCleanupOnFail"`
+	// Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+	ShouldNotWait bool `pulumi:"shouldNotWait"`
+	// During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+	ShouldResetValues bool `pulumi:"shouldResetValues"`
+	// During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+	ShouldReuseValues bool `pulumi:"shouldReuseValues"`
+	// If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+	ShouldSkipCrds bool `pulumi:"shouldSkipCrds"`
+	// If set, renders subchart notes along with the parent. Set to false by default.
+	ShouldSkipRenderSubchartNotes bool `pulumi:"shouldSkipRenderSubchartNotes"`
 	// A filter to return only deployment stages that matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -25684,6 +27112,8 @@ type GetDeployStagesDeployStageCollectionItemInput interface {
 type GetDeployStagesDeployStageCollectionItemArgs struct {
 	// Specifies the approval policy.
 	ApprovalPolicies GetDeployStagesDeployStageCollectionItemApprovalPolicyArrayInput `pulumi:"approvalPolicies"`
+	// Disable pre/post upgrade hooks. Set to false by default.
+	AreHooksEnabled pulumi.BoolInput `pulumi:"areHooksEnabled"`
 	// Collection of backend environment IP addresses.
 	BlueBackendIps GetDeployStagesDeployStageCollectionItemBlueBackendIpArrayInput `pulumi:"blueBackendIps"`
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -25746,6 +27176,10 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolInput `pulumi:"isAsync"`
+	// Enables helm --debug option to stream output to tf stdout. Set to false by default.
+	IsDebugEnabled pulumi.BoolInput `pulumi:"isDebugEnabled"`
+	// Force resource update through delete; or if required, recreate. Set to false by default.
+	IsForceEnabled pulumi.BoolInput `pulumi:"isForceEnabled"`
 	// A boolean flag specifies whether the invoked function must be validated.
 	IsValidationEnabled pulumi.BoolInput `pulumi:"isValidationEnabled"`
 	// List of Kubernetes manifest artifact OCIDs.
@@ -25754,6 +27188,8 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfigs GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArrayInput `pulumi:"loadBalancerConfigs"`
+	// Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+	MaxHistory pulumi.IntInput `pulumi:"maxHistory"`
 	// Maximum usable memory for the Function (in MB).
 	MaxMemoryInMbs pulumi.StringInput `pulumi:"maxMemoryInMbs"`
 	// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -25776,6 +27212,22 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	RollbackPolicies GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayInput `pulumi:"rollbackPolicies"`
 	// Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicies GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayInput `pulumi:"rolloutPolicies"`
+	// Specifies the name and value pairs to set helm values.
+	SetStrings GetDeployStagesDeployStageCollectionItemSetStringArrayInput `pulumi:"setStrings"`
+	// Specifies the name and value pairs to set helm values.
+	SetValues GetDeployStagesDeployStageCollectionItemSetValueArrayInput `pulumi:"setValues"`
+	// Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+	ShouldCleanupOnFail pulumi.BoolInput `pulumi:"shouldCleanupOnFail"`
+	// Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+	ShouldNotWait pulumi.BoolInput `pulumi:"shouldNotWait"`
+	// During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+	ShouldResetValues pulumi.BoolInput `pulumi:"shouldResetValues"`
+	// During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+	ShouldReuseValues pulumi.BoolInput `pulumi:"shouldReuseValues"`
+	// If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+	ShouldSkipCrds pulumi.BoolInput `pulumi:"shouldSkipCrds"`
+	// If set, renders subchart notes along with the parent. Set to false by default.
+	ShouldSkipRenderSubchartNotes pulumi.BoolInput `pulumi:"shouldSkipRenderSubchartNotes"`
 	// A filter to return only deployment stages that matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -25852,6 +27304,11 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) ApprovalPolicies() GetDe
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []GetDeployStagesDeployStageCollectionItemApprovalPolicy {
 		return v.ApprovalPolicies
 	}).(GetDeployStagesDeployStageCollectionItemApprovalPolicyArrayOutput)
+}
+
+// Disable pre/post upgrade hooks. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) AreHooksEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.AreHooksEnabled }).(pulumi.BoolOutput)
 }
 
 // Collection of backend environment IP addresses.
@@ -26031,6 +27488,16 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) IsAsync() pulumi.BoolOut
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.IsAsync }).(pulumi.BoolOutput)
 }
 
+// Enables helm --debug option to stream output to tf stdout. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) IsDebugEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.IsDebugEnabled }).(pulumi.BoolOutput)
+}
+
+// Force resource update through delete; or if required, recreate. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) IsForceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.IsForceEnabled }).(pulumi.BoolOutput)
+}
+
 // A boolean flag specifies whether the invoked function must be validated.
 func (o GetDeployStagesDeployStageCollectionItemOutput) IsValidationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.IsValidationEnabled }).(pulumi.BoolOutput)
@@ -26053,6 +27520,11 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) LoadBalancerConfigs() Ge
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []GetDeployStagesDeployStageCollectionItemLoadBalancerConfig {
 		return v.LoadBalancerConfigs
 	}).(GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArrayOutput)
+}
+
+// Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+func (o GetDeployStagesDeployStageCollectionItemOutput) MaxHistory() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) int { return v.MaxHistory }).(pulumi.IntOutput)
 }
 
 // Maximum usable memory for the Function (in MB).
@@ -26114,6 +27586,50 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) RolloutPolicies() GetDep
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []GetDeployStagesDeployStageCollectionItemRolloutPolicy {
 		return v.RolloutPolicies
 	}).(GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayOutput)
+}
+
+// Specifies the name and value pairs to set helm values.
+func (o GetDeployStagesDeployStageCollectionItemOutput) SetStrings() GetDeployStagesDeployStageCollectionItemSetStringArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []GetDeployStagesDeployStageCollectionItemSetString {
+		return v.SetStrings
+	}).(GetDeployStagesDeployStageCollectionItemSetStringArrayOutput)
+}
+
+// Specifies the name and value pairs to set helm values.
+func (o GetDeployStagesDeployStageCollectionItemOutput) SetValues() GetDeployStagesDeployStageCollectionItemSetValueArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []GetDeployStagesDeployStageCollectionItemSetValue {
+		return v.SetValues
+	}).(GetDeployStagesDeployStageCollectionItemSetValueArrayOutput)
+}
+
+// Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ShouldCleanupOnFail() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.ShouldCleanupOnFail }).(pulumi.BoolOutput)
+}
+
+// Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ShouldNotWait() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.ShouldNotWait }).(pulumi.BoolOutput)
+}
+
+// During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ShouldResetValues() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.ShouldResetValues }).(pulumi.BoolOutput)
+}
+
+// During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ShouldReuseValues() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.ShouldReuseValues }).(pulumi.BoolOutput)
+}
+
+// If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ShouldSkipCrds() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.ShouldSkipCrds }).(pulumi.BoolOutput)
+}
+
+// If set, renders subchart notes along with the parent. Set to false by default.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ShouldSkipRenderSubchartNotes() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.ShouldSkipRenderSubchartNotes }).(pulumi.BoolOutput)
 }
 
 // A filter to return only deployment stages that matches the given lifecycle state.
@@ -26292,7 +27808,7 @@ func (o GetDeployStagesDeployStageCollectionItemApprovalPolicyArrayOutput) Index
 }
 
 type GetDeployStagesDeployStageCollectionItemBlueBackendIp struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items []string `pulumi:"items"`
 }
 
@@ -26308,7 +27824,7 @@ type GetDeployStagesDeployStageCollectionItemBlueBackendIpInput interface {
 }
 
 type GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -26363,7 +27879,7 @@ func (o GetDeployStagesDeployStageCollectionItemBlueBackendIpOutput) ToGetDeploy
 	return o
 }
 
-// The IP address of the backend server. A server could be a compute instance or a load balancer.
+// List of parameters defined to set helm value.
 func (o GetDeployStagesDeployStageCollectionItemBlueBackendIpOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemBlueBackendIp) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -27003,7 +28519,7 @@ func (o GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigArrayO
 }
 
 type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items []GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItem `pulumi:"items"`
 }
 
@@ -27019,7 +28535,7 @@ type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionInp
 }
 
 type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArgs struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -27074,7 +28590,7 @@ func (o GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection
 	return o
 }
 
-// The IP address of the backend server. A server could be a compute instance or a load balancer.
+// List of parameters defined to set helm value.
 func (o GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionOutput) Items() GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection) []GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItem {
 		return v.Items
@@ -27316,7 +28832,7 @@ func (o GetDeployStagesDeployStageCollectionItemFailurePolicyArrayOutput) Index(
 }
 
 type GetDeployStagesDeployStageCollectionItemGreenBackendIp struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items []string `pulumi:"items"`
 }
 
@@ -27332,7 +28848,7 @@ type GetDeployStagesDeployStageCollectionItemGreenBackendIpInput interface {
 }
 
 type GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs struct {
-	// The IP address of the backend server. A server could be a compute instance or a load balancer.
+	// List of parameters defined to set helm value.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -27387,7 +28903,7 @@ func (o GetDeployStagesDeployStageCollectionItemGreenBackendIpOutput) ToGetDeplo
 	return o
 }
 
-// The IP address of the backend server. A server could be a compute instance or a load balancer.
+// List of parameters defined to set helm value.
 func (o GetDeployStagesDeployStageCollectionItemGreenBackendIpOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemGreenBackendIp) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -27894,6 +29410,416 @@ func (o GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayOutput) Index(
 	}).(GetDeployStagesDeployStageCollectionItemRolloutPolicyOutput)
 }
 
+type GetDeployStagesDeployStageCollectionItemSetString struct {
+	// List of parameters defined to set helm value.
+	Items []GetDeployStagesDeployStageCollectionItemSetStringItem `pulumi:"items"`
+}
+
+// GetDeployStagesDeployStageCollectionItemSetStringInput is an input type that accepts GetDeployStagesDeployStageCollectionItemSetStringArgs and GetDeployStagesDeployStageCollectionItemSetStringOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemSetStringInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemSetStringArgs{...}
+type GetDeployStagesDeployStageCollectionItemSetStringInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemSetStringOutput() GetDeployStagesDeployStageCollectionItemSetStringOutput
+	ToGetDeployStagesDeployStageCollectionItemSetStringOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemSetStringOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringArgs struct {
+	// List of parameters defined to set helm value.
+	Items GetDeployStagesDeployStageCollectionItemSetStringItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeployStagesDeployStageCollectionItemSetStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetString)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetStringArgs) ToGetDeployStagesDeployStageCollectionItemSetStringOutput() GetDeployStagesDeployStageCollectionItemSetStringOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemSetStringOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetStringArgs) ToGetDeployStagesDeployStageCollectionItemSetStringOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemSetStringOutput)
+}
+
+// GetDeployStagesDeployStageCollectionItemSetStringArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemSetStringArray and GetDeployStagesDeployStageCollectionItemSetStringArrayOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemSetStringArrayInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemSetStringArray{ GetDeployStagesDeployStageCollectionItemSetStringArgs{...} }
+type GetDeployStagesDeployStageCollectionItemSetStringArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemSetStringArrayOutput() GetDeployStagesDeployStageCollectionItemSetStringArrayOutput
+	ToGetDeployStagesDeployStageCollectionItemSetStringArrayOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemSetStringArrayOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringArray []GetDeployStagesDeployStageCollectionItemSetStringInput
+
+func (GetDeployStagesDeployStageCollectionItemSetStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemSetString)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetStringArray) ToGetDeployStagesDeployStageCollectionItemSetStringArrayOutput() GetDeployStagesDeployStageCollectionItemSetStringArrayOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemSetStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetStringArray) ToGetDeployStagesDeployStageCollectionItemSetStringArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemSetStringArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemSetStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetString)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringOutput) ToGetDeployStagesDeployStageCollectionItemSetStringOutput() GetDeployStagesDeployStageCollectionItemSetStringOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringOutput) ToGetDeployStagesDeployStageCollectionItemSetStringOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetStringOutput {
+	return o
+}
+
+// List of parameters defined to set helm value.
+func (o GetDeployStagesDeployStageCollectionItemSetStringOutput) Items() GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemSetString) []GetDeployStagesDeployStageCollectionItemSetStringItem {
+		return v.Items
+	}).(GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemSetStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemSetString)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringArrayOutput) ToGetDeployStagesDeployStageCollectionItemSetStringArrayOutput() GetDeployStagesDeployStageCollectionItemSetStringArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringArrayOutput) ToGetDeployStagesDeployStageCollectionItemSetStringArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetStringArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringArrayOutput) Index(i pulumi.IntInput) GetDeployStagesDeployStageCollectionItemSetStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStagesDeployStageCollectionItemSetString {
+		return vs[0].([]GetDeployStagesDeployStageCollectionItemSetString)[vs[1].(int)]
+	}).(GetDeployStagesDeployStageCollectionItemSetStringOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringItem struct {
+	// Name of the parameter (case-sensitive).
+	Name string `pulumi:"name"`
+	// Value of the parameter.
+	Value string `pulumi:"value"`
+}
+
+// GetDeployStagesDeployStageCollectionItemSetStringItemInput is an input type that accepts GetDeployStagesDeployStageCollectionItemSetStringItemArgs and GetDeployStagesDeployStageCollectionItemSetStringItemOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemSetStringItemInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemSetStringItemArgs{...}
+type GetDeployStagesDeployStageCollectionItemSetStringItemInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemSetStringItemOutput() GetDeployStagesDeployStageCollectionItemSetStringItemOutput
+	ToGetDeployStagesDeployStageCollectionItemSetStringItemOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemSetStringItemOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringItemArgs struct {
+	// Name of the parameter (case-sensitive).
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the parameter.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDeployStagesDeployStageCollectionItemSetStringItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetStringItem)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetStringItemArgs) ToGetDeployStagesDeployStageCollectionItemSetStringItemOutput() GetDeployStagesDeployStageCollectionItemSetStringItemOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemSetStringItemOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetStringItemArgs) ToGetDeployStagesDeployStageCollectionItemSetStringItemOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetStringItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemSetStringItemOutput)
+}
+
+// GetDeployStagesDeployStageCollectionItemSetStringItemArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemSetStringItemArray and GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemSetStringItemArrayInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemSetStringItemArray{ GetDeployStagesDeployStageCollectionItemSetStringItemArgs{...} }
+type GetDeployStagesDeployStageCollectionItemSetStringItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput() GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput
+	ToGetDeployStagesDeployStageCollectionItemSetStringItemArrayOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringItemArray []GetDeployStagesDeployStageCollectionItemSetStringItemInput
+
+func (GetDeployStagesDeployStageCollectionItemSetStringItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemSetStringItem)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetStringItemArray) ToGetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput() GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemSetStringItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetStringItemArray) ToGetDeployStagesDeployStageCollectionItemSetStringItemArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemSetStringItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetStringItem)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringItemOutput) ToGetDeployStagesDeployStageCollectionItemSetStringItemOutput() GetDeployStagesDeployStageCollectionItemSetStringItemOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringItemOutput) ToGetDeployStagesDeployStageCollectionItemSetStringItemOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetStringItemOutput {
+	return o
+}
+
+// Name of the parameter (case-sensitive).
+func (o GetDeployStagesDeployStageCollectionItemSetStringItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemSetStringItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the parameter.
+func (o GetDeployStagesDeployStageCollectionItemSetStringItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemSetStringItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemSetStringItem)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput) ToGetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput() GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput) ToGetDeployStagesDeployStageCollectionItemSetStringItemArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput) Index(i pulumi.IntInput) GetDeployStagesDeployStageCollectionItemSetStringItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStagesDeployStageCollectionItemSetStringItem {
+		return vs[0].([]GetDeployStagesDeployStageCollectionItemSetStringItem)[vs[1].(int)]
+	}).(GetDeployStagesDeployStageCollectionItemSetStringItemOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValue struct {
+	// List of parameters defined to set helm value.
+	Items []GetDeployStagesDeployStageCollectionItemSetValueItem `pulumi:"items"`
+}
+
+// GetDeployStagesDeployStageCollectionItemSetValueInput is an input type that accepts GetDeployStagesDeployStageCollectionItemSetValueArgs and GetDeployStagesDeployStageCollectionItemSetValueOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemSetValueInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemSetValueArgs{...}
+type GetDeployStagesDeployStageCollectionItemSetValueInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemSetValueOutput() GetDeployStagesDeployStageCollectionItemSetValueOutput
+	ToGetDeployStagesDeployStageCollectionItemSetValueOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemSetValueOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueArgs struct {
+	// List of parameters defined to set helm value.
+	Items GetDeployStagesDeployStageCollectionItemSetValueItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeployStagesDeployStageCollectionItemSetValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetValue)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetValueArgs) ToGetDeployStagesDeployStageCollectionItemSetValueOutput() GetDeployStagesDeployStageCollectionItemSetValueOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemSetValueOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetValueArgs) ToGetDeployStagesDeployStageCollectionItemSetValueOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemSetValueOutput)
+}
+
+// GetDeployStagesDeployStageCollectionItemSetValueArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemSetValueArray and GetDeployStagesDeployStageCollectionItemSetValueArrayOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemSetValueArrayInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemSetValueArray{ GetDeployStagesDeployStageCollectionItemSetValueArgs{...} }
+type GetDeployStagesDeployStageCollectionItemSetValueArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemSetValueArrayOutput() GetDeployStagesDeployStageCollectionItemSetValueArrayOutput
+	ToGetDeployStagesDeployStageCollectionItemSetValueArrayOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemSetValueArrayOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueArray []GetDeployStagesDeployStageCollectionItemSetValueInput
+
+func (GetDeployStagesDeployStageCollectionItemSetValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemSetValue)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetValueArray) ToGetDeployStagesDeployStageCollectionItemSetValueArrayOutput() GetDeployStagesDeployStageCollectionItemSetValueArrayOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemSetValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetValueArray) ToGetDeployStagesDeployStageCollectionItemSetValueArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemSetValueArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemSetValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetValue)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueOutput) ToGetDeployStagesDeployStageCollectionItemSetValueOutput() GetDeployStagesDeployStageCollectionItemSetValueOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueOutput) ToGetDeployStagesDeployStageCollectionItemSetValueOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetValueOutput {
+	return o
+}
+
+// List of parameters defined to set helm value.
+func (o GetDeployStagesDeployStageCollectionItemSetValueOutput) Items() GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemSetValue) []GetDeployStagesDeployStageCollectionItemSetValueItem {
+		return v.Items
+	}).(GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemSetValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemSetValue)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueArrayOutput) ToGetDeployStagesDeployStageCollectionItemSetValueArrayOutput() GetDeployStagesDeployStageCollectionItemSetValueArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueArrayOutput) ToGetDeployStagesDeployStageCollectionItemSetValueArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetValueArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueArrayOutput) Index(i pulumi.IntInput) GetDeployStagesDeployStageCollectionItemSetValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStagesDeployStageCollectionItemSetValue {
+		return vs[0].([]GetDeployStagesDeployStageCollectionItemSetValue)[vs[1].(int)]
+	}).(GetDeployStagesDeployStageCollectionItemSetValueOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueItem struct {
+	// Name of the parameter (case-sensitive).
+	Name string `pulumi:"name"`
+	// Value of the parameter.
+	Value string `pulumi:"value"`
+}
+
+// GetDeployStagesDeployStageCollectionItemSetValueItemInput is an input type that accepts GetDeployStagesDeployStageCollectionItemSetValueItemArgs and GetDeployStagesDeployStageCollectionItemSetValueItemOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemSetValueItemInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemSetValueItemArgs{...}
+type GetDeployStagesDeployStageCollectionItemSetValueItemInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemSetValueItemOutput() GetDeployStagesDeployStageCollectionItemSetValueItemOutput
+	ToGetDeployStagesDeployStageCollectionItemSetValueItemOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemSetValueItemOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueItemArgs struct {
+	// Name of the parameter (case-sensitive).
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the parameter.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDeployStagesDeployStageCollectionItemSetValueItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetValueItem)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetValueItemArgs) ToGetDeployStagesDeployStageCollectionItemSetValueItemOutput() GetDeployStagesDeployStageCollectionItemSetValueItemOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemSetValueItemOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetValueItemArgs) ToGetDeployStagesDeployStageCollectionItemSetValueItemOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetValueItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemSetValueItemOutput)
+}
+
+// GetDeployStagesDeployStageCollectionItemSetValueItemArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemSetValueItemArray and GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput values.
+// You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemSetValueItemArrayInput` via:
+//
+//	GetDeployStagesDeployStageCollectionItemSetValueItemArray{ GetDeployStagesDeployStageCollectionItemSetValueItemArgs{...} }
+type GetDeployStagesDeployStageCollectionItemSetValueItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput() GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput
+	ToGetDeployStagesDeployStageCollectionItemSetValueItemArrayOutputWithContext(context.Context) GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueItemArray []GetDeployStagesDeployStageCollectionItemSetValueItemInput
+
+func (GetDeployStagesDeployStageCollectionItemSetValueItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemSetValueItem)(nil)).Elem()
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetValueItemArray) ToGetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput() GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput {
+	return i.ToGetDeployStagesDeployStageCollectionItemSetValueItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeployStagesDeployStageCollectionItemSetValueItemArray) ToGetDeployStagesDeployStageCollectionItemSetValueItemArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemSetValueItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetValueItem)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueItemOutput) ToGetDeployStagesDeployStageCollectionItemSetValueItemOutput() GetDeployStagesDeployStageCollectionItemSetValueItemOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueItemOutput) ToGetDeployStagesDeployStageCollectionItemSetValueItemOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetValueItemOutput {
+	return o
+}
+
+// Name of the parameter (case-sensitive).
+func (o GetDeployStagesDeployStageCollectionItemSetValueItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemSetValueItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the parameter.
+func (o GetDeployStagesDeployStageCollectionItemSetValueItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItemSetValueItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeployStagesDeployStageCollectionItemSetValueItem)(nil)).Elem()
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput) ToGetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput() GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput) ToGetDeployStagesDeployStageCollectionItemSetValueItemArrayOutputWithContext(ctx context.Context) GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput {
+	return o
+}
+
+func (o GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput) Index(i pulumi.IntInput) GetDeployStagesDeployStageCollectionItemSetValueItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeployStagesDeployStageCollectionItemSetValueItem {
+		return vs[0].([]GetDeployStagesDeployStageCollectionItemSetValueItem)[vs[1].(int)]
+	}).(GetDeployStagesDeployStageCollectionItemSetValueItemOutput)
+}
+
 type GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig struct {
 	// Listen port for the backend server.
 	BackendPort int `pulumi:"backendPort"`
@@ -28125,6 +30051,7 @@ func (o GetDeployStagesDeployStageCollectionItemWaitCriteriaArrayOutput) Index(i
 }
 
 type GetDeployStagesFilter struct {
+	// Name of the parameter (case-sensitive).
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -28142,6 +30069,7 @@ type GetDeployStagesFilterInput interface {
 }
 
 type GetDeployStagesFilterArgs struct {
+	// Name of the parameter (case-sensitive).
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -28198,6 +30126,7 @@ func (o GetDeployStagesFilterOutput) ToGetDeployStagesFilterOutputWithContext(ct
 	return o
 }
 
+// Name of the parameter (case-sensitive).
 func (o GetDeployStagesFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -39019,6 +40948,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionTlsVerifyConfigPtrInput)(nil)).Elem(), ConnectionTlsVerifyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployArtifactDeployArtifactSourceInput)(nil)).Elem(), DeployArtifactDeployArtifactSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployArtifactDeployArtifactSourcePtrInput)(nil)).Elem(), DeployArtifactDeployArtifactSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput)(nil)).Elem(), DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrInput)(nil)).Elem(), DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployEnvironmentComputeInstanceGroupSelectorsInput)(nil)).Elem(), DeployEnvironmentComputeInstanceGroupSelectorsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployEnvironmentComputeInstanceGroupSelectorsPtrInput)(nil)).Elem(), DeployEnvironmentComputeInstanceGroupSelectorsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployEnvironmentComputeInstanceGroupSelectorsItemInput)(nil)).Elem(), DeployEnvironmentComputeInstanceGroupSelectorsItemArgs{})
@@ -39075,6 +41006,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageRollbackPolicyPtrInput)(nil)).Elem(), DeployStageRollbackPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageRolloutPolicyInput)(nil)).Elem(), DeployStageRolloutPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageRolloutPolicyPtrInput)(nil)).Elem(), DeployStageRolloutPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageSetStringInput)(nil)).Elem(), DeployStageSetStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageSetStringPtrInput)(nil)).Elem(), DeployStageSetStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageSetStringItemInput)(nil)).Elem(), DeployStageSetStringItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageSetStringItemArrayInput)(nil)).Elem(), DeployStageSetStringItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageSetValuesInput)(nil)).Elem(), DeployStageSetValuesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageSetValuesPtrInput)(nil)).Elem(), DeployStageSetValuesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageSetValuesItemInput)(nil)).Elem(), DeployStageSetValuesItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageSetValuesItemArrayInput)(nil)).Elem(), DeployStageSetValuesItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageTestLoadBalancerConfigInput)(nil)).Elem(), DeployStageTestLoadBalancerConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageTestLoadBalancerConfigPtrInput)(nil)).Elem(), DeployStageTestLoadBalancerConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployStageWaitCriteriaInput)(nil)).Elem(), DeployStageWaitCriteriaArgs{})
@@ -39251,12 +41190,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterArrayInput)(nil)).Elem(), GetConnectionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactDeployArtifactSourceInput)(nil)).Elem(), GetDeployArtifactDeployArtifactSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactDeployArtifactSourceArrayInput)(nil)).Elem(), GetDeployArtifactDeployArtifactSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceInput)(nil)).Elem(), GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayInput)(nil)).Elem(), GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionInput)(nil)).Elem(), GetDeployArtifactsDeployArtifactCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionArrayInput)(nil)).Elem(), GetDeployArtifactsDeployArtifactCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionItemInput)(nil)).Elem(), GetDeployArtifactsDeployArtifactCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionItemArrayInput)(nil)).Elem(), GetDeployArtifactsDeployArtifactCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceInput)(nil)).Elem(), GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArrayInput)(nil)).Elem(), GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceInput)(nil)).Elem(), GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayInput)(nil)).Elem(), GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsFilterInput)(nil)).Elem(), GetDeployArtifactsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactsFilterArrayInput)(nil)).Elem(), GetDeployArtifactsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployEnvironmentComputeInstanceGroupSelectorInput)(nil)).Elem(), GetDeployEnvironmentComputeInstanceGroupSelectorArgs{})
@@ -39353,6 +41296,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageRollbackPolicyArrayInput)(nil)).Elem(), GetDeployStageRollbackPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageRolloutPolicyInput)(nil)).Elem(), GetDeployStageRolloutPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageRolloutPolicyArrayInput)(nil)).Elem(), GetDeployStageRolloutPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageSetStringInput)(nil)).Elem(), GetDeployStageSetStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageSetStringArrayInput)(nil)).Elem(), GetDeployStageSetStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageSetStringItemInput)(nil)).Elem(), GetDeployStageSetStringItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageSetStringItemArrayInput)(nil)).Elem(), GetDeployStageSetStringItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageSetValueInput)(nil)).Elem(), GetDeployStageSetValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageSetValueArrayInput)(nil)).Elem(), GetDeployStageSetValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageSetValueItemInput)(nil)).Elem(), GetDeployStageSetValueItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageSetValueItemArrayInput)(nil)).Elem(), GetDeployStageSetValueItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageTestLoadBalancerConfigInput)(nil)).Elem(), GetDeployStageTestLoadBalancerConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageTestLoadBalancerConfigArrayInput)(nil)).Elem(), GetDeployStageTestLoadBalancerConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStageWaitCriteriaInput)(nil)).Elem(), GetDeployStageWaitCriteriaArgs{})
@@ -39391,6 +41342,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemRollbackPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemRolloutPolicyInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemRolloutPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetStringInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemSetStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetStringArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemSetStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetStringItemInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemSetStringItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetStringItemArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemSetStringItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetValueInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemSetValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetValueArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemSetValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetValueItemInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemSetValueItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemSetValueItemArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemSetValueItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArrayInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployStagesDeployStageCollectionItemWaitCriteriaInput)(nil)).Elem(), GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs{})
@@ -39645,6 +41604,8 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionTlsVerifyConfigPtrOutput{})
 	pulumi.RegisterOutputType(DeployArtifactDeployArtifactSourceOutput{})
 	pulumi.RegisterOutputType(DeployArtifactDeployArtifactSourcePtrOutput{})
+	pulumi.RegisterOutputType(DeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput{})
+	pulumi.RegisterOutputType(DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrOutput{})
 	pulumi.RegisterOutputType(DeployEnvironmentComputeInstanceGroupSelectorsOutput{})
 	pulumi.RegisterOutputType(DeployEnvironmentComputeInstanceGroupSelectorsPtrOutput{})
 	pulumi.RegisterOutputType(DeployEnvironmentComputeInstanceGroupSelectorsItemOutput{})
@@ -39701,6 +41662,14 @@ func init() {
 	pulumi.RegisterOutputType(DeployStageRollbackPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DeployStageRolloutPolicyOutput{})
 	pulumi.RegisterOutputType(DeployStageRolloutPolicyPtrOutput{})
+	pulumi.RegisterOutputType(DeployStageSetStringOutput{})
+	pulumi.RegisterOutputType(DeployStageSetStringPtrOutput{})
+	pulumi.RegisterOutputType(DeployStageSetStringItemOutput{})
+	pulumi.RegisterOutputType(DeployStageSetStringItemArrayOutput{})
+	pulumi.RegisterOutputType(DeployStageSetValuesOutput{})
+	pulumi.RegisterOutputType(DeployStageSetValuesPtrOutput{})
+	pulumi.RegisterOutputType(DeployStageSetValuesItemOutput{})
+	pulumi.RegisterOutputType(DeployStageSetValuesItemArrayOutput{})
 	pulumi.RegisterOutputType(DeployStageTestLoadBalancerConfigOutput{})
 	pulumi.RegisterOutputType(DeployStageTestLoadBalancerConfigPtrOutput{})
 	pulumi.RegisterOutputType(DeployStageWaitCriteriaOutput{})
@@ -39877,12 +41846,16 @@ func init() {
 	pulumi.RegisterOutputType(GetConnectionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactDeployArtifactSourceOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactDeployArtifactSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutput{})
+	pulumi.RegisterOutputType(GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactsDeployArtifactCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactsDeployArtifactCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactsDeployArtifactCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactsDeployArtifactCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceOutput{})
+	pulumi.RegisterOutputType(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactsFilterOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployEnvironmentComputeInstanceGroupSelectorOutput{})
@@ -39979,6 +41952,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDeployStageRollbackPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStageRolloutPolicyOutput{})
 	pulumi.RegisterOutputType(GetDeployStageRolloutPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStageSetStringOutput{})
+	pulumi.RegisterOutputType(GetDeployStageSetStringArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStageSetStringItemOutput{})
+	pulumi.RegisterOutputType(GetDeployStageSetStringItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStageSetValueOutput{})
+	pulumi.RegisterOutputType(GetDeployStageSetValueArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStageSetValueItemOutput{})
+	pulumi.RegisterOutputType(GetDeployStageSetValueItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStageTestLoadBalancerConfigOutput{})
 	pulumi.RegisterOutputType(GetDeployStageTestLoadBalancerConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStageWaitCriteriaOutput{})
@@ -40017,6 +41998,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemRolloutPolicyOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemSetStringOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemSetStringArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemSetStringItemOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemSetStringItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemSetValueOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemSetValueArrayOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemSetValueItemOutput{})
+	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemSetValueItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployStagesDeployStageCollectionItemWaitCriteriaOutput{})

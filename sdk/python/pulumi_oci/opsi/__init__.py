@@ -33,11 +33,15 @@ from .get_operations_insights_warehouse_resource_usage_summary import *
 from .get_operations_insights_warehouse_user import *
 from .get_operations_insights_warehouse_users import *
 from .get_operations_insights_warehouses import *
+from .get_opsi_configuration import *
+from .get_opsi_configuration_configuration_item import *
+from .get_opsi_configurations import *
 from .host_insight import *
 from .operations_insights_private_endpoint import *
 from .operations_insights_warehouse import *
 from .operations_insights_warehouse_download_warehouse_wallet import *
 from .operations_insights_warehouse_rotate_warehouse_wallet import *
 from .operations_insights_warehouse_user import *
+from .opsi_configuration import *
 from ._inputs import *
 from . import outputs

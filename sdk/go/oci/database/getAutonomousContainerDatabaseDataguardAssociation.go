@@ -66,9 +66,11 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 	AutonomousContainerDatabaseDataguardAssociationId string `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
+	// The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds int `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
 	Id string `pulumi:"id"`
-	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled bool `pulumi:"isAutomaticFailoverEnabled"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -159,12 +161,19 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Auton
 	}).(pulumi.StringOutput)
 }
 
+// The lag time for my preference based on data loss tolerance in seconds.
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) int {
+		return v.FastStartFailOverLagLimitInSeconds
+	}).(pulumi.IntOutput)
+}
+
 // The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) IsAutomaticFailoverEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) bool {
 		return v.IsAutomaticFailoverEnabled

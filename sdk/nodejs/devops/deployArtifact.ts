@@ -25,6 +25,12 @@ import * as utilities from "../utilities";
  *         chartUrl: _var.deploy_artifact_deploy_artifact_source_chart_url,
  *         deployArtifactPath: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_path,
  *         deployArtifactVersion: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_version,
+ *         helmVerificationKeySource: {
+ *             verificationKeySourceType: _var.deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
+ *             currentPublicKey: _var.deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,
+ *             previousPublicKey: _var.deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key,
+ *             vaultSecretId: oci_vault_secret.test_secret.id,
+ *         },
  *         imageDigest: _var.deploy_artifact_deploy_artifact_source_image_digest,
  *         imageUri: _var.deploy_artifact_deploy_artifact_source_image_uri,
  *         repositoryId: oci_devops_repository.test_repository.id,

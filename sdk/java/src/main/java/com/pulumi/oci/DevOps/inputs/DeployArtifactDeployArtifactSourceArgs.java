@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DevOps.inputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -91,6 +92,21 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
     }
 
     /**
+     * (Updatable) The source of the verification material.
+     * 
+     */
+    @Import(name="helmVerificationKeySource")
+    private @Nullable Output<DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs> helmVerificationKeySource;
+
+    /**
+     * @return (Updatable) The source of the verification material.
+     * 
+     */
+    public Optional<Output<DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs>> helmVerificationKeySource() {
+        return Optional.ofNullable(this.helmVerificationKeySource);
+    }
+
+    /**
      * (Updatable) Specifies image digest for the version of the image.
      * 
      */
@@ -143,6 +159,7 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
         this.deployArtifactPath = $.deployArtifactPath;
         this.deployArtifactSourceType = $.deployArtifactSourceType;
         this.deployArtifactVersion = $.deployArtifactVersion;
+        this.helmVerificationKeySource = $.helmVerificationKeySource;
         this.imageDigest = $.imageDigest;
         this.imageUri = $.imageUri;
         this.repositoryId = $.repositoryId;
@@ -269,6 +286,27 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
          */
         public Builder deployArtifactVersion(String deployArtifactVersion) {
             return deployArtifactVersion(Output.of(deployArtifactVersion));
+        }
+
+        /**
+         * @param helmVerificationKeySource (Updatable) The source of the verification material.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmVerificationKeySource(@Nullable Output<DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs> helmVerificationKeySource) {
+            $.helmVerificationKeySource = helmVerificationKeySource;
+            return this;
+        }
+
+        /**
+         * @param helmVerificationKeySource (Updatable) The source of the verification material.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmVerificationKeySource(DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs helmVerificationKeySource) {
+            return helmVerificationKeySource(Output.of(helmVerificationKeySource));
         }
 
         /**

@@ -68,6 +68,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseBackupConfig> backupConfigs;
     /**
+     * @return Retention period, in days, for backups.
+     * 
+     */
+    private Integer backupRetentionPeriodInDays;
+    /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
      * 
      */
@@ -488,6 +493,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String timeUntilReconnectCloneEnabled;
     private String timestamp;
+    /**
+     * @return The backup storage to the database.
+     * 
+     */
+    private Double totalBackupStorageSizeInGbs;
     private Boolean useLatestAvailableBackupTimeStamp;
     /**
      * @return The amount of storage that has been used, in terabytes.
@@ -570,6 +580,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public List<GetAutonomousDatabasesAutonomousDatabaseBackupConfig> backupConfigs() {
         return this.backupConfigs;
+    }
+    /**
+     * @return Retention period, in days, for backups.
+     * 
+     */
+    public Integer backupRetentionPeriodInDays() {
+        return this.backupRetentionPeriodInDays;
     }
     /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -1176,6 +1193,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public String timestamp() {
         return this.timestamp;
     }
+    /**
+     * @return The backup storage to the database.
+     * 
+     */
+    public Double totalBackupStorageSizeInGbs() {
+        return this.totalBackupStorageSizeInGbs;
+    }
     public Boolean useLatestAvailableBackupTimeStamp() {
         return this.useLatestAvailableBackupTimeStamp;
     }
@@ -1221,6 +1245,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String autonomousMaintenanceScheduleType;
         private List<String> availableUpgradeVersions;
         private List<GetAutonomousDatabasesAutonomousDatabaseBackupConfig> backupConfigs;
+        private Integer backupRetentionPeriodInDays;
         private String characterSet;
         private String cloneType;
         private String compartmentId;
@@ -1313,6 +1338,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String timeReclamationOfFreeAutonomousDatabase;
         private String timeUntilReconnectCloneEnabled;
         private String timestamp;
+        private Double totalBackupStorageSizeInGbs;
         private Boolean useLatestAvailableBackupTimeStamp;
         private Integer usedDataStorageSizeInTbs;
         private String vaultId;
@@ -1331,6 +1357,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.autonomousMaintenanceScheduleType = defaults.autonomousMaintenanceScheduleType;
     	      this.availableUpgradeVersions = defaults.availableUpgradeVersions;
     	      this.backupConfigs = defaults.backupConfigs;
+    	      this.backupRetentionPeriodInDays = defaults.backupRetentionPeriodInDays;
     	      this.characterSet = defaults.characterSet;
     	      this.cloneType = defaults.cloneType;
     	      this.compartmentId = defaults.compartmentId;
@@ -1423,6 +1450,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
     	      this.timestamp = defaults.timestamp;
+    	      this.totalBackupStorageSizeInGbs = defaults.totalBackupStorageSizeInGbs;
     	      this.useLatestAvailableBackupTimeStamp = defaults.useLatestAvailableBackupTimeStamp;
     	      this.usedDataStorageSizeInTbs = defaults.usedDataStorageSizeInTbs;
     	      this.vaultId = defaults.vaultId;
@@ -1492,6 +1520,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         public Builder backupConfigs(GetAutonomousDatabasesAutonomousDatabaseBackupConfig... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
+        }
+        @CustomType.Setter
+        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
+            this.backupRetentionPeriodInDays = Objects.requireNonNull(backupRetentionPeriodInDays);
+            return this;
         }
         @CustomType.Setter
         public Builder characterSet(String characterSet) {
@@ -1990,6 +2023,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder totalBackupStorageSizeInGbs(Double totalBackupStorageSizeInGbs) {
+            this.totalBackupStorageSizeInGbs = Objects.requireNonNull(totalBackupStorageSizeInGbs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
             this.useLatestAvailableBackupTimeStamp = Objects.requireNonNull(useLatestAvailableBackupTimeStamp);
             return this;
@@ -2025,6 +2063,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             o.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
             o.availableUpgradeVersions = availableUpgradeVersions;
             o.backupConfigs = backupConfigs;
+            o.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
             o.characterSet = characterSet;
             o.cloneType = cloneType;
             o.compartmentId = compartmentId;
@@ -2117,6 +2156,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             o.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             o.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             o.timestamp = timestamp;
+            o.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             o.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             o.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             o.vaultId = vaultId;

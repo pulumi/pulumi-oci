@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
@@ -27,12 +28,17 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
      */
     private String autonomousContainerDatabaseId;
     /**
+     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    private Integer fastStartFailOverLagLimitInSeconds;
+    /**
      * @return The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
      * 
      */
     private String id;
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     private Boolean isAutomaticFailoverEnabled;
@@ -123,6 +129,13 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
         return this.autonomousContainerDatabaseId;
     }
     /**
+     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    public Integer fastStartFailOverLagLimitInSeconds() {
+        return this.fastStartFailOverLagLimitInSeconds;
+    }
+    /**
      * @return The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
      * 
      */
@@ -130,7 +143,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
         return this.id;
     }
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     public Boolean isAutomaticFailoverEnabled() {
@@ -234,6 +247,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
         private String applyRate;
         private String autonomousContainerDatabaseDataguardAssociationId;
         private String autonomousContainerDatabaseId;
+        private Integer fastStartFailOverLagLimitInSeconds;
         private String id;
         private Boolean isAutomaticFailoverEnabled;
         private String lifecycleDetails;
@@ -255,6 +269,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
     	      this.applyRate = defaults.applyRate;
     	      this.autonomousContainerDatabaseDataguardAssociationId = defaults.autonomousContainerDatabaseDataguardAssociationId;
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
+    	      this.fastStartFailOverLagLimitInSeconds = defaults.fastStartFailOverLagLimitInSeconds;
     	      this.id = defaults.id;
     	      this.isAutomaticFailoverEnabled = defaults.isAutomaticFailoverEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -289,6 +304,11 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = Objects.requireNonNull(fastStartFailOverLagLimitInSeconds);
             return this;
         }
         @CustomType.Setter
@@ -367,6 +387,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
             o.applyRate = applyRate;
             o.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
             o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            o.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             o.id = id;
             o.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             o.lifecycleDetails = lifecycleDetails;

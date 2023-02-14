@@ -15,14 +15,14 @@ public final class DeployStageDeployStagePredecessorCollectionArgs extends com.p
     public static final DeployStageDeployStagePredecessorCollectionArgs Empty = new DeployStageDeployStagePredecessorCollectionArgs();
 
     /**
-     * (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * (Updatable) List of parameters defined to set helm value.
      * 
      */
     @Import(name="items", required=true)
     private Output<List<DeployStageDeployStagePredecessorCollectionItemArgs>> items;
 
     /**
-     * @return (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * @return (Updatable) List of parameters defined to set helm value.
      * 
      */
     public Output<List<DeployStageDeployStagePredecessorCollectionItemArgs>> items() {
@@ -54,7 +54,7 @@ public final class DeployStageDeployStagePredecessorCollectionArgs extends com.p
         }
 
         /**
-         * @param items (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+         * @param items (Updatable) List of parameters defined to set helm value.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class DeployStageDeployStagePredecessorCollectionArgs extends com.p
         }
 
         /**
-         * @param items (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+         * @param items (Updatable) List of parameters defined to set helm value.
          * 
          * @return builder
          * 
@@ -75,7 +75,7 @@ public final class DeployStageDeployStagePredecessorCollectionArgs extends com.p
         }
 
         /**
-         * @param items (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+         * @param items (Updatable) List of parameters defined to set helm value.
          * 
          * @return builder
          * 

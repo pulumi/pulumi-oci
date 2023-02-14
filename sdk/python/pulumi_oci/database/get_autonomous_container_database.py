@@ -22,7 +22,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, reclaimable_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, total_cpus=None, vault_id=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, reclaimable_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -62,6 +62,9 @@ class GetAutonomousContainerDatabaseResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if fast_start_fail_over_lag_limit_in_seconds and not isinstance(fast_start_fail_over_lag_limit_in_seconds, int):
+            raise TypeError("Expected argument 'fast_start_fail_over_lag_limit_in_seconds' to be a int")
+        pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -158,12 +161,18 @@ class GetAutonomousContainerDatabaseResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_snapshot_standby_revert and not isinstance(time_snapshot_standby_revert, str):
+            raise TypeError("Expected argument 'time_snapshot_standby_revert' to be a str")
+        pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
         if total_cpus and not isinstance(total_cpus, int):
             raise TypeError("Expected argument 'total_cpus' to be a int")
         pulumi.set(__self__, "total_cpus", total_cpus)
         if vault_id and not isinstance(vault_id, str):
             raise TypeError("Expected argument 'vault_id' to be a str")
         pulumi.set(__self__, "vault_id", vault_id)
+        if version_preference and not isinstance(version_preference, str):
+            raise TypeError("Expected argument 'version_preference' to be a str")
+        pulumi.set(__self__, "version_preference", version_preference)
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
@@ -259,6 +268,11 @@ class GetAutonomousContainerDatabaseResult:
         The user-provided name for the Autonomous Container Database.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -484,6 +498,14 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeSnapshotStandbyRevert")
+    def time_snapshot_standby_revert(self) -> str:
+        """
+        The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        """
+        return pulumi.get(self, "time_snapshot_standby_revert")
+
+    @property
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> int:
         """
@@ -498,6 +520,14 @@ class GetAutonomousContainerDatabaseResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> str:
+        """
+        The next maintenance version preference.
+        """
+        return pulumi.get(self, "version_preference")
 
 
 class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDatabaseResult):
@@ -519,6 +549,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             db_version=self.db_version,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            fast_start_fail_over_lag_limit_in_seconds=self.fast_start_fail_over_lag_limit_in_seconds,
             freeform_tags=self.freeform_tags,
             id=self.id,
             infrastructure_type=self.infrastructure_type,
@@ -551,8 +582,10 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             standby_maintenance_buffer_in_days=self.standby_maintenance_buffer_in_days,
             state=self.state,
             time_created=self.time_created,
+            time_snapshot_standby_revert=self.time_snapshot_standby_revert,
             total_cpus=self.total_cpus,
-            vault_id=self.vault_id)
+            vault_id=self.vault_id,
+            version_preference=self.version_preference)
 
 
 def get_autonomous_container_database(autonomous_container_database_id: Optional[str] = None,
@@ -593,6 +626,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         db_version=__ret__.db_version,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
+        fast_start_fail_over_lag_limit_in_seconds=__ret__.fast_start_fail_over_lag_limit_in_seconds,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         infrastructure_type=__ret__.infrastructure_type,
@@ -625,8 +659,10 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         standby_maintenance_buffer_in_days=__ret__.standby_maintenance_buffer_in_days,
         state=__ret__.state,
         time_created=__ret__.time_created,
+        time_snapshot_standby_revert=__ret__.time_snapshot_standby_revert,
         total_cpus=__ret__.total_cpus,
-        vault_id=__ret__.vault_id)
+        vault_id=__ret__.vault_id,
+        version_preference=__ret__.version_preference)
 
 
 @_utilities.lift_output_func(get_autonomous_container_database)

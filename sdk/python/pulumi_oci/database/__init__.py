@@ -8,6 +8,7 @@ import typing
 from .autonomous_container_database import *
 from .autonomous_container_database_dataguard_association import *
 from .autonomous_container_database_dataguard_association_operation import *
+from .autonomous_container_database_dataguard_role_change import *
 from .autonomous_database import *
 from .autonomous_database_backup import *
 from .autonomous_database_instance_wallet_management import *
@@ -50,6 +51,7 @@ from .get_autonomous_character_sets import *
 from .get_autonomous_container_database import *
 from .get_autonomous_container_database_dataguard_association import *
 from .get_autonomous_container_database_dataguard_associations import *
+from .get_autonomous_container_database_versions import *
 from .get_autonomous_container_databases import *
 from .get_autonomous_container_patches import *
 from .get_autonomous_database import *

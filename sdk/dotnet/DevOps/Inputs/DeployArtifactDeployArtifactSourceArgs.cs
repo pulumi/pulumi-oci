@@ -43,6 +43,12 @@ namespace Pulumi.Oci.DevOps.Inputs
         public Input<string>? DeployArtifactVersion { get; set; }
 
         /// <summary>
+        /// (Updatable) The source of the verification material.
+        /// </summary>
+        [Input("helmVerificationKeySource")]
+        public Input<Inputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs>? HelmVerificationKeySource { get; set; }
+
+        /// <summary>
         /// (Updatable) Specifies image digest for the version of the image.
         /// </summary>
         [Input("imageDigest")]

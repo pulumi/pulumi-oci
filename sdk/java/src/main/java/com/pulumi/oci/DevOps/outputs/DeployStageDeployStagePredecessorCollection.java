@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class DeployStageDeployStagePredecessorCollection {
     /**
-     * @return (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * @return (Updatable) List of parameters defined to set helm value.
      * 
      */
     private List<DeployStageDeployStagePredecessorCollectionItem> items;
 
     private DeployStageDeployStagePredecessorCollection() {}
     /**
-     * @return (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * @return (Updatable) List of parameters defined to set helm value.
      * 
      */
     public List<DeployStageDeployStagePredecessorCollectionItem> items() {

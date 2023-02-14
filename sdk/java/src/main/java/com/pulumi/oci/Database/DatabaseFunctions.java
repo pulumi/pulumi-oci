@@ -15,6 +15,8 @@ import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAss
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasePlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
@@ -219,6 +221,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseVersionsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerPatchesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupResult;
@@ -1036,6 +1039,166 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociationsPlain(GetAutonomousContainerDatabaseDataguardAssociationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", TypeShape.of(GetAutonomousContainerDatabaseDataguardAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Autonomous Container Database versions.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceComponent(var_.autonomous_container_database_version_service_component())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs args) {
+        return getAutonomousContainerDatabaseVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Autonomous Container Database versions.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceComponent(var_.autonomous_container_database_version_service_component())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersionsPlain(GetAutonomousContainerDatabaseVersionsPlainArgs args) {
+        return getAutonomousContainerDatabaseVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Autonomous Container Database versions.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceComponent(var_.autonomous_container_database_version_service_component())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", TypeShape.of(GetAutonomousContainerDatabaseVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Autonomous Container Database versions.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceComponent(var_.autonomous_container_database_version_service_component())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersionsPlain(GetAutonomousContainerDatabaseVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", TypeShape.of(GetAutonomousContainerDatabaseVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Autonomous Container Databases in Oracle Cloud Infrastructure Database service.

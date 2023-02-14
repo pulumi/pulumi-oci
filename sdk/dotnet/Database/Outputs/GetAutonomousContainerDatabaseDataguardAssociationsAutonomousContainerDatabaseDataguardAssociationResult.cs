@@ -27,11 +27,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AutonomousContainerDatabaseId;
         /// <summary>
+        /// The lag time for my preference based on data loss tolerance in seconds.
+        /// </summary>
+        public readonly int FastStartFailOverLagLimitInSeconds;
+        /// <summary>
         /// The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
         /// </summary>
         public readonly bool IsAutomaticFailoverEnabled;
         /// <summary>
@@ -93,6 +97,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string autonomousContainerDatabaseId,
 
+            int fastStartFailOverLagLimitInSeconds,
+
             string id,
 
             bool isAutomaticFailoverEnabled,
@@ -125,6 +131,7 @@ namespace Pulumi.Oci.Database.Outputs
             ApplyRate = applyRate;
             AutonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            FastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             Id = id;
             IsAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             LifecycleDetails = lifecycleDetails;

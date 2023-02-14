@@ -200,6 +200,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.backupConfigs;
     }
     /**
+     * Retention period, in days, for backups.
+     * 
+     */
+    @Export(name="backupRetentionPeriodInDays", type=Integer.class, parameters={})
+    private Output<Integer> backupRetentionPeriodInDays;
+
+    /**
+     * @return Retention period, in days, for backups.
+     * 
+     */
+    public Output<Integer> backupRetentionPeriodInDays() {
+        return this.backupRetentionPeriodInDays;
+    }
+    /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      * 
      */
@@ -1482,6 +1496,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timestamp() {
         return this.timestamp;
+    }
+    /**
+     * The backup storage to the database.
+     * 
+     */
+    @Export(name="totalBackupStorageSizeInGbs", type=Double.class, parameters={})
+    private Output<Double> totalBackupStorageSizeInGbs;
+
+    /**
+     * @return The backup storage to the database.
+     * 
+     */
+    public Output<Double> totalBackupStorageSizeInGbs() {
+        return this.totalBackupStorageSizeInGbs;
     }
     /**
      * Clone from latest available backup timestamp.

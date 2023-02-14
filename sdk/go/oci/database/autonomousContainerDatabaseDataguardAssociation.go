@@ -35,7 +35,9 @@ type AutonomousContainerDatabaseDataguardAssociation struct {
 	AutonomousContainerDatabaseDataguardAssociationId pulumi.StringOutput `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId pulumi.StringOutput `pulumi:"autonomousContainerDatabaseId"`
-	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds pulumi.IntOutput `pulumi:"fastStartFailOverLagLimitInSeconds"`
+	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
 	IsAutomaticFailoverEnabled pulumi.BoolOutput `pulumi:"isAutomaticFailoverEnabled"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -47,7 +49,7 @@ type AutonomousContainerDatabaseDataguardAssociation struct {
 	PeerLifecycleState pulumi.StringOutput `pulumi:"peerLifecycleState"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	PeerRole pulumi.StringOutput `pulumi:"peerRole"`
-	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringOutput `pulumi:"role"`
@@ -106,7 +108,9 @@ type autonomousContainerDatabaseDataguardAssociationState struct {
 	AutonomousContainerDatabaseDataguardAssociationId *string `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId *string `pulumi:"autonomousContainerDatabaseId"`
-	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
+	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
 	IsAutomaticFailoverEnabled *bool `pulumi:"isAutomaticFailoverEnabled"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -118,7 +122,7 @@ type autonomousContainerDatabaseDataguardAssociationState struct {
 	PeerLifecycleState *string `pulumi:"peerLifecycleState"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	PeerRole *string `pulumi:"peerRole"`
-	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode *string `pulumi:"protectionMode"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role *string `pulumi:"role"`
@@ -143,7 +147,9 @@ type AutonomousContainerDatabaseDataguardAssociationState struct {
 	AutonomousContainerDatabaseDataguardAssociationId pulumi.StringPtrInput
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId pulumi.StringPtrInput
-	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
+	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
 	IsAutomaticFailoverEnabled pulumi.BoolPtrInput
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringPtrInput
@@ -155,7 +161,7 @@ type AutonomousContainerDatabaseDataguardAssociationState struct {
 	PeerLifecycleState pulumi.StringPtrInput
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	PeerRole pulumi.StringPtrInput
-	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringPtrInput
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringPtrInput
@@ -180,8 +186,12 @@ type autonomousContainerDatabaseDataguardAssociationArgs struct {
 	AutonomousContainerDatabaseDataguardAssociationId string `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
-	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
+	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
 	IsAutomaticFailoverEnabled *bool `pulumi:"isAutomaticFailoverEnabled"`
+	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	ProtectionMode *string `pulumi:"protectionMode"`
 }
 
 // The set of arguments for constructing a AutonomousContainerDatabaseDataguardAssociation resource.
@@ -190,8 +200,12 @@ type AutonomousContainerDatabaseDataguardAssociationArgs struct {
 	AutonomousContainerDatabaseDataguardAssociationId pulumi.StringInput
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId pulumi.StringInput
-	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
+	// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
 	IsAutomaticFailoverEnabled pulumi.BoolPtrInput
+	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	ProtectionMode pulumi.StringPtrInput
 }
 
 func (AutonomousContainerDatabaseDataguardAssociationArgs) ElementType() reflect.Type {
@@ -305,7 +319,14 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) AutonomousContain
 	}).(pulumi.StringOutput)
 }
 
-// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.IntOutput {
+		return v.FastStartFailOverLagLimitInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
 func (o AutonomousContainerDatabaseDataguardAssociationOutput) IsAutomaticFailoverEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.BoolOutput {
 		return v.IsAutomaticFailoverEnabled
@@ -345,7 +366,7 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerRole() pulumi
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.PeerRole }).(pulumi.StringOutput)
 }
 
-// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 func (o AutonomousContainerDatabaseDataguardAssociationOutput) ProtectionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.ProtectionMode }).(pulumi.StringOutput)
 }

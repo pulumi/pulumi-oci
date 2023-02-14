@@ -146,14 +146,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * Oracle Database version of the Autonomous Container Database.
+     * The base version for the Autonomous Container Database.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return Oracle Database version of the Autonomous Container Database.
+     * @return The base version for the Autonomous Container Database.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -191,6 +191,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    @Import(name="fastStartFailOverLagLimitInSeconds")
+    private @Nullable Output<Integer> fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    public Optional<Output<Integer>> fastStartFailOverLagLimitInSeconds() {
+        return Optional.ofNullable(this.fastStartFailOverLagLimitInSeconds);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -221,14 +236,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     @Import(name="isAutomaticFailoverEnabled")
     private @Nullable Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     public Optional<Output<Boolean>> isAutomaticFailoverEnabled() {
@@ -640,6 +655,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     * 
+     */
+    @Import(name="timeSnapshotStandbyRevert")
+    private @Nullable Output<String> timeSnapshotStandbyRevert;
+
+    /**
+     * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     * 
+     */
+    public Optional<Output<String>> timeSnapshotStandbyRevert() {
+        return Optional.ofNullable(this.timeSnapshotStandbyRevert);
+    }
+
+    /**
      * The number of CPU cores allocated to the Autonomous VM cluster.
      * 
      */
@@ -669,6 +699,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         return Optional.ofNullable(this.vaultId);
     }
 
+    /**
+     * (Updatable) The next maintenance version preference.
+     * 
+     */
+    @Import(name="versionPreference")
+    private @Nullable Output<String> versionPreference;
+
+    /**
+     * @return (Updatable) The next maintenance version preference.
+     * 
+     */
+    public Optional<Output<String>> versionPreference() {
+        return Optional.ofNullable(this.versionPreference);
+    }
+
     private AutonomousContainerDatabaseState() {}
 
     private AutonomousContainerDatabaseState(AutonomousContainerDatabaseState $) {
@@ -684,6 +729,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
         this.infrastructureType = $.infrastructureType;
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
@@ -715,8 +761,10 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
+        this.timeSnapshotStandbyRevert = $.timeSnapshotStandbyRevert;
         this.totalCpus = $.totalCpus;
         this.vaultId = $.vaultId;
+        this.versionPreference = $.versionPreference;
     }
 
     public static Builder builder() {
@@ -903,7 +951,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param dbVersion Oracle Database version of the Autonomous Container Database.
+         * @param dbVersion The base version for the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -914,7 +962,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param dbVersion Oracle Database version of the Autonomous Container Database.
+         * @param dbVersion The base version for the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -966,6 +1014,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
+         * @param fastStartFailOverLagLimitInSeconds The lag time for my preference based on data loss tolerance in seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(@Nullable Output<Integer> fastStartFailOverLagLimitInSeconds) {
+            $.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            return this;
+        }
+
+        /**
+         * @param fastStartFailOverLagLimitInSeconds The lag time for my preference based on data loss tolerance in seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
+            return fastStartFailOverLagLimitInSeconds(Output.of(fastStartFailOverLagLimitInSeconds));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -1008,7 +1077,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
          * 
          * @return builder
          * 
@@ -1019,7 +1088,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
          * 
          * @return builder
          * 
@@ -1623,6 +1692,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
+         * @param timeSnapshotStandbyRevert The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeSnapshotStandbyRevert(@Nullable Output<String> timeSnapshotStandbyRevert) {
+            $.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
+            return this;
+        }
+
+        /**
+         * @param timeSnapshotStandbyRevert The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeSnapshotStandbyRevert(String timeSnapshotStandbyRevert) {
+            return timeSnapshotStandbyRevert(Output.of(timeSnapshotStandbyRevert));
+        }
+
+        /**
          * @param totalCpus The number of CPU cores allocated to the Autonomous VM cluster.
          * 
          * @return builder
@@ -1662,6 +1752,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder vaultId(String vaultId) {
             return vaultId(Output.of(vaultId));
+        }
+
+        /**
+         * @param versionPreference (Updatable) The next maintenance version preference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionPreference(@Nullable Output<String> versionPreference) {
+            $.versionPreference = versionPreference;
+            return this;
+        }
+
+        /**
+         * @param versionPreference (Updatable) The next maintenance version preference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionPreference(String versionPreference) {
+            return versionPreference(Output.of(versionPreference));
         }
 
         public AutonomousContainerDatabaseState build() {

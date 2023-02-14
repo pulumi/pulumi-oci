@@ -46,9 +46,11 @@ import (
 //				},
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DbUniqueName:  pulumi.Any(_var.Autonomous_container_database_db_unique_name),
+//				DbVersion:     pulumi.Any(_var.Autonomous_container_database_db_version),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
+//				FastStartFailOverLagLimitInSeconds: pulumi.Any(_var.Autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds),
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
@@ -95,6 +97,7 @@ import (
 //				PeerDbUniqueName:                             pulumi.Any(_var.Autonomous_container_database_peer_db_unique_name),
 //				ServiceLevelAgreementType:                    pulumi.Any(_var.Autonomous_container_database_service_level_agreement_type),
 //				VaultId:                                      pulumi.Any(oci_kms_vault.Test_vault.Id),
+//				VersionPreference:                            pulumi.Any(_var.Autonomous_container_database_version_preference),
 //				StandbyMaintenanceBufferInDays:               pulumi.Any(_var.Autonomous_container_database_standby_maintenance_buffer_in_days),
 //			})
 //			if err != nil {
@@ -134,17 +137,19 @@ type AutonomousContainerDatabase struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	ComputeModel  pulumi.StringOutput `pulumi:"computeModel"`
 	DbUniqueName  pulumi.StringOutput `pulumi:"dbUniqueName"`
-	// Oracle Database version of the Autonomous Container Database.
+	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds pulumi.IntOutput `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType pulumi.StringOutput `pulumi:"infrastructureType"`
-	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled pulumi.BoolOutput `pulumi:"isAutomaticFailoverEnabled"`
 	// Key History Entry.
 	KeyHistoryEntries AutonomousContainerDatabaseKeyHistoryEntryArrayOutput `pulumi:"keyHistoryEntries"`
@@ -200,10 +205,14 @@ type AutonomousContainerDatabase struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+	TimeSnapshotStandbyRevert pulumi.StringOutput `pulumi:"timeSnapshotStandbyRevert"`
 	// The number of CPU cores allocated to the Autonomous VM cluster.
 	TotalCpus pulumi.IntOutput `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
+	// (Updatable) The next maintenance version preference.
+	VersionPreference pulumi.StringOutput `pulumi:"versionPreference"`
 }
 
 // NewAutonomousContainerDatabase registers a new resource with the given unique name, arguments, and options.
@@ -257,17 +266,19 @@ type autonomousContainerDatabaseState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	ComputeModel  *string `pulumi:"computeModel"`
 	DbUniqueName  *string `pulumi:"dbUniqueName"`
-	// Oracle Database version of the Autonomous Container Database.
+	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName *string `pulumi:"displayName"`
+	// The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType *string `pulumi:"infrastructureType"`
-	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled *bool `pulumi:"isAutomaticFailoverEnabled"`
 	// Key History Entry.
 	KeyHistoryEntries []AutonomousContainerDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
@@ -323,10 +334,14 @@ type autonomousContainerDatabaseState struct {
 	State *string `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+	TimeSnapshotStandbyRevert *string `pulumi:"timeSnapshotStandbyRevert"`
 	// The number of CPU cores allocated to the Autonomous VM cluster.
 	TotalCpus *int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId *string `pulumi:"vaultId"`
+	// (Updatable) The next maintenance version preference.
+	VersionPreference *string `pulumi:"versionPreference"`
 }
 
 type AutonomousContainerDatabaseState struct {
@@ -346,17 +361,19 @@ type AutonomousContainerDatabaseState struct {
 	CompartmentId pulumi.StringPtrInput
 	ComputeModel  pulumi.StringPtrInput
 	DbUniqueName  pulumi.StringPtrInput
-	// Oracle Database version of the Autonomous Container Database.
+	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringPtrInput
+	// The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The infrastructure type this resource belongs to.
 	InfrastructureType pulumi.StringPtrInput
-	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled pulumi.BoolPtrInput
 	// Key History Entry.
 	KeyHistoryEntries AutonomousContainerDatabaseKeyHistoryEntryArrayInput
@@ -412,10 +429,14 @@ type AutonomousContainerDatabaseState struct {
 	State pulumi.StringPtrInput
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringPtrInput
+	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+	TimeSnapshotStandbyRevert pulumi.StringPtrInput
 	// The number of CPU cores allocated to the Autonomous VM cluster.
 	TotalCpus pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringPtrInput
+	// (Updatable) The next maintenance version preference.
+	VersionPreference pulumi.StringPtrInput
 }
 
 func (AutonomousContainerDatabaseState) ElementType() reflect.Type {
@@ -434,13 +455,17 @@ type autonomousContainerDatabaseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
 	DbUniqueName  *string `pulumi:"dbUniqueName"`
+	// The base version for the Autonomous Container Database.
+	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName string `pulumi:"displayName"`
+	// The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled *bool `pulumi:"isAutomaticFailoverEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	KeyStoreId *string `pulumi:"keyStoreId"`
@@ -472,6 +497,8 @@ type autonomousContainerDatabaseArgs struct {
 	StandbyMaintenanceBufferInDays *int `pulumi:"standbyMaintenanceBufferInDays"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId *string `pulumi:"vaultId"`
+	// (Updatable) The next maintenance version preference.
+	VersionPreference *string `pulumi:"versionPreference"`
 }
 
 // The set of arguments for constructing a AutonomousContainerDatabase resource.
@@ -487,13 +514,17 @@ type AutonomousContainerDatabaseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
 	DbUniqueName  pulumi.StringPtrInput
+	// The base version for the Autonomous Container Database.
+	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringInput
+	// The lag time for my preference based on data loss tolerance in seconds.
+	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	KeyStoreId pulumi.StringPtrInput
@@ -525,6 +556,8 @@ type AutonomousContainerDatabaseArgs struct {
 	StandbyMaintenanceBufferInDays pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringPtrInput
+	// (Updatable) The next maintenance version preference.
+	VersionPreference pulumi.StringPtrInput
 }
 
 func (AutonomousContainerDatabaseArgs) ElementType() reflect.Type {
@@ -659,7 +692,7 @@ func (o AutonomousContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DbUniqueName }).(pulumi.StringOutput)
 }
 
-// Oracle Database version of the Autonomous Container Database.
+// The base version for the Autonomous Container Database.
 func (o AutonomousContainerDatabaseOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -674,6 +707,11 @@ func (o AutonomousContainerDatabaseOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// The lag time for my preference based on data loss tolerance in seconds.
+func (o AutonomousContainerDatabaseOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.FastStartFailOverLagLimitInSeconds }).(pulumi.IntOutput)
+}
+
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o AutonomousContainerDatabaseOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
@@ -684,7 +722,7 @@ func (o AutonomousContainerDatabaseOutput) InfrastructureType() pulumi.StringOut
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.InfrastructureType }).(pulumi.StringOutput)
 }
 
-// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 func (o AutonomousContainerDatabaseOutput) IsAutomaticFailoverEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.BoolOutput { return v.IsAutomaticFailoverEnabled }).(pulumi.BoolOutput)
 }
@@ -841,6 +879,11 @@ func (o AutonomousContainerDatabaseOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+func (o AutonomousContainerDatabaseOutput) TimeSnapshotStandbyRevert() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.TimeSnapshotStandbyRevert }).(pulumi.StringOutput)
+}
+
 // The number of CPU cores allocated to the Autonomous VM cluster.
 func (o AutonomousContainerDatabaseOutput) TotalCpus() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.TotalCpus }).(pulumi.IntOutput)
@@ -849,6 +892,11 @@ func (o AutonomousContainerDatabaseOutput) TotalCpus() pulumi.IntOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 func (o AutonomousContainerDatabaseOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The next maintenance version preference.
+func (o AutonomousContainerDatabaseOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.VersionPreference }).(pulumi.StringOutput)
 }
 
 type AutonomousContainerDatabaseArrayOutput struct{ *pulumi.OutputState }

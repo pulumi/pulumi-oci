@@ -18,6 +18,10 @@ __all__ = [
     'ExadataInsightMemberVmClusterDetail',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetail',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails',
+    'OpsiConfigurationConfigItem',
+    'OpsiConfigurationConfigItemMetadata',
+    'OpsiConfigurationConfigItemMetadataUnitDetail',
+    'OpsiConfigurationConfigItemMetadataValueInputDetail',
     'GetAwrHubAwrSnapshotItemResult',
     'GetAwrHubAwrSnapshotsAwrSnapshotCollectionResult',
     'GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult',
@@ -66,6 +70,21 @@ __all__ = [
     'GetOperationsInsightsWarehousesFilterResult',
     'GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionResult',
     'GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult',
+    'GetOpsiConfigurationConfigItemResult',
+    'GetOpsiConfigurationConfigItemMetadataResult',
+    'GetOpsiConfigurationConfigItemMetadataUnitDetailResult',
+    'GetOpsiConfigurationConfigItemMetadataValueInputDetailResult',
+    'GetOpsiConfigurationConfigurationItemConfigItemResult',
+    'GetOpsiConfigurationConfigurationItemConfigItemMetadataResult',
+    'GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult',
+    'GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult',
+    'GetOpsiConfigurationsFilterResult',
+    'GetOpsiConfigurationsOpsiConfigurationsCollectionResult',
+    'GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult',
+    'GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult',
+    'GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult',
+    'GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult',
+    'GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult',
 ]
 
 @pulumi.output_type
@@ -674,6 +693,335 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails(d
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class OpsiConfigurationConfigItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configItemType":
+            suggest = "config_item_type"
+        elif key == "applicableContexts":
+            suggest = "applicable_contexts"
+        elif key == "defaultValue":
+            suggest = "default_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpsiConfigurationConfigItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpsiConfigurationConfigItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpsiConfigurationConfigItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_item_type: str,
+                 applicable_contexts: Optional[Sequence[str]] = None,
+                 default_value: Optional[str] = None,
+                 metadatas: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadata']] = None,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str config_item_type: (Updatable) Type of configuration item.
+        :param Sequence[str] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
+        :param str default_value: Value of configuration item.
+        :param Sequence['OpsiConfigurationConfigItemMetadataArgs'] metadatas: Configuration item metadata.
+        :param str name: (Updatable) Name of configuration item.
+        :param str value: (Updatable) Value of configuration item.
+        """
+        pulumi.set(__self__, "config_item_type", config_item_type)
+        if applicable_contexts is not None:
+            pulumi.set(__self__, "applicable_contexts", applicable_contexts)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="configItemType")
+    def config_item_type(self) -> str:
+        """
+        (Updatable) Type of configuration item.
+        """
+        return pulumi.get(self, "config_item_type")
+
+    @property
+    @pulumi.getter(name="applicableContexts")
+    def applicable_contexts(self) -> Optional[Sequence[str]]:
+        """
+        List of contexts in Operations Insights where this configuration item is applicable.
+        """
+        return pulumi.get(self, "applicable_contexts")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> Optional[str]:
+        """
+        Value of configuration item.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadata']]:
+        """
+        Configuration item metadata.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of configuration item.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) Value of configuration item.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class OpsiConfigurationConfigItemMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configItemType":
+            suggest = "config_item_type"
+        elif key == "dataType":
+            suggest = "data_type"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "unitDetails":
+            suggest = "unit_details"
+        elif key == "valueInputDetails":
+            suggest = "value_input_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpsiConfigurationConfigItemMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpsiConfigurationConfigItemMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpsiConfigurationConfigItemMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_item_type: Optional[str] = None,
+                 data_type: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 unit_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataUnitDetail']] = None,
+                 value_input_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataValueInputDetail']] = None):
+        """
+        :param str config_item_type: (Updatable) Type of configuration item.
+        :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+        :param str description: (Updatable) Description of OPSI configuration.
+        :param str display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+        :param Sequence['OpsiConfigurationConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
+        :param Sequence['OpsiConfigurationConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+        """
+        if config_item_type is not None:
+            pulumi.set(__self__, "config_item_type", config_item_type)
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if unit_details is not None:
+            pulumi.set(__self__, "unit_details", unit_details)
+        if value_input_details is not None:
+            pulumi.set(__self__, "value_input_details", value_input_details)
+
+    @property
+    @pulumi.getter(name="configItemType")
+    def config_item_type(self) -> Optional[str]:
+        """
+        (Updatable) Type of configuration item.
+        """
+        return pulumi.get(self, "config_item_type")
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> Optional[str]:
+        """
+        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+        """
+        return pulumi.get(self, "data_type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) Description of OPSI configuration.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="unitDetails")
+    def unit_details(self) -> Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataUnitDetail']]:
+        """
+        Unit details of configuration item.
+        """
+        return pulumi.get(self, "unit_details")
+
+    @property
+    @pulumi.getter(name="valueInputDetails")
+    def value_input_details(self) -> Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataValueInputDetail']]:
+        """
+        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+        """
+        return pulumi.get(self, "value_input_details")
+
+
+@pulumi.output_type
+class OpsiConfigurationConfigItemMetadataUnitDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpsiConfigurationConfigItemMetadataUnitDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpsiConfigurationConfigItemMetadataUnitDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpsiConfigurationConfigItemMetadataUnitDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 unit: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+        :param str unit: Unit of configuration item.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> Optional[str]:
+        """
+        Unit of configuration item.
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
+class OpsiConfigurationConfigItemMetadataValueInputDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedValueType":
+            suggest = "allowed_value_type"
+        elif key == "maxValue":
+            suggest = "max_value"
+        elif key == "minValue":
+            suggest = "min_value"
+        elif key == "possibleValues":
+            suggest = "possible_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpsiConfigurationConfigItemMetadataValueInputDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpsiConfigurationConfigItemMetadataValueInputDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpsiConfigurationConfigItemMetadataValueInputDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_value_type: Optional[str] = None,
+                 max_value: Optional[str] = None,
+                 min_value: Optional[str] = None,
+                 possible_values: Optional[Sequence[str]] = None):
+        """
+        :param str allowed_value_type: Allowed value type of configuration item.
+        :param str max_value: Maximum value limit for the configuration item.
+        :param str min_value: Minimum value limit for the configuration item.
+        :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
+        """
+        if allowed_value_type is not None:
+            pulumi.set(__self__, "allowed_value_type", allowed_value_type)
+        if max_value is not None:
+            pulumi.set(__self__, "max_value", max_value)
+        if min_value is not None:
+            pulumi.set(__self__, "min_value", min_value)
+        if possible_values is not None:
+            pulumi.set(__self__, "possible_values", possible_values)
+
+    @property
+    @pulumi.getter(name="allowedValueType")
+    def allowed_value_type(self) -> Optional[str]:
+        """
+        Allowed value type of configuration item.
+        """
+        return pulumi.get(self, "allowed_value_type")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> Optional[str]:
+        """
+        Maximum value limit for the configuration item.
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> Optional[str]:
+        """
+        Minimum value limit for the configuration item.
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter(name="possibleValues")
+    def possible_values(self) -> Optional[Sequence[str]]:
+        """
+        Allowed values to pick for the configuration item.
+        """
+        return pulumi.get(self, "possible_values")
 
 
 @pulumi.output_type
@@ -4253,5 +4601,917 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
         The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationConfigItemResult(dict):
+    def __init__(__self__, *,
+                 applicable_contexts: Sequence[str],
+                 config_item_type: str,
+                 default_value: str,
+                 metadatas: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataResult'],
+                 name: str,
+                 value: str):
+        """
+        :param Sequence[str] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
+        :param str config_item_type: Type of configuration item.
+        :param str default_value: Value of configuration item.
+        :param Sequence['GetOpsiConfigurationConfigItemMetadataArgs'] metadatas: Configuration item metadata.
+        :param str name: Name of configuration item.
+        :param str value: Value of configuration item.
+        """
+        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
+        pulumi.set(__self__, "config_item_type", config_item_type)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="applicableContexts")
+    def applicable_contexts(self) -> Sequence[str]:
+        """
+        List of contexts in Operations Insights where this configuration item is applicable.
+        """
+        return pulumi.get(self, "applicable_contexts")
+
+    @property
+    @pulumi.getter(name="configItemType")
+    def config_item_type(self) -> str:
+        """
+        Type of configuration item.
+        """
+        return pulumi.get(self, "config_item_type")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        Value of configuration item.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetOpsiConfigurationConfigItemMetadataResult']:
+        """
+        Configuration item metadata.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of configuration item.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of configuration item.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationConfigItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 config_item_type: str,
+                 data_type: str,
+                 description: str,
+                 display_name: str,
+                 unit_details: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult'],
+                 value_input_details: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataValueInputDetailResult']):
+        """
+        :param str config_item_type: Type of configuration item.
+        :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+        :param str description: Description of OPSI configuration.
+        :param str display_name: User-friendly display name for the OPSI configuration. The name does not have to be unique.
+        :param Sequence['GetOpsiConfigurationConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
+        :param Sequence['GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+        """
+        pulumi.set(__self__, "config_item_type", config_item_type)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "unit_details", unit_details)
+        pulumi.set(__self__, "value_input_details", value_input_details)
+
+    @property
+    @pulumi.getter(name="configItemType")
+    def config_item_type(self) -> str:
+        """
+        Type of configuration item.
+        """
+        return pulumi.get(self, "config_item_type")
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> str:
+        """
+        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+        """
+        return pulumi.get(self, "data_type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of OPSI configuration.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        User-friendly display name for the OPSI configuration. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="unitDetails")
+    def unit_details(self) -> Sequence['outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult']:
+        """
+        Unit details of configuration item.
+        """
+        return pulumi.get(self, "unit_details")
+
+    @property
+    @pulumi.getter(name="valueInputDetails")
+    def value_input_details(self) -> Sequence['outputs.GetOpsiConfigurationConfigItemMetadataValueInputDetailResult']:
+        """
+        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+        """
+        return pulumi.get(self, "value_input_details")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationConfigItemMetadataUnitDetailResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 unit: str):
+        """
+        :param str display_name: User-friendly display name for the OPSI configuration. The name does not have to be unique.
+        :param str unit: Unit of configuration item.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "unit", unit)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        User-friendly display name for the OPSI configuration. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        Unit of configuration item.
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationConfigItemMetadataValueInputDetailResult(dict):
+    def __init__(__self__, *,
+                 allowed_value_type: str,
+                 max_value: str,
+                 min_value: str,
+                 possible_values: Sequence[str]):
+        """
+        :param str allowed_value_type: Allowed value type of configuration item.
+        :param str max_value: Maximum value limit for the configuration item.
+        :param str min_value: Minimum value limit for the configuration item.
+        :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
+        """
+        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
+        pulumi.set(__self__, "max_value", max_value)
+        pulumi.set(__self__, "min_value", min_value)
+        pulumi.set(__self__, "possible_values", possible_values)
+
+    @property
+    @pulumi.getter(name="allowedValueType")
+    def allowed_value_type(self) -> str:
+        """
+        Allowed value type of configuration item.
+        """
+        return pulumi.get(self, "allowed_value_type")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> str:
+        """
+        Maximum value limit for the configuration item.
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> str:
+        """
+        Minimum value limit for the configuration item.
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter(name="possibleValues")
+    def possible_values(self) -> Sequence[str]:
+        """
+        Allowed values to pick for the configuration item.
+        """
+        return pulumi.get(self, "possible_values")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationConfigurationItemConfigItemResult(dict):
+    def __init__(__self__, *,
+                 applicable_contexts: Sequence[str],
+                 config_item_type: str,
+                 default_value: str,
+                 metadatas: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataResult'],
+                 name: str,
+                 value: str,
+                 value_source_config: str):
+        """
+        :param Sequence[str] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
+        :param str config_item_type: Type of configuration item.
+        :param str default_value: Value of configuration item.
+        :param Sequence['GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs'] metadatas: Configuration item metadata.
+        :param str name: A filter to return only configuration items that match the entire name.
+        :param str value: Value of configuration item.
+        :param str value_source_config: Source configuration from where the value is taken for a configuration item.
+        """
+        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
+        pulumi.set(__self__, "config_item_type", config_item_type)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_source_config", value_source_config)
+
+    @property
+    @pulumi.getter(name="applicableContexts")
+    def applicable_contexts(self) -> Sequence[str]:
+        """
+        List of contexts in Operations Insights where this configuration item is applicable.
+        """
+        return pulumi.get(self, "applicable_contexts")
+
+    @property
+    @pulumi.getter(name="configItemType")
+    def config_item_type(self) -> str:
+        """
+        Type of configuration item.
+        """
+        return pulumi.get(self, "config_item_type")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        Value of configuration item.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataResult']:
+        """
+        Configuration item metadata.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only configuration items that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of configuration item.
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueSourceConfig")
+    def value_source_config(self) -> str:
+        """
+        Source configuration from where the value is taken for a configuration item.
+        """
+        return pulumi.get(self, "value_source_config")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationConfigurationItemConfigItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 config_item_type: str,
+                 data_type: str,
+                 description: str,
+                 display_name: str,
+                 unit_details: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult'],
+                 value_input_details: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult']):
+        """
+        :param str config_item_type: Type of configuration item.
+        :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+        :param str description: Description of configuration item .
+        :param str display_name: User-friendly display name for the configuration item unit.
+        :param Sequence['GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
+        :param Sequence['GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+        """
+        pulumi.set(__self__, "config_item_type", config_item_type)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "unit_details", unit_details)
+        pulumi.set(__self__, "value_input_details", value_input_details)
+
+    @property
+    @pulumi.getter(name="configItemType")
+    def config_item_type(self) -> str:
+        """
+        Type of configuration item.
+        """
+        return pulumi.get(self, "config_item_type")
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> str:
+        """
+        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+        """
+        return pulumi.get(self, "data_type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of configuration item .
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        User-friendly display name for the configuration item unit.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="unitDetails")
+    def unit_details(self) -> Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult']:
+        """
+        Unit details of configuration item.
+        """
+        return pulumi.get(self, "unit_details")
+
+    @property
+    @pulumi.getter(name="valueInputDetails")
+    def value_input_details(self) -> Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult']:
+        """
+        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+        """
+        return pulumi.get(self, "value_input_details")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 unit: str):
+        """
+        :param str display_name: User-friendly display name for the configuration item unit.
+        :param str unit: Unit of configuration item.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "unit", unit)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        User-friendly display name for the configuration item unit.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        Unit of configuration item.
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult(dict):
+    def __init__(__self__, *,
+                 allowed_value_type: str,
+                 max_value: str,
+                 min_value: str,
+                 possible_values: Sequence[str]):
+        """
+        :param str allowed_value_type: Allowed value type of configuration item.
+        :param str max_value: Maximum value limit for the configuration item.
+        :param str min_value: Minimum value limit for the configuration item.
+        :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
+        """
+        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
+        pulumi.set(__self__, "max_value", max_value)
+        pulumi.set(__self__, "min_value", min_value)
+        pulumi.set(__self__, "possible_values", possible_values)
+
+    @property
+    @pulumi.getter(name="allowedValueType")
+    def allowed_value_type(self) -> str:
+        """
+        Allowed value type of configuration item.
+        """
+        return pulumi.get(self, "allowed_value_type")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> str:
+        """
+        Maximum value limit for the configuration item.
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> str:
+        """
+        Minimum value limit for the configuration item.
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter(name="possibleValues")
+    def possible_values(self) -> Sequence[str]:
+        """
+        Allowed values to pick for the configuration item.
+        """
+        return pulumi.get(self, "possible_values")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of configuration item.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of configuration item.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationsOpsiConfigurationsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 config_item_custom_statuses: Sequence[str],
+                 config_item_fields: Sequence[str],
+                 config_items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult'],
+                 config_items_applicable_contexts: Sequence[str],
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 opsi_config_fields: Sequence[str],
+                 opsi_config_type: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs'] config_items: Array of configuration item summary objects.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: Description of OPSI configuration.
+        :param str display_name: Filter to return based on resources that match the entire display name.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str opsi_config_type: Filter to return based on configuration type of OPSI configuration.
+        :param str state: Filter to return based on Lifecycle state of OPSI configuration.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
+        :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "config_item_custom_statuses", config_item_custom_statuses)
+        pulumi.set(__self__, "config_item_fields", config_item_fields)
+        pulumi.set(__self__, "config_items", config_items)
+        pulumi.set(__self__, "config_items_applicable_contexts", config_items_applicable_contexts)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "opsi_config_fields", opsi_config_fields)
+        pulumi.set(__self__, "opsi_config_type", opsi_config_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configItemCustomStatuses")
+    def config_item_custom_statuses(self) -> Sequence[str]:
+        return pulumi.get(self, "config_item_custom_statuses")
+
+    @property
+    @pulumi.getter(name="configItemFields")
+    def config_item_fields(self) -> Sequence[str]:
+        return pulumi.get(self, "config_item_fields")
+
+    @property
+    @pulumi.getter(name="configItems")
+    def config_items(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult']:
+        """
+        Array of configuration item summary objects.
+        """
+        return pulumi.get(self, "config_items")
+
+    @property
+    @pulumi.getter(name="configItemsApplicableContexts")
+    def config_items_applicable_contexts(self) -> Sequence[str]:
+        return pulumi.get(self, "config_items_applicable_contexts")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of OPSI configuration.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Filter to return based on resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="opsiConfigFields")
+    def opsi_config_fields(self) -> Sequence[str]:
+        return pulumi.get(self, "opsi_config_fields")
+
+    @property
+    @pulumi.getter(name="opsiConfigType")
+    def opsi_config_type(self) -> str:
+        """
+        Filter to return based on configuration type of OPSI configuration.
+        """
+        return pulumi.get(self, "opsi_config_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Filter to return based on Lifecycle state of OPSI configuration.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time at which the resource was first created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time at which the resource was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult(dict):
+    def __init__(__self__, *,
+                 applicable_contexts: Sequence[str],
+                 config_item_type: str,
+                 default_value: str,
+                 metadatas: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult'],
+                 name: str,
+                 value: str):
+        """
+        :param Sequence[str] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
+        :param str config_item_type: Type of configuration item.
+        :param str default_value: Value of configuration item.
+        :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs'] metadatas: Configuration item metadata.
+        :param str name: Name of configuration item.
+        :param str value: Value of configuration item.
+        """
+        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
+        pulumi.set(__self__, "config_item_type", config_item_type)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="applicableContexts")
+    def applicable_contexts(self) -> Sequence[str]:
+        """
+        List of contexts in Operations Insights where this configuration item is applicable.
+        """
+        return pulumi.get(self, "applicable_contexts")
+
+    @property
+    @pulumi.getter(name="configItemType")
+    def config_item_type(self) -> str:
+        """
+        Type of configuration item.
+        """
+        return pulumi.get(self, "config_item_type")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        Value of configuration item.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult']:
+        """
+        Configuration item metadata.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of configuration item.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of configuration item.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 config_item_type: str,
+                 data_type: str,
+                 description: str,
+                 display_name: str,
+                 unit_details: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult'],
+                 value_input_details: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult']):
+        """
+        :param str config_item_type: Type of configuration item.
+        :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+        :param str description: Description of OPSI configuration.
+        :param str display_name: Filter to return based on resources that match the entire display name.
+        :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
+        :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+        """
+        pulumi.set(__self__, "config_item_type", config_item_type)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "unit_details", unit_details)
+        pulumi.set(__self__, "value_input_details", value_input_details)
+
+    @property
+    @pulumi.getter(name="configItemType")
+    def config_item_type(self) -> str:
+        """
+        Type of configuration item.
+        """
+        return pulumi.get(self, "config_item_type")
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> str:
+        """
+        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+        """
+        return pulumi.get(self, "data_type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of OPSI configuration.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Filter to return based on resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="unitDetails")
+    def unit_details(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult']:
+        """
+        Unit details of configuration item.
+        """
+        return pulumi.get(self, "unit_details")
+
+    @property
+    @pulumi.getter(name="valueInputDetails")
+    def value_input_details(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult']:
+        """
+        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+        """
+        return pulumi.get(self, "value_input_details")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 unit: str):
+        """
+        :param str display_name: Filter to return based on resources that match the entire display name.
+        :param str unit: Unit of configuration item.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "unit", unit)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Filter to return based on resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        Unit of configuration item.
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
+class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult(dict):
+    def __init__(__self__, *,
+                 allowed_value_type: str,
+                 max_value: str,
+                 min_value: str,
+                 possible_values: Sequence[str]):
+        """
+        :param str allowed_value_type: Allowed value type of configuration item.
+        :param str max_value: Maximum value limit for the configuration item.
+        :param str min_value: Minimum value limit for the configuration item.
+        :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
+        """
+        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
+        pulumi.set(__self__, "max_value", max_value)
+        pulumi.set(__self__, "min_value", min_value)
+        pulumi.set(__self__, "possible_values", possible_values)
+
+    @property
+    @pulumi.getter(name="allowedValueType")
+    def allowed_value_type(self) -> str:
+        """
+        Allowed value type of configuration item.
+        """
+        return pulumi.get(self, "allowed_value_type")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> str:
+        """
+        Maximum value limit for the configuration item.
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> str:
+        """
+        Minimum value limit for the configuration item.
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter(name="possibleValues")
+    def possible_values(self) -> Sequence[str]:
+        """
+        Allowed values to pick for the configuration item.
+        """
+        return pulumi.get(self, "possible_values")
 
 

@@ -13,11 +13,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStagesFilter {
+    /**
+     * @return Name of the parameter (case-sensitive).
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetDeployStagesFilter() {}
+    /**
+     * @return Name of the parameter (case-sensitive).
+     * 
+     */
     public String name() {
         return this.name;
     }

@@ -62,7 +62,11 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
      */
     public readonly autonomousContainerDatabaseId!: pulumi.Output<string>;
     /**
-     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+     */
+    public readonly fastStartFailOverLagLimitInSeconds!: pulumi.Output<number>;
+    /**
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      */
     public readonly isAutomaticFailoverEnabled!: pulumi.Output<boolean>;
     /**
@@ -86,9 +90,9 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
      */
     public /*out*/ readonly peerRole!: pulumi.Output<string>;
     /**
-     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    public /*out*/ readonly protectionMode!: pulumi.Output<string>;
+    public readonly protectionMode!: pulumi.Output<string>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
@@ -131,6 +135,7 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
             resourceInputs["applyRate"] = state ? state.applyRate : undefined;
             resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = state ? state.autonomousContainerDatabaseDataguardAssociationId : undefined;
             resourceInputs["autonomousContainerDatabaseId"] = state ? state.autonomousContainerDatabaseId : undefined;
+            resourceInputs["fastStartFailOverLagLimitInSeconds"] = state ? state.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = state ? state.isAutomaticFailoverEnabled : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["peerAutonomousContainerDatabaseDataguardAssociationId"] = state ? state.peerAutonomousContainerDatabaseDataguardAssociationId : undefined;
@@ -154,7 +159,9 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
             }
             resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = args ? args.autonomousContainerDatabaseDataguardAssociationId : undefined;
             resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
+            resourceInputs["fastStartFailOverLagLimitInSeconds"] = args ? args.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = args ? args.isAutomaticFailoverEnabled : undefined;
+            resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
             resourceInputs["applyLag"] = undefined /*out*/;
             resourceInputs["applyRate"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -162,7 +169,6 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
             resourceInputs["peerAutonomousContainerDatabaseId"] = undefined /*out*/;
             resourceInputs["peerLifecycleState"] = undefined /*out*/;
             resourceInputs["peerRole"] = undefined /*out*/;
-            resourceInputs["protectionMode"] = undefined /*out*/;
             resourceInputs["role"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -196,7 +202,11 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
      */
     autonomousContainerDatabaseId?: pulumi.Input<string>;
     /**
-     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+     */
+    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+    /**
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
     /**
@@ -220,7 +230,7 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
      */
     peerRole?: pulumi.Input<string>;
     /**
-     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
     protectionMode?: pulumi.Input<string>;
     /**
@@ -262,7 +272,15 @@ export interface AutonomousContainerDatabaseDataguardAssociationArgs {
      */
     autonomousContainerDatabaseId: pulumi.Input<string>;
     /**
-     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+     */
+    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+    /**
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     */
+    protectionMode?: pulumi.Input<string>;
 }

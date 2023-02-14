@@ -12,6 +12,9 @@ namespace Pulumi.Oci.DevOps.Inputs
 
     public sealed class GetDeployStagesFilterArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Name of the parameter (case-sensitive).
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 

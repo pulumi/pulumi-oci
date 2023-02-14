@@ -21,7 +21,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
     """
     A collection of values returned by getAutonomousContainerDatabaseDataguardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, autonomous_container_database_dataguard_association_id=None, autonomous_container_database_id=None, id=None, is_automatic_failover_enabled=None, lifecycle_details=None, peer_autonomous_container_database_dataguard_association_id=None, peer_autonomous_container_database_id=None, peer_lifecycle_state=None, peer_role=None, protection_mode=None, role=None, state=None, time_created=None, time_last_role_changed=None, time_last_synced=None, transport_lag=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, autonomous_container_database_dataguard_association_id=None, autonomous_container_database_id=None, fast_start_fail_over_lag_limit_in_seconds=None, id=None, is_automatic_failover_enabled=None, lifecycle_details=None, peer_autonomous_container_database_dataguard_association_id=None, peer_autonomous_container_database_id=None, peer_lifecycle_state=None, peer_role=None, protection_mode=None, role=None, state=None, time_created=None, time_last_role_changed=None, time_last_synced=None, transport_lag=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -34,6 +34,9 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        if fast_start_fail_over_lag_limit_in_seconds and not isinstance(fast_start_fail_over_lag_limit_in_seconds, int):
+            raise TypeError("Expected argument 'fast_start_fail_over_lag_limit_in_seconds' to be a int")
+        pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -107,6 +110,14 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         return pulumi.get(self, "autonomous_container_database_id")
 
     @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -118,7 +129,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> bool:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -229,6 +240,7 @@ class AwaitableGetAutonomousContainerDatabaseDataguardAssociationResult(GetAuton
             apply_rate=self.apply_rate,
             autonomous_container_database_dataguard_association_id=self.autonomous_container_database_dataguard_association_id,
             autonomous_container_database_id=self.autonomous_container_database_id,
+            fast_start_fail_over_lag_limit_in_seconds=self.fast_start_fail_over_lag_limit_in_seconds,
             id=self.id,
             is_automatic_failover_enabled=self.is_automatic_failover_enabled,
             lifecycle_details=self.lifecycle_details,
@@ -278,6 +290,7 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
         apply_rate=__ret__.apply_rate,
         autonomous_container_database_dataguard_association_id=__ret__.autonomous_container_database_dataguard_association_id,
         autonomous_container_database_id=__ret__.autonomous_container_database_id,
+        fast_start_fail_over_lag_limit_in_seconds=__ret__.fast_start_fail_over_lag_limit_in_seconds,
         id=__ret__.id,
         is_automatic_failover_enabled=__ret__.is_automatic_failover_enabled,
         lifecycle_details=__ret__.lifecycle_details,

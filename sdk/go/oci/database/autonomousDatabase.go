@@ -49,6 +49,8 @@ type AutonomousDatabase struct {
 	AvailableUpgradeVersions pulumi.StringArrayOutput `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs AutonomousDatabaseBackupConfigArrayOutput `pulumi:"backupConfigs"`
+	// Retention period, in days, for backups.
+	BackupRetentionPeriodInDays pulumi.IntOutput `pulumi:"backupRetentionPeriodInDays"`
 	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
 	CharacterSet pulumi.StringOutput `pulumi:"characterSet"`
 	// The Autonomous Database clone type.
@@ -236,6 +238,8 @@ type AutonomousDatabase struct {
 	TimeUntilReconnectCloneEnabled pulumi.StringOutput `pulumi:"timeUntilReconnectCloneEnabled"`
 	// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 	Timestamp pulumi.StringOutput `pulumi:"timestamp"`
+	// The backup storage to the database.
+	TotalBackupStorageSizeInGbs pulumi.Float64Output `pulumi:"totalBackupStorageSizeInGbs"`
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp pulumi.BoolOutput `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The amount of storage that has been used, in terabytes.
@@ -310,6 +314,8 @@ type autonomousDatabaseState struct {
 	AvailableUpgradeVersions []string `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs []AutonomousDatabaseBackupConfig `pulumi:"backupConfigs"`
+	// Retention period, in days, for backups.
+	BackupRetentionPeriodInDays *int `pulumi:"backupRetentionPeriodInDays"`
 	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
 	CharacterSet *string `pulumi:"characterSet"`
 	// The Autonomous Database clone type.
@@ -497,6 +503,8 @@ type autonomousDatabaseState struct {
 	TimeUntilReconnectCloneEnabled *string `pulumi:"timeUntilReconnectCloneEnabled"`
 	// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 	Timestamp *string `pulumi:"timestamp"`
+	// The backup storage to the database.
+	TotalBackupStorageSizeInGbs *float64 `pulumi:"totalBackupStorageSizeInGbs"`
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp *bool `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The amount of storage that has been used, in terabytes.
@@ -530,6 +538,8 @@ type AutonomousDatabaseState struct {
 	AvailableUpgradeVersions pulumi.StringArrayInput
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs AutonomousDatabaseBackupConfigArrayInput
+	// Retention period, in days, for backups.
+	BackupRetentionPeriodInDays pulumi.IntPtrInput
 	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
 	CharacterSet pulumi.StringPtrInput
 	// The Autonomous Database clone type.
@@ -717,6 +727,8 @@ type AutonomousDatabaseState struct {
 	TimeUntilReconnectCloneEnabled pulumi.StringPtrInput
 	// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 	Timestamp pulumi.StringPtrInput
+	// The backup storage to the database.
+	TotalBackupStorageSizeInGbs pulumi.Float64PtrInput
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp pulumi.BoolPtrInput
 	// The amount of storage that has been used, in terabytes.
@@ -1136,6 +1148,11 @@ func (o AutonomousDatabaseOutput) AvailableUpgradeVersions() pulumi.StringArrayO
 // Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 func (o AutonomousDatabaseOutput) BackupConfigs() AutonomousDatabaseBackupConfigArrayOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseBackupConfigArrayOutput { return v.BackupConfigs }).(AutonomousDatabaseBackupConfigArrayOutput)
+}
+
+// Retention period, in days, for backups.
+func (o AutonomousDatabaseOutput) BackupRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.BackupRetentionPeriodInDays }).(pulumi.IntOutput)
 }
 
 // The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
@@ -1598,6 +1615,11 @@ func (o AutonomousDatabaseOutput) TimeUntilReconnectCloneEnabled() pulumi.String
 // The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 func (o AutonomousDatabaseOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+// The backup storage to the database.
+func (o AutonomousDatabaseOutput) TotalBackupStorageSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.Float64Output { return v.TotalBackupStorageSizeInGbs }).(pulumi.Float64Output)
 }
 
 // Clone from latest available backup timestamp.

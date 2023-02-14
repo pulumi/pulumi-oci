@@ -55,6 +55,12 @@ import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
+import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
+import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
+import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsPlainArgs;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSnapshotResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSnapshotsResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSourcesSummaryResult;
@@ -79,6 +85,9 @@ import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehouseResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehouseUserResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehouseUsersResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehousesResult;
+import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationConfigurationItemResult;
+import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationResult;
+import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -4700,5 +4709,529 @@ public final class OpsiFunctions {
      */
     public static CompletableFuture<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehousesPlain(GetOperationsInsightsWarehousesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses", TypeShape.of(GetOperationsInsightsWarehousesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an OPSI configuration resource.
+     * Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
+     * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
+     *             .opsiConfigurationId(oci_opsi_opsi_configuration.test_opsi_configuration().id())
+     *             .configItemCustomStatuses(var_.opsi_configuration_config_item_custom_status())
+     *             .configItemFields(var_.opsi_configuration_config_item_field())
+     *             .configItemsApplicableContexts(var_.opsi_configuration_config_items_applicable_context())
+     *             .opsiConfigFields(var_.opsi_configuration_opsi_config_field())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOpsiConfigurationResult> getOpsiConfiguration(GetOpsiConfigurationArgs args) {
+        return getOpsiConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an OPSI configuration resource.
+     * Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
+     * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
+     *             .opsiConfigurationId(oci_opsi_opsi_configuration.test_opsi_configuration().id())
+     *             .configItemCustomStatuses(var_.opsi_configuration_config_item_custom_status())
+     *             .configItemFields(var_.opsi_configuration_config_item_field())
+     *             .configItemsApplicableContexts(var_.opsi_configuration_config_items_applicable_context())
+     *             .opsiConfigFields(var_.opsi_configuration_opsi_config_field())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOpsiConfigurationResult> getOpsiConfigurationPlain(GetOpsiConfigurationPlainArgs args) {
+        return getOpsiConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an OPSI configuration resource.
+     * Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
+     * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
+     *             .opsiConfigurationId(oci_opsi_opsi_configuration.test_opsi_configuration().id())
+     *             .configItemCustomStatuses(var_.opsi_configuration_config_item_custom_status())
+     *             .configItemFields(var_.opsi_configuration_config_item_field())
+     *             .configItemsApplicableContexts(var_.opsi_configuration_config_items_applicable_context())
+     *             .opsiConfigFields(var_.opsi_configuration_opsi_config_field())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOpsiConfigurationResult> getOpsiConfiguration(GetOpsiConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOpsiConfiguration:getOpsiConfiguration", TypeShape.of(GetOpsiConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an OPSI configuration resource.
+     * Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
+     * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
+     *             .opsiConfigurationId(oci_opsi_opsi_configuration.test_opsi_configuration().id())
+     *             .configItemCustomStatuses(var_.opsi_configuration_config_item_custom_status())
+     *             .configItemFields(var_.opsi_configuration_config_item_field())
+     *             .configItemsApplicableContexts(var_.opsi_configuration_config_items_applicable_context())
+     *             .opsiConfigFields(var_.opsi_configuration_opsi_config_field())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOpsiConfigurationResult> getOpsiConfigurationPlain(GetOpsiConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getOpsiConfiguration:getOpsiConfiguration", TypeShape.of(GetOpsiConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+     * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurationConfigurationItem = OpsiFunctions.getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configItemFields(var_.opsi_configuration_configuration_item_config_item_field())
+     *             .configItemsApplicableContexts(var_.opsi_configuration_configuration_item_config_items_applicable_context())
+     *             .name(var_.opsi_configuration_configuration_item_name())
+     *             .opsiConfigType(var_.opsi_configuration_configuration_item_opsi_config_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs args) {
+        return getOpsiConfigurationConfigurationItem(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+     * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurationConfigurationItem = OpsiFunctions.getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configItemFields(var_.opsi_configuration_configuration_item_config_item_field())
+     *             .configItemsApplicableContexts(var_.opsi_configuration_configuration_item_config_items_applicable_context())
+     *             .name(var_.opsi_configuration_configuration_item_name())
+     *             .opsiConfigType(var_.opsi_configuration_configuration_item_opsi_config_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItemPlain(GetOpsiConfigurationConfigurationItemPlainArgs args) {
+        return getOpsiConfigurationConfigurationItemPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+     * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurationConfigurationItem = OpsiFunctions.getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configItemFields(var_.opsi_configuration_configuration_item_config_item_field())
+     *             .configItemsApplicableContexts(var_.opsi_configuration_configuration_item_config_items_applicable_context())
+     *             .name(var_.opsi_configuration_configuration_item_name())
+     *             .opsiConfigType(var_.opsi_configuration_configuration_item_opsi_config_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", TypeShape.of(GetOpsiConfigurationConfigurationItemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+     * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurationConfigurationItem = OpsiFunctions.getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configItemFields(var_.opsi_configuration_configuration_item_config_item_field())
+     *             .configItemsApplicableContexts(var_.opsi_configuration_configuration_item_config_items_applicable_context())
+     *             .name(var_.opsi_configuration_configuration_item_name())
+     *             .opsiConfigType(var_.opsi_configuration_configuration_item_opsi_config_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItemPlain(GetOpsiConfigurationConfigurationItemPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", TypeShape.of(GetOpsiConfigurationConfigurationItemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of OPSI configuration resources based on the query parameters specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurations = OpsiFunctions.getOpsiConfigurations(GetOpsiConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.opsi_configuration_display_name())
+     *             .opsiConfigTypes(var_.opsi_configuration_opsi_config_type())
+     *             .states(var_.opsi_configuration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOpsiConfigurationsResult> getOpsiConfigurations(GetOpsiConfigurationsArgs args) {
+        return getOpsiConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of OPSI configuration resources based on the query parameters specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurations = OpsiFunctions.getOpsiConfigurations(GetOpsiConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.opsi_configuration_display_name())
+     *             .opsiConfigTypes(var_.opsi_configuration_opsi_config_type())
+     *             .states(var_.opsi_configuration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOpsiConfigurationsResult> getOpsiConfigurationsPlain(GetOpsiConfigurationsPlainArgs args) {
+        return getOpsiConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of OPSI configuration resources based on the query parameters specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurations = OpsiFunctions.getOpsiConfigurations(GetOpsiConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.opsi_configuration_display_name())
+     *             .opsiConfigTypes(var_.opsi_configuration_opsi_config_type())
+     *             .states(var_.opsi_configuration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOpsiConfigurationsResult> getOpsiConfigurations(GetOpsiConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOpsiConfigurations:getOpsiConfigurations", TypeShape.of(GetOpsiConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of OPSI configuration resources based on the query parameters specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurations = OpsiFunctions.getOpsiConfigurations(GetOpsiConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.opsi_configuration_display_name())
+     *             .opsiConfigTypes(var_.opsi_configuration_opsi_config_type())
+     *             .states(var_.opsi_configuration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOpsiConfigurationsResult> getOpsiConfigurationsPlain(GetOpsiConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getOpsiConfigurations:getOpsiConfigurations", TypeShape.of(GetOpsiConfigurationsResult.class), args, Utilities.withVersion(options));
     }
 }

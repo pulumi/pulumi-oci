@@ -58,6 +58,8 @@ type LookupDeployStageArgs struct {
 type LookupDeployStageResult struct {
 	// Specifies the approval policy.
 	ApprovalPolicies []GetDeployStageApprovalPolicy `pulumi:"approvalPolicies"`
+	// Disable pre/post upgrade hooks. Set to false by default.
+	AreHooksEnabled bool `pulumi:"areHooksEnabled"`
 	// Collection of backend environment IP addresses.
 	BlueBackendIps []GetDeployStageBlueBackendIp `pulumi:"blueBackendIps"`
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -121,6 +123,10 @@ type LookupDeployStageResult struct {
 	Id string `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync bool `pulumi:"isAsync"`
+	// Enables helm --debug option to stream output to tf stdout. Set to false by default.
+	IsDebugEnabled bool `pulumi:"isDebugEnabled"`
+	// Force resource update through delete; or if required, recreate. Set to false by default.
+	IsForceEnabled bool `pulumi:"isForceEnabled"`
 	// A boolean flag specifies whether the invoked function must be validated.
 	IsValidationEnabled bool `pulumi:"isValidationEnabled"`
 	// List of Kubernetes manifest artifact OCIDs.
@@ -129,6 +135,8 @@ type LookupDeployStageResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfigs []GetDeployStageLoadBalancerConfig `pulumi:"loadBalancerConfigs"`
+	// Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+	MaxHistory int `pulumi:"maxHistory"`
 	// Maximum usable memory for the Function (in MB).
 	MaxMemoryInMbs string `pulumi:"maxMemoryInMbs"`
 	// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -151,6 +159,22 @@ type LookupDeployStageResult struct {
 	RollbackPolicies []GetDeployStageRollbackPolicy `pulumi:"rollbackPolicies"`
 	// Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicies []GetDeployStageRolloutPolicy `pulumi:"rolloutPolicies"`
+	// Specifies the name and value pairs to set helm values.
+	SetStrings []GetDeployStageSetString `pulumi:"setStrings"`
+	// Specifies the name and value pairs to set helm values.
+	SetValues []GetDeployStageSetValue `pulumi:"setValues"`
+	// Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+	ShouldCleanupOnFail bool `pulumi:"shouldCleanupOnFail"`
+	// Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+	ShouldNotWait bool `pulumi:"shouldNotWait"`
+	// During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+	ShouldResetValues bool `pulumi:"shouldResetValues"`
+	// During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+	ShouldReuseValues bool `pulumi:"shouldReuseValues"`
+	// If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+	ShouldSkipCrds bool `pulumi:"shouldSkipCrds"`
+	// If set, renders subchart notes along with the parent. Set to false by default.
+	ShouldSkipRenderSubchartNotes bool `pulumi:"shouldSkipRenderSubchartNotes"`
 	// The current state of the deployment stage.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -212,6 +236,11 @@ func (o LookupDeployStageResultOutput) ToLookupDeployStageResultOutputWithContex
 // Specifies the approval policy.
 func (o LookupDeployStageResultOutput) ApprovalPolicies() GetDeployStageApprovalPolicyArrayOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageApprovalPolicy { return v.ApprovalPolicies }).(GetDeployStageApprovalPolicyArrayOutput)
+}
+
+// Disable pre/post upgrade hooks. Set to false by default.
+func (o LookupDeployStageResultOutput) AreHooksEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.AreHooksEnabled }).(pulumi.BoolOutput)
 }
 
 // Collection of backend environment IP addresses.
@@ -375,6 +404,16 @@ func (o LookupDeployStageResultOutput) IsAsync() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsAsync }).(pulumi.BoolOutput)
 }
 
+// Enables helm --debug option to stream output to tf stdout. Set to false by default.
+func (o LookupDeployStageResultOutput) IsDebugEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsDebugEnabled }).(pulumi.BoolOutput)
+}
+
+// Force resource update through delete; or if required, recreate. Set to false by default.
+func (o LookupDeployStageResultOutput) IsForceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsForceEnabled }).(pulumi.BoolOutput)
+}
+
 // A boolean flag specifies whether the invoked function must be validated.
 func (o LookupDeployStageResultOutput) IsValidationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsValidationEnabled }).(pulumi.BoolOutput)
@@ -393,6 +432,11 @@ func (o LookupDeployStageResultOutput) LifecycleDetails() pulumi.StringOutput {
 // Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 func (o LookupDeployStageResultOutput) LoadBalancerConfigs() GetDeployStageLoadBalancerConfigArrayOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageLoadBalancerConfig { return v.LoadBalancerConfigs }).(GetDeployStageLoadBalancerConfigArrayOutput)
+}
+
+// Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+func (o LookupDeployStageResultOutput) MaxHistory() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) int { return v.MaxHistory }).(pulumi.IntOutput)
 }
 
 // Maximum usable memory for the Function (in MB).
@@ -450,6 +494,46 @@ func (o LookupDeployStageResultOutput) RollbackPolicies() GetDeployStageRollback
 // Description of rollout policy for load balancer traffic shift stage.
 func (o LookupDeployStageResultOutput) RolloutPolicies() GetDeployStageRolloutPolicyArrayOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageRolloutPolicy { return v.RolloutPolicies }).(GetDeployStageRolloutPolicyArrayOutput)
+}
+
+// Specifies the name and value pairs to set helm values.
+func (o LookupDeployStageResultOutput) SetStrings() GetDeployStageSetStringArrayOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageSetString { return v.SetStrings }).(GetDeployStageSetStringArrayOutput)
+}
+
+// Specifies the name and value pairs to set helm values.
+func (o LookupDeployStageResultOutput) SetValues() GetDeployStageSetValueArrayOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageSetValue { return v.SetValues }).(GetDeployStageSetValueArrayOutput)
+}
+
+// Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+func (o LookupDeployStageResultOutput) ShouldCleanupOnFail() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldCleanupOnFail }).(pulumi.BoolOutput)
+}
+
+// Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+func (o LookupDeployStageResultOutput) ShouldNotWait() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldNotWait }).(pulumi.BoolOutput)
+}
+
+// During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+func (o LookupDeployStageResultOutput) ShouldResetValues() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldResetValues }).(pulumi.BoolOutput)
+}
+
+// During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+func (o LookupDeployStageResultOutput) ShouldReuseValues() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldReuseValues }).(pulumi.BoolOutput)
+}
+
+// If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+func (o LookupDeployStageResultOutput) ShouldSkipCrds() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldSkipCrds }).(pulumi.BoolOutput)
+}
+
+// If set, renders subchart notes along with the parent. Set to false by default.
+func (o LookupDeployStageResultOutput) ShouldSkipRenderSubchartNotes() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldSkipRenderSubchartNotes }).(pulumi.BoolOutput)
 }
 
 // The current state of the deployment stage.

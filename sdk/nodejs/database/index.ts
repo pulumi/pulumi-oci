@@ -20,6 +20,11 @@ export type AutonomousContainerDatabaseDataguardAssociationOperation = import(".
 export const AutonomousContainerDatabaseDataguardAssociationOperation: typeof import("./autonomousContainerDatabaseDataguardAssociationOperation").AutonomousContainerDatabaseDataguardAssociationOperation = null as any;
 utilities.lazyLoad(exports, ["AutonomousContainerDatabaseDataguardAssociationOperation"], () => require("./autonomousContainerDatabaseDataguardAssociationOperation"));
 
+export { AutonomousContainerDatabaseDataguardRoleChangeArgs, AutonomousContainerDatabaseDataguardRoleChangeState } from "./autonomousContainerDatabaseDataguardRoleChange";
+export type AutonomousContainerDatabaseDataguardRoleChange = import("./autonomousContainerDatabaseDataguardRoleChange").AutonomousContainerDatabaseDataguardRoleChange;
+export const AutonomousContainerDatabaseDataguardRoleChange: typeof import("./autonomousContainerDatabaseDataguardRoleChange").AutonomousContainerDatabaseDataguardRoleChange = null as any;
+utilities.lazyLoad(exports, ["AutonomousContainerDatabaseDataguardRoleChange"], () => require("./autonomousContainerDatabaseDataguardRoleChange"));
+
 export { AutonomousDatabaseArgs, AutonomousDatabaseState } from "./autonomousDatabase";
 export type AutonomousDatabase = import("./autonomousDatabase").AutonomousDatabase;
 export const AutonomousDatabase: typeof import("./autonomousDatabase").AutonomousDatabase = null as any;
@@ -229,6 +234,11 @@ export { GetAutonomousContainerDatabaseDataguardAssociationsArgs, GetAutonomousC
 export const getAutonomousContainerDatabaseDataguardAssociations: typeof import("./getAutonomousContainerDatabaseDataguardAssociations").getAutonomousContainerDatabaseDataguardAssociations = null as any;
 export const getAutonomousContainerDatabaseDataguardAssociationsOutput: typeof import("./getAutonomousContainerDatabaseDataguardAssociations").getAutonomousContainerDatabaseDataguardAssociationsOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseDataguardAssociations","getAutonomousContainerDatabaseDataguardAssociationsOutput"], () => require("./getAutonomousContainerDatabaseDataguardAssociations"));
+
+export { GetAutonomousContainerDatabaseVersionsArgs, GetAutonomousContainerDatabaseVersionsResult, GetAutonomousContainerDatabaseVersionsOutputArgs } from "./getAutonomousContainerDatabaseVersions";
+export const getAutonomousContainerDatabaseVersions: typeof import("./getAutonomousContainerDatabaseVersions").getAutonomousContainerDatabaseVersions = null as any;
+export const getAutonomousContainerDatabaseVersionsOutput: typeof import("./getAutonomousContainerDatabaseVersions").getAutonomousContainerDatabaseVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseVersions","getAutonomousContainerDatabaseVersionsOutput"], () => require("./getAutonomousContainerDatabaseVersions"));
 
 export { GetAutonomousContainerDatabasesArgs, GetAutonomousContainerDatabasesResult, GetAutonomousContainerDatabasesOutputArgs } from "./getAutonomousContainerDatabases";
 export const getAutonomousContainerDatabases: typeof import("./getAutonomousContainerDatabases").getAutonomousContainerDatabases = null as any;
@@ -795,6 +805,8 @@ const _module = {
                 return new AutonomousContainerDatabaseDataguardAssociation(name, <any>undefined, { urn })
             case "oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation":
                 return new AutonomousContainerDatabaseDataguardAssociationOperation(name, <any>undefined, { urn })
+            case "oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange":
+                return new AutonomousContainerDatabaseDataguardRoleChange(name, <any>undefined, { urn })
             case "oci:Database/autonomousDatabase:AutonomousDatabase":
                 return new AutonomousDatabase(name, <any>undefined, { urn })
             case "oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup":
@@ -899,6 +911,7 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabaseDataguardAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabaseDataguardAssociationOperation", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabaseDataguardRoleChange", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseBackup", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseInstanceWalletManagement", _module)

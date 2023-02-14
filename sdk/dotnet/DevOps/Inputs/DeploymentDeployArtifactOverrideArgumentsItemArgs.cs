@@ -26,6 +26,7 @@ namespace Pulumi.Oci.DevOps.Inputs
 
         /// <summary>
         /// value of the argument.
+        /// *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

@@ -78,7 +78,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-provided name for the Autonomous Container Database.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName                        string `pulumi:"displayName"`
+	FastStartFailOverLagLimitInSeconds int    `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
@@ -132,10 +133,14 @@ type LookupAutonomousContainerDatabaseResult struct {
 	State string `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+	TimeSnapshotStandbyRevert string `pulumi:"timeSnapshotStandbyRevert"`
 	// The number of CPU cores allocated to the Autonomous VM cluster.
 	TotalCpus int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId string `pulumi:"vaultId"`
+	// The next maintenance version preference.
+	VersionPreference string `pulumi:"versionPreference"`
 }
 
 func LookupAutonomousContainerDatabaseOutput(ctx *pulumi.Context, args LookupAutonomousContainerDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousContainerDatabaseResultOutput {
@@ -238,6 +243,10 @@ func (o LookupAutonomousContainerDatabaseResultOutput) DefinedTags() pulumi.MapO
 // The user-provided name for the Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseResultOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.FastStartFailOverLagLimitInSeconds }).(pulumi.IntOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -401,6 +410,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) TimeCreated() pulumi.Stri
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+func (o LookupAutonomousContainerDatabaseResultOutput) TimeSnapshotStandbyRevert() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeSnapshotStandbyRevert }).(pulumi.StringOutput)
+}
+
 // The number of CPU cores allocated to the Autonomous VM cluster.
 func (o LookupAutonomousContainerDatabaseResultOutput) TotalCpus() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.TotalCpus }).(pulumi.IntOutput)
@@ -409,6 +423,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) TotalCpus() pulumi.IntOut
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 func (o LookupAutonomousContainerDatabaseResultOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+// The next maintenance version preference.
+func (o LookupAutonomousContainerDatabaseResultOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.VersionPreference }).(pulumi.StringOutput)
 }
 
 func init() {

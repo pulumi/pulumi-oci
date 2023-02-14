@@ -145,6 +145,21 @@ export const getOperationsInsightsWarehouses: typeof import("./getOperationsInsi
 export const getOperationsInsightsWarehousesOutput: typeof import("./getOperationsInsightsWarehouses").getOperationsInsightsWarehousesOutput = null as any;
 utilities.lazyLoad(exports, ["getOperationsInsightsWarehouses","getOperationsInsightsWarehousesOutput"], () => require("./getOperationsInsightsWarehouses"));
 
+export { GetOpsiConfigurationArgs, GetOpsiConfigurationResult, GetOpsiConfigurationOutputArgs } from "./getOpsiConfiguration";
+export const getOpsiConfiguration: typeof import("./getOpsiConfiguration").getOpsiConfiguration = null as any;
+export const getOpsiConfigurationOutput: typeof import("./getOpsiConfiguration").getOpsiConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getOpsiConfiguration","getOpsiConfigurationOutput"], () => require("./getOpsiConfiguration"));
+
+export { GetOpsiConfigurationConfigurationItemArgs, GetOpsiConfigurationConfigurationItemResult, GetOpsiConfigurationConfigurationItemOutputArgs } from "./getOpsiConfigurationConfigurationItem";
+export const getOpsiConfigurationConfigurationItem: typeof import("./getOpsiConfigurationConfigurationItem").getOpsiConfigurationConfigurationItem = null as any;
+export const getOpsiConfigurationConfigurationItemOutput: typeof import("./getOpsiConfigurationConfigurationItem").getOpsiConfigurationConfigurationItemOutput = null as any;
+utilities.lazyLoad(exports, ["getOpsiConfigurationConfigurationItem","getOpsiConfigurationConfigurationItemOutput"], () => require("./getOpsiConfigurationConfigurationItem"));
+
+export { GetOpsiConfigurationsArgs, GetOpsiConfigurationsResult, GetOpsiConfigurationsOutputArgs } from "./getOpsiConfigurations";
+export const getOpsiConfigurations: typeof import("./getOpsiConfigurations").getOpsiConfigurations = null as any;
+export const getOpsiConfigurationsOutput: typeof import("./getOpsiConfigurations").getOpsiConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getOpsiConfigurations","getOpsiConfigurationsOutput"], () => require("./getOpsiConfigurations"));
+
 export { HostInsightArgs, HostInsightState } from "./hostInsight";
 export type HostInsight = import("./hostInsight").HostInsight;
 export const HostInsight: typeof import("./hostInsight").HostInsight = null as any;
@@ -175,6 +190,11 @@ export type OperationsInsightsWarehouseUser = import("./operationsInsightsWareho
 export const OperationsInsightsWarehouseUser: typeof import("./operationsInsightsWarehouseUser").OperationsInsightsWarehouseUser = null as any;
 utilities.lazyLoad(exports, ["OperationsInsightsWarehouseUser"], () => require("./operationsInsightsWarehouseUser"));
 
+export { OpsiConfigurationArgs, OpsiConfigurationState } from "./opsiConfiguration";
+export type OpsiConfiguration = import("./opsiConfiguration").OpsiConfiguration;
+export const OpsiConfiguration: typeof import("./opsiConfiguration").OpsiConfiguration = null as any;
+utilities.lazyLoad(exports, ["OpsiConfiguration"], () => require("./opsiConfiguration"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -200,6 +220,8 @@ const _module = {
                 return new OperationsInsightsWarehouseRotateWarehouseWallet(name, <any>undefined, { urn })
             case "oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser":
                 return new OperationsInsightsWarehouseUser(name, <any>undefined, { urn })
+            case "oci:Opsi/opsiConfiguration:OpsiConfiguration":
+                return new OpsiConfiguration(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -215,3 +237,4 @@ pulumi.runtime.registerResourceModule("oci", "Opsi/operationsInsightsWarehouse",
 pulumi.runtime.registerResourceModule("oci", "Opsi/operationsInsightsWarehouseDownloadWarehouseWallet", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/operationsInsightsWarehouseRotateWarehouseWallet", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/operationsInsightsWarehouseUser", _module)
+pulumi.runtime.registerResourceModule("oci", "Opsi/opsiConfiguration", _module)

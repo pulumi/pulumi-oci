@@ -13,6 +13,9 @@ namespace Pulumi.Oci.DevOps.Outputs
     [OutputType]
     public sealed class GetDeployStagesFilterResult
     {
+        /// <summary>
+        /// Name of the parameter (case-sensitive).
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

@@ -50,7 +50,13 @@ namespace Pulumi.Oci.Database
         public Output<string> AutonomousContainerDatabaseId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        /// </summary>
+        [Output("fastStartFailOverLagLimitInSeconds")]
+        public Output<int> FastStartFailOverLagLimitInSeconds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         /// </summary>
         [Output("isAutomaticFailoverEnabled")]
         public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
@@ -86,7 +92,7 @@ namespace Pulumi.Oci.Database
         public Output<string> PeerRole { get; private set; } = null!;
 
         /// <summary>
-        /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Output("protectionMode")]
         public Output<string> ProtectionMode { get; private set; } = null!;
@@ -186,10 +192,22 @@ namespace Pulumi.Oci.Database
         public Input<string> AutonomousContainerDatabaseId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        /// </summary>
+        [Input("fastStartFailOverLagLimitInSeconds")]
+        public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// </summary>
+        [Input("protectionMode")]
+        public Input<string>? ProtectionMode { get; set; }
 
         public AutonomousContainerDatabaseDataguardAssociationArgs()
         {
@@ -224,7 +242,13 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousContainerDatabaseId { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        /// </summary>
+        [Input("fastStartFailOverLagLimitInSeconds")]
+        public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -260,7 +284,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerRole { get; set; }
 
         /// <summary>
-        /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Input("protectionMode")]
         public Input<string>? ProtectionMode { get; set; }

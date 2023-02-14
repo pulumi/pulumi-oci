@@ -17,6 +17,8 @@ import com.pulumi.oci.DevOps.inputs.DeployStageLoadBalancerConfigArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageProductionLoadBalancerConfigArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageRollbackPolicyArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageRolloutPolicyArgs;
+import com.pulumi.oci.DevOps.inputs.DeployStageSetStringArgs;
+import com.pulumi.oci.DevOps.inputs.DeployStageSetValuesArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageTestLoadBalancerConfigArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageWaitCriteriaArgs;
 import java.lang.Boolean;
@@ -47,6 +49,21 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<DeployStageApprovalPolicyArgs>> approvalPolicy() {
         return Optional.ofNullable(this.approvalPolicy);
+    }
+
+    /**
+     * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+     * 
+     */
+    @Import(name="areHooksEnabled")
+    private @Nullable Output<Boolean> areHooksEnabled;
+
+    /**
+     * @return (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> areHooksEnabled() {
+        return Optional.ofNullable(this.areHooksEnabled);
     }
 
     /**
@@ -485,6 +502,36 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     * 
+     */
+    @Import(name="isDebugEnabled")
+    private @Nullable Output<Boolean> isDebugEnabled;
+
+    /**
+     * @return (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> isDebugEnabled() {
+        return Optional.ofNullable(this.isDebugEnabled);
+    }
+
+    /**
+     * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+     * 
+     */
+    @Import(name="isForceEnabled")
+    private @Nullable Output<Boolean> isForceEnabled;
+
+    /**
+     * @return (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> isForceEnabled() {
+        return Optional.ofNullable(this.isForceEnabled);
+    }
+
+    /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      * 
      */
@@ -527,6 +574,21 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<DeployStageLoadBalancerConfigArgs>> loadBalancerConfig() {
         return Optional.ofNullable(this.loadBalancerConfig);
+    }
+
+    /**
+     * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     * 
+     */
+    @Import(name="maxHistory")
+    private @Nullable Output<Integer> maxHistory;
+
+    /**
+     * @return (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     * 
+     */
+    public Optional<Output<Integer>> maxHistory() {
+        return Optional.ofNullable(this.maxHistory);
     }
 
     /**
@@ -680,14 +742,134 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     * 
+     */
+    @Import(name="setString")
+    private @Nullable Output<DeployStageSetStringArgs> setString;
+
+    /**
+     * @return (Updatable) Specifies the name and value pairs to set helm values.
+     * 
+     */
+    public Optional<Output<DeployStageSetStringArgs>> setString() {
+        return Optional.ofNullable(this.setString);
+    }
+
+    /**
+     * (Updatable) Specifies the name and value pairs to set helm values.
+     * 
+     */
+    @Import(name="setValues")
+    private @Nullable Output<DeployStageSetValuesArgs> setValues;
+
+    /**
+     * @return (Updatable) Specifies the name and value pairs to set helm values.
+     * 
+     */
+    public Optional<Output<DeployStageSetValuesArgs>> setValues() {
+        return Optional.ofNullable(this.setValues);
+    }
+
+    /**
+     * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     * 
+     */
+    @Import(name="shouldCleanupOnFail")
+    private @Nullable Output<Boolean> shouldCleanupOnFail;
+
+    /**
+     * @return (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldCleanupOnFail() {
+        return Optional.ofNullable(this.shouldCleanupOnFail);
+    }
+
+    /**
+     * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     * 
+     */
+    @Import(name="shouldNotWait")
+    private @Nullable Output<Boolean> shouldNotWait;
+
+    /**
+     * @return (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldNotWait() {
+        return Optional.ofNullable(this.shouldNotWait);
+    }
+
+    /**
+     * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     * 
+     */
+    @Import(name="shouldResetValues")
+    private @Nullable Output<Boolean> shouldResetValues;
+
+    /**
+     * @return (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldResetValues() {
+        return Optional.ofNullable(this.shouldResetValues);
+    }
+
+    /**
+     * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     * 
+     */
+    @Import(name="shouldReuseValues")
+    private @Nullable Output<Boolean> shouldReuseValues;
+
+    /**
+     * @return (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldReuseValues() {
+        return Optional.ofNullable(this.shouldReuseValues);
+    }
+
+    /**
+     * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     * 
+     */
+    @Import(name="shouldSkipCrds")
+    private @Nullable Output<Boolean> shouldSkipCrds;
+
+    /**
+     * @return (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldSkipCrds() {
+        return Optional.ofNullable(this.shouldSkipCrds);
+    }
+
+    /**
+     * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+     * 
+     */
+    @Import(name="shouldSkipRenderSubchartNotes")
+    private @Nullable Output<Boolean> shouldSkipRenderSubchartNotes;
+
+    /**
+     * @return (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldSkipRenderSubchartNotes() {
+        return Optional.ofNullable(this.shouldSkipRenderSubchartNotes);
+    }
+
+    /**
+     * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     @Import(name="testLoadBalancerConfig")
     private @Nullable Output<DeployStageTestLoadBalancerConfigArgs> testLoadBalancerConfig;
 
     /**
-     * @return (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * @return (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     public Optional<Output<DeployStageTestLoadBalancerConfigArgs>> testLoadBalancerConfig() {
@@ -758,6 +940,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
 
     private DeployStageArgs(DeployStageArgs $) {
         this.approvalPolicy = $.approvalPolicy;
+        this.areHooksEnabled = $.areHooksEnabled;
         this.blueBackendIps = $.blueBackendIps;
         this.blueGreenStrategy = $.blueGreenStrategy;
         this.canaryStrategy = $.canaryStrategy;
@@ -787,9 +970,12 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         this.greenBackendIps = $.greenBackendIps;
         this.helmChartDeployArtifactId = $.helmChartDeployArtifactId;
         this.isAsync = $.isAsync;
+        this.isDebugEnabled = $.isDebugEnabled;
+        this.isForceEnabled = $.isForceEnabled;
         this.isValidationEnabled = $.isValidationEnabled;
         this.kubernetesManifestDeployArtifactIds = $.kubernetesManifestDeployArtifactIds;
         this.loadBalancerConfig = $.loadBalancerConfig;
+        this.maxHistory = $.maxHistory;
         this.maxMemoryInMbs = $.maxMemoryInMbs;
         this.namespace = $.namespace;
         this.okeBlueGreenDeployStageId = $.okeBlueGreenDeployStageId;
@@ -800,6 +986,14 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         this.releaseName = $.releaseName;
         this.rollbackPolicy = $.rollbackPolicy;
         this.rolloutPolicy = $.rolloutPolicy;
+        this.setString = $.setString;
+        this.setValues = $.setValues;
+        this.shouldCleanupOnFail = $.shouldCleanupOnFail;
+        this.shouldNotWait = $.shouldNotWait;
+        this.shouldResetValues = $.shouldResetValues;
+        this.shouldReuseValues = $.shouldReuseValues;
+        this.shouldSkipCrds = $.shouldSkipCrds;
+        this.shouldSkipRenderSubchartNotes = $.shouldSkipRenderSubchartNotes;
         this.testLoadBalancerConfig = $.testLoadBalancerConfig;
         this.timeoutInSeconds = $.timeoutInSeconds;
         this.trafficShiftTarget = $.trafficShiftTarget;
@@ -844,6 +1038,27 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder approvalPolicy(DeployStageApprovalPolicyArgs approvalPolicy) {
             return approvalPolicy(Output.of(approvalPolicy));
+        }
+
+        /**
+         * @param areHooksEnabled (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areHooksEnabled(@Nullable Output<Boolean> areHooksEnabled) {
+            $.areHooksEnabled = areHooksEnabled;
+            return this;
+        }
+
+        /**
+         * @param areHooksEnabled (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areHooksEnabled(Boolean areHooksEnabled) {
+            return areHooksEnabled(Output.of(areHooksEnabled));
         }
 
         /**
@@ -1466,6 +1681,48 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isDebugEnabled (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDebugEnabled(@Nullable Output<Boolean> isDebugEnabled) {
+            $.isDebugEnabled = isDebugEnabled;
+            return this;
+        }
+
+        /**
+         * @param isDebugEnabled (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDebugEnabled(Boolean isDebugEnabled) {
+            return isDebugEnabled(Output.of(isDebugEnabled));
+        }
+
+        /**
+         * @param isForceEnabled (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForceEnabled(@Nullable Output<Boolean> isForceEnabled) {
+            $.isForceEnabled = isForceEnabled;
+            return this;
+        }
+
+        /**
+         * @param isForceEnabled (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForceEnabled(Boolean isForceEnabled) {
+            return isForceEnabled(Output.of(isForceEnabled));
+        }
+
+        /**
          * @param isValidationEnabled (Updatable) A boolean flag specifies whether the invoked function should be validated.
          * 
          * @return builder
@@ -1536,6 +1793,27 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder loadBalancerConfig(DeployStageLoadBalancerConfigArgs loadBalancerConfig) {
             return loadBalancerConfig(Output.of(loadBalancerConfig));
+        }
+
+        /**
+         * @param maxHistory (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxHistory(@Nullable Output<Integer> maxHistory) {
+            $.maxHistory = maxHistory;
+            return this;
+        }
+
+        /**
+         * @param maxHistory (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxHistory(Integer maxHistory) {
+            return maxHistory(Output.of(maxHistory));
         }
 
         /**
@@ -1749,7 +2027,175 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param testLoadBalancerConfig (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+         * @param setString (Updatable) Specifies the name and value pairs to set helm values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder setString(@Nullable Output<DeployStageSetStringArgs> setString) {
+            $.setString = setString;
+            return this;
+        }
+
+        /**
+         * @param setString (Updatable) Specifies the name and value pairs to set helm values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder setString(DeployStageSetStringArgs setString) {
+            return setString(Output.of(setString));
+        }
+
+        /**
+         * @param setValues (Updatable) Specifies the name and value pairs to set helm values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder setValues(@Nullable Output<DeployStageSetValuesArgs> setValues) {
+            $.setValues = setValues;
+            return this;
+        }
+
+        /**
+         * @param setValues (Updatable) Specifies the name and value pairs to set helm values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder setValues(DeployStageSetValuesArgs setValues) {
+            return setValues(Output.of(setValues));
+        }
+
+        /**
+         * @param shouldCleanupOnFail (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldCleanupOnFail(@Nullable Output<Boolean> shouldCleanupOnFail) {
+            $.shouldCleanupOnFail = shouldCleanupOnFail;
+            return this;
+        }
+
+        /**
+         * @param shouldCleanupOnFail (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldCleanupOnFail(Boolean shouldCleanupOnFail) {
+            return shouldCleanupOnFail(Output.of(shouldCleanupOnFail));
+        }
+
+        /**
+         * @param shouldNotWait (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldNotWait(@Nullable Output<Boolean> shouldNotWait) {
+            $.shouldNotWait = shouldNotWait;
+            return this;
+        }
+
+        /**
+         * @param shouldNotWait (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldNotWait(Boolean shouldNotWait) {
+            return shouldNotWait(Output.of(shouldNotWait));
+        }
+
+        /**
+         * @param shouldResetValues (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldResetValues(@Nullable Output<Boolean> shouldResetValues) {
+            $.shouldResetValues = shouldResetValues;
+            return this;
+        }
+
+        /**
+         * @param shouldResetValues (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldResetValues(Boolean shouldResetValues) {
+            return shouldResetValues(Output.of(shouldResetValues));
+        }
+
+        /**
+         * @param shouldReuseValues (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldReuseValues(@Nullable Output<Boolean> shouldReuseValues) {
+            $.shouldReuseValues = shouldReuseValues;
+            return this;
+        }
+
+        /**
+         * @param shouldReuseValues (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldReuseValues(Boolean shouldReuseValues) {
+            return shouldReuseValues(Output.of(shouldReuseValues));
+        }
+
+        /**
+         * @param shouldSkipCrds (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldSkipCrds(@Nullable Output<Boolean> shouldSkipCrds) {
+            $.shouldSkipCrds = shouldSkipCrds;
+            return this;
+        }
+
+        /**
+         * @param shouldSkipCrds (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldSkipCrds(Boolean shouldSkipCrds) {
+            return shouldSkipCrds(Output.of(shouldSkipCrds));
+        }
+
+        /**
+         * @param shouldSkipRenderSubchartNotes (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldSkipRenderSubchartNotes(@Nullable Output<Boolean> shouldSkipRenderSubchartNotes) {
+            $.shouldSkipRenderSubchartNotes = shouldSkipRenderSubchartNotes;
+            return this;
+        }
+
+        /**
+         * @param shouldSkipRenderSubchartNotes (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldSkipRenderSubchartNotes(Boolean shouldSkipRenderSubchartNotes) {
+            return shouldSkipRenderSubchartNotes(Output.of(shouldSkipRenderSubchartNotes));
+        }
+
+        /**
+         * @param testLoadBalancerConfig (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
          * 
          * @return builder
          * 
@@ -1760,7 +2206,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param testLoadBalancerConfig (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+         * @param testLoadBalancerConfig (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
          * 
          * @return builder
          * 

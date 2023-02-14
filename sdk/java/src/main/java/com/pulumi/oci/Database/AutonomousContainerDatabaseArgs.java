@@ -105,6 +105,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
+     * The base version for the Autonomous Container Database.
+     * 
+     */
+    @Import(name="dbVersion")
+    private @Nullable Output<String> dbVersion;
+
+    /**
+     * @return The base version for the Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<String>> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -135,6 +150,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    @Import(name="fastStartFailOverLagLimitInSeconds")
+    private @Nullable Output<Integer> fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    public Optional<Output<Integer>> fastStartFailOverLagLimitInSeconds() {
+        return Optional.ofNullable(this.fastStartFailOverLagLimitInSeconds);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -150,14 +180,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     @Import(name="isAutomaticFailoverEnabled")
     private @Nullable Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     public Optional<Output<Boolean>> isAutomaticFailoverEnabled() {
@@ -388,6 +418,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.vaultId);
     }
 
+    /**
+     * (Updatable) The next maintenance version preference.
+     * 
+     */
+    @Import(name="versionPreference")
+    private @Nullable Output<String> versionPreference;
+
+    /**
+     * @return (Updatable) The next maintenance version preference.
+     * 
+     */
+    public Optional<Output<String>> versionPreference() {
+        return Optional.ofNullable(this.versionPreference);
+    }
+
     private AutonomousContainerDatabaseArgs() {}
 
     private AutonomousContainerDatabaseArgs(AutonomousContainerDatabaseArgs $) {
@@ -397,8 +442,10 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
         this.dbUniqueName = $.dbUniqueName;
+        this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
         this.keyStoreId = $.keyStoreId;
@@ -417,6 +464,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.serviceLevelAgreementType = $.serviceLevelAgreementType;
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.vaultId = $.vaultId;
+        this.versionPreference = $.versionPreference;
     }
 
     public static Builder builder() {
@@ -552,6 +600,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
+         * @param dbVersion The base version for the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbVersion(@Nullable Output<String> dbVersion) {
+            $.dbVersion = dbVersion;
+            return this;
+        }
+
+        /**
+         * @param dbVersion The base version for the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbVersion(String dbVersion) {
+            return dbVersion(Output.of(dbVersion));
+        }
+
+        /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * 
          * @return builder
@@ -594,6 +663,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
+         * @param fastStartFailOverLagLimitInSeconds The lag time for my preference based on data loss tolerance in seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(@Nullable Output<Integer> fastStartFailOverLagLimitInSeconds) {
+            $.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            return this;
+        }
+
+        /**
+         * @param fastStartFailOverLagLimitInSeconds The lag time for my preference based on data loss tolerance in seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
+            return fastStartFailOverLagLimitInSeconds(Output.of(fastStartFailOverLagLimitInSeconds));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -615,7 +705,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
          * 
          * @return builder
          * 
@@ -626,7 +716,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
          * 
          * @return builder
          * 
@@ -945,6 +1035,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder vaultId(String vaultId) {
             return vaultId(Output.of(vaultId));
+        }
+
+        /**
+         * @param versionPreference (Updatable) The next maintenance version preference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionPreference(@Nullable Output<String> versionPreference) {
+            $.versionPreference = versionPreference;
+            return this;
+        }
+
+        /**
+         * @param versionPreference (Updatable) The next maintenance version preference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionPreference(String versionPreference) {
+            return versionPreference(Output.of(versionPreference));
         }
 
         public AutonomousContainerDatabaseArgs build() {

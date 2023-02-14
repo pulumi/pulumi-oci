@@ -4,7 +4,9 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DevOps.outputs.GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -34,6 +36,11 @@ public final class GetDeployArtifactDeployArtifactSource {
      * 
      */
     private String deployArtifactVersion;
+    /**
+     * @return The source of the verification material.
+     * 
+     */
+    private List<GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources;
     /**
      * @return Specifies image digest for the version of the image.
      * 
@@ -87,6 +94,13 @@ public final class GetDeployArtifactDeployArtifactSource {
         return this.deployArtifactVersion;
     }
     /**
+     * @return The source of the verification material.
+     * 
+     */
+    public List<GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources() {
+        return this.helmVerificationKeySources;
+    }
+    /**
      * @return Specifies image digest for the version of the image.
      * 
      */
@@ -122,6 +136,7 @@ public final class GetDeployArtifactDeployArtifactSource {
         private String deployArtifactPath;
         private String deployArtifactSourceType;
         private String deployArtifactVersion;
+        private List<GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources;
         private String imageDigest;
         private String imageUri;
         private String repositoryId;
@@ -133,6 +148,7 @@ public final class GetDeployArtifactDeployArtifactSource {
     	      this.deployArtifactPath = defaults.deployArtifactPath;
     	      this.deployArtifactSourceType = defaults.deployArtifactSourceType;
     	      this.deployArtifactVersion = defaults.deployArtifactVersion;
+    	      this.helmVerificationKeySources = defaults.helmVerificationKeySources;
     	      this.imageDigest = defaults.imageDigest;
     	      this.imageUri = defaults.imageUri;
     	      this.repositoryId = defaults.repositoryId;
@@ -164,6 +180,14 @@ public final class GetDeployArtifactDeployArtifactSource {
             return this;
         }
         @CustomType.Setter
+        public Builder helmVerificationKeySources(List<GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources) {
+            this.helmVerificationKeySources = Objects.requireNonNull(helmVerificationKeySources);
+            return this;
+        }
+        public Builder helmVerificationKeySources(GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource... helmVerificationKeySources) {
+            return helmVerificationKeySources(List.of(helmVerificationKeySources));
+        }
+        @CustomType.Setter
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = Objects.requireNonNull(imageDigest);
             return this;
@@ -185,6 +209,7 @@ public final class GetDeployArtifactDeployArtifactSource {
             o.deployArtifactPath = deployArtifactPath;
             o.deployArtifactSourceType = deployArtifactSourceType;
             o.deployArtifactVersion = deployArtifactVersion;
+            o.helmVerificationKeySources = helmVerificationKeySources;
             o.imageDigest = imageDigest;
             o.imageUri = imageUri;
             o.repositoryId = repositoryId;

@@ -43,6 +43,7 @@ __all__ = [
     'BuildRunCommitInfoArgs',
     'ConnectionTlsVerifyConfigArgs',
     'DeployArtifactDeployArtifactSourceArgs',
+    'DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs',
     'DeployEnvironmentComputeInstanceGroupSelectorsArgs',
     'DeployEnvironmentComputeInstanceGroupSelectorsItemArgs',
     'DeployEnvironmentNetworkChannelArgs',
@@ -71,6 +72,10 @@ __all__ = [
     'DeployStageProductionLoadBalancerConfigArgs',
     'DeployStageRollbackPolicyArgs',
     'DeployStageRolloutPolicyArgs',
+    'DeployStageSetStringArgs',
+    'DeployStageSetStringItemArgs',
+    'DeployStageSetValuesArgs',
+    'DeployStageSetValuesItemArgs',
     'DeployStageTestLoadBalancerConfigArgs',
     'DeployStageWaitCriteriaArgs',
     'DeploymentDeployArtifactOverrideArgumentsArgs',
@@ -1538,6 +1543,7 @@ class DeployArtifactDeployArtifactSourceArgs:
                  chart_url: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_path: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_version: Optional[pulumi.Input[str]] = None,
+                 helm_verification_key_source: Optional[pulumi.Input['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs']] = None,
                  image_digest: Optional[pulumi.Input[str]] = None,
                  image_uri: Optional[pulumi.Input[str]] = None,
                  repository_id: Optional[pulumi.Input[str]] = None):
@@ -1547,6 +1553,7 @@ class DeployArtifactDeployArtifactSourceArgs:
         :param pulumi.Input[str] chart_url: (Updatable) The URL of an OCIR repository.
         :param pulumi.Input[str] deploy_artifact_path: (Updatable) Specifies the artifact path in the repository.
         :param pulumi.Input[str] deploy_artifact_version: (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        :param pulumi.Input['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs'] helm_verification_key_source: (Updatable) The source of the verification material.
         :param pulumi.Input[str] image_digest: (Updatable) Specifies image digest for the version of the image.
         :param pulumi.Input[str] image_uri: (Updatable) Specifies OCIR Image Path - optionally include tag.
         :param pulumi.Input[str] repository_id: (Updatable) The OCID of a repository
@@ -1560,6 +1567,8 @@ class DeployArtifactDeployArtifactSourceArgs:
             pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         if deploy_artifact_version is not None:
             pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
+        if helm_verification_key_source is not None:
+            pulumi.set(__self__, "helm_verification_key_source", helm_verification_key_source)
         if image_digest is not None:
             pulumi.set(__self__, "image_digest", image_digest)
         if image_uri is not None:
@@ -1628,6 +1637,18 @@ class DeployArtifactDeployArtifactSourceArgs:
         pulumi.set(self, "deploy_artifact_version", value)
 
     @property
+    @pulumi.getter(name="helmVerificationKeySource")
+    def helm_verification_key_source(self) -> Optional[pulumi.Input['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs']]:
+        """
+        (Updatable) The source of the verification material.
+        """
+        return pulumi.get(self, "helm_verification_key_source")
+
+    @helm_verification_key_source.setter
+    def helm_verification_key_source(self, value: Optional[pulumi.Input['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs']]):
+        pulumi.set(self, "helm_verification_key_source", value)
+
+    @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1662,6 +1683,76 @@ class DeployArtifactDeployArtifactSourceArgs:
     @repository_id.setter
     def repository_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "repository_id", value)
+
+
+@pulumi.input_type
+class DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs:
+    def __init__(__self__, *,
+                 verification_key_source_type: pulumi.Input[str],
+                 current_public_key: Optional[pulumi.Input[str]] = None,
+                 previous_public_key: Optional[pulumi.Input[str]] = None,
+                 vault_secret_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] verification_key_source_type: (Updatable) Specifies type of verification material.
+        :param pulumi.Input[str] current_public_key: (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        :param pulumi.Input[str] previous_public_key: (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        :param pulumi.Input[str] vault_secret_id: (Updatable) The OCID of the Vault Secret containing the verification key versions.
+        """
+        pulumi.set(__self__, "verification_key_source_type", verification_key_source_type)
+        if current_public_key is not None:
+            pulumi.set(__self__, "current_public_key", current_public_key)
+        if previous_public_key is not None:
+            pulumi.set(__self__, "previous_public_key", previous_public_key)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter(name="verificationKeySourceType")
+    def verification_key_source_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Specifies type of verification material.
+        """
+        return pulumi.get(self, "verification_key_source_type")
+
+    @verification_key_source_type.setter
+    def verification_key_source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "verification_key_source_type", value)
+
+    @property
+    @pulumi.getter(name="currentPublicKey")
+    def current_public_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        """
+        return pulumi.get(self, "current_public_key")
+
+    @current_public_key.setter
+    def current_public_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "current_public_key", value)
+
+    @property
+    @pulumi.getter(name="previousPublicKey")
+    def previous_public_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        """
+        return pulumi.get(self, "previous_public_key")
+
+    @previous_public_key.setter
+    def previous_public_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "previous_public_key", value)
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the Vault Secret containing the verification key versions.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+    @vault_secret_id.setter
+    def vault_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_secret_id", value)
 
 
 @pulumi.input_type
@@ -2208,7 +2299,7 @@ class DeployStageBlueBackendIpsArgs:
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] items: (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] items: (Updatable) List of parameters defined to set helm value.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -2217,7 +2308,7 @@ class DeployStageBlueBackendIpsArgs:
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        (Updatable) List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -2540,7 +2631,7 @@ class DeployStageDeployStagePredecessorCollectionArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeployStageDeployStagePredecessorCollectionItemArgs']]]):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DeployStageDeployStagePredecessorCollectionItemArgs']]] items: (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param pulumi.Input[Sequence[pulumi.Input['DeployStageDeployStagePredecessorCollectionItemArgs']]] items: (Updatable) List of parameters defined to set helm value.
         """
         pulumi.set(__self__, "items", items)
 
@@ -2548,7 +2639,7 @@ class DeployStageDeployStagePredecessorCollectionArgs:
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeployStageDeployStagePredecessorCollectionItemArgs']]]:
         """
-        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        (Updatable) List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -2638,7 +2729,7 @@ class DeployStageGreenBackendIpsArgs:
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] items: (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] items: (Updatable) List of parameters defined to set helm value.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -2647,7 +2738,7 @@ class DeployStageGreenBackendIpsArgs:
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        (Updatable) List of parameters defined to set helm value.
         """
         return pulumi.get(self, "items")
 
@@ -2909,6 +3000,130 @@ class DeployStageRolloutPolicyArgs:
 
 
 @pulumi.input_type
+class DeployStageSetStringArgs:
+    def __init__(__self__, *,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input['DeployStageSetStringItemArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DeployStageSetStringItemArgs']]] items: (Updatable) List of parameters defined to set helm value.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeployStageSetStringItemArgs']]]]:
+        """
+        (Updatable) List of parameters defined to set helm value.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployStageSetStringItemArgs']]]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class DeployStageSetStringItemArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the parameter (case-sensitive).
+        :param pulumi.Input[str] value: (Updatable) Value of the parameter.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Value of the parameter.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DeployStageSetValuesArgs:
+    def __init__(__self__, *,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input['DeployStageSetValuesItemArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DeployStageSetValuesItemArgs']]] items: (Updatable) List of parameters defined to set helm value.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeployStageSetValuesItemArgs']]]]:
+        """
+        (Updatable) List of parameters defined to set helm value.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployStageSetValuesItemArgs']]]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class DeployStageSetValuesItemArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the parameter (case-sensitive).
+        :param pulumi.Input[str] value: (Updatable) Value of the parameter.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Value of the parameter.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
 class DeployStageTestLoadBalancerConfigArgs:
     def __init__(__self__, *,
                  backend_port: Optional[pulumi.Input[int]] = None,
@@ -3049,6 +3264,7 @@ class DeploymentDeployArtifactOverrideArgumentsItemArgs:
         :param pulumi.Input[str] deploy_artifact_id: The OCID of the artifact to which this parameter applies.
         :param pulumi.Input[str] name: Name of the parameter (case-sensitive).
         :param pulumi.Input[str] value: value of the argument.
+               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         if deploy_artifact_id is not None:
             pulumi.set(__self__, "deploy_artifact_id", deploy_artifact_id)
@@ -3086,6 +3302,7 @@ class DeploymentDeployArtifactOverrideArgumentsItemArgs:
     def value(self) -> Optional[pulumi.Input[str]]:
         """
         value of the argument.
+        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         return pulumi.get(self, "value")
 
@@ -3407,6 +3624,7 @@ class DeploymentDeployStageOverrideArgumentsItemArgs:
         :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
         :param pulumi.Input[str] name: Name of the parameter (case-sensitive).
         :param pulumi.Input[str] value: value of the argument.
+               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         if deploy_stage_id is not None:
             pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
@@ -3444,6 +3662,7 @@ class DeploymentDeployStageOverrideArgumentsItemArgs:
     def value(self) -> Optional[pulumi.Input[str]]:
         """
         value of the argument.
+        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         return pulumi.get(self, "value")
 
@@ -3483,6 +3702,7 @@ class DeploymentDeploymentArgumentsItemArgs:
         """
         :param pulumi.Input[str] name: Name of the parameter (case-sensitive).
         :param pulumi.Input[str] value: value of the argument.
+               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3506,6 +3726,7 @@ class DeploymentDeploymentArgumentsItemArgs:
     def value(self) -> Optional[pulumi.Input[str]]:
         """
         value of the argument.
+        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
         """
         return pulumi.get(self, "value")
 
@@ -4250,6 +4471,9 @@ class GetDeployStagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of the parameter (case-sensitive).
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4258,6 +4482,9 @@ class GetDeployStagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of the parameter (case-sensitive).
+        """
         return pulumi.get(self, "name")
 
     @name.setter

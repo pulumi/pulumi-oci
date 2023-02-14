@@ -92,6 +92,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly backupConfigs!: pulumi.Output<outputs.Database.AutonomousDatabaseBackupConfig[]>;
     /**
+     * Retention period, in days, for backups.
+     */
+    public /*out*/ readonly backupRetentionPeriodInDays!: pulumi.Output<number>;
+    /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      */
     public readonly characterSet!: pulumi.Output<string>;
@@ -461,6 +465,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly timestamp!: pulumi.Output<string>;
     /**
+     * The backup storage to the database.
+     */
+    public /*out*/ readonly totalBackupStorageSizeInGbs!: pulumi.Output<number>;
+    /**
      * Clone from latest available backup timestamp.
      */
     public readonly useLatestAvailableBackupTimeStamp!: pulumi.Output<boolean>;
@@ -501,6 +509,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["autonomousMaintenanceScheduleType"] = state ? state.autonomousMaintenanceScheduleType : undefined;
             resourceInputs["availableUpgradeVersions"] = state ? state.availableUpgradeVersions : undefined;
             resourceInputs["backupConfigs"] = state ? state.backupConfigs : undefined;
+            resourceInputs["backupRetentionPeriodInDays"] = state ? state.backupRetentionPeriodInDays : undefined;
             resourceInputs["characterSet"] = state ? state.characterSet : undefined;
             resourceInputs["cloneType"] = state ? state.cloneType : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -592,6 +601,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeReclamationOfFreeAutonomousDatabase"] = state ? state.timeReclamationOfFreeAutonomousDatabase : undefined;
             resourceInputs["timeUntilReconnectCloneEnabled"] = state ? state.timeUntilReconnectCloneEnabled : undefined;
             resourceInputs["timestamp"] = state ? state.timestamp : undefined;
+            resourceInputs["totalBackupStorageSizeInGbs"] = state ? state.totalBackupStorageSizeInGbs : undefined;
             resourceInputs["useLatestAvailableBackupTimeStamp"] = state ? state.useLatestAvailableBackupTimeStamp : undefined;
             resourceInputs["usedDataStorageSizeInTbs"] = state ? state.usedDataStorageSizeInTbs : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
@@ -671,6 +681,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["apexDetails"] = undefined /*out*/;
             resourceInputs["availableUpgradeVersions"] = undefined /*out*/;
             resourceInputs["backupConfigs"] = undefined /*out*/;
+            resourceInputs["backupRetentionPeriodInDays"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["connectionUrls"] = undefined /*out*/;
             resourceInputs["dataguardRegionType"] = undefined /*out*/;
@@ -709,6 +720,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeOfNextRefresh"] = undefined /*out*/;
             resourceInputs["timeReclamationOfFreeAutonomousDatabase"] = undefined /*out*/;
             resourceInputs["timeUntilReconnectCloneEnabled"] = undefined /*out*/;
+            resourceInputs["totalBackupStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["usedDataStorageSizeInTbs"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -766,6 +778,10 @@ export interface AutonomousDatabaseState {
      * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      */
     backupConfigs?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseBackupConfig>[]>;
+    /**
+     * Retention period, in days, for backups.
+     */
+    backupRetentionPeriodInDays?: pulumi.Input<number>;
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      */
@@ -1135,6 +1151,10 @@ export interface AutonomousDatabaseState {
      * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
      */
     timestamp?: pulumi.Input<string>;
+    /**
+     * The backup storage to the database.
+     */
+    totalBackupStorageSizeInGbs?: pulumi.Input<number>;
     /**
      * Clone from latest available backup timestamp.
      */

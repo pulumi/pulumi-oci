@@ -92,6 +92,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseBackupConfig>> BackupConfigs { get; private set; } = null!;
 
         /// <summary>
+        /// Retention period, in days, for backups.
+        /// </summary>
+        [Output("backupRetentionPeriodInDays")]
+        public Output<int> BackupRetentionPeriodInDays { get; private set; } = null!;
+
+        /// <summary>
         /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
         /// </summary>
         [Output("characterSet")]
@@ -641,6 +647,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timestamp")]
         public Output<string> Timestamp { get; private set; } = null!;
+
+        /// <summary>
+        /// The backup storage to the database.
+        /// </summary>
+        [Output("totalBackupStorageSizeInGbs")]
+        public Output<double> TotalBackupStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// Clone from latest available backup timestamp.
@@ -1246,6 +1258,12 @@ namespace Pulumi.Oci.Database
             get => _backupConfigs ?? (_backupConfigs = new InputList<Inputs.AutonomousDatabaseBackupConfigGetArgs>());
             set => _backupConfigs = value;
         }
+
+        /// <summary>
+        /// Retention period, in days, for backups.
+        /// </summary>
+        [Input("backupRetentionPeriodInDays")]
+        public Input<int>? BackupRetentionPeriodInDays { get; set; }
 
         /// <summary>
         /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
@@ -1887,6 +1905,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timestamp")]
         public Input<string>? Timestamp { get; set; }
+
+        /// <summary>
+        /// The backup storage to the database.
+        /// </summary>
+        [Input("totalBackupStorageSizeInGbs")]
+        public Input<double>? TotalBackupStorageSizeInGbs { get; set; }
 
         /// <summary>
         /// Clone from latest available backup timestamp.

@@ -22,7 +22,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_standby_dbs=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_standby_dbs=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -56,6 +56,9 @@ class GetAutonomousDatabaseResult:
         if backup_configs and not isinstance(backup_configs, list):
             raise TypeError("Expected argument 'backup_configs' to be a list")
         pulumi.set(__self__, "backup_configs", backup_configs)
+        if backup_retention_period_in_days and not isinstance(backup_retention_period_in_days, int):
+            raise TypeError("Expected argument 'backup_retention_period_in_days' to be a int")
+        pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
         if character_set and not isinstance(character_set, str):
             raise TypeError("Expected argument 'character_set' to be a str")
         pulumi.set(__self__, "character_set", character_set)
@@ -332,6 +335,9 @@ class GetAutonomousDatabaseResult:
         if timestamp and not isinstance(timestamp, str):
             raise TypeError("Expected argument 'timestamp' to be a str")
         pulumi.set(__self__, "timestamp", timestamp)
+        if total_backup_storage_size_in_gbs and not isinstance(total_backup_storage_size_in_gbs, float):
+            raise TypeError("Expected argument 'total_backup_storage_size_in_gbs' to be a float")
+        pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         if use_latest_available_backup_time_stamp and not isinstance(use_latest_available_backup_time_stamp, bool):
             raise TypeError("Expected argument 'use_latest_available_backup_time_stamp' to be a bool")
         pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
@@ -423,6 +429,14 @@ class GetAutonomousDatabaseResult:
         Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
+
+    @property
+    @pulumi.getter(name="backupRetentionPeriodInDays")
+    def backup_retention_period_in_days(self) -> int:
+        """
+        Retention period, in days, for backups.
+        """
+        return pulumi.get(self, "backup_retention_period_in_days")
 
     @property
     @pulumi.getter(name="characterSet")
@@ -1136,6 +1150,14 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "timestamp")
 
     @property
+    @pulumi.getter(name="totalBackupStorageSizeInGbs")
+    def total_backup_storage_size_in_gbs(self) -> float:
+        """
+        The backup storage to the database.
+        """
+        return pulumi.get(self, "total_backup_storage_size_in_gbs")
+
+    @property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
     def use_latest_available_backup_time_stamp(self) -> bool:
         return pulumi.get(self, "use_latest_available_backup_time_stamp")
@@ -1182,6 +1204,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             autonomous_maintenance_schedule_type=self.autonomous_maintenance_schedule_type,
             available_upgrade_versions=self.available_upgrade_versions,
             backup_configs=self.backup_configs,
+            backup_retention_period_in_days=self.backup_retention_period_in_days,
             character_set=self.character_set,
             clone_type=self.clone_type,
             compartment_id=self.compartment_id,
@@ -1274,6 +1297,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             time_reclamation_of_free_autonomous_database=self.time_reclamation_of_free_autonomous_database,
             time_until_reconnect_clone_enabled=self.time_until_reconnect_clone_enabled,
             timestamp=self.timestamp,
+            total_backup_storage_size_in_gbs=self.total_backup_storage_size_in_gbs,
             use_latest_available_backup_time_stamp=self.use_latest_available_backup_time_stamp,
             used_data_storage_size_in_tbs=self.used_data_storage_size_in_tbs,
             vault_id=self.vault_id,
@@ -1316,6 +1340,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         autonomous_maintenance_schedule_type=__ret__.autonomous_maintenance_schedule_type,
         available_upgrade_versions=__ret__.available_upgrade_versions,
         backup_configs=__ret__.backup_configs,
+        backup_retention_period_in_days=__ret__.backup_retention_period_in_days,
         character_set=__ret__.character_set,
         clone_type=__ret__.clone_type,
         compartment_id=__ret__.compartment_id,
@@ -1408,6 +1433,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         time_reclamation_of_free_autonomous_database=__ret__.time_reclamation_of_free_autonomous_database,
         time_until_reconnect_clone_enabled=__ret__.time_until_reconnect_clone_enabled,
         timestamp=__ret__.timestamp,
+        total_backup_storage_size_in_gbs=__ret__.total_backup_storage_size_in_gbs,
         use_latest_available_backup_time_stamp=__ret__.use_latest_available_backup_time_stamp,
         used_data_storage_size_in_tbs=__ret__.used_data_storage_size_in_tbs,
         vault_id=__ret__.vault_id,

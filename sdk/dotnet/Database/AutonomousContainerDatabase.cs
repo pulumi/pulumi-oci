@@ -43,10 +43,12 @@ namespace Pulumi.Oci.Database
     ///         },
     ///         CompartmentId = @var.Compartment_id,
     ///         DbUniqueName = @var.Autonomous_container_database_db_unique_name,
+    ///         DbVersion = @var.Autonomous_container_database_db_version,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
+    ///         FastStartFailOverLagLimitInSeconds = @var.Autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -102,6 +104,7 @@ namespace Pulumi.Oci.Database
     ///         PeerDbUniqueName = @var.Autonomous_container_database_peer_db_unique_name,
     ///         ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
     ///         VaultId = oci_kms_vault.Test_vault.Id,
+    ///         VersionPreference = @var.Autonomous_container_database_version_preference,
     ///         StandbyMaintenanceBufferInDays = @var.Autonomous_container_database_standby_maintenance_buffer_in_days,
     ///     });
     /// 
@@ -168,7 +171,7 @@ namespace Pulumi.Oci.Database
         public Output<string> DbUniqueName { get; private set; } = null!;
 
         /// <summary>
-        /// Oracle Database version of the Autonomous Container Database.
+        /// The base version for the Autonomous Container Database.
         /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
@@ -186,6 +189,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// The lag time for my preference based on data loss tolerance in seconds.
+        /// </summary>
+        [Output("fastStartFailOverLagLimitInSeconds")]
+        public Output<int> FastStartFailOverLagLimitInSeconds { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
@@ -198,7 +207,7 @@ namespace Pulumi.Oci.Database
         public Output<string> InfrastructureType { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         /// </summary>
         [Output("isAutomaticFailoverEnabled")]
         public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
@@ -366,6 +375,12 @@ namespace Pulumi.Oci.Database
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
+        /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        /// </summary>
+        [Output("timeSnapshotStandbyRevert")]
+        public Output<string> TimeSnapshotStandbyRevert { get; private set; } = null!;
+
+        /// <summary>
         /// The number of CPU cores allocated to the Autonomous VM cluster.
         /// </summary>
         [Output("totalCpus")]
@@ -376,6 +391,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("vaultId")]
         public Output<string> VaultId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The next maintenance version preference.
+        /// </summary>
+        [Output("versionPreference")]
+        public Output<string> VersionPreference { get; private set; } = null!;
 
 
         /// <summary>
@@ -456,6 +477,12 @@ namespace Pulumi.Oci.Database
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }
 
+        /// <summary>
+        /// The base version for the Autonomous Container Database.
+        /// </summary>
+        [Input("dbVersion")]
+        public Input<string>? DbVersion { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -474,6 +501,12 @@ namespace Pulumi.Oci.Database
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The lag time for my preference based on data loss tolerance in seconds.
+        /// </summary>
+        [Input("fastStartFailOverLagLimitInSeconds")]
+        public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -487,7 +520,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -582,6 +615,12 @@ namespace Pulumi.Oci.Database
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }
 
+        /// <summary>
+        /// (Updatable) The next maintenance version preference.
+        /// </summary>
+        [Input("versionPreference")]
+        public Input<string>? VersionPreference { get; set; }
+
         public AutonomousContainerDatabaseArgs()
         {
         }
@@ -639,7 +678,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? DbUniqueName { get; set; }
 
         /// <summary>
-        /// Oracle Database version of the Autonomous Container Database.
+        /// The base version for the Autonomous Container Database.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
@@ -662,6 +701,12 @@ namespace Pulumi.Oci.Database
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// The lag time for my preference based on data loss tolerance in seconds.
+        /// </summary>
+        [Input("fastStartFailOverLagLimitInSeconds")]
+        public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -681,7 +726,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? InfrastructureType { get; set; }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -867,6 +912,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
+        /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        /// </summary>
+        [Input("timeSnapshotStandbyRevert")]
+        public Input<string>? TimeSnapshotStandbyRevert { get; set; }
+
+        /// <summary>
         /// The number of CPU cores allocated to the Autonomous VM cluster.
         /// </summary>
         [Input("totalCpus")]
@@ -877,6 +928,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The next maintenance version preference.
+        /// </summary>
+        [Input("versionPreference")]
+        public Input<string>? VersionPreference { get; set; }
 
         public AutonomousContainerDatabaseState()
         {

@@ -20,6 +20,7 @@ class DeployStageArgs:
                  deploy_stage_predecessor_collection: pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs'],
                  deploy_stage_type: pulumi.Input[str],
                  approval_policy: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']] = None,
+                 are_hooks_enabled: Optional[pulumi.Input[bool]] = None,
                  blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
                  blue_green_strategy: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']] = None,
                  canary_strategy: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']] = None,
@@ -46,9 +47,12 @@ class DeployStageArgs:
                  green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
                  helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  is_async: Optional[pulumi.Input[bool]] = None,
+                 is_debug_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_force_enabled: Optional[pulumi.Input[bool]] = None,
                  is_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  load_balancer_config: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']] = None,
+                 max_history: Optional[pulumi.Input[int]] = None,
                  max_memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  oke_blue_green_deploy_stage_id: Optional[pulumi.Input[str]] = None,
@@ -59,6 +63,14 @@ class DeployStageArgs:
                  release_name: Optional[pulumi.Input[str]] = None,
                  rollback_policy: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']] = None,
                  rollout_policy: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']] = None,
+                 set_string: Optional[pulumi.Input['DeployStageSetStringArgs']] = None,
+                 set_values: Optional[pulumi.Input['DeployStageSetValuesArgs']] = None,
+                 should_cleanup_on_fail: Optional[pulumi.Input[bool]] = None,
+                 should_not_wait: Optional[pulumi.Input[bool]] = None,
+                 should_reset_values: Optional[pulumi.Input[bool]] = None,
+                 should_reuse_values: Optional[pulumi.Input[bool]] = None,
+                 should_skip_crds: Optional[pulumi.Input[bool]] = None,
+                 should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
                  test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  traffic_shift_target: Optional[pulumi.Input[str]] = None,
@@ -70,6 +82,7 @@ class DeployStageArgs:
         :param pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs'] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
         :param pulumi.Input[str] deploy_stage_type: (Updatable) Deployment stage type.
         :param pulumi.Input['DeployStageApprovalPolicyArgs'] approval_policy: (Updatable) Specifies the approval policy.
+        :param pulumi.Input[bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
         :param pulumi.Input['DeployStageBlueBackendIpsArgs'] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input['DeployStageBlueGreenStrategyArgs'] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input['DeployStageCanaryStrategyArgs'] canary_strategy: Specifies the required canary release strategy for OKE deployment.
@@ -96,9 +109,12 @@ class DeployStageArgs:
         :param pulumi.Input['DeployStageGreenBackendIpsArgs'] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
+        :param pulumi.Input[bool] is_debug_enabled: (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        :param pulumi.Input[bool] is_force_enabled: (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
         :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
         :param pulumi.Input['DeployStageLoadBalancerConfigArgs'] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         :param pulumi.Input[str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
         :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
         :param pulumi.Input[str] oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
@@ -109,7 +125,15 @@ class DeployStageArgs:
         :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         :param pulumi.Input['DeployStageRollbackPolicyArgs'] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input['DeployStageRolloutPolicyArgs'] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input['DeployStageSetStringArgs'] set_string: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input['DeployStageSetValuesArgs'] set_values: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        :param pulumi.Input[bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        :param pulumi.Input[bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        :param pulumi.Input[bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+        :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
@@ -120,6 +144,8 @@ class DeployStageArgs:
         pulumi.set(__self__, "deploy_stage_type", deploy_stage_type)
         if approval_policy is not None:
             pulumi.set(__self__, "approval_policy", approval_policy)
+        if are_hooks_enabled is not None:
+            pulumi.set(__self__, "are_hooks_enabled", are_hooks_enabled)
         if blue_backend_ips is not None:
             pulumi.set(__self__, "blue_backend_ips", blue_backend_ips)
         if blue_green_strategy is not None:
@@ -172,12 +198,18 @@ class DeployStageArgs:
             pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         if is_async is not None:
             pulumi.set(__self__, "is_async", is_async)
+        if is_debug_enabled is not None:
+            pulumi.set(__self__, "is_debug_enabled", is_debug_enabled)
+        if is_force_enabled is not None:
+            pulumi.set(__self__, "is_force_enabled", is_force_enabled)
         if is_validation_enabled is not None:
             pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
         if kubernetes_manifest_deploy_artifact_ids is not None:
             pulumi.set(__self__, "kubernetes_manifest_deploy_artifact_ids", kubernetes_manifest_deploy_artifact_ids)
         if load_balancer_config is not None:
             pulumi.set(__self__, "load_balancer_config", load_balancer_config)
+        if max_history is not None:
+            pulumi.set(__self__, "max_history", max_history)
         if max_memory_in_mbs is not None:
             pulumi.set(__self__, "max_memory_in_mbs", max_memory_in_mbs)
         if namespace is not None:
@@ -198,6 +230,22 @@ class DeployStageArgs:
             pulumi.set(__self__, "rollback_policy", rollback_policy)
         if rollout_policy is not None:
             pulumi.set(__self__, "rollout_policy", rollout_policy)
+        if set_string is not None:
+            pulumi.set(__self__, "set_string", set_string)
+        if set_values is not None:
+            pulumi.set(__self__, "set_values", set_values)
+        if should_cleanup_on_fail is not None:
+            pulumi.set(__self__, "should_cleanup_on_fail", should_cleanup_on_fail)
+        if should_not_wait is not None:
+            pulumi.set(__self__, "should_not_wait", should_not_wait)
+        if should_reset_values is not None:
+            pulumi.set(__self__, "should_reset_values", should_reset_values)
+        if should_reuse_values is not None:
+            pulumi.set(__self__, "should_reuse_values", should_reuse_values)
+        if should_skip_crds is not None:
+            pulumi.set(__self__, "should_skip_crds", should_skip_crds)
+        if should_skip_render_subchart_notes is not None:
+            pulumi.set(__self__, "should_skip_render_subchart_notes", should_skip_render_subchart_notes)
         if test_load_balancer_config is not None:
             pulumi.set(__self__, "test_load_balancer_config", test_load_balancer_config)
         if timeout_in_seconds is not None:
@@ -256,6 +304,18 @@ class DeployStageArgs:
     @approval_policy.setter
     def approval_policy(self, value: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']]):
         pulumi.set(self, "approval_policy", value)
+
+    @property
+    @pulumi.getter(name="areHooksEnabled")
+    def are_hooks_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+        """
+        return pulumi.get(self, "are_hooks_enabled")
+
+    @are_hooks_enabled.setter
+    def are_hooks_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_hooks_enabled", value)
 
     @property
     @pulumi.getter(name="blueBackendIps")
@@ -570,6 +630,30 @@ class DeployStageArgs:
         pulumi.set(self, "is_async", value)
 
     @property
+    @pulumi.getter(name="isDebugEnabled")
+    def is_debug_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        """
+        return pulumi.get(self, "is_debug_enabled")
+
+    @is_debug_enabled.setter
+    def is_debug_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_debug_enabled", value)
+
+    @property
+    @pulumi.getter(name="isForceEnabled")
+    def is_force_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+        """
+        return pulumi.get(self, "is_force_enabled")
+
+    @is_force_enabled.setter
+    def is_force_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_force_enabled", value)
+
+    @property
     @pulumi.getter(name="isValidationEnabled")
     def is_validation_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -604,6 +688,18 @@ class DeployStageArgs:
     @load_balancer_config.setter
     def load_balancer_config(self, value: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']]):
         pulumi.set(self, "load_balancer_config", value)
+
+    @property
+    @pulumi.getter(name="maxHistory")
+    def max_history(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        """
+        return pulumi.get(self, "max_history")
+
+    @max_history.setter
+    def max_history(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_history", value)
 
     @property
     @pulumi.getter(name="maxMemoryInMbs")
@@ -726,10 +822,106 @@ class DeployStageArgs:
         pulumi.set(self, "rollout_policy", value)
 
     @property
+    @pulumi.getter(name="setString")
+    def set_string(self) -> Optional[pulumi.Input['DeployStageSetStringArgs']]:
+        """
+        (Updatable) Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_string")
+
+    @set_string.setter
+    def set_string(self, value: Optional[pulumi.Input['DeployStageSetStringArgs']]):
+        pulumi.set(self, "set_string", value)
+
+    @property
+    @pulumi.getter(name="setValues")
+    def set_values(self) -> Optional[pulumi.Input['DeployStageSetValuesArgs']]:
+        """
+        (Updatable) Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_values")
+
+    @set_values.setter
+    def set_values(self, value: Optional[pulumi.Input['DeployStageSetValuesArgs']]):
+        pulumi.set(self, "set_values", value)
+
+    @property
+    @pulumi.getter(name="shouldCleanupOnFail")
+    def should_cleanup_on_fail(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        """
+        return pulumi.get(self, "should_cleanup_on_fail")
+
+    @should_cleanup_on_fail.setter
+    def should_cleanup_on_fail(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_cleanup_on_fail", value)
+
+    @property
+    @pulumi.getter(name="shouldNotWait")
+    def should_not_wait(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        """
+        return pulumi.get(self, "should_not_wait")
+
+    @should_not_wait.setter
+    def should_not_wait(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_not_wait", value)
+
+    @property
+    @pulumi.getter(name="shouldResetValues")
+    def should_reset_values(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        """
+        return pulumi.get(self, "should_reset_values")
+
+    @should_reset_values.setter
+    def should_reset_values(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_reset_values", value)
+
+    @property
+    @pulumi.getter(name="shouldReuseValues")
+    def should_reuse_values(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        """
+        return pulumi.get(self, "should_reuse_values")
+
+    @should_reuse_values.setter
+    def should_reuse_values(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_reuse_values", value)
+
+    @property
+    @pulumi.getter(name="shouldSkipCrds")
+    def should_skip_crds(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_crds")
+
+    @should_skip_crds.setter
+    def should_skip_crds(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_skip_crds", value)
+
+    @property
+    @pulumi.getter(name="shouldSkipRenderSubchartNotes")
+    def should_skip_render_subchart_notes(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_render_subchart_notes")
+
+    @should_skip_render_subchart_notes.setter
+    def should_skip_render_subchart_notes(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_skip_render_subchart_notes", value)
+
+    @property
     @pulumi.getter(name="testLoadBalancerConfig")
     def test_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']]:
         """
-        (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "test_load_balancer_config")
 
@@ -790,6 +982,7 @@ class DeployStageArgs:
 class _DeployStageState:
     def __init__(__self__, *,
                  approval_policy: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']] = None,
+                 are_hooks_enabled: Optional[pulumi.Input[bool]] = None,
                  blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
                  blue_green_strategy: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']] = None,
                  canary_strategy: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']] = None,
@@ -820,10 +1013,13 @@ class _DeployStageState:
                  green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
                  helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  is_async: Optional[pulumi.Input[bool]] = None,
+                 is_debug_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_force_enabled: Optional[pulumi.Input[bool]] = None,
                  is_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  load_balancer_config: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']] = None,
+                 max_history: Optional[pulumi.Input[int]] = None,
                  max_memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  oke_blue_green_deploy_stage_id: Optional[pulumi.Input[str]] = None,
@@ -835,6 +1031,14 @@ class _DeployStageState:
                  release_name: Optional[pulumi.Input[str]] = None,
                  rollback_policy: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']] = None,
                  rollout_policy: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']] = None,
+                 set_string: Optional[pulumi.Input['DeployStageSetStringArgs']] = None,
+                 set_values: Optional[pulumi.Input['DeployStageSetValuesArgs']] = None,
+                 should_cleanup_on_fail: Optional[pulumi.Input[bool]] = None,
+                 should_not_wait: Optional[pulumi.Input[bool]] = None,
+                 should_reset_values: Optional[pulumi.Input[bool]] = None,
+                 should_reuse_values: Optional[pulumi.Input[bool]] = None,
+                 should_skip_crds: Optional[pulumi.Input[bool]] = None,
+                 should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
@@ -847,6 +1051,7 @@ class _DeployStageState:
         """
         Input properties used for looking up and filtering DeployStage resources.
         :param pulumi.Input['DeployStageApprovalPolicyArgs'] approval_policy: (Updatable) Specifies the approval policy.
+        :param pulumi.Input[bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
         :param pulumi.Input['DeployStageBlueBackendIpsArgs'] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input['DeployStageBlueGreenStrategyArgs'] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input['DeployStageCanaryStrategyArgs'] canary_strategy: Specifies the required canary release strategy for OKE deployment.
@@ -877,10 +1082,13 @@ class _DeployStageState:
         :param pulumi.Input['DeployStageGreenBackendIpsArgs'] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
+        :param pulumi.Input[bool] is_debug_enabled: (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        :param pulumi.Input[bool] is_force_enabled: (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
         :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input['DeployStageLoadBalancerConfigArgs'] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         :param pulumi.Input[str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
         :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
         :param pulumi.Input[str] oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
@@ -892,9 +1100,17 @@ class _DeployStageState:
         :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         :param pulumi.Input['DeployStageRollbackPolicyArgs'] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input['DeployStageRolloutPolicyArgs'] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
+        :param pulumi.Input['DeployStageSetStringArgs'] set_string: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input['DeployStageSetValuesArgs'] set_values: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        :param pulumi.Input[bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        :param pulumi.Input[bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        :param pulumi.Input[bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
         :param pulumi.Input[str] state: The current state of the deployment stage.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
@@ -904,6 +1120,8 @@ class _DeployStageState:
         """
         if approval_policy is not None:
             pulumi.set(__self__, "approval_policy", approval_policy)
+        if are_hooks_enabled is not None:
+            pulumi.set(__self__, "are_hooks_enabled", are_hooks_enabled)
         if blue_backend_ips is not None:
             pulumi.set(__self__, "blue_backend_ips", blue_backend_ips)
         if blue_green_strategy is not None:
@@ -964,6 +1182,10 @@ class _DeployStageState:
             pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         if is_async is not None:
             pulumi.set(__self__, "is_async", is_async)
+        if is_debug_enabled is not None:
+            pulumi.set(__self__, "is_debug_enabled", is_debug_enabled)
+        if is_force_enabled is not None:
+            pulumi.set(__self__, "is_force_enabled", is_force_enabled)
         if is_validation_enabled is not None:
             pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
         if kubernetes_manifest_deploy_artifact_ids is not None:
@@ -972,6 +1194,8 @@ class _DeployStageState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if load_balancer_config is not None:
             pulumi.set(__self__, "load_balancer_config", load_balancer_config)
+        if max_history is not None:
+            pulumi.set(__self__, "max_history", max_history)
         if max_memory_in_mbs is not None:
             pulumi.set(__self__, "max_memory_in_mbs", max_memory_in_mbs)
         if namespace is not None:
@@ -994,6 +1218,22 @@ class _DeployStageState:
             pulumi.set(__self__, "rollback_policy", rollback_policy)
         if rollout_policy is not None:
             pulumi.set(__self__, "rollout_policy", rollout_policy)
+        if set_string is not None:
+            pulumi.set(__self__, "set_string", set_string)
+        if set_values is not None:
+            pulumi.set(__self__, "set_values", set_values)
+        if should_cleanup_on_fail is not None:
+            pulumi.set(__self__, "should_cleanup_on_fail", should_cleanup_on_fail)
+        if should_not_wait is not None:
+            pulumi.set(__self__, "should_not_wait", should_not_wait)
+        if should_reset_values is not None:
+            pulumi.set(__self__, "should_reset_values", should_reset_values)
+        if should_reuse_values is not None:
+            pulumi.set(__self__, "should_reuse_values", should_reuse_values)
+        if should_skip_crds is not None:
+            pulumi.set(__self__, "should_skip_crds", should_skip_crds)
+        if should_skip_render_subchart_notes is not None:
+            pulumi.set(__self__, "should_skip_render_subchart_notes", should_skip_render_subchart_notes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -1024,6 +1264,18 @@ class _DeployStageState:
     @approval_policy.setter
     def approval_policy(self, value: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']]):
         pulumi.set(self, "approval_policy", value)
+
+    @property
+    @pulumi.getter(name="areHooksEnabled")
+    def are_hooks_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+        """
+        return pulumi.get(self, "are_hooks_enabled")
+
+    @are_hooks_enabled.setter
+    def are_hooks_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_hooks_enabled", value)
 
     @property
     @pulumi.getter(name="blueBackendIps")
@@ -1386,6 +1638,30 @@ class _DeployStageState:
         pulumi.set(self, "is_async", value)
 
     @property
+    @pulumi.getter(name="isDebugEnabled")
+    def is_debug_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        """
+        return pulumi.get(self, "is_debug_enabled")
+
+    @is_debug_enabled.setter
+    def is_debug_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_debug_enabled", value)
+
+    @property
+    @pulumi.getter(name="isForceEnabled")
+    def is_force_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+        """
+        return pulumi.get(self, "is_force_enabled")
+
+    @is_force_enabled.setter
+    def is_force_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_force_enabled", value)
+
+    @property
     @pulumi.getter(name="isValidationEnabled")
     def is_validation_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -1432,6 +1708,18 @@ class _DeployStageState:
     @load_balancer_config.setter
     def load_balancer_config(self, value: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']]):
         pulumi.set(self, "load_balancer_config", value)
+
+    @property
+    @pulumi.getter(name="maxHistory")
+    def max_history(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        """
+        return pulumi.get(self, "max_history")
+
+    @max_history.setter
+    def max_history(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_history", value)
 
     @property
     @pulumi.getter(name="maxMemoryInMbs")
@@ -1566,6 +1854,102 @@ class _DeployStageState:
         pulumi.set(self, "rollout_policy", value)
 
     @property
+    @pulumi.getter(name="setString")
+    def set_string(self) -> Optional[pulumi.Input['DeployStageSetStringArgs']]:
+        """
+        (Updatable) Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_string")
+
+    @set_string.setter
+    def set_string(self, value: Optional[pulumi.Input['DeployStageSetStringArgs']]):
+        pulumi.set(self, "set_string", value)
+
+    @property
+    @pulumi.getter(name="setValues")
+    def set_values(self) -> Optional[pulumi.Input['DeployStageSetValuesArgs']]:
+        """
+        (Updatable) Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_values")
+
+    @set_values.setter
+    def set_values(self, value: Optional[pulumi.Input['DeployStageSetValuesArgs']]):
+        pulumi.set(self, "set_values", value)
+
+    @property
+    @pulumi.getter(name="shouldCleanupOnFail")
+    def should_cleanup_on_fail(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        """
+        return pulumi.get(self, "should_cleanup_on_fail")
+
+    @should_cleanup_on_fail.setter
+    def should_cleanup_on_fail(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_cleanup_on_fail", value)
+
+    @property
+    @pulumi.getter(name="shouldNotWait")
+    def should_not_wait(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        """
+        return pulumi.get(self, "should_not_wait")
+
+    @should_not_wait.setter
+    def should_not_wait(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_not_wait", value)
+
+    @property
+    @pulumi.getter(name="shouldResetValues")
+    def should_reset_values(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        """
+        return pulumi.get(self, "should_reset_values")
+
+    @should_reset_values.setter
+    def should_reset_values(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_reset_values", value)
+
+    @property
+    @pulumi.getter(name="shouldReuseValues")
+    def should_reuse_values(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        """
+        return pulumi.get(self, "should_reuse_values")
+
+    @should_reuse_values.setter
+    def should_reuse_values(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_reuse_values", value)
+
+    @property
+    @pulumi.getter(name="shouldSkipCrds")
+    def should_skip_crds(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_crds")
+
+    @should_skip_crds.setter
+    def should_skip_crds(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_skip_crds", value)
+
+    @property
+    @pulumi.getter(name="shouldSkipRenderSubchartNotes")
+    def should_skip_render_subchart_notes(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_render_subchart_notes")
+
+    @should_skip_render_subchart_notes.setter
+    def should_skip_render_subchart_notes(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_skip_render_subchart_notes", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1593,7 +1977,7 @@ class _DeployStageState:
     @pulumi.getter(name="testLoadBalancerConfig")
     def test_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']]:
         """
-        (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "test_load_balancer_config")
 
@@ -1680,6 +2064,7 @@ class DeployStage(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  approval_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageApprovalPolicyArgs']]] = None,
+                 are_hooks_enabled: Optional[pulumi.Input[bool]] = None,
                  blue_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']]] = None,
                  blue_green_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']]] = None,
                  canary_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']]] = None,
@@ -1709,9 +2094,12 @@ class DeployStage(pulumi.CustomResource):
                  green_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']]] = None,
                  helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  is_async: Optional[pulumi.Input[bool]] = None,
+                 is_debug_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_force_enabled: Optional[pulumi.Input[bool]] = None,
                  is_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageLoadBalancerConfigArgs']]] = None,
+                 max_history: Optional[pulumi.Input[int]] = None,
                  max_memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  oke_blue_green_deploy_stage_id: Optional[pulumi.Input[str]] = None,
@@ -1722,6 +2110,14 @@ class DeployStage(pulumi.CustomResource):
                  release_name: Optional[pulumi.Input[str]] = None,
                  rollback_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']]] = None,
                  rollout_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']]] = None,
+                 set_string: Optional[pulumi.Input[pulumi.InputType['DeployStageSetStringArgs']]] = None,
+                 set_values: Optional[pulumi.Input[pulumi.InputType['DeployStageSetValuesArgs']]] = None,
+                 should_cleanup_on_fail: Optional[pulumi.Input[bool]] = None,
+                 should_not_wait: Optional[pulumi.Input[bool]] = None,
+                 should_reset_values: Optional[pulumi.Input[bool]] = None,
+                 should_reuse_values: Optional[pulumi.Input[bool]] = None,
+                 should_skip_crds: Optional[pulumi.Input[bool]] = None,
+                 should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
                  test_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  traffic_shift_target: Optional[pulumi.Input[str]] = None,
@@ -1744,6 +2140,7 @@ class DeployStage(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['DeployStageApprovalPolicyArgs']] approval_policy: (Updatable) Specifies the approval policy.
+        :param pulumi.Input[bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
         :param pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
@@ -1773,9 +2170,12 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
+        :param pulumi.Input[bool] is_debug_enabled: (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        :param pulumi.Input[bool] is_force_enabled: (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
         :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
         :param pulumi.Input[pulumi.InputType['DeployStageLoadBalancerConfigArgs']] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         :param pulumi.Input[str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
         :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
         :param pulumi.Input[str] oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
@@ -1786,7 +2186,15 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         :param pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[pulumi.InputType['DeployStageSetStringArgs']] set_string: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[pulumi.InputType['DeployStageSetValuesArgs']] set_values: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        :param pulumi.Input[bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        :param pulumi.Input[bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        :param pulumi.Input[bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+        :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
@@ -1827,6 +2235,7 @@ class DeployStage(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  approval_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageApprovalPolicyArgs']]] = None,
+                 are_hooks_enabled: Optional[pulumi.Input[bool]] = None,
                  blue_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']]] = None,
                  blue_green_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']]] = None,
                  canary_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']]] = None,
@@ -1856,9 +2265,12 @@ class DeployStage(pulumi.CustomResource):
                  green_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']]] = None,
                  helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  is_async: Optional[pulumi.Input[bool]] = None,
+                 is_debug_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_force_enabled: Optional[pulumi.Input[bool]] = None,
                  is_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageLoadBalancerConfigArgs']]] = None,
+                 max_history: Optional[pulumi.Input[int]] = None,
                  max_memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  oke_blue_green_deploy_stage_id: Optional[pulumi.Input[str]] = None,
@@ -1869,6 +2281,14 @@ class DeployStage(pulumi.CustomResource):
                  release_name: Optional[pulumi.Input[str]] = None,
                  rollback_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']]] = None,
                  rollout_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']]] = None,
+                 set_string: Optional[pulumi.Input[pulumi.InputType['DeployStageSetStringArgs']]] = None,
+                 set_values: Optional[pulumi.Input[pulumi.InputType['DeployStageSetValuesArgs']]] = None,
+                 should_cleanup_on_fail: Optional[pulumi.Input[bool]] = None,
+                 should_not_wait: Optional[pulumi.Input[bool]] = None,
+                 should_reset_values: Optional[pulumi.Input[bool]] = None,
+                 should_reuse_values: Optional[pulumi.Input[bool]] = None,
+                 should_skip_crds: Optional[pulumi.Input[bool]] = None,
+                 should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
                  test_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  traffic_shift_target: Optional[pulumi.Input[str]] = None,
@@ -1884,6 +2304,7 @@ class DeployStage(pulumi.CustomResource):
             __props__ = DeployStageArgs.__new__(DeployStageArgs)
 
             __props__.__dict__["approval_policy"] = approval_policy
+            __props__.__dict__["are_hooks_enabled"] = are_hooks_enabled
             __props__.__dict__["blue_backend_ips"] = blue_backend_ips
             __props__.__dict__["blue_green_strategy"] = blue_green_strategy
             __props__.__dict__["canary_strategy"] = canary_strategy
@@ -1919,9 +2340,12 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["green_backend_ips"] = green_backend_ips
             __props__.__dict__["helm_chart_deploy_artifact_id"] = helm_chart_deploy_artifact_id
             __props__.__dict__["is_async"] = is_async
+            __props__.__dict__["is_debug_enabled"] = is_debug_enabled
+            __props__.__dict__["is_force_enabled"] = is_force_enabled
             __props__.__dict__["is_validation_enabled"] = is_validation_enabled
             __props__.__dict__["kubernetes_manifest_deploy_artifact_ids"] = kubernetes_manifest_deploy_artifact_ids
             __props__.__dict__["load_balancer_config"] = load_balancer_config
+            __props__.__dict__["max_history"] = max_history
             __props__.__dict__["max_memory_in_mbs"] = max_memory_in_mbs
             __props__.__dict__["namespace"] = namespace
             __props__.__dict__["oke_blue_green_deploy_stage_id"] = oke_blue_green_deploy_stage_id
@@ -1932,6 +2356,14 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["release_name"] = release_name
             __props__.__dict__["rollback_policy"] = rollback_policy
             __props__.__dict__["rollout_policy"] = rollout_policy
+            __props__.__dict__["set_string"] = set_string
+            __props__.__dict__["set_values"] = set_values
+            __props__.__dict__["should_cleanup_on_fail"] = should_cleanup_on_fail
+            __props__.__dict__["should_not_wait"] = should_not_wait
+            __props__.__dict__["should_reset_values"] = should_reset_values
+            __props__.__dict__["should_reuse_values"] = should_reuse_values
+            __props__.__dict__["should_skip_crds"] = should_skip_crds
+            __props__.__dict__["should_skip_render_subchart_notes"] = should_skip_render_subchart_notes
             __props__.__dict__["test_load_balancer_config"] = test_load_balancer_config
             __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
             __props__.__dict__["traffic_shift_target"] = traffic_shift_target
@@ -1955,6 +2387,7 @@ class DeployStage(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             approval_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageApprovalPolicyArgs']]] = None,
+            are_hooks_enabled: Optional[pulumi.Input[bool]] = None,
             blue_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']]] = None,
             blue_green_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']]] = None,
             canary_strategy: Optional[pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']]] = None,
@@ -1985,10 +2418,13 @@ class DeployStage(pulumi.CustomResource):
             green_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']]] = None,
             helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
             is_async: Optional[pulumi.Input[bool]] = None,
+            is_debug_enabled: Optional[pulumi.Input[bool]] = None,
+            is_force_enabled: Optional[pulumi.Input[bool]] = None,
             is_validation_enabled: Optional[pulumi.Input[bool]] = None,
             kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageLoadBalancerConfigArgs']]] = None,
+            max_history: Optional[pulumi.Input[int]] = None,
             max_memory_in_mbs: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             oke_blue_green_deploy_stage_id: Optional[pulumi.Input[str]] = None,
@@ -2000,6 +2436,14 @@ class DeployStage(pulumi.CustomResource):
             release_name: Optional[pulumi.Input[str]] = None,
             rollback_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']]] = None,
             rollout_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']]] = None,
+            set_string: Optional[pulumi.Input[pulumi.InputType['DeployStageSetStringArgs']]] = None,
+            set_values: Optional[pulumi.Input[pulumi.InputType['DeployStageSetValuesArgs']]] = None,
+            should_cleanup_on_fail: Optional[pulumi.Input[bool]] = None,
+            should_not_wait: Optional[pulumi.Input[bool]] = None,
+            should_reset_values: Optional[pulumi.Input[bool]] = None,
+            should_reuse_values: Optional[pulumi.Input[bool]] = None,
+            should_skip_crds: Optional[pulumi.Input[bool]] = None,
+            should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             test_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']]] = None,
@@ -2017,6 +2461,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['DeployStageApprovalPolicyArgs']] approval_policy: (Updatable) Specifies the approval policy.
+        :param pulumi.Input[bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
         :param pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
@@ -2047,10 +2492,13 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
+        :param pulumi.Input[bool] is_debug_enabled: (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        :param pulumi.Input[bool] is_force_enabled: (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
         :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[pulumi.InputType['DeployStageLoadBalancerConfigArgs']] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         :param pulumi.Input[str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
         :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
         :param pulumi.Input[str] oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
@@ -2062,9 +2510,17 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         :param pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
+        :param pulumi.Input[pulumi.InputType['DeployStageSetStringArgs']] set_string: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[pulumi.InputType['DeployStageSetValuesArgs']] set_values: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        :param pulumi.Input[bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        :param pulumi.Input[bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        :param pulumi.Input[bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
         :param pulumi.Input[str] state: The current state of the deployment stage.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
@@ -2077,6 +2533,7 @@ class DeployStage(pulumi.CustomResource):
         __props__ = _DeployStageState.__new__(_DeployStageState)
 
         __props__.__dict__["approval_policy"] = approval_policy
+        __props__.__dict__["are_hooks_enabled"] = are_hooks_enabled
         __props__.__dict__["blue_backend_ips"] = blue_backend_ips
         __props__.__dict__["blue_green_strategy"] = blue_green_strategy
         __props__.__dict__["canary_strategy"] = canary_strategy
@@ -2107,10 +2564,13 @@ class DeployStage(pulumi.CustomResource):
         __props__.__dict__["green_backend_ips"] = green_backend_ips
         __props__.__dict__["helm_chart_deploy_artifact_id"] = helm_chart_deploy_artifact_id
         __props__.__dict__["is_async"] = is_async
+        __props__.__dict__["is_debug_enabled"] = is_debug_enabled
+        __props__.__dict__["is_force_enabled"] = is_force_enabled
         __props__.__dict__["is_validation_enabled"] = is_validation_enabled
         __props__.__dict__["kubernetes_manifest_deploy_artifact_ids"] = kubernetes_manifest_deploy_artifact_ids
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["load_balancer_config"] = load_balancer_config
+        __props__.__dict__["max_history"] = max_history
         __props__.__dict__["max_memory_in_mbs"] = max_memory_in_mbs
         __props__.__dict__["namespace"] = namespace
         __props__.__dict__["oke_blue_green_deploy_stage_id"] = oke_blue_green_deploy_stage_id
@@ -2122,6 +2582,14 @@ class DeployStage(pulumi.CustomResource):
         __props__.__dict__["release_name"] = release_name
         __props__.__dict__["rollback_policy"] = rollback_policy
         __props__.__dict__["rollout_policy"] = rollout_policy
+        __props__.__dict__["set_string"] = set_string
+        __props__.__dict__["set_values"] = set_values
+        __props__.__dict__["should_cleanup_on_fail"] = should_cleanup_on_fail
+        __props__.__dict__["should_not_wait"] = should_not_wait
+        __props__.__dict__["should_reset_values"] = should_reset_values
+        __props__.__dict__["should_reuse_values"] = should_reuse_values
+        __props__.__dict__["should_skip_crds"] = should_skip_crds
+        __props__.__dict__["should_skip_render_subchart_notes"] = should_skip_render_subchart_notes
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["test_load_balancer_config"] = test_load_balancer_config
@@ -2140,6 +2608,14 @@ class DeployStage(pulumi.CustomResource):
         (Updatable) Specifies the approval policy.
         """
         return pulumi.get(self, "approval_policy")
+
+    @property
+    @pulumi.getter(name="areHooksEnabled")
+    def are_hooks_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Disable pre/post upgrade hooks. Set to false by default.
+        """
+        return pulumi.get(self, "are_hooks_enabled")
 
     @property
     @pulumi.getter(name="blueBackendIps")
@@ -2382,6 +2858,22 @@ class DeployStage(pulumi.CustomResource):
         return pulumi.get(self, "is_async")
 
     @property
+    @pulumi.getter(name="isDebugEnabled")
+    def is_debug_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
+        """
+        return pulumi.get(self, "is_debug_enabled")
+
+    @property
+    @pulumi.getter(name="isForceEnabled")
+    def is_force_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
+        """
+        return pulumi.get(self, "is_force_enabled")
+
+    @property
     @pulumi.getter(name="isValidationEnabled")
     def is_validation_enabled(self) -> pulumi.Output[bool]:
         """
@@ -2412,6 +2904,14 @@ class DeployStage(pulumi.CustomResource):
         (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         """
         return pulumi.get(self, "load_balancer_config")
+
+    @property
+    @pulumi.getter(name="maxHistory")
+    def max_history(self) -> pulumi.Output[int]:
+        """
+        (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+        """
+        return pulumi.get(self, "max_history")
 
     @property
     @pulumi.getter(name="maxMemoryInMbs")
@@ -2502,6 +3002,70 @@ class DeployStage(pulumi.CustomResource):
         return pulumi.get(self, "rollout_policy")
 
     @property
+    @pulumi.getter(name="setString")
+    def set_string(self) -> pulumi.Output['outputs.DeployStageSetString']:
+        """
+        (Updatable) Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_string")
+
+    @property
+    @pulumi.getter(name="setValues")
+    def set_values(self) -> pulumi.Output['outputs.DeployStageSetValues']:
+        """
+        (Updatable) Specifies the name and value pairs to set helm values.
+        """
+        return pulumi.get(self, "set_values")
+
+    @property
+    @pulumi.getter(name="shouldCleanupOnFail")
+    def should_cleanup_on_fail(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+        """
+        return pulumi.get(self, "should_cleanup_on_fail")
+
+    @property
+    @pulumi.getter(name="shouldNotWait")
+    def should_not_wait(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+        """
+        return pulumi.get(self, "should_not_wait")
+
+    @property
+    @pulumi.getter(name="shouldResetValues")
+    def should_reset_values(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+        """
+        return pulumi.get(self, "should_reset_values")
+
+    @property
+    @pulumi.getter(name="shouldReuseValues")
+    def should_reuse_values(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+        """
+        return pulumi.get(self, "should_reuse_values")
+
+    @property
+    @pulumi.getter(name="shouldSkipCrds")
+    def should_skip_crds(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_crds")
+
+    @property
+    @pulumi.getter(name="shouldSkipRenderSubchartNotes")
+    def should_skip_render_subchart_notes(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
+        """
+        return pulumi.get(self, "should_skip_render_subchart_notes")
+
+    @property
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
@@ -2521,7 +3085,7 @@ class DeployStage(pulumi.CustomResource):
     @pulumi.getter(name="testLoadBalancerConfig")
     def test_load_balancer_config(self) -> pulumi.Output['outputs.DeployStageTestLoadBalancerConfig']:
         """
-        (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "test_load_balancer_config")
 

@@ -31,6 +31,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DevOps.DeployArtifact;
  * import com.pulumi.oci.DevOps.DeployArtifactArgs;
  * import com.pulumi.oci.DevOps.inputs.DeployArtifactDeployArtifactSourceArgs;
+ * import com.pulumi.oci.DevOps.inputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -52,6 +53,12 @@ import javax.annotation.Nullable;
  *                 .chartUrl(var_.deploy_artifact_deploy_artifact_source_chart_url())
  *                 .deployArtifactPath(var_.deploy_artifact_deploy_artifact_source_deploy_artifact_path())
  *                 .deployArtifactVersion(var_.deploy_artifact_deploy_artifact_source_deploy_artifact_version())
+ *                 .helmVerificationKeySource(DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs.builder()
+ *                     .verificationKeySourceType(var_.deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type())
+ *                     .currentPublicKey(var_.deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key())
+ *                     .previousPublicKey(var_.deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key())
+ *                     .vaultSecretId(oci_vault_secret.test_secret().id())
+ *                     .build())
  *                 .imageDigest(var_.deploy_artifact_deploy_artifact_source_image_digest())
  *                 .imageUri(var_.deploy_artifact_deploy_artifact_source_image_uri())
  *                 .repositoryId(oci_devops_repository.test_repository().id())

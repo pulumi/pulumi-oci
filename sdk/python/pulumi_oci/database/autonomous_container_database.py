@@ -24,7 +24,9 @@ class AutonomousContainerDatabaseArgs:
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
+                 db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
@@ -41,7 +43,8 @@ class AutonomousContainerDatabaseArgs:
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  service_level_agreement_type: Optional[pulumi.Input[str]] = None,
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
-                 vault_id: Optional[pulumi.Input[str]] = None):
+                 vault_id: Optional[pulumi.Input[str]] = None,
+                 version_preference: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabase resource.
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -51,9 +54,11 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+        :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -67,6 +72,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
         :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "patch_model", patch_model)
@@ -82,8 +88,12 @@ class AutonomousContainerDatabaseArgs:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if db_unique_name is not None:
             pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if db_version is not None:
+            pulumi.set(__self__, "db_version", db_version)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_automatic_failover_enabled is not None:
@@ -118,6 +128,8 @@ class AutonomousContainerDatabaseArgs:
             pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if version_preference is not None:
+            pulumi.set(__self__, "version_preference", version_preference)
 
     @property
     @pulumi.getter(name="displayName")
@@ -213,6 +225,18 @@ class AutonomousContainerDatabaseArgs:
         pulumi.set(self, "db_unique_name", value)
 
     @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The base version for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @db_version.setter
+    def db_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_version", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -223,6 +247,18 @@ class AutonomousContainerDatabaseArgs:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "fast_start_fail_over_lag_limit_in_seconds", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -240,7 +276,7 @@ class AutonomousContainerDatabaseArgs:
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -422,6 +458,18 @@ class AutonomousContainerDatabaseArgs:
     def vault_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vault_id", value)
 
+    @property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The next maintenance version preference.
+        """
+        return pulumi.get(self, "version_preference")
+
+    @version_preference.setter
+    def version_preference(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version_preference", value)
+
 
 @pulumi.input_type
 class _AutonomousContainerDatabaseState:
@@ -438,6 +486,7 @@ class _AutonomousContainerDatabaseState:
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  infrastructure_type: Optional[pulumi.Input[str]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -469,8 +518,10 @@ class _AutonomousContainerDatabaseState:
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_snapshot_standby_revert: Optional[pulumi.Input[str]] = None,
                  total_cpus: Optional[pulumi.Input[int]] = None,
-                 vault_id: Optional[pulumi.Input[str]] = None):
+                 vault_id: Optional[pulumi.Input[str]] = None,
+                 version_preference: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabase resources.
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -480,12 +531,13 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        :param pulumi.Input[str] db_version: Oracle Database version of the Autonomous Container Database.
+        :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
+        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
-        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -512,8 +564,10 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
         :param pulumi.Input[str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[str] time_created: The date and time the Autonomous Container Database was created.
+        :param pulumi.Input[str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         :param pulumi.Input[int] total_cpus: The number of CPU cores allocated to the Autonomous VM cluster.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
         if autonomous_exadata_infrastructure_id is not None:
             pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
@@ -539,6 +593,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if infrastructure_type is not None:
@@ -601,10 +657,14 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_snapshot_standby_revert is not None:
+            pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
         if total_cpus is not None:
             pulumi.set(__self__, "total_cpus", total_cpus)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if version_preference is not None:
+            pulumi.set(__self__, "version_preference", version_preference)
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -712,7 +772,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
         """
-        Oracle Database version of the Autonomous Container Database.
+        The base version for the Autonomous Container Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -745,6 +805,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "fast_start_fail_over_lag_limit_in_seconds", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -772,7 +844,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -1111,6 +1183,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeSnapshotStandbyRevert")
+    def time_snapshot_standby_revert(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        """
+        return pulumi.get(self, "time_snapshot_standby_revert")
+
+    @time_snapshot_standby_revert.setter
+    def time_snapshot_standby_revert(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_snapshot_standby_revert", value)
+
+    @property
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> Optional[pulumi.Input[int]]:
         """
@@ -1134,6 +1218,18 @@ class _AutonomousContainerDatabaseState:
     def vault_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vault_id", value)
 
+    @property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The next maintenance version preference.
+        """
+        return pulumi.get(self, "version_preference")
+
+    @version_preference.setter
+    def version_preference(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version_preference", value)
+
 
 class AutonomousContainerDatabase(pulumi.CustomResource):
     @overload
@@ -1146,8 +1242,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
+                 db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
@@ -1166,6 +1264,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  service_level_agreement_type: Optional[pulumi.Input[str]] = None,
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
+                 version_preference: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -1195,9 +1294,11 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             ),
             compartment_id=var["compartment_id"],
             db_unique_name=var["autonomous_container_database_db_unique_name"],
+            db_version=var["autonomous_container_database_db_version"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
+            fast_start_fail_over_lag_limit_in_seconds=var["autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds"],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1238,6 +1339,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             peer_db_unique_name=var["autonomous_container_database_peer_db_unique_name"],
             service_level_agreement_type=var["autonomous_container_database_service_level_agreement_type"],
             vault_id=oci_kms_vault["test_vault"]["id"],
+            version_preference=var["autonomous_container_database_version_preference"],
             standby_maintenance_buffer_in_days=var["autonomous_container_database_standby_maintenance_buffer_in_days"])
         ```
 
@@ -1256,10 +1358,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+        :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
+        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -1274,6 +1378,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
         :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
         ...
     @overload
@@ -1309,9 +1414,11 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             ),
             compartment_id=var["compartment_id"],
             db_unique_name=var["autonomous_container_database_db_unique_name"],
+            db_version=var["autonomous_container_database_db_version"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
+            fast_start_fail_over_lag_limit_in_seconds=var["autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds"],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1352,6 +1459,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             peer_db_unique_name=var["autonomous_container_database_peer_db_unique_name"],
             service_level_agreement_type=var["autonomous_container_database_service_level_agreement_type"],
             vault_id=oci_kms_vault["test_vault"]["id"],
+            version_preference=var["autonomous_container_database_version_preference"],
             standby_maintenance_buffer_in_days=var["autonomous_container_database_standby_maintenance_buffer_in_days"])
         ```
 
@@ -1384,8 +1492,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
+                 db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
@@ -1404,6 +1514,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  service_level_agreement_type: Optional[pulumi.Input[str]] = None,
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
+                 version_preference: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1419,10 +1530,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["db_unique_name"] = db_unique_name
+            __props__.__dict__["db_version"] = db_version
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["fast_start_fail_over_lag_limit_in_seconds"] = fast_start_fail_over_lag_limit_in_seconds
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
             __props__.__dict__["key_store_id"] = key_store_id
@@ -1443,10 +1556,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["service_level_agreement_type"] = service_level_agreement_type
             __props__.__dict__["standby_maintenance_buffer_in_days"] = standby_maintenance_buffer_in_days
             __props__.__dict__["vault_id"] = vault_id
+            __props__.__dict__["version_preference"] = version_preference
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["available_cpus"] = None
             __props__.__dict__["compute_model"] = None
-            __props__.__dict__["db_version"] = None
             __props__.__dict__["infrastructure_type"] = None
             __props__.__dict__["key_history_entries"] = None
             __props__.__dict__["key_store_wallet_name"] = None
@@ -1461,6 +1574,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["role"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_snapshot_standby_revert"] = None
             __props__.__dict__["total_cpus"] = None
         super(AutonomousContainerDatabase, __self__).__init__(
             'oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase',
@@ -1484,6 +1598,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             db_version: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             infrastructure_type: Optional[pulumi.Input[str]] = None,
             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1515,8 +1630,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_snapshot_standby_revert: Optional[pulumi.Input[str]] = None,
             total_cpus: Optional[pulumi.Input[int]] = None,
-            vault_id: Optional[pulumi.Input[str]] = None) -> 'AutonomousContainerDatabase':
+            vault_id: Optional[pulumi.Input[str]] = None,
+            version_preference: Optional[pulumi.Input[str]] = None) -> 'AutonomousContainerDatabase':
         """
         Get an existing AutonomousContainerDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1531,12 +1648,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        :param pulumi.Input[str] db_version: Oracle Database version of the Autonomous Container Database.
+        :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
+        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
-        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -1563,8 +1681,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
         :param pulumi.Input[str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[str] time_created: The date and time the Autonomous Container Database was created.
+        :param pulumi.Input[str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         :param pulumi.Input[int] total_cpus: The number of CPU cores allocated to the Autonomous VM cluster.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1582,6 +1702,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["db_version"] = db_version
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["fast_start_fail_over_lag_limit_in_seconds"] = fast_start_fail_over_lag_limit_in_seconds
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["infrastructure_type"] = infrastructure_type
         __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
@@ -1613,8 +1734,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["standby_maintenance_buffer_in_days"] = standby_maintenance_buffer_in_days
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_snapshot_standby_revert"] = time_snapshot_standby_revert
         __props__.__dict__["total_cpus"] = total_cpus
         __props__.__dict__["vault_id"] = vault_id
+        __props__.__dict__["version_preference"] = version_preference
         return AutonomousContainerDatabase(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1687,7 +1810,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Output[str]:
         """
-        Oracle Database version of the Autonomous Container Database.
+        The base version for the Autonomous Container Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -1706,6 +1829,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         (Updatable) The display name for the Autonomous Container Database.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> pulumi.Output[int]:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -1727,7 +1858,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> pulumi.Output[bool]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -1950,6 +2081,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeSnapshotStandbyRevert")
+    def time_snapshot_standby_revert(self) -> pulumi.Output[str]:
+        """
+        The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        """
+        return pulumi.get(self, "time_snapshot_standby_revert")
+
+    @property
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> pulumi.Output[int]:
         """
@@ -1964,4 +2103,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The next maintenance version preference.
+        """
+        return pulumi.get(self, "version_preference")
 

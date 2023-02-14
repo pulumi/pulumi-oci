@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.AutonomousContainerDatabaseDataguardAssociationAr
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardAssociationState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
@@ -87,14 +88,28 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.autonomousContainerDatabaseId;
     }
     /**
-     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    @Export(name="fastStartFailOverLagLimitInSeconds", type=Integer.class, parameters={})
+    private Output<Integer> fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * @return (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
+    public Output<Integer> fastStartFailOverLagLimitInSeconds() {
+        return this.fastStartFailOverLagLimitInSeconds;
+    }
+    /**
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
      */
     @Export(name="isAutomaticFailoverEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
      */
     public Output<Boolean> isAutomaticFailoverEnabled() {
@@ -171,14 +186,14 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.peerRole;
     }
     /**
-     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
     @Export(name="protectionMode", type=String.class, parameters={})
     private Output<String> protectionMode;
 
     /**
-     * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * @return (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
     public Output<String> protectionMode() {

@@ -87,6 +87,7 @@ export interface GetAutonomousContainerDatabaseResult {
      * The user-provided name for the Autonomous Container Database.
      */
     readonly displayName: string;
+    readonly fastStartFailOverLagLimitInSeconds: number;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -183,6 +184,10 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly timeCreated: string;
     /**
+     * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+     */
+    readonly timeSnapshotStandbyRevert: string;
+    /**
      * The number of CPU cores allocated to the Autonomous VM cluster.
      */
     readonly totalCpus: number;
@@ -190,6 +195,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     readonly vaultId: string;
+    /**
+     * The next maintenance version preference.
+     */
+    readonly versionPreference: string;
 }
 /**
  * This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.

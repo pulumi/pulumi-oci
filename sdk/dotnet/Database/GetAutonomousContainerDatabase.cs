@@ -146,6 +146,7 @@ namespace Pulumi.Oci.Database
         /// The user-provided name for the Autonomous Container Database.
         /// </summary>
         public readonly string DisplayName;
+        public readonly int FastStartFailOverLagLimitInSeconds;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -242,6 +243,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        /// </summary>
+        public readonly string TimeSnapshotStandbyRevert;
+        /// <summary>
         /// The number of CPU cores allocated to the Autonomous VM cluster.
         /// </summary>
         public readonly int TotalCpus;
@@ -249,6 +254,10 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         public readonly string VaultId;
+        /// <summary>
+        /// The next maintenance version preference.
+        /// </summary>
+        public readonly string VersionPreference;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseResult(
@@ -277,6 +286,8 @@ namespace Pulumi.Oci.Database
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
+
+            int fastStartFailOverLagLimitInSeconds,
 
             ImmutableDictionary<string, object> freeformTags,
 
@@ -342,9 +353,13 @@ namespace Pulumi.Oci.Database
 
             string timeCreated,
 
+            string timeSnapshotStandbyRevert,
+
             int totalCpus,
 
-            string vaultId)
+            string vaultId,
+
+            string versionPreference)
         {
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
@@ -359,6 +374,7 @@ namespace Pulumi.Oci.Database
             DbVersion = dbVersion;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            FastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             FreeformTags = freeformTags;
             Id = id;
             InfrastructureType = infrastructureType;
@@ -391,8 +407,10 @@ namespace Pulumi.Oci.Database
             StandbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             State = state;
             TimeCreated = timeCreated;
+            TimeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
             TotalCpus = totalCpus;
             VaultId = vaultId;
+            VersionPreference = versionPreference;
         }
     }
 }

@@ -29,8 +29,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
     ///         ModelTrainingDetails = new Oci.AiAnomalyDetection.Inputs.ModelModelTrainingDetailsArgs
     ///         {
     ///             DataAssetIds = @var.Model_model_training_details_data_asset_ids,
+    ///             AlgorithmHint = @var.Model_model_training_details_algorithm_hint,
     ///             TargetFap = @var.Model_model_training_details_target_fap,
     ///             TrainingFraction = @var.Model_model_training_details_training_fraction,
+    ///             WindowSize = @var.Model_model_training_details_window_size,
     ///         },
     ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
     ///         DefinedTags = 

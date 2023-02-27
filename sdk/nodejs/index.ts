@@ -100,6 +100,7 @@ import * as osuborganizationsubscription from "./osuborganizationsubscription";
 import * as osubsubscription from "./osubsubscription";
 import * as osubusage from "./osubusage";
 import * as queue from "./queue";
+import * as recoverymod from "./recoverymod";
 import * as resourcemanager from "./resourcemanager";
 import * as sch from "./sch";
 import * as secrets from "./secrets";
@@ -111,6 +112,7 @@ import * as streaming from "./streaming";
 import * as types from "./types";
 import * as usageproxy from "./usageproxy";
 import * as vault from "./vault";
+import * as vbs from "./vbs";
 import * as visualbuilder from "./visualbuilder";
 import * as vnmonitoring from "./vnmonitoring";
 import * as vulnerabilityscanning from "./vulnerabilityscanning";
@@ -207,6 +209,7 @@ export {
     osubsubscription,
     osubusage,
     queue,
+    recoverymod,
     resourcemanager,
     sch,
     secrets,
@@ -218,6 +221,7 @@ export {
     types,
     usageproxy,
     vault,
+    vbs,
     visualbuilder,
     vnmonitoring,
     vulnerabilityscanning,

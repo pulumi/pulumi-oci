@@ -15,6 +15,56 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAs
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmDiskGroupsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmDiskGroupsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstanceArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmUsersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmUsersPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstanceArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomeArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodeArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveriesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveriesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveryArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveryPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesArgs;
@@ -119,6 +169,31 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointA
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabasesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmConfigurationResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmDiskGroupsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmInstanceResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmInstancesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmUsersResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClusterInstanceResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClusterInstancesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClusterResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClustersResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbHomeResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbHomesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbNodeResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbNodesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerServicesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenersResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetJobExecutionsStatusResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetJobExecutionsStatusesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTaskResult;
@@ -820,6 +895,4732 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpointsPlain(GetDbManagementPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", TypeShape.of(GetDbManagementPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmResult> getExternalAsm(GetExternalAsmArgs args) {
+        return getExternalAsm(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmResult> getExternalAsmPlain(GetExternalAsmPlainArgs args) {
+        return getExternalAsmPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmResult> getExternalAsm(GetExternalAsmArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsm:getExternalAsm", TypeShape.of(GetExternalAsmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmResult> getExternalAsmPlain(GetExternalAsmPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsm:getExternalAsm", TypeShape.of(GetExternalAsmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmConfigurationResult> getExternalAsmConfiguration(GetExternalAsmConfigurationArgs args) {
+        return getExternalAsmConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmConfigurationResult> getExternalAsmConfigurationPlain(GetExternalAsmConfigurationPlainArgs args) {
+        return getExternalAsmConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmConfigurationResult> getExternalAsmConfiguration(GetExternalAsmConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", TypeShape.of(GetExternalAsmConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmConfigurationResult> getExternalAsmConfigurationPlain(GetExternalAsmConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", TypeShape.of(GetExternalAsmConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs args) {
+        return getExternalAsmDiskGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroupsPlain(GetExternalAsmDiskGroupsPlainArgs args) {
+        return getExternalAsmDiskGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", TypeShape.of(GetExternalAsmDiskGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroupsPlain(GetExternalAsmDiskGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", TypeShape.of(GetExternalAsmDiskGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
+     *             .externalAsmInstanceId(oci_database_management_external_asm_instance.test_external_asm_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmInstanceResult> getExternalAsmInstance(GetExternalAsmInstanceArgs args) {
+        return getExternalAsmInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
+     *             .externalAsmInstanceId(oci_database_management_external_asm_instance.test_external_asm_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmInstanceResult> getExternalAsmInstancePlain(GetExternalAsmInstancePlainArgs args) {
+        return getExternalAsmInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
+     *             .externalAsmInstanceId(oci_database_management_external_asm_instance.test_external_asm_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmInstanceResult> getExternalAsmInstance(GetExternalAsmInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", TypeShape.of(GetExternalAsmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
+     *             .externalAsmInstanceId(oci_database_management_external_asm_instance.test_external_asm_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmInstanceResult> getExternalAsmInstancePlain(GetExternalAsmInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", TypeShape.of(GetExternalAsmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified external ASM.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_instance_display_name())
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmInstancesResult> getExternalAsmInstances() {
+        return getExternalAsmInstances(GetExternalAsmInstancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified external ASM.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_instance_display_name())
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmInstancesResult> getExternalAsmInstancesPlain() {
+        return getExternalAsmInstancesPlain(GetExternalAsmInstancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified external ASM.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_instance_display_name())
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmInstancesResult> getExternalAsmInstances(GetExternalAsmInstancesArgs args) {
+        return getExternalAsmInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified external ASM.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_instance_display_name())
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmInstancesResult> getExternalAsmInstancesPlain(GetExternalAsmInstancesPlainArgs args) {
+        return getExternalAsmInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified external ASM.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_instance_display_name())
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmInstancesResult> getExternalAsmInstances(GetExternalAsmInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmInstances:getExternalAsmInstances", TypeShape.of(GetExternalAsmInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified external ASM.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_instance_display_name())
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmInstancesResult> getExternalAsmInstancesPlain(GetExternalAsmInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsmInstances:getExternalAsmInstances", TypeShape.of(GetExternalAsmInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmUsersResult> getExternalAsmUsers(GetExternalAsmUsersArgs args) {
+        return getExternalAsmUsers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmUsersResult> getExternalAsmUsersPlain(GetExternalAsmUsersPlainArgs args) {
+        return getExternalAsmUsersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmUsersResult> getExternalAsmUsers(GetExternalAsmUsersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", TypeShape.of(GetExternalAsmUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
+     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmUsersResult> getExternalAsmUsersPlain(GetExternalAsmUsersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", TypeShape.of(GetExternalAsmUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmsResult> getExternalAsms() {
+        return getExternalAsms(GetExternalAsmsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmsResult> getExternalAsmsPlain() {
+        return getExternalAsmsPlain(GetExternalAsmsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmsResult> getExternalAsms(GetExternalAsmsArgs args) {
+        return getExternalAsms(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmsResult> getExternalAsmsPlain(GetExternalAsmsPlainArgs args) {
+        return getExternalAsmsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalAsmsResult> getExternalAsms(GetExternalAsmsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsms:getExternalAsms", TypeShape.of(GetExternalAsmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_asm_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalAsmsResult> getExternalAsmsPlain(GetExternalAsmsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsms:getExternalAsms", TypeShape.of(GetExternalAsmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster specified by `externalClusterId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClusterResult> getExternalCluster(GetExternalClusterArgs args) {
+        return getExternalCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster specified by `externalClusterId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClusterResult> getExternalClusterPlain(GetExternalClusterPlainArgs args) {
+        return getExternalClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster specified by `externalClusterId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClusterResult> getExternalCluster(GetExternalClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalCluster:getExternalCluster", TypeShape.of(GetExternalClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster specified by `externalClusterId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClusterResult> getExternalClusterPlain(GetExternalClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalCluster:getExternalCluster", TypeShape.of(GetExternalClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
+     *             .externalClusterInstanceId(oci_database_management_external_cluster_instance.test_external_cluster_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClusterInstanceResult> getExternalClusterInstance(GetExternalClusterInstanceArgs args) {
+        return getExternalClusterInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
+     *             .externalClusterInstanceId(oci_database_management_external_cluster_instance.test_external_cluster_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClusterInstanceResult> getExternalClusterInstancePlain(GetExternalClusterInstancePlainArgs args) {
+        return getExternalClusterInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
+     *             .externalClusterInstanceId(oci_database_management_external_cluster_instance.test_external_cluster_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClusterInstanceResult> getExternalClusterInstance(GetExternalClusterInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", TypeShape.of(GetExternalClusterInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
+     *             .externalClusterInstanceId(oci_database_management_external_cluster_instance.test_external_cluster_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClusterInstanceResult> getExternalClusterInstancePlain(GetExternalClusterInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", TypeShape.of(GetExternalClusterInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified external cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_instance_display_name())
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClusterInstancesResult> getExternalClusterInstances() {
+        return getExternalClusterInstances(GetExternalClusterInstancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified external cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_instance_display_name())
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClusterInstancesResult> getExternalClusterInstancesPlain() {
+        return getExternalClusterInstancesPlain(GetExternalClusterInstancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified external cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_instance_display_name())
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClusterInstancesResult> getExternalClusterInstances(GetExternalClusterInstancesArgs args) {
+        return getExternalClusterInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified external cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_instance_display_name())
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClusterInstancesResult> getExternalClusterInstancesPlain(GetExternalClusterInstancesPlainArgs args) {
+        return getExternalClusterInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified external cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_instance_display_name())
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClusterInstancesResult> getExternalClusterInstances(GetExternalClusterInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalClusterInstances:getExternalClusterInstances", TypeShape.of(GetExternalClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified external cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_instance_display_name())
+     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClusterInstancesResult> getExternalClusterInstancesPlain(GetExternalClusterInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalClusterInstances:getExternalClusterInstances", TypeShape.of(GetExternalClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClustersResult> getExternalClusters() {
+        return getExternalClusters(GetExternalClustersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClustersResult> getExternalClustersPlain() {
+        return getExternalClustersPlain(GetExternalClustersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClustersResult> getExternalClusters(GetExternalClustersArgs args) {
+        return getExternalClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClustersResult> getExternalClustersPlain(GetExternalClustersPlainArgs args) {
+        return getExternalClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalClustersResult> getExternalClusters(GetExternalClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalClusters:getExternalClusters", TypeShape.of(GetExternalClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_cluster_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalClustersResult> getExternalClustersPlain(GetExternalClustersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalClusters:getExternalClusters", TypeShape.of(GetExternalClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_database_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDatabasesResult> getExternalDatabases() {
+        return getExternalDatabases(GetExternalDatabasesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_database_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDatabasesResult> getExternalDatabasesPlain() {
+        return getExternalDatabasesPlain(GetExternalDatabasesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_database_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDatabasesResult> getExternalDatabases(GetExternalDatabasesArgs args) {
+        return getExternalDatabases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_database_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDatabasesResult> getExternalDatabasesPlain(GetExternalDatabasesPlainArgs args) {
+        return getExternalDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_database_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDatabasesResult> getExternalDatabases(GetExternalDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", TypeShape.of(GetExternalDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_database_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDatabasesResult> getExternalDatabasesPlain(GetExternalDatabasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", TypeShape.of(GetExternalDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB home specified by `externalDbHomeId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
+     *             .externalDbHomeId(oci_database_management_external_db_home.test_external_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbHomeResult> getExternalDbHome(GetExternalDbHomeArgs args) {
+        return getExternalDbHome(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB home specified by `externalDbHomeId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
+     *             .externalDbHomeId(oci_database_management_external_db_home.test_external_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbHomeResult> getExternalDbHomePlain(GetExternalDbHomePlainArgs args) {
+        return getExternalDbHomePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB home specified by `externalDbHomeId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
+     *             .externalDbHomeId(oci_database_management_external_db_home.test_external_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbHomeResult> getExternalDbHome(GetExternalDbHomeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", TypeShape.of(GetExternalDbHomeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB home specified by `externalDbHomeId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
+     *             .externalDbHomeId(oci_database_management_external_db_home.test_external_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbHomeResult> getExternalDbHomePlain(GetExternalDbHomePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", TypeShape.of(GetExternalDbHomeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_home_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbHomesResult> getExternalDbHomes() {
+        return getExternalDbHomes(GetExternalDbHomesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_home_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbHomesResult> getExternalDbHomesPlain() {
+        return getExternalDbHomesPlain(GetExternalDbHomesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_home_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbHomesResult> getExternalDbHomes(GetExternalDbHomesArgs args) {
+        return getExternalDbHomes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_home_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbHomesResult> getExternalDbHomesPlain(GetExternalDbHomesPlainArgs args) {
+        return getExternalDbHomesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_home_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbHomesResult> getExternalDbHomes(GetExternalDbHomesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", TypeShape.of(GetExternalDbHomesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_home_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbHomesResult> getExternalDbHomesPlain(GetExternalDbHomesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", TypeShape.of(GetExternalDbHomesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB node specified by `externalDbNodeId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
+     *             .externalDbNodeId(oci_database_management_external_db_node.test_external_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbNodeResult> getExternalDbNode(GetExternalDbNodeArgs args) {
+        return getExternalDbNode(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB node specified by `externalDbNodeId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
+     *             .externalDbNodeId(oci_database_management_external_db_node.test_external_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbNodeResult> getExternalDbNodePlain(GetExternalDbNodePlainArgs args) {
+        return getExternalDbNodePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB node specified by `externalDbNodeId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
+     *             .externalDbNodeId(oci_database_management_external_db_node.test_external_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbNodeResult> getExternalDbNode(GetExternalDbNodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", TypeShape.of(GetExternalDbNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB node specified by `externalDbNodeId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
+     *             .externalDbNodeId(oci_database_management_external_db_node.test_external_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbNodeResult> getExternalDbNodePlain(GetExternalDbNodePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", TypeShape.of(GetExternalDbNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB nodes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_node_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbNodesResult> getExternalDbNodes() {
+        return getExternalDbNodes(GetExternalDbNodesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB nodes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_node_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbNodesResult> getExternalDbNodesPlain() {
+        return getExternalDbNodesPlain(GetExternalDbNodesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB nodes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_node_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbNodesResult> getExternalDbNodes(GetExternalDbNodesArgs args) {
+        return getExternalDbNodes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB nodes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_node_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbNodesResult> getExternalDbNodesPlain(GetExternalDbNodesPlainArgs args) {
+        return getExternalDbNodesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB nodes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_node_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbNodesResult> getExternalDbNodes(GetExternalDbNodesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", TypeShape.of(GetExternalDbNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB nodes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_node_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbNodesResult> getExternalDbNodesPlain(GetExternalDbNodesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", TypeShape.of(GetExternalDbNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system specified by `externalDbSystemId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemResult> getExternalDbSystem(GetExternalDbSystemArgs args) {
+        return getExternalDbSystem(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system specified by `externalDbSystemId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemResult> getExternalDbSystemPlain(GetExternalDbSystemPlainArgs args) {
+        return getExternalDbSystemPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system specified by `externalDbSystemId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemResult> getExternalDbSystem(GetExternalDbSystemArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", TypeShape.of(GetExternalDbSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system specified by `externalDbSystemId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemResult> getExternalDbSystemPlain(GetExternalDbSystemPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", TypeShape.of(GetExternalDbSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
+     *             .externalDbSystemConnectorId(oci_database_management_external_db_system_connector.test_external_db_system_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemConnectorResult> getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs args) {
+        return getExternalDbSystemConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
+     *             .externalDbSystemConnectorId(oci_database_management_external_db_system_connector.test_external_db_system_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemConnectorResult> getExternalDbSystemConnectorPlain(GetExternalDbSystemConnectorPlainArgs args) {
+        return getExternalDbSystemConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
+     *             .externalDbSystemConnectorId(oci_database_management_external_db_system_connector.test_external_db_system_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemConnectorResult> getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", TypeShape.of(GetExternalDbSystemConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
+     *             .externalDbSystemConnectorId(oci_database_management_external_db_system_connector.test_external_db_system_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemConnectorResult> getExternalDbSystemConnectorPlain(GetExternalDbSystemConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", TypeShape.of(GetExternalDbSystemConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external connectors in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_connector_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectors() {
+        return getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external connectors in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_connector_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectorsPlain() {
+        return getExternalDbSystemConnectorsPlain(GetExternalDbSystemConnectorsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external connectors in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_connector_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs args) {
+        return getExternalDbSystemConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external connectors in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_connector_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectorsPlain(GetExternalDbSystemConnectorsPlainArgs args) {
+        return getExternalDbSystemConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external connectors in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_connector_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors", TypeShape.of(GetExternalDbSystemConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external connectors in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_connector_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectorsPlain(GetExternalDbSystemConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors", TypeShape.of(GetExternalDbSystemConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_discovery_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs args) {
+        return getExternalDbSystemDiscoveries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_discovery_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveriesPlain(GetExternalDbSystemDiscoveriesPlainArgs args) {
+        return getExternalDbSystemDiscoveriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_discovery_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", TypeShape.of(GetExternalDbSystemDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_discovery_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveriesPlain(GetExternalDbSystemDiscoveriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", TypeShape.of(GetExternalDbSystemDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
+     *             .externalDbSystemDiscoveryId(oci_database_management_external_db_system_discovery.test_external_db_system_discovery().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs args) {
+        return getExternalDbSystemDiscovery(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
+     *             .externalDbSystemDiscoveryId(oci_database_management_external_db_system_discovery.test_external_db_system_discovery().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscoveryPlain(GetExternalDbSystemDiscoveryPlainArgs args) {
+        return getExternalDbSystemDiscoveryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
+     *             .externalDbSystemDiscoveryId(oci_database_management_external_db_system_discovery.test_external_db_system_discovery().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", TypeShape.of(GetExternalDbSystemDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
+     *             .externalDbSystemDiscoveryId(oci_database_management_external_db_system_discovery.test_external_db_system_discovery().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscoveryPlain(GetExternalDbSystemDiscoveryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", TypeShape.of(GetExternalDbSystemDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemsResult> getExternalDbSystems(GetExternalDbSystemsArgs args) {
+        return getExternalDbSystems(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemsResult> getExternalDbSystemsPlain(GetExternalDbSystemsPlainArgs args) {
+        return getExternalDbSystemsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalDbSystemsResult> getExternalDbSystems(GetExternalDbSystemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", TypeShape.of(GetExternalDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_db_system_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalDbSystemsResult> getExternalDbSystemsPlain(GetExternalDbSystemsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", TypeShape.of(GetExternalDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external listener specified by `externalListenerId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
+     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalListenerResult> getExternalListener(GetExternalListenerArgs args) {
+        return getExternalListener(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external listener specified by `externalListenerId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
+     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalListenerResult> getExternalListenerPlain(GetExternalListenerPlainArgs args) {
+        return getExternalListenerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external listener specified by `externalListenerId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
+     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalListenerResult> getExternalListener(GetExternalListenerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalListener:getExternalListener", TypeShape.of(GetExternalListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external listener specified by `externalListenerId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
+     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalListenerResult> getExternalListenerPlain(GetExternalListenerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalListener:getExternalListener", TypeShape.of(GetExternalListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified external listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
+     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalListenerServicesResult> getExternalListenerServices(GetExternalListenerServicesArgs args) {
+        return getExternalListenerServices(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified external listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
+     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalListenerServicesResult> getExternalListenerServicesPlain(GetExternalListenerServicesPlainArgs args) {
+        return getExternalListenerServicesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified external listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
+     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalListenerServicesResult> getExternalListenerServices(GetExternalListenerServicesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", TypeShape.of(GetExternalListenerServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified external listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
+     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalListenerServicesResult> getExternalListenerServicesPlain(GetExternalListenerServicesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", TypeShape.of(GetExternalListenerServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_listener_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalListenersResult> getExternalListeners() {
+        return getExternalListeners(GetExternalListenersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_listener_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalListenersResult> getExternalListenersPlain() {
+        return getExternalListenersPlain(GetExternalListenersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_listener_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalListenersResult> getExternalListeners(GetExternalListenersArgs args) {
+        return getExternalListeners(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_listener_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalListenersResult> getExternalListenersPlain(GetExternalListenersPlainArgs args) {
+        return getExternalListenersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_listener_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalListenersResult> getExternalListeners(GetExternalListenersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalListeners:getExternalListeners", TypeShape.of(GetExternalListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified external DB system.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_listener_display_name())
+     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalListenersResult> getExternalListenersPlain(GetExternalListenersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalListeners:getExternalListeners", TypeShape.of(GetExternalListenersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Job Executions Status resource in Oracle Cloud Infrastructure Database Management service.

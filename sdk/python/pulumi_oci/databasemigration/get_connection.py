@@ -22,7 +22,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, admin_credentials=None, certificate_tdn=None, compartment_id=None, connect_descriptors=None, connection_id=None, credentials_secret_id=None, database_id=None, database_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, private_endpoints=None, ssh_details=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_keystore=None, tls_wallet=None, vault_details=None):
+    def __init__(__self__, admin_credentials=None, certificate_tdn=None, compartment_id=None, connect_descriptors=None, connection_id=None, credentials_secret_id=None, database_id=None, database_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, private_endpoints=None, ssh_details=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_keystore=None, tls_wallet=None, vault_details=None):
         if admin_credentials and not isinstance(admin_credentials, list):
             raise TypeError("Expected argument 'admin_credentials' to be a list")
         pulumi.set(__self__, "admin_credentials", admin_credentials)
@@ -62,6 +62,9 @@ class GetConnectionResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids and not isinstance(nsg_ids, list):
+            raise TypeError("Expected argument 'nsg_ids' to be a list")
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoints and not isinstance(private_endpoints, list):
             raise TypeError("Expected argument 'private_endpoints' to be a list")
         pulumi.set(__self__, "private_endpoints", private_endpoints)
@@ -192,6 +195,14 @@ class GetConnectionResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        An array of Network Security Group OCIDs used to define network access for Connections.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
     @pulumi.getter(name="privateEndpoints")
     def private_endpoints(self) -> Sequence['outputs.GetConnectionPrivateEndpointResult']:
         """
@@ -277,6 +288,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            nsg_ids=self.nsg_ids,
             private_endpoints=self.private_endpoints,
             ssh_details=self.ssh_details,
             state=self.state,
@@ -326,6 +338,7 @@ def get_connection(connection_id: Optional[str] = None,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         lifecycle_details=__ret__.lifecycle_details,
+        nsg_ids=__ret__.nsg_ids,
         private_endpoints=__ret__.private_endpoints,
         ssh_details=__ret__.ssh_details,
         state=__ret__.state,

@@ -22,7 +22,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, ocpus_enabled=None, reclaimable_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, ocpus_enabled=None, reclaimable_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -62,6 +62,9 @@ class GetAutonomousVmClusterResult:
         if db_node_storage_size_in_gbs and not isinstance(db_node_storage_size_in_gbs, int):
             raise TypeError("Expected argument 'db_node_storage_size_in_gbs' to be a int")
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        if db_servers and not isinstance(db_servers, list):
+            raise TypeError("Expected argument 'db_servers' to be a list")
+        pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -107,6 +110,9 @@ class GetAutonomousVmClusterResult:
         if next_maintenance_run_id and not isinstance(next_maintenance_run_id, str):
             raise TypeError("Expected argument 'next_maintenance_run_id' to be a str")
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+        if node_count and not isinstance(node_count, int):
+            raise TypeError("Expected argument 'node_count' to be a int")
+        pulumi.set(__self__, "node_count", node_count)
         if ocpus_enabled and not isinstance(ocpus_enabled, float):
             raise TypeError("Expected argument 'ocpus_enabled' to be a float")
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
@@ -237,6 +243,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Sequence[str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        """
+        return pulumi.get(self, "db_servers")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
@@ -354,6 +368,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "next_maintenance_run_id")
 
     @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> int:
+        """
+        The number of nodes in the Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "node_count")
+
+    @property
     @pulumi.getter(name="ocpusEnabled")
     def ocpus_enabled(self) -> float:
         """
@@ -445,6 +467,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
+            db_servers=self.db_servers,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
@@ -460,6 +483,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
             next_maintenance_run_id=self.next_maintenance_run_id,
+            node_count=self.node_count,
             ocpus_enabled=self.ocpus_enabled,
             reclaimable_cpus=self.reclaimable_cpus,
             scan_listener_port_non_tls=self.scan_listener_port_non_tls,
@@ -509,6 +533,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         data_storage_size_in_gb=__ret__.data_storage_size_in_gb,
         data_storage_size_in_tbs=__ret__.data_storage_size_in_tbs,
         db_node_storage_size_in_gbs=__ret__.db_node_storage_size_in_gbs,
+        db_servers=__ret__.db_servers,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
         exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
@@ -524,6 +549,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         memory_per_oracle_compute_unit_in_gbs=__ret__.memory_per_oracle_compute_unit_in_gbs,
         memory_size_in_gbs=__ret__.memory_size_in_gbs,
         next_maintenance_run_id=__ret__.next_maintenance_run_id,
+        node_count=__ret__.node_count,
         ocpus_enabled=__ret__.ocpus_enabled,
         reclaimable_cpus=__ret__.reclaimable_cpus,
         scan_listener_port_non_tls=__ret__.scan_listener_port_non_tls,

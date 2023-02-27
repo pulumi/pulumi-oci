@@ -59,6 +59,10 @@ type GetDbServerArgs struct {
 
 // A collection of values returned by getDbServer.
 type GetDbServerResult struct {
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+	AutonomousVirtualMachineIds []string `pulumi:"autonomousVirtualMachineIds"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+	AutonomousVmClusterIds []string `pulumi:"autonomousVmClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of CPU cores enabled on the Db server.
@@ -138,6 +142,16 @@ func (o GetDbServerResultOutput) ToGetDbServerResultOutput() GetDbServerResultOu
 
 func (o GetDbServerResultOutput) ToGetDbServerResultOutputWithContext(ctx context.Context) GetDbServerResultOutput {
 	return o
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+func (o GetDbServerResultOutput) AutonomousVirtualMachineIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbServerResult) []string { return v.AutonomousVirtualMachineIds }).(pulumi.StringArrayOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+func (o GetDbServerResultOutput) AutonomousVmClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbServerResult) []string { return v.AutonomousVmClusterIds }).(pulumi.StringArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

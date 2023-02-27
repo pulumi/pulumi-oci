@@ -21,8 +21,8 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         /// <summary>
         /// (Updatable) Absolute path of directory on database server
         /// </summary>
-        [Input("path", required: true)]
-        public Input<string> Path { get; set; } = null!;
+        [Input("path")]
+        public Input<string>? Path { get; set; }
 
         public MigrationDatapumpSettingsExportDirectoryObjectArgs()
         {

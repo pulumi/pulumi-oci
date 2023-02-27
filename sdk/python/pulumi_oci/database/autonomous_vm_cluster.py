@@ -23,6 +23,7 @@ class AutonomousVmClusterArgs:
                  autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -43,6 +44,7 @@ class AutonomousVmClusterArgs:
         :param pulumi.Input[float] autonomous_data_storage_size_in_tbs: The data disk group size to be allocated for Autonomous Databases, in TBs.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to enable per VM cluster node.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
@@ -65,6 +67,8 @@ class AutonomousVmClusterArgs:
             pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count_per_node is not None:
             pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
+        if db_servers is not None:
+            pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -171,6 +175,18 @@ class AutonomousVmClusterArgs:
     @cpu_core_count_per_node.setter
     def cpu_core_count_per_node(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "cpu_core_count_per_node", value)
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        """
+        return pulumi.get(self, "db_servers")
+
+    @db_servers.setter
+    def db_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "db_servers", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -320,6 +336,7 @@ class _AutonomousVmClusterState:
                  data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -334,6 +351,7 @@ class _AutonomousVmClusterState:
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+                 node_count: Optional[pulumi.Input[int]] = None,
                  ocpus_enabled: Optional[pulumi.Input[float]] = None,
                  reclaimable_cpus: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
@@ -356,6 +374,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[float] data_storage_size_in_tbs: The total data storage allocated in TBs
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -370,6 +389,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+        :param pulumi.Input[int] node_count: The number of nodes in the Autonomous VM Cluster.
         :param pulumi.Input[float] ocpus_enabled: The number of enabled OCPU cores.
         :param pulumi.Input[int] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
@@ -404,6 +424,8 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
             pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        if db_servers is not None:
+            pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -432,6 +454,8 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if next_maintenance_run_id is not None:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+        if node_count is not None:
+            pulumi.set(__self__, "node_count", node_count)
         if ocpus_enabled is not None:
             pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
         if reclaimable_cpus is not None:
@@ -591,6 +615,18 @@ class _AutonomousVmClusterState:
     @db_node_storage_size_in_gbs.setter
     def db_node_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "db_node_storage_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        """
+        return pulumi.get(self, "db_servers")
+
+    @db_servers.setter
+    def db_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "db_servers", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -761,6 +797,18 @@ class _AutonomousVmClusterState:
         pulumi.set(self, "next_maintenance_run_id", value)
 
     @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of nodes in the Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "node_count")
+
+    @node_count.setter
+    def node_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "node_count", value)
+
+    @property
     @pulumi.getter(name="ocpusEnabled")
     def ocpus_enabled(self) -> Optional[pulumi.Input[float]]:
         """
@@ -878,6 +926,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -912,6 +961,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             autonomous_data_storage_size_in_tbs=var["autonomous_vm_cluster_autonomous_data_storage_size_in_tbs"],
             compute_model=var["autonomous_vm_cluster_compute_model"],
             cpu_core_count_per_node=var["autonomous_vm_cluster_cpu_core_count_per_node"],
+            db_servers=var["autonomous_vm_cluster_db_servers"],
             defined_tags=var["autonomous_vm_cluster_defined_tags"],
             freeform_tags={
                 "Department": "Finance",
@@ -952,6 +1002,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to enable per VM cluster node.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -992,6 +1043,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             autonomous_data_storage_size_in_tbs=var["autonomous_vm_cluster_autonomous_data_storage_size_in_tbs"],
             compute_model=var["autonomous_vm_cluster_compute_model"],
             cpu_core_count_per_node=var["autonomous_vm_cluster_cpu_core_count_per_node"],
+            db_servers=var["autonomous_vm_cluster_db_servers"],
             defined_tags=var["autonomous_vm_cluster_defined_tags"],
             freeform_tags={
                 "Department": "Finance",
@@ -1045,6 +1097,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -1074,6 +1127,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["compute_model"] = compute_model
             __props__.__dict__["cpu_core_count_per_node"] = cpu_core_count_per_node
+            __props__.__dict__["db_servers"] = db_servers
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
@@ -1107,6 +1161,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["maintenance_windows"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
+            __props__.__dict__["node_count"] = None
             __props__.__dict__["ocpus_enabled"] = None
             __props__.__dict__["reclaimable_cpus"] = None
             __props__.__dict__["state"] = None
@@ -1133,6 +1188,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+            db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -1147,6 +1203,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+            node_count: Optional[pulumi.Input[int]] = None,
             ocpus_enabled: Optional[pulumi.Input[float]] = None,
             reclaimable_cpus: Optional[pulumi.Input[int]] = None,
             scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
@@ -1174,6 +1231,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[float] data_storage_size_in_tbs: The total data storage allocated in TBs
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -1188,6 +1246,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+        :param pulumi.Input[int] node_count: The number of nodes in the Autonomous VM Cluster.
         :param pulumi.Input[float] ocpus_enabled: The number of enabled OCPU cores.
         :param pulumi.Input[int] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
@@ -1214,6 +1273,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
         __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
         __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
+        __props__.__dict__["db_servers"] = db_servers
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
@@ -1228,6 +1288,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
+        __props__.__dict__["node_count"] = node_count
         __props__.__dict__["ocpus_enabled"] = ocpus_enabled
         __props__.__dict__["reclaimable_cpus"] = reclaimable_cpus
         __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
@@ -1331,6 +1392,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        """
+        return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1443,6 +1512,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         """
         return pulumi.get(self, "next_maintenance_run_id")
+
+    @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> pulumi.Output[int]:
+        """
+        The number of nodes in the Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="ocpusEnabled")

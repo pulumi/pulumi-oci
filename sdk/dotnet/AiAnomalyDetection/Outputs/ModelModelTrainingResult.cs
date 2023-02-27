@@ -21,10 +21,13 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// A boolean value to indicate if train goal/targetFap is achieved for trained model
         /// </summary>
         public readonly bool? IsTrainingGoalAchieved;
+        public readonly double? Mae;
+        public readonly int? MaxInferenceSyncRows;
         /// <summary>
         /// The model accuracy metric on timestamp level.
         /// </summary>
         public readonly double? MultivariateFap;
+        public readonly double? Rmse;
         /// <summary>
         /// Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
         /// </summary>
@@ -37,6 +40,10 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// A warning message to explain the reason when targetFap cannot be achieved for trained model
         /// </summary>
         public readonly string? Warning;
+        /// <summary>
+        /// This value would determine the window size of the training algorithm.
+        /// </summary>
+        public readonly int? WindowSize;
 
         [OutputConstructor]
         private ModelModelTrainingResult(
@@ -44,20 +51,32 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
 
             bool? isTrainingGoalAchieved,
 
+            double? mae,
+
+            int? maxInferenceSyncRows,
+
             double? multivariateFap,
+
+            double? rmse,
 
             ImmutableArray<Outputs.ModelModelTrainingResultRowReductionDetail> rowReductionDetails,
 
             ImmutableArray<Outputs.ModelModelTrainingResultSignalDetail> signalDetails,
 
-            string? warning)
+            string? warning,
+
+            int? windowSize)
         {
             Fap = fap;
             IsTrainingGoalAchieved = isTrainingGoalAchieved;
+            Mae = mae;
+            MaxInferenceSyncRows = maxInferenceSyncRows;
             MultivariateFap = multivariateFap;
+            Rmse = rmse;
             RowReductionDetails = rowReductionDetails;
             SignalDetails = signalDetails;
             Warning = warning;
+            WindowSize = windowSize;
         }
     }
 }

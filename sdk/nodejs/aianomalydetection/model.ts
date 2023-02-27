@@ -21,8 +21,10 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     modelTrainingDetails: {
  *         dataAssetIds: _var.model_model_training_details_data_asset_ids,
+ *         algorithmHint: _var.model_model_training_details_algorithm_hint,
  *         targetFap: _var.model_model_training_details_target_fap,
  *         trainingFraction: _var.model_model_training_details_training_fraction,
+ *         windowSize: _var.model_model_training_details_window_size,
  *     },
  *     projectId: oci_ai_anomaly_detection_project.test_project.id,
  *     definedTags: {

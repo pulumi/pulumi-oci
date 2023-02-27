@@ -14,6 +14,10 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
     public sealed class ModelModelTrainingDetails
     {
         /// <summary>
+        /// User can choose specific algorithm for training.
+        /// </summary>
+        public readonly string? AlgorithmHint;
+        /// <summary>
         /// The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
         /// </summary>
         public readonly ImmutableArray<string> DataAssetIds;
@@ -25,18 +29,28 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// Fraction of total data that is used for training the model. The remaining is used for validation of the model.
         /// </summary>
         public readonly double? TrainingFraction;
+        /// <summary>
+        /// This value would determine the window size of the training algorithm.
+        /// </summary>
+        public readonly int? WindowSize;
 
         [OutputConstructor]
         private ModelModelTrainingDetails(
+            string? algorithmHint,
+
             ImmutableArray<string> dataAssetIds,
 
             double? targetFap,
 
-            double? trainingFraction)
+            double? trainingFraction,
+
+            int? windowSize)
         {
+            AlgorithmHint = algorithmHint;
             DataAssetIds = dataAssetIds;
             TargetFap = targetFap;
             TrainingFraction = trainingFraction;
+            WindowSize = windowSize;
         }
     }
 }

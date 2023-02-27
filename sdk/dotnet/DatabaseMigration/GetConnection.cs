@@ -153,6 +153,10 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// An array of Network Security Group OCIDs used to define network access for Connections.
+        /// </summary>
+        public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
         /// Oracle Cloud Infrastructure Private Endpoint configuration details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionPrivateEndpointResult> PrivateEndpoints;
@@ -211,6 +215,8 @@ namespace Pulumi.Oci.DatabaseMigration
 
             string lifecycleDetails,
 
+            ImmutableArray<string> nsgIds,
+
             ImmutableArray<Outputs.GetConnectionPrivateEndpointResult> privateEndpoints,
 
             ImmutableArray<Outputs.GetConnectionSshDetailResult> sshDetails,
@@ -242,6 +248,7 @@ namespace Pulumi.Oci.DatabaseMigration
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            NsgIds = nsgIds;
             PrivateEndpoints = privateEndpoints;
             SshDetails = sshDetails;
             State = state;

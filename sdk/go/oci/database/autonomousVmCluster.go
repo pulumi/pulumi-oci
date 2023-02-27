@@ -37,6 +37,7 @@ import (
 //				AutonomousDataStorageSizeInTbs: pulumi.Any(_var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs),
 //				ComputeModel:                   pulumi.Any(_var.Autonomous_vm_cluster_compute_model),
 //				CpuCoreCountPerNode:            pulumi.Any(_var.Autonomous_vm_cluster_cpu_core_count_per_node),
+//				DbServers:                      pulumi.Any(_var.Autonomous_vm_cluster_db_servers),
 //				DefinedTags:                    pulumi.Any(_var.Autonomous_vm_cluster_defined_tags),
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
@@ -112,6 +113,8 @@ type AutonomousVmCluster struct {
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers pulumi.StringArrayOutput `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
@@ -140,6 +143,8 @@ type AutonomousVmCluster struct {
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
+	// The number of nodes in the Autonomous VM Cluster.
+	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
 	// The number of enabled OCPU cores.
 	OcpusEnabled pulumi.Float64Output `pulumi:"ocpusEnabled"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
@@ -224,6 +229,8 @@ type autonomousVmClusterState struct {
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers []string `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
@@ -252,6 +259,8 @@ type autonomousVmClusterState struct {
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
+	// The number of nodes in the Autonomous VM Cluster.
+	NodeCount *int `pulumi:"nodeCount"`
 	// The number of enabled OCPU cores.
 	OcpusEnabled *float64 `pulumi:"ocpusEnabled"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
@@ -296,6 +305,8 @@ type AutonomousVmClusterState struct {
 	DataStorageSizeInTbs pulumi.Float64PtrInput
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs pulumi.IntPtrInput
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
@@ -324,6 +335,8 @@ type AutonomousVmClusterState struct {
 	MemorySizeInGbs pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
+	// The number of nodes in the Autonomous VM Cluster.
+	NodeCount pulumi.IntPtrInput
 	// The number of enabled OCPU cores.
 	OcpusEnabled pulumi.Float64PtrInput
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
@@ -357,6 +370,8 @@ type autonomousVmClusterArgs struct {
 	ComputeModel *string `pulumi:"computeModel"`
 	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers []string `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
@@ -397,6 +412,8 @@ type AutonomousVmClusterArgs struct {
 	ComputeModel pulumi.StringPtrInput
 	// The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
@@ -573,6 +590,11 @@ func (o AutonomousVmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+func (o AutonomousVmClusterOutput) DbServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringArrayOutput { return v.DbServers }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 func (o AutonomousVmClusterOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
@@ -645,6 +667,11 @@ func (o AutonomousVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 func (o AutonomousVmClusterOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The number of nodes in the Autonomous VM Cluster.
+func (o AutonomousVmClusterOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
 }
 
 // The number of enabled OCPU cores.

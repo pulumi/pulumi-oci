@@ -185,6 +185,8 @@ if typing.TYPE_CHECKING:
     osubusage = __osubusage
     import pulumi_oci.queue as __queue
     queue = __queue
+    import pulumi_oci.recoverymod as __recoverymod
+    recoverymod = __recoverymod
     import pulumi_oci.resourcemanager as __resourcemanager
     resourcemanager = __resourcemanager
     import pulumi_oci.sch as __sch
@@ -205,6 +207,8 @@ if typing.TYPE_CHECKING:
     usageproxy = __usageproxy
     import pulumi_oci.vault as __vault
     vault = __vault
+    import pulumi_oci.vbs as __vbs
+    vbs = __vbs
     import pulumi_oci.visualbuilder as __visualbuilder
     visualbuilder = __visualbuilder
     import pulumi_oci.vnmonitoring as __vnmonitoring
@@ -306,6 +310,7 @@ else:
     osubsubscription = _utilities.lazy_import('pulumi_oci.osubsubscription')
     osubusage = _utilities.lazy_import('pulumi_oci.osubusage')
     queue = _utilities.lazy_import('pulumi_oci.queue')
+    recoverymod = _utilities.lazy_import('pulumi_oci.recoverymod')
     resourcemanager = _utilities.lazy_import('pulumi_oci.resourcemanager')
     sch = _utilities.lazy_import('pulumi_oci.sch')
     secrets = _utilities.lazy_import('pulumi_oci.secrets')
@@ -316,6 +321,7 @@ else:
     streaming = _utilities.lazy_import('pulumi_oci.streaming')
     usageproxy = _utilities.lazy_import('pulumi_oci.usageproxy')
     vault = _utilities.lazy_import('pulumi_oci.vault')
+    vbs = _utilities.lazy_import('pulumi_oci.vbs')
     visualbuilder = _utilities.lazy_import('pulumi_oci.visualbuilder')
     vnmonitoring = _utilities.lazy_import('pulumi_oci.vnmonitoring')
     vulnerabilityscanning = _utilities.lazy_import('pulumi_oci.vulnerabilityscanning')
@@ -356,6 +362,14 @@ _utilities.register(
   "fqn": "pulumi_oci.aianomalydetection",
   "classes": {
    "oci:AiAnomalyDetection/dataAsset:DataAsset": "DataAsset"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiAnomalyDetection/detectAnomalyJob",
+  "fqn": "pulumi_oci.aianomalydetection",
+  "classes": {
+   "oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob": "DetectAnomalyJob"
   }
  },
  {
@@ -2320,6 +2334,78 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/externalAsm",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalAsm:ExternalAsm": "ExternalAsm"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalCluster",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalCluster:ExternalCluster": "ExternalCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalClusterInstance",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance": "ExternalClusterInstance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalDbNode",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalDbNode:ExternalDbNode": "ExternalDbNode"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalDbSystem",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalDbSystem:ExternalDbSystem": "ExternalDbSystem"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalDbSystemConnector",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector": "ExternalDbSystemConnector"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalDbSystemDatabaseManagementsManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement": "ExternalDbSystemDatabaseManagementsManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalDbSystemDiscovery",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery": "ExternalDbSystemDiscovery"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalListener",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalListener:ExternalListener": "ExternalListener"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/managedDatabaseGroup",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
@@ -3920,6 +4006,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "RecoveryMod/protectedDatabase",
+  "fqn": "pulumi_oci.recoverymod",
+  "classes": {
+   "oci:RecoveryMod/protectedDatabase:ProtectedDatabase": "ProtectedDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "RecoveryMod/protectionPolicy",
+  "fqn": "pulumi_oci.recoverymod",
+  "classes": {
+   "oci:RecoveryMod/protectionPolicy:ProtectionPolicy": "ProtectionPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "RecoveryMod/recoveryServiceSubnet",
+  "fqn": "pulumi_oci.recoverymod",
+  "classes": {
+   "oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet": "RecoveryServiceSubnet"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ResourceManager/privateEndpoint",
   "fqn": "pulumi_oci.resourcemanager",
   "classes": {
@@ -4100,6 +4210,14 @@ _utilities.register(
   "fqn": "pulumi_oci.vault",
   "classes": {
    "oci:Vault/secret:Secret": "Secret"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Vbs/instVbsInstance",
+  "fqn": "pulumi_oci.vbs",
+  "classes": {
+   "oci:Vbs/instVbsInstance:InstVbsInstance": "InstVbsInstance"
   }
  },
  {

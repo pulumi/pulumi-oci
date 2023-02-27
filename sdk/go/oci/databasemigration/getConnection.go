@@ -81,6 +81,8 @@ type LookupConnectionResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds []string `pulumi:"nsgIds"`
 	// Oracle Cloud Infrastructure Private Endpoint configuration details.
 	PrivateEndpoints []GetConnectionPrivateEndpoint `pulumi:"privateEndpoints"`
 	// Details of the SSH key that will be used.
@@ -199,6 +201,11 @@ func (o LookupConnectionResultOutput) Id() pulumi.StringOutput {
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o LookupConnectionResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An array of Network Security Group OCIDs used to define network access for Connections.
+func (o LookupConnectionResultOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // Oracle Cloud Infrastructure Private Endpoint configuration details.

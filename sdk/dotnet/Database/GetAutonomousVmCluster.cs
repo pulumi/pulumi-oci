@@ -155,6 +155,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int DbNodeStorageSizeInGbs;
         /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        /// </summary>
+        public readonly ImmutableArray<string> DbServers;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -211,6 +215,10 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         public readonly string NextMaintenanceRunId;
+        /// <summary>
+        /// The number of nodes in the Autonomous VM Cluster.
+        /// </summary>
+        public readonly int NodeCount;
         /// <summary>
         /// The number of enabled OCPU cores.
         /// </summary>
@@ -276,6 +284,8 @@ namespace Pulumi.Oci.Database
 
             int dbNodeStorageSizeInGbs,
 
+            ImmutableArray<string> dbServers,
+
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
@@ -305,6 +315,8 @@ namespace Pulumi.Oci.Database
             int memorySizeInGbs,
 
             string nextMaintenanceRunId,
+
+            int nodeCount,
 
             double ocpusEnabled,
 
@@ -337,6 +349,7 @@ namespace Pulumi.Oci.Database
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            DbServers = dbServers;
             DefinedTags = definedTags;
             DisplayName = displayName;
             ExadataInfrastructureId = exadataInfrastructureId;
@@ -352,6 +365,7 @@ namespace Pulumi.Oci.Database
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
+            NodeCount = nodeCount;
             OcpusEnabled = ocpusEnabled;
             ReclaimableCpus = reclaimableCpus;
             ScanListenerPortNonTls = scanListenerPortNonTls;

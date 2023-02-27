@@ -17,6 +17,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.ConnectionVaultDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -76,6 +77,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .displayName(var_.connection_display_name())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .nsgIds(var_.connection_nsg_ids())
  *             .privateEndpoint(ConnectionPrivateEndpointArgs.builder()
  *                 .compartmentId(var_.compartment_id())
  *                 .subnetId(oci_core_subnet.test_subnet().id())
@@ -259,6 +261,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+     * 
+     */
+    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    private Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+     * 
+     */
+    public Output<List<String>> nsgIds() {
+        return this.nsgIds;
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.

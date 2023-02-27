@@ -126,6 +126,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string DatabaseType;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        /// </summary>
+        public readonly string DbSystemId;
+        /// <summary>
         /// The infrastructure used to deploy the Oracle Database.
         /// </summary>
         public readonly string DeploymentType;
@@ -155,6 +159,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string ParentContainerId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+        /// </summary>
+        public readonly string StorageSystemId;
+        /// <summary>
         /// The date and time the Managed Database was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -175,6 +183,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string databaseType,
 
+            string dbSystemId,
+
             string deploymentType,
 
             string id,
@@ -191,6 +201,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string parentContainerId,
 
+            string storageSystemId,
+
             string timeCreated,
 
             string workloadType)
@@ -200,6 +212,7 @@ namespace Pulumi.Oci.DatabaseManagement
             DatabaseStatus = databaseStatus;
             DatabaseSubType = databaseSubType;
             DatabaseType = databaseType;
+            DbSystemId = dbSystemId;
             DeploymentType = deploymentType;
             Id = id;
             IsCluster = isCluster;
@@ -208,6 +221,7 @@ namespace Pulumi.Oci.DatabaseManagement
             ManagementOption = managementOption;
             Name = name;
             ParentContainerId = parentContainerId;
+            StorageSystemId = storageSystemId;
             TimeCreated = timeCreated;
             WorkloadType = workloadType;
         }

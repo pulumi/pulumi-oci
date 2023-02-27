@@ -94,6 +94,10 @@ export interface GetConnectionResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * An array of Network Security Group OCIDs used to define network access for Connections.
+     */
+    readonly nsgIds: string[];
+    /**
      * Oracle Cloud Infrastructure Private Endpoint configuration details.
      */
     readonly privateEndpoints: outputs.DatabaseMigration.GetConnectionPrivateEndpoint[];

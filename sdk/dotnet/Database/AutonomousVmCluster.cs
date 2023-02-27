@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Database
     ///         AutonomousDataStorageSizeInTbs = @var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
     ///         ComputeModel = @var.Autonomous_vm_cluster_compute_model,
     ///         CpuCoreCountPerNode = @var.Autonomous_vm_cluster_cpu_core_count_per_node,
+    ///         DbServers = @var.Autonomous_vm_cluster_db_servers,
     ///         DefinedTags = @var.Autonomous_vm_cluster_defined_tags,
     ///         FreeformTags = 
     ///         {
@@ -155,6 +156,12 @@ namespace Pulumi.Oci.Database
         public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        /// </summary>
+        [Output("dbServers")]
+        public Output<ImmutableArray<string>> DbServers { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
@@ -237,6 +244,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("nextMaintenanceRunId")]
         public Output<string> NextMaintenanceRunId { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of nodes in the Autonomous VM Cluster.
+        /// </summary>
+        [Output("nodeCount")]
+        public Output<int> NodeCount { get; private set; } = null!;
 
         /// <summary>
         /// The number of enabled OCPU cores.
@@ -361,6 +374,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
+
+        [Input("dbServers")]
+        private InputList<string>? _dbServers;
+
+        /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        /// </summary>
+        public InputList<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new InputList<string>());
+            set => _dbServers = value;
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -541,6 +566,18 @@ namespace Pulumi.Oci.Database
         [Input("dbNodeStorageSizeInGbs")]
         public Input<int>? DbNodeStorageSizeInGbs { get; set; }
 
+        [Input("dbServers")]
+        private InputList<string>? _dbServers;
+
+        /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        /// </summary>
+        public InputList<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new InputList<string>());
+            set => _dbServers = value;
+        }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -648,6 +685,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("nextMaintenanceRunId")]
         public Input<string>? NextMaintenanceRunId { get; set; }
+
+        /// <summary>
+        /// The number of nodes in the Autonomous VM Cluster.
+        /// </summary>
+        [Input("nodeCount")]
+        public Input<int>? NodeCount { get; set; }
 
         /// <summary>
         /// The number of enabled OCPU cores.

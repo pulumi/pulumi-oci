@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -13,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ModelModelTrainingDetails {
+    /**
+     * @return User can choose specific algorithm for training.
+     * 
+     */
+    private @Nullable String algorithmHint;
     /**
      * @return The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      * 
@@ -28,8 +34,20 @@ public final class ModelModelTrainingDetails {
      * 
      */
     private @Nullable Double trainingFraction;
+    /**
+     * @return This value would determine the window size of the training algorithm.
+     * 
+     */
+    private @Nullable Integer windowSize;
 
     private ModelModelTrainingDetails() {}
+    /**
+     * @return User can choose specific algorithm for training.
+     * 
+     */
+    public Optional<String> algorithmHint() {
+        return Optional.ofNullable(this.algorithmHint);
+    }
     /**
      * @return The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      * 
@@ -51,6 +69,13 @@ public final class ModelModelTrainingDetails {
     public Optional<Double> trainingFraction() {
         return Optional.ofNullable(this.trainingFraction);
     }
+    /**
+     * @return This value would determine the window size of the training algorithm.
+     * 
+     */
+    public Optional<Integer> windowSize() {
+        return Optional.ofNullable(this.windowSize);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -61,17 +86,26 @@ public final class ModelModelTrainingDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String algorithmHint;
         private List<String> dataAssetIds;
         private @Nullable Double targetFap;
         private @Nullable Double trainingFraction;
+        private @Nullable Integer windowSize;
         public Builder() {}
         public Builder(ModelModelTrainingDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.algorithmHint = defaults.algorithmHint;
     	      this.dataAssetIds = defaults.dataAssetIds;
     	      this.targetFap = defaults.targetFap;
     	      this.trainingFraction = defaults.trainingFraction;
+    	      this.windowSize = defaults.windowSize;
         }
 
+        @CustomType.Setter
+        public Builder algorithmHint(@Nullable String algorithmHint) {
+            this.algorithmHint = algorithmHint;
+            return this;
+        }
         @CustomType.Setter
         public Builder dataAssetIds(List<String> dataAssetIds) {
             this.dataAssetIds = Objects.requireNonNull(dataAssetIds);
@@ -90,11 +124,18 @@ public final class ModelModelTrainingDetails {
             this.trainingFraction = trainingFraction;
             return this;
         }
+        @CustomType.Setter
+        public Builder windowSize(@Nullable Integer windowSize) {
+            this.windowSize = windowSize;
+            return this;
+        }
         public ModelModelTrainingDetails build() {
             final var o = new ModelModelTrainingDetails();
+            o.algorithmHint = algorithmHint;
             o.dataAssetIds = dataAssetIds;
             o.targetFap = targetFap;
             o.trainingFraction = trainingFraction;
+            o.windowSize = windowSize;
             return o;
         }
     }

@@ -1039,12 +1039,16 @@ func (o JobProgressArrayOutput) Index(i pulumi.IntInput) JobProgressOutput {
 }
 
 type JobProgressPhase struct {
+	// The text describing the action required to fix the issue
+	Action *string `pulumi:"action"`
 	// Duration of the phase in milliseconds
 	DurationInMs *int `pulumi:"durationInMs"`
 	// Summary of phase status results.
 	Extracts []JobProgressPhaseExtract `pulumi:"extracts"`
 	// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
 	IsAdvisorReportAvailable *bool `pulumi:"isAdvisorReportAvailable"`
+	// The text describing the root cause of the reported issue
+	Issue *string `pulumi:"issue"`
 	// Details to access log file in the specified Object Storage bucket, if any.
 	LogLocations []JobProgressPhaseLogLocation `pulumi:"logLocations"`
 	// Phase name
@@ -1067,12 +1071,16 @@ type JobProgressPhaseInput interface {
 }
 
 type JobProgressPhaseArgs struct {
+	// The text describing the action required to fix the issue
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Duration of the phase in milliseconds
 	DurationInMs pulumi.IntPtrInput `pulumi:"durationInMs"`
 	// Summary of phase status results.
 	Extracts JobProgressPhaseExtractArrayInput `pulumi:"extracts"`
 	// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
 	IsAdvisorReportAvailable pulumi.BoolPtrInput `pulumi:"isAdvisorReportAvailable"`
+	// The text describing the root cause of the reported issue
+	Issue pulumi.StringPtrInput `pulumi:"issue"`
 	// Details to access log file in the specified Object Storage bucket, if any.
 	LogLocations JobProgressPhaseLogLocationArrayInput `pulumi:"logLocations"`
 	// Phase name
@@ -1134,6 +1142,11 @@ func (o JobProgressPhaseOutput) ToJobProgressPhaseOutputWithContext(ctx context.
 	return o
 }
 
+// The text describing the action required to fix the issue
+func (o JobProgressPhaseOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobProgressPhase) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
 // Duration of the phase in milliseconds
 func (o JobProgressPhaseOutput) DurationInMs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v JobProgressPhase) *int { return v.DurationInMs }).(pulumi.IntPtrOutput)
@@ -1147,6 +1160,11 @@ func (o JobProgressPhaseOutput) Extracts() JobProgressPhaseExtractArrayOutput {
 // True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
 func (o JobProgressPhaseOutput) IsAdvisorReportAvailable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v JobProgressPhase) *bool { return v.IsAdvisorReportAvailable }).(pulumi.BoolPtrOutput)
+}
+
+// The text describing the root cause of the reported issue
+func (o JobProgressPhaseOutput) Issue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobProgressPhase) *string { return v.Issue }).(pulumi.StringPtrOutput)
 }
 
 // Details to access log file in the specified Object Storage bucket, if any.
@@ -2766,7 +2784,7 @@ type MigrationDatapumpSettingsExportDirectoryObject struct {
 	// (Updatable) Name of directory object in database
 	Name string `pulumi:"name"`
 	// (Updatable) Absolute path of directory on database server
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 }
 
 // MigrationDatapumpSettingsExportDirectoryObjectInput is an input type that accepts MigrationDatapumpSettingsExportDirectoryObjectArgs and MigrationDatapumpSettingsExportDirectoryObjectOutput values.
@@ -2784,7 +2802,7 @@ type MigrationDatapumpSettingsExportDirectoryObjectArgs struct {
 	// (Updatable) Name of directory object in database
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) Absolute path of directory on database server
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 }
 
 func (MigrationDatapumpSettingsExportDirectoryObjectArgs) ElementType() reflect.Type {
@@ -2870,8 +2888,8 @@ func (o MigrationDatapumpSettingsExportDirectoryObjectOutput) Name() pulumi.Stri
 }
 
 // (Updatable) Absolute path of directory on database server
-func (o MigrationDatapumpSettingsExportDirectoryObjectOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v MigrationDatapumpSettingsExportDirectoryObject) string { return v.Path }).(pulumi.StringOutput)
+func (o MigrationDatapumpSettingsExportDirectoryObjectOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDatapumpSettingsExportDirectoryObject) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 type MigrationDatapumpSettingsExportDirectoryObjectPtrOutput struct{ *pulumi.OutputState }
@@ -2914,7 +2932,7 @@ func (o MigrationDatapumpSettingsExportDirectoryObjectPtrOutput) Path() pulumi.S
 		if v == nil {
 			return nil
 		}
-		return &v.Path
+		return v.Path
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2922,7 +2940,7 @@ type MigrationDatapumpSettingsImportDirectoryObject struct {
 	// (Updatable) Name of directory object in database
 	Name string `pulumi:"name"`
 	// (Updatable) Absolute path of directory on database server
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 }
 
 // MigrationDatapumpSettingsImportDirectoryObjectInput is an input type that accepts MigrationDatapumpSettingsImportDirectoryObjectArgs and MigrationDatapumpSettingsImportDirectoryObjectOutput values.
@@ -2940,7 +2958,7 @@ type MigrationDatapumpSettingsImportDirectoryObjectArgs struct {
 	// (Updatable) Name of directory object in database
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) Absolute path of directory on database server
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 }
 
 func (MigrationDatapumpSettingsImportDirectoryObjectArgs) ElementType() reflect.Type {
@@ -3026,8 +3044,8 @@ func (o MigrationDatapumpSettingsImportDirectoryObjectOutput) Name() pulumi.Stri
 }
 
 // (Updatable) Absolute path of directory on database server
-func (o MigrationDatapumpSettingsImportDirectoryObjectOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v MigrationDatapumpSettingsImportDirectoryObject) string { return v.Path }).(pulumi.StringOutput)
+func (o MigrationDatapumpSettingsImportDirectoryObjectOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDatapumpSettingsImportDirectoryObject) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 type MigrationDatapumpSettingsImportDirectoryObjectPtrOutput struct{ *pulumi.OutputState }
@@ -3070,7 +3088,7 @@ func (o MigrationDatapumpSettingsImportDirectoryObjectPtrOutput) Path() pulumi.S
 		if v == nil {
 			return nil
 		}
-		return &v.Path
+		return v.Path
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -7056,6 +7074,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds []string `pulumi:"nsgIds"`
 	// Oracle Cloud Infrastructure Private Endpoint configuration details.
 	PrivateEndpoints []GetConnectionsConnectionCollectionItemPrivateEndpoint `pulumi:"privateEndpoints"`
 	// Details of the SSH key that will be used.
@@ -7110,6 +7130,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Oracle Cloud Infrastructure Private Endpoint configuration details.
 	PrivateEndpoints GetConnectionsConnectionCollectionItemPrivateEndpointArrayInput `pulumi:"privateEndpoints"`
 	// Details of the SSH key that will be used.
@@ -7241,6 +7263,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) Id() pulumi.StringOutput {
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetConnectionsConnectionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An array of Network Security Group OCIDs used to define network access for Connections.
+func (o GetConnectionsConnectionCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // Oracle Cloud Infrastructure Private Endpoint configuration details.

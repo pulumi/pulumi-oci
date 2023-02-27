@@ -55,6 +55,10 @@ import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousPatchPlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinePlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
@@ -242,6 +246,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructureResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructureShapesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructuresResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousPatchResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousVirtualMachineResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousVirtualMachinesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousVmClusterResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousVmClustersResult;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationResult;
@@ -4587,6 +4593,326 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousPatchResult> getAutonomousPatchPlain(GetAutonomousPatchPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousPatch:getAutonomousPatch", TypeShape.of(GetAutonomousPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of specific Autonomous Virtual Machine.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
+     *             .autonomousVirtualMachineId(oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs args) {
+        return getAutonomousVirtualMachine(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of specific Autonomous Virtual Machine.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
+     *             .autonomousVirtualMachineId(oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachinePlain(GetAutonomousVirtualMachinePlainArgs args) {
+        return getAutonomousVirtualMachinePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of specific Autonomous Virtual Machine.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
+     *             .autonomousVirtualMachineId(oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousVirtualMachine:getAutonomousVirtualMachine", TypeShape.of(GetAutonomousVirtualMachineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of specific Autonomous Virtual Machine.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
+     *             .autonomousVirtualMachineId(oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachinePlain(GetAutonomousVirtualMachinePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousVirtualMachine:getAutonomousVirtualMachine", TypeShape.of(GetAutonomousVirtualMachineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.autonomous_virtual_machine_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs args) {
+        return getAutonomousVirtualMachines(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.autonomous_virtual_machine_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachinesPlain(GetAutonomousVirtualMachinesPlainArgs args) {
+        return getAutonomousVirtualMachinesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.autonomous_virtual_machine_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", TypeShape.of(GetAutonomousVirtualMachinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.autonomous_virtual_machine_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachinesPlain(GetAutonomousVirtualMachinesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", TypeShape.of(GetAutonomousVirtualMachinesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.

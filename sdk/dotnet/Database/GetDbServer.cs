@@ -120,6 +120,14 @@ namespace Pulumi.Oci.Database
     public sealed class GetDbServerResult
     {
         /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+        /// </summary>
+        public readonly ImmutableArray<string> AutonomousVirtualMachineIds;
+        /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+        /// </summary>
+        public readonly ImmutableArray<string> AutonomousVmClusterIds;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -199,6 +207,10 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetDbServerResult(
+            ImmutableArray<string> autonomousVirtualMachineIds,
+
+            ImmutableArray<string> autonomousVmClusterIds,
+
             string compartmentId,
 
             int cpuCoreCount,
@@ -239,6 +251,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> vmClusterIds)
         {
+            AutonomousVirtualMachineIds = autonomousVirtualMachineIds;
+            AutonomousVmClusterIds = autonomousVmClusterIds;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
             DbNodeIds = dbNodeIds;

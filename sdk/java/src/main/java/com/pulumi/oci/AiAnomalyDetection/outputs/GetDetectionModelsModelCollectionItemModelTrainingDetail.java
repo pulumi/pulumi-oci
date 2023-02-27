@@ -5,12 +5,18 @@ package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
+    /**
+     * @return User can choose specific algorithm for training.
+     * 
+     */
+    private String algorithmHint;
     /**
      * @return The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      * 
@@ -26,8 +32,20 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
      * 
      */
     private Double trainingFraction;
+    /**
+     * @return Window size defined during training or deduced by the algorithm.
+     * 
+     */
+    private Integer windowSize;
 
     private GetDetectionModelsModelCollectionItemModelTrainingDetail() {}
+    /**
+     * @return User can choose specific algorithm for training.
+     * 
+     */
+    public String algorithmHint() {
+        return this.algorithmHint;
+    }
     /**
      * @return The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      * 
@@ -49,6 +67,13 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
     public Double trainingFraction() {
         return this.trainingFraction;
     }
+    /**
+     * @return Window size defined during training or deduced by the algorithm.
+     * 
+     */
+    public Integer windowSize() {
+        return this.windowSize;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -59,17 +84,26 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String algorithmHint;
         private List<String> dataAssetIds;
         private Double targetFap;
         private Double trainingFraction;
+        private Integer windowSize;
         public Builder() {}
         public Builder(GetDetectionModelsModelCollectionItemModelTrainingDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.algorithmHint = defaults.algorithmHint;
     	      this.dataAssetIds = defaults.dataAssetIds;
     	      this.targetFap = defaults.targetFap;
     	      this.trainingFraction = defaults.trainingFraction;
+    	      this.windowSize = defaults.windowSize;
         }
 
+        @CustomType.Setter
+        public Builder algorithmHint(String algorithmHint) {
+            this.algorithmHint = Objects.requireNonNull(algorithmHint);
+            return this;
+        }
         @CustomType.Setter
         public Builder dataAssetIds(List<String> dataAssetIds) {
             this.dataAssetIds = Objects.requireNonNull(dataAssetIds);
@@ -88,11 +122,18 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
             this.trainingFraction = Objects.requireNonNull(trainingFraction);
             return this;
         }
+        @CustomType.Setter
+        public Builder windowSize(Integer windowSize) {
+            this.windowSize = Objects.requireNonNull(windowSize);
+            return this;
+        }
         public GetDetectionModelsModelCollectionItemModelTrainingDetail build() {
             final var o = new GetDetectionModelsModelCollectionItemModelTrainingDetail();
+            o.algorithmHint = algorithmHint;
             o.dataAssetIds = dataAssetIds;
             o.targetFap = targetFap;
             o.trainingFraction = trainingFraction;
+            o.windowSize = windowSize;
             return o;
         }
     }

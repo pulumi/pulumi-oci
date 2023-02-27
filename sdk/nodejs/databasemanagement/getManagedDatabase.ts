@@ -65,6 +65,10 @@ export interface GetManagedDatabaseResult {
      */
     readonly databaseType: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     */
+    readonly dbSystemId: string;
+    /**
      * The infrastructure used to deploy the Oracle Database.
      */
     readonly deploymentType: string;
@@ -93,6 +97,10 @@ export interface GetManagedDatabaseResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
      */
     readonly parentContainerId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+     */
+    readonly storageSystemId: string;
     /**
      * The date and time the Managed Database was created.
      */

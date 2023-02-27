@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AiPrivateEndpoint{}
 	case "oci:AiAnomalyDetection/dataAsset:DataAsset":
 		r = &DataAsset{}
+	case "oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob":
+		r = &DetectAnomalyJob{}
 	case "oci:AiAnomalyDetection/model:Model":
 		r = &Model{}
 	case "oci:AiAnomalyDetection/project:Project":
@@ -50,6 +52,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"AiAnomalyDetection/dataAsset",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"AiAnomalyDetection/detectAnomalyJob",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

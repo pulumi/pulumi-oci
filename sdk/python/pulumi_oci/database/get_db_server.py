@@ -22,7 +22,13 @@ class GetDbServerResult:
     """
     A collection of values returned by getDbServer.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, db_node_ids=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_server_patching_details=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, max_cpu_count=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, shape=None, state=None, time_created=None, vm_cluster_ids=None):
+    def __init__(__self__, autonomous_virtual_machine_ids=None, autonomous_vm_cluster_ids=None, compartment_id=None, cpu_core_count=None, db_node_ids=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_server_patching_details=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, max_cpu_count=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, shape=None, state=None, time_created=None, vm_cluster_ids=None):
+        if autonomous_virtual_machine_ids and not isinstance(autonomous_virtual_machine_ids, list):
+            raise TypeError("Expected argument 'autonomous_virtual_machine_ids' to be a list")
+        pulumi.set(__self__, "autonomous_virtual_machine_ids", autonomous_virtual_machine_ids)
+        if autonomous_vm_cluster_ids and not isinstance(autonomous_vm_cluster_ids, list):
+            raise TypeError("Expected argument 'autonomous_vm_cluster_ids' to be a list")
+        pulumi.set(__self__, "autonomous_vm_cluster_ids", autonomous_vm_cluster_ids)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -83,6 +89,22 @@ class GetDbServerResult:
         if vm_cluster_ids and not isinstance(vm_cluster_ids, list):
             raise TypeError("Expected argument 'vm_cluster_ids' to be a list")
         pulumi.set(__self__, "vm_cluster_ids", vm_cluster_ids)
+
+    @property
+    @pulumi.getter(name="autonomousVirtualMachineIds")
+    def autonomous_virtual_machine_ids(self) -> Sequence[str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+        """
+        return pulumi.get(self, "autonomous_virtual_machine_ids")
+
+    @property
+    @pulumi.getter(name="autonomousVmClusterIds")
+    def autonomous_vm_cluster_ids(self) -> Sequence[str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+        """
+        return pulumi.get(self, "autonomous_vm_cluster_ids")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -248,6 +270,8 @@ class AwaitableGetDbServerResult(GetDbServerResult):
         if False:
             yield self
         return GetDbServerResult(
+            autonomous_virtual_machine_ids=self.autonomous_virtual_machine_ids,
+            autonomous_vm_cluster_ids=self.autonomous_vm_cluster_ids,
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
             db_node_ids=self.db_node_ids,
@@ -299,6 +323,8 @@ def get_db_server(db_server_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbServer:getDbServer', __args__, opts=opts, typ=GetDbServerResult).value
 
     return AwaitableGetDbServerResult(
+        autonomous_virtual_machine_ids=__ret__.autonomous_virtual_machine_ids,
+        autonomous_vm_cluster_ids=__ret__.autonomous_vm_cluster_ids,
         compartment_id=__ret__.compartment_id,
         cpu_core_count=__ret__.cpu_core_count,
         db_node_ids=__ret__.db_node_ids,

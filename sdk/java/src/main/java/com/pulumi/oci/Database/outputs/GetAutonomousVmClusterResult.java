@@ -79,6 +79,11 @@ public final class GetAutonomousVmClusterResult {
      */
     private Integer dbNodeStorageSizeInGbs;
     /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     * 
+     */
+    private List<String> dbServers;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -149,6 +154,11 @@ public final class GetAutonomousVmClusterResult {
      * 
      */
     private String nextMaintenanceRunId;
+    /**
+     * @return The number of nodes in the Autonomous VM Cluster.
+     * 
+     */
+    private Integer nodeCount;
     /**
      * @return The number of enabled OCPU cores.
      * 
@@ -284,6 +294,13 @@ public final class GetAutonomousVmClusterResult {
         return this.dbNodeStorageSizeInGbs;
     }
     /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     * 
+     */
+    public List<String> dbServers() {
+        return this.dbServers;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -385,6 +402,13 @@ public final class GetAutonomousVmClusterResult {
         return this.nextMaintenanceRunId;
     }
     /**
+     * @return The number of nodes in the Autonomous VM Cluster.
+     * 
+     */
+    public Integer nodeCount() {
+        return this.nodeCount;
+    }
+    /**
      * @return The number of enabled OCPU cores.
      * 
      */
@@ -470,6 +494,7 @@ public final class GetAutonomousVmClusterResult {
         private Double dataStorageSizeInGb;
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
+        private List<String> dbServers;
         private Map<String,Object> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
@@ -485,6 +510,7 @@ public final class GetAutonomousVmClusterResult {
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
+        private Integer nodeCount;
         private Double ocpusEnabled;
         private Integer reclaimableCpus;
         private Integer scanListenerPortNonTls;
@@ -510,6 +536,7 @@ public final class GetAutonomousVmClusterResult {
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
+    	      this.dbServers = defaults.dbServers;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
@@ -525,6 +552,7 @@ public final class GetAutonomousVmClusterResult {
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
+    	      this.nodeCount = defaults.nodeCount;
     	      this.ocpusEnabled = defaults.ocpusEnabled;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
     	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
@@ -600,6 +628,14 @@ public final class GetAutonomousVmClusterResult {
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbServers(List<String> dbServers) {
+            this.dbServers = Objects.requireNonNull(dbServers);
+            return this;
+        }
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -683,6 +719,11 @@ public final class GetAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder nodeCount(Integer nodeCount) {
+            this.nodeCount = Objects.requireNonNull(nodeCount);
+            return this;
+        }
+        @CustomType.Setter
         public Builder ocpusEnabled(Double ocpusEnabled) {
             this.ocpusEnabled = Objects.requireNonNull(ocpusEnabled);
             return this;
@@ -742,6 +783,7 @@ public final class GetAutonomousVmClusterResult {
             o.dataStorageSizeInGb = dataStorageSizeInGb;
             o.dataStorageSizeInTbs = dataStorageSizeInTbs;
             o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.dbServers = dbServers;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.exadataInfrastructureId = exadataInfrastructureId;
@@ -757,6 +799,7 @@ public final class GetAutonomousVmClusterResult {
             o.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             o.memorySizeInGbs = memorySizeInGbs;
             o.nextMaintenanceRunId = nextMaintenanceRunId;
+            o.nodeCount = nodeCount;
             o.ocpusEnabled = ocpusEnabled;
             o.reclaimableCpus = reclaimableCpus;
             o.scanListenerPortNonTls = scanListenerPortNonTls;

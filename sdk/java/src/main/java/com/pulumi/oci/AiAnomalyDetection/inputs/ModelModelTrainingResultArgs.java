@@ -9,6 +9,7 @@ import com.pulumi.oci.AiAnomalyDetection.inputs.ModelModelTrainingResultRowReduc
 import com.pulumi.oci.AiAnomalyDetection.inputs.ModelModelTrainingResultSignalDetailArgs;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -50,6 +51,20 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.isTrainingGoalAchieved);
     }
 
+    @Import(name="mae")
+    private @Nullable Output<Double> mae;
+
+    public Optional<Output<Double>> mae() {
+        return Optional.ofNullable(this.mae);
+    }
+
+    @Import(name="maxInferenceSyncRows")
+    private @Nullable Output<Integer> maxInferenceSyncRows;
+
+    public Optional<Output<Integer>> maxInferenceSyncRows() {
+        return Optional.ofNullable(this.maxInferenceSyncRows);
+    }
+
     /**
      * The model accuracy metric on timestamp level.
      * 
@@ -63,6 +78,13 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
      */
     public Optional<Output<Double>> multivariateFap() {
         return Optional.ofNullable(this.multivariateFap);
+    }
+
+    @Import(name="rmse")
+    private @Nullable Output<Double> rmse;
+
+    public Optional<Output<Double>> rmse() {
+        return Optional.ofNullable(this.rmse);
     }
 
     /**
@@ -110,15 +132,34 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.warning);
     }
 
+    /**
+     * This value would determine the window size of the training algorithm.
+     * 
+     */
+    @Import(name="windowSize")
+    private @Nullable Output<Integer> windowSize;
+
+    /**
+     * @return This value would determine the window size of the training algorithm.
+     * 
+     */
+    public Optional<Output<Integer>> windowSize() {
+        return Optional.ofNullable(this.windowSize);
+    }
+
     private ModelModelTrainingResultArgs() {}
 
     private ModelModelTrainingResultArgs(ModelModelTrainingResultArgs $) {
         this.fap = $.fap;
         this.isTrainingGoalAchieved = $.isTrainingGoalAchieved;
+        this.mae = $.mae;
+        this.maxInferenceSyncRows = $.maxInferenceSyncRows;
         this.multivariateFap = $.multivariateFap;
+        this.rmse = $.rmse;
         this.rowReductionDetails = $.rowReductionDetails;
         this.signalDetails = $.signalDetails;
         this.warning = $.warning;
+        this.windowSize = $.windowSize;
     }
 
     public static Builder builder() {
@@ -181,6 +222,24 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
             return isTrainingGoalAchieved(Output.of(isTrainingGoalAchieved));
         }
 
+        public Builder mae(@Nullable Output<Double> mae) {
+            $.mae = mae;
+            return this;
+        }
+
+        public Builder mae(Double mae) {
+            return mae(Output.of(mae));
+        }
+
+        public Builder maxInferenceSyncRows(@Nullable Output<Integer> maxInferenceSyncRows) {
+            $.maxInferenceSyncRows = maxInferenceSyncRows;
+            return this;
+        }
+
+        public Builder maxInferenceSyncRows(Integer maxInferenceSyncRows) {
+            return maxInferenceSyncRows(Output.of(maxInferenceSyncRows));
+        }
+
         /**
          * @param multivariateFap The model accuracy metric on timestamp level.
          * 
@@ -200,6 +259,15 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
          */
         public Builder multivariateFap(Double multivariateFap) {
             return multivariateFap(Output.of(multivariateFap));
+        }
+
+        public Builder rmse(@Nullable Output<Double> rmse) {
+            $.rmse = rmse;
+            return this;
+        }
+
+        public Builder rmse(Double rmse) {
+            return rmse(Output.of(rmse));
         }
 
         /**
@@ -283,6 +351,27 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
          */
         public Builder warning(String warning) {
             return warning(Output.of(warning));
+        }
+
+        /**
+         * @param windowSize This value would determine the window size of the training algorithm.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder windowSize(@Nullable Output<Integer> windowSize) {
+            $.windowSize = windowSize;
+            return this;
+        }
+
+        /**
+         * @param windowSize This value would determine the window size of the training algorithm.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder windowSize(Integer windowSize) {
+            return windowSize(Output.of(windowSize));
         }
 
         public ModelModelTrainingResultArgs build() {

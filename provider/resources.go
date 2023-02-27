@@ -2304,6 +2304,10 @@ func Provider() tfbridge.ProviderInfo {
 		"recovery":           recoveryMod,
 		"vbs":                vbsMod,
 	}
+
+	// Note: We specify the default module as "" so that the mapper will error when a
+	// token without a module is found. This allows us to safely and gradually migrate
+	// to ComputeDefaults.
 	err := x.ComputeDefaults(&prov, x.TokensKnownModules("oci_", "", []string{
 		"ai_anomaly_detection_",
 		"datascience_",

@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  *             .autonomousDataStorageSizeInTbs(var_.autonomous_vm_cluster_autonomous_data_storage_size_in_tbs())
  *             .computeModel(var_.autonomous_vm_cluster_compute_model())
  *             .cpuCoreCountPerNode(var_.autonomous_vm_cluster_cpu_core_count_per_node())
+ *             .dbServers(var_.autonomous_vm_cluster_db_servers())
  *             .definedTags(var_.autonomous_vm_cluster_defined_tags())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isLocalBackupEnabled(var_.autonomous_vm_cluster_is_local_backup_enabled())
@@ -257,6 +258,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.dbNodeStorageSizeInGbs;
     }
     /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     * 
+     */
+    @Export(name="dbServers", type=List.class, parameters={String.class})
+    private Output<List<String>> dbServers;
+
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     * 
+     */
+    public Output<List<String>> dbServers() {
+        return this.dbServers;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -451,6 +466,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> nextMaintenanceRunId() {
         return this.nextMaintenanceRunId;
+    }
+    /**
+     * The number of nodes in the Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="nodeCount", type=Integer.class, parameters={})
+    private Output<Integer> nodeCount;
+
+    /**
+     * @return The number of nodes in the Autonomous VM Cluster.
+     * 
+     */
+    public Output<Integer> nodeCount() {
+        return this.nodeCount;
     }
     /**
      * The number of enabled OCPU cores.

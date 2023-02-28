@@ -1,5 +1,4 @@
-//go:build  || all
-// +build python all
+//go:build dotnet || all
 
 package examples
 

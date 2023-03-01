@@ -33,8 +33,10 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				ModelTrainingDetails: &aianomalydetection.ModelModelTrainingDetailsArgs{
 //					DataAssetIds:     pulumi.Any(_var.Model_model_training_details_data_asset_ids),
+//					AlgorithmHint:    pulumi.Any(_var.Model_model_training_details_algorithm_hint),
 //					TargetFap:        pulumi.Any(_var.Model_model_training_details_target_fap),
 //					TrainingFraction: pulumi.Any(_var.Model_model_training_details_training_fraction),
+//					WindowSize:       pulumi.Any(_var.Model_model_training_details_window_size),
 //				},
 //				ProjectId: pulumi.Any(oci_ai_anomaly_detection_project.Test_project.Id),
 //				DefinedTags: pulumi.AnyMap{

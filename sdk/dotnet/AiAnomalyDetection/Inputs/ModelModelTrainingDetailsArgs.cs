@@ -12,6 +12,12 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 
     public sealed class ModelModelTrainingDetailsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// User can choose specific algorithm for training.
+        /// </summary>
+        [Input("algorithmHint")]
+        public Input<string>? AlgorithmHint { get; set; }
+
         [Input("dataAssetIds", required: true)]
         private InputList<string>? _dataAssetIds;
 
@@ -35,6 +41,12 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         /// </summary>
         [Input("trainingFraction")]
         public Input<double>? TrainingFraction { get; set; }
+
+        /// <summary>
+        /// This value would determine the window size of the training algorithm.
+        /// </summary>
+        [Input("windowSize")]
+        public Input<int>? WindowSize { get; set; }
 
         public ModelModelTrainingDetailsArgs()
         {

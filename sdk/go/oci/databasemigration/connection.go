@@ -57,6 +57,7 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				NsgIds: pulumi.Any(_var.Connection_nsg_ids),
 //				PrivateEndpoint: &databasemigration.ConnectionPrivateEndpointArgs{
 //					CompartmentId: pulumi.Any(_var.Compartment_id),
 //					SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
@@ -114,6 +115,8 @@ type Connection struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint ConnectionPrivateEndpointOutput `pulumi:"privateEndpoint"`
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
@@ -197,6 +200,8 @@ type connectionState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint *ConnectionPrivateEndpoint `pulumi:"privateEndpoint"`
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
@@ -240,6 +245,8 @@ type ConnectionState struct {
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds pulumi.StringArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint ConnectionPrivateEndpointPtrInput
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
@@ -283,6 +290,8 @@ type connectionArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint *ConnectionPrivateEndpoint `pulumi:"privateEndpoint"`
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
@@ -315,6 +324,8 @@ type ConnectionArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds pulumi.StringArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint ConnectionPrivateEndpointPtrInput
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
@@ -467,6 +478,11 @@ func (o ConnectionOutput) FreeformTags() pulumi.MapOutput {
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o ConnectionOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+func (o ConnectionOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.

@@ -57,6 +57,7 @@ namespace Pulumi.Oci.DatabaseMigration
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         NsgIds = @var.Connection_nsg_ids,
     ///         PrivateEndpoint = new Oci.DatabaseMigration.Inputs.ConnectionPrivateEndpointArgs
     ///         {
     ///             CompartmentId = @var.Compartment_id,
@@ -153,6 +154,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+        /// </summary>
+        [Output("nsgIds")]
+        public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
@@ -320,6 +327,18 @@ namespace Pulumi.Oci.DatabaseMigration
             set => _freeformTags = value;
         }
 
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
+
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         /// </summary>
@@ -435,6 +454,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.

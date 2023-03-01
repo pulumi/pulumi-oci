@@ -240,6 +240,8 @@ __all__ = [
     'GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthResult',
     'GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthResult',
     'GetAutonomousExadataInfrastructuresFilterResult',
+    'GetAutonomousVirtualMachinesAutonomousVirtualMachineResult',
+    'GetAutonomousVirtualMachinesFilterResult',
     'GetAutonomousVmClusterMaintenanceWindowResult',
     'GetAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
     'GetAutonomousVmClusterMaintenanceWindowDetailResult',
@@ -17263,6 +17265,183 @@ class GetAutonomousExadataInfrastructuresFilterResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousVirtualMachinesAutonomousVirtualMachineResult(dict):
+    def __init__(__self__, *,
+                 autonomous_vm_cluster_id: str,
+                 client_ip_address: str,
+                 compartment_id: str,
+                 cpu_core_count: int,
+                 db_node_storage_size_in_gbs: int,
+                 db_server_display_name: str,
+                 db_server_id: str,
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 memory_size_in_gbs: int,
+                 state: str,
+                 vm_name: str):
+        """
+        :param str autonomous_vm_cluster_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str client_ip_address: Client IP Address.
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param int cpu_core_count: The number of CPU cores enabled on the Autonomous Virtual Machine.
+        :param int db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Autonomous Virtual Machine.
+        :param str db_server_display_name: The display name of the dbServer associated with the Autonomous Virtual Machine.
+        :param str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machine.
+        :param int memory_size_in_gbs: The allocated memory in GBs on the Autonomous Virtual Machine.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str vm_name: The name of the Autonomous Virtual Machine.
+        """
+        pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
+        pulumi.set(__self__, "client_ip_address", client_ip_address)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        pulumi.set(__self__, "db_server_display_name", db_server_display_name)
+        pulumi.set(__self__, "db_server_id", db_server_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "vm_name", vm_name)
+
+    @property
+    @pulumi.getter(name="autonomousVmClusterId")
+    def autonomous_vm_cluster_id(self) -> str:
+        """
+        The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "autonomous_vm_cluster_id")
+
+    @property
+    @pulumi.getter(name="clientIpAddress")
+    def client_ip_address(self) -> str:
+        """
+        Client IP Address.
+        """
+        return pulumi.get(self, "client_ip_address")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> int:
+        """
+        The number of CPU cores enabled on the Autonomous Virtual Machine.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> int:
+        """
+        The allocated local node storage in GBs on the Autonomous Virtual Machine.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServerDisplayName")
+    def db_server_display_name(self) -> str:
+        """
+        The display name of the dbServer associated with the Autonomous Virtual Machine.
+        """
+        return pulumi.get(self, "db_server_display_name")
+
+    @property
+    @pulumi.getter(name="dbServerId")
+    def db_server_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
+        """
+        return pulumi.get(self, "db_server_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machine.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> int:
+        """
+        The allocated memory in GBs on the Autonomous Virtual Machine.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="vmName")
+    def vm_name(self) -> str:
+        """
+        The name of the Autonomous Virtual Machine.
+        """
+        return pulumi.get(self, "vm_name")
+
+
+@pulumi.output_type
+class GetAutonomousVirtualMachinesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetAutonomousVmClusterMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: int,
@@ -17555,6 +17734,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  data_storage_size_in_gb: float,
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
+                 db_servers: Sequence[str],
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  exadata_infrastructure_id: str,
@@ -17570,6 +17750,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  memory_per_oracle_compute_unit_in_gbs: int,
                  memory_size_in_gbs: int,
                  next_maintenance_run_id: str,
+                 node_count: int,
                  ocpus_enabled: float,
                  reclaimable_cpus: int,
                  scan_listener_port_non_tls: int,
@@ -17592,6 +17773,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param float data_storage_size_in_gb: The total data storage allocated in GBs.
         :param float data_storage_size_in_tbs: The total data storage allocated in TBs
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
+        :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
@@ -17606,6 +17788,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+        :param int node_count: The number of nodes in the Autonomous VM Cluster.
         :param float ocpus_enabled: The number of enabled OCPU cores.
         :param int reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param int scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
@@ -17628,6 +17811,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        pulumi.set(__self__, "db_servers", db_servers)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
@@ -17643,6 +17827,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+        pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
@@ -17748,6 +17933,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Sequence[str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        """
+        return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -17865,6 +18058,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         """
         return pulumi.get(self, "next_maintenance_run_id")
+
+    @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> int:
+        """
+        The number of nodes in the Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="ocpusEnabled")
@@ -26291,6 +26492,8 @@ class GetDbServerDbServerPatchingDetailResult(dict):
 @pulumi.output_type
 class GetDbServersDbServerResult(dict):
     def __init__(__self__, *,
+                 autonomous_virtual_machine_ids: Sequence[str],
+                 autonomous_vm_cluster_ids: Sequence[str],
                  compartment_id: str,
                  cpu_core_count: int,
                  db_node_ids: Sequence[str],
@@ -26311,6 +26514,8 @@ class GetDbServersDbServerResult(dict):
                  time_created: str,
                  vm_cluster_ids: Sequence[str]):
         """
+        :param Sequence[str] autonomous_virtual_machine_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+        :param Sequence[str] autonomous_vm_cluster_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int cpu_core_count: The number of CPU cores enabled on the Db server.
         :param Sequence[str] db_node_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
@@ -26331,6 +26536,8 @@ class GetDbServersDbServerResult(dict):
         :param str time_created: The date and time that the Db Server was created.
         :param Sequence[str] vm_cluster_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
         """
+        pulumi.set(__self__, "autonomous_virtual_machine_ids", autonomous_virtual_machine_ids)
+        pulumi.set(__self__, "autonomous_vm_cluster_ids", autonomous_vm_cluster_ids)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "db_node_ids", db_node_ids)
@@ -26350,6 +26557,22 @@ class GetDbServersDbServerResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vm_cluster_ids", vm_cluster_ids)
+
+    @property
+    @pulumi.getter(name="autonomousVirtualMachineIds")
+    def autonomous_virtual_machine_ids(self) -> Sequence[str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+        """
+        return pulumi.get(self, "autonomous_virtual_machine_ids")
+
+    @property
+    @pulumi.getter(name="autonomousVmClusterIds")
+    def autonomous_vm_cluster_ids(self) -> Sequence[str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+        """
+        return pulumi.get(self, "autonomous_vm_cluster_ids")
 
     @property
     @pulumi.getter(name="compartmentId")

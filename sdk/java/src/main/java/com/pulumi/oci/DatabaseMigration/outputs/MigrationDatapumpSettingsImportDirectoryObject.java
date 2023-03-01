@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class MigrationDatapumpSettingsImportDirectoryObject {
@@ -18,7 +20,7 @@ public final class MigrationDatapumpSettingsImportDirectoryObject {
      * @return (Updatable) Absolute path of directory on database server
      * 
      */
-    private String path;
+    private @Nullable String path;
 
     private MigrationDatapumpSettingsImportDirectoryObject() {}
     /**
@@ -32,8 +34,8 @@ public final class MigrationDatapumpSettingsImportDirectoryObject {
      * @return (Updatable) Absolute path of directory on database server
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
 
     public static Builder builder() {
@@ -46,7 +48,7 @@ public final class MigrationDatapumpSettingsImportDirectoryObject {
     @CustomType.Builder
     public static final class Builder {
         private String name;
-        private String path;
+        private @Nullable String path;
         public Builder() {}
         public Builder(MigrationDatapumpSettingsImportDirectoryObject defaults) {
     	      Objects.requireNonNull(defaults);
@@ -60,8 +62,8 @@ public final class MigrationDatapumpSettingsImportDirectoryObject {
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         public MigrationDatapumpSettingsImportDirectoryObject build() {

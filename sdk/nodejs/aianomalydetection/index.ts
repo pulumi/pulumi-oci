@@ -15,6 +15,11 @@ export type DataAsset = import("./dataAsset").DataAsset;
 export const DataAsset: typeof import("./dataAsset").DataAsset = null as any;
 utilities.lazyLoad(exports, ["DataAsset"], () => require("./dataAsset"));
 
+export { DetectAnomalyJobArgs, DetectAnomalyJobState } from "./detectAnomalyJob";
+export type DetectAnomalyJob = import("./detectAnomalyJob").DetectAnomalyJob;
+export const DetectAnomalyJob: typeof import("./detectAnomalyJob").DetectAnomalyJob = null as any;
+utilities.lazyLoad(exports, ["DetectAnomalyJob"], () => require("./detectAnomalyJob"));
+
 export { GetAiPrivateEndpointArgs, GetAiPrivateEndpointResult, GetAiPrivateEndpointOutputArgs } from "./getAiPrivateEndpoint";
 export const getAiPrivateEndpoint: typeof import("./getAiPrivateEndpoint").getAiPrivateEndpoint = null as any;
 export const getAiPrivateEndpointOutput: typeof import("./getAiPrivateEndpoint").getAiPrivateEndpointOutput = null as any;
@@ -24,6 +29,16 @@ export { GetAiPrivateEndpointsArgs, GetAiPrivateEndpointsResult, GetAiPrivateEnd
 export const getAiPrivateEndpoints: typeof import("./getAiPrivateEndpoints").getAiPrivateEndpoints = null as any;
 export const getAiPrivateEndpointsOutput: typeof import("./getAiPrivateEndpoints").getAiPrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getAiPrivateEndpoints","getAiPrivateEndpointsOutput"], () => require("./getAiPrivateEndpoints"));
+
+export { GetDetectAnomalyJobArgs, GetDetectAnomalyJobResult, GetDetectAnomalyJobOutputArgs } from "./getDetectAnomalyJob";
+export const getDetectAnomalyJob: typeof import("./getDetectAnomalyJob").getDetectAnomalyJob = null as any;
+export const getDetectAnomalyJobOutput: typeof import("./getDetectAnomalyJob").getDetectAnomalyJobOutput = null as any;
+utilities.lazyLoad(exports, ["getDetectAnomalyJob","getDetectAnomalyJobOutput"], () => require("./getDetectAnomalyJob"));
+
+export { GetDetectAnomalyJobsArgs, GetDetectAnomalyJobsResult, GetDetectAnomalyJobsOutputArgs } from "./getDetectAnomalyJobs";
+export const getDetectAnomalyJobs: typeof import("./getDetectAnomalyJobs").getDetectAnomalyJobs = null as any;
+export const getDetectAnomalyJobsOutput: typeof import("./getDetectAnomalyJobs").getDetectAnomalyJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getDetectAnomalyJobs","getDetectAnomalyJobsOutput"], () => require("./getDetectAnomalyJobs"));
 
 export { GetDetectionDataAssetArgs, GetDetectionDataAssetResult, GetDetectionDataAssetOutputArgs } from "./getDetectionDataAsset";
 export const getDetectionDataAsset: typeof import("./getDetectionDataAsset").getDetectionDataAsset = null as any;
@@ -74,6 +89,8 @@ const _module = {
                 return new AiPrivateEndpoint(name, <any>undefined, { urn })
             case "oci:AiAnomalyDetection/dataAsset:DataAsset":
                 return new DataAsset(name, <any>undefined, { urn })
+            case "oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob":
+                return new DetectAnomalyJob(name, <any>undefined, { urn })
             case "oci:AiAnomalyDetection/model:Model":
                 return new Model(name, <any>undefined, { urn })
             case "oci:AiAnomalyDetection/project:Project":
@@ -85,5 +102,6 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "AiAnomalyDetection/aiPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "AiAnomalyDetection/dataAsset", _module)
+pulumi.runtime.registerResourceModule("oci", "AiAnomalyDetection/detectAnomalyJob", _module)
 pulumi.runtime.registerResourceModule("oci", "AiAnomalyDetection/model", _module)
 pulumi.runtime.registerResourceModule("oci", "AiAnomalyDetection/project", _module)

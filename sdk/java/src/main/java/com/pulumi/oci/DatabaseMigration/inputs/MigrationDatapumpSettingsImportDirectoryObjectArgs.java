@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class MigrationDatapumpSettingsImportDirectoryObjectArgs extends com.pulumi.resources.ResourceArgs {
@@ -32,15 +34,15 @@ public final class MigrationDatapumpSettingsImportDirectoryObjectArgs extends co
      * (Updatable) Absolute path of directory on database server
      * 
      */
-    @Import(name="path", required=true)
-    private Output<String> path;
+    @Import(name="path")
+    private @Nullable Output<String> path;
 
     /**
      * @return (Updatable) Absolute path of directory on database server
      * 
      */
-    public Output<String> path() {
-        return this.path;
+    public Optional<Output<String>> path() {
+        return Optional.ofNullable(this.path);
     }
 
     private MigrationDatapumpSettingsImportDirectoryObjectArgs() {}
@@ -95,7 +97,7 @@ public final class MigrationDatapumpSettingsImportDirectoryObjectArgs extends co
          * @return builder
          * 
          */
-        public Builder path(Output<String> path) {
+        public Builder path(@Nullable Output<String> path) {
             $.path = path;
             return this;
         }
@@ -112,7 +114,6 @@ public final class MigrationDatapumpSettingsImportDirectoryObjectArgs extends co
 
         public MigrationDatapumpSettingsImportDirectoryObjectArgs build() {
             $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.path = Objects.requireNonNull($.path, "expected parameter 'path' to be non-null");
             return $;
         }
     }

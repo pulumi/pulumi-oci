@@ -45,6 +45,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     nsgIds: _var.connection_nsg_ids,
  *     privateEndpoint: {
  *         compartmentId: _var.compartment_id,
  *         subnetId: oci_core_subnet.test_subnet.id,
@@ -142,6 +143,10 @@ export class Connection extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+     */
+    public readonly nsgIds!: pulumi.Output<string[]>;
+    /**
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      */
     public readonly privateEndpoint!: pulumi.Output<outputs.DatabaseMigration.ConnectionPrivateEndpoint>;
@@ -202,6 +207,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["privateEndpoint"] = state ? state.privateEndpoint : undefined;
             resourceInputs["sshDetails"] = state ? state.sshDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -234,6 +240,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["privateEndpoint"] = args ? args.privateEndpoint : undefined;
             resourceInputs["sshDetails"] = args ? args.sshDetails : undefined;
             resourceInputs["tlsKeystore"] = args ? args.tlsKeystore : undefined;
@@ -299,6 +306,10 @@ export interface ConnectionState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+     */
+    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      */
@@ -377,6 +388,10 @@ export interface ConnectionArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+     */
+    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      */

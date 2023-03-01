@@ -22,7 +22,7 @@ class GetManagedDatabaseResult:
     """
     A collection of values returned by getManagedDatabase.
     """
-    def __init__(__self__, additional_details=None, compartment_id=None, database_status=None, database_sub_type=None, database_type=None, deployment_type=None, id=None, is_cluster=None, managed_database_groups=None, managed_database_id=None, management_option=None, name=None, parent_container_id=None, time_created=None, workload_type=None):
+    def __init__(__self__, additional_details=None, compartment_id=None, database_status=None, database_sub_type=None, database_type=None, db_system_id=None, deployment_type=None, id=None, is_cluster=None, managed_database_groups=None, managed_database_id=None, management_option=None, name=None, parent_container_id=None, storage_system_id=None, time_created=None, workload_type=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -38,6 +38,9 @@ class GetManagedDatabaseResult:
         if database_type and not isinstance(database_type, str):
             raise TypeError("Expected argument 'database_type' to be a str")
         pulumi.set(__self__, "database_type", database_type)
+        if db_system_id and not isinstance(db_system_id, str):
+            raise TypeError("Expected argument 'db_system_id' to be a str")
+        pulumi.set(__self__, "db_system_id", db_system_id)
         if deployment_type and not isinstance(deployment_type, str):
             raise TypeError("Expected argument 'deployment_type' to be a str")
         pulumi.set(__self__, "deployment_type", deployment_type)
@@ -62,6 +65,9 @@ class GetManagedDatabaseResult:
         if parent_container_id and not isinstance(parent_container_id, str):
             raise TypeError("Expected argument 'parent_container_id' to be a str")
         pulumi.set(__self__, "parent_container_id", parent_container_id)
+        if storage_system_id and not isinstance(storage_system_id, str):
+            raise TypeError("Expected argument 'storage_system_id' to be a str")
+        pulumi.set(__self__, "storage_system_id", storage_system_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -108,6 +114,14 @@ class GetManagedDatabaseResult:
         The type of Oracle Database installation.
         """
         return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        """
+        return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -171,6 +185,14 @@ class GetManagedDatabaseResult:
         return pulumi.get(self, "parent_container_id")
 
     @property
+    @pulumi.getter(name="storageSystemId")
+    def storage_system_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+        """
+        return pulumi.get(self, "storage_system_id")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -198,6 +220,7 @@ class AwaitableGetManagedDatabaseResult(GetManagedDatabaseResult):
             database_status=self.database_status,
             database_sub_type=self.database_sub_type,
             database_type=self.database_type,
+            db_system_id=self.db_system_id,
             deployment_type=self.deployment_type,
             id=self.id,
             is_cluster=self.is_cluster,
@@ -206,6 +229,7 @@ class AwaitableGetManagedDatabaseResult(GetManagedDatabaseResult):
             management_option=self.management_option,
             name=self.name,
             parent_container_id=self.parent_container_id,
+            storage_system_id=self.storage_system_id,
             time_created=self.time_created,
             workload_type=self.workload_type)
 
@@ -240,6 +264,7 @@ def get_managed_database(managed_database_id: Optional[str] = None,
         database_status=__ret__.database_status,
         database_sub_type=__ret__.database_sub_type,
         database_type=__ret__.database_type,
+        db_system_id=__ret__.db_system_id,
         deployment_type=__ret__.deployment_type,
         id=__ret__.id,
         is_cluster=__ret__.is_cluster,
@@ -248,6 +273,7 @@ def get_managed_database(managed_database_id: Optional[str] = None,
         management_option=__ret__.management_option,
         name=__ret__.name,
         parent_container_id=__ret__.parent_container_id,
+        storage_system_id=__ret__.storage_system_id,
         time_created=__ret__.time_created,
         workload_type=__ret__.workload_type)
 

@@ -24,11 +24,20 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         [Input("isTrainingGoalAchieved")]
         public Input<bool>? IsTrainingGoalAchieved { get; set; }
 
+        [Input("mae")]
+        public Input<double>? Mae { get; set; }
+
+        [Input("maxInferenceSyncRows")]
+        public Input<int>? MaxInferenceSyncRows { get; set; }
+
         /// <summary>
         /// The model accuracy metric on timestamp level.
         /// </summary>
         [Input("multivariateFap")]
         public Input<double>? MultivariateFap { get; set; }
+
+        [Input("rmse")]
+        public Input<double>? Rmse { get; set; }
 
         [Input("rowReductionDetails")]
         private InputList<Inputs.ModelModelTrainingResultRowReductionDetailGetArgs>? _rowReductionDetails;
@@ -59,6 +68,12 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         /// </summary>
         [Input("warning")]
         public Input<string>? Warning { get; set; }
+
+        /// <summary>
+        /// This value would determine the window size of the training algorithm.
+        /// </summary>
+        [Input("windowSize")]
+        public Input<int>? WindowSize { get; set; }
 
         public ModelModelTrainingResultGetArgs()
         {

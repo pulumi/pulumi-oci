@@ -374,8 +374,10 @@ class Model(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             model_training_details=oci.ai_anomaly_detection.ModelModelTrainingDetailsArgs(
                 data_asset_ids=var["model_model_training_details_data_asset_ids"],
+                algorithm_hint=var["model_model_training_details_algorithm_hint"],
                 target_fap=var["model_model_training_details_target_fap"],
                 training_fraction=var["model_model_training_details_training_fraction"],
+                window_size=var["model_model_training_details_window_size"],
             ),
             project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
             defined_tags={
@@ -427,8 +429,10 @@ class Model(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             model_training_details=oci.ai_anomaly_detection.ModelModelTrainingDetailsArgs(
                 data_asset_ids=var["model_model_training_details_data_asset_ids"],
+                algorithm_hint=var["model_model_training_details_algorithm_hint"],
                 target_fap=var["model_model_training_details_target_fap"],
                 training_fraction=var["model_model_training_details_training_fraction"],
+                window_size=var["model_model_training_details_window_size"],
             ),
             project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
             defined_tags={

@@ -21,6 +21,21 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
     public static final JobProgressPhaseArgs Empty = new JobProgressPhaseArgs();
 
     /**
+     * The text describing the action required to fix the issue
+     * 
+     */
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    /**
+     * @return The text describing the action required to fix the issue
+     * 
+     */
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
+    /**
      * Duration of the phase in milliseconds
      * 
      */
@@ -63,6 +78,21 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<Boolean>> isAdvisorReportAvailable() {
         return Optional.ofNullable(this.isAdvisorReportAvailable);
+    }
+
+    /**
+     * The text describing the root cause of the reported issue
+     * 
+     */
+    @Import(name="issue")
+    private @Nullable Output<String> issue;
+
+    /**
+     * @return The text describing the root cause of the reported issue
+     * 
+     */
+    public Optional<Output<String>> issue() {
+        return Optional.ofNullable(this.issue);
     }
 
     /**
@@ -128,9 +158,11 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
     private JobProgressPhaseArgs() {}
 
     private JobProgressPhaseArgs(JobProgressPhaseArgs $) {
+        this.action = $.action;
         this.durationInMs = $.durationInMs;
         this.extracts = $.extracts;
         this.isAdvisorReportAvailable = $.isAdvisorReportAvailable;
+        this.issue = $.issue;
         this.logLocations = $.logLocations;
         this.name = $.name;
         this.progress = $.progress;
@@ -153,6 +185,27 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
 
         public Builder(JobProgressPhaseArgs defaults) {
             $ = new JobProgressPhaseArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param action The text describing the action required to fix the issue
+         * 
+         * @return builder
+         * 
+         */
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        /**
+         * @param action The text describing the action required to fix the issue
+         * 
+         * @return builder
+         * 
+         */
+        public Builder action(String action) {
+            return action(Output.of(action));
         }
 
         /**
@@ -226,6 +279,27 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder isAdvisorReportAvailable(Boolean isAdvisorReportAvailable) {
             return isAdvisorReportAvailable(Output.of(isAdvisorReportAvailable));
+        }
+
+        /**
+         * @param issue The text describing the root cause of the reported issue
+         * 
+         * @return builder
+         * 
+         */
+        public Builder issue(@Nullable Output<String> issue) {
+            $.issue = issue;
+            return this;
+        }
+
+        /**
+         * @param issue The text describing the root cause of the reported issue
+         * 
+         * @return builder
+         * 
+         */
+        public Builder issue(String issue) {
+            return issue(Output.of(issue));
         }
 
         /**

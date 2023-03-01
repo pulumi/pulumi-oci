@@ -79,6 +79,11 @@ public final class GetConnectionResult {
      */
     private String lifecycleDetails;
     /**
+     * @return An array of Network Security Group OCIDs used to define network access for Connections.
+     * 
+     */
+    private List<String> nsgIds;
+    /**
      * @return Oracle Cloud Infrastructure Private Endpoint configuration details.
      * 
      */
@@ -205,6 +210,13 @@ public final class GetConnectionResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return An array of Network Security Group OCIDs used to define network access for Connections.
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds;
+    }
+    /**
      * @return Oracle Cloud Infrastructure Private Endpoint configuration details.
      * 
      */
@@ -282,6 +294,7 @@ public final class GetConnectionResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private List<String> nsgIds;
         private List<GetConnectionPrivateEndpoint> privateEndpoints;
         private List<GetConnectionSshDetail> sshDetails;
         private String state;
@@ -307,6 +320,7 @@ public final class GetConnectionResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.privateEndpoints = defaults.privateEndpoints;
     	      this.sshDetails = defaults.sshDetails;
     	      this.state = defaults.state;
@@ -390,6 +404,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder nsgIds(List<String> nsgIds) {
+            this.nsgIds = Objects.requireNonNull(nsgIds);
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
         public Builder privateEndpoints(List<GetConnectionPrivateEndpoint> privateEndpoints) {
             this.privateEndpoints = Objects.requireNonNull(privateEndpoints);
             return this;
@@ -458,6 +480,7 @@ public final class GetConnectionResult {
             o.freeformTags = freeformTags;
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;
+            o.nsgIds = nsgIds;
             o.privateEndpoints = privateEndpoints;
             o.sshDetails = sshDetails;
             o.state = state;

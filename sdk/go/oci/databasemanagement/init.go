@@ -23,6 +23,24 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint":
 		r = &DbManagementPrivateEndpoint{}
+	case "oci:DatabaseManagement/externalAsm:ExternalAsm":
+		r = &ExternalAsm{}
+	case "oci:DatabaseManagement/externalCluster:ExternalCluster":
+		r = &ExternalCluster{}
+	case "oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance":
+		r = &ExternalClusterInstance{}
+	case "oci:DatabaseManagement/externalDbNode:ExternalDbNode":
+		r = &ExternalDbNode{}
+	case "oci:DatabaseManagement/externalDbSystem:ExternalDbSystem":
+		r = &ExternalDbSystem{}
+	case "oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector":
+		r = &ExternalDbSystemConnector{}
+	case "oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement":
+		r = &ExternalDbSystemDatabaseManagementsManagement{}
+	case "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery":
+		r = &ExternalDbSystemDiscovery{}
+	case "oci:DatabaseManagement/externalListener:ExternalListener":
+		r = &ExternalListener{}
 	case "oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup":
 		r = &ManagedDatabaseGroup{}
 	case "oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter":
@@ -45,6 +63,51 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/dbManagementPrivateEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalAsm",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalClusterInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalDbNode",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalDbSystem",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalDbSystemConnector",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalDbSystemDatabaseManagementsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalDbSystemDiscovery",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalListener",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

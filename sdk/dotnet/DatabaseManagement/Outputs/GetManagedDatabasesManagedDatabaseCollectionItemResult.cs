@@ -34,6 +34,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string DatabaseType;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        /// </summary>
+        public readonly string DbSystemId;
+        /// <summary>
         /// A filter to return Managed Databases of the specified deployment type.
         /// </summary>
         public readonly string DeploymentType;
@@ -62,6 +66,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string ParentContainerId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+        /// </summary>
+        public readonly string StorageSystemId;
+        /// <summary>
         /// The date and time the Managed Database was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -82,6 +90,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string databaseType,
 
+            string dbSystemId,
+
             string deploymentType,
 
             string id,
@@ -96,6 +106,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string parentContainerId,
 
+            string storageSystemId,
+
             string timeCreated,
 
             string workloadType)
@@ -105,6 +117,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             DatabaseStatus = databaseStatus;
             DatabaseSubType = databaseSubType;
             DatabaseType = databaseType;
+            DbSystemId = dbSystemId;
             DeploymentType = deploymentType;
             Id = id;
             IsCluster = isCluster;
@@ -112,6 +125,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             ManagementOption = managementOption;
             Name = name;
             ParentContainerId = parentContainerId;
+            StorageSystemId = storageSystemId;
             TimeCreated = timeCreated;
             WorkloadType = workloadType;
         }

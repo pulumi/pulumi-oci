@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     autonomousDataStorageSizeInTbs: _var.autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
  *     computeModel: _var.autonomous_vm_cluster_compute_model,
  *     cpuCoreCountPerNode: _var.autonomous_vm_cluster_cpu_core_count_per_node,
+ *     dbServers: _var.autonomous_vm_cluster_db_servers,
  *     definedTags: _var.autonomous_vm_cluster_defined_tags,
  *     freeformTags: {
  *         Department: "Finance",
@@ -134,6 +135,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
     /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
+    public readonly dbServers!: pulumi.Output<string[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
@@ -189,6 +194,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    /**
+     * The number of nodes in the Autonomous VM Cluster.
+     */
+    public /*out*/ readonly nodeCount!: pulumi.Output<number>;
     /**
      * The number of enabled OCPU cores.
      */
@@ -251,6 +260,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
+            resourceInputs["dbServers"] = state ? state.dbServers : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
@@ -265,6 +275,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
+            resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["ocpusEnabled"] = state ? state.ocpusEnabled : undefined;
             resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
             resourceInputs["scanListenerPortNonTls"] = state ? state.scanListenerPortNonTls : undefined;
@@ -292,6 +303,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["computeModel"] = args ? args.computeModel : undefined;
             resourceInputs["cpuCoreCountPerNode"] = args ? args.cpuCoreCountPerNode : undefined;
+            resourceInputs["dbServers"] = args ? args.dbServers : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
@@ -319,6 +331,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["maintenanceWindows"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
+            resourceInputs["nodeCount"] = undefined /*out*/;
             resourceInputs["ocpusEnabled"] = undefined /*out*/;
             resourceInputs["reclaimableCpus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -379,6 +392,10 @@ export interface AutonomousVmClusterState {
      */
     dbNodeStorageSizeInGbs?: pulumi.Input<number>;
     /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
+    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -434,6 +451,10 @@ export interface AutonomousVmClusterState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     nextMaintenanceRunId?: pulumi.Input<string>;
+    /**
+     * The number of nodes in the Autonomous VM Cluster.
+     */
+    nodeCount?: pulumi.Input<number>;
     /**
      * The number of enabled OCPU cores.
      */
@@ -492,6 +513,10 @@ export interface AutonomousVmClusterArgs {
      * The number of CPU cores to enable per VM cluster node.
      */
     cpuCoreCountPerNode?: pulumi.Input<number>;
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
+    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */

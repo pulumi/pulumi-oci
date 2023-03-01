@@ -26,6 +26,7 @@ class ConnectionArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint: Optional[pulumi.Input['ConnectionPrivateEndpointArgs']] = None,
                  ssh_details: Optional[pulumi.Input['ConnectionSshDetailsArgs']] = None,
                  tls_keystore: Optional[pulumi.Input[str]] = None,
@@ -42,6 +43,7 @@ class ConnectionArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input['ConnectionPrivateEndpointArgs'] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         :param pulumi.Input['ConnectionSshDetailsArgs'] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
@@ -63,6 +65,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint is not None:
             pulumi.set(__self__, "private_endpoint", private_endpoint)
         if ssh_details is not None:
@@ -193,6 +197,18 @@ class ConnectionArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
     @pulumi.getter(name="privateEndpoint")
     def private_endpoint(self) -> Optional[pulumi.Input['ConnectionPrivateEndpointArgs']]:
         """
@@ -255,6 +271,7 @@ class _ConnectionState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint: Optional[pulumi.Input['ConnectionPrivateEndpointArgs']] = None,
                  ssh_details: Optional[pulumi.Input['ConnectionSshDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -277,6 +294,7 @@ class _ConnectionState:
         :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input['ConnectionPrivateEndpointArgs'] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         :param pulumi.Input['ConnectionSshDetailsArgs'] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         :param pulumi.Input[str] state: The current state of the Connection resource.
@@ -309,6 +327,8 @@ class _ConnectionState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint is not None:
             pulumi.set(__self__, "private_endpoint", private_endpoint)
         if ssh_details is not None:
@@ -461,6 +481,18 @@ class _ConnectionState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
     @pulumi.getter(name="privateEndpoint")
     def private_endpoint(self) -> Optional[pulumi.Input['ConnectionPrivateEndpointArgs']]:
         """
@@ -583,6 +615,7 @@ class Connection(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint: Optional[pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']]] = None,
                  ssh_details: Optional[pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']]] = None,
                  tls_keystore: Optional[pulumi.Input[str]] = None,
@@ -628,6 +661,7 @@ class Connection(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            nsg_ids=var["connection_nsg_ids"],
             private_endpoint=oci.database_migration.ConnectionPrivateEndpointArgs(
                 compartment_id=var["compartment_id"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
@@ -662,6 +696,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         :param pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
@@ -713,6 +748,7 @@ class Connection(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            nsg_ids=var["connection_nsg_ids"],
             private_endpoint=oci.database_migration.ConnectionPrivateEndpointArgs(
                 compartment_id=var["compartment_id"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
@@ -760,6 +796,7 @@ class Connection(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint: Optional[pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']]] = None,
                  ssh_details: Optional[pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']]] = None,
                  tls_keystore: Optional[pulumi.Input[str]] = None,
@@ -789,6 +826,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_endpoint"] = private_endpoint
             __props__.__dict__["ssh_details"] = ssh_details
             __props__.__dict__["tls_keystore"] = tls_keystore
@@ -823,6 +861,7 @@ class Connection(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_endpoint: Optional[pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']]] = None,
             ssh_details: Optional[pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -850,6 +889,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         :param pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         :param pulumi.Input[str] state: The current state of the Connection resource.
@@ -875,6 +915,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["private_endpoint"] = private_endpoint
         __props__.__dict__["ssh_details"] = ssh_details
         __props__.__dict__["state"] = state
@@ -973,6 +1014,14 @@ class Connection(pulumi.CustomResource):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+        """
+        return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpoint")

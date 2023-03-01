@@ -72,6 +72,8 @@ from .get_autonomous_exadata_infrastructure_ocpu import *
 from .get_autonomous_exadata_infrastructure_shapes import *
 from .get_autonomous_exadata_infrastructures import *
 from .get_autonomous_patch import *
+from .get_autonomous_virtual_machine import *
+from .get_autonomous_virtual_machines import *
 from .get_autonomous_vm_cluster import *
 from .get_autonomous_vm_clusters import *
 from .get_backup_destination import *

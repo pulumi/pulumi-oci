@@ -10,6 +10,51 @@ export type DbManagementPrivateEndpoint = import("./dbManagementPrivateEndpoint"
 export const DbManagementPrivateEndpoint: typeof import("./dbManagementPrivateEndpoint").DbManagementPrivateEndpoint = null as any;
 utilities.lazyLoad(exports, ["DbManagementPrivateEndpoint"], () => require("./dbManagementPrivateEndpoint"));
 
+export { ExternalAsmArgs, ExternalAsmState } from "./externalAsm";
+export type ExternalAsm = import("./externalAsm").ExternalAsm;
+export const ExternalAsm: typeof import("./externalAsm").ExternalAsm = null as any;
+utilities.lazyLoad(exports, ["ExternalAsm"], () => require("./externalAsm"));
+
+export { ExternalClusterArgs, ExternalClusterState } from "./externalCluster";
+export type ExternalCluster = import("./externalCluster").ExternalCluster;
+export const ExternalCluster: typeof import("./externalCluster").ExternalCluster = null as any;
+utilities.lazyLoad(exports, ["ExternalCluster"], () => require("./externalCluster"));
+
+export { ExternalClusterInstanceArgs, ExternalClusterInstanceState } from "./externalClusterInstance";
+export type ExternalClusterInstance = import("./externalClusterInstance").ExternalClusterInstance;
+export const ExternalClusterInstance: typeof import("./externalClusterInstance").ExternalClusterInstance = null as any;
+utilities.lazyLoad(exports, ["ExternalClusterInstance"], () => require("./externalClusterInstance"));
+
+export { ExternalDbNodeArgs, ExternalDbNodeState } from "./externalDbNode";
+export type ExternalDbNode = import("./externalDbNode").ExternalDbNode;
+export const ExternalDbNode: typeof import("./externalDbNode").ExternalDbNode = null as any;
+utilities.lazyLoad(exports, ["ExternalDbNode"], () => require("./externalDbNode"));
+
+export { ExternalDbSystemArgs, ExternalDbSystemState } from "./externalDbSystem";
+export type ExternalDbSystem = import("./externalDbSystem").ExternalDbSystem;
+export const ExternalDbSystem: typeof import("./externalDbSystem").ExternalDbSystem = null as any;
+utilities.lazyLoad(exports, ["ExternalDbSystem"], () => require("./externalDbSystem"));
+
+export { ExternalDbSystemConnectorArgs, ExternalDbSystemConnectorState } from "./externalDbSystemConnector";
+export type ExternalDbSystemConnector = import("./externalDbSystemConnector").ExternalDbSystemConnector;
+export const ExternalDbSystemConnector: typeof import("./externalDbSystemConnector").ExternalDbSystemConnector = null as any;
+utilities.lazyLoad(exports, ["ExternalDbSystemConnector"], () => require("./externalDbSystemConnector"));
+
+export { ExternalDbSystemDatabaseManagementsManagementArgs, ExternalDbSystemDatabaseManagementsManagementState } from "./externalDbSystemDatabaseManagementsManagement";
+export type ExternalDbSystemDatabaseManagementsManagement = import("./externalDbSystemDatabaseManagementsManagement").ExternalDbSystemDatabaseManagementsManagement;
+export const ExternalDbSystemDatabaseManagementsManagement: typeof import("./externalDbSystemDatabaseManagementsManagement").ExternalDbSystemDatabaseManagementsManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalDbSystemDatabaseManagementsManagement"], () => require("./externalDbSystemDatabaseManagementsManagement"));
+
+export { ExternalDbSystemDiscoveryArgs, ExternalDbSystemDiscoveryState } from "./externalDbSystemDiscovery";
+export type ExternalDbSystemDiscovery = import("./externalDbSystemDiscovery").ExternalDbSystemDiscovery;
+export const ExternalDbSystemDiscovery: typeof import("./externalDbSystemDiscovery").ExternalDbSystemDiscovery = null as any;
+utilities.lazyLoad(exports, ["ExternalDbSystemDiscovery"], () => require("./externalDbSystemDiscovery"));
+
+export { ExternalListenerArgs, ExternalListenerState } from "./externalListener";
+export type ExternalListener = import("./externalListener").ExternalListener;
+export const ExternalListener: typeof import("./externalListener").ExternalListener = null as any;
+utilities.lazyLoad(exports, ["ExternalListener"], () => require("./externalListener"));
+
 export { GetDbManagementPrivateEndpointArgs, GetDbManagementPrivateEndpointResult, GetDbManagementPrivateEndpointOutputArgs } from "./getDbManagementPrivateEndpoint";
 export const getDbManagementPrivateEndpoint: typeof import("./getDbManagementPrivateEndpoint").getDbManagementPrivateEndpoint = null as any;
 export const getDbManagementPrivateEndpointOutput: typeof import("./getDbManagementPrivateEndpoint").getDbManagementPrivateEndpointOutput = null as any;
@@ -29,6 +74,131 @@ export { GetDbManagementPrivateEndpointsArgs, GetDbManagementPrivateEndpointsRes
 export const getDbManagementPrivateEndpoints: typeof import("./getDbManagementPrivateEndpoints").getDbManagementPrivateEndpoints = null as any;
 export const getDbManagementPrivateEndpointsOutput: typeof import("./getDbManagementPrivateEndpoints").getDbManagementPrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getDbManagementPrivateEndpoints","getDbManagementPrivateEndpointsOutput"], () => require("./getDbManagementPrivateEndpoints"));
+
+export { GetExternalAsmArgs, GetExternalAsmResult, GetExternalAsmOutputArgs } from "./getExternalAsm";
+export const getExternalAsm: typeof import("./getExternalAsm").getExternalAsm = null as any;
+export const getExternalAsmOutput: typeof import("./getExternalAsm").getExternalAsmOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalAsm","getExternalAsmOutput"], () => require("./getExternalAsm"));
+
+export { GetExternalAsmConfigurationArgs, GetExternalAsmConfigurationResult, GetExternalAsmConfigurationOutputArgs } from "./getExternalAsmConfiguration";
+export const getExternalAsmConfiguration: typeof import("./getExternalAsmConfiguration").getExternalAsmConfiguration = null as any;
+export const getExternalAsmConfigurationOutput: typeof import("./getExternalAsmConfiguration").getExternalAsmConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalAsmConfiguration","getExternalAsmConfigurationOutput"], () => require("./getExternalAsmConfiguration"));
+
+export { GetExternalAsmDiskGroupsArgs, GetExternalAsmDiskGroupsResult, GetExternalAsmDiskGroupsOutputArgs } from "./getExternalAsmDiskGroups";
+export const getExternalAsmDiskGroups: typeof import("./getExternalAsmDiskGroups").getExternalAsmDiskGroups = null as any;
+export const getExternalAsmDiskGroupsOutput: typeof import("./getExternalAsmDiskGroups").getExternalAsmDiskGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalAsmDiskGroups","getExternalAsmDiskGroupsOutput"], () => require("./getExternalAsmDiskGroups"));
+
+export { GetExternalAsmInstanceArgs, GetExternalAsmInstanceResult, GetExternalAsmInstanceOutputArgs } from "./getExternalAsmInstance";
+export const getExternalAsmInstance: typeof import("./getExternalAsmInstance").getExternalAsmInstance = null as any;
+export const getExternalAsmInstanceOutput: typeof import("./getExternalAsmInstance").getExternalAsmInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalAsmInstance","getExternalAsmInstanceOutput"], () => require("./getExternalAsmInstance"));
+
+export { GetExternalAsmInstancesArgs, GetExternalAsmInstancesResult, GetExternalAsmInstancesOutputArgs } from "./getExternalAsmInstances";
+export const getExternalAsmInstances: typeof import("./getExternalAsmInstances").getExternalAsmInstances = null as any;
+export const getExternalAsmInstancesOutput: typeof import("./getExternalAsmInstances").getExternalAsmInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalAsmInstances","getExternalAsmInstancesOutput"], () => require("./getExternalAsmInstances"));
+
+export { GetExternalAsmUsersArgs, GetExternalAsmUsersResult, GetExternalAsmUsersOutputArgs } from "./getExternalAsmUsers";
+export const getExternalAsmUsers: typeof import("./getExternalAsmUsers").getExternalAsmUsers = null as any;
+export const getExternalAsmUsersOutput: typeof import("./getExternalAsmUsers").getExternalAsmUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalAsmUsers","getExternalAsmUsersOutput"], () => require("./getExternalAsmUsers"));
+
+export { GetExternalAsmsArgs, GetExternalAsmsResult, GetExternalAsmsOutputArgs } from "./getExternalAsms";
+export const getExternalAsms: typeof import("./getExternalAsms").getExternalAsms = null as any;
+export const getExternalAsmsOutput: typeof import("./getExternalAsms").getExternalAsmsOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalAsms","getExternalAsmsOutput"], () => require("./getExternalAsms"));
+
+export { GetExternalClusterArgs, GetExternalClusterResult, GetExternalClusterOutputArgs } from "./getExternalCluster";
+export const getExternalCluster: typeof import("./getExternalCluster").getExternalCluster = null as any;
+export const getExternalClusterOutput: typeof import("./getExternalCluster").getExternalClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalCluster","getExternalClusterOutput"], () => require("./getExternalCluster"));
+
+export { GetExternalClusterInstanceArgs, GetExternalClusterInstanceResult, GetExternalClusterInstanceOutputArgs } from "./getExternalClusterInstance";
+export const getExternalClusterInstance: typeof import("./getExternalClusterInstance").getExternalClusterInstance = null as any;
+export const getExternalClusterInstanceOutput: typeof import("./getExternalClusterInstance").getExternalClusterInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalClusterInstance","getExternalClusterInstanceOutput"], () => require("./getExternalClusterInstance"));
+
+export { GetExternalClusterInstancesArgs, GetExternalClusterInstancesResult, GetExternalClusterInstancesOutputArgs } from "./getExternalClusterInstances";
+export const getExternalClusterInstances: typeof import("./getExternalClusterInstances").getExternalClusterInstances = null as any;
+export const getExternalClusterInstancesOutput: typeof import("./getExternalClusterInstances").getExternalClusterInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalClusterInstances","getExternalClusterInstancesOutput"], () => require("./getExternalClusterInstances"));
+
+export { GetExternalClustersArgs, GetExternalClustersResult, GetExternalClustersOutputArgs } from "./getExternalClusters";
+export const getExternalClusters: typeof import("./getExternalClusters").getExternalClusters = null as any;
+export const getExternalClustersOutput: typeof import("./getExternalClusters").getExternalClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalClusters","getExternalClustersOutput"], () => require("./getExternalClusters"));
+
+export { GetExternalDatabasesArgs, GetExternalDatabasesResult, GetExternalDatabasesOutputArgs } from "./getExternalDatabases";
+export const getExternalDatabases: typeof import("./getExternalDatabases").getExternalDatabases = null as any;
+export const getExternalDatabasesOutput: typeof import("./getExternalDatabases").getExternalDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDatabases","getExternalDatabasesOutput"], () => require("./getExternalDatabases"));
+
+export { GetExternalDbHomeArgs, GetExternalDbHomeResult, GetExternalDbHomeOutputArgs } from "./getExternalDbHome";
+export const getExternalDbHome: typeof import("./getExternalDbHome").getExternalDbHome = null as any;
+export const getExternalDbHomeOutput: typeof import("./getExternalDbHome").getExternalDbHomeOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbHome","getExternalDbHomeOutput"], () => require("./getExternalDbHome"));
+
+export { GetExternalDbHomesArgs, GetExternalDbHomesResult, GetExternalDbHomesOutputArgs } from "./getExternalDbHomes";
+export const getExternalDbHomes: typeof import("./getExternalDbHomes").getExternalDbHomes = null as any;
+export const getExternalDbHomesOutput: typeof import("./getExternalDbHomes").getExternalDbHomesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbHomes","getExternalDbHomesOutput"], () => require("./getExternalDbHomes"));
+
+export { GetExternalDbNodeArgs, GetExternalDbNodeResult, GetExternalDbNodeOutputArgs } from "./getExternalDbNode";
+export const getExternalDbNode: typeof import("./getExternalDbNode").getExternalDbNode = null as any;
+export const getExternalDbNodeOutput: typeof import("./getExternalDbNode").getExternalDbNodeOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbNode","getExternalDbNodeOutput"], () => require("./getExternalDbNode"));
+
+export { GetExternalDbNodesArgs, GetExternalDbNodesResult, GetExternalDbNodesOutputArgs } from "./getExternalDbNodes";
+export const getExternalDbNodes: typeof import("./getExternalDbNodes").getExternalDbNodes = null as any;
+export const getExternalDbNodesOutput: typeof import("./getExternalDbNodes").getExternalDbNodesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbNodes","getExternalDbNodesOutput"], () => require("./getExternalDbNodes"));
+
+export { GetExternalDbSystemArgs, GetExternalDbSystemResult, GetExternalDbSystemOutputArgs } from "./getExternalDbSystem";
+export const getExternalDbSystem: typeof import("./getExternalDbSystem").getExternalDbSystem = null as any;
+export const getExternalDbSystemOutput: typeof import("./getExternalDbSystem").getExternalDbSystemOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbSystem","getExternalDbSystemOutput"], () => require("./getExternalDbSystem"));
+
+export { GetExternalDbSystemConnectorArgs, GetExternalDbSystemConnectorResult, GetExternalDbSystemConnectorOutputArgs } from "./getExternalDbSystemConnector";
+export const getExternalDbSystemConnector: typeof import("./getExternalDbSystemConnector").getExternalDbSystemConnector = null as any;
+export const getExternalDbSystemConnectorOutput: typeof import("./getExternalDbSystemConnector").getExternalDbSystemConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbSystemConnector","getExternalDbSystemConnectorOutput"], () => require("./getExternalDbSystemConnector"));
+
+export { GetExternalDbSystemConnectorsArgs, GetExternalDbSystemConnectorsResult, GetExternalDbSystemConnectorsOutputArgs } from "./getExternalDbSystemConnectors";
+export const getExternalDbSystemConnectors: typeof import("./getExternalDbSystemConnectors").getExternalDbSystemConnectors = null as any;
+export const getExternalDbSystemConnectorsOutput: typeof import("./getExternalDbSystemConnectors").getExternalDbSystemConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbSystemConnectors","getExternalDbSystemConnectorsOutput"], () => require("./getExternalDbSystemConnectors"));
+
+export { GetExternalDbSystemDiscoveriesArgs, GetExternalDbSystemDiscoveriesResult, GetExternalDbSystemDiscoveriesOutputArgs } from "./getExternalDbSystemDiscoveries";
+export const getExternalDbSystemDiscoveries: typeof import("./getExternalDbSystemDiscoveries").getExternalDbSystemDiscoveries = null as any;
+export const getExternalDbSystemDiscoveriesOutput: typeof import("./getExternalDbSystemDiscoveries").getExternalDbSystemDiscoveriesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbSystemDiscoveries","getExternalDbSystemDiscoveriesOutput"], () => require("./getExternalDbSystemDiscoveries"));
+
+export { GetExternalDbSystemDiscoveryArgs, GetExternalDbSystemDiscoveryResult, GetExternalDbSystemDiscoveryOutputArgs } from "./getExternalDbSystemDiscovery";
+export const getExternalDbSystemDiscovery: typeof import("./getExternalDbSystemDiscovery").getExternalDbSystemDiscovery = null as any;
+export const getExternalDbSystemDiscoveryOutput: typeof import("./getExternalDbSystemDiscovery").getExternalDbSystemDiscoveryOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbSystemDiscovery","getExternalDbSystemDiscoveryOutput"], () => require("./getExternalDbSystemDiscovery"));
+
+export { GetExternalDbSystemsArgs, GetExternalDbSystemsResult, GetExternalDbSystemsOutputArgs } from "./getExternalDbSystems";
+export const getExternalDbSystems: typeof import("./getExternalDbSystems").getExternalDbSystems = null as any;
+export const getExternalDbSystemsOutput: typeof import("./getExternalDbSystems").getExternalDbSystemsOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDbSystems","getExternalDbSystemsOutput"], () => require("./getExternalDbSystems"));
+
+export { GetExternalListenerArgs, GetExternalListenerResult, GetExternalListenerOutputArgs } from "./getExternalListener";
+export const getExternalListener: typeof import("./getExternalListener").getExternalListener = null as any;
+export const getExternalListenerOutput: typeof import("./getExternalListener").getExternalListenerOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalListener","getExternalListenerOutput"], () => require("./getExternalListener"));
+
+export { GetExternalListenerServicesArgs, GetExternalListenerServicesResult, GetExternalListenerServicesOutputArgs } from "./getExternalListenerServices";
+export const getExternalListenerServices: typeof import("./getExternalListenerServices").getExternalListenerServices = null as any;
+export const getExternalListenerServicesOutput: typeof import("./getExternalListenerServices").getExternalListenerServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalListenerServices","getExternalListenerServicesOutput"], () => require("./getExternalListenerServices"));
+
+export { GetExternalListenersArgs, GetExternalListenersResult, GetExternalListenersOutputArgs } from "./getExternalListeners";
+export const getExternalListeners: typeof import("./getExternalListeners").getExternalListeners = null as any;
+export const getExternalListenersOutput: typeof import("./getExternalListeners").getExternalListenersOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalListeners","getExternalListenersOutput"], () => require("./getExternalListeners"));
 
 export { GetJobExecutionsStatusArgs, GetJobExecutionsStatusResult, GetJobExecutionsStatusOutputArgs } from "./getJobExecutionsStatus";
 export const getJobExecutionsStatus: typeof import("./getJobExecutionsStatus").getJobExecutionsStatus = null as any;
@@ -302,6 +472,24 @@ const _module = {
         switch (type) {
             case "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint":
                 return new DbManagementPrivateEndpoint(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalAsm:ExternalAsm":
+                return new ExternalAsm(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalCluster:ExternalCluster":
+                return new ExternalCluster(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance":
+                return new ExternalClusterInstance(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalDbNode:ExternalDbNode":
+                return new ExternalDbNode(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalDbSystem:ExternalDbSystem":
+                return new ExternalDbSystem(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector":
+                return new ExternalDbSystemConnector(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement":
+                return new ExternalDbSystemDatabaseManagementsManagement(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery":
+                return new ExternalDbSystemDiscovery(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalListener:ExternalListener":
+                return new ExternalListener(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup":
                 return new ManagedDatabaseGroup(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter":
@@ -314,6 +502,15 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/dbManagementPrivateEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalAsm", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalClusterInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbNode", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystem", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemDatabaseManagementsManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemDiscovery", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalListener", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabaseGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesChangeDatabaseParameter", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesResetDatabaseParameter", _module)

@@ -8,6 +8,7 @@ import com.pulumi.oci.AiAnomalyDetection.outputs.ModelModelTrainingResultRowRedu
 import com.pulumi.oci.AiAnomalyDetection.outputs.ModelModelTrainingResultSignalDetail;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -26,11 +27,14 @@ public final class ModelModelTrainingResult {
      * 
      */
     private @Nullable Boolean isTrainingGoalAchieved;
+    private @Nullable Double mae;
+    private @Nullable Integer maxInferenceSyncRows;
     /**
      * @return The model accuracy metric on timestamp level.
      * 
      */
     private @Nullable Double multivariateFap;
+    private @Nullable Double rmse;
     /**
      * @return Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
      * 
@@ -46,6 +50,11 @@ public final class ModelModelTrainingResult {
      * 
      */
     private @Nullable String warning;
+    /**
+     * @return This value would determine the window size of the training algorithm.
+     * 
+     */
+    private @Nullable Integer windowSize;
 
     private ModelModelTrainingResult() {}
     /**
@@ -62,12 +71,21 @@ public final class ModelModelTrainingResult {
     public Optional<Boolean> isTrainingGoalAchieved() {
         return Optional.ofNullable(this.isTrainingGoalAchieved);
     }
+    public Optional<Double> mae() {
+        return Optional.ofNullable(this.mae);
+    }
+    public Optional<Integer> maxInferenceSyncRows() {
+        return Optional.ofNullable(this.maxInferenceSyncRows);
+    }
     /**
      * @return The model accuracy metric on timestamp level.
      * 
      */
     public Optional<Double> multivariateFap() {
         return Optional.ofNullable(this.multivariateFap);
+    }
+    public Optional<Double> rmse() {
+        return Optional.ofNullable(this.rmse);
     }
     /**
      * @return Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
@@ -90,6 +108,13 @@ public final class ModelModelTrainingResult {
     public Optional<String> warning() {
         return Optional.ofNullable(this.warning);
     }
+    /**
+     * @return This value would determine the window size of the training algorithm.
+     * 
+     */
+    public Optional<Integer> windowSize() {
+        return Optional.ofNullable(this.windowSize);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -102,19 +127,27 @@ public final class ModelModelTrainingResult {
     public static final class Builder {
         private @Nullable Double fap;
         private @Nullable Boolean isTrainingGoalAchieved;
+        private @Nullable Double mae;
+        private @Nullable Integer maxInferenceSyncRows;
         private @Nullable Double multivariateFap;
+        private @Nullable Double rmse;
         private @Nullable List<ModelModelTrainingResultRowReductionDetail> rowReductionDetails;
         private @Nullable List<ModelModelTrainingResultSignalDetail> signalDetails;
         private @Nullable String warning;
+        private @Nullable Integer windowSize;
         public Builder() {}
         public Builder(ModelModelTrainingResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fap = defaults.fap;
     	      this.isTrainingGoalAchieved = defaults.isTrainingGoalAchieved;
+    	      this.mae = defaults.mae;
+    	      this.maxInferenceSyncRows = defaults.maxInferenceSyncRows;
     	      this.multivariateFap = defaults.multivariateFap;
+    	      this.rmse = defaults.rmse;
     	      this.rowReductionDetails = defaults.rowReductionDetails;
     	      this.signalDetails = defaults.signalDetails;
     	      this.warning = defaults.warning;
+    	      this.windowSize = defaults.windowSize;
         }
 
         @CustomType.Setter
@@ -128,8 +161,23 @@ public final class ModelModelTrainingResult {
             return this;
         }
         @CustomType.Setter
+        public Builder mae(@Nullable Double mae) {
+            this.mae = mae;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxInferenceSyncRows(@Nullable Integer maxInferenceSyncRows) {
+            this.maxInferenceSyncRows = maxInferenceSyncRows;
+            return this;
+        }
+        @CustomType.Setter
         public Builder multivariateFap(@Nullable Double multivariateFap) {
             this.multivariateFap = multivariateFap;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rmse(@Nullable Double rmse) {
+            this.rmse = rmse;
             return this;
         }
         @CustomType.Setter
@@ -153,14 +201,23 @@ public final class ModelModelTrainingResult {
             this.warning = warning;
             return this;
         }
+        @CustomType.Setter
+        public Builder windowSize(@Nullable Integer windowSize) {
+            this.windowSize = windowSize;
+            return this;
+        }
         public ModelModelTrainingResult build() {
             final var o = new ModelModelTrainingResult();
             o.fap = fap;
             o.isTrainingGoalAchieved = isTrainingGoalAchieved;
+            o.mae = mae;
+            o.maxInferenceSyncRows = maxInferenceSyncRows;
             o.multivariateFap = multivariateFap;
+            o.rmse = rmse;
             o.rowReductionDetails = rowReductionDetails;
             o.signalDetails = signalDetails;
             o.warning = warning;
+            o.windowSize = windowSize;
             return o;
         }
     }

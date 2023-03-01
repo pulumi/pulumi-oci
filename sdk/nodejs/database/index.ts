@@ -339,6 +339,16 @@ export const getAutonomousPatch: typeof import("./getAutonomousPatch").getAutono
 export const getAutonomousPatchOutput: typeof import("./getAutonomousPatch").getAutonomousPatchOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousPatch","getAutonomousPatchOutput"], () => require("./getAutonomousPatch"));
 
+export { GetAutonomousVirtualMachineArgs, GetAutonomousVirtualMachineResult, GetAutonomousVirtualMachineOutputArgs } from "./getAutonomousVirtualMachine";
+export const getAutonomousVirtualMachine: typeof import("./getAutonomousVirtualMachine").getAutonomousVirtualMachine = null as any;
+export const getAutonomousVirtualMachineOutput: typeof import("./getAutonomousVirtualMachine").getAutonomousVirtualMachineOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousVirtualMachine","getAutonomousVirtualMachineOutput"], () => require("./getAutonomousVirtualMachine"));
+
+export { GetAutonomousVirtualMachinesArgs, GetAutonomousVirtualMachinesResult, GetAutonomousVirtualMachinesOutputArgs } from "./getAutonomousVirtualMachines";
+export const getAutonomousVirtualMachines: typeof import("./getAutonomousVirtualMachines").getAutonomousVirtualMachines = null as any;
+export const getAutonomousVirtualMachinesOutput: typeof import("./getAutonomousVirtualMachines").getAutonomousVirtualMachinesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousVirtualMachines","getAutonomousVirtualMachinesOutput"], () => require("./getAutonomousVirtualMachines"));
+
 export { GetAutonomousVmClusterArgs, GetAutonomousVmClusterResult, GetAutonomousVmClusterOutputArgs } from "./getAutonomousVmCluster";
 export const getAutonomousVmCluster: typeof import("./getAutonomousVmCluster").getAutonomousVmCluster = null as any;
 export const getAutonomousVmClusterOutput: typeof import("./getAutonomousVmCluster").getAutonomousVmClusterOutput = null as any;

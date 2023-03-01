@@ -94,6 +94,10 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly dbNodeStorageSizeInGbs: number;
     /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
+    readonly dbServers: string[];
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     readonly definedTags: {[key: string]: any};
@@ -150,6 +154,10 @@ export interface GetAutonomousVmClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     readonly nextMaintenanceRunId: string;
+    /**
+     * The number of nodes in the Autonomous VM Cluster.
+     */
+    readonly nodeCount: number;
     /**
      * The number of enabled OCPU cores.
      */

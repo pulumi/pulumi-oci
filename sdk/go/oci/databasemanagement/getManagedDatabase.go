@@ -66,6 +66,8 @@ type GetManagedDatabaseResult struct {
 	DatabaseSubType string `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType string `pulumi:"databaseType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+	DbSystemId string `pulumi:"dbSystemId"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The provider-assigned unique ID for this managed resource.
@@ -81,6 +83,8 @@ type GetManagedDatabaseResult struct {
 	Name string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
 	ParentContainerId string `pulumi:"parentContainerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+	StorageSystemId string `pulumi:"storageSystemId"`
 	// The date and time the Managed Database was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The workload type of the Autonomous Database.
@@ -150,6 +154,11 @@ func (o GetManagedDatabaseResultOutput) DatabaseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+func (o GetManagedDatabaseResultOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
 // The infrastructure used to deploy the Oracle Database.
 func (o GetManagedDatabaseResultOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DeploymentType }).(pulumi.StringOutput)
@@ -189,6 +198,11 @@ func (o GetManagedDatabaseResultOutput) Name() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
 func (o GetManagedDatabaseResultOutput) ParentContainerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.ParentContainerId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+func (o GetManagedDatabaseResultOutput) StorageSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.StorageSystemId }).(pulumi.StringOutput)
 }
 
 // The date and time the Managed Database was created.

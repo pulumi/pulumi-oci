@@ -40,6 +40,11 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      */
     private String databaseType;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     * 
+     */
+    private String dbSystemId;
+    /**
      * @return A filter to return Managed Databases of the specified deployment type.
      * 
      */
@@ -74,6 +79,11 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      * 
      */
     private String parentContainerId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+     * 
+     */
+    private String storageSystemId;
     /**
      * @return The date and time the Managed Database was created.
      * 
@@ -120,6 +130,13 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      */
     public String databaseType() {
         return this.databaseType;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     * 
+     */
+    public String dbSystemId() {
+        return this.dbSystemId;
     }
     /**
      * @return A filter to return Managed Databases of the specified deployment type.
@@ -171,6 +188,13 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         return this.parentContainerId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+     * 
+     */
+    public String storageSystemId() {
+        return this.storageSystemId;
+    }
+    /**
      * @return The date and time the Managed Database was created.
      * 
      */
@@ -199,6 +223,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         private String databaseStatus;
         private String databaseSubType;
         private String databaseType;
+        private String dbSystemId;
         private String deploymentType;
         private String id;
         private Boolean isCluster;
@@ -206,6 +231,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         private String managementOption;
         private String name;
         private String parentContainerId;
+        private String storageSystemId;
         private String timeCreated;
         private String workloadType;
         public Builder() {}
@@ -216,6 +242,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
     	      this.databaseStatus = defaults.databaseStatus;
     	      this.databaseSubType = defaults.databaseSubType;
     	      this.databaseType = defaults.databaseType;
+    	      this.dbSystemId = defaults.dbSystemId;
     	      this.deploymentType = defaults.deploymentType;
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
@@ -223,6 +250,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
     	      this.managementOption = defaults.managementOption;
     	      this.name = defaults.name;
     	      this.parentContainerId = defaults.parentContainerId;
+    	      this.storageSystemId = defaults.storageSystemId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.workloadType = defaults.workloadType;
         }
@@ -250,6 +278,11 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
             this.databaseType = Objects.requireNonNull(databaseType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
         @CustomType.Setter
@@ -291,6 +324,11 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder storageSystemId(String storageSystemId) {
+            this.storageSystemId = Objects.requireNonNull(storageSystemId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
@@ -307,6 +345,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
             o.databaseStatus = databaseStatus;
             o.databaseSubType = databaseSubType;
             o.databaseType = databaseType;
+            o.dbSystemId = dbSystemId;
             o.deploymentType = deploymentType;
             o.id = id;
             o.isCluster = isCluster;
@@ -314,6 +353,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
             o.managementOption = managementOption;
             o.name = name;
             o.parentContainerId = parentContainerId;
+            o.storageSystemId = storageSystemId;
             o.timeCreated = timeCreated;
             o.workloadType = workloadType;
             return o;

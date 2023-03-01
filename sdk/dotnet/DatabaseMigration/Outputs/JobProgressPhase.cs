@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     public sealed class JobProgressPhase
     {
         /// <summary>
+        /// The text describing the action required to fix the issue
+        /// </summary>
+        public readonly string? Action;
+        /// <summary>
         /// Duration of the phase in milliseconds
         /// </summary>
         public readonly int? DurationInMs;
@@ -25,6 +29,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
         /// </summary>
         public readonly bool? IsAdvisorReportAvailable;
+        /// <summary>
+        /// The text describing the root cause of the reported issue
+        /// </summary>
+        public readonly string? Issue;
         /// <summary>
         /// Details to access log file in the specified Object Storage bucket, if any.
         /// </summary>
@@ -44,11 +52,15 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
         [OutputConstructor]
         private JobProgressPhase(
+            string? action,
+
             int? durationInMs,
 
             ImmutableArray<Outputs.JobProgressPhaseExtract> extracts,
 
             bool? isAdvisorReportAvailable,
+
+            string? issue,
 
             ImmutableArray<Outputs.JobProgressPhaseLogLocation> logLocations,
 
@@ -58,9 +70,11 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             string? status)
         {
+            Action = action;
             DurationInMs = durationInMs;
             Extracts = extracts;
             IsAdvisorReportAvailable = isAdvisorReportAvailable;
+            Issue = issue;
             LogLocations = logLocations;
             Name = name;
             Progress = progress;

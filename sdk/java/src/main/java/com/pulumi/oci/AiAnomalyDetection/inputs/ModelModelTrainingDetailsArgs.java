@@ -6,6 +6,7 @@ package com.pulumi.oci.AiAnomalyDetection.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class ModelModelTrainingDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ModelModelTrainingDetailsArgs Empty = new ModelModelTrainingDetailsArgs();
+
+    /**
+     * User can choose specific algorithm for training.
+     * 
+     */
+    @Import(name="algorithmHint")
+    private @Nullable Output<String> algorithmHint;
+
+    /**
+     * @return User can choose specific algorithm for training.
+     * 
+     */
+    public Optional<Output<String>> algorithmHint() {
+        return Optional.ofNullable(this.algorithmHint);
+    }
 
     /**
      * The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
@@ -62,12 +78,29 @@ public final class ModelModelTrainingDetailsArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.trainingFraction);
     }
 
+    /**
+     * This value would determine the window size of the training algorithm.
+     * 
+     */
+    @Import(name="windowSize")
+    private @Nullable Output<Integer> windowSize;
+
+    /**
+     * @return This value would determine the window size of the training algorithm.
+     * 
+     */
+    public Optional<Output<Integer>> windowSize() {
+        return Optional.ofNullable(this.windowSize);
+    }
+
     private ModelModelTrainingDetailsArgs() {}
 
     private ModelModelTrainingDetailsArgs(ModelModelTrainingDetailsArgs $) {
+        this.algorithmHint = $.algorithmHint;
         this.dataAssetIds = $.dataAssetIds;
         this.targetFap = $.targetFap;
         this.trainingFraction = $.trainingFraction;
+        this.windowSize = $.windowSize;
     }
 
     public static Builder builder() {
@@ -86,6 +119,27 @@ public final class ModelModelTrainingDetailsArgs extends com.pulumi.resources.Re
 
         public Builder(ModelModelTrainingDetailsArgs defaults) {
             $ = new ModelModelTrainingDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param algorithmHint User can choose specific algorithm for training.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder algorithmHint(@Nullable Output<String> algorithmHint) {
+            $.algorithmHint = algorithmHint;
+            return this;
+        }
+
+        /**
+         * @param algorithmHint User can choose specific algorithm for training.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder algorithmHint(String algorithmHint) {
+            return algorithmHint(Output.of(algorithmHint));
         }
 
         /**
@@ -159,6 +213,27 @@ public final class ModelModelTrainingDetailsArgs extends com.pulumi.resources.Re
          */
         public Builder trainingFraction(Double trainingFraction) {
             return trainingFraction(Output.of(trainingFraction));
+        }
+
+        /**
+         * @param windowSize This value would determine the window size of the training algorithm.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder windowSize(@Nullable Output<Integer> windowSize) {
+            $.windowSize = windowSize;
+            return this;
+        }
+
+        /**
+         * @param windowSize This value would determine the window size of the training algorithm.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder windowSize(Integer windowSize) {
+            return windowSize(Output.of(windowSize));
         }
 
         public ModelModelTrainingDetailsArgs build() {

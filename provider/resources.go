@@ -21,7 +21,9 @@ import (
 	ociShim "github.com/oracle/terraform-provider-oci/shim"
 	"github.com/pulumi/pulumi-oci/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
+	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
+	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 )
 
 // all of the token components used below.
@@ -118,6 +120,7 @@ const (
 	osubSubscriptionMod             = "OsubSubscription"             // Osub Subscription
 	osubUsageMod                    = "OsubUsage"                    // Osub Usage
 	queueMod                        = "Queue"                        // Queue
+	recoveryMod                     = "RecoveryMod"                  // Recovery
 	resourceManagerMod              = "ResourceManager"              // Resource Manager
 	schMod                          = "Sch"                          // Sch
 	secretsMod                      = "Secrets"                      // Secrets
@@ -128,6 +131,7 @@ const (
 	streamingMod                    = "Streaming"                    // Streaming
 	usageProxyMod                   = "UsageProxy"                   // Usage Proxy
 	vaultMod                        = "Vault"                        // Vault
+	vbsMod                          = "Vbs"                          // VBS
 	visualBuilderMod                = "VisualBuilder"                // Visual Builder
 	vnMonitoringMod                 = "VnMonitoring"                 // Vn Monitoring
 	vulnerabilityScanningMod        = "VulnerabilityScanning"        // VulnerabilityScanning
@@ -2290,27 +2294,49 @@ func Provider() tfbridge.ProviderInfo {
 	}
 
 	capMap := map[string]string{
+		"aiAnomalyDetection": aiAnomalyDetectionMod,
 		"datascience":        dataScienceMod,
 		"database":           databaseMod,
-		"databasemanagement": databaseManagementMod,
-		"databasemigration":  databaseMigrationMod,
-		"databasetools":      databaseToolsMod,
+		"databaseManagement": databaseManagementMod,
+		"databaseMigration":  databaseMigrationMod,
+		"databaseTools":      databaseToolsMod,
 		"opsi":               opsiMod,
+		"recovery":           recoveryMod,
+		"vbs":                vbsMod,
 	}
-	prov.ComputeDefaults(tfbridge.TokensKnownModules("oci_", "", []string{
+
+	// Note: We specify the default module as "" so that the mapper will error when a
+	// token without a module is found. This allows us to safely and gradually migrate
+	// to ComputeDefaults.
+	err := x.ComputeDefaults(&prov, x.TokensKnownModules("oci_", "", []string{
+		"ai_anomaly_detection_",
 		"datascience_",
 		"database_",
 		"database_management_",
 		"database_tools_",
 		"database_migration_",
 		"opsi_",
+		"recovery_",
+		"vbs_",
 	}, func(module, name string) (string, error) {
 		mod, ok := capMap[module]
 		if !ok {
 			return "", fmt.Errorf("unmapped module '%s'", module)
 		}
-		return tfbridge.MakeStandardToken(mainPkg)(mod, name)
+		return x.MakeStandardToken(mainPkg)(mod, name)
 	}))
+	contract.AssertNoError(err)
+
+	resourcesMissingDocs := []string{
+		"oci_database_autonomous_container_database_dataguard_role_change",
+		"oci_datascience_model_artifact_export",
+		"oci_datascience_model_artifact_import",
+	}
+	for _, r := range resourcesMissingDocs {
+		_, ok := prov.Resources[r]
+		contract.Assertf(ok, "Expected resource %s", r)
+		prov.Resources[r].Docs = &tfbridge.DocInfo{Markdown: []byte{' '}}
+	}
 
 	prov.SetAutonaming(255, "-")
 

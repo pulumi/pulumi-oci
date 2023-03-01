@@ -17,6 +17,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class JobProgressPhase {
     /**
+     * @return The text describing the action required to fix the issue
+     * 
+     */
+    private @Nullable String action;
+    /**
      * @return Duration of the phase in milliseconds
      * 
      */
@@ -31,6 +36,11 @@ public final class JobProgressPhase {
      * 
      */
     private @Nullable Boolean isAdvisorReportAvailable;
+    /**
+     * @return The text describing the root cause of the reported issue
+     * 
+     */
+    private @Nullable String issue;
     /**
      * @return Details to access log file in the specified Object Storage bucket, if any.
      * 
@@ -54,6 +64,13 @@ public final class JobProgressPhase {
 
     private JobProgressPhase() {}
     /**
+     * @return The text describing the action required to fix the issue
+     * 
+     */
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
+    }
+    /**
      * @return Duration of the phase in milliseconds
      * 
      */
@@ -73,6 +90,13 @@ public final class JobProgressPhase {
      */
     public Optional<Boolean> isAdvisorReportAvailable() {
         return Optional.ofNullable(this.isAdvisorReportAvailable);
+    }
+    /**
+     * @return The text describing the root cause of the reported issue
+     * 
+     */
+    public Optional<String> issue() {
+        return Optional.ofNullable(this.issue);
     }
     /**
      * @return Details to access log file in the specified Object Storage bucket, if any.
@@ -112,9 +136,11 @@ public final class JobProgressPhase {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String action;
         private @Nullable Integer durationInMs;
         private @Nullable List<JobProgressPhaseExtract> extracts;
         private @Nullable Boolean isAdvisorReportAvailable;
+        private @Nullable String issue;
         private @Nullable List<JobProgressPhaseLogLocation> logLocations;
         private @Nullable String name;
         private @Nullable Integer progress;
@@ -122,15 +148,22 @@ public final class JobProgressPhase {
         public Builder() {}
         public Builder(JobProgressPhase defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
     	      this.durationInMs = defaults.durationInMs;
     	      this.extracts = defaults.extracts;
     	      this.isAdvisorReportAvailable = defaults.isAdvisorReportAvailable;
+    	      this.issue = defaults.issue;
     	      this.logLocations = defaults.logLocations;
     	      this.name = defaults.name;
     	      this.progress = defaults.progress;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
+        public Builder action(@Nullable String action) {
+            this.action = action;
+            return this;
+        }
         @CustomType.Setter
         public Builder durationInMs(@Nullable Integer durationInMs) {
             this.durationInMs = durationInMs;
@@ -147,6 +180,11 @@ public final class JobProgressPhase {
         @CustomType.Setter
         public Builder isAdvisorReportAvailable(@Nullable Boolean isAdvisorReportAvailable) {
             this.isAdvisorReportAvailable = isAdvisorReportAvailable;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder issue(@Nullable String issue) {
+            this.issue = issue;
             return this;
         }
         @CustomType.Setter
@@ -174,9 +212,11 @@ public final class JobProgressPhase {
         }
         public JobProgressPhase build() {
             final var o = new JobProgressPhase();
+            o.action = action;
             o.durationInMs = durationInMs;
             o.extracts = extracts;
             o.isAdvisorReportAvailable = isAdvisorReportAvailable;
+            o.issue = issue;
             o.logLocations = logLocations;
             o.name = name;
             o.progress = progress;

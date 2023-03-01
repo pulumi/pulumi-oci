@@ -15,6 +15,16 @@ import java.util.Objects;
 @CustomType
 public final class GetDbServerResult {
     /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+     * 
+     */
+    private List<String> autonomousVirtualMachineIds;
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+     * 
+     */
+    private List<String> autonomousVmClusterIds;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -112,6 +122,20 @@ public final class GetDbServerResult {
     private List<String> vmClusterIds;
 
     private GetDbServerResult() {}
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+     * 
+     */
+    public List<String> autonomousVirtualMachineIds() {
+        return this.autonomousVirtualMachineIds;
+    }
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+     * 
+     */
+    public List<String> autonomousVmClusterIds() {
+        return this.autonomousVmClusterIds;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -258,6 +282,8 @@ public final class GetDbServerResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> autonomousVirtualMachineIds;
+        private List<String> autonomousVmClusterIds;
         private String compartmentId;
         private Integer cpuCoreCount;
         private List<String> dbNodeIds;
@@ -281,6 +307,8 @@ public final class GetDbServerResult {
         public Builder() {}
         public Builder(GetDbServerResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autonomousVirtualMachineIds = defaults.autonomousVirtualMachineIds;
+    	      this.autonomousVmClusterIds = defaults.autonomousVmClusterIds;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.dbNodeIds = defaults.dbNodeIds;
@@ -303,6 +331,22 @@ public final class GetDbServerResult {
     	      this.vmClusterIds = defaults.vmClusterIds;
         }
 
+        @CustomType.Setter
+        public Builder autonomousVirtualMachineIds(List<String> autonomousVirtualMachineIds) {
+            this.autonomousVirtualMachineIds = Objects.requireNonNull(autonomousVirtualMachineIds);
+            return this;
+        }
+        public Builder autonomousVirtualMachineIds(String... autonomousVirtualMachineIds) {
+            return autonomousVirtualMachineIds(List.of(autonomousVirtualMachineIds));
+        }
+        @CustomType.Setter
+        public Builder autonomousVmClusterIds(List<String> autonomousVmClusterIds) {
+            this.autonomousVmClusterIds = Objects.requireNonNull(autonomousVmClusterIds);
+            return this;
+        }
+        public Builder autonomousVmClusterIds(String... autonomousVmClusterIds) {
+            return autonomousVmClusterIds(List.of(autonomousVmClusterIds));
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -414,6 +458,8 @@ public final class GetDbServerResult {
         }
         public GetDbServerResult build() {
             final var o = new GetDbServerResult();
+            o.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
+            o.autonomousVmClusterIds = autonomousVmClusterIds;
             o.compartmentId = compartmentId;
             o.cpuCoreCount = cpuCoreCount;
             o.dbNodeIds = dbNodeIds;

@@ -406,28 +406,36 @@ class JobProgressArgs:
 @pulumi.input_type
 class JobProgressPhaseArgs:
     def __init__(__self__, *,
+                 action: Optional[pulumi.Input[str]] = None,
                  duration_in_ms: Optional[pulumi.Input[int]] = None,
                  extracts: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]] = None,
                  is_advisor_report_available: Optional[pulumi.Input[bool]] = None,
+                 issue: Optional[pulumi.Input[str]] = None,
                  log_locations: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  progress: Optional[pulumi.Input[int]] = None,
                  status: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] action: The text describing the action required to fix the issue
         :param pulumi.Input[int] duration_in_ms: Duration of the phase in milliseconds
         :param pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]] extracts: Summary of phase status results.
         :param pulumi.Input[bool] is_advisor_report_available: True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+        :param pulumi.Input[str] issue: The text describing the root cause of the reported issue
         :param pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]] log_locations: Details to access log file in the specified Object Storage bucket, if any.
         :param pulumi.Input[str] name: Phase name
         :param pulumi.Input[int] progress: Percent progress of job phase.
         :param pulumi.Input[str] status: Phase status
         """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if duration_in_ms is not None:
             pulumi.set(__self__, "duration_in_ms", duration_in_ms)
         if extracts is not None:
             pulumi.set(__self__, "extracts", extracts)
         if is_advisor_report_available is not None:
             pulumi.set(__self__, "is_advisor_report_available", is_advisor_report_available)
+        if issue is not None:
+            pulumi.set(__self__, "issue", issue)
         if log_locations is not None:
             pulumi.set(__self__, "log_locations", log_locations)
         if name is not None:
@@ -436,6 +444,18 @@ class JobProgressPhaseArgs:
             pulumi.set(__self__, "progress", progress)
         if status is not None:
             pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[str]]:
+        """
+        The text describing the action required to fix the issue
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action", value)
 
     @property
     @pulumi.getter(name="durationInMs")
@@ -472,6 +492,18 @@ class JobProgressPhaseArgs:
     @is_advisor_report_available.setter
     def is_advisor_report_available(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_advisor_report_available", value)
+
+    @property
+    @pulumi.getter
+    def issue(self) -> Optional[pulumi.Input[str]]:
+        """
+        The text describing the root cause of the reported issue
+        """
+        return pulumi.get(self, "issue")
+
+    @issue.setter
+    def issue(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "issue", value)
 
     @property
     @pulumi.getter(name="logLocations")
@@ -1056,13 +1088,14 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
 class MigrationDatapumpSettingsExportDirectoryObjectArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 path: pulumi.Input[str]):
+                 path: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] name: (Updatable) Name of directory object in database
         :param pulumi.Input[str] path: (Updatable) Absolute path of directory on database server
         """
         pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
 
     @property
     @pulumi.getter
@@ -1078,14 +1111,14 @@ class MigrationDatapumpSettingsExportDirectoryObjectArgs:
 
     @property
     @pulumi.getter
-    def path(self) -> pulumi.Input[str]:
+    def path(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Absolute path of directory on database server
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: pulumi.Input[str]):
+    def path(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "path", value)
 
 
@@ -1093,13 +1126,14 @@ class MigrationDatapumpSettingsExportDirectoryObjectArgs:
 class MigrationDatapumpSettingsImportDirectoryObjectArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 path: pulumi.Input[str]):
+                 path: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] name: (Updatable) Name of directory object in database
         :param pulumi.Input[str] path: (Updatable) Absolute path of directory on database server
         """
         pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
 
     @property
     @pulumi.getter
@@ -1115,14 +1149,14 @@ class MigrationDatapumpSettingsImportDirectoryObjectArgs:
 
     @property
     @pulumi.getter
-    def path(self) -> pulumi.Input[str]:
+    def path(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Absolute path of directory on database server
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: pulumi.Input[str]):
+    def path(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "path", value)
 
 

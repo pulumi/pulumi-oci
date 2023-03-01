@@ -11,6 +11,10 @@ import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointPlainArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointsArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointsPlainArgs;
+import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobArgs;
+import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobPlainArgs;
+import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobsArgs;
+import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobsPlainArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetPlainArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetsArgs;
@@ -25,6 +29,8 @@ import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectsArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectsPlainArgs;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetAiPrivateEndpointResult;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetAiPrivateEndpointsResult;
+import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobResult;
+import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobsResult;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionDataAssetResult;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionDataAssetsResult;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionModelResult;
@@ -358,6 +364,338 @@ public final class AiAnomalyDetectionFunctions {
      */
     public static CompletableFuture<GetAiPrivateEndpointsResult> getAiPrivateEndpointsPlain(GetAiPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", TypeShape.of(GetAiPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a detect anomaly asynchronous job by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
+     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDetectAnomalyJobResult> getDetectAnomalyJob(GetDetectAnomalyJobArgs args) {
+        return getDetectAnomalyJob(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a detect anomaly asynchronous job by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
+     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDetectAnomalyJobResult> getDetectAnomalyJobPlain(GetDetectAnomalyJobPlainArgs args) {
+        return getDetectAnomalyJobPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a detect anomaly asynchronous job by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
+     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDetectAnomalyJobResult> getDetectAnomalyJob(GetDetectAnomalyJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob", TypeShape.of(GetDetectAnomalyJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a detect anomaly asynchronous job by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
+     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDetectAnomalyJobResult> getDetectAnomalyJobPlain(GetDetectAnomalyJobPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob", TypeShape.of(GetDetectAnomalyJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of all the Anomaly Detection jobs in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .displayName(var_.detect_anomaly_job_display_name())
+     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.detect_anomaly_job_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDetectAnomalyJobsResult> getDetectAnomalyJobs(GetDetectAnomalyJobsArgs args) {
+        return getDetectAnomalyJobs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of all the Anomaly Detection jobs in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .displayName(var_.detect_anomaly_job_display_name())
+     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.detect_anomaly_job_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDetectAnomalyJobsResult> getDetectAnomalyJobsPlain(GetDetectAnomalyJobsPlainArgs args) {
+        return getDetectAnomalyJobsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of all the Anomaly Detection jobs in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .displayName(var_.detect_anomaly_job_display_name())
+     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.detect_anomaly_job_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDetectAnomalyJobsResult> getDetectAnomalyJobs(GetDetectAnomalyJobsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", TypeShape.of(GetDetectAnomalyJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of all the Anomaly Detection jobs in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .displayName(var_.detect_anomaly_job_display_name())
+     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.detect_anomaly_job_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDetectAnomalyJobsResult> getDetectAnomalyJobsPlain(GetDetectAnomalyJobsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", TypeShape.of(GetDetectAnomalyJobsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.

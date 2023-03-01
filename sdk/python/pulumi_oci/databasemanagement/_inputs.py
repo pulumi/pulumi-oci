@@ -10,12 +10,64 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'ExternalAsmServicedDatabaseArgs',
+    'ExternalClusterNetworkConfigurationArgs',
+    'ExternalClusterScanConfigurationArgs',
+    'ExternalClusterVipConfigurationArgs',
+    'ExternalDbSystemConnectorConnectionInfoArgs',
+    'ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs',
+    'ExternalDbSystemConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemDatabaseManagementConfigArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs',
+    'ExternalDbSystemDiscoveryPatchOperationArgs',
+    'ExternalDbSystemDiscoveryPatchOperationValueArgs',
+    'ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs',
+    'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs',
+    'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs',
+    'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs',
+    'ExternalListenerEndpointArgs',
+    'ExternalListenerServicedAsmArgs',
+    'ExternalListenerServicedDatabaseArgs',
     'ManagedDatabaseGroupManagedDatabaseArgs',
     'ManagedDatabasesChangeDatabaseParameterCredentialsArgs',
     'ManagedDatabasesChangeDatabaseParameterParameterArgs',
     'ManagedDatabasesResetDatabaseParameterCredentialsArgs',
     'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs',
     'GetDbManagementPrivateEndpointsFilterArgs',
+    'GetExternalAsmDiskGroupsFilterArgs',
+    'GetExternalAsmInstancesFilterArgs',
+    'GetExternalAsmUsersFilterArgs',
+    'GetExternalAsmsFilterArgs',
+    'GetExternalClusterInstancesFilterArgs',
+    'GetExternalClustersFilterArgs',
+    'GetExternalDatabasesFilterArgs',
+    'GetExternalDbHomesFilterArgs',
+    'GetExternalDbNodesFilterArgs',
+    'GetExternalDbSystemConnectorsFilterArgs',
+    'GetExternalDbSystemDiscoveriesFilterArgs',
+    'GetExternalDbSystemsFilterArgs',
+    'GetExternalListenerServicesFilterArgs',
+    'GetExternalListenersFilterArgs',
     'GetJobExecutionsStatusesFilterArgs',
     'GetManagedDatabaseAddmTasksFilterArgs',
     'GetManagedDatabaseAlertLogCountsFilterArgs',
@@ -41,6 +93,3680 @@ __all__ = [
     'GetManagedDatabasesUserProxyUsersFilterArgs',
     'GetManagedDatabasesUserSystemPrivilegesFilterArgs',
 ]
+
+@pulumi.input_type
+class ExternalAsmServicedDatabaseArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 database_sub_type: Optional[pulumi.Input[str]] = None,
+                 database_type: Optional[pulumi.Input[str]] = None,
+                 db_unique_name: Optional[pulumi.Input[str]] = None,
+                 disk_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 is_managed: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+        :param pulumi.Input[str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param pulumi.Input[str] database_type: The type of Oracle Database installation.
+        :param pulumi.Input[str] db_unique_name: The unique name of the external database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] disk_groups: The list of ASM disk groups used by the database.
+        :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+        :param pulumi.Input[bool] is_managed: Indicates whether the database is a Managed Database or not.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_sub_type is not None:
+            pulumi.set(__self__, "database_sub_type", database_sub_type)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if db_unique_name is not None:
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if disk_groups is not None:
+            pulumi.set(__self__, "disk_groups", disk_groups)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_managed is not None:
+            pulumi.set(__self__, "is_managed", is_managed)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @database_sub_type.setter
+    def database_sub_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_sub_type", value)
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @database_type.setter
+    def database_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_type", value)
+
+    @property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique name of the external database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @db_unique_name.setter
+    def db_unique_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_unique_name", value)
+
+    @property
+    @pulumi.getter(name="diskGroups")
+    def disk_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of ASM disk groups used by the database.
+        """
+        return pulumi.get(self, "disk_groups")
+
+    @disk_groups.setter
+    def disk_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "disk_groups", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isManaged")
+    def is_managed(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the database is a Managed Database or not.
+        """
+        return pulumi.get(self, "is_managed")
+
+    @is_managed.setter
+    def is_managed(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_managed", value)
+
+
+@pulumi.input_type
+class ExternalClusterNetworkConfigurationArgs:
+    def __init__(__self__, *,
+                 network_number: Optional[pulumi.Input[int]] = None,
+                 network_type: Optional[pulumi.Input[str]] = None,
+                 subnet: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
+        :param pulumi.Input[str] network_type: The network type.
+        :param pulumi.Input[str] subnet: The subnet for the network.
+        """
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet is not None:
+            pulumi.set(__self__, "subnet", subnet)
+
+    @property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @network_number.setter
+    def network_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "network_number", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter
+    def subnet(self) -> Optional[pulumi.Input[str]]:
+        """
+        The subnet for the network.
+        """
+        return pulumi.get(self, "subnet")
+
+    @subnet.setter
+    def subnet(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet", value)
+
+
+@pulumi.input_type
+class ExternalClusterScanConfigurationArgs:
+    def __init__(__self__, *,
+                 network_number: Optional[pulumi.Input[int]] = None,
+                 scan_name: Optional[pulumi.Input[str]] = None,
+                 scan_port: Optional[pulumi.Input[int]] = None,
+                 scan_protocol: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
+        :param pulumi.Input[str] scan_name: The name of the SCAN listener.
+        :param pulumi.Input[int] scan_port: The port number of the SCAN listener.
+        :param pulumi.Input[str] scan_protocol: The protocol of the SCAN listener.
+        """
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if scan_name is not None:
+            pulumi.set(__self__, "scan_name", scan_name)
+        if scan_port is not None:
+            pulumi.set(__self__, "scan_port", scan_port)
+        if scan_protocol is not None:
+            pulumi.set(__self__, "scan_protocol", scan_protocol)
+
+    @property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @network_number.setter
+    def network_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "network_number", value)
+
+    @property
+    @pulumi.getter(name="scanName")
+    def scan_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_name")
+
+    @scan_name.setter
+    def scan_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scan_name", value)
+
+    @property
+    @pulumi.getter(name="scanPort")
+    def scan_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port number of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_port")
+
+    @scan_port.setter
+    def scan_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "scan_port", value)
+
+    @property
+    @pulumi.getter(name="scanProtocol")
+    def scan_protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_protocol")
+
+    @scan_protocol.setter
+    def scan_protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scan_protocol", value)
+
+
+@pulumi.input_type
+class ExternalClusterVipConfigurationArgs:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[str]] = None,
+                 network_number: Optional[pulumi.Input[int]] = None,
+                 node_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address: The VIP name or IP address.
+        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
+        :param pulumi.Input[str] node_name: The name of the node with the VIP.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[str]]:
+        """
+        The VIP name or IP address.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @network_number.setter
+    def network_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "network_number", value)
+
+    @property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @node_name.setter
+    def node_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_name", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemConnectorConnectionInfoArgs:
+    def __init__(__self__, *,
+                 component_type: pulumi.Input[str],
+                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None):
+        """
+        :param pulumi.Input[str] component_type: The component type.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_strings is not None:
+            pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> pulumi.Input[str]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @component_type.setter
+    def component_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "component_type", value)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]:
+        """
+        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @connection_credentials.setter
+    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]):
+        pulumi.set(self, "connection_credentials", value)
+
+    @property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+    @connection_strings.setter
+    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]):
+        pulumi.set(self, "connection_strings", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
+    def __init__(__self__, *,
+                 credential_name: Optional[pulumi.Input[str]] = None,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @credential_name.setter
+    def credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_name", value)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
+    def __init__(__self__, *,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
+        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
+        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
+        :param pulumi.Input[str] service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter
+    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @hosts.setter
+    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "hosts", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDatabaseManagementConfigArgs:
+    def __init__(__self__, *,
+                 license_model: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
+        """
+        pulumi.set(__self__, "license_model", license_model)
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> pulumi.Input[str]:
+        """
+        The Oracle license model that applies to the external database.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: pulumi.Input[str]):
+        pulumi.set(self, "license_model", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
+    def __init__(__self__, *,
+                 adr_home_directory: Optional[pulumi.Input[str]] = None,
+                 asm_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]] = None,
+                 associated_components: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]] = None,
+                 cluster_id: Optional[pulumi.Input[str]] = None,
+                 cluster_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]] = None,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 component_id: Optional[pulumi.Input[str]] = None,
+                 component_name: Optional[pulumi.Input[str]] = None,
+                 component_type: Optional[pulumi.Input[str]] = None,
+                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]] = None,
+                 container_database_id: Optional[pulumi.Input[str]] = None,
+                 cpu_core_count: Optional[pulumi.Input[float]] = None,
+                 crs_base_directory: Optional[pulumi.Input[str]] = None,
+                 db_edition: Optional[pulumi.Input[str]] = None,
+                 db_id: Optional[pulumi.Input[str]] = None,
+                 db_node_name: Optional[pulumi.Input[str]] = None,
+                 db_packs: Optional[pulumi.Input[str]] = None,
+                 db_role: Optional[pulumi.Input[str]] = None,
+                 db_type: Optional[pulumi.Input[str]] = None,
+                 db_unique_name: Optional[pulumi.Input[str]] = None,
+                 db_version: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]] = None,
+                 grid_home: Optional[pulumi.Input[str]] = None,
+                 guid: Optional[pulumi.Input[str]] = None,
+                 home_directory: Optional[pulumi.Input[str]] = None,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 instance_name: Optional[pulumi.Input[str]] = None,
+                 is_cluster: Optional[pulumi.Input[bool]] = None,
+                 is_flex_cluster: Optional[pulumi.Input[bool]] = None,
+                 is_flex_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_selected_for_monitoring: Optional[pulumi.Input[bool]] = None,
+                 listener_alias: Optional[pulumi.Input[str]] = None,
+                 listener_type: Optional[pulumi.Input[str]] = None,
+                 log_directory: Optional[pulumi.Input[str]] = None,
+                 memory_size_in_gbs: Optional[pulumi.Input[float]] = None,
+                 network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]] = None,
+                 node_role: Optional[pulumi.Input[str]] = None,
+                 ocr_file_location: Optional[pulumi.Input[str]] = None,
+                 oracle_home: Optional[pulumi.Input[str]] = None,
+                 pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]] = None,
+                 resource_id: Optional[pulumi.Input[str]] = None,
+                 scan_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 trace_directory: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None,
+                 vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]] = None):
+        """
+        :param pulumi.Input[str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]] associated_components: The list of associated components.
+        :param pulumi.Input[str] cluster_id: The unique identifier of the Oracle cluster.
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+        :param pulumi.Input[str] component_id: The identifier of the discovered DB system component.
+        :param pulumi.Input[str] component_name: The name of the discovered DB system component.
+        :param pulumi.Input[str] component_type: The component type.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]] connectors: The connector details used to connect to the external DB system component.
+        :param pulumi.Input[str] container_database_id: The unique identifier of the parent Container Database (CDB).
+        :param pulumi.Input[float] cpu_core_count: The number of CPU cores available on the DB node.
+        :param pulumi.Input[str] crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param pulumi.Input[str] db_edition: The Oracle Database edition.
+        :param pulumi.Input[str] db_id: The Oracle Database ID.
+        :param pulumi.Input[str] db_node_name: The name of the DB node.
+        :param pulumi.Input[str] db_packs: The database packs licensed for the external Oracle Database.
+        :param pulumi.Input[str] db_role: The role of the Oracle Database in Oracle Data Guard configuration.
+        :param pulumi.Input[str] db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+        :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the external database.
+        :param pulumi.Input[str] db_version: The Oracle Database version.
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]] endpoints: The list of protocol addresses the listener is configured to listen on.
+        :param pulumi.Input[str] grid_home: The directory in which Oracle Grid Infrastructure is installed.
+        :param pulumi.Input[str] guid: The unique identifier of the PDB.
+        :param pulumi.Input[str] home_directory: The location of the DB home.
+        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param pulumi.Input[str] instance_name: The name of the ASM instance.
+        :param pulumi.Input[bool] is_cluster: Indicates whether the Oracle Database is part of a cluster.
+        :param pulumi.Input[bool] is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
+        :param pulumi.Input[bool] is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
+        :param pulumi.Input[bool] is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        :param pulumi.Input[str] listener_alias: The listener alias.
+        :param pulumi.Input[str] listener_type: The type of listener.
+        :param pulumi.Input[str] log_directory: The destination directory of the listener log file.
+        :param pulumi.Input[float] memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]] network_configurations: The list of network address configurations of the external cluster.
+        :param pulumi.Input[str] node_role: The role of the cluster node.
+        :param pulumi.Input[str] ocr_file_location: The location of the Oracle Cluster Registry (OCR) file.
+        :param pulumi.Input[str] oracle_home: The Oracle home location of the listener.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]] pluggable_databases: The list of Pluggable Databases.
+        :param pulumi.Input[str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the external cluster.
+        :param pulumi.Input[str] status: The state of the discovered DB system component.
+        :param pulumi.Input[str] trace_directory: The destination directory of the listener trace file.
+        :param pulumi.Input[str] version: The version of Oracle Clusterware running in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]] vip_configurations: The list of Virtual IP (VIP) configurations of the external cluster.
+        """
+        if adr_home_directory is not None:
+            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        if asm_instances is not None:
+            pulumi.set(__self__, "asm_instances", asm_instances)
+        if associated_components is not None:
+            pulumi.set(__self__, "associated_components", associated_components)
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
+        if cluster_instances is not None:
+            pulumi.set(__self__, "cluster_instances", cluster_instances)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if component_id is not None:
+            pulumi.set(__self__, "component_id", component_id)
+        if component_name is not None:
+            pulumi.set(__self__, "component_name", component_name)
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+        if connectors is not None:
+            pulumi.set(__self__, "connectors", connectors)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if cpu_core_count is not None:
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        if crs_base_directory is not None:
+            pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        if db_edition is not None:
+            pulumi.set(__self__, "db_edition", db_edition)
+        if db_id is not None:
+            pulumi.set(__self__, "db_id", db_id)
+        if db_node_name is not None:
+            pulumi.set(__self__, "db_node_name", db_node_name)
+        if db_packs is not None:
+            pulumi.set(__self__, "db_packs", db_packs)
+        if db_role is not None:
+            pulumi.set(__self__, "db_role", db_role)
+        if db_type is not None:
+            pulumi.set(__self__, "db_type", db_type)
+        if db_unique_name is not None:
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if db_version is not None:
+            pulumi.set(__self__, "db_version", db_version)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if endpoints is not None:
+            pulumi.set(__self__, "endpoints", endpoints)
+        if grid_home is not None:
+            pulumi.set(__self__, "grid_home", grid_home)
+        if guid is not None:
+            pulumi.set(__self__, "guid", guid)
+        if home_directory is not None:
+            pulumi.set(__self__, "home_directory", home_directory)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if is_cluster is not None:
+            pulumi.set(__self__, "is_cluster", is_cluster)
+        if is_flex_cluster is not None:
+            pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
+        if is_flex_enabled is not None:
+            pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
+        if is_selected_for_monitoring is not None:
+            pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+        if listener_alias is not None:
+            pulumi.set(__self__, "listener_alias", listener_alias)
+        if listener_type is not None:
+            pulumi.set(__self__, "listener_type", listener_type)
+        if log_directory is not None:
+            pulumi.set(__self__, "log_directory", log_directory)
+        if memory_size_in_gbs is not None:
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if network_configurations is not None:
+            pulumi.set(__self__, "network_configurations", network_configurations)
+        if node_role is not None:
+            pulumi.set(__self__, "node_role", node_role)
+        if ocr_file_location is not None:
+            pulumi.set(__self__, "ocr_file_location", ocr_file_location)
+        if oracle_home is not None:
+            pulumi.set(__self__, "oracle_home", oracle_home)
+        if pluggable_databases is not None:
+            pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if scan_configurations is not None:
+            pulumi.set(__self__, "scan_configurations", scan_configurations)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if trace_directory is not None:
+            pulumi.set(__self__, "trace_directory", trace_directory)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if vip_configurations is not None:
+            pulumi.set(__self__, "vip_configurations", vip_configurations)
+
+    @property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @adr_home_directory.setter
+    def adr_home_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "adr_home_directory", value)
+
+    @property
+    @pulumi.getter(name="asmInstances")
+    def asm_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]:
+        return pulumi.get(self, "asm_instances")
+
+    @asm_instances.setter
+    def asm_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]):
+        pulumi.set(self, "asm_instances", value)
+
+    @property
+    @pulumi.getter(name="associatedComponents")
+    def associated_components(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]:
+        """
+        The list of associated components.
+        """
+        return pulumi.get(self, "associated_components")
+
+    @associated_components.setter
+    def associated_components(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]):
+        pulumi.set(self, "associated_components", value)
+
+    @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique identifier of the Oracle cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @cluster_id.setter
+    def cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_id", value)
+
+    @property
+    @pulumi.getter(name="clusterInstances")
+    def cluster_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]:
+        return pulumi.get(self, "cluster_instances")
+
+    @cluster_instances.setter
+    def cluster_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]):
+        pulumi.set(self, "cluster_instances", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="componentId")
+    def component_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The identifier of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_id")
+
+    @component_id.setter
+    def component_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component_id", value)
+
+    @property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_name")
+
+    @component_name.setter
+    def component_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component_name", value)
+
+    @property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @component_type.setter
+    def component_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component_type", value)
+
+    @property
+    @pulumi.getter
+    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]:
+        """
+        The connector details used to connect to the external DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @connectors.setter
+    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]):
+        pulumi.set(self, "connectors", value)
+
+    @property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique identifier of the parent Container Database (CDB).
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> Optional[pulumi.Input[float]]:
+        """
+        The number of CPU cores available on the DB node.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @cpu_core_count.setter
+    def cpu_core_count(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "cpu_core_count", value)
+
+    @property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @crs_base_directory.setter
+    def crs_base_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "crs_base_directory", value)
+
+    @property
+    @pulumi.getter(name="dbEdition")
+    def db_edition(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle Database edition.
+        """
+        return pulumi.get(self, "db_edition")
+
+    @db_edition.setter
+    def db_edition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_edition", value)
+
+    @property
+    @pulumi.getter(name="dbId")
+    def db_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle Database ID.
+        """
+        return pulumi.get(self, "db_id")
+
+    @db_id.setter
+    def db_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_id", value)
+
+    @property
+    @pulumi.getter(name="dbNodeName")
+    def db_node_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the DB node.
+        """
+        return pulumi.get(self, "db_node_name")
+
+    @db_node_name.setter
+    def db_node_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_node_name", value)
+
+    @property
+    @pulumi.getter(name="dbPacks")
+    def db_packs(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database packs licensed for the external Oracle Database.
+        """
+        return pulumi.get(self, "db_packs")
+
+    @db_packs.setter
+    def db_packs(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_packs", value)
+
+    @property
+    @pulumi.getter(name="dbRole")
+    def db_role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the Oracle Database in Oracle Data Guard configuration.
+        """
+        return pulumi.get(self, "db_role")
+
+    @db_role.setter
+    def db_role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_role", value)
+
+    @property
+    @pulumi.getter(name="dbType")
+    def db_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+        """
+        return pulumi.get(self, "db_type")
+
+    @db_type.setter
+    def db_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_type", value)
+
+    @property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The `DB_UNIQUE_NAME` of the external database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @db_unique_name.setter
+    def db_unique_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_unique_name", value)
+
+    @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle Database version.
+        """
+        return pulumi.get(self, "db_version")
+
+    @db_version.setter
+    def db_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_version", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]:
+        """
+        The list of protocol addresses the listener is configured to listen on.
+        """
+        return pulumi.get(self, "endpoints")
+
+    @endpoints.setter
+    def endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]):
+        pulumi.set(self, "endpoints", value)
+
+    @property
+    @pulumi.getter(name="gridHome")
+    def grid_home(self) -> Optional[pulumi.Input[str]]:
+        """
+        The directory in which Oracle Grid Infrastructure is installed.
+        """
+        return pulumi.get(self, "grid_home")
+
+    @grid_home.setter
+    def grid_home(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "grid_home", value)
+
+    @property
+    @pulumi.getter
+    def guid(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique identifier of the PDB.
+        """
+        return pulumi.get(self, "guid")
+
+    @guid.setter
+    def guid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "guid", value)
+
+    @property
+    @pulumi.getter(name="homeDirectory")
+    def home_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        The location of the DB home.
+        """
+        return pulumi.get(self, "home_directory")
+
+    @home_directory.setter
+    def home_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "home_directory", value)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @instance_name.setter
+    def instance_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_name", value)
+
+    @property
+    @pulumi.getter(name="isCluster")
+    def is_cluster(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the Oracle Database is part of a cluster.
+        """
+        return pulumi.get(self, "is_cluster")
+
+    @is_cluster.setter
+    def is_cluster(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_cluster", value)
+
+    @property
+    @pulumi.getter(name="isFlexCluster")
+    def is_flex_cluster(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the cluster is an Oracle Flex Cluster or not.
+        """
+        return pulumi.get(self, "is_flex_cluster")
+
+    @is_flex_cluster.setter
+    def is_flex_cluster(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_flex_cluster", value)
+
+    @property
+    @pulumi.getter(name="isFlexEnabled")
+    def is_flex_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether Oracle Flex ASM is enabled or not.
+        """
+        return pulumi.get(self, "is_flex_enabled")
+
+    @is_flex_enabled.setter
+    def is_flex_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_flex_enabled", value)
+
+    @property
+    @pulumi.getter(name="isSelectedForMonitoring")
+    def is_selected_for_monitoring(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        return pulumi.get(self, "is_selected_for_monitoring")
+
+    @is_selected_for_monitoring.setter
+    def is_selected_for_monitoring(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_selected_for_monitoring", value)
+
+    @property
+    @pulumi.getter(name="listenerAlias")
+    def listener_alias(self) -> Optional[pulumi.Input[str]]:
+        """
+        The listener alias.
+        """
+        return pulumi.get(self, "listener_alias")
+
+    @listener_alias.setter
+    def listener_alias(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "listener_alias", value)
+
+    @property
+    @pulumi.getter(name="listenerType")
+    def listener_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of listener.
+        """
+        return pulumi.get(self, "listener_type")
+
+    @listener_type.setter
+    def listener_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "listener_type", value)
+
+    @property
+    @pulumi.getter(name="logDirectory")
+    def log_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        The destination directory of the listener log file.
+        """
+        return pulumi.get(self, "log_directory")
+
+    @log_directory.setter
+    def log_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_directory", value)
+
+    @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The total memory in gigabytes (GB) on the DB node.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]:
+        """
+        The list of network address configurations of the external cluster.
+        """
+        return pulumi.get(self, "network_configurations")
+
+    @network_configurations.setter
+    def network_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]):
+        pulumi.set(self, "network_configurations", value)
+
+    @property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+    @node_role.setter
+    def node_role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_role", value)
+
+    @property
+    @pulumi.getter(name="ocrFileLocation")
+    def ocr_file_location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The location of the Oracle Cluster Registry (OCR) file.
+        """
+        return pulumi.get(self, "ocr_file_location")
+
+    @ocr_file_location.setter
+    def ocr_file_location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocr_file_location", value)
+
+    @property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle home location of the listener.
+        """
+        return pulumi.get(self, "oracle_home")
+
+    @oracle_home.setter
+    def oracle_home(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "oracle_home", value)
+
+    @property
+    @pulumi.getter(name="pluggableDatabases")
+    def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]:
+        """
+        The list of Pluggable Databases.
+        """
+        return pulumi.get(self, "pluggable_databases")
+
+    @pluggable_databases.setter
+    def pluggable_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]):
+        pulumi.set(self, "pluggable_databases", value)
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_id", value)
+
+    @property
+    @pulumi.getter(name="scanConfigurations")
+    def scan_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]:
+        """
+        The list of Single Client Access Name (SCAN) configurations of the external cluster.
+        """
+        return pulumi.get(self, "scan_configurations")
+
+    @scan_configurations.setter
+    def scan_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]):
+        pulumi.set(self, "scan_configurations", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The state of the discovered DB system component.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="traceDirectory")
+    def trace_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        The destination directory of the listener trace file.
+        """
+        return pulumi.get(self, "trace_directory")
+
+    @trace_directory.setter
+    def trace_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "trace_directory", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of Oracle Clusterware running in the cluster.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+    @property
+    @pulumi.getter(name="vipConfigurations")
+    def vip_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]:
+        """
+        The list of Virtual IP (VIP) configurations of the external cluster.
+        """
+        return pulumi.get(self, "vip_configurations")
+
+    @vip_configurations.setter
+    def vip_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]):
+        pulumi.set(self, "vip_configurations", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
+    def __init__(__self__, *,
+                 adr_home_directory: Optional[pulumi.Input[str]] = None,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 instance_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param pulumi.Input[str] instance_name: The name of the ASM instance.
+        """
+        if adr_home_directory is not None:
+            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+
+    @property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @adr_home_directory.setter
+    def adr_home_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "adr_home_directory", value)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @instance_name.setter
+    def instance_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_name", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
+    def __init__(__self__, *,
+                 association_type: Optional[pulumi.Input[str]] = None,
+                 component_id: Optional[pulumi.Input[str]] = None,
+                 component_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] association_type: The association type.
+        :param pulumi.Input[str] component_id: The identifier of the discovered DB system component.
+        :param pulumi.Input[str] component_type: The component type.
+        """
+        if association_type is not None:
+            pulumi.set(__self__, "association_type", association_type)
+        if component_id is not None:
+            pulumi.set(__self__, "component_id", component_id)
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+
+    @property
+    @pulumi.getter(name="associationType")
+    def association_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The association type.
+        """
+        return pulumi.get(self, "association_type")
+
+    @association_type.setter
+    def association_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "association_type", value)
+
+    @property
+    @pulumi.getter(name="componentId")
+    def component_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The identifier of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_id")
+
+    @component_id.setter
+    def component_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component_id", value)
+
+    @property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @component_type.setter
+    def component_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component_type", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
+    def __init__(__self__, *,
+                 adr_home_directory: Optional[pulumi.Input[str]] = None,
+                 cluster_id: Optional[pulumi.Input[str]] = None,
+                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]] = None,
+                 crs_base_directory: Optional[pulumi.Input[str]] = None,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 node_role: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param pulumi.Input[str] cluster_id: The unique identifier of the Oracle cluster.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]] connectors: The connector details used to connect to the external DB system component.
+        :param pulumi.Input[str] crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param pulumi.Input[str] node_role: The role of the cluster node.
+        """
+        if adr_home_directory is not None:
+            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
+        if connectors is not None:
+            pulumi.set(__self__, "connectors", connectors)
+        if crs_base_directory is not None:
+            pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if node_role is not None:
+            pulumi.set(__self__, "node_role", node_role)
+
+    @property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @adr_home_directory.setter
+    def adr_home_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "adr_home_directory", value)
+
+    @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique identifier of the Oracle cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @cluster_id.setter
+    def cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_id", value)
+
+    @property
+    @pulumi.getter
+    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]:
+        """
+        The connector details used to connect to the external DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @connectors.setter
+    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]):
+        pulumi.set(self, "connectors", value)
+
+    @property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @crs_base_directory.setter
+    def crs_base_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "crs_base_directory", value)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+    @node_role.setter
+    def node_role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_role", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
+    def __init__(__self__, *,
+                 agent_id: Optional[pulumi.Input[str]] = None,
+                 connection_failure_message: Optional[pulumi.Input[str]] = None,
+                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: Optional[pulumi.Input[str]] = None,
+                 connector_type: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 time_connection_status_last_updated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+        :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
+        :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
+        :param pulumi.Input[str] connector_type: The type of connector.
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
+        """
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_failure_message is not None:
+            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        if connection_infos is not None:
+            pulumi.set(__self__, "connection_infos", connection_infos)
+        if connection_status is not None:
+            pulumi.set(__self__, "connection_status", connection_status)
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if time_connection_status_last_updated is not None:
+            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @agent_id.setter
+    def agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "agent_id", value)
+
+    @property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> Optional[pulumi.Input[str]]:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @connection_failure_message.setter
+    def connection_failure_message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_failure_message", value)
+
+    @property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]:
+        """
+        The connection details required to connect to an external DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @connection_infos.setter
+    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]):
+        pulumi.set(self, "connection_infos", value)
+
+    @property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of connectivity to the external DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @connection_status.setter
+    def connection_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_status", value)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the connectionStatus of the external DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+    @time_connection_status_last_updated.setter
+    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_connection_status_last_updated", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs:
+    def __init__(__self__, *,
+                 component_type: Optional[pulumi.Input[str]] = None,
+                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None):
+        """
+        :param pulumi.Input[str] component_type: The component type.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
+        """
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_strings is not None:
+            pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @component_type.setter
+    def component_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component_type", value)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]:
+        """
+        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @connection_credentials.setter
+    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]):
+        pulumi.set(self, "connection_credentials", value)
+
+    @property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+    @connection_strings.setter
+    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]):
+        pulumi.set(self, "connection_strings", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs:
+    def __init__(__self__, *,
+                 credential_name: Optional[pulumi.Input[str]] = None,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @credential_name.setter
+    def credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_name", value)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs:
+    def __init__(__self__, *,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
+        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
+        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
+        :param pulumi.Input[str] service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter
+    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @hosts.setter
+    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "hosts", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
+    def __init__(__self__, *,
+                 agent_id: Optional[pulumi.Input[str]] = None,
+                 connection_failure_message: Optional[pulumi.Input[str]] = None,
+                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: Optional[pulumi.Input[str]] = None,
+                 connector_type: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 time_connection_status_last_updated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+        :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
+        :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
+        :param pulumi.Input[str] connector_type: The type of connector.
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
+        """
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_failure_message is not None:
+            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        if connection_infos is not None:
+            pulumi.set(__self__, "connection_infos", connection_infos)
+        if connection_status is not None:
+            pulumi.set(__self__, "connection_status", connection_status)
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if time_connection_status_last_updated is not None:
+            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @agent_id.setter
+    def agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "agent_id", value)
+
+    @property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> Optional[pulumi.Input[str]]:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @connection_failure_message.setter
+    def connection_failure_message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_failure_message", value)
+
+    @property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]:
+        """
+        The connection details required to connect to an external DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @connection_infos.setter
+    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]):
+        pulumi.set(self, "connection_infos", value)
+
+    @property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of connectivity to the external DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @connection_status.setter
+    def connection_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_status", value)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the connectionStatus of the external DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+    @time_connection_status_last_updated.setter
+    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_connection_status_last_updated", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
+    def __init__(__self__, *,
+                 component_type: Optional[pulumi.Input[str]] = None,
+                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None):
+        """
+        :param pulumi.Input[str] component_type: The component type.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
+        """
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_strings is not None:
+            pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @component_type.setter
+    def component_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component_type", value)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]:
+        """
+        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @connection_credentials.setter
+    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]):
+        pulumi.set(self, "connection_credentials", value)
+
+    @property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+    @connection_strings.setter
+    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]):
+        pulumi.set(self, "connection_strings", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs:
+    def __init__(__self__, *,
+                 credential_name: Optional[pulumi.Input[str]] = None,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @credential_name.setter
+    def credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_name", value)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs:
+    def __init__(__self__, *,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
+        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
+        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
+        :param pulumi.Input[str] service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter
+    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @hosts.setter
+    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "hosts", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
+    def __init__(__self__, *,
+                 host: Optional[pulumi.Input[str]] = None,
+                 key: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] host: The host name or IP address.
+        :param pulumi.Input[str] key: The unique name of the service.
+        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
+        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] services: The list of services registered with the listener.
+        """
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name or IP address.
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique name of the service.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of services registered with the listener.
+        """
+        return pulumi.get(self, "services")
+
+    @services.setter
+    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "services", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
+    def __init__(__self__, *,
+                 network_number: Optional[pulumi.Input[int]] = None,
+                 network_type: Optional[pulumi.Input[str]] = None,
+                 subnet: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
+        :param pulumi.Input[str] network_type: The network type.
+        :param pulumi.Input[str] subnet: The subnet for the network.
+        """
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet is not None:
+            pulumi.set(__self__, "subnet", subnet)
+
+    @property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @network_number.setter
+    def network_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "network_number", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter
+    def subnet(self) -> Optional[pulumi.Input[str]]:
+        """
+        The subnet for the network.
+        """
+        return pulumi.get(self, "subnet")
+
+    @subnet.setter
+    def subnet(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]] = None,
+                 container_database_id: Optional[pulumi.Input[str]] = None,
+                 guid: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]] connectors: The connector details used to connect to the external DB system component.
+        :param pulumi.Input[str] container_database_id: The unique identifier of the parent Container Database (CDB).
+        :param pulumi.Input[str] guid: The unique identifier of the PDB.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connectors is not None:
+            pulumi.set(__self__, "connectors", connectors)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if guid is not None:
+            pulumi.set(__self__, "guid", guid)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]:
+        """
+        The connector details used to connect to the external DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @connectors.setter
+    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]):
+        pulumi.set(self, "connectors", value)
+
+    @property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique identifier of the parent Container Database (CDB).
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @property
+    @pulumi.getter
+    def guid(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique identifier of the PDB.
+        """
+        return pulumi.get(self, "guid")
+
+    @guid.setter
+    def guid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "guid", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs:
+    def __init__(__self__, *,
+                 agent_id: Optional[pulumi.Input[str]] = None,
+                 connection_failure_message: Optional[pulumi.Input[str]] = None,
+                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: Optional[pulumi.Input[str]] = None,
+                 connector_type: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 time_connection_status_last_updated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+        :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
+        :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
+        :param pulumi.Input[str] connector_type: The type of connector.
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
+        """
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_failure_message is not None:
+            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        if connection_infos is not None:
+            pulumi.set(__self__, "connection_infos", connection_infos)
+        if connection_status is not None:
+            pulumi.set(__self__, "connection_status", connection_status)
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if time_connection_status_last_updated is not None:
+            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @agent_id.setter
+    def agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "agent_id", value)
+
+    @property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> Optional[pulumi.Input[str]]:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @connection_failure_message.setter
+    def connection_failure_message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_failure_message", value)
+
+    @property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]:
+        """
+        The connection details required to connect to an external DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @connection_infos.setter
+    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]):
+        pulumi.set(self, "connection_infos", value)
+
+    @property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of connectivity to the external DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @connection_status.setter
+    def connection_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_status", value)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the connectionStatus of the external DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+    @time_connection_status_last_updated.setter
+    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_connection_status_last_updated", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs:
+    def __init__(__self__, *,
+                 component_type: Optional[pulumi.Input[str]] = None,
+                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None):
+        """
+        :param pulumi.Input[str] component_type: The component type.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
+        """
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_strings is not None:
+            pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @component_type.setter
+    def component_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component_type", value)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]:
+        """
+        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @connection_credentials.setter
+    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]):
+        pulumi.set(self, "connection_credentials", value)
+
+    @property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+    @connection_strings.setter
+    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]):
+        pulumi.set(self, "connection_strings", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs:
+    def __init__(__self__, *,
+                 credential_name: Optional[pulumi.Input[str]] = None,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @credential_name.setter
+    def credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_name", value)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs:
+    def __init__(__self__, *,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
+        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
+        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
+        :param pulumi.Input[str] service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter
+    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @hosts.setter
+    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "hosts", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
+    def __init__(__self__, *,
+                 network_number: Optional[pulumi.Input[int]] = None,
+                 scan_name: Optional[pulumi.Input[str]] = None,
+                 scan_port: Optional[pulumi.Input[int]] = None,
+                 scan_protocol: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
+        :param pulumi.Input[str] scan_name: The name of the SCAN listener.
+        :param pulumi.Input[int] scan_port: The port number of the SCAN listener.
+        :param pulumi.Input[str] scan_protocol: The protocol of the SCAN listener.
+        """
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if scan_name is not None:
+            pulumi.set(__self__, "scan_name", scan_name)
+        if scan_port is not None:
+            pulumi.set(__self__, "scan_port", scan_port)
+        if scan_protocol is not None:
+            pulumi.set(__self__, "scan_protocol", scan_protocol)
+
+    @property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @network_number.setter
+    def network_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "network_number", value)
+
+    @property
+    @pulumi.getter(name="scanName")
+    def scan_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_name")
+
+    @scan_name.setter
+    def scan_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scan_name", value)
+
+    @property
+    @pulumi.getter(name="scanPort")
+    def scan_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port number of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_port")
+
+    @scan_port.setter
+    def scan_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "scan_port", value)
+
+    @property
+    @pulumi.getter(name="scanProtocol")
+    def scan_protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_protocol")
+
+    @scan_protocol.setter
+    def scan_protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scan_protocol", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[str]] = None,
+                 network_number: Optional[pulumi.Input[int]] = None,
+                 node_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address: The VIP name or IP address.
+        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
+        :param pulumi.Input[str] node_name: The name of the node with the VIP.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[str]]:
+        """
+        The VIP name or IP address.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @network_number.setter
+    def network_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "network_number", value)
+
+    @property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @node_name.setter
+    def node_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_name", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryPatchOperationArgs:
+    def __init__(__self__, *,
+                 operation: pulumi.Input[str],
+                 selection: pulumi.Input[str],
+                 value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']] = None):
+        """
+        :param pulumi.Input[str] operation: (Updatable) The operation can be one of these values: `MERGE`
+        :param pulumi.Input[str] selection: (Updatable)
+        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs'] value: (Updatable)
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operation(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The operation can be one of these values: `MERGE`
+        """
+        return pulumi.get(self, "operation")
+
+    @operation.setter
+    def operation(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operation", value)
+
+    @property
+    @pulumi.getter
+    def selection(self) -> pulumi.Input[str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "selection")
+
+    @selection.setter
+    def selection(self, value: pulumi.Input[str]):
+        pulumi.set(self, "selection", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryPatchOperationValueArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 connector: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 is_selected_for_monitoring: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs'] connector: The connector details used to connect to the external DB system component.
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[bool] is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connector is not None:
+            pulumi.set(__self__, "connector", connector)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_selected_for_monitoring is not None:
+            pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def connector(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]:
+        """
+        The connector details used to connect to the external DB system component.
+        """
+        return pulumi.get(self, "connector")
+
+    @connector.setter
+    def connector(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]):
+        pulumi.set(self, "connector", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="isSelectedForMonitoring")
+    def is_selected_for_monitoring(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        return pulumi.get(self, "is_selected_for_monitoring")
+
+    @is_selected_for_monitoring.setter
+    def is_selected_for_monitoring(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_selected_for_monitoring", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
+    def __init__(__self__, *,
+                 connector_type: pulumi.Input[str],
+                 display_name: pulumi.Input[str],
+                 agent_id: Optional[pulumi.Input[str]] = None,
+                 connection_info: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']] = None):
+        """
+        :param pulumi.Input[str] connector_type: The type of connector.
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs'] connection_info: The connection details required to connect to an external DB system component.
+        """
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_info is not None:
+            pulumi.set(__self__, "connection_info", connection_info)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> pulumi.Input[str]:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @agent_id.setter
+    def agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "agent_id", value)
+
+    @property
+    @pulumi.getter(name="connectionInfo")
+    def connection_info(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]:
+        """
+        The connection details required to connect to an external DB system component.
+        """
+        return pulumi.get(self, "connection_info")
+
+    @connection_info.setter
+    def connection_info(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]):
+        pulumi.set(self, "connection_info", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
+    def __init__(__self__, *,
+                 component_type: pulumi.Input[str],
+                 connection_credentials: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']] = None,
+                 connection_string: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']] = None):
+        """
+        :param pulumi.Input[str] component_type: The component type.
+        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs'] connection_string: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+
+    @property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> pulumi.Input[str]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @component_type.setter
+    def component_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "component_type", value)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]:
+        """
+        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @connection_credentials.setter
+    def connection_credentials(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]):
+        pulumi.set(self, "connection_credentials", value)
+
+    @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+    @connection_string.setter
+    def connection_string(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]):
+        pulumi.set(self, "connection_string", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs:
+    def __init__(__self__, *,
+                 credential_type: pulumi.Input[str],
+                 credential_name: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
+        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> pulumi.Input[str]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @credential_name.setter
+    def credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_name", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs:
+    def __init__(__self__, *,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
+        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
+        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
+        :param pulumi.Input[str] service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter
+    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @hosts.setter
+    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "hosts", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalListenerEndpointArgs:
+    def __init__(__self__, *,
+                 host: Optional[pulumi.Input[str]] = None,
+                 key: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] host: The host name or IP address.
+        :param pulumi.Input[str] key: The unique name of the service.
+        :param pulumi.Input[int] port: The port number.
+        :param pulumi.Input[str] protocol: The listener protocol.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] services: The list of services registered with the listener.
+        """
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name or IP address.
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique name of the service.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port number.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The listener protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of services registered with the listener.
+        """
+        return pulumi.get(self, "services")
+
+    @services.setter
+    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "services", value)
+
+
+@pulumi.input_type
+class ExternalListenerServicedAsmArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+        :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+
+@pulumi.input_type
+class ExternalListenerServicedDatabaseArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 database_sub_type: Optional[pulumi.Input[str]] = None,
+                 database_type: Optional[pulumi.Input[str]] = None,
+                 db_unique_name: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 is_managed: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+        :param pulumi.Input[str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param pulumi.Input[str] database_type: The type of Oracle Database installation.
+        :param pulumi.Input[str] db_unique_name: The unique name of the external database.
+        :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+        :param pulumi.Input[bool] is_managed: Indicates whether the database is a Managed Database or not.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_sub_type is not None:
+            pulumi.set(__self__, "database_sub_type", database_sub_type)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if db_unique_name is not None:
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_managed is not None:
+            pulumi.set(__self__, "is_managed", is_managed)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @database_sub_type.setter
+    def database_sub_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_sub_type", value)
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @database_type.setter
+    def database_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_type", value)
+
+    @property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique name of the external database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @db_unique_name.setter
+    def db_unique_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_unique_name", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isManaged")
+    def is_managed(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the database is a Managed Database or not.
+        """
+        return pulumi.get(self, "is_managed")
+
+    @is_managed.setter
+    def is_managed(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_managed", value)
+
 
 @pulumi.input_type
 class ManagedDatabaseGroupManagedDatabaseArgs:
@@ -437,6 +4163,570 @@ class GetDbManagementPrivateEndpointsFilterArgs:
         """
         A filter to return only resources that match the entire name.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalAsmDiskGroupsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the ASM disk group.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the ASM disk group.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalAsmInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalAsmUsersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the ASM user.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the ASM user.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalAsmsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalClusterInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalClustersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalDatabasesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalDbHomesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalDbNodesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalDbSystemConnectorsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalDbSystemDiscoveriesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalDbSystemsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalListenerServicesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the service.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the service.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExternalListenersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

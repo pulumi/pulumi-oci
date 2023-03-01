@@ -8,6 +8,7 @@ import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionModelModelTrainingR
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionModelModelTrainingResultSignalDetail;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -24,11 +25,14 @@ public final class GetDetectionModelModelTrainingResult {
      * 
      */
     private Boolean isTrainingGoalAchieved;
+    private Double mae;
+    private Integer maxInferenceSyncRows;
     /**
      * @return The model accuracy metric on timestamp level.
      * 
      */
     private Double multivariateFap;
+    private Double rmse;
     /**
      * @return Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
      * 
@@ -44,6 +48,11 @@ public final class GetDetectionModelModelTrainingResult {
      * 
      */
     private String warning;
+    /**
+     * @return Window size defined during training or deduced by the algorithm.
+     * 
+     */
+    private Integer windowSize;
 
     private GetDetectionModelModelTrainingResult() {}
     /**
@@ -60,12 +69,21 @@ public final class GetDetectionModelModelTrainingResult {
     public Boolean isTrainingGoalAchieved() {
         return this.isTrainingGoalAchieved;
     }
+    public Double mae() {
+        return this.mae;
+    }
+    public Integer maxInferenceSyncRows() {
+        return this.maxInferenceSyncRows;
+    }
     /**
      * @return The model accuracy metric on timestamp level.
      * 
      */
     public Double multivariateFap() {
         return this.multivariateFap;
+    }
+    public Double rmse() {
+        return this.rmse;
     }
     /**
      * @return Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
@@ -88,6 +106,13 @@ public final class GetDetectionModelModelTrainingResult {
     public String warning() {
         return this.warning;
     }
+    /**
+     * @return Window size defined during training or deduced by the algorithm.
+     * 
+     */
+    public Integer windowSize() {
+        return this.windowSize;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -100,19 +125,27 @@ public final class GetDetectionModelModelTrainingResult {
     public static final class Builder {
         private Double fap;
         private Boolean isTrainingGoalAchieved;
+        private Double mae;
+        private Integer maxInferenceSyncRows;
         private Double multivariateFap;
+        private Double rmse;
         private List<GetDetectionModelModelTrainingResultRowReductionDetail> rowReductionDetails;
         private List<GetDetectionModelModelTrainingResultSignalDetail> signalDetails;
         private String warning;
+        private Integer windowSize;
         public Builder() {}
         public Builder(GetDetectionModelModelTrainingResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fap = defaults.fap;
     	      this.isTrainingGoalAchieved = defaults.isTrainingGoalAchieved;
+    	      this.mae = defaults.mae;
+    	      this.maxInferenceSyncRows = defaults.maxInferenceSyncRows;
     	      this.multivariateFap = defaults.multivariateFap;
+    	      this.rmse = defaults.rmse;
     	      this.rowReductionDetails = defaults.rowReductionDetails;
     	      this.signalDetails = defaults.signalDetails;
     	      this.warning = defaults.warning;
+    	      this.windowSize = defaults.windowSize;
         }
 
         @CustomType.Setter
@@ -126,8 +159,23 @@ public final class GetDetectionModelModelTrainingResult {
             return this;
         }
         @CustomType.Setter
+        public Builder mae(Double mae) {
+            this.mae = Objects.requireNonNull(mae);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxInferenceSyncRows(Integer maxInferenceSyncRows) {
+            this.maxInferenceSyncRows = Objects.requireNonNull(maxInferenceSyncRows);
+            return this;
+        }
+        @CustomType.Setter
         public Builder multivariateFap(Double multivariateFap) {
             this.multivariateFap = Objects.requireNonNull(multivariateFap);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rmse(Double rmse) {
+            this.rmse = Objects.requireNonNull(rmse);
             return this;
         }
         @CustomType.Setter
@@ -151,14 +199,23 @@ public final class GetDetectionModelModelTrainingResult {
             this.warning = Objects.requireNonNull(warning);
             return this;
         }
+        @CustomType.Setter
+        public Builder windowSize(Integer windowSize) {
+            this.windowSize = Objects.requireNonNull(windowSize);
+            return this;
+        }
         public GetDetectionModelModelTrainingResult build() {
             final var o = new GetDetectionModelModelTrainingResult();
             o.fap = fap;
             o.isTrainingGoalAchieved = isTrainingGoalAchieved;
+            o.mae = mae;
+            o.maxInferenceSyncRows = maxInferenceSyncRows;
             o.multivariateFap = multivariateFap;
+            o.rmse = rmse;
             o.rowReductionDetails = rowReductionDetails;
             o.signalDetails = signalDetails;
             o.warning = warning;
+            o.windowSize = windowSize;
             return o;
         }
     }

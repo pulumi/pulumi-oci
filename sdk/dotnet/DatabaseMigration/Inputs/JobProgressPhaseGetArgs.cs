@@ -13,6 +13,12 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
     public sealed class JobProgressPhaseGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The text describing the action required to fix the issue
+        /// </summary>
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
+        /// <summary>
         /// Duration of the phase in milliseconds
         /// </summary>
         [Input("durationInMs")]
@@ -35,6 +41,12 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         /// </summary>
         [Input("isAdvisorReportAvailable")]
         public Input<bool>? IsAdvisorReportAvailable { get; set; }
+
+        /// <summary>
+        /// The text describing the root cause of the reported issue
+        /// </summary>
+        [Input("issue")]
+        public Input<string>? Issue { get; set; }
 
         [Input("logLocations")]
         private InputList<Inputs.JobProgressPhaseLogLocationGetArgs>? _logLocations;

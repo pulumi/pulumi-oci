@@ -518,28 +518,36 @@ class JobProgressPhase(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 action: Optional[str] = None,
                  duration_in_ms: Optional[int] = None,
                  extracts: Optional[Sequence['outputs.JobProgressPhaseExtract']] = None,
                  is_advisor_report_available: Optional[bool] = None,
+                 issue: Optional[str] = None,
                  log_locations: Optional[Sequence['outputs.JobProgressPhaseLogLocation']] = None,
                  name: Optional[str] = None,
                  progress: Optional[int] = None,
                  status: Optional[str] = None):
         """
+        :param str action: The text describing the action required to fix the issue
         :param int duration_in_ms: Duration of the phase in milliseconds
         :param Sequence['JobProgressPhaseExtractArgs'] extracts: Summary of phase status results.
         :param bool is_advisor_report_available: True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+        :param str issue: The text describing the root cause of the reported issue
         :param Sequence['JobProgressPhaseLogLocationArgs'] log_locations: Details to access log file in the specified Object Storage bucket, if any.
         :param str name: Phase name
         :param int progress: Percent progress of job phase.
         :param str status: Phase status
         """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if duration_in_ms is not None:
             pulumi.set(__self__, "duration_in_ms", duration_in_ms)
         if extracts is not None:
             pulumi.set(__self__, "extracts", extracts)
         if is_advisor_report_available is not None:
             pulumi.set(__self__, "is_advisor_report_available", is_advisor_report_available)
+        if issue is not None:
+            pulumi.set(__self__, "issue", issue)
         if log_locations is not None:
             pulumi.set(__self__, "log_locations", log_locations)
         if name is not None:
@@ -548,6 +556,14 @@ class JobProgressPhase(dict):
             pulumi.set(__self__, "progress", progress)
         if status is not None:
             pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[str]:
+        """
+        The text describing the action required to fix the issue
+        """
+        return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="durationInMs")
@@ -572,6 +588,14 @@ class JobProgressPhase(dict):
         True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
         """
         return pulumi.get(self, "is_advisor_report_available")
+
+    @property
+    @pulumi.getter
+    def issue(self) -> Optional[str]:
+        """
+        The text describing the root cause of the reported issue
+        """
+        return pulumi.get(self, "issue")
 
     @property
     @pulumi.getter(name="logLocations")
@@ -1129,13 +1153,14 @@ class MigrationDatapumpSettingsDataPumpParameters(dict):
 class MigrationDatapumpSettingsExportDirectoryObject(dict):
     def __init__(__self__, *,
                  name: str,
-                 path: str):
+                 path: Optional[str] = None):
         """
         :param str name: (Updatable) Name of directory object in database
         :param str path: (Updatable) Absolute path of directory on database server
         """
         pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
 
     @property
     @pulumi.getter
@@ -1147,7 +1172,7 @@ class MigrationDatapumpSettingsExportDirectoryObject(dict):
 
     @property
     @pulumi.getter
-    def path(self) -> str:
+    def path(self) -> Optional[str]:
         """
         (Updatable) Absolute path of directory on database server
         """
@@ -1158,13 +1183,14 @@ class MigrationDatapumpSettingsExportDirectoryObject(dict):
 class MigrationDatapumpSettingsImportDirectoryObject(dict):
     def __init__(__self__, *,
                  name: str,
-                 path: str):
+                 path: Optional[str] = None):
         """
         :param str name: (Updatable) Name of directory object in database
         :param str path: (Updatable) Absolute path of directory on database server
         """
         pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
 
     @property
     @pulumi.getter
@@ -1176,7 +1202,7 @@ class MigrationDatapumpSettingsImportDirectoryObject(dict):
 
     @property
     @pulumi.getter
-    def path(self) -> str:
+    def path(self) -> Optional[str]:
         """
         (Updatable) Absolute path of directory on database server
         """
@@ -2467,6 +2493,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  lifecycle_details: str,
+                 nsg_ids: Sequence[str],
                  private_endpoints: Sequence['outputs.GetConnectionsConnectionCollectionItemPrivateEndpointResult'],
                  ssh_details: Sequence['outputs.GetConnectionsConnectionCollectionItemSshDetailResult'],
                  state: str,
@@ -2489,6 +2516,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for Connections.
         :param Sequence['GetConnectionsConnectionCollectionItemPrivateEndpointArgs'] private_endpoints: Oracle Cloud Infrastructure Private Endpoint configuration details.
         :param Sequence['GetConnectionsConnectionCollectionItemSshDetailArgs'] ssh_details: Details of the SSH key that will be used.
         :param str state: The current state of the Database Migration Deployment.
@@ -2509,6 +2537,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_endpoints", private_endpoints)
         pulumi.set(__self__, "ssh_details", ssh_details)
         pulumi.set(__self__, "state", state)
@@ -2614,6 +2643,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        An array of Network Security Group OCIDs used to define network access for Connections.
+        """
+        return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpoints")

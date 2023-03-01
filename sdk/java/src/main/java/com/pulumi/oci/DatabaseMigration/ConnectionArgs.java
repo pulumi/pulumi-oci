@@ -12,6 +12,7 @@ import com.pulumi.oci.DatabaseMigration.inputs.ConnectionSshDetailsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionVaultDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -158,6 +159,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+     * 
+     */
+    @Import(name="nsgIds")
+    private @Nullable Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+     * 
+     */
+    public Optional<Output<List<String>>> nsgIds() {
+        return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      * 
      */
@@ -244,6 +260,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.nsgIds = $.nsgIds;
         this.privateEndpoint = $.privateEndpoint;
         this.sshDetails = $.sshDetails;
         this.tlsKeystore = $.tlsKeystore;
@@ -456,6 +473,37 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param nsgIds (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
+            $.nsgIds = nsgIds;
+            return this;
+        }
+
+        /**
+         * @param nsgIds (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(List<String> nsgIds) {
+            return nsgIds(Output.of(nsgIds));
+        }
+
+        /**
+         * @param nsgIds (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
         }
 
         /**

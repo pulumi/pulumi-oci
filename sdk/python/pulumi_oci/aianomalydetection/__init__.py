@@ -7,8 +7,11 @@ import typing
 # Export this package's modules as members:
 from .ai_private_endpoint import *
 from .data_asset import *
+from .detect_anomaly_job import *
 from .get_ai_private_endpoint import *
 from .get_ai_private_endpoints import *
+from .get_detect_anomaly_job import *
+from .get_detect_anomaly_jobs import *
 from .get_detection_data_asset import *
 from .get_detection_data_assets import *
 from .get_detection_model import *

@@ -34795,11 +34795,10 @@ type GetRepositoriesRepositoryCollectionItem struct {
 	// HTTP URL that you use to git clone, pull and push.
 	HttpUrl string `pulumi:"httpUrl"`
 	// The OCID of the repository. This value is unique and immutable.
-	Id string `pulumi:"id"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	Id               string `pulumi:"id"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Configuration information for mirroring the repository.
-	MirrorRepositoryConfigs []GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig `pulumi:"mirrorRepositoryConfigs"`
+	MirrorRepositoryConfig GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig `pulumi:"mirrorRepositoryConfig"`
 	// A filter to return only resources that match the entire name given.
 	Name string `pulumi:"name"`
 	// Tenancy unique namespace.
@@ -34855,11 +34854,10 @@ type GetRepositoriesRepositoryCollectionItemArgs struct {
 	// HTTP URL that you use to git clone, pull and push.
 	HttpUrl pulumi.StringInput `pulumi:"httpUrl"`
 	// The OCID of the repository. This value is unique and immutable.
-	Id pulumi.StringInput `pulumi:"id"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
+	Id               pulumi.StringInput `pulumi:"id"`
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Configuration information for mirroring the repository.
-	MirrorRepositoryConfigs GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayInput `pulumi:"mirrorRepositoryConfigs"`
+	MirrorRepositoryConfig GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigInput `pulumi:"mirrorRepositoryConfig"`
 	// A filter to return only resources that match the entire name given.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Tenancy unique namespace.
@@ -34982,16 +34980,15 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) Id() pulumi.StringOutput 
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetRepositoriesRepositoryCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Configuration information for mirroring the repository.
-func (o GetRepositoriesRepositoryCollectionItemOutput) MirrorRepositoryConfigs() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) []GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig {
-		return v.MirrorRepositoryConfigs
-	}).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) MirrorRepositoryConfig() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig {
+		return v.MirrorRepositoryConfig
+	}).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput)
 }
 
 // A filter to return only resources that match the entire name given.
@@ -35080,7 +35077,7 @@ type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig struct {
 	// URL of external repository you want to mirror.
 	RepositoryUrl string `pulumi:"repositoryUrl"`
 	// Specifies a trigger schedule. Timing information for when to initiate automated syncs.
-	TriggerSchedules []GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule `pulumi:"triggerSchedules"`
+	TriggerSchedule GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule `pulumi:"triggerSchedule"`
 }
 
 // GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigInput is an input type that accepts GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs and GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput values.
@@ -35100,7 +35097,7 @@ type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs struct {
 	// URL of external repository you want to mirror.
 	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
 	// Specifies a trigger schedule. Timing information for when to initiate automated syncs.
-	TriggerSchedules GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayInput `pulumi:"triggerSchedules"`
+	TriggerSchedule GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleInput `pulumi:"triggerSchedule"`
 }
 
 func (GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs) ElementType() reflect.Type {
@@ -35113,31 +35110,6 @@ func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs) ToGet
 
 func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutputWithContext(ctx context.Context) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput)
-}
-
-// GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray and GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput values.
-// You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayInput` via:
-//
-//	GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray{ GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs{...} }
-type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput
-	ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutputWithContext(context.Context) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput
-}
-
-type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray []GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigInput
-
-func (GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig)(nil)).Elem()
-}
-
-func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput {
-	return i.ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutputWithContext(ctx context.Context) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput)
 }
 
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput struct{ *pulumi.OutputState }
@@ -35165,30 +35137,10 @@ func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput) Rep
 }
 
 // Specifies a trigger schedule. Timing information for when to initiate automated syncs.
-func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput) TriggerSchedules() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig) []GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule {
-		return v.TriggerSchedules
-	}).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput)
-}
-
-type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig)(nil)).Elem()
-}
-
-func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput {
-	return o
-}
-
-func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutputWithContext(ctx context.Context) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput {
-	return o
-}
-
-func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput) Index(i pulumi.IntInput) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig {
-		return vs[0].([]GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig)[vs[1].(int)]
-	}).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput)
+func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput) TriggerSchedule() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule {
+		return v.TriggerSchedule
+	}).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput)
 }
 
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule struct {
@@ -35228,31 +35180,6 @@ func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSche
 	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput)
 }
 
-// GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray and GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput values.
-// You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayInput` via:
-//
-//	GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray{ GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs{...} }
-type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput
-	ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutputWithContext(context.Context) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput
-}
-
-type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray []GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleInput
-
-func (GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule)(nil)).Elem()
-}
-
-func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput {
-	return i.ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutputWithContext(ctx context.Context) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput)
-}
-
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput) ElementType() reflect.Type {
@@ -35279,26 +35206,6 @@ func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSche
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule) string {
 		return v.ScheduleType
 	}).(pulumi.StringOutput)
-}
-
-type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule)(nil)).Elem()
-}
-
-func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput() GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput {
-	return o
-}
-
-func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput) ToGetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutputWithContext(ctx context.Context) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput {
-	return o
-}
-
-func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput) Index(i pulumi.IntInput) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule {
-		return vs[0].([]GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule)[vs[1].(int)]
-	}).(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput)
 }
 
 type GetRepositoryAuthorItem struct {
@@ -41441,9 +41348,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesRepositoryCollectionItemInput)(nil)).Elem(), GetRepositoriesRepositoryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesRepositoryCollectionItemArrayInput)(nil)).Elem(), GetRepositoriesRepositoryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigInput)(nil)).Elem(), GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayInput)(nil)).Elem(), GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleInput)(nil)).Elem(), GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayInput)(nil)).Elem(), GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryAuthorItemInput)(nil)).Elem(), GetRepositoryAuthorItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryAuthorItemArrayInput)(nil)).Elem(), GetRepositoryAuthorItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryAuthorsFilterInput)(nil)).Elem(), GetRepositoryAuthorsFilterArgs{})
@@ -42097,9 +42002,7 @@ func init() {
 	pulumi.RegisterOutputType(GetRepositoriesRepositoryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetRepositoriesRepositoryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput{})
-	pulumi.RegisterOutputType(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput{})
-	pulumi.RegisterOutputType(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoryAuthorItemOutput{})
 	pulumi.RegisterOutputType(GetRepositoryAuthorItemArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoryAuthorsFilterOutput{})

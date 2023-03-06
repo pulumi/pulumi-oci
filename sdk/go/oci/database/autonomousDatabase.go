@@ -66,6 +66,12 @@ type AutonomousDatabase struct {
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
 	ConnectionUrls AutonomousDatabaseConnectionUrlArrayOutput `pulumi:"connectionUrls"`
 	// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+	// **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+	// * The data type must be an *integer*.
+	// * The minimum number of cores for all types of autonomous database is *1*
+	// * The maximum number of cores is as follows:
+	// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+	// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
 	// (Updatable) Customer Contacts.
 	CustomerContacts AutonomousDatabaseCustomerContactArrayOutput `pulumi:"customerContacts"`
@@ -81,7 +87,7 @@ type AutonomousDatabase struct {
 	DatabaseManagementStatus pulumi.StringOutput `pulumi:"databaseManagementStatus"`
 	// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
 	DataguardRegionType pulumi.StringOutput `pulumi:"dataguardRegionType"`
-	// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+	// (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 	DbName pulumi.StringOutput `pulumi:"dbName"`
 	// (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD and APEX are only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
@@ -107,7 +113,7 @@ type AutonomousDatabase struct {
 	IsAutoScalingEnabled pulumi.BoolOutput `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled pulumi.BoolOutput `pulumi:"isAutoScalingForStorageEnabled"`
-	// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled pulumi.BoolOutput `pulumi:"isDataGuardEnabled"`
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
 	IsDedicated pulumi.BoolOutput `pulumi:"isDedicated"`
@@ -331,6 +337,12 @@ type autonomousDatabaseState struct {
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
 	ConnectionUrls []AutonomousDatabaseConnectionUrl `pulumi:"connectionUrls"`
 	// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+	// **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+	// * The data type must be an *integer*.
+	// * The minimum number of cores for all types of autonomous database is *1*
+	// * The maximum number of cores is as follows:
+	// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+	// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// (Updatable) Customer Contacts.
 	CustomerContacts []AutonomousDatabaseCustomerContact `pulumi:"customerContacts"`
@@ -346,7 +358,7 @@ type autonomousDatabaseState struct {
 	DatabaseManagementStatus *string `pulumi:"databaseManagementStatus"`
 	// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
 	DataguardRegionType *string `pulumi:"dataguardRegionType"`
-	// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+	// (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 	DbName *string `pulumi:"dbName"`
 	// (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD and APEX are only supported for `dbVersion` `19c` and above.
 	DbVersion *string `pulumi:"dbVersion"`
@@ -372,7 +384,7 @@ type autonomousDatabaseState struct {
 	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled *bool `pulumi:"isAutoScalingForStorageEnabled"`
-	// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled *bool `pulumi:"isDataGuardEnabled"`
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
 	IsDedicated *bool `pulumi:"isDedicated"`
@@ -555,6 +567,12 @@ type AutonomousDatabaseState struct {
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
 	ConnectionUrls AutonomousDatabaseConnectionUrlArrayInput
 	// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+	// **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+	// * The data type must be an *integer*.
+	// * The minimum number of cores for all types of autonomous database is *1*
+	// * The maximum number of cores is as follows:
+	// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+	// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount pulumi.IntPtrInput
 	// (Updatable) Customer Contacts.
 	CustomerContacts AutonomousDatabaseCustomerContactArrayInput
@@ -570,7 +588,7 @@ type AutonomousDatabaseState struct {
 	DatabaseManagementStatus pulumi.StringPtrInput
 	// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
 	DataguardRegionType pulumi.StringPtrInput
-	// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+	// (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 	DbName pulumi.StringPtrInput
 	// (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD and APEX are only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringPtrInput
@@ -596,7 +614,7 @@ type AutonomousDatabaseState struct {
 	IsAutoScalingEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled pulumi.BoolPtrInput
-	// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled pulumi.BoolPtrInput
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
 	IsDedicated pulumi.BoolPtrInput
@@ -767,6 +785,12 @@ type autonomousDatabaseArgs struct {
 	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
 	ComputeModel *string `pulumi:"computeModel"`
 	// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+	// **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+	// * The data type must be an *integer*.
+	// * The minimum number of cores for all types of autonomous database is *1*
+	// * The maximum number of cores is as follows:
+	// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+	// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// (Updatable) Customer Contacts.
 	CustomerContacts []AutonomousDatabaseCustomerContact `pulumi:"customerContacts"`
@@ -780,7 +804,7 @@ type autonomousDatabaseArgs struct {
 	DatabaseEdition *string `pulumi:"databaseEdition"`
 	// Status of Database Management for this Autonomous Database.
 	DatabaseManagementStatus *string `pulumi:"databaseManagementStatus"`
-	// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+	// (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 	DbName string `pulumi:"dbName"`
 	// (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD and APEX are only supported for `dbVersion` `19c` and above.
 	DbVersion *string `pulumi:"dbVersion"`
@@ -802,7 +826,7 @@ type autonomousDatabaseArgs struct {
 	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled *bool `pulumi:"isAutoScalingForStorageEnabled"`
-	// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled *bool `pulumi:"isDataGuardEnabled"`
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
 	IsDedicated *bool `pulumi:"isDedicated"`
@@ -900,6 +924,12 @@ type AutonomousDatabaseArgs struct {
 	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
 	ComputeModel pulumi.StringPtrInput
 	// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+	// **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+	// * The data type must be an *integer*.
+	// * The minimum number of cores for all types of autonomous database is *1*
+	// * The maximum number of cores is as follows:
+	// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+	// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount pulumi.IntPtrInput
 	// (Updatable) Customer Contacts.
 	CustomerContacts AutonomousDatabaseCustomerContactArrayInput
@@ -913,7 +943,7 @@ type AutonomousDatabaseArgs struct {
 	DatabaseEdition pulumi.StringPtrInput
 	// Status of Database Management for this Autonomous Database.
 	DatabaseManagementStatus pulumi.StringPtrInput
-	// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+	// (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 	DbName pulumi.StringInput
 	// (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD and APEX are only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringPtrInput
@@ -935,7 +965,7 @@ type AutonomousDatabaseArgs struct {
 	IsAutoScalingEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled pulumi.BoolPtrInput
-	// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled pulumi.BoolPtrInput
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
 	IsDedicated pulumi.BoolPtrInput
@@ -1191,6 +1221,12 @@ func (o AutonomousDatabaseOutput) ConnectionUrls() AutonomousDatabaseConnectionU
 }
 
 // (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+// **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+// * The data type must be an *integer*.
+// * The minimum number of cores for all types of autonomous database is *1*
+// * The maximum number of cores is as follows:
+// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 func (o AutonomousDatabaseOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
@@ -1230,7 +1266,7 @@ func (o AutonomousDatabaseOutput) DataguardRegionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DataguardRegionType }).(pulumi.StringOutput)
 }
 
-// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+// (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 func (o AutonomousDatabaseOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DbName }).(pulumi.StringOutput)
 }
@@ -1289,7 +1325,7 @@ func (o AutonomousDatabaseOutput) IsAutoScalingForStorageEnabled() pulumi.BoolOu
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolOutput { return v.IsAutoScalingForStorageEnabled }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 func (o AutonomousDatabaseOutput) IsDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolOutput { return v.IsDataGuardEnabled }).(pulumi.BoolOutput)
 }

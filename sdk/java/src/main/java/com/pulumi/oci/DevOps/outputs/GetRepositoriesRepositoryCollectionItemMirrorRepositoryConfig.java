@@ -6,7 +6,6 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -25,7 +24,7 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
      * @return Specifies a trigger schedule. Timing information for when to initiate automated syncs.
      * 
      */
-    private List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
+    private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule triggerSchedule;
 
     private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig() {}
     /**
@@ -46,8 +45,8 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
      * @return Specifies a trigger schedule. Timing information for when to initiate automated syncs.
      * 
      */
-    public List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules() {
-        return this.triggerSchedules;
+    public GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule triggerSchedule() {
+        return this.triggerSchedule;
     }
 
     public static Builder builder() {
@@ -61,13 +60,13 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
     public static final class Builder {
         private String connectorId;
         private String repositoryUrl;
-        private List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
+        private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule triggerSchedule;
         public Builder() {}
         public Builder(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectorId = defaults.connectorId;
     	      this.repositoryUrl = defaults.repositoryUrl;
-    	      this.triggerSchedules = defaults.triggerSchedules;
+    	      this.triggerSchedule = defaults.triggerSchedule;
         }
 
         @CustomType.Setter
@@ -81,18 +80,15 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
             return this;
         }
         @CustomType.Setter
-        public Builder triggerSchedules(List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules) {
-            this.triggerSchedules = Objects.requireNonNull(triggerSchedules);
+        public Builder triggerSchedule(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule triggerSchedule) {
+            this.triggerSchedule = Objects.requireNonNull(triggerSchedule);
             return this;
-        }
-        public Builder triggerSchedules(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule... triggerSchedules) {
-            return triggerSchedules(List.of(triggerSchedules));
         }
         public GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig build() {
             final var o = new GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig();
             o.connectorId = connectorId;
             o.repositoryUrl = repositoryUrl;
-            o.triggerSchedules = triggerSchedules;
+            o.triggerSchedule = triggerSchedule;
             return o;
         }
     }

@@ -125,6 +125,12 @@ export class AutonomousDatabase extends pulumi.CustomResource {
     public /*out*/ readonly connectionUrls!: pulumi.Output<outputs.Database.AutonomousDatabaseConnectionUrl[]>;
     /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     * * The data type must be an *integer*.
+     * * The minimum number of cores for all types of autonomous database is *1*
+     * * The maximum number of cores is as follows:
+     * * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+     * * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      */
     public readonly cpuCoreCount!: pulumi.Output<number>;
     /**
@@ -156,7 +162,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly dataguardRegionType!: pulumi.Output<string>;
     /**
-     * The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+     * (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      */
     public readonly dbName!: pulumi.Output<string>;
     /**
@@ -204,7 +210,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly isAutoScalingForStorageEnabled!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     public readonly isDataGuardEnabled!: pulumi.Output<boolean>;
     /**
@@ -812,6 +818,12 @@ export interface AutonomousDatabaseState {
     connectionUrls?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseConnectionUrl>[]>;
     /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     * * The data type must be an *integer*.
+     * * The minimum number of cores for all types of autonomous database is *1*
+     * * The maximum number of cores is as follows:
+     * * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+     * * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
@@ -843,7 +855,7 @@ export interface AutonomousDatabaseState {
      */
     dataguardRegionType?: pulumi.Input<string>;
     /**
-     * The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+     * (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      */
     dbName?: pulumi.Input<string>;
     /**
@@ -891,7 +903,7 @@ export interface AutonomousDatabaseState {
      */
     isAutoScalingForStorageEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isDataGuardEnabled?: pulumi.Input<boolean>;
     /**
@@ -1223,6 +1235,12 @@ export interface AutonomousDatabaseArgs {
     computeModel?: pulumi.Input<string>;
     /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     * * The data type must be an *integer*.
+     * * The minimum number of cores for all types of autonomous database is *1*
+     * * The maximum number of cores is as follows:
+     * * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
+     * * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
@@ -1250,7 +1268,7 @@ export interface AutonomousDatabaseArgs {
      */
     databaseManagementStatus?: pulumi.Input<string>;
     /**
-     * The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+     * (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      */
     dbName: pulumi.Input<string>;
     /**
@@ -1290,7 +1308,7 @@ export interface AutonomousDatabaseArgs {
      */
     isAutoScalingForStorageEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isDataGuardEnabled?: pulumi.Input<boolean>;
     /**

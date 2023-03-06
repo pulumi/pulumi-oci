@@ -59,16 +59,12 @@ public final class GetRepositoriesRepositoryCollectionItem {
      * 
      */
     private String id;
-    /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     * 
-     */
-    private String lifecyleDetails;
+    private String lifecycleDetails;
     /**
      * @return Configuration information for mirroring the repository.
      * 
      */
-    private List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig> mirrorRepositoryConfigs;
+    private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig mirrorRepositoryConfig;
     /**
      * @return A filter to return only resources that match the entire name given.
      * 
@@ -194,19 +190,15 @@ public final class GetRepositoriesRepositoryCollectionItem {
     public String id() {
         return this.id;
     }
-    /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     * 
-     */
-    public String lifecyleDetails() {
-        return this.lifecyleDetails;
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
     }
     /**
      * @return Configuration information for mirroring the repository.
      * 
      */
-    public List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig> mirrorRepositoryConfigs() {
-        return this.mirrorRepositoryConfigs;
+    public GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig mirrorRepositoryConfig() {
+        return this.mirrorRepositoryConfig;
     }
     /**
      * @return A filter to return only resources that match the entire name given.
@@ -311,8 +303,8 @@ public final class GetRepositoriesRepositoryCollectionItem {
         private Map<String,Object> freeformTags;
         private String httpUrl;
         private String id;
-        private String lifecyleDetails;
-        private List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig> mirrorRepositoryConfigs;
+        private String lifecycleDetails;
+        private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig mirrorRepositoryConfig;
         private String name;
         private String namespace;
         private String projectId;
@@ -337,8 +329,8 @@ public final class GetRepositoriesRepositoryCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.httpUrl = defaults.httpUrl;
     	      this.id = defaults.id;
-    	      this.lifecyleDetails = defaults.lifecyleDetails;
-    	      this.mirrorRepositoryConfigs = defaults.mirrorRepositoryConfigs;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.mirrorRepositoryConfig = defaults.mirrorRepositoryConfig;
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
     	      this.projectId = defaults.projectId;
@@ -399,17 +391,14 @@ public final class GetRepositoriesRepositoryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
         @CustomType.Setter
-        public Builder mirrorRepositoryConfigs(List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig> mirrorRepositoryConfigs) {
-            this.mirrorRepositoryConfigs = Objects.requireNonNull(mirrorRepositoryConfigs);
+        public Builder mirrorRepositoryConfig(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig mirrorRepositoryConfig) {
+            this.mirrorRepositoryConfig = Objects.requireNonNull(mirrorRepositoryConfig);
             return this;
-        }
-        public Builder mirrorRepositoryConfigs(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig... mirrorRepositoryConfigs) {
-            return mirrorRepositoryConfigs(List.of(mirrorRepositoryConfigs));
         }
         @CustomType.Setter
         public Builder name(String name) {
@@ -485,8 +474,8 @@ public final class GetRepositoriesRepositoryCollectionItem {
             o.freeformTags = freeformTags;
             o.httpUrl = httpUrl;
             o.id = id;
-            o.lifecyleDetails = lifecyleDetails;
-            o.mirrorRepositoryConfigs = mirrorRepositoryConfigs;
+            o.lifecycleDetails = lifecycleDetails;
+            o.mirrorRepositoryConfig = mirrorRepositoryConfig;
             o.name = name;
             o.namespace = namespace;
             o.projectId = projectId;

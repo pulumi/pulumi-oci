@@ -49,14 +49,11 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// The OCID of the repository. This value is unique and immutable.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        /// </summary>
-        public readonly string LifecyleDetails;
+        public readonly string LifecycleDetails;
         /// <summary>
         /// Configuration information for mirroring the repository.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult> MirrorRepositoryConfigs;
+        public readonly Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult MirrorRepositoryConfig;
         /// <summary>
         /// A filter to return only resources that match the entire name given.
         /// </summary>
@@ -126,9 +123,9 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string id,
 
-            string lifecyleDetails,
+            string lifecycleDetails,
 
-            ImmutableArray<Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult> mirrorRepositoryConfigs,
+            Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult mirrorRepositoryConfig,
 
             string name,
 
@@ -163,8 +160,8 @@ namespace Pulumi.Oci.DevOps.Outputs
             FreeformTags = freeformTags;
             HttpUrl = httpUrl;
             Id = id;
-            LifecyleDetails = lifecyleDetails;
-            MirrorRepositoryConfigs = mirrorRepositoryConfigs;
+            LifecycleDetails = lifecycleDetails;
+            MirrorRepositoryConfig = mirrorRepositoryConfig;
             Name = name;
             Namespace = @namespace;
             ProjectId = projectId;

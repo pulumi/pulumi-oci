@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Specifies a trigger schedule. Timing information for when to initiate automated syncs.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult> TriggerSchedules;
+        public readonly Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult TriggerSchedule;
 
         [OutputConstructor]
         private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult(
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string repositoryUrl,
 
-            ImmutableArray<Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult> triggerSchedules)
+            Outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult triggerSchedule)
         {
             ConnectorId = connectorId;
             RepositoryUrl = repositoryUrl;
-            TriggerSchedules = triggerSchedules;
+            TriggerSchedule = triggerSchedule;
         }
     }
 }

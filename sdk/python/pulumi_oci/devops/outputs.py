@@ -12818,8 +12818,8 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  http_url: str,
                  id: str,
-                 lifecyle_details: str,
-                 mirror_repository_configs: Sequence['outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult'],
+                 lifecycle_details: str,
+                 mirror_repository_config: 'outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult',
                  name: str,
                  namespace: str,
                  project_id: str,
@@ -12842,8 +12842,7 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str http_url: HTTP URL that you use to git clone, pull and push.
         :param str id: The OCID of the repository. This value is unique and immutable.
-        :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence['GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs'] mirror_repository_configs: Configuration information for mirroring the repository.
+        :param 'GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs' mirror_repository_config: Configuration information for mirroring the repository.
         :param str name: A filter to return only resources that match the entire name given.
         :param str namespace: Tenancy unique namespace.
         :param str project_id: unique project identifier
@@ -12866,8 +12865,8 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "http_url", http_url)
         pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "mirror_repository_configs", mirror_repository_configs)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "mirror_repository_config", mirror_repository_config)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "project_id", project_id)
@@ -12954,20 +12953,17 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
-    @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        return pulumi.get(self, "lifecyle_details")
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        return pulumi.get(self, "lifecycle_details")
 
     @property
-    @pulumi.getter(name="mirrorRepositoryConfigs")
-    def mirror_repository_configs(self) -> Sequence['outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult']:
+    @pulumi.getter(name="mirrorRepositoryConfig")
+    def mirror_repository_config(self) -> 'outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult':
         """
         Configuration information for mirroring the repository.
         """
-        return pulumi.get(self, "mirror_repository_configs")
+        return pulumi.get(self, "mirror_repository_config")
 
     @property
     @pulumi.getter
@@ -13071,15 +13067,15 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult(dict):
     def __init__(__self__, *,
                  connector_id: str,
                  repository_url: str,
-                 trigger_schedules: Sequence['outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult']):
+                 trigger_schedule: 'outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult'):
         """
         :param str connector_id: Upstream git repository connection identifer.
         :param str repository_url: URL of external repository you want to mirror.
-        :param Sequence['GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs'] trigger_schedules: Specifies a trigger schedule. Timing information for when to initiate automated syncs.
+        :param 'GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs' trigger_schedule: Specifies a trigger schedule. Timing information for when to initiate automated syncs.
         """
         pulumi.set(__self__, "connector_id", connector_id)
         pulumi.set(__self__, "repository_url", repository_url)
-        pulumi.set(__self__, "trigger_schedules", trigger_schedules)
+        pulumi.set(__self__, "trigger_schedule", trigger_schedule)
 
     @property
     @pulumi.getter(name="connectorId")
@@ -13098,12 +13094,12 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult(dict):
         return pulumi.get(self, "repository_url")
 
     @property
-    @pulumi.getter(name="triggerSchedules")
-    def trigger_schedules(self) -> Sequence['outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult']:
+    @pulumi.getter(name="triggerSchedule")
+    def trigger_schedule(self) -> 'outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult':
         """
         Specifies a trigger schedule. Timing information for when to initiate automated syncs.
         """
-        return pulumi.get(self, "trigger_schedules")
+        return pulumi.get(self, "trigger_schedule")
 
 
 @pulumi.output_type

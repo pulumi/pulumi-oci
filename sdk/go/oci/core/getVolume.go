@@ -81,7 +81,7 @@ type LookupVolumeResult struct {
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated bool `pulumi:"isHydrated"`
-	// The OCID of the Key Management key which is the master encryption key for the volume.
+	// The OCID of the Vault service key which is the master encryption key for the volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
@@ -206,7 +206,7 @@ func (o LookupVolumeResultOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVolumeResult) bool { return v.IsHydrated }).(pulumi.BoolOutput)
 }
 
-// The OCID of the Key Management key which is the master encryption key for the volume.
+// The OCID of the Vault service key which is the master encryption key for the volume.
 func (o LookupVolumeResultOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }

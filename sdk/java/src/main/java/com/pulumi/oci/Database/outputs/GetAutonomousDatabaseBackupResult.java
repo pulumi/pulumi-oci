@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
@@ -28,6 +29,11 @@ public final class GetAutonomousDatabaseBackupResult {
      */
     private Double databaseSizeInTbs;
     /**
+     * @return A valid Oracle Database version for Autonomous Database.
+     * 
+     */
+    private String dbVersion;
+    /**
      * @return The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
@@ -42,6 +48,7 @@ public final class GetAutonomousDatabaseBackupResult {
      * 
      */
     private Boolean isAutomatic;
+    private Boolean isLongTermBackup;
     /**
      * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
      * 
@@ -73,10 +80,25 @@ public final class GetAutonomousDatabaseBackupResult {
      */
     private String lifecycleDetails;
     /**
+     * @return Retention period, in days, for long-term backups
+     * 
+     */
+    private Integer retentionPeriodInDays;
+    /**
+     * @return The backup size in terrabytes (TB).
+     * 
+     */
+    private Double sizeInTbs;
+    /**
      * @return The current state of the backup.
      * 
      */
     private String state;
+    /**
+     * @return Timestamp until when the backup will be available
+     * 
+     */
+    private String timeAvailableTill;
     /**
      * @return The date and time the backup completed.
      * 
@@ -124,6 +146,13 @@ public final class GetAutonomousDatabaseBackupResult {
         return this.databaseSizeInTbs;
     }
     /**
+     * @return A valid Oracle Database version for Autonomous Database.
+     * 
+     */
+    public String dbVersion() {
+        return this.dbVersion;
+    }
+    /**
      * @return The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
@@ -143,6 +172,9 @@ public final class GetAutonomousDatabaseBackupResult {
      */
     public Boolean isAutomatic() {
         return this.isAutomatic;
+    }
+    public Boolean isLongTermBackup() {
+        return this.isLongTermBackup;
     }
     /**
      * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
@@ -187,11 +219,32 @@ public final class GetAutonomousDatabaseBackupResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return Retention period, in days, for long-term backups
+     * 
+     */
+    public Integer retentionPeriodInDays() {
+        return this.retentionPeriodInDays;
+    }
+    /**
+     * @return The backup size in terrabytes (TB).
+     * 
+     */
+    public Double sizeInTbs() {
+        return this.sizeInTbs;
+    }
+    /**
      * @return The current state of the backup.
      * 
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return Timestamp until when the backup will be available
+     * 
+     */
+    public String timeAvailableTill() {
+        return this.timeAvailableTill;
     }
     /**
      * @return The date and time the backup completed.
@@ -235,16 +288,21 @@ public final class GetAutonomousDatabaseBackupResult {
         private String autonomousDatabaseId;
         private String compartmentId;
         private Double databaseSizeInTbs;
+        private String dbVersion;
         private String displayName;
         private String id;
         private Boolean isAutomatic;
+        private Boolean isLongTermBackup;
         private Boolean isRestorable;
         private String keyStoreId;
         private String keyStoreWalletName;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lifecycleDetails;
+        private Integer retentionPeriodInDays;
+        private Double sizeInTbs;
         private String state;
+        private String timeAvailableTill;
         private String timeEnded;
         private String timeStarted;
         private String type;
@@ -256,16 +314,21 @@ public final class GetAutonomousDatabaseBackupResult {
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.databaseSizeInTbs = defaults.databaseSizeInTbs;
+    	      this.dbVersion = defaults.dbVersion;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
     	      this.isAutomatic = defaults.isAutomatic;
+    	      this.isLongTermBackup = defaults.isLongTermBackup;
     	      this.isRestorable = defaults.isRestorable;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.retentionPeriodInDays = defaults.retentionPeriodInDays;
+    	      this.sizeInTbs = defaults.sizeInTbs;
     	      this.state = defaults.state;
+    	      this.timeAvailableTill = defaults.timeAvailableTill;
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeStarted = defaults.timeStarted;
     	      this.type = defaults.type;
@@ -293,6 +356,11 @@ public final class GetAutonomousDatabaseBackupResult {
             return this;
         }
         @CustomType.Setter
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = Objects.requireNonNull(dbVersion);
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
@@ -305,6 +373,11 @@ public final class GetAutonomousDatabaseBackupResult {
         @CustomType.Setter
         public Builder isAutomatic(Boolean isAutomatic) {
             this.isAutomatic = Objects.requireNonNull(isAutomatic);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLongTermBackup(Boolean isLongTermBackup) {
+            this.isLongTermBackup = Objects.requireNonNull(isLongTermBackup);
             return this;
         }
         @CustomType.Setter
@@ -338,8 +411,23 @@ public final class GetAutonomousDatabaseBackupResult {
             return this;
         }
         @CustomType.Setter
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            this.retentionPeriodInDays = Objects.requireNonNull(retentionPeriodInDays);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sizeInTbs(Double sizeInTbs) {
+            this.sizeInTbs = Objects.requireNonNull(sizeInTbs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeAvailableTill(String timeAvailableTill) {
+            this.timeAvailableTill = Objects.requireNonNull(timeAvailableTill);
             return this;
         }
         @CustomType.Setter
@@ -368,16 +456,21 @@ public final class GetAutonomousDatabaseBackupResult {
             o.autonomousDatabaseId = autonomousDatabaseId;
             o.compartmentId = compartmentId;
             o.databaseSizeInTbs = databaseSizeInTbs;
+            o.dbVersion = dbVersion;
             o.displayName = displayName;
             o.id = id;
             o.isAutomatic = isAutomatic;
+            o.isLongTermBackup = isLongTermBackup;
             o.isRestorable = isRestorable;
             o.keyStoreId = keyStoreId;
             o.keyStoreWalletName = keyStoreWalletName;
             o.kmsKeyId = kmsKeyId;
             o.kmsKeyVersionId = kmsKeyVersionId;
             o.lifecycleDetails = lifecycleDetails;
+            o.retentionPeriodInDays = retentionPeriodInDays;
+            o.sizeInTbs = sizeInTbs;
             o.state = state;
+            o.timeAvailableTill = timeAvailableTill;
             o.timeEnded = timeEnded;
             o.timeStarted = timeStarted;
             o.type = type;

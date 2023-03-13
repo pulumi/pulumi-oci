@@ -18,12 +18,12 @@ public final class VirtualCircuitCrossConnectMapping {
      */
     private @Nullable String bgpMd5authKey;
     /**
-     * @return (Updatable) The OCID of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
      * 
      */
     private @Nullable String crossConnectOrCrossConnectGroupId;
     /**
-     * @return (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a /30 or /31 subnet mask.
+     * @return (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a subnet mask from /28 to /31.
      * 
      */
     private @Nullable String customerBgpPeeringIp;
@@ -33,7 +33,7 @@ public final class VirtualCircuitCrossConnectMapping {
      */
     private @Nullable String customerBgpPeeringIpv6;
     /**
-     * @return (Updatable) The IPv4 address for Oracle&#39;s end of the BGP session. Must use a /30 or /31 subnet mask. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
+     * @return (Updatable) The IPv4 address for Oracle&#39;s end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
      * 
      */
     private @Nullable String oracleBgpPeeringIp;
@@ -57,14 +57,14 @@ public final class VirtualCircuitCrossConnectMapping {
         return Optional.ofNullable(this.bgpMd5authKey);
     }
     /**
-     * @return (Updatable) The OCID of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
      * 
      */
     public Optional<String> crossConnectOrCrossConnectGroupId() {
         return Optional.ofNullable(this.crossConnectOrCrossConnectGroupId);
     }
     /**
-     * @return (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a /30 or /31 subnet mask.
+     * @return (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a subnet mask from /28 to /31.
      * 
      */
     public Optional<String> customerBgpPeeringIp() {
@@ -78,7 +78,7 @@ public final class VirtualCircuitCrossConnectMapping {
         return Optional.ofNullable(this.customerBgpPeeringIpv6);
     }
     /**
-     * @return (Updatable) The IPv4 address for Oracle&#39;s end of the BGP session. Must use a /30 or /31 subnet mask. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
+     * @return (Updatable) The IPv4 address for Oracle&#39;s end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
      * 
      */
     public Optional<String> oracleBgpPeeringIp() {

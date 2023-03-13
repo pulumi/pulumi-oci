@@ -43,7 +43,7 @@ class VolumeArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
@@ -207,7 +207,7 @@ class VolumeArgs:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -311,7 +311,7 @@ class _VolumeState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         :param pulumi.Input[str] state: The current state of a volume.
@@ -517,7 +517,7 @@ class _VolumeState:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -727,7 +727,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
@@ -924,7 +924,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         :param pulumi.Input[str] state: The current state of a volume.
@@ -1059,7 +1059,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
         return pulumi.get(self, "kms_key_id")
 

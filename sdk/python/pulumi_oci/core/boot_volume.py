@@ -41,7 +41,7 @@ class BootVolumeArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
@@ -204,7 +204,7 @@ class BootVolumeArgs:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -276,7 +276,7 @@ class _BootVolumeState:
         :param pulumi.Input[str] image_id: The image OCID used to create the boot volume.
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[bool] is_hydrated: Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         :param pulumi.Input[str] state: The current state of a boot volume.
@@ -490,7 +490,7 @@ class _BootVolumeState:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -675,7 +675,7 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
@@ -857,7 +857,7 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] image_id: The image OCID used to create the boot volume.
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[bool] is_hydrated: Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         :param pulumi.Input[str] state: The current state of a boot volume.
@@ -999,7 +999,7 @@ class BootVolume(pulumi.CustomResource):
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 

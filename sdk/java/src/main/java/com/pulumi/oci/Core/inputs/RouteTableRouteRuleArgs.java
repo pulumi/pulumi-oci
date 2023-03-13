@@ -98,9 +98,17 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
         return this.networkEntityId;
     }
 
+    /**
+     * (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+     * 
+     */
     @Import(name="routeType")
     private @Nullable Output<String> routeType;
 
+    /**
+     * @return (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+     * 
+     */
     public Optional<Output<String>> routeType() {
         return Optional.ofNullable(this.routeType);
     }
@@ -247,11 +255,23 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
             return networkEntityId(Output.of(networkEntityId));
         }
 
+        /**
+         * @param routeType (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+         * 
+         * @return builder
+         * 
+         */
         public Builder routeType(@Nullable Output<String> routeType) {
             $.routeType = routeType;
             return this;
         }
 
+        /**
+         * @param routeType (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+         * 
+         * @return builder
+         * 
+         */
         public Builder routeType(String routeType) {
             return routeType(Output.of(routeType));
         }

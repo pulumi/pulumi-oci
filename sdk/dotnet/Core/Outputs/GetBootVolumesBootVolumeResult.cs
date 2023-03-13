@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsHydrated;
         /// <summary>
-        /// The OCID of the Key Management master encryption key assigned to the boot volume.
+        /// The OCID of the Vault service master encryption key assigned to the boot volume.
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>

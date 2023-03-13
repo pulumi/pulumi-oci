@@ -36,6 +36,16 @@ import * as utilities from "../utilities";
  *                 policyType: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type,
  *             },
  *         },
+ *         environmentConfigurationDetails: {
+ *             environmentConfigurationType: _var.model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_configuration_type,
+ *             cmds: _var.model_deployment_model_deployment_configuration_details_environment_configuration_details_cmd,
+ *             entrypoints: _var.model_deployment_model_deployment_configuration_details_environment_configuration_details_entrypoint,
+ *             environmentVariables: _var.model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_variables,
+ *             healthCheckPort: _var.model_deployment_model_deployment_configuration_details_environment_configuration_details_health_check_port,
+ *             image: _var.model_deployment_model_deployment_configuration_details_environment_configuration_details_image,
+ *             imageDigest: _var.model_deployment_model_deployment_configuration_details_environment_configuration_details_image_digest,
+ *             serverPort: _var.model_deployment_model_deployment_configuration_details_environment_configuration_details_server_port,
+ *         },
  *     },
  *     projectId: oci_datascience_project.test_project.id,
  *     categoryLogDetails: {

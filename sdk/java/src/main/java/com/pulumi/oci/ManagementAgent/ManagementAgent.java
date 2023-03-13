@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ManagementAgent.ManagementAgentArgs;
 import com.pulumi.oci.ManagementAgent.inputs.ManagementAgentState;
+import com.pulumi.oci.ManagementAgent.outputs.ManagementAgentManagementAgentProperty;
 import com.pulumi.oci.ManagementAgent.outputs.ManagementAgentPluginList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -272,6 +273,20 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      */
     public Output<String> managedAgentId() {
         return this.managedAgentId;
+    }
+    /**
+     * Additional properties for this Management Agent
+     * 
+     */
+    @Export(name="managementAgentProperties", type=List.class, parameters={ManagementAgentManagementAgentProperty.class})
+    private Output<List<ManagementAgentManagementAgentProperty>> managementAgentProperties;
+
+    /**
+     * @return Additional properties for this Management Agent
+     * 
+     */
+    public Output<List<ManagementAgentManagementAgentProperty>> managementAgentProperties() {
+        return this.managementAgentProperties;
     }
     /**
      * Platform Name

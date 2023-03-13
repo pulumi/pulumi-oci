@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Destination;
         /// <summary>
-        /// The type of destination for the rule. the type is required if `direction` = `EGRESS`.
+        /// The type of destination for the rule.
         /// </summary>
         public readonly string DestinationType;
         /// <summary>

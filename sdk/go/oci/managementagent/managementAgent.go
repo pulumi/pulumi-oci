@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -81,6 +81,8 @@ type ManagementAgent struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Unique Management Agent identifier
 	ManagedAgentId pulumi.StringOutput `pulumi:"managedAgentId"`
+	// Additional properties for this Management Agent
+	ManagementAgentProperties ManagementAgentManagementAgentPropertyArrayOutput `pulumi:"managementAgentProperties"`
 	// Platform Name
 	PlatformName pulumi.StringOutput `pulumi:"platformName"`
 	// Platform Type
@@ -165,6 +167,8 @@ type managementAgentState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Unique Management Agent identifier
 	ManagedAgentId *string `pulumi:"managedAgentId"`
+	// Additional properties for this Management Agent
+	ManagementAgentProperties []ManagementAgentManagementAgentProperty `pulumi:"managementAgentProperties"`
 	// Platform Name
 	PlatformName *string `pulumi:"platformName"`
 	// Platform Type
@@ -218,6 +222,8 @@ type ManagementAgentState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Unique Management Agent identifier
 	ManagedAgentId pulumi.StringPtrInput
+	// Additional properties for this Management Agent
+	ManagementAgentProperties ManagementAgentManagementAgentPropertyArrayInput
 	// Platform Name
 	PlatformName pulumi.StringPtrInput
 	// Platform Type
@@ -431,6 +437,13 @@ func (o ManagementAgentOutput) LifecycleDetails() pulumi.StringOutput {
 // Unique Management Agent identifier
 func (o ManagementAgentOutput) ManagedAgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.ManagedAgentId }).(pulumi.StringOutput)
+}
+
+// Additional properties for this Management Agent
+func (o ManagementAgentOutput) ManagementAgentProperties() ManagementAgentManagementAgentPropertyArrayOutput {
+	return o.ApplyT(func(v *ManagementAgent) ManagementAgentManagementAgentPropertyArrayOutput {
+		return v.ManagementAgentProperties
+	}).(ManagementAgentManagementAgentPropertyArrayOutput)
 }
 
 // Platform Name

@@ -384,6 +384,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseLocalStandbyDb>> LocalStandbyDbs { get; private set; } = null!;
 
         /// <summary>
+        /// Details for the long-term backup schedule.
+        /// </summary>
+        [Output("longTermBackupSchedules")]
+        public Output<ImmutableArray<Outputs.AutonomousDatabaseLongTermBackupSchedule>> LongTermBackupSchedules { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>
         [Output("maxCpuCoreCount")]
@@ -400,6 +406,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("ncharacterSet")]
         public Output<string> NcharacterSet { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time when the next long-term backup would be created.
+        /// </summary>
+        [Output("nextLongTermBackupTimeStamp")]
+        public Output<string> NextLongTermBackupTimeStamp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -1605,6 +1617,18 @@ namespace Pulumi.Oci.Database
             set => _localStandbyDbs = value;
         }
 
+        [Input("longTermBackupSchedules")]
+        private InputList<Inputs.AutonomousDatabaseLongTermBackupScheduleGetArgs>? _longTermBackupSchedules;
+
+        /// <summary>
+        /// Details for the long-term backup schedule.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabaseLongTermBackupScheduleGetArgs> LongTermBackupSchedules
+        {
+            get => _longTermBackupSchedules ?? (_longTermBackupSchedules = new InputList<Inputs.AutonomousDatabaseLongTermBackupScheduleGetArgs>());
+            set => _longTermBackupSchedules = value;
+        }
+
         /// <summary>
         /// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>
@@ -1622,6 +1646,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ncharacterSet")]
         public Input<string>? NcharacterSet { get; set; }
+
+        /// <summary>
+        /// The date and time when the next long-term backup would be created.
+        /// </summary>
+        [Input("nextLongTermBackupTimeStamp")]
+        public Input<string>? NextLongTermBackupTimeStamp { get; set; }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;

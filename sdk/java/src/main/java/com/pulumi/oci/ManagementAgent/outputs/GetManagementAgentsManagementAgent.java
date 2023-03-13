@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsManagementAgentManagementAgentProperty;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsManagementAgentPluginList;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -86,6 +87,11 @@ public final class GetManagementAgentsManagementAgent {
      */
     private String lifecycleDetails;
     private String managedAgentId;
+    /**
+     * @return Additional properties for this Management Agent
+     * 
+     */
+    private List<GetManagementAgentsManagementAgentManagementAgentProperty> managementAgentProperties;
     /**
      * @return Platform Name
      * 
@@ -243,6 +249,13 @@ public final class GetManagementAgentsManagementAgent {
         return this.managedAgentId;
     }
     /**
+     * @return Additional properties for this Management Agent
+     * 
+     */
+    public List<GetManagementAgentsManagementAgentManagementAgentProperty> managementAgentProperties() {
+        return this.managementAgentProperties;
+    }
+    /**
      * @return Platform Name
      * 
      */
@@ -338,6 +351,7 @@ public final class GetManagementAgentsManagementAgent {
         private Boolean isCustomerDeployed;
         private String lifecycleDetails;
         private String managedAgentId;
+        private List<GetManagementAgentsManagementAgentManagementAgentProperty> managementAgentProperties;
         private String platformName;
         private String platformType;
         private String platformVersion;
@@ -367,6 +381,7 @@ public final class GetManagementAgentsManagementAgent {
     	      this.isCustomerDeployed = defaults.isCustomerDeployed;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managedAgentId = defaults.managedAgentId;
+    	      this.managementAgentProperties = defaults.managementAgentProperties;
     	      this.platformName = defaults.platformName;
     	      this.platformType = defaults.platformType;
     	      this.platformVersion = defaults.platformVersion;
@@ -463,6 +478,14 @@ public final class GetManagementAgentsManagementAgent {
             return this;
         }
         @CustomType.Setter
+        public Builder managementAgentProperties(List<GetManagementAgentsManagementAgentManagementAgentProperty> managementAgentProperties) {
+            this.managementAgentProperties = Objects.requireNonNull(managementAgentProperties);
+            return this;
+        }
+        public Builder managementAgentProperties(GetManagementAgentsManagementAgentManagementAgentProperty... managementAgentProperties) {
+            return managementAgentProperties(List.of(managementAgentProperties));
+        }
+        @CustomType.Setter
         public Builder platformName(String platformName) {
             this.platformName = Objects.requireNonNull(platformName);
             return this;
@@ -533,6 +556,7 @@ public final class GetManagementAgentsManagementAgent {
             o.isCustomerDeployed = isCustomerDeployed;
             o.lifecycleDetails = lifecycleDetails;
             o.managedAgentId = managedAgentId;
+            o.managementAgentProperties = managementAgentProperties;
             o.platformName = platformName;
             o.platformType = platformType;
             o.platformVersion = platformVersion;

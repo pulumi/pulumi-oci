@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .addOnFeatures(var_.oce_instance_add_on_features())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .description(var_.oce_instance_description())
+ *             .drRegion(var_.oce_instance_dr_region())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .instanceAccessType(var_.oce_instance_instance_access_type())
  *             .instanceLicenseType(var_.oce_instance_instance_license_type())
@@ -145,6 +146,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * (Updatable) disaster recovery paired ragion name
+     * 
+     */
+    @Export(name="drRegion", type=String.class, parameters={})
+    private Output<String> drRegion;
+
+    /**
+     * @return (Updatable) disaster recovery paired ragion name
+     * 
+     */
+    public Output<String> drRegion() {
+        return this.drRegion;
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`

@@ -14,7 +14,9 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets the maximum possible date that a maintenance reboot can be extended.
+        /// Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
+        /// [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -43,7 +45,9 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets the maximum possible date that a maintenance reboot can be extended.
+        /// Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
+        /// [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage

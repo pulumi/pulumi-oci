@@ -33,6 +33,7 @@ public final class GetManagementAgentsResult {
      */
     private @Nullable String displayName;
     private @Nullable List<GetManagementAgentsFilter> filters;
+    private @Nullable List<String> gatewayIds;
     /**
      * @return Host resource ocid
      * 
@@ -109,6 +110,9 @@ public final class GetManagementAgentsResult {
     }
     public List<GetManagementAgentsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
+    }
+    public List<String> gatewayIds() {
+        return this.gatewayIds == null ? List.of() : this.gatewayIds;
     }
     /**
      * @return Host resource ocid
@@ -189,6 +193,7 @@ public final class GetManagementAgentsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetManagementAgentsFilter> filters;
+        private @Nullable List<String> gatewayIds;
         private @Nullable String hostId;
         private String id;
         private @Nullable String installType;
@@ -207,6 +212,7 @@ public final class GetManagementAgentsResult {
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
+    	      this.gatewayIds = defaults.gatewayIds;
     	      this.hostId = defaults.hostId;
     	      this.id = defaults.id;
     	      this.installType = defaults.installType;
@@ -250,6 +256,14 @@ public final class GetManagementAgentsResult {
         }
         public Builder filters(GetManagementAgentsFilter... filters) {
             return filters(List.of(filters));
+        }
+        @CustomType.Setter
+        public Builder gatewayIds(@Nullable List<String> gatewayIds) {
+            this.gatewayIds = gatewayIds;
+            return this;
+        }
+        public Builder gatewayIds(String... gatewayIds) {
+            return gatewayIds(List.of(gatewayIds));
         }
         @CustomType.Setter
         public Builder hostId(@Nullable String hostId) {
@@ -316,6 +330,7 @@ public final class GetManagementAgentsResult {
             o.compartmentIdInSubtree = compartmentIdInSubtree;
             o.displayName = displayName;
             o.filters = filters;
+            o.gatewayIds = gatewayIds;
             o.hostId = hostId;
             o.id = id;
             o.installType = installType;

@@ -206,6 +206,7 @@ public final class GetInstanceResult {
      * 
      */
     private String timeMaintenanceRebootDue;
+    private String updateOperationConstraint;
 
     private GetInstanceResult() {}
     /**
@@ -468,6 +469,9 @@ public final class GetInstanceResult {
     public String timeMaintenanceRebootDue() {
         return this.timeMaintenanceRebootDue;
     }
+    public String updateOperationConstraint() {
+        return this.updateOperationConstraint;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -516,6 +520,7 @@ public final class GetInstanceResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeMaintenanceRebootDue;
+        private String updateOperationConstraint;
         public Builder() {}
         public Builder(GetInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -557,6 +562,7 @@ public final class GetInstanceResult {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeMaintenanceRebootDue = defaults.timeMaintenanceRebootDue;
+    	      this.updateOperationConstraint = defaults.updateOperationConstraint;
         }
 
         @CustomType.Setter
@@ -776,6 +782,11 @@ public final class GetInstanceResult {
             this.timeMaintenanceRebootDue = Objects.requireNonNull(timeMaintenanceRebootDue);
             return this;
         }
+        @CustomType.Setter
+        public Builder updateOperationConstraint(String updateOperationConstraint) {
+            this.updateOperationConstraint = Objects.requireNonNull(updateOperationConstraint);
+            return this;
+        }
         public GetInstanceResult build() {
             final var o = new GetInstanceResult();
             o.agentConfigs = agentConfigs;
@@ -816,6 +827,7 @@ public final class GetInstanceResult {
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            o.updateOperationConstraint = updateOperationConstraint;
             return o;
         }
     }

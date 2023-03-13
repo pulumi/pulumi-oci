@@ -42,6 +42,9 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("networkEntityId", required: true)]
         public Input<string> NetworkEntityId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+        /// </summary>
         [Input("routeType")]
         public Input<string>? RouteType { get; set; }
 

@@ -22,12 +22,12 @@ public final class InstanceSourceDetails {
      */
     private @Nullable String bootVolumeVpusPerGb;
     /**
-     * @return The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     private @Nullable String kmsKeyId;
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return The OCID of the boot volume used to boot the instance.
      * 
      */
     private String sourceId;
@@ -53,14 +53,14 @@ public final class InstanceSourceDetails {
         return Optional.ofNullable(this.bootVolumeVpusPerGb);
     }
     /**
-     * @return The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<String> kmsKeyId() {
         return Optional.ofNullable(this.kmsKeyId);
     }
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return The OCID of the boot volume used to boot the instance.
      * 
      */
     public String sourceId() {

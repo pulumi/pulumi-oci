@@ -16,9 +16,17 @@ public final class GetManagementAgentsFilter extends com.pulumi.resources.Invoke
 
     public static final GetManagementAgentsFilter Empty = new GetManagementAgentsFilter();
 
+    /**
+     * Name of the property
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return Name of the property
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -30,9 +38,17 @@ public final class GetManagementAgentsFilter extends com.pulumi.resources.Invoke
         return Optional.ofNullable(this.regex);
     }
 
+    /**
+     * Values of the property
+     * 
+     */
     @Import(name="values", required=true)
     private List<String> values;
 
+    /**
+     * @return Values of the property
+     * 
+     */
     public List<String> values() {
         return this.values;
     }
@@ -63,6 +79,12 @@ public final class GetManagementAgentsFilter extends com.pulumi.resources.Invoke
             $ = new GetManagementAgentsFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of the property
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;
@@ -73,11 +95,23 @@ public final class GetManagementAgentsFilter extends com.pulumi.resources.Invoke
             return this;
         }
 
+        /**
+         * @param values Values of the property
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(List<String> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values Values of the property
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

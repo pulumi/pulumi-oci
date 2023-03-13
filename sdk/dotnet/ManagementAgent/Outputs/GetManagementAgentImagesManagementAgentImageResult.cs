@@ -14,13 +14,17 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
     public sealed class GetManagementAgentImagesManagementAgentImageResult
     {
         /// <summary>
-        /// Agent image content SHA256 Hash
+        /// Object content SHA256 Hash
         /// </summary>
         public readonly string Checksum;
         /// <summary>
         /// Agent image resource id
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Details of the Objectstorage object
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult> ImageObjectStorageDetails;
         /// <summary>
         /// Object storage URL for download
         /// </summary>
@@ -60,6 +64,8 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
             string id,
 
+            ImmutableArray<Outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult> imageObjectStorageDetails,
+
             string objectUrl,
 
             string packageArchitectureType,
@@ -78,6 +84,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         {
             Checksum = checksum;
             Id = id;
+            ImageObjectStorageDetails = imageObjectStorageDetails;
             ObjectUrl = objectUrl;
             PackageArchitectureType = packageArchitectureType;
             PackageType = packageType;

@@ -20,12 +20,12 @@ public final class GetInstancesInstanceSourceDetail {
      */
     private String bootVolumeVpusPerGb;
     /**
-     * @return The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     private String kmsKeyId;
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return The OCID of the boot volume used to boot the instance.
      * 
      */
     private String sourceId;
@@ -51,14 +51,14 @@ public final class GetInstancesInstanceSourceDetail {
         return this.bootVolumeVpusPerGb;
     }
     /**
-     * @return The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public String kmsKeyId() {
         return this.kmsKeyId;
     }
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return The OCID of the boot volume used to boot the instance.
      * 
      */
     public String sourceId() {

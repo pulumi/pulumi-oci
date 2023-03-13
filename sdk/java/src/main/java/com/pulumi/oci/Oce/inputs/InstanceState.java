@@ -94,6 +94,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) disaster recovery paired ragion name
+     * 
+     */
+    @Import(name="drRegion")
+    private @Nullable Output<String> drRegion;
+
+    /**
+     * @return (Updatable) disaster recovery paired ragion name
+     * 
+     */
+    public Optional<Output<String>> drRegion() {
+        return Optional.ofNullable(this.drRegion);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -401,6 +416,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
+        this.drRegion = $.drRegion;
         this.freeformTags = $.freeformTags;
         this.guid = $.guid;
         this.idcsAccessToken = $.idcsAccessToken;
@@ -554,6 +570,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param drRegion (Updatable) disaster recovery paired ragion name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drRegion(@Nullable Output<String> drRegion) {
+            $.drRegion = drRegion;
+            return this;
+        }
+
+        /**
+         * @param drRegion (Updatable) disaster recovery paired ragion name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drRegion(String drRegion) {
+            return drRegion(Output.of(drRegion));
         }
 
         /**

@@ -52,13 +52,13 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> Attributes { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        /// Represents the range of IP addresses to match against when routing traffic.
         /// </summary>
         [Output("destination")]
         public Output<string> Destination { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        /// Type of destination for the rule. Allowed values:
         /// </summary>
         [Output("destinationType")]
         public Output<string> DestinationType { get; private set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsConflict { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
         /// </summary>
         [Output("nextHopDrgAttachmentId")]
         public Output<string> NextHopDrgAttachmentId { get; private set; } = null!;
@@ -146,13 +146,13 @@ namespace Pulumi.Oci.Core
     public sealed class DrgRouteTableRouteRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        /// Represents the range of IP addresses to match against when routing traffic.
         /// </summary>
         [Input("destination", required: true)]
         public Input<string> Destination { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        /// Type of destination for the rule. Allowed values:
         /// </summary>
         [Input("destinationType", required: true)]
         public Input<string> DestinationType { get; set; } = null!;
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Core
         public Input<string> DrgRouteTableId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
         /// </summary>
         [Input("nextHopDrgAttachmentId", required: true)]
         public Input<string> NextHopDrgAttachmentId { get; set; } = null!;
@@ -190,13 +190,13 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        /// Represents the range of IP addresses to match against when routing traffic.
         /// </summary>
         [Input("destination")]
         public Input<string>? Destination { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        /// Type of destination for the rule. Allowed values:
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }
@@ -220,7 +220,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsConflict { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
         /// </summary>
         [Input("nextHopDrgAttachmentId")]
         public Input<string>? NextHopDrgAttachmentId { get; set; }

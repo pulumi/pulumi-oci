@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -262,7 +262,8 @@ type Instance struct {
 	// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
-	TimeMaintenanceRebootDue pulumi.StringOutput `pulumi:"timeMaintenanceRebootDue"`
+	TimeMaintenanceRebootDue  pulumi.StringOutput    `pulumi:"timeMaintenanceRebootDue"`
+	UpdateOperationConstraint pulumi.StringPtrOutput `pulumi:"updateOperationConstraint"`
 }
 
 // NewInstance registers a new resource with the given unique name, arguments, and options.
@@ -379,7 +380,8 @@ type instanceState struct {
 	// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
-	TimeMaintenanceRebootDue *string `pulumi:"timeMaintenanceRebootDue"`
+	TimeMaintenanceRebootDue  *string `pulumi:"timeMaintenanceRebootDue"`
+	UpdateOperationConstraint *string `pulumi:"updateOperationConstraint"`
 }
 
 type InstanceState struct {
@@ -459,7 +461,8 @@ type InstanceState struct {
 	// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
-	TimeMaintenanceRebootDue pulumi.StringPtrInput
+	TimeMaintenanceRebootDue  pulumi.StringPtrInput
+	UpdateOperationConstraint pulumi.StringPtrInput
 }
 
 func (InstanceState) ElementType() reflect.Type {
@@ -527,7 +530,8 @@ type instanceArgs struct {
 	// Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
 	//
 	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
-	SubnetId *string `pulumi:"subnetId"`
+	SubnetId                  *string `pulumi:"subnetId"`
+	UpdateOperationConstraint *string `pulumi:"updateOperationConstraint"`
 }
 
 // The set of arguments for constructing a Instance resource.
@@ -592,7 +596,8 @@ type InstanceArgs struct {
 	// Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
 	//
 	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
-	SubnetId pulumi.StringPtrInput
+	SubnetId                  pulumi.StringPtrInput
+	UpdateOperationConstraint pulumi.StringPtrInput
 }
 
 func (InstanceArgs) ElementType() reflect.Type {
@@ -865,6 +870,10 @@ func (o InstanceOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
 func (o InstanceOutput) TimeMaintenanceRebootDue() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.TimeMaintenanceRebootDue }).(pulumi.StringOutput)
+}
+
+func (o InstanceOutput) UpdateOperationConstraint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringPtrOutput { return v.UpdateOperationConstraint }).(pulumi.StringPtrOutput)
 }
 
 type InstanceArrayOutput struct{ *pulumi.OutputState }

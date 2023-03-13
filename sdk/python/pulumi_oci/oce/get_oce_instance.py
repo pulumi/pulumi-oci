@@ -21,7 +21,7 @@ class GetOceInstanceResult:
     """
     A collection of values returned by getOceInstance.
     """
-    def __init__(__self__, add_on_features=None, admin_email=None, compartment_id=None, defined_tags=None, description=None, freeform_tags=None, guid=None, id=None, idcs_access_token=None, idcs_tenancy=None, instance_access_type=None, instance_license_type=None, instance_usage_type=None, lifecycle_details=None, name=None, object_storage_namespace=None, oce_instance_id=None, service=None, state=None, state_message=None, system_tags=None, tenancy_id=None, tenancy_name=None, time_created=None, time_updated=None, upgrade_schedule=None, waf_primary_domain=None):
+    def __init__(__self__, add_on_features=None, admin_email=None, compartment_id=None, defined_tags=None, description=None, dr_region=None, freeform_tags=None, guid=None, id=None, idcs_access_token=None, idcs_tenancy=None, instance_access_type=None, instance_license_type=None, instance_usage_type=None, lifecycle_details=None, name=None, object_storage_namespace=None, oce_instance_id=None, service=None, state=None, state_message=None, system_tags=None, tenancy_id=None, tenancy_name=None, time_created=None, time_updated=None, upgrade_schedule=None, waf_primary_domain=None):
         if add_on_features and not isinstance(add_on_features, list):
             raise TypeError("Expected argument 'add_on_features' to be a list")
         pulumi.set(__self__, "add_on_features", add_on_features)
@@ -37,6 +37,9 @@ class GetOceInstanceResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if dr_region and not isinstance(dr_region, str):
+            raise TypeError("Expected argument 'dr_region' to be a str")
+        pulumi.set(__self__, "dr_region", dr_region)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -143,6 +146,14 @@ class GetOceInstanceResult:
         OceInstance description, can be updated
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="drRegion")
+    def dr_region(self) -> str:
+        """
+        disaster recovery paired ragion name
+        """
+        return pulumi.get(self, "dr_region")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -326,6 +337,7 @@ class AwaitableGetOceInstanceResult(GetOceInstanceResult):
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
+            dr_region=self.dr_region,
             freeform_tags=self.freeform_tags,
             guid=self.guid,
             id=self.id,
@@ -380,6 +392,7 @@ def get_oce_instance(oce_instance_id: Optional[str] = None,
         compartment_id=__ret__.compartment_id,
         defined_tags=__ret__.defined_tags,
         description=__ret__.description,
+        dr_region=__ret__.dr_region,
         freeform_tags=__ret__.freeform_tags,
         guid=__ret__.guid,
         id=__ret__.id,

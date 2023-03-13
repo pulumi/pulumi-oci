@@ -33,6 +33,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         /// </summary>
         public readonly string NetworkEntityId;
+        /// <summary>
+        /// (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+        /// </summary>
         public readonly string? RouteType;
 
         [OutputConstructor]

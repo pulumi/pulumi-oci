@@ -43,7 +43,8 @@ class InstanceArgs:
                  shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
                  source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 subnet_id: Optional[pulumi.Input[str]] = None):
+                 subnet_id: Optional[pulumi.Input[str]] = None,
+                 update_operation_constraint: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Instance resource.
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -136,6 +137,8 @@ class InstanceArgs:
             pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if update_operation_constraint is not None:
+            pulumi.set(__self__, "update_operation_constraint", update_operation_constraint)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -470,6 +473,15 @@ class InstanceArgs:
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
 
+    @property
+    @pulumi.getter(name="updateOperationConstraint")
+    def update_operation_constraint(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "update_operation_constraint")
+
+    @update_operation_constraint.setter
+    def update_operation_constraint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "update_operation_constraint", value)
+
 
 @pulumi.input_type
 class _InstanceState:
@@ -509,7 +521,8 @@ class _InstanceState:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None):
+                 time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
+                 update_operation_constraint: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -629,6 +642,8 @@ class _InstanceState:
             pulumi.set(__self__, "time_created", time_created)
         if time_maintenance_reboot_due is not None:
             pulumi.set(__self__, "time_maintenance_reboot_due", time_maintenance_reboot_due)
+        if update_operation_constraint is not None:
+            pulumi.set(__self__, "update_operation_constraint", update_operation_constraint)
 
     @property
     @pulumi.getter(name="agentConfig")
@@ -1059,6 +1074,15 @@ class _InstanceState:
     def time_maintenance_reboot_due(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_maintenance_reboot_due", value)
 
+    @property
+    @pulumi.getter(name="updateOperationConstraint")
+    def update_operation_constraint(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "update_operation_constraint")
+
+    @update_operation_constraint.setter
+    def update_operation_constraint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "update_operation_constraint", value)
+
 
 class Instance(pulumi.CustomResource):
     @overload
@@ -1093,6 +1117,7 @@ class Instance(pulumi.CustomResource):
                  source_details: Optional[pulumi.Input[pulumi.InputType['InstanceSourceDetailsArgs']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 update_operation_constraint: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Instance resource in Oracle Cloud Infrastructure Core service.
@@ -1481,6 +1506,7 @@ class Instance(pulumi.CustomResource):
                  source_details: Optional[pulumi.Input[pulumi.InputType['InstanceSourceDetailsArgs']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 update_operation_constraint: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1533,6 +1559,7 @@ class Instance(pulumi.CustomResource):
                 warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
                 pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["update_operation_constraint"] = update_operation_constraint
             __props__.__dict__["boot_volume_id"] = None
             __props__.__dict__["launch_mode"] = None
             __props__.__dict__["private_ip"] = None
@@ -1586,7 +1613,8 @@ class Instance(pulumi.CustomResource):
             subnet_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None) -> 'Instance':
+            time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
+            update_operation_constraint: Optional[pulumi.Input[str]] = None) -> 'Instance':
         """
         Get an existing Instance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1670,6 +1698,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_maintenance_reboot_due"] = time_maintenance_reboot_due
+        __props__.__dict__["update_operation_constraint"] = update_operation_constraint
         return Instance(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1956,4 +1985,9 @@ class Instance(pulumi.CustomResource):
         The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_maintenance_reboot_due")
+
+    @property
+    @pulumi.getter(name="updateOperationConstraint")
+    def update_operation_constraint(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "update_operation_constraint")
 

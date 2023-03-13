@@ -27,6 +27,8 @@ namespace Pulumi.Oci.Database
     ///     {
     ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
     ///         DisplayName = @var.Autonomous_database_backup_display_name,
+    ///         IsLongTermBackup = @var.Autonomous_database_backup_is_long_term_backup,
+    ///         RetentionPeriodInDays = @var.Autonomous_database_backup_retention_period_in_days,
     ///     });
     /// 
     /// });
@@ -62,6 +64,12 @@ namespace Pulumi.Oci.Database
         public Output<double> DatabaseSizeInTbs { get; private set; } = null!;
 
         /// <summary>
+        /// A valid Oracle Database version for Autonomous Database.
+        /// </summary>
+        [Output("dbVersion")]
+        public Output<string> DbVersion { get; private set; } = null!;
+
+        /// <summary>
         /// The user-friendly name for the backup. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
@@ -72,6 +80,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("isAutomatic")]
         public Output<bool> IsAutomatic { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether the backup is long-term
+        /// </summary>
+        [Output("isLongTermBackup")]
+        public Output<bool> IsLongTermBackup { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the backup can be used to restore the associated Autonomous Database.
@@ -110,10 +124,28 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Retention period, in days, for long-term backups
+        /// </summary>
+        [Output("retentionPeriodInDays")]
+        public Output<int> RetentionPeriodInDays { get; private set; } = null!;
+
+        /// <summary>
+        /// The backup size in terrabytes (TB).
+        /// </summary>
+        [Output("sizeInTbs")]
+        public Output<double> SizeInTbs { get; private set; } = null!;
+
+        /// <summary>
         /// The current state of the backup.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// Timestamp until when the backup will be available
+        /// </summary>
+        [Output("timeAvailableTill")]
+        public Output<string> TimeAvailableTill { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the backup completed.
@@ -194,8 +226,20 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The user-friendly name for the backup. The name does not have to be unique.
         /// </summary>
-        [Input("displayName", required: true)]
-        public Input<string> DisplayName { get; set; } = null!;
+        [Input("displayName")]
+        public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// Indicates whether the backup is long-term
+        /// </summary>
+        [Input("isLongTermBackup")]
+        public Input<bool>? IsLongTermBackup { get; set; }
+
+        /// <summary>
+        /// (Updatable) Retention period, in days, for long-term backups
+        /// </summary>
+        [Input("retentionPeriodInDays")]
+        public Input<int>? RetentionPeriodInDays { get; set; }
 
         public AutonomousDatabaseBackupArgs()
         {
@@ -224,6 +268,12 @@ namespace Pulumi.Oci.Database
         public Input<double>? DatabaseSizeInTbs { get; set; }
 
         /// <summary>
+        /// A valid Oracle Database version for Autonomous Database.
+        /// </summary>
+        [Input("dbVersion")]
+        public Input<string>? DbVersion { get; set; }
+
+        /// <summary>
         /// The user-friendly name for the backup. The name does not have to be unique.
         /// </summary>
         [Input("displayName")]
@@ -234,6 +284,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isAutomatic")]
         public Input<bool>? IsAutomatic { get; set; }
+
+        /// <summary>
+        /// Indicates whether the backup is long-term
+        /// </summary>
+        [Input("isLongTermBackup")]
+        public Input<bool>? IsLongTermBackup { get; set; }
 
         /// <summary>
         /// Indicates whether the backup can be used to restore the associated Autonomous Database.
@@ -272,10 +328,28 @@ namespace Pulumi.Oci.Database
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) Retention period, in days, for long-term backups
+        /// </summary>
+        [Input("retentionPeriodInDays")]
+        public Input<int>? RetentionPeriodInDays { get; set; }
+
+        /// <summary>
+        /// The backup size in terrabytes (TB).
+        /// </summary>
+        [Input("sizeInTbs")]
+        public Input<double>? SizeInTbs { get; set; }
+
+        /// <summary>
         /// The current state of the backup.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// Timestamp until when the backup will be available
+        /// </summary>
+        [Input("timeAvailableTill")]
+        public Input<string>? TimeAvailableTill { get; set; }
 
         /// <summary>
         /// The date and time the backup completed.

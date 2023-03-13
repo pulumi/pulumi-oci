@@ -17,9 +17,17 @@ public final class GetManagementAgentsFilterArgs extends com.pulumi.resources.Re
 
     public static final GetManagementAgentsFilterArgs Empty = new GetManagementAgentsFilterArgs();
 
+    /**
+     * Name of the property
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return Name of the property
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
@@ -31,9 +39,17 @@ public final class GetManagementAgentsFilterArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.regex);
     }
 
+    /**
+     * Values of the property
+     * 
+     */
     @Import(name="values", required=true)
     private Output<List<String>> values;
 
+    /**
+     * @return Values of the property
+     * 
+     */
     public Output<List<String>> values() {
         return this.values;
     }
@@ -64,11 +80,23 @@ public final class GetManagementAgentsFilterArgs extends com.pulumi.resources.Re
             $ = new GetManagementAgentsFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of the property
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name Name of the property
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
@@ -82,15 +110,33 @@ public final class GetManagementAgentsFilterArgs extends com.pulumi.resources.Re
             return regex(Output.of(regex));
         }
 
+        /**
+         * @param values Values of the property
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(Output<List<String>> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values Values of the property
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(List<String> values) {
             return values(Output.of(values));
         }
 
+        /**
+         * @param values Values of the property
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

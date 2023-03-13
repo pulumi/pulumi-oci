@@ -115,6 +115,10 @@ export class ManagementAgent extends pulumi.CustomResource {
      */
     public readonly managedAgentId!: pulumi.Output<string>;
     /**
+     * Additional properties for this Management Agent
+     */
+    public /*out*/ readonly managementAgentProperties!: pulumi.Output<outputs.ManagementAgent.ManagementAgentManagementAgentProperty[]>;
+    /**
      * Platform Name
      */
     public /*out*/ readonly platformName!: pulumi.Output<string>;
@@ -183,6 +187,7 @@ export class ManagementAgent extends pulumi.CustomResource {
             resourceInputs["isCustomerDeployed"] = state ? state.isCustomerDeployed : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["managedAgentId"] = state ? state.managedAgentId : undefined;
+            resourceInputs["managementAgentProperties"] = state ? state.managementAgentProperties : undefined;
             resourceInputs["platformName"] = state ? state.platformName : undefined;
             resourceInputs["platformType"] = state ? state.platformType : undefined;
             resourceInputs["platformVersion"] = state ? state.platformVersion : undefined;
@@ -213,6 +218,7 @@ export class ManagementAgent extends pulumi.CustomResource {
             resourceInputs["isAgentAutoUpgradable"] = undefined /*out*/;
             resourceInputs["isCustomerDeployed"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["managementAgentProperties"] = undefined /*out*/;
             resourceInputs["platformName"] = undefined /*out*/;
             resourceInputs["platformType"] = undefined /*out*/;
             resourceInputs["platformVersion"] = undefined /*out*/;
@@ -293,6 +299,10 @@ export interface ManagementAgentState {
      * Unique Management Agent identifier
      */
     managedAgentId?: pulumi.Input<string>;
+    /**
+     * Additional properties for this Management Agent
+     */
+    managementAgentProperties?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentManagementAgentProperty>[]>;
     /**
      * Platform Name
      */

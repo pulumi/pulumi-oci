@@ -36,6 +36,7 @@ import (
 //				AvailabilityStatus:     pulumi.StringRef(_var.Management_agent_availability_status),
 //				CompartmentIdInSubtree: pulumi.BoolRef(_var.Management_agent_compartment_id_in_subtree),
 //				DisplayName:            pulumi.StringRef(_var.Management_agent_display_name),
+//				GatewayIds:             oci_apigateway_gateway.Test_gateway.Id,
 //				HostId:                 pulumi.StringRef(oci_management_agent_host.Test_host.Id),
 //				InstallType:            pulumi.StringRef(_var.Management_agent_install_type),
 //				IsCustomerDeployed:     pulumi.BoolRef(_var.Management_agent_is_customer_deployed),
@@ -74,6 +75,8 @@ type GetManagementAgentsArgs struct {
 	// Filter to return only Management Agents having the particular display name.
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetManagementAgentsFilter `pulumi:"filters"`
+	// Filter to return only results having the particular gatewayId.
+	GatewayIds []string `pulumi:"gatewayIds"`
 	// Filter to return only Management Agents having the particular agent host id.
 	HostId *string `pulumi:"hostId"`
 	// A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
@@ -101,6 +104,7 @@ type GetManagementAgentsResult struct {
 	// Management Agent Name
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetManagementAgentsFilter `pulumi:"filters"`
+	GatewayIds  []string                    `pulumi:"gatewayIds"`
 	// Host resource ocid
 	HostId *string `pulumi:"hostId"`
 	// The provider-assigned unique ID for this managed resource.
@@ -147,6 +151,8 @@ type GetManagementAgentsOutputArgs struct {
 	// Filter to return only Management Agents having the particular display name.
 	DisplayName pulumi.StringPtrInput               `pulumi:"displayName"`
 	Filters     GetManagementAgentsFilterArrayInput `pulumi:"filters"`
+	// Filter to return only results having the particular gatewayId.
+	GatewayIds pulumi.StringArrayInput `pulumi:"gatewayIds"`
 	// Filter to return only Management Agents having the particular agent host id.
 	HostId pulumi.StringPtrInput `pulumi:"hostId"`
 	// A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
@@ -207,6 +213,10 @@ func (o GetManagementAgentsResultOutput) DisplayName() pulumi.StringPtrOutput {
 
 func (o GetManagementAgentsResultOutput) Filters() GetManagementAgentsFilterArrayOutput {
 	return o.ApplyT(func(v GetManagementAgentsResult) []GetManagementAgentsFilter { return v.Filters }).(GetManagementAgentsFilterArrayOutput)
+}
+
+func (o GetManagementAgentsResultOutput) GatewayIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentsResult) []string { return v.GatewayIds }).(pulumi.StringArrayOutput)
 }
 
 // Host resource ocid

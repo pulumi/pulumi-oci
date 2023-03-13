@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.AutonomousDatabaseConnectionUrlArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseKeyHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLocalStandbyDbArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseStandbyDbArgs;
 import java.lang.Boolean;
@@ -921,6 +922,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * Details for the long-term backup schedule.
+     * 
+     */
+    @Import(name="longTermBackupSchedules")
+    private @Nullable Output<List<AutonomousDatabaseLongTermBackupScheduleArgs>> longTermBackupSchedules;
+
+    /**
+     * @return Details for the long-term backup schedule.
+     * 
+     */
+    public Optional<Output<List<AutonomousDatabaseLongTermBackupScheduleArgs>>> longTermBackupSchedules() {
+        return Optional.ofNullable(this.longTermBackupSchedules);
+    }
+
+    /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
@@ -963,6 +979,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> ncharacterSet() {
         return Optional.ofNullable(this.ncharacterSet);
+    }
+
+    /**
+     * The date and time when the next long-term backup would be created.
+     * 
+     */
+    @Import(name="nextLongTermBackupTimeStamp")
+    private @Nullable Output<String> nextLongTermBackupTimeStamp;
+
+    /**
+     * @return The date and time when the next long-term backup would be created.
+     * 
+     */
+    public Optional<Output<String>> nextLongTermBackupTimeStamp() {
+        return Optional.ofNullable(this.nextLongTermBackupTimeStamp);
     }
 
     /**
@@ -1733,9 +1764,11 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
         this.localStandbyDbs = $.localStandbyDbs;
+        this.longTermBackupSchedules = $.longTermBackupSchedules;
         this.maxCpuCoreCount = $.maxCpuCoreCount;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.ncharacterSet = $.ncharacterSet;
+        this.nextLongTermBackupTimeStamp = $.nextLongTermBackupTimeStamp;
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
         this.openMode = $.openMode;
@@ -3122,6 +3155,37 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param longTermBackupSchedules Details for the long-term backup schedule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder longTermBackupSchedules(@Nullable Output<List<AutonomousDatabaseLongTermBackupScheduleArgs>> longTermBackupSchedules) {
+            $.longTermBackupSchedules = longTermBackupSchedules;
+            return this;
+        }
+
+        /**
+         * @param longTermBackupSchedules Details for the long-term backup schedule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder longTermBackupSchedules(List<AutonomousDatabaseLongTermBackupScheduleArgs> longTermBackupSchedules) {
+            return longTermBackupSchedules(Output.of(longTermBackupSchedules));
+        }
+
+        /**
+         * @param longTermBackupSchedules Details for the long-term backup schedule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder longTermBackupSchedules(AutonomousDatabaseLongTermBackupScheduleArgs... longTermBackupSchedules) {
+            return longTermBackupSchedules(List.of(longTermBackupSchedules));
+        }
+
+        /**
          * @param maxCpuCoreCount (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
          * 
          * @return builder
@@ -3182,6 +3246,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder ncharacterSet(String ncharacterSet) {
             return ncharacterSet(Output.of(ncharacterSet));
+        }
+
+        /**
+         * @param nextLongTermBackupTimeStamp The date and time when the next long-term backup would be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nextLongTermBackupTimeStamp(@Nullable Output<String> nextLongTermBackupTimeStamp) {
+            $.nextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
+            return this;
+        }
+
+        /**
+         * @param nextLongTermBackupTimeStamp The date and time when the next long-term backup would be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nextLongTermBackupTimeStamp(String nextLongTermBackupTimeStamp) {
+            return nextLongTermBackupTimeStamp(Output.of(nextLongTermBackupTimeStamp));
         }
 
         /**

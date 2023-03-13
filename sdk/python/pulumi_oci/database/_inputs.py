@@ -29,6 +29,7 @@ __all__ = [
     'AutonomousDatabaseCustomerContactArgs',
     'AutonomousDatabaseKeyHistoryEntryArgs',
     'AutonomousDatabaseLocalStandbyDbArgs',
+    'AutonomousDatabaseLongTermBackupScheduleArgs',
     'AutonomousDatabaseScheduledOperationArgs',
     'AutonomousDatabaseScheduledOperationDayOfWeekArgs',
     'AutonomousDatabaseStandbyDbArgs',
@@ -1500,6 +1501,77 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @time_data_guard_role_changed.setter
     def time_data_guard_role_changed(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_data_guard_role_changed", value)
+
+
+@pulumi.input_type
+class AutonomousDatabaseLongTermBackupScheduleArgs:
+    def __init__(__self__, *,
+                 is_disabled: Optional[pulumi.Input[bool]] = None,
+                 repeat_cadence: Optional[pulumi.Input[str]] = None,
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 time_of_backup: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param pulumi.Input[str] repeat_cadence: The frequency of the long-term backup schedule
+        :param pulumi.Input[int] retention_period_in_days: Retention period, in days, for long-term backups
+        :param pulumi.Input[str] time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        if is_disabled is not None:
+            pulumi.set(__self__, "is_disabled", is_disabled)
+        if repeat_cadence is not None:
+            pulumi.set(__self__, "repeat_cadence", repeat_cadence)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        if time_of_backup is not None:
+            pulumi.set(__self__, "time_of_backup", time_of_backup)
+
+    @property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @is_disabled.setter
+    def is_disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_disabled", value)
+
+    @property
+    @pulumi.getter(name="repeatCadence")
+    def repeat_cadence(self) -> Optional[pulumi.Input[str]]:
+        """
+        The frequency of the long-term backup schedule
+        """
+        return pulumi.get(self, "repeat_cadence")
+
+    @repeat_cadence.setter
+    def repeat_cadence(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "repeat_cadence", value)
+
+    @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retention_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="timeOfBackup")
+    def time_of_backup(self) -> Optional[pulumi.Input[str]]:
+        """
+        The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        return pulumi.get(self, "time_of_backup")
+
+    @time_of_backup.setter
+    def time_of_backup(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_of_backup", value)
 
 
 @pulumi.input_type

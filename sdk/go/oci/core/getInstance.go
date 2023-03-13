@@ -14,6 +14,9 @@ import (
 //
 // Gets information about the specified instance.
 //
+// **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+// operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+//
 // ## Example Usage
 //
 // ```go
@@ -131,7 +134,8 @@ type LookupInstanceResult struct {
 	// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
-	TimeMaintenanceRebootDue string `pulumi:"timeMaintenanceRebootDue"`
+	TimeMaintenanceRebootDue  string `pulumi:"timeMaintenanceRebootDue"`
+	UpdateOperationConstraint string `pulumi:"updateOperationConstraint"`
 }
 
 func LookupInstanceOutput(ctx *pulumi.Context, args LookupInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupInstanceResultOutput {
@@ -362,6 +366,10 @@ func (o LookupInstanceResultOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
 func (o LookupInstanceResultOutput) TimeMaintenanceRebootDue() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.TimeMaintenanceRebootDue }).(pulumi.StringOutput)
+}
+
+func (o LookupInstanceResultOutput) UpdateOperationConstraint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.UpdateOperationConstraint }).(pulumi.StringOutput)
 }
 
 func init() {

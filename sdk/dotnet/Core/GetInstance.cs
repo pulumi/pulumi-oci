@@ -16,6 +16,10 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets information about the specified instance.
         /// 
+        /// **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+        /// operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+        /// 
+        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -44,6 +48,10 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets information about the specified instance.
+        /// 
+        /// **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+        /// operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -240,6 +248,7 @@ namespace Pulumi.Oci.Core
         /// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeMaintenanceRebootDue;
+        public readonly string UpdateOperationConstraint;
 
         [OutputConstructor]
         private GetInstanceResult(
@@ -317,7 +326,9 @@ namespace Pulumi.Oci.Core
 
             string timeCreated,
 
-            string timeMaintenanceRebootDue)
+            string timeMaintenanceRebootDue,
+
+            string updateOperationConstraint)
         {
             AgentConfigs = agentConfigs;
             Async = async;
@@ -357,6 +368,7 @@ namespace Pulumi.Oci.Core
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            UpdateOperationConstraint = updateOperationConstraint;
         }
     }
 }

@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string DeploymentType;
         /// <summary>
+        /// (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+        /// </summary>
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails? EnvironmentConfigurationDetails;
+        /// <summary>
         /// (Updatable) The model configuration details.
         /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails ModelConfigurationDetails;
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.DataScience.Outputs
         private ModelDeploymentModelDeploymentConfigurationDetails(
             string deploymentType,
 
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails? environmentConfigurationDetails,
+
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails)
         {
             DeploymentType = deploymentType;
+            EnvironmentConfigurationDetails = environmentConfigurationDetails;
             ModelConfigurationDetails = modelConfigurationDetails;
         }
     }

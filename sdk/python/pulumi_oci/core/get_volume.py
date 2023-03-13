@@ -206,7 +206,7 @@ class GetVolumeResult:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
-        The OCID of the Key Management key which is the master encryption key for the volume.
+        The OCID of the Vault service key which is the master encryption key for the volume.
         """
         return pulumi.get(self, "kms_key_id")
 

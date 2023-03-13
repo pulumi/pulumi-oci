@@ -73,7 +73,7 @@ type LookupBootVolumeBackupResult struct {
 	Id string `pulumi:"id"`
 	// The image OCID used to create the boot volume the backup is taken from.
 	ImageId string `pulumi:"imageId"`
-	// The OCID of the Key Management master encryption assigned to the boot volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	// The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the boot volume, in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
@@ -178,7 +178,7 @@ func (o LookupBootVolumeBackupResultOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// The OCID of the Key Management master encryption assigned to the boot volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+// The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 func (o LookupBootVolumeBackupResultOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }

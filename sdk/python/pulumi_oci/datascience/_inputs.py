@@ -25,6 +25,7 @@ __all__ = [
     'ModelDeploymentCategoryLogDetailsAccessArgs',
     'ModelDeploymentCategoryLogDetailsPredictArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs',
@@ -920,13 +921,17 @@ class ModelDeploymentCategoryLogDetailsPredictArgs:
 class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
     def __init__(__self__, *,
                  deployment_type: pulumi.Input[str],
-                 model_configuration_details: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs']):
+                 model_configuration_details: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs'],
+                 environment_configuration_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs']] = None):
         """
         :param pulumi.Input[str] deployment_type: (Updatable) The type of the model deployment.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs'] model_configuration_details: (Updatable) The model configuration details.
+        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs'] environment_configuration_details: (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
         """
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        if environment_configuration_details is not None:
+            pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -951,6 +956,152 @@ class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
     @model_configuration_details.setter
     def model_configuration_details(self, value: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs']):
         pulumi.set(self, "model_configuration_details", value)
+
+    @property
+    @pulumi.getter(name="environmentConfigurationDetails")
+    def environment_configuration_details(self) -> Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs']]:
+        """
+        (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+        """
+        return pulumi.get(self, "environment_configuration_details")
+
+    @environment_configuration_details.setter
+    def environment_configuration_details(self, value: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs']]):
+        pulumi.set(self, "environment_configuration_details", value)
+
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 environment_configuration_type: pulumi.Input[str],
+                 cmds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 entrypoints: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 health_check_port: Optional[pulumi.Input[int]] = None,
+                 image: Optional[pulumi.Input[str]] = None,
+                 image_digest: Optional[pulumi.Input[str]] = None,
+                 server_port: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] environment_configuration_type: (Updatable) The environment configuration type
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+        :param pulumi.Input[int] health_check_port: (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+        :param pulumi.Input[str] image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param pulumi.Input[str] image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param pulumi.Input[int] server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+        """
+        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if health_check_port is not None:
+            pulumi.set(__self__, "health_check_port", health_check_port)
+        if image is not None:
+            pulumi.set(__self__, "image", image)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if server_port is not None:
+            pulumi.set(__self__, "server_port", server_port)
+
+    @property
+    @pulumi.getter(name="environmentConfigurationType")
+    def environment_configuration_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The environment configuration type
+        """
+        return pulumi.get(self, "environment_configuration_type")
+
+    @environment_configuration_type.setter
+    def environment_configuration_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "environment_configuration_type", value)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @cmds.setter
+    def cmds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "cmds", value)
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @entrypoints.setter
+    def entrypoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "entrypoints", value)
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @environment_variables.setter
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "environment_variables", value)
+
+    @property
+    @pulumi.getter(name="healthCheckPort")
+    def health_check_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+        """
+        return pulumi.get(self, "health_check_port")
+
+    @health_check_port.setter
+    def health_check_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "health_check_port", value)
+
+    @property
+    @pulumi.getter
+    def image(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @image.setter
+    def image(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image", value)
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @image_digest.setter
+    def image_digest(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image_digest", value)
+
+    @property
+    @pulumi.getter(name="serverPort")
+    def server_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+        """
+        return pulumi.get(self, "server_port")
+
+    @server_port.setter
+    def server_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "server_port", value)
 
 
 @pulumi.input_type

@@ -22,7 +22,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_standby_dbs=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_standby_dbs=None, long_term_backup_schedules=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -200,6 +200,9 @@ class GetAutonomousDatabaseResult:
         if local_standby_dbs and not isinstance(local_standby_dbs, list):
             raise TypeError("Expected argument 'local_standby_dbs' to be a list")
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
+        if long_term_backup_schedules and not isinstance(long_term_backup_schedules, list):
+            raise TypeError("Expected argument 'long_term_backup_schedules' to be a list")
+        pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         if max_cpu_core_count and not isinstance(max_cpu_core_count, int):
             raise TypeError("Expected argument 'max_cpu_core_count' to be a int")
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
@@ -209,6 +212,9 @@ class GetAutonomousDatabaseResult:
         if ncharacter_set and not isinstance(ncharacter_set, str):
             raise TypeError("Expected argument 'ncharacter_set' to be a str")
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        if next_long_term_backup_time_stamp and not isinstance(next_long_term_backup_time_stamp, str):
+            raise TypeError("Expected argument 'next_long_term_backup_time_stamp' to be a str")
+        pulumi.set(__self__, "next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -810,6 +816,14 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "local_standby_dbs")
 
     @property
+    @pulumi.getter(name="longTermBackupSchedules")
+    def long_term_backup_schedules(self) -> Sequence['outputs.GetAutonomousDatabaseLongTermBackupScheduleResult']:
+        """
+        Details for the long-term backup schedule.
+        """
+        return pulumi.get(self, "long_term_backup_schedules")
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> int:
         """
@@ -832,6 +846,14 @@ class GetAutonomousDatabaseResult:
         The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
+
+    @property
+    @pulumi.getter(name="nextLongTermBackupTimeStamp")
+    def next_long_term_backup_time_stamp(self) -> str:
+        """
+        The date and time when the next long-term backup would be created.
+        """
+        return pulumi.get(self, "next_long_term_backup_time_stamp")
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -1252,9 +1274,11 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
             local_standby_dbs=self.local_standby_dbs,
+            long_term_backup_schedules=self.long_term_backup_schedules,
             max_cpu_core_count=self.max_cpu_core_count,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             ncharacter_set=self.ncharacter_set,
+            next_long_term_backup_time_stamp=self.next_long_term_backup_time_stamp,
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
             open_mode=self.open_mode,
@@ -1388,9 +1412,11 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
         local_standby_dbs=__ret__.local_standby_dbs,
+        long_term_backup_schedules=__ret__.long_term_backup_schedules,
         max_cpu_core_count=__ret__.max_cpu_core_count,
         memory_per_oracle_compute_unit_in_gbs=__ret__.memory_per_oracle_compute_unit_in_gbs,
         ncharacter_set=__ret__.ncharacter_set,
+        next_long_term_backup_time_stamp=__ret__.next_long_term_backup_time_stamp,
         nsg_ids=__ret__.nsg_ids,
         ocpu_count=__ret__.ocpu_count,
         open_mode=__ret__.open_mode,

@@ -124,6 +124,10 @@ namespace Pulumi.Oci.Oce
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// disaster recovery paired ragion name
+        /// </summary>
+        public readonly string DrRegion;
+        /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -218,6 +222,8 @@ namespace Pulumi.Oci.Oce
 
             string description,
 
+            string drRegion,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string guid,
@@ -267,6 +273,7 @@ namespace Pulumi.Oci.Oce
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
+            DrRegion = drRegion;
             FreeformTags = freeformTags;
             Guid = guid;
             Id = id;

@@ -94,7 +94,7 @@ export interface GetVolumeResult {
      */
     readonly isHydrated: boolean;
     /**
-     * The OCID of the Key Management key which is the master encryption key for the volume.
+     * The OCID of the Vault service key which is the master encryption key for the volume.
      */
     readonly kmsKeyId: string;
     /**

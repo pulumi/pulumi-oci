@@ -22,7 +22,7 @@ class GetManagementAgentResult:
     """
     A collection of values returned by getManagementAgent.
     """
-    def __init__(__self__, availability_status=None, compartment_id=None, defined_tags=None, deploy_plugins_ids=None, display_name=None, freeform_tags=None, host=None, host_id=None, id=None, install_key_id=None, install_path=None, install_type=None, is_agent_auto_upgradable=None, is_customer_deployed=None, lifecycle_details=None, managed_agent_id=None, management_agent_id=None, platform_name=None, platform_type=None, platform_version=None, plugin_lists=None, resource_artifact_version=None, state=None, time_created=None, time_last_heartbeat=None, time_updated=None, version=None):
+    def __init__(__self__, availability_status=None, compartment_id=None, defined_tags=None, deploy_plugins_ids=None, display_name=None, freeform_tags=None, host=None, host_id=None, id=None, install_key_id=None, install_path=None, install_type=None, is_agent_auto_upgradable=None, is_customer_deployed=None, lifecycle_details=None, managed_agent_id=None, management_agent_id=None, management_agent_properties=None, platform_name=None, platform_type=None, platform_version=None, plugin_lists=None, resource_artifact_version=None, state=None, time_created=None, time_last_heartbeat=None, time_updated=None, version=None):
         if availability_status and not isinstance(availability_status, str):
             raise TypeError("Expected argument 'availability_status' to be a str")
         pulumi.set(__self__, "availability_status", availability_status)
@@ -74,6 +74,9 @@ class GetManagementAgentResult:
         if management_agent_id and not isinstance(management_agent_id, str):
             raise TypeError("Expected argument 'management_agent_id' to be a str")
         pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if management_agent_properties and not isinstance(management_agent_properties, list):
+            raise TypeError("Expected argument 'management_agent_properties' to be a list")
+        pulumi.set(__self__, "management_agent_properties", management_agent_properties)
         if platform_name and not isinstance(platform_name, str):
             raise TypeError("Expected argument 'platform_name' to be a str")
         pulumi.set(__self__, "platform_name", platform_name)
@@ -233,6 +236,14 @@ class GetManagementAgentResult:
         return pulumi.get(self, "management_agent_id")
 
     @property
+    @pulumi.getter(name="managementAgentProperties")
+    def management_agent_properties(self) -> Sequence['outputs.GetManagementAgentManagementAgentPropertyResult']:
+        """
+        Additional properties for this Management Agent
+        """
+        return pulumi.get(self, "management_agent_properties")
+
+    @property
     @pulumi.getter(name="platformName")
     def platform_name(self) -> str:
         """
@@ -336,6 +347,7 @@ class AwaitableGetManagementAgentResult(GetManagementAgentResult):
             lifecycle_details=self.lifecycle_details,
             managed_agent_id=self.managed_agent_id,
             management_agent_id=self.management_agent_id,
+            management_agent_properties=self.management_agent_properties,
             platform_name=self.platform_name,
             platform_type=self.platform_type,
             platform_version=self.platform_version,
@@ -390,6 +402,7 @@ def get_management_agent(management_agent_id: Optional[str] = None,
         lifecycle_details=__ret__.lifecycle_details,
         managed_agent_id=__ret__.managed_agent_id,
         management_agent_id=__ret__.management_agent_id,
+        management_agent_properties=__ret__.management_agent_properties,
         platform_name=__ret__.platform_name,
         platform_type=__ret__.platform_type,
         platform_version=__ret__.platform_version,

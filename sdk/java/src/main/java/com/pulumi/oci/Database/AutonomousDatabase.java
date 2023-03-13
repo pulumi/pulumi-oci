@@ -16,6 +16,7 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLocalStandbyDb;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseLongTermBackupSchedule;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseStandbyDb;
 import com.pulumi.oci.Utilities;
@@ -878,6 +879,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.localStandbyDbs;
     }
     /**
+     * Details for the long-term backup schedule.
+     * 
+     */
+    @Export(name="longTermBackupSchedules", type=List.class, parameters={AutonomousDatabaseLongTermBackupSchedule.class})
+    private Output<List<AutonomousDatabaseLongTermBackupSchedule>> longTermBackupSchedules;
+
+    /**
+     * @return Details for the long-term backup schedule.
+     * 
+     */
+    public Output<List<AutonomousDatabaseLongTermBackupSchedule>> longTermBackupSchedules() {
+        return this.longTermBackupSchedules;
+    }
+    /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
@@ -918,6 +933,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> ncharacterSet() {
         return this.ncharacterSet;
+    }
+    /**
+     * The date and time when the next long-term backup would be created.
+     * 
+     */
+    @Export(name="nextLongTermBackupTimeStamp", type=String.class, parameters={})
+    private Output<String> nextLongTermBackupTimeStamp;
+
+    /**
+     * @return The date and time when the next long-term backup would be created.
+     * 
+     */
+    public Output<String> nextLongTermBackupTimeStamp() {
+        return this.nextLongTermBackupTimeStamp;
     }
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**

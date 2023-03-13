@@ -55,6 +55,7 @@ class GetOceInstancesOceInstanceResult(dict):
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  description: str,
+                 dr_region: str,
                  freeform_tags: Mapping[str, Any],
                  guid: str,
                  id: str,
@@ -82,6 +83,7 @@ class GetOceInstancesOceInstanceResult(dict):
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: OceInstance description, can be updated
+        :param str dr_region: disaster recovery paired ragion name
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str guid: Unique GUID identifier that is immutable on creation
         :param str id: Unique identifier that is immutable on creation
@@ -108,6 +110,7 @@ class GetOceInstancesOceInstanceResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "dr_region", dr_region)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "guid", guid)
         pulumi.set(__self__, "id", id)
@@ -169,6 +172,14 @@ class GetOceInstancesOceInstanceResult(dict):
         OceInstance description, can be updated
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="drRegion")
+    def dr_region(self) -> str:
+        """
+        disaster recovery paired ragion name
+        """
+        return pulumi.get(self, "dr_region")
 
     @property
     @pulumi.getter(name="freeformTags")

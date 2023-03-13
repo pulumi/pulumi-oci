@@ -713,6 +713,12 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> timeMaintenanceRebootDue() {
         return this.timeMaintenanceRebootDue;
     }
+    @Export(name="updateOperationConstraint", type=String.class, parameters={})
+    private Output</* @Nullable */ String> updateOperationConstraint;
+
+    public Output<Optional<String>> updateOperationConstraint() {
+        return Codegen.optional(this.updateOperationConstraint);
+    }
 
     /**
      *

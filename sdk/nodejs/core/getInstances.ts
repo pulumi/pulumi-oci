@@ -13,6 +13,9 @@ import * as utilities from "../utilities";
  * You can filter the results by specifying an instance name (the list will include all the identically-named
  * instances in the compartment).
  *
+ * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+ * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -108,6 +111,9 @@ export interface GetInstancesResult {
  * Lists the instances in the specified compartment and the specified availability domain.
  * You can filter the results by specifying an instance name (the list will include all the identically-named
  * instances in the compartment).
+ *
+ * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+ * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
  *
  * ## Example Usage
  *

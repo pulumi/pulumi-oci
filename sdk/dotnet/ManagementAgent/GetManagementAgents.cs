@@ -37,6 +37,7 @@ namespace Pulumi.Oci.ManagementAgent
         ///         AvailabilityStatus = @var.Management_agent_availability_status,
         ///         CompartmentIdInSubtree = @var.Management_agent_compartment_id_in_subtree,
         ///         DisplayName = @var.Management_agent_display_name,
+        ///         GatewayIds = oci_apigateway_gateway.Test_gateway.Id,
         ///         HostId = oci_management_agent_host.Test_host.Id,
         ///         InstallType = @var.Management_agent_install_type,
         ///         IsCustomerDeployed = @var.Management_agent_is_customer_deployed,
@@ -80,6 +81,7 @@ namespace Pulumi.Oci.ManagementAgent
         ///         AvailabilityStatus = @var.Management_agent_availability_status,
         ///         CompartmentIdInSubtree = @var.Management_agent_compartment_id_in_subtree,
         ///         DisplayName = @var.Management_agent_display_name,
+        ///         GatewayIds = oci_apigateway_gateway.Test_gateway.Id,
         ///         HostId = oci_management_agent_host.Test_host.Id,
         ///         InstallType = @var.Management_agent_install_type,
         ///         IsCustomerDeployed = @var.Management_agent_is_customer_deployed,
@@ -137,6 +139,18 @@ namespace Pulumi.Oci.ManagementAgent
         {
             get => _filters ?? (_filters = new List<Inputs.GetManagementAgentsFilterArgs>());
             set => _filters = value;
+        }
+
+        [Input("gatewayIds")]
+        private List<string>? _gatewayIds;
+
+        /// <summary>
+        /// Filter to return only results having the particular gatewayId.
+        /// </summary>
+        public List<string> GatewayIds
+        {
+            get => _gatewayIds ?? (_gatewayIds = new List<string>());
+            set => _gatewayIds = value;
         }
 
         /// <summary>
@@ -245,6 +259,18 @@ namespace Pulumi.Oci.ManagementAgent
             set => _filters = value;
         }
 
+        [Input("gatewayIds")]
+        private InputList<string>? _gatewayIds;
+
+        /// <summary>
+        /// Filter to return only results having the particular gatewayId.
+        /// </summary>
+        public InputList<string> GatewayIds
+        {
+            get => _gatewayIds ?? (_gatewayIds = new InputList<string>());
+            set => _gatewayIds = value;
+        }
+
         /// <summary>
         /// Filter to return only Management Agents having the particular agent host id.
         /// </summary>
@@ -330,6 +356,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetManagementAgentsFilterResult> Filters;
+        public readonly ImmutableArray<string> GatewayIds;
         /// <summary>
         /// Host resource ocid
         /// </summary>
@@ -381,6 +408,8 @@ namespace Pulumi.Oci.ManagementAgent
 
             ImmutableArray<Outputs.GetManagementAgentsFilterResult> filters,
 
+            ImmutableArray<string> gatewayIds,
+
             string? hostId,
 
             string id,
@@ -405,6 +434,7 @@ namespace Pulumi.Oci.ManagementAgent
             CompartmentIdInSubtree = compartmentIdInSubtree;
             DisplayName = displayName;
             Filters = filters;
+            GatewayIds = gatewayIds;
             HostId = hostId;
             Id = id;
             InstallType = installType;

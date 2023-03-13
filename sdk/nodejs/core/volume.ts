@@ -146,7 +146,7 @@ export class Volume extends pulumi.CustomResource {
      */
     public /*out*/ readonly isHydrated!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
     /**
@@ -308,7 +308,7 @@ export interface VolumeState {
      */
     isHydrated?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
@@ -392,7 +392,7 @@ export interface VolumeArgs {
      */
     isAutoTuneEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      */
     kmsKeyId?: pulumi.Input<string>;
     /**

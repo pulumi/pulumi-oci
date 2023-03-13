@@ -30,6 +30,7 @@ __all__ = [
     'AutonomousDatabaseCustomerContact',
     'AutonomousDatabaseKeyHistoryEntry',
     'AutonomousDatabaseLocalStandbyDb',
+    'AutonomousDatabaseLongTermBackupSchedule',
     'AutonomousDatabaseScheduledOperation',
     'AutonomousDatabaseScheduledOperationDayOfWeek',
     'AutonomousDatabaseStandbyDb',
@@ -187,6 +188,7 @@ __all__ = [
     'GetAutonomousDatabaseDataguardAssociationsFilterResult',
     'GetAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabaseLocalStandbyDbResult',
+    'GetAutonomousDatabaseLongTermBackupScheduleResult',
     'GetAutonomousDatabaseRefreshableClonesFilterResult',
     'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult',
     'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult',
@@ -202,6 +204,7 @@ __all__ = [
     'GetAutonomousDatabasesAutonomousDatabaseCustomerContactResult',
     'GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult',
+    'GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult',
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult',
@@ -214,6 +217,7 @@ __all__ = [
     'GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult',
@@ -1799,6 +1803,84 @@ class AutonomousDatabaseLocalStandbyDb(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+
+@pulumi.output_type
+class AutonomousDatabaseLongTermBackupSchedule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isDisabled":
+            suggest = "is_disabled"
+        elif key == "repeatCadence":
+            suggest = "repeat_cadence"
+        elif key == "retentionPeriodInDays":
+            suggest = "retention_period_in_days"
+        elif key == "timeOfBackup":
+            suggest = "time_of_backup"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseLongTermBackupSchedule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseLongTermBackupSchedule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseLongTermBackupSchedule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_disabled: Optional[bool] = None,
+                 repeat_cadence: Optional[str] = None,
+                 retention_period_in_days: Optional[int] = None,
+                 time_of_backup: Optional[str] = None):
+        """
+        :param bool is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param str repeat_cadence: The frequency of the long-term backup schedule
+        :param int retention_period_in_days: Retention period, in days, for long-term backups
+        :param str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        if is_disabled is not None:
+            pulumi.set(__self__, "is_disabled", is_disabled)
+        if repeat_cadence is not None:
+            pulumi.set(__self__, "repeat_cadence", repeat_cadence)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        if time_of_backup is not None:
+            pulumi.set(__self__, "time_of_backup", time_of_backup)
+
+    @property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> Optional[bool]:
+        """
+        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @property
+    @pulumi.getter(name="repeatCadence")
+    def repeat_cadence(self) -> Optional[str]:
+        """
+        The frequency of the long-term backup schedule
+        """
+        return pulumi.get(self, "repeat_cadence")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> Optional[int]:
+        """
+        Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="timeOfBackup")
+    def time_of_backup(self) -> Optional[str]:
+        """
+        The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        return pulumi.get(self, "time_of_backup")
 
 
 @pulumi.output_type
@@ -11803,16 +11885,21 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
                  autonomous_database_id: str,
                  compartment_id: str,
                  database_size_in_tbs: float,
+                 db_version: str,
                  display_name: str,
                  id: str,
                  is_automatic: bool,
+                 is_long_term_backup: bool,
                  is_restorable: bool,
                  key_store_id: str,
                  key_store_wallet_name: str,
                  kms_key_id: str,
                  kms_key_version_id: str,
                  lifecycle_details: str,
+                 retention_period_in_days: int,
+                 size_in_tbs: float,
                  state: str,
+                 time_available_till: str,
                  time_ended: str,
                  time_started: str,
                  type: str,
@@ -11821,6 +11908,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
+        :param str db_version: A valid Oracle Database version for Autonomous Database.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         :param bool is_automatic: Indicates whether the backup is user-initiated or automatic.
@@ -11830,7 +11918,10 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param int retention_period_in_days: Retention period, in days, for long-term backups
+        :param float size_in_tbs: The backup size in terrabytes (TB).
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_available_till: Timestamp until when the backup will be available
         :param str time_ended: The date and time the backup completed.
         :param str time_started: The date and time the backup started.
         :param str type: The type of backup.
@@ -11839,16 +11930,21 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_size_in_tbs", database_size_in_tbs)
+        pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_automatic", is_automatic)
+        pulumi.set(__self__, "is_long_term_backup", is_long_term_backup)
         pulumi.set(__self__, "is_restorable", is_restorable)
         pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        pulumi.set(__self__, "size_in_tbs", size_in_tbs)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_available_till", time_available_till)
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "type", type)
@@ -11879,6 +11975,14 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         return pulumi.get(self, "database_size_in_tbs")
 
     @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> str:
+        """
+        A valid Oracle Database version for Autonomous Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -11901,6 +12005,11 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         Indicates whether the backup is user-initiated or automatic.
         """
         return pulumi.get(self, "is_automatic")
+
+    @property
+    @pulumi.getter(name="isLongTermBackup")
+    def is_long_term_backup(self) -> bool:
+        return pulumi.get(self, "is_long_term_backup")
 
     @property
     @pulumi.getter(name="isRestorable")
@@ -11951,12 +12060,36 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> int:
+        """
+        Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="sizeInTbs")
+    def size_in_tbs(self) -> float:
+        """
+        The backup size in terrabytes (TB).
+        """
+        return pulumi.get(self, "size_in_tbs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
         A filter to return only resources that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeAvailableTill")
+    def time_available_till(self) -> str:
+        """
+        Timestamp until when the backup will be available
+        """
+        return pulumi.get(self, "time_available_till")
 
     @property
     @pulumi.getter(name="timeEnded")
@@ -12568,6 +12701,57 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabaseLongTermBackupScheduleResult(dict):
+    def __init__(__self__, *,
+                 is_disabled: bool,
+                 repeat_cadence: str,
+                 retention_period_in_days: int,
+                 time_of_backup: str):
+        """
+        :param bool is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param str repeat_cadence: The frequency of the long-term backup schedule
+        :param int retention_period_in_days: Retention period, in days, for long-term backups
+        :param str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "repeat_cadence", repeat_cadence)
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        pulumi.set(__self__, "time_of_backup", time_of_backup)
+
+    @property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> bool:
+        """
+        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @property
+    @pulumi.getter(name="repeatCadence")
+    def repeat_cadence(self) -> str:
+        """
+        The frequency of the long-term backup schedule
+        """
+        return pulumi.get(self, "repeat_cadence")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> int:
+        """
+        Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="timeOfBackup")
+    def time_of_backup(self) -> str:
+        """
+        The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        return pulumi.get(self, "time_of_backup")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseRefreshableClonesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -12806,9 +12990,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  license_model: str,
                  lifecycle_details: str,
                  local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult'],
+                 long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult'],
                  max_cpu_core_count: int,
                  memory_per_oracle_compute_unit_in_gbs: int,
                  ncharacter_set: str,
+                 next_long_term_backup_time_stamp: str,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
                  open_mode: str,
@@ -12910,9 +13096,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of OCPU cores to be made available to the database.
@@ -13013,9 +13201,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
+        pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        pulumi.set(__self__, "next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "open_mode", open_mode)
@@ -13519,6 +13709,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "local_standby_dbs")
 
     @property
+    @pulumi.getter(name="longTermBackupSchedules")
+    def long_term_backup_schedules(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult']:
+        """
+        Details for the long-term backup schedule.
+        """
+        return pulumi.get(self, "long_term_backup_schedules")
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> int:
         """
@@ -13541,6 +13739,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
+
+    @property
+    @pulumi.getter(name="nextLongTermBackupTimeStamp")
+    def next_long_term_backup_time_stamp(self) -> str:
+        """
+        The date and time when the next long-term backup would be created.
+        """
+        return pulumi.get(self, "next_long_term_backup_time_stamp")
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -14294,6 +14500,57 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult(dict):
+    def __init__(__self__, *,
+                 is_disabled: bool,
+                 repeat_cadence: str,
+                 retention_period_in_days: int,
+                 time_of_backup: str):
+        """
+        :param bool is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param str repeat_cadence: The frequency of the long-term backup schedule
+        :param int retention_period_in_days: Retention period, in days, for long-term backups
+        :param str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "repeat_cadence", repeat_cadence)
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        pulumi.set(__self__, "time_of_backup", time_of_backup)
+
+    @property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> bool:
+        """
+        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @property
+    @pulumi.getter(name="repeatCadence")
+    def repeat_cadence(self) -> str:
+        """
+        The frequency of the long-term backup schedule
+        """
+        return pulumi.get(self, "repeat_cadence")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> int:
+        """
+        Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="timeOfBackup")
+    def time_of_backup(self) -> str:
+        """
+        The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        return pulumi.get(self, "time_of_backup")
+
+
+@pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult(dict):
     def __init__(__self__, *,
                  day_of_weeks: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult'],
@@ -14458,9 +14715,11 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  license_model: str,
                  lifecycle_details: str,
                  local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult'],
+                 long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult'],
                  max_cpu_core_count: int,
                  memory_per_oracle_compute_unit_in_gbs: int,
                  ncharacter_set: str,
+                 next_long_term_backup_time_stamp: str,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
                  open_mode: str,
@@ -14556,9 +14815,11 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of OCPU cores to be made available to the database.
@@ -14651,9 +14912,11 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
+        pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        pulumi.set(__self__, "next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "open_mode", open_mode)
@@ -15121,6 +15384,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "local_standby_dbs")
 
     @property
+    @pulumi.getter(name="longTermBackupSchedules")
+    def long_term_backup_schedules(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult']:
+        """
+        Details for the long-term backup schedule.
+        """
+        return pulumi.get(self, "long_term_backup_schedules")
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> int:
         """
@@ -15143,6 +15414,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
+
+    @property
+    @pulumi.getter(name="nextLongTermBackupTimeStamp")
+    def next_long_term_backup_time_stamp(self) -> str:
+        """
+        The date and time when the next long-term backup would be created.
+        """
+        return pulumi.get(self, "next_long_term_backup_time_stamp")
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -15837,6 +16116,57 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult(dict):
+    def __init__(__self__, *,
+                 is_disabled: bool,
+                 repeat_cadence: str,
+                 retention_period_in_days: int,
+                 time_of_backup: str):
+        """
+        :param bool is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param str repeat_cadence: The frequency of the long-term backup schedule
+        :param int retention_period_in_days: Retention period, in days, for long-term backups
+        :param str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "repeat_cadence", repeat_cadence)
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        pulumi.set(__self__, "time_of_backup", time_of_backup)
+
+    @property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> bool:
+        """
+        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @property
+    @pulumi.getter(name="repeatCadence")
+    def repeat_cadence(self) -> str:
+        """
+        The frequency of the long-term backup schedule
+        """
+        return pulumi.get(self, "repeat_cadence")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> int:
+        """
+        Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="timeOfBackup")
+    def time_of_backup(self) -> str:
+        """
+        The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+        """
+        return pulumi.get(self, "time_of_backup")
 
 
 @pulumi.output_type

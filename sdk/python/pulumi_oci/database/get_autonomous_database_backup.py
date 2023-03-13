@@ -21,7 +21,7 @@ class GetAutonomousDatabaseBackupResult:
     """
     A collection of values returned by getAutonomousDatabaseBackup.
     """
-    def __init__(__self__, autonomous_database_backup_id=None, autonomous_database_id=None, compartment_id=None, database_size_in_tbs=None, display_name=None, id=None, is_automatic=None, is_restorable=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_version_id=None, lifecycle_details=None, state=None, time_ended=None, time_started=None, type=None, vault_id=None):
+    def __init__(__self__, autonomous_database_backup_id=None, autonomous_database_id=None, compartment_id=None, database_size_in_tbs=None, db_version=None, display_name=None, id=None, is_automatic=None, is_long_term_backup=None, is_restorable=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_version_id=None, lifecycle_details=None, retention_period_in_days=None, size_in_tbs=None, state=None, time_available_till=None, time_ended=None, time_started=None, type=None, vault_id=None):
         if autonomous_database_backup_id and not isinstance(autonomous_database_backup_id, str):
             raise TypeError("Expected argument 'autonomous_database_backup_id' to be a str")
         pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
@@ -34,6 +34,9 @@ class GetAutonomousDatabaseBackupResult:
         if database_size_in_tbs and not isinstance(database_size_in_tbs, float):
             raise TypeError("Expected argument 'database_size_in_tbs' to be a float")
         pulumi.set(__self__, "database_size_in_tbs", database_size_in_tbs)
+        if db_version and not isinstance(db_version, str):
+            raise TypeError("Expected argument 'db_version' to be a str")
+        pulumi.set(__self__, "db_version", db_version)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -43,6 +46,9 @@ class GetAutonomousDatabaseBackupResult:
         if is_automatic and not isinstance(is_automatic, bool):
             raise TypeError("Expected argument 'is_automatic' to be a bool")
         pulumi.set(__self__, "is_automatic", is_automatic)
+        if is_long_term_backup and not isinstance(is_long_term_backup, bool):
+            raise TypeError("Expected argument 'is_long_term_backup' to be a bool")
+        pulumi.set(__self__, "is_long_term_backup", is_long_term_backup)
         if is_restorable and not isinstance(is_restorable, bool):
             raise TypeError("Expected argument 'is_restorable' to be a bool")
         pulumi.set(__self__, "is_restorable", is_restorable)
@@ -61,9 +67,18 @@ class GetAutonomousDatabaseBackupResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if retention_period_in_days and not isinstance(retention_period_in_days, int):
+            raise TypeError("Expected argument 'retention_period_in_days' to be a int")
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        if size_in_tbs and not isinstance(size_in_tbs, float):
+            raise TypeError("Expected argument 'size_in_tbs' to be a float")
+        pulumi.set(__self__, "size_in_tbs", size_in_tbs)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if time_available_till and not isinstance(time_available_till, str):
+            raise TypeError("Expected argument 'time_available_till' to be a str")
+        pulumi.set(__self__, "time_available_till", time_available_till)
         if time_ended and not isinstance(time_ended, str):
             raise TypeError("Expected argument 'time_ended' to be a str")
         pulumi.set(__self__, "time_ended", time_ended)
@@ -107,6 +122,14 @@ class GetAutonomousDatabaseBackupResult:
         return pulumi.get(self, "database_size_in_tbs")
 
     @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> str:
+        """
+        A valid Oracle Database version for Autonomous Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -129,6 +152,11 @@ class GetAutonomousDatabaseBackupResult:
         Indicates whether the backup is user-initiated or automatic.
         """
         return pulumi.get(self, "is_automatic")
+
+    @property
+    @pulumi.getter(name="isLongTermBackup")
+    def is_long_term_backup(self) -> bool:
+        return pulumi.get(self, "is_long_term_backup")
 
     @property
     @pulumi.getter(name="isRestorable")
@@ -179,12 +207,36 @@ class GetAutonomousDatabaseBackupResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> int:
+        """
+        Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="sizeInTbs")
+    def size_in_tbs(self) -> float:
+        """
+        The backup size in terrabytes (TB).
+        """
+        return pulumi.get(self, "size_in_tbs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
         The current state of the backup.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeAvailableTill")
+    def time_available_till(self) -> str:
+        """
+        Timestamp until when the backup will be available
+        """
+        return pulumi.get(self, "time_available_till")
 
     @property
     @pulumi.getter(name="timeEnded")
@@ -229,16 +281,21 @@ class AwaitableGetAutonomousDatabaseBackupResult(GetAutonomousDatabaseBackupResu
             autonomous_database_id=self.autonomous_database_id,
             compartment_id=self.compartment_id,
             database_size_in_tbs=self.database_size_in_tbs,
+            db_version=self.db_version,
             display_name=self.display_name,
             id=self.id,
             is_automatic=self.is_automatic,
+            is_long_term_backup=self.is_long_term_backup,
             is_restorable=self.is_restorable,
             key_store_id=self.key_store_id,
             key_store_wallet_name=self.key_store_wallet_name,
             kms_key_id=self.kms_key_id,
             kms_key_version_id=self.kms_key_version_id,
             lifecycle_details=self.lifecycle_details,
+            retention_period_in_days=self.retention_period_in_days,
+            size_in_tbs=self.size_in_tbs,
             state=self.state,
+            time_available_till=self.time_available_till,
             time_ended=self.time_ended,
             time_started=self.time_started,
             type=self.type,
@@ -274,16 +331,21 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[str] 
         autonomous_database_id=__ret__.autonomous_database_id,
         compartment_id=__ret__.compartment_id,
         database_size_in_tbs=__ret__.database_size_in_tbs,
+        db_version=__ret__.db_version,
         display_name=__ret__.display_name,
         id=__ret__.id,
         is_automatic=__ret__.is_automatic,
+        is_long_term_backup=__ret__.is_long_term_backup,
         is_restorable=__ret__.is_restorable,
         key_store_id=__ret__.key_store_id,
         key_store_wallet_name=__ret__.key_store_wallet_name,
         kms_key_id=__ret__.kms_key_id,
         kms_key_version_id=__ret__.kms_key_version_id,
         lifecycle_details=__ret__.lifecycle_details,
+        retention_period_in_days=__ret__.retention_period_in_days,
+        size_in_tbs=__ret__.size_in_tbs,
         state=__ret__.state,
+        time_available_till=__ret__.time_available_till,
         time_ended=__ret__.time_ended,
         time_started=__ret__.time_started,
         type=__ret__.type,

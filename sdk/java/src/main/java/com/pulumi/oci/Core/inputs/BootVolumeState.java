@@ -218,14 +218,14 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -679,7 +679,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyId (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -690,7 +690,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyId (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 

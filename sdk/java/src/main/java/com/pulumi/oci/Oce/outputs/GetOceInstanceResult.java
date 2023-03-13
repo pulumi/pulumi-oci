@@ -38,6 +38,11 @@ public final class GetOceInstanceResult {
      */
     private String description;
     /**
+     * @return disaster recovery paired ragion name
+     * 
+     */
+    private String drRegion;
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -175,6 +180,13 @@ public final class GetOceInstanceResult {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return disaster recovery paired ragion name
+     * 
+     */
+    public String drRegion() {
+        return this.drRegion;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -337,6 +349,7 @@ public final class GetOceInstanceResult {
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String description;
+        private String drRegion;
         private Map<String,Object> freeformTags;
         private String guid;
         private String id;
@@ -367,6 +380,7 @@ public final class GetOceInstanceResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.drRegion = defaults.drRegion;
     	      this.freeformTags = defaults.freeformTags;
     	      this.guid = defaults.guid;
     	      this.id = defaults.id;
@@ -417,6 +431,11 @@ public final class GetOceInstanceResult {
         @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder drRegion(String drRegion) {
+            this.drRegion = Objects.requireNonNull(drRegion);
             return this;
         }
         @CustomType.Setter
@@ -536,6 +555,7 @@ public final class GetOceInstanceResult {
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.description = description;
+            o.drRegion = drRegion;
             o.freeformTags = freeformTags;
             o.guid = guid;
             o.id = id;

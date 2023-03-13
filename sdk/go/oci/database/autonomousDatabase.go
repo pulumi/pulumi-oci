@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -153,12 +153,16 @@ type AutonomousDatabase struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Autonomous Data Guard standby database details.
 	LocalStandbyDbs AutonomousDatabaseLocalStandbyDbArrayOutput `pulumi:"localStandbyDbs"`
+	// Details for the long-term backup schedule.
+	LongTermBackupSchedules AutonomousDatabaseLongTermBackupScheduleArrayOutput `pulumi:"longTermBackupSchedules"`
 	// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount pulumi.IntOutput `pulumi:"maxCpuCoreCount"`
 	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
+	// The date and time when the next long-term backup would be created.
+	NextLongTermBackupTimeStamp pulumi.StringOutput `pulumi:"nextLongTermBackupTimeStamp"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
@@ -424,12 +428,16 @@ type autonomousDatabaseState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Autonomous Data Guard standby database details.
 	LocalStandbyDbs []AutonomousDatabaseLocalStandbyDb `pulumi:"localStandbyDbs"`
+	// Details for the long-term backup schedule.
+	LongTermBackupSchedules []AutonomousDatabaseLongTermBackupSchedule `pulumi:"longTermBackupSchedules"`
 	// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount *int `pulumi:"maxCpuCoreCount"`
 	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet *string `pulumi:"ncharacterSet"`
+	// The date and time when the next long-term backup would be created.
+	NextLongTermBackupTimeStamp *string `pulumi:"nextLongTermBackupTimeStamp"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
@@ -654,12 +662,16 @@ type AutonomousDatabaseState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Autonomous Data Guard standby database details.
 	LocalStandbyDbs AutonomousDatabaseLocalStandbyDbArrayInput
+	// Details for the long-term backup schedule.
+	LongTermBackupSchedules AutonomousDatabaseLongTermBackupScheduleArrayInput
 	// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount pulumi.IntPtrInput
 	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet pulumi.StringPtrInput
+	// The date and time when the next long-term backup would be created.
+	NextLongTermBackupTimeStamp pulumi.StringPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
@@ -1425,6 +1437,13 @@ func (o AutonomousDatabaseOutput) LocalStandbyDbs() AutonomousDatabaseLocalStand
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseLocalStandbyDbArrayOutput { return v.LocalStandbyDbs }).(AutonomousDatabaseLocalStandbyDbArrayOutput)
 }
 
+// Details for the long-term backup schedule.
+func (o AutonomousDatabaseOutput) LongTermBackupSchedules() AutonomousDatabaseLongTermBackupScheduleArrayOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseLongTermBackupScheduleArrayOutput {
+		return v.LongTermBackupSchedules
+	}).(AutonomousDatabaseLongTermBackupScheduleArrayOutput)
+}
+
 // (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 func (o AutonomousDatabaseOutput) MaxCpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
@@ -1438,6 +1457,11 @@ func (o AutonomousDatabaseOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOu
 // The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 func (o AutonomousDatabaseOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The date and time when the next long-term backup would be created.
+func (o AutonomousDatabaseOutput) NextLongTermBackupTimeStamp() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.NextLongTermBackupTimeStamp }).(pulumi.StringOutput)
 }
 
 // (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**

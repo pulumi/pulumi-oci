@@ -86,7 +86,7 @@ public final class GetBootVolumeResult {
      */
     private Boolean isHydrated;
     /**
-     * @return The OCID of the Key Management master encryption key assigned to the boot volume.
+     * @return The OCID of the Vault service master encryption key assigned to the boot volume.
      * 
      */
     private String kmsKeyId;
@@ -228,7 +228,7 @@ public final class GetBootVolumeResult {
         return this.isHydrated;
     }
     /**
-     * @return The OCID of the Key Management master encryption key assigned to the boot volume.
+     * @return The OCID of the Vault service master encryption key assigned to the boot volume.
      * 
      */
     public String kmsKeyId() {

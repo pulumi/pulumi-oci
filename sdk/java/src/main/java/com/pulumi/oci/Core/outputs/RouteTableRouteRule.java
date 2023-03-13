@@ -40,6 +40,10 @@ public final class RouteTableRouteRule {
      * 
      */
     private String networkEntityId;
+    /**
+     * @return (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+     * 
+     */
     private @Nullable String routeType;
 
     private RouteTableRouteRule() {}
@@ -82,6 +86,10 @@ public final class RouteTableRouteRule {
     public String networkEntityId() {
         return this.networkEntityId;
     }
+    /**
+     * @return (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+     * 
+     */
     public Optional<String> routeType() {
         return Optional.ofNullable(this.routeType);
     }

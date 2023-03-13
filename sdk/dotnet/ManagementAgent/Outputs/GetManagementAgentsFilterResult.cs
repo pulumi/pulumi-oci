@@ -13,8 +13,14 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
     [OutputType]
     public sealed class GetManagementAgentsFilterResult
     {
+        /// <summary>
+        /// Name of the property
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
+        /// <summary>
+        /// Values of the property
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

@@ -163,6 +163,10 @@ namespace Pulumi.Oci.ManagementAgent
         public readonly string ManagedAgentId;
         public readonly string ManagementAgentId;
         /// <summary>
+        /// Additional properties for this Management Agent
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetManagementAgentManagementAgentPropertyResult> ManagementAgentProperties;
+        /// <summary>
         /// Platform Name
         /// </summary>
         public readonly string PlatformName;
@@ -239,6 +243,8 @@ namespace Pulumi.Oci.ManagementAgent
 
             string managementAgentId,
 
+            ImmutableArray<Outputs.GetManagementAgentManagementAgentPropertyResult> managementAgentProperties,
+
             string platformName,
 
             string platformType,
@@ -276,6 +282,7 @@ namespace Pulumi.Oci.ManagementAgent
             LifecycleDetails = lifecycleDetails;
             ManagedAgentId = managedAgentId;
             ManagementAgentId = managementAgentId;
+            ManagementAgentProperties = managementAgentProperties;
             PlatformName = platformName;
             PlatformType = platformType;
             PlatformVersion = platformVersion;

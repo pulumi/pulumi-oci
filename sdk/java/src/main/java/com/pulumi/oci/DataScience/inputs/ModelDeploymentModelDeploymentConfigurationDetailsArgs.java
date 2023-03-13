@@ -5,9 +5,12 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extends com.pulumi.resources.ResourceArgs {
@@ -30,6 +33,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
     }
 
     /**
+     * (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+     * 
+     */
+    @Import(name="environmentConfigurationDetails")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs> environmentConfigurationDetails;
+
+    /**
+     * @return (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+     * 
+     */
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs>> environmentConfigurationDetails() {
+        return Optional.ofNullable(this.environmentConfigurationDetails);
+    }
+
+    /**
      * (Updatable) The model configuration details.
      * 
      */
@@ -48,6 +66,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
 
     private ModelDeploymentModelDeploymentConfigurationDetailsArgs(ModelDeploymentModelDeploymentConfigurationDetailsArgs $) {
         this.deploymentType = $.deploymentType;
+        this.environmentConfigurationDetails = $.environmentConfigurationDetails;
         this.modelConfigurationDetails = $.modelConfigurationDetails;
     }
 
@@ -88,6 +107,27 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
          */
         public Builder deploymentType(String deploymentType) {
             return deploymentType(Output.of(deploymentType));
+        }
+
+        /**
+         * @param environmentConfigurationDetails (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentConfigurationDetails(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs> environmentConfigurationDetails) {
+            $.environmentConfigurationDetails = environmentConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param environmentConfigurationDetails (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs environmentConfigurationDetails) {
+            return environmentConfigurationDetails(Output.of(environmentConfigurationDetails));
         }
 
         /**

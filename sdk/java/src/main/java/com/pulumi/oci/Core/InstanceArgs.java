@@ -463,6 +463,13 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subnetId);
     }
 
+    @Import(name="updateOperationConstraint")
+    private @Nullable Output<String> updateOperationConstraint;
+
+    public Optional<Output<String>> updateOperationConstraint() {
+        return Optional.ofNullable(this.updateOperationConstraint);
+    }
+
     private InstanceArgs() {}
 
     private InstanceArgs(InstanceArgs $) {
@@ -494,6 +501,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.sourceDetails = $.sourceDetails;
         this.state = $.state;
         this.subnetId = $.subnetId;
+        this.updateOperationConstraint = $.updateOperationConstraint;
     }
 
     public static Builder builder() {
@@ -1112,6 +1120,15 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead. */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        public Builder updateOperationConstraint(@Nullable Output<String> updateOperationConstraint) {
+            $.updateOperationConstraint = updateOperationConstraint;
+            return this;
+        }
+
+        public Builder updateOperationConstraint(String updateOperationConstraint) {
+            return updateOperationConstraint(Output.of(updateOperationConstraint));
         }
 
         public InstanceArgs build() {

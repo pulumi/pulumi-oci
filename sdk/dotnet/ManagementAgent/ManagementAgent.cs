@@ -131,6 +131,12 @@ namespace Pulumi.Oci.ManagementAgent
         public Output<string> ManagedAgentId { get; private set; } = null!;
 
         /// <summary>
+        /// Additional properties for this Management Agent
+        /// </summary>
+        [Output("managementAgentProperties")]
+        public Output<ImmutableArray<Outputs.ManagementAgentManagementAgentProperty>> ManagementAgentProperties { get; private set; } = null!;
+
+        /// <summary>
         /// Platform Name
         /// </summary>
         [Output("platformName")]
@@ -399,6 +405,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         [Input("managedAgentId")]
         public Input<string>? ManagedAgentId { get; set; }
+
+        [Input("managementAgentProperties")]
+        private InputList<Inputs.ManagementAgentManagementAgentPropertyGetArgs>? _managementAgentProperties;
+
+        /// <summary>
+        /// Additional properties for this Management Agent
+        /// </summary>
+        public InputList<Inputs.ManagementAgentManagementAgentPropertyGetArgs> ManagementAgentProperties
+        {
+            get => _managementAgentProperties ?? (_managementAgentProperties = new InputList<Inputs.ManagementAgentManagementAgentPropertyGetArgs>());
+            set => _managementAgentProperties = value;
+        }
 
         /// <summary>
         /// Platform Name

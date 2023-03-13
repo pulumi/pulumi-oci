@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +47,16 @@ import (
 //							InstanceCount: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count),
 //							PolicyType:    pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type),
 //						},
+//					},
+//					EnvironmentConfigurationDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs{
+//						EnvironmentConfigurationType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_configuration_type),
+//						Cmds:                         pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_cmd),
+//						Entrypoints:                  pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_entrypoint),
+//						EnvironmentVariables:         pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_variables),
+//						HealthCheckPort:              pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_health_check_port),
+//						Image:                        pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_image),
+//						ImageDigest:                  pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_image_digest),
+//						ServerPort:                   pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_server_port),
 //					},
 //				},
 //				ProjectId: pulumi.Any(oci_datascience_project.Test_project.Id),

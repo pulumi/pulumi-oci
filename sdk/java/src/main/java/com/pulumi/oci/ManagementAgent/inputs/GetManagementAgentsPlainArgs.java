@@ -100,6 +100,21 @@ public final class GetManagementAgentsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * Filter to return only results having the particular gatewayId.
+     * 
+     */
+    @Import(name="gatewayIds")
+    private @Nullable List<String> gatewayIds;
+
+    /**
+     * @return Filter to return only results having the particular gatewayId.
+     * 
+     */
+    public Optional<List<String>> gatewayIds() {
+        return Optional.ofNullable(this.gatewayIds);
+    }
+
+    /**
      * Filter to return only Management Agents having the particular agent host id.
      * 
      */
@@ -213,6 +228,7 @@ public final class GetManagementAgentsPlainArgs extends com.pulumi.resources.Inv
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.gatewayIds = $.gatewayIds;
         this.hostId = $.hostId;
         this.installType = $.installType;
         this.isCustomerDeployed = $.isCustomerDeployed;
@@ -302,6 +318,27 @@ public final class GetManagementAgentsPlainArgs extends com.pulumi.resources.Inv
 
         public Builder filters(GetManagementAgentsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param gatewayIds Filter to return only results having the particular gatewayId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gatewayIds(@Nullable List<String> gatewayIds) {
+            $.gatewayIds = gatewayIds;
+            return this;
+        }
+
+        /**
+         * @param gatewayIds Filter to return only results having the particular gatewayId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gatewayIds(String... gatewayIds) {
+            return gatewayIds(List.of(gatewayIds));
         }
 
         /**

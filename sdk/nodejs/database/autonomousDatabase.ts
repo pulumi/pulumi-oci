@@ -290,6 +290,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly localStandbyDbs!: pulumi.Output<outputs.Database.AutonomousDatabaseLocalStandbyDb[]>;
     /**
+     * Details for the long-term backup schedule.
+     */
+    public /*out*/ readonly longTermBackupSchedules!: pulumi.Output<outputs.Database.AutonomousDatabaseLongTermBackupSchedule[]>;
+    /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      */
     public readonly maxCpuCoreCount!: pulumi.Output<number>;
@@ -301,6 +305,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      */
     public readonly ncharacterSet!: pulumi.Output<string>;
+    /**
+     * The date and time when the next long-term backup would be created.
+     */
+    public /*out*/ readonly nextLongTermBackupTimeStamp!: pulumi.Output<string>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -562,9 +570,11 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["localStandbyDbs"] = state ? state.localStandbyDbs : undefined;
+            resourceInputs["longTermBackupSchedules"] = state ? state.longTermBackupSchedules : undefined;
             resourceInputs["maxCpuCoreCount"] = state ? state.maxCpuCoreCount : undefined;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
+            resourceInputs["nextLongTermBackupTimeStamp"] = state ? state.nextLongTermBackupTimeStamp : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
             resourceInputs["openMode"] = state ? state.openMode : undefined;
@@ -703,7 +713,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["localStandbyDbs"] = undefined /*out*/;
+            resourceInputs["longTermBackupSchedules"] = undefined /*out*/;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
+            resourceInputs["nextLongTermBackupTimeStamp"] = undefined /*out*/;
             resourceInputs["peerDbIds"] = undefined /*out*/;
             resourceInputs["privateEndpoint"] = undefined /*out*/;
             resourceInputs["provisionableCpuses"] = undefined /*out*/;
@@ -983,6 +995,10 @@ export interface AutonomousDatabaseState {
      */
     localStandbyDbs?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseLocalStandbyDb>[]>;
     /**
+     * Details for the long-term backup schedule.
+     */
+    longTermBackupSchedules?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseLongTermBackupSchedule>[]>;
+    /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      */
     maxCpuCoreCount?: pulumi.Input<number>;
@@ -994,6 +1010,10 @@ export interface AutonomousDatabaseState {
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      */
     ncharacterSet?: pulumi.Input<string>;
+    /**
+     * The date and time when the next long-term backup would be created.
+     */
+    nextLongTermBackupTimeStamp?: pulumi.Input<string>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.

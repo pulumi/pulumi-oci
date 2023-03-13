@@ -118,6 +118,7 @@ class _ManagementAgentState:
                  is_customer_deployed: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  managed_agent_id: Optional[pulumi.Input[str]] = None,
+                 management_agent_properties: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]] = None,
                  platform_name: Optional[pulumi.Input[str]] = None,
                  platform_type: Optional[pulumi.Input[str]] = None,
                  platform_version: Optional[pulumi.Input[str]] = None,
@@ -145,6 +146,7 @@ class _ManagementAgentState:
         :param pulumi.Input[bool] is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] managed_agent_id: Unique Management Agent identifier
+        :param pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]] management_agent_properties: Additional properties for this Management Agent
         :param pulumi.Input[str] platform_name: Platform Name
         :param pulumi.Input[str] platform_type: Platform Type
         :param pulumi.Input[str] platform_version: Platform Version
@@ -186,6 +188,8 @@ class _ManagementAgentState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_agent_id is not None:
             pulumi.set(__self__, "managed_agent_id", managed_agent_id)
+        if management_agent_properties is not None:
+            pulumi.set(__self__, "management_agent_properties", management_agent_properties)
         if platform_name is not None:
             pulumi.set(__self__, "platform_name", platform_name)
         if platform_type is not None:
@@ -386,6 +390,18 @@ class _ManagementAgentState:
     @managed_agent_id.setter
     def managed_agent_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "managed_agent_id", value)
+
+    @property
+    @pulumi.getter(name="managementAgentProperties")
+    def management_agent_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]]:
+        """
+        Additional properties for this Management Agent
+        """
+        return pulumi.get(self, "management_agent_properties")
+
+    @management_agent_properties.setter
+    def management_agent_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]]):
+        pulumi.set(self, "management_agent_properties", value)
 
     @property
     @pulumi.getter(name="platformName")
@@ -619,6 +635,7 @@ class ManagementAgent(pulumi.CustomResource):
             __props__.__dict__["is_agent_auto_upgradable"] = None
             __props__.__dict__["is_customer_deployed"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["management_agent_properties"] = None
             __props__.__dict__["platform_name"] = None
             __props__.__dict__["platform_type"] = None
             __props__.__dict__["platform_version"] = None
@@ -654,6 +671,7 @@ class ManagementAgent(pulumi.CustomResource):
             is_customer_deployed: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             managed_agent_id: Optional[pulumi.Input[str]] = None,
+            management_agent_properties: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementAgentManagementAgentPropertyArgs']]]]] = None,
             platform_name: Optional[pulumi.Input[str]] = None,
             platform_type: Optional[pulumi.Input[str]] = None,
             platform_version: Optional[pulumi.Input[str]] = None,
@@ -686,6 +704,7 @@ class ManagementAgent(pulumi.CustomResource):
         :param pulumi.Input[bool] is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] managed_agent_id: Unique Management Agent identifier
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementAgentManagementAgentPropertyArgs']]]] management_agent_properties: Additional properties for this Management Agent
         :param pulumi.Input[str] platform_name: Platform Name
         :param pulumi.Input[str] platform_type: Platform Type
         :param pulumi.Input[str] platform_version: Platform Version
@@ -716,6 +735,7 @@ class ManagementAgent(pulumi.CustomResource):
         __props__.__dict__["is_customer_deployed"] = is_customer_deployed
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["managed_agent_id"] = managed_agent_id
+        __props__.__dict__["management_agent_properties"] = management_agent_properties
         __props__.__dict__["platform_name"] = platform_name
         __props__.__dict__["platform_type"] = platform_type
         __props__.__dict__["platform_version"] = platform_version
@@ -847,6 +867,14 @@ class ManagementAgent(pulumi.CustomResource):
         Unique Management Agent identifier
         """
         return pulumi.get(self, "managed_agent_id")
+
+    @property
+    @pulumi.getter(name="managementAgentProperties")
+    def management_agent_properties(self) -> pulumi.Output[Sequence['outputs.ManagementAgentManagementAgentProperty']]:
+        """
+        Additional properties for this Management Agent
+        """
+        return pulumi.get(self, "management_agent_properties")
 
     @property
     @pulumi.getter(name="platformName")

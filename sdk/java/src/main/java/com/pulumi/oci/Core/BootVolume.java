@@ -274,14 +274,14 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
         return this.isHydrated;
     }
     /**
-     * (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     @Export(name="kmsKeyId", type=String.class, parameters={})
     private Output<String> kmsKeyId;
 
     /**
-     * @return (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Output<String> kmsKeyId() {

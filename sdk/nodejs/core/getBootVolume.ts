@@ -99,7 +99,7 @@ export interface GetBootVolumeResult {
      */
     readonly isHydrated: boolean;
     /**
-     * The OCID of the Key Management master encryption key assigned to the boot volume.
+     * The OCID of the Vault service master encryption key assigned to the boot volume.
      */
     readonly kmsKeyId: string;
     /**

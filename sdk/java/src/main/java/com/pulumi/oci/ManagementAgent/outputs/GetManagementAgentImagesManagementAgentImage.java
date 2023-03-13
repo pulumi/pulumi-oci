@@ -4,14 +4,16 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetManagementAgentImagesManagementAgentImage {
     /**
-     * @return Agent image content SHA256 Hash
+     * @return Object content SHA256 Hash
      * 
      */
     private String checksum;
@@ -20,6 +22,11 @@ public final class GetManagementAgentImagesManagementAgentImage {
      * 
      */
     private String id;
+    /**
+     * @return Details of the Objectstorage object
+     * 
+     */
+    private List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails;
     /**
      * @return Object storage URL for download
      * 
@@ -63,7 +70,7 @@ public final class GetManagementAgentImagesManagementAgentImage {
 
     private GetManagementAgentImagesManagementAgentImage() {}
     /**
-     * @return Agent image content SHA256 Hash
+     * @return Object content SHA256 Hash
      * 
      */
     public String checksum() {
@@ -75,6 +82,13 @@ public final class GetManagementAgentImagesManagementAgentImage {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Details of the Objectstorage object
+     * 
+     */
+    public List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails() {
+        return this.imageObjectStorageDetails;
     }
     /**
      * @return Object storage URL for download
@@ -144,6 +158,7 @@ public final class GetManagementAgentImagesManagementAgentImage {
     public static final class Builder {
         private String checksum;
         private String id;
+        private List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails;
         private String objectUrl;
         private String packageArchitectureType;
         private String packageType;
@@ -157,6 +172,7 @@ public final class GetManagementAgentImagesManagementAgentImage {
     	      Objects.requireNonNull(defaults);
     	      this.checksum = defaults.checksum;
     	      this.id = defaults.id;
+    	      this.imageObjectStorageDetails = defaults.imageObjectStorageDetails;
     	      this.objectUrl = defaults.objectUrl;
     	      this.packageArchitectureType = defaults.packageArchitectureType;
     	      this.packageType = defaults.packageType;
@@ -176,6 +192,14 @@ public final class GetManagementAgentImagesManagementAgentImage {
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
+        }
+        @CustomType.Setter
+        public Builder imageObjectStorageDetails(List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails) {
+            this.imageObjectStorageDetails = Objects.requireNonNull(imageObjectStorageDetails);
+            return this;
+        }
+        public Builder imageObjectStorageDetails(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail... imageObjectStorageDetails) {
+            return imageObjectStorageDetails(List.of(imageObjectStorageDetails));
         }
         @CustomType.Setter
         public Builder objectUrl(String objectUrl) {
@@ -221,6 +245,7 @@ public final class GetManagementAgentImagesManagementAgentImage {
             final var o = new GetManagementAgentImagesManagementAgentImage();
             o.checksum = checksum;
             o.id = id;
+            o.imageObjectStorageDetails = imageObjectStorageDetails;
             o.objectUrl = objectUrl;
             o.packageArchitectureType = packageArchitectureType;
             o.packageType = packageType;

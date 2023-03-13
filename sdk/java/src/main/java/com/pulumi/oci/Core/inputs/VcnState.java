@@ -179,14 +179,14 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
+     * A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
      * 
      */
     @Import(name="dnsLabel")
     private @Nullable Output<String> dnsLabel;
 
     /**
-     * @return A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
+     * @return A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
      * 
      */
     public Optional<Output<String>> dnsLabel() {
@@ -614,7 +614,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsLabel A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
+         * @param dnsLabel A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
          * 
          * @return builder
          * 
@@ -625,7 +625,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsLabel A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
+         * @param dnsLabel A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
          * 
          * @return builder
          * 

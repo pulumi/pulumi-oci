@@ -23,7 +23,7 @@ class GetManagementAgentsResult:
     """
     A collection of values returned by getManagementAgents.
     """
-    def __init__(__self__, access_level=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, host_id=None, id=None, install_type=None, is_customer_deployed=None, management_agents=None, platform_types=None, plugin_names=None, state=None, versions=None):
+    def __init__(__self__, access_level=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, gateway_ids=None, host_id=None, id=None, install_type=None, is_customer_deployed=None, management_agents=None, platform_types=None, plugin_names=None, state=None, versions=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -42,6 +42,9 @@ class GetManagementAgentsResult:
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
+        if gateway_ids and not isinstance(gateway_ids, list):
+            raise TypeError("Expected argument 'gateway_ids' to be a list")
+        pulumi.set(__self__, "gateway_ids", gateway_ids)
         if host_id and not isinstance(host_id, str):
             raise TypeError("Expected argument 'host_id' to be a str")
         pulumi.set(__self__, "host_id", host_id)
@@ -108,6 +111,11 @@ class GetManagementAgentsResult:
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetManagementAgentsFilterResult']]:
         return pulumi.get(self, "filters")
+
+    @property
+    @pulumi.getter(name="gatewayIds")
+    def gateway_ids(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "gateway_ids")
 
     @property
     @pulumi.getter(name="hostId")
@@ -194,6 +202,7 @@ class AwaitableGetManagementAgentsResult(GetManagementAgentsResult):
             compartment_id_in_subtree=self.compartment_id_in_subtree,
             display_name=self.display_name,
             filters=self.filters,
+            gateway_ids=self.gateway_ids,
             host_id=self.host_id,
             id=self.id,
             install_type=self.install_type,
@@ -211,6 +220,7 @@ def get_management_agents(access_level: Optional[str] = None,
                           compartment_id_in_subtree: Optional[bool] = None,
                           display_name: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetManagementAgentsFilterArgs']]] = None,
+                          gateway_ids: Optional[Sequence[str]] = None,
                           host_id: Optional[str] = None,
                           install_type: Optional[str] = None,
                           is_customer_deployed: Optional[bool] = None,
@@ -237,6 +247,7 @@ def get_management_agents(access_level: Optional[str] = None,
         availability_status=var["management_agent_availability_status"],
         compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
         display_name=var["management_agent_display_name"],
+        gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
         host_id=oci_management_agent_host["test_host"]["id"],
         install_type=var["management_agent_install_type"],
         is_customer_deployed=var["management_agent_is_customer_deployed"],
@@ -252,6 +263,7 @@ def get_management_agents(access_level: Optional[str] = None,
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
     :param bool compartment_id_in_subtree: if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
     :param str display_name: Filter to return only Management Agents having the particular display name.
+    :param Sequence[str] gateway_ids: Filter to return only results having the particular gatewayId.
     :param str host_id: Filter to return only Management Agents having the particular agent host id.
     :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
     :param bool is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
@@ -267,6 +279,7 @@ def get_management_agents(access_level: Optional[str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['gatewayIds'] = gateway_ids
     __args__['hostId'] = host_id
     __args__['installType'] = install_type
     __args__['isCustomerDeployed'] = is_customer_deployed
@@ -284,6 +297,7 @@ def get_management_agents(access_level: Optional[str] = None,
         compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
         display_name=__ret__.display_name,
         filters=__ret__.filters,
+        gateway_ids=__ret__.gateway_ids,
         host_id=__ret__.host_id,
         id=__ret__.id,
         install_type=__ret__.install_type,
@@ -302,6 +316,7 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentsFilterArgs']]]]] = None,
+                                 gateway_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  host_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  install_type: Optional[pulumi.Input[Optional[str]]] = None,
                                  is_customer_deployed: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -328,6 +343,7 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
         availability_status=var["management_agent_availability_status"],
         compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
         display_name=var["management_agent_display_name"],
+        gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
         host_id=oci_management_agent_host["test_host"]["id"],
         install_type=var["management_agent_install_type"],
         is_customer_deployed=var["management_agent_is_customer_deployed"],
@@ -343,6 +359,7 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
     :param bool compartment_id_in_subtree: if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
     :param str display_name: Filter to return only Management Agents having the particular display name.
+    :param Sequence[str] gateway_ids: Filter to return only results having the particular gatewayId.
     :param str host_id: Filter to return only Management Agents having the particular agent host id.
     :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
     :param bool is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.

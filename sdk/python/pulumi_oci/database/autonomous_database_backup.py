@@ -15,14 +15,23 @@ __all__ = ['AutonomousDatabaseBackupArgs', 'AutonomousDatabaseBackup']
 class AutonomousDatabaseBackupArgs:
     def __init__(__self__, *,
                  autonomous_database_id: pulumi.Input[str],
-                 display_name: pulumi.Input[str]):
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 is_long_term_backup: Optional[pulumi.Input[bool]] = None,
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseBackup resource.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
+        :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
+        :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
-        pulumi.set(__self__, "display_name", display_name)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_long_term_backup is not None:
+            pulumi.set(__self__, "is_long_term_backup", is_long_term_backup)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -38,15 +47,39 @@ class AutonomousDatabaseBackupArgs:
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Input[str]:
+    def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: pulumi.Input[str]):
+    def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="isLongTermBackup")
+    def is_long_term_backup(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the backup is long-term
+        """
+        return pulumi.get(self, "is_long_term_backup")
+
+    @is_long_term_backup.setter
+    def is_long_term_backup(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_long_term_backup", value)
+
+    @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retention_period_in_days", value)
 
 
 @pulumi.input_type
@@ -55,15 +88,20 @@ class _AutonomousDatabaseBackupState:
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 db_version: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_automatic: Optional[pulumi.Input[bool]] = None,
+                 is_long_term_backup: Optional[pulumi.Input[bool]] = None,
                  is_restorable: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  key_store_wallet_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 size_in_tbs: Optional[pulumi.Input[float]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 time_available_till: Optional[pulumi.Input[str]] = None,
                  time_ended: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -73,15 +111,20 @@ class _AutonomousDatabaseBackupState:
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
+        :param pulumi.Input[str] db_version: A valid Oracle Database version for Autonomous Database.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[bool] is_automatic: Indicates whether the backup is user-initiated or automatic.
+        :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[bool] is_restorable: Indicates whether the backup can be used to restore the associated Autonomous Database.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
+        :param pulumi.Input[float] size_in_tbs: The backup size in terrabytes (TB).
         :param pulumi.Input[str] state: The current state of the backup.
+        :param pulumi.Input[str] time_available_till: Timestamp until when the backup will be available
         :param pulumi.Input[str] time_ended: The date and time the backup completed.
         :param pulumi.Input[str] time_started: The date and time the backup started.
         :param pulumi.Input[str] type: The type of backup.
@@ -93,10 +136,14 @@ class _AutonomousDatabaseBackupState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if database_size_in_tbs is not None:
             pulumi.set(__self__, "database_size_in_tbs", database_size_in_tbs)
+        if db_version is not None:
+            pulumi.set(__self__, "db_version", db_version)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if is_automatic is not None:
             pulumi.set(__self__, "is_automatic", is_automatic)
+        if is_long_term_backup is not None:
+            pulumi.set(__self__, "is_long_term_backup", is_long_term_backup)
         if is_restorable is not None:
             pulumi.set(__self__, "is_restorable", is_restorable)
         if key_store_id is not None:
@@ -109,8 +156,14 @@ class _AutonomousDatabaseBackupState:
             pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        if size_in_tbs is not None:
+            pulumi.set(__self__, "size_in_tbs", size_in_tbs)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if time_available_till is not None:
+            pulumi.set(__self__, "time_available_till", time_available_till)
         if time_ended is not None:
             pulumi.set(__self__, "time_ended", time_ended)
         if time_started is not None:
@@ -157,6 +210,18 @@ class _AutonomousDatabaseBackupState:
         pulumi.set(self, "database_size_in_tbs", value)
 
     @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        A valid Oracle Database version for Autonomous Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @db_version.setter
+    def db_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_version", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -179,6 +244,18 @@ class _AutonomousDatabaseBackupState:
     @is_automatic.setter
     def is_automatic(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_automatic", value)
+
+    @property
+    @pulumi.getter(name="isLongTermBackup")
+    def is_long_term_backup(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the backup is long-term
+        """
+        return pulumi.get(self, "is_long_term_backup")
+
+    @is_long_term_backup.setter
+    def is_long_term_backup(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_long_term_backup", value)
 
     @property
     @pulumi.getter(name="isRestorable")
@@ -253,6 +330,30 @@ class _AutonomousDatabaseBackupState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retention_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="sizeInTbs")
+    def size_in_tbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The backup size in terrabytes (TB).
+        """
+        return pulumi.get(self, "size_in_tbs")
+
+    @size_in_tbs.setter
+    def size_in_tbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "size_in_tbs", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -263,6 +364,18 @@ class _AutonomousDatabaseBackupState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="timeAvailableTill")
+    def time_available_till(self) -> Optional[pulumi.Input[str]]:
+        """
+        Timestamp until when the backup will be available
+        """
+        return pulumi.get(self, "time_available_till")
+
+    @time_available_till.setter
+    def time_available_till(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_available_till", value)
 
     @property
     @pulumi.getter(name="timeEnded")
@@ -320,6 +433,8 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 is_long_term_backup: Optional[pulumi.Input[bool]] = None,
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
@@ -334,7 +449,9 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
 
         test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup",
             autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            display_name=var["autonomous_database_backup_display_name"])
+            display_name=var["autonomous_database_backup_display_name"],
+            is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
+            retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
         ```
 
         ## Import
@@ -349,6 +466,8 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
+        :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
+        :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
         """
         ...
     @overload
@@ -369,7 +488,9 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
 
         test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup",
             autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            display_name=var["autonomous_database_backup_display_name"])
+            display_name=var["autonomous_database_backup_display_name"],
+            is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
+            retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
         ```
 
         ## Import
@@ -397,6 +518,8 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 is_long_term_backup: Optional[pulumi.Input[bool]] = None,
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -409,11 +532,12 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             if autonomous_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'autonomous_database_id'")
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
-            if display_name is None and not opts.urn:
-                raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["is_long_term_backup"] = is_long_term_backup
+            __props__.__dict__["retention_period_in_days"] = retention_period_in_days
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["database_size_in_tbs"] = None
+            __props__.__dict__["db_version"] = None
             __props__.__dict__["is_automatic"] = None
             __props__.__dict__["is_restorable"] = None
             __props__.__dict__["key_store_id"] = None
@@ -421,7 +545,9 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             __props__.__dict__["kms_key_id"] = None
             __props__.__dict__["kms_key_version_id"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["size_in_tbs"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["time_available_till"] = None
             __props__.__dict__["time_ended"] = None
             __props__.__dict__["time_started"] = None
             __props__.__dict__["type"] = None
@@ -439,15 +565,20 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             autonomous_database_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             database_size_in_tbs: Optional[pulumi.Input[float]] = None,
+            db_version: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             is_automatic: Optional[pulumi.Input[bool]] = None,
+            is_long_term_backup: Optional[pulumi.Input[bool]] = None,
             is_restorable: Optional[pulumi.Input[bool]] = None,
             key_store_id: Optional[pulumi.Input[str]] = None,
             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            retention_period_in_days: Optional[pulumi.Input[int]] = None,
+            size_in_tbs: Optional[pulumi.Input[float]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            time_available_till: Optional[pulumi.Input[str]] = None,
             time_ended: Optional[pulumi.Input[str]] = None,
             time_started: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
@@ -462,15 +593,20 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
+        :param pulumi.Input[str] db_version: A valid Oracle Database version for Autonomous Database.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[bool] is_automatic: Indicates whether the backup is user-initiated or automatic.
+        :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[bool] is_restorable: Indicates whether the backup can be used to restore the associated Autonomous Database.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
+        :param pulumi.Input[float] size_in_tbs: The backup size in terrabytes (TB).
         :param pulumi.Input[str] state: The current state of the backup.
+        :param pulumi.Input[str] time_available_till: Timestamp until when the backup will be available
         :param pulumi.Input[str] time_ended: The date and time the backup completed.
         :param pulumi.Input[str] time_started: The date and time the backup started.
         :param pulumi.Input[str] type: The type of backup.
@@ -483,15 +619,20 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         __props__.__dict__["autonomous_database_id"] = autonomous_database_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["database_size_in_tbs"] = database_size_in_tbs
+        __props__.__dict__["db_version"] = db_version
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["is_automatic"] = is_automatic
+        __props__.__dict__["is_long_term_backup"] = is_long_term_backup
         __props__.__dict__["is_restorable"] = is_restorable
         __props__.__dict__["key_store_id"] = key_store_id
         __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["retention_period_in_days"] = retention_period_in_days
+        __props__.__dict__["size_in_tbs"] = size_in_tbs
         __props__.__dict__["state"] = state
+        __props__.__dict__["time_available_till"] = time_available_till
         __props__.__dict__["time_ended"] = time_ended
         __props__.__dict__["time_started"] = time_started
         __props__.__dict__["type"] = type
@@ -523,6 +664,14 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         return pulumi.get(self, "database_size_in_tbs")
 
     @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> pulumi.Output[str]:
+        """
+        A valid Oracle Database version for Autonomous Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
@@ -537,6 +686,14 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         Indicates whether the backup is user-initiated or automatic.
         """
         return pulumi.get(self, "is_automatic")
+
+    @property
+    @pulumi.getter(name="isLongTermBackup")
+    def is_long_term_backup(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether the backup is long-term
+        """
+        return pulumi.get(self, "is_long_term_backup")
 
     @property
     @pulumi.getter(name="isRestorable")
@@ -587,12 +744,36 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> pulumi.Output[int]:
+        """
+        (Updatable) Retention period, in days, for long-term backups
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="sizeInTbs")
+    def size_in_tbs(self) -> pulumi.Output[float]:
+        """
+        The backup size in terrabytes (TB).
+        """
+        return pulumi.get(self, "size_in_tbs")
+
+    @property
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
         The current state of the backup.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeAvailableTill")
+    def time_available_till(self) -> pulumi.Output[str]:
+        """
+        Timestamp until when the backup will be available
+        """
+        return pulumi.get(self, "time_available_till")
 
     @property
     @pulumi.getter(name="timeEnded")

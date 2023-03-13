@@ -22,7 +22,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_id=None, instance_options=None, ipxe_script=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_id=None, instance_options=None, ipxe_script=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -149,6 +149,9 @@ class GetInstanceResult:
         if time_maintenance_reboot_due and not isinstance(time_maintenance_reboot_due, str):
             raise TypeError("Expected argument 'time_maintenance_reboot_due' to be a str")
         pulumi.set(__self__, "time_maintenance_reboot_due", time_maintenance_reboot_due)
+        if update_operation_constraint and not isinstance(update_operation_constraint, str):
+            raise TypeError("Expected argument 'update_operation_constraint' to be a str")
+        pulumi.set(__self__, "update_operation_constraint", update_operation_constraint)
 
     @property
     @pulumi.getter(name="agentConfigs")
@@ -439,6 +442,11 @@ class GetInstanceResult:
         """
         return pulumi.get(self, "time_maintenance_reboot_due")
 
+    @property
+    @pulumi.getter(name="updateOperationConstraint")
+    def update_operation_constraint(self) -> str:
+        return pulumi.get(self, "update_operation_constraint")
+
 
 class AwaitableGetInstanceResult(GetInstanceResult):
     # pylint: disable=using-constant-test
@@ -483,7 +491,8 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_maintenance_reboot_due=self.time_maintenance_reboot_due)
+            time_maintenance_reboot_due=self.time_maintenance_reboot_due,
+            update_operation_constraint=self.update_operation_constraint)
 
 
 def get_instance(instance_id: Optional[str] = None,
@@ -492,6 +501,9 @@ def get_instance(instance_id: Optional[str] = None,
     This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
 
     Gets information about the specified instance.
+
+    **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+    operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
 
     ## Example Usage
 
@@ -548,7 +560,8 @@ def get_instance(instance_id: Optional[str] = None,
         subnet_id=__ret__.subnet_id,
         system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
-        time_maintenance_reboot_due=__ret__.time_maintenance_reboot_due)
+        time_maintenance_reboot_due=__ret__.time_maintenance_reboot_due,
+        update_operation_constraint=__ret__.update_operation_constraint)
 
 
 @_utilities.lift_output_func(get_instance)
@@ -558,6 +571,9 @@ def get_instance_output(instance_id: Optional[pulumi.Input[str]] = None,
     This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
 
     Gets information about the specified instance.
+
+    **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+    operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
 
     ## Example Usage
 

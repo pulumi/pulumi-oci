@@ -11561,7 +11561,7 @@ public final class CoreFunctions {
      * [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
      * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      * The list of platform images includes the three most recently published versions
-     * of each major distribution.
+     * of each major distribution. The list does not support filtering based on image tags.
      * 
      * The list of images returned is ordered to first show the recent platform images,
      * then all of the custom images.
@@ -11617,7 +11617,7 @@ public final class CoreFunctions {
      * [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
      * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      * The list of platform images includes the three most recently published versions
-     * of each major distribution.
+     * of each major distribution. The list does not support filtering based on image tags.
      * 
      * The list of images returned is ordered to first show the recent platform images,
      * then all of the custom images.
@@ -11673,7 +11673,7 @@ public final class CoreFunctions {
      * [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
      * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      * The list of platform images includes the three most recently published versions
-     * of each major distribution.
+     * of each major distribution. The list does not support filtering based on image tags.
      * 
      * The list of images returned is ordered to first show the recent platform images,
      * then all of the custom images.
@@ -11729,7 +11729,7 @@ public final class CoreFunctions {
      * [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
      * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      * The list of platform images includes the three most recently published versions
-     * of each major distribution.
+     * of each major distribution. The list does not support filtering based on image tags.
      * 
      * The list of images returned is ordered to first show the recent platform images,
      * then all of the custom images.
@@ -11783,6 +11783,9 @@ public final class CoreFunctions {
      * 
      * Gets information about the specified instance.
      * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -11821,6 +11824,9 @@ public final class CoreFunctions {
      * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
      * 
      * Gets information about the specified instance.
+     * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
      * ```java
@@ -11861,6 +11867,9 @@ public final class CoreFunctions {
      * 
      * Gets information about the specified instance.
      * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -11899,6 +11908,9 @@ public final class CoreFunctions {
      * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
      * 
      * Gets information about the specified instance.
+     * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
      * ```java
@@ -12741,7 +12753,8 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
+     * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * 
      * ## Example Usage
      * ```java
@@ -12780,7 +12793,8 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
+     * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * 
      * ## Example Usage
      * ```java
@@ -12819,7 +12833,8 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
+     * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * 
      * ## Example Usage
      * ```java
@@ -12858,7 +12873,8 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
+     * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * 
      * ## Example Usage
      * ```java
@@ -13701,6 +13717,9 @@ public final class CoreFunctions {
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
      * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -13745,6 +13764,9 @@ public final class CoreFunctions {
      * Lists the instances in the specified compartment and the specified availability domain.
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
+     * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
      * ```java
@@ -13791,6 +13813,9 @@ public final class CoreFunctions {
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
      * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -13835,6 +13860,9 @@ public final class CoreFunctions {
      * Lists the instances in the specified compartment and the specified availability domain.
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
+     * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
      * ```java

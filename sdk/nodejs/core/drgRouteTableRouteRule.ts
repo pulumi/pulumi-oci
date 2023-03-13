@@ -64,11 +64,11 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
      */
     public /*out*/ readonly attributes!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     * Represents the range of IP addresses to match against when routing traffic.
      */
     public readonly destination!: pulumi.Output<string>;
     /**
-     * (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * Type of destination for the rule. Allowed values:
      */
     public readonly destinationType!: pulumi.Output<string>;
     /**
@@ -84,7 +84,7 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
      */
     public /*out*/ readonly isConflict!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      */
     public readonly nextHopDrgAttachmentId!: pulumi.Output<string>;
     /**
@@ -156,11 +156,11 @@ export interface DrgRouteTableRouteRuleState {
      */
     attributes?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     * Represents the range of IP addresses to match against when routing traffic.
      */
     destination?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * Type of destination for the rule. Allowed values:
      */
     destinationType?: pulumi.Input<string>;
     /**
@@ -176,7 +176,7 @@ export interface DrgRouteTableRouteRuleState {
      */
     isConflict?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      */
     nextHopDrgAttachmentId?: pulumi.Input<string>;
     /**
@@ -194,11 +194,11 @@ export interface DrgRouteTableRouteRuleState {
  */
 export interface DrgRouteTableRouteRuleArgs {
     /**
-     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     * Represents the range of IP addresses to match against when routing traffic.
      */
     destination: pulumi.Input<string>;
     /**
-     * (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * Type of destination for the rule. Allowed values:
      */
     destinationType: pulumi.Input<string>;
     /**
@@ -206,7 +206,7 @@ export interface DrgRouteTableRouteRuleArgs {
      */
     drgRouteTableId: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      */
     nextHopDrgAttachmentId: pulumi.Input<string>;
 }

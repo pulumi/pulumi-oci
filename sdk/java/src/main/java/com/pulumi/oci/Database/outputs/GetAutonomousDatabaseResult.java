@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLocalStandbyDb;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLongTermBackupSchedule;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseStandbyDb;
 import java.lang.Boolean;
@@ -300,6 +301,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
     /**
+     * @return Details for the long-term backup schedule.
+     * 
+     */
+    private List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
+    /**
      * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
@@ -314,6 +320,11 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private String ncharacterSet;
+    /**
+     * @return The date and time when the next long-term backup would be created.
+     * 
+     */
+    private String nextLongTermBackupTimeStamp;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -914,6 +925,13 @@ public final class GetAutonomousDatabaseResult {
         return this.localStandbyDbs;
     }
     /**
+     * @return Details for the long-term backup schedule.
+     * 
+     */
+    public List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules() {
+        return this.longTermBackupSchedules;
+    }
+    /**
      * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
@@ -933,6 +951,13 @@ public final class GetAutonomousDatabaseResult {
      */
     public String ncharacterSet() {
         return this.ncharacterSet;
+    }
+    /**
+     * @return The date and time when the next long-term backup would be created.
+     * 
+     */
+    public String nextLongTermBackupTimeStamp() {
+        return this.nextLongTermBackupTimeStamp;
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -1301,9 +1326,11 @@ public final class GetAutonomousDatabaseResult {
         private String licenseModel;
         private String lifecycleDetails;
         private List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
+        private List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
         private Integer maxCpuCoreCount;
         private Integer memoryPerOracleComputeUnitInGbs;
         private String ncharacterSet;
+        private String nextLongTermBackupTimeStamp;
         private List<String> nsgIds;
         private Double ocpuCount;
         private String openMode;
@@ -1413,9 +1440,11 @@ public final class GetAutonomousDatabaseResult {
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.localStandbyDbs = defaults.localStandbyDbs;
+    	      this.longTermBackupSchedules = defaults.longTermBackupSchedules;
     	      this.maxCpuCoreCount = defaults.maxCpuCoreCount;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.ncharacterSet = defaults.ncharacterSet;
+    	      this.nextLongTermBackupTimeStamp = defaults.nextLongTermBackupTimeStamp;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.openMode = defaults.openMode;
@@ -1785,6 +1814,14 @@ public final class GetAutonomousDatabaseResult {
             return localStandbyDbs(List.of(localStandbyDbs));
         }
         @CustomType.Setter
+        public Builder longTermBackupSchedules(List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules) {
+            this.longTermBackupSchedules = Objects.requireNonNull(longTermBackupSchedules);
+            return this;
+        }
+        public Builder longTermBackupSchedules(GetAutonomousDatabaseLongTermBackupSchedule... longTermBackupSchedules) {
+            return longTermBackupSchedules(List.of(longTermBackupSchedules));
+        }
+        @CustomType.Setter
         public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
             this.maxCpuCoreCount = Objects.requireNonNull(maxCpuCoreCount);
             return this;
@@ -1797,6 +1834,11 @@ public final class GetAutonomousDatabaseResult {
         @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nextLongTermBackupTimeStamp(String nextLongTermBackupTimeStamp) {
+            this.nextLongTermBackupTimeStamp = Objects.requireNonNull(nextLongTermBackupTimeStamp);
             return this;
         }
         @CustomType.Setter
@@ -2119,9 +2161,11 @@ public final class GetAutonomousDatabaseResult {
             o.licenseModel = licenseModel;
             o.lifecycleDetails = lifecycleDetails;
             o.localStandbyDbs = localStandbyDbs;
+            o.longTermBackupSchedules = longTermBackupSchedules;
             o.maxCpuCoreCount = maxCpuCoreCount;
             o.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             o.ncharacterSet = ncharacterSet;
+            o.nextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
             o.nsgIds = nsgIds;
             o.ocpuCount = ocpuCount;
             o.openMode = openMode;

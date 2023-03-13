@@ -10,6 +10,121 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type ManagementAgentManagementAgentProperty struct {
+	// Name of the property
+	Name *string `pulumi:"name"`
+	// Unit for the property
+	Units *string `pulumi:"units"`
+	// Values of the property
+	Values []string `pulumi:"values"`
+}
+
+// ManagementAgentManagementAgentPropertyInput is an input type that accepts ManagementAgentManagementAgentPropertyArgs and ManagementAgentManagementAgentPropertyOutput values.
+// You can construct a concrete instance of `ManagementAgentManagementAgentPropertyInput` via:
+//
+//	ManagementAgentManagementAgentPropertyArgs{...}
+type ManagementAgentManagementAgentPropertyInput interface {
+	pulumi.Input
+
+	ToManagementAgentManagementAgentPropertyOutput() ManagementAgentManagementAgentPropertyOutput
+	ToManagementAgentManagementAgentPropertyOutputWithContext(context.Context) ManagementAgentManagementAgentPropertyOutput
+}
+
+type ManagementAgentManagementAgentPropertyArgs struct {
+	// Name of the property
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Unit for the property
+	Units pulumi.StringPtrInput `pulumi:"units"`
+	// Values of the property
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (ManagementAgentManagementAgentPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (i ManagementAgentManagementAgentPropertyArgs) ToManagementAgentManagementAgentPropertyOutput() ManagementAgentManagementAgentPropertyOutput {
+	return i.ToManagementAgentManagementAgentPropertyOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentManagementAgentPropertyArgs) ToManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) ManagementAgentManagementAgentPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentManagementAgentPropertyOutput)
+}
+
+// ManagementAgentManagementAgentPropertyArrayInput is an input type that accepts ManagementAgentManagementAgentPropertyArray and ManagementAgentManagementAgentPropertyArrayOutput values.
+// You can construct a concrete instance of `ManagementAgentManagementAgentPropertyArrayInput` via:
+//
+//	ManagementAgentManagementAgentPropertyArray{ ManagementAgentManagementAgentPropertyArgs{...} }
+type ManagementAgentManagementAgentPropertyArrayInput interface {
+	pulumi.Input
+
+	ToManagementAgentManagementAgentPropertyArrayOutput() ManagementAgentManagementAgentPropertyArrayOutput
+	ToManagementAgentManagementAgentPropertyArrayOutputWithContext(context.Context) ManagementAgentManagementAgentPropertyArrayOutput
+}
+
+type ManagementAgentManagementAgentPropertyArray []ManagementAgentManagementAgentPropertyInput
+
+func (ManagementAgentManagementAgentPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (i ManagementAgentManagementAgentPropertyArray) ToManagementAgentManagementAgentPropertyArrayOutput() ManagementAgentManagementAgentPropertyArrayOutput {
+	return i.ToManagementAgentManagementAgentPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentManagementAgentPropertyArray) ToManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) ManagementAgentManagementAgentPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentManagementAgentPropertyArrayOutput)
+}
+
+type ManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (o ManagementAgentManagementAgentPropertyOutput) ToManagementAgentManagementAgentPropertyOutput() ManagementAgentManagementAgentPropertyOutput {
+	return o
+}
+
+func (o ManagementAgentManagementAgentPropertyOutput) ToManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) ManagementAgentManagementAgentPropertyOutput {
+	return o
+}
+
+// Name of the property
+func (o ManagementAgentManagementAgentPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentManagementAgentProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Unit for the property
+func (o ManagementAgentManagementAgentPropertyOutput) Units() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentManagementAgentProperty) *string { return v.Units }).(pulumi.StringPtrOutput)
+}
+
+// Values of the property
+func (o ManagementAgentManagementAgentPropertyOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ManagementAgentManagementAgentProperty) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type ManagementAgentManagementAgentPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentManagementAgentPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (o ManagementAgentManagementAgentPropertyArrayOutput) ToManagementAgentManagementAgentPropertyArrayOutput() ManagementAgentManagementAgentPropertyArrayOutput {
+	return o
+}
+
+func (o ManagementAgentManagementAgentPropertyArrayOutput) ToManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) ManagementAgentManagementAgentPropertyArrayOutput {
+	return o
+}
+
+func (o ManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) ManagementAgentManagementAgentPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementAgentManagementAgentProperty {
+		return vs[0].([]ManagementAgentManagementAgentProperty)[vs[1].(int)]
+	}).(ManagementAgentManagementAgentPropertyOutput)
+}
+
 type ManagementAgentPluginList struct {
 	// flag indicating whether the plugin is in enabled mode or disabled mode.
 	IsEnabled *bool `pulumi:"isEnabled"`
@@ -744,10 +859,12 @@ func (o GetManagementAgentImagesFilterArrayOutput) Index(i pulumi.IntInput) GetM
 }
 
 type GetManagementAgentImagesManagementAgentImage struct {
-	// Agent image content SHA256 Hash
+	// Object content SHA256 Hash
 	Checksum string `pulumi:"checksum"`
 	// Agent image resource id
 	Id string `pulumi:"id"`
+	// Details of the Objectstorage object
+	ImageObjectStorageDetails []GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail `pulumi:"imageObjectStorageDetails"`
 	// Object storage URL for download
 	ObjectUrl string `pulumi:"objectUrl"`
 	// The installation package target architecture type
@@ -778,10 +895,12 @@ type GetManagementAgentImagesManagementAgentImageInput interface {
 }
 
 type GetManagementAgentImagesManagementAgentImageArgs struct {
-	// Agent image content SHA256 Hash
+	// Object content SHA256 Hash
 	Checksum pulumi.StringInput `pulumi:"checksum"`
 	// Agent image resource id
 	Id pulumi.StringInput `pulumi:"id"`
+	// Details of the Objectstorage object
+	ImageObjectStorageDetails GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput `pulumi:"imageObjectStorageDetails"`
 	// Object storage URL for download
 	ObjectUrl pulumi.StringInput `pulumi:"objectUrl"`
 	// The installation package target architecture type
@@ -851,7 +970,7 @@ func (o GetManagementAgentImagesManagementAgentImageOutput) ToGetManagementAgent
 	return o
 }
 
-// Agent image content SHA256 Hash
+// Object content SHA256 Hash
 func (o GetManagementAgentImagesManagementAgentImageOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.Checksum }).(pulumi.StringOutput)
 }
@@ -859,6 +978,13 @@ func (o GetManagementAgentImagesManagementAgentImageOutput) Checksum() pulumi.St
 // Agent image resource id
 func (o GetManagementAgentImagesManagementAgentImageOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details of the Objectstorage object
+func (o GetManagementAgentImagesManagementAgentImageOutput) ImageObjectStorageDetails() GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) []GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail {
+		return v.ImageObjectStorageDetails
+	}).(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput)
 }
 
 // Object storage URL for download
@@ -919,6 +1045,145 @@ func (o GetManagementAgentImagesManagementAgentImageArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentImagesManagementAgentImage {
 		return vs[0].([]GetManagementAgentImagesManagementAgentImage)[vs[1].(int)]
 	}).(GetManagementAgentImagesManagementAgentImageOutput)
+}
+
+type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail struct {
+	// Object content SHA256 Hash
+	Checksum string `pulumi:"checksum"`
+	// Objectstorage object name reference providing the original location of this object
+	Object string `pulumi:"object"`
+	// Objectstorage bucket reference providing the original location of this object
+	ObjectBucket string `pulumi:"objectBucket"`
+	// Objectstorage namespace reference providing the original location of this object
+	ObjectNamespace string `pulumi:"objectNamespace"`
+	// Object storage URL for download
+	ObjectUrl string `pulumi:"objectUrl"`
+}
+
+// GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailInput is an input type that accepts GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs and GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput values.
+// You can construct a concrete instance of `GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailInput` via:
+//
+//	GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs{...}
+type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput() GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput
+	ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutputWithContext(context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput
+}
+
+type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs struct {
+	// Object content SHA256 Hash
+	Checksum pulumi.StringInput `pulumi:"checksum"`
+	// Objectstorage object name reference providing the original location of this object
+	Object pulumi.StringInput `pulumi:"object"`
+	// Objectstorage bucket reference providing the original location of this object
+	ObjectBucket pulumi.StringInput `pulumi:"objectBucket"`
+	// Objectstorage namespace reference providing the original location of this object
+	ObjectNamespace pulumi.StringInput `pulumi:"objectNamespace"`
+	// Object storage URL for download
+	ObjectUrl pulumi.StringInput `pulumi:"objectUrl"`
+}
+
+func (GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail)(nil)).Elem()
+}
+
+func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput() GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
+	return i.ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput)
+}
+
+// GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput is an input type that accepts GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray and GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput` via:
+//
+//	GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray{ GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs{...} }
+type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput() GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput
+	ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutputWithContext(context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput
+}
+
+type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray []GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailInput
+
+func (GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail)(nil)).Elem()
+}
+
+func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput() GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput {
+	return i.ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput)
+}
+
+type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail)(nil)).Elem()
+}
+
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput() GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
+	return o
+}
+
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
+	return o
+}
+
+// Object content SHA256 Hash
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) Checksum() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string { return v.Checksum }).(pulumi.StringOutput)
+}
+
+// Objectstorage object name reference providing the original location of this object
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// Objectstorage bucket reference providing the original location of this object
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectBucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string {
+		return v.ObjectBucket
+	}).(pulumi.StringOutput)
+}
+
+// Objectstorage namespace reference providing the original location of this object
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string {
+		return v.ObjectNamespace
+	}).(pulumi.StringOutput)
+}
+
+// Object storage URL for download
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string {
+		return v.ObjectUrl
+	}).(pulumi.StringOutput)
+}
+
+type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail)(nil)).Elem()
+}
+
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput() GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) Index(i pulumi.IntInput) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail {
+		return vs[0].([]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail)[vs[1].(int)]
+	}).(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput)
 }
 
 type GetManagementAgentInstallKeysFilter struct {
@@ -1230,6 +1495,121 @@ func (o GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput) Index
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentInstallKeysManagementAgentInstallKey {
 		return vs[0].([]GetManagementAgentInstallKeysManagementAgentInstallKey)[vs[1].(int)]
 	}).(GetManagementAgentInstallKeysManagementAgentInstallKeyOutput)
+}
+
+type GetManagementAgentManagementAgentProperty struct {
+	// Name of the property
+	Name string `pulumi:"name"`
+	// Unit for the property
+	Units string `pulumi:"units"`
+	// Values of the property
+	Values []string `pulumi:"values"`
+}
+
+// GetManagementAgentManagementAgentPropertyInput is an input type that accepts GetManagementAgentManagementAgentPropertyArgs and GetManagementAgentManagementAgentPropertyOutput values.
+// You can construct a concrete instance of `GetManagementAgentManagementAgentPropertyInput` via:
+//
+//	GetManagementAgentManagementAgentPropertyArgs{...}
+type GetManagementAgentManagementAgentPropertyInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentManagementAgentPropertyOutput() GetManagementAgentManagementAgentPropertyOutput
+	ToGetManagementAgentManagementAgentPropertyOutputWithContext(context.Context) GetManagementAgentManagementAgentPropertyOutput
+}
+
+type GetManagementAgentManagementAgentPropertyArgs struct {
+	// Name of the property
+	Name pulumi.StringInput `pulumi:"name"`
+	// Unit for the property
+	Units pulumi.StringInput `pulumi:"units"`
+	// Values of the property
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagementAgentManagementAgentPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (i GetManagementAgentManagementAgentPropertyArgs) ToGetManagementAgentManagementAgentPropertyOutput() GetManagementAgentManagementAgentPropertyOutput {
+	return i.ToGetManagementAgentManagementAgentPropertyOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentManagementAgentPropertyArgs) ToGetManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) GetManagementAgentManagementAgentPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentManagementAgentPropertyOutput)
+}
+
+// GetManagementAgentManagementAgentPropertyArrayInput is an input type that accepts GetManagementAgentManagementAgentPropertyArray and GetManagementAgentManagementAgentPropertyArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentManagementAgentPropertyArrayInput` via:
+//
+//	GetManagementAgentManagementAgentPropertyArray{ GetManagementAgentManagementAgentPropertyArgs{...} }
+type GetManagementAgentManagementAgentPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentManagementAgentPropertyArrayOutput() GetManagementAgentManagementAgentPropertyArrayOutput
+	ToGetManagementAgentManagementAgentPropertyArrayOutputWithContext(context.Context) GetManagementAgentManagementAgentPropertyArrayOutput
+}
+
+type GetManagementAgentManagementAgentPropertyArray []GetManagementAgentManagementAgentPropertyInput
+
+func (GetManagementAgentManagementAgentPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (i GetManagementAgentManagementAgentPropertyArray) ToGetManagementAgentManagementAgentPropertyArrayOutput() GetManagementAgentManagementAgentPropertyArrayOutput {
+	return i.ToGetManagementAgentManagementAgentPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentManagementAgentPropertyArray) ToGetManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) GetManagementAgentManagementAgentPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentManagementAgentPropertyArrayOutput)
+}
+
+type GetManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (o GetManagementAgentManagementAgentPropertyOutput) ToGetManagementAgentManagementAgentPropertyOutput() GetManagementAgentManagementAgentPropertyOutput {
+	return o
+}
+
+func (o GetManagementAgentManagementAgentPropertyOutput) ToGetManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) GetManagementAgentManagementAgentPropertyOutput {
+	return o
+}
+
+// Name of the property
+func (o GetManagementAgentManagementAgentPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentManagementAgentProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Unit for the property
+func (o GetManagementAgentManagementAgentPropertyOutput) Units() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentManagementAgentProperty) string { return v.Units }).(pulumi.StringOutput)
+}
+
+// Values of the property
+func (o GetManagementAgentManagementAgentPropertyOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentManagementAgentProperty) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagementAgentManagementAgentPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentManagementAgentPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (o GetManagementAgentManagementAgentPropertyArrayOutput) ToGetManagementAgentManagementAgentPropertyArrayOutput() GetManagementAgentManagementAgentPropertyArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentManagementAgentPropertyArrayOutput) ToGetManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) GetManagementAgentManagementAgentPropertyArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentManagementAgentPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentManagementAgentProperty {
+		return vs[0].([]GetManagementAgentManagementAgentProperty)[vs[1].(int)]
+	}).(GetManagementAgentManagementAgentPropertyOutput)
 }
 
 type GetManagementAgentPluginCountItem struct {
@@ -1867,8 +2247,10 @@ func (o GetManagementAgentPluginsManagementAgentPluginArrayOutput) Index(i pulum
 }
 
 type GetManagementAgentsFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
+	// Name of the property
+	Name  string `pulumi:"name"`
+	Regex *bool  `pulumi:"regex"`
+	// Values of the property
 	Values []string `pulumi:"values"`
 }
 
@@ -1884,8 +2266,10 @@ type GetManagementAgentsFilterInput interface {
 }
 
 type GetManagementAgentsFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	// Name of the property
+	Name  pulumi.StringInput  `pulumi:"name"`
+	Regex pulumi.BoolPtrInput `pulumi:"regex"`
+	// Values of the property
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -1940,6 +2324,7 @@ func (o GetManagementAgentsFilterOutput) ToGetManagementAgentsFilterOutputWithCo
 	return o
 }
 
+// Name of the property
 func (o GetManagementAgentsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -1948,6 +2333,7 @@ func (o GetManagementAgentsFilterOutput) Regex() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetManagementAgentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
 }
 
+// Values of the property
 func (o GetManagementAgentsFilterOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetManagementAgentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -2003,6 +2389,8 @@ type GetManagementAgentsManagementAgent struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	ManagedAgentId   string `pulumi:"managedAgentId"`
+	// Additional properties for this Management Agent
+	ManagementAgentProperties []GetManagementAgentsManagementAgentManagementAgentProperty `pulumi:"managementAgentProperties"`
 	// Platform Name
 	PlatformName string `pulumi:"platformName"`
 	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
@@ -2067,6 +2455,8 @@ type GetManagementAgentsManagementAgentArgs struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	ManagedAgentId   pulumi.StringInput `pulumi:"managedAgentId"`
+	// Additional properties for this Management Agent
+	ManagementAgentProperties GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput `pulumi:"managementAgentProperties"`
 	// Platform Name
 	PlatformName pulumi.StringInput `pulumi:"platformName"`
 	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
@@ -2218,6 +2608,13 @@ func (o GetManagementAgentsManagementAgentOutput) ManagedAgentId() pulumi.String
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.ManagedAgentId }).(pulumi.StringOutput)
 }
 
+// Additional properties for this Management Agent
+func (o GetManagementAgentsManagementAgentOutput) ManagementAgentProperties() GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) []GetManagementAgentsManagementAgentManagementAgentProperty {
+		return v.ManagementAgentProperties
+	}).(GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput)
+}
+
 // Platform Name
 func (o GetManagementAgentsManagementAgentOutput) PlatformName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.PlatformName }).(pulumi.StringOutput)
@@ -2288,6 +2685,121 @@ func (o GetManagementAgentsManagementAgentArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgent {
 		return vs[0].([]GetManagementAgentsManagementAgent)[vs[1].(int)]
 	}).(GetManagementAgentsManagementAgentOutput)
+}
+
+type GetManagementAgentsManagementAgentManagementAgentProperty struct {
+	// Name of the property
+	Name string `pulumi:"name"`
+	// Unit for the property
+	Units string `pulumi:"units"`
+	// Values of the property
+	Values []string `pulumi:"values"`
+}
+
+// GetManagementAgentsManagementAgentManagementAgentPropertyInput is an input type that accepts GetManagementAgentsManagementAgentManagementAgentPropertyArgs and GetManagementAgentsManagementAgentManagementAgentPropertyOutput values.
+// You can construct a concrete instance of `GetManagementAgentsManagementAgentManagementAgentPropertyInput` via:
+//
+//	GetManagementAgentsManagementAgentManagementAgentPropertyArgs{...}
+type GetManagementAgentsManagementAgentManagementAgentPropertyInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentsManagementAgentManagementAgentPropertyOutput() GetManagementAgentsManagementAgentManagementAgentPropertyOutput
+	ToGetManagementAgentsManagementAgentManagementAgentPropertyOutputWithContext(context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyOutput
+}
+
+type GetManagementAgentsManagementAgentManagementAgentPropertyArgs struct {
+	// Name of the property
+	Name pulumi.StringInput `pulumi:"name"`
+	// Unit for the property
+	Units pulumi.StringInput `pulumi:"units"`
+	// Values of the property
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagementAgentsManagementAgentManagementAgentPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentsManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (i GetManagementAgentsManagementAgentManagementAgentPropertyArgs) ToGetManagementAgentsManagementAgentManagementAgentPropertyOutput() GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
+	return i.ToGetManagementAgentsManagementAgentManagementAgentPropertyOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentsManagementAgentManagementAgentPropertyArgs) ToGetManagementAgentsManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentManagementAgentPropertyOutput)
+}
+
+// GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput is an input type that accepts GetManagementAgentsManagementAgentManagementAgentPropertyArray and GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput` via:
+//
+//	GetManagementAgentsManagementAgentManagementAgentPropertyArray{ GetManagementAgentsManagementAgentManagementAgentPropertyArgs{...} }
+type GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput() GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput
+	ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutputWithContext(context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput
+}
+
+type GetManagementAgentsManagementAgentManagementAgentPropertyArray []GetManagementAgentsManagementAgentManagementAgentPropertyInput
+
+func (GetManagementAgentsManagementAgentManagementAgentPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentsManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (i GetManagementAgentsManagementAgentManagementAgentPropertyArray) ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput() GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput {
+	return i.ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentsManagementAgentManagementAgentPropertyArray) ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput)
+}
+
+type GetManagementAgentsManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentsManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ToGetManagementAgentsManagementAgentManagementAgentPropertyOutput() GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ToGetManagementAgentsManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
+	return o
+}
+
+// Name of the property
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentManagementAgentProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Unit for the property
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) Units() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentManagementAgentProperty) string { return v.Units }).(pulumi.StringOutput)
+}
+
+// Values of the property
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentManagementAgentProperty) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentsManagementAgentManagementAgentProperty)(nil)).Elem()
+}
+
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput() GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgentManagementAgentProperty {
+		return vs[0].([]GetManagementAgentsManagementAgentManagementAgentProperty)[vs[1].(int)]
+	}).(GetManagementAgentsManagementAgentManagementAgentPropertyOutput)
 }
 
 type GetManagementAgentsManagementAgentPluginList struct {
@@ -2442,6 +2954,8 @@ func (o GetManagementAgentsManagementAgentPluginListArrayOutput) Index(i pulumi.
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentManagementAgentPropertyInput)(nil)).Elem(), ManagementAgentManagementAgentPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentManagementAgentPropertyArrayInput)(nil)).Elem(), ManagementAgentManagementAgentPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentPluginListInput)(nil)).Elem(), ManagementAgentPluginListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentPluginListArrayInput)(nil)).Elem(), ManagementAgentPluginListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentAvailableHistoriesAvailabilityHistoryInput)(nil)).Elem(), GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs{})
@@ -2456,10 +2970,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentImagesFilterArrayInput)(nil)).Elem(), GetManagementAgentImagesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentImagesManagementAgentImageInput)(nil)).Elem(), GetManagementAgentImagesManagementAgentImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentImagesManagementAgentImageArrayInput)(nil)).Elem(), GetManagementAgentImagesManagementAgentImageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailInput)(nil)).Elem(), GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput)(nil)).Elem(), GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentInstallKeysFilterInput)(nil)).Elem(), GetManagementAgentInstallKeysFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentInstallKeysFilterArrayInput)(nil)).Elem(), GetManagementAgentInstallKeysFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentInstallKeysManagementAgentInstallKeyInput)(nil)).Elem(), GetManagementAgentInstallKeysManagementAgentInstallKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentInstallKeysManagementAgentInstallKeyArrayInput)(nil)).Elem(), GetManagementAgentInstallKeysManagementAgentInstallKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentManagementAgentPropertyInput)(nil)).Elem(), GetManagementAgentManagementAgentPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentManagementAgentPropertyArrayInput)(nil)).Elem(), GetManagementAgentManagementAgentPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentPluginCountItemInput)(nil)).Elem(), GetManagementAgentPluginCountItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentPluginCountItemArrayInput)(nil)).Elem(), GetManagementAgentPluginCountItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentPluginCountItemDimensionInput)(nil)).Elem(), GetManagementAgentPluginCountItemDimensionArgs{})
@@ -2474,8 +2992,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsFilterArrayInput)(nil)).Elem(), GetManagementAgentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentInput)(nil)).Elem(), GetManagementAgentsManagementAgentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentManagementAgentPropertyInput)(nil)).Elem(), GetManagementAgentsManagementAgentManagementAgentPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentManagementAgentPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentPluginListInput)(nil)).Elem(), GetManagementAgentsManagementAgentPluginListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentPluginListArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentPluginListArray{})
+	pulumi.RegisterOutputType(ManagementAgentManagementAgentPropertyOutput{})
+	pulumi.RegisterOutputType(ManagementAgentManagementAgentPropertyArrayOutput{})
 	pulumi.RegisterOutputType(ManagementAgentPluginListOutput{})
 	pulumi.RegisterOutputType(ManagementAgentPluginListArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput{})
@@ -2490,10 +3012,14 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementAgentImagesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentImagesManagementAgentImageOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentImagesManagementAgentImageArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentInstallKeysFilterOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentInstallKeysFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentInstallKeysManagementAgentInstallKeyOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentManagementAgentPropertyOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentManagementAgentPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentPluginCountItemOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentPluginCountItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentPluginCountItemDimensionOutput{})
@@ -2508,6 +3034,8 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementAgentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentManagementAgentPropertyOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentPluginListOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentPluginListArrayOutput{})
 }

@@ -4,9 +4,12 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetails {
@@ -15,6 +18,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
      * 
      */
     private String deploymentType;
+    /**
+     * @return (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+     * 
+     */
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails environmentConfigurationDetails;
     /**
      * @return (Updatable) The model configuration details.
      * 
@@ -28,6 +36,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
      */
     public String deploymentType() {
         return this.deploymentType;
+    }
+    /**
+     * @return (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+     * 
+     */
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails> environmentConfigurationDetails() {
+        return Optional.ofNullable(this.environmentConfigurationDetails);
     }
     /**
      * @return (Updatable) The model configuration details.
@@ -47,17 +62,24 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
     @CustomType.Builder
     public static final class Builder {
         private String deploymentType;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails environmentConfigurationDetails;
         private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentType = defaults.deploymentType;
+    	      this.environmentConfigurationDetails = defaults.environmentConfigurationDetails;
     	      this.modelConfigurationDetails = defaults.modelConfigurationDetails;
         }
 
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = Objects.requireNonNull(deploymentType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder environmentConfigurationDetails(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails environmentConfigurationDetails) {
+            this.environmentConfigurationDetails = environmentConfigurationDetails;
             return this;
         }
         @CustomType.Setter
@@ -68,6 +90,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
         public ModelDeploymentModelDeploymentConfigurationDetails build() {
             final var o = new ModelDeploymentModelDeploymentConfigurationDetails();
             o.deploymentType = deploymentType;
+            o.environmentConfigurationDetails = environmentConfigurationDetails;
             o.modelConfigurationDetails = modelConfigurationDetails;
             return o;
         }

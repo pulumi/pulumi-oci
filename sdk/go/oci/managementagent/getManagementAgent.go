@@ -87,6 +87,8 @@ type LookupManagementAgentResult struct {
 	LifecycleDetails  string `pulumi:"lifecycleDetails"`
 	ManagedAgentId    string `pulumi:"managedAgentId"`
 	ManagementAgentId string `pulumi:"managementAgentId"`
+	// Additional properties for this Management Agent
+	ManagementAgentProperties []GetManagementAgentManagementAgentProperty `pulumi:"managementAgentProperties"`
 	// Platform Name
 	PlatformName string `pulumi:"platformName"`
 	// Platform Type
@@ -227,6 +229,13 @@ func (o LookupManagementAgentResultOutput) ManagedAgentId() pulumi.StringOutput 
 
 func (o LookupManagementAgentResultOutput) ManagementAgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// Additional properties for this Management Agent
+func (o LookupManagementAgentResultOutput) ManagementAgentProperties() GetManagementAgentManagementAgentPropertyArrayOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) []GetManagementAgentManagementAgentProperty {
+		return v.ManagementAgentProperties
+	}).(GetManagementAgentManagementAgentPropertyArrayOutput)
 }
 
 // Platform Name

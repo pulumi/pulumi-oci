@@ -34,14 +34,14 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     * Represents the range of IP addresses to match against when routing traffic.
      * 
      */
     @Import(name="destination")
     private @Nullable Output<String> destination;
 
     /**
-     * @return (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     * @return Represents the range of IP addresses to match against when routing traffic.
      * 
      */
     public Optional<Output<String>> destination() {
@@ -49,14 +49,14 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * Type of destination for the rule. Allowed values:
      * 
      */
     @Import(name="destinationType")
     private @Nullable Output<String> destinationType;
 
     /**
-     * @return (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * @return Type of destination for the rule. Allowed values:
      * 
      */
     public Optional<Output<String>> destinationType() {
@@ -109,14 +109,14 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      * 
      */
     @Import(name="nextHopDrgAttachmentId")
     private @Nullable Output<String> nextHopDrgAttachmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      * 
      */
     public Optional<Output<String>> nextHopDrgAttachmentId() {
@@ -207,7 +207,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destination (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+         * @param destination Represents the range of IP addresses to match against when routing traffic.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destination (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+         * @param destination Represents the range of IP addresses to match against when routing traffic.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationType (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+         * @param destinationType Type of destination for the rule. Allowed values:
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationType (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+         * @param destinationType Type of destination for the rule. Allowed values:
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param nextHopDrgAttachmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+         * @param nextHopDrgAttachmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param nextHopDrgAttachmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+         * @param nextHopDrgAttachmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
          * 
          * @return builder
          * 

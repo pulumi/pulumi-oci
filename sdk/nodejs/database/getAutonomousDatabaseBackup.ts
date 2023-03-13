@@ -56,6 +56,10 @@ export interface GetAutonomousDatabaseBackupResult {
      */
     readonly databaseSizeInTbs: number;
     /**
+     * A valid Oracle Database version for Autonomous Database.
+     */
+    readonly dbVersion: string;
+    /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
     readonly displayName: string;
@@ -67,6 +71,7 @@ export interface GetAutonomousDatabaseBackupResult {
      * Indicates whether the backup is user-initiated or automatic.
      */
     readonly isAutomatic: boolean;
+    readonly isLongTermBackup: boolean;
     /**
      * Indicates whether the backup can be used to restore the associated Autonomous Database.
      */
@@ -92,9 +97,21 @@ export interface GetAutonomousDatabaseBackupResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Retention period, in days, for long-term backups
+     */
+    readonly retentionPeriodInDays: number;
+    /**
+     * The backup size in terrabytes (TB).
+     */
+    readonly sizeInTbs: number;
+    /**
      * The current state of the backup.
      */
     readonly state: string;
+    /**
+     * Timestamp until when the backup will be available
+     */
+    readonly timeAvailableTill: string;
     /**
      * The date and time the backup completed.
      */

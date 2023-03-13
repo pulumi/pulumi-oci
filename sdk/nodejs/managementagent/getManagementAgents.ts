@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     availabilityStatus: _var.management_agent_availability_status,
  *     compartmentIdInSubtree: _var.management_agent_compartment_id_in_subtree,
  *     displayName: _var.management_agent_display_name,
+ *     gatewayIds: oci_apigateway_gateway.test_gateway.id,
  *     hostId: oci_management_agent_host.test_host.id,
  *     installType: _var.management_agent_install_type,
  *     isCustomerDeployed: _var.management_agent_is_customer_deployed,
@@ -45,6 +46,7 @@ export function getManagementAgents(args: GetManagementAgentsArgs, opts?: pulumi
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
+        "gatewayIds": args.gatewayIds,
         "hostId": args.hostId,
         "installType": args.installType,
         "isCustomerDeployed": args.isCustomerDeployed,
@@ -80,6 +82,10 @@ export interface GetManagementAgentsArgs {
      */
     displayName?: string;
     filters?: inputs.ManagementAgent.GetManagementAgentsFilter[];
+    /**
+     * Filter to return only results having the particular gatewayId.
+     */
+    gatewayIds?: string[];
     /**
      * Filter to return only Management Agents having the particular agent host id.
      */
@@ -129,6 +135,7 @@ export interface GetManagementAgentsResult {
      */
     readonly displayName?: string;
     readonly filters?: outputs.ManagementAgent.GetManagementAgentsFilter[];
+    readonly gatewayIds?: string[];
     /**
      * Host resource ocid
      */
@@ -185,6 +192,7 @@ export interface GetManagementAgentsResult {
  *     availabilityStatus: _var.management_agent_availability_status,
  *     compartmentIdInSubtree: _var.management_agent_compartment_id_in_subtree,
  *     displayName: _var.management_agent_display_name,
+ *     gatewayIds: oci_apigateway_gateway.test_gateway.id,
  *     hostId: oci_management_agent_host.test_host.id,
  *     installType: _var.management_agent_install_type,
  *     isCustomerDeployed: _var.management_agent_is_customer_deployed,
@@ -224,6 +232,10 @@ export interface GetManagementAgentsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentsFilterArgs>[]>;
+    /**
+     * Filter to return only results having the particular gatewayId.
+     */
+    gatewayIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Filter to return only Management Agents having the particular agent host id.
      */

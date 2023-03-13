@@ -203,14 +203,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -666,7 +666,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyId (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyId (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
          * 
          * @return builder
          * 

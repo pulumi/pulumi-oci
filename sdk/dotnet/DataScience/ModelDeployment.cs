@@ -48,6 +48,17 @@ namespace Pulumi.Oci.DataScience
     ///                     PolicyType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type,
     ///                 },
     ///             },
+    ///             EnvironmentConfigurationDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs
+    ///             {
+    ///                 EnvironmentConfigurationType = @var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_configuration_type,
+    ///                 Cmds = @var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_cmd,
+    ///                 Entrypoints = @var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_entrypoint,
+    ///                 EnvironmentVariables = @var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_variables,
+    ///                 HealthCheckPort = @var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_health_check_port,
+    ///                 Image = @var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_image,
+    ///                 ImageDigest = @var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_image_digest,
+    ///                 ServerPort = @var.Model_deployment_model_deployment_configuration_details_environment_configuration_details_server_port,
+    ///             },
     ///         },
     ///         ProjectId = oci_datascience_project.Test_project.Id,
     ///         CategoryLogDetails = new Oci.DataScience.Inputs.ModelDeploymentCategoryLogDetailsArgs

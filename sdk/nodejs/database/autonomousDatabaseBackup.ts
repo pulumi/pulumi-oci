@@ -18,6 +18,8 @@ import * as utilities from "../utilities";
  * const testAutonomousDatabaseBackup = new oci.database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup", {
  *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
  *     displayName: _var.autonomous_database_backup_display_name,
+ *     isLongTermBackup: _var.autonomous_database_backup_is_long_term_backup,
+ *     retentionPeriodInDays: _var.autonomous_database_backup_retention_period_in_days,
  * });
  * ```
  *
@@ -70,6 +72,10 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      */
     public /*out*/ readonly databaseSizeInTbs!: pulumi.Output<number>;
     /**
+     * A valid Oracle Database version for Autonomous Database.
+     */
+    public /*out*/ readonly dbVersion!: pulumi.Output<string>;
+    /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
@@ -77,6 +83,10 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      * Indicates whether the backup is user-initiated or automatic.
      */
     public /*out*/ readonly isAutomatic!: pulumi.Output<boolean>;
+    /**
+     * Indicates whether the backup is long-term
+     */
+    public readonly isLongTermBackup!: pulumi.Output<boolean>;
     /**
      * Indicates whether the backup can be used to restore the associated Autonomous Database.
      */
@@ -102,9 +112,21 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * (Updatable) Retention period, in days, for long-term backups
+     */
+    public readonly retentionPeriodInDays!: pulumi.Output<number>;
+    /**
+     * The backup size in terrabytes (TB).
+     */
+    public /*out*/ readonly sizeInTbs!: pulumi.Output<number>;
+    /**
      * The current state of the backup.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * Timestamp until when the backup will be available
+     */
+    public /*out*/ readonly timeAvailableTill!: pulumi.Output<string>;
     /**
      * The date and time the backup completed.
      */
@@ -138,15 +160,20 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
             resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["databaseSizeInTbs"] = state ? state.databaseSizeInTbs : undefined;
+            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["isAutomatic"] = state ? state.isAutomatic : undefined;
+            resourceInputs["isLongTermBackup"] = state ? state.isLongTermBackup : undefined;
             resourceInputs["isRestorable"] = state ? state.isRestorable : undefined;
             resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
             resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["retentionPeriodInDays"] = state ? state.retentionPeriodInDays : undefined;
+            resourceInputs["sizeInTbs"] = state ? state.sizeInTbs : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["timeAvailableTill"] = state ? state.timeAvailableTill : undefined;
             resourceInputs["timeEnded"] = state ? state.timeEnded : undefined;
             resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -156,13 +183,13 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
             if ((!args || args.autonomousDatabaseId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'autonomousDatabaseId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'displayName'");
-            }
             resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["isLongTermBackup"] = args ? args.isLongTermBackup : undefined;
+            resourceInputs["retentionPeriodInDays"] = args ? args.retentionPeriodInDays : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["databaseSizeInTbs"] = undefined /*out*/;
+            resourceInputs["dbVersion"] = undefined /*out*/;
             resourceInputs["isAutomatic"] = undefined /*out*/;
             resourceInputs["isRestorable"] = undefined /*out*/;
             resourceInputs["keyStoreId"] = undefined /*out*/;
@@ -170,7 +197,9 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
             resourceInputs["kmsKeyId"] = undefined /*out*/;
             resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["sizeInTbs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["timeAvailableTill"] = undefined /*out*/;
             resourceInputs["timeEnded"] = undefined /*out*/;
             resourceInputs["timeStarted"] = undefined /*out*/;
             resourceInputs["type"] = undefined /*out*/;
@@ -198,6 +227,10 @@ export interface AutonomousDatabaseBackupState {
      */
     databaseSizeInTbs?: pulumi.Input<number>;
     /**
+     * A valid Oracle Database version for Autonomous Database.
+     */
+    dbVersion?: pulumi.Input<string>;
+    /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
@@ -205,6 +238,10 @@ export interface AutonomousDatabaseBackupState {
      * Indicates whether the backup is user-initiated or automatic.
      */
     isAutomatic?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether the backup is long-term
+     */
+    isLongTermBackup?: pulumi.Input<boolean>;
     /**
      * Indicates whether the backup can be used to restore the associated Autonomous Database.
      */
@@ -230,9 +267,21 @@ export interface AutonomousDatabaseBackupState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * (Updatable) Retention period, in days, for long-term backups
+     */
+    retentionPeriodInDays?: pulumi.Input<number>;
+    /**
+     * The backup size in terrabytes (TB).
+     */
+    sizeInTbs?: pulumi.Input<number>;
+    /**
      * The current state of the backup.
      */
     state?: pulumi.Input<string>;
+    /**
+     * Timestamp until when the backup will be available
+     */
+    timeAvailableTill?: pulumi.Input<string>;
     /**
      * The date and time the backup completed.
      */
@@ -262,5 +311,13 @@ export interface AutonomousDatabaseBackupArgs {
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
-    displayName: pulumi.Input<string>;
+    displayName?: pulumi.Input<string>;
+    /**
+     * Indicates whether the backup is long-term
+     */
+    isLongTermBackup?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Retention period, in days, for long-term backups
+     */
+    retentionPeriodInDays?: pulumi.Input<number>;
 }

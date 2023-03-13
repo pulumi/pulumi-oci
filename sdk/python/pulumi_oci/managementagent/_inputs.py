@@ -10,6 +10,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'ManagementAgentManagementAgentPropertyArgs',
     'ManagementAgentPluginListArgs',
     'GetManagementAgentAvailableHistoriesFilterArgs',
     'GetManagementAgentImagesFilterArgs',
@@ -17,6 +18,61 @@ __all__ = [
     'GetManagementAgentPluginsFilterArgs',
     'GetManagementAgentsFilterArgs',
 ]
+
+@pulumi.input_type
+class ManagementAgentManagementAgentPropertyArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 units: Optional[pulumi.Input[str]] = None,
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the property
+        :param pulumi.Input[str] units: Unit for the property
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: Values of the property
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if units is not None:
+            pulumi.set(__self__, "units", units)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def units(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unit for the property
+        """
+        return pulumi.get(self, "units")
+
+    @units.setter
+    def units(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "units", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Values of the property
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "values", value)
+
 
 @pulumi.input_type
 class ManagementAgentPluginListArgs:
@@ -311,6 +367,10 @@ class GetManagementAgentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of the property
+        :param Sequence[str] values: Values of the property
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -319,6 +379,9 @@ class GetManagementAgentsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of the property
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -328,6 +391,9 @@ class GetManagementAgentsFilterArgs:
     @property
     @pulumi.getter
     def values(self) -> Sequence[str]:
+        """
+        Values of the property
+        """
         return pulumi.get(self, "values")
 
     @values.setter

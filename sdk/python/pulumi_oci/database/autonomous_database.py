@@ -1094,9 +1094,11 @@ class _AutonomousDatabaseState:
                  license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]] = None,
+                 long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
+                 next_long_term_backup_time_stamp: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None,
@@ -1214,9 +1216,11 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]] local_standby_dbs: Autonomous Data Guard standby database details.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param pulumi.Input[str] next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
@@ -1382,12 +1386,16 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if local_standby_dbs is not None:
             pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
+        if long_term_backup_schedules is not None:
+            pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         if max_cpu_core_count is not None:
             pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         if memory_per_oracle_compute_unit_in_gbs is not None:
             pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if ncharacter_set is not None:
             pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        if next_long_term_backup_time_stamp is not None:
+            pulumi.set(__self__, "next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ocpu_count is not None:
@@ -2190,6 +2198,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "local_standby_dbs", value)
 
     @property
+    @pulumi.getter(name="longTermBackupSchedules")
+    def long_term_backup_schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]:
+        """
+        Details for the long-term backup schedule.
+        """
+        return pulumi.get(self, "long_term_backup_schedules")
+
+    @long_term_backup_schedules.setter
+    def long_term_backup_schedules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]):
+        pulumi.set(self, "long_term_backup_schedules", value)
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -2224,6 +2244,18 @@ class _AutonomousDatabaseState:
     @ncharacter_set.setter
     def ncharacter_set(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ncharacter_set", value)
+
+    @property
+    @pulumi.getter(name="nextLongTermBackupTimeStamp")
+    def next_long_term_backup_time_stamp(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when the next long-term backup would be created.
+        """
+        return pulumi.get(self, "next_long_term_backup_time_stamp")
+
+    @next_long_term_backup_time_stamp.setter
+    def next_long_term_backup_time_stamp(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "next_long_term_backup_time_stamp", value)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -3140,7 +3172,9 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["kms_key_version_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["local_standby_dbs"] = None
+            __props__.__dict__["long_term_backup_schedules"] = None
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = None
+            __props__.__dict__["next_long_term_backup_time_stamp"] = None
             __props__.__dict__["peer_db_ids"] = None
             __props__.__dict__["private_endpoint"] = None
             __props__.__dict__["provisionable_cpuses"] = None
@@ -3235,9 +3269,11 @@ class AutonomousDatabase(pulumi.CustomResource):
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLocalStandbyDbArgs']]]]] = None,
+            long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]]] = None,
             max_cpu_core_count: Optional[pulumi.Input[int]] = None,
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
             ncharacter_set: Optional[pulumi.Input[str]] = None,
+            next_long_term_backup_time_stamp: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ocpu_count: Optional[pulumi.Input[float]] = None,
             open_mode: Optional[pulumi.Input[str]] = None,
@@ -3360,9 +3396,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLocalStandbyDbArgs']]]] local_standby_dbs: Autonomous Data Guard standby database details.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param pulumi.Input[str] next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
@@ -3474,9 +3512,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["local_standby_dbs"] = local_standby_dbs
+        __props__.__dict__["long_term_backup_schedules"] = long_term_backup_schedules
         __props__.__dict__["max_cpu_core_count"] = max_cpu_core_count
         __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
         __props__.__dict__["ncharacter_set"] = ncharacter_set
+        __props__.__dict__["next_long_term_backup_time_stamp"] = next_long_term_backup_time_stamp
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["ocpu_count"] = ocpu_count
         __props__.__dict__["open_mode"] = open_mode
@@ -4001,6 +4041,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "local_standby_dbs")
 
     @property
+    @pulumi.getter(name="longTermBackupSchedules")
+    def long_term_backup_schedules(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseLongTermBackupSchedule']]:
+        """
+        Details for the long-term backup schedule.
+        """
+        return pulumi.get(self, "long_term_backup_schedules")
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> pulumi.Output[int]:
         """
@@ -4023,6 +4071,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
+
+    @property
+    @pulumi.getter(name="nextLongTermBackupTimeStamp")
+    def next_long_term_backup_time_stamp(self) -> pulumi.Output[str]:
+        """
+        The date and time when the next long-term backup would be created.
+        """
+        return pulumi.get(self, "next_long_term_backup_time_stamp")
 
     @property
     @pulumi.getter(name="nsgIds")

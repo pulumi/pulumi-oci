@@ -328,6 +328,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseLocalStandbyDbResult> LocalStandbyDbs;
         /// <summary>
+        /// Details for the long-term backup schedule.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseLongTermBackupScheduleResult> LongTermBackupSchedules;
+        /// <summary>
         /// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>
         public readonly int MaxCpuCoreCount;
@@ -339,6 +343,10 @@ namespace Pulumi.Oci.Database
         /// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         /// </summary>
         public readonly string NcharacterSet;
+        /// <summary>
+        /// The date and time when the next long-term backup would be created.
+        /// </summary>
+        public readonly string NextLongTermBackupTimeStamp;
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -625,11 +633,15 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousDatabaseLocalStandbyDbResult> localStandbyDbs,
 
+            ImmutableArray<Outputs.GetAutonomousDatabaseLongTermBackupScheduleResult> longTermBackupSchedules,
+
             int maxCpuCoreCount,
 
             int memoryPerOracleComputeUnitInGbs,
 
             string ncharacterSet,
+
+            string nextLongTermBackupTimeStamp,
 
             ImmutableArray<string> nsgIds,
 
@@ -784,9 +796,11 @@ namespace Pulumi.Oci.Database
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
             LocalStandbyDbs = localStandbyDbs;
+            LongTermBackupSchedules = longTermBackupSchedules;
             MaxCpuCoreCount = maxCpuCoreCount;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             NcharacterSet = ncharacterSet;
+            NextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
             OpenMode = openMode;

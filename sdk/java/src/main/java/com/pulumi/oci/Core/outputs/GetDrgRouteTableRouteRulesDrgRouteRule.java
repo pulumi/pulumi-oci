@@ -23,7 +23,7 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
      */
     private String destination;
     /**
-     * @return The type of destination for the rule. the type is required if `direction` = `EGRESS`.
+     * @return The type of destination for the rule.
      * 
      */
     private String destinationType;
@@ -74,7 +74,7 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
         return this.destination;
     }
     /**
-     * @return The type of destination for the rule. the type is required if `direction` = `EGRESS`.
+     * @return The type of destination for the rule.
      * 
      */
     public String destinationType() {

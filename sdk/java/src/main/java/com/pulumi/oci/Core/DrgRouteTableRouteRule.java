@@ -80,28 +80,28 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
         return this.attributes;
     }
     /**
-     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     * Represents the range of IP addresses to match against when routing traffic.
      * 
      */
     @Export(name="destination", type=String.class, parameters={})
     private Output<String> destination;
 
     /**
-     * @return (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     * @return Represents the range of IP addresses to match against when routing traffic.
      * 
      */
     public Output<String> destination() {
         return this.destination;
     }
     /**
-     * (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * Type of destination for the rule. Allowed values:
      * 
      */
     @Export(name="destinationType", type=String.class, parameters={})
     private Output<String> destinationType;
 
     /**
-     * @return (Updatable) Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * @return Type of destination for the rule. Allowed values:
      * 
      */
     public Output<String> destinationType() {
@@ -150,14 +150,14 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
         return this.isConflict;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      * 
      */
     @Export(name="nextHopDrgAttachmentId", type=String.class, parameters={})
     private Output<String> nextHopDrgAttachmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      * 
      */
     public Output<String> nextHopDrgAttachmentId() {

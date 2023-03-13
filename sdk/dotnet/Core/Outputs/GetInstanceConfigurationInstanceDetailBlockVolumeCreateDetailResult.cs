@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the Key Management key to assign as the master encryption key for the volume.
+        /// The OCID of the Vault service key to assign as the master encryption key for the volume.
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>

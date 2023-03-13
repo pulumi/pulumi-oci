@@ -23,6 +23,7 @@ class InstanceArgs:
                  add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 dr_region: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  instance_access_type: Optional[pulumi.Input[str]] = None,
                  instance_license_type: Optional[pulumi.Input[str]] = None,
@@ -41,6 +42,7 @@ class InstanceArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) OceInstance description
+        :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
         :param pulumi.Input[str] instance_license_type: (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
@@ -61,6 +63,8 @@ class InstanceArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if dr_region is not None:
+            pulumi.set(__self__, "dr_region", dr_region)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if instance_access_type is not None:
@@ -185,6 +189,18 @@ class InstanceArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="drRegion")
+    def dr_region(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) disaster recovery paired ragion name
+        """
+        return pulumi.get(self, "dr_region")
+
+    @dr_region.setter
+    def dr_region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dr_region", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -277,6 +293,7 @@ class _InstanceState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 dr_region: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  guid: Optional[pulumi.Input[str]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
@@ -304,6 +321,7 @@ class _InstanceState:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) OceInstance description
+        :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] guid: Unique GUID identifier that is immutable on creation
         :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
@@ -335,6 +353,8 @@ class _InstanceState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if dr_region is not None:
+            pulumi.set(__self__, "dr_region", dr_region)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if guid is not None:
@@ -435,6 +455,18 @@ class _InstanceState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="drRegion")
+    def dr_region(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) disaster recovery paired ragion name
+        """
+        return pulumi.get(self, "dr_region")
+
+    @dr_region.setter
+    def dr_region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dr_region", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -687,6 +719,7 @@ class Instance(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 dr_region: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
                  instance_access_type: Optional[pulumi.Input[str]] = None,
@@ -722,6 +755,7 @@ class Instance(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             description=var["oce_instance_description"],
+            dr_region=var["oce_instance_dr_region"],
             freeform_tags={
                 "bar-key": "value",
             },
@@ -747,6 +781,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) OceInstance description
+        :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
         :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
@@ -788,6 +823,7 @@ class Instance(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             description=var["oce_instance_description"],
+            dr_region=var["oce_instance_dr_region"],
             freeform_tags={
                 "bar-key": "value",
             },
@@ -826,6 +862,7 @@ class Instance(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 dr_region: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
                  instance_access_type: Optional[pulumi.Input[str]] = None,
@@ -855,6 +892,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
+            __props__.__dict__["dr_region"] = dr_region
             __props__.__dict__["freeform_tags"] = freeform_tags
             if idcs_access_token is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_access_token'")
@@ -900,6 +938,7 @@ class Instance(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            dr_region: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             guid: Optional[pulumi.Input[str]] = None,
             idcs_access_token: Optional[pulumi.Input[str]] = None,
@@ -932,6 +971,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) OceInstance description
+        :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] guid: Unique GUID identifier that is immutable on creation
         :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
@@ -962,6 +1002,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
+        __props__.__dict__["dr_region"] = dr_region
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["guid"] = guid
         __props__.__dict__["idcs_access_token"] = idcs_access_token
@@ -1023,6 +1064,14 @@ class Instance(pulumi.CustomResource):
         (Updatable) OceInstance description
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="drRegion")
+    def dr_region(self) -> pulumi.Output[str]:
+        """
+        (Updatable) disaster recovery paired ragion name
+        """
+        return pulumi.get(self, "dr_region")
 
     @property
     @pulumi.getter(name="freeformTags")

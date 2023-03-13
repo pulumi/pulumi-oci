@@ -22,11 +22,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? BootVolumeVpusPerGb;
         /// <summary>
-        /// The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
-        /// The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+        /// The OCID of the boot volume used to boot the instance.
         /// </summary>
         public readonly string SourceId;
         /// <summary>

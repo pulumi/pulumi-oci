@@ -405,6 +405,9 @@ namespace Pulumi.Oci.Core
         [Output("timeMaintenanceRebootDue")]
         public Output<string> TimeMaintenanceRebootDue { get; private set; } = null!;
 
+        [Output("updateOperationConstraint")]
+        public Output<string?> UpdateOperationConstraint { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a Instance resource with the given unique name, arguments, and options.
@@ -639,6 +642,9 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        [Input("updateOperationConstraint")]
+        public Input<string>? UpdateOperationConstraint { get; set; }
 
         public InstanceArgs()
         {
@@ -890,6 +896,9 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("timeMaintenanceRebootDue")]
         public Input<string>? TimeMaintenanceRebootDue { get; set; }
+
+        [Input("updateOperationConstraint")]
+        public Input<string>? UpdateOperationConstraint { get; set; }
 
         public InstanceState()
         {

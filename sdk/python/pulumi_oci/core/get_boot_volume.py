@@ -215,7 +215,7 @@ class GetBootVolumeResult:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
-        The OCID of the Key Management master encryption key assigned to the boot volume.
+        The OCID of the Vault service master encryption key assigned to the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 

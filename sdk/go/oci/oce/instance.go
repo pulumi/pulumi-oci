@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +41,7 @@ import (
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Oce_instance_description),
+//				DrRegion:    pulumi.Any(_var.Oce_instance_dr_region),
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
 //				},
@@ -81,6 +82,8 @@ type Instance struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) OceInstance description
 	Description pulumi.StringOutput `pulumi:"description"`
+	// (Updatable) disaster recovery paired ragion name
+	DrRegion pulumi.StringOutput `pulumi:"drRegion"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Unique GUID identifier that is immutable on creation
@@ -187,6 +190,8 @@ type instanceState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) OceInstance description
 	Description *string `pulumi:"description"`
+	// (Updatable) disaster recovery paired ragion name
+	DrRegion *string `pulumi:"drRegion"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique GUID identifier that is immutable on creation
@@ -240,6 +245,8 @@ type InstanceState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) OceInstance description
 	Description pulumi.StringPtrInput
+	// (Updatable) disaster recovery paired ragion name
+	DrRegion pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Unique GUID identifier that is immutable on creation
@@ -297,6 +304,8 @@ type instanceArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) OceInstance description
 	Description *string `pulumi:"description"`
+	// (Updatable) disaster recovery paired ragion name
+	DrRegion *string `pulumi:"drRegion"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Identity Cloud Service access token identifying a stripe and service administrator user
@@ -333,6 +342,8 @@ type InstanceArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) OceInstance description
 	Description pulumi.StringPtrInput
+	// (Updatable) disaster recovery paired ragion name
+	DrRegion pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Identity Cloud Service access token identifying a stripe and service administrator user
@@ -467,6 +478,11 @@ func (o InstanceOutput) DefinedTags() pulumi.MapOutput {
 // (Updatable) OceInstance description
 func (o InstanceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) disaster recovery paired ragion name
+func (o InstanceOutput) DrRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DrRegion }).(pulumi.StringOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

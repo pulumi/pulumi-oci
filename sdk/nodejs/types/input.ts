@@ -11089,7 +11089,7 @@ export namespace Core {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * The OCID of the Key Management key to assign as the master encryption key for the volume.
+         * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
@@ -11791,11 +11791,11 @@ export namespace Core {
          */
         bootVolumeVpusPerGb?: pulumi.Input<string>;
         /**
-         * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of an image or a boot volume to use, depending on the value of `sourceType`.
+         * The OCID of the boot volume used to boot the instance.
          */
         sourceId: pulumi.Input<string>;
         /**
@@ -11961,6 +11961,9 @@ export namespace Core {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
          */
         networkEntityId: pulumi.Input<string>;
+        /**
+         * (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+         */
         routeType?: pulumi.Input<string>;
     }
 
@@ -12192,11 +12195,11 @@ export namespace Core {
          */
         bgpMd5authKey?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
          */
         crossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
         /**
-         * (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a /30 or /31 subnet mask.
+         * (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
          */
         customerBgpPeeringIp?: pulumi.Input<string>;
         /**
@@ -12204,7 +12207,7 @@ export namespace Core {
          */
         customerBgpPeeringIpv6?: pulumi.Input<string>;
         /**
-         * (Updatable) The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+         * (Updatable) The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
          */
         oracleBgpPeeringIp?: pulumi.Input<string>;
         /**
@@ -12251,7 +12254,7 @@ export namespace Core {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
@@ -16592,9 +16595,48 @@ export namespace DataScience {
          */
         deploymentType: pulumi.Input<string>;
         /**
+         * (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+         */
+        environmentConfigurationDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails>;
+        /**
          * (Updatable) The model configuration details.
          */
         modelConfigurationDetails: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails>;
+    }
+
+    export interface ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails {
+        /**
+         * (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+         */
+        cmds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+         */
+        entrypoints?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The environment configuration type
+         */
+        environmentConfigurationType: pulumi.Input<string>;
+        /**
+         * (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+         */
+        healthCheckPort?: pulumi.Input<number>;
+        /**
+         * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+         */
+        image?: pulumi.Input<string>;
+        /**
+         * (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+         */
+        imageDigest?: pulumi.Input<string>;
+        /**
+         * (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+         */
+        serverPort?: pulumi.Input<number>;
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails {
@@ -17362,6 +17404,25 @@ export namespace Database {
          * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
          */
         timeDataGuardRoleChanged?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseLongTermBackupSchedule {
+        /**
+         * Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+         */
+        isDisabled?: pulumi.Input<boolean>;
+        /**
+         * The frequency of the long-term backup schedule
+         */
+        repeatCadence?: pulumi.Input<string>;
+        /**
+         * Retention period, in days, for long-term backups
+         */
+        retentionPeriodInDays?: pulumi.Input<number>;
+        /**
+         * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+         */
+        timeOfBackup?: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseScheduledOperation {
@@ -27953,15 +28014,42 @@ export namespace ManagementAgent {
     }
 
     export interface GetManagementAgentsFilter {
+        /**
+         * Name of the property
+         */
         name: string;
         regex?: boolean;
+        /**
+         * Values of the property
+         */
         values: string[];
     }
 
     export interface GetManagementAgentsFilterArgs {
+        /**
+         * Name of the property
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
+        /**
+         * Values of the property
+         */
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ManagementAgentManagementAgentProperty {
+        /**
+         * Name of the property
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Unit for the property
+         */
+        units?: pulumi.Input<string>;
+        /**
+         * Values of the property
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ManagementAgentPluginList {

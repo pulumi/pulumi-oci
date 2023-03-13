@@ -46,14 +46,14 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -61,14 +61,14 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * The OCID of the boot volume used to boot the instance.
      * 
      */
     @Import(name="sourceId", required=true)
     private Output<String> sourceId;
 
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return The OCID of the boot volume used to boot the instance.
      * 
      */
     public Output<String> sourceId() {
@@ -161,7 +161,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param kmsKeyId The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param kmsKeyId The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceId The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+         * @param sourceId The OCID of the boot volume used to boot the instance.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceId The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+         * @param sourceId The OCID of the boot volume used to boot the instance.
          * 
          * @return builder
          * 

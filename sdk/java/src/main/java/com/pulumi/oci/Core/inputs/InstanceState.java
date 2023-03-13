@@ -583,6 +583,13 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeMaintenanceRebootDue);
     }
 
+    @Import(name="updateOperationConstraint")
+    private @Nullable Output<String> updateOperationConstraint;
+
+    public Optional<Output<String>> updateOperationConstraint() {
+        return Optional.ofNullable(this.updateOperationConstraint);
+    }
+
     private InstanceState() {}
 
     private InstanceState(InstanceState $) {
@@ -622,6 +629,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeMaintenanceRebootDue = $.timeMaintenanceRebootDue;
+        this.updateOperationConstraint = $.updateOperationConstraint;
     }
 
     public static Builder builder() {
@@ -1408,6 +1416,15 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeMaintenanceRebootDue(String timeMaintenanceRebootDue) {
             return timeMaintenanceRebootDue(Output.of(timeMaintenanceRebootDue));
+        }
+
+        public Builder updateOperationConstraint(@Nullable Output<String> updateOperationConstraint) {
+            $.updateOperationConstraint = updateOperationConstraint;
+            return this;
+        }
+
+        public Builder updateOperationConstraint(String updateOperationConstraint) {
+            return updateOperationConstraint(Output.of(updateOperationConstraint));
         }
 
         public InstanceState build() {

@@ -63,12 +63,15 @@ type LookupAutonomousDatabaseBackupResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs float64 `pulumi:"databaseSizeInTbs"`
+	// A valid Oracle Database version for Autonomous Database.
+	DbVersion string `pulumi:"dbVersion"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 	Id string `pulumi:"id"`
 	// Indicates whether the backup is user-initiated or automatic.
-	IsAutomatic bool `pulumi:"isAutomatic"`
+	IsAutomatic      bool `pulumi:"isAutomatic"`
+	IsLongTermBackup bool `pulumi:"isLongTermBackup"`
 	// Indicates whether the backup can be used to restore the associated Autonomous Database.
 	IsRestorable bool `pulumi:"isRestorable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -81,8 +84,14 @@ type LookupAutonomousDatabaseBackupResult struct {
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Retention period, in days, for long-term backups
+	RetentionPeriodInDays int `pulumi:"retentionPeriodInDays"`
+	// The backup size in terrabytes (TB).
+	SizeInTbs float64 `pulumi:"sizeInTbs"`
 	// The current state of the backup.
 	State string `pulumi:"state"`
+	// Timestamp until when the backup will be available
+	TimeAvailableTill string `pulumi:"timeAvailableTill"`
 	// The date and time the backup completed.
 	TimeEnded string `pulumi:"timeEnded"`
 	// The date and time the backup started.
@@ -150,6 +159,11 @@ func (o LookupAutonomousDatabaseBackupResultOutput) DatabaseSizeInTbs() pulumi.F
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) float64 { return v.DatabaseSizeInTbs }).(pulumi.Float64Output)
 }
 
+// A valid Oracle Database version for Autonomous Database.
+func (o LookupAutonomousDatabaseBackupResultOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
 // The user-friendly name for the backup. The name does not have to be unique.
 func (o LookupAutonomousDatabaseBackupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -163,6 +177,10 @@ func (o LookupAutonomousDatabaseBackupResultOutput) Id() pulumi.StringOutput {
 // Indicates whether the backup is user-initiated or automatic.
 func (o LookupAutonomousDatabaseBackupResultOutput) IsAutomatic() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) bool { return v.IsAutomatic }).(pulumi.BoolOutput)
+}
+
+func (o LookupAutonomousDatabaseBackupResultOutput) IsLongTermBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) bool { return v.IsLongTermBackup }).(pulumi.BoolOutput)
 }
 
 // Indicates whether the backup can be used to restore the associated Autonomous Database.
@@ -195,9 +213,24 @@ func (o LookupAutonomousDatabaseBackupResultOutput) LifecycleDetails() pulumi.St
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Retention period, in days, for long-term backups
+func (o LookupAutonomousDatabaseBackupResultOutput) RetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) int { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
+}
+
+// The backup size in terrabytes (TB).
+func (o LookupAutonomousDatabaseBackupResultOutput) SizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) float64 { return v.SizeInTbs }).(pulumi.Float64Output)
+}
+
 // The current state of the backup.
 func (o LookupAutonomousDatabaseBackupResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Timestamp until when the backup will be available
+func (o LookupAutonomousDatabaseBackupResultOutput) TimeAvailableTill() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.TimeAvailableTill }).(pulumi.StringOutput)
 }
 
 // The date and time the backup completed.

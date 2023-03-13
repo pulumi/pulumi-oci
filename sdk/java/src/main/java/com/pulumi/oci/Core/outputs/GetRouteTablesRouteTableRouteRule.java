@@ -38,6 +38,10 @@ public final class GetRouteTablesRouteTableRouteRule {
      * 
      */
     private String networkEntityId;
+    /**
+     * @return A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+     * 
+     */
     private String routeType;
 
     private GetRouteTablesRouteTableRouteRule() {}
@@ -80,6 +84,10 @@ public final class GetRouteTablesRouteTableRouteRule {
     public String networkEntityId() {
         return this.networkEntityId;
     }
+    /**
+     * @return A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+     * 
+     */
     public String routeType() {
         return this.routeType;
     }

@@ -80,7 +80,7 @@ public final class GetVolumeResult {
      */
     private Boolean isHydrated;
     /**
-     * @return The OCID of the Key Management key which is the master encryption key for the volume.
+     * @return The OCID of the Vault service key which is the master encryption key for the volume.
      * 
      */
     private String kmsKeyId;
@@ -218,7 +218,7 @@ public final class GetVolumeResult {
         return this.isHydrated;
     }
     /**
-     * @return The OCID of the Key Management key which is the master encryption key for the volume.
+     * @return The OCID of the Vault service key which is the master encryption key for the volume.
      * 
      */
     public String kmsKeyId() {

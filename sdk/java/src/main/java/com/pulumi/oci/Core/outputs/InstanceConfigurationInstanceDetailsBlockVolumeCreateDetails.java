@@ -52,7 +52,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     private @Nullable String kmsKeyId;
@@ -119,7 +119,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Optional<String> kmsKeyId() {

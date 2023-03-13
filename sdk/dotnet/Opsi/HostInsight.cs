@@ -14,6 +14,39 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testHostInsight = new Oci.Opsi.HostInsight("testHostInsight", new()
+    ///     {
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EntitySource = @var.Host_insight_entity_source,
+    ///         ComputeId = oci_opsi_compute.Test_compute.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+    ///         EnterpriseManagerEntityIdentifier = @var.Host_insight_enterprise_manager_entity_identifier,
+    ///         EnterpriseManagerIdentifier = @var.Host_insight_enterprise_manager_identifier,
+    ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         Status = "DISABLED",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// HostInsights can be imported using the `id`, e.g.

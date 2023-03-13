@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *         "foo-namespace.bar-key": "value",
  *     },
  *     description: _var.oce_instance_description,
+ *     drRegion: _var.oce_instance_dr_region,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
@@ -94,6 +95,10 @@ export class Instance extends pulumi.CustomResource {
      * (Updatable) OceInstance description
      */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) disaster recovery paired ragion name
+     */
+    public readonly drRegion!: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -193,6 +198,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["drRegion"] = state ? state.drRegion : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["guid"] = state ? state.guid : undefined;
             resourceInputs["idcsAccessToken"] = state ? state.idcsAccessToken : undefined;
@@ -238,6 +244,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["drRegion"] = args ? args.drRegion : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["idcsAccessToken"] = args?.idcsAccessToken ? pulumi.secret(args.idcsAccessToken) : undefined;
             resourceInputs["instanceAccessType"] = args ? args.instanceAccessType : undefined;
@@ -290,6 +297,10 @@ export interface InstanceState {
      * (Updatable) OceInstance description
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) disaster recovery paired ragion name
+     */
+    drRegion?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -396,6 +407,10 @@ export interface InstanceArgs {
      * (Updatable) OceInstance description
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) disaster recovery paired ragion name
+     */
+    drRegion?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */

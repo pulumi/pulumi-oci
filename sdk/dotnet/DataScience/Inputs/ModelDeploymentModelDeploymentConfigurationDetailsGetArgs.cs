@@ -19,6 +19,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string> DeploymentType { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+        /// </summary>
+        [Input("environmentConfigurationDetails")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsGetArgs>? EnvironmentConfigurationDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The model configuration details.
         /// </summary>
         [Input("modelConfigurationDetails", required: true)]

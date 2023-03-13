@@ -11,6 +11,9 @@ import * as utilities from "../utilities";
  *
  * Gets information about the specified instance.
  *
+ * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+ * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -188,11 +191,15 @@ export interface GetInstanceResult {
      * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
      */
     readonly timeMaintenanceRebootDue: string;
+    readonly updateOperationConstraint: string;
 }
 /**
  * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
  *
  * Gets information about the specified instance.
+ *
+ * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+ * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
  *
  * ## Example Usage
  *

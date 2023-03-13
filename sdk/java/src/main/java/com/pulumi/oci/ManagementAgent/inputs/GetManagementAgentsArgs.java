@@ -101,6 +101,21 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * Filter to return only results having the particular gatewayId.
+     * 
+     */
+    @Import(name="gatewayIds")
+    private @Nullable Output<List<String>> gatewayIds;
+
+    /**
+     * @return Filter to return only results having the particular gatewayId.
+     * 
+     */
+    public Optional<Output<List<String>>> gatewayIds() {
+        return Optional.ofNullable(this.gatewayIds);
+    }
+
+    /**
      * Filter to return only Management Agents having the particular agent host id.
      * 
      */
@@ -214,6 +229,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.gatewayIds = $.gatewayIds;
         this.hostId = $.hostId;
         this.installType = $.installType;
         this.isCustomerDeployed = $.isCustomerDeployed;
@@ -357,6 +373,37 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
 
         public Builder filters(GetManagementAgentsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param gatewayIds Filter to return only results having the particular gatewayId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gatewayIds(@Nullable Output<List<String>> gatewayIds) {
+            $.gatewayIds = gatewayIds;
+            return this;
+        }
+
+        /**
+         * @param gatewayIds Filter to return only results having the particular gatewayId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gatewayIds(List<String> gatewayIds) {
+            return gatewayIds(Output.of(gatewayIds));
+        }
+
+        /**
+         * @param gatewayIds Filter to return only results having the particular gatewayId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gatewayIds(String... gatewayIds) {
+            return gatewayIds(List.of(gatewayIds));
         }
 
         /**

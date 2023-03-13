@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsHydrated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Output("kmsKeyId")]
         public Output<string> KmsKeyId { get; private set; } = null!;
@@ -336,7 +336,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsAutoTuneEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
@@ -464,7 +464,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsHydrated { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }

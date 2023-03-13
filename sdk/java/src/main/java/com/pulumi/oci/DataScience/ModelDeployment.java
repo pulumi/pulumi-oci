@@ -36,6 +36,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.ModelDeploymentCategoryLogDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.ModelDeploymentCategoryLogDetailsAccessArgs;
  * import com.pulumi.oci.DataScience.inputs.ModelDeploymentCategoryLogDetailsPredictArgs;
@@ -70,6 +71,16 @@ import javax.annotation.Nullable;
  *                         .instanceCount(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count())
  *                         .policyType(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type())
  *                         .build())
+ *                     .build())
+ *                 .environmentConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs.builder()
+ *                     .environmentConfigurationType(var_.model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_configuration_type())
+ *                     .cmds(var_.model_deployment_model_deployment_configuration_details_environment_configuration_details_cmd())
+ *                     .entrypoints(var_.model_deployment_model_deployment_configuration_details_environment_configuration_details_entrypoint())
+ *                     .environmentVariables(var_.model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_variables())
+ *                     .healthCheckPort(var_.model_deployment_model_deployment_configuration_details_environment_configuration_details_health_check_port())
+ *                     .image(var_.model_deployment_model_deployment_configuration_details_environment_configuration_details_image())
+ *                     .imageDigest(var_.model_deployment_model_deployment_configuration_details_environment_configuration_details_image_digest())
+ *                     .serverPort(var_.model_deployment_model_deployment_configuration_details_environment_configuration_details_server_port())
  *                     .build())
  *                 .build())
  *             .projectId(oci_datascience_project.test_project().id())

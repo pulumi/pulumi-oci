@@ -66,6 +66,8 @@ type GetOceInstanceResult struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// OceInstance description, can be updated
 	Description string `pulumi:"description"`
+	// disaster recovery paired ragion name
+	DrRegion string `pulumi:"drRegion"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique GUID identifier that is immutable on creation
@@ -171,6 +173,11 @@ func (o GetOceInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 // OceInstance description, can be updated
 func (o GetOceInstanceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOceInstanceResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// disaster recovery paired ragion name
+func (o GetOceInstanceResultOutput) DrRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOceInstanceResult) string { return v.DrRegion }).(pulumi.StringOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

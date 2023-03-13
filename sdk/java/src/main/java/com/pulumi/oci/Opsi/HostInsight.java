@@ -21,6 +21,46 @@ import javax.annotation.Nullable;
  * 
  * Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
  * 
+ * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Opsi.HostInsight;
+ * import com.pulumi.oci.Opsi.HostInsightArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testHostInsight = new HostInsight(&#34;testHostInsight&#34;, HostInsightArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .entitySource(var_.host_insight_entity_source())
+ *             .computeId(oci_opsi_compute.test_compute().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+ *             .enterpriseManagerEntityIdentifier(var_.host_insight_enterprise_manager_entity_identifier())
+ *             .enterpriseManagerIdentifier(var_.host_insight_enterprise_manager_identifier())
+ *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+ *             .status(&#34;DISABLED&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * HostInsights can be imported using the `id`, e.g.

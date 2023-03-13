@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
@@ -45,6 +46,8 @@ import javax.annotation.Nullable;
  *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup(&#34;testAutonomousDatabaseBackup&#34;, AutonomousDatabaseBackupArgs.builder()        
  *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
  *             .displayName(var_.autonomous_database_backup_display_name())
+ *             .isLongTermBackup(var_.autonomous_database_backup_is_long_term_backup())
+ *             .retentionPeriodInDays(var_.autonomous_database_backup_retention_period_in_days())
  *             .build());
  * 
  *     }
@@ -105,6 +108,20 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
         return this.databaseSizeInTbs;
     }
     /**
+     * A valid Oracle Database version for Autonomous Database.
+     * 
+     */
+    @Export(name="dbVersion", type=String.class, parameters={})
+    private Output<String> dbVersion;
+
+    /**
+     * @return A valid Oracle Database version for Autonomous Database.
+     * 
+     */
+    public Output<String> dbVersion() {
+        return this.dbVersion;
+    }
+    /**
      * The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
@@ -131,6 +148,20 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      */
     public Output<Boolean> isAutomatic() {
         return this.isAutomatic;
+    }
+    /**
+     * Indicates whether the backup is long-term
+     * 
+     */
+    @Export(name="isLongTermBackup", type=Boolean.class, parameters={})
+    private Output<Boolean> isLongTermBackup;
+
+    /**
+     * @return Indicates whether the backup is long-term
+     * 
+     */
+    public Output<Boolean> isLongTermBackup() {
+        return this.isLongTermBackup;
     }
     /**
      * Indicates whether the backup can be used to restore the associated Autonomous Database.
@@ -217,6 +248,34 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
         return this.lifecycleDetails;
     }
     /**
+     * (Updatable) Retention period, in days, for long-term backups
+     * 
+     */
+    @Export(name="retentionPeriodInDays", type=Integer.class, parameters={})
+    private Output<Integer> retentionPeriodInDays;
+
+    /**
+     * @return (Updatable) Retention period, in days, for long-term backups
+     * 
+     */
+    public Output<Integer> retentionPeriodInDays() {
+        return this.retentionPeriodInDays;
+    }
+    /**
+     * The backup size in terrabytes (TB).
+     * 
+     */
+    @Export(name="sizeInTbs", type=Double.class, parameters={})
+    private Output<Double> sizeInTbs;
+
+    /**
+     * @return The backup size in terrabytes (TB).
+     * 
+     */
+    public Output<Double> sizeInTbs() {
+        return this.sizeInTbs;
+    }
+    /**
      * The current state of the backup.
      * 
      */
@@ -229,6 +288,20 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * Timestamp until when the backup will be available
+     * 
+     */
+    @Export(name="timeAvailableTill", type=String.class, parameters={})
+    private Output<String> timeAvailableTill;
+
+    /**
+     * @return Timestamp until when the backup will be available
+     * 
+     */
+    public Output<String> timeAvailableTill() {
+        return this.timeAvailableTill;
     }
     /**
      * The date and time the backup completed.

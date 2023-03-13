@@ -2259,6 +2259,8 @@ func (o ModelDeploymentCategoryLogDetailsPredictPtrOutput) LogId() pulumi.String
 type ModelDeploymentModelDeploymentConfigurationDetails struct {
 	// (Updatable) The type of the model deployment.
 	DeploymentType string `pulumi:"deploymentType"`
+	// (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+	EnvironmentConfigurationDetails *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails `pulumi:"environmentConfigurationDetails"`
 	// (Updatable) The model configuration details.
 	ModelConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails `pulumi:"modelConfigurationDetails"`
 }
@@ -2277,6 +2279,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInput interface {
 type ModelDeploymentModelDeploymentConfigurationDetailsArgs struct {
 	// (Updatable) The type of the model deployment.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+	EnvironmentConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrInput `pulumi:"environmentConfigurationDetails"`
 	// (Updatable) The model configuration details.
 	ModelConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInput `pulumi:"modelConfigurationDetails"`
 }
@@ -2363,6 +2367,13 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsOutput) DeploymentType
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetails) string { return v.DeploymentType }).(pulumi.StringOutput)
 }
 
+// (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+func (o ModelDeploymentModelDeploymentConfigurationDetailsOutput) EnvironmentConfigurationDetails() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails {
+		return v.EnvironmentConfigurationDetails
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput)
+}
+
 // (Updatable) The model configuration details.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsOutput) ModelConfigurationDetails() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetails) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails {
@@ -2404,6 +2415,16 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsPtrOutput) DeploymentT
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+func (o ModelDeploymentModelDeploymentConfigurationDetailsPtrOutput) EnvironmentConfigurationDetails() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails {
+		if v == nil {
+			return nil
+		}
+		return v.EnvironmentConfigurationDetails
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput)
+}
+
 // (Updatable) The model configuration details.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsPtrOutput) ModelConfigurationDetails() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails {
@@ -2412,6 +2433,292 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsPtrOutput) ModelConfig
 		}
 		return &v.ModelConfigurationDetails
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails struct {
+	// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// (Updatable) The environment configuration type
+	EnvironmentConfigurationType string `pulumi:"environmentConfigurationType"`
+	// (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	// (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	HealthCheckPort *int `pulumi:"healthCheckPort"`
+	// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image *string `pulumi:"image"`
+	// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest *string `pulumi:"imageDigest"`
+	// (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	ServerPort *int `pulumi:"serverPort"`
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs and ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsInput` via:
+//
+//	ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs{...}
+type ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs struct {
+	// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// (Updatable) The environment configuration type
+	EnvironmentConfigurationType pulumi.StringInput `pulumi:"environmentConfigurationType"`
+	// (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	// (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	HealthCheckPort pulumi.IntPtrInput `pulumi:"healthCheckPort"`
+	// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringPtrInput `pulumi:"image"`
+	// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
+	// (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	ServerPort pulumi.IntPtrInput `pulumi:"serverPort"`
+}
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput)
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput).ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs, ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtr and ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrInput` via:
+//
+//	        ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput
+}
+
+type modelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrType ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs
+
+func ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtr(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrInput {
+	return (*modelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrType)(v)
+}
+
+func (*modelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails)(nil)).Elem()
+}
+
+func (i *modelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrType) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *modelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrType) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return o.ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails {
+		return &v
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The environment configuration type
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) EnvironmentConfigurationType() pulumi.StringOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) string {
+		return v.EnvironmentConfigurationType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) map[string]interface{} {
+		return v.EnvironmentVariables
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) HealthCheckPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *int {
+		return v.HealthCheckPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *string {
+		return v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *string {
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) ServerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *int {
+		return v.ServerPort
+	}).(pulumi.IntPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) ToModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) Elem() ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails
+		return ret
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput)
+}
+
+// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The environment configuration type
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) EnvironmentConfigurationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EnvironmentConfigurationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.EnvironmentVariables
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) HealthCheckPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HealthCheckPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) ServerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ServerPort
+	}).(pulumi.IntPtrOutput)
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails struct {
@@ -10762,6 +11069,8 @@ func (o GetModelDeploymentCategoryLogDetailPredictArrayOutput) Index(i pulumi.In
 type GetModelDeploymentModelDeploymentConfigurationDetail struct {
 	// The type of the model deployment.
 	DeploymentType string `pulumi:"deploymentType"`
+	// The configuration to carry the environment details thats used in Model Deployment creation
+	EnvironmentConfigurationDetails []GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail `pulumi:"environmentConfigurationDetails"`
 	// The model configuration details.
 	ModelConfigurationDetails []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail `pulumi:"modelConfigurationDetails"`
 }
@@ -10780,6 +11089,8 @@ type GetModelDeploymentModelDeploymentConfigurationDetailInput interface {
 type GetModelDeploymentModelDeploymentConfigurationDetailArgs struct {
 	// The type of the model deployment.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// The configuration to carry the environment details thats used in Model Deployment creation
+	EnvironmentConfigurationDetails GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput `pulumi:"environmentConfigurationDetails"`
 	// The model configuration details.
 	ModelConfigurationDetails GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput `pulumi:"modelConfigurationDetails"`
 }
@@ -10840,6 +11151,13 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailOutput) DeploymentTy
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetail) string { return v.DeploymentType }).(pulumi.StringOutput)
 }
 
+// The configuration to carry the environment details thats used in Model Deployment creation
+func (o GetModelDeploymentModelDeploymentConfigurationDetailOutput) EnvironmentConfigurationDetails() GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetail) []GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail {
+		return v.EnvironmentConfigurationDetails
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput)
+}
+
 // The model configuration details.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailOutput) ModelConfigurationDetails() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetail) []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail {
@@ -10865,6 +11183,182 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetail {
 		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetail)[vs[1].(int)]
 	}).(GetModelDeploymentModelDeploymentConfigurationDetailOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The environment configuration type
+	EnvironmentConfigurationType string `pulumi:"environmentConfigurationType"`
+	// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	HealthCheckPort int `pulumi:"healthCheckPort"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	ServerPort int `pulumi:"serverPort"`
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs and GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs{...}
+type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput() GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The environment configuration type
+	EnvironmentConfigurationType pulumi.StringInput `pulumi:"environmentConfigurationType"`
+	// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	HealthCheckPort pulumi.IntInput `pulumi:"healthCheckPort"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	ServerPort pulumi.IntInput `pulumi:"serverPort"`
+}
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput() GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput)
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray and GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray{ GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs{...} }
+type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray []GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray) ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray) ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput() GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The environment configuration type
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) EnvironmentConfigurationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) string {
+		return v.EnvironmentConfigurationType
+	}).(pulumi.StringOutput)
+}
+
+// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) map[string]interface{} {
+		return v.EnvironmentVariables
+	}).(pulumi.MapOutput)
+}
+
+// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) HealthCheckPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) int {
+		return v.HealthCheckPort
+	}).(pulumi.IntOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) string {
+		return v.ImageDigest
+	}).(pulumi.StringOutput)
+}
+
+// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ServerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) int {
+		return v.ServerPort
+	}).(pulumi.IntOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail {
+		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)[vs[1].(int)]
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput)
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail struct {
@@ -12211,6 +12705,8 @@ func (o GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArrayOutput) I
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail struct {
 	// The type of the model deployment.
 	DeploymentType string `pulumi:"deploymentType"`
+	// The configuration to carry the environment details thats used in Model Deployment creation
+	EnvironmentConfigurationDetails []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail `pulumi:"environmentConfigurationDetails"`
 	// The model configuration details.
 	ModelConfigurationDetails []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail `pulumi:"modelConfigurationDetails"`
 }
@@ -12229,6 +12725,8 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInput i
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs struct {
 	// The type of the model deployment.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// The configuration to carry the environment details thats used in Model Deployment creation
+	EnvironmentConfigurationDetails GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput `pulumi:"environmentConfigurationDetails"`
 	// The model configuration details.
 	ModelConfigurationDetails GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput `pulumi:"modelConfigurationDetails"`
 }
@@ -12291,6 +12789,13 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailOutp
 	}).(pulumi.StringOutput)
 }
 
+// The configuration to carry the environment details thats used in Model Deployment creation
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailOutput) EnvironmentConfigurationDetails() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail {
+		return v.EnvironmentConfigurationDetails
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput)
+}
+
 // The model configuration details.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailOutput) ModelConfigurationDetails() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail {
@@ -12316,6 +12821,182 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArra
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail {
 		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail)[vs[1].(int)]
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The environment configuration type
+	EnvironmentConfigurationType string `pulumi:"environmentConfigurationType"`
+	// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	HealthCheckPort int `pulumi:"healthCheckPort"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	ServerPort int `pulumi:"serverPort"`
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs{...}
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The environment configuration type
+	EnvironmentConfigurationType pulumi.StringInput `pulumi:"environmentConfigurationType"`
+	// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	HealthCheckPort pulumi.IntInput `pulumi:"healthCheckPort"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	ServerPort pulumi.IntInput `pulumi:"serverPort"`
+}
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput)
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs{...} }
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The environment configuration type
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) EnvironmentConfigurationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) string {
+		return v.EnvironmentConfigurationType
+	}).(pulumi.StringOutput)
+}
+
+// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) map[string]interface{} {
+		return v.EnvironmentVariables
+	}).(pulumi.MapOutput)
+}
+
+// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) HealthCheckPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) int {
+		return v.HealthCheckPort
+	}).(pulumi.IntOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) string {
+		return v.ImageDigest
+	}).(pulumi.StringOutput)
+}
+
+// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) ServerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) int {
+		return v.ServerPort
+	}).(pulumi.IntOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail {
+		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail)[vs[1].(int)]
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput)
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail struct {
@@ -20841,6 +21522,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentCategoryLogDetailsPredictPtrInput)(nil)).Elem(), ModelDeploymentCategoryLogDetailsPredictArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{})
@@ -20958,6 +21641,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentCategoryLogDetailPredictArrayInput)(nil)).Elem(), GetModelDeploymentCategoryLogDetailPredictArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{})
@@ -20982,6 +21667,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{})
@@ -21144,6 +21831,8 @@ func init() {
 	pulumi.RegisterOutputType(ModelDeploymentCategoryLogDetailsPredictPtrOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput{})
@@ -21261,6 +21950,8 @@ func init() {
 	pulumi.RegisterOutputType(GetModelDeploymentCategoryLogDetailPredictArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput{})
@@ -21285,6 +21976,8 @@ func init() {
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput{})

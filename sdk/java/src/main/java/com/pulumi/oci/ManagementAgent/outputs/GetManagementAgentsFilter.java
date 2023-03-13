@@ -13,17 +13,33 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentsFilter {
+    /**
+     * @return Name of the property
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
+    /**
+     * @return Values of the property
+     * 
+     */
     private List<String> values;
 
     private GetManagementAgentsFilter() {}
+    /**
+     * @return Name of the property
+     * 
+     */
     public String name() {
         return this.name;
     }
     public Optional<Boolean> regex() {
         return Optional.ofNullable(this.regex);
     }
+    /**
+     * @return Values of the property
+     * 
+     */
     public List<String> values() {
         return this.values;
     }

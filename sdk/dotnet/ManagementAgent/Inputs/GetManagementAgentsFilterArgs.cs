@@ -12,6 +12,9 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
 
     public sealed class GetManagementAgentsFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of the property
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
@@ -20,6 +23,10 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
 
         [Input("values", required: true)]
         private InputList<string>? _values;
+
+        /// <summary>
+        /// Values of the property
+        /// </summary>
         public InputList<string> Values
         {
             get => _values ?? (_values = new InputList<string>());

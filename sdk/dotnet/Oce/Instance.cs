@@ -37,6 +37,7 @@ namespace Pulumi.Oci.Oce
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
     ///         Description = @var.Oce_instance_description,
+    ///         DrRegion = @var.Oce_instance_dr_region,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -91,6 +92,12 @@ namespace Pulumi.Oci.Oce
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) disaster recovery paired ragion name
+        /// </summary>
+        [Output("drRegion")]
+        public Output<string> DrRegion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -304,6 +311,12 @@ namespace Pulumi.Oci.Oce
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// (Updatable) disaster recovery paired ragion name
+        /// </summary>
+        [Input("drRegion")]
+        public Input<string>? DrRegion { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -435,6 +448,12 @@ namespace Pulumi.Oci.Oce
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// (Updatable) disaster recovery paired ragion name
+        /// </summary>
+        [Input("drRegion")]
+        public Input<string>? DrRegion { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

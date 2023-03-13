@@ -39,14 +39,14 @@ public final class GetManagementAgentAvailableHistoriesPlainArgs extends com.pul
     }
 
     /**
-     * Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      * 
      */
     @Import(name="timeAvailabilityStatusEndedGreaterThan")
     private @Nullable String timeAvailabilityStatusEndedGreaterThan;
 
     /**
-     * @return Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      * 
      */
     public Optional<String> timeAvailabilityStatusEndedGreaterThan() {
@@ -54,14 +54,14 @@ public final class GetManagementAgentAvailableHistoriesPlainArgs extends com.pul
     }
 
     /**
-     * Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      * 
      */
     @Import(name="timeAvailabilityStatusStartedLessThan")
     private @Nullable String timeAvailabilityStatusStartedLessThan;
 
     /**
-     * @return Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      * 
      */
     public Optional<String> timeAvailabilityStatusStartedLessThan() {
@@ -116,7 +116,7 @@ public final class GetManagementAgentAvailableHistoriesPlainArgs extends com.pul
         }
 
         /**
-         * @param timeAvailabilityStatusEndedGreaterThan Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeAvailabilityStatusEndedGreaterThan Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class GetManagementAgentAvailableHistoriesPlainArgs extends com.pul
         }
 
         /**
-         * @param timeAvailabilityStatusStartedLessThan Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeAvailabilityStatusStartedLessThan Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          * 
          * @return builder
          * 

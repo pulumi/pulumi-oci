@@ -11,6 +11,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ManagementAgentManagementAgentProperty',
     'ManagementAgentPluginList',
     'GetManagementAgentAvailableHistoriesAvailabilityHistoryResult',
     'GetManagementAgentAvailableHistoriesFilterResult',
@@ -18,8 +19,10 @@ __all__ = [
     'GetManagementAgentCountItemDimensionResult',
     'GetManagementAgentImagesFilterResult',
     'GetManagementAgentImagesManagementAgentImageResult',
+    'GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult',
     'GetManagementAgentInstallKeysFilterResult',
     'GetManagementAgentInstallKeysManagementAgentInstallKeyResult',
+    'GetManagementAgentManagementAgentPropertyResult',
     'GetManagementAgentPluginCountItemResult',
     'GetManagementAgentPluginCountItemDimensionResult',
     'GetManagementAgentPluginListResult',
@@ -27,8 +30,52 @@ __all__ = [
     'GetManagementAgentPluginsManagementAgentPluginResult',
     'GetManagementAgentsFilterResult',
     'GetManagementAgentsManagementAgentResult',
+    'GetManagementAgentsManagementAgentManagementAgentPropertyResult',
     'GetManagementAgentsManagementAgentPluginListResult',
 ]
+
+@pulumi.output_type
+class ManagementAgentManagementAgentProperty(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 units: Optional[str] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param str name: Name of the property
+        :param str units: Unit for the property
+        :param Sequence[str] values: Values of the property
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if units is not None:
+            pulumi.set(__self__, "units", units)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def units(self) -> Optional[str]:
+        """
+        Unit for the property
+        """
+        return pulumi.get(self, "units")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        Values of the property
+        """
+        return pulumi.get(self, "values")
+
 
 @pulumi.output_type
 class ManagementAgentPluginList(dict):
@@ -357,6 +404,7 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
     def __init__(__self__, *,
                  checksum: str,
                  id: str,
+                 image_object_storage_details: Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult'],
                  object_url: str,
                  package_architecture_type: str,
                  package_type: str,
@@ -366,8 +414,9 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
                  state: str,
                  version: str):
         """
-        :param str checksum: Agent image content SHA256 Hash
+        :param str checksum: Object content SHA256 Hash
         :param str id: Agent image resource id
+        :param Sequence['GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs'] image_object_storage_details: Details of the Objectstorage object
         :param str object_url: Object storage URL for download
         :param str package_architecture_type: The installation package target architecture type
         :param str package_type: The installation package type
@@ -379,6 +428,7 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
         """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "image_object_storage_details", image_object_storage_details)
         pulumi.set(__self__, "object_url", object_url)
         pulumi.set(__self__, "package_architecture_type", package_architecture_type)
         pulumi.set(__self__, "package_type", package_type)
@@ -392,7 +442,7 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
     @pulumi.getter
     def checksum(self) -> str:
         """
-        Agent image content SHA256 Hash
+        Object content SHA256 Hash
         """
         return pulumi.get(self, "checksum")
 
@@ -403,6 +453,14 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
         Agent image resource id
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="imageObjectStorageDetails")
+    def image_object_storage_details(self) -> Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult']:
+        """
+        Details of the Objectstorage object
+        """
+        return pulumi.get(self, "image_object_storage_details")
 
     @property
     @pulumi.getter(name="objectUrl")
@@ -467,6 +525,68 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
         Agent image version
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult(dict):
+    def __init__(__self__, *,
+                 checksum: str,
+                 object: str,
+                 object_bucket: str,
+                 object_namespace: str,
+                 object_url: str):
+        """
+        :param str checksum: Object content SHA256 Hash
+        :param str object: Objectstorage object name reference providing the original location of this object
+        :param str object_bucket: Objectstorage bucket reference providing the original location of this object
+        :param str object_namespace: Objectstorage namespace reference providing the original location of this object
+        :param str object_url: Object storage URL for download
+        """
+        pulumi.set(__self__, "checksum", checksum)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_bucket", object_bucket)
+        pulumi.set(__self__, "object_namespace", object_namespace)
+        pulumi.set(__self__, "object_url", object_url)
+
+    @property
+    @pulumi.getter
+    def checksum(self) -> str:
+        """
+        Object content SHA256 Hash
+        """
+        return pulumi.get(self, "checksum")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        Objectstorage object name reference providing the original location of this object
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectBucket")
+    def object_bucket(self) -> str:
+        """
+        Objectstorage bucket reference providing the original location of this object
+        """
+        return pulumi.get(self, "object_bucket")
+
+    @property
+    @pulumi.getter(name="objectNamespace")
+    def object_namespace(self) -> str:
+        """
+        Objectstorage namespace reference providing the original location of this object
+        """
+        return pulumi.get(self, "object_namespace")
+
+    @property
+    @pulumi.getter(name="objectUrl")
+    def object_url(self) -> str:
+        """
+        Object storage URL for download
+        """
+        return pulumi.get(self, "object_url")
 
 
 @pulumi.output_type
@@ -644,6 +764,46 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
         The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetManagementAgentManagementAgentPropertyResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 units: str,
+                 values: Sequence[str]):
+        """
+        :param str name: Name of the property
+        :param str units: Unit for the property
+        :param Sequence[str] values: Values of the property
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "units", units)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def units(self) -> str:
+        """
+        Unit for the property
+        """
+        return pulumi.get(self, "units")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        """
+        Values of the property
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -922,6 +1082,10 @@ class GetManagementAgentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of the property
+        :param Sequence[str] values: Values of the property
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -930,11 +1094,17 @@ class GetManagementAgentsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of the property
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def values(self) -> Sequence[str]:
+        """
+        Values of the property
+        """
         return pulumi.get(self, "values")
 
     @property
@@ -962,6 +1132,7 @@ class GetManagementAgentsManagementAgentResult(dict):
                  is_customer_deployed: bool,
                  lifecycle_details: str,
                  managed_agent_id: str,
+                 management_agent_properties: Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult'],
                  platform_name: str,
                  platform_type: str,
                  platform_version: str,
@@ -987,6 +1158,7 @@ class GetManagementAgentsManagementAgentResult(dict):
         :param bool is_agent_auto_upgradable: true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
         :param bool is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetManagementAgentsManagementAgentManagementAgentPropertyArgs'] management_agent_properties: Additional properties for this Management Agent
         :param str platform_name: Platform Name
         :param str platform_type: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
         :param str platform_version: Platform Version
@@ -1014,6 +1186,7 @@ class GetManagementAgentsManagementAgentResult(dict):
         pulumi.set(__self__, "is_customer_deployed", is_customer_deployed)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_agent_id", managed_agent_id)
+        pulumi.set(__self__, "management_agent_properties", management_agent_properties)
         pulumi.set(__self__, "platform_name", platform_name)
         pulumi.set(__self__, "platform_type", platform_type)
         pulumi.set(__self__, "platform_version", platform_version)
@@ -1148,6 +1321,14 @@ class GetManagementAgentsManagementAgentResult(dict):
         return pulumi.get(self, "managed_agent_id")
 
     @property
+    @pulumi.getter(name="managementAgentProperties")
+    def management_agent_properties(self) -> Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult']:
+        """
+        Additional properties for this Management Agent
+        """
+        return pulumi.get(self, "management_agent_properties")
+
+    @property
     @pulumi.getter(name="platformName")
     def platform_name(self) -> str:
         """
@@ -1226,6 +1407,46 @@ class GetManagementAgentsManagementAgentResult(dict):
         Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetManagementAgentsManagementAgentManagementAgentPropertyResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 units: str,
+                 values: Sequence[str]):
+        """
+        :param str name: Name of the property
+        :param str units: Unit for the property
+        :param Sequence[str] values: Values of the property
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "units", units)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def units(self) -> str:
+        """
+        Unit for the property
+        """
+        return pulumi.get(self, "units")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        """
+        Values of the property
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type

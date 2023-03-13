@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double DatabaseSizeInTbs;
         /// <summary>
+        /// A valid Oracle Database version for Autonomous Database.
+        /// </summary>
+        public readonly string DbVersion;
+        /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
         public readonly string DisplayName;
@@ -37,6 +41,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Indicates whether the backup is user-initiated or automatic.
         /// </summary>
         public readonly bool IsAutomatic;
+        public readonly bool IsLongTermBackup;
         /// <summary>
         /// Indicates whether the backup can be used to restore the associated Autonomous Database.
         /// </summary>
@@ -62,9 +67,21 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Retention period, in days, for long-term backups
+        /// </summary>
+        public readonly int RetentionPeriodInDays;
+        /// <summary>
+        /// The backup size in terrabytes (TB).
+        /// </summary>
+        public readonly double SizeInTbs;
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// Timestamp until when the backup will be available
+        /// </summary>
+        public readonly string TimeAvailableTill;
         /// <summary>
         /// The date and time the backup completed.
         /// </summary>
@@ -90,11 +107,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             double databaseSizeInTbs,
 
+            string dbVersion,
+
             string displayName,
 
             string id,
 
             bool isAutomatic,
+
+            bool isLongTermBackup,
 
             bool isRestorable,
 
@@ -108,7 +129,13 @@ namespace Pulumi.Oci.Database.Outputs
 
             string lifecycleDetails,
 
+            int retentionPeriodInDays,
+
+            double sizeInTbs,
+
             string state,
+
+            string timeAvailableTill,
 
             string timeEnded,
 
@@ -121,16 +148,21 @@ namespace Pulumi.Oci.Database.Outputs
             AutonomousDatabaseId = autonomousDatabaseId;
             CompartmentId = compartmentId;
             DatabaseSizeInTbs = databaseSizeInTbs;
+            DbVersion = dbVersion;
             DisplayName = displayName;
             Id = id;
             IsAutomatic = isAutomatic;
+            IsLongTermBackup = isLongTermBackup;
             IsRestorable = isRestorable;
             KeyStoreId = keyStoreId;
             KeyStoreWalletName = keyStoreWalletName;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;
+            RetentionPeriodInDays = retentionPeriodInDays;
+            SizeInTbs = sizeInTbs;
             State = state;
+            TimeAvailableTill = timeAvailableTill;
             TimeEnded = timeEnded;
             TimeStarted = timeStarted;
             Type = type;

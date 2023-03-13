@@ -84,7 +84,7 @@ type LookupBootVolumeResult struct {
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
 	IsHydrated bool `pulumi:"isHydrated"`
-	// The OCID of the Key Management master encryption key assigned to the boot volume.
+	// The OCID of the Vault service master encryption key assigned to the boot volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the boot volume in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
@@ -214,7 +214,7 @@ func (o LookupBootVolumeResultOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) bool { return v.IsHydrated }).(pulumi.BoolOutput)
 }
 
-// The OCID of the Key Management master encryption key assigned to the boot volume.
+// The OCID of the Vault service master encryption key assigned to the boot volume.
 func (o LookupBootVolumeResultOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail;
 import java.lang.String;
 import java.util.List;
@@ -17,6 +18,11 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      */
     private String deploymentType;
     /**
+     * @return The configuration to carry the environment details thats used in Model Deployment creation
+     * 
+     */
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails;
+    /**
      * @return The model configuration details.
      * 
      */
@@ -29,6 +35,13 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      */
     public String deploymentType() {
         return this.deploymentType;
+    }
+    /**
+     * @return The configuration to carry the environment details thats used in Model Deployment creation
+     * 
+     */
+    public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails() {
+        return this.environmentConfigurationDetails;
     }
     /**
      * @return The model configuration details.
@@ -48,11 +61,13 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     @CustomType.Builder
     public static final class Builder {
         private String deploymentType;
+        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentType = defaults.deploymentType;
+    	      this.environmentConfigurationDetails = defaults.environmentConfigurationDetails;
     	      this.modelConfigurationDetails = defaults.modelConfigurationDetails;
         }
 
@@ -60,6 +75,14 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = Objects.requireNonNull(deploymentType);
             return this;
+        }
+        @CustomType.Setter
+        public Builder environmentConfigurationDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails) {
+            this.environmentConfigurationDetails = Objects.requireNonNull(environmentConfigurationDetails);
+            return this;
+        }
+        public Builder environmentConfigurationDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail... environmentConfigurationDetails) {
+            return environmentConfigurationDetails(List.of(environmentConfigurationDetails));
         }
         @CustomType.Setter
         public Builder modelConfigurationDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails) {
@@ -72,6 +95,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail build() {
             final var o = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail();
             o.deploymentType = deploymentType;
+            o.environmentConfigurationDetails = environmentConfigurationDetails;
             o.modelConfigurationDetails = modelConfigurationDetails;
             return o;
         }

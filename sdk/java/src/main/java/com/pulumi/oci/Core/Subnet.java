@@ -192,14 +192,14 @@ public class Subnet extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * A DNS label for the subnet, used in conjunction with the VNIC&#39;s hostname and VCN&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
+     * A DNS label for the subnet, used in conjunction with the VNIC&#39;s hostname and VCN&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
      * 
      */
     @Export(name="dnsLabel", type=String.class, parameters={})
     private Output<String> dnsLabel;
 
     /**
-     * @return A DNS label for the subnet, used in conjunction with the VNIC&#39;s hostname and VCN&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
+     * @return A DNS label for the subnet, used in conjunction with the VNIC&#39;s hostname and VCN&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
      * 
      */
     public Output<String> dnsLabel() {

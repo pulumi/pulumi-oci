@@ -267,6 +267,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly localStandbyDbs: outputs.Database.GetAutonomousDatabaseLocalStandbyDb[];
     /**
+     * Details for the long-term backup schedule.
+     */
+    readonly longTermBackupSchedules: outputs.Database.GetAutonomousDatabaseLongTermBackupSchedule[];
+    /**
      * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      */
     readonly maxCpuCoreCount: number;
@@ -278,6 +282,10 @@ export interface GetAutonomousDatabaseResult {
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      */
     readonly ncharacterSet: string;
+    /**
+     * The date and time when the next long-term backup would be created.
+     */
+    readonly nextLongTermBackupTimeStamp: string;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.

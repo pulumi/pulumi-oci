@@ -63,6 +63,10 @@ export interface GetOceInstanceResult {
      */
     readonly description: string;
     /**
+     * disaster recovery paired ragion name
+     */
+    readonly drRegion: string;
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: any};

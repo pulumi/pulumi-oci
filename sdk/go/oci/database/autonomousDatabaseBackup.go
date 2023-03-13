@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -30,8 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.NewAutonomousDatabaseBackup(ctx, "testAutonomousDatabaseBackup", &Database.AutonomousDatabaseBackupArgs{
-//				AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-//				DisplayName:          pulumi.Any(_var.Autonomous_database_backup_display_name),
+//				AutonomousDatabaseId:  pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
+//				DisplayName:           pulumi.Any(_var.Autonomous_database_backup_display_name),
+//				IsLongTermBackup:      pulumi.Any(_var.Autonomous_database_backup_is_long_term_backup),
+//				RetentionPeriodInDays: pulumi.Any(_var.Autonomous_database_backup_retention_period_in_days),
 //			})
 //			if err != nil {
 //				return err
@@ -60,10 +62,14 @@ type AutonomousDatabaseBackup struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs pulumi.Float64Output `pulumi:"databaseSizeInTbs"`
+	// A valid Oracle Database version for Autonomous Database.
+	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Indicates whether the backup is user-initiated or automatic.
 	IsAutomatic pulumi.BoolOutput `pulumi:"isAutomatic"`
+	// Indicates whether the backup is long-term
+	IsLongTermBackup pulumi.BoolOutput `pulumi:"isLongTermBackup"`
 	// Indicates whether the backup can be used to restore the associated Autonomous Database.
 	IsRestorable pulumi.BoolOutput `pulumi:"isRestorable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -76,8 +82,14 @@ type AutonomousDatabaseBackup struct {
 	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) Retention period, in days, for long-term backups
+	RetentionPeriodInDays pulumi.IntOutput `pulumi:"retentionPeriodInDays"`
+	// The backup size in terrabytes (TB).
+	SizeInTbs pulumi.Float64Output `pulumi:"sizeInTbs"`
 	// The current state of the backup.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Timestamp until when the backup will be available
+	TimeAvailableTill pulumi.StringOutput `pulumi:"timeAvailableTill"`
 	// The date and time the backup completed.
 	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
 	// The date and time the backup started.
@@ -97,9 +109,6 @@ func NewAutonomousDatabaseBackup(ctx *pulumi.Context,
 
 	if args.AutonomousDatabaseId == nil {
 		return nil, errors.New("invalid value for required argument 'AutonomousDatabaseId'")
-	}
-	if args.DisplayName == nil {
-		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
 	var resource AutonomousDatabaseBackup
 	err := ctx.RegisterResource("oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup", name, args, &resource, opts...)
@@ -129,10 +138,14 @@ type autonomousDatabaseBackupState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs *float64 `pulumi:"databaseSizeInTbs"`
+	// A valid Oracle Database version for Autonomous Database.
+	DbVersion *string `pulumi:"dbVersion"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// Indicates whether the backup is user-initiated or automatic.
 	IsAutomatic *bool `pulumi:"isAutomatic"`
+	// Indicates whether the backup is long-term
+	IsLongTermBackup *bool `pulumi:"isLongTermBackup"`
 	// Indicates whether the backup can be used to restore the associated Autonomous Database.
 	IsRestorable *bool `pulumi:"isRestorable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -145,8 +158,14 @@ type autonomousDatabaseBackupState struct {
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Retention period, in days, for long-term backups
+	RetentionPeriodInDays *int `pulumi:"retentionPeriodInDays"`
+	// The backup size in terrabytes (TB).
+	SizeInTbs *float64 `pulumi:"sizeInTbs"`
 	// The current state of the backup.
 	State *string `pulumi:"state"`
+	// Timestamp until when the backup will be available
+	TimeAvailableTill *string `pulumi:"timeAvailableTill"`
 	// The date and time the backup completed.
 	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time the backup started.
@@ -164,10 +183,14 @@ type AutonomousDatabaseBackupState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs pulumi.Float64PtrInput
+	// A valid Oracle Database version for Autonomous Database.
+	DbVersion pulumi.StringPtrInput
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// Indicates whether the backup is user-initiated or automatic.
 	IsAutomatic pulumi.BoolPtrInput
+	// Indicates whether the backup is long-term
+	IsLongTermBackup pulumi.BoolPtrInput
 	// Indicates whether the backup can be used to restore the associated Autonomous Database.
 	IsRestorable pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -180,8 +203,14 @@ type AutonomousDatabaseBackupState struct {
 	KmsKeyVersionId pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) Retention period, in days, for long-term backups
+	RetentionPeriodInDays pulumi.IntPtrInput
+	// The backup size in terrabytes (TB).
+	SizeInTbs pulumi.Float64PtrInput
 	// The current state of the backup.
 	State pulumi.StringPtrInput
+	// Timestamp until when the backup will be available
+	TimeAvailableTill pulumi.StringPtrInput
 	// The date and time the backup completed.
 	TimeEnded pulumi.StringPtrInput
 	// The date and time the backup started.
@@ -200,7 +229,11 @@ type autonomousDatabaseBackupArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
 	// The user-friendly name for the backup. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
+	// Indicates whether the backup is long-term
+	IsLongTermBackup *bool `pulumi:"isLongTermBackup"`
+	// (Updatable) Retention period, in days, for long-term backups
+	RetentionPeriodInDays *int `pulumi:"retentionPeriodInDays"`
 }
 
 // The set of arguments for constructing a AutonomousDatabaseBackup resource.
@@ -208,7 +241,11 @@ type AutonomousDatabaseBackupArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 	AutonomousDatabaseId pulumi.StringInput
 	// The user-friendly name for the backup. The name does not have to be unique.
-	DisplayName pulumi.StringInput
+	DisplayName pulumi.StringPtrInput
+	// Indicates whether the backup is long-term
+	IsLongTermBackup pulumi.BoolPtrInput
+	// (Updatable) Retention period, in days, for long-term backups
+	RetentionPeriodInDays pulumi.IntPtrInput
 }
 
 func (AutonomousDatabaseBackupArgs) ElementType() reflect.Type {
@@ -313,6 +350,11 @@ func (o AutonomousDatabaseBackupOutput) DatabaseSizeInTbs() pulumi.Float64Output
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.Float64Output { return v.DatabaseSizeInTbs }).(pulumi.Float64Output)
 }
 
+// A valid Oracle Database version for Autonomous Database.
+func (o AutonomousDatabaseBackupOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.DbVersion }).(pulumi.StringOutput)
+}
+
 // The user-friendly name for the backup. The name does not have to be unique.
 func (o AutonomousDatabaseBackupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
@@ -321,6 +363,11 @@ func (o AutonomousDatabaseBackupOutput) DisplayName() pulumi.StringOutput {
 // Indicates whether the backup is user-initiated or automatic.
 func (o AutonomousDatabaseBackupOutput) IsAutomatic() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.BoolOutput { return v.IsAutomatic }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the backup is long-term
+func (o AutonomousDatabaseBackupOutput) IsLongTermBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.BoolOutput { return v.IsLongTermBackup }).(pulumi.BoolOutput)
 }
 
 // Indicates whether the backup can be used to restore the associated Autonomous Database.
@@ -353,9 +400,24 @@ func (o AutonomousDatabaseBackupOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// (Updatable) Retention period, in days, for long-term backups
+func (o AutonomousDatabaseBackupOutput) RetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.IntOutput { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
+}
+
+// The backup size in terrabytes (TB).
+func (o AutonomousDatabaseBackupOutput) SizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.Float64Output { return v.SizeInTbs }).(pulumi.Float64Output)
+}
+
 // The current state of the backup.
 func (o AutonomousDatabaseBackupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Timestamp until when the backup will be available
+func (o AutonomousDatabaseBackupOutput) TimeAvailableTill() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.TimeAvailableTill }).(pulumi.StringOutput)
 }
 
 // The date and time the backup completed.

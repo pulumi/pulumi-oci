@@ -699,7 +699,7 @@ type GetVolumeBackupsVolumeBackup struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the volume backup.
 	Id string `pulumi:"id"`
-	// The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	// The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the volume, in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
@@ -756,7 +756,7 @@ type GetVolumeBackupsVolumeBackupArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the volume backup.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	// The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The size of the volume, in GBs.
 	SizeInGbs pulumi.StringInput `pulumi:"sizeInGbs"`
@@ -870,7 +870,7 @@ func (o GetVolumeBackupsVolumeBackupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeBackupsVolumeBackup) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+// The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 func (o GetVolumeBackupsVolumeBackupOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeBackupsVolumeBackup) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
@@ -966,7 +966,7 @@ func (o GetVolumeBackupsVolumeBackupArrayOutput) Index(i pulumi.IntInput) GetVol
 }
 
 type GetVolumeBackupsVolumeBackupSourceDetail struct {
-	// The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	// The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId       string `pulumi:"kmsKeyId"`
 	Region         string `pulumi:"region"`
 	VolumeBackupId string `pulumi:"volumeBackupId"`
@@ -984,7 +984,7 @@ type GetVolumeBackupsVolumeBackupSourceDetailInput interface {
 }
 
 type GetVolumeBackupsVolumeBackupSourceDetailArgs struct {
-	// The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	// The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId       pulumi.StringInput `pulumi:"kmsKeyId"`
 	Region         pulumi.StringInput `pulumi:"region"`
 	VolumeBackupId pulumi.StringInput `pulumi:"volumeBackupId"`
@@ -1041,7 +1041,7 @@ func (o GetVolumeBackupsVolumeBackupSourceDetailOutput) ToGetVolumeBackupsVolume
 	return o
 }
 
-// The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+// The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 func (o GetVolumeBackupsVolumeBackupSourceDetailOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeBackupsVolumeBackupSourceDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
@@ -3001,7 +3001,7 @@ type GetVolumesVolume struct {
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated bool `pulumi:"isHydrated"`
-	// The OCID of the Key Management key which is the master encryption key for the volume.
+	// The OCID of the Vault service key which is the master encryption key for the volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
@@ -3060,7 +3060,7 @@ type GetVolumesVolumeArgs struct {
 	IsAutoTuneEnabled pulumi.BoolInput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated pulumi.BoolInput `pulumi:"isHydrated"`
-	// The OCID of the Key Management key which is the master encryption key for the volume.
+	// The OCID of the Vault service key which is the master encryption key for the volume.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
 	SizeInGbs pulumi.StringInput `pulumi:"sizeInGbs"`
@@ -3197,7 +3197,7 @@ func (o GetVolumesVolumeOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVolumesVolume) bool { return v.IsHydrated }).(pulumi.BoolOutput)
 }
 
-// The OCID of the Key Management key which is the master encryption key for the volume.
+// The OCID of the Vault service key which is the master encryption key for the volume.
 func (o GetVolumesVolumeOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolume) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }

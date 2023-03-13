@@ -271,14 +271,14 @@ public class Volume extends com.pulumi.resources.CustomResource {
         return this.isHydrated;
     }
     /**
-     * (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     @Export(name="kmsKeyId", type=String.class, parameters={})
     private Output<String> kmsKeyId;
 
     /**
-     * @return (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Output<String> kmsKeyId() {

@@ -104,6 +104,10 @@ export interface GetManagementAgentResult {
     readonly managedAgentId: string;
     readonly managementAgentId: string;
     /**
+     * Additional properties for this Management Agent
+     */
+    readonly managementAgentProperties: outputs.ManagementAgent.GetManagementAgentManagementAgentProperty[];
+    /**
      * Platform Name
      */
     readonly platformName: string;

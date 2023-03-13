@@ -7,13 +7,53 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
 //
 // Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewHostInsight(ctx, "testHostInsight", &Opsi.HostInsightArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				EntitySource:  pulumi.Any(_var.Host_insight_entity_source),
+//				ComputeId:     pulumi.Any(oci_opsi_compute.Test_compute.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				EnterpriseManagerBridgeId:         pulumi.Any(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
+//				EnterpriseManagerEntityIdentifier: pulumi.Any(_var.Host_insight_enterprise_manager_entity_identifier),
+//				EnterpriseManagerIdentifier:       pulumi.Any(_var.Host_insight_enterprise_manager_identifier),
+//				ExadataInsightId:                  pulumi.Any(oci_opsi_exadata_insight.Test_exadata_insight.Id),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
+//				Status:            pulumi.String("DISABLED"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ## Import
 //

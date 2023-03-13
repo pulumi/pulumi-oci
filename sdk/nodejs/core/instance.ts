@@ -336,6 +336,7 @@ export class Instance extends pulumi.CustomResource {
      * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeMaintenanceRebootDue!: pulumi.Output<string>;
+    public readonly updateOperationConstraint!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Instance resource with the given unique name, arguments, and options.
@@ -386,6 +387,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeMaintenanceRebootDue"] = state ? state.timeMaintenanceRebootDue : undefined;
+            resourceInputs["updateOperationConstraint"] = state ? state.updateOperationConstraint : undefined;
         } else {
             const args = argsOrState as InstanceArgs | undefined;
             if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
@@ -425,6 +427,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["updateOperationConstraint"] = args ? args.updateOperationConstraint : undefined;
             resourceInputs["bootVolumeId"] = undefined /*out*/;
             resourceInputs["launchMode"] = undefined /*out*/;
             resourceInputs["privateIp"] = undefined /*out*/;
@@ -590,6 +593,7 @@ export interface InstanceState {
      * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
      */
     timeMaintenanceRebootDue?: pulumi.Input<string>;
+    updateOperationConstraint?: pulumi.Input<string>;
 }
 
 /**
@@ -711,4 +715,5 @@ export interface InstanceArgs {
      * @deprecated The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
      */
     subnetId?: pulumi.Input<string>;
+    updateOperationConstraint?: pulumi.Input<string>;
 }

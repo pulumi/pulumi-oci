@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? BootVolumeVpusPerGb { get; set; }
 
         /// <summary>
-        /// The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+        /// The OCID of the boot volume used to boot the instance.
         /// </summary>
         [Input("sourceId", required: true)]
         public Input<string> SourceId { get; set; } = null!;

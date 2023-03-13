@@ -120,8 +120,8 @@ def get_management_agent_available_histories(filters: Optional[Sequence[pulumi.I
 
 
     :param str management_agent_id: Unique Management Agent identifier
-    :param str time_availability_status_ended_greater_than: Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-    :param str time_availability_status_started_less_than: Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+    :param str time_availability_status_ended_greater_than: Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
+    :param str time_availability_status_started_less_than: Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -164,7 +164,7 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
 
 
     :param str management_agent_id: Unique Management Agent identifier
-    :param str time_availability_status_ended_greater_than: Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-    :param str time_availability_status_started_less_than: Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+    :param str time_availability_status_ended_greater_than: Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
+    :param str time_availability_status_started_less_than: Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
     """
     ...

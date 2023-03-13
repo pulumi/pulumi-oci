@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -113,7 +113,7 @@ type BootVolume struct {
 	IsAutoTuneEnabled pulumi.BoolOutput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
 	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
-	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
@@ -197,7 +197,7 @@ type bootVolumeState struct {
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
 	IsHydrated *bool `pulumi:"isHydrated"`
-	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs *string `pulumi:"sizeInGbs"`
@@ -244,7 +244,7 @@ type BootVolumeState struct {
 	IsAutoTuneEnabled pulumi.BoolPtrInput
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
 	IsHydrated pulumi.BoolPtrInput
-	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs pulumi.StringPtrInput
@@ -289,7 +289,7 @@ type bootVolumeArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
-	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs     *string                 `pulumi:"sizeInGbs"`
@@ -321,7 +321,7 @@ type BootVolumeArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolPtrInput
-	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs     pulumi.StringPtrInput
@@ -483,7 +483,7 @@ func (o BootVolumeOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.BoolOutput { return v.IsHydrated }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 func (o BootVolumeOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }

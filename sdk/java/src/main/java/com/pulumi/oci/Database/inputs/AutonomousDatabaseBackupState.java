@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -63,6 +64,21 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
     }
 
     /**
+     * A valid Oracle Database version for Autonomous Database.
+     * 
+     */
+    @Import(name="dbVersion")
+    private @Nullable Output<String> dbVersion;
+
+    /**
+     * @return A valid Oracle Database version for Autonomous Database.
+     * 
+     */
+    public Optional<Output<String>> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
+    }
+
+    /**
      * The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
@@ -90,6 +106,21 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
      */
     public Optional<Output<Boolean>> isAutomatic() {
         return Optional.ofNullable(this.isAutomatic);
+    }
+
+    /**
+     * Indicates whether the backup is long-term
+     * 
+     */
+    @Import(name="isLongTermBackup")
+    private @Nullable Output<Boolean> isLongTermBackup;
+
+    /**
+     * @return Indicates whether the backup is long-term
+     * 
+     */
+    public Optional<Output<Boolean>> isLongTermBackup() {
+        return Optional.ofNullable(this.isLongTermBackup);
     }
 
     /**
@@ -183,6 +214,36 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
     }
 
     /**
+     * (Updatable) Retention period, in days, for long-term backups
+     * 
+     */
+    @Import(name="retentionPeriodInDays")
+    private @Nullable Output<Integer> retentionPeriodInDays;
+
+    /**
+     * @return (Updatable) Retention period, in days, for long-term backups
+     * 
+     */
+    public Optional<Output<Integer>> retentionPeriodInDays() {
+        return Optional.ofNullable(this.retentionPeriodInDays);
+    }
+
+    /**
+     * The backup size in terrabytes (TB).
+     * 
+     */
+    @Import(name="sizeInTbs")
+    private @Nullable Output<Double> sizeInTbs;
+
+    /**
+     * @return The backup size in terrabytes (TB).
+     * 
+     */
+    public Optional<Output<Double>> sizeInTbs() {
+        return Optional.ofNullable(this.sizeInTbs);
+    }
+
+    /**
      * The current state of the backup.
      * 
      */
@@ -195,6 +256,21 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * Timestamp until when the backup will be available
+     * 
+     */
+    @Import(name="timeAvailableTill")
+    private @Nullable Output<String> timeAvailableTill;
+
+    /**
+     * @return Timestamp until when the backup will be available
+     * 
+     */
+    public Optional<Output<String>> timeAvailableTill() {
+        return Optional.ofNullable(this.timeAvailableTill);
     }
 
     /**
@@ -263,15 +339,20 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         this.autonomousDatabaseId = $.autonomousDatabaseId;
         this.compartmentId = $.compartmentId;
         this.databaseSizeInTbs = $.databaseSizeInTbs;
+        this.dbVersion = $.dbVersion;
         this.displayName = $.displayName;
         this.isAutomatic = $.isAutomatic;
+        this.isLongTermBackup = $.isLongTermBackup;
         this.isRestorable = $.isRestorable;
         this.keyStoreId = $.keyStoreId;
         this.keyStoreWalletName = $.keyStoreWalletName;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.retentionPeriodInDays = $.retentionPeriodInDays;
+        this.sizeInTbs = $.sizeInTbs;
         this.state = $.state;
+        this.timeAvailableTill = $.timeAvailableTill;
         this.timeEnded = $.timeEnded;
         this.timeStarted = $.timeStarted;
         this.type = $.type;
@@ -360,6 +441,27 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
+         * @param dbVersion A valid Oracle Database version for Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbVersion(@Nullable Output<String> dbVersion) {
+            $.dbVersion = dbVersion;
+            return this;
+        }
+
+        /**
+         * @param dbVersion A valid Oracle Database version for Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbVersion(String dbVersion) {
+            return dbVersion(Output.of(dbVersion));
+        }
+
+        /**
          * @param displayName The user-friendly name for the backup. The name does not have to be unique.
          * 
          * @return builder
@@ -399,6 +501,27 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
          */
         public Builder isAutomatic(Boolean isAutomatic) {
             return isAutomatic(Output.of(isAutomatic));
+        }
+
+        /**
+         * @param isLongTermBackup Indicates whether the backup is long-term
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLongTermBackup(@Nullable Output<Boolean> isLongTermBackup) {
+            $.isLongTermBackup = isLongTermBackup;
+            return this;
+        }
+
+        /**
+         * @param isLongTermBackup Indicates whether the backup is long-term
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLongTermBackup(Boolean isLongTermBackup) {
+            return isLongTermBackup(Output.of(isLongTermBackup));
         }
 
         /**
@@ -528,6 +651,48 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
+         * @param retentionPeriodInDays (Updatable) Retention period, in days, for long-term backups
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionPeriodInDays(@Nullable Output<Integer> retentionPeriodInDays) {
+            $.retentionPeriodInDays = retentionPeriodInDays;
+            return this;
+        }
+
+        /**
+         * @param retentionPeriodInDays (Updatable) Retention period, in days, for long-term backups
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            return retentionPeriodInDays(Output.of(retentionPeriodInDays));
+        }
+
+        /**
+         * @param sizeInTbs The backup size in terrabytes (TB).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sizeInTbs(@Nullable Output<Double> sizeInTbs) {
+            $.sizeInTbs = sizeInTbs;
+            return this;
+        }
+
+        /**
+         * @param sizeInTbs The backup size in terrabytes (TB).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sizeInTbs(Double sizeInTbs) {
+            return sizeInTbs(Output.of(sizeInTbs));
+        }
+
+        /**
          * @param state The current state of the backup.
          * 
          * @return builder
@@ -546,6 +711,27 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param timeAvailableTill Timestamp until when the backup will be available
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeAvailableTill(@Nullable Output<String> timeAvailableTill) {
+            $.timeAvailableTill = timeAvailableTill;
+            return this;
+        }
+
+        /**
+         * @param timeAvailableTill Timestamp until when the backup will be available
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeAvailableTill(String timeAvailableTill) {
+            return timeAvailableTill(Output.of(timeAvailableTill));
         }
 
         /**

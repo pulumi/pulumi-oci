@@ -5,6 +5,7 @@ package com.pulumi.oci.ManagementAgent.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ManagementAgent.inputs.ManagementAgentManagementAgentPropertyArgs;
 import com.pulumi.oci.ManagementAgent.inputs.ManagementAgentPluginListArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -246,6 +247,21 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Additional properties for this Management Agent
+     * 
+     */
+    @Import(name="managementAgentProperties")
+    private @Nullable Output<List<ManagementAgentManagementAgentPropertyArgs>> managementAgentProperties;
+
+    /**
+     * @return Additional properties for this Management Agent
+     * 
+     */
+    public Optional<Output<List<ManagementAgentManagementAgentPropertyArgs>>> managementAgentProperties() {
+        return Optional.ofNullable(this.managementAgentProperties);
+    }
+
+    /**
      * Platform Name
      * 
      */
@@ -413,6 +429,7 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
         this.isCustomerDeployed = $.isCustomerDeployed;
         this.lifecycleDetails = $.lifecycleDetails;
         this.managedAgentId = $.managedAgentId;
+        this.managementAgentProperties = $.managementAgentProperties;
         this.platformName = $.platformName;
         this.platformType = $.platformType;
         this.platformVersion = $.platformVersion;
@@ -766,6 +783,37 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
          */
         public Builder managedAgentId(String managedAgentId) {
             return managedAgentId(Output.of(managedAgentId));
+        }
+
+        /**
+         * @param managementAgentProperties Additional properties for this Management Agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementAgentProperties(@Nullable Output<List<ManagementAgentManagementAgentPropertyArgs>> managementAgentProperties) {
+            $.managementAgentProperties = managementAgentProperties;
+            return this;
+        }
+
+        /**
+         * @param managementAgentProperties Additional properties for this Management Agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementAgentProperties(List<ManagementAgentManagementAgentPropertyArgs> managementAgentProperties) {
+            return managementAgentProperties(Output.of(managementAgentProperties));
+        }
+
+        /**
+         * @param managementAgentProperties Additional properties for this Management Agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementAgentProperties(ManagementAgentManagementAgentPropertyArgs... managementAgentProperties) {
+            return managementAgentProperties(List.of(managementAgentProperties));
         }
 
         /**

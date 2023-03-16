@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet {
     /**
-     * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     private @Nullable String displayName;
@@ -24,7 +24,7 @@ public final class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet {
 
     private ClusterNetworkPlacementConfigurationSecondaryVnicSubnet() {}
     /**
-     * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     public Optional<String> displayName() {

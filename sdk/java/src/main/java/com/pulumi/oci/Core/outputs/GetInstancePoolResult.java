@@ -27,7 +27,7 @@ public final class GetInstancePoolResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     private String displayName;
@@ -96,7 +96,7 @@ public final class GetInstancePoolResult {
         return this.definedTags;
     }
     /**
-     * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     public String displayName() {

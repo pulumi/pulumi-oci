@@ -37,6 +37,46 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Domain{}
 	case "oci:Identity/domainReplicationToRegion:DomainReplicationToRegion":
 		r = &DomainReplicationToRegion{}
+	case "oci:Identity/domainsApiKey:DomainsApiKey":
+		r = &DomainsApiKey{}
+	case "oci:Identity/domainsAuthToken:DomainsAuthToken":
+		r = &DomainsAuthToken{}
+	case "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting":
+		r = &DomainsAuthenticationFactorSetting{}
+	case "oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey":
+		r = &DomainsCustomerSecretKey{}
+	case "oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup":
+		r = &DomainsDynamicResourceGroup{}
+	case "oci:Identity/domainsGroup:DomainsGroup":
+		r = &DomainsGroup{}
+	case "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider":
+		r = &DomainsIdentityProvider{}
+	case "oci:Identity/domainsKmsiSetting:DomainsKmsiSetting":
+		r = &DomainsKmsiSetting{}
+	case "oci:Identity/domainsMyApiKey:DomainsMyApiKey":
+		r = &DomainsMyApiKey{}
+	case "oci:Identity/domainsMyAuthToken:DomainsMyAuthToken":
+		r = &DomainsMyAuthToken{}
+	case "oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey":
+		r = &DomainsMyCustomerSecretKey{}
+	case "oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential":
+		r = &DomainsMyOauth2clientCredential{}
+	case "oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential":
+		r = &DomainsMySmtpCredential{}
+	case "oci:Identity/domainsMySupportAccount:DomainsMySupportAccount":
+		r = &DomainsMySupportAccount{}
+	case "oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential":
+		r = &DomainsMyUserDbCredential{}
+	case "oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential":
+		r = &DomainsOauth2clientCredential{}
+	case "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy":
+		r = &DomainsPasswordPolicy{}
+	case "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential":
+		r = &DomainsSmtpCredential{}
+	case "oci:Identity/domainsUser:DomainsUser":
+		r = &DomainsUser{}
+	case "oci:Identity/domainsUserDbCredential:DomainsUserDbCredential":
+		r = &DomainsUserDbCredential{}
 	case "oci:Identity/dynamicGroup:DynamicGroup":
 		r = &DynamicGroup{}
 	case "oci:Identity/group:Group":
@@ -120,6 +160,106 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/domainReplicationToRegion",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsApiKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsAuthToken",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsAuthenticationFactorSetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsCustomerSecretKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsDynamicResourceGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsIdentityProvider",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsKmsiSetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsMyApiKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsMyAuthToken",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsMyCustomerSecretKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsMyOauth2clientCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsMySmtpCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsMySupportAccount",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsMyUserDbCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsOauth2clientCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsPasswordPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsSmtpCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsUser",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsUserDbCredential",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

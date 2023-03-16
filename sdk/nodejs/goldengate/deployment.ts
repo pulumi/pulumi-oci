@@ -124,6 +124,18 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
     /**
+     * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+     */
+    public readonly maintenanceWindow!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceWindow>;
+    /**
+     * Type of the next maintenance.
+     */
+    public /*out*/ readonly nextMaintenanceActionType!: pulumi.Output<string>;
+    /**
+     * Description of the next maintenance.
+     */
+    public /*out*/ readonly nextMaintenanceDescription!: pulumi.Output<string>;
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
@@ -142,7 +154,7 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * Possible lifecycle states.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string>;
     /**
      * The amount of storage being utilized (in bytes)
      */
@@ -160,11 +172,15 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    public /*out*/ readonly timeOfNextMaintenance!: pulumi.Output<string>;
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     public /*out*/ readonly timeUpgradeRequired!: pulumi.Output<string>;
 
@@ -200,6 +216,9 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
+            resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
+            resourceInputs["nextMaintenanceActionType"] = state ? state.nextMaintenanceActionType : undefined;
+            resourceInputs["nextMaintenanceDescription"] = state ? state.nextMaintenanceDescription : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["oggData"] = state ? state.oggData : undefined;
             resourceInputs["privateIpAddress"] = state ? state.privateIpAddress : undefined;
@@ -209,6 +228,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeOfNextMaintenance"] = state ? state.timeOfNextMaintenance : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["timeUpgradeRequired"] = state ? state.timeUpgradeRequired : undefined;
         } else {
@@ -246,8 +266,10 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
             resourceInputs["isPublic"] = args ? args.isPublic : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["oggData"] = args ? args.oggData : undefined;
+            resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["deploymentDiagnosticDatas"] = undefined /*out*/;
             resourceInputs["deploymentUrl"] = undefined /*out*/;
@@ -256,12 +278,14 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["isStorageUtilizationLimitExceeded"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lifecycleSubState"] = undefined /*out*/;
+            resourceInputs["nextMaintenanceActionType"] = undefined /*out*/;
+            resourceInputs["nextMaintenanceDescription"] = undefined /*out*/;
             resourceInputs["privateIpAddress"] = undefined /*out*/;
             resourceInputs["publicIpAddress"] = undefined /*out*/;
-            resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageUtilizationInBytes"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeOfNextMaintenance"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["timeUpgradeRequired"] = undefined /*out*/;
         }
@@ -351,6 +375,18 @@ export interface DeploymentState {
      */
     lifecycleSubState?: pulumi.Input<string>;
     /**
+     * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+     */
+    maintenanceWindow?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceWindow>;
+    /**
+     * Type of the next maintenance.
+     */
+    nextMaintenanceActionType?: pulumi.Input<string>;
+    /**
+     * Description of the next maintenance.
+     */
+    nextMaintenanceDescription?: pulumi.Input<string>;
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -387,11 +423,15 @@ export interface DeploymentState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
+     * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    timeOfNextMaintenance?: pulumi.Input<string>;
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     timeUpgradeRequired?: pulumi.Input<string>;
 }
@@ -449,6 +489,10 @@ export interface DeploymentArgs {
      */
     licenseModel: pulumi.Input<string>;
     /**
+     * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+     */
+    maintenanceWindow?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceWindow>;
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -456,6 +500,10 @@ export interface DeploymentArgs {
      * (Updatable) Deployment Data for creating an OggDeployment
      */
     oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData>;
+    /**
+     * Possible lifecycle states.
+     */
+    state?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      */

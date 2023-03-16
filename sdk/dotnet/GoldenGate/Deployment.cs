@@ -140,6 +140,24 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> LifecycleSubState { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        /// </summary>
+        [Output("maintenanceWindow")]
+        public Output<Outputs.DeploymentMaintenanceWindow> MaintenanceWindow { get; private set; } = null!;
+
+        /// <summary>
+        /// Type of the next maintenance.
+        /// </summary>
+        [Output("nextMaintenanceActionType")]
+        public Output<string> NextMaintenanceActionType { get; private set; } = null!;
+
+        /// <summary>
+        /// Description of the next maintenance.
+        /// </summary>
+        [Output("nextMaintenanceDescription")]
+        public Output<string> NextMaintenanceDescription { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
         [Output("nsgIds")]
@@ -194,13 +212,19 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
+        /// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        [Output("timeOfNextMaintenance")]
+        public Output<string> TimeOfNextMaintenance { get; private set; } = null!;
+
+        /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeUpgradeRequired")]
         public Output<string> TimeUpgradeRequired { get; private set; } = null!;
@@ -335,6 +359,12 @@ namespace Pulumi.Oci.GoldenGate
         [Input("licenseModel", required: true)]
         public Input<string> LicenseModel { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        /// </summary>
+        [Input("maintenanceWindow")]
+        public Input<Inputs.DeploymentMaintenanceWindowArgs>? MaintenanceWindow { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -352,6 +382,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("oggData")]
         public Input<Inputs.DeploymentOggDataArgs>? OggData { get; set; }
+
+        /// <summary>
+        /// Possible lifecycle states.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
@@ -499,6 +535,24 @@ namespace Pulumi.Oci.GoldenGate
         [Input("lifecycleSubState")]
         public Input<string>? LifecycleSubState { get; set; }
 
+        /// <summary>
+        /// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        /// </summary>
+        [Input("maintenanceWindow")]
+        public Input<Inputs.DeploymentMaintenanceWindowGetArgs>? MaintenanceWindow { get; set; }
+
+        /// <summary>
+        /// Type of the next maintenance.
+        /// </summary>
+        [Input("nextMaintenanceActionType")]
+        public Input<string>? NextMaintenanceActionType { get; set; }
+
+        /// <summary>
+        /// Description of the next maintenance.
+        /// </summary>
+        [Input("nextMaintenanceDescription")]
+        public Input<string>? NextMaintenanceDescription { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -566,13 +620,19 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
+        /// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        [Input("timeOfNextMaintenance")]
+        public Input<string>? TimeOfNextMaintenance { get; set; }
+
+        /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Input("timeUpgradeRequired")]
         public Input<string>? TimeUpgradeRequired { get; set; }

@@ -827,7 +827,7 @@ class ClusterNetworkInstancePoolArgs:
         :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]] load_balancers: The load balancers attached to the instance pool.
@@ -908,7 +908,7 @@ class ClusterNetworkInstancePoolArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 
@@ -1185,7 +1185,7 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
         """
         if display_name is not None:
@@ -1197,7 +1197,7 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 
@@ -1278,7 +1278,7 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
                  display_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if display_name is not None:
@@ -1300,7 +1300,7 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 
@@ -3145,7 +3145,9 @@ class InstanceConfigurationInstanceDetailsArgs:
                  secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]]] = None):
         """
         :param pulumi.Input[str] instance_type: The type of instance details. Supported instanceType is compute
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeArgs']]] block_volumes: Block volume parameters.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs'] launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]] secondary_vnics: Secondary VNIC parameters.
         """
         pulumi.set(__self__, "instance_type", instance_type)
         if block_volumes is not None:
@@ -3170,6 +3172,9 @@ class InstanceConfigurationInstanceDetailsArgs:
     @property
     @pulumi.getter(name="blockVolumes")
     def block_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeArgs']]]]:
+        """
+        Block volume parameters.
+        """
         return pulumi.get(self, "block_volumes")
 
     @block_volumes.setter
@@ -3191,6 +3196,9 @@ class InstanceConfigurationInstanceDetailsArgs:
     @property
     @pulumi.getter(name="secondaryVnics")
     def secondary_vnics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]]]:
+        """
+        Secondary VNIC parameters.
+        """
         return pulumi.get(self, "secondary_vnics")
 
     @secondary_vnics.setter
@@ -3660,7 +3668,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
         :param pulumi.Input[str] capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param pulumi.Input[str] dedicated_vm_host_id: The OCID of dedicated VM host.
+        :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
@@ -3803,7 +3811,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @pulumi.getter(name="dedicatedVmHostId")
     def dedicated_vm_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of dedicated VM host.
+        The OCID of the dedicated virtual machine host to place the instance on.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 
@@ -4453,16 +4461,16 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
                  percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available.
-        :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param pulumi.Input[bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
+        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
-        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled.
+        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
         """
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
@@ -4502,7 +4510,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @pulumi.getter(name="areVirtualInstructionsEnabled")
     def are_virtual_instructions_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether virtualization instructions are available.
+        Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
         """
         return pulumi.get(self, "are_virtual_instructions_enabled")
 
@@ -4514,7 +4522,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @pulumi.getter(name="isAccessControlServiceEnabled")
     def is_access_control_service_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         """
         return pulumi.get(self, "is_access_control_service_enabled")
 
@@ -4574,7 +4582,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether symmetric multi-threading is enabled on the instance.
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
@@ -4610,7 +4618,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @pulumi.getter(name="percentageOfCoresEnabled")
     def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
         """
-        The percentage of cores enabled.
+        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
         """
         return pulumi.get(self, "percentage_of_cores_enabled")
 
@@ -5383,16 +5391,16 @@ class InstancePlatformConfigArgs:
                  percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available.
-        :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param pulumi.Input[bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
+        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
-        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled.
+        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
         """
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
@@ -5432,7 +5440,7 @@ class InstancePlatformConfigArgs:
     @pulumi.getter(name="areVirtualInstructionsEnabled")
     def are_virtual_instructions_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether virtualization instructions are available.
+        Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
         """
         return pulumi.get(self, "are_virtual_instructions_enabled")
 
@@ -5444,7 +5452,7 @@ class InstancePlatformConfigArgs:
     @pulumi.getter(name="isAccessControlServiceEnabled")
     def is_access_control_service_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         """
         return pulumi.get(self, "is_access_control_service_enabled")
 
@@ -5504,7 +5512,7 @@ class InstancePlatformConfigArgs:
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether symmetric multi-threading is enabled on the instance.
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
@@ -5540,7 +5548,7 @@ class InstancePlatformConfigArgs:
     @pulumi.getter(name="percentageOfCoresEnabled")
     def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
         """
-        The percentage of cores enabled.
+        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
         """
         return pulumi.get(self, "percentage_of_cores_enabled")
 
@@ -5827,7 +5835,7 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
                  display_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] subnet_id: (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if display_name is not None:
@@ -5849,7 +5857,7 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 

@@ -215,7 +215,7 @@ class GetInstanceResult:
     @pulumi.getter(name="dedicatedVmHostId")
     def dedicated_vm_host_id(self) -> str:
         """
-        The OCID of dedicated VM host.
+        The OCID of the dedicated virtual machine host that the instance is placed on.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 

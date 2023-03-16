@@ -29,8 +29,10 @@ class DeploymentArgs:
                  fqdn: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_public: Optional[pulumi.Input[bool]] = None,
+                 maintenance_window: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None):
+                 ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
+                 state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Deployment resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -46,8 +48,10 @@ class DeploymentArgs:
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
+        :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[str] state: Possible lifecycle states.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -68,10 +72,14 @@ class DeploymentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_public is not None:
             pulumi.set(__self__, "is_public", is_public)
+        if maintenance_window is not None:
+            pulumi.set(__self__, "maintenance_window", maintenance_window)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ogg_data is not None:
             pulumi.set(__self__, "ogg_data", ogg_data)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -230,6 +238,18 @@ class DeploymentArgs:
         pulumi.set(self, "is_public", value)
 
     @property
+    @pulumi.getter(name="maintenanceWindow")
+    def maintenance_window(self) -> Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']]:
+        """
+        (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        """
+        return pulumi.get(self, "maintenance_window")
+
+    @maintenance_window.setter
+    def maintenance_window(self, value: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']]):
+        pulumi.set(self, "maintenance_window", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -252,6 +272,18 @@ class DeploymentArgs:
     @ogg_data.setter
     def ogg_data(self, value: Optional[pulumi.Input['DeploymentOggDataArgs']]):
         pulumi.set(self, "ogg_data", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible lifecycle states.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
@@ -276,6 +308,9 @@ class _DeploymentState:
                  license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
+                 maintenance_window: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']] = None,
+                 next_maintenance_action_type: Optional[pulumi.Input[str]] = None,
+                 next_maintenance_description: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
                  private_ip_address: Optional[pulumi.Input[str]] = None,
@@ -285,6 +320,7 @@ class _DeploymentState:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_of_next_maintenance: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  time_upgrade_required: Optional[pulumi.Input[str]] = None):
         """
@@ -308,6 +344,9 @@ class _DeploymentState:
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
+        :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        :param pulumi.Input[str] next_maintenance_action_type: Type of the next maintenance.
+        :param pulumi.Input[str] next_maintenance_description: Description of the next maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
@@ -317,8 +356,9 @@ class _DeploymentState:
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_upgrade_required: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -358,6 +398,12 @@ class _DeploymentState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if lifecycle_sub_state is not None:
             pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        if maintenance_window is not None:
+            pulumi.set(__self__, "maintenance_window", maintenance_window)
+        if next_maintenance_action_type is not None:
+            pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
+        if next_maintenance_description is not None:
+            pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ogg_data is not None:
@@ -376,6 +422,8 @@ class _DeploymentState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_of_next_maintenance is not None:
+            pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if time_upgrade_required is not None:
@@ -610,6 +658,42 @@ class _DeploymentState:
         pulumi.set(self, "lifecycle_sub_state", value)
 
     @property
+    @pulumi.getter(name="maintenanceWindow")
+    def maintenance_window(self) -> Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']]:
+        """
+        (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        """
+        return pulumi.get(self, "maintenance_window")
+
+    @maintenance_window.setter
+    def maintenance_window(self, value: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']]):
+        pulumi.set(self, "maintenance_window", value)
+
+    @property
+    @pulumi.getter(name="nextMaintenanceActionType")
+    def next_maintenance_action_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of the next maintenance.
+        """
+        return pulumi.get(self, "next_maintenance_action_type")
+
+    @next_maintenance_action_type.setter
+    def next_maintenance_action_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "next_maintenance_action_type", value)
+
+    @property
+    @pulumi.getter(name="nextMaintenanceDescription")
+    def next_maintenance_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Description of the next maintenance.
+        """
+        return pulumi.get(self, "next_maintenance_description")
+
+    @next_maintenance_description.setter
+    def next_maintenance_description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "next_maintenance_description", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -718,6 +802,18 @@ class _DeploymentState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeOfNextMaintenance")
+    def time_of_next_maintenance(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_of_next_maintenance")
+
+    @time_of_next_maintenance.setter
+    def time_of_next_maintenance(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_of_next_maintenance", value)
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
@@ -733,7 +829,7 @@ class _DeploymentState:
     @pulumi.getter(name="timeUpgradeRequired")
     def time_upgrade_required(self) -> Optional[pulumi.Input[str]]:
         """
-        The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_upgrade_required")
 
@@ -759,8 +855,10 @@ class Deployment(pulumi.CustomResource):
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_public: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ogg_data: Optional[pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -790,8 +888,10 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
+        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[str] state: Possible lifecycle states.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         """
         ...
@@ -840,8 +940,10 @@ class Deployment(pulumi.CustomResource):
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_public: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ogg_data: Optional[pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -876,8 +978,10 @@ class Deployment(pulumi.CustomResource):
             if license_model is None and not opts.urn:
                 raise TypeError("Missing required property 'license_model'")
             __props__.__dict__["license_model"] = license_model
+            __props__.__dict__["maintenance_window"] = maintenance_window
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["ogg_data"] = ogg_data
+            __props__.__dict__["state"] = state
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -888,12 +992,14 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["is_storage_utilization_limit_exceeded"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["lifecycle_sub_state"] = None
+            __props__.__dict__["next_maintenance_action_type"] = None
+            __props__.__dict__["next_maintenance_description"] = None
             __props__.__dict__["private_ip_address"] = None
             __props__.__dict__["public_ip_address"] = None
-            __props__.__dict__["state"] = None
             __props__.__dict__["storage_utilization_in_bytes"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_of_next_maintenance"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["time_upgrade_required"] = None
         super(Deployment, __self__).__init__(
@@ -925,6 +1031,9 @@ class Deployment(pulumi.CustomResource):
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
+            maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
+            next_maintenance_action_type: Optional[pulumi.Input[str]] = None,
+            next_maintenance_description: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ogg_data: Optional[pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']]] = None,
             private_ip_address: Optional[pulumi.Input[str]] = None,
@@ -934,6 +1043,7 @@ class Deployment(pulumi.CustomResource):
             subnet_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_of_next_maintenance: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             time_upgrade_required: Optional[pulumi.Input[str]] = None) -> 'Deployment':
         """
@@ -962,6 +1072,9 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
+        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        :param pulumi.Input[str] next_maintenance_action_type: Type of the next maintenance.
+        :param pulumi.Input[str] next_maintenance_description: Description of the next maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
@@ -971,8 +1084,9 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_upgrade_required: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -997,6 +1111,9 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["lifecycle_sub_state"] = lifecycle_sub_state
+        __props__.__dict__["maintenance_window"] = maintenance_window
+        __props__.__dict__["next_maintenance_action_type"] = next_maintenance_action_type
+        __props__.__dict__["next_maintenance_description"] = next_maintenance_description
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["ogg_data"] = ogg_data
         __props__.__dict__["private_ip_address"] = private_ip_address
@@ -1006,6 +1123,7 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_of_next_maintenance"] = time_of_next_maintenance
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["time_upgrade_required"] = time_upgrade_required
         return Deployment(resource_name, opts=opts, __props__=__props__)
@@ -1163,6 +1281,30 @@ class Deployment(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
+    @pulumi.getter(name="maintenanceWindow")
+    def maintenance_window(self) -> pulumi.Output['outputs.DeploymentMaintenanceWindow']:
+        """
+        (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        """
+        return pulumi.get(self, "maintenance_window")
+
+    @property
+    @pulumi.getter(name="nextMaintenanceActionType")
+    def next_maintenance_action_type(self) -> pulumi.Output[str]:
+        """
+        Type of the next maintenance.
+        """
+        return pulumi.get(self, "next_maintenance_action_type")
+
+    @property
+    @pulumi.getter(name="nextMaintenanceDescription")
+    def next_maintenance_description(self) -> pulumi.Output[str]:
+        """
+        Description of the next maintenance.
+        """
+        return pulumi.get(self, "next_maintenance_description")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
         """
@@ -1235,6 +1377,14 @@ class Deployment(pulumi.CustomResource):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeOfNextMaintenance")
+    def time_of_next_maintenance(self) -> pulumi.Output[str]:
+        """
+        The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_of_next_maintenance")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
@@ -1246,7 +1396,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="timeUpgradeRequired")
     def time_upgrade_required(self) -> pulumi.Output[str]:
         """
-        The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_upgrade_required")
 

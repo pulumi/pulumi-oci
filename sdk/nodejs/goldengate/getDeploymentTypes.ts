@@ -19,7 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testDeploymentTypes = oci.GoldenGate.getDeploymentTypes({
  *     compartmentId: _var.compartment_id,
+ *     deploymentType: _var.deployment_type_deployment_type,
  *     displayName: _var.deployment_type_display_name,
+ *     oggVersion: _var.deployment_type_ogg_version,
  * });
  * ```
  */
@@ -28,8 +30,10 @@ export function getDeploymentTypes(args: GetDeploymentTypesArgs, opts?: pulumi.I
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeploymentTypes:getDeploymentTypes", {
         "compartmentId": args.compartmentId,
+        "deploymentType": args.deploymentType,
         "displayName": args.displayName,
         "filters": args.filters,
+        "oggVersion": args.oggVersion,
     }, opts);
 }
 
@@ -42,10 +46,18 @@ export interface GetDeploymentTypesArgs {
      */
     compartmentId: string;
     /**
+     * The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+     */
+    deploymentType?: string;
+    /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
     displayName?: string;
     filters?: inputs.GoldenGate.GetDeploymentTypesFilter[];
+    /**
+     * Allows to query by a specific GoldenGate version.
+     */
+    oggVersion?: string;
 }
 
 /**
@@ -53,6 +65,10 @@ export interface GetDeploymentTypesArgs {
  */
 export interface GetDeploymentTypesResult {
     readonly compartmentId: string;
+    /**
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+     */
+    readonly deploymentType?: string;
     /**
      * The list of deployment_type_collection.
      */
@@ -66,6 +82,10 @@ export interface GetDeploymentTypesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Version of OGG
+     */
+    readonly oggVersion?: string;
 }
 /**
  * This data source provides the list of Deployment Types in Oracle Cloud Infrastructure Golden Gate service.
@@ -80,7 +100,9 @@ export interface GetDeploymentTypesResult {
  *
  * const testDeploymentTypes = oci.GoldenGate.getDeploymentTypes({
  *     compartmentId: _var.compartment_id,
+ *     deploymentType: _var.deployment_type_deployment_type,
  *     displayName: _var.deployment_type_display_name,
+ *     oggVersion: _var.deployment_type_ogg_version,
  * });
  * ```
  */
@@ -97,8 +119,16 @@ export interface GetDeploymentTypesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+     */
+    deploymentType?: pulumi.Input<string>;
+    /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentTypesFilterArgs>[]>;
+    /**
+     * Allows to query by a specific GoldenGate version.
+     */
+    oggVersion?: pulumi.Input<string>;
 }

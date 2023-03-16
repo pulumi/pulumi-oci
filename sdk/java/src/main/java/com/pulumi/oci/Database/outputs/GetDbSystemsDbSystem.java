@@ -176,6 +176,11 @@ public final class GetDbSystemsDbSystem {
      */
     private List<String> nsgIds;
     /**
+     * @return The most recent OS Patch Version applied on the DB system.
+     * 
+     */
+    private String osVersion;
+    /**
      * @return The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
@@ -490,6 +495,13 @@ public final class GetDbSystemsDbSystem {
         return this.nsgIds;
     }
     /**
+     * @return The most recent OS Patch Version applied on the DB system.
+     * 
+     */
+    public String osVersion() {
+        return this.osVersion;
+    }
+    /**
      * @return The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
@@ -660,6 +672,7 @@ public final class GetDbSystemsDbSystem {
         private String nextMaintenanceRunId;
         private Integer nodeCount;
         private List<String> nsgIds;
+        private String osVersion;
         private String pointInTimeDataDiskCloneTimestamp;
         private String privateIp;
         private Integer recoStorageSizeInGb;
@@ -716,6 +729,7 @@ public final class GetDbSystemsDbSystem {
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.osVersion = defaults.osVersion;
     	      this.pointInTimeDataDiskCloneTimestamp = defaults.pointInTimeDataDiskCloneTimestamp;
     	      this.privateIp = defaults.privateIp;
     	      this.recoStorageSizeInGb = defaults.recoStorageSizeInGb;
@@ -935,6 +949,11 @@ public final class GetDbSystemsDbSystem {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder osVersion(String osVersion) {
+            this.osVersion = Objects.requireNonNull(osVersion);
+            return this;
+        }
+        @CustomType.Setter
         public Builder pointInTimeDataDiskCloneTimestamp(String pointInTimeDataDiskCloneTimestamp) {
             this.pointInTimeDataDiskCloneTimestamp = Objects.requireNonNull(pointInTimeDataDiskCloneTimestamp);
             return this;
@@ -1074,6 +1093,7 @@ public final class GetDbSystemsDbSystem {
             o.nextMaintenanceRunId = nextMaintenanceRunId;
             o.nodeCount = nodeCount;
             o.nsgIds = nsgIds;
+            o.osVersion = osVersion;
             o.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
             o.privateIp = privateIp;
             o.recoStorageSizeInGb = recoStorageSizeInGb;

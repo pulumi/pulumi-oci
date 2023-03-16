@@ -52,14 +52,14 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -231,7 +231,7 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+         * @param displayName (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+         * @param displayName (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
          * 
          * @return builder
          * 

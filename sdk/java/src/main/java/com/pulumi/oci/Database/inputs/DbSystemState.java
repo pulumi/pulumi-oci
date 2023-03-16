@@ -544,6 +544,21 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The most recent OS Patch Version applied on the DB system.
+     * 
+     */
+    @Import(name="osVersion")
+    private @Nullable Output<String> osVersion;
+
+    /**
+     * @return The most recent OS Patch Version applied on the DB system.
+     * 
+     */
+    public Optional<Output<String>> osVersion() {
+        return Optional.ofNullable(this.osVersion);
+    }
+
+    /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
@@ -868,6 +883,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
         this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
+        this.osVersion = $.osVersion;
         this.pointInTimeDataDiskCloneTimestamp = $.pointInTimeDataDiskCloneTimestamp;
         this.privateIp = $.privateIp;
         this.recoStorageSizeInGb = $.recoStorageSizeInGb;
@@ -1671,6 +1687,27 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
+        }
+
+        /**
+         * @param osVersion The most recent OS Patch Version applied on the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osVersion(@Nullable Output<String> osVersion) {
+            $.osVersion = osVersion;
+            return this;
+        }
+
+        /**
+         * @param osVersion The most recent OS Patch Version applied on the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osVersion(String osVersion) {
+            return osVersion(Output.of(osVersion));
         }
 
         /**

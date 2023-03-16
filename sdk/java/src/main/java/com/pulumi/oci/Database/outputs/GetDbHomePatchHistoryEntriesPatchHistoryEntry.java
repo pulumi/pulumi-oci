@@ -30,6 +30,11 @@ public final class GetDbHomePatchHistoryEntriesPatchHistoryEntry {
      */
     private String patchId;
     /**
+     * @return The type of Patch operation.
+     * 
+     */
+    private String patchType;
+    /**
      * @return The current state of the action.
      * 
      */
@@ -75,6 +80,13 @@ public final class GetDbHomePatchHistoryEntriesPatchHistoryEntry {
         return this.patchId;
     }
     /**
+     * @return The type of Patch operation.
+     * 
+     */
+    public String patchType() {
+        return this.patchType;
+    }
+    /**
      * @return The current state of the action.
      * 
      */
@@ -109,6 +121,7 @@ public final class GetDbHomePatchHistoryEntriesPatchHistoryEntry {
         private String id;
         private String lifecycleDetails;
         private String patchId;
+        private String patchType;
         private String state;
         private String timeEnded;
         private String timeStarted;
@@ -119,6 +132,7 @@ public final class GetDbHomePatchHistoryEntriesPatchHistoryEntry {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.patchId = defaults.patchId;
+    	      this.patchType = defaults.patchType;
     	      this.state = defaults.state;
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeStarted = defaults.timeStarted;
@@ -145,6 +159,11 @@ public final class GetDbHomePatchHistoryEntriesPatchHistoryEntry {
             return this;
         }
         @CustomType.Setter
+        public Builder patchType(String patchType) {
+            this.patchType = Objects.requireNonNull(patchType);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -165,6 +184,7 @@ public final class GetDbHomePatchHistoryEntriesPatchHistoryEntry {
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;
             o.patchId = patchId;
+            o.patchType = patchType;
             o.state = state;
             o.timeEnded = timeEnded;
             o.timeStarted = timeStarted;

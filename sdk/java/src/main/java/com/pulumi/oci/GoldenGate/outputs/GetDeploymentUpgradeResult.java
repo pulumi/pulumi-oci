@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -53,6 +54,23 @@ public final class GetDeploymentUpgradeResult {
      */
     private String id;
     /**
+     * @return Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+     * * Manual upgrade is allowed to rollback only until the old version isn&#39;t deprecated yet.
+     * * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+     * 
+     */
+    private Boolean isRollbackAllowed;
+    /**
+     * @return Indicates if OGG release contains security fix.
+     * 
+     */
+    private Boolean isSecurityFix;
+    /**
+     * @return Indicates if upgrade notifications are snoozed or not.
+     * 
+     */
+    private Boolean isSnoozed;
+    /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
@@ -67,6 +85,16 @@ public final class GetDeploymentUpgradeResult {
      * 
      */
     private String oggVersion;
+    /**
+     * @return Version of OGG
+     * 
+     */
+    private String previousOggVersion;
+    /**
+     * @return The type of release.
+     * 
+     */
+    private String releaseType;
     /**
      * @return Possible lifecycle states.
      * 
@@ -87,6 +115,21 @@ public final class GetDeploymentUpgradeResult {
      * 
      */
     private String timeFinished;
+    /**
+     * @return The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeReleased;
+    /**
+     * @return The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeSchedule;
+    /**
+     * @return The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeSnoozedUntil;
     /**
      * @return The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
@@ -159,6 +202,29 @@ public final class GetDeploymentUpgradeResult {
         return this.id;
     }
     /**
+     * @return Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+     * * Manual upgrade is allowed to rollback only until the old version isn&#39;t deprecated yet.
+     * * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+     * 
+     */
+    public Boolean isRollbackAllowed() {
+        return this.isRollbackAllowed;
+    }
+    /**
+     * @return Indicates if OGG release contains security fix.
+     * 
+     */
+    public Boolean isSecurityFix() {
+        return this.isSecurityFix;
+    }
+    /**
+     * @return Indicates if upgrade notifications are snoozed or not.
+     * 
+     */
+    public Boolean isSnoozed() {
+        return this.isSnoozed;
+    }
+    /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
@@ -178,6 +244,20 @@ public final class GetDeploymentUpgradeResult {
      */
     public String oggVersion() {
         return this.oggVersion;
+    }
+    /**
+     * @return Version of OGG
+     * 
+     */
+    public String previousOggVersion() {
+        return this.previousOggVersion;
+    }
+    /**
+     * @return The type of release.
+     * 
+     */
+    public String releaseType() {
+        return this.releaseType;
     }
     /**
      * @return Possible lifecycle states.
@@ -206,6 +286,27 @@ public final class GetDeploymentUpgradeResult {
      */
     public String timeFinished() {
         return this.timeFinished;
+    }
+    /**
+     * @return The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeReleased() {
+        return this.timeReleased;
+    }
+    /**
+     * @return The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeSchedule() {
+        return this.timeSchedule;
+    }
+    /**
+     * @return The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeSnoozedUntil() {
+        return this.timeSnoozedUntil;
     }
     /**
      * @return The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -240,13 +341,21 @@ public final class GetDeploymentUpgradeResult {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isRollbackAllowed;
+        private Boolean isSecurityFix;
+        private Boolean isSnoozed;
         private String lifecycleDetails;
         private String lifecycleSubState;
         private String oggVersion;
+        private String previousOggVersion;
+        private String releaseType;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeFinished;
+        private String timeReleased;
+        private String timeSchedule;
+        private String timeSnoozedUntil;
         private String timeStarted;
         private String timeUpdated;
         public Builder() {}
@@ -261,13 +370,21 @@ public final class GetDeploymentUpgradeResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isRollbackAllowed = defaults.isRollbackAllowed;
+    	      this.isSecurityFix = defaults.isSecurityFix;
+    	      this.isSnoozed = defaults.isSnoozed;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.oggVersion = defaults.oggVersion;
+    	      this.previousOggVersion = defaults.previousOggVersion;
+    	      this.releaseType = defaults.releaseType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeFinished = defaults.timeFinished;
+    	      this.timeReleased = defaults.timeReleased;
+    	      this.timeSchedule = defaults.timeSchedule;
+    	      this.timeSnoozedUntil = defaults.timeSnoozedUntil;
     	      this.timeStarted = defaults.timeStarted;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -318,6 +435,21 @@ public final class GetDeploymentUpgradeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isRollbackAllowed(Boolean isRollbackAllowed) {
+            this.isRollbackAllowed = Objects.requireNonNull(isRollbackAllowed);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSecurityFix(Boolean isSecurityFix) {
+            this.isSecurityFix = Objects.requireNonNull(isSecurityFix);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSnoozed(Boolean isSnoozed) {
+            this.isSnoozed = Objects.requireNonNull(isSnoozed);
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
@@ -330,6 +462,16 @@ public final class GetDeploymentUpgradeResult {
         @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = Objects.requireNonNull(oggVersion);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder previousOggVersion(String previousOggVersion) {
+            this.previousOggVersion = Objects.requireNonNull(previousOggVersion);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder releaseType(String releaseType) {
+            this.releaseType = Objects.requireNonNull(releaseType);
             return this;
         }
         @CustomType.Setter
@@ -353,6 +495,21 @@ public final class GetDeploymentUpgradeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeReleased(String timeReleased) {
+            this.timeReleased = Objects.requireNonNull(timeReleased);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeSchedule(String timeSchedule) {
+            this.timeSchedule = Objects.requireNonNull(timeSchedule);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeSnoozedUntil(String timeSnoozedUntil) {
+            this.timeSnoozedUntil = Objects.requireNonNull(timeSnoozedUntil);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
@@ -373,13 +530,21 @@ public final class GetDeploymentUpgradeResult {
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.isRollbackAllowed = isRollbackAllowed;
+            o.isSecurityFix = isSecurityFix;
+            o.isSnoozed = isSnoozed;
             o.lifecycleDetails = lifecycleDetails;
             o.lifecycleSubState = lifecycleSubState;
             o.oggVersion = oggVersion;
+            o.previousOggVersion = previousOggVersion;
+            o.releaseType = releaseType;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeFinished = timeFinished;
+            o.timeReleased = timeReleased;
+            o.timeSchedule = timeSchedule;
+            o.timeSnoozedUntil = timeSnoozedUntil;
             o.timeStarted = timeStarted;
             o.timeUpdated = timeUpdated;
             return o;

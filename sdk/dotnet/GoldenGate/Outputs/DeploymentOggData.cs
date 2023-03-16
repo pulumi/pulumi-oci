@@ -34,7 +34,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// Version of OGG
+        /// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         /// </summary>
         public readonly string? OggVersion;
 

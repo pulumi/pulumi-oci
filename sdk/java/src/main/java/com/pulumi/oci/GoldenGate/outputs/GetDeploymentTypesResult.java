@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 public final class GetDeploymentTypesResult {
     private String compartmentId;
     /**
+     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
+     * 
+     */
+    private @Nullable String deploymentType;
+    /**
      * @return The list of deployment_type_collection.
      * 
      */
@@ -31,10 +36,22 @@ public final class GetDeploymentTypesResult {
      * 
      */
     private String id;
+    /**
+     * @return Version of OGG
+     * 
+     */
+    private @Nullable String oggVersion;
 
     private GetDeploymentTypesResult() {}
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
+     * 
+     */
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return The list of deployment_type_collection.
@@ -60,6 +77,13 @@ public final class GetDeploymentTypesResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Version of OGG
+     * 
+     */
+    public Optional<String> oggVersion() {
+        return Optional.ofNullable(this.oggVersion);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -71,23 +95,32 @@ public final class GetDeploymentTypesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private @Nullable String deploymentType;
         private List<GetDeploymentTypesDeploymentTypeCollection> deploymentTypeCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeploymentTypesFilter> filters;
         private String id;
+        private @Nullable String oggVersion;
         public Builder() {}
         public Builder(GetDeploymentTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.deploymentType = defaults.deploymentType;
     	      this.deploymentTypeCollections = defaults.deploymentTypeCollections;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.oggVersion = defaults.oggVersion;
         }
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
@@ -116,13 +149,20 @@ public final class GetDeploymentTypesResult {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
+        public Builder oggVersion(@Nullable String oggVersion) {
+            this.oggVersion = oggVersion;
+            return this;
+        }
         public GetDeploymentTypesResult build() {
             final var o = new GetDeploymentTypesResult();
             o.compartmentId = compartmentId;
+            o.deploymentType = deploymentType;
             o.deploymentTypeCollections = deploymentTypeCollections;
             o.displayName = displayName;
             o.filters = filters;
             o.id = id;
+            o.oggVersion = oggVersion;
             return o;
         }
     }

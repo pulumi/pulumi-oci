@@ -82,7 +82,7 @@ class GetClusterNetworkResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 

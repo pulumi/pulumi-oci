@@ -54,7 +54,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      */
     private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails createVnicDetails;
     /**
-     * @return The OCID of dedicated VM host.
+     * @return The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
     private @Nullable String dedicatedVmHostId;
@@ -184,7 +184,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         return Optional.ofNullable(this.createVnicDetails);
     }
     /**
-     * @return The OCID of dedicated VM host.
+     * @return The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
     public Optional<String> dedicatedVmHostId() {

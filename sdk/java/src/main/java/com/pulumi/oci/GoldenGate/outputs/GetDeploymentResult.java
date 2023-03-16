@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentDeploymentDiagnosticData;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentOggData;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -118,6 +119,21 @@ public final class GetDeploymentResult {
      */
     private String lifecycleSubState;
     /**
+     * @return Defines the maintenance window, when automatic actions can be performed.
+     * 
+     */
+    private List<GetDeploymentMaintenanceWindow> maintenanceWindows;
+    /**
+     * @return Type of the next maintenance.
+     * 
+     */
+    private String nextMaintenanceActionType;
+    /**
+     * @return Description of the next maintenance.
+     * 
+     */
+    private String nextMaintenanceDescription;
+    /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -163,12 +179,17 @@ public final class GetDeploymentResult {
      */
     private String timeCreated;
     /**
+     * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeOfNextMaintenance;
+    /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     private String timeUpdated;
     /**
-     * @return The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     private String timeUpgradeRequired;
@@ -318,6 +339,27 @@ public final class GetDeploymentResult {
         return this.lifecycleSubState;
     }
     /**
+     * @return Defines the maintenance window, when automatic actions can be performed.
+     * 
+     */
+    public List<GetDeploymentMaintenanceWindow> maintenanceWindows() {
+        return this.maintenanceWindows;
+    }
+    /**
+     * @return Type of the next maintenance.
+     * 
+     */
+    public String nextMaintenanceActionType() {
+        return this.nextMaintenanceActionType;
+    }
+    /**
+     * @return Description of the next maintenance.
+     * 
+     */
+    public String nextMaintenanceDescription() {
+        return this.nextMaintenanceDescription;
+    }
+    /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -381,6 +423,13 @@ public final class GetDeploymentResult {
         return this.timeCreated;
     }
     /**
+     * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeOfNextMaintenance() {
+        return this.timeOfNextMaintenance;
+    }
+    /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -388,7 +437,7 @@ public final class GetDeploymentResult {
         return this.timeUpdated;
     }
     /**
-     * @return The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     public String timeUpgradeRequired() {
@@ -425,6 +474,9 @@ public final class GetDeploymentResult {
         private String licenseModel;
         private String lifecycleDetails;
         private String lifecycleSubState;
+        private List<GetDeploymentMaintenanceWindow> maintenanceWindows;
+        private String nextMaintenanceActionType;
+        private String nextMaintenanceDescription;
         private List<String> nsgIds;
         private List<GetDeploymentOggData> oggDatas;
         private String privateIpAddress;
@@ -434,6 +486,7 @@ public final class GetDeploymentResult {
         private String subnetId;
         private Map<String,Object> systemTags;
         private String timeCreated;
+        private String timeOfNextMaintenance;
         private String timeUpdated;
         private String timeUpgradeRequired;
         public Builder() {}
@@ -460,6 +513,9 @@ public final class GetDeploymentResult {
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lifecycleSubState = defaults.lifecycleSubState;
+    	      this.maintenanceWindows = defaults.maintenanceWindows;
+    	      this.nextMaintenanceActionType = defaults.nextMaintenanceActionType;
+    	      this.nextMaintenanceDescription = defaults.nextMaintenanceDescription;
     	      this.nsgIds = defaults.nsgIds;
     	      this.oggDatas = defaults.oggDatas;
     	      this.privateIpAddress = defaults.privateIpAddress;
@@ -469,6 +525,7 @@ public final class GetDeploymentResult {
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeOfNextMaintenance = defaults.timeOfNextMaintenance;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.timeUpgradeRequired = defaults.timeUpgradeRequired;
         }
@@ -582,6 +639,24 @@ public final class GetDeploymentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceWindows(List<GetDeploymentMaintenanceWindow> maintenanceWindows) {
+            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+            return this;
+        }
+        public Builder maintenanceWindows(GetDeploymentMaintenanceWindow... maintenanceWindows) {
+            return maintenanceWindows(List.of(maintenanceWindows));
+        }
+        @CustomType.Setter
+        public Builder nextMaintenanceActionType(String nextMaintenanceActionType) {
+            this.nextMaintenanceActionType = Objects.requireNonNull(nextMaintenanceActionType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nextMaintenanceDescription(String nextMaintenanceDescription) {
+            this.nextMaintenanceDescription = Objects.requireNonNull(nextMaintenanceDescription);
+            return this;
+        }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -633,6 +708,11 @@ public final class GetDeploymentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeOfNextMaintenance(String timeOfNextMaintenance) {
+            this.timeOfNextMaintenance = Objects.requireNonNull(timeOfNextMaintenance);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
@@ -665,6 +745,9 @@ public final class GetDeploymentResult {
             o.licenseModel = licenseModel;
             o.lifecycleDetails = lifecycleDetails;
             o.lifecycleSubState = lifecycleSubState;
+            o.maintenanceWindows = maintenanceWindows;
+            o.nextMaintenanceActionType = nextMaintenanceActionType;
+            o.nextMaintenanceDescription = nextMaintenanceDescription;
             o.nsgIds = nsgIds;
             o.oggDatas = oggDatas;
             o.privateIpAddress = privateIpAddress;
@@ -674,6 +757,7 @@ public final class GetDeploymentResult {
             o.subnetId = subnetId;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
+            o.timeOfNextMaintenance = timeOfNextMaintenance;
             o.timeUpdated = timeUpdated;
             o.timeUpgradeRequired = timeUpgradeRequired;
             return o;

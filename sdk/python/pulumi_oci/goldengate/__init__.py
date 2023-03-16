@@ -23,6 +23,7 @@ from .get_deployment_type import *
 from .get_deployment_types import *
 from .get_deployment_upgrade import *
 from .get_deployment_upgrades import *
+from .get_deployment_versions import *
 from .get_deployments import *
 from .get_message import *
 from .get_messages import *

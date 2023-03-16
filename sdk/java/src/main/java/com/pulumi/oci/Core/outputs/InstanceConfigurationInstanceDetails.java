@@ -15,6 +15,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceConfigurationInstanceDetails {
+    /**
+     * @return Block volume parameters.
+     * 
+     */
     private @Nullable List<InstanceConfigurationInstanceDetailsBlockVolume> blockVolumes;
     /**
      * @return The type of instance details. Supported instanceType is compute
@@ -26,9 +30,17 @@ public final class InstanceConfigurationInstanceDetails {
      * 
      */
     private @Nullable InstanceConfigurationInstanceDetailsLaunchDetails launchDetails;
+    /**
+     * @return Secondary VNIC parameters.
+     * 
+     */
     private @Nullable List<InstanceConfigurationInstanceDetailsSecondaryVnic> secondaryVnics;
 
     private InstanceConfigurationInstanceDetails() {}
+    /**
+     * @return Block volume parameters.
+     * 
+     */
     public List<InstanceConfigurationInstanceDetailsBlockVolume> blockVolumes() {
         return this.blockVolumes == null ? List.of() : this.blockVolumes;
     }
@@ -46,6 +58,10 @@ public final class InstanceConfigurationInstanceDetails {
     public Optional<InstanceConfigurationInstanceDetailsLaunchDetails> launchDetails() {
         return Optional.ofNullable(this.launchDetails);
     }
+    /**
+     * @return Secondary VNIC parameters.
+     * 
+     */
     public List<InstanceConfigurationInstanceDetailsSecondaryVnic> secondaryVnics() {
         return this.secondaryVnics == null ? List.of() : this.secondaryVnics;
     }

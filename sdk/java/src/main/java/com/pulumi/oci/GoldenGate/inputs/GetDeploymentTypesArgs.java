@@ -33,6 +33,21 @@ public final class GetDeploymentTypesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
+     * The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
+     * 
+     */
+    @Import(name="deploymentType")
+    private @Nullable Output<String> deploymentType;
+
+    /**
+     * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
+     * 
+     */
+    public Optional<Output<String>> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
+    }
+
+    /**
      * A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
@@ -54,12 +69,29 @@ public final class GetDeploymentTypesArgs extends com.pulumi.resources.InvokeArg
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * Allows to query by a specific GoldenGate version.
+     * 
+     */
+    @Import(name="oggVersion")
+    private @Nullable Output<String> oggVersion;
+
+    /**
+     * @return Allows to query by a specific GoldenGate version.
+     * 
+     */
+    public Optional<Output<String>> oggVersion() {
+        return Optional.ofNullable(this.oggVersion);
+    }
+
     private GetDeploymentTypesArgs() {}
 
     private GetDeploymentTypesArgs(GetDeploymentTypesArgs $) {
         this.compartmentId = $.compartmentId;
+        this.deploymentType = $.deploymentType;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.oggVersion = $.oggVersion;
     }
 
     public static Builder builder() {
@@ -102,6 +134,27 @@ public final class GetDeploymentTypesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
+         * @param deploymentType The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentType(@Nullable Output<String> deploymentType) {
+            $.deploymentType = deploymentType;
+            return this;
+        }
+
+        /**
+         * @param deploymentType The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentType(String deploymentType) {
+            return deploymentType(Output.of(deploymentType));
+        }
+
+        /**
          * @param displayName A filter to return only the resources that match the entire &#39;displayName&#39; given.
          * 
          * @return builder
@@ -133,6 +186,27 @@ public final class GetDeploymentTypesArgs extends com.pulumi.resources.InvokeArg
 
         public Builder filters(GetDeploymentTypesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param oggVersion Allows to query by a specific GoldenGate version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oggVersion(@Nullable Output<String> oggVersion) {
+            $.oggVersion = oggVersion;
+            return this;
+        }
+
+        /**
+         * @param oggVersion Allows to query by a specific GoldenGate version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oggVersion(String oggVersion) {
+            return oggVersion(Output.of(oggVersion));
         }
 
         public GetDeploymentTypesArgs build() {

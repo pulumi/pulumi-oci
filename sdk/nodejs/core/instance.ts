@@ -219,7 +219,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly createVnicDetails!: pulumi.Output<outputs.Core.InstanceCreateVnicDetails>;
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated virtual machine host to place the instance on.
      */
     public readonly dedicatedVmHostId!: pulumi.Output<string>;
     /**
@@ -476,7 +476,7 @@ export interface InstanceState {
      */
     createVnicDetails?: pulumi.Input<inputs.Core.InstanceCreateVnicDetails>;
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated virtual machine host to place the instance on.
      */
     dedicatedVmHostId?: pulumi.Input<string>;
     /**
@@ -626,7 +626,7 @@ export interface InstanceArgs {
      */
     createVnicDetails?: pulumi.Input<inputs.Core.InstanceCreateVnicDetails>;
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated virtual machine host to place the instance on.
      */
     dedicatedVmHostId?: pulumi.Input<string>;
     /**

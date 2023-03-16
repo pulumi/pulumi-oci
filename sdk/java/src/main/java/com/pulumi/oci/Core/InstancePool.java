@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
  * 
- * Create an instance pool.
+ * Creates an instance pool.
  * 
  * ## Example Usage
  * ```java
@@ -130,14 +130,14 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     public Output<String> displayName() {

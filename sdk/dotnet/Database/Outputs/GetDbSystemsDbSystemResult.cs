@@ -139,6 +139,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
+        /// The most recent OS Patch Version applied on the DB system.
+        /// </summary>
+        public readonly string OsVersion;
+        /// <summary>
         /// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string PointInTimeDataDiskCloneTimestamp;
@@ -281,6 +285,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> nsgIds,
 
+            string osVersion,
+
             string pointInTimeDataDiskCloneTimestamp,
 
             string privateIp,
@@ -353,6 +359,7 @@ namespace Pulumi.Oci.Database.Outputs
             NextMaintenanceRunId = nextMaintenanceRunId;
             NodeCount = nodeCount;
             NsgIds = nsgIds;
+            OsVersion = osVersion;
             PointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
             PrivateIp = privateIp;
             RecoStorageSizeInGb = recoStorageSizeInGb;

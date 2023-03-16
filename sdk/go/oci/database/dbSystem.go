@@ -134,6 +134,8 @@ type DbSystem struct {
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	// The most recent OS Patch Version applied on the DB system.
+	OsVersion pulumi.StringOutput `pulumi:"osVersion"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringOutput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -303,6 +305,8 @@ type dbSystemState struct {
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
+	// The most recent OS Patch Version applied on the DB system.
+	OsVersion *string `pulumi:"osVersion"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp *string `pulumi:"pointInTimeDataDiskCloneTimestamp"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -423,6 +427,8 @@ type DbSystemState struct {
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
+	// The most recent OS Patch Version applied on the DB system.
+	OsVersion pulumi.StringPtrInput
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringPtrInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -903,6 +909,11 @@ func (o DbSystemOutput) NodeCount() pulumi.IntOutput {
 // * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 func (o DbSystemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The most recent OS Patch Version applied on the DB system.
+func (o DbSystemOutput) OsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.OsVersion }).(pulumi.StringOutput)
 }
 
 // The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

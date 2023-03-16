@@ -139,6 +139,20 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+        /// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+        /// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+        /// </summary>
+        public readonly bool IsRollbackAllowed;
+        /// <summary>
+        /// Indicates if OGG release contains security fix.
+        /// </summary>
+        public readonly bool IsSecurityFix;
+        /// <summary>
+        /// Indicates if upgrade notifications are snoozed or not.
+        /// </summary>
+        public readonly bool IsSnoozed;
+        /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -150,6 +164,14 @@ namespace Pulumi.Oci.GoldenGate
         /// Version of OGG
         /// </summary>
         public readonly string OggVersion;
+        /// <summary>
+        /// Version of OGG
+        /// </summary>
+        public readonly string PreviousOggVersion;
+        /// <summary>
+        /// The type of release.
+        /// </summary>
+        public readonly string ReleaseType;
         /// <summary>
         /// Possible lifecycle states.
         /// </summary>
@@ -166,6 +188,18 @@ namespace Pulumi.Oci.GoldenGate
         /// The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeFinished;
+        /// <summary>
+        /// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeReleased;
+        /// <summary>
+        /// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeSchedule;
+        /// <summary>
+        /// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeSnoozedUntil;
         /// <summary>
         /// The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
@@ -195,11 +229,21 @@ namespace Pulumi.Oci.GoldenGate
 
             string id,
 
+            bool isRollbackAllowed,
+
+            bool isSecurityFix,
+
+            bool isSnoozed,
+
             string lifecycleDetails,
 
             string lifecycleSubState,
 
             string oggVersion,
+
+            string previousOggVersion,
+
+            string releaseType,
 
             string state,
 
@@ -208,6 +252,12 @@ namespace Pulumi.Oci.GoldenGate
             string timeCreated,
 
             string timeFinished,
+
+            string timeReleased,
+
+            string timeSchedule,
+
+            string timeSnoozedUntil,
 
             string timeStarted,
 
@@ -222,13 +272,21 @@ namespace Pulumi.Oci.GoldenGate
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsRollbackAllowed = isRollbackAllowed;
+            IsSecurityFix = isSecurityFix;
+            IsSnoozed = isSnoozed;
             LifecycleDetails = lifecycleDetails;
             LifecycleSubState = lifecycleSubState;
             OggVersion = oggVersion;
+            PreviousOggVersion = previousOggVersion;
+            ReleaseType = releaseType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeFinished = timeFinished;
+            TimeReleased = timeReleased;
+            TimeSchedule = timeSchedule;
+            TimeSnoozedUntil = timeSnoozedUntil;
             TimeStarted = timeStarted;
             TimeUpdated = timeUpdated;
         }

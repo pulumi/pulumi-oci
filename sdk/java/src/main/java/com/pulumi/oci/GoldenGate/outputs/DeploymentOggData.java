@@ -37,7 +37,7 @@ public final class DeploymentOggData {
      */
     private @Nullable String key;
     /**
-     * @return Version of OGG
+     * @return (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
      * 
      */
     private @Nullable String oggVersion;
@@ -79,7 +79,7 @@ public final class DeploymentOggData {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return Version of OGG
+     * @return (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
      * 
      */
     public Optional<String> oggVersion() {

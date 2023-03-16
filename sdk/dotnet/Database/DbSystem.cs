@@ -265,6 +265,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
+        /// The most recent OS Patch Version applied on the DB system.
+        /// </summary>
+        [Output("osVersion")]
+        public Output<string> OsVersion { get; private set; } = null!;
+
+        /// <summary>
         /// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("pointInTimeDataDiskCloneTimestamp")]
@@ -943,6 +949,12 @@ namespace Pulumi.Oci.Database
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
+
+        /// <summary>
+        /// The most recent OS Patch Version applied on the DB system.
+        /// </summary>
+        [Input("osVersion")]
+        public Input<string>? OsVersion { get; set; }
 
         /// <summary>
         /// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

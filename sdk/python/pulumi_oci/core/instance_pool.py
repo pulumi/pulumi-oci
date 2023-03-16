@@ -32,7 +32,7 @@ class InstancePoolArgs:
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
         :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool.
         :param pulumi.Input[str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
@@ -116,7 +116,7 @@ class InstancePoolArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 
@@ -180,7 +180,7 @@ class _InstancePoolState:
         :param pulumi.Input[int] actual_size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool.
@@ -252,7 +252,7 @@ class _InstancePoolState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 
@@ -363,7 +363,7 @@ class InstancePool(pulumi.CustomResource):
         """
         This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
 
-        Create an instance pool.
+        Creates an instance pool.
 
         ## Example Usage
 
@@ -411,7 +411,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]] load_balancers: The load balancers to attach to the instance pool.
@@ -428,7 +428,7 @@ class InstancePool(pulumi.CustomResource):
         """
         This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
 
-        Create an instance pool.
+        Creates an instance pool.
 
         ## Example Usage
 
@@ -555,7 +555,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[int] actual_size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]] load_balancers: The load balancers to attach to the instance pool.
@@ -609,7 +609,7 @@ class InstancePool(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 

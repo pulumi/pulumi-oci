@@ -201,7 +201,7 @@ type Instance struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 	CreateVnicDetails InstanceCreateVnicDetailsOutput `pulumi:"createVnicDetails"`
-	// The OCID of dedicated VM host.
+	// The OCID of the dedicated virtual machine host to place the instance on.
 	DedicatedVmHostId pulumi.StringOutput `pulumi:"dedicatedVmHostId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -319,7 +319,7 @@ type instanceState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 	CreateVnicDetails *InstanceCreateVnicDetails `pulumi:"createVnicDetails"`
-	// The OCID of dedicated VM host.
+	// The OCID of the dedicated virtual machine host to place the instance on.
 	DedicatedVmHostId *string `pulumi:"dedicatedVmHostId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -400,7 +400,7 @@ type InstanceState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 	CreateVnicDetails InstanceCreateVnicDetailsPtrInput
-	// The OCID of dedicated VM host.
+	// The OCID of the dedicated virtual machine host to place the instance on.
 	DedicatedVmHostId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -483,7 +483,7 @@ type instanceArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 	CreateVnicDetails *InstanceCreateVnicDetails `pulumi:"createVnicDetails"`
-	// The OCID of dedicated VM host.
+	// The OCID of the dedicated virtual machine host to place the instance on.
 	DedicatedVmHostId *string `pulumi:"dedicatedVmHostId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -549,7 +549,7 @@ type InstanceArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 	CreateVnicDetails InstanceCreateVnicDetailsPtrInput
-	// The OCID of dedicated VM host.
+	// The OCID of the dedicated virtual machine host to place the instance on.
 	DedicatedVmHostId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -726,7 +726,7 @@ func (o InstanceOutput) CreateVnicDetails() InstanceCreateVnicDetailsOutput {
 	return o.ApplyT(func(v *Instance) InstanceCreateVnicDetailsOutput { return v.CreateVnicDetails }).(InstanceCreateVnicDetailsOutput)
 }
 
-// The OCID of dedicated VM host.
+// The OCID of the dedicated virtual machine host to place the instance on.
 func (o InstanceOutput) DedicatedVmHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DedicatedVmHostId }).(pulumi.StringOutput)
 }

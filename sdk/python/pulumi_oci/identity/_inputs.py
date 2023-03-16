@@ -13,6 +13,211 @@ __all__ = [
     'AuthenticationPolicyNetworkPolicyArgs',
     'AuthenticationPolicyPasswordPolicyArgs',
     'DomainReplicaRegionArgs',
+    'DomainsApiKeyIdcsCreatedByArgs',
+    'DomainsApiKeyIdcsLastModifiedByArgs',
+    'DomainsApiKeyMetaArgs',
+    'DomainsApiKeyTagArgs',
+    'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs',
+    'DomainsApiKeyUserArgs',
+    'DomainsAuthTokenIdcsCreatedByArgs',
+    'DomainsAuthTokenIdcsLastModifiedByArgs',
+    'DomainsAuthTokenMetaArgs',
+    'DomainsAuthTokenTagArgs',
+    'DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs',
+    'DomainsAuthTokenUserArgs',
+    'DomainsAuthenticationFactorSettingBypassCodeSettingsArgs',
+    'DomainsAuthenticationFactorSettingClientAppSettingsArgs',
+    'DomainsAuthenticationFactorSettingCompliancePolicyArgs',
+    'DomainsAuthenticationFactorSettingEmailSettingsArgs',
+    'DomainsAuthenticationFactorSettingEndpointRestrictionsArgs',
+    'DomainsAuthenticationFactorSettingIdcsCreatedByArgs',
+    'DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs',
+    'DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs',
+    'DomainsAuthenticationFactorSettingMetaArgs',
+    'DomainsAuthenticationFactorSettingNotificationSettingsArgs',
+    'DomainsAuthenticationFactorSettingTagArgs',
+    'DomainsAuthenticationFactorSettingThirdPartyFactorArgs',
+    'DomainsAuthenticationFactorSettingTotpSettingsArgs',
+    'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs',
+    'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs',
+    'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs',
+    'DomainsCustomerSecretKeyIdcsCreatedByArgs',
+    'DomainsCustomerSecretKeyIdcsLastModifiedByArgs',
+    'DomainsCustomerSecretKeyMetaArgs',
+    'DomainsCustomerSecretKeyTagArgs',
+    'DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs',
+    'DomainsCustomerSecretKeyUserArgs',
+    'DomainsDynamicResourceGroupDynamicGroupAppRoleArgs',
+    'DomainsDynamicResourceGroupGrantArgs',
+    'DomainsDynamicResourceGroupIdcsCreatedByArgs',
+    'DomainsDynamicResourceGroupIdcsLastModifiedByArgs',
+    'DomainsDynamicResourceGroupMetaArgs',
+    'DomainsDynamicResourceGroupTagArgs',
+    'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs',
+    'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs',
+    'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs',
+    'DomainsGroupIdcsCreatedByArgs',
+    'DomainsGroupIdcsLastModifiedByArgs',
+    'DomainsGroupMemberArgs',
+    'DomainsGroupMetaArgs',
+    'DomainsGroupTagArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs',
+    'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs',
+    'DomainsIdentityProviderCorrelationPolicyArgs',
+    'DomainsIdentityProviderIdcsCreatedByArgs',
+    'DomainsIdentityProviderIdcsLastModifiedByArgs',
+    'DomainsIdentityProviderJitUserProvAssignedGroupArgs',
+    'DomainsIdentityProviderJitUserProvAttributesArgs',
+    'DomainsIdentityProviderJitUserProvGroupMappingArgs',
+    'DomainsIdentityProviderMetaArgs',
+    'DomainsIdentityProviderTagArgs',
+    'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs',
+    'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs',
+    'DomainsKmsiSettingIdcsCreatedByArgs',
+    'DomainsKmsiSettingIdcsLastModifiedByArgs',
+    'DomainsKmsiSettingMetaArgs',
+    'DomainsKmsiSettingTagArgs',
+    'DomainsMyApiKeyIdcsCreatedByArgs',
+    'DomainsMyApiKeyIdcsLastModifiedByArgs',
+    'DomainsMyApiKeyMetaArgs',
+    'DomainsMyApiKeyTagArgs',
+    'DomainsMyApiKeyUserArgs',
+    'DomainsMyAuthTokenIdcsCreatedByArgs',
+    'DomainsMyAuthTokenIdcsLastModifiedByArgs',
+    'DomainsMyAuthTokenMetaArgs',
+    'DomainsMyAuthTokenTagArgs',
+    'DomainsMyAuthTokenUserArgs',
+    'DomainsMyCustomerSecretKeyIdcsCreatedByArgs',
+    'DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs',
+    'DomainsMyCustomerSecretKeyMetaArgs',
+    'DomainsMyCustomerSecretKeyTagArgs',
+    'DomainsMyCustomerSecretKeyUserArgs',
+    'DomainsMyOauth2clientCredentialIdcsCreatedByArgs',
+    'DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs',
+    'DomainsMyOauth2clientCredentialMetaArgs',
+    'DomainsMyOauth2clientCredentialScopeArgs',
+    'DomainsMyOauth2clientCredentialTagArgs',
+    'DomainsMyOauth2clientCredentialUserArgs',
+    'DomainsMySmtpCredentialIdcsCreatedByArgs',
+    'DomainsMySmtpCredentialIdcsLastModifiedByArgs',
+    'DomainsMySmtpCredentialMetaArgs',
+    'DomainsMySmtpCredentialTagArgs',
+    'DomainsMySmtpCredentialUserArgs',
+    'DomainsMySupportAccountIdcsCreatedByArgs',
+    'DomainsMySupportAccountIdcsLastModifiedByArgs',
+    'DomainsMySupportAccountMetaArgs',
+    'DomainsMySupportAccountTagArgs',
+    'DomainsMySupportAccountUserArgs',
+    'DomainsMyUserDbCredentialIdcsCreatedByArgs',
+    'DomainsMyUserDbCredentialIdcsLastModifiedByArgs',
+    'DomainsMyUserDbCredentialMetaArgs',
+    'DomainsMyUserDbCredentialTagArgs',
+    'DomainsMyUserDbCredentialUserArgs',
+    'DomainsOauth2clientCredentialIdcsCreatedByArgs',
+    'DomainsOauth2clientCredentialIdcsLastModifiedByArgs',
+    'DomainsOauth2clientCredentialMetaArgs',
+    'DomainsOauth2clientCredentialScopeArgs',
+    'DomainsOauth2clientCredentialTagArgs',
+    'DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs',
+    'DomainsOauth2clientCredentialUserArgs',
+    'DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs',
+    'DomainsPasswordPolicyGroupArgs',
+    'DomainsPasswordPolicyIdcsCreatedByArgs',
+    'DomainsPasswordPolicyIdcsLastModifiedByArgs',
+    'DomainsPasswordPolicyMetaArgs',
+    'DomainsPasswordPolicyTagArgs',
+    'DomainsSmtpCredentialIdcsCreatedByArgs',
+    'DomainsSmtpCredentialIdcsLastModifiedByArgs',
+    'DomainsSmtpCredentialMetaArgs',
+    'DomainsSmtpCredentialTagArgs',
+    'DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs',
+    'DomainsSmtpCredentialUserArgs',
+    'DomainsUserAddressArgs',
+    'DomainsUserDbCredentialIdcsCreatedByArgs',
+    'DomainsUserDbCredentialIdcsLastModifiedByArgs',
+    'DomainsUserDbCredentialMetaArgs',
+    'DomainsUserDbCredentialTagArgs',
+    'DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs',
+    'DomainsUserDbCredentialUserArgs',
+    'DomainsUserEmailArgs',
+    'DomainsUserEntitlementArgs',
+    'DomainsUserGroupArgs',
+    'DomainsUserIdcsCreatedByArgs',
+    'DomainsUserIdcsLastModifiedByArgs',
+    'DomainsUserImArgs',
+    'DomainsUserMetaArgs',
+    'DomainsUserNameArgs',
+    'DomainsUserPhoneNumberArgs',
+    'DomainsUserPhotoArgs',
+    'DomainsUserRoleArgs',
+    'DomainsUserTagArgs',
+    'DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs',
+    'DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs',
+    'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs',
+    'DomainsUserX509certificateArgs',
     'NetworkSourceVirtualSourceListArgs',
     'TagValidatorArgs',
     'UserCapabilityArgs',
@@ -227,6 +432,15261 @@ class DomainReplicaRegionArgs:
     @url.setter
     def url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "url", value)
+
+
+@pulumi.input_type
+class DomainsApiKeyIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsApiKeyIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsApiKeyMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsApiKeyTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
+    def __init__(__self__, *,
+                 allow_self_change: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] allow_self_change: If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        if allow_self_change is not None:
+            pulumi.set(__self__, "allow_self_change", allow_self_change)
+
+    @property
+    @pulumi.getter(name="allowSelfChange")
+    def allow_self_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        return pulumi.get(self, "allow_self_change")
+
+    @allow_self_change.setter
+    def allow_self_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_self_change", value)
+
+
+@pulumi.input_type
+class DomainsApiKeyUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAuthTokenIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAuthTokenIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAuthTokenMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsAuthTokenTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
+    def __init__(__self__, *,
+                 allow_self_change: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] allow_self_change: If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        if allow_self_change is not None:
+            pulumi.set(__self__, "allow_self_change", allow_self_change)
+
+    @property
+    @pulumi.getter(name="allowSelfChange")
+    def allow_self_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        return pulumi.get(self, "allow_self_change")
+
+    @allow_self_change.setter
+    def allow_self_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_self_change", value)
+
+
+@pulumi.input_type
+class DomainsAuthTokenUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingBypassCodeSettingsArgs:
+    def __init__(__self__, *,
+                 help_desk_code_expiry_in_mins: pulumi.Input[int],
+                 help_desk_generation_enabled: pulumi.Input[bool],
+                 help_desk_max_usage: pulumi.Input[int],
+                 length: pulumi.Input[int],
+                 max_active: pulumi.Input[int],
+                 self_service_generation_enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[int] help_desk_code_expiry_in_mins: (Updatable) Expiry (in minutes) of any bypass code that is generated by the help desk
+        :param pulumi.Input[bool] help_desk_generation_enabled: (Updatable) If true, indicates that help desk bypass code generation is enabled
+        :param pulumi.Input[int] help_desk_max_usage: (Updatable) The maximum number of times that any bypass code that is generated by the help desk can be used
+        :param pulumi.Input[int] length: (Updatable) Exact length of the bypass code to be generated
+        :param pulumi.Input[int] max_active: (Updatable) The maximum number of bypass codes that can be issued to any user
+        :param pulumi.Input[bool] self_service_generation_enabled: (Updatable) If true, indicates that self-service bypass code generation is enabled
+        """
+        pulumi.set(__self__, "help_desk_code_expiry_in_mins", help_desk_code_expiry_in_mins)
+        pulumi.set(__self__, "help_desk_generation_enabled", help_desk_generation_enabled)
+        pulumi.set(__self__, "help_desk_max_usage", help_desk_max_usage)
+        pulumi.set(__self__, "length", length)
+        pulumi.set(__self__, "max_active", max_active)
+        pulumi.set(__self__, "self_service_generation_enabled", self_service_generation_enabled)
+
+    @property
+    @pulumi.getter(name="helpDeskCodeExpiryInMins")
+    def help_desk_code_expiry_in_mins(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Expiry (in minutes) of any bypass code that is generated by the help desk
+        """
+        return pulumi.get(self, "help_desk_code_expiry_in_mins")
+
+    @help_desk_code_expiry_in_mins.setter
+    def help_desk_code_expiry_in_mins(self, value: pulumi.Input[int]):
+        pulumi.set(self, "help_desk_code_expiry_in_mins", value)
+
+    @property
+    @pulumi.getter(name="helpDeskGenerationEnabled")
+    def help_desk_generation_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) If true, indicates that help desk bypass code generation is enabled
+        """
+        return pulumi.get(self, "help_desk_generation_enabled")
+
+    @help_desk_generation_enabled.setter
+    def help_desk_generation_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "help_desk_generation_enabled", value)
+
+    @property
+    @pulumi.getter(name="helpDeskMaxUsage")
+    def help_desk_max_usage(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum number of times that any bypass code that is generated by the help desk can be used
+        """
+        return pulumi.get(self, "help_desk_max_usage")
+
+    @help_desk_max_usage.setter
+    def help_desk_max_usage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "help_desk_max_usage", value)
+
+    @property
+    @pulumi.getter
+    def length(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Exact length of the bypass code to be generated
+        """
+        return pulumi.get(self, "length")
+
+    @length.setter
+    def length(self, value: pulumi.Input[int]):
+        pulumi.set(self, "length", value)
+
+    @property
+    @pulumi.getter(name="maxActive")
+    def max_active(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum number of bypass codes that can be issued to any user
+        """
+        return pulumi.get(self, "max_active")
+
+    @max_active.setter
+    def max_active(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max_active", value)
+
+    @property
+    @pulumi.getter(name="selfServiceGenerationEnabled")
+    def self_service_generation_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) If true, indicates that self-service bypass code generation is enabled
+        """
+        return pulumi.get(self, "self_service_generation_enabled")
+
+    @self_service_generation_enabled.setter
+    def self_service_generation_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "self_service_generation_enabled", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingClientAppSettingsArgs:
+    def __init__(__self__, *,
+                 device_protection_policy: pulumi.Input[str],
+                 initial_lockout_period_in_secs: pulumi.Input[int],
+                 key_pair_length: pulumi.Input[int],
+                 lockout_escalation_pattern: pulumi.Input[str],
+                 max_failures_before_lockout: pulumi.Input[int],
+                 max_failures_before_warning: pulumi.Input[int],
+                 max_lockout_interval_in_secs: pulumi.Input[int],
+                 min_pin_length: pulumi.Input[int],
+                 policy_update_freq_in_days: pulumi.Input[int],
+                 request_signing_algo: pulumi.Input[str],
+                 shared_secret_encoding: pulumi.Input[str],
+                 unlock_app_for_each_request_enabled: pulumi.Input[bool],
+                 unlock_app_interval_in_secs: pulumi.Input[int],
+                 unlock_on_app_foreground_enabled: pulumi.Input[bool],
+                 unlock_on_app_start_enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[str] device_protection_policy: (Updatable) Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
+        :param pulumi.Input[int] initial_lockout_period_in_secs: (Updatable) The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
+        :param pulumi.Input[int] key_pair_length: (Updatable) The size of the key that the system uses to generate the public-private key pair
+        :param pulumi.Input[str] lockout_escalation_pattern: (Updatable) The pattern of escalation that the system follows, in locking a particular user out of the service.
+        :param pulumi.Input[int] max_failures_before_lockout: (Updatable) The maximum number of times that a particular user can fail to login before the system locks that user out of the service
+        :param pulumi.Input[int] max_failures_before_warning: (Updatable) The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
+        :param pulumi.Input[int] max_lockout_interval_in_secs: (Updatable) The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
+        :param pulumi.Input[int] min_pin_length: (Updatable) Minimum length of the Personal Identification Number (PIN)
+        :param pulumi.Input[int] policy_update_freq_in_days: (Updatable) The period of time in days after which a client should refresh its policy by re-reading that policy from the server
+        :param pulumi.Input[str] request_signing_algo: (Updatable) Indicates which algorithm the system will use to sign requests
+        :param pulumi.Input[str] shared_secret_encoding: (Updatable) Indicates the type of encoding that the system should use to generate a shared secret
+        :param pulumi.Input[bool] unlock_app_for_each_request_enabled: (Updatable) If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+        :param pulumi.Input[int] unlock_app_interval_in_secs: (Updatable) Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
+        :param pulumi.Input[bool] unlock_on_app_foreground_enabled: (Updatable) If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+        :param pulumi.Input[bool] unlock_on_app_start_enabled: (Updatable) If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+        """
+        pulumi.set(__self__, "device_protection_policy", device_protection_policy)
+        pulumi.set(__self__, "initial_lockout_period_in_secs", initial_lockout_period_in_secs)
+        pulumi.set(__self__, "key_pair_length", key_pair_length)
+        pulumi.set(__self__, "lockout_escalation_pattern", lockout_escalation_pattern)
+        pulumi.set(__self__, "max_failures_before_lockout", max_failures_before_lockout)
+        pulumi.set(__self__, "max_failures_before_warning", max_failures_before_warning)
+        pulumi.set(__self__, "max_lockout_interval_in_secs", max_lockout_interval_in_secs)
+        pulumi.set(__self__, "min_pin_length", min_pin_length)
+        pulumi.set(__self__, "policy_update_freq_in_days", policy_update_freq_in_days)
+        pulumi.set(__self__, "request_signing_algo", request_signing_algo)
+        pulumi.set(__self__, "shared_secret_encoding", shared_secret_encoding)
+        pulumi.set(__self__, "unlock_app_for_each_request_enabled", unlock_app_for_each_request_enabled)
+        pulumi.set(__self__, "unlock_app_interval_in_secs", unlock_app_interval_in_secs)
+        pulumi.set(__self__, "unlock_on_app_foreground_enabled", unlock_on_app_foreground_enabled)
+        pulumi.set(__self__, "unlock_on_app_start_enabled", unlock_on_app_start_enabled)
+
+    @property
+    @pulumi.getter(name="deviceProtectionPolicy")
+    def device_protection_policy(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
+        """
+        return pulumi.get(self, "device_protection_policy")
+
+    @device_protection_policy.setter
+    def device_protection_policy(self, value: pulumi.Input[str]):
+        pulumi.set(self, "device_protection_policy", value)
+
+    @property
+    @pulumi.getter(name="initialLockoutPeriodInSecs")
+    def initial_lockout_period_in_secs(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
+        """
+        return pulumi.get(self, "initial_lockout_period_in_secs")
+
+    @initial_lockout_period_in_secs.setter
+    def initial_lockout_period_in_secs(self, value: pulumi.Input[int]):
+        pulumi.set(self, "initial_lockout_period_in_secs", value)
+
+    @property
+    @pulumi.getter(name="keyPairLength")
+    def key_pair_length(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The size of the key that the system uses to generate the public-private key pair
+        """
+        return pulumi.get(self, "key_pair_length")
+
+    @key_pair_length.setter
+    def key_pair_length(self, value: pulumi.Input[int]):
+        pulumi.set(self, "key_pair_length", value)
+
+    @property
+    @pulumi.getter(name="lockoutEscalationPattern")
+    def lockout_escalation_pattern(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The pattern of escalation that the system follows, in locking a particular user out of the service.
+        """
+        return pulumi.get(self, "lockout_escalation_pattern")
+
+    @lockout_escalation_pattern.setter
+    def lockout_escalation_pattern(self, value: pulumi.Input[str]):
+        pulumi.set(self, "lockout_escalation_pattern", value)
+
+    @property
+    @pulumi.getter(name="maxFailuresBeforeLockout")
+    def max_failures_before_lockout(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum number of times that a particular user can fail to login before the system locks that user out of the service
+        """
+        return pulumi.get(self, "max_failures_before_lockout")
+
+    @max_failures_before_lockout.setter
+    def max_failures_before_lockout(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max_failures_before_lockout", value)
+
+    @property
+    @pulumi.getter(name="maxFailuresBeforeWarning")
+    def max_failures_before_warning(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
+        """
+        return pulumi.get(self, "max_failures_before_warning")
+
+    @max_failures_before_warning.setter
+    def max_failures_before_warning(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max_failures_before_warning", value)
+
+    @property
+    @pulumi.getter(name="maxLockoutIntervalInSecs")
+    def max_lockout_interval_in_secs(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
+        """
+        return pulumi.get(self, "max_lockout_interval_in_secs")
+
+    @max_lockout_interval_in_secs.setter
+    def max_lockout_interval_in_secs(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max_lockout_interval_in_secs", value)
+
+    @property
+    @pulumi.getter(name="minPinLength")
+    def min_pin_length(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Minimum length of the Personal Identification Number (PIN)
+        """
+        return pulumi.get(self, "min_pin_length")
+
+    @min_pin_length.setter
+    def min_pin_length(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min_pin_length", value)
+
+    @property
+    @pulumi.getter(name="policyUpdateFreqInDays")
+    def policy_update_freq_in_days(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The period of time in days after which a client should refresh its policy by re-reading that policy from the server
+        """
+        return pulumi.get(self, "policy_update_freq_in_days")
+
+    @policy_update_freq_in_days.setter
+    def policy_update_freq_in_days(self, value: pulumi.Input[int]):
+        pulumi.set(self, "policy_update_freq_in_days", value)
+
+    @property
+    @pulumi.getter(name="requestSigningAlgo")
+    def request_signing_algo(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Indicates which algorithm the system will use to sign requests
+        """
+        return pulumi.get(self, "request_signing_algo")
+
+    @request_signing_algo.setter
+    def request_signing_algo(self, value: pulumi.Input[str]):
+        pulumi.set(self, "request_signing_algo", value)
+
+    @property
+    @pulumi.getter(name="sharedSecretEncoding")
+    def shared_secret_encoding(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Indicates the type of encoding that the system should use to generate a shared secret
+        """
+        return pulumi.get(self, "shared_secret_encoding")
+
+    @shared_secret_encoding.setter
+    def shared_secret_encoding(self, value: pulumi.Input[str]):
+        pulumi.set(self, "shared_secret_encoding", value)
+
+    @property
+    @pulumi.getter(name="unlockAppForEachRequestEnabled")
+    def unlock_app_for_each_request_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+        """
+        return pulumi.get(self, "unlock_app_for_each_request_enabled")
+
+    @unlock_app_for_each_request_enabled.setter
+    def unlock_app_for_each_request_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "unlock_app_for_each_request_enabled", value)
+
+    @property
+    @pulumi.getter(name="unlockAppIntervalInSecs")
+    def unlock_app_interval_in_secs(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
+        """
+        return pulumi.get(self, "unlock_app_interval_in_secs")
+
+    @unlock_app_interval_in_secs.setter
+    def unlock_app_interval_in_secs(self, value: pulumi.Input[int]):
+        pulumi.set(self, "unlock_app_interval_in_secs", value)
+
+    @property
+    @pulumi.getter(name="unlockOnAppForegroundEnabled")
+    def unlock_on_app_foreground_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+        """
+        return pulumi.get(self, "unlock_on_app_foreground_enabled")
+
+    @unlock_on_app_foreground_enabled.setter
+    def unlock_on_app_foreground_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "unlock_on_app_foreground_enabled", value)
+
+    @property
+    @pulumi.getter(name="unlockOnAppStartEnabled")
+    def unlock_on_app_start_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+        """
+        return pulumi.get(self, "unlock_on_app_start_enabled")
+
+    @unlock_on_app_start_enabled.setter
+    def unlock_on_app_start_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "unlock_on_app_start_enabled", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingCompliancePolicyArgs:
+    def __init__(__self__, *,
+                 action: pulumi.Input[str],
+                 name: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] action: (Updatable) The action to be taken if the value of the attribute is not as expected
+        :param pulumi.Input[str] name: (Updatable) The name of the attribute being evaluated
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def action(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The action to be taken if the value of the attribute is not as expected
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[str]):
+        pulumi.set(self, "action", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of the attribute being evaluated
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingEmailSettingsArgs:
+    def __init__(__self__, *,
+                 email_link_enabled: pulumi.Input[bool],
+                 email_link_custom_url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] email_link_enabled: (Updatable) Specifies whether Email link is enabled or not.
+        :param pulumi.Input[str] email_link_custom_url: (Updatable) Custom redirect Url which will be used in email link
+        """
+        pulumi.set(__self__, "email_link_enabled", email_link_enabled)
+        if email_link_custom_url is not None:
+            pulumi.set(__self__, "email_link_custom_url", email_link_custom_url)
+
+    @property
+    @pulumi.getter(name="emailLinkEnabled")
+    def email_link_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Specifies whether Email link is enabled or not.
+        """
+        return pulumi.get(self, "email_link_enabled")
+
+    @email_link_enabled.setter
+    def email_link_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "email_link_enabled", value)
+
+    @property
+    @pulumi.getter(name="emailLinkCustomUrl")
+    def email_link_custom_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Custom redirect Url which will be used in email link
+        """
+        return pulumi.get(self, "email_link_custom_url")
+
+    @email_link_custom_url.setter
+    def email_link_custom_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "email_link_custom_url", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs:
+    def __init__(__self__, *,
+                 max_endpoint_trust_duration_in_days: pulumi.Input[int],
+                 max_enrolled_devices: pulumi.Input[int],
+                 max_incorrect_attempts: pulumi.Input[int],
+                 max_trusted_endpoints: pulumi.Input[int],
+                 trusted_endpoints_enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[int] max_endpoint_trust_duration_in_days: (Updatable) Maximum number of days until an endpoint can be trusted
+        :param pulumi.Input[int] max_enrolled_devices: (Updatable) Maximum number of enrolled devices per user
+        :param pulumi.Input[int] max_incorrect_attempts: (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
+        :param pulumi.Input[int] max_trusted_endpoints: (Updatable) Max number of trusted endpoints per user
+        :param pulumi.Input[bool] trusted_endpoints_enabled: (Updatable) Specify if trusted endpoints are enabled
+        """
+        pulumi.set(__self__, "max_endpoint_trust_duration_in_days", max_endpoint_trust_duration_in_days)
+        pulumi.set(__self__, "max_enrolled_devices", max_enrolled_devices)
+        pulumi.set(__self__, "max_incorrect_attempts", max_incorrect_attempts)
+        pulumi.set(__self__, "max_trusted_endpoints", max_trusted_endpoints)
+        pulumi.set(__self__, "trusted_endpoints_enabled", trusted_endpoints_enabled)
+
+    @property
+    @pulumi.getter(name="maxEndpointTrustDurationInDays")
+    def max_endpoint_trust_duration_in_days(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Maximum number of days until an endpoint can be trusted
+        """
+        return pulumi.get(self, "max_endpoint_trust_duration_in_days")
+
+    @max_endpoint_trust_duration_in_days.setter
+    def max_endpoint_trust_duration_in_days(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max_endpoint_trust_duration_in_days", value)
+
+    @property
+    @pulumi.getter(name="maxEnrolledDevices")
+    def max_enrolled_devices(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Maximum number of enrolled devices per user
+        """
+        return pulumi.get(self, "max_enrolled_devices")
+
+    @max_enrolled_devices.setter
+    def max_enrolled_devices(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max_enrolled_devices", value)
+
+    @property
+    @pulumi.getter(name="maxIncorrectAttempts")
+    def max_incorrect_attempts(self) -> pulumi.Input[int]:
+        """
+        (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
+        """
+        return pulumi.get(self, "max_incorrect_attempts")
+
+    @max_incorrect_attempts.setter
+    def max_incorrect_attempts(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max_incorrect_attempts", value)
+
+    @property
+    @pulumi.getter(name="maxTrustedEndpoints")
+    def max_trusted_endpoints(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Max number of trusted endpoints per user
+        """
+        return pulumi.get(self, "max_trusted_endpoints")
+
+    @max_trusted_endpoints.setter
+    def max_trusted_endpoints(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max_trusted_endpoints", value)
+
+    @property
+    @pulumi.getter(name="trustedEndpointsEnabled")
+    def trusted_endpoints_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Specify if trusted endpoints are enabled
+        """
+        return pulumi.get(self, "trusted_endpoints_enabled")
+
+    @trusted_endpoints_enabled.setter
+    def trusted_endpoints_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "trusted_endpoints_enabled", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs:
+    def __init__(__self__, *,
+                 mobile_number_enabled: Optional[pulumi.Input[bool]] = None,
+                 mobile_number_update_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] mobile_number_enabled: (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
+        :param pulumi.Input[bool] mobile_number_update_enabled: (Updatable) If true, indicates that the user can update the mobile number in the user's Multi-Factor Authentication profile
+        """
+        if mobile_number_enabled is not None:
+            pulumi.set(__self__, "mobile_number_enabled", mobile_number_enabled)
+        if mobile_number_update_enabled is not None:
+            pulumi.set(__self__, "mobile_number_update_enabled", mobile_number_update_enabled)
+
+    @property
+    @pulumi.getter(name="mobileNumberEnabled")
+    def mobile_number_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
+        """
+        return pulumi.get(self, "mobile_number_enabled")
+
+    @mobile_number_enabled.setter
+    def mobile_number_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "mobile_number_enabled", value)
+
+    @property
+    @pulumi.getter(name="mobileNumberUpdateEnabled")
+    def mobile_number_update_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that the user can update the mobile number in the user's Multi-Factor Authentication profile
+        """
+        return pulumi.get(self, "mobile_number_update_enabled")
+
+    @mobile_number_update_enabled.setter
+    def mobile_number_update_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "mobile_number_update_enabled", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingNotificationSettingsArgs:
+    def __init__(__self__, *,
+                 pull_enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[bool] pull_enabled: (Updatable) If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+        """
+        pulumi.set(__self__, "pull_enabled", pull_enabled)
+
+    @property
+    @pulumi.getter(name="pullEnabled")
+    def pull_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+        """
+        return pulumi.get(self, "pull_enabled")
+
+    @pull_enabled.setter
+    def pull_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "pull_enabled", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Key or name of the tag.
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingThirdPartyFactorArgs:
+    def __init__(__self__, *,
+                 duo_security: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[bool] duo_security: (Updatable) To enable Duo Security factor
+        """
+        pulumi.set(__self__, "duo_security", duo_security)
+
+    @property
+    @pulumi.getter(name="duoSecurity")
+    def duo_security(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) To enable Duo Security factor
+        """
+        return pulumi.get(self, "duo_security")
+
+    @duo_security.setter
+    def duo_security(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "duo_security", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingTotpSettingsArgs:
+    def __init__(__self__, *,
+                 email_otp_validity_duration_in_mins: pulumi.Input[int],
+                 email_passcode_length: pulumi.Input[int],
+                 hashing_algorithm: pulumi.Input[str],
+                 jwt_validity_duration_in_secs: pulumi.Input[int],
+                 key_refresh_interval_in_days: pulumi.Input[int],
+                 passcode_length: pulumi.Input[int],
+                 sms_otp_validity_duration_in_mins: pulumi.Input[int],
+                 sms_passcode_length: pulumi.Input[int],
+                 time_step_in_secs: pulumi.Input[int],
+                 time_step_tolerance: pulumi.Input[int]):
+        """
+        :param pulumi.Input[int] email_otp_validity_duration_in_mins: (Updatable) The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
+        :param pulumi.Input[int] email_passcode_length: (Updatable) Exact length of the email one-time passcode.
+        :param pulumi.Input[str] hashing_algorithm: (Updatable) The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+        :param pulumi.Input[int] jwt_validity_duration_in_secs: (Updatable) The period of time (in seconds) that a JSON Web Token (JWT) is valid
+        :param pulumi.Input[int] key_refresh_interval_in_days: (Updatable) The duration of time (in days) after which the shared secret has to be refreshed
+        :param pulumi.Input[int] passcode_length: (Updatable) Exact length of the One-Time Passcode that the system should generate
+        :param pulumi.Input[int] sms_otp_validity_duration_in_mins: (Updatable) The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
+        :param pulumi.Input[int] sms_passcode_length: (Updatable) Exact length of the Short Message Service (SMS) One-Time Passcode
+        :param pulumi.Input[int] time_step_in_secs: (Updatable) Time (in secs) to be used as the time step
+        :param pulumi.Input[int] time_step_tolerance: (Updatable) The tolerance/step-size that the system should use when validating a One-Time Passcode
+        """
+        pulumi.set(__self__, "email_otp_validity_duration_in_mins", email_otp_validity_duration_in_mins)
+        pulumi.set(__self__, "email_passcode_length", email_passcode_length)
+        pulumi.set(__self__, "hashing_algorithm", hashing_algorithm)
+        pulumi.set(__self__, "jwt_validity_duration_in_secs", jwt_validity_duration_in_secs)
+        pulumi.set(__self__, "key_refresh_interval_in_days", key_refresh_interval_in_days)
+        pulumi.set(__self__, "passcode_length", passcode_length)
+        pulumi.set(__self__, "sms_otp_validity_duration_in_mins", sms_otp_validity_duration_in_mins)
+        pulumi.set(__self__, "sms_passcode_length", sms_passcode_length)
+        pulumi.set(__self__, "time_step_in_secs", time_step_in_secs)
+        pulumi.set(__self__, "time_step_tolerance", time_step_tolerance)
+
+    @property
+    @pulumi.getter(name="emailOtpValidityDurationInMins")
+    def email_otp_validity_duration_in_mins(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
+        """
+        return pulumi.get(self, "email_otp_validity_duration_in_mins")
+
+    @email_otp_validity_duration_in_mins.setter
+    def email_otp_validity_duration_in_mins(self, value: pulumi.Input[int]):
+        pulumi.set(self, "email_otp_validity_duration_in_mins", value)
+
+    @property
+    @pulumi.getter(name="emailPasscodeLength")
+    def email_passcode_length(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Exact length of the email one-time passcode.
+        """
+        return pulumi.get(self, "email_passcode_length")
+
+    @email_passcode_length.setter
+    def email_passcode_length(self, value: pulumi.Input[int]):
+        pulumi.set(self, "email_passcode_length", value)
+
+    @property
+    @pulumi.getter(name="hashingAlgorithm")
+    def hashing_algorithm(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+        """
+        return pulumi.get(self, "hashing_algorithm")
+
+    @hashing_algorithm.setter
+    def hashing_algorithm(self, value: pulumi.Input[str]):
+        pulumi.set(self, "hashing_algorithm", value)
+
+    @property
+    @pulumi.getter(name="jwtValidityDurationInSecs")
+    def jwt_validity_duration_in_secs(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The period of time (in seconds) that a JSON Web Token (JWT) is valid
+        """
+        return pulumi.get(self, "jwt_validity_duration_in_secs")
+
+    @jwt_validity_duration_in_secs.setter
+    def jwt_validity_duration_in_secs(self, value: pulumi.Input[int]):
+        pulumi.set(self, "jwt_validity_duration_in_secs", value)
+
+    @property
+    @pulumi.getter(name="keyRefreshIntervalInDays")
+    def key_refresh_interval_in_days(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The duration of time (in days) after which the shared secret has to be refreshed
+        """
+        return pulumi.get(self, "key_refresh_interval_in_days")
+
+    @key_refresh_interval_in_days.setter
+    def key_refresh_interval_in_days(self, value: pulumi.Input[int]):
+        pulumi.set(self, "key_refresh_interval_in_days", value)
+
+    @property
+    @pulumi.getter(name="passcodeLength")
+    def passcode_length(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Exact length of the One-Time Passcode that the system should generate
+        """
+        return pulumi.get(self, "passcode_length")
+
+    @passcode_length.setter
+    def passcode_length(self, value: pulumi.Input[int]):
+        pulumi.set(self, "passcode_length", value)
+
+    @property
+    @pulumi.getter(name="smsOtpValidityDurationInMins")
+    def sms_otp_validity_duration_in_mins(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
+        """
+        return pulumi.get(self, "sms_otp_validity_duration_in_mins")
+
+    @sms_otp_validity_duration_in_mins.setter
+    def sms_otp_validity_duration_in_mins(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sms_otp_validity_duration_in_mins", value)
+
+    @property
+    @pulumi.getter(name="smsPasscodeLength")
+    def sms_passcode_length(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Exact length of the Short Message Service (SMS) One-Time Passcode
+        """
+        return pulumi.get(self, "sms_passcode_length")
+
+    @sms_passcode_length.setter
+    def sms_passcode_length(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sms_passcode_length", value)
+
+    @property
+    @pulumi.getter(name="timeStepInSecs")
+    def time_step_in_secs(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Time (in secs) to be used as the time step
+        """
+        return pulumi.get(self, "time_step_in_secs")
+
+    @time_step_in_secs.setter
+    def time_step_in_secs(self, value: pulumi.Input[int]):
+        pulumi.set(self, "time_step_in_secs", value)
+
+    @property
+    @pulumi.getter(name="timeStepTolerance")
+    def time_step_tolerance(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The tolerance/step-size that the system should use when validating a One-Time Passcode
+        """
+        return pulumi.get(self, "time_step_tolerance")
+
+    @time_step_tolerance.setter
+    def time_step_tolerance(self, value: pulumi.Input[int]):
+        pulumi.set(self, "time_step_tolerance", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs:
+    def __init__(__self__, *,
+                 attestation: pulumi.Input[str],
+                 authenticator_selection_attachment: pulumi.Input[str],
+                 authenticator_selection_require_resident_key: pulumi.Input[bool],
+                 authenticator_selection_resident_key: pulumi.Input[str],
+                 authenticator_selection_user_verification: pulumi.Input[str],
+                 exclude_credentials: pulumi.Input[bool],
+                 public_key_types: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 timeout: pulumi.Input[int],
+                 domain_validation_level: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] attestation: (Updatable) Attribute used to define the type of attestation required.
+        :param pulumi.Input[str] authenticator_selection_attachment: (Updatable) Attribute used to define authenticator selection attachment.
+        :param pulumi.Input[bool] authenticator_selection_require_resident_key: (Updatable) Flag used to indicate authenticator selection is required or not
+        :param pulumi.Input[str] authenticator_selection_resident_key: (Updatable) Attribute used to define authenticator selection resident key requirement.
+        :param pulumi.Input[str] authenticator_selection_user_verification: (Updatable) Attribute used to define authenticator selection verification.
+        :param pulumi.Input[bool] exclude_credentials: (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] public_key_types: (Updatable) List of server supported public key algorithms
+        :param pulumi.Input[int] timeout: (Updatable) Timeout for the fido authentication to complete
+        :param pulumi.Input[int] domain_validation_level: (Updatable) Number of domain levels IDCS should use for origin comparision
+        """
+        pulumi.set(__self__, "attestation", attestation)
+        pulumi.set(__self__, "authenticator_selection_attachment", authenticator_selection_attachment)
+        pulumi.set(__self__, "authenticator_selection_require_resident_key", authenticator_selection_require_resident_key)
+        pulumi.set(__self__, "authenticator_selection_resident_key", authenticator_selection_resident_key)
+        pulumi.set(__self__, "authenticator_selection_user_verification", authenticator_selection_user_verification)
+        pulumi.set(__self__, "exclude_credentials", exclude_credentials)
+        pulumi.set(__self__, "public_key_types", public_key_types)
+        pulumi.set(__self__, "timeout", timeout)
+        if domain_validation_level is not None:
+            pulumi.set(__self__, "domain_validation_level", domain_validation_level)
+
+    @property
+    @pulumi.getter
+    def attestation(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Attribute used to define the type of attestation required.
+        """
+        return pulumi.get(self, "attestation")
+
+    @attestation.setter
+    def attestation(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attestation", value)
+
+    @property
+    @pulumi.getter(name="authenticatorSelectionAttachment")
+    def authenticator_selection_attachment(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Attribute used to define authenticator selection attachment.
+        """
+        return pulumi.get(self, "authenticator_selection_attachment")
+
+    @authenticator_selection_attachment.setter
+    def authenticator_selection_attachment(self, value: pulumi.Input[str]):
+        pulumi.set(self, "authenticator_selection_attachment", value)
+
+    @property
+    @pulumi.getter(name="authenticatorSelectionRequireResidentKey")
+    def authenticator_selection_require_resident_key(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Flag used to indicate authenticator selection is required or not
+        """
+        return pulumi.get(self, "authenticator_selection_require_resident_key")
+
+    @authenticator_selection_require_resident_key.setter
+    def authenticator_selection_require_resident_key(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "authenticator_selection_require_resident_key", value)
+
+    @property
+    @pulumi.getter(name="authenticatorSelectionResidentKey")
+    def authenticator_selection_resident_key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Attribute used to define authenticator selection resident key requirement.
+        """
+        return pulumi.get(self, "authenticator_selection_resident_key")
+
+    @authenticator_selection_resident_key.setter
+    def authenticator_selection_resident_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "authenticator_selection_resident_key", value)
+
+    @property
+    @pulumi.getter(name="authenticatorSelectionUserVerification")
+    def authenticator_selection_user_verification(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Attribute used to define authenticator selection verification.
+        """
+        return pulumi.get(self, "authenticator_selection_user_verification")
+
+    @authenticator_selection_user_verification.setter
+    def authenticator_selection_user_verification(self, value: pulumi.Input[str]):
+        pulumi.set(self, "authenticator_selection_user_verification", value)
+
+    @property
+    @pulumi.getter(name="excludeCredentials")
+    def exclude_credentials(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
+        """
+        return pulumi.get(self, "exclude_credentials")
+
+    @exclude_credentials.setter
+    def exclude_credentials(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "exclude_credentials", value)
+
+    @property
+    @pulumi.getter(name="publicKeyTypes")
+    def public_key_types(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) List of server supported public key algorithms
+        """
+        return pulumi.get(self, "public_key_types")
+
+    @public_key_types.setter
+    def public_key_types(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "public_key_types", value)
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Timeout for the fido authentication to complete
+        """
+        return pulumi.get(self, "timeout")
+
+    @timeout.setter
+    def timeout(self, value: pulumi.Input[int]):
+        pulumi.set(self, "timeout", value)
+
+    @property
+    @pulumi.getter(name="domainValidationLevel")
+    def domain_validation_level(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Number of domain levels IDCS should use for origin comparision
+        """
+        return pulumi.get(self, "domain_validation_level")
+
+    @domain_validation_level.setter
+    def domain_validation_level(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "domain_validation_level", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs:
+    def __init__(__self__, *,
+                 duo_security_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs']] = None):
+        """
+        :param pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs'] duo_security_settings: (Updatable) Settings related to Duo Security
+        """
+        if duo_security_settings is not None:
+            pulumi.set(__self__, "duo_security_settings", duo_security_settings)
+
+    @property
+    @pulumi.getter(name="duoSecuritySettings")
+    def duo_security_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs']]:
+        """
+        (Updatable) Settings related to Duo Security
+        """
+        return pulumi.get(self, "duo_security_settings")
+
+    @duo_security_settings.setter
+    def duo_security_settings(self, value: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs']]):
+        pulumi.set(self, "duo_security_settings", value)
+
+
+@pulumi.input_type
+class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs:
+    def __init__(__self__, *,
+                 api_hostname: pulumi.Input[str],
+                 integration_key: pulumi.Input[str],
+                 secret_key: pulumi.Input[str],
+                 user_mapping_attribute: pulumi.Input[str],
+                 attestation_key: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] api_hostname: (Updatable) Hostname to access the Duo security account
+        :param pulumi.Input[str] integration_key: (Updatable) Integration key from Duo Security authenticator
+        :param pulumi.Input[str] secret_key: (Updatable) Secret key from Duo Security authenticator
+        :param pulumi.Input[str] user_mapping_attribute: (Updatable) User attribute mapping value
+        :param pulumi.Input[str] attestation_key: (Updatable) Attestation key to attest the request and response between Duo Security
+        """
+        pulumi.set(__self__, "api_hostname", api_hostname)
+        pulumi.set(__self__, "integration_key", integration_key)
+        pulumi.set(__self__, "secret_key", secret_key)
+        pulumi.set(__self__, "user_mapping_attribute", user_mapping_attribute)
+        if attestation_key is not None:
+            pulumi.set(__self__, "attestation_key", attestation_key)
+
+    @property
+    @pulumi.getter(name="apiHostname")
+    def api_hostname(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Hostname to access the Duo security account
+        """
+        return pulumi.get(self, "api_hostname")
+
+    @api_hostname.setter
+    def api_hostname(self, value: pulumi.Input[str]):
+        pulumi.set(self, "api_hostname", value)
+
+    @property
+    @pulumi.getter(name="integrationKey")
+    def integration_key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Integration key from Duo Security authenticator
+        """
+        return pulumi.get(self, "integration_key")
+
+    @integration_key.setter
+    def integration_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "integration_key", value)
+
+    @property
+    @pulumi.getter(name="secretKey")
+    def secret_key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Secret key from Duo Security authenticator
+        """
+        return pulumi.get(self, "secret_key")
+
+    @secret_key.setter
+    def secret_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "secret_key", value)
+
+    @property
+    @pulumi.getter(name="userMappingAttribute")
+    def user_mapping_attribute(self) -> pulumi.Input[str]:
+        """
+        (Updatable) User attribute mapping value
+        """
+        return pulumi.get(self, "user_mapping_attribute")
+
+    @user_mapping_attribute.setter
+    def user_mapping_attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "user_mapping_attribute", value)
+
+    @property
+    @pulumi.getter(name="attestationKey")
+    def attestation_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Attestation key to attest the request and response between Duo Security
+        """
+        return pulumi.get(self, "attestation_key")
+
+    @attestation_key.setter
+    def attestation_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "attestation_key", value)
+
+
+@pulumi.input_type
+class DomainsCustomerSecretKeyIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsCustomerSecretKeyMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsCustomerSecretKeyTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
+    def __init__(__self__, *,
+                 allow_self_change: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] allow_self_change: If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        if allow_self_change is not None:
+            pulumi.set(__self__, "allow_self_change", allow_self_change)
+
+    @property
+    @pulumi.getter(name="allowSelfChange")
+    def allow_self_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        return pulumi.get(self, "allow_self_change")
+
+    @allow_self_change.setter
+    def allow_self_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_self_change", value)
+
+
+@pulumi.input_type
+class DomainsCustomerSecretKeyUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 admin_role: Optional[pulumi.Input[bool]] = None,
+                 app_id: Optional[pulumi.Input[str]] = None,
+                 app_name: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 legacy_group_name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Oracle Cloud Infrastructure Tag value
+        :param pulumi.Input[bool] admin_role: (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+        :param pulumi.Input[str] app_id: (Updatable) App identifier
+        :param pulumi.Input[str] app_name: (Updatable) Name of parent App. READ-ONLY.
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] legacy_group_name: (Updatable) The name of the legacy group associated with this AppRole.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if admin_role is not None:
+            pulumi.set(__self__, "admin_role", admin_role)
+        if app_id is not None:
+            pulumi.set(__self__, "app_id", app_id)
+        if app_name is not None:
+            pulumi.set(__self__, "app_name", app_name)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if legacy_group_name is not None:
+            pulumi.set(__self__, "legacy_group_name", legacy_group_name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="adminRole")
+    def admin_role(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+        """
+        return pulumi.get(self, "admin_role")
+
+    @admin_role.setter
+    def admin_role(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "admin_role", value)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App identifier
+        """
+        return pulumi.get(self, "app_id")
+
+    @app_id.setter
+    def app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_id", value)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of parent App. READ-ONLY.
+        """
+        return pulumi.get(self, "app_name")
+
+    @app_name.setter
+    def app_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_name", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter(name="legacyGroupName")
+    def legacy_group_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the legacy group associated with this AppRole.
+        """
+        return pulumi.get(self, "legacy_group_name")
+
+    @legacy_group_name.setter
+    def legacy_group_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_group_name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupGrantArgs:
+    def __init__(__self__, *,
+                 app_id: Optional[pulumi.Input[str]] = None,
+                 grant_mechanism: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] app_id: (Updatable) App identifier
+        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] value: (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        if app_id is not None:
+            pulumi.set(__self__, "app_id", app_id)
+        if grant_mechanism is not None:
+            pulumi.set(__self__, "grant_mechanism", grant_mechanism)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App identifier
+        """
+        return pulumi.get(self, "app_id")
+
+    @app_id.setter
+    def app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_id", value)
+
+    @property
+    @pulumi.getter(name="grantMechanism")
+    def grant_mechanism(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        """
+        return pulumi.get(self, "grant_mechanism")
+
+    @grant_mechanism.setter
+    def grant_mechanism(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "grant_mechanism", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Oracle Cloud Infrastructure Tag value
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Oracle Cloud Infrastructure Tag value
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+        :param pulumi.Input[str] value: (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
+    def __init__(__self__, *,
+                 defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
+                 tag_slug: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]] defined_tags: (Updatable) Oracle Cloud Infrastructure Defined Tags
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]] freeform_tags: (Updatable) Oracle Cloud Infrastructure Freeform Tags
+        :param pulumi.Input[str] tag_slug: (Updatable) Oracle Cloud Infrastructure Tag slug
+        """
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if tag_slug is not None:
+            pulumi.set(__self__, "tag_slug", tag_slug)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Defined Tags
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Freeform Tags
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="tagSlug")
+    def tag_slug(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag slug
+        """
+        return pulumi.get(self, "tag_slug")
+
+    @tag_slug.setter
+    def tag_slug(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tag_slug", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 namespace: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+        :param pulumi.Input[str] namespace: (Updatable) Oracle Cloud Infrastructure Tag namespace
+        :param pulumi.Input[str] value: (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+        :param pulumi.Input[str] value: (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsGroupIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        :param pulumi.Input[str] display: (Updatable) App Display Name
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) App URI
+        :param pulumi.Input[str] type: (Updatable) The type of the entity that created this Group.
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App Display Name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of the entity that created this Group.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsGroupIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        :param pulumi.Input[str] display: (Updatable) App Display Name
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) App URI
+        :param pulumi.Input[str] type: (Updatable) The type of the entity that created this Group.
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App Display Name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of the entity that created this Group.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsGroupMemberArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 date_added: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 membership_ocid: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) The type of the entity that created this Group.
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        :param pulumi.Input[str] date_added: (Updatable) The DateTime the member was added to the Group.
+        :param pulumi.Input[str] display: (Updatable) App Display Name
+        :param pulumi.Input[str] membership_ocid: (Updatable) Membership Ocid
+        :param pulumi.Input[str] name: (Updatable) PasswordPolicy Name
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) App URI
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if date_added is not None:
+            pulumi.set(__self__, "date_added", date_added)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if membership_ocid is not None:
+            pulumi.set(__self__, "membership_ocid", membership_ocid)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of the entity that created this Group.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="dateAdded")
+    def date_added(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the member was added to the Group.
+        """
+        return pulumi.get(self, "date_added")
+
+    @date_added.setter
+    def date_added(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "date_added", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App Display Name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter(name="membershipOcid")
+    def membership_ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Membership Ocid
+        """
+        return pulumi.get(self, "membership_ocid")
+
+    @membership_ocid.setter
+    def membership_ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "membership_ocid", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) PasswordPolicy Name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsGroupMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsGroupTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
+    def __init__(__self__, *,
+                 defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
+                 tag_slug: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]] defined_tags: (Updatable) Oracle Cloud Infrastructure Defined Tags
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]] freeform_tags: (Updatable) Oracle Cloud Infrastructure Freeform Tags
+        :param pulumi.Input[str] tag_slug: (Updatable) Oracle Cloud Infrastructure Tag slug
+        """
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if tag_slug is not None:
+            pulumi.set(__self__, "tag_slug", tag_slug)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Defined Tags
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Freeform Tags
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="tagSlug")
+    def tag_slug(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag slug
+        """
+        return pulumi.get(self, "tag_slug")
+
+    @tag_slug.setter
+    def tag_slug(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tag_slug", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 namespace: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+        :param pulumi.Input[str] namespace: (Updatable) Oracle Cloud Infrastructure Tag namespace
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs:
+    def __init__(__self__, *,
+                 domain_level_schema: Optional[pulumi.Input[str]] = None,
+                 domain_level_schema_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs']]]] = None,
+                 instance_level_schema: Optional[pulumi.Input[str]] = None,
+                 instance_level_schema_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs']]]] = None):
+        """
+        :param pulumi.Input[str] domain_level_schema: (Updatable) DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs']]] domain_level_schema_names: (Updatable) DBCS Domain-level schema-names. Each value is specific to a DB Domain.
+        :param pulumi.Input[str] instance_level_schema: (Updatable) DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs']]] instance_level_schema_names: (Updatable) DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
+        """
+        if domain_level_schema is not None:
+            pulumi.set(__self__, "domain_level_schema", domain_level_schema)
+        if domain_level_schema_names is not None:
+            pulumi.set(__self__, "domain_level_schema_names", domain_level_schema_names)
+        if instance_level_schema is not None:
+            pulumi.set(__self__, "instance_level_schema", instance_level_schema)
+        if instance_level_schema_names is not None:
+            pulumi.set(__self__, "instance_level_schema_names", instance_level_schema_names)
+
+    @property
+    @pulumi.getter(name="domainLevelSchema")
+    def domain_level_schema(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+        """
+        return pulumi.get(self, "domain_level_schema")
+
+    @domain_level_schema.setter
+    def domain_level_schema(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_level_schema", value)
+
+    @property
+    @pulumi.getter(name="domainLevelSchemaNames")
+    def domain_level_schema_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs']]]]:
+        """
+        (Updatable) DBCS Domain-level schema-names. Each value is specific to a DB Domain.
+        """
+        return pulumi.get(self, "domain_level_schema_names")
+
+    @domain_level_schema_names.setter
+    def domain_level_schema_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs']]]]):
+        pulumi.set(self, "domain_level_schema_names", value)
+
+    @property
+    @pulumi.getter(name="instanceLevelSchema")
+    def instance_level_schema(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+        """
+        return pulumi.get(self, "instance_level_schema")
+
+    @instance_level_schema.setter
+    def instance_level_schema(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_level_schema", value)
+
+    @property
+    @pulumi.getter(name="instanceLevelSchemaNames")
+    def instance_level_schema_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs']]]]:
+        """
+        (Updatable) DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
+        """
+        return pulumi.get(self, "instance_level_schema_names")
+
+    @instance_level_schema_names.setter
+    def instance_level_schema_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs']]]]):
+        pulumi.set(self, "instance_level_schema_names", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs:
+    def __init__(__self__, *,
+                 domain_name: pulumi.Input[str],
+                 schema_name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] domain_name: (Updatable) DBCS Domain Name
+        :param pulumi.Input[str] schema_name: (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) DBCS Domain Name
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "domain_name", value)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @schema_name.setter
+    def schema_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "schema_name", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs:
+    def __init__(__self__, *,
+                 db_instance_id: pulumi.Input[str],
+                 schema_name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] db_instance_id: (Updatable) App Id of DBCS App instance
+        :param pulumi.Input[str] schema_name: (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+        """
+        pulumi.set(__self__, "db_instance_id", db_instance_id)
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter(name="dbInstanceId")
+    def db_instance_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) App Id of DBCS App instance
+        """
+        return pulumi.get(self, "db_instance_id")
+
+    @db_instance_id.setter
+    def db_instance_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "db_instance_id", value)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @schema_name.setter
+    def schema_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "schema_name", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs:
+    def __init__(__self__, *,
+                 membership_rule: Optional[pulumi.Input[str]] = None,
+                 membership_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] membership_rule: (Updatable) Membership rule
+        :param pulumi.Input[str] membership_type: (Updatable) Membership type
+        """
+        if membership_rule is not None:
+            pulumi.set(__self__, "membership_rule", membership_rule)
+        if membership_type is not None:
+            pulumi.set(__self__, "membership_type", membership_type)
+
+    @property
+    @pulumi.getter(name="membershipRule")
+    def membership_rule(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Membership rule
+        """
+        return pulumi.get(self, "membership_rule")
+
+    @membership_rule.setter
+    def membership_rule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "membership_rule", value)
+
+    @property
+    @pulumi.getter(name="membershipType")
+    def membership_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Membership type
+        """
+        return pulumi.get(self, "membership_type")
+
+    @membership_type.setter
+    def membership_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "membership_type", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs:
+    def __init__(__self__, *,
+                 app_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs']]]] = None,
+                 creation_mechanism: Optional[pulumi.Input[str]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 grants: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs']]]] = None,
+                 owners: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs']]]] = None,
+                 password_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs']]]] = None,
+                 synced_from_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs']]] app_roles: (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+        :param pulumi.Input[str] creation_mechanism: (Updatable) Source from which this group got created.
+        :param pulumi.Input[str] description: (Updatable) Group description
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs']]] grants: (Updatable) Grants assigned to group
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs']]] owners: (Updatable) Group owners
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs']]] password_policies: (Updatable) Password Policy associated with this Group.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs']]] synced_from_apps: (Updatable) The entity that created this Group.
+        """
+        if app_roles is not None:
+            pulumi.set(__self__, "app_roles", app_roles)
+        if creation_mechanism is not None:
+            pulumi.set(__self__, "creation_mechanism", creation_mechanism)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if grants is not None:
+            pulumi.set(__self__, "grants", grants)
+        if owners is not None:
+            pulumi.set(__self__, "owners", owners)
+        if password_policies is not None:
+            pulumi.set(__self__, "password_policies", password_policies)
+        if synced_from_apps is not None:
+            pulumi.set(__self__, "synced_from_apps", synced_from_apps)
+
+    @property
+    @pulumi.getter(name="appRoles")
+    def app_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs']]]]:
+        """
+        (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+        """
+        return pulumi.get(self, "app_roles")
+
+    @app_roles.setter
+    def app_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs']]]]):
+        pulumi.set(self, "app_roles", value)
+
+    @property
+    @pulumi.getter(name="creationMechanism")
+    def creation_mechanism(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Source from which this group got created.
+        """
+        return pulumi.get(self, "creation_mechanism")
+
+    @creation_mechanism.setter
+    def creation_mechanism(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "creation_mechanism", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Group description
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs']]]]:
+        """
+        (Updatable) Grants assigned to group
+        """
+        return pulumi.get(self, "grants")
+
+    @grants.setter
+    def grants(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs']]]]):
+        pulumi.set(self, "grants", value)
+
+    @property
+    @pulumi.getter
+    def owners(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs']]]]:
+        """
+        (Updatable) Group owners
+        """
+        return pulumi.get(self, "owners")
+
+    @owners.setter
+    def owners(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs']]]]):
+        pulumi.set(self, "owners", value)
+
+    @property
+    @pulumi.getter(name="passwordPolicies")
+    def password_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs']]]]:
+        """
+        (Updatable) Password Policy associated with this Group.
+        """
+        return pulumi.get(self, "password_policies")
+
+    @password_policies.setter
+    def password_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs']]]]):
+        pulumi.set(self, "password_policies", value)
+
+    @property
+    @pulumi.getter(name="syncedFromApps")
+    def synced_from_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs']]]]:
+        """
+        (Updatable) The entity that created this Group.
+        """
+        return pulumi.get(self, "synced_from_apps")
+
+    @synced_from_apps.setter
+    def synced_from_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs']]]]):
+        pulumi.set(self, "synced_from_apps", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 admin_role: Optional[pulumi.Input[bool]] = None,
+                 app_id: Optional[pulumi.Input[str]] = None,
+                 app_name: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 legacy_group_name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        :param pulumi.Input[bool] admin_role: (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+        :param pulumi.Input[str] app_id: (Updatable) App identifier
+        :param pulumi.Input[str] app_name: (Updatable) Name of parent App. READ-ONLY.
+        :param pulumi.Input[str] display: (Updatable) App Display Name
+        :param pulumi.Input[str] legacy_group_name: (Updatable) The name of the legacy group associated with this AppRole.
+        :param pulumi.Input[str] ref: (Updatable) App URI
+        :param pulumi.Input[str] type: (Updatable) The type of the entity that created this Group.
+        """
+        pulumi.set(__self__, "value", value)
+        if admin_role is not None:
+            pulumi.set(__self__, "admin_role", admin_role)
+        if app_id is not None:
+            pulumi.set(__self__, "app_id", app_id)
+        if app_name is not None:
+            pulumi.set(__self__, "app_name", app_name)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if legacy_group_name is not None:
+            pulumi.set(__self__, "legacy_group_name", legacy_group_name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="adminRole")
+    def admin_role(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+        """
+        return pulumi.get(self, "admin_role")
+
+    @admin_role.setter
+    def admin_role(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "admin_role", value)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App identifier
+        """
+        return pulumi.get(self, "app_id")
+
+    @app_id.setter
+    def app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_id", value)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of parent App. READ-ONLY.
+        """
+        return pulumi.get(self, "app_name")
+
+    @app_name.setter
+    def app_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_name", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App Display Name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter(name="legacyGroupName")
+    def legacy_group_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the legacy group associated with this AppRole.
+        """
+        return pulumi.get(self, "legacy_group_name")
+
+    @legacy_group_name.setter
+    def legacy_group_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_group_name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of the entity that created this Group.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs:
+    def __init__(__self__, *,
+                 app_id: Optional[pulumi.Input[str]] = None,
+                 grant_mechanism: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] app_id: (Updatable) App identifier
+        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        :param pulumi.Input[str] ref: (Updatable) App URI
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        """
+        if app_id is not None:
+            pulumi.set(__self__, "app_id", app_id)
+        if grant_mechanism is not None:
+            pulumi.set(__self__, "grant_mechanism", grant_mechanism)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App identifier
+        """
+        return pulumi.get(self, "app_id")
+
+    @app_id.setter
+    def app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_id", value)
+
+    @property
+    @pulumi.getter(name="grantMechanism")
+    def grant_mechanism(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        """
+        return pulumi.get(self, "grant_mechanism")
+
+    @grant_mechanism.setter
+    def grant_mechanism(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "grant_mechanism", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) The type of the entity that created this Group.
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        :param pulumi.Input[str] display: (Updatable) App Display Name
+        :param pulumi.Input[str] ref: (Updatable) App URI
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of the entity that created this Group.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App Display Name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 name: Optional[pulumi.Input[str]] = None,
+                 priority: Optional[pulumi.Input[int]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        :param pulumi.Input[str] name: (Updatable) PasswordPolicy Name
+        :param pulumi.Input[int] priority: (Updatable) PasswordPolicy priority
+        :param pulumi.Input[str] ref: (Updatable) App URI
+        """
+        pulumi.set(__self__, "value", value)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) PasswordPolicy Name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) PasswordPolicy priority
+        """
+        return pulumi.get(self, "priority")
+
+    @priority.setter
+    def priority(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "priority", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) The type of the entity that created this Group.
+        :param pulumi.Input[str] value: (Updatable) The ID of the App.
+        :param pulumi.Input[str] display: (Updatable) App Display Name
+        :param pulumi.Input[str] ref: (Updatable) App URI
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of the entity that created this Group.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ID of the App.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App Display Name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) App URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs:
+    def __init__(__self__, *,
+                 gid_number: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] gid_number: (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
+        """
+        if gid_number is not None:
+            pulumi.set(__self__, "gid_number", gid_number)
+
+    @property
+    @pulumi.getter(name="gidNumber")
+    def gid_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
+        """
+        return pulumi.get(self, "gid_number")
+
+    @gid_number.setter
+    def gid_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "gid_number", value)
+
+
+@pulumi.input_type
+class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs:
+    def __init__(__self__, *,
+                 requestable: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] requestable: (Updatable) Flag controlling whether group membership can be request by user through self service console.
+        """
+        if requestable is not None:
+            pulumi.set(__self__, "requestable", requestable)
+
+    @property
+    @pulumi.getter
+    def requestable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Flag controlling whether group membership can be request by user through self service console.
+        """
+        return pulumi.get(self, "requestable")
+
+    @requestable.setter
+    def requestable(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "requestable", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderCorrelationPolicyArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) Identity Provider Type
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        :param pulumi.Input[str] ref: (Updatable) Group URI
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Identity Provider Type
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Group URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) Group URI
+        :param pulumi.Input[str] type: (Updatable) Identity Provider Type
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Group URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identity Provider Type
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) Group URI
+        :param pulumi.Input[str] type: (Updatable) Identity Provider Type
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Group URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identity Provider Type
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderJitUserProvAssignedGroupArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        :param pulumi.Input[str] ref: (Updatable) Group URI
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Group URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderJitUserProvAttributesArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] ref: (Updatable) Group URI
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Group URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderJitUserProvGroupMappingArgs:
+    def __init__(__self__, *,
+                 idp_group: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] idp_group: (Updatable) IDP Group Name
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] ref: (Updatable) Group URI
+        """
+        pulumi.set(__self__, "idp_group", idp_group)
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter(name="idpGroup")
+    def idp_group(self) -> pulumi.Input[str]:
+        """
+        (Updatable) IDP Group Name
+        """
+        return pulumi.get(self, "idp_group")
+
+    @idp_group.setter
+    def idp_group(self, value: pulumi.Input[str]):
+        pulumi.set(self, "idp_group", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Group URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Key or name of the tag.
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs:
+    def __init__(__self__, *,
+                 account_linking_enabled: pulumi.Input[bool],
+                 consumer_key: pulumi.Input[str],
+                 consumer_secret: pulumi.Input[str],
+                 registration_enabled: pulumi.Input[bool],
+                 service_provider_name: pulumi.Input[str],
+                 access_token_url: Optional[pulumi.Input[str]] = None,
+                 admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 authz_url: Optional[pulumi.Input[str]] = None,
+                 client_credential_in_payload: Optional[pulumi.Input[bool]] = None,
+                 clock_skew_in_seconds: Optional[pulumi.Input[int]] = None,
+                 discovery_url: Optional[pulumi.Input[str]] = None,
+                 id_attribute: Optional[pulumi.Input[str]] = None,
+                 profile_url: Optional[pulumi.Input[str]] = None,
+                 redirect_url: Optional[pulumi.Input[str]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] account_linking_enabled: (Updatable) Whether account linking is enabled
+        :param pulumi.Input[str] consumer_key: (Updatable) Social IDP Client Application Client ID
+        :param pulumi.Input[str] consumer_secret: (Updatable) Social IDP Client Application Client Secret
+        :param pulumi.Input[bool] registration_enabled: (Updatable) Whether registration is enabled
+        :param pulumi.Input[str] service_provider_name: (Updatable) Service Provider Name
+        :param pulumi.Input[str] access_token_url: (Updatable) Social IDP Access token URL
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] admin_scopes: (Updatable) Admin scope to request
+        :param pulumi.Input[str] authz_url: (Updatable) Social IDP Authorization URL
+        :param pulumi.Input[bool] client_credential_in_payload: (Updatable) Whether the client credential is contained in payload
+        :param pulumi.Input[int] clock_skew_in_seconds: (Updatable) Social IDP allowed clock skew time
+        :param pulumi.Input[str] discovery_url: (Updatable) Discovery URL
+        :param pulumi.Input[str] id_attribute: (Updatable) Id attribute used for account linking
+        :param pulumi.Input[str] profile_url: (Updatable) Social IDP User profile URL
+        :param pulumi.Input[str] redirect_url: (Updatable) redirect URL for social idp
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: (Updatable) Scope to request
+        :param pulumi.Input[str] status: (Updatable) Status
+        """
+        pulumi.set(__self__, "account_linking_enabled", account_linking_enabled)
+        pulumi.set(__self__, "consumer_key", consumer_key)
+        pulumi.set(__self__, "consumer_secret", consumer_secret)
+        pulumi.set(__self__, "registration_enabled", registration_enabled)
+        pulumi.set(__self__, "service_provider_name", service_provider_name)
+        if access_token_url is not None:
+            pulumi.set(__self__, "access_token_url", access_token_url)
+        if admin_scopes is not None:
+            pulumi.set(__self__, "admin_scopes", admin_scopes)
+        if authz_url is not None:
+            pulumi.set(__self__, "authz_url", authz_url)
+        if client_credential_in_payload is not None:
+            pulumi.set(__self__, "client_credential_in_payload", client_credential_in_payload)
+        if clock_skew_in_seconds is not None:
+            pulumi.set(__self__, "clock_skew_in_seconds", clock_skew_in_seconds)
+        if discovery_url is not None:
+            pulumi.set(__self__, "discovery_url", discovery_url)
+        if id_attribute is not None:
+            pulumi.set(__self__, "id_attribute", id_attribute)
+        if profile_url is not None:
+            pulumi.set(__self__, "profile_url", profile_url)
+        if redirect_url is not None:
+            pulumi.set(__self__, "redirect_url", redirect_url)
+        if scopes is not None:
+            pulumi.set(__self__, "scopes", scopes)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="accountLinkingEnabled")
+    def account_linking_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Whether account linking is enabled
+        """
+        return pulumi.get(self, "account_linking_enabled")
+
+    @account_linking_enabled.setter
+    def account_linking_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "account_linking_enabled", value)
+
+    @property
+    @pulumi.getter(name="consumerKey")
+    def consumer_key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Social IDP Client Application Client ID
+        """
+        return pulumi.get(self, "consumer_key")
+
+    @consumer_key.setter
+    def consumer_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "consumer_key", value)
+
+    @property
+    @pulumi.getter(name="consumerSecret")
+    def consumer_secret(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Social IDP Client Application Client Secret
+        """
+        return pulumi.get(self, "consumer_secret")
+
+    @consumer_secret.setter
+    def consumer_secret(self, value: pulumi.Input[str]):
+        pulumi.set(self, "consumer_secret", value)
+
+    @property
+    @pulumi.getter(name="registrationEnabled")
+    def registration_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Whether registration is enabled
+        """
+        return pulumi.get(self, "registration_enabled")
+
+    @registration_enabled.setter
+    def registration_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "registration_enabled", value)
+
+    @property
+    @pulumi.getter(name="serviceProviderName")
+    def service_provider_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Service Provider Name
+        """
+        return pulumi.get(self, "service_provider_name")
+
+    @service_provider_name.setter
+    def service_provider_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "service_provider_name", value)
+
+    @property
+    @pulumi.getter(name="accessTokenUrl")
+    def access_token_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Social IDP Access token URL
+        """
+        return pulumi.get(self, "access_token_url")
+
+    @access_token_url.setter
+    def access_token_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_token_url", value)
+
+    @property
+    @pulumi.getter(name="adminScopes")
+    def admin_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Admin scope to request
+        """
+        return pulumi.get(self, "admin_scopes")
+
+    @admin_scopes.setter
+    def admin_scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "admin_scopes", value)
+
+    @property
+    @pulumi.getter(name="authzUrl")
+    def authz_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Social IDP Authorization URL
+        """
+        return pulumi.get(self, "authz_url")
+
+    @authz_url.setter
+    def authz_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "authz_url", value)
+
+    @property
+    @pulumi.getter(name="clientCredentialInPayload")
+    def client_credential_in_payload(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether the client credential is contained in payload
+        """
+        return pulumi.get(self, "client_credential_in_payload")
+
+    @client_credential_in_payload.setter
+    def client_credential_in_payload(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "client_credential_in_payload", value)
+
+    @property
+    @pulumi.getter(name="clockSkewInSeconds")
+    def clock_skew_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Social IDP allowed clock skew time
+        """
+        return pulumi.get(self, "clock_skew_in_seconds")
+
+    @clock_skew_in_seconds.setter
+    def clock_skew_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "clock_skew_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Discovery URL
+        """
+        return pulumi.get(self, "discovery_url")
+
+    @discovery_url.setter
+    def discovery_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "discovery_url", value)
+
+    @property
+    @pulumi.getter(name="idAttribute")
+    def id_attribute(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Id attribute used for account linking
+        """
+        return pulumi.get(self, "id_attribute")
+
+    @id_attribute.setter
+    def id_attribute(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id_attribute", value)
+
+    @property
+    @pulumi.getter(name="profileUrl")
+    def profile_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Social IDP User profile URL
+        """
+        return pulumi.get(self, "profile_url")
+
+    @profile_url.setter
+    def profile_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "profile_url", value)
+
+    @property
+    @pulumi.getter(name="redirectUrl")
+    def redirect_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) redirect URL for social idp
+        """
+        return pulumi.get(self, "redirect_url")
+
+    @redirect_url.setter
+    def redirect_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "redirect_url", value)
+
+    @property
+    @pulumi.getter
+    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Scope to request
+        """
+        return pulumi.get(self, "scopes")
+
+    @scopes.setter
+    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "scopes", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Status
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+
+@pulumi.input_type
+class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs:
+    def __init__(__self__, *,
+                 cert_match_attribute: pulumi.Input[str],
+                 signing_certificate_chains: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 user_match_attribute: pulumi.Input[str],
+                 crl_check_on_ocsp_failure_enabled: Optional[pulumi.Input[bool]] = None,
+                 crl_enabled: Optional[pulumi.Input[bool]] = None,
+                 crl_location: Optional[pulumi.Input[str]] = None,
+                 crl_reload_duration: Optional[pulumi.Input[int]] = None,
+                 ocsp_allow_unknown_response_status: Optional[pulumi.Input[bool]] = None,
+                 ocsp_enable_signed_response: Optional[pulumi.Input[bool]] = None,
+                 ocsp_enabled: Optional[pulumi.Input[bool]] = None,
+                 ocsp_responder_url: Optional[pulumi.Input[str]] = None,
+                 ocsp_revalidate_time: Optional[pulumi.Input[int]] = None,
+                 ocsp_server_name: Optional[pulumi.Input[str]] = None,
+                 ocsp_trust_cert_chains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 other_cert_match_attribute: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] cert_match_attribute: (Updatable) X509 Certificate Matching Attribute
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] signing_certificate_chains: (Updatable) Certificate alias list to create a chain for the incoming client certificate
+        :param pulumi.Input[str] user_match_attribute: (Updatable) This property specifies the userstore attribute value that must match the incoming certificate attribute.
+        :param pulumi.Input[bool] crl_check_on_ocsp_failure_enabled: (Updatable) Fallback on CRL Validation if OCSP fails.
+        :param pulumi.Input[bool] crl_enabled: (Updatable) Set to true to enable CRL Validation
+        :param pulumi.Input[str] crl_location: (Updatable) CRL Location URL
+        :param pulumi.Input[int] crl_reload_duration: (Updatable) Fetch the CRL contents every X minutes
+        :param pulumi.Input[bool] ocsp_allow_unknown_response_status: (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+        :param pulumi.Input[bool] ocsp_enable_signed_response: (Updatable) Describes if the OCSP response is signed
+        :param pulumi.Input[bool] ocsp_enabled: (Updatable) Set to true to enable OCSP Validation
+        :param pulumi.Input[str] ocsp_responder_url: (Updatable) This property specifies OCSP Responder URL.
+        :param pulumi.Input[int] ocsp_revalidate_time: (Updatable) Revalidate OCSP status for user after X hours
+        :param pulumi.Input[str] ocsp_server_name: (Updatable) This property specifies the OCSP Server alias name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ocsp_trust_cert_chains: (Updatable) OCSP Trusted Certificate Chain
+        :param pulumi.Input[str] other_cert_match_attribute: (Updatable) Check for specific conditions of other certificate attributes
+        """
+        pulumi.set(__self__, "cert_match_attribute", cert_match_attribute)
+        pulumi.set(__self__, "signing_certificate_chains", signing_certificate_chains)
+        pulumi.set(__self__, "user_match_attribute", user_match_attribute)
+        if crl_check_on_ocsp_failure_enabled is not None:
+            pulumi.set(__self__, "crl_check_on_ocsp_failure_enabled", crl_check_on_ocsp_failure_enabled)
+        if crl_enabled is not None:
+            pulumi.set(__self__, "crl_enabled", crl_enabled)
+        if crl_location is not None:
+            pulumi.set(__self__, "crl_location", crl_location)
+        if crl_reload_duration is not None:
+            pulumi.set(__self__, "crl_reload_duration", crl_reload_duration)
+        if ocsp_allow_unknown_response_status is not None:
+            pulumi.set(__self__, "ocsp_allow_unknown_response_status", ocsp_allow_unknown_response_status)
+        if ocsp_enable_signed_response is not None:
+            pulumi.set(__self__, "ocsp_enable_signed_response", ocsp_enable_signed_response)
+        if ocsp_enabled is not None:
+            pulumi.set(__self__, "ocsp_enabled", ocsp_enabled)
+        if ocsp_responder_url is not None:
+            pulumi.set(__self__, "ocsp_responder_url", ocsp_responder_url)
+        if ocsp_revalidate_time is not None:
+            pulumi.set(__self__, "ocsp_revalidate_time", ocsp_revalidate_time)
+        if ocsp_server_name is not None:
+            pulumi.set(__self__, "ocsp_server_name", ocsp_server_name)
+        if ocsp_trust_cert_chains is not None:
+            pulumi.set(__self__, "ocsp_trust_cert_chains", ocsp_trust_cert_chains)
+        if other_cert_match_attribute is not None:
+            pulumi.set(__self__, "other_cert_match_attribute", other_cert_match_attribute)
+
+    @property
+    @pulumi.getter(name="certMatchAttribute")
+    def cert_match_attribute(self) -> pulumi.Input[str]:
+        """
+        (Updatable) X509 Certificate Matching Attribute
+        """
+        return pulumi.get(self, "cert_match_attribute")
+
+    @cert_match_attribute.setter
+    def cert_match_attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cert_match_attribute", value)
+
+    @property
+    @pulumi.getter(name="signingCertificateChains")
+    def signing_certificate_chains(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) Certificate alias list to create a chain for the incoming client certificate
+        """
+        return pulumi.get(self, "signing_certificate_chains")
+
+    @signing_certificate_chains.setter
+    def signing_certificate_chains(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "signing_certificate_chains", value)
+
+    @property
+    @pulumi.getter(name="userMatchAttribute")
+    def user_match_attribute(self) -> pulumi.Input[str]:
+        """
+        (Updatable) This property specifies the userstore attribute value that must match the incoming certificate attribute.
+        """
+        return pulumi.get(self, "user_match_attribute")
+
+    @user_match_attribute.setter
+    def user_match_attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "user_match_attribute", value)
+
+    @property
+    @pulumi.getter(name="crlCheckOnOcspFailureEnabled")
+    def crl_check_on_ocsp_failure_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Fallback on CRL Validation if OCSP fails.
+        """
+        return pulumi.get(self, "crl_check_on_ocsp_failure_enabled")
+
+    @crl_check_on_ocsp_failure_enabled.setter
+    def crl_check_on_ocsp_failure_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "crl_check_on_ocsp_failure_enabled", value)
+
+    @property
+    @pulumi.getter(name="crlEnabled")
+    def crl_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Set to true to enable CRL Validation
+        """
+        return pulumi.get(self, "crl_enabled")
+
+    @crl_enabled.setter
+    def crl_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "crl_enabled", value)
+
+    @property
+    @pulumi.getter(name="crlLocation")
+    def crl_location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) CRL Location URL
+        """
+        return pulumi.get(self, "crl_location")
+
+    @crl_location.setter
+    def crl_location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "crl_location", value)
+
+    @property
+    @pulumi.getter(name="crlReloadDuration")
+    def crl_reload_duration(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Fetch the CRL contents every X minutes
+        """
+        return pulumi.get(self, "crl_reload_duration")
+
+    @crl_reload_duration.setter
+    def crl_reload_duration(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "crl_reload_duration", value)
+
+    @property
+    @pulumi.getter(name="ocspAllowUnknownResponseStatus")
+    def ocsp_allow_unknown_response_status(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+        """
+        return pulumi.get(self, "ocsp_allow_unknown_response_status")
+
+    @ocsp_allow_unknown_response_status.setter
+    def ocsp_allow_unknown_response_status(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ocsp_allow_unknown_response_status", value)
+
+    @property
+    @pulumi.getter(name="ocspEnableSignedResponse")
+    def ocsp_enable_signed_response(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Describes if the OCSP response is signed
+        """
+        return pulumi.get(self, "ocsp_enable_signed_response")
+
+    @ocsp_enable_signed_response.setter
+    def ocsp_enable_signed_response(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ocsp_enable_signed_response", value)
+
+    @property
+    @pulumi.getter(name="ocspEnabled")
+    def ocsp_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Set to true to enable OCSP Validation
+        """
+        return pulumi.get(self, "ocsp_enabled")
+
+    @ocsp_enabled.setter
+    def ocsp_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ocsp_enabled", value)
+
+    @property
+    @pulumi.getter(name="ocspResponderUrl")
+    def ocsp_responder_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This property specifies OCSP Responder URL.
+        """
+        return pulumi.get(self, "ocsp_responder_url")
+
+    @ocsp_responder_url.setter
+    def ocsp_responder_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocsp_responder_url", value)
+
+    @property
+    @pulumi.getter(name="ocspRevalidateTime")
+    def ocsp_revalidate_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Revalidate OCSP status for user after X hours
+        """
+        return pulumi.get(self, "ocsp_revalidate_time")
+
+    @ocsp_revalidate_time.setter
+    def ocsp_revalidate_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ocsp_revalidate_time", value)
+
+    @property
+    @pulumi.getter(name="ocspServerName")
+    def ocsp_server_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This property specifies the OCSP Server alias name
+        """
+        return pulumi.get(self, "ocsp_server_name")
+
+    @ocsp_server_name.setter
+    def ocsp_server_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocsp_server_name", value)
+
+    @property
+    @pulumi.getter(name="ocspTrustCertChains")
+    def ocsp_trust_cert_chains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) OCSP Trusted Certificate Chain
+        """
+        return pulumi.get(self, "ocsp_trust_cert_chains")
+
+    @ocsp_trust_cert_chains.setter
+    def ocsp_trust_cert_chains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ocsp_trust_cert_chains", value)
+
+    @property
+    @pulumi.getter(name="otherCertMatchAttribute")
+    def other_cert_match_attribute(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Check for specific conditions of other certificate attributes
+        """
+        return pulumi.get(self, "other_cert_match_attribute")
+
+    @other_cert_match_attribute.setter
+    def other_cert_match_attribute(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "other_cert_match_attribute", value)
+
+
+@pulumi.input_type
+class DomainsKmsiSettingIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsKmsiSettingIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsKmsiSettingMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsKmsiSettingTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Key or name of the tag.
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyApiKeyIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyApiKeyIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyApiKeyMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsMyApiKeyTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyApiKeyUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyAuthTokenIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyAuthTokenIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyAuthTokenMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsMyAuthTokenTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyAuthTokenUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyCustomerSecretKeyMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsMyCustomerSecretKeyTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyCustomerSecretKeyUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyOauth2clientCredentialMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsMyOauth2clientCredentialScopeArgs:
+    def __init__(__self__, *,
+                 audience: pulumi.Input[str],
+                 scope: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] audience: Audience
+        :param pulumi.Input[str] scope: Scope
+        """
+        pulumi.set(__self__, "audience", audience)
+        pulumi.set(__self__, "scope", scope)
+
+    @property
+    @pulumi.getter
+    def audience(self) -> pulumi.Input[str]:
+        """
+        Audience
+        """
+        return pulumi.get(self, "audience")
+
+    @audience.setter
+    def audience(self, value: pulumi.Input[str]):
+        pulumi.set(self, "audience", value)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[str]:
+        """
+        Scope
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[str]):
+        pulumi.set(self, "scope", value)
+
+
+@pulumi.input_type
+class DomainsMyOauth2clientCredentialTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyOauth2clientCredentialUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMySmtpCredentialIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMySmtpCredentialIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMySmtpCredentialMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsMySmtpCredentialTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMySmtpCredentialUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMySupportAccountIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this Support Account
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this Support Account
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMySupportAccountIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this Support Account
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this Support Account
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMySupportAccountMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsMySupportAccountTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMySupportAccountUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this Support Account
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this Support Account
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyUserDbCredentialIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyUserDbCredentialMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsMyUserDbCredentialTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyUserDbCredentialUserArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsOauth2clientCredentialIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsOauth2clientCredentialMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsOauth2clientCredentialScopeArgs:
+    def __init__(__self__, *,
+                 audience: pulumi.Input[str],
+                 scope: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] audience: Audience
+        :param pulumi.Input[str] scope: Scope
+        """
+        pulumi.set(__self__, "audience", audience)
+        pulumi.set(__self__, "scope", scope)
+
+    @property
+    @pulumi.getter
+    def audience(self) -> pulumi.Input[str]:
+        """
+        Audience
+        """
+        return pulumi.get(self, "audience")
+
+    @audience.setter
+    def audience(self, value: pulumi.Input[str]):
+        pulumi.set(self, "audience", value)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[str]:
+        """
+        Scope
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[str]):
+        pulumi.set(self, "scope", value)
+
+
+@pulumi.input_type
+class DomainsOauth2clientCredentialTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
+    def __init__(__self__, *,
+                 allow_self_change: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] allow_self_change: If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        if allow_self_change is not None:
+            pulumi.set(__self__, "allow_self_change", allow_self_change)
+
+    @property
+    @pulumi.getter(name="allowSelfChange")
+    def allow_self_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        return pulumi.get(self, "allow_self_change")
+
+    @allow_self_change.setter
+    def allow_self_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_self_change", value)
+
+
+@pulumi.input_type
+class DomainsOauth2clientCredentialUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Key or name of the tag.
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsPasswordPolicyGroupArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsPasswordPolicyIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsPasswordPolicyIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsPasswordPolicyMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsPasswordPolicyTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Key or name of the tag.
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsSmtpCredentialIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsSmtpCredentialIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsSmtpCredentialMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsSmtpCredentialTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
+    def __init__(__self__, *,
+                 allow_self_change: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] allow_self_change: If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        if allow_self_change is not None:
+            pulumi.set(__self__, "allow_self_change", allow_self_change)
+
+    @property
+    @pulumi.getter(name="allowSelfChange")
+    def allow_self_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        return pulumi.get(self, "allow_self_change")
+
+    @allow_self_change.setter
+    def allow_self_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_self_change", value)
+
+
+@pulumi.input_type
+class DomainsSmtpCredentialUserArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] value: User's id
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserAddressArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 country: Optional[pulumi.Input[str]] = None,
+                 formatted: Optional[pulumi.Input[str]] = None,
+                 locality: Optional[pulumi.Input[str]] = None,
+                 postal_code: Optional[pulumi.Input[str]] = None,
+                 primary: Optional[pulumi.Input[bool]] = None,
+                 region: Optional[pulumi.Input[str]] = None,
+                 street_address: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] country: (Updatable) The country name component.
+        :param pulumi.Input[str] formatted: (Updatable) Full name
+        :param pulumi.Input[str] locality: (Updatable) The city or locality component.
+        :param pulumi.Input[str] postal_code: (Updatable) The zipcode or postal code component.
+        :param pulumi.Input[bool] primary: (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        :param pulumi.Input[str] region: (Updatable) The state or region component.
+        :param pulumi.Input[str] street_address: (Updatable) The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
+        """
+        pulumi.set(__self__, "type", type)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if formatted is not None:
+            pulumi.set(__self__, "formatted", formatted)
+        if locality is not None:
+            pulumi.set(__self__, "locality", locality)
+        if postal_code is not None:
+            pulumi.set(__self__, "postal_code", postal_code)
+        if primary is not None:
+            pulumi.set(__self__, "primary", primary)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if street_address is not None:
+            pulumi.set(__self__, "street_address", street_address)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def country(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The country name component.
+        """
+        return pulumi.get(self, "country")
+
+    @country.setter
+    def country(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "country", value)
+
+    @property
+    @pulumi.getter
+    def formatted(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Full name
+        """
+        return pulumi.get(self, "formatted")
+
+    @formatted.setter
+    def formatted(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "formatted", value)
+
+    @property
+    @pulumi.getter
+    def locality(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The city or locality component.
+        """
+        return pulumi.get(self, "locality")
+
+    @locality.setter
+    def locality(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "locality", value)
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The zipcode or postal code component.
+        """
+        return pulumi.get(self, "postal_code")
+
+    @postal_code.setter
+    def postal_code(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "postal_code", value)
+
+    @property
+    @pulumi.getter
+    def primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "primary")
+
+    @primary.setter
+    def primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "primary", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The state or region component.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter(name="streetAddress")
+    def street_address(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
+        """
+        return pulumi.get(self, "street_address")
+
+    @street_address.setter
+    def street_address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "street_address", value)
+
+
+@pulumi.input_type
+class DomainsUserDbCredentialIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsUserDbCredentialIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsUserDbCredentialMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsUserDbCredentialTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] value: User's id
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
+    def __init__(__self__, *,
+                 allow_self_change: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] allow_self_change: If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        if allow_self_change is not None:
+            pulumi.set(__self__, "allow_self_change", allow_self_change)
+
+    @property
+    @pulumi.getter(name="allowSelfChange")
+    def allow_self_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        return pulumi.get(self, "allow_self_change")
+
+    @allow_self_change.setter
+    def allow_self_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_self_change", value)
+
+
+@pulumi.input_type
+class DomainsUserDbCredentialUserArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        User's id
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User display name
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        User's ocid
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI that corresponds to the user linked to this credential
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserEmailArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 pending_verification_data: Optional[pulumi.Input[str]] = None,
+                 primary: Optional[pulumi.Input[bool]] = None,
+                 secondary: Optional[pulumi.Input[bool]] = None,
+                 verified: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] pending_verification_data: (Updatable) Pending e-mail address verification
+        :param pulumi.Input[bool] primary: (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        :param pulumi.Input[bool] secondary: (Updatable) A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value 'true' MUST appear no more than once.
+        :param pulumi.Input[bool] verified: (Updatable) A Boolean value that indicates if the phone number is verified.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if pending_verification_data is not None:
+            pulumi.set(__self__, "pending_verification_data", pending_verification_data)
+        if primary is not None:
+            pulumi.set(__self__, "primary", primary)
+        if secondary is not None:
+            pulumi.set(__self__, "secondary", secondary)
+        if verified is not None:
+            pulumi.set(__self__, "verified", verified)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="pendingVerificationData")
+    def pending_verification_data(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Pending e-mail address verification
+        """
+        return pulumi.get(self, "pending_verification_data")
+
+    @pending_verification_data.setter
+    def pending_verification_data(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pending_verification_data", value)
+
+    @property
+    @pulumi.getter
+    def primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "primary")
+
+    @primary.setter
+    def primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "primary", value)
+
+    @property
+    @pulumi.getter
+    def secondary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "secondary")
+
+    @secondary.setter
+    def secondary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "secondary", value)
+
+    @property
+    @pulumi.getter
+    def verified(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value that indicates if the phone number is verified.
+        """
+        return pulumi.get(self, "verified")
+
+    @verified.setter
+    def verified(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "verified", value)
+
+
+@pulumi.input_type
+class DomainsUserEntitlementArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 primary: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[bool] primary: (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if primary is not None:
+            pulumi.set(__self__, "primary", primary)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "primary")
+
+    @primary.setter
+    def primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "primary", value)
+
+
+@pulumi.input_type
+class DomainsUserGroupArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 date_added: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
+                 membership_ocid: Optional[pulumi.Input[str]] = None,
+                 non_unique_display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] date_added: (Updatable) Date when the member is Added to the group
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+        :param pulumi.Input[str] membership_ocid: (Updatable) Membership Ocid
+        :param pulumi.Input[str] non_unique_display: (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        """
+        pulumi.set(__self__, "value", value)
+        if date_added is not None:
+            pulumi.set(__self__, "date_added", date_added)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
+        if membership_ocid is not None:
+            pulumi.set(__self__, "membership_ocid", membership_ocid)
+        if non_unique_display is not None:
+            pulumi.set(__self__, "non_unique_display", non_unique_display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="dateAdded")
+    def date_added(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Date when the member is Added to the group
+        """
+        return pulumi.get(self, "date_added")
+
+    @date_added.setter
+    def date_added(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "date_added", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+        """
+        return pulumi.get(self, "external_id")
+
+    @external_id.setter
+    def external_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="membershipOcid")
+    def membership_ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Membership Ocid
+        """
+        return pulumi.get(self, "membership_ocid")
+
+    @membership_ocid.setter
+    def membership_ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "membership_ocid", value)
+
+    @property
+    @pulumi.getter(name="nonUniqueDisplay")
+    def non_unique_display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
+        """
+        return pulumi.get(self, "non_unique_display")
+
+    @non_unique_display.setter
+    def non_unique_display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "non_unique_display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsUserIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsUserIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsUserImArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 primary: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[bool] primary: (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if primary is not None:
+            pulumi.set(__self__, "primary", primary)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "primary")
+
+    @primary.setter
+    def primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "primary", value)
+
+
+@pulumi.input_type
+class DomainsUserMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsUserNameArgs:
+    def __init__(__self__, *,
+                 family_name: pulumi.Input[str],
+                 formatted: Optional[pulumi.Input[str]] = None,
+                 given_name: Optional[pulumi.Input[str]] = None,
+                 honorific_prefix: Optional[pulumi.Input[str]] = None,
+                 honorific_suffix: Optional[pulumi.Input[str]] = None,
+                 middle_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] family_name: (Updatable) Last name
+        :param pulumi.Input[str] formatted: (Updatable) Full name
+        :param pulumi.Input[str] given_name: (Updatable) First name
+        :param pulumi.Input[str] honorific_prefix: (Updatable) Prefix
+        :param pulumi.Input[str] honorific_suffix: (Updatable) Suffix
+        :param pulumi.Input[str] middle_name: (Updatable) Middle name
+        """
+        pulumi.set(__self__, "family_name", family_name)
+        if formatted is not None:
+            pulumi.set(__self__, "formatted", formatted)
+        if given_name is not None:
+            pulumi.set(__self__, "given_name", given_name)
+        if honorific_prefix is not None:
+            pulumi.set(__self__, "honorific_prefix", honorific_prefix)
+        if honorific_suffix is not None:
+            pulumi.set(__self__, "honorific_suffix", honorific_suffix)
+        if middle_name is not None:
+            pulumi.set(__self__, "middle_name", middle_name)
+
+    @property
+    @pulumi.getter(name="familyName")
+    def family_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Last name
+        """
+        return pulumi.get(self, "family_name")
+
+    @family_name.setter
+    def family_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "family_name", value)
+
+    @property
+    @pulumi.getter
+    def formatted(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Full name
+        """
+        return pulumi.get(self, "formatted")
+
+    @formatted.setter
+    def formatted(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "formatted", value)
+
+    @property
+    @pulumi.getter(name="givenName")
+    def given_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) First name
+        """
+        return pulumi.get(self, "given_name")
+
+    @given_name.setter
+    def given_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "given_name", value)
+
+    @property
+    @pulumi.getter(name="honorificPrefix")
+    def honorific_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Prefix
+        """
+        return pulumi.get(self, "honorific_prefix")
+
+    @honorific_prefix.setter
+    def honorific_prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "honorific_prefix", value)
+
+    @property
+    @pulumi.getter(name="honorificSuffix")
+    def honorific_suffix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Suffix
+        """
+        return pulumi.get(self, "honorific_suffix")
+
+    @honorific_suffix.setter
+    def honorific_suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "honorific_suffix", value)
+
+    @property
+    @pulumi.getter(name="middleName")
+    def middle_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Middle name
+        """
+        return pulumi.get(self, "middle_name")
+
+    @middle_name.setter
+    def middle_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "middle_name", value)
+
+
+@pulumi.input_type
+class DomainsUserPhoneNumberArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 primary: Optional[pulumi.Input[bool]] = None,
+                 verified: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[bool] primary: (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        :param pulumi.Input[bool] verified: (Updatable) A Boolean value that indicates if the phone number is verified.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if primary is not None:
+            pulumi.set(__self__, "primary", primary)
+        if verified is not None:
+            pulumi.set(__self__, "verified", verified)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "primary")
+
+    @primary.setter
+    def primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "primary", value)
+
+    @property
+    @pulumi.getter
+    def verified(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value that indicates if the phone number is verified.
+        """
+        return pulumi.get(self, "verified")
+
+    @verified.setter
+    def verified(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "verified", value)
+
+
+@pulumi.input_type
+class DomainsUserPhotoArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 primary: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[bool] primary: (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if primary is not None:
+            pulumi.set(__self__, "primary", primary)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "primary")
+
+    @primary.setter
+    def primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "primary", value)
+
+
+@pulumi.input_type
+class DomainsUserRoleArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 primary: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[bool] primary: (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if primary is not None:
+            pulumi.set(__self__, "primary", primary)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "primary")
+
+    @primary.setter
+    def primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "primary", value)
+
+
+@pulumi.input_type
+class DomainsUserTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) The value of of the User's api key.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of of the User's api key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs:
+    def __init__(__self__, *,
+                 cost_center: Optional[pulumi.Input[str]] = None,
+                 department: Optional[pulumi.Input[str]] = None,
+                 division: Optional[pulumi.Input[str]] = None,
+                 employee_number: Optional[pulumi.Input[str]] = None,
+                 manager: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs']] = None,
+                 organization: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] cost_center: (Updatable) Identifies the name of a cost center.
+        :param pulumi.Input[str] department: (Updatable) Identifies the name of a department.
+        :param pulumi.Input[str] division: (Updatable) Identifies the name of a division.
+        :param pulumi.Input[str] employee_number: (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs'] manager: (Updatable) The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
+        :param pulumi.Input[str] organization: (Updatable) Identifies the name of an organization.
+        """
+        if cost_center is not None:
+            pulumi.set(__self__, "cost_center", cost_center)
+        if department is not None:
+            pulumi.set(__self__, "department", department)
+        if division is not None:
+            pulumi.set(__self__, "division", division)
+        if employee_number is not None:
+            pulumi.set(__self__, "employee_number", employee_number)
+        if manager is not None:
+            pulumi.set(__self__, "manager", manager)
+        if organization is not None:
+            pulumi.set(__self__, "organization", organization)
+
+    @property
+    @pulumi.getter(name="costCenter")
+    def cost_center(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifies the name of a cost center.
+        """
+        return pulumi.get(self, "cost_center")
+
+    @cost_center.setter
+    def cost_center(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cost_center", value)
+
+    @property
+    @pulumi.getter
+    def department(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifies the name of a department.
+        """
+        return pulumi.get(self, "department")
+
+    @department.setter
+    def department(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "department", value)
+
+    @property
+    @pulumi.getter
+    def division(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifies the name of a division.
+        """
+        return pulumi.get(self, "division")
+
+    @division.setter
+    def division(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "division", value)
+
+    @property
+    @pulumi.getter(name="employeeNumber")
+    def employee_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+        """
+        return pulumi.get(self, "employee_number")
+
+    @employee_number.setter
+    def employee_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "employee_number", value)
+
+    @property
+    @pulumi.getter
+    def manager(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs']]:
+        """
+        (Updatable) The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
+        """
+        return pulumi.get(self, "manager")
+
+    @manager.setter
+    def manager(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs']]):
+        pulumi.set(self, "manager", value)
+
+    @property
+    @pulumi.getter
+    def organization(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifies the name of an organization.
+        """
+        return pulumi.get(self, "organization")
+
+    @organization.setter
+    def organization(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "organization", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
+    def __init__(__self__, *,
+                 defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
+                 tag_slug: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]] defined_tags: (Updatable) Oracle Cloud Infrastructure Defined Tags
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]] freeform_tags: (Updatable) Oracle Cloud Infrastructure Freeform Tags
+        :param pulumi.Input[str] tag_slug: (Updatable) Oracle Cloud Infrastructure Tag slug
+        """
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if tag_slug is not None:
+            pulumi.set(__self__, "tag_slug", tag_slug)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Defined Tags
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Freeform Tags
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="tagSlug")
+    def tag_slug(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag slug
+        """
+        return pulumi.get(self, "tag_slug")
+
+    @tag_slug.setter
+    def tag_slug(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tag_slug", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 namespace: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) The value of of the User's api key.
+        :param pulumi.Input[str] namespace: (Updatable) Oracle Cloud Infrastructure Tag namespace
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of of the User's api key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) The value of of the User's api key.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of of the User's api key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs:
+    def __init__(__self__, *,
+                 risk_level: Optional[pulumi.Input[str]] = None,
+                 risk_scores: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs']]]] = None):
+        """
+        :param pulumi.Input[str] risk_level: (Updatable) Risk Level
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs']]] risk_scores: (Updatable) The risk score pertaining to the user.
+        """
+        if risk_level is not None:
+            pulumi.set(__self__, "risk_level", risk_level)
+        if risk_scores is not None:
+            pulumi.set(__self__, "risk_scores", risk_scores)
+
+    @property
+    @pulumi.getter(name="riskLevel")
+    def risk_level(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Risk Level
+        """
+        return pulumi.get(self, "risk_level")
+
+    @risk_level.setter
+    def risk_level(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "risk_level", value)
+
+    @property
+    @pulumi.getter(name="riskScores")
+    def risk_scores(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs']]]]:
+        """
+        (Updatable) The risk score pertaining to the user.
+        """
+        return pulumi.get(self, "risk_scores")
+
+    @risk_scores.setter
+    def risk_scores(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs']]]]):
+        pulumi.set(self, "risk_scores", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs:
+    def __init__(__self__, *,
+                 last_update_timestamp: pulumi.Input[str],
+                 risk_level: pulumi.Input[str],
+                 score: pulumi.Input[int],
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None,
+                 source: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] last_update_timestamp: (Updatable) Last update timestamp for the risk score
+        :param pulumi.Input[str] risk_level: (Updatable) Risk Level
+        :param pulumi.Input[int] score: (Updatable) Risk Score value
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] source: (Updatable) Risk Provider Profile Source
+        :param pulumi.Input[str] status: (Updatable) A supplemental status indicating the reason why a user is disabled
+        """
+        pulumi.set(__self__, "last_update_timestamp", last_update_timestamp)
+        pulumi.set(__self__, "risk_level", risk_level)
+        pulumi.set(__self__, "score", score)
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="lastUpdateTimestamp")
+    def last_update_timestamp(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Last update timestamp for the risk score
+        """
+        return pulumi.get(self, "last_update_timestamp")
+
+    @last_update_timestamp.setter
+    def last_update_timestamp(self, value: pulumi.Input[str]):
+        pulumi.set(self, "last_update_timestamp", value)
+
+    @property
+    @pulumi.getter(name="riskLevel")
+    def risk_level(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Risk Level
+        """
+        return pulumi.get(self, "risk_level")
+
+    @risk_level.setter
+    def risk_level(self, value: pulumi.Input[str]):
+        pulumi.set(self, "risk_level", value)
+
+    @property
+    @pulumi.getter
+    def score(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Risk Score value
+        """
+        return pulumi.get(self, "score")
+
+    @score.setter
+    def score(self, value: pulumi.Input[int]):
+        pulumi.set(self, "score", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Risk Provider Profile Source
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A supplemental status indicating the reason why a user is disabled
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs:
+    def __init__(__self__, *,
+                 can_use_api_keys: Optional[pulumi.Input[bool]] = None,
+                 can_use_auth_tokens: Optional[pulumi.Input[bool]] = None,
+                 can_use_console_password: Optional[pulumi.Input[bool]] = None,
+                 can_use_customer_secret_keys: Optional[pulumi.Input[bool]] = None,
+                 can_use_db_credentials: Optional[pulumi.Input[bool]] = None,
+                 can_use_oauth2client_credentials: Optional[pulumi.Input[bool]] = None,
+                 can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] can_use_api_keys: (Updatable) Indicates weather a user can use api keys
+        :param pulumi.Input[bool] can_use_auth_tokens: (Updatable) Indicates weather a user can use auth tokens
+        :param pulumi.Input[bool] can_use_console_password: (Updatable) Indicates weather a user can use console password
+        :param pulumi.Input[bool] can_use_customer_secret_keys: (Updatable) Indicates weather a user can use customer secret keys
+        :param pulumi.Input[bool] can_use_db_credentials: (Updatable) Indicates weather a user can use db credentials
+        :param pulumi.Input[bool] can_use_oauth2client_credentials: (Updatable) Indicates weather a user can use oauth2 client credentials
+        :param pulumi.Input[bool] can_use_smtp_credentials: (Updatable) Indicates weather a user can use smtp credentials
+        """
+        if can_use_api_keys is not None:
+            pulumi.set(__self__, "can_use_api_keys", can_use_api_keys)
+        if can_use_auth_tokens is not None:
+            pulumi.set(__self__, "can_use_auth_tokens", can_use_auth_tokens)
+        if can_use_console_password is not None:
+            pulumi.set(__self__, "can_use_console_password", can_use_console_password)
+        if can_use_customer_secret_keys is not None:
+            pulumi.set(__self__, "can_use_customer_secret_keys", can_use_customer_secret_keys)
+        if can_use_db_credentials is not None:
+            pulumi.set(__self__, "can_use_db_credentials", can_use_db_credentials)
+        if can_use_oauth2client_credentials is not None:
+            pulumi.set(__self__, "can_use_oauth2client_credentials", can_use_oauth2client_credentials)
+        if can_use_smtp_credentials is not None:
+            pulumi.set(__self__, "can_use_smtp_credentials", can_use_smtp_credentials)
+
+    @property
+    @pulumi.getter(name="canUseApiKeys")
+    def can_use_api_keys(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates weather a user can use api keys
+        """
+        return pulumi.get(self, "can_use_api_keys")
+
+    @can_use_api_keys.setter
+    def can_use_api_keys(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_use_api_keys", value)
+
+    @property
+    @pulumi.getter(name="canUseAuthTokens")
+    def can_use_auth_tokens(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates weather a user can use auth tokens
+        """
+        return pulumi.get(self, "can_use_auth_tokens")
+
+    @can_use_auth_tokens.setter
+    def can_use_auth_tokens(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_use_auth_tokens", value)
+
+    @property
+    @pulumi.getter(name="canUseConsolePassword")
+    def can_use_console_password(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates weather a user can use console password
+        """
+        return pulumi.get(self, "can_use_console_password")
+
+    @can_use_console_password.setter
+    def can_use_console_password(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_use_console_password", value)
+
+    @property
+    @pulumi.getter(name="canUseCustomerSecretKeys")
+    def can_use_customer_secret_keys(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates weather a user can use customer secret keys
+        """
+        return pulumi.get(self, "can_use_customer_secret_keys")
+
+    @can_use_customer_secret_keys.setter
+    def can_use_customer_secret_keys(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_use_customer_secret_keys", value)
+
+    @property
+    @pulumi.getter(name="canUseDbCredentials")
+    def can_use_db_credentials(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates weather a user can use db credentials
+        """
+        return pulumi.get(self, "can_use_db_credentials")
+
+    @can_use_db_credentials.setter
+    def can_use_db_credentials(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_use_db_credentials", value)
+
+    @property
+    @pulumi.getter(name="canUseOauth2clientCredentials")
+    def can_use_oauth2client_credentials(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates weather a user can use oauth2 client credentials
+        """
+        return pulumi.get(self, "can_use_oauth2client_credentials")
+
+    @can_use_oauth2client_credentials.setter
+    def can_use_oauth2client_credentials(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_use_oauth2client_credentials", value)
+
+    @property
+    @pulumi.getter(name="canUseSmtpCredentials")
+    def can_use_smtp_credentials(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates weather a user can use smtp credentials
+        """
+        return pulumi.get(self, "can_use_smtp_credentials")
+
+    @can_use_smtp_credentials.setter
+    def can_use_smtp_credentials(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_use_smtp_credentials", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs:
+    def __init__(__self__, *,
+                 db_login_attempts: Optional[pulumi.Input[int]] = None,
+                 db_user_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] db_login_attempts: (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        :param pulumi.Input[str] db_user_name: (Updatable) The Database User Name
+        """
+        if db_login_attempts is not None:
+            pulumi.set(__self__, "db_login_attempts", db_login_attempts)
+        if db_user_name is not None:
+            pulumi.set(__self__, "db_user_name", db_user_name)
+
+    @property
+    @pulumi.getter(name="dbLoginAttempts")
+    def db_login_attempts(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        """
+        return pulumi.get(self, "db_login_attempts")
+
+    @db_login_attempts.setter
+    def db_login_attempts(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "db_login_attempts", value)
+
+    @property
+    @pulumi.getter(name="dbUserName")
+    def db_user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The Database User Name
+        """
+        return pulumi.get(self, "db_user_name")
+
+    @db_user_name.setter
+    def db_user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_user_name", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs:
+    def __init__(__self__, *,
+                 db_global_roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 domain_level_schema: Optional[pulumi.Input[str]] = None,
+                 instance_level_schema: Optional[pulumi.Input[str]] = None,
+                 is_db_user: Optional[pulumi.Input[bool]] = None,
+                 password_verifiers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_global_roles: (Updatable) DB global roles to which the user is granted access.
+        :param pulumi.Input[str] domain_level_schema: (Updatable) DB domain level schema to which the user is granted access.
+        :param pulumi.Input[str] instance_level_schema: (Updatable) DB instance level schema to which the user is granted access.
+        :param pulumi.Input[bool] is_db_user: (Updatable) If true, indicates this is a database user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs']]] password_verifiers: (Updatable) Password Verifiers for DB User.
+        """
+        if db_global_roles is not None:
+            pulumi.set(__self__, "db_global_roles", db_global_roles)
+        if domain_level_schema is not None:
+            pulumi.set(__self__, "domain_level_schema", domain_level_schema)
+        if instance_level_schema is not None:
+            pulumi.set(__self__, "instance_level_schema", instance_level_schema)
+        if is_db_user is not None:
+            pulumi.set(__self__, "is_db_user", is_db_user)
+        if password_verifiers is not None:
+            pulumi.set(__self__, "password_verifiers", password_verifiers)
+
+    @property
+    @pulumi.getter(name="dbGlobalRoles")
+    def db_global_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) DB global roles to which the user is granted access.
+        """
+        return pulumi.get(self, "db_global_roles")
+
+    @db_global_roles.setter
+    def db_global_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "db_global_roles", value)
+
+    @property
+    @pulumi.getter(name="domainLevelSchema")
+    def domain_level_schema(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) DB domain level schema to which the user is granted access.
+        """
+        return pulumi.get(self, "domain_level_schema")
+
+    @domain_level_schema.setter
+    def domain_level_schema(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_level_schema", value)
+
+    @property
+    @pulumi.getter(name="instanceLevelSchema")
+    def instance_level_schema(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) DB instance level schema to which the user is granted access.
+        """
+        return pulumi.get(self, "instance_level_schema")
+
+    @instance_level_schema.setter
+    def instance_level_schema(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_level_schema", value)
+
+    @property
+    @pulumi.getter(name="isDbUser")
+    def is_db_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates this is a database user.
+        """
+        return pulumi.get(self, "is_db_user")
+
+    @is_db_user.setter
+    def is_db_user(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_db_user", value)
+
+    @property
+    @pulumi.getter(name="passwordVerifiers")
+    def password_verifiers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs']]]]:
+        """
+        (Updatable) Password Verifiers for DB User.
+        """
+        return pulumi.get(self, "password_verifiers")
+
+    @password_verifiers.setter
+    def password_verifiers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs']]]]):
+        pulumi.set(self, "password_verifiers", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs:
+    def __init__(__self__, *,
+                 realm_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]] realm_users: (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+        """
+        if realm_users is not None:
+            pulumi.set(__self__, "realm_users", realm_users)
+
+    @property
+    @pulumi.getter(name="realmUsers")
+    def realm_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]]]:
+        """
+        (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+        """
+        return pulumi.get(self, "realm_users")
+
+    @realm_users.setter
+    def realm_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]]]):
+        pulumi.set(self, "realm_users", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 principal_name: Optional[pulumi.Input[str]] = None,
+                 realm_name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] principal_name: (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        :param pulumi.Input[str] realm_name: (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if principal_name is not None:
+            pulumi.set(__self__, "principal_name", principal_name)
+        if realm_name is not None:
+            pulumi.set(__self__, "realm_name", realm_name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="principalName")
+    def principal_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        """
+        return pulumi.get(self, "principal_name")
+
+    @principal_name.setter
+    def principal_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "principal_name", value)
+
+    @property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        """
+        return pulumi.get(self, "realm_name")
+
+    @realm_name.setter
+    def realm_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "realm_name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
+    def __init__(__self__, *,
+                 bypass_codes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs']]]] = None,
+                 devices: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs']]]] = None,
+                 login_attempts: Optional[pulumi.Input[int]] = None,
+                 mfa_enabled_on: Optional[pulumi.Input[str]] = None,
+                 mfa_ignored_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 mfa_status: Optional[pulumi.Input[str]] = None,
+                 preferred_authentication_factor: Optional[pulumi.Input[str]] = None,
+                 preferred_authentication_method: Optional[pulumi.Input[str]] = None,
+                 preferred_device: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs']] = None,
+                 preferred_third_party_vendor: Optional[pulumi.Input[str]] = None,
+                 trusted_user_agents: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs']]] bypass_codes: (Updatable) A list of bypass codes belongs to user
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs']]] devices: (Updatable) A list of devices enrolled by the user.
+        :param pulumi.Input[int] login_attempts: (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        :param pulumi.Input[str] mfa_enabled_on: (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] mfa_ignored_apps: (Updatable) User MFA Ignored Apps Identifiers
+        :param pulumi.Input[str] mfa_status: (Updatable) User Opted for MFA
+        :param pulumi.Input[str] preferred_authentication_factor: (Updatable) Preferred Authentication Factor Type
+        :param pulumi.Input[str] preferred_authentication_method: (Updatable) Preferred Authentication method
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs'] preferred_device: (Updatable) User preferred device
+        :param pulumi.Input[str] preferred_third_party_vendor: (Updatable) Preferred Third party vendor name
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs']]] trusted_user_agents: (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+        """
+        if bypass_codes is not None:
+            pulumi.set(__self__, "bypass_codes", bypass_codes)
+        if devices is not None:
+            pulumi.set(__self__, "devices", devices)
+        if login_attempts is not None:
+            pulumi.set(__self__, "login_attempts", login_attempts)
+        if mfa_enabled_on is not None:
+            pulumi.set(__self__, "mfa_enabled_on", mfa_enabled_on)
+        if mfa_ignored_apps is not None:
+            pulumi.set(__self__, "mfa_ignored_apps", mfa_ignored_apps)
+        if mfa_status is not None:
+            pulumi.set(__self__, "mfa_status", mfa_status)
+        if preferred_authentication_factor is not None:
+            pulumi.set(__self__, "preferred_authentication_factor", preferred_authentication_factor)
+        if preferred_authentication_method is not None:
+            pulumi.set(__self__, "preferred_authentication_method", preferred_authentication_method)
+        if preferred_device is not None:
+            pulumi.set(__self__, "preferred_device", preferred_device)
+        if preferred_third_party_vendor is not None:
+            pulumi.set(__self__, "preferred_third_party_vendor", preferred_third_party_vendor)
+        if trusted_user_agents is not None:
+            pulumi.set(__self__, "trusted_user_agents", trusted_user_agents)
+
+    @property
+    @pulumi.getter(name="bypassCodes")
+    def bypass_codes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs']]]]:
+        """
+        (Updatable) A list of bypass codes belongs to user
+        """
+        return pulumi.get(self, "bypass_codes")
+
+    @bypass_codes.setter
+    def bypass_codes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs']]]]):
+        pulumi.set(self, "bypass_codes", value)
+
+    @property
+    @pulumi.getter
+    def devices(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs']]]]:
+        """
+        (Updatable) A list of devices enrolled by the user.
+        """
+        return pulumi.get(self, "devices")
+
+    @devices.setter
+    def devices(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs']]]]):
+        pulumi.set(self, "devices", value)
+
+    @property
+    @pulumi.getter(name="loginAttempts")
+    def login_attempts(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        """
+        return pulumi.get(self, "login_attempts")
+
+    @login_attempts.setter
+    def login_attempts(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "login_attempts", value)
+
+    @property
+    @pulumi.getter(name="mfaEnabledOn")
+    def mfa_enabled_on(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        """
+        return pulumi.get(self, "mfa_enabled_on")
+
+    @mfa_enabled_on.setter
+    def mfa_enabled_on(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mfa_enabled_on", value)
+
+    @property
+    @pulumi.getter(name="mfaIgnoredApps")
+    def mfa_ignored_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) User MFA Ignored Apps Identifiers
+        """
+        return pulumi.get(self, "mfa_ignored_apps")
+
+    @mfa_ignored_apps.setter
+    def mfa_ignored_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "mfa_ignored_apps", value)
+
+    @property
+    @pulumi.getter(name="mfaStatus")
+    def mfa_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Opted for MFA
+        """
+        return pulumi.get(self, "mfa_status")
+
+    @mfa_status.setter
+    def mfa_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mfa_status", value)
+
+    @property
+    @pulumi.getter(name="preferredAuthenticationFactor")
+    def preferred_authentication_factor(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Preferred Authentication Factor Type
+        """
+        return pulumi.get(self, "preferred_authentication_factor")
+
+    @preferred_authentication_factor.setter
+    def preferred_authentication_factor(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_authentication_factor", value)
+
+    @property
+    @pulumi.getter(name="preferredAuthenticationMethod")
+    def preferred_authentication_method(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Preferred Authentication method
+        """
+        return pulumi.get(self, "preferred_authentication_method")
+
+    @preferred_authentication_method.setter
+    def preferred_authentication_method(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_authentication_method", value)
+
+    @property
+    @pulumi.getter(name="preferredDevice")
+    def preferred_device(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs']]:
+        """
+        (Updatable) User preferred device
+        """
+        return pulumi.get(self, "preferred_device")
+
+    @preferred_device.setter
+    def preferred_device(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs']]):
+        pulumi.set(self, "preferred_device", value)
+
+    @property
+    @pulumi.getter(name="preferredThirdPartyVendor")
+    def preferred_third_party_vendor(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Preferred Third party vendor name
+        """
+        return pulumi.get(self, "preferred_third_party_vendor")
+
+    @preferred_third_party_vendor.setter
+    def preferred_third_party_vendor(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_third_party_vendor", value)
+
+    @property
+    @pulumi.getter(name="trustedUserAgents")
+    def trusted_user_agents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs']]]]:
+        """
+        (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+        """
+        return pulumi.get(self, "trusted_user_agents")
+
+    @trusted_user_agents.setter
+    def trusted_user_agents(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs']]]]):
+        pulumi.set(self, "trusted_user_agents", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 authentication_method: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 factor_status: Optional[pulumi.Input[str]] = None,
+                 factor_type: Optional[pulumi.Input[str]] = None,
+                 last_sync_time: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 third_party_vendor_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] authentication_method: (Updatable) Authentication method.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] factor_status: (Updatable) Device authentication factor status.
+        :param pulumi.Input[str] factor_type: (Updatable) Authentication Factor Type
+        :param pulumi.Input[str] last_sync_time: (Updatable) Last Sync time for device.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] status: (Updatable) A supplemental status indicating the reason why a user is disabled
+        :param pulumi.Input[str] third_party_vendor_name: (Updatable) Third party factor vendor name.
+        """
+        pulumi.set(__self__, "value", value)
+        if authentication_method is not None:
+            pulumi.set(__self__, "authentication_method", authentication_method)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if factor_status is not None:
+            pulumi.set(__self__, "factor_status", factor_status)
+        if factor_type is not None:
+            pulumi.set(__self__, "factor_type", factor_type)
+        if last_sync_time is not None:
+            pulumi.set(__self__, "last_sync_time", last_sync_time)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if third_party_vendor_name is not None:
+            pulumi.set(__self__, "third_party_vendor_name", third_party_vendor_name)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="authenticationMethod")
+    def authentication_method(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Authentication method.
+        """
+        return pulumi.get(self, "authentication_method")
+
+    @authentication_method.setter
+    def authentication_method(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "authentication_method", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter(name="factorStatus")
+    def factor_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Device authentication factor status.
+        """
+        return pulumi.get(self, "factor_status")
+
+    @factor_status.setter
+    def factor_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "factor_status", value)
+
+    @property
+    @pulumi.getter(name="factorType")
+    def factor_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Authentication Factor Type
+        """
+        return pulumi.get(self, "factor_type")
+
+    @factor_type.setter
+    def factor_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "factor_type", value)
+
+    @property
+    @pulumi.getter(name="lastSyncTime")
+    def last_sync_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Last Sync time for device.
+        """
+        return pulumi.get(self, "last_sync_time")
+
+    @last_sync_time.setter
+    def last_sync_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_sync_time", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A supplemental status indicating the reason why a user is disabled
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="thirdPartyVendorName")
+    def third_party_vendor_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Third party factor vendor name.
+        """
+        return pulumi.get(self, "third_party_vendor_name")
+
+    @third_party_vendor_name.setter
+    def third_party_vendor_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "third_party_vendor_name", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs:
+    def __init__(__self__, *,
+                 applicable_password_policy: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs']] = None,
+                 cant_change: Optional[pulumi.Input[bool]] = None,
+                 cant_expire: Optional[pulumi.Input[bool]] = None,
+                 expired: Optional[pulumi.Input[bool]] = None,
+                 last_failed_validation_date: Optional[pulumi.Input[str]] = None,
+                 last_successful_set_date: Optional[pulumi.Input[str]] = None,
+                 last_successful_validation_date: Optional[pulumi.Input[str]] = None,
+                 must_change: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs'] applicable_password_policy: (Updatable) Applicable Password Policy
+        :param pulumi.Input[bool] cant_change: (Updatable) Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+        :param pulumi.Input[bool] cant_expire: (Updatable) Indicates that the password expiry policy will not be applied for the current Resource
+        :param pulumi.Input[bool] expired: (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        :param pulumi.Input[str] last_failed_validation_date: (Updatable) A DateTime that specifies the date and time when last failed password validation was set
+        :param pulumi.Input[str] last_successful_set_date: (Updatable) A DateTime that specifies the date and time when the current password was set
+        :param pulumi.Input[str] last_successful_validation_date: (Updatable) A DateTime that specifies the date and time when last successful password validation was set
+        :param pulumi.Input[bool] must_change: (Updatable) Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+        """
+        if applicable_password_policy is not None:
+            pulumi.set(__self__, "applicable_password_policy", applicable_password_policy)
+        if cant_change is not None:
+            pulumi.set(__self__, "cant_change", cant_change)
+        if cant_expire is not None:
+            pulumi.set(__self__, "cant_expire", cant_expire)
+        if expired is not None:
+            pulumi.set(__self__, "expired", expired)
+        if last_failed_validation_date is not None:
+            pulumi.set(__self__, "last_failed_validation_date", last_failed_validation_date)
+        if last_successful_set_date is not None:
+            pulumi.set(__self__, "last_successful_set_date", last_successful_set_date)
+        if last_successful_validation_date is not None:
+            pulumi.set(__self__, "last_successful_validation_date", last_successful_validation_date)
+        if must_change is not None:
+            pulumi.set(__self__, "must_change", must_change)
+
+    @property
+    @pulumi.getter(name="applicablePasswordPolicy")
+    def applicable_password_policy(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs']]:
+        """
+        (Updatable) Applicable Password Policy
+        """
+        return pulumi.get(self, "applicable_password_policy")
+
+    @applicable_password_policy.setter
+    def applicable_password_policy(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs']]):
+        pulumi.set(self, "applicable_password_policy", value)
+
+    @property
+    @pulumi.getter(name="cantChange")
+    def cant_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+        """
+        return pulumi.get(self, "cant_change")
+
+    @cant_change.setter
+    def cant_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "cant_change", value)
+
+    @property
+    @pulumi.getter(name="cantExpire")
+    def cant_expire(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates that the password expiry policy will not be applied for the current Resource
+        """
+        return pulumi.get(self, "cant_expire")
+
+    @cant_expire.setter
+    def cant_expire(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "cant_expire", value)
+
+    @property
+    @pulumi.getter
+    def expired(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        """
+        return pulumi.get(self, "expired")
+
+    @expired.setter
+    def expired(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "expired", value)
+
+    @property
+    @pulumi.getter(name="lastFailedValidationDate")
+    def last_failed_validation_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A DateTime that specifies the date and time when last failed password validation was set
+        """
+        return pulumi.get(self, "last_failed_validation_date")
+
+    @last_failed_validation_date.setter
+    def last_failed_validation_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_failed_validation_date", value)
+
+    @property
+    @pulumi.getter(name="lastSuccessfulSetDate")
+    def last_successful_set_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A DateTime that specifies the date and time when the current password was set
+        """
+        return pulumi.get(self, "last_successful_set_date")
+
+    @last_successful_set_date.setter
+    def last_successful_set_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_successful_set_date", value)
+
+    @property
+    @pulumi.getter(name="lastSuccessfulValidationDate")
+    def last_successful_validation_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A DateTime that specifies the date and time when last successful password validation was set
+        """
+        return pulumi.get(self, "last_successful_validation_date")
+
+    @last_successful_validation_date.setter
+    def last_successful_validation_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_successful_validation_date", value)
+
+    @property
+    @pulumi.getter(name="mustChange")
+    def must_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+        """
+        return pulumi.get(self, "must_change")
+
+    @must_change.setter
+    def must_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "must_change", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 priority: Optional[pulumi.Input[int]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[int] priority: (Updatable) PasswordPolicy priority
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) PasswordPolicy priority
+        """
+        return pulumi.get(self, "priority")
+
+    @priority.setter
+    def priority(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "priority", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs:
+    def __init__(__self__, *,
+                 factor_identifier: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs']] = None,
+                 factor_method: Optional[pulumi.Input[str]] = None,
+                 factor_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs'] factor_identifier: (Updatable) Factor Identifier ID
+        :param pulumi.Input[str] factor_method: (Updatable) Authentication Factor Method
+        :param pulumi.Input[str] factor_type: (Updatable) Authentication Factor Type
+        """
+        if factor_identifier is not None:
+            pulumi.set(__self__, "factor_identifier", factor_identifier)
+        if factor_method is not None:
+            pulumi.set(__self__, "factor_method", factor_method)
+        if factor_type is not None:
+            pulumi.set(__self__, "factor_type", factor_type)
+
+    @property
+    @pulumi.getter(name="factorIdentifier")
+    def factor_identifier(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs']]:
+        """
+        (Updatable) Factor Identifier ID
+        """
+        return pulumi.get(self, "factor_identifier")
+
+    @factor_identifier.setter
+    def factor_identifier(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs']]):
+        pulumi.set(self, "factor_identifier", value)
+
+    @property
+    @pulumi.getter(name="factorMethod")
+    def factor_method(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Authentication Factor Method
+        """
+        return pulumi.get(self, "factor_method")
+
+    @factor_method.setter
+    def factor_method(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "factor_method", value)
+
+    @property
+    @pulumi.getter(name="factorType")
+    def factor_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Authentication Factor Type
+        """
+        return pulumi.get(self, "factor_type")
+
+    @factor_type.setter
+    def factor_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "factor_type", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs:
+    def __init__(__self__, *,
+                 gecos: Optional[pulumi.Input[str]] = None,
+                 gid_number: Optional[pulumi.Input[int]] = None,
+                 home_directory: Optional[pulumi.Input[str]] = None,
+                 login_shell: Optional[pulumi.Input[str]] = None,
+                 uid_number: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] gecos: (Updatable) General information about the POSIX account such as their real name and phone number
+        :param pulumi.Input[int] gid_number: (Updatable) Primary Group identifier of the POSIX user
+        :param pulumi.Input[str] home_directory: (Updatable) The absolute path to the home directory of the POSIX account
+        :param pulumi.Input[str] login_shell: (Updatable) The path to the login shell of the POSIX account
+        :param pulumi.Input[int] uid_number: (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+        """
+        if gecos is not None:
+            pulumi.set(__self__, "gecos", gecos)
+        if gid_number is not None:
+            pulumi.set(__self__, "gid_number", gid_number)
+        if home_directory is not None:
+            pulumi.set(__self__, "home_directory", home_directory)
+        if login_shell is not None:
+            pulumi.set(__self__, "login_shell", login_shell)
+        if uid_number is not None:
+            pulumi.set(__self__, "uid_number", uid_number)
+
+    @property
+    @pulumi.getter
+    def gecos(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) General information about the POSIX account such as their real name and phone number
+        """
+        return pulumi.get(self, "gecos")
+
+    @gecos.setter
+    def gecos(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "gecos", value)
+
+    @property
+    @pulumi.getter(name="gidNumber")
+    def gid_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Primary Group identifier of the POSIX user
+        """
+        return pulumi.get(self, "gid_number")
+
+    @gid_number.setter
+    def gid_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "gid_number", value)
+
+    @property
+    @pulumi.getter(name="homeDirectory")
+    def home_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The absolute path to the home directory of the POSIX account
+        """
+        return pulumi.get(self, "home_directory")
+
+    @home_directory.setter
+    def home_directory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "home_directory", value)
+
+    @property
+    @pulumi.getter(name="loginShell")
+    def login_shell(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The path to the login shell of the POSIX account
+        """
+        return pulumi.get(self, "login_shell")
+
+    @login_shell.setter
+    def login_shell(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "login_shell", value)
+
+    @property
+    @pulumi.getter(name="uidNumber")
+    def uid_number(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+        """
+        return pulumi.get(self, "uid_number")
+
+    @uid_number.setter
+    def uid_number(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "uid_number", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs:
+    def __init__(__self__, *,
+                 sec_questions: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]] sec_questions: (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+        """
+        if sec_questions is not None:
+            pulumi.set(__self__, "sec_questions", sec_questions)
+
+    @property
+    @pulumi.getter(name="secQuestions")
+    def sec_questions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]]]:
+        """
+        (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+        """
+        return pulumi.get(self, "sec_questions")
+
+    @sec_questions.setter
+    def sec_questions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]]]):
+        pulumi.set(self, "sec_questions", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs:
+    def __init__(__self__, *,
+                 answer: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 hint_text: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] answer: (Updatable) Answer provided by an user for a security question.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] hint_text: (Updatable) Hint for an answer given by user while setting up Security Question.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "answer", answer)
+        pulumi.set(__self__, "value", value)
+        if hint_text is not None:
+            pulumi.set(__self__, "hint_text", hint_text)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def answer(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Answer provided by an user for a security question.
+        """
+        return pulumi.get(self, "answer")
+
+    @answer.setter
+    def answer(self, value: pulumi.Input[str]):
+        pulumi.set(self, "answer", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="hintText")
+    def hint_text(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Hint for an answer given by user while setting up Security Question.
+        """
+        return pulumi.get(self, "hint_text")
+
+    @hint_text.setter
+    def hint_text(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hint_text", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
+    def __init__(__self__, *,
+                 allow_self_change: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] allow_self_change: (Updatable) If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        if allow_self_change is not None:
+            pulumi.set(__self__, "allow_self_change", allow_self_change)
+
+    @property
+    @pulumi.getter(name="allowSelfChange")
+    def allow_self_change(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        """
+        return pulumi.get(self, "allow_self_change")
+
+    @allow_self_change.setter
+    def allow_self_change(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_self_change", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs:
+    def __init__(__self__, *,
+                 self_registration_profile: pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs'],
+                 consent_granted: Optional[pulumi.Input[bool]] = None,
+                 user_token: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs'] self_registration_profile: (Updatable) Self registration profile used when user is self registered.
+        :param pulumi.Input[bool] consent_granted: (Updatable) A boolean value that indicates whether the consent is granted.
+        :param pulumi.Input[str] user_token: (Updatable) User token returned if userFlowControlledByExternalClient is true
+        """
+        pulumi.set(__self__, "self_registration_profile", self_registration_profile)
+        if consent_granted is not None:
+            pulumi.set(__self__, "consent_granted", consent_granted)
+        if user_token is not None:
+            pulumi.set(__self__, "user_token", user_token)
+
+    @property
+    @pulumi.getter(name="selfRegistrationProfile")
+    def self_registration_profile(self) -> pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs']:
+        """
+        (Updatable) Self registration profile used when user is self registered.
+        """
+        return pulumi.get(self, "self_registration_profile")
+
+    @self_registration_profile.setter
+    def self_registration_profile(self, value: pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs']):
+        pulumi.set(self, "self_registration_profile", value)
+
+    @property
+    @pulumi.getter(name="consentGranted")
+    def consent_granted(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A boolean value that indicates whether the consent is granted.
+        """
+        return pulumi.get(self, "consent_granted")
+
+    @consent_granted.setter
+    def consent_granted(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "consent_granted", value)
+
+    @property
+    @pulumi.getter(name="userToken")
+    def user_token(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User token returned if userFlowControlledByExternalClient is true
+        """
+        return pulumi.get(self, "user_token")
+
+    @user_token.setter
+    def user_token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_token", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs:
+    def __init__(__self__, *,
+                 sff_auth_keys: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] sff_auth_keys: (Updatable) SFF auth keys clob
+        """
+        if sff_auth_keys is not None:
+            pulumi.set(__self__, "sff_auth_keys", sff_auth_keys)
+
+    @property
+    @pulumi.getter(name="sffAuthKeys")
+    def sff_auth_keys(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) SFF auth keys clob
+        """
+        return pulumi.get(self, "sff_auth_keys")
+
+    @sff_auth_keys.setter
+    def sff_auth_keys(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sff_auth_keys", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs:
+    def __init__(__self__, *,
+                 social_accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs']]] social_accounts: (Updatable) Description:
+        """
+        if social_accounts is not None:
+            pulumi.set(__self__, "social_accounts", social_accounts)
+
+    @property
+    @pulumi.getter(name="socialAccounts")
+    def social_accounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs']]]]:
+        """
+        (Updatable) Description:
+        """
+        return pulumi.get(self, "social_accounts")
+
+    @social_accounts.setter
+    def social_accounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs']]]]):
+        pulumi.set(self, "social_accounts", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs:
+    def __init__(__self__, *,
+                 terms_of_use_consents: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs']]] terms_of_use_consents: (Updatable) Description:
+        """
+        if terms_of_use_consents is not None:
+            pulumi.set(__self__, "terms_of_use_consents", terms_of_use_consents)
+
+    @property
+    @pulumi.getter(name="termsOfUseConsents")
+    def terms_of_use_consents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs']]]]:
+        """
+        (Updatable) Description:
+        """
+        return pulumi.get(self, "terms_of_use_consents")
+
+    @terms_of_use_consents.setter
+    def terms_of_use_consents(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs']]]]):
+        pulumi.set(self, "terms_of_use_consents", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs:
+    def __init__(__self__, *,
+                 api_keys: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs']]]] = None,
+                 auth_tokens: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs']]]] = None,
+                 customer_secret_keys: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs']]]] = None,
+                 db_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]]] = None,
+                 o_auth2client_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]]] = None,
+                 smtp_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs']]] api_keys: (Updatable) A list of api keys corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs']]] auth_tokens: (Updatable) A list of auth tokens corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs']]] customer_secret_keys: (Updatable) A list of customer secret keys corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]] db_credentials: (Updatable) A list of db credentials corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]] o_auth2client_credentials: (Updatable) A list of oauth2 client credentials corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]] smtp_credentials: (Updatable) A list of smtp credentials corresponding to user.
+        """
+        if api_keys is not None:
+            pulumi.set(__self__, "api_keys", api_keys)
+        if auth_tokens is not None:
+            pulumi.set(__self__, "auth_tokens", auth_tokens)
+        if customer_secret_keys is not None:
+            pulumi.set(__self__, "customer_secret_keys", customer_secret_keys)
+        if db_credentials is not None:
+            pulumi.set(__self__, "db_credentials", db_credentials)
+        if o_auth2client_credentials is not None:
+            pulumi.set(__self__, "o_auth2client_credentials", o_auth2client_credentials)
+        if smtp_credentials is not None:
+            pulumi.set(__self__, "smtp_credentials", smtp_credentials)
+
+    @property
+    @pulumi.getter(name="apiKeys")
+    def api_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs']]]]:
+        """
+        (Updatable) A list of api keys corresponding to user.
+        """
+        return pulumi.get(self, "api_keys")
+
+    @api_keys.setter
+    def api_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs']]]]):
+        pulumi.set(self, "api_keys", value)
+
+    @property
+    @pulumi.getter(name="authTokens")
+    def auth_tokens(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs']]]]:
+        """
+        (Updatable) A list of auth tokens corresponding to user.
+        """
+        return pulumi.get(self, "auth_tokens")
+
+    @auth_tokens.setter
+    def auth_tokens(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs']]]]):
+        pulumi.set(self, "auth_tokens", value)
+
+    @property
+    @pulumi.getter(name="customerSecretKeys")
+    def customer_secret_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs']]]]:
+        """
+        (Updatable) A list of customer secret keys corresponding to user.
+        """
+        return pulumi.get(self, "customer_secret_keys")
+
+    @customer_secret_keys.setter
+    def customer_secret_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs']]]]):
+        pulumi.set(self, "customer_secret_keys", value)
+
+    @property
+    @pulumi.getter(name="dbCredentials")
+    def db_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]]]:
+        """
+        (Updatable) A list of db credentials corresponding to user.
+        """
+        return pulumi.get(self, "db_credentials")
+
+    @db_credentials.setter
+    def db_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]]]):
+        pulumi.set(self, "db_credentials", value)
+
+    @property
+    @pulumi.getter(name="oAuth2clientCredentials")
+    def o_auth2client_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]]]:
+        """
+        (Updatable) A list of oauth2 client credentials corresponding to user.
+        """
+        return pulumi.get(self, "o_auth2client_credentials")
+
+    @o_auth2client_credentials.setter
+    def o_auth2client_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]]]):
+        pulumi.set(self, "o_auth2client_credentials", value)
+
+    @property
+    @pulumi.getter(name="smtpCredentials")
+    def smtp_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]]]:
+        """
+        (Updatable) A list of smtp credentials corresponding to user.
+        """
+        return pulumi.get(self, "smtp_credentials")
+
+    @smtp_credentials.setter
+    def smtp_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]]]):
+        pulumi.set(self, "smtp_credentials", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] key: (Updatable) The value of of the User's api key.
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of of the User's api key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs:
+    def __init__(__self__, *,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs:
+    def __init__(__self__, *,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs:
+    def __init__(__self__, *,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs:
+    def __init__(__self__, *,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs:
+    def __init__(__self__, *,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
+    def __init__(__self__, *,
+                 last_failed_login_date: Optional[pulumi.Input[str]] = None,
+                 last_successful_login_date: Optional[pulumi.Input[str]] = None,
+                 locked: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs']] = None,
+                 login_attempts: Optional[pulumi.Input[int]] = None,
+                 max_concurrent_sessions: Optional[pulumi.Input[int]] = None,
+                 previous_successful_login_date: Optional[pulumi.Input[str]] = None,
+                 recovery_attempts: Optional[pulumi.Input[int]] = None,
+                 recovery_enroll_attempts: Optional[pulumi.Input[int]] = None,
+                 recovery_locked: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs']] = None):
+        """
+        :param pulumi.Input[str] last_failed_login_date: (Updatable) The last failed login date
+        :param pulumi.Input[str] last_successful_login_date: (Updatable) The last successful login date
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs'] locked: (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+        :param pulumi.Input[int] login_attempts: (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        :param pulumi.Input[int] max_concurrent_sessions: (Updatable) Maximum number of concurrent sessions for a User
+        :param pulumi.Input[str] previous_successful_login_date: (Updatable) The previous successful login date
+        :param pulumi.Input[int] recovery_attempts: (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
+        :param pulumi.Input[int] recovery_enroll_attempts: (Updatable) The number of failed account recovery enrollment attempts.
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs'] recovery_locked: (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+        """
+        if last_failed_login_date is not None:
+            pulumi.set(__self__, "last_failed_login_date", last_failed_login_date)
+        if last_successful_login_date is not None:
+            pulumi.set(__self__, "last_successful_login_date", last_successful_login_date)
+        if locked is not None:
+            pulumi.set(__self__, "locked", locked)
+        if login_attempts is not None:
+            pulumi.set(__self__, "login_attempts", login_attempts)
+        if max_concurrent_sessions is not None:
+            pulumi.set(__self__, "max_concurrent_sessions", max_concurrent_sessions)
+        if previous_successful_login_date is not None:
+            pulumi.set(__self__, "previous_successful_login_date", previous_successful_login_date)
+        if recovery_attempts is not None:
+            pulumi.set(__self__, "recovery_attempts", recovery_attempts)
+        if recovery_enroll_attempts is not None:
+            pulumi.set(__self__, "recovery_enroll_attempts", recovery_enroll_attempts)
+        if recovery_locked is not None:
+            pulumi.set(__self__, "recovery_locked", recovery_locked)
+
+    @property
+    @pulumi.getter(name="lastFailedLoginDate")
+    def last_failed_login_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The last failed login date
+        """
+        return pulumi.get(self, "last_failed_login_date")
+
+    @last_failed_login_date.setter
+    def last_failed_login_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_failed_login_date", value)
+
+    @property
+    @pulumi.getter(name="lastSuccessfulLoginDate")
+    def last_successful_login_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The last successful login date
+        """
+        return pulumi.get(self, "last_successful_login_date")
+
+    @last_successful_login_date.setter
+    def last_successful_login_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_successful_login_date", value)
+
+    @property
+    @pulumi.getter
+    def locked(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs']]:
+        """
+        (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+        """
+        return pulumi.get(self, "locked")
+
+    @locked.setter
+    def locked(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs']]):
+        pulumi.set(self, "locked", value)
+
+    @property
+    @pulumi.getter(name="loginAttempts")
+    def login_attempts(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        """
+        return pulumi.get(self, "login_attempts")
+
+    @login_attempts.setter
+    def login_attempts(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "login_attempts", value)
+
+    @property
+    @pulumi.getter(name="maxConcurrentSessions")
+    def max_concurrent_sessions(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum number of concurrent sessions for a User
+        """
+        return pulumi.get(self, "max_concurrent_sessions")
+
+    @max_concurrent_sessions.setter
+    def max_concurrent_sessions(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_concurrent_sessions", value)
+
+    @property
+    @pulumi.getter(name="previousSuccessfulLoginDate")
+    def previous_successful_login_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The previous successful login date
+        """
+        return pulumi.get(self, "previous_successful_login_date")
+
+    @previous_successful_login_date.setter
+    def previous_successful_login_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "previous_successful_login_date", value)
+
+    @property
+    @pulumi.getter(name="recoveryAttempts")
+    def recovery_attempts(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
+        """
+        return pulumi.get(self, "recovery_attempts")
+
+    @recovery_attempts.setter
+    def recovery_attempts(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "recovery_attempts", value)
+
+    @property
+    @pulumi.getter(name="recoveryEnrollAttempts")
+    def recovery_enroll_attempts(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of failed account recovery enrollment attempts.
+        """
+        return pulumi.get(self, "recovery_enroll_attempts")
+
+    @recovery_enroll_attempts.setter
+    def recovery_enroll_attempts(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "recovery_enroll_attempts", value)
+
+    @property
+    @pulumi.getter(name="recoveryLocked")
+    def recovery_locked(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs']]:
+        """
+        (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+        """
+        return pulumi.get(self, "recovery_locked")
+
+    @recovery_locked.setter
+    def recovery_locked(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs']]):
+        pulumi.set(self, "recovery_locked", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs:
+    def __init__(__self__, *,
+                 expired: Optional[pulumi.Input[bool]] = None,
+                 lock_date: Optional[pulumi.Input[str]] = None,
+                 on: Optional[pulumi.Input[bool]] = None,
+                 reason: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] expired: (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        :param pulumi.Input[str] lock_date: (Updatable) The date and time that the current resource was locked
+        :param pulumi.Input[bool] on: (Updatable) Indicates that the rev is locked
+        :param pulumi.Input[int] reason: (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+        """
+        if expired is not None:
+            pulumi.set(__self__, "expired", expired)
+        if lock_date is not None:
+            pulumi.set(__self__, "lock_date", lock_date)
+        if on is not None:
+            pulumi.set(__self__, "on", on)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+
+    @property
+    @pulumi.getter
+    def expired(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        """
+        return pulumi.get(self, "expired")
+
+    @expired.setter
+    def expired(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "expired", value)
+
+    @property
+    @pulumi.getter(name="lockDate")
+    def lock_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The date and time that the current resource was locked
+        """
+        return pulumi.get(self, "lock_date")
+
+    @lock_date.setter
+    def lock_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lock_date", value)
+
+    @property
+    @pulumi.getter
+    def on(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates that the rev is locked
+        """
+        return pulumi.get(self, "on")
+
+    @on.setter
+    def on(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "on", value)
+
+    @property
+    @pulumi.getter
+    def reason(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+        """
+        return pulumi.get(self, "reason")
+
+    @reason.setter
+    def reason(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "reason", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs:
+    def __init__(__self__, *,
+                 lock_date: Optional[pulumi.Input[str]] = None,
+                 on: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] lock_date: (Updatable) The date and time that the current resource was locked
+        :param pulumi.Input[bool] on: (Updatable) Indicates that the rev is locked
+        """
+        if lock_date is not None:
+            pulumi.set(__self__, "lock_date", lock_date)
+        if on is not None:
+            pulumi.set(__self__, "on", on)
+
+    @property
+    @pulumi.getter(name="lockDate")
+    def lock_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The date and time that the current resource was locked
+        """
+        return pulumi.get(self, "lock_date")
+
+    @lock_date.setter
+    def lock_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lock_date", value)
+
+    @property
+    @pulumi.getter
+    def on(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates that the rev is locked
+        """
+        return pulumi.get(self, "on")
+
+    @on.setter
+    def on(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "on", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
+    def __init__(__self__, *,
+                 account_recovery_required: Optional[pulumi.Input[bool]] = None,
+                 accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs']]]] = None,
+                 app_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs']]]] = None,
+                 applicable_authentication_target_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs']]]] = None,
+                 bypass_notification: Optional[pulumi.Input[bool]] = None,
+                 creation_mechanism: Optional[pulumi.Input[str]] = None,
+                 delegated_authentication_target_app: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs']] = None,
+                 do_not_show_getting_started: Optional[pulumi.Input[bool]] = None,
+                 grants: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs']]]] = None,
+                 idcs_app_roles_limited_to_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs']]]] = None,
+                 is_account_recovery_enrolled: Optional[pulumi.Input[bool]] = None,
+                 is_authentication_delegated: Optional[pulumi.Input[bool]] = None,
+                 is_federated_user: Optional[pulumi.Input[bool]] = None,
+                 is_group_membership_normalized: Optional[pulumi.Input[bool]] = None,
+                 is_group_membership_synced_to_users_groups: Optional[pulumi.Input[bool]] = None,
+                 notification_email_template_id: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 support_accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs']]]] = None,
+                 synced_from_app: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs']] = None,
+                 user_flow_controlled_by_external_client: Optional[pulumi.Input[bool]] = None,
+                 user_provider: Optional[pulumi.Input[str]] = None,
+                 user_tokens: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs']]]] = None):
+        """
+        :param pulumi.Input[bool] account_recovery_required: (Updatable) Boolean value to prompt user to setup account recovery during login.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs']]] accounts: (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs']]] app_roles: (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs']]] applicable_authentication_target_apps: (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user's delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user's applicable Delegated Authentication Policy is returned.
+        :param pulumi.Input[bool] bypass_notification: (Updatable) A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+        :param pulumi.Input[str] creation_mechanism: (Updatable) User creation mechanism
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs'] delegated_authentication_target_app: (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \\"syncedFromApp\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+        :param pulumi.Input[bool] do_not_show_getting_started: (Updatable) A Boolean value indicating whether or not to hide the getting started page
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs']]] grants: (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs']]] idcs_app_roles_limited_to_groups: (Updatable) Description:
+        :param pulumi.Input[bool] is_account_recovery_enrolled: (Updatable) A Boolean value indicating whether or not a user is enrolled for account recovery
+        :param pulumi.Input[bool] is_authentication_delegated: (Updatable) A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+        :param pulumi.Input[bool] is_federated_user: (Updatable) A Boolean value indicating whether or not the user is federated.
+        :param pulumi.Input[bool] is_group_membership_normalized: (Updatable) A Boolean value indicating whether or not group membership is normalized for this user.
+        :param pulumi.Input[bool] is_group_membership_synced_to_users_groups: (Updatable) A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
+        :param pulumi.Input[str] notification_email_template_id: (Updatable) Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+        :param pulumi.Input[str] status: (Updatable) A supplemental status indicating the reason why a user is disabled
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs']]] support_accounts: (Updatable) A list of Support Accounts corresponding to user.
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs'] synced_from_app: (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
+        :param pulumi.Input[bool] user_flow_controlled_by_external_client: (Updatable) A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+        :param pulumi.Input[str] user_provider: (Updatable) User Support Account Provider
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs']]] user_tokens: (Updatable) User token returned if userFlowControlledByExternalClient is true
+        """
+        if account_recovery_required is not None:
+            pulumi.set(__self__, "account_recovery_required", account_recovery_required)
+        if accounts is not None:
+            pulumi.set(__self__, "accounts", accounts)
+        if app_roles is not None:
+            pulumi.set(__self__, "app_roles", app_roles)
+        if applicable_authentication_target_apps is not None:
+            pulumi.set(__self__, "applicable_authentication_target_apps", applicable_authentication_target_apps)
+        if bypass_notification is not None:
+            pulumi.set(__self__, "bypass_notification", bypass_notification)
+        if creation_mechanism is not None:
+            pulumi.set(__self__, "creation_mechanism", creation_mechanism)
+        if delegated_authentication_target_app is not None:
+            pulumi.set(__self__, "delegated_authentication_target_app", delegated_authentication_target_app)
+        if do_not_show_getting_started is not None:
+            pulumi.set(__self__, "do_not_show_getting_started", do_not_show_getting_started)
+        if grants is not None:
+            pulumi.set(__self__, "grants", grants)
+        if idcs_app_roles_limited_to_groups is not None:
+            pulumi.set(__self__, "idcs_app_roles_limited_to_groups", idcs_app_roles_limited_to_groups)
+        if is_account_recovery_enrolled is not None:
+            pulumi.set(__self__, "is_account_recovery_enrolled", is_account_recovery_enrolled)
+        if is_authentication_delegated is not None:
+            pulumi.set(__self__, "is_authentication_delegated", is_authentication_delegated)
+        if is_federated_user is not None:
+            pulumi.set(__self__, "is_federated_user", is_federated_user)
+        if is_group_membership_normalized is not None:
+            pulumi.set(__self__, "is_group_membership_normalized", is_group_membership_normalized)
+        if is_group_membership_synced_to_users_groups is not None:
+            pulumi.set(__self__, "is_group_membership_synced_to_users_groups", is_group_membership_synced_to_users_groups)
+        if notification_email_template_id is not None:
+            pulumi.set(__self__, "notification_email_template_id", notification_email_template_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if support_accounts is not None:
+            pulumi.set(__self__, "support_accounts", support_accounts)
+        if synced_from_app is not None:
+            pulumi.set(__self__, "synced_from_app", synced_from_app)
+        if user_flow_controlled_by_external_client is not None:
+            pulumi.set(__self__, "user_flow_controlled_by_external_client", user_flow_controlled_by_external_client)
+        if user_provider is not None:
+            pulumi.set(__self__, "user_provider", user_provider)
+        if user_tokens is not None:
+            pulumi.set(__self__, "user_tokens", user_tokens)
+
+    @property
+    @pulumi.getter(name="accountRecoveryRequired")
+    def account_recovery_required(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Boolean value to prompt user to setup account recovery during login.
+        """
+        return pulumi.get(self, "account_recovery_required")
+
+    @account_recovery_required.setter
+    def account_recovery_required(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "account_recovery_required", value)
+
+    @property
+    @pulumi.getter
+    def accounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs']]]]:
+        """
+        (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+        """
+        return pulumi.get(self, "accounts")
+
+    @accounts.setter
+    def accounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs']]]]):
+        pulumi.set(self, "accounts", value)
+
+    @property
+    @pulumi.getter(name="appRoles")
+    def app_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs']]]]:
+        """
+        (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+        """
+        return pulumi.get(self, "app_roles")
+
+    @app_roles.setter
+    def app_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs']]]]):
+        pulumi.set(self, "app_roles", value)
+
+    @property
+    @pulumi.getter(name="applicableAuthenticationTargetApps")
+    def applicable_authentication_target_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs']]]]:
+        """
+        (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user's delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user's applicable Delegated Authentication Policy is returned.
+        """
+        return pulumi.get(self, "applicable_authentication_target_apps")
+
+    @applicable_authentication_target_apps.setter
+    def applicable_authentication_target_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs']]]]):
+        pulumi.set(self, "applicable_authentication_target_apps", value)
+
+    @property
+    @pulumi.getter(name="bypassNotification")
+    def bypass_notification(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+        """
+        return pulumi.get(self, "bypass_notification")
+
+    @bypass_notification.setter
+    def bypass_notification(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "bypass_notification", value)
+
+    @property
+    @pulumi.getter(name="creationMechanism")
+    def creation_mechanism(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User creation mechanism
+        """
+        return pulumi.get(self, "creation_mechanism")
+
+    @creation_mechanism.setter
+    def creation_mechanism(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "creation_mechanism", value)
+
+    @property
+    @pulumi.getter(name="delegatedAuthenticationTargetApp")
+    def delegated_authentication_target_app(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs']]:
+        """
+        (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \\"syncedFromApp\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+        """
+        return pulumi.get(self, "delegated_authentication_target_app")
+
+    @delegated_authentication_target_app.setter
+    def delegated_authentication_target_app(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs']]):
+        pulumi.set(self, "delegated_authentication_target_app", value)
+
+    @property
+    @pulumi.getter(name="doNotShowGettingStarted")
+    def do_not_show_getting_started(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating whether or not to hide the getting started page
+        """
+        return pulumi.get(self, "do_not_show_getting_started")
+
+    @do_not_show_getting_started.setter
+    def do_not_show_getting_started(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "do_not_show_getting_started", value)
+
+    @property
+    @pulumi.getter
+    def grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs']]]]:
+        """
+        (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+        """
+        return pulumi.get(self, "grants")
+
+    @grants.setter
+    def grants(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs']]]]):
+        pulumi.set(self, "grants", value)
+
+    @property
+    @pulumi.getter(name="idcsAppRolesLimitedToGroups")
+    def idcs_app_roles_limited_to_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs']]]]:
+        """
+        (Updatable) Description:
+        """
+        return pulumi.get(self, "idcs_app_roles_limited_to_groups")
+
+    @idcs_app_roles_limited_to_groups.setter
+    def idcs_app_roles_limited_to_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs']]]]):
+        pulumi.set(self, "idcs_app_roles_limited_to_groups", value)
+
+    @property
+    @pulumi.getter(name="isAccountRecoveryEnrolled")
+    def is_account_recovery_enrolled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating whether or not a user is enrolled for account recovery
+        """
+        return pulumi.get(self, "is_account_recovery_enrolled")
+
+    @is_account_recovery_enrolled.setter
+    def is_account_recovery_enrolled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_account_recovery_enrolled", value)
+
+    @property
+    @pulumi.getter(name="isAuthenticationDelegated")
+    def is_authentication_delegated(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+        """
+        return pulumi.get(self, "is_authentication_delegated")
+
+    @is_authentication_delegated.setter
+    def is_authentication_delegated(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_authentication_delegated", value)
+
+    @property
+    @pulumi.getter(name="isFederatedUser")
+    def is_federated_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating whether or not the user is federated.
+        """
+        return pulumi.get(self, "is_federated_user")
+
+    @is_federated_user.setter
+    def is_federated_user(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_federated_user", value)
+
+    @property
+    @pulumi.getter(name="isGroupMembershipNormalized")
+    def is_group_membership_normalized(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating whether or not group membership is normalized for this user.
+        """
+        return pulumi.get(self, "is_group_membership_normalized")
+
+    @is_group_membership_normalized.setter
+    def is_group_membership_normalized(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_group_membership_normalized", value)
+
+    @property
+    @pulumi.getter(name="isGroupMembershipSyncedToUsersGroups")
+    def is_group_membership_synced_to_users_groups(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
+        """
+        return pulumi.get(self, "is_group_membership_synced_to_users_groups")
+
+    @is_group_membership_synced_to_users_groups.setter
+    def is_group_membership_synced_to_users_groups(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_group_membership_synced_to_users_groups", value)
+
+    @property
+    @pulumi.getter(name="notificationEmailTemplateId")
+    def notification_email_template_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+        """
+        return pulumi.get(self, "notification_email_template_id")
+
+    @notification_email_template_id.setter
+    def notification_email_template_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "notification_email_template_id", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A supplemental status indicating the reason why a user is disabled
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="supportAccounts")
+    def support_accounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs']]]]:
+        """
+        (Updatable) A list of Support Accounts corresponding to user.
+        """
+        return pulumi.get(self, "support_accounts")
+
+    @support_accounts.setter
+    def support_accounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs']]]]):
+        pulumi.set(self, "support_accounts", value)
+
+    @property
+    @pulumi.getter(name="syncedFromApp")
+    def synced_from_app(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs']]:
+        """
+        (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
+        """
+        return pulumi.get(self, "synced_from_app")
+
+    @synced_from_app.setter
+    def synced_from_app(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs']]):
+        pulumi.set(self, "synced_from_app", value)
+
+    @property
+    @pulumi.getter(name="userFlowControlledByExternalClient")
+    def user_flow_controlled_by_external_client(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+        """
+        return pulumi.get(self, "user_flow_controlled_by_external_client")
+
+    @user_flow_controlled_by_external_client.setter
+    def user_flow_controlled_by_external_client(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "user_flow_controlled_by_external_client", value)
+
+    @property
+    @pulumi.getter(name="userProvider")
+    def user_provider(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Support Account Provider
+        """
+        return pulumi.get(self, "user_provider")
+
+    @user_provider.setter
+    def user_provider(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_provider", value)
+
+    @property
+    @pulumi.getter(name="userTokens")
+    def user_tokens(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs']]]]:
+        """
+        (Updatable) User token returned if userFlowControlledByExternalClient is true
+        """
+        return pulumi.get(self, "user_tokens")
+
+    @user_tokens.setter
+    def user_tokens(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs']]]]):
+        pulumi.set(self, "user_tokens", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs:
+    def __init__(__self__, *,
+                 active: Optional[pulumi.Input[bool]] = None,
+                 app_id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] active: (Updatable) Status of the account
+        :param pulumi.Input[str] app_id: (Updatable) The ID of the App in this Grant.
+        :param pulumi.Input[str] name: (Updatable) Name of the account assigned to the User.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if app_id is not None:
+            pulumi.set(__self__, "app_id", app_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Status of the account
+        """
+        return pulumi.get(self, "active")
+
+    @active.setter
+    def active(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "active", value)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The ID of the App in this Grant.
+        """
+        return pulumi.get(self, "app_id")
+
+    @app_id.setter
+    def app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the account assigned to the User.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 admin_role: Optional[pulumi.Input[bool]] = None,
+                 app_id: Optional[pulumi.Input[str]] = None,
+                 app_name: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 legacy_group_name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[bool] admin_role: (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+        :param pulumi.Input[str] app_id: (Updatable) The ID of the App in this Grant.
+        :param pulumi.Input[str] app_name: (Updatable) The name (Client ID) of the App that defines this AppRole.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] legacy_group_name: (Updatable) The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        """
+        pulumi.set(__self__, "value", value)
+        if admin_role is not None:
+            pulumi.set(__self__, "admin_role", admin_role)
+        if app_id is not None:
+            pulumi.set(__self__, "app_id", app_id)
+        if app_name is not None:
+            pulumi.set(__self__, "app_name", app_name)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if legacy_group_name is not None:
+            pulumi.set(__self__, "legacy_group_name", legacy_group_name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="adminRole")
+    def admin_role(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+        """
+        return pulumi.get(self, "admin_role")
+
+    @admin_role.setter
+    def admin_role(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "admin_role", value)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The ID of the App in this Grant.
+        """
+        return pulumi.get(self, "app_id")
+
+    @app_id.setter
+    def app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_id", value)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name (Client ID) of the App that defines this AppRole.
+        """
+        return pulumi.get(self, "app_name")
+
+    @app_name.setter
+    def app_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_name", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter(name="legacyGroupName")
+    def legacy_group_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+        """
+        return pulumi.get(self, "legacy_group_name")
+
+    @legacy_group_name.setter
+    def legacy_group_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_group_name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 target_request_timeout: Optional[pulumi.Input[int]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[int] target_request_timeout: (Updatable) Timeout interval for Synchronization TargetAction in milliseconds
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        pulumi.set(__self__, "type", type)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if target_request_timeout is not None:
+            pulumi.set(__self__, "target_request_timeout", target_request_timeout)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter(name="targetRequestTimeout")
+    def target_request_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Timeout interval for Synchronization TargetAction in milliseconds
+        """
+        return pulumi.get(self, "target_request_timeout")
+
+    @target_request_timeout.setter
+    def target_request_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "target_request_timeout", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs:
+    def __init__(__self__, *,
+                 app_id: Optional[pulumi.Input[str]] = None,
+                 grant_mechanism: Optional[pulumi.Input[str]] = None,
+                 grantor_id: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] app_id: (Updatable) The ID of the App in this Grant.
+        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        :param pulumi.Input[str] grantor_id: (Updatable) Grantor identifier
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if app_id is not None:
+            pulumi.set(__self__, "app_id", app_id)
+        if grant_mechanism is not None:
+            pulumi.set(__self__, "grant_mechanism", grant_mechanism)
+        if grantor_id is not None:
+            pulumi.set(__self__, "grantor_id", grantor_id)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The ID of the App in this Grant.
+        """
+        return pulumi.get(self, "app_id")
+
+    @app_id.setter
+    def app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_id", value)
+
+    @property
+    @pulumi.getter(name="grantMechanism")
+    def grant_mechanism(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        """
+        return pulumi.get(self, "grant_mechanism")
+
+    @grant_mechanism.setter
+    def grant_mechanism(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "grant_mechanism", value)
+
+    @property
+    @pulumi.getter(name="grantorId")
+    def grantor_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Grantor identifier
+        """
+        return pulumi.get(self, "grantor_id")
+
+    @grantor_id.setter
+    def grantor_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "grantor_id", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs:
+    def __init__(__self__, *,
+                 idcs_app_role_id: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] idcs_app_role_id: (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "idcs_app_role_id", idcs_app_role_id)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter(name="idcsAppRoleId")
+    def idcs_app_role_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+        """
+        return pulumi.get(self, "idcs_app_role_id")
+
+    @idcs_app_role_id.setter
+    def idcs_app_role_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "idcs_app_role_id", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs:
+    def __init__(__self__, *,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 user_id: Optional[pulumi.Input[str]] = None,
+                 user_provider: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] user_id: (Updatable) User Support User Id
+        :param pulumi.Input[str] user_provider: (Updatable) User Support Account Provider
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if user_id is not None:
+            pulumi.set(__self__, "user_id", user_id)
+        if user_provider is not None:
+            pulumi.set(__self__, "user_provider", user_provider)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ocid of the User's Support Account.
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter(name="userId")
+    def user_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Support User Id
+        """
+        return pulumi.get(self, "user_id")
+
+    @user_id.setter
+    def user_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_id", value)
+
+    @property
+    @pulumi.getter(name="userProvider")
+    def user_provider(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Support Account Provider
+        """
+        return pulumi.get(self, "user_provider")
+
+    @user_provider.setter
+    def user_provider(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_provider", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs:
+    def __init__(__self__, *,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ref: (Updatable) User Token URI
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        """
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User Token URI
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsUserX509certificateArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 primary: Optional[pulumi.Input[bool]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) The value of a X509 certificate.
+        :param pulumi.Input[str] display: (Updatable) A human readable name, primarily used for display purposes.
+        :param pulumi.Input[bool] primary: (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        :param pulumi.Input[str] type: (Updatable) A label indicating the attribute's function.
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if primary is not None:
+            pulumi.set(__self__, "primary", primary)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value of a X509 certificate.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A human readable name, primarily used for display purposes.
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        """
+        return pulumi.get(self, "primary")
+
+    @primary.setter
+    def primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "primary", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A label indicating the attribute's function.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
 
 
 @pulumi.input_type

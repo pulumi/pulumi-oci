@@ -28,7 +28,7 @@ class ClusterNetworkArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
         :param pulumi.Input['ClusterNetworkPlacementConfigurationArgs'] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -93,7 +93,7 @@ class ClusterNetworkArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 
@@ -130,7 +130,7 @@ class _ClusterNetworkState:
         Input properties used for looking up and filtering ClusterNetwork resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
         :param pulumi.Input['ClusterNetworkPlacementConfigurationArgs'] placement_configuration: The location for where the instance pools in a cluster network will place instances.
@@ -185,7 +185,7 @@ class _ClusterNetworkState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 
@@ -332,7 +332,7 @@ class ClusterNetwork(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterNetworkInstancePoolArgs']]]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
         :param pulumi.Input[pulumi.InputType['ClusterNetworkPlacementConfigurationArgs']] placement_configuration: The location for where the instance pools in a cluster network will place instances.
@@ -466,7 +466,7 @@ class ClusterNetwork(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterNetworkInstancePoolArgs']]]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
         :param pulumi.Input[pulumi.InputType['ClusterNetworkPlacementConfigurationArgs']] placement_configuration: The location for where the instance pools in a cluster network will place instances.
@@ -509,7 +509,7 @@ class ClusterNetwork(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
 

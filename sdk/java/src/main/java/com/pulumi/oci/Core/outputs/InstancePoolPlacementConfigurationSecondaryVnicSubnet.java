@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstancePoolPlacementConfigurationSecondaryVnicSubnet {
     /**
-     * @return (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     private @Nullable String displayName;
@@ -24,7 +24,7 @@ public final class InstancePoolPlacementConfigurationSecondaryVnicSubnet {
 
     private InstancePoolPlacementConfigurationSecondaryVnicSubnet() {}
     /**
-     * @return (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     public Optional<String> displayName() {

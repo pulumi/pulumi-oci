@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string PatchId;
         /// <summary>
+        /// The type of Patch operation.
+        /// </summary>
+        public readonly string PatchType;
+        /// <summary>
         /// The current state of the action.
         /// </summary>
         public readonly string State;
@@ -52,6 +56,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string patchId,
 
+            string patchType,
+
             string state,
 
             string timeEnded,
@@ -62,6 +68,7 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             PatchId = patchId;
+            PatchType = patchType;
             State = state;
             TimeEnded = timeEnded;
             TimeStarted = timeStarted;

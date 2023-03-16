@@ -73,7 +73,7 @@ type LookupInstanceResult struct {
 	// The OCID of the compartment that contains the instance.
 	CompartmentId     string                        `pulumi:"compartmentId"`
 	CreateVnicDetails []GetInstanceCreateVnicDetail `pulumi:"createVnicDetails"`
-	// The OCID of dedicated VM host.
+	// The OCID of the dedicated virtual machine host that the instance is placed on.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -214,7 +214,7 @@ func (o LookupInstanceResultOutput) CreateVnicDetails() GetInstanceCreateVnicDet
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceCreateVnicDetail { return v.CreateVnicDetails }).(GetInstanceCreateVnicDetailArrayOutput)
 }
 
-// The OCID of dedicated VM host.
+// The OCID of the dedicated virtual machine host that the instance is placed on.
 func (o LookupInstanceResultOutput) DedicatedVmHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.DedicatedVmHostId }).(pulumi.StringOutput)
 }

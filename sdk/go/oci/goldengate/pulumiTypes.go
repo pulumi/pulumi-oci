@@ -470,6 +470,162 @@ func (o DeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInput) 
 	}).(DeploymentDeploymentDiagnosticDataOutput)
 }
 
+type DeploymentMaintenanceWindow struct {
+	// (Updatable) Days of the week.
+	Day string `pulumi:"day"`
+	// (Updatable) Start hour for maintenance period. Hour is in UTC.
+	StartHour int `pulumi:"startHour"`
+}
+
+// DeploymentMaintenanceWindowInput is an input type that accepts DeploymentMaintenanceWindowArgs and DeploymentMaintenanceWindowOutput values.
+// You can construct a concrete instance of `DeploymentMaintenanceWindowInput` via:
+//
+//	DeploymentMaintenanceWindowArgs{...}
+type DeploymentMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToDeploymentMaintenanceWindowOutput() DeploymentMaintenanceWindowOutput
+	ToDeploymentMaintenanceWindowOutputWithContext(context.Context) DeploymentMaintenanceWindowOutput
+}
+
+type DeploymentMaintenanceWindowArgs struct {
+	// (Updatable) Days of the week.
+	Day pulumi.StringInput `pulumi:"day"`
+	// (Updatable) Start hour for maintenance period. Hour is in UTC.
+	StartHour pulumi.IntInput `pulumi:"startHour"`
+}
+
+func (DeploymentMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentMaintenanceWindow)(nil)).Elem()
+}
+
+func (i DeploymentMaintenanceWindowArgs) ToDeploymentMaintenanceWindowOutput() DeploymentMaintenanceWindowOutput {
+	return i.ToDeploymentMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i DeploymentMaintenanceWindowArgs) ToDeploymentMaintenanceWindowOutputWithContext(ctx context.Context) DeploymentMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentMaintenanceWindowOutput)
+}
+
+func (i DeploymentMaintenanceWindowArgs) ToDeploymentMaintenanceWindowPtrOutput() DeploymentMaintenanceWindowPtrOutput {
+	return i.ToDeploymentMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (i DeploymentMaintenanceWindowArgs) ToDeploymentMaintenanceWindowPtrOutputWithContext(ctx context.Context) DeploymentMaintenanceWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentMaintenanceWindowOutput).ToDeploymentMaintenanceWindowPtrOutputWithContext(ctx)
+}
+
+// DeploymentMaintenanceWindowPtrInput is an input type that accepts DeploymentMaintenanceWindowArgs, DeploymentMaintenanceWindowPtr and DeploymentMaintenanceWindowPtrOutput values.
+// You can construct a concrete instance of `DeploymentMaintenanceWindowPtrInput` via:
+//
+//	        DeploymentMaintenanceWindowArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeploymentMaintenanceWindowPtrInput interface {
+	pulumi.Input
+
+	ToDeploymentMaintenanceWindowPtrOutput() DeploymentMaintenanceWindowPtrOutput
+	ToDeploymentMaintenanceWindowPtrOutputWithContext(context.Context) DeploymentMaintenanceWindowPtrOutput
+}
+
+type deploymentMaintenanceWindowPtrType DeploymentMaintenanceWindowArgs
+
+func DeploymentMaintenanceWindowPtr(v *DeploymentMaintenanceWindowArgs) DeploymentMaintenanceWindowPtrInput {
+	return (*deploymentMaintenanceWindowPtrType)(v)
+}
+
+func (*deploymentMaintenanceWindowPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentMaintenanceWindow)(nil)).Elem()
+}
+
+func (i *deploymentMaintenanceWindowPtrType) ToDeploymentMaintenanceWindowPtrOutput() DeploymentMaintenanceWindowPtrOutput {
+	return i.ToDeploymentMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (i *deploymentMaintenanceWindowPtrType) ToDeploymentMaintenanceWindowPtrOutputWithContext(ctx context.Context) DeploymentMaintenanceWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentMaintenanceWindowPtrOutput)
+}
+
+type DeploymentMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (DeploymentMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentMaintenanceWindow)(nil)).Elem()
+}
+
+func (o DeploymentMaintenanceWindowOutput) ToDeploymentMaintenanceWindowOutput() DeploymentMaintenanceWindowOutput {
+	return o
+}
+
+func (o DeploymentMaintenanceWindowOutput) ToDeploymentMaintenanceWindowOutputWithContext(ctx context.Context) DeploymentMaintenanceWindowOutput {
+	return o
+}
+
+func (o DeploymentMaintenanceWindowOutput) ToDeploymentMaintenanceWindowPtrOutput() DeploymentMaintenanceWindowPtrOutput {
+	return o.ToDeploymentMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (o DeploymentMaintenanceWindowOutput) ToDeploymentMaintenanceWindowPtrOutputWithContext(ctx context.Context) DeploymentMaintenanceWindowPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeploymentMaintenanceWindow) *DeploymentMaintenanceWindow {
+		return &v
+	}).(DeploymentMaintenanceWindowPtrOutput)
+}
+
+// (Updatable) Days of the week.
+func (o DeploymentMaintenanceWindowOutput) Day() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentMaintenanceWindow) string { return v.Day }).(pulumi.StringOutput)
+}
+
+// (Updatable) Start hour for maintenance period. Hour is in UTC.
+func (o DeploymentMaintenanceWindowOutput) StartHour() pulumi.IntOutput {
+	return o.ApplyT(func(v DeploymentMaintenanceWindow) int { return v.StartHour }).(pulumi.IntOutput)
+}
+
+type DeploymentMaintenanceWindowPtrOutput struct{ *pulumi.OutputState }
+
+func (DeploymentMaintenanceWindowPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentMaintenanceWindow)(nil)).Elem()
+}
+
+func (o DeploymentMaintenanceWindowPtrOutput) ToDeploymentMaintenanceWindowPtrOutput() DeploymentMaintenanceWindowPtrOutput {
+	return o
+}
+
+func (o DeploymentMaintenanceWindowPtrOutput) ToDeploymentMaintenanceWindowPtrOutputWithContext(ctx context.Context) DeploymentMaintenanceWindowPtrOutput {
+	return o
+}
+
+func (o DeploymentMaintenanceWindowPtrOutput) Elem() DeploymentMaintenanceWindowOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceWindow) DeploymentMaintenanceWindow {
+		if v != nil {
+			return *v
+		}
+		var ret DeploymentMaintenanceWindow
+		return ret
+	}).(DeploymentMaintenanceWindowOutput)
+}
+
+// (Updatable) Days of the week.
+func (o DeploymentMaintenanceWindowPtrOutput) Day() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Day
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Start hour for maintenance period. Hour is in UTC.
+func (o DeploymentMaintenanceWindowPtrOutput) StartHour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceWindow) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.StartHour
+	}).(pulumi.IntPtrOutput)
+}
+
 type DeploymentOggData struct {
 	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 	AdminPassword string `pulumi:"adminPassword"`
@@ -481,7 +637,7 @@ type DeploymentOggData struct {
 	DeploymentName string `pulumi:"deploymentName"`
 	// (Updatable) A PEM-encoded private key.
 	Key *string `pulumi:"key"`
-	// Version of OGG
+	// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
 	OggVersion *string `pulumi:"oggVersion"`
 }
 
@@ -507,7 +663,7 @@ type DeploymentOggDataArgs struct {
 	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
 	// (Updatable) A PEM-encoded private key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Version of OGG
+	// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
 	OggVersion pulumi.StringPtrInput `pulumi:"oggVersion"`
 }
 
@@ -613,7 +769,7 @@ func (o DeploymentOggDataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// Version of OGG
+// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
 func (o DeploymentOggDataOutput) OggVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.OggVersion }).(pulumi.StringPtrOutput)
 }
@@ -692,7 +848,7 @@ func (o DeploymentOggDataPtrOutput) Key() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Version of OGG
+// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
 func (o DeploymentOggDataPtrOutput) OggVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
@@ -3634,6 +3790,112 @@ func (o GetDeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInpu
 	}).(GetDeploymentDeploymentDiagnosticDataOutput)
 }
 
+type GetDeploymentMaintenanceWindow struct {
+	// Days of the week.
+	Day string `pulumi:"day"`
+	// Start hour for maintenance period. Hour is in UTC.
+	StartHour int `pulumi:"startHour"`
+}
+
+// GetDeploymentMaintenanceWindowInput is an input type that accepts GetDeploymentMaintenanceWindowArgs and GetDeploymentMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetDeploymentMaintenanceWindowInput` via:
+//
+//	GetDeploymentMaintenanceWindowArgs{...}
+type GetDeploymentMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetDeploymentMaintenanceWindowOutput() GetDeploymentMaintenanceWindowOutput
+	ToGetDeploymentMaintenanceWindowOutputWithContext(context.Context) GetDeploymentMaintenanceWindowOutput
+}
+
+type GetDeploymentMaintenanceWindowArgs struct {
+	// Days of the week.
+	Day pulumi.StringInput `pulumi:"day"`
+	// Start hour for maintenance period. Hour is in UTC.
+	StartHour pulumi.IntInput `pulumi:"startHour"`
+}
+
+func (GetDeploymentMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetDeploymentMaintenanceWindowArgs) ToGetDeploymentMaintenanceWindowOutput() GetDeploymentMaintenanceWindowOutput {
+	return i.ToGetDeploymentMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentMaintenanceWindowArgs) ToGetDeploymentMaintenanceWindowOutputWithContext(ctx context.Context) GetDeploymentMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentMaintenanceWindowOutput)
+}
+
+// GetDeploymentMaintenanceWindowArrayInput is an input type that accepts GetDeploymentMaintenanceWindowArray and GetDeploymentMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentMaintenanceWindowArrayInput` via:
+//
+//	GetDeploymentMaintenanceWindowArray{ GetDeploymentMaintenanceWindowArgs{...} }
+type GetDeploymentMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentMaintenanceWindowArrayOutput() GetDeploymentMaintenanceWindowArrayOutput
+	ToGetDeploymentMaintenanceWindowArrayOutputWithContext(context.Context) GetDeploymentMaintenanceWindowArrayOutput
+}
+
+type GetDeploymentMaintenanceWindowArray []GetDeploymentMaintenanceWindowInput
+
+func (GetDeploymentMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetDeploymentMaintenanceWindowArray) ToGetDeploymentMaintenanceWindowArrayOutput() GetDeploymentMaintenanceWindowArrayOutput {
+	return i.ToGetDeploymentMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentMaintenanceWindowArray) ToGetDeploymentMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetDeploymentMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentMaintenanceWindowArrayOutput)
+}
+
+type GetDeploymentMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetDeploymentMaintenanceWindowOutput) ToGetDeploymentMaintenanceWindowOutput() GetDeploymentMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetDeploymentMaintenanceWindowOutput) ToGetDeploymentMaintenanceWindowOutputWithContext(ctx context.Context) GetDeploymentMaintenanceWindowOutput {
+	return o
+}
+
+// Days of the week.
+func (o GetDeploymentMaintenanceWindowOutput) Day() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentMaintenanceWindow) string { return v.Day }).(pulumi.StringOutput)
+}
+
+// Start hour for maintenance period. Hour is in UTC.
+func (o GetDeploymentMaintenanceWindowOutput) StartHour() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentMaintenanceWindow) int { return v.StartHour }).(pulumi.IntOutput)
+}
+
+type GetDeploymentMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetDeploymentMaintenanceWindowArrayOutput) ToGetDeploymentMaintenanceWindowArrayOutput() GetDeploymentMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetDeploymentMaintenanceWindowArrayOutput) ToGetDeploymentMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetDeploymentMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetDeploymentMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetDeploymentMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentMaintenanceWindow {
+		return vs[0].([]GetDeploymentMaintenanceWindow)[vs[1].(int)]
+	}).(GetDeploymentMaintenanceWindowOutput)
+}
+
 type GetDeploymentOggData struct {
 	AdminPassword string `pulumi:"adminPassword"`
 	// The GoldenGate deployment console username.
@@ -4016,10 +4278,12 @@ type GetDeploymentTypesDeploymentTypeCollectionItem struct {
 	Category string `pulumi:"category"`
 	// An array of connectionTypes.
 	ConnectionTypes []string `pulumi:"connectionTypes"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
 	DeploymentType string `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName string `pulumi:"displayName"`
+	// Allows to query by a specific GoldenGate version.
+	OggVersion string `pulumi:"oggVersion"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 	SourceTechnologies []string `pulumi:"sourceTechnologies"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
@@ -4042,10 +4306,12 @@ type GetDeploymentTypesDeploymentTypeCollectionItemArgs struct {
 	Category pulumi.StringInput `pulumi:"category"`
 	// An array of connectionTypes.
 	ConnectionTypes pulumi.StringArrayInput `pulumi:"connectionTypes"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Allows to query by a specific GoldenGate version.
+	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 	SourceTechnologies pulumi.StringArrayInput `pulumi:"sourceTechnologies"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
@@ -4113,7 +4379,7 @@ func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) ConnectionTypes() 
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.ConnectionTypes }).(pulumi.StringArrayOutput)
 }
 
-// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
 func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
 }
@@ -4121,6 +4387,11 @@ func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) DeploymentType() p
 // A filter to return only the resources that match the entire 'displayName' given.
 func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Allows to query by a specific GoldenGate version.
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) OggVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.OggVersion }).(pulumi.StringOutput)
 }
 
 // List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
@@ -4372,12 +4643,24 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
 	Id string `pulumi:"id"`
+	// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+	// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+	// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+	IsRollbackAllowed bool `pulumi:"isRollbackAllowed"`
+	// Indicates if OGG release contains security fix.
+	IsSecurityFix bool `pulumi:"isSecurityFix"`
+	// Indicates if upgrade notifications are snoozed or not.
+	IsSnoozed bool `pulumi:"isSnoozed"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
 	// Version of OGG
 	OggVersion string `pulumi:"oggVersion"`
+	// Version of OGG
+	PreviousOggVersion string `pulumi:"previousOggVersion"`
+	// The type of release.
+	ReleaseType string `pulumi:"releaseType"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -4386,6 +4669,12 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeFinished string `pulumi:"timeFinished"`
+	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeReleased string `pulumi:"timeReleased"`
+	// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeSchedule string `pulumi:"timeSchedule"`
+	// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeSnoozedUntil string `pulumi:"timeSnoozedUntil"`
 	// The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeStarted string `pulumi:"timeStarted"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -4420,12 +4709,24 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+	// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+	// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+	IsRollbackAllowed pulumi.BoolInput `pulumi:"isRollbackAllowed"`
+	// Indicates if OGG release contains security fix.
+	IsSecurityFix pulumi.BoolInput `pulumi:"isSecurityFix"`
+	// Indicates if upgrade notifications are snoozed or not.
+	IsSnoozed pulumi.BoolInput `pulumi:"isSnoozed"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
 	// Version of OGG
 	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
+	// Version of OGG
+	PreviousOggVersion pulumi.StringInput `pulumi:"previousOggVersion"`
+	// The type of release.
+	ReleaseType pulumi.StringInput `pulumi:"releaseType"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -4434,6 +4735,12 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeSchedule pulumi.StringInput `pulumi:"timeSchedule"`
+	// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeSnoozedUntil pulumi.StringInput `pulumi:"timeSnoozedUntil"`
 	// The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -4535,6 +4842,23 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) Id() pulumi.
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) IsRollbackAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) bool { return v.IsRollbackAllowed }).(pulumi.BoolOutput)
+}
+
+// Indicates if OGG release contains security fix.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) IsSecurityFix() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) bool { return v.IsSecurityFix }).(pulumi.BoolOutput)
+}
+
+// Indicates if upgrade notifications are snoozed or not.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) IsSnoozed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) bool { return v.IsSnoozed }).(pulumi.BoolOutput)
+}
+
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -4548,6 +4872,16 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) LifecycleSub
 // Version of OGG
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) OggVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.OggVersion }).(pulumi.StringOutput)
+}
+
+// Version of OGG
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) PreviousOggVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.PreviousOggVersion }).(pulumi.StringOutput)
+}
+
+// The type of release.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) ReleaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.ReleaseType }).(pulumi.StringOutput)
 }
 
 // A filter to return only the resources that match the 'lifecycleState' given.
@@ -4570,6 +4904,21 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeCreated(
 // The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeFinished() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.TimeSchedule }).(pulumi.StringOutput)
+}
+
+// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeSnoozedUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.TimeSnoozedUntil }).(pulumi.StringOutput)
 }
 
 // The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -4708,6 +5057,344 @@ func (o GetDeploymentUpgradesFilterArrayOutput) Index(i pulumi.IntInput) GetDepl
 	}).(GetDeploymentUpgradesFilterOutput)
 }
 
+type GetDeploymentVersionsDeploymentVersionCollection struct {
+	// Array of DeploymentVersionSummary.
+	Items []GetDeploymentVersionsDeploymentVersionCollectionItem `pulumi:"items"`
+}
+
+// GetDeploymentVersionsDeploymentVersionCollectionInput is an input type that accepts GetDeploymentVersionsDeploymentVersionCollectionArgs and GetDeploymentVersionsDeploymentVersionCollectionOutput values.
+// You can construct a concrete instance of `GetDeploymentVersionsDeploymentVersionCollectionInput` via:
+//
+//	GetDeploymentVersionsDeploymentVersionCollectionArgs{...}
+type GetDeploymentVersionsDeploymentVersionCollectionInput interface {
+	pulumi.Input
+
+	ToGetDeploymentVersionsDeploymentVersionCollectionOutput() GetDeploymentVersionsDeploymentVersionCollectionOutput
+	ToGetDeploymentVersionsDeploymentVersionCollectionOutputWithContext(context.Context) GetDeploymentVersionsDeploymentVersionCollectionOutput
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionArgs struct {
+	// Array of DeploymentVersionSummary.
+	Items GetDeploymentVersionsDeploymentVersionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeploymentVersionsDeploymentVersionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentVersionsDeploymentVersionCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentVersionsDeploymentVersionCollectionArgs) ToGetDeploymentVersionsDeploymentVersionCollectionOutput() GetDeploymentVersionsDeploymentVersionCollectionOutput {
+	return i.ToGetDeploymentVersionsDeploymentVersionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentVersionsDeploymentVersionCollectionArgs) ToGetDeploymentVersionsDeploymentVersionCollectionOutputWithContext(ctx context.Context) GetDeploymentVersionsDeploymentVersionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentVersionsDeploymentVersionCollectionOutput)
+}
+
+// GetDeploymentVersionsDeploymentVersionCollectionArrayInput is an input type that accepts GetDeploymentVersionsDeploymentVersionCollectionArray and GetDeploymentVersionsDeploymentVersionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentVersionsDeploymentVersionCollectionArrayInput` via:
+//
+//	GetDeploymentVersionsDeploymentVersionCollectionArray{ GetDeploymentVersionsDeploymentVersionCollectionArgs{...} }
+type GetDeploymentVersionsDeploymentVersionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentVersionsDeploymentVersionCollectionArrayOutput() GetDeploymentVersionsDeploymentVersionCollectionArrayOutput
+	ToGetDeploymentVersionsDeploymentVersionCollectionArrayOutputWithContext(context.Context) GetDeploymentVersionsDeploymentVersionCollectionArrayOutput
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionArray []GetDeploymentVersionsDeploymentVersionCollectionInput
+
+func (GetDeploymentVersionsDeploymentVersionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentVersionsDeploymentVersionCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentVersionsDeploymentVersionCollectionArray) ToGetDeploymentVersionsDeploymentVersionCollectionArrayOutput() GetDeploymentVersionsDeploymentVersionCollectionArrayOutput {
+	return i.ToGetDeploymentVersionsDeploymentVersionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentVersionsDeploymentVersionCollectionArray) ToGetDeploymentVersionsDeploymentVersionCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentVersionsDeploymentVersionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentVersionsDeploymentVersionCollectionArrayOutput)
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentVersionsDeploymentVersionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentVersionsDeploymentVersionCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionOutput) ToGetDeploymentVersionsDeploymentVersionCollectionOutput() GetDeploymentVersionsDeploymentVersionCollectionOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionOutput) ToGetDeploymentVersionsDeploymentVersionCollectionOutputWithContext(ctx context.Context) GetDeploymentVersionsDeploymentVersionCollectionOutput {
+	return o
+}
+
+// Array of DeploymentVersionSummary.
+func (o GetDeploymentVersionsDeploymentVersionCollectionOutput) Items() GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsDeploymentVersionCollection) []GetDeploymentVersionsDeploymentVersionCollectionItem {
+		return v.Items
+	}).(GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput)
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentVersionsDeploymentVersionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentVersionsDeploymentVersionCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionArrayOutput) ToGetDeploymentVersionsDeploymentVersionCollectionArrayOutput() GetDeploymentVersionsDeploymentVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionArrayOutput) ToGetDeploymentVersionsDeploymentVersionCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentVersionsDeploymentVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetDeploymentVersionsDeploymentVersionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentVersionsDeploymentVersionCollection {
+		return vs[0].([]GetDeploymentVersionsDeploymentVersionCollection)[vs[1].(int)]
+	}).(GetDeploymentVersionsDeploymentVersionCollectionOutput)
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionItem struct {
+	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+	DeploymentType string `pulumi:"deploymentType"`
+	// Indicates if OGG release contains security fix.
+	IsSecurityFix bool `pulumi:"isSecurityFix"`
+	// Version of OGG
+	OggVersion string `pulumi:"oggVersion"`
+	// The type of release.
+	ReleaseType string `pulumi:"releaseType"`
+	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeReleased string `pulumi:"timeReleased"`
+}
+
+// GetDeploymentVersionsDeploymentVersionCollectionItemInput is an input type that accepts GetDeploymentVersionsDeploymentVersionCollectionItemArgs and GetDeploymentVersionsDeploymentVersionCollectionItemOutput values.
+// You can construct a concrete instance of `GetDeploymentVersionsDeploymentVersionCollectionItemInput` via:
+//
+//	GetDeploymentVersionsDeploymentVersionCollectionItemArgs{...}
+type GetDeploymentVersionsDeploymentVersionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDeploymentVersionsDeploymentVersionCollectionItemOutput() GetDeploymentVersionsDeploymentVersionCollectionItemOutput
+	ToGetDeploymentVersionsDeploymentVersionCollectionItemOutputWithContext(context.Context) GetDeploymentVersionsDeploymentVersionCollectionItemOutput
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionItemArgs struct {
+	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// Indicates if OGG release contains security fix.
+	IsSecurityFix pulumi.BoolInput `pulumi:"isSecurityFix"`
+	// Version of OGG
+	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
+	// The type of release.
+	ReleaseType pulumi.StringInput `pulumi:"releaseType"`
+	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+}
+
+func (GetDeploymentVersionsDeploymentVersionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentVersionsDeploymentVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentVersionsDeploymentVersionCollectionItemArgs) ToGetDeploymentVersionsDeploymentVersionCollectionItemOutput() GetDeploymentVersionsDeploymentVersionCollectionItemOutput {
+	return i.ToGetDeploymentVersionsDeploymentVersionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentVersionsDeploymentVersionCollectionItemArgs) ToGetDeploymentVersionsDeploymentVersionCollectionItemOutputWithContext(ctx context.Context) GetDeploymentVersionsDeploymentVersionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentVersionsDeploymentVersionCollectionItemOutput)
+}
+
+// GetDeploymentVersionsDeploymentVersionCollectionItemArrayInput is an input type that accepts GetDeploymentVersionsDeploymentVersionCollectionItemArray and GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentVersionsDeploymentVersionCollectionItemArrayInput` via:
+//
+//	GetDeploymentVersionsDeploymentVersionCollectionItemArray{ GetDeploymentVersionsDeploymentVersionCollectionItemArgs{...} }
+type GetDeploymentVersionsDeploymentVersionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput() GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput
+	ToGetDeploymentVersionsDeploymentVersionCollectionItemArrayOutputWithContext(context.Context) GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionItemArray []GetDeploymentVersionsDeploymentVersionCollectionItemInput
+
+func (GetDeploymentVersionsDeploymentVersionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentVersionsDeploymentVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentVersionsDeploymentVersionCollectionItemArray) ToGetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput() GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput {
+	return i.ToGetDeploymentVersionsDeploymentVersionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentVersionsDeploymentVersionCollectionItemArray) ToGetDeploymentVersionsDeploymentVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput)
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentVersionsDeploymentVersionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentVersionsDeploymentVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) ToGetDeploymentVersionsDeploymentVersionCollectionItemOutput() GetDeploymentVersionsDeploymentVersionCollectionItemOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) ToGetDeploymentVersionsDeploymentVersionCollectionItemOutputWithContext(ctx context.Context) GetDeploymentVersionsDeploymentVersionCollectionItemOutput {
+	return o
+}
+
+// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsDeploymentVersionCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
+// Indicates if OGG release contains security fix.
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) IsSecurityFix() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsDeploymentVersionCollectionItem) bool { return v.IsSecurityFix }).(pulumi.BoolOutput)
+}
+
+// Version of OGG
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) OggVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsDeploymentVersionCollectionItem) string { return v.OggVersion }).(pulumi.StringOutput)
+}
+
+// The type of release.
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) ReleaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsDeploymentVersionCollectionItem) string { return v.ReleaseType }).(pulumi.StringOutput)
+}
+
+// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsDeploymentVersionCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+type GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentVersionsDeploymentVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput) ToGetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput() GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput) ToGetDeploymentVersionsDeploymentVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDeploymentVersionsDeploymentVersionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentVersionsDeploymentVersionCollectionItem {
+		return vs[0].([]GetDeploymentVersionsDeploymentVersionCollectionItem)[vs[1].(int)]
+	}).(GetDeploymentVersionsDeploymentVersionCollectionItemOutput)
+}
+
+type GetDeploymentVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDeploymentVersionsFilterInput is an input type that accepts GetDeploymentVersionsFilterArgs and GetDeploymentVersionsFilterOutput values.
+// You can construct a concrete instance of `GetDeploymentVersionsFilterInput` via:
+//
+//	GetDeploymentVersionsFilterArgs{...}
+type GetDeploymentVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetDeploymentVersionsFilterOutput() GetDeploymentVersionsFilterOutput
+	ToGetDeploymentVersionsFilterOutputWithContext(context.Context) GetDeploymentVersionsFilterOutput
+}
+
+type GetDeploymentVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDeploymentVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentVersionsFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentVersionsFilterArgs) ToGetDeploymentVersionsFilterOutput() GetDeploymentVersionsFilterOutput {
+	return i.ToGetDeploymentVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentVersionsFilterArgs) ToGetDeploymentVersionsFilterOutputWithContext(ctx context.Context) GetDeploymentVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentVersionsFilterOutput)
+}
+
+// GetDeploymentVersionsFilterArrayInput is an input type that accepts GetDeploymentVersionsFilterArray and GetDeploymentVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentVersionsFilterArrayInput` via:
+//
+//	GetDeploymentVersionsFilterArray{ GetDeploymentVersionsFilterArgs{...} }
+type GetDeploymentVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentVersionsFilterArrayOutput() GetDeploymentVersionsFilterArrayOutput
+	ToGetDeploymentVersionsFilterArrayOutputWithContext(context.Context) GetDeploymentVersionsFilterArrayOutput
+}
+
+type GetDeploymentVersionsFilterArray []GetDeploymentVersionsFilterInput
+
+func (GetDeploymentVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentVersionsFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentVersionsFilterArray) ToGetDeploymentVersionsFilterArrayOutput() GetDeploymentVersionsFilterArrayOutput {
+	return i.ToGetDeploymentVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentVersionsFilterArray) ToGetDeploymentVersionsFilterArrayOutputWithContext(ctx context.Context) GetDeploymentVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentVersionsFilterArrayOutput)
+}
+
+type GetDeploymentVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentVersionsFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentVersionsFilterOutput) ToGetDeploymentVersionsFilterOutput() GetDeploymentVersionsFilterOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsFilterOutput) ToGetDeploymentVersionsFilterOutputWithContext(ctx context.Context) GetDeploymentVersionsFilterOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDeploymentVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentVersionsFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentVersionsFilterArrayOutput) ToGetDeploymentVersionsFilterArrayOutput() GetDeploymentVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsFilterArrayOutput) ToGetDeploymentVersionsFilterArrayOutputWithContext(ctx context.Context) GetDeploymentVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetDeploymentVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentVersionsFilter {
+		return vs[0].([]GetDeploymentVersionsFilter)[vs[1].(int)]
+	}).(GetDeploymentVersionsFilterOutput)
+}
+
 type GetDeploymentsDeploymentCollection struct {
 	Items []GetDeploymentsDeploymentCollectionItem `pulumi:"items"`
 }
@@ -4843,6 +5530,12 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	// Defines the maintenance window, when automatic actions can be performed.
+	MaintenanceWindows []GetDeploymentsDeploymentCollectionItemMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// Type of the next maintenance.
+	NextMaintenanceActionType string `pulumi:"nextMaintenanceActionType"`
+	// Description of the next maintenance.
+	NextMaintenanceDescription string `pulumi:"nextMaintenanceDescription"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
@@ -4861,9 +5554,11 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOfNextMaintenance string `pulumi:"timeOfNextMaintenance"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpgradeRequired string `pulumi:"timeUpgradeRequired"`
 }
 
@@ -4919,6 +5614,12 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
+	// Defines the maintenance window, when automatic actions can be performed.
+	MaintenanceWindows GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
+	// Type of the next maintenance.
+	NextMaintenanceActionType pulumi.StringInput `pulumi:"nextMaintenanceActionType"`
+	// Description of the next maintenance.
+	NextMaintenanceDescription pulumi.StringInput `pulumi:"nextMaintenanceDescription"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
@@ -4937,9 +5638,11 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOfNextMaintenance pulumi.StringInput `pulumi:"timeOfNextMaintenance"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpgradeRequired pulumi.StringInput `pulumi:"timeUpgradeRequired"`
 }
 
@@ -5096,6 +5799,23 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) LifecycleSubState() pulumi
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.LifecycleSubState }).(pulumi.StringOutput)
 }
 
+// Defines the maintenance window, when automatic actions can be performed.
+func (o GetDeploymentsDeploymentCollectionItemOutput) MaintenanceWindows() GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemMaintenanceWindow {
+		return v.MaintenanceWindows
+	}).(GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput)
+}
+
+// Type of the next maintenance.
+func (o GetDeploymentsDeploymentCollectionItemOutput) NextMaintenanceActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.NextMaintenanceActionType }).(pulumi.StringOutput)
+}
+
+// Description of the next maintenance.
+func (o GetDeploymentsDeploymentCollectionItemOutput) NextMaintenanceDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.NextMaintenanceDescription }).(pulumi.StringOutput)
+}
+
 // An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 func (o GetDeploymentsDeploymentCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -5143,12 +5863,17 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) TimeCreated() pulumi.Strin
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemOutput) TimeOfNextMaintenance() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeOfNextMaintenance }).(pulumi.StringOutput)
+}
+
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentsDeploymentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentsDeploymentCollectionItemOutput) TimeUpgradeRequired() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeUpgradeRequired }).(pulumi.StringOutput)
 }
@@ -5319,6 +6044,112 @@ func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceWindow struct {
+	// Days of the week.
+	Day string `pulumi:"day"`
+	// Start hour for maintenance period. Hour is in UTC.
+	StartHour int `pulumi:"startHour"`
+}
+
+// GetDeploymentsDeploymentCollectionItemMaintenanceWindowInput is an input type that accepts GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs and GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemMaintenanceWindowInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs{...}
+type GetDeploymentsDeploymentCollectionItemMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput() GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput
+	ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs struct {
+	// Days of the week.
+	Day pulumi.StringInput `pulumi:"day"`
+	// Start hour for maintenance period. Hour is in UTC.
+	StartHour pulumi.IntInput `pulumi:"startHour"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs) ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput() GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs) ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray and GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray{ GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs{...} }
+type GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput() GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray []GetDeploymentsDeploymentCollectionItemMaintenanceWindowInput
+
+func (GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray) ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput() GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray) ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput) ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput() GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput) ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput {
+	return o
+}
+
+// Days of the week.
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput) Day() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemMaintenanceWindow) string { return v.Day }).(pulumi.StringOutput)
+}
+
+// Start hour for maintenance period. Hour is in UTC.
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput) StartHour() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemMaintenanceWindow) int { return v.StartHour }).(pulumi.IntOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput) ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput() GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput) ToGetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemMaintenanceWindow {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemMaintenanceWindow)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput)
 }
 
 type GetDeploymentsDeploymentCollectionItemOggData struct {
@@ -7019,6 +7850,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceWindowInput)(nil)).Elem(), DeploymentMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceWindowPtrInput)(nil)).Elem(), DeploymentMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataInput)(nil)).Elem(), DeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataPtrInput)(nil)).Elem(), DeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeInput)(nil)).Elem(), GetConnectionAdditionalAttributeArgs{})
@@ -7059,6 +7892,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsFilterArrayInput)(nil)).Elem(), GetDeploymentBackupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceWindowInput)(nil)).Elem(), GetDeploymentMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceWindowArrayInput)(nil)).Elem(), GetDeploymentMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataInput)(nil)).Elem(), GetDeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataArrayInput)(nil)).Elem(), GetDeploymentOggDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypeItemInput)(nil)).Elem(), GetDeploymentTypeItemArgs{})
@@ -7075,12 +7910,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentUpgradesDeploymentUpgradeCollectionItemArrayInput)(nil)).Elem(), GetDeploymentUpgradesDeploymentUpgradeCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentUpgradesFilterInput)(nil)).Elem(), GetDeploymentUpgradesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentUpgradesFilterArrayInput)(nil)).Elem(), GetDeploymentUpgradesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentVersionsDeploymentVersionCollectionInput)(nil)).Elem(), GetDeploymentVersionsDeploymentVersionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentVersionsDeploymentVersionCollectionArrayInput)(nil)).Elem(), GetDeploymentVersionsDeploymentVersionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentVersionsDeploymentVersionCollectionItemInput)(nil)).Elem(), GetDeploymentVersionsDeploymentVersionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentVersionsDeploymentVersionCollectionItemArrayInput)(nil)).Elem(), GetDeploymentVersionsDeploymentVersionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentVersionsFilterInput)(nil)).Elem(), GetDeploymentVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentVersionsFilterArrayInput)(nil)).Elem(), GetDeploymentVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindowInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterInput)(nil)).Elem(), GetDeploymentsFilterArgs{})
@@ -7117,6 +7960,8 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(DeploymentMaintenanceWindowPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataPtrOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeOutput{})
@@ -7157,6 +8002,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentBackupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetDeploymentMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentTypeItemOutput{})
@@ -7173,12 +8020,20 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentUpgradesDeploymentUpgradeCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentUpgradesFilterOutput{})
 	pulumi.RegisterOutputType(GetDeploymentUpgradesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentVersionsDeploymentVersionCollectionOutput{})
+	pulumi.RegisterOutputType(GetDeploymentVersionsDeploymentVersionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentVersionsDeploymentVersionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetDeploymentVersionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterOutput{})

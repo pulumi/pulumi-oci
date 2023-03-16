@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstancePoolPlacementConfigurationSecondaryVnicSubnetGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

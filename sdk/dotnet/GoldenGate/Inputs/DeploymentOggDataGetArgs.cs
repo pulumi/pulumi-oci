@@ -53,7 +53,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// Version of OGG
+        /// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         /// </summary>
         [Input("oggVersion")]
         public Input<string>? OggVersion { get; set; }

@@ -95,6 +95,11 @@ export const getDeploymentUpgrades: typeof import("./getDeploymentUpgrades").get
 export const getDeploymentUpgradesOutput: typeof import("./getDeploymentUpgrades").getDeploymentUpgradesOutput = null as any;
 utilities.lazyLoad(exports, ["getDeploymentUpgrades","getDeploymentUpgradesOutput"], () => require("./getDeploymentUpgrades"));
 
+export { GetDeploymentVersionsArgs, GetDeploymentVersionsResult, GetDeploymentVersionsOutputArgs } from "./getDeploymentVersions";
+export const getDeploymentVersions: typeof import("./getDeploymentVersions").getDeploymentVersions = null as any;
+export const getDeploymentVersionsOutput: typeof import("./getDeploymentVersions").getDeploymentVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDeploymentVersions","getDeploymentVersionsOutput"], () => require("./getDeploymentVersions"));
+
 export { GetDeploymentsArgs, GetDeploymentsResult, GetDeploymentsOutputArgs } from "./getDeployments";
 export const getDeployments: typeof import("./getDeployments").getDeployments = null as any;
 export const getDeploymentsOutput: typeof import("./getDeployments").getDeploymentsOutput = null as any;

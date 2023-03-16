@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
 //
-// Create an instance pool.
+// Creates an instance pool.
 //
 // ## Example Usage
 //
@@ -89,7 +89,7 @@ type InstancePool struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+	// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -154,7 +154,7 @@ type instancePoolState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+	// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -179,7 +179,7 @@ type InstancePoolState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+	// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -206,7 +206,7 @@ type instancePoolArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+	// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -228,7 +228,7 @@ type InstancePoolArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+	// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -346,7 +346,7 @@ func (o InstancePoolOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *InstancePool) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 func (o InstancePoolOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

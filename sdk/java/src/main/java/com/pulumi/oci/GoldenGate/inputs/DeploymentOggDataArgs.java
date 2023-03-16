@@ -91,14 +91,14 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Version of OGG
+     * (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
      * 
      */
     @Import(name="oggVersion")
     private @Nullable Output<String> oggVersion;
 
     /**
-     * @return Version of OGG
+     * @return (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
      * 
      */
     public Optional<Output<String>> oggVersion() {
@@ -240,7 +240,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param oggVersion Version of OGG
+         * @param oggVersion (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param oggVersion Version of OGG
+         * @param oggVersion (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
          * 
          * @return builder
          * 

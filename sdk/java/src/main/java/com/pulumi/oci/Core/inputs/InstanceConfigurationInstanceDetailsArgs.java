@@ -19,9 +19,17 @@ public final class InstanceConfigurationInstanceDetailsArgs extends com.pulumi.r
 
     public static final InstanceConfigurationInstanceDetailsArgs Empty = new InstanceConfigurationInstanceDetailsArgs();
 
+    /**
+     * Block volume parameters.
+     * 
+     */
     @Import(name="blockVolumes")
     private @Nullable Output<List<InstanceConfigurationInstanceDetailsBlockVolumeArgs>> blockVolumes;
 
+    /**
+     * @return Block volume parameters.
+     * 
+     */
     public Optional<Output<List<InstanceConfigurationInstanceDetailsBlockVolumeArgs>>> blockVolumes() {
         return Optional.ofNullable(this.blockVolumes);
     }
@@ -56,9 +64,17 @@ public final class InstanceConfigurationInstanceDetailsArgs extends com.pulumi.r
         return Optional.ofNullable(this.launchDetails);
     }
 
+    /**
+     * Secondary VNIC parameters.
+     * 
+     */
     @Import(name="secondaryVnics")
     private @Nullable Output<List<InstanceConfigurationInstanceDetailsSecondaryVnicArgs>> secondaryVnics;
 
+    /**
+     * @return Secondary VNIC parameters.
+     * 
+     */
     public Optional<Output<List<InstanceConfigurationInstanceDetailsSecondaryVnicArgs>>> secondaryVnics() {
         return Optional.ofNullable(this.secondaryVnics);
     }
@@ -90,15 +106,33 @@ public final class InstanceConfigurationInstanceDetailsArgs extends com.pulumi.r
             $ = new InstanceConfigurationInstanceDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param blockVolumes Block volume parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder blockVolumes(@Nullable Output<List<InstanceConfigurationInstanceDetailsBlockVolumeArgs>> blockVolumes) {
             $.blockVolumes = blockVolumes;
             return this;
         }
 
+        /**
+         * @param blockVolumes Block volume parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder blockVolumes(List<InstanceConfigurationInstanceDetailsBlockVolumeArgs> blockVolumes) {
             return blockVolumes(Output.of(blockVolumes));
         }
 
+        /**
+         * @param blockVolumes Block volume parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder blockVolumes(InstanceConfigurationInstanceDetailsBlockVolumeArgs... blockVolumes) {
             return blockVolumes(List.of(blockVolumes));
         }
@@ -145,15 +179,33 @@ public final class InstanceConfigurationInstanceDetailsArgs extends com.pulumi.r
             return launchDetails(Output.of(launchDetails));
         }
 
+        /**
+         * @param secondaryVnics Secondary VNIC parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secondaryVnics(@Nullable Output<List<InstanceConfigurationInstanceDetailsSecondaryVnicArgs>> secondaryVnics) {
             $.secondaryVnics = secondaryVnics;
             return this;
         }
 
+        /**
+         * @param secondaryVnics Secondary VNIC parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secondaryVnics(List<InstanceConfigurationInstanceDetailsSecondaryVnicArgs> secondaryVnics) {
             return secondaryVnics(Output.of(secondaryVnics));
         }
 
+        /**
+         * @param secondaryVnics Secondary VNIC parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secondaryVnics(InstanceConfigurationInstanceDetailsSecondaryVnicArgs... secondaryVnics) {
             return secondaryVnics(List.of(secondaryVnics));
         }

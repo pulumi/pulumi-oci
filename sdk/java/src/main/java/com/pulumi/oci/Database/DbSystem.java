@@ -556,6 +556,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.nsgIds);
     }
     /**
+     * The most recent OS Patch Version applied on the DB system.
+     * 
+     */
+    @Export(name="osVersion", type=String.class, parameters={})
+    private Output<String> osVersion;
+
+    /**
+     * @return The most recent OS Patch Version applied on the DB system.
+     * 
+     */
+    public Output<String> osVersion() {
+        return this.osVersion;
+    }
+    /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */

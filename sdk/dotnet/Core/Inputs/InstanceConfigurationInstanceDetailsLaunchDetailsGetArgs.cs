@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsGetArgs>? CreateVnicDetails { get; set; }
 
         /// <summary>
-        /// The OCID of dedicated VM host.
+        /// The OCID of the dedicated virtual machine host to place the instance on.
         /// </summary>
         [Input("dedicatedVmHostId")]
         public Input<string>? DedicatedVmHostId { get; set; }

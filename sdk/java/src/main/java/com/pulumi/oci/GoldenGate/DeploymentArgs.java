@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceWindowArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -202,6 +203,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+     * 
+     */
+    @Import(name="maintenanceWindow")
+    private @Nullable Output<DeploymentMaintenanceWindowArgs> maintenanceWindow;
+
+    /**
+     * @return (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+     * 
+     */
+    public Optional<Output<DeploymentMaintenanceWindowArgs>> maintenanceWindow() {
+        return Optional.ofNullable(this.maintenanceWindow);
+    }
+
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -229,6 +245,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<DeploymentOggDataArgs>> oggData() {
         return Optional.ofNullable(this.oggData);
+    }
+
+    /**
+     * Possible lifecycle states.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return Possible lifecycle states.
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
     }
 
     /**
@@ -261,8 +292,10 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
         this.isPublic = $.isPublic;
         this.licenseModel = $.licenseModel;
+        this.maintenanceWindow = $.maintenanceWindow;
         this.nsgIds = $.nsgIds;
         this.oggData = $.oggData;
+        this.state = $.state;
         this.subnetId = $.subnetId;
     }
 
@@ -537,6 +570,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param maintenanceWindow (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindow(@Nullable Output<DeploymentMaintenanceWindowArgs> maintenanceWindow) {
+            $.maintenanceWindow = maintenanceWindow;
+            return this;
+        }
+
+        /**
+         * @param maintenanceWindow (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindow(DeploymentMaintenanceWindowArgs maintenanceWindow) {
+            return maintenanceWindow(Output.of(maintenanceWindow));
+        }
+
+        /**
          * @param nsgIds (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
          * 
          * @return builder
@@ -586,6 +640,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder oggData(DeploymentOggDataArgs oggData) {
             return oggData(Output.of(oggData));
+        }
+
+        /**
+         * @param state Possible lifecycle states.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state Possible lifecycle states.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         /**

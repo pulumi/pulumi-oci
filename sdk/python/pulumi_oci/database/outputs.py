@@ -25643,6 +25643,7 @@ class GetDbHomePatchHistoryEntriesPatchHistoryEntryResult(dict):
                  id: str,
                  lifecycle_details: str,
                  patch_id: str,
+                 patch_type: str,
                  state: str,
                  time_ended: str,
                  time_started: str):
@@ -25651,6 +25652,7 @@ class GetDbHomePatchHistoryEntriesPatchHistoryEntryResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
         :param str lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
         :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+        :param str patch_type: The type of Patch operation.
         :param str state: The current state of the action.
         :param str time_ended: The date and time when the patch action completed
         :param str time_started: The date and time when the patch action started.
@@ -25659,6 +25661,7 @@ class GetDbHomePatchHistoryEntriesPatchHistoryEntryResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "patch_id", patch_id)
+        pulumi.set(__self__, "patch_type", patch_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
@@ -25694,6 +25697,14 @@ class GetDbHomePatchHistoryEntriesPatchHistoryEntryResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
         """
         return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> str:
+        """
+        The type of Patch operation.
+        """
+        return pulumi.get(self, "patch_type")
 
     @property
     @pulumi.getter
@@ -27287,6 +27298,7 @@ class GetDbSystemHistoryEntriesPatchHistoryEntryResult(dict):
                  id: str,
                  lifecycle_details: str,
                  patch_id: str,
+                 patch_type: str,
                  state: str,
                  time_ended: str,
                  time_started: str):
@@ -27295,6 +27307,7 @@ class GetDbSystemHistoryEntriesPatchHistoryEntryResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
         :param str lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
         :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+        :param str patch_type: The type of Patch operation.
         :param str state: The current state of the action.
         :param str time_ended: The date and time when the patch action completed
         :param str time_started: The date and time when the patch action started.
@@ -27303,6 +27316,7 @@ class GetDbSystemHistoryEntriesPatchHistoryEntryResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "patch_id", patch_id)
+        pulumi.set(__self__, "patch_type", patch_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
@@ -27338,6 +27352,14 @@ class GetDbSystemHistoryEntriesPatchHistoryEntryResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
         """
         return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> str:
+        """
+        The type of Patch operation.
+        """
+        return pulumi.get(self, "patch_type")
 
     @property
     @pulumi.getter
@@ -28068,6 +28090,7 @@ class GetDbSystemsDbSystemResult(dict):
                  next_maintenance_run_id: str,
                  node_count: int,
                  nsg_ids: Sequence[str],
+                 os_version: str,
                  point_in_time_data_disk_clone_timestamp: str,
                  private_ip: str,
                  reco_storage_size_in_gb: int,
@@ -28119,6 +28142,7 @@ class GetDbSystemsDbSystemResult(dict):
         :param int node_count: The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        :param str os_version: The most recent OS Patch Version applied on the DB system.
         :param str point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param int reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         :param str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
@@ -28173,6 +28197,7 @@ class GetDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "point_in_time_data_disk_clone_timestamp", point_in_time_data_disk_clone_timestamp)
         pulumi.set(__self__, "private_ip", private_ip)
         pulumi.set(__self__, "reco_storage_size_in_gb", reco_storage_size_in_gb)
@@ -28453,6 +28478,14 @@ class GetDbSystemsDbSystemResult(dict):
         * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> str:
+        """
+        The most recent OS Patch Version applied on the DB system.
+        """
+        return pulumi.get(self, "os_version")
 
     @property
     @pulumi.getter(name="pointInTimeDataDiskCloneTimestamp")

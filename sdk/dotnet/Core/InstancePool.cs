@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Core
     /// <summary>
     /// This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
     /// 
-    /// Create an instance pool.
+    /// Creates an instance pool.
     /// 
     /// ## Example Usage
     /// 
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -211,7 +211,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -303,7 +303,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

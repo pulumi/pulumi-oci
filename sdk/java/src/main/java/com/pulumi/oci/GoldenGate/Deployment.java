@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.DeploymentArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentState;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentDeploymentDiagnosticData;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentOggData;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -303,6 +304,48 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.lifecycleSubState;
     }
     /**
+     * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+     * 
+     */
+    @Export(name="maintenanceWindow", type=DeploymentMaintenanceWindow.class, parameters={})
+    private Output<DeploymentMaintenanceWindow> maintenanceWindow;
+
+    /**
+     * @return (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+     * 
+     */
+    public Output<DeploymentMaintenanceWindow> maintenanceWindow() {
+        return this.maintenanceWindow;
+    }
+    /**
+     * Type of the next maintenance.
+     * 
+     */
+    @Export(name="nextMaintenanceActionType", type=String.class, parameters={})
+    private Output<String> nextMaintenanceActionType;
+
+    /**
+     * @return Type of the next maintenance.
+     * 
+     */
+    public Output<String> nextMaintenanceActionType() {
+        return this.nextMaintenanceActionType;
+    }
+    /**
+     * Description of the next maintenance.
+     * 
+     */
+    @Export(name="nextMaintenanceDescription", type=String.class, parameters={})
+    private Output<String> nextMaintenanceDescription;
+
+    /**
+     * @return Description of the next maintenance.
+     * 
+     */
+    public Output<String> nextMaintenanceDescription() {
+        return this.nextMaintenanceDescription;
+    }
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -429,6 +472,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
+     * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    @Export(name="timeOfNextMaintenance", type=String.class, parameters={})
+    private Output<String> timeOfNextMaintenance;
+
+    /**
+     * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public Output<String> timeOfNextMaintenance() {
+        return this.timeOfNextMaintenance;
+    }
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -443,14 +500,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeUpgradeRequired", type=String.class, parameters={})
     private Output<String> timeUpgradeRequired;
 
     /**
-     * @return The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     public Output<String> timeUpgradeRequired() {

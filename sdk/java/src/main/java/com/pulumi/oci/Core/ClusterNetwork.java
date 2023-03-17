@@ -114,14 +114,14 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     public Output<String> displayName() {

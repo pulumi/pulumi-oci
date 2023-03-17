@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetInstanceConfigurationInstanceDetailResult
     {
+        /// <summary>
+        /// Block volume parameters.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailBlockVolumeResult> BlockVolumes;
         /// <summary>
         /// The type of instance details. Supported instanceType is compute
@@ -22,6 +25,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailLaunchDetailResult> LaunchDetails;
+        /// <summary>
+        /// Secondary VNIC parameters.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailSecondaryVnicResult> SecondaryVnics;
 
         [OutputConstructor]

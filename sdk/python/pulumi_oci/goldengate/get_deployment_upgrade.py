@@ -21,7 +21,7 @@ class GetDeploymentUpgradeResult:
     """
     A collection of values returned by getDeploymentUpgrade.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, deployment_id=None, deployment_upgrade_id=None, deployment_upgrade_type=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, lifecycle_sub_state=None, ogg_version=None, state=None, system_tags=None, time_created=None, time_finished=None, time_started=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, deployment_id=None, deployment_upgrade_id=None, deployment_upgrade_type=None, description=None, display_name=None, freeform_tags=None, id=None, is_rollback_allowed=None, is_security_fix=None, is_snoozed=None, lifecycle_details=None, lifecycle_sub_state=None, ogg_version=None, previous_ogg_version=None, release_type=None, state=None, system_tags=None, time_created=None, time_finished=None, time_released=None, time_schedule=None, time_snoozed_until=None, time_started=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,6 +49,15 @@ class GetDeploymentUpgradeResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_rollback_allowed and not isinstance(is_rollback_allowed, bool):
+            raise TypeError("Expected argument 'is_rollback_allowed' to be a bool")
+        pulumi.set(__self__, "is_rollback_allowed", is_rollback_allowed)
+        if is_security_fix and not isinstance(is_security_fix, bool):
+            raise TypeError("Expected argument 'is_security_fix' to be a bool")
+        pulumi.set(__self__, "is_security_fix", is_security_fix)
+        if is_snoozed and not isinstance(is_snoozed, bool):
+            raise TypeError("Expected argument 'is_snoozed' to be a bool")
+        pulumi.set(__self__, "is_snoozed", is_snoozed)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -58,6 +67,12 @@ class GetDeploymentUpgradeResult:
         if ogg_version and not isinstance(ogg_version, str):
             raise TypeError("Expected argument 'ogg_version' to be a str")
         pulumi.set(__self__, "ogg_version", ogg_version)
+        if previous_ogg_version and not isinstance(previous_ogg_version, str):
+            raise TypeError("Expected argument 'previous_ogg_version' to be a str")
+        pulumi.set(__self__, "previous_ogg_version", previous_ogg_version)
+        if release_type and not isinstance(release_type, str):
+            raise TypeError("Expected argument 'release_type' to be a str")
+        pulumi.set(__self__, "release_type", release_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -70,6 +85,15 @@ class GetDeploymentUpgradeResult:
         if time_finished and not isinstance(time_finished, str):
             raise TypeError("Expected argument 'time_finished' to be a str")
         pulumi.set(__self__, "time_finished", time_finished)
+        if time_released and not isinstance(time_released, str):
+            raise TypeError("Expected argument 'time_released' to be a str")
+        pulumi.set(__self__, "time_released", time_released)
+        if time_schedule and not isinstance(time_schedule, str):
+            raise TypeError("Expected argument 'time_schedule' to be a str")
+        pulumi.set(__self__, "time_schedule", time_schedule)
+        if time_snoozed_until and not isinstance(time_snoozed_until, str):
+            raise TypeError("Expected argument 'time_snoozed_until' to be a str")
+        pulumi.set(__self__, "time_snoozed_until", time_snoozed_until)
         if time_started and not isinstance(time_started, str):
             raise TypeError("Expected argument 'time_started' to be a str")
         pulumi.set(__self__, "time_started", time_started)
@@ -147,6 +171,32 @@ class GetDeploymentUpgradeResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isRollbackAllowed")
+    def is_rollback_allowed(self) -> bool:
+        """
+        Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+        * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+        * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+        """
+        return pulumi.get(self, "is_rollback_allowed")
+
+    @property
+    @pulumi.getter(name="isSecurityFix")
+    def is_security_fix(self) -> bool:
+        """
+        Indicates if OGG release contains security fix.
+        """
+        return pulumi.get(self, "is_security_fix")
+
+    @property
+    @pulumi.getter(name="isSnoozed")
+    def is_snoozed(self) -> bool:
+        """
+        Indicates if upgrade notifications are snoozed or not.
+        """
+        return pulumi.get(self, "is_snoozed")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -169,6 +219,22 @@ class GetDeploymentUpgradeResult:
         Version of OGG
         """
         return pulumi.get(self, "ogg_version")
+
+    @property
+    @pulumi.getter(name="previousOggVersion")
+    def previous_ogg_version(self) -> str:
+        """
+        Version of OGG
+        """
+        return pulumi.get(self, "previous_ogg_version")
+
+    @property
+    @pulumi.getter(name="releaseType")
+    def release_type(self) -> str:
+        """
+        The type of release.
+        """
+        return pulumi.get(self, "release_type")
 
     @property
     @pulumi.getter
@@ -203,6 +269,30 @@ class GetDeploymentUpgradeResult:
         return pulumi.get(self, "time_finished")
 
     @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> str:
+        """
+        The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_released")
+
+    @property
+    @pulumi.getter(name="timeSchedule")
+    def time_schedule(self) -> str:
+        """
+        The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_schedule")
+
+    @property
+    @pulumi.getter(name="timeSnoozedUntil")
+    def time_snoozed_until(self) -> str:
+        """
+        The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_snoozed_until")
+
+    @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> str:
         """
@@ -234,13 +324,21 @@ class AwaitableGetDeploymentUpgradeResult(GetDeploymentUpgradeResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_rollback_allowed=self.is_rollback_allowed,
+            is_security_fix=self.is_security_fix,
+            is_snoozed=self.is_snoozed,
             lifecycle_details=self.lifecycle_details,
             lifecycle_sub_state=self.lifecycle_sub_state,
             ogg_version=self.ogg_version,
+            previous_ogg_version=self.previous_ogg_version,
+            release_type=self.release_type,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_finished=self.time_finished,
+            time_released=self.time_released,
+            time_schedule=self.time_schedule,
+            time_snoozed_until=self.time_snoozed_until,
             time_started=self.time_started,
             time_updated=self.time_updated)
 
@@ -279,13 +377,21 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[str] = None,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        is_rollback_allowed=__ret__.is_rollback_allowed,
+        is_security_fix=__ret__.is_security_fix,
+        is_snoozed=__ret__.is_snoozed,
         lifecycle_details=__ret__.lifecycle_details,
         lifecycle_sub_state=__ret__.lifecycle_sub_state,
         ogg_version=__ret__.ogg_version,
+        previous_ogg_version=__ret__.previous_ogg_version,
+        release_type=__ret__.release_type,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
         time_finished=__ret__.time_finished,
+        time_released=__ret__.time_released,
+        time_schedule=__ret__.time_schedule,
+        time_snoozed_until=__ret__.time_snoozed_until,
         time_started=__ret__.time_started,
         time_updated=__ret__.time_updated)
 

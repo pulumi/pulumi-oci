@@ -13,6 +13,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetInstanceConfigurationInstanceDetail {
+    /**
+     * @return Block volume parameters.
+     * 
+     */
     private List<GetInstanceConfigurationInstanceDetailBlockVolume> blockVolumes;
     /**
      * @return The type of instance details. Supported instanceType is compute
@@ -24,9 +28,17 @@ public final class GetInstanceConfigurationInstanceDetail {
      * 
      */
     private List<GetInstanceConfigurationInstanceDetailLaunchDetail> launchDetails;
+    /**
+     * @return Secondary VNIC parameters.
+     * 
+     */
     private List<GetInstanceConfigurationInstanceDetailSecondaryVnic> secondaryVnics;
 
     private GetInstanceConfigurationInstanceDetail() {}
+    /**
+     * @return Block volume parameters.
+     * 
+     */
     public List<GetInstanceConfigurationInstanceDetailBlockVolume> blockVolumes() {
         return this.blockVolumes;
     }
@@ -44,6 +56,10 @@ public final class GetInstanceConfigurationInstanceDetail {
     public List<GetInstanceConfigurationInstanceDetailLaunchDetail> launchDetails() {
         return this.launchDetails;
     }
+    /**
+     * @return Secondary VNIC parameters.
+     * 
+     */
     public List<GetInstanceConfigurationInstanceDetailSecondaryVnic> secondaryVnics() {
         return this.secondaryVnics;
     }

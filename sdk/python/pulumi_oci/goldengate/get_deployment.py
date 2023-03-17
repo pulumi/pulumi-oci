@@ -22,7 +22,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_updated=None, time_upgrade_required=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -86,6 +86,15 @@ class GetDeploymentResult:
         if lifecycle_sub_state and not isinstance(lifecycle_sub_state, str):
             raise TypeError("Expected argument 'lifecycle_sub_state' to be a str")
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        if maintenance_windows and not isinstance(maintenance_windows, list):
+            raise TypeError("Expected argument 'maintenance_windows' to be a list")
+        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        if next_maintenance_action_type and not isinstance(next_maintenance_action_type, str):
+            raise TypeError("Expected argument 'next_maintenance_action_type' to be a str")
+        pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
+        if next_maintenance_description and not isinstance(next_maintenance_description, str):
+            raise TypeError("Expected argument 'next_maintenance_description' to be a str")
+        pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -113,6 +122,9 @@ class GetDeploymentResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_of_next_maintenance and not isinstance(time_of_next_maintenance, str):
+            raise TypeError("Expected argument 'time_of_next_maintenance' to be a str")
+        pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -286,6 +298,30 @@ class GetDeploymentResult:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
+    @pulumi.getter(name="maintenanceWindows")
+    def maintenance_windows(self) -> Sequence['outputs.GetDeploymentMaintenanceWindowResult']:
+        """
+        Defines the maintenance window, when automatic actions can be performed.
+        """
+        return pulumi.get(self, "maintenance_windows")
+
+    @property
+    @pulumi.getter(name="nextMaintenanceActionType")
+    def next_maintenance_action_type(self) -> str:
+        """
+        Type of the next maintenance.
+        """
+        return pulumi.get(self, "next_maintenance_action_type")
+
+    @property
+    @pulumi.getter(name="nextMaintenanceDescription")
+    def next_maintenance_description(self) -> str:
+        """
+        Description of the next maintenance.
+        """
+        return pulumi.get(self, "next_maintenance_description")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -358,6 +394,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeOfNextMaintenance")
+    def time_of_next_maintenance(self) -> str:
+        """
+        The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_of_next_maintenance")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -369,7 +413,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="timeUpgradeRequired")
     def time_upgrade_required(self) -> str:
         """
-        The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_upgrade_required")
 
@@ -401,6 +445,9 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
             lifecycle_sub_state=self.lifecycle_sub_state,
+            maintenance_windows=self.maintenance_windows,
+            next_maintenance_action_type=self.next_maintenance_action_type,
+            next_maintenance_description=self.next_maintenance_description,
             nsg_ids=self.nsg_ids,
             ogg_datas=self.ogg_datas,
             private_ip_address=self.private_ip_address,
@@ -410,6 +457,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
             time_created=self.time_created,
+            time_of_next_maintenance=self.time_of_next_maintenance,
             time_updated=self.time_updated,
             time_upgrade_required=self.time_upgrade_required)
 
@@ -460,6 +508,9 @@ def get_deployment(deployment_id: Optional[str] = None,
         license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
         lifecycle_sub_state=__ret__.lifecycle_sub_state,
+        maintenance_windows=__ret__.maintenance_windows,
+        next_maintenance_action_type=__ret__.next_maintenance_action_type,
+        next_maintenance_description=__ret__.next_maintenance_description,
         nsg_ids=__ret__.nsg_ids,
         ogg_datas=__ret__.ogg_datas,
         private_ip_address=__ret__.private_ip_address,
@@ -469,6 +520,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         subnet_id=__ret__.subnet_id,
         system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
+        time_of_next_maintenance=__ret__.time_of_next_maintenance,
         time_updated=__ret__.time_updated,
         time_upgrade_required=__ret__.time_upgrade_required)
 

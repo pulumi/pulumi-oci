@@ -22,13 +22,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<string> ConnectionTypes;
         /// <summary>
-        /// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        /// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
         /// </summary>
         public readonly string DeploymentType;
         /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Allows to query by a specific GoldenGate version.
+        /// </summary>
+        public readonly string OggVersion;
         /// <summary>
         /// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         /// </summary>
@@ -48,6 +52,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string displayName,
 
+            string oggVersion,
+
             ImmutableArray<string> sourceTechnologies,
 
             ImmutableArray<string> targetTechnologies)
@@ -56,6 +62,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ConnectionTypes = connectionTypes;
             DeploymentType = deploymentType;
             DisplayName = displayName;
+            OggVersion = oggVersion;
             SourceTechnologies = sourceTechnologies;
             TargetTechnologies = targetTechnologies;
         }

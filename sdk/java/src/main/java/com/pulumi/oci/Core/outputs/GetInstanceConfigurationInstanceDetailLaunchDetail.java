@@ -53,7 +53,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetail {
      */
     private List<GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail> createVnicDetails;
     /**
-     * @return The OCID of dedicated VM host.
+     * @return The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
     private String dedicatedVmHostId;
@@ -183,7 +183,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetail {
         return this.createVnicDetails;
     }
     /**
-     * @return The OCID of dedicated VM host.
+     * @return The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
     public String dedicatedVmHostId() {

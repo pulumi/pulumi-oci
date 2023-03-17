@@ -20,7 +20,7 @@ public final class GetInstancePoolsResult {
      */
     private String compartmentId;
     /**
-     * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     private @Nullable String displayName;
@@ -50,7 +50,7 @@ public final class GetInstancePoolsResult {
         return this.compartmentId;
     }
     /**
-     * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     public Optional<String> displayName() {

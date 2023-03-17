@@ -221,6 +221,10 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
+     * The most recent OS Patch Version applied on the DB system.
+     */
+    public /*out*/ readonly osVersion!: pulumi.Output<string>;
+    /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     public /*out*/ readonly pointInTimeDataDiskCloneTimestamp!: pulumi.Output<string>;
@@ -345,6 +349,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
+            resourceInputs["osVersion"] = state ? state.osVersion : undefined;
             resourceInputs["pointInTimeDataDiskCloneTimestamp"] = state ? state.pointInTimeDataDiskCloneTimestamp : undefined;
             resourceInputs["privateIp"] = state ? state.privateIp : undefined;
             resourceInputs["recoStorageSizeInGb"] = state ? state.recoStorageSizeInGb : undefined;
@@ -430,6 +435,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["maintenanceWindows"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
+            resourceInputs["osVersion"] = undefined /*out*/;
             resourceInputs["pointInTimeDataDiskCloneTimestamp"] = undefined /*out*/;
             resourceInputs["scanDnsName"] = undefined /*out*/;
             resourceInputs["scanDnsRecordId"] = undefined /*out*/;
@@ -592,6 +598,10 @@ export interface DbSystemState {
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The most recent OS Patch Version applied on the DB system.
+     */
+    osVersion?: pulumi.Input<string>;
     /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */

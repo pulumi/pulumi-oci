@@ -29,8 +29,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetDeploymentTypes(ctx, &goldengate.GetDeploymentTypesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Deployment_type_display_name),
+//				CompartmentId:  _var.Compartment_id,
+//				DeploymentType: pulumi.StringRef(_var.Deployment_type_deployment_type),
+//				DisplayName:    pulumi.StringRef(_var.Deployment_type_display_name),
+//				OggVersion:     pulumi.StringRef(_var.Deployment_type_ogg_version),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -53,14 +55,20 @@ func GetDeploymentTypes(ctx *pulumi.Context, args *GetDeploymentTypesArgs, opts 
 type GetDeploymentTypesArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+	DeploymentType *string `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetDeploymentTypesFilter `pulumi:"filters"`
+	// Allows to query by a specific GoldenGate version.
+	OggVersion *string `pulumi:"oggVersion"`
 }
 
 // A collection of values returned by getDeploymentTypes.
 type GetDeploymentTypesResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	DeploymentType *string `pulumi:"deploymentType"`
 	// The list of deployment_type_collection.
 	DeploymentTypeCollections []GetDeploymentTypesDeploymentTypeCollection `pulumi:"deploymentTypeCollections"`
 	// An object's Display Name.
@@ -68,6 +76,8 @@ type GetDeploymentTypesResult struct {
 	Filters     []GetDeploymentTypesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Version of OGG
+	OggVersion *string `pulumi:"oggVersion"`
 }
 
 func GetDeploymentTypesOutput(ctx *pulumi.Context, args GetDeploymentTypesOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentTypesResultOutput {
@@ -87,9 +97,13 @@ func GetDeploymentTypesOutput(ctx *pulumi.Context, args GetDeploymentTypesOutput
 type GetDeploymentTypesOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput              `pulumi:"displayName"`
 	Filters     GetDeploymentTypesFilterArrayInput `pulumi:"filters"`
+	// Allows to query by a specific GoldenGate version.
+	OggVersion pulumi.StringPtrInput `pulumi:"oggVersion"`
 }
 
 func (GetDeploymentTypesOutputArgs) ElementType() reflect.Type {
@@ -115,6 +129,11 @@ func (o GetDeploymentTypesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentTypesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+func (o GetDeploymentTypesResultOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentTypesResult) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
+}
+
 // The list of deployment_type_collection.
 func (o GetDeploymentTypesResultOutput) DeploymentTypeCollections() GetDeploymentTypesDeploymentTypeCollectionArrayOutput {
 	return o.ApplyT(func(v GetDeploymentTypesResult) []GetDeploymentTypesDeploymentTypeCollection {
@@ -134,6 +153,11 @@ func (o GetDeploymentTypesResultOutput) Filters() GetDeploymentTypesFilterArrayO
 // The provider-assigned unique ID for this managed resource.
 func (o GetDeploymentTypesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentTypesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Version of OGG
+func (o GetDeploymentTypesResultOutput) OggVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentTypesResult) *string { return v.OggVersion }).(pulumi.StringPtrOutput)
 }
 
 func init() {

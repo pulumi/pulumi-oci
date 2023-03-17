@@ -61,7 +61,7 @@ type LookupClusterNetworkResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -131,7 +131,7 @@ func (o LookupClusterNetworkResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupClusterNetworkResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 func (o LookupClusterNetworkResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }

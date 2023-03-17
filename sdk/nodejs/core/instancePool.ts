@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
  *
- * Create an instance pool.
+ * Creates an instance pool.
  *
  * ## Example Usage
  *
@@ -95,7 +95,7 @@ export class InstancePool extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -199,7 +199,7 @@ export interface InstancePoolState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -245,7 +245,7 @@ export interface InstancePoolArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      */
     displayName?: pulumi.Input<string>;
     /**

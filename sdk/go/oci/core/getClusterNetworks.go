@@ -67,7 +67,7 @@ type GetClusterNetworksResult struct {
 	ClusterNetworks []GetClusterNetworksClusterNetwork `pulumi:"clusterNetworks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetClusterNetworksFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -129,7 +129,7 @@ func (o GetClusterNetworksResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNetworksResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 func (o GetClusterNetworksResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetClusterNetworksResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

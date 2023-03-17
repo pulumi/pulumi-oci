@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetInstancesInstanceCreateVnicDetailResult> CreateVnicDetails;
         /// <summary>
-        /// The OCID of dedicated VM host.
+        /// The OCID of the dedicated virtual machine host that the instance is placed on.
         /// </summary>
         public readonly string DedicatedVmHostId;
         /// <summary>

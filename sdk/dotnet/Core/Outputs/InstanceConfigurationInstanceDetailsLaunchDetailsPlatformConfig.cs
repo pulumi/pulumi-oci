@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig
     {
         /// <summary>
-        /// Whether virtualization instructions are available.
+        /// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
         /// </summary>
         public readonly bool? AreVirtualInstructionsEnabled;
         /// <summary>
-        /// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        /// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         /// </summary>
         public readonly bool? IsAccessControlServiceEnabled;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool? IsSecureBootEnabled;
         /// <summary>
-        /// Whether symmetric multi-threading is enabled on the instance.
+        /// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         /// </summary>
         public readonly bool? IsSymmetricMultiThreadingEnabled;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? NumaNodesPerSocket;
         /// <summary>
-        /// The percentage of cores enabled.
+        /// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
         /// </summary>
         public readonly int? PercentageOfCoresEnabled;
         /// <summary>

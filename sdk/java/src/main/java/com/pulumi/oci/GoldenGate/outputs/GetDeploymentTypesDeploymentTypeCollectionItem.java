@@ -21,7 +21,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      */
     private List<String> connectionTypes;
     /**
-     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
+     * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
      * 
      */
     private String deploymentType;
@@ -30,6 +30,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      * 
      */
     private String displayName;
+    /**
+     * @return Allows to query by a specific GoldenGate version.
+     * 
+     */
+    private String oggVersion;
     /**
      * @return List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ &#34;Oracle Database 19c&#34;, &#34;Oracle Exadata&#34;, &#34;OCI Streaming&#34; ]
      * 
@@ -57,7 +62,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         return this.connectionTypes;
     }
     /**
-     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
+     * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
      * 
      */
     public String deploymentType() {
@@ -69,6 +74,13 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Allows to query by a specific GoldenGate version.
+     * 
+     */
+    public String oggVersion() {
+        return this.oggVersion;
     }
     /**
      * @return List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ &#34;Oracle Database 19c&#34;, &#34;Oracle Exadata&#34;, &#34;OCI Streaming&#34; ]
@@ -98,6 +110,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         private List<String> connectionTypes;
         private String deploymentType;
         private String displayName;
+        private String oggVersion;
         private List<String> sourceTechnologies;
         private List<String> targetTechnologies;
         public Builder() {}
@@ -107,6 +120,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     	      this.connectionTypes = defaults.connectionTypes;
     	      this.deploymentType = defaults.deploymentType;
     	      this.displayName = defaults.displayName;
+    	      this.oggVersion = defaults.oggVersion;
     	      this.sourceTechnologies = defaults.sourceTechnologies;
     	      this.targetTechnologies = defaults.targetTechnologies;
         }
@@ -135,6 +149,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder oggVersion(String oggVersion) {
+            this.oggVersion = Objects.requireNonNull(oggVersion);
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceTechnologies(List<String> sourceTechnologies) {
             this.sourceTechnologies = Objects.requireNonNull(sourceTechnologies);
             return this;
@@ -156,6 +175,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             o.connectionTypes = connectionTypes;
             o.deploymentType = deploymentType;
             o.displayName = displayName;
+            o.oggVersion = oggVersion;
             o.sourceTechnologies = sourceTechnologies;
             o.targetTechnologies = targetTechnologies;
             return o;

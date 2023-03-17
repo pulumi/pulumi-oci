@@ -14,6 +14,7 @@ __all__ = [
     'ConnectionBootstrapServerArgs',
     'ConnectionIngressIpArgs',
     'DeploymentDeploymentDiagnosticDataArgs',
+    'DeploymentMaintenanceWindowArgs',
     'DeploymentOggDataArgs',
     'GetConnectionAssignmentsFilterArgs',
     'GetConnectionsFilterArgs',
@@ -21,6 +22,7 @@ __all__ = [
     'GetDeploymentBackupsFilterArgs',
     'GetDeploymentTypesFilterArgs',
     'GetDeploymentUpgradesFilterArgs',
+    'GetDeploymentVersionsFilterArgs',
     'GetDeploymentsFilterArgs',
     'GetMessagesFilterArgs',
     'GetTrailFilesFilterArgs',
@@ -248,6 +250,43 @@ class DeploymentDeploymentDiagnosticDataArgs:
 
 
 @pulumi.input_type
+class DeploymentMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 day: pulumi.Input[str],
+                 start_hour: pulumi.Input[int]):
+        """
+        :param pulumi.Input[str] day: (Updatable) Days of the week.
+        :param pulumi.Input[int] start_hour: (Updatable) Start hour for maintenance period. Hour is in UTC.
+        """
+        pulumi.set(__self__, "day", day)
+        pulumi.set(__self__, "start_hour", start_hour)
+
+    @property
+    @pulumi.getter
+    def day(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Days of the week.
+        """
+        return pulumi.get(self, "day")
+
+    @day.setter
+    def day(self, value: pulumi.Input[str]):
+        pulumi.set(self, "day", value)
+
+    @property
+    @pulumi.getter(name="startHour")
+    def start_hour(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Start hour for maintenance period. Hour is in UTC.
+        """
+        return pulumi.get(self, "start_hour")
+
+    @start_hour.setter
+    def start_hour(self, value: pulumi.Input[int]):
+        pulumi.set(self, "start_hour", value)
+
+
+@pulumi.input_type
 class DeploymentOggDataArgs:
     def __init__(__self__, *,
                  admin_password: pulumi.Input[str],
@@ -262,7 +301,7 @@ class DeploymentOggDataArgs:
         :param pulumi.Input[str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param pulumi.Input[str] certificate: (Updatable) A PEM-encoded SSL certificate.
         :param pulumi.Input[str] key: (Updatable) A PEM-encoded private key.
-        :param pulumi.Input[str] ogg_version: Version of OGG
+        :param pulumi.Input[str] ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "admin_username", admin_username)
@@ -338,7 +377,7 @@ class DeploymentOggDataArgs:
     @pulumi.getter(name="oggVersion")
     def ogg_version(self) -> Optional[pulumi.Input[str]]:
         """
-        Version of OGG
+        (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         """
         return pulumi.get(self, "ogg_version")
 
@@ -556,6 +595,45 @@ class GetDeploymentTypesFilterArgs:
 
 @pulumi.input_type
 class GetDeploymentUpgradesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetDeploymentVersionsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

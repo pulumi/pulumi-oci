@@ -65,7 +65,7 @@ type GetInstancePoolsArgs struct {
 type GetInstancePoolsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetInstancePoolsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -124,7 +124,7 @@ func (o GetInstancePoolsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePoolsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
 func (o GetInstancePoolsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInstancePoolsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetInstancePoolPlacementConfigurationSecondaryVnicSubnetResult
     {
         /// <summary>
-        /// The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+        /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

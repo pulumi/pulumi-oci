@@ -74,7 +74,7 @@ export interface GetInstanceResult {
     readonly compartmentId: string;
     readonly createVnicDetails: outputs.Core.GetInstanceCreateVnicDetail[];
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated virtual machine host that the instance is placed on.
      */
     readonly dedicatedVmHostId: string;
     /**

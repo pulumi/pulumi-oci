@@ -55,7 +55,7 @@ public final class GetInstancesInstance {
     private String compartmentId;
     private List<GetInstancesInstanceCreateVnicDetail> createVnicDetails;
     /**
-     * @return The OCID of dedicated VM host.
+     * @return The OCID of the dedicated virtual machine host that the instance is placed on.
      * 
      */
     private String dedicatedVmHostId;
@@ -247,7 +247,7 @@ public final class GetInstancesInstance {
         return this.createVnicDetails;
     }
     /**
-     * @return The OCID of dedicated VM host.
+     * @return The OCID of the dedicated virtual machine host that the instance is placed on.
      * 
      */
     public String dedicatedVmHostId() {

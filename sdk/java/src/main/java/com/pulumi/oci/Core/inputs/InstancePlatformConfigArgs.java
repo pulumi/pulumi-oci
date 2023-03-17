@@ -18,14 +18,14 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
     public static final InstancePlatformConfigArgs Empty = new InstancePlatformConfigArgs();
 
     /**
-     * Whether virtualization instructions are available.
+     * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
      * 
      */
     @Import(name="areVirtualInstructionsEnabled")
     private @Nullable Output<Boolean> areVirtualInstructionsEnabled;
 
     /**
-     * @return Whether virtualization instructions are available.
+     * @return Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
      * 
      */
     public Optional<Output<Boolean>> areVirtualInstructionsEnabled() {
@@ -33,14 +33,14 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
      * 
      */
     @Import(name="isAccessControlServiceEnabled")
     private @Nullable Output<Boolean> isAccessControlServiceEnabled;
 
     /**
-     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
      * 
      */
     public Optional<Output<Boolean>> isAccessControlServiceEnabled() {
@@ -108,14 +108,14 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Whether symmetric multi-threading is enabled on the instance.
+     * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
      * 
      */
     @Import(name="isSymmetricMultiThreadingEnabled")
     private @Nullable Output<Boolean> isSymmetricMultiThreadingEnabled;
 
     /**
-     * @return Whether symmetric multi-threading is enabled on the instance.
+     * @return Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
      * 
      */
     public Optional<Output<Boolean>> isSymmetricMultiThreadingEnabled() {
@@ -153,14 +153,14 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The percentage of cores enabled.
+     * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
      * 
      */
     @Import(name="percentageOfCoresEnabled")
     private @Nullable Output<Integer> percentageOfCoresEnabled;
 
     /**
-     * @return The percentage of cores enabled.
+     * @return The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
      * 
      */
     public Optional<Output<Integer>> percentageOfCoresEnabled() {
@@ -217,7 +217,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param areVirtualInstructionsEnabled Whether virtualization instructions are available.
+         * @param areVirtualInstructionsEnabled Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param areVirtualInstructionsEnabled Whether virtualization instructions are available.
+         * @param areVirtualInstructionsEnabled Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isAccessControlServiceEnabled Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         * @param isAccessControlServiceEnabled Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isAccessControlServiceEnabled Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         * @param isAccessControlServiceEnabled Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isSymmetricMultiThreadingEnabled Whether symmetric multi-threading is enabled on the instance.
+         * @param isSymmetricMultiThreadingEnabled Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isSymmetricMultiThreadingEnabled Whether symmetric multi-threading is enabled on the instance.
+         * @param isSymmetricMultiThreadingEnabled Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param percentageOfCoresEnabled The percentage of cores enabled.
+         * @param percentageOfCoresEnabled The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
          * 
          * @return builder
          * 
@@ -417,7 +417,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param percentageOfCoresEnabled The percentage of cores enabled.
+         * @param percentageOfCoresEnabled The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
          * 
          * @return builder
          * 

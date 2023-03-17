@@ -54,7 +54,7 @@ export interface GetClusterNetworkResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      */
     readonly displayName: string;
     /**

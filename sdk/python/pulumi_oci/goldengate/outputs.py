@@ -15,6 +15,7 @@ __all__ = [
     'ConnectionBootstrapServer',
     'ConnectionIngressIp',
     'DeploymentDeploymentDiagnosticData',
+    'DeploymentMaintenanceWindow',
     'DeploymentOggData',
     'GetConnectionAdditionalAttributeResult',
     'GetConnectionAssignmentsConnectionAssignmentCollectionResult',
@@ -35,6 +36,7 @@ __all__ = [
     'GetDeploymentBackupsDeploymentBackupCollectionItemResult',
     'GetDeploymentBackupsFilterResult',
     'GetDeploymentDeploymentDiagnosticDataResult',
+    'GetDeploymentMaintenanceWindowResult',
     'GetDeploymentOggDataResult',
     'GetDeploymentTypeItemResult',
     'GetDeploymentTypesDeploymentTypeCollectionResult',
@@ -43,9 +45,13 @@ __all__ = [
     'GetDeploymentUpgradesDeploymentUpgradeCollectionResult',
     'GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult',
     'GetDeploymentUpgradesFilterResult',
+    'GetDeploymentVersionsDeploymentVersionCollectionResult',
+    'GetDeploymentVersionsDeploymentVersionCollectionItemResult',
+    'GetDeploymentVersionsFilterResult',
     'GetDeploymentsDeploymentCollectionResult',
     'GetDeploymentsDeploymentCollectionItemResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult',
+    'GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult',
     'GetDeploymentsDeploymentCollectionItemOggDataResult',
     'GetDeploymentsFilterResult',
     'GetMessageItemResult',
@@ -290,6 +296,52 @@ class DeploymentDeploymentDiagnosticData(dict):
 
 
 @pulumi.output_type
+class DeploymentMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "startHour":
+            suggest = "start_hour"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 day: str,
+                 start_hour: int):
+        """
+        :param str day: (Updatable) Days of the week.
+        :param int start_hour: (Updatable) Start hour for maintenance period. Hour is in UTC.
+        """
+        pulumi.set(__self__, "day", day)
+        pulumi.set(__self__, "start_hour", start_hour)
+
+    @property
+    @pulumi.getter
+    def day(self) -> str:
+        """
+        (Updatable) Days of the week.
+        """
+        return pulumi.get(self, "day")
+
+    @property
+    @pulumi.getter(name="startHour")
+    def start_hour(self) -> int:
+        """
+        (Updatable) Start hour for maintenance period. Hour is in UTC.
+        """
+        return pulumi.get(self, "start_hour")
+
+
+@pulumi.output_type
 class DeploymentOggData(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -327,7 +379,7 @@ class DeploymentOggData(dict):
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param str certificate: (Updatable) A PEM-encoded SSL certificate.
         :param str key: (Updatable) A PEM-encoded private key.
-        :param str ogg_version: Version of OGG
+        :param str ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "admin_username", admin_username)
@@ -383,7 +435,7 @@ class DeploymentOggData(dict):
     @pulumi.getter(name="oggVersion")
     def ogg_version(self) -> Optional[str]:
         """
-        Version of OGG
+        (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         """
         return pulumi.get(self, "ogg_version")
 
@@ -2013,6 +2065,35 @@ class GetDeploymentDeploymentDiagnosticDataResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentMaintenanceWindowResult(dict):
+    def __init__(__self__, *,
+                 day: str,
+                 start_hour: int):
+        """
+        :param str day: Days of the week.
+        :param int start_hour: Start hour for maintenance period. Hour is in UTC.
+        """
+        pulumi.set(__self__, "day", day)
+        pulumi.set(__self__, "start_hour", start_hour)
+
+    @property
+    @pulumi.getter
+    def day(self) -> str:
+        """
+        Days of the week.
+        """
+        return pulumi.get(self, "day")
+
+    @property
+    @pulumi.getter(name="startHour")
+    def start_hour(self) -> int:
+        """
+        Start hour for maintenance period. Hour is in UTC.
+        """
+        return pulumi.get(self, "start_hour")
+
+
+@pulumi.output_type
 class GetDeploymentOggDataResult(dict):
     def __init__(__self__, *,
                  admin_password: str,
@@ -2175,13 +2256,15 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
                  connection_types: Sequence[str],
                  deployment_type: str,
                  display_name: str,
+                 ogg_version: str,
                  source_technologies: Sequence[str],
                  target_technologies: Sequence[str]):
         """
         :param str category: The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
         :param Sequence[str] connection_types: An array of connectionTypes.
-        :param str deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param str ogg_version: Allows to query by a specific GoldenGate version.
         :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
@@ -2189,6 +2272,7 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         pulumi.set(__self__, "connection_types", connection_types)
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "ogg_version", ogg_version)
         pulumi.set(__self__, "source_technologies", source_technologies)
         pulumi.set(__self__, "target_technologies", target_technologies)
 
@@ -2212,7 +2296,7 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
         """
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
         """
         return pulumi.get(self, "deployment_type")
 
@@ -2223,6 +2307,14 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         A filter to return only the resources that match the entire 'displayName' given.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="oggVersion")
+    def ogg_version(self) -> str:
+        """
+        Allows to query by a specific GoldenGate version.
+        """
+        return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="sourceTechnologies")
@@ -2291,13 +2383,21 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_rollback_allowed: bool,
+                 is_security_fix: bool,
+                 is_snoozed: bool,
                  lifecycle_details: str,
                  lifecycle_sub_state: str,
                  ogg_version: str,
+                 previous_ogg_version: str,
+                 release_type: str,
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  time_finished: str,
+                 time_released: str,
+                 time_schedule: str,
+                 time_snoozed_until: str,
                  time_started: str,
                  time_updated: str):
         """
@@ -2309,13 +2409,23 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
+        :param bool is_rollback_allowed: Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+               * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+               * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+        :param bool is_security_fix: Indicates if OGG release contains security fix.
+        :param bool is_snoozed: Indicates if upgrade notifications are snoozed or not.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param str lifecycle_sub_state: Possible GGS lifecycle sub-states.
         :param str ogg_version: Version of OGG
+        :param str previous_ogg_version: Version of OGG
+        :param str release_type: The type of release.
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_finished: The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_released: The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_schedule: The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_snoozed_until: The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_started: The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
@@ -2327,13 +2437,21 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_rollback_allowed", is_rollback_allowed)
+        pulumi.set(__self__, "is_security_fix", is_security_fix)
+        pulumi.set(__self__, "is_snoozed", is_snoozed)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "previous_ogg_version", previous_ogg_version)
+        pulumi.set(__self__, "release_type", release_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_released", time_released)
+        pulumi.set(__self__, "time_schedule", time_schedule)
+        pulumi.set(__self__, "time_snoozed_until", time_snoozed_until)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -2402,6 +2520,32 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isRollbackAllowed")
+    def is_rollback_allowed(self) -> bool:
+        """
+        Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+        * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+        * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+        """
+        return pulumi.get(self, "is_rollback_allowed")
+
+    @property
+    @pulumi.getter(name="isSecurityFix")
+    def is_security_fix(self) -> bool:
+        """
+        Indicates if OGG release contains security fix.
+        """
+        return pulumi.get(self, "is_security_fix")
+
+    @property
+    @pulumi.getter(name="isSnoozed")
+    def is_snoozed(self) -> bool:
+        """
+        Indicates if upgrade notifications are snoozed or not.
+        """
+        return pulumi.get(self, "is_snoozed")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -2424,6 +2568,22 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         Version of OGG
         """
         return pulumi.get(self, "ogg_version")
+
+    @property
+    @pulumi.getter(name="previousOggVersion")
+    def previous_ogg_version(self) -> str:
+        """
+        Version of OGG
+        """
+        return pulumi.get(self, "previous_ogg_version")
+
+    @property
+    @pulumi.getter(name="releaseType")
+    def release_type(self) -> str:
+        """
+        The type of release.
+        """
+        return pulumi.get(self, "release_type")
 
     @property
     @pulumi.getter
@@ -2458,6 +2618,30 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         return pulumi.get(self, "time_finished")
 
     @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> str:
+        """
+        The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_released")
+
+    @property
+    @pulumi.getter(name="timeSchedule")
+    def time_schedule(self) -> str:
+        """
+        The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_schedule")
+
+    @property
+    @pulumi.getter(name="timeSnoozedUntil")
+    def time_snoozed_until(self) -> str:
+        """
+        The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_snoozed_until")
+
+    @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> str:
         """
@@ -2476,6 +2660,113 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
 
 @pulumi.output_type
 class GetDeploymentUpgradesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDeploymentVersionsDeploymentVersionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult']):
+        """
+        :param Sequence['GetDeploymentVersionsDeploymentVersionCollectionItemArgs'] items: Array of DeploymentVersionSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult']:
+        """
+        Array of DeploymentVersionSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeploymentVersionsDeploymentVersionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 deployment_type: str,
+                 is_security_fix: bool,
+                 ogg_version: str,
+                 release_type: str,
+                 time_released: str):
+        """
+        :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+        :param bool is_security_fix: Indicates if OGG release contains security fix.
+        :param str ogg_version: Version of OGG
+        :param str release_type: The type of release.
+        :param str time_released: The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "is_security_fix", is_security_fix)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "release_type", release_type)
+        pulumi.set(__self__, "time_released", time_released)
+
+    @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> str:
+        """
+        The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="isSecurityFix")
+    def is_security_fix(self) -> bool:
+        """
+        Indicates if OGG release contains security fix.
+        """
+        return pulumi.get(self, "is_security_fix")
+
+    @property
+    @pulumi.getter(name="oggVersion")
+    def ogg_version(self) -> str:
+        """
+        Version of OGG
+        """
+        return pulumi.get(self, "ogg_version")
+
+    @property
+    @pulumi.getter(name="releaseType")
+    def release_type(self) -> str:
+        """
+        The type of release.
+        """
+        return pulumi.get(self, "release_type")
+
+    @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> str:
+        """
+        The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_released")
+
+
+@pulumi.output_type
+class GetDeploymentVersionsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -2536,6 +2827,9 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  license_model: str,
                  lifecycle_details: str,
                  lifecycle_sub_state: str,
+                 maintenance_windows: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult'],
+                 next_maintenance_action_type: str,
+                 next_maintenance_description: str,
                  nsg_ids: Sequence[str],
                  ogg_datas: Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult'],
                  private_ip_address: str,
@@ -2545,6 +2839,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  subnet_id: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
+                 time_of_next_maintenance: str,
                  time_updated: str,
                  time_upgrade_required: str):
         """
@@ -2568,6 +2863,9 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str license_model: The Oracle license model that applies to a Deployment.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs'] maintenance_windows: Defines the maintenance window, when automatic actions can be performed.
+        :param str next_maintenance_action_type: Type of the next maintenance.
+        :param str next_maintenance_description: Description of the next maintenance.
         :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataArgs'] ogg_datas: Deployment Data for an OggDeployment
         :param str private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
@@ -2577,8 +2875,9 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_upgrade_required: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -2600,6 +2899,9 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
+        pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ogg_datas", ogg_datas)
         pulumi.set(__self__, "private_ip_address", private_ip_address)
@@ -2609,6 +2911,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
 
@@ -2773,6 +3076,30 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
+    @pulumi.getter(name="maintenanceWindows")
+    def maintenance_windows(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult']:
+        """
+        Defines the maintenance window, when automatic actions can be performed.
+        """
+        return pulumi.get(self, "maintenance_windows")
+
+    @property
+    @pulumi.getter(name="nextMaintenanceActionType")
+    def next_maintenance_action_type(self) -> str:
+        """
+        Type of the next maintenance.
+        """
+        return pulumi.get(self, "next_maintenance_action_type")
+
+    @property
+    @pulumi.getter(name="nextMaintenanceDescription")
+    def next_maintenance_description(self) -> str:
+        """
+        Description of the next maintenance.
+        """
+        return pulumi.get(self, "next_maintenance_description")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -2845,6 +3172,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeOfNextMaintenance")
+    def time_of_next_maintenance(self) -> str:
+        """
+        The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_of_next_maintenance")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -2856,7 +3191,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="timeUpgradeRequired")
     def time_upgrade_required(self) -> str:
         """
-        The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_upgrade_required")
 
@@ -2932,6 +3267,35 @@ class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(dict)
         The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_diagnostic_start")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult(dict):
+    def __init__(__self__, *,
+                 day: str,
+                 start_hour: int):
+        """
+        :param str day: Days of the week.
+        :param int start_hour: Start hour for maintenance period. Hour is in UTC.
+        """
+        pulumi.set(__self__, "day", day)
+        pulumi.set(__self__, "start_hour", start_hour)
+
+    @property
+    @pulumi.getter
+    def day(self) -> str:
+        """
+        Days of the week.
+        """
+        return pulumi.get(self, "day")
+
+    @property
+    @pulumi.getter(name="startHour")
+    def start_hour(self) -> int:
+        """
+        Start hour for maintenance period. Hour is in UTC.
+        """
+        return pulumi.get(self, "start_hour")
 
 
 @pulumi.output_type

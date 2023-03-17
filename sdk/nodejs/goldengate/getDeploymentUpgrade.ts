@@ -76,6 +76,20 @@ export interface GetDeploymentUpgradeResult {
      */
     readonly id: string;
     /**
+     * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+     * * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+     * * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+     */
+    readonly isRollbackAllowed: boolean;
+    /**
+     * Indicates if OGG release contains security fix.
+     */
+    readonly isSecurityFix: boolean;
+    /**
+     * Indicates if upgrade notifications are snoozed or not.
+     */
+    readonly isSnoozed: boolean;
+    /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
     readonly lifecycleDetails: string;
@@ -87,6 +101,14 @@ export interface GetDeploymentUpgradeResult {
      * Version of OGG
      */
     readonly oggVersion: string;
+    /**
+     * Version of OGG
+     */
+    readonly previousOggVersion: string;
+    /**
+     * The type of release.
+     */
+    readonly releaseType: string;
     /**
      * Possible lifecycle states.
      */
@@ -103,6 +125,18 @@ export interface GetDeploymentUpgradeResult {
      * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeFinished: string;
+    /**
+     * The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    readonly timeReleased: string;
+    /**
+     * The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    readonly timeSchedule: string;
+    /**
+     * The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    readonly timeSnoozedUntil: string;
     /**
      * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */

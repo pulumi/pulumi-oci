@@ -636,6 +636,7 @@ class _DbSystemState:
                  next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 os_version: Optional[pulumi.Input[str]] = None,
                  point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[str]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
@@ -701,6 +702,7 @@ class _DbSystemState:
         :param pulumi.Input[int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[str] os_version: The most recent OS Patch Version applied on the DB system.
         :param pulumi.Input[str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -789,6 +791,8 @@ class _DbSystemState:
             pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if os_version is not None:
+            pulumi.set(__self__, "os_version", os_version)
         if point_in_time_data_disk_clone_timestamp is not None:
             pulumi.set(__self__, "point_in_time_data_disk_clone_timestamp", point_in_time_data_disk_clone_timestamp)
         if private_ip is not None:
@@ -1234,6 +1238,18 @@ class _DbSystemState:
     @nsg_ids.setter
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent OS Patch Version applied on the DB system.
+        """
+        return pulumi.get(self, "os_version")
+
+    @os_version.setter
+    def os_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_version", value)
 
     @property
     @pulumi.getter(name="pointInTimeDataDiskCloneTimestamp")
@@ -1766,6 +1782,7 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["maintenance_windows"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
+            __props__.__dict__["os_version"] = None
             __props__.__dict__["point_in_time_data_disk_clone_timestamp"] = None
             __props__.__dict__["scan_dns_name"] = None
             __props__.__dict__["scan_dns_record_id"] = None
@@ -1818,6 +1835,7 @@ class DbSystem(pulumi.CustomResource):
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            os_version: Optional[pulumi.Input[str]] = None,
             point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[str]] = None,
             private_ip: Optional[pulumi.Input[str]] = None,
             reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
@@ -1888,6 +1906,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[str] os_version: The most recent OS Patch Version applied on the DB system.
         :param pulumi.Input[str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -1947,6 +1966,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
+        __props__.__dict__["os_version"] = os_version
         __props__.__dict__["point_in_time_data_disk_clone_timestamp"] = point_in_time_data_disk_clone_timestamp
         __props__.__dict__["private_ip"] = private_ip
         __props__.__dict__["reco_storage_size_in_gb"] = reco_storage_size_in_gb
@@ -2242,6 +2262,14 @@ class DbSystem(pulumi.CustomResource):
         * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> pulumi.Output[str]:
+        """
+        The most recent OS Patch Version applied on the DB system.
+        """
+        return pulumi.get(self, "os_version")
 
     @property
     @pulumi.getter(name="pointInTimeDataDiskCloneTimestamp")

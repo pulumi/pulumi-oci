@@ -51,14 +51,14 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -230,7 +230,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+         * @param displayName The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+         * @param displayName The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
          * 
          * @return builder
          * 

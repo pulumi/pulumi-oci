@@ -31,7 +31,9 @@ namespace Pulumi.Oci.GoldenGate
         ///     var testDeploymentTypes = Oci.GoldenGate.GetDeploymentTypes.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         DeploymentType = @var.Deployment_type_deployment_type,
         ///         DisplayName = @var.Deployment_type_display_name,
+        ///         OggVersion = @var.Deployment_type_ogg_version,
         ///     });
         /// 
         /// });
@@ -62,7 +64,9 @@ namespace Pulumi.Oci.GoldenGate
         ///     var testDeploymentTypes = Oci.GoldenGate.GetDeploymentTypes.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         DeploymentType = @var.Deployment_type_deployment_type,
         ///         DisplayName = @var.Deployment_type_display_name,
+        ///         OggVersion = @var.Deployment_type_ogg_version,
         ///     });
         /// 
         /// });
@@ -84,6 +88,12 @@ namespace Pulumi.Oci.GoldenGate
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+        /// </summary>
+        [Input("deploymentType")]
+        public string? DeploymentType { get; set; }
+
+        /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
         [Input("displayName")]
@@ -96,6 +106,12 @@ namespace Pulumi.Oci.GoldenGate
             get => _filters ?? (_filters = new List<Inputs.GetDeploymentTypesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Allows to query by a specific GoldenGate version.
+        /// </summary>
+        [Input("oggVersion")]
+        public string? OggVersion { get; set; }
 
         public GetDeploymentTypesArgs()
         {
@@ -112,6 +128,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+        /// </summary>
+        [Input("deploymentType")]
+        public Input<string>? DeploymentType { get; set; }
+
+        /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
         [Input("displayName")]
@@ -125,6 +147,12 @@ namespace Pulumi.Oci.GoldenGate
             set => _filters = value;
         }
 
+        /// <summary>
+        /// Allows to query by a specific GoldenGate version.
+        /// </summary>
+        [Input("oggVersion")]
+        public Input<string>? OggVersion { get; set; }
+
         public GetDeploymentTypesInvokeArgs()
         {
         }
@@ -136,6 +164,10 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDeploymentTypesResult
     {
         public readonly string CompartmentId;
+        /// <summary>
+        /// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        /// </summary>
+        public readonly string? DeploymentType;
         /// <summary>
         /// The list of deployment_type_collection.
         /// </summary>
@@ -149,10 +181,16 @@ namespace Pulumi.Oci.GoldenGate
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Version of OGG
+        /// </summary>
+        public readonly string? OggVersion;
 
         [OutputConstructor]
         private GetDeploymentTypesResult(
             string compartmentId,
+
+            string? deploymentType,
 
             ImmutableArray<Outputs.GetDeploymentTypesDeploymentTypeCollectionResult> deploymentTypeCollections,
 
@@ -160,13 +198,17 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetDeploymentTypesFilterResult> filters,
 
-            string id)
+            string id,
+
+            string? oggVersion)
         {
             CompartmentId = compartmentId;
+            DeploymentType = deploymentType;
             DeploymentTypeCollections = deploymentTypeCollections;
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            OggVersion = oggVersion;
         }
     }
 }

@@ -65,6 +65,12 @@ type Deployment struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
+	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+	MaintenanceWindow DeploymentMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
+	// Type of the next maintenance.
+	NextMaintenanceActionType pulumi.StringOutput `pulumi:"nextMaintenanceActionType"`
+	// Description of the next maintenance.
+	NextMaintenanceDescription pulumi.StringOutput `pulumi:"nextMaintenanceDescription"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
@@ -83,9 +89,11 @@ type Deployment struct {
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOfNextMaintenance pulumi.StringOutput `pulumi:"timeOfNextMaintenance"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpgradeRequired pulumi.StringOutput `pulumi:"timeUpgradeRequired"`
 }
 
@@ -177,6 +185,12 @@ type deploymentState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
+	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+	MaintenanceWindow *DeploymentMaintenanceWindow `pulumi:"maintenanceWindow"`
+	// Type of the next maintenance.
+	NextMaintenanceActionType *string `pulumi:"nextMaintenanceActionType"`
+	// Description of the next maintenance.
+	NextMaintenanceDescription *string `pulumi:"nextMaintenanceDescription"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
@@ -195,9 +209,11 @@ type deploymentState struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOfNextMaintenance *string `pulumi:"timeOfNextMaintenance"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpgradeRequired *string `pulumi:"timeUpgradeRequired"`
 }
 
@@ -240,6 +256,12 @@ type DeploymentState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState pulumi.StringPtrInput
+	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+	MaintenanceWindow DeploymentMaintenanceWindowPtrInput
+	// Type of the next maintenance.
+	NextMaintenanceActionType pulumi.StringPtrInput
+	// Description of the next maintenance.
+	NextMaintenanceDescription pulumi.StringPtrInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Deployment Data for creating an OggDeployment
@@ -258,9 +280,11 @@ type DeploymentState struct {
 	SystemTags pulumi.MapInput
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringPtrInput
+	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOfNextMaintenance pulumi.StringPtrInput
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringPtrInput
-	// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpgradeRequired pulumi.StringPtrInput
 }
 
@@ -293,10 +317,14 @@ type deploymentArgs struct {
 	IsPublic *bool `pulumi:"isPublic"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel string `pulumi:"licenseModel"`
+	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+	MaintenanceWindow *DeploymentMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData *DeploymentOggData `pulumi:"oggData"`
+	// Possible lifecycle states.
+	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -327,10 +355,14 @@ type DeploymentArgs struct {
 	IsPublic pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringInput
+	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+	MaintenanceWindow DeploymentMaintenanceWindowPtrInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataPtrInput
+	// Possible lifecycle states.
+	State pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringInput
 }
@@ -517,6 +549,21 @@ func (o DeploymentOutput) LifecycleSubState() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LifecycleSubState }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+func (o DeploymentOutput) MaintenanceWindow() DeploymentMaintenanceWindowOutput {
+	return o.ApplyT(func(v *Deployment) DeploymentMaintenanceWindowOutput { return v.MaintenanceWindow }).(DeploymentMaintenanceWindowOutput)
+}
+
+// Type of the next maintenance.
+func (o DeploymentOutput) NextMaintenanceActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.NextMaintenanceActionType }).(pulumi.StringOutput)
+}
+
+// Description of the next maintenance.
+func (o DeploymentOutput) NextMaintenanceDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.NextMaintenanceDescription }).(pulumi.StringOutput)
+}
+
 // (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 func (o DeploymentOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -562,12 +609,17 @@ func (o DeploymentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o DeploymentOutput) TimeOfNextMaintenance() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeOfNextMaintenance }).(pulumi.StringOutput)
+}
+
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o DeploymentOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o DeploymentOutput) TimeUpgradeRequired() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeUpgradeRequired }).(pulumi.StringOutput)
 }

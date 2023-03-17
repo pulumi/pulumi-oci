@@ -9332,7 +9332,7 @@ export namespace Core {
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+         * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -9421,7 +9421,7 @@ export namespace Core {
 
     export interface ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet {
         /**
-         * The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+         * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -9447,7 +9447,7 @@ export namespace Core {
 
     export interface ClusterNetworkPlacementConfigurationSecondaryVnicSubnet {
         /**
-         * The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+         * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -11001,6 +11001,9 @@ export namespace Core {
     }
 
     export interface InstanceConfigurationInstanceDetails {
+        /**
+         * Block volume parameters.
+         */
         blockVolumes?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolume>[]>;
         /**
          * The type of instance details. Supported instanceType is compute
@@ -11010,6 +11013,9 @@ export namespace Core {
          * Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
          */
         launchDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetails>;
+        /**
+         * Secondary VNIC parameters.
+         */
         secondaryVnics?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsSecondaryVnic>[]>;
     }
 
@@ -11151,7 +11157,7 @@ export namespace Core {
          */
         createVnicDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails>;
         /**
-         * The OCID of dedicated VM host.
+         * The OCID of the dedicated virtual machine host to place the instance on.
          */
         dedicatedVmHostId?: pulumi.Input<string>;
         /**
@@ -11337,11 +11343,11 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig {
         /**
-         * Whether virtualization instructions are available.
+         * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          */
         areVirtualInstructionsEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
         isAccessControlServiceEnabled?: pulumi.Input<boolean>;
         /**
@@ -11361,7 +11367,7 @@ export namespace Core {
          */
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether symmetric multi-threading is enabled on the instance.
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          */
         isSymmetricMultiThreadingEnabled?: pulumi.Input<boolean>;
         /**
@@ -11373,7 +11379,7 @@ export namespace Core {
          */
         numaNodesPerSocket?: pulumi.Input<string>;
         /**
-         * The percentage of cores enabled.
+         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
          */
         percentageOfCoresEnabled?: pulumi.Input<number>;
         /**
@@ -11583,11 +11589,11 @@ export namespace Core {
 
     export interface InstancePlatformConfig {
         /**
-         * Whether virtualization instructions are available.
+         * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          */
         areVirtualInstructionsEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
         isAccessControlServiceEnabled?: pulumi.Input<boolean>;
         /**
@@ -11607,7 +11613,7 @@ export namespace Core {
          */
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether symmetric multi-threading is enabled on the instance.
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          */
         isSymmetricMultiThreadingEnabled?: pulumi.Input<boolean>;
         /**
@@ -11619,7 +11625,7 @@ export namespace Core {
          */
         numaNodesPerSocket?: pulumi.Input<string>;
         /**
-         * The percentage of cores enabled.
+         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
          */
         percentageOfCoresEnabled?: pulumi.Input<number>;
         /**
@@ -11703,7 +11709,7 @@ export namespace Core {
 
     export interface InstancePoolPlacementConfigurationSecondaryVnicSubnet {
         /**
-         * (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
+         * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -25420,6 +25426,17 @@ export namespace GoldenGate {
         timeDiagnosticStart?: pulumi.Input<string>;
     }
 
+    export interface DeploymentMaintenanceWindow {
+        /**
+         * (Updatable) Days of the week.
+         */
+        day: pulumi.Input<string>;
+        /**
+         * (Updatable) Start hour for maintenance period. Hour is in UTC.
+         */
+        startHour: pulumi.Input<number>;
+    }
+
     export interface DeploymentOggData {
         /**
          * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
@@ -25442,7 +25459,7 @@ export namespace GoldenGate {
          */
         key?: pulumi.Input<string>;
         /**
-         * Version of OGG
+         * (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
          */
         oggVersion?: pulumi.Input<string>;
     }
@@ -25526,6 +25543,18 @@ export namespace GoldenGate {
     }
 
     export interface GetDeploymentUpgradesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDeploymentVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDeploymentVersionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -25698,6 +25727,4133 @@ export namespace Identity {
          * Region agnostic domain URL.
          */
         url?: pulumi.Input<string>;
+    }
+
+    export interface DomainsApiKeyIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsApiKeyIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsApiKeyMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsApiKeyTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
+        /**
+         * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         */
+        allowSelfChange?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsApiKeyUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthTokenIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthTokenIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthTokenMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthTokenTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
+        /**
+         * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         */
+        allowSelfChange?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsAuthTokenUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingBypassCodeSettings {
+        /**
+         * (Updatable) Expiry (in minutes) of any bypass code that is generated by the help desk
+         */
+        helpDeskCodeExpiryInMins: pulumi.Input<number>;
+        /**
+         * (Updatable) If true, indicates that help desk bypass code generation is enabled
+         */
+        helpDeskGenerationEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The maximum number of times that any bypass code that is generated by the help desk can be used
+         */
+        helpDeskMaxUsage: pulumi.Input<number>;
+        /**
+         * (Updatable) Exact length of the bypass code to be generated
+         */
+        length: pulumi.Input<number>;
+        /**
+         * (Updatable) The maximum number of bypass codes that can be issued to any user
+         */
+        maxActive: pulumi.Input<number>;
+        /**
+         * (Updatable) If true, indicates that self-service bypass code generation is enabled
+         */
+        selfServiceGenerationEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingClientAppSettings {
+        /**
+         * (Updatable) Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
+         */
+        deviceProtectionPolicy: pulumi.Input<string>;
+        /**
+         * (Updatable) The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
+         */
+        initialLockoutPeriodInSecs: pulumi.Input<number>;
+        /**
+         * (Updatable) The size of the key that the system uses to generate the public-private key pair
+         */
+        keyPairLength: pulumi.Input<number>;
+        /**
+         * (Updatable) The pattern of escalation that the system follows, in locking a particular user out of the service.
+         */
+        lockoutEscalationPattern: pulumi.Input<string>;
+        /**
+         * (Updatable) The maximum number of times that a particular user can fail to login before the system locks that user out of the service
+         */
+        maxFailuresBeforeLockout: pulumi.Input<number>;
+        /**
+         * (Updatable) The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
+         */
+        maxFailuresBeforeWarning: pulumi.Input<number>;
+        /**
+         * (Updatable) The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
+         */
+        maxLockoutIntervalInSecs: pulumi.Input<number>;
+        /**
+         * (Updatable) Minimum length of the Personal Identification Number (PIN)
+         */
+        minPinLength: pulumi.Input<number>;
+        /**
+         * (Updatable) The period of time in days after which a client should refresh its policy by re-reading that policy from the server
+         */
+        policyUpdateFreqInDays: pulumi.Input<number>;
+        /**
+         * (Updatable) Indicates which algorithm the system will use to sign requests
+         */
+        requestSigningAlgo: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates the type of encoding that the system should use to generate a shared secret
+         */
+        sharedSecretEncoding: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+         */
+        unlockAppForEachRequestEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
+         */
+        unlockAppIntervalInSecs: pulumi.Input<number>;
+        /**
+         * (Updatable) If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+         */
+        unlockOnAppForegroundEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+         */
+        unlockOnAppStartEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingCompliancePolicy {
+        /**
+         * (Updatable) The action to be taken if the value of the attribute is not as expected
+         */
+        action: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the attribute being evaluated
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingEmailSettings {
+        /**
+         * (Updatable) Custom redirect Url which will be used in email link
+         */
+        emailLinkCustomUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether Email link is enabled or not.
+         */
+        emailLinkEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingEndpointRestrictions {
+        /**
+         * (Updatable) Maximum number of days until an endpoint can be trusted
+         */
+        maxEndpointTrustDurationInDays: pulumi.Input<number>;
+        /**
+         * (Updatable) Maximum number of enrolled devices per user
+         */
+        maxEnrolledDevices: pulumi.Input<number>;
+        /**
+         * (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
+         */
+        maxIncorrectAttempts: pulumi.Input<number>;
+        /**
+         * (Updatable) Max number of trusted endpoints per user
+         */
+        maxTrustedEndpoints: pulumi.Input<number>;
+        /**
+         * (Updatable) Specify if trusted endpoints are enabled
+         */
+        trustedEndpointsEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingIdcsCreatedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingIdcsLastModifiedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingIdentityStoreSettings {
+        /**
+         * (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
+         */
+        mobileNumberEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, indicates that the user can update the mobile number in the user's Multi-Factor Authentication profile
+         */
+        mobileNumberUpdateEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingNotificationSettings {
+        /**
+         * (Updatable) If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+         */
+        pullEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingTag {
+        /**
+         * (Updatable) Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingThirdPartyFactor {
+        /**
+         * (Updatable) To enable Duo Security factor
+         */
+        duoSecurity: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingTotpSettings {
+        /**
+         * (Updatable) The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
+         */
+        emailOtpValidityDurationInMins: pulumi.Input<number>;
+        /**
+         * (Updatable) Exact length of the email one-time passcode.
+         */
+        emailPasscodeLength: pulumi.Input<number>;
+        /**
+         * (Updatable) The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+         */
+        hashingAlgorithm: pulumi.Input<string>;
+        /**
+         * (Updatable) The period of time (in seconds) that a JSON Web Token (JWT) is valid
+         */
+        jwtValidityDurationInSecs: pulumi.Input<number>;
+        /**
+         * (Updatable) The duration of time (in days) after which the shared secret has to be refreshed
+         */
+        keyRefreshIntervalInDays: pulumi.Input<number>;
+        /**
+         * (Updatable) Exact length of the One-Time Passcode that the system should generate
+         */
+        passcodeLength: pulumi.Input<number>;
+        /**
+         * (Updatable) The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
+         */
+        smsOtpValidityDurationInMins: pulumi.Input<number>;
+        /**
+         * (Updatable) Exact length of the Short Message Service (SMS) One-Time Passcode
+         */
+        smsPasscodeLength: pulumi.Input<number>;
+        /**
+         * (Updatable) Time (in secs) to be used as the time step
+         */
+        timeStepInSecs: pulumi.Input<number>;
+        /**
+         * (Updatable) The tolerance/step-size that the system should use when validating a One-Time Passcode
+         */
+        timeStepTolerance: pulumi.Input<number>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings {
+        /**
+         * (Updatable) Attribute used to define the type of attestation required.
+         */
+        attestation: pulumi.Input<string>;
+        /**
+         * (Updatable) Attribute used to define authenticator selection attachment.
+         */
+        authenticatorSelectionAttachment: pulumi.Input<string>;
+        /**
+         * (Updatable) Flag used to indicate authenticator selection is required or not
+         */
+        authenticatorSelectionRequireResidentKey: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Attribute used to define authenticator selection resident key requirement.
+         */
+        authenticatorSelectionResidentKey: pulumi.Input<string>;
+        /**
+         * (Updatable) Attribute used to define authenticator selection verification.
+         */
+        authenticatorSelectionUserVerification: pulumi.Input<string>;
+        /**
+         * (Updatable) Number of domain levels IDCS should use for origin comparision
+         */
+        domainValidationLevel?: pulumi.Input<number>;
+        /**
+         * (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
+         */
+        excludeCredentials: pulumi.Input<boolean>;
+        /**
+         * (Updatable) List of server supported public key algorithms
+         */
+        publicKeyTypes: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Timeout for the fido authentication to complete
+         */
+        timeout: pulumi.Input<number>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings {
+        /**
+         * (Updatable) Settings related to Duo Security
+         */
+        duoSecuritySettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings>;
+    }
+
+    export interface DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings {
+        /**
+         * (Updatable) Hostname to access the Duo security account
+         */
+        apiHostname: pulumi.Input<string>;
+        /**
+         * (Updatable) Attestation key to attest the request and response between Duo Security
+         */
+        attestationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Integration key from Duo Security authenticator
+         */
+        integrationKey: pulumi.Input<string>;
+        /**
+         * (Updatable) Secret key from Duo Security authenticator
+         */
+        secretKey: pulumi.Input<string>;
+        /**
+         * (Updatable) User attribute mapping value
+         */
+        userMappingAttribute: pulumi.Input<string>;
+    }
+
+    export interface DomainsCustomerSecretKeyIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsCustomerSecretKeyIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsCustomerSecretKeyMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsCustomerSecretKeyTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
+        /**
+         * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         */
+        allowSelfChange?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsCustomerSecretKeyUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupDynamicGroupAppRole {
+        /**
+         * (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+         */
+        adminRole?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) App identifier
+         */
+        appId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of parent App. READ-ONLY.
+         */
+        appName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the legacy group associated with this AppRole.
+         */
+        legacyGroupName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag value
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupGrant {
+        /**
+         * (Updatable) App identifier
+         */
+        appId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         */
+        grantMechanism?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupIdcsCreatedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag value
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupIdcsLastModifiedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag value
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupTag {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag key
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag value
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Defined Tags
+         */
+        definedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag>[]>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         */
+        freeformTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag>[]>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag slug
+         */
+        tagSlug?: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag key
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag namespace
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag value
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag key
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag value
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupIdcsCreatedBy {
+        /**
+         * (Updatable) App Display Name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) App URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the entity that created this Group.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupIdcsLastModifiedBy {
+        /**
+         * (Updatable) App Display Name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) App URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the entity that created this Group.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupMember {
+        /**
+         * (Updatable) The DateTime the member was added to the Group.
+         */
+        dateAdded?: pulumi.Input<string>;
+        /**
+         * (Updatable) App Display Name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Membership Ocid
+         */
+        membershipOcid?: pulumi.Input<string>;
+        /**
+         * (Updatable) PasswordPolicy Name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) App URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the entity that created this Group.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupTag {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag key
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Defined Tags
+         */
+        definedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag>[]>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         */
+        freeformTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag>[]>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag slug
+         */
+        tagSlug?: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag key
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag namespace
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag key
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup {
+        /**
+         * (Updatable) DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+         */
+        domainLevelSchema?: pulumi.Input<string>;
+        /**
+         * (Updatable) DBCS Domain-level schema-names. Each value is specific to a DB Domain.
+         */
+        domainLevelSchemaNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName>[]>;
+        /**
+         * (Updatable) DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+         */
+        instanceLevelSchema?: pulumi.Input<string>;
+        /**
+         * (Updatable) DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
+         */
+        instanceLevelSchemaNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName>[]>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName {
+        /**
+         * (Updatable) DBCS Domain Name
+         */
+        domainName: pulumi.Input<string>;
+        /**
+         * (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+         */
+        schemaName: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName {
+        /**
+         * (Updatable) App Id of DBCS App instance
+         */
+        dbInstanceId: pulumi.Input<string>;
+        /**
+         * (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+         */
+        schemaName: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup {
+        /**
+         * (Updatable) Membership rule
+         */
+        membershipRule?: pulumi.Input<string>;
+        /**
+         * (Updatable) Membership type
+         */
+        membershipType?: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup {
+        /**
+         * (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+         */
+        appRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole>[]>;
+        /**
+         * (Updatable) Source from which this group got created.
+         */
+        creationMechanism?: pulumi.Input<string>;
+        /**
+         * (Updatable) Group description
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) Grants assigned to group
+         */
+        grants?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant>[]>;
+        /**
+         * (Updatable) Group owners
+         */
+        owners?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner>[]>;
+        /**
+         * (Updatable) Password Policy associated with this Group.
+         */
+        passwordPolicies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy>[]>;
+        /**
+         * (Updatable) The entity that created this Group.
+         */
+        syncedFromApps?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp>[]>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole {
+        /**
+         * (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+         */
+        adminRole?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) App identifier
+         */
+        appId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of parent App. READ-ONLY.
+         */
+        appName?: pulumi.Input<string>;
+        /**
+         * (Updatable) App Display Name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the legacy group associated with this AppRole.
+         */
+        legacyGroupName?: pulumi.Input<string>;
+        /**
+         * (Updatable) App URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the entity that created this Group.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant {
+        /**
+         * (Updatable) App identifier
+         */
+        appId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         */
+        grantMechanism?: pulumi.Input<string>;
+        /**
+         * (Updatable) App URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner {
+        /**
+         * (Updatable) App Display Name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) App URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the entity that created this Group.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy {
+        /**
+         * (Updatable) PasswordPolicy Name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) PasswordPolicy priority
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * (Updatable) App URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp {
+        /**
+         * (Updatable) App Display Name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) App URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the entity that created this Group.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the App.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup {
+        /**
+         * (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
+         */
+        gidNumber?: pulumi.Input<number>;
+    }
+
+    export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup {
+        /**
+         * (Updatable) Flag controlling whether group membership can be request by user through self service console.
+         */
+        requestable?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsIdentityProviderCorrelationPolicy {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Group URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identity Provider Type
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderIdcsCreatedBy {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) Group URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identity Provider Type
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderIdcsLastModifiedBy {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) Group URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identity Provider Type
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderJitUserProvAssignedGroup {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Group URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderJitUserProvAttributes {
+        /**
+         * (Updatable) Group URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderJitUserProvGroupMapping {
+        /**
+         * (Updatable) IDP Group Name
+         */
+        idpGroup: pulumi.Input<string>;
+        /**
+         * (Updatable) Group URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderTag {
+        /**
+         * (Updatable) Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider {
+        /**
+         * (Updatable) Social IDP Access token URL
+         */
+        accessTokenUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) Whether account linking is enabled
+         */
+        accountLinkingEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Admin scope to request
+         */
+        adminScopes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Social IDP Authorization URL
+         */
+        authzUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) Whether the client credential is contained in payload
+         */
+        clientCredentialInPayload?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Social IDP allowed clock skew time
+         */
+        clockSkewInSeconds?: pulumi.Input<number>;
+        /**
+         * (Updatable) Social IDP Client Application Client ID
+         */
+        consumerKey: pulumi.Input<string>;
+        /**
+         * (Updatable) Social IDP Client Application Client Secret
+         */
+        consumerSecret: pulumi.Input<string>;
+        /**
+         * (Updatable) Discovery URL
+         */
+        discoveryUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) Id attribute used for account linking
+         */
+        idAttribute?: pulumi.Input<string>;
+        /**
+         * (Updatable) Social IDP User profile URL
+         */
+        profileUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) redirect URL for social idp
+         */
+        redirectUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) Whether registration is enabled
+         */
+        registrationEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Scope to request
+         */
+        scopes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Service Provider Name
+         */
+        serviceProviderName: pulumi.Input<string>;
+        /**
+         * (Updatable) Status
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider {
+        /**
+         * (Updatable) X509 Certificate Matching Attribute
+         */
+        certMatchAttribute: pulumi.Input<string>;
+        /**
+         * (Updatable) Fallback on CRL Validation if OCSP fails.
+         */
+        crlCheckOnOcspFailureEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Set to true to enable CRL Validation
+         */
+        crlEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) CRL Location URL
+         */
+        crlLocation?: pulumi.Input<string>;
+        /**
+         * (Updatable) Fetch the CRL contents every X minutes
+         */
+        crlReloadDuration?: pulumi.Input<number>;
+        /**
+         * (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+         */
+        ocspAllowUnknownResponseStatus?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Describes if the OCSP response is signed
+         */
+        ocspEnableSignedResponse?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Set to true to enable OCSP Validation
+         */
+        ocspEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) This property specifies OCSP Responder URL.
+         */
+        ocspResponderUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) Revalidate OCSP status for user after X hours
+         */
+        ocspRevalidateTime?: pulumi.Input<number>;
+        /**
+         * (Updatable) This property specifies the OCSP Server alias name
+         */
+        ocspServerName?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCSP Trusted Certificate Chain
+         */
+        ocspTrustCertChains?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Check for specific conditions of other certificate attributes
+         */
+        otherCertMatchAttribute?: pulumi.Input<string>;
+        /**
+         * (Updatable) Certificate alias list to create a chain for the incoming client certificate
+         */
+        signingCertificateChains: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) This property specifies the userstore attribute value that must match the incoming certificate attribute.
+         */
+        userMatchAttribute: pulumi.Input<string>;
+    }
+
+    export interface DomainsKmsiSettingIdcsCreatedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsKmsiSettingIdcsLastModifiedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsKmsiSettingMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsKmsiSettingTag {
+        /**
+         * (Updatable) Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyApiKeyIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyApiKeyIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyApiKeyMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyApiKeyTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyApiKeyUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyAuthTokenIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyAuthTokenIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyAuthTokenMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyAuthTokenTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyAuthTokenUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyCustomerSecretKeyIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyCustomerSecretKeyIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyCustomerSecretKeyMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyCustomerSecretKeyTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyCustomerSecretKeyUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyOauth2clientCredentialIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyOauth2clientCredentialMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyOauth2clientCredentialScope {
+        /**
+         * Audience
+         */
+        audience: pulumi.Input<string>;
+        /**
+         * Scope
+         */
+        scope: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyOauth2clientCredentialTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyOauth2clientCredentialUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySmtpCredentialIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySmtpCredentialIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySmtpCredentialMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySmtpCredentialTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySmtpCredentialUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySupportAccountIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this Support Account
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySupportAccountIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this Support Account
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySupportAccountMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySupportAccountTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMySupportAccountUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this Support Account
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyUserDbCredentialIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyUserDbCredentialIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyUserDbCredentialMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyUserDbCredentialTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMyUserDbCredentialUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsOauth2clientCredentialIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsOauth2clientCredentialIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsOauth2clientCredentialMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsOauth2clientCredentialScope {
+        /**
+         * Audience
+         */
+        audience: pulumi.Input<string>;
+        /**
+         * Scope
+         */
+        scope: pulumi.Input<string>;
+    }
+
+    export interface DomainsOauth2clientCredentialTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
+        /**
+         * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         */
+        allowSelfChange?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsOauth2clientCredentialUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsPasswordPolicyConfiguredPasswordPolicyRule {
+        /**
+         * (Updatable) Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsPasswordPolicyGroup {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsPasswordPolicyIdcsCreatedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsPasswordPolicyIdcsLastModifiedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsPasswordPolicyMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsPasswordPolicyTag {
+        /**
+         * (Updatable) Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsSmtpCredentialIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsSmtpCredentialIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsSmtpCredentialMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsSmtpCredentialTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
+        /**
+         * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         */
+        allowSelfChange?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsSmtpCredentialUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserAddress {
+        /**
+         * (Updatable) The country name component.
+         */
+        country?: pulumi.Input<string>;
+        /**
+         * (Updatable) Full name
+         */
+        formatted?: pulumi.Input<string>;
+        /**
+         * (Updatable) The city or locality component.
+         */
+        locality?: pulumi.Input<string>;
+        /**
+         * (Updatable) The zipcode or postal code component.
+         */
+        postalCode?: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         */
+        primary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The state or region component.
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * (Updatable) The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
+         */
+        streetAddress?: pulumi.Input<string>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserDbCredentialIdcsCreatedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserDbCredentialIdcsLastModifiedBy {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * The type of resource, User or App, that modified this Resource
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserDbCredentialMeta {
+        /**
+         * The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserDbCredentialTag {
+        /**
+         * Key or name of the tag.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
+        /**
+         * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         */
+        allowSelfChange?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsUserDbCredentialUser {
+        /**
+         * (Updatable) User display name
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * User's ocid
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI that corresponds to the user linked to this credential
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * User's id
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserEmail {
+        /**
+         * (Updatable) Pending e-mail address verification
+         */
+        pendingVerificationData?: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         */
+        primary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value 'true' MUST appear no more than once.
+         */
+        secondary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value that indicates if the phone number is verified.
+         */
+        verified?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsUserEntitlement {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         */
+        primary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserGroup {
+        /**
+         * (Updatable) Date when the member is Added to the group
+         */
+        dateAdded?: pulumi.Input<string>;
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+         */
+        externalId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Membership Ocid
+         */
+        membershipOcid?: pulumi.Input<string>;
+        /**
+         * (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
+         */
+        nonUniqueDisplay?: pulumi.Input<string>;
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserIdcsCreatedBy {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserIdcsLastModifiedBy {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserIm {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         */
+        primary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserName {
+        /**
+         * (Updatable) Last name
+         */
+        familyName: pulumi.Input<string>;
+        /**
+         * (Updatable) Full name
+         */
+        formatted?: pulumi.Input<string>;
+        /**
+         * (Updatable) First name
+         */
+        givenName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix
+         */
+        honorificPrefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) Suffix
+         */
+        honorificSuffix?: pulumi.Input<string>;
+        /**
+         * (Updatable) Middle name
+         */
+        middleName?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserPhoneNumber {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         */
+        primary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value that indicates if the phone number is verified.
+         */
+        verified?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsUserPhoto {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         */
+        primary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserRole {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         */
+        primary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserTag {
+        /**
+         * (Updatable) The value of of the User's api key.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasextensionenterprise20user {
+        /**
+         * (Updatable) Identifies the name of a cost center.
+         */
+        costCenter?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identifies the name of a department.
+         */
+        department?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identifies the name of a division.
+         */
+        division?: pulumi.Input<string>;
+        /**
+         * (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+         */
+        employeeNumber?: pulumi.Input<string>;
+        /**
+         * (Updatable) The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
+         */
+        manager?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager>;
+        /**
+         * (Updatable) Identifies the name of an organization.
+         */
+        organization?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager {
+        /**
+         * (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Defined Tags
+         */
+        definedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag>[]>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         */
+        freeformTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag>[]>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag slug
+         */
+        tagSlug?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag {
+        /**
+         * (Updatable) The value of of the User's api key.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Tag namespace
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag {
+        /**
+         * (Updatable) The value of of the User's api key.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser {
+        /**
+         * (Updatable) Risk Level
+         */
+        riskLevel?: pulumi.Input<string>;
+        /**
+         * (Updatable) The risk score pertaining to the user.
+         */
+        riskScores?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore {
+        /**
+         * (Updatable) Last update timestamp for the risk score
+         */
+        lastUpdateTimestamp: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Risk Level
+         */
+        riskLevel: pulumi.Input<string>;
+        /**
+         * (Updatable) Risk Score value
+         */
+        score: pulumi.Input<number>;
+        /**
+         * (Updatable) Risk Provider Profile Source
+         */
+        source?: pulumi.Input<string>;
+        /**
+         * (Updatable) A supplemental status indicating the reason why a user is disabled
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser {
+        /**
+         * (Updatable) Indicates weather a user can use api keys
+         */
+        canUseApiKeys?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates weather a user can use auth tokens
+         */
+        canUseAuthTokens?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates weather a user can use console password
+         */
+        canUseConsolePassword?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates weather a user can use customer secret keys
+         */
+        canUseCustomerSecretKeys?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates weather a user can use db credentials
+         */
+        canUseDbCredentials?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates weather a user can use oauth2 client credentials
+         */
+        canUseOauth2clientCredentials?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates weather a user can use smtp credentials
+         */
+        canUseSmtpCredentials?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser {
+        /**
+         * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+         */
+        dbLoginAttempts?: pulumi.Input<number>;
+        /**
+         * (Updatable) The Database User Name
+         */
+        dbUserName?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser {
+        /**
+         * (Updatable) DB global roles to which the user is granted access.
+         */
+        dbGlobalRoles?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) DB domain level schema to which the user is granted access.
+         */
+        domainLevelSchema?: pulumi.Input<string>;
+        /**
+         * (Updatable) DB instance level schema to which the user is granted access.
+         */
+        instanceLevelSchema?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, indicates this is a database user.
+         */
+        isDbUser?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Password Verifiers for DB User.
+         */
+        passwordVerifiers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier {
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser {
+        /**
+         * (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+         */
+        realmUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser {
+        /**
+         * (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+         */
+        principalName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+         */
+        realmName?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser {
+        /**
+         * (Updatable) A list of bypass codes belongs to user
+         */
+        bypassCodes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode>[]>;
+        /**
+         * (Updatable) A list of devices enrolled by the user.
+         */
+        devices?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice>[]>;
+        /**
+         * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+         */
+        loginAttempts?: pulumi.Input<number>;
+        /**
+         * (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+         */
+        mfaEnabledOn?: pulumi.Input<string>;
+        /**
+         * (Updatable) User MFA Ignored Apps Identifiers
+         */
+        mfaIgnoredApps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) User Opted for MFA
+         */
+        mfaStatus?: pulumi.Input<string>;
+        /**
+         * (Updatable) Preferred Authentication Factor Type
+         */
+        preferredAuthenticationFactor?: pulumi.Input<string>;
+        /**
+         * (Updatable) Preferred Authentication method
+         */
+        preferredAuthenticationMethod?: pulumi.Input<string>;
+        /**
+         * (Updatable) User preferred device
+         */
+        preferredDevice?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice>;
+        /**
+         * (Updatable) Preferred Third party vendor name
+         */
+        preferredThirdPartyVendor?: pulumi.Input<string>;
+        /**
+         * (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+         */
+        trustedUserAgents?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode {
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice {
+        /**
+         * (Updatable) Authentication method.
+         */
+        authenticationMethod?: pulumi.Input<string>;
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Device authentication factor status.
+         */
+        factorStatus?: pulumi.Input<string>;
+        /**
+         * (Updatable) Authentication Factor Type
+         */
+        factorType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Last Sync time for device.
+         */
+        lastSyncTime?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) A supplemental status indicating the reason why a user is disabled
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * (Updatable) Third party factor vendor name.
+         */
+        thirdPartyVendorName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser {
+        /**
+         * (Updatable) Applicable Password Policy
+         */
+        applicablePasswordPolicy?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy>;
+        /**
+         * (Updatable) Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+         */
+        cantChange?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates that the password expiry policy will not be applied for the current Resource
+         */
+        cantExpire?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         */
+        expired?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A DateTime that specifies the date and time when last failed password validation was set
+         */
+        lastFailedValidationDate?: pulumi.Input<string>;
+        /**
+         * (Updatable) A DateTime that specifies the date and time when the current password was set
+         */
+        lastSuccessfulSetDate?: pulumi.Input<string>;
+        /**
+         * (Updatable) A DateTime that specifies the date and time when last successful password validation was set
+         */
+        lastSuccessfulValidationDate?: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+         */
+        mustChange?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) PasswordPolicy priority
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser {
+        /**
+         * (Updatable) Factor Identifier ID
+         */
+        factorIdentifier?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier>;
+        /**
+         * (Updatable) Authentication Factor Method
+         */
+        factorMethod?: pulumi.Input<string>;
+        /**
+         * (Updatable) Authentication Factor Type
+         */
+        factorType?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser {
+        /**
+         * (Updatable) General information about the POSIX account such as their real name and phone number
+         */
+        gecos?: pulumi.Input<string>;
+        /**
+         * (Updatable) Primary Group identifier of the POSIX user
+         */
+        gidNumber?: pulumi.Input<number>;
+        /**
+         * (Updatable) The absolute path to the home directory of the POSIX account
+         */
+        homeDirectory?: pulumi.Input<string>;
+        /**
+         * (Updatable) The path to the login shell of the POSIX account
+         */
+        loginShell?: pulumi.Input<string>;
+        /**
+         * (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+         */
+        uidNumber?: pulumi.Input<number>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser {
+        /**
+         * (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+         */
+        secQuestions?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion {
+        /**
+         * (Updatable) Answer provided by an user for a security question.
+         */
+        answer: pulumi.Input<string>;
+        /**
+         * (Updatable) Hint for an answer given by user while setting up Security Question.
+         */
+        hintText?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
+        /**
+         * (Updatable) If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         */
+        allowSelfChange?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser {
+        /**
+         * (Updatable) A boolean value that indicates whether the consent is granted.
+         */
+        consentGranted?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Self registration profile used when user is self registered.
+         */
+        selfRegistrationProfile: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile>;
+        /**
+         * (Updatable) User token returned if userFlowControlledByExternalClient is true
+         */
+        userToken?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser {
+        /**
+         * (Updatable) SFF auth keys clob
+         */
+        sffAuthKeys?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser {
+        /**
+         * (Updatable) Description:
+         */
+        socialAccounts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser {
+        /**
+         * (Updatable) Description:
+         */
+        termsOfUseConsents?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent {
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser {
+        /**
+         * (Updatable) A list of api keys corresponding to user.
+         */
+        apiKeys?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey>[]>;
+        /**
+         * (Updatable) A list of auth tokens corresponding to user.
+         */
+        authTokens?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken>[]>;
+        /**
+         * (Updatable) A list of customer secret keys corresponding to user.
+         */
+        customerSecretKeys?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey>[]>;
+        /**
+         * (Updatable) A list of db credentials corresponding to user.
+         */
+        dbCredentials?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential>[]>;
+        /**
+         * (Updatable) A list of oauth2 client credentials corresponding to user.
+         */
+        oAuth2clientCredentials?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential>[]>;
+        /**
+         * (Updatable) A list of smtp credentials corresponding to user.
+         */
+        smtpCredentials?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey {
+        /**
+         * (Updatable) The value of of the User's api key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken {
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey {
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential {
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential {
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential {
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser {
+        /**
+         * (Updatable) The last failed login date
+         */
+        lastFailedLoginDate?: pulumi.Input<string>;
+        /**
+         * (Updatable) The last successful login date
+         */
+        lastSuccessfulLoginDate?: pulumi.Input<string>;
+        /**
+         * (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+         */
+        locked?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked>;
+        /**
+         * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+         */
+        loginAttempts?: pulumi.Input<number>;
+        /**
+         * (Updatable) Maximum number of concurrent sessions for a User
+         */
+        maxConcurrentSessions?: pulumi.Input<number>;
+        /**
+         * (Updatable) The previous successful login date
+         */
+        previousSuccessfulLoginDate?: pulumi.Input<string>;
+        /**
+         * (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
+         */
+        recoveryAttempts?: pulumi.Input<number>;
+        /**
+         * (Updatable) The number of failed account recovery enrollment attempts.
+         */
+        recoveryEnrollAttempts?: pulumi.Input<number>;
+        /**
+         * (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+         */
+        recoveryLocked?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked {
+        /**
+         * (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         */
+        expired?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The date and time that the current resource was locked
+         */
+        lockDate?: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates that the rev is locked
+         */
+        on?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+         */
+        reason?: pulumi.Input<number>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked {
+        /**
+         * (Updatable) The date and time that the current resource was locked
+         */
+        lockDate?: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates that the rev is locked
+         */
+        on?: pulumi.Input<boolean>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser {
+        /**
+         * (Updatable) Boolean value to prompt user to setup account recovery during login.
+         */
+        accountRecoveryRequired?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+         */
+        accounts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount>[]>;
+        /**
+         * (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+         */
+        appRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole>[]>;
+        /**
+         * (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user's delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user's applicable Delegated Authentication Policy is returned.
+         */
+        applicableAuthenticationTargetApps?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp>[]>;
+        /**
+         * (Updatable) A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+         */
+        bypassNotification?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) User creation mechanism
+         */
+        creationMechanism?: pulumi.Input<string>;
+        /**
+         * (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+         */
+        delegatedAuthenticationTargetApp?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp>;
+        /**
+         * (Updatable) A Boolean value indicating whether or not to hide the getting started page
+         */
+        doNotShowGettingStarted?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+         */
+        grants?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant>[]>;
+        /**
+         * (Updatable) Description:
+         */
+        idcsAppRolesLimitedToGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup>[]>;
+        /**
+         * (Updatable) A Boolean value indicating whether or not a user is enrolled for account recovery
+         */
+        isAccountRecoveryEnrolled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+         */
+        isAuthenticationDelegated?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A Boolean value indicating whether or not the user is federated.
+         */
+        isFederatedUser?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A Boolean value indicating whether or not group membership is normalized for this user.
+         */
+        isGroupMembershipNormalized?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
+         */
+        isGroupMembershipSyncedToUsersGroups?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+         */
+        notificationEmailTemplateId?: pulumi.Input<string>;
+        /**
+         * (Updatable) A supplemental status indicating the reason why a user is disabled
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * (Updatable) A list of Support Accounts corresponding to user.
+         */
+        supportAccounts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount>[]>;
+        /**
+         * (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
+         */
+        syncedFromApp?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp>;
+        /**
+         * (Updatable) A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+         */
+        userFlowControlledByExternalClient?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) User Support Account Provider
+         */
+        userProvider?: pulumi.Input<string>;
+        /**
+         * (Updatable) User token returned if userFlowControlledByExternalClient is true
+         */
+        userTokens?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken>[]>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount {
+        /**
+         * (Updatable) Status of the account
+         */
+        active?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The ID of the App in this Grant.
+         */
+        appId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the account assigned to the User.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole {
+        /**
+         * (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+         */
+        adminRole?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The ID of the App in this Grant.
+         */
+        appId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name (Client ID) of the App that defines this AppRole.
+         */
+        appName?: pulumi.Input<string>;
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+         */
+        legacyGroupName?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Timeout interval for Synchronization TargetAction in milliseconds
+         */
+        targetRequestTimeout?: pulumi.Input<number>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant {
+        /**
+         * (Updatable) The ID of the App in this Grant.
+         */
+        appId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         */
+        grantMechanism?: pulumi.Input<string>;
+        /**
+         * (Updatable) Grantor identifier
+         */
+        grantorId?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+         */
+        idcsAppRoleId: pulumi.Input<string>;
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount {
+        /**
+         * (Updatable) Ocid of the User's Support Account.
+         */
+        ocid?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Support User Id
+         */
+        userId?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Support Account Provider
+         */
+        userProvider?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken {
+        /**
+         * (Updatable) User Token URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsUserX509certificate {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes.
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         */
+        primary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A label indicating the attribute's function.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of a X509 certificate.
+         */
+        value: pulumi.Input<string>;
     }
 
     export interface GetAllowedDomainLicenseTypesFilter {

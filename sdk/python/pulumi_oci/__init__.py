@@ -2990,6 +2990,166 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsApiKey",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsApiKey:DomainsApiKey": "DomainsApiKey"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsAuthToken",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsAuthToken:DomainsAuthToken": "DomainsAuthToken"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsAuthenticationFactorSetting",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting": "DomainsAuthenticationFactorSetting"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsCustomerSecretKey",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey": "DomainsCustomerSecretKey"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsDynamicResourceGroup",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup": "DomainsDynamicResourceGroup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsGroup",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsGroup:DomainsGroup": "DomainsGroup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsIdentityProvider",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider": "DomainsIdentityProvider"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsKmsiSetting",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsKmsiSetting:DomainsKmsiSetting": "DomainsKmsiSetting"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsMyApiKey",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMyApiKey:DomainsMyApiKey": "DomainsMyApiKey"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsMyAuthToken",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMyAuthToken:DomainsMyAuthToken": "DomainsMyAuthToken"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsMyCustomerSecretKey",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey": "DomainsMyCustomerSecretKey"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsMyOauth2clientCredential",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential": "DomainsMyOauth2clientCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsMySmtpCredential",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential": "DomainsMySmtpCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsMySupportAccount",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMySupportAccount:DomainsMySupportAccount": "DomainsMySupportAccount"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsMyUserDbCredential",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential": "DomainsMyUserDbCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsOauth2clientCredential",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential": "DomainsOauth2clientCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsPasswordPolicy",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy": "DomainsPasswordPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsSmtpCredential",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential": "DomainsSmtpCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsUser",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsUser:DomainsUser": "DomainsUser"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsUserDbCredential",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsUserDbCredential:DomainsUserDbCredential": "DomainsUserDbCredential"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/dynamicGroup",
   "fqn": "pulumi_oci.identity",
   "classes": {

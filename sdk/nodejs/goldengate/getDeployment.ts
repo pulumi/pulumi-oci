@@ -126,6 +126,18 @@ export interface GetDeploymentResult {
      */
     readonly lifecycleSubState: string;
     /**
+     * Defines the maintenance window, when automatic actions can be performed.
+     */
+    readonly maintenanceWindows: outputs.GoldenGate.GetDeploymentMaintenanceWindow[];
+    /**
+     * Type of the next maintenance.
+     */
+    readonly nextMaintenanceActionType: string;
+    /**
+     * Description of the next maintenance.
+     */
+    readonly nextMaintenanceDescription: string;
+    /**
      * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     readonly nsgIds: string[];
@@ -162,11 +174,15 @@ export interface GetDeploymentResult {
      */
     readonly timeCreated: string;
     /**
+     * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    readonly timeOfNextMaintenance: string;
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeUpdated: string;
     /**
-     * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeUpgradeRequired: string;
 }

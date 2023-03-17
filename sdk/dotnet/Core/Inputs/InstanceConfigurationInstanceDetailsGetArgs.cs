@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Core.Inputs
     {
         [Input("blockVolumes")]
         private InputList<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeGetArgs>? _blockVolumes;
+
+        /// <summary>
+        /// Block volume parameters.
+        /// </summary>
         public InputList<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeGetArgs> BlockVolumes
         {
             get => _blockVolumes ?? (_blockVolumes = new InputList<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeGetArgs>());
@@ -34,6 +38,10 @@ namespace Pulumi.Oci.Core.Inputs
 
         [Input("secondaryVnics")]
         private InputList<Inputs.InstanceConfigurationInstanceDetailsSecondaryVnicGetArgs>? _secondaryVnics;
+
+        /// <summary>
+        /// Secondary VNIC parameters.
+        /// </summary>
         public InputList<Inputs.InstanceConfigurationInstanceDetailsSecondaryVnicGetArgs> SecondaryVnics
         {
             get => _secondaryVnics ?? (_secondaryVnics = new InputList<Inputs.InstanceConfigurationInstanceDetailsSecondaryVnicGetArgs>());

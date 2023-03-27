@@ -17,6 +17,7 @@ package oci
 import (
 	"fmt"
 	"path/filepath"
+	"strings"
 
 	ociShim "github.com/oracle/terraform-provider-oci/shim"
 	"github.com/pulumi/pulumi-oci/provider/pkg/version"
@@ -139,6 +140,116 @@ const (
 	waasMod                         = "Waas"
 	wafMod                          = "Waf"
 )
+
+// A mapping between the terraform prefix and the pulumi module name.
+// This mapping is used by x.TokensKnownModules to compute module names.
+var mappedMods = map[string]string{
+	"ai_anomaly_detection":           aiAnomalyDetectionMod,
+	"ai_vision":                      aiVisionMod,
+	"analytics":                      analyticsMod,
+	"apigateway":                     apiGatewayMod,
+	"adm":                            admMod,
+	"announcements_service":          announcementsServiceMod,
+	"apm":                            apmMod,
+	"apm_traces":                     apmTracesMod,
+	"apm_config":                     apmConfigMod,
+	"apm_synthetics":                 apmSyntheticsMod,
+	"appmgmt_control":                appMgmtControlMod,
+	"artifacts":                      artifactsMod,
+	"audit":                          auditMod,
+	"autoscaling":                    autoscalingMod,
+	"bastion":                        bastionMod,
+	"bds":                            bigDataServiceMod,
+	"blockchain":                     blockchainMod,
+	"budget":                         budgetMod,
+	"certificates_management":        certificatesManagementMod,
+	"cloud_bridge":                   cloudBridgeMod,
+	"cloud_guard":                    cloudGuardMod,
+	"cloud_migrations":               cloudMigrationsMod,
+	"computeinstanceagent":           computeInstanceAgent,
+	"containerengine":                containerEngineMod,
+	"container_instances":            containerInstancesMod,
+	"core":                           coreMod,
+	"data_connectivity":              dataConnectivityMod,
+	"data_labelling_service":         dataLabellingServiceMod,
+	"data_safe":                      dataSafeMod,
+	"database":                       databaseMod,
+	"database_management":            databaseManagementMod,
+	"database_migration":             databaseMigrationMod,
+	"database_tools":                 databaseToolsMod,
+	"datacatalog":                    dataCatalogMod,
+	"dataflow":                       dataFlowMod,
+	"dataintegration":                dataIntegrationMod,
+	"datascience":                    dataScienceMod,
+	"devops":                         devopsMod,
+	"disaster_recovery":              disasterRecoveryMod,
+	"dns":                            dnsMod,
+	"email":                          emailMod,
+	"em_warehouse":                   emWarehouseMod,
+	"events":                         eventsMod,
+	"file_storage":                   fileStorageMod,
+	"functions":                      functionsMod,
+	"fusion_apps":                    fusionAppsMod,
+	"generic_artifacts_content":      genericArtifactsContentMod,
+	"golden_gate":                    goldenGateMod,
+	"health_checks":                  healthChecksMod,
+	"identity":                       identityMod,
+	"identity_data_plane":            identityDataPlaneMod,
+	"integration":                    integrationMod,
+	"jms":                            jmsMod,
+	"kms":                            kmsMod,
+	"license_manager":                licenseManagerMod,
+	"limits":                         limitsMod,
+	"load_balancer":                  loadBalancerMod,
+	"log_analytics":                  logAnalyticsMod,
+	"logging":                        loggingMod,
+	"management_agent":               managementAgentMod,
+	"management_dashboard":           managementDashboardMod,
+	"marketplace":                    marketplaceMod,
+	"media_services":                 mediaServicesMod,
+	"metering_computation":           meteringComputationMod,
+	"monitoring":                     monitoringMod,
+	"mysql":                          mysqlMod,
+	"network_load_balancer":          networkLoadBalancerMod,
+	"network_firewall":               networkFirewallMod,
+	"nosql":                          nosqlMod,
+	"objectstorage":                  objectStorageMod,
+	"oce":                            oceMod,
+	"ocvp":                           ocvpMod,
+	"oda":                            odaMod,
+	"osmanagement":                   osManagementMod,
+	"osp_gateway":                    ospGatewayMod,
+	"ons":                            onsMod,
+	"onesubscription":                oneSubscriptionMod,
+	"opa":                            opaMod,
+	"opensearch":                     opensearchMod,
+	"operator_access_control":        operatorAccessControlMod,
+	"opsi":                           opsiMod,
+	"optimizer":                      optimizerMod,
+	"osub_billing_schedule":          osubBillingScheduleMod,
+	"osub_organization_subscription": osubOrganizationSubscriptionMod,
+	"osub_subscription":              osubSubscriptionMod,
+	"osub_usage":                     osubUsageMod,
+	"queue":                          queueMod,
+	"recovery":                       recoveryMod,
+	"resourcemanager":                resourceManagerMod,
+	"sch":                            schMod,
+	"secrets":                        secretsMod,
+	"service_catalog":                serviceCatalogMod,
+	"service_manager_proxy":          serviceManagerProxyMod,
+	"service_mesh":                   serviceMeshMod,
+	"stack_monitoring":               stackMonitoringMod,
+	"streaming":                      streamingMod,
+	"usage_proxy":                    usageProxyMod,
+	"vault":                          vaultMod,
+	"vbs":                            vbsMod,
+	"visual_builder":                 visualBuilderMod,
+	"vn_Monitoring":                  vnMonitoringMod,
+	"vulnerability_scanning":         vulnerabilityScanningMod,
+	"waa":                            waaMod,
+	"waas":                           waasMod,
+	"waf":                            wafMod,
+}
 
 // Provider returns additional overlaid schema and metadata associated with the provider
 func Provider() tfbridge.ProviderInfo {
@@ -2293,42 +2404,26 @@ func Provider() tfbridge.ProviderInfo {
 		},
 	}
 
-	capMap := map[string]string{
-		"aiAnomalyDetection": aiAnomalyDetectionMod,
-		"datascience":        dataScienceMod,
-		"database":           databaseMod,
-		"databaseManagement": databaseManagementMod,
-		"databaseMigration":  databaseMigrationMod,
-		"databaseTools":      databaseToolsMod,
-		"goldenGate":         goldenGateMod,
-		"identity":           identityMod,
-		"opsi":               opsiMod,
-		"recovery":           recoveryMod,
-		"vbs":                vbsMod,
+	mappedModKeys := make([]string, 0, len(mappedMods))
+	for k := range mappedMods {
+		mappedModKeys = append(mappedModKeys, k)
 	}
 
-	// Note: We specify the default module as "" so that the mapper will error when a
-	// token without a module is found. This allows us to safely and gradually migrate
-	// to ComputeDefaults.
-	err := x.ComputeDefaults(&prov, x.TokensKnownModules("oci_", "", []string{
-		"ai_anomaly_detection_",
-		"datascience_",
-		"database_",
-		"database_management_",
-		"database_tools_",
-		"database_migration_",
-		"golden_gate_",
-		"identity_",
-		"opsi_",
-		"recovery_",
-		"vbs_",
-	}, func(module, name string) (string, error) {
-		mod, ok := capMap[module]
-		if !ok {
-			return "", fmt.Errorf("unmapped module '%s'", module)
-		}
-		return x.MakeStandardToken(mainPkg)(mod, name)
-	}))
+	moduleNameMap := make(map[string]string, len(mappedMods))
+	for _, v := range mappedMods {
+		moduleNameMap[strings.ToLower(v)] = v
+	}
+
+	err := x.ComputeDefaults(&prov, x.TokensKnownModules("oci_", "", mappedModKeys,
+		func(mod, name string) (string, error) {
+			m, ok := moduleNameMap[strings.ToLower(mod)]
+			if !ok && mod == "recovery" {
+				m = recoveryMod
+			} else if !ok {
+				return "", fmt.Errorf("'%s' has unmapped module '%s'", name, mod)
+			}
+			return tfbridge.MakeResource(mainPkg, m, name).String(), nil
+		}))
 	contract.AssertNoError(err)
 
 	resourcesMissingDocs := []string{

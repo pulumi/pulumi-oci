@@ -82,8 +82,8 @@ namespace Pulumi.Oci.Database.Inputs
         /// <summary>
         /// (Updatable) The maintenance window scheduling preference.
         /// </summary>
-        [Input("preference", required: true)]
-        public Input<string> Preference { get; set; } = null!;
+        [Input("preference")]
+        public Input<string>? Preference { get; set; }
 
         [Input("weeksOfMonths")]
         private InputList<int>? _weeksOfMonths;

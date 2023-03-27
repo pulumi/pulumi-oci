@@ -155,6 +155,21 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.volumeGroupReplicasDeletion);
     }
 
+    /**
+     * OCIDs for the volumes in this volume group.
+     * 
+     */
+    @Import(name="volumeIds")
+    private @Nullable Output<List<String>> volumeIds;
+
+    /**
+     * @return OCIDs for the volumes in this volume group.
+     * 
+     */
+    public Optional<Output<List<String>>> volumeIds() {
+        return Optional.ofNullable(this.volumeIds);
+    }
+
     private VolumeGroupArgs() {}
 
     private VolumeGroupArgs(VolumeGroupArgs $) {
@@ -168,6 +183,7 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
         this.sourceDetails = $.sourceDetails;
         this.volumeGroupReplicas = $.volumeGroupReplicas;
         this.volumeGroupReplicasDeletion = $.volumeGroupReplicasDeletion;
+        this.volumeIds = $.volumeIds;
     }
 
     public static Builder builder() {
@@ -382,6 +398,37 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder volumeGroupReplicasDeletion(Boolean volumeGroupReplicasDeletion) {
             return volumeGroupReplicasDeletion(Output.of(volumeGroupReplicasDeletion));
+        }
+
+        /**
+         * @param volumeIds OCIDs for the volumes in this volume group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder volumeIds(@Nullable Output<List<String>> volumeIds) {
+            $.volumeIds = volumeIds;
+            return this;
+        }
+
+        /**
+         * @param volumeIds OCIDs for the volumes in this volume group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder volumeIds(List<String> volumeIds) {
+            return volumeIds(Output.of(volumeIds));
+        }
+
+        /**
+         * @param volumeIds OCIDs for the volumes in this volume group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder volumeIds(String... volumeIds) {
+            return volumeIds(List.of(volumeIds));
         }
 
         public VolumeGroupArgs build() {

@@ -28,7 +28,9 @@ import * as utilities from "../utilities";
  *         dbBackupConfig: {
  *             autoBackupEnabled: _var.database_database_db_backup_config_auto_backup_enabled,
  *             autoBackupWindow: _var.database_database_db_backup_config_auto_backup_window,
+ *             backupDeletionPolicy: _var.database_database_db_backup_config_backup_deletion_policy,
  *             backupDestinationDetails: [{
+ *                 dbrsPolicyId: oci_identity_policy.test_policy.id,
  *                 id: _var.database_database_db_backup_config_backup_destination_details_id,
  *                 type: _var.database_database_db_backup_config_backup_destination_details_type,
  *             }],
@@ -171,9 +173,17 @@ export class Database extends pulumi.CustomResource {
      */
     public readonly kmsKeyVersionId!: pulumi.Output<string>;
     /**
+     * The duration when the latest database backup created.
+     */
+    public /*out*/ readonly lastBackupDurationInSeconds!: pulumi.Output<number>;
+    /**
      * The date and time when the latest database backup was created.
      */
     public /*out*/ readonly lastBackupTimestamp!: pulumi.Output<string>;
+    /**
+     * The date and time when the latest database backup failed.
+     */
+    public /*out*/ readonly lastFailedBackupTimestamp!: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
@@ -248,7 +258,9 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["kmsKeyMigration"] = state ? state.kmsKeyMigration : undefined;
             resourceInputs["kmsKeyRotation"] = state ? state.kmsKeyRotation : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
+            resourceInputs["lastBackupDurationInSeconds"] = state ? state.lastBackupDurationInSeconds : undefined;
             resourceInputs["lastBackupTimestamp"] = state ? state.lastBackupTimestamp : undefined;
+            resourceInputs["lastFailedBackupTimestamp"] = state ? state.lastFailedBackupTimestamp : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
             resourceInputs["pdbName"] = state ? state.pdbName : undefined;
@@ -292,7 +304,9 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["isCdb"] = undefined /*out*/;
+            resourceInputs["lastBackupDurationInSeconds"] = undefined /*out*/;
             resourceInputs["lastBackupTimestamp"] = undefined /*out*/;
+            resourceInputs["lastFailedBackupTimestamp"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["ncharacterSet"] = undefined /*out*/;
             resourceInputs["pdbName"] = undefined /*out*/;
@@ -392,9 +406,17 @@ export interface DatabaseState {
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
+     * The duration when the latest database backup created.
+     */
+    lastBackupDurationInSeconds?: pulumi.Input<number>;
+    /**
      * The date and time when the latest database backup was created.
      */
     lastBackupTimestamp?: pulumi.Input<string>;
+    /**
+     * The date and time when the latest database backup failed.
+     */
+    lastFailedBackupTimestamp?: pulumi.Input<string>;
     /**
      * Additional information about the current lifecycle state.
      */

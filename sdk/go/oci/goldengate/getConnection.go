@@ -56,7 +56,9 @@ type LookupConnectionArgs struct {
 
 // A collection of values returned by getConnection.
 type LookupConnectionResult struct {
-	AccountKey string `pulumi:"accountKey"`
+	// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+	AccessKeyId string `pulumi:"accessKeyId"`
+	AccountKey  string `pulumi:"accountKey"`
 	// Sets the Azure storage account name.
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -72,12 +74,17 @@ type LookupConnectionResult struct {
 	ClientSecret string `pulumi:"clientSecret"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
-	ConnectionId  string `pulumi:"connectionId"`
-	// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+	// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+	ConnectionFactory string `pulumi:"connectionFactory"`
+	ConnectionId      string `pulumi:"connectionId"`
+	// Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
 	ConnectionString string `pulumi:"connectionString"`
 	// The connection type.
-	ConnectionType     string `pulumi:"connectionType"`
+	ConnectionType string `pulumi:"connectionType"`
+	// JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	ConnectionUrl      string `pulumi:"connectionUrl"`
 	ConsumerProperties string `pulumi:"consumerProperties"`
+	CoreSiteXml        string `pulumi:"coreSiteXml"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId string `pulumi:"databaseId"`
 	// The name of the database.
@@ -100,9 +107,18 @@ type LookupConnectionResult struct {
 	Host string `pulumi:"host"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id string `pulumi:"id"`
-	// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps []GetConnectionIngressIp `pulumi:"ingressIps"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+	// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+	JndiConnectionFactory string `pulumi:"jndiConnectionFactory"`
+	// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+	JndiInitialContextFactory string `pulumi:"jndiInitialContextFactory"`
+	// The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+	JndiProviderUrl         string `pulumi:"jndiProviderUrl"`
+	JndiSecurityCredentials string `pulumi:"jndiSecurityCredentials"`
+	// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+	JndiSecurityPrincipal string `pulumi:"jndiSecurityPrincipal"`
+	// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 	KeyId            string `pulumi:"keyId"`
 	KeyStore         string `pulumi:"keyStore"`
 	KeyStorePassword string `pulumi:"keyStorePassword"`
@@ -120,12 +136,18 @@ type LookupConnectionResult struct {
 	ProducerProperties   string `pulumi:"producerProperties"`
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
 	// The name of the region. e.g.: us-ashburn-1
-	Region   string `pulumi:"region"`
-	SasToken string `pulumi:"sasToken"`
-	// Security protocol for PostgreSQL.
+	Region          string `pulumi:"region"`
+	SasToken        string `pulumi:"sasToken"`
+	SecretAccessKey string `pulumi:"secretAccessKey"`
+	// Security Protocol for Microsoft SQL Server/PostgreSQL.
 	SecurityProtocol string `pulumi:"securityProtocol"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-	SessionMode    string `pulumi:"sessionMode"`
+	SessionMode string `pulumi:"sessionMode"`
+	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+	ShouldUseJndi bool `pulumi:"shouldUseJndi"`
+	// If set to true, the driver validates the certificate that is sent by the database server.
+	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
+	// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
 	SslCa          string `pulumi:"sslCa"`
 	SslCert        string `pulumi:"sslCert"`
 	SslCrl         string `pulumi:"sslCrl"`
@@ -153,11 +175,11 @@ type LookupConnectionResult struct {
 	TrustStorePassword string `pulumi:"trustStorePassword"`
 	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url string `pulumi:"url"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
 	UserId string `pulumi:"userId"`
-	// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
 	Username string `pulumi:"username"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId string `pulumi:"vaultId"`
 	Wallet  string `pulumi:"wallet"`
 }
@@ -198,6 +220,11 @@ func (o LookupConnectionResultOutput) ToLookupConnectionResultOutput() LookupCon
 
 func (o LookupConnectionResultOutput) ToLookupConnectionResultOutputWithContext(ctx context.Context) LookupConnectionResultOutput {
 	return o
+}
+
+// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+func (o LookupConnectionResultOutput) AccessKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
 
 func (o LookupConnectionResultOutput) AccountKey() pulumi.StringOutput {
@@ -243,11 +270,16 @@ func (o LookupConnectionResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+func (o LookupConnectionResultOutput) ConnectionFactory() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionFactory }).(pulumi.StringOutput)
+}
+
 func (o LookupConnectionResultOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
-// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+// Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
 func (o LookupConnectionResultOutput) ConnectionString() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionString }).(pulumi.StringOutput)
 }
@@ -257,8 +289,17 @@ func (o LookupConnectionResultOutput) ConnectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
 
+// JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+func (o LookupConnectionResultOutput) ConnectionUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionUrl }).(pulumi.StringOutput)
+}
+
 func (o LookupConnectionResultOutput) ConsumerProperties() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConsumerProperties }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionResultOutput) CoreSiteXml() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.CoreSiteXml }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -316,12 +357,36 @@ func (o LookupConnectionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 func (o LookupConnectionResultOutput) IngressIps() GetConnectionIngressIpArrayOutput {
 	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionIngressIp { return v.IngressIps }).(GetConnectionIngressIpArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+func (o LookupConnectionResultOutput) JndiConnectionFactory() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.JndiConnectionFactory }).(pulumi.StringOutput)
+}
+
+// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+func (o LookupConnectionResultOutput) JndiInitialContextFactory() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.JndiInitialContextFactory }).(pulumi.StringOutput)
+}
+
+// The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+func (o LookupConnectionResultOutput) JndiProviderUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.JndiProviderUrl }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionResultOutput) JndiSecurityCredentials() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.JndiSecurityCredentials }).(pulumi.StringOutput)
+}
+
+// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+func (o LookupConnectionResultOutput) JndiSecurityPrincipal() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.JndiSecurityPrincipal }).(pulumi.StringOutput)
+}
+
+// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 func (o LookupConnectionResultOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.KeyId }).(pulumi.StringOutput)
 }
@@ -383,7 +448,11 @@ func (o LookupConnectionResultOutput) SasToken() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SasToken }).(pulumi.StringOutput)
 }
 
-// Security protocol for PostgreSQL.
+func (o LookupConnectionResultOutput) SecretAccessKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKey }).(pulumi.StringOutput)
+}
+
+// Security Protocol for Microsoft SQL Server/PostgreSQL.
 func (o LookupConnectionResultOutput) SecurityProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecurityProtocol }).(pulumi.StringOutput)
 }
@@ -393,6 +462,17 @@ func (o LookupConnectionResultOutput) SessionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SessionMode }).(pulumi.StringOutput)
 }
 
+// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+func (o LookupConnectionResultOutput) ShouldUseJndi() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldUseJndi }).(pulumi.BoolOutput)
+}
+
+// If set to true, the driver validates the certificate that is sent by the database server.
+func (o LookupConnectionResultOutput) ShouldValidateServerCertificate() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldValidateServerCertificate }).(pulumi.BoolOutput)
+}
+
+// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
 func (o LookupConnectionResultOutput) SslCa() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslCa }).(pulumi.StringOutput)
 }
@@ -471,17 +551,17 @@ func (o LookupConnectionResultOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Url }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
 func (o LookupConnectionResultOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.UserId }).(pulumi.StringOutput)
 }
 
-// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
 func (o LookupConnectionResultOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Username }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 func (o LookupConnectionResultOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.VaultId }).(pulumi.StringOutput)
 }

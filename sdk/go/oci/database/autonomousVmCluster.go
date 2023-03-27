@@ -47,7 +47,6 @@ import (
 //				LicenseModel:         pulumi.Any(_var.Autonomous_vm_cluster_license_model),
 //				MaintenanceWindowDetails: database.AutonomousVmClusterMaintenanceWindowDetailArray{
 //					&database.AutonomousVmClusterMaintenanceWindowDetailArgs{
-//						Preference: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_preference),
 //						DaysOfWeeks: database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{
 //							&database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{
 //								Name: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_days_of_week_name),
@@ -60,6 +59,8 @@ import (
 //								Name: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_months_name),
 //							},
 //						},
+//						PatchingMode:  pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_patching_mode),
+//						Preference:    pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_preference),
 //						WeeksOfMonths: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_weeks_of_month),
 //					},
 //				},

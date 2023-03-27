@@ -84,6 +84,21 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    /**
+     * @return A filter to return only backups that matches with the given type of Backup.
+     * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
+    }
+
     private GetAutonomousDatabaseBackupsArgs() {}
 
     private GetAutonomousDatabaseBackupsArgs(GetAutonomousDatabaseBackupsArgs $) {
@@ -92,6 +107,7 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.state = $.state;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -207,6 +223,27 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param type A filter to return only backups that matches with the given type of Backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param type A filter to return only backups that matches with the given type of Backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
         }
 
         public GetAutonomousDatabaseBackupsArgs build() {

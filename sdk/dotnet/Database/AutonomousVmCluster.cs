@@ -45,7 +45,6 @@ namespace Pulumi.Oci.Database
     ///         {
     ///             new Oci.Database.Inputs.AutonomousVmClusterMaintenanceWindowDetailArgs
     ///             {
-    ///                 Preference = @var.Autonomous_vm_cluster_maintenance_window_details_preference,
     ///                 DaysOfWeeks = new[]
     ///                 {
     ///                     new Oci.Database.Inputs.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs
@@ -62,6 +61,8 @@ namespace Pulumi.Oci.Database
     ///                         Name = @var.Autonomous_vm_cluster_maintenance_window_details_months_name,
     ///                     },
     ///                 },
+    ///                 PatchingMode = @var.Autonomous_vm_cluster_maintenance_window_details_patching_mode,
+    ///                 Preference = @var.Autonomous_vm_cluster_maintenance_window_details_preference,
     ///                 WeeksOfMonths = @var.Autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
     ///             },
     ///         },

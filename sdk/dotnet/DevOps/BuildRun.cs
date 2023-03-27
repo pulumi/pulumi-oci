@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DevOps
     /// <summary>
     /// This resource provides the Build Run resource in Oracle Cloud Infrastructure Devops service.
     /// 
-    /// Starts a build pipeline run for a predefined build pipeline.
+    /// Starts a build pipeline run for a predefined build pipeline. Please ensure the completion of any work request for creation/updation of Build Pipeline before starting a Build Run.
     /// 
     /// ## Example Usage
     /// 

@@ -37,6 +37,12 @@ namespace Pulumi.Oci.DevOps
     ///             },
     ///         },
     ///         BuildPipelineStageType = @var.Build_pipeline_stage_build_pipeline_stage_type,
+    ///         BuildRunnerShapeConfig = new Oci.DevOps.Inputs.BuildPipelineStageBuildRunnerShapeConfigArgs
+    ///         {
+    ///             BuildRunnerType = @var.Build_pipeline_stage_build_runner_shape_config_build_runner_type,
+    ///             MemoryInGbs = @var.Build_pipeline_stage_build_runner_shape_config_memory_in_gbs,
+    ///             Ocpus = @var.Build_pipeline_stage_build_runner_shape_config_ocpus,
+    ///         },
     ///         BuildSourceCollection = new Oci.DevOps.Inputs.BuildPipelineStageBuildSourceCollectionArgs
     ///         {
     ///             Items = new[]
@@ -123,6 +129,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("buildPipelineStageType")]
         public Output<string> BuildPipelineStageType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The information about build runner.
+        /// </summary>
+        [Output("buildRunnerShapeConfig")]
+        public Output<Outputs.BuildPipelineStageBuildRunnerShapeConfig> BuildRunnerShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Collection of build sources.
@@ -315,6 +327,12 @@ namespace Pulumi.Oci.DevOps
         public Input<string> BuildPipelineStageType { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The information about build runner.
+        /// </summary>
+        [Input("buildRunnerShapeConfig")]
+        public Input<Inputs.BuildPipelineStageBuildRunnerShapeConfigArgs>? BuildRunnerShapeConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) Collection of build sources.
         /// </summary>
         [Input("buildSourceCollection")]
@@ -435,6 +453,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("buildPipelineStageType")]
         public Input<string>? BuildPipelineStageType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The information about build runner.
+        /// </summary>
+        [Input("buildRunnerShapeConfig")]
+        public Input<Inputs.BuildPipelineStageBuildRunnerShapeConfigGetArgs>? BuildRunnerShapeConfig { get; set; }
 
         /// <summary>
         /// (Updatable) Collection of build sources.

@@ -50,6 +50,21 @@ public final class DatabaseDbBackupConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+     * 
+     */
+    @Import(name="backupDeletionPolicy")
+    private @Nullable Output<String> backupDeletionPolicy;
+
+    /**
+     * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+     * 
+     */
+    public Optional<Output<String>> backupDeletionPolicy() {
+        return Optional.ofNullable(this.backupDeletionPolicy);
+    }
+
+    /**
      * Backup destination details.
      * 
      */
@@ -84,6 +99,7 @@ public final class DatabaseDbBackupConfigArgs extends com.pulumi.resources.Resou
     private DatabaseDbBackupConfigArgs(DatabaseDbBackupConfigArgs $) {
         this.autoBackupEnabled = $.autoBackupEnabled;
         this.autoBackupWindow = $.autoBackupWindow;
+        this.backupDeletionPolicy = $.backupDeletionPolicy;
         this.backupDestinationDetails = $.backupDestinationDetails;
         this.recoveryWindowInDays = $.recoveryWindowInDays;
     }
@@ -146,6 +162,27 @@ public final class DatabaseDbBackupConfigArgs extends com.pulumi.resources.Resou
          */
         public Builder autoBackupWindow(String autoBackupWindow) {
             return autoBackupWindow(Output.of(autoBackupWindow));
+        }
+
+        /**
+         * @param backupDeletionPolicy This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDeletionPolicy(@Nullable Output<String> backupDeletionPolicy) {
+            $.backupDeletionPolicy = backupDeletionPolicy;
+            return this;
+        }
+
+        /**
+         * @param backupDeletionPolicy This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDeletionPolicy(String backupDeletionPolicy) {
+            return backupDeletionPolicy(Output.of(backupDeletionPolicy));
         }
 
         /**

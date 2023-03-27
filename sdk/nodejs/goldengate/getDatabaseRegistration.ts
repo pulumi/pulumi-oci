@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
  *
- * Note: Deprecated. Use the new resource model APIs instead.
+ * Note: Deprecated. Use the /connections API instead.
  * Retrieves a DatabaseRegistration.
  *
  * ## Example Usage
@@ -52,7 +52,7 @@ export interface GetDatabaseRegistrationResult {
      */
     readonly compartmentId: string;
     /**
-     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * Connect descriptor or Easy Connect Naming method used to connect to a database.
      */
     readonly connectionString: string;
     /**
@@ -89,7 +89,7 @@ export interface GetDatabaseRegistrationResult {
      */
     readonly ipAddress: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
     readonly keyId: string;
     /**
@@ -98,15 +98,15 @@ export interface GetDatabaseRegistrationResult {
     readonly lifecycleDetails: string;
     readonly password: string;
     /**
-     * A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+     * A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
      */
     readonly rcePrivateIp: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+     * The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
     readonly secretCompartmentId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+     * The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
      */
     readonly secretId: string;
     /**
@@ -134,11 +134,11 @@ export interface GetDatabaseRegistrationResult {
      */
     readonly timeUpdated: string;
     /**
-     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      */
     readonly username: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
     readonly vaultId: string;
     readonly wallet: string;
@@ -146,7 +146,7 @@ export interface GetDatabaseRegistrationResult {
 /**
  * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
  *
- * Note: Deprecated. Use the new resource model APIs instead.
+ * Note: Deprecated. Use the /connections API instead.
  * Retrieves a DatabaseRegistration.
  *
  * ## Example Usage

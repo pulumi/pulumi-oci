@@ -22,7 +22,7 @@ class GetDatabaseResult:
     """
     A collection of values returned by getDatabase.
     """
-    def __init__(__self__, character_set=None, compartment_id=None, connection_strings=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, time_created=None, vault_id=None, vm_cluster_id=None):
+    def __init__(__self__, character_set=None, compartment_id=None, connection_strings=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, time_created=None, vault_id=None, vm_cluster_id=None):
         if character_set and not isinstance(character_set, str):
             raise TypeError("Expected argument 'character_set' to be a str")
         pulumi.set(__self__, "character_set", character_set)
@@ -89,9 +89,15 @@ class GetDatabaseResult:
         if kms_key_version_id and not isinstance(kms_key_version_id, str):
             raise TypeError("Expected argument 'kms_key_version_id' to be a str")
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if last_backup_duration_in_seconds and not isinstance(last_backup_duration_in_seconds, int):
+            raise TypeError("Expected argument 'last_backup_duration_in_seconds' to be a int")
+        pulumi.set(__self__, "last_backup_duration_in_seconds", last_backup_duration_in_seconds)
         if last_backup_timestamp and not isinstance(last_backup_timestamp, str):
             raise TypeError("Expected argument 'last_backup_timestamp' to be a str")
         pulumi.set(__self__, "last_backup_timestamp", last_backup_timestamp)
+        if last_failed_backup_timestamp and not isinstance(last_failed_backup_timestamp, str):
+            raise TypeError("Expected argument 'last_failed_backup_timestamp' to be a str")
+        pulumi.set(__self__, "last_failed_backup_timestamp", last_failed_backup_timestamp)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -285,12 +291,28 @@ class GetDatabaseResult:
         return pulumi.get(self, "kms_key_version_id")
 
     @property
+    @pulumi.getter(name="lastBackupDurationInSeconds")
+    def last_backup_duration_in_seconds(self) -> int:
+        """
+        The duration when the latest database backup created.
+        """
+        return pulumi.get(self, "last_backup_duration_in_seconds")
+
+    @property
     @pulumi.getter(name="lastBackupTimestamp")
     def last_backup_timestamp(self) -> str:
         """
         The date and time when the latest database backup was created.
         """
         return pulumi.get(self, "last_backup_timestamp")
+
+    @property
+    @pulumi.getter(name="lastFailedBackupTimestamp")
+    def last_failed_backup_timestamp(self) -> str:
+        """
+        The date and time when the latest database backup failed.
+        """
+        return pulumi.get(self, "last_failed_backup_timestamp")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -398,7 +420,9 @@ class AwaitableGetDatabaseResult(GetDatabaseResult):
             kms_key_migration=self.kms_key_migration,
             kms_key_rotation=self.kms_key_rotation,
             kms_key_version_id=self.kms_key_version_id,
+            last_backup_duration_in_seconds=self.last_backup_duration_in_seconds,
             last_backup_timestamp=self.last_backup_timestamp,
+            last_failed_backup_timestamp=self.last_failed_backup_timestamp,
             lifecycle_details=self.lifecycle_details,
             ncharacter_set=self.ncharacter_set,
             pdb_name=self.pdb_name,
@@ -458,7 +482,9 @@ def get_database(database_id: Optional[str] = None,
         kms_key_migration=__ret__.kms_key_migration,
         kms_key_rotation=__ret__.kms_key_rotation,
         kms_key_version_id=__ret__.kms_key_version_id,
+        last_backup_duration_in_seconds=__ret__.last_backup_duration_in_seconds,
         last_backup_timestamp=__ret__.last_backup_timestamp,
+        last_failed_backup_timestamp=__ret__.last_failed_backup_timestamp,
         lifecycle_details=__ret__.lifecycle_details,
         ncharacter_set=__ret__.ncharacter_set,
         pdb_name=__ret__.pdb_name,

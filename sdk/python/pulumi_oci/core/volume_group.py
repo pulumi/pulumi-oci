@@ -25,7 +25,8 @@ class VolumeGroupArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  preserve_volume_replica: Optional[pulumi.Input[bool]] = None,
                  volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
-                 volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None):
+                 volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a VolumeGroup resource.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
@@ -36,6 +37,7 @@ class VolumeGroupArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,6 +56,8 @@ class VolumeGroupArgs:
             pulumi.set(__self__, "volume_group_replicas", volume_group_replicas)
         if volume_group_replicas_deletion is not None:
             pulumi.set(__self__, "volume_group_replicas_deletion", volume_group_replicas_deletion)
+        if volume_ids is not None:
+            pulumi.set(__self__, "volume_ids", volume_ids)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -168,6 +172,18 @@ class VolumeGroupArgs:
     @volume_group_replicas_deletion.setter
     def volume_group_replicas_deletion(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "volume_group_replicas_deletion", value)
+
+    @property
+    @pulumi.getter(name="volumeIds")
+    def volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        OCIDs for the volumes in this volume group.
+        """
+        return pulumi.get(self, "volume_ids")
+
+    @volume_ids.setter
+    def volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "volume_ids", value)
 
 
 @pulumi.input_type
@@ -441,6 +457,7 @@ class VolumeGroup(pulumi.CustomResource):
                  source_details: Optional[pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']]] = None,
                  volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]]] = None,
                  volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -488,6 +505,7 @@ class VolumeGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']] source_details: Specifies the source for a volume group.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
         ...
     @overload
@@ -556,6 +574,7 @@ class VolumeGroup(pulumi.CustomResource):
                  source_details: Optional[pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']]] = None,
                  volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]]] = None,
                  volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -581,12 +600,12 @@ class VolumeGroup(pulumi.CustomResource):
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["volume_group_replicas"] = volume_group_replicas
             __props__.__dict__["volume_group_replicas_deletion"] = volume_group_replicas_deletion
+            __props__.__dict__["volume_ids"] = volume_ids
             __props__.__dict__["is_hydrated"] = None
             __props__.__dict__["size_in_gbs"] = None
             __props__.__dict__["size_in_mbs"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
-            __props__.__dict__["volume_ids"] = None
         super(VolumeGroup, __self__).__init__(
             'oci:Core/volumeGroup:VolumeGroup',
             resource_name,

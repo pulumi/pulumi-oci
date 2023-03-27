@@ -15,6 +15,7 @@ __all__ = [
     'ApplicationImagePolicyConfigKeyDetail',
     'ApplicationTraceConfig',
     'FunctionProvisionedConcurrencyConfig',
+    'FunctionSourceDetails',
     'FunctionTraceConfig',
     'GetApplicationImagePolicyConfigResult',
     'GetApplicationImagePolicyConfigKeyDetailResult',
@@ -25,10 +26,12 @@ __all__ = [
     'GetApplicationsApplicationTraceConfigResult',
     'GetApplicationsFilterResult',
     'GetFunctionProvisionedConcurrencyConfigResult',
+    'GetFunctionSourceDetailResult',
     'GetFunctionTraceConfigResult',
     'GetFunctionsFilterResult',
     'GetFunctionsFunctionResult',
     'GetFunctionsFunctionProvisionedConcurrencyConfigResult',
+    'GetFunctionsFunctionSourceDetailResult',
     'GetFunctionsFunctionTraceConfigResult',
     'GetFusionEnvironmentAdminUserItemResult',
     'GetFusionEnvironmentAdminUsersAdminUserCollectionResult',
@@ -82,6 +85,27 @@ __all__ = [
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult',
+    'GetPbfListingPublisherDetailResult',
+    'GetPbfListingTriggerResult',
+    'GetPbfListingTriggersFilterResult',
+    'GetPbfListingTriggersTriggersCollectionResult',
+    'GetPbfListingTriggersTriggersCollectionItemResult',
+    'GetPbfListingVersionConfigResult',
+    'GetPbfListingVersionRequirementResult',
+    'GetPbfListingVersionRequirementPolicyResult',
+    'GetPbfListingVersionTriggerResult',
+    'GetPbfListingVersionsFilterResult',
+    'GetPbfListingVersionsPbfListingVersionsCollectionResult',
+    'GetPbfListingVersionsPbfListingVersionsCollectionItemResult',
+    'GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult',
+    'GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult',
+    'GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResult',
+    'GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult',
+    'GetPbfListingsFilterResult',
+    'GetPbfListingsPbfListingsCollectionResult',
+    'GetPbfListingsPbfListingsCollectionItemResult',
+    'GetPbfListingsPbfListingsCollectionItemPublisherDetailResult',
+    'GetPbfListingsPbfListingsCollectionItemTriggerResult',
 ]
 
 @pulumi.output_type
@@ -246,6 +270,54 @@ class FunctionProvisionedConcurrencyConfig(dict):
         (Updatable)
         """
         return pulumi.get(self, "count")
+
+
+@pulumi.output_type
+class FunctionSourceDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "pbfListingId":
+            suggest = "pbf_listing_id"
+        elif key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionSourceDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionSourceDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionSourceDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 pbf_listing_id: str,
+                 source_type: str):
+        """
+        :param str pbf_listing_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        :param str source_type: Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+        pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter(name="pbfListingId")
+    def pbf_listing_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        """
+        return pulumi.get(self, "pbf_listing_id")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+        return pulumi.get(self, "source_type")
 
 
 @pulumi.output_type
@@ -650,6 +722,35 @@ class GetFunctionProvisionedConcurrencyConfigResult(dict):
 
 
 @pulumi.output_type
+class GetFunctionSourceDetailResult(dict):
+    def __init__(__self__, *,
+                 pbf_listing_id: str,
+                 source_type: str):
+        """
+        :param str pbf_listing_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        :param str source_type: Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+        pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter(name="pbfListingId")
+    def pbf_listing_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        """
+        return pulumi.get(self, "pbf_listing_id")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
 class GetFunctionTraceConfigResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
@@ -709,6 +810,7 @@ class GetFunctionsFunctionResult(dict):
                  invoke_endpoint: str,
                  memory_in_mbs: str,
                  provisioned_concurrency_configs: Sequence['outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult'],
+                 source_details: Sequence['outputs.GetFunctionsFunctionSourceDetailResult'],
                  state: str,
                  time_created: str,
                  time_updated: str,
@@ -727,6 +829,7 @@ class GetFunctionsFunctionResult(dict):
         :param str invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param str memory_in_mbs: Maximum usable memory for the function (MiB).
         :param Sequence['GetFunctionsFunctionProvisionedConcurrencyConfigArgs'] provisioned_concurrency_configs: Define the strategy for provisioned concurrency for the function.
+        :param Sequence['GetFunctionsFunctionSourceDetailArgs'] source_details: The source details for the Function. The function can be created from various sources.
         :param str state: A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
         :param str time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param str time_updated: The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -745,6 +848,7 @@ class GetFunctionsFunctionResult(dict):
         pulumi.set(__self__, "invoke_endpoint", invoke_endpoint)
         pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
         pulumi.set(__self__, "provisioned_concurrency_configs", provisioned_concurrency_configs)
+        pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -848,6 +952,14 @@ class GetFunctionsFunctionResult(dict):
         return pulumi.get(self, "provisioned_concurrency_configs")
 
     @property
+    @pulumi.getter(name="sourceDetails")
+    def source_details(self) -> Sequence['outputs.GetFunctionsFunctionSourceDetailResult']:
+        """
+        The source details for the Function. The function can be created from various sources.
+        """
+        return pulumi.get(self, "source_details")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -911,6 +1023,35 @@ class GetFunctionsFunctionProvisionedConcurrencyConfigResult(dict):
         The strategy for provisioned concurrency to be used.
         """
         return pulumi.get(self, "strategy")
+
+
+@pulumi.output_type
+class GetFunctionsFunctionSourceDetailResult(dict):
+    def __init__(__self__, *,
+                 pbf_listing_id: str,
+                 source_type: str):
+        """
+        :param str pbf_listing_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        :param str source_type: Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+        pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter(name="pbfListingId")
+    def pbf_listing_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        """
+        return pulumi.get(self, "pbf_listing_id")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+        return pulumi.get(self, "source_type")
 
 
 @pulumi.output_type
@@ -3538,5 +3679,758 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult(di
         The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
         """
         return pulumi.get(self, "attribute_value")
+
+
+@pulumi.output_type
+class GetPbfListingPublisherDetailResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: A brief descriptive name for the PBF trigger.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A brief descriptive name for the PBF trigger.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetPbfListingTriggerResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: A brief descriptive name for the PBF trigger.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A brief descriptive name for the PBF trigger.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetPbfListingTriggersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only resources that match the service trigger source of a PBF.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the service trigger source of a PBF.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPbfListingTriggersTriggersCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPbfListingTriggersTriggersCollectionItemResult']):
+        """
+        :param Sequence['GetPbfListingTriggersTriggersCollectionItemArgs'] items: List of TriggerSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPbfListingTriggersTriggersCollectionItemResult']:
+        """
+        List of TriggerSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPbfListingTriggersTriggersCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: A filter to return only resources that match the service trigger source of a PBF.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the service trigger source of a PBF.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetPbfListingVersionConfigResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 is_optional: bool,
+                 key: str):
+        """
+        :param str description: Details about why this policy is required and what it will be used for.
+        :param bool is_optional: Is this a required config or an optional one. Requests with required config params missing will be rejected.
+        :param str key: The key name of the config param.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_optional", is_optional)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Details about why this policy is required and what it will be used for.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isOptional")
+    def is_optional(self) -> bool:
+        """
+        Is this a required config or an optional one. Requests with required config params missing will be rejected.
+        """
+        return pulumi.get(self, "is_optional")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key name of the config param.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetPbfListingVersionRequirementResult(dict):
+    def __init__(__self__, *,
+                 min_memory_required_in_mbs: str,
+                 policies: Sequence['outputs.GetPbfListingVersionRequirementPolicyResult']):
+        """
+        :param str min_memory_required_in_mbs: Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+        :param Sequence['GetPbfListingVersionRequirementPolicyArgs'] policies: List of policies required for this PBF execution.
+        """
+        pulumi.set(__self__, "min_memory_required_in_mbs", min_memory_required_in_mbs)
+        pulumi.set(__self__, "policies", policies)
+
+    @property
+    @pulumi.getter(name="minMemoryRequiredInMbs")
+    def min_memory_required_in_mbs(self) -> str:
+        """
+        Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+        """
+        return pulumi.get(self, "min_memory_required_in_mbs")
+
+    @property
+    @pulumi.getter
+    def policies(self) -> Sequence['outputs.GetPbfListingVersionRequirementPolicyResult']:
+        """
+        List of policies required for this PBF execution.
+        """
+        return pulumi.get(self, "policies")
+
+
+@pulumi.output_type
+class GetPbfListingVersionRequirementPolicyResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 policy: str):
+        """
+        :param str description: Details about why this policy is required and what it will be used for.
+        :param str policy: Policy required for PBF execution
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "policy", policy)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Details about why this policy is required and what it will be used for.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def policy(self) -> str:
+        """
+        Policy required for PBF execution
+        """
+        return pulumi.get(self, "policy")
+
+
+@pulumi.output_type
+class GetPbfListingVersionTriggerResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: A brief descriptive name for the PBF trigger.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A brief descriptive name for the PBF trigger.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetPbfListingVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPbfListingVersionsPbfListingVersionsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemResult']):
+        """
+        :param Sequence['GetPbfListingVersionsPbfListingVersionsCollectionItemArgs'] items: List of PbfListingVersionSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemResult']:
+        """
+        List of PbfListingVersionSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPbfListingVersionsPbfListingVersionsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 change_summary: str,
+                 configs: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult'],
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 name: str,
+                 pbf_listing_id: str,
+                 requirements: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult'],
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str,
+                 triggers: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult']):
+        """
+        :param str change_summary: Details changes are included in this version.
+        :param Sequence['GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs'] configs: Details about the required and optional Function configurations needed for proper performance of the PBF.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: Unique identifier that is immutable on creation
+        :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        :param str pbf_listing_id: unique PbfListing identifier
+        :param Sequence['GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs'] requirements: Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
+        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
+        :param Sequence['GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs'] triggers: An array of Trigger. A list of triggers that may activate the PBF.
+        """
+        pulumi.set(__self__, "change_summary", change_summary)
+        pulumi.set(__self__, "configs", configs)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
+        pulumi.set(__self__, "requirements", requirements)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "triggers", triggers)
+
+    @property
+    @pulumi.getter(name="changeSummary")
+    def change_summary(self) -> str:
+        """
+        Details changes are included in this version.
+        """
+        return pulumi.get(self, "change_summary")
+
+    @property
+    @pulumi.getter
+    def configs(self) -> Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult']:
+        """
+        Details about the required and optional Function configurations needed for proper performance of the PBF.
+        """
+        return pulumi.get(self, "configs")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique identifier that is immutable on creation
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="pbfListingId")
+    def pbf_listing_id(self) -> str:
+        """
+        unique PbfListing identifier
+        """
+        return pulumi.get(self, "pbf_listing_id")
+
+    @property
+    @pulumi.getter
+    def requirements(self) -> Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult']:
+        """
+        Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
+        """
+        return pulumi.get(self, "requirements")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def triggers(self) -> Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult']:
+        """
+        An array of Trigger. A list of triggers that may activate the PBF.
+        """
+        return pulumi.get(self, "triggers")
+
+
+@pulumi.output_type
+class GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 is_optional: bool,
+                 key: str):
+        """
+        :param str description: Details about why this policy is required and what it will be used for.
+        :param bool is_optional: Is this a required config or an optional one. Requests with required config params missing will be rejected.
+        :param str key: The key name of the config param.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_optional", is_optional)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Details about why this policy is required and what it will be used for.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isOptional")
+    def is_optional(self) -> bool:
+        """
+        Is this a required config or an optional one. Requests with required config params missing will be rejected.
+        """
+        return pulumi.get(self, "is_optional")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key name of the config param.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult(dict):
+    def __init__(__self__, *,
+                 min_memory_required_in_mbs: str,
+                 policies: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResult']):
+        """
+        :param str min_memory_required_in_mbs: Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+        :param Sequence['GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs'] policies: List of policies required for this PBF execution.
+        """
+        pulumi.set(__self__, "min_memory_required_in_mbs", min_memory_required_in_mbs)
+        pulumi.set(__self__, "policies", policies)
+
+    @property
+    @pulumi.getter(name="minMemoryRequiredInMbs")
+    def min_memory_required_in_mbs(self) -> str:
+        """
+        Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+        """
+        return pulumi.get(self, "min_memory_required_in_mbs")
+
+    @property
+    @pulumi.getter
+    def policies(self) -> Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResult']:
+        """
+        List of policies required for this PBF execution.
+        """
+        return pulumi.get(self, "policies")
+
+
+@pulumi.output_type
+class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 policy: str):
+        """
+        :param str description: Details about why this policy is required and what it will be used for.
+        :param str policy: Policy required for PBF execution
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "policy", policy)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Details about why this policy is required and what it will be used for.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def policy(self) -> str:
+        """
+        Policy required for PBF execution
+        """
+        return pulumi.get(self, "policy")
+
+
+@pulumi.output_type
+class GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetPbfListingsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only resources that match the entire PBF name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire PBF name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPbfListingsPbfListingsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemResult']):
+        """
+        :param Sequence['GetPbfListingsPbfListingsCollectionItemArgs'] items: List of PbfListingSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPbfListingsPbfListingsCollectionItemResult']:
+        """
+        List of PbfListingSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPbfListingsPbfListingsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 name: str,
+                 publisher_details: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemPublisherDetailResult'],
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str,
+                 triggers: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemTriggerResult']):
+        """
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: A short overview of the PBF Listing: the purpose of the PBF and and associated information.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: Unique identifier that is immutable on creation.
+        :param str name: A filter to return only resources that match the entire PBF name given.
+        :param Sequence['GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs'] publisher_details: Contains details about the publisher of this PBF Listing.
+        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the PbfListing was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The last time the PbfListing was updated. An RFC3339 formatted datetime string.
+        :param Sequence['GetPbfListingsPbfListingsCollectionItemTriggerArgs'] triggers: An array of Trigger. A list of triggers that may activate the PBF.
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "publisher_details", publisher_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "triggers", triggers)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A short overview of the PBF Listing: the purpose of the PBF and and associated information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique identifier that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire PBF name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="publisherDetails")
+    def publisher_details(self) -> Sequence['outputs.GetPbfListingsPbfListingsCollectionItemPublisherDetailResult']:
+        """
+        Contains details about the publisher of this PBF Listing.
+        """
+        return pulumi.get(self, "publisher_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the PbfListing was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last time the PbfListing was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def triggers(self) -> Sequence['outputs.GetPbfListingsPbfListingsCollectionItemTriggerResult']:
+        """
+        An array of Trigger. A list of triggers that may activate the PBF.
+        """
+        return pulumi.get(self, "triggers")
+
+
+@pulumi.output_type
+class GetPbfListingsPbfListingsCollectionItemPublisherDetailResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: A filter to return only resources that match the entire PBF name given.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire PBF name given.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetPbfListingsPbfListingsCollectionItemTriggerResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: A filter to return only resources that match the entire PBF name given.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire PBF name given.
+        """
+        return pulumi.get(self, "name")
 
 

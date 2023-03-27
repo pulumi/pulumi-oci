@@ -37,7 +37,7 @@ type Deployment struct {
 	DeploymentBackupId pulumi.StringOutput `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas DeploymentDeploymentDiagnosticDataArrayOutput `pulumi:"deploymentDiagnosticDatas"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType pulumi.StringOutput `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl pulumi.StringOutput `pulumi:"deploymentUrl"`
@@ -157,7 +157,7 @@ type deploymentState struct {
 	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas []DeploymentDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType *string `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl *string `pulumi:"deploymentUrl"`
@@ -228,7 +228,7 @@ type DeploymentState struct {
 	DeploymentBackupId pulumi.StringPtrInput
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas DeploymentDeploymentDiagnosticDataArrayInput
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType pulumi.StringPtrInput
 	// The URL of a resource.
 	DeploymentUrl pulumi.StringPtrInput
@@ -301,7 +301,7 @@ type deploymentArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType string `pulumi:"deploymentType"`
 	// (Updatable) Metadata about this specific object.
 	Description *string `pulumi:"description"`
@@ -339,7 +339,7 @@ type DeploymentArgs struct {
 	DefinedTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringPtrInput
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType pulumi.StringInput
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringPtrInput
@@ -479,7 +479,7 @@ func (o DeploymentOutput) DeploymentDiagnosticDatas() DeploymentDeploymentDiagno
 	return o.ApplyT(func(v *Deployment) DeploymentDeploymentDiagnosticDataArrayOutput { return v.DeploymentDiagnosticDatas }).(DeploymentDeploymentDiagnosticDataArrayOutput)
 }
 
-// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 func (o DeploymentOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeploymentType }).(pulumi.StringOutput)
 }

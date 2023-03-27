@@ -40,12 +40,16 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
      * 
      */
     private @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months;
+    /**
+     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     */
     private @Nullable String patchingMode;
     /**
      * @return (Updatable) The maintenance window scheduling preference.
      * 
      */
-    private String preference;
+    private @Nullable String preference;
     /**
      * @return (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
@@ -91,6 +95,10 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
     public List<AutonomousVmClusterMaintenanceWindowDetailMonth> months() {
         return this.months == null ? List.of() : this.months;
     }
+    /**
+     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     */
     public Optional<String> patchingMode() {
         return Optional.ofNullable(this.patchingMode);
     }
@@ -98,8 +106,8 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
      * @return (Updatable) The maintenance window scheduling preference.
      * 
      */
-    public String preference() {
-        return this.preference;
+    public Optional<String> preference() {
+        return Optional.ofNullable(this.preference);
     }
     /**
      * @return (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -126,7 +134,7 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         private @Nullable Integer leadTimeInWeeks;
         private @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months;
         private @Nullable String patchingMode;
-        private String preference;
+        private @Nullable String preference;
         private @Nullable List<Integer> weeksOfMonths;
         public Builder() {}
         public Builder(AutonomousVmClusterMaintenanceWindowDetail defaults) {
@@ -193,8 +201,8 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder preference(String preference) {
-            this.preference = Objects.requireNonNull(preference);
+        public Builder preference(@Nullable String preference) {
+            this.preference = preference;
             return this;
         }
         @CustomType.Setter

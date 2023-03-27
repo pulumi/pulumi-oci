@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DevOps.BuildPipelineStageArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageState;
 import com.pulumi.oci.DevOps.outputs.BuildPipelineStageBuildPipelineStagePredecessorCollection;
+import com.pulumi.oci.DevOps.outputs.BuildPipelineStageBuildRunnerShapeConfig;
 import com.pulumi.oci.DevOps.outputs.BuildPipelineStageBuildSourceCollection;
 import com.pulumi.oci.DevOps.outputs.BuildPipelineStageDeliverArtifactCollection;
 import com.pulumi.oci.DevOps.outputs.BuildPipelineStagePrivateAccessConfig;
@@ -37,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DevOps.BuildPipelineStage;
  * import com.pulumi.oci.DevOps.BuildPipelineStageArgs;
  * import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildRunnerShapeConfigArgs;
  * import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildSourceCollectionArgs;
  * import com.pulumi.oci.DevOps.inputs.BuildPipelineStageDeliverArtifactCollectionArgs;
  * import com.pulumi.oci.DevOps.inputs.BuildPipelineStagePrivateAccessConfigArgs;
@@ -62,6 +64,11 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .buildPipelineStageType(var_.build_pipeline_stage_build_pipeline_stage_type())
+ *             .buildRunnerShapeConfig(BuildPipelineStageBuildRunnerShapeConfigArgs.builder()
+ *                 .buildRunnerType(var_.build_pipeline_stage_build_runner_shape_config_build_runner_type())
+ *                 .memoryInGbs(var_.build_pipeline_stage_build_runner_shape_config_memory_in_gbs())
+ *                 .ocpus(var_.build_pipeline_stage_build_runner_shape_config_ocpus())
+ *                 .build())
  *             .buildSourceCollection(BuildPipelineStageBuildSourceCollectionArgs.builder()
  *                 .items(BuildPipelineStageBuildSourceCollectionItemArgs.builder()
  *                     .connectionType(var_.build_pipeline_stage_build_source_collection_items_connection_type())
@@ -155,6 +162,20 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      */
     public Output<String> buildPipelineStageType() {
         return this.buildPipelineStageType;
+    }
+    /**
+     * (Updatable) The information about build runner.
+     * 
+     */
+    @Export(name="buildRunnerShapeConfig", type=BuildPipelineStageBuildRunnerShapeConfig.class, parameters={})
+    private Output<BuildPipelineStageBuildRunnerShapeConfig> buildRunnerShapeConfig;
+
+    /**
+     * @return (Updatable) The information about build runner.
+     * 
+     */
+    public Output<BuildPipelineStageBuildRunnerShapeConfig> buildRunnerShapeConfig() {
+        return this.buildRunnerShapeConfig;
     }
     /**
      * (Updatable) Collection of build sources.

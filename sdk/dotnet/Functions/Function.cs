@@ -27,7 +27,6 @@ namespace Pulumi.Oci.Functions
     ///     {
     ///         ApplicationId = oci_functions_application.Test_application.Id,
     ///         DisplayName = @var.Function_display_name,
-    ///         Image = @var.Function_image,
     ///         MemoryInMbs = @var.Function_memory_in_mbs,
     ///         Config = @var.Function_config,
     ///         DefinedTags = 
@@ -38,11 +37,17 @@ namespace Pulumi.Oci.Functions
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Image = @var.Function_image,
     ///         ImageDigest = @var.Function_image_digest,
     ///         ProvisionedConcurrencyConfig = new Oci.Functions.Inputs.FunctionProvisionedConcurrencyConfigArgs
     ///         {
     ///             Strategy = @var.Function_provisioned_concurrency_config_strategy,
     ///             Count = @var.Function_provisioned_concurrency_config_count,
+    ///         },
+    ///         SourceDetails = new Oci.Functions.Inputs.FunctionSourceDetailsArgs
+    ///         {
+    ///             PbfListingId = oci_functions_pbf_listing.Test_pbf_listing.Id,
+    ///             SourceType = @var.Function_source_details_source_type,
     ///         },
     ///         TimeoutInSeconds = @var.Function_timeout_in_seconds,
     ///         TraceConfig = new Oci.Functions.Inputs.FunctionTraceConfigArgs
@@ -130,6 +135,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Output("provisionedConcurrencyConfig")]
         public Output<Outputs.FunctionProvisionedConcurrencyConfig> ProvisionedConcurrencyConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// The source details for the Function. The function can be created from various sources.
+        /// </summary>
+        [Output("sourceDetails")]
+        public Output<Outputs.FunctionSourceDetails> SourceDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the function.
@@ -258,8 +269,8 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
-        [Input("image", required: true)]
-        public Input<string> Image { get; set; } = null!;
+        [Input("image")]
+        public Input<string>? Image { get; set; }
 
         /// <summary>
         /// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
@@ -278,6 +289,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Input("provisionedConcurrencyConfig")]
         public Input<Inputs.FunctionProvisionedConcurrencyConfigArgs>? ProvisionedConcurrencyConfig { get; set; }
+
+        /// <summary>
+        /// The source details for the Function. The function can be created from various sources.
+        /// </summary>
+        [Input("sourceDetails")]
+        public Input<Inputs.FunctionSourceDetailsArgs>? SourceDetails { get; set; }
 
         /// <summary>
         /// (Updatable) Timeout for executions of the function. Value in seconds.
@@ -382,6 +399,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Input("provisionedConcurrencyConfig")]
         public Input<Inputs.FunctionProvisionedConcurrencyConfigGetArgs>? ProvisionedConcurrencyConfig { get; set; }
+
+        /// <summary>
+        /// The source details for the Function. The function can be created from various sources.
+        /// </summary>
+        [Input("sourceDetails")]
+        public Input<Inputs.FunctionSourceDetailsGetArgs>? SourceDetails { get; set; }
 
         /// <summary>
         /// The current state of the function.

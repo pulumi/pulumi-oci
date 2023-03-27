@@ -33,6 +33,7 @@ import (
 //				CompartmentId:        pulumi.StringRef(_var.Compartment_id),
 //				DisplayName:          pulumi.StringRef(_var.Autonomous_database_backup_display_name),
 //				State:                pulumi.StringRef(_var.Autonomous_database_backup_state),
+//				Type:                 pulumi.StringRef(_var.Autonomous_database_backup_type),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -62,6 +63,8 @@ type GetAutonomousDatabaseBackupsArgs struct {
 	Filters     []GetAutonomousDatabaseBackupsFilter `pulumi:"filters"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
+	// A filter to return only backups that matches with the given type of Backup.
+	Type *string `pulumi:"type"`
 }
 
 // A collection of values returned by getAutonomousDatabaseBackups.
@@ -79,6 +82,8 @@ type GetAutonomousDatabaseBackupsResult struct {
 	Id string `pulumi:"id"`
 	// The current state of the backup.
 	State *string `pulumi:"state"`
+	// The type of backup.
+	Type *string `pulumi:"type"`
 }
 
 func GetAutonomousDatabaseBackupsOutput(ctx *pulumi.Context, args GetAutonomousDatabaseBackupsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabaseBackupsResultOutput {
@@ -105,6 +110,8 @@ type GetAutonomousDatabaseBackupsOutputArgs struct {
 	Filters     GetAutonomousDatabaseBackupsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only backups that matches with the given type of Backup.
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetAutonomousDatabaseBackupsOutputArgs) ElementType() reflect.Type {
@@ -160,6 +167,11 @@ func (o GetAutonomousDatabaseBackupsResultOutput) Id() pulumi.StringOutput {
 // The current state of the backup.
 func (o GetAutonomousDatabaseBackupsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The type of backup.
+func (o GetAutonomousDatabaseBackupsResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -15,7 +15,7 @@ public final class BuildPipelineBuildPipelineParametersItem {
      * @return (Updatable) Default value of the parameter.
      * 
      */
-    private @Nullable String defaultValue;
+    private String defaultValue;
     /**
      * @return (Updatable) Optional description about the build pipeline.
      * 
@@ -32,8 +32,8 @@ public final class BuildPipelineBuildPipelineParametersItem {
      * @return (Updatable) Default value of the parameter.
      * 
      */
-    public Optional<String> defaultValue() {
-        return Optional.ofNullable(this.defaultValue);
+    public String defaultValue() {
+        return this.defaultValue;
     }
     /**
      * @return (Updatable) Optional description about the build pipeline.
@@ -59,7 +59,7 @@ public final class BuildPipelineBuildPipelineParametersItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String defaultValue;
+        private String defaultValue;
         private @Nullable String description;
         private String name;
         public Builder() {}
@@ -71,8 +71,8 @@ public final class BuildPipelineBuildPipelineParametersItem {
         }
 
         @CustomType.Setter
-        public Builder defaultValue(@Nullable String defaultValue) {
-            this.defaultValue = defaultValue;
+        public Builder defaultValue(String defaultValue) {
+            this.defaultValue = Objects.requireNonNull(defaultValue);
             return this;
         }
         @CustomType.Setter

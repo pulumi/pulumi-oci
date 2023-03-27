@@ -222,6 +222,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
+        /// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        /// </summary>
+        public readonly string DisasterRecoveryRegionType;
+        /// <summary>
         /// The user-friendly name for the Autonomous Database. The name does not have to be unique.
         /// </summary>
         public readonly string DisplayName;
@@ -324,6 +328,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// </summary>
+        public readonly string LocalDisasterRecoveryType;
+        /// <summary>
         /// Autonomous Data Guard standby database details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseLocalStandbyDbResult> LocalStandbyDbs;
@@ -397,6 +405,11 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string RefreshableStatus;
         /// <summary>
+        /// Configurations of a Disaster Recovery.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult> RemoteDisasterRecoveryConfigurations;
+        public readonly string RemoteDisasterRecoveryType;
+        /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string Role;
@@ -454,6 +467,10 @@ namespace Pulumi.Oci.Database
         /// The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         /// </summary>
         public readonly string TimeDeletionOfFreeAutonomousDatabase;
+        /// <summary>
+        /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        /// </summary>
+        public readonly string TimeDisasterRecoveryRoleChanged;
         /// <summary>
         /// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         /// </summary>
@@ -577,6 +594,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableDictionary<string, object> definedTags,
 
+            string disasterRecoveryRegionType,
+
             string displayName,
 
             int failedDataRecoveryInSeconds,
@@ -631,6 +650,8 @@ namespace Pulumi.Oci.Database
 
             string lifecycleDetails,
 
+            string localDisasterRecoveryType,
+
             ImmutableArray<Outputs.GetAutonomousDatabaseLocalStandbyDbResult> localStandbyDbs,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseLongTermBackupScheduleResult> longTermBackupSchedules,
@@ -666,6 +687,10 @@ namespace Pulumi.Oci.Database
             string refreshableMode,
 
             string refreshableStatus,
+
+            ImmutableArray<Outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult> remoteDisasterRecoveryConfigurations,
+
+            string remoteDisasterRecoveryType,
 
             string role,
 
@@ -704,6 +729,8 @@ namespace Pulumi.Oci.Database
             string timeDataGuardRoleChanged,
 
             string timeDeletionOfFreeAutonomousDatabase,
+
+            string timeDisasterRecoveryRoleChanged,
 
             string timeLocalDataGuardEnabled,
 
@@ -768,6 +795,7 @@ namespace Pulumi.Oci.Database
             DbVersion = dbVersion;
             DbWorkload = dbWorkload;
             DefinedTags = definedTags;
+            DisasterRecoveryRegionType = disasterRecoveryRegionType;
             DisplayName = displayName;
             FailedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             FreeformTags = freeformTags;
@@ -795,6 +823,7 @@ namespace Pulumi.Oci.Database
             KmsKeyVersionId = kmsKeyVersionId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
+            LocalDisasterRecoveryType = localDisasterRecoveryType;
             LocalStandbyDbs = localStandbyDbs;
             LongTermBackupSchedules = longTermBackupSchedules;
             MaxCpuCoreCount = maxCpuCoreCount;
@@ -813,6 +842,8 @@ namespace Pulumi.Oci.Database
             ProvisionableCpuses = provisionableCpuses;
             RefreshableMode = refreshableMode;
             RefreshableStatus = refreshableStatus;
+            RemoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;
+            RemoteDisasterRecoveryType = remoteDisasterRecoveryType;
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
             ScheduledOperations = scheduledOperations;
@@ -832,6 +863,7 @@ namespace Pulumi.Oci.Database
             TimeCreated = timeCreated;
             TimeDataGuardRoleChanged = timeDataGuardRoleChanged;
             TimeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
+            TimeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
             TimeMaintenanceEnd = timeMaintenanceEnd;

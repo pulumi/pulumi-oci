@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -63,6 +65,10 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      */
     public readonly autonomousDatabaseId!: pulumi.Output<string>;
+    /**
+     * Backup destination details
+     */
+    public readonly backupDestinationDetails!: pulumi.Output<outputs.Database.AutonomousDatabaseBackupBackupDestinationDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -158,6 +164,7 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseBackupState | undefined;
             resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
+            resourceInputs["backupDestinationDetails"] = state ? state.backupDestinationDetails : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["databaseSizeInTbs"] = state ? state.databaseSizeInTbs : undefined;
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
@@ -184,6 +191,7 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
                 throw new Error("Missing required property 'autonomousDatabaseId'");
             }
             resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
+            resourceInputs["backupDestinationDetails"] = args ? args.backupDestinationDetails : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["isLongTermBackup"] = args ? args.isLongTermBackup : undefined;
             resourceInputs["retentionPeriodInDays"] = args ? args.retentionPeriodInDays : undefined;
@@ -218,6 +226,10 @@ export interface AutonomousDatabaseBackupState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      */
     autonomousDatabaseId?: pulumi.Input<string>;
+    /**
+     * Backup destination details
+     */
+    backupDestinationDetails?: pulumi.Input<inputs.Database.AutonomousDatabaseBackupBackupDestinationDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -308,6 +320,10 @@ export interface AutonomousDatabaseBackupArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      */
     autonomousDatabaseId: pulumi.Input<string>;
+    /**
+     * Backup destination details
+     */
+    backupDestinationDetails?: pulumi.Input<inputs.Database.AutonomousDatabaseBackupBackupDestinationDetails>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */

@@ -14,6 +14,7 @@ __all__ = [
     'BuildPipelineBuildPipelineParametersItemArgs',
     'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs',
     'BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs',
+    'BuildPipelineStageBuildRunnerShapeConfigArgs',
     'BuildPipelineStageBuildSourceCollectionArgs',
     'BuildPipelineStageBuildSourceCollectionItemArgs',
     'BuildPipelineStageDeliverArtifactCollectionArgs',
@@ -147,19 +148,30 @@ class BuildPipelineBuildPipelineParametersArgs:
 @pulumi.input_type
 class BuildPipelineBuildPipelineParametersItemArgs:
     def __init__(__self__, *,
+                 default_value: pulumi.Input[str],
                  name: pulumi.Input[str],
-                 default_value: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
         :param pulumi.Input[str] default_value: (Updatable) Default value of the parameter.
+        :param pulumi.Input[str] name: (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
         :param pulumi.Input[str] description: (Updatable) Optional description about the build pipeline.
         """
+        pulumi.set(__self__, "default_value", default_value)
         pulumi.set(__self__, "name", name)
-        if default_value is not None:
-            pulumi.set(__self__, "default_value", default_value)
         if description is not None:
             pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Default value of the parameter.
+        """
+        return pulumi.get(self, "default_value")
+
+    @default_value.setter
+    def default_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "default_value", value)
 
     @property
     @pulumi.getter
@@ -172,18 +184,6 @@ class BuildPipelineBuildPipelineParametersItemArgs:
     @name.setter
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter(name="defaultValue")
-    def default_value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Default value of the parameter.
-        """
-        return pulumi.get(self, "default_value")
-
-    @default_value.setter
-    def default_value(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "default_value", value)
 
     @property
     @pulumi.getter
@@ -240,6 +240,60 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs:
     @id.setter
     def id(self, value: pulumi.Input[str]):
         pulumi.set(self, "id", value)
+
+
+@pulumi.input_type
+class BuildPipelineStageBuildRunnerShapeConfigArgs:
+    def __init__(__self__, *,
+                 build_runner_type: pulumi.Input[str],
+                 memory_in_gbs: Optional[pulumi.Input[int]] = None,
+                 ocpus: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] build_runner_type: (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        :param pulumi.Input[int] memory_in_gbs: (Updatable) The total amount of memory set for the instance in gigabytes.
+        :param pulumi.Input[int] ocpus: (Updatable) The total number of OCPUs set for the instance.
+        """
+        pulumi.set(__self__, "build_runner_type", build_runner_type)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="buildRunnerType")
+    def build_runner_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        """
+        return pulumi.get(self, "build_runner_type")
+
+    @build_runner_type.setter
+    def build_runner_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "build_runner_type", value)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The total amount of memory set for the instance in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The total number of OCPUs set for the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ocpus", value)
 
 
 @pulumi.input_type

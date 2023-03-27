@@ -24,6 +24,11 @@ public final class GetDatabasesDatabaseDbBackupConfig {
      */
     private String autoBackupWindow;
     /**
+     * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+     * 
+     */
+    private String backupDeletionPolicy;
+    /**
      * @return Backup destination details.
      * 
      */
@@ -48,6 +53,13 @@ public final class GetDatabasesDatabaseDbBackupConfig {
      */
     public String autoBackupWindow() {
         return this.autoBackupWindow;
+    }
+    /**
+     * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+     * 
+     */
+    public String backupDeletionPolicy() {
+        return this.backupDeletionPolicy;
     }
     /**
      * @return Backup destination details.
@@ -75,6 +87,7 @@ public final class GetDatabasesDatabaseDbBackupConfig {
     public static final class Builder {
         private Boolean autoBackupEnabled;
         private String autoBackupWindow;
+        private String backupDeletionPolicy;
         private List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private Integer recoveryWindowInDays;
         public Builder() {}
@@ -82,6 +95,7 @@ public final class GetDatabasesDatabaseDbBackupConfig {
     	      Objects.requireNonNull(defaults);
     	      this.autoBackupEnabled = defaults.autoBackupEnabled;
     	      this.autoBackupWindow = defaults.autoBackupWindow;
+    	      this.backupDeletionPolicy = defaults.backupDeletionPolicy;
     	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
@@ -94,6 +108,11 @@ public final class GetDatabasesDatabaseDbBackupConfig {
         @CustomType.Setter
         public Builder autoBackupWindow(String autoBackupWindow) {
             this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupDeletionPolicy(String backupDeletionPolicy) {
+            this.backupDeletionPolicy = Objects.requireNonNull(backupDeletionPolicy);
             return this;
         }
         @CustomType.Setter
@@ -113,6 +132,7 @@ public final class GetDatabasesDatabaseDbBackupConfig {
             final var o = new GetDatabasesDatabaseDbBackupConfig();
             o.autoBackupEnabled = autoBackupEnabled;
             o.autoBackupWindow = autoBackupWindow;
+            o.backupDeletionPolicy = backupDeletionPolicy;
             o.backupDestinationDetails = backupDestinationDetails;
             o.recoveryWindowInDays = recoveryWindowInDays;
             return o;

@@ -16,6 +16,21 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
     public static final DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs Empty = new DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     * 
+     */
+    @Import(name="dbrsPolicyId")
+    private @Nullable Output<String> dbrsPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     * 
+     */
+    public Optional<Output<String>> dbrsPolicyId() {
+        return Optional.ofNullable(this.dbrsPolicyId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
@@ -48,6 +63,7 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
     private DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs() {}
 
     private DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs(DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs $) {
+        this.dbrsPolicyId = $.dbrsPolicyId;
         this.id = $.id;
         this.type = $.type;
     }
@@ -68,6 +84,27 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
 
         public Builder(DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs defaults) {
             $ = new DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param dbrsPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbrsPolicyId(@Nullable Output<String> dbrsPolicyId) {
+            $.dbrsPolicyId = dbrsPolicyId;
+            return this;
+        }
+
+        /**
+         * @param dbrsPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbrsPolicyId(String dbrsPolicyId) {
+            return dbrsPolicyId(Output.of(dbrsPolicyId));
         }
 
         /**

@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionProvisionedConcurrencyConfig;
+import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionSourceDetail;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionTraceConfig;
 import java.lang.Integer;
 import java.lang.Object;
@@ -75,6 +76,11 @@ public final class GetFunctionsFunction {
      * 
      */
     private List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+    /**
+     * @return The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    private List<GetFunctionsFunctionSourceDetail> sourceDetails;
     /**
      * @return A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
      * 
@@ -187,6 +193,13 @@ public final class GetFunctionsFunction {
         return this.provisionedConcurrencyConfigs;
     }
     /**
+     * @return The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    public List<GetFunctionsFunctionSourceDetail> sourceDetails() {
+        return this.sourceDetails;
+    }
+    /**
      * @return A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
      * 
      */
@@ -243,6 +256,7 @@ public final class GetFunctionsFunction {
         private String invokeEndpoint;
         private String memoryInMbs;
         private List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+        private List<GetFunctionsFunctionSourceDetail> sourceDetails;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -263,6 +277,7 @@ public final class GetFunctionsFunction {
     	      this.invokeEndpoint = defaults.invokeEndpoint;
     	      this.memoryInMbs = defaults.memoryInMbs;
     	      this.provisionedConcurrencyConfigs = defaults.provisionedConcurrencyConfigs;
+    	      this.sourceDetails = defaults.sourceDetails;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -334,6 +349,14 @@ public final class GetFunctionsFunction {
             return provisionedConcurrencyConfigs(List.of(provisionedConcurrencyConfigs));
         }
         @CustomType.Setter
+        public Builder sourceDetails(List<GetFunctionsFunctionSourceDetail> sourceDetails) {
+            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            return this;
+        }
+        public Builder sourceDetails(GetFunctionsFunctionSourceDetail... sourceDetails) {
+            return sourceDetails(List.of(sourceDetails));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -375,6 +398,7 @@ public final class GetFunctionsFunction {
             o.invokeEndpoint = invokeEndpoint;
             o.memoryInMbs = memoryInMbs;
             o.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
+            o.sourceDetails = sourceDetails;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

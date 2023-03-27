@@ -140,10 +140,22 @@ namespace Pulumi.Oci.Database
         public Output<string> KmsKeyVersionId { get; private set; } = null!;
 
         /// <summary>
+        /// The duration when the latest database backup created.
+        /// </summary>
+        [Output("lastBackupDurationInSeconds")]
+        public Output<int> LastBackupDurationInSeconds { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time when the latest database backup was created.
         /// </summary>
         [Output("lastBackupTimestamp")]
         public Output<string> LastBackupTimestamp { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time when the latest database backup failed.
+        /// </summary>
+        [Output("lastFailedBackupTimestamp")]
+        public Output<string> LastFailedBackupTimestamp { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
@@ -404,10 +416,22 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyVersionId { get; set; }
 
         /// <summary>
+        /// The duration when the latest database backup created.
+        /// </summary>
+        [Input("lastBackupDurationInSeconds")]
+        public Input<int>? LastBackupDurationInSeconds { get; set; }
+
+        /// <summary>
         /// The date and time when the latest database backup was created.
         /// </summary>
         [Input("lastBackupTimestamp")]
         public Input<string>? LastBackupTimestamp { get; set; }
+
+        /// <summary>
+        /// The date and time when the latest database backup failed.
+        /// </summary>
+        [Input("lastFailedBackupTimestamp")]
+        public Input<string>? LastFailedBackupTimestamp { get; set; }
 
         /// <summary>
         /// Additional information about the current lifecycle state.

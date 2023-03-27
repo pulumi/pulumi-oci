@@ -20,6 +20,7 @@ class ConnectionArgs:
                  connection_type: pulumi.Input[str],
                  display_name: pulumi.Input[str],
                  technology_type: pulumi.Input[str],
+                 access_key_id: Optional[pulumi.Input[str]] = None,
                  account_key: Optional[pulumi.Input[str]] = None,
                  account_name: Optional[pulumi.Input[str]] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
@@ -28,8 +29,11 @@ class ConnectionArgs:
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret: Optional[pulumi.Input[str]] = None,
+                 connection_factory: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
+                 connection_url: Optional[pulumi.Input[str]] = None,
                  consumer_properties: Optional[pulumi.Input[str]] = None,
+                 core_site_xml: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_name: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
@@ -39,6 +43,11 @@ class ConnectionArgs:
                  endpoint: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host: Optional[pulumi.Input[str]] = None,
+                 jndi_connection_factory: Optional[pulumi.Input[str]] = None,
+                 jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
+                 jndi_provider_url: Optional[pulumi.Input[str]] = None,
+                 jndi_security_credentials: Optional[pulumi.Input[str]] = None,
+                 jndi_security_principal: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_store: Optional[pulumi.Input[str]] = None,
                  key_store_password: Optional[pulumi.Input[str]] = None,
@@ -52,8 +61,11 @@ class ConnectionArgs:
                  public_key_fingerprint: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  sas_token: Optional[pulumi.Input[str]] = None,
+                 secret_access_key: Optional[pulumi.Input[str]] = None,
                  security_protocol: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
+                 should_use_jndi: Optional[pulumi.Input[bool]] = None,
+                 should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
                  ssl_crl: Optional[pulumi.Input[str]] = None,
@@ -76,16 +88,20 @@ class ConnectionArgs:
         :param pulumi.Input[str] connection_type: (Updatable) The connection type.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
+        :param pulumi.Input[str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param pulumi.Input[str] authentication_type: (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        :param pulumi.Input[str] authentication_type: (Updatable) Used authentication mechanism.
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-        :param pulumi.Input[str] connection_string: (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        :param pulumi.Input[str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        :param pulumi.Input[str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        :param pulumi.Input[str] connection_url: (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
         :param pulumi.Input[str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
+        :param pulumi.Input[str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
         :param pulumi.Input[str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param pulumi.Input[str] database_name: (Updatable) The name of the database.
         :param pulumi.Input[str] db_system_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
@@ -95,22 +111,30 @@ class ConnectionArgs:
         :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host.
-        :param pulumi.Input[str] key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        :param pulumi.Input[str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        :param pulumi.Input[str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        :param pulumi.Input[str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal.
+        :param pulumi.Input[str] jndi_security_principal: (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
         :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-        :param pulumi.Input[str] private_key_passphrase: (Updatable) The passphrase of the private key.
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of private key file in PEM format.
+        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-        :param pulumi.Input[str] security_protocol: (Updatable) Security protocol for PostgreSQL.
+        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param pulumi.Input[str] security_protocol: (Updatable) Security Protocol.
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
         :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -122,15 +146,17 @@ class ConnectionArgs:
         :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file.
         :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password.
         :param pulumi.Input[str] url: (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
-        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
-        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_type", connection_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "technology_type", technology_type)
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
         if account_key is not None:
             pulumi.set(__self__, "account_key", account_key)
         if account_name is not None:
@@ -147,10 +173,16 @@ class ConnectionArgs:
             pulumi.set(__self__, "client_id", client_id)
         if client_secret is not None:
             pulumi.set(__self__, "client_secret", client_secret)
+        if connection_factory is not None:
+            pulumi.set(__self__, "connection_factory", connection_factory)
         if connection_string is not None:
             pulumi.set(__self__, "connection_string", connection_string)
+        if connection_url is not None:
+            pulumi.set(__self__, "connection_url", connection_url)
         if consumer_properties is not None:
             pulumi.set(__self__, "consumer_properties", consumer_properties)
+        if core_site_xml is not None:
+            pulumi.set(__self__, "core_site_xml", core_site_xml)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if database_name is not None:
@@ -169,6 +201,16 @@ class ConnectionArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host is not None:
             pulumi.set(__self__, "host", host)
+        if jndi_connection_factory is not None:
+            pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
+        if jndi_initial_context_factory is not None:
+            pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
+        if jndi_provider_url is not None:
+            pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
+        if jndi_security_credentials is not None:
+            pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+        if jndi_security_principal is not None:
+            pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
         if key_id is not None:
             pulumi.set(__self__, "key_id", key_id)
         if key_store is not None:
@@ -195,10 +237,16 @@ class ConnectionArgs:
             pulumi.set(__self__, "region", region)
         if sas_token is not None:
             pulumi.set(__self__, "sas_token", sas_token)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
         if security_protocol is not None:
             pulumi.set(__self__, "security_protocol", security_protocol)
         if session_mode is not None:
             pulumi.set(__self__, "session_mode", session_mode)
+        if should_use_jndi is not None:
+            pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        if should_validate_server_certificate is not None:
+            pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         if ssl_ca is not None:
             pulumi.set(__self__, "ssl_ca", ssl_ca)
         if ssl_cert is not None:
@@ -281,6 +329,18 @@ class ConnectionArgs:
         pulumi.set(self, "technology_type", value)
 
     @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @access_key_id.setter
+    def access_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_key_id", value)
+
+    @property
     @pulumi.getter(name="accountKey")
     def account_key(self) -> Optional[pulumi.Input[str]]:
         """
@@ -320,7 +380,7 @@ class ConnectionArgs:
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        (Updatable) Used authentication mechanism.
         """
         return pulumi.get(self, "authentication_type")
 
@@ -377,16 +437,40 @@ class ConnectionArgs:
         pulumi.set(self, "client_secret", value)
 
     @property
+    @pulumi.getter(name="connectionFactory")
+    def connection_factory(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        """
+        return pulumi.get(self, "connection_factory")
+
+    @connection_factory.setter
+    def connection_factory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_factory", value)
+
+    @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
     def connection_string(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "connection_string", value)
+
+    @property
+    @pulumi.getter(name="connectionUrl")
+    def connection_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        """
+        return pulumi.get(self, "connection_url")
+
+    @connection_url.setter
+    def connection_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_url", value)
 
     @property
     @pulumi.getter(name="consumerProperties")
@@ -399,6 +483,18 @@ class ConnectionArgs:
     @consumer_properties.setter
     def consumer_properties(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "consumer_properties", value)
+
+    @property
+    @pulumi.getter(name="coreSiteXml")
+    def core_site_xml(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        """
+        return pulumi.get(self, "core_site_xml")
+
+    @core_site_xml.setter
+    def core_site_xml(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "core_site_xml", value)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -509,10 +605,70 @@ class ConnectionArgs:
         pulumi.set(self, "host", value)
 
     @property
+    @pulumi.getter(name="jndiConnectionFactory")
+    def jndi_connection_factory(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        """
+        return pulumi.get(self, "jndi_connection_factory")
+
+    @jndi_connection_factory.setter
+    def jndi_connection_factory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_connection_factory", value)
+
+    @property
+    @pulumi.getter(name="jndiInitialContextFactory")
+    def jndi_initial_context_factory(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        """
+        return pulumi.get(self, "jndi_initial_context_factory")
+
+    @jndi_initial_context_factory.setter
+    def jndi_initial_context_factory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_initial_context_factory", value)
+
+    @property
+    @pulumi.getter(name="jndiProviderUrl")
+    def jndi_provider_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        """
+        return pulumi.get(self, "jndi_provider_url")
+
+    @jndi_provider_url.setter
+    def jndi_provider_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_provider_url", value)
+
+    @property
+    @pulumi.getter(name="jndiSecurityCredentials")
+    def jndi_security_credentials(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The password associated to the principal.
+        """
+        return pulumi.get(self, "jndi_security_credentials")
+
+    @jndi_security_credentials.setter
+    def jndi_security_credentials(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_security_credentials", value)
+
+    @property
+    @pulumi.getter(name="jndiSecurityPrincipal")
+    def jndi_security_principal(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        """
+        return pulumi.get(self, "jndi_security_principal")
+
+    @jndi_security_principal.setter
+    def jndi_security_principal(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_security_principal", value)
+
+    @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "key_id")
 
@@ -560,7 +716,7 @@ class ConnectionArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         """
         return pulumi.get(self, "password")
 
@@ -596,7 +752,7 @@ class ConnectionArgs:
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of private key file in PEM format.
         """
         return pulumi.get(self, "private_key_file")
 
@@ -608,7 +764,7 @@ class ConnectionArgs:
     @pulumi.getter(name="privateKeyPassphrase")
     def private_key_passphrase(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The passphrase of the private key.
+        (Updatable) Password if the private key file is encrypted.
         """
         return pulumi.get(self, "private_key_passphrase")
 
@@ -665,10 +821,22 @@ class ConnectionArgs:
         pulumi.set(self, "sas_token", value)
 
     @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @secret_access_key.setter
+    def secret_access_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_access_key", value)
+
+    @property
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Security protocol for PostgreSQL.
+        (Updatable) Security Protocol.
         """
         return pulumi.get(self, "security_protocol")
 
@@ -689,10 +857,34 @@ class ConnectionArgs:
         pulumi.set(self, "session_mode", value)
 
     @property
+    @pulumi.getter(name="shouldUseJndi")
+    def should_use_jndi(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        """
+        return pulumi.get(self, "should_use_jndi")
+
+    @should_use_jndi.setter
+    def should_use_jndi(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_use_jndi", value)
+
+    @property
+    @pulumi.getter(name="shouldValidateServerCertificate")
+    def should_validate_server_certificate(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        """
+        return pulumi.get(self, "should_validate_server_certificate")
+
+    @should_validate_server_certificate.setter
+    def should_validate_server_certificate(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_validate_server_certificate", value)
+
+    @property
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -836,7 +1028,7 @@ class ConnectionArgs:
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
         """
         return pulumi.get(self, "user_id")
 
@@ -848,7 +1040,7 @@ class ConnectionArgs:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         """
         return pulumi.get(self, "username")
 
@@ -860,7 +1052,7 @@ class ConnectionArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         return pulumi.get(self, "vault_id")
 
@@ -884,6 +1076,7 @@ class ConnectionArgs:
 @pulumi.input_type
 class _ConnectionState:
     def __init__(__self__, *,
+                 access_key_id: Optional[pulumi.Input[str]] = None,
                  account_key: Optional[pulumi.Input[str]] = None,
                  account_name: Optional[pulumi.Input[str]] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
@@ -893,9 +1086,12 @@ class _ConnectionState:
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 connection_factory: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
                  connection_type: Optional[pulumi.Input[str]] = None,
+                 connection_url: Optional[pulumi.Input[str]] = None,
                  consumer_properties: Optional[pulumi.Input[str]] = None,
+                 core_site_xml: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_name: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
@@ -907,6 +1103,11 @@ class _ConnectionState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host: Optional[pulumi.Input[str]] = None,
                  ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]] = None,
+                 jndi_connection_factory: Optional[pulumi.Input[str]] = None,
+                 jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
+                 jndi_provider_url: Optional[pulumi.Input[str]] = None,
+                 jndi_security_credentials: Optional[pulumi.Input[str]] = None,
+                 jndi_security_principal: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_store: Optional[pulumi.Input[str]] = None,
                  key_store_password: Optional[pulumi.Input[str]] = None,
@@ -921,8 +1122,11 @@ class _ConnectionState:
                  public_key_fingerprint: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  sas_token: Optional[pulumi.Input[str]] = None,
+                 secret_access_key: Optional[pulumi.Input[str]] = None,
                  security_protocol: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
+                 should_use_jndi: Optional[pulumi.Input[bool]] = None,
+                 should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
                  ssl_crl: Optional[pulumi.Input[str]] = None,
@@ -946,18 +1150,22 @@ class _ConnectionState:
                  wallet: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
+        :param pulumi.Input[str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param pulumi.Input[str] authentication_type: (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        :param pulumi.Input[str] authentication_type: (Updatable) Used authentication mechanism.
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] connection_string: (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        :param pulumi.Input[str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        :param pulumi.Input[str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         :param pulumi.Input[str] connection_type: (Updatable) The connection type.
+        :param pulumi.Input[str] connection_url: (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
         :param pulumi.Input[str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
+        :param pulumi.Input[str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
         :param pulumi.Input[str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param pulumi.Input[str] database_name: (Updatable) The name of the database.
         :param pulumi.Input[str] db_system_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
@@ -968,24 +1176,32 @@ class _ConnectionState:
         :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host.
-        :param pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]] ingress_ips: List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
-        :param pulumi.Input[str] key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        :param pulumi.Input[str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        :param pulumi.Input[str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        :param pulumi.Input[str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal.
+        :param pulumi.Input[str] jndi_security_principal: (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
         :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-        :param pulumi.Input[str] private_key_passphrase: (Updatable) The passphrase of the private key.
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of private key file in PEM format.
+        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-        :param pulumi.Input[str] security_protocol: (Updatable) Security protocol for PostgreSQL.
+        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param pulumi.Input[str] security_protocol: (Updatable) Security Protocol.
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
         :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -1002,11 +1218,13 @@ class _ConnectionState:
         :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file.
         :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password.
         :param pulumi.Input[str] url: (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
-        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
-        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
         """
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
         if account_key is not None:
             pulumi.set(__self__, "account_key", account_key)
         if account_name is not None:
@@ -1025,12 +1243,18 @@ class _ConnectionState:
             pulumi.set(__self__, "client_secret", client_secret)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_factory is not None:
+            pulumi.set(__self__, "connection_factory", connection_factory)
         if connection_string is not None:
             pulumi.set(__self__, "connection_string", connection_string)
         if connection_type is not None:
             pulumi.set(__self__, "connection_type", connection_type)
+        if connection_url is not None:
+            pulumi.set(__self__, "connection_url", connection_url)
         if consumer_properties is not None:
             pulumi.set(__self__, "consumer_properties", consumer_properties)
+        if core_site_xml is not None:
+            pulumi.set(__self__, "core_site_xml", core_site_xml)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if database_name is not None:
@@ -1053,6 +1277,16 @@ class _ConnectionState:
             pulumi.set(__self__, "host", host)
         if ingress_ips is not None:
             pulumi.set(__self__, "ingress_ips", ingress_ips)
+        if jndi_connection_factory is not None:
+            pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
+        if jndi_initial_context_factory is not None:
+            pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
+        if jndi_provider_url is not None:
+            pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
+        if jndi_security_credentials is not None:
+            pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+        if jndi_security_principal is not None:
+            pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
         if key_id is not None:
             pulumi.set(__self__, "key_id", key_id)
         if key_store is not None:
@@ -1081,10 +1315,16 @@ class _ConnectionState:
             pulumi.set(__self__, "region", region)
         if sas_token is not None:
             pulumi.set(__self__, "sas_token", sas_token)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
         if security_protocol is not None:
             pulumi.set(__self__, "security_protocol", security_protocol)
         if session_mode is not None:
             pulumi.set(__self__, "session_mode", session_mode)
+        if should_use_jndi is not None:
+            pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        if should_validate_server_certificate is not None:
+            pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         if ssl_ca is not None:
             pulumi.set(__self__, "ssl_ca", ssl_ca)
         if ssl_cert is not None:
@@ -1129,6 +1369,18 @@ class _ConnectionState:
             pulumi.set(__self__, "wallet", wallet)
 
     @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @access_key_id.setter
+    def access_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_key_id", value)
+
+    @property
     @pulumi.getter(name="accountKey")
     def account_key(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1168,7 +1420,7 @@ class _ConnectionState:
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        (Updatable) Used authentication mechanism.
         """
         return pulumi.get(self, "authentication_type")
 
@@ -1237,10 +1489,22 @@ class _ConnectionState:
         pulumi.set(self, "compartment_id", value)
 
     @property
+    @pulumi.getter(name="connectionFactory")
+    def connection_factory(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        """
+        return pulumi.get(self, "connection_factory")
+
+    @connection_factory.setter
+    def connection_factory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_factory", value)
+
+    @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         """
         return pulumi.get(self, "connection_string")
 
@@ -1261,6 +1525,18 @@ class _ConnectionState:
         pulumi.set(self, "connection_type", value)
 
     @property
+    @pulumi.getter(name="connectionUrl")
+    def connection_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        """
+        return pulumi.get(self, "connection_url")
+
+    @connection_url.setter
+    def connection_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_url", value)
+
+    @property
     @pulumi.getter(name="consumerProperties")
     def consumer_properties(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1271,6 +1547,18 @@ class _ConnectionState:
     @consumer_properties.setter
     def consumer_properties(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "consumer_properties", value)
+
+    @property
+    @pulumi.getter(name="coreSiteXml")
+    def core_site_xml(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        """
+        return pulumi.get(self, "core_site_xml")
+
+    @core_site_xml.setter
+    def core_site_xml(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "core_site_xml", value)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -1396,7 +1684,7 @@ class _ConnectionState:
     @pulumi.getter(name="ingressIps")
     def ingress_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]:
         """
-        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         """
         return pulumi.get(self, "ingress_ips")
 
@@ -1405,10 +1693,70 @@ class _ConnectionState:
         pulumi.set(self, "ingress_ips", value)
 
     @property
+    @pulumi.getter(name="jndiConnectionFactory")
+    def jndi_connection_factory(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        """
+        return pulumi.get(self, "jndi_connection_factory")
+
+    @jndi_connection_factory.setter
+    def jndi_connection_factory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_connection_factory", value)
+
+    @property
+    @pulumi.getter(name="jndiInitialContextFactory")
+    def jndi_initial_context_factory(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        """
+        return pulumi.get(self, "jndi_initial_context_factory")
+
+    @jndi_initial_context_factory.setter
+    def jndi_initial_context_factory(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_initial_context_factory", value)
+
+    @property
+    @pulumi.getter(name="jndiProviderUrl")
+    def jndi_provider_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        """
+        return pulumi.get(self, "jndi_provider_url")
+
+    @jndi_provider_url.setter
+    def jndi_provider_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_provider_url", value)
+
+    @property
+    @pulumi.getter(name="jndiSecurityCredentials")
+    def jndi_security_credentials(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The password associated to the principal.
+        """
+        return pulumi.get(self, "jndi_security_credentials")
+
+    @jndi_security_credentials.setter
+    def jndi_security_credentials(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_security_credentials", value)
+
+    @property
+    @pulumi.getter(name="jndiSecurityPrincipal")
+    def jndi_security_principal(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        """
+        return pulumi.get(self, "jndi_security_principal")
+
+    @jndi_security_principal.setter
+    def jndi_security_principal(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jndi_security_principal", value)
+
+    @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "key_id")
 
@@ -1468,7 +1816,7 @@ class _ConnectionState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         """
         return pulumi.get(self, "password")
 
@@ -1504,7 +1852,7 @@ class _ConnectionState:
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of private key file in PEM format.
         """
         return pulumi.get(self, "private_key_file")
 
@@ -1516,7 +1864,7 @@ class _ConnectionState:
     @pulumi.getter(name="privateKeyPassphrase")
     def private_key_passphrase(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The passphrase of the private key.
+        (Updatable) Password if the private key file is encrypted.
         """
         return pulumi.get(self, "private_key_passphrase")
 
@@ -1573,10 +1921,22 @@ class _ConnectionState:
         pulumi.set(self, "sas_token", value)
 
     @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @secret_access_key.setter
+    def secret_access_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_access_key", value)
+
+    @property
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Security protocol for PostgreSQL.
+        (Updatable) Security Protocol.
         """
         return pulumi.get(self, "security_protocol")
 
@@ -1597,10 +1957,34 @@ class _ConnectionState:
         pulumi.set(self, "session_mode", value)
 
     @property
+    @pulumi.getter(name="shouldUseJndi")
+    def should_use_jndi(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        """
+        return pulumi.get(self, "should_use_jndi")
+
+    @should_use_jndi.setter
+    def should_use_jndi(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_use_jndi", value)
+
+    @property
+    @pulumi.getter(name="shouldValidateServerCertificate")
+    def should_validate_server_certificate(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        """
+        return pulumi.get(self, "should_validate_server_certificate")
+
+    @should_validate_server_certificate.setter
+    def should_validate_server_certificate(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_validate_server_certificate", value)
+
+    @property
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -1804,7 +2188,7 @@ class _ConnectionState:
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
         """
         return pulumi.get(self, "user_id")
 
@@ -1816,7 +2200,7 @@ class _ConnectionState:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         """
         return pulumi.get(self, "username")
 
@@ -1828,7 +2212,7 @@ class _ConnectionState:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         return pulumi.get(self, "vault_id")
 
@@ -1854,6 +2238,7 @@ class Connection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 access_key_id: Optional[pulumi.Input[str]] = None,
                  account_key: Optional[pulumi.Input[str]] = None,
                  account_name: Optional[pulumi.Input[str]] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
@@ -1863,9 +2248,12 @@ class Connection(pulumi.CustomResource):
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 connection_factory: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
                  connection_type: Optional[pulumi.Input[str]] = None,
+                 connection_url: Optional[pulumi.Input[str]] = None,
                  consumer_properties: Optional[pulumi.Input[str]] = None,
+                 core_site_xml: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_name: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
@@ -1876,6 +2264,11 @@ class Connection(pulumi.CustomResource):
                  endpoint: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host: Optional[pulumi.Input[str]] = None,
+                 jndi_connection_factory: Optional[pulumi.Input[str]] = None,
+                 jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
+                 jndi_provider_url: Optional[pulumi.Input[str]] = None,
+                 jndi_security_credentials: Optional[pulumi.Input[str]] = None,
+                 jndi_security_principal: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_store: Optional[pulumi.Input[str]] = None,
                  key_store_password: Optional[pulumi.Input[str]] = None,
@@ -1889,8 +2282,11 @@ class Connection(pulumi.CustomResource):
                  public_key_fingerprint: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  sas_token: Optional[pulumi.Input[str]] = None,
+                 secret_access_key: Optional[pulumi.Input[str]] = None,
                  security_protocol: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
+                 should_use_jndi: Optional[pulumi.Input[bool]] = None,
+                 should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
                  ssl_crl: Optional[pulumi.Input[str]] = None,
@@ -1925,6 +2321,7 @@ class Connection(pulumi.CustomResource):
             connection_type=var["connection_connection_type"],
             display_name=var["connection_display_name"],
             technology_type=var["connection_technology_type"],
+            access_key_id=oci_kms_key["test_key"]["id"],
             account_key=var["connection_account_key"],
             account_name=var["connection_account_name"],
             additional_attributes=[oci.golden_gate.ConnectionAdditionalAttributeArgs(
@@ -1940,8 +2337,11 @@ class Connection(pulumi.CustomResource):
             )],
             client_id=oci_golden_gate_client["test_client"]["id"],
             client_secret=var["connection_client_secret"],
+            connection_factory=var["connection_connection_factory"],
             connection_string=var["connection_connection_string"],
+            connection_url=var["connection_connection_url"],
             consumer_properties=var["connection_consumer_properties"],
+            core_site_xml=var["connection_core_site_xml"],
             database_id=oci_database_database["test_database"]["id"],
             database_name=oci_database_database["test_database"]["name"],
             db_system_id=oci_database_db_system["test_db_system"]["id"],
@@ -1955,6 +2355,11 @@ class Connection(pulumi.CustomResource):
                 "bar-key": "value",
             },
             host=var["connection_host"],
+            jndi_connection_factory=var["connection_jndi_connection_factory"],
+            jndi_initial_context_factory=var["connection_jndi_initial_context_factory"],
+            jndi_provider_url=var["connection_jndi_provider_url"],
+            jndi_security_credentials=var["connection_jndi_security_credentials"],
+            jndi_security_principal=var["connection_jndi_security_principal"],
             key_id=oci_kms_key["test_key"]["id"],
             key_store=var["connection_key_store"],
             key_store_password=var["connection_key_store_password"],
@@ -1968,8 +2373,11 @@ class Connection(pulumi.CustomResource):
             public_key_fingerprint=var["connection_public_key_fingerprint"],
             region=var["connection_region"],
             sas_token=var["connection_sas_token"],
+            secret_access_key=var["connection_secret_access_key"],
             security_protocol=var["connection_security_protocol"],
             session_mode=var["connection_session_mode"],
+            should_use_jndi=var["connection_should_use_jndi"],
+            should_validate_server_certificate=var["connection_should_validate_server_certificate"],
             ssl_ca=var["connection_ssl_ca"],
             ssl_cert=var["connection_ssl_cert"],
             ssl_crl=var["connection_ssl_crl"],
@@ -1998,18 +2406,22 @@ class Connection(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param pulumi.Input[str] authentication_type: (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        :param pulumi.Input[str] authentication_type: (Updatable) Used authentication mechanism.
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionBootstrapServerArgs']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] connection_string: (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        :param pulumi.Input[str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        :param pulumi.Input[str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         :param pulumi.Input[str] connection_type: (Updatable) The connection type.
+        :param pulumi.Input[str] connection_url: (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
         :param pulumi.Input[str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
+        :param pulumi.Input[str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
         :param pulumi.Input[str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param pulumi.Input[str] database_name: (Updatable) The name of the database.
         :param pulumi.Input[str] db_system_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
@@ -2020,22 +2432,30 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host.
-        :param pulumi.Input[str] key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        :param pulumi.Input[str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        :param pulumi.Input[str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        :param pulumi.Input[str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal.
+        :param pulumi.Input[str] jndi_security_principal: (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
         :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-        :param pulumi.Input[str] private_key_passphrase: (Updatable) The passphrase of the private key.
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of private key file in PEM format.
+        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-        :param pulumi.Input[str] security_protocol: (Updatable) Security protocol for PostgreSQL.
+        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param pulumi.Input[str] security_protocol: (Updatable) Security Protocol.
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
         :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -2048,9 +2468,9 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file.
         :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password.
         :param pulumi.Input[str] url: (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
-        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
-        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
         """
         ...
@@ -2075,6 +2495,7 @@ class Connection(pulumi.CustomResource):
             connection_type=var["connection_connection_type"],
             display_name=var["connection_display_name"],
             technology_type=var["connection_technology_type"],
+            access_key_id=oci_kms_key["test_key"]["id"],
             account_key=var["connection_account_key"],
             account_name=var["connection_account_name"],
             additional_attributes=[oci.golden_gate.ConnectionAdditionalAttributeArgs(
@@ -2090,8 +2511,11 @@ class Connection(pulumi.CustomResource):
             )],
             client_id=oci_golden_gate_client["test_client"]["id"],
             client_secret=var["connection_client_secret"],
+            connection_factory=var["connection_connection_factory"],
             connection_string=var["connection_connection_string"],
+            connection_url=var["connection_connection_url"],
             consumer_properties=var["connection_consumer_properties"],
+            core_site_xml=var["connection_core_site_xml"],
             database_id=oci_database_database["test_database"]["id"],
             database_name=oci_database_database["test_database"]["name"],
             db_system_id=oci_database_db_system["test_db_system"]["id"],
@@ -2105,6 +2529,11 @@ class Connection(pulumi.CustomResource):
                 "bar-key": "value",
             },
             host=var["connection_host"],
+            jndi_connection_factory=var["connection_jndi_connection_factory"],
+            jndi_initial_context_factory=var["connection_jndi_initial_context_factory"],
+            jndi_provider_url=var["connection_jndi_provider_url"],
+            jndi_security_credentials=var["connection_jndi_security_credentials"],
+            jndi_security_principal=var["connection_jndi_security_principal"],
             key_id=oci_kms_key["test_key"]["id"],
             key_store=var["connection_key_store"],
             key_store_password=var["connection_key_store_password"],
@@ -2118,8 +2547,11 @@ class Connection(pulumi.CustomResource):
             public_key_fingerprint=var["connection_public_key_fingerprint"],
             region=var["connection_region"],
             sas_token=var["connection_sas_token"],
+            secret_access_key=var["connection_secret_access_key"],
             security_protocol=var["connection_security_protocol"],
             session_mode=var["connection_session_mode"],
+            should_use_jndi=var["connection_should_use_jndi"],
+            should_validate_server_certificate=var["connection_should_validate_server_certificate"],
             ssl_ca=var["connection_ssl_ca"],
             ssl_cert=var["connection_ssl_cert"],
             ssl_crl=var["connection_ssl_crl"],
@@ -2161,6 +2593,7 @@ class Connection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 access_key_id: Optional[pulumi.Input[str]] = None,
                  account_key: Optional[pulumi.Input[str]] = None,
                  account_name: Optional[pulumi.Input[str]] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
@@ -2170,9 +2603,12 @@ class Connection(pulumi.CustomResource):
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 connection_factory: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
                  connection_type: Optional[pulumi.Input[str]] = None,
+                 connection_url: Optional[pulumi.Input[str]] = None,
                  consumer_properties: Optional[pulumi.Input[str]] = None,
+                 core_site_xml: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_name: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
@@ -2183,6 +2619,11 @@ class Connection(pulumi.CustomResource):
                  endpoint: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host: Optional[pulumi.Input[str]] = None,
+                 jndi_connection_factory: Optional[pulumi.Input[str]] = None,
+                 jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
+                 jndi_provider_url: Optional[pulumi.Input[str]] = None,
+                 jndi_security_credentials: Optional[pulumi.Input[str]] = None,
+                 jndi_security_principal: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_store: Optional[pulumi.Input[str]] = None,
                  key_store_password: Optional[pulumi.Input[str]] = None,
@@ -2196,8 +2637,11 @@ class Connection(pulumi.CustomResource):
                  public_key_fingerprint: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  sas_token: Optional[pulumi.Input[str]] = None,
+                 secret_access_key: Optional[pulumi.Input[str]] = None,
                  security_protocol: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
+                 should_use_jndi: Optional[pulumi.Input[bool]] = None,
+                 should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
                  ssl_crl: Optional[pulumi.Input[str]] = None,
@@ -2224,6 +2668,7 @@ class Connection(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ConnectionArgs.__new__(ConnectionArgs)
 
+            __props__.__dict__["access_key_id"] = access_key_id
             __props__.__dict__["account_key"] = account_key
             __props__.__dict__["account_name"] = account_name
             __props__.__dict__["additional_attributes"] = additional_attributes
@@ -2235,11 +2680,14 @@ class Connection(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["connection_factory"] = connection_factory
             __props__.__dict__["connection_string"] = connection_string
             if connection_type is None and not opts.urn:
                 raise TypeError("Missing required property 'connection_type'")
             __props__.__dict__["connection_type"] = connection_type
+            __props__.__dict__["connection_url"] = connection_url
             __props__.__dict__["consumer_properties"] = consumer_properties
+            __props__.__dict__["core_site_xml"] = core_site_xml
             __props__.__dict__["database_id"] = database_id
             __props__.__dict__["database_name"] = database_name
             __props__.__dict__["db_system_id"] = db_system_id
@@ -2252,6 +2700,11 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["endpoint"] = endpoint
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["host"] = host
+            __props__.__dict__["jndi_connection_factory"] = jndi_connection_factory
+            __props__.__dict__["jndi_initial_context_factory"] = jndi_initial_context_factory
+            __props__.__dict__["jndi_provider_url"] = jndi_provider_url
+            __props__.__dict__["jndi_security_credentials"] = jndi_security_credentials
+            __props__.__dict__["jndi_security_principal"] = jndi_security_principal
             __props__.__dict__["key_id"] = key_id
             __props__.__dict__["key_store"] = key_store
             __props__.__dict__["key_store_password"] = None if key_store_password is None else pulumi.Output.secret(key_store_password)
@@ -2265,8 +2718,11 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["public_key_fingerprint"] = public_key_fingerprint
             __props__.__dict__["region"] = region
             __props__.__dict__["sas_token"] = sas_token
+            __props__.__dict__["secret_access_key"] = secret_access_key
             __props__.__dict__["security_protocol"] = security_protocol
             __props__.__dict__["session_mode"] = session_mode
+            __props__.__dict__["should_use_jndi"] = should_use_jndi
+            __props__.__dict__["should_validate_server_certificate"] = should_validate_server_certificate
             __props__.__dict__["ssl_ca"] = ssl_ca
             __props__.__dict__["ssl_cert"] = ssl_cert
             __props__.__dict__["ssl_crl"] = ssl_crl
@@ -2304,6 +2760,7 @@ class Connection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            access_key_id: Optional[pulumi.Input[str]] = None,
             account_key: Optional[pulumi.Input[str]] = None,
             account_name: Optional[pulumi.Input[str]] = None,
             additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
@@ -2313,9 +2770,12 @@ class Connection(pulumi.CustomResource):
             client_id: Optional[pulumi.Input[str]] = None,
             client_secret: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            connection_factory: Optional[pulumi.Input[str]] = None,
             connection_string: Optional[pulumi.Input[str]] = None,
             connection_type: Optional[pulumi.Input[str]] = None,
+            connection_url: Optional[pulumi.Input[str]] = None,
             consumer_properties: Optional[pulumi.Input[str]] = None,
+            core_site_xml: Optional[pulumi.Input[str]] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             database_name: Optional[pulumi.Input[str]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
@@ -2327,6 +2787,11 @@ class Connection(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             host: Optional[pulumi.Input[str]] = None,
             ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionIngressIpArgs']]]]] = None,
+            jndi_connection_factory: Optional[pulumi.Input[str]] = None,
+            jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
+            jndi_provider_url: Optional[pulumi.Input[str]] = None,
+            jndi_security_credentials: Optional[pulumi.Input[str]] = None,
+            jndi_security_principal: Optional[pulumi.Input[str]] = None,
             key_id: Optional[pulumi.Input[str]] = None,
             key_store: Optional[pulumi.Input[str]] = None,
             key_store_password: Optional[pulumi.Input[str]] = None,
@@ -2341,8 +2806,11 @@ class Connection(pulumi.CustomResource):
             public_key_fingerprint: Optional[pulumi.Input[str]] = None,
             region: Optional[pulumi.Input[str]] = None,
             sas_token: Optional[pulumi.Input[str]] = None,
+            secret_access_key: Optional[pulumi.Input[str]] = None,
             security_protocol: Optional[pulumi.Input[str]] = None,
             session_mode: Optional[pulumi.Input[str]] = None,
+            should_use_jndi: Optional[pulumi.Input[bool]] = None,
+            should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
             ssl_ca: Optional[pulumi.Input[str]] = None,
             ssl_cert: Optional[pulumi.Input[str]] = None,
             ssl_crl: Optional[pulumi.Input[str]] = None,
@@ -2371,18 +2839,22 @@ class Connection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param pulumi.Input[str] authentication_type: (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        :param pulumi.Input[str] authentication_type: (Updatable) Used authentication mechanism.
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionBootstrapServerArgs']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] connection_string: (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        :param pulumi.Input[str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        :param pulumi.Input[str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         :param pulumi.Input[str] connection_type: (Updatable) The connection type.
+        :param pulumi.Input[str] connection_url: (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
         :param pulumi.Input[str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
+        :param pulumi.Input[str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
         :param pulumi.Input[str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param pulumi.Input[str] database_name: (Updatable) The name of the database.
         :param pulumi.Input[str] db_system_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
@@ -2393,24 +2865,32 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionIngressIpArgs']]]] ingress_ips: List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
-        :param pulumi.Input[str] key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionIngressIpArgs']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        :param pulumi.Input[str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        :param pulumi.Input[str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        :param pulumi.Input[str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal.
+        :param pulumi.Input[str] jndi_security_principal: (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
         :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-        :param pulumi.Input[str] private_key_passphrase: (Updatable) The passphrase of the private key.
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of private key file in PEM format.
+        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-        :param pulumi.Input[str] security_protocol: (Updatable) Security protocol for PostgreSQL.
+        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param pulumi.Input[str] security_protocol: (Updatable) Security Protocol.
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
         :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -2427,15 +2907,16 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file.
         :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password.
         :param pulumi.Input[str] url: (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
-        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
-        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _ConnectionState.__new__(_ConnectionState)
 
+        __props__.__dict__["access_key_id"] = access_key_id
         __props__.__dict__["account_key"] = account_key
         __props__.__dict__["account_name"] = account_name
         __props__.__dict__["additional_attributes"] = additional_attributes
@@ -2445,9 +2926,12 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["client_id"] = client_id
         __props__.__dict__["client_secret"] = client_secret
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["connection_factory"] = connection_factory
         __props__.__dict__["connection_string"] = connection_string
         __props__.__dict__["connection_type"] = connection_type
+        __props__.__dict__["connection_url"] = connection_url
         __props__.__dict__["consumer_properties"] = consumer_properties
+        __props__.__dict__["core_site_xml"] = core_site_xml
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["database_name"] = database_name
         __props__.__dict__["db_system_id"] = db_system_id
@@ -2459,6 +2943,11 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["host"] = host
         __props__.__dict__["ingress_ips"] = ingress_ips
+        __props__.__dict__["jndi_connection_factory"] = jndi_connection_factory
+        __props__.__dict__["jndi_initial_context_factory"] = jndi_initial_context_factory
+        __props__.__dict__["jndi_provider_url"] = jndi_provider_url
+        __props__.__dict__["jndi_security_credentials"] = jndi_security_credentials
+        __props__.__dict__["jndi_security_principal"] = jndi_security_principal
         __props__.__dict__["key_id"] = key_id
         __props__.__dict__["key_store"] = key_store
         __props__.__dict__["key_store_password"] = key_store_password
@@ -2473,8 +2962,11 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["public_key_fingerprint"] = public_key_fingerprint
         __props__.__dict__["region"] = region
         __props__.__dict__["sas_token"] = sas_token
+        __props__.__dict__["secret_access_key"] = secret_access_key
         __props__.__dict__["security_protocol"] = security_protocol
         __props__.__dict__["session_mode"] = session_mode
+        __props__.__dict__["should_use_jndi"] = should_use_jndi
+        __props__.__dict__["should_validate_server_certificate"] = should_validate_server_certificate
         __props__.__dict__["ssl_ca"] = ssl_ca
         __props__.__dict__["ssl_cert"] = ssl_cert
         __props__.__dict__["ssl_crl"] = ssl_crl
@@ -2497,6 +2989,14 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["vault_id"] = vault_id
         __props__.__dict__["wallet"] = wallet
         return Connection(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        """
+        return pulumi.get(self, "access_key_id")
 
     @property
     @pulumi.getter(name="accountKey")
@@ -2526,7 +3026,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        (Updatable) Used authentication mechanism.
         """
         return pulumi.get(self, "authentication_type")
 
@@ -2571,10 +3071,18 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="connectionFactory")
+    def connection_factory(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        """
+        return pulumi.get(self, "connection_factory")
+
+    @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> pulumi.Output[str]:
         """
-        (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         """
         return pulumi.get(self, "connection_string")
 
@@ -2587,12 +3095,28 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "connection_type")
 
     @property
+    @pulumi.getter(name="connectionUrl")
+    def connection_url(self) -> pulumi.Output[str]:
+        """
+        (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        """
+        return pulumi.get(self, "connection_url")
+
+    @property
     @pulumi.getter(name="consumerProperties")
     def consumer_properties(self) -> pulumi.Output[str]:
         """
         (Updatable) The base64 encoded content of the consumer.properties file.
         """
         return pulumi.get(self, "consumer_properties")
+
+    @property
+    @pulumi.getter(name="coreSiteXml")
+    def core_site_xml(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        """
+        return pulumi.get(self, "core_site_xml")
 
     @property
     @pulumi.getter(name="databaseId")
@@ -2678,15 +3202,55 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="ingressIps")
     def ingress_ips(self) -> pulumi.Output[Sequence['outputs.ConnectionIngressIp']]:
         """
-        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         """
         return pulumi.get(self, "ingress_ips")
+
+    @property
+    @pulumi.getter(name="jndiConnectionFactory")
+    def jndi_connection_factory(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        """
+        return pulumi.get(self, "jndi_connection_factory")
+
+    @property
+    @pulumi.getter(name="jndiInitialContextFactory")
+    def jndi_initial_context_factory(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        """
+        return pulumi.get(self, "jndi_initial_context_factory")
+
+    @property
+    @pulumi.getter(name="jndiProviderUrl")
+    def jndi_provider_url(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        """
+        return pulumi.get(self, "jndi_provider_url")
+
+    @property
+    @pulumi.getter(name="jndiSecurityCredentials")
+    def jndi_security_credentials(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The password associated to the principal.
+        """
+        return pulumi.get(self, "jndi_security_credentials")
+
+    @property
+    @pulumi.getter(name="jndiSecurityPrincipal")
+    def jndi_security_principal(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        """
+        return pulumi.get(self, "jndi_security_principal")
 
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "key_id")
 
@@ -2726,7 +3290,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[str]:
         """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         """
         return pulumi.get(self, "password")
 
@@ -2750,7 +3314,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> pulumi.Output[str]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of private key file in PEM format.
         """
         return pulumi.get(self, "private_key_file")
 
@@ -2758,7 +3322,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="privateKeyPassphrase")
     def private_key_passphrase(self) -> pulumi.Output[str]:
         """
-        (Updatable) The passphrase of the private key.
+        (Updatable) Password if the private key file is encrypted.
         """
         return pulumi.get(self, "private_key_passphrase")
 
@@ -2795,10 +3359,18 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "sas_token")
 
     @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @property
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> pulumi.Output[str]:
         """
-        (Updatable) Security protocol for PostgreSQL.
+        (Updatable) Security Protocol.
         """
         return pulumi.get(self, "security_protocol")
 
@@ -2811,10 +3383,26 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "session_mode")
 
     @property
+    @pulumi.getter(name="shouldUseJndi")
+    def should_use_jndi(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        """
+        return pulumi.get(self, "should_use_jndi")
+
+    @property
+    @pulumi.getter(name="shouldValidateServerCertificate")
+    def should_validate_server_certificate(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        """
+        return pulumi.get(self, "should_validate_server_certificate")
+
+    @property
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> pulumi.Output[str]:
         """
-        (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -2950,7 +3538,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
         """
         return pulumi.get(self, "user_id")
 
@@ -2958,7 +3546,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def username(self) -> pulumi.Output[str]:
         """
-        (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         """
         return pulumi.get(self, "username")
 
@@ -2966,7 +3554,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         return pulumi.get(self, "vault_id")
 

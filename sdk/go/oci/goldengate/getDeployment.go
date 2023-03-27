@@ -67,7 +67,7 @@ type LookupDeploymentResult struct {
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas []GetDeploymentDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
 	DeploymentId              string                                  `pulumi:"deploymentId"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl string `pulumi:"deploymentUrl"`
@@ -198,7 +198,7 @@ func (o LookupDeploymentResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
 
-// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 func (o LookupDeploymentResultOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentType }).(pulumi.StringOutput)
 }

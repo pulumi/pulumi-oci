@@ -94,6 +94,10 @@ export interface GetFunctionResult {
      */
     readonly provisionedConcurrencyConfigs: outputs.Functions.GetFunctionProvisionedConcurrencyConfig[];
     /**
+     * The source details for the Function. The function can be created from various sources.
+     */
+    readonly sourceDetails: outputs.Functions.GetFunctionSourceDetail[];
+    /**
      * The current state of the function.
      */
     readonly state: string;

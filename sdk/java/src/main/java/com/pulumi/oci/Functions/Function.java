@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Functions.FunctionArgs;
 import com.pulumi.oci.Functions.inputs.FunctionState;
 import com.pulumi.oci.Functions.outputs.FunctionProvisionedConcurrencyConfig;
+import com.pulumi.oci.Functions.outputs.FunctionSourceDetails;
 import com.pulumi.oci.Functions.outputs.FunctionTraceConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -33,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Functions.Function;
  * import com.pulumi.oci.Functions.FunctionArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
+ * import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -50,15 +52,19 @@ import javax.annotation.Nullable;
  *         var testFunction = new Function(&#34;testFunction&#34;, FunctionArgs.builder()        
  *             .applicationId(oci_functions_application.test_application().id())
  *             .displayName(var_.function_display_name())
- *             .image(var_.function_image())
  *             .memoryInMbs(var_.function_memory_in_mbs())
  *             .config(var_.function_config())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .image(var_.function_image())
  *             .imageDigest(var_.function_image_digest())
  *             .provisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfigArgs.builder()
  *                 .strategy(var_.function_provisioned_concurrency_config_strategy())
  *                 .count(var_.function_provisioned_concurrency_config_count())
+ *                 .build())
+ *             .sourceDetails(FunctionSourceDetailsArgs.builder()
+ *                 .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+ *                 .sourceType(var_.function_source_details_source_type())
  *                 .build())
  *             .timeoutInSeconds(var_.function_timeout_in_seconds())
  *             .traceConfig(FunctionTraceConfigArgs.builder()
@@ -234,6 +240,20 @@ public class Function extends com.pulumi.resources.CustomResource {
      */
     public Output<FunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfig() {
         return this.provisionedConcurrencyConfig;
+    }
+    /**
+     * The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    @Export(name="sourceDetails", type=FunctionSourceDetails.class, parameters={})
+    private Output<FunctionSourceDetails> sourceDetails;
+
+    /**
+     * @return The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    public Output<FunctionSourceDetails> sourceDetails() {
+        return this.sourceDetails;
     }
     /**
      * The current state of the function.

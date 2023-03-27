@@ -146,15 +146,15 @@ public final class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs extends 
      * (Updatable) The maintenance window scheduling preference.
      * 
      */
-    @Import(name="preference", required=true)
-    private Output<String> preference;
+    @Import(name="preference")
+    private @Nullable Output<String> preference;
 
     /**
      * @return (Updatable) The maintenance window scheduling preference.
      * 
      */
-    public Output<String> preference() {
-        return this.preference;
+    public Optional<Output<String>> preference() {
+        return Optional.ofNullable(this.preference);
     }
 
     /**
@@ -412,7 +412,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs extends 
          * @return builder
          * 
          */
-        public Builder preference(Output<String> preference) {
+        public Builder preference(@Nullable Output<String> preference) {
             $.preference = preference;
             return this;
         }
@@ -459,7 +459,6 @@ public final class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs extends 
         }
 
         public CloudAutonomousVmClusterMaintenanceWindowDetailsArgs build() {
-            $.preference = Objects.requireNonNull($.preference, "expected parameter 'preference' to be non-null");
             return $;
         }
     }

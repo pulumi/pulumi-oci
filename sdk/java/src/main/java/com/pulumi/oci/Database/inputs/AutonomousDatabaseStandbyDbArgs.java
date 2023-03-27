@@ -76,6 +76,21 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.timeDataGuardRoleChanged);
     }
 
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * 
+     */
+    @Import(name="timeDisasterRecoveryRoleChanged")
+    private @Nullable Output<String> timeDisasterRecoveryRoleChanged;
+
+    /**
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * 
+     */
+    public Optional<Output<String>> timeDisasterRecoveryRoleChanged() {
+        return Optional.ofNullable(this.timeDisasterRecoveryRoleChanged);
+    }
+
     private AutonomousDatabaseStandbyDbArgs() {}
 
     private AutonomousDatabaseStandbyDbArgs(AutonomousDatabaseStandbyDbArgs $) {
@@ -83,6 +98,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
         this.timeDataGuardRoleChanged = $.timeDataGuardRoleChanged;
+        this.timeDisasterRecoveryRoleChanged = $.timeDisasterRecoveryRoleChanged;
     }
 
     public static Builder builder() {
@@ -185,6 +201,27 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
          */
         public Builder timeDataGuardRoleChanged(String timeDataGuardRoleChanged) {
             return timeDataGuardRoleChanged(Output.of(timeDataGuardRoleChanged));
+        }
+
+        /**
+         * @param timeDisasterRecoveryRoleChanged The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDisasterRecoveryRoleChanged(@Nullable Output<String> timeDisasterRecoveryRoleChanged) {
+            $.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            return this;
+        }
+
+        /**
+         * @param timeDisasterRecoveryRoleChanged The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDisasterRecoveryRoleChanged(String timeDisasterRecoveryRoleChanged) {
+            return timeDisasterRecoveryRoleChanged(Output.of(timeDisasterRecoveryRoleChanged));
         }
 
         public AutonomousDatabaseStandbyDbArgs build() {

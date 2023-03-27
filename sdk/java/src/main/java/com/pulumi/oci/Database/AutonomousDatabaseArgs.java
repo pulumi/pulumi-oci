@@ -751,6 +751,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    @Import(name="remoteDisasterRecoveryType")
+    private @Nullable Output<String> remoteDisasterRecoveryType;
+
+    /**
+     * @return Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    public Optional<Output<String>> remoteDisasterRecoveryType() {
+        return Optional.ofNullable(this.remoteDisasterRecoveryType);
+    }
+
+    /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
      * 
      */
@@ -1025,6 +1040,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.privateEndpointIp = $.privateEndpointIp;
         this.privateEndpointLabel = $.privateEndpointLabel;
         this.refreshableMode = $.refreshableMode;
+        this.remoteDisasterRecoveryType = $.remoteDisasterRecoveryType;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.scheduledOperations = $.scheduledOperations;
         this.secretId = $.secretId;
@@ -2088,6 +2104,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder refreshableMode(String refreshableMode) {
             return refreshableMode(Output.of(refreshableMode));
+        }
+
+        /**
+         * @param remoteDisasterRecoveryType Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteDisasterRecoveryType(@Nullable Output<String> remoteDisasterRecoveryType) {
+            $.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
+            return this;
+        }
+
+        /**
+         * @param remoteDisasterRecoveryType Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteDisasterRecoveryType(String remoteDisasterRecoveryType) {
+            return remoteDisasterRecoveryType(Output.of(remoteDisasterRecoveryType));
         }
 
         /**

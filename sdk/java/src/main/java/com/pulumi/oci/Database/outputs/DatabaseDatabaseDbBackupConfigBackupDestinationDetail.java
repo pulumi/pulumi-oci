@@ -12,6 +12,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     * 
+     */
+    private @Nullable String dbrsPolicyId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
@@ -24,6 +29,13 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     private @Nullable String vpcUser;
 
     private DatabaseDatabaseDbBackupConfigBackupDestinationDetail() {}
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     * 
+     */
+    public Optional<String> dbrsPolicyId() {
+        return Optional.ofNullable(this.dbrsPolicyId);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
@@ -51,17 +63,24 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String dbrsPolicyId;
         private @Nullable String id;
         private @Nullable String type;
         private @Nullable String vpcUser;
         public Builder() {}
         public Builder(DatabaseDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.type = defaults.type;
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
+        public Builder dbrsPolicyId(@Nullable String dbrsPolicyId) {
+            this.dbrsPolicyId = dbrsPolicyId;
+            return this;
+        }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
@@ -79,6 +98,7 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
         }
         public DatabaseDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var o = new DatabaseDatabaseDbBackupConfigBackupDestinationDetail();
+            o.dbrsPolicyId = dbrsPolicyId;
             o.id = id;
             o.type = type;
             o.vpcUser = vpcUser;

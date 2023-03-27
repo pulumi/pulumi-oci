@@ -40,6 +40,10 @@ public final class AutonomousVmClusterMaintenanceWindow {
      * 
      */
     private @Nullable List<AutonomousVmClusterMaintenanceWindowMonth> months;
+    /**
+     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     */
     private @Nullable String patchingMode;
     /**
      * @return (Updatable) The maintenance window scheduling preference.
@@ -91,6 +95,10 @@ public final class AutonomousVmClusterMaintenanceWindow {
     public List<AutonomousVmClusterMaintenanceWindowMonth> months() {
         return this.months == null ? List.of() : this.months;
     }
+    /**
+     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     */
     public Optional<String> patchingMode() {
         return Optional.ofNullable(this.patchingMode);
     }

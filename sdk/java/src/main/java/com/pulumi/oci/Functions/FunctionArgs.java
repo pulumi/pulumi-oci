@@ -6,6 +6,7 @@ package com.pulumi.oci.Functions;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
+import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArgs;
 import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
 import java.lang.Integer;
 import java.lang.Object;
@@ -99,15 +100,15 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
-    @Import(name="image", required=true)
-    private Output<String> image;
+    @Import(name="image")
+    private @Nullable Output<String> image;
 
     /**
      * @return (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
-    public Output<String> image() {
-        return this.image;
+    public Optional<Output<String>> image() {
+        return Optional.ofNullable(this.image);
     }
 
     /**
@@ -156,6 +157,21 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    @Import(name="sourceDetails")
+    private @Nullable Output<FunctionSourceDetailsArgs> sourceDetails;
+
+    /**
+     * @return The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    public Optional<Output<FunctionSourceDetailsArgs>> sourceDetails() {
+        return Optional.ofNullable(this.sourceDetails);
+    }
+
+    /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      * 
      */
@@ -197,6 +213,7 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         this.imageDigest = $.imageDigest;
         this.memoryInMbs = $.memoryInMbs;
         this.provisionedConcurrencyConfig = $.provisionedConcurrencyConfig;
+        this.sourceDetails = $.sourceDetails;
         this.timeoutInSeconds = $.timeoutInSeconds;
         this.traceConfig = $.traceConfig;
     }
@@ -330,7 +347,7 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder image(Output<String> image) {
+        public Builder image(@Nullable Output<String> image) {
             $.image = image;
             return this;
         }
@@ -409,6 +426,27 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param sourceDetails The source details for the Function. The function can be created from various sources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDetails(@Nullable Output<FunctionSourceDetailsArgs> sourceDetails) {
+            $.sourceDetails = sourceDetails;
+            return this;
+        }
+
+        /**
+         * @param sourceDetails The source details for the Function. The function can be created from various sources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDetails(FunctionSourceDetailsArgs sourceDetails) {
+            return sourceDetails(Output.of(sourceDetails));
+        }
+
+        /**
          * @param timeoutInSeconds (Updatable) Timeout for executions of the function. Value in seconds.
          * 
          * @return builder
@@ -453,7 +491,6 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         public FunctionArgs build() {
             $.applicationId = Objects.requireNonNull($.applicationId, "expected parameter 'applicationId' to be non-null");
             $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.image = Objects.requireNonNull($.image, "expected parameter 'image' to be non-null");
             $.memoryInMbs = Objects.requireNonNull($.memoryInMbs, "expected parameter 'memoryInMbs' to be non-null");
             return $;
         }

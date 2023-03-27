@@ -23,7 +23,7 @@ class GetAutonomousDatabaseBackupsResult:
     """
     A collection of values returned by getAutonomousDatabaseBackups.
     """
-    def __init__(__self__, autonomous_database_backups=None, autonomous_database_id=None, compartment_id=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, autonomous_database_backups=None, autonomous_database_id=None, compartment_id=None, display_name=None, filters=None, id=None, state=None, type=None):
         if autonomous_database_backups and not isinstance(autonomous_database_backups, list):
             raise TypeError("Expected argument 'autonomous_database_backups' to be a list")
         pulumi.set(__self__, "autonomous_database_backups", autonomous_database_backups)
@@ -45,6 +45,9 @@ class GetAutonomousDatabaseBackupsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="autonomousDatabaseBackups")
@@ -99,6 +102,14 @@ class GetAutonomousDatabaseBackupsResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of backup.
+        """
+        return pulumi.get(self, "type")
+
 
 class AwaitableGetAutonomousDatabaseBackupsResult(GetAutonomousDatabaseBackupsResult):
     # pylint: disable=using-constant-test
@@ -112,7 +123,8 @@ class AwaitableGetAutonomousDatabaseBackupsResult(GetAutonomousDatabaseBackupsRe
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
-            state=self.state)
+            state=self.state,
+            type=self.type)
 
 
 def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None,
@@ -120,6 +132,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None
                                     display_name: Optional[str] = None,
                                     filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseBackupsFilterArgs']]] = None,
                                     state: Optional[str] = None,
+                                    type: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseBackupsResult:
     """
     This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
@@ -135,7 +148,8 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None
     test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
         compartment_id=var["compartment_id"],
         display_name=var["autonomous_database_backup_display_name"],
-        state=var["autonomous_database_backup_state"])
+        state=var["autonomous_database_backup_state"],
+        type=var["autonomous_database_backup_type"])
     ```
 
 
@@ -143,6 +157,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    :param str type: A filter to return only backups that matches with the given type of Backup.
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
@@ -150,6 +165,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
+    __args__['type'] = type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups', __args__, opts=opts, typ=GetAutonomousDatabaseBackupsResult).value
 
@@ -160,7 +176,8 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None
         display_name=__ret__.display_name,
         filters=__ret__.filters,
         id=__ret__.id,
-        state=__ret__.state)
+        state=__ret__.state,
+        type=__ret__.type)
 
 
 @_utilities.lift_output_func(get_autonomous_database_backups)
@@ -169,6 +186,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulu
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseBackupsFilterArgs']]]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
+                                           type: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseBackupsResult]:
     """
     This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
@@ -184,7 +202,8 @@ def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulu
     test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
         compartment_id=var["compartment_id"],
         display_name=var["autonomous_database_backup_display_name"],
-        state=var["autonomous_database_backup_state"])
+        state=var["autonomous_database_backup_state"],
+        type=var["autonomous_database_backup_type"])
     ```
 
 
@@ -192,5 +211,6 @@ def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulu
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    :param str type: A filter to return only backups that matches with the given type of Backup.
     """
     ...

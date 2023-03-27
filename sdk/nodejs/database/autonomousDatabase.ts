@@ -182,6 +182,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     */
+    public /*out*/ readonly disasterRecoveryRegionType!: pulumi.Output<string>;
+    /**
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
@@ -286,6 +290,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     */
+    public /*out*/ readonly localDisasterRecoveryType!: pulumi.Output<string>;
+    /**
      * Autonomous Data Guard standby database details.
      */
     public /*out*/ readonly localStandbyDbs!: pulumi.Output<outputs.Database.AutonomousDatabaseLocalStandbyDb[]>;
@@ -358,6 +366,14 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      */
     public /*out*/ readonly refreshableStatus!: pulumi.Output<string>;
+    /**
+     * Configurations of a Disaster Recovery.
+     */
+    public /*out*/ readonly remoteDisasterRecoveryConfigurations!: pulumi.Output<outputs.Database.AutonomousDatabaseRemoteDisasterRecoveryConfiguration[]>;
+    /**
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     */
+    public readonly remoteDisasterRecoveryType!: pulumi.Output<string>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
@@ -434,6 +450,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      */
     public /*out*/ readonly timeDeletionOfFreeAutonomousDatabase!: pulumi.Output<string>;
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     */
+    public /*out*/ readonly timeDisasterRecoveryRoleChanged!: pulumi.Output<string>;
     /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      */
@@ -543,6 +563,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
             resourceInputs["dbWorkload"] = state ? state.dbWorkload : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["disasterRecoveryRegionType"] = state ? state.disasterRecoveryRegionType : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["failedDataRecoveryInSeconds"] = state ? state.failedDataRecoveryInSeconds : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -569,6 +590,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["localDisasterRecoveryType"] = state ? state.localDisasterRecoveryType : undefined;
             resourceInputs["localStandbyDbs"] = state ? state.localStandbyDbs : undefined;
             resourceInputs["longTermBackupSchedules"] = state ? state.longTermBackupSchedules : undefined;
             resourceInputs["maxCpuCoreCount"] = state ? state.maxCpuCoreCount : undefined;
@@ -587,6 +609,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["provisionableCpuses"] = state ? state.provisionableCpuses : undefined;
             resourceInputs["refreshableMode"] = state ? state.refreshableMode : undefined;
             resourceInputs["refreshableStatus"] = state ? state.refreshableStatus : undefined;
+            resourceInputs["remoteDisasterRecoveryConfigurations"] = state ? state.remoteDisasterRecoveryConfigurations : undefined;
+            resourceInputs["remoteDisasterRecoveryType"] = state ? state.remoteDisasterRecoveryType : undefined;
             resourceInputs["role"] = state ? state.role : undefined;
             resourceInputs["rotateKeyTrigger"] = state ? state.rotateKeyTrigger : undefined;
             resourceInputs["scheduledOperations"] = state ? state.scheduledOperations : undefined;
@@ -606,6 +630,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeDataGuardRoleChanged"] = state ? state.timeDataGuardRoleChanged : undefined;
             resourceInputs["timeDeletionOfFreeAutonomousDatabase"] = state ? state.timeDeletionOfFreeAutonomousDatabase : undefined;
+            resourceInputs["timeDisasterRecoveryRoleChanged"] = state ? state.timeDisasterRecoveryRoleChanged : undefined;
             resourceInputs["timeLocalDataGuardEnabled"] = state ? state.timeLocalDataGuardEnabled : undefined;
             resourceInputs["timeMaintenanceBegin"] = state ? state.timeMaintenanceBegin : undefined;
             resourceInputs["timeMaintenanceEnd"] = state ? state.timeMaintenanceEnd : undefined;
@@ -677,6 +702,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["privateEndpointIp"] = args ? args.privateEndpointIp : undefined;
             resourceInputs["privateEndpointLabel"] = args ? args.privateEndpointLabel : undefined;
             resourceInputs["refreshableMode"] = args ? args.refreshableMode : undefined;
+            resourceInputs["remoteDisasterRecoveryType"] = args ? args.remoteDisasterRecoveryType : undefined;
             resourceInputs["rotateKeyTrigger"] = args ? args.rotateKeyTrigger : undefined;
             resourceInputs["scheduledOperations"] = args ? args.scheduledOperations : undefined;
             resourceInputs["secretId"] = args ? args.secretId : undefined;
@@ -701,6 +727,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["connectionUrls"] = undefined /*out*/;
             resourceInputs["dataguardRegionType"] = undefined /*out*/;
+            resourceInputs["disasterRecoveryRegionType"] = undefined /*out*/;
             resourceInputs["failedDataRecoveryInSeconds"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
             resourceInputs["isPreview"] = undefined /*out*/;
@@ -712,6 +739,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["kmsKeyLifecycleDetails"] = undefined /*out*/;
             resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["localDisasterRecoveryType"] = undefined /*out*/;
             resourceInputs["localStandbyDbs"] = undefined /*out*/;
             resourceInputs["longTermBackupSchedules"] = undefined /*out*/;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
@@ -720,6 +748,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["privateEndpoint"] = undefined /*out*/;
             resourceInputs["provisionableCpuses"] = undefined /*out*/;
             resourceInputs["refreshableStatus"] = undefined /*out*/;
+            resourceInputs["remoteDisasterRecoveryConfigurations"] = undefined /*out*/;
             resourceInputs["role"] = undefined /*out*/;
             resourceInputs["serviceConsoleUrl"] = undefined /*out*/;
             resourceInputs["standbyDbs"] = undefined /*out*/;
@@ -728,6 +757,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeDataGuardRoleChanged"] = undefined /*out*/;
             resourceInputs["timeDeletionOfFreeAutonomousDatabase"] = undefined /*out*/;
+            resourceInputs["timeDisasterRecoveryRoleChanged"] = undefined /*out*/;
             resourceInputs["timeLocalDataGuardEnabled"] = undefined /*out*/;
             resourceInputs["timeMaintenanceBegin"] = undefined /*out*/;
             resourceInputs["timeMaintenanceEnd"] = undefined /*out*/;
@@ -887,6 +917,10 @@ export interface AutonomousDatabaseState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     */
+    disasterRecoveryRegionType?: pulumi.Input<string>;
+    /**
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
@@ -991,6 +1025,10 @@ export interface AutonomousDatabaseState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     */
+    localDisasterRecoveryType?: pulumi.Input<string>;
+    /**
      * Autonomous Data Guard standby database details.
      */
     localStandbyDbs?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseLocalStandbyDb>[]>;
@@ -1063,6 +1101,14 @@ export interface AutonomousDatabaseState {
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      */
     refreshableStatus?: pulumi.Input<string>;
+    /**
+     * Configurations of a Disaster Recovery.
+     */
+    remoteDisasterRecoveryConfigurations?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseRemoteDisasterRecoveryConfiguration>[]>;
+    /**
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     */
+    remoteDisasterRecoveryType?: pulumi.Input<string>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
@@ -1139,6 +1185,10 @@ export interface AutonomousDatabaseState {
      * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      */
     timeDeletionOfFreeAutonomousDatabase?: pulumi.Input<string>;
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     */
+    timeDisasterRecoveryRoleChanged?: pulumi.Input<string>;
     /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      */
@@ -1408,6 +1458,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      */
     refreshableMode?: pulumi.Input<string>;
+    /**
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     */
+    remoteDisasterRecoveryType?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
      */

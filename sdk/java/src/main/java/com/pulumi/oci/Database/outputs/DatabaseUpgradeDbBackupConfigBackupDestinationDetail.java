@@ -12,6 +12,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     * 
+     */
+    private @Nullable String dbrsPolicyId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
@@ -38,6 +43,13 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
     private @Nullable String vpcUser;
 
     private DatabaseUpgradeDbBackupConfigBackupDestinationDetail() {}
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     * 
+     */
+    public Optional<String> dbrsPolicyId() {
+        return Optional.ofNullable(this.dbrsPolicyId);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
@@ -83,6 +95,7 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String dbrsPolicyId;
         private @Nullable String id;
         private @Nullable String internetProxy;
         private @Nullable String type;
@@ -91,6 +104,7 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
         public Builder() {}
         public Builder(DatabaseUpgradeDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.internetProxy = defaults.internetProxy;
     	      this.type = defaults.type;
@@ -98,6 +112,11 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
+        public Builder dbrsPolicyId(@Nullable String dbrsPolicyId) {
+            this.dbrsPolicyId = dbrsPolicyId;
+            return this;
+        }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
@@ -125,6 +144,7 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
         }
         public DatabaseUpgradeDbBackupConfigBackupDestinationDetail build() {
             final var o = new DatabaseUpgradeDbBackupConfigBackupDestinationDetail();
+            o.dbrsPolicyId = dbrsPolicyId;
             o.id = id;
             o.internetProxy = internetProxy;
             o.type = type;

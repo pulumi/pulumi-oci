@@ -64,6 +64,9 @@ namespace Pulumi.Oci.Database.Inputs
             set => _months = value;
         }
 
+        /// <summary>
+        /// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        /// </summary>
         [Input("patchingMode")]
         public Input<string>? PatchingMode { get; set; }
 

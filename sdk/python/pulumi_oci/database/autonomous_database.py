@@ -63,6 +63,7 @@ class AutonomousDatabaseArgs:
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
                  refreshable_mode: Optional[pulumi.Input[str]] = None,
+                 remote_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
@@ -138,6 +139,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) The private endpoint label for the resource.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        :param pulumi.Input[str] remote_disaster_recovery_type: Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) list of scheduled operations
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
@@ -246,6 +248,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
         if refreshable_mode is not None:
             pulumi.set(__self__, "refreshable_mode", refreshable_mode)
+        if remote_disaster_recovery_type is not None:
+            pulumi.set(__self__, "remote_disaster_recovery_type", remote_disaster_recovery_type)
         if rotate_key_trigger is not None:
             pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         if scheduled_operations is not None:
@@ -853,6 +857,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "refreshable_mode", value)
 
     @property
+    @pulumi.getter(name="remoteDisasterRecoveryType")
+    def remote_disaster_recovery_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "remote_disaster_recovery_type")
+
+    @remote_disaster_recovery_type.setter
+    def remote_disaster_recovery_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "remote_disaster_recovery_type", value)
+
+    @property
     @pulumi.getter(name="rotateKeyTrigger")
     def rotate_key_trigger(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -1067,6 +1083,7 @@ class _AutonomousDatabaseState:
                  db_version: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 disaster_recovery_region_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  failed_data_recovery_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1093,6 +1110,7 @@ class _AutonomousDatabaseState:
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 local_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]] = None,
                  long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -1111,6 +1129,8 @@ class _AutonomousDatabaseState:
                  provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
                  refreshable_mode: Optional[pulumi.Input[str]] = None,
                  refreshable_status: Optional[pulumi.Input[str]] = None,
+                 remote_disaster_recovery_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]] = None,
+                 remote_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  role: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
@@ -1130,6 +1150,7 @@ class _AutonomousDatabaseState:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
                  time_deletion_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
+                 time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None,
                  time_local_data_guard_enabled: Optional[pulumi.Input[str]] = None,
                  time_maintenance_begin: Optional[pulumi.Input[str]] = None,
                  time_maintenance_end: Optional[pulumi.Input[str]] = None,
@@ -1189,6 +1210,7 @@ class _AutonomousDatabaseState:
                * AJD - indicates an Autonomous JSON Database
                * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[str] disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1215,6 +1237,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
@@ -1234,6 +1257,8 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[str] refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
+        :param pulumi.Input[str] remote_disaster_recovery_type: Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) list of scheduled operations
@@ -1253,6 +1278,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] time_created: The date and time the Autonomous Database was created.
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
+        :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         :param pulumi.Input[str] time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         :param pulumi.Input[str] time_maintenance_begin: The date and time when maintenance will begin.
         :param pulumi.Input[str] time_maintenance_end: The date and time when maintenance will end.
@@ -1332,6 +1358,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "db_workload", db_workload)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if disaster_recovery_region_type is not None:
+            pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if failed_data_recovery_in_seconds is not None:
@@ -1384,6 +1412,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if local_disaster_recovery_type is not None:
+            pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         if local_standby_dbs is not None:
             pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         if long_term_backup_schedules is not None:
@@ -1420,6 +1450,10 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "refreshable_mode", refreshable_mode)
         if refreshable_status is not None:
             pulumi.set(__self__, "refreshable_status", refreshable_status)
+        if remote_disaster_recovery_configurations is not None:
+            pulumi.set(__self__, "remote_disaster_recovery_configurations", remote_disaster_recovery_configurations)
+        if remote_disaster_recovery_type is not None:
+            pulumi.set(__self__, "remote_disaster_recovery_type", remote_disaster_recovery_type)
         if role is not None:
             pulumi.set(__self__, "role", role)
         if rotate_key_trigger is not None:
@@ -1458,6 +1492,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         if time_deletion_of_free_autonomous_database is not None:
             pulumi.set(__self__, "time_deletion_of_free_autonomous_database", time_deletion_of_free_autonomous_database)
+        if time_disaster_recovery_role_changed is not None:
+            pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
         if time_local_data_guard_enabled is not None:
             pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
         if time_maintenance_begin is not None:
@@ -1874,6 +1910,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="disasterRecoveryRegionType")
+    def disaster_recovery_region_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        """
+        return pulumi.get(self, "disaster_recovery_region_type")
+
+    @disaster_recovery_region_type.setter
+    def disaster_recovery_region_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "disaster_recovery_region_type", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -2186,6 +2234,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="localDisasterRecoveryType")
+    def local_disaster_recovery_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "local_disaster_recovery_type")
+
+    @local_disaster_recovery_type.setter
+    def local_disaster_recovery_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "local_disaster_recovery_type", value)
+
+    @property
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]]:
         """
@@ -2401,6 +2461,30 @@ class _AutonomousDatabaseState:
     @refreshable_status.setter
     def refreshable_status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "refreshable_status", value)
+
+    @property
+    @pulumi.getter(name="remoteDisasterRecoveryConfigurations")
+    def remote_disaster_recovery_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]]:
+        """
+        Configurations of a Disaster Recovery.
+        """
+        return pulumi.get(self, "remote_disaster_recovery_configurations")
+
+    @remote_disaster_recovery_configurations.setter
+    def remote_disaster_recovery_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]]):
+        pulumi.set(self, "remote_disaster_recovery_configurations", value)
+
+    @property
+    @pulumi.getter(name="remoteDisasterRecoveryType")
+    def remote_disaster_recovery_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "remote_disaster_recovery_type")
+
+    @remote_disaster_recovery_type.setter
+    def remote_disaster_recovery_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "remote_disaster_recovery_type", value)
 
     @property
     @pulumi.getter
@@ -2629,6 +2713,18 @@ class _AutonomousDatabaseState:
     @time_deletion_of_free_autonomous_database.setter
     def time_deletion_of_free_autonomous_database(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_deletion_of_free_autonomous_database", value)
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
+
+    @time_disaster_recovery_role_changed.setter
+    def time_disaster_recovery_role_changed(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_disaster_recovery_role_changed", value)
 
     @property
     @pulumi.getter(name="timeLocalDataGuardEnabled")
@@ -2875,6 +2971,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
                  refreshable_mode: Optional[pulumi.Input[str]] = None,
+                 remote_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
@@ -2964,6 +3061,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) The private endpoint label for the resource.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        :param pulumi.Input[str] remote_disaster_recovery_type: Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]] scheduled_operations: (Updatable) list of scheduled operations
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
@@ -3061,6 +3159,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
                  refreshable_mode: Optional[pulumi.Input[str]] = None,
+                 remote_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
@@ -3136,6 +3235,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
             __props__.__dict__["private_endpoint_label"] = private_endpoint_label
             __props__.__dict__["refreshable_mode"] = refreshable_mode
+            __props__.__dict__["remote_disaster_recovery_type"] = remote_disaster_recovery_type
             __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
             __props__.__dict__["scheduled_operations"] = scheduled_operations
             __props__.__dict__["secret_id"] = secret_id
@@ -3160,6 +3260,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["connection_strings"] = None
             __props__.__dict__["connection_urls"] = None
             __props__.__dict__["dataguard_region_type"] = None
+            __props__.__dict__["disaster_recovery_region_type"] = None
             __props__.__dict__["failed_data_recovery_in_seconds"] = None
             __props__.__dict__["infrastructure_type"] = None
             __props__.__dict__["is_preview"] = None
@@ -3171,6 +3272,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["kms_key_lifecycle_details"] = None
             __props__.__dict__["kms_key_version_id"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["local_disaster_recovery_type"] = None
             __props__.__dict__["local_standby_dbs"] = None
             __props__.__dict__["long_term_backup_schedules"] = None
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = None
@@ -3179,6 +3281,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["private_endpoint"] = None
             __props__.__dict__["provisionable_cpuses"] = None
             __props__.__dict__["refreshable_status"] = None
+            __props__.__dict__["remote_disaster_recovery_configurations"] = None
             __props__.__dict__["role"] = None
             __props__.__dict__["service_console_url"] = None
             __props__.__dict__["standby_dbs"] = None
@@ -3187,6 +3290,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_data_guard_role_changed"] = None
             __props__.__dict__["time_deletion_of_free_autonomous_database"] = None
+            __props__.__dict__["time_disaster_recovery_role_changed"] = None
             __props__.__dict__["time_local_data_guard_enabled"] = None
             __props__.__dict__["time_maintenance_begin"] = None
             __props__.__dict__["time_maintenance_end"] = None
@@ -3242,6 +3346,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             db_version: Optional[pulumi.Input[str]] = None,
             db_workload: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            disaster_recovery_region_type: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             failed_data_recovery_in_seconds: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -3268,6 +3373,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            local_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
             local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLocalStandbyDbArgs']]]]] = None,
             long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]]] = None,
             max_cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -3286,6 +3392,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
             refreshable_mode: Optional[pulumi.Input[str]] = None,
             refreshable_status: Optional[pulumi.Input[str]] = None,
+            remote_disaster_recovery_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]]] = None,
+            remote_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
             role: Optional[pulumi.Input[str]] = None,
             rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
             scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]]] = None,
@@ -3305,6 +3413,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
             time_deletion_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
+            time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None,
             time_local_data_guard_enabled: Optional[pulumi.Input[str]] = None,
             time_maintenance_begin: Optional[pulumi.Input[str]] = None,
             time_maintenance_end: Optional[pulumi.Input[str]] = None,
@@ -3369,6 +3478,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                * AJD - indicates an Autonomous JSON Database
                * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[str] disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -3395,6 +3505,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLocalStandbyDbArgs']]]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
@@ -3414,6 +3525,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[str] refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
+        :param pulumi.Input[str] remote_disaster_recovery_type: Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]] scheduled_operations: (Updatable) list of scheduled operations
@@ -3433,6 +3546,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the Autonomous Database was created.
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
+        :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         :param pulumi.Input[str] time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         :param pulumi.Input[str] time_maintenance_begin: The date and time when maintenance will begin.
         :param pulumi.Input[str] time_maintenance_end: The date and time when maintenance will end.
@@ -3485,6 +3599,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["db_version"] = db_version
         __props__.__dict__["db_workload"] = db_workload
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["disaster_recovery_region_type"] = disaster_recovery_region_type
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["failed_data_recovery_in_seconds"] = failed_data_recovery_in_seconds
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -3511,6 +3626,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["local_disaster_recovery_type"] = local_disaster_recovery_type
         __props__.__dict__["local_standby_dbs"] = local_standby_dbs
         __props__.__dict__["long_term_backup_schedules"] = long_term_backup_schedules
         __props__.__dict__["max_cpu_core_count"] = max_cpu_core_count
@@ -3529,6 +3645,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["provisionable_cpuses"] = provisionable_cpuses
         __props__.__dict__["refreshable_mode"] = refreshable_mode
         __props__.__dict__["refreshable_status"] = refreshable_status
+        __props__.__dict__["remote_disaster_recovery_configurations"] = remote_disaster_recovery_configurations
+        __props__.__dict__["remote_disaster_recovery_type"] = remote_disaster_recovery_type
         __props__.__dict__["role"] = role
         __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
         __props__.__dict__["scheduled_operations"] = scheduled_operations
@@ -3548,6 +3666,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_data_guard_role_changed"] = time_data_guard_role_changed
         __props__.__dict__["time_deletion_of_free_autonomous_database"] = time_deletion_of_free_autonomous_database
+        __props__.__dict__["time_disaster_recovery_role_changed"] = time_disaster_recovery_role_changed
         __props__.__dict__["time_local_data_guard_enabled"] = time_local_data_guard_enabled
         __props__.__dict__["time_maintenance_begin"] = time_maintenance_begin
         __props__.__dict__["time_maintenance_end"] = time_maintenance_end
@@ -3825,6 +3944,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="disasterRecoveryRegionType")
+    def disaster_recovery_region_type(self) -> pulumi.Output[str]:
+        """
+        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        """
+        return pulumi.get(self, "disaster_recovery_region_type")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
@@ -4033,6 +4160,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localDisasterRecoveryType")
+    def local_disaster_recovery_type(self) -> pulumi.Output[str]:
+        """
+        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "local_disaster_recovery_type")
+
+    @property
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseLocalStandbyDb']]:
         """
@@ -4176,6 +4311,22 @@ class AutonomousDatabase(pulumi.CustomResource):
         The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         """
         return pulumi.get(self, "refreshable_status")
+
+    @property
+    @pulumi.getter(name="remoteDisasterRecoveryConfigurations")
+    def remote_disaster_recovery_configurations(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseRemoteDisasterRecoveryConfiguration']]:
+        """
+        Configurations of a Disaster Recovery.
+        """
+        return pulumi.get(self, "remote_disaster_recovery_configurations")
+
+    @property
+    @pulumi.getter(name="remoteDisasterRecoveryType")
+    def remote_disaster_recovery_type(self) -> pulumi.Output[str]:
+        """
+        Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "remote_disaster_recovery_type")
 
     @property
     @pulumi.getter
@@ -4328,6 +4479,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         """
         return pulumi.get(self, "time_deletion_of_free_autonomous_database")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> pulumi.Output[str]:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @property
     @pulumi.getter(name="timeLocalDataGuardEnabled")

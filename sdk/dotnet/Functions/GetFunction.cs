@@ -153,6 +153,10 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFunctionProvisionedConcurrencyConfigResult> ProvisionedConcurrencyConfigs;
         /// <summary>
+        /// The source details for the Function. The function can be created from various sources.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFunctionSourceDetailResult> SourceDetails;
+        /// <summary>
         /// The current state of the function.
         /// </summary>
         public readonly string State;
@@ -201,6 +205,8 @@ namespace Pulumi.Oci.Functions
 
             ImmutableArray<Outputs.GetFunctionProvisionedConcurrencyConfigResult> provisionedConcurrencyConfigs,
 
+            ImmutableArray<Outputs.GetFunctionSourceDetailResult> sourceDetails,
+
             string state,
 
             string timeCreated,
@@ -224,6 +230,7 @@ namespace Pulumi.Oci.Functions
             InvokeEndpoint = invokeEndpoint;
             MemoryInMbs = memoryInMbs;
             ProvisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
+            SourceDetails = sourceDetails;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

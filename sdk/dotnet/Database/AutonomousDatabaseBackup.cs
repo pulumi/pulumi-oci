@@ -52,6 +52,12 @@ namespace Pulumi.Oci.Database
         public Output<string> AutonomousDatabaseId { get; private set; } = null!;
 
         /// <summary>
+        /// Backup destination details
+        /// </summary>
+        [Output("backupDestinationDetails")]
+        public Output<Outputs.AutonomousDatabaseBackupBackupDestinationDetails> BackupDestinationDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
@@ -224,6 +230,12 @@ namespace Pulumi.Oci.Database
         public Input<string> AutonomousDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// Backup destination details
+        /// </summary>
+        [Input("backupDestinationDetails")]
+        public Input<Inputs.AutonomousDatabaseBackupBackupDestinationDetailsArgs>? BackupDestinationDetails { get; set; }
+
+        /// <summary>
         /// The user-friendly name for the backup. The name does not have to be unique.
         /// </summary>
         [Input("displayName")]
@@ -254,6 +266,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("autonomousDatabaseId")]
         public Input<string>? AutonomousDatabaseId { get; set; }
+
+        /// <summary>
+        /// Backup destination details
+        /// </summary>
+        [Input("backupDestinationDetails")]
+        public Input<Inputs.AutonomousDatabaseBackupBackupDestinationDetailsGetArgs>? BackupDestinationDetails { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

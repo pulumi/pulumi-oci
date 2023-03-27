@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFunctionProvisionedConcurrencyConfig;
+import com.pulumi.oci.Functions.outputs.GetFunctionSourceDetail;
 import com.pulumi.oci.Functions.outputs.GetFunctionTraceConfig;
 import java.lang.Integer;
 import java.lang.Object;
@@ -76,6 +77,11 @@ public final class GetFunctionResult {
      * 
      */
     private List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+    /**
+     * @return The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    private List<GetFunctionSourceDetail> sourceDetails;
     /**
      * @return The current state of the function.
      * 
@@ -191,6 +197,13 @@ public final class GetFunctionResult {
         return this.provisionedConcurrencyConfigs;
     }
     /**
+     * @return The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    public List<GetFunctionSourceDetail> sourceDetails() {
+        return this.sourceDetails;
+    }
+    /**
      * @return The current state of the function.
      * 
      */
@@ -248,6 +261,7 @@ public final class GetFunctionResult {
         private String invokeEndpoint;
         private String memoryInMbs;
         private List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+        private List<GetFunctionSourceDetail> sourceDetails;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -269,6 +283,7 @@ public final class GetFunctionResult {
     	      this.invokeEndpoint = defaults.invokeEndpoint;
     	      this.memoryInMbs = defaults.memoryInMbs;
     	      this.provisionedConcurrencyConfigs = defaults.provisionedConcurrencyConfigs;
+    	      this.sourceDetails = defaults.sourceDetails;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -345,6 +360,14 @@ public final class GetFunctionResult {
             return provisionedConcurrencyConfigs(List.of(provisionedConcurrencyConfigs));
         }
         @CustomType.Setter
+        public Builder sourceDetails(List<GetFunctionSourceDetail> sourceDetails) {
+            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            return this;
+        }
+        public Builder sourceDetails(GetFunctionSourceDetail... sourceDetails) {
+            return sourceDetails(List.of(sourceDetails));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -387,6 +410,7 @@ public final class GetFunctionResult {
             o.invokeEndpoint = invokeEndpoint;
             o.memoryInMbs = memoryInMbs;
             o.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
+            o.sourceDetails = sourceDetails;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

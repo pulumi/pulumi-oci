@@ -185,7 +185,9 @@ class _DatabaseState:
                  kms_key_migration: Optional[pulumi.Input[bool]] = None,
                  kms_key_rotation: Optional[pulumi.Input[int]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
+                 last_backup_duration_in_seconds: Optional[pulumi.Input[int]] = None,
                  last_backup_timestamp: Optional[pulumi.Input[str]] = None,
+                 last_failed_backup_timestamp: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
@@ -218,7 +220,9 @@ class _DatabaseState:
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[int] last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param pulumi.Input[str] last_backup_timestamp: The date and time when the latest database backup was created.
+        :param pulumi.Input[str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -270,8 +274,12 @@ class _DatabaseState:
             pulumi.set(__self__, "kms_key_rotation", kms_key_rotation)
         if kms_key_version_id is not None:
             pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if last_backup_duration_in_seconds is not None:
+            pulumi.set(__self__, "last_backup_duration_in_seconds", last_backup_duration_in_seconds)
         if last_backup_timestamp is not None:
             pulumi.set(__self__, "last_backup_timestamp", last_backup_timestamp)
+        if last_failed_backup_timestamp is not None:
+            pulumi.set(__self__, "last_failed_backup_timestamp", last_failed_backup_timestamp)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if ncharacter_set is not None:
@@ -534,6 +542,18 @@ class _DatabaseState:
         pulumi.set(self, "kms_key_version_id", value)
 
     @property
+    @pulumi.getter(name="lastBackupDurationInSeconds")
+    def last_backup_duration_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        The duration when the latest database backup created.
+        """
+        return pulumi.get(self, "last_backup_duration_in_seconds")
+
+    @last_backup_duration_in_seconds.setter
+    def last_backup_duration_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "last_backup_duration_in_seconds", value)
+
+    @property
     @pulumi.getter(name="lastBackupTimestamp")
     def last_backup_timestamp(self) -> Optional[pulumi.Input[str]]:
         """
@@ -544,6 +564,18 @@ class _DatabaseState:
     @last_backup_timestamp.setter
     def last_backup_timestamp(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "last_backup_timestamp", value)
+
+    @property
+    @pulumi.getter(name="lastFailedBackupTimestamp")
+    def last_failed_backup_timestamp(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when the latest database backup failed.
+        """
+        return pulumi.get(self, "last_failed_backup_timestamp")
+
+    @last_failed_backup_timestamp.setter
+    def last_failed_backup_timestamp(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_failed_backup_timestamp", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -703,7 +735,9 @@ class Database(pulumi.CustomResource):
                 db_backup_config=oci.database.DatabaseDatabaseDbBackupConfigArgs(
                     auto_backup_enabled=var["database_database_db_backup_config_auto_backup_enabled"],
                     auto_backup_window=var["database_database_db_backup_config_auto_backup_window"],
+                    backup_deletion_policy=var["database_database_db_backup_config_backup_deletion_policy"],
                     backup_destination_details=[oci.database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs(
+                        dbrs_policy_id=oci_identity_policy["test_policy"]["id"],
                         id=var["database_database_db_backup_config_backup_destination_details_id"],
                         type=var["database_database_db_backup_config_backup_destination_details_type"],
                     )],
@@ -776,7 +810,9 @@ class Database(pulumi.CustomResource):
                 db_backup_config=oci.database.DatabaseDatabaseDbBackupConfigArgs(
                     auto_backup_enabled=var["database_database_db_backup_config_auto_backup_enabled"],
                     auto_backup_window=var["database_database_db_backup_config_auto_backup_window"],
+                    backup_deletion_policy=var["database_database_db_backup_config_backup_deletion_policy"],
                     backup_destination_details=[oci.database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs(
+                        dbrs_policy_id=oci_identity_policy["test_policy"]["id"],
                         id=var["database_database_db_backup_config_backup_destination_details_id"],
                         type=var["database_database_db_backup_config_backup_destination_details_type"],
                     )],
@@ -870,7 +906,9 @@ class Database(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = None
             __props__.__dict__["freeform_tags"] = None
             __props__.__dict__["is_cdb"] = None
+            __props__.__dict__["last_backup_duration_in_seconds"] = None
             __props__.__dict__["last_backup_timestamp"] = None
+            __props__.__dict__["last_failed_backup_timestamp"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["ncharacter_set"] = None
             __props__.__dict__["pdb_name"] = None
@@ -909,7 +947,9 @@ class Database(pulumi.CustomResource):
             kms_key_migration: Optional[pulumi.Input[bool]] = None,
             kms_key_rotation: Optional[pulumi.Input[int]] = None,
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+            last_backup_duration_in_seconds: Optional[pulumi.Input[int]] = None,
             last_backup_timestamp: Optional[pulumi.Input[str]] = None,
+            last_failed_backup_timestamp: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             ncharacter_set: Optional[pulumi.Input[str]] = None,
             pdb_name: Optional[pulumi.Input[str]] = None,
@@ -947,7 +987,9 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[int] last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param pulumi.Input[str] last_backup_timestamp: The date and time when the latest database backup was created.
+        :param pulumi.Input[str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -983,7 +1025,9 @@ class Database(pulumi.CustomResource):
         __props__.__dict__["kms_key_migration"] = kms_key_migration
         __props__.__dict__["kms_key_rotation"] = kms_key_rotation
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
+        __props__.__dict__["last_backup_duration_in_seconds"] = last_backup_duration_in_seconds
         __props__.__dict__["last_backup_timestamp"] = last_backup_timestamp
+        __props__.__dict__["last_failed_backup_timestamp"] = last_failed_backup_timestamp
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["ncharacter_set"] = ncharacter_set
         __props__.__dict__["pdb_name"] = pdb_name
@@ -1157,12 +1201,28 @@ class Database(pulumi.CustomResource):
         return pulumi.get(self, "kms_key_version_id")
 
     @property
+    @pulumi.getter(name="lastBackupDurationInSeconds")
+    def last_backup_duration_in_seconds(self) -> pulumi.Output[int]:
+        """
+        The duration when the latest database backup created.
+        """
+        return pulumi.get(self, "last_backup_duration_in_seconds")
+
+    @property
     @pulumi.getter(name="lastBackupTimestamp")
     def last_backup_timestamp(self) -> pulumi.Output[str]:
         """
         The date and time when the latest database backup was created.
         """
         return pulumi.get(self, "last_backup_timestamp")
+
+    @property
+    @pulumi.getter(name="lastFailedBackupTimestamp")
+    def last_failed_backup_timestamp(self) -> pulumi.Output[str]:
+        """
+        The date and time when the latest database backup failed.
+        """
+        return pulumi.get(self, "last_failed_backup_timestamp")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

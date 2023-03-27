@@ -118,6 +118,8 @@ type LookupAutonomousDatabaseResult struct {
 	DbWorkload string `pulumi:"dbWorkload"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+	DisasterRecoveryRegionType string `pulumi:"disasterRecoveryRegionType"`
 	// The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
@@ -170,6 +172,8 @@ type LookupAutonomousDatabaseResult struct {
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	LocalDisasterRecoveryType string `pulumi:"localDisasterRecoveryType"`
 	// Autonomous Data Guard standby database details.
 	LocalStandbyDbs []GetAutonomousDatabaseLocalStandbyDb `pulumi:"localStandbyDbs"`
 	// Details for the long-term backup schedule.
@@ -207,6 +211,9 @@ type LookupAutonomousDatabaseResult struct {
 	RefreshableMode string `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
 	RefreshableStatus string `pulumi:"refreshableStatus"`
+	// Configurations of a Disaster Recovery.
+	RemoteDisasterRecoveryConfigurations []GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration `pulumi:"remoteDisasterRecoveryConfigurations"`
+	RemoteDisasterRecoveryType           string                                                     `pulumi:"remoteDisasterRecoveryType"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
@@ -239,6 +246,8 @@ type LookupAutonomousDatabaseResult struct {
 	TimeDataGuardRoleChanged string `pulumi:"timeDataGuardRoleChanged"`
 	// The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
 	TimeDeletionOfFreeAutonomousDatabase string `pulumi:"timeDeletionOfFreeAutonomousDatabase"`
+	// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+	TimeDisasterRecoveryRoleChanged string `pulumi:"timeDisasterRecoveryRoleChanged"`
 	// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
 	TimeLocalDataGuardEnabled string `pulumi:"timeLocalDataGuardEnabled"`
 	// The date and time when maintenance will begin.
@@ -468,6 +477,11 @@ func (o LookupAutonomousDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+func (o LookupAutonomousDatabaseResultOutput) DisasterRecoveryRegionType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DisasterRecoveryRegionType }).(pulumi.StringOutput)
+}
+
 // The user-friendly name for the Autonomous Database. The name does not have to be unique.
 func (o LookupAutonomousDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -603,6 +617,11 @@ func (o LookupAutonomousDatabaseResultOutput) LifecycleDetails() pulumi.StringOu
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+func (o LookupAutonomousDatabaseResultOutput) LocalDisasterRecoveryType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LocalDisasterRecoveryType }).(pulumi.StringOutput)
+}
+
 // Autonomous Data Guard standby database details.
 func (o LookupAutonomousDatabaseResultOutput) LocalStandbyDbs() GetAutonomousDatabaseLocalStandbyDbArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseLocalStandbyDb { return v.LocalStandbyDbs }).(GetAutonomousDatabaseLocalStandbyDbArrayOutput)
@@ -696,6 +715,17 @@ func (o LookupAutonomousDatabaseResultOutput) RefreshableStatus() pulumi.StringO
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.RefreshableStatus }).(pulumi.StringOutput)
 }
 
+// Configurations of a Disaster Recovery.
+func (o LookupAutonomousDatabaseResultOutput) RemoteDisasterRecoveryConfigurations() GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration {
+		return v.RemoteDisasterRecoveryConfigurations
+	}).(GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) RemoteDisasterRecoveryType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.RemoteDisasterRecoveryType }).(pulumi.StringOutput)
+}
+
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 func (o LookupAutonomousDatabaseResultOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Role }).(pulumi.StringOutput)
@@ -785,6 +815,11 @@ func (o LookupAutonomousDatabaseResultOutput) TimeDataGuardRoleChanged() pulumi.
 // The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
 func (o LookupAutonomousDatabaseResultOutput) TimeDeletionOfFreeAutonomousDatabase() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeDeletionOfFreeAutonomousDatabase }).(pulumi.StringOutput)
+}
+
+// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+func (o LookupAutonomousDatabaseResultOutput) TimeDisasterRecoveryRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeDisasterRecoveryRoleChanged }).(pulumi.StringOutput)
 }
 
 // The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.

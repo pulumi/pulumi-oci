@@ -32,6 +32,11 @@ public final class AutonomousDatabaseStandbyDb {
      * 
      */
     private @Nullable String timeDataGuardRoleChanged;
+    /**
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * 
+     */
+    private @Nullable String timeDisasterRecoveryRoleChanged;
 
     private AutonomousDatabaseStandbyDb() {}
     /**
@@ -62,6 +67,13 @@ public final class AutonomousDatabaseStandbyDb {
     public Optional<String> timeDataGuardRoleChanged() {
         return Optional.ofNullable(this.timeDataGuardRoleChanged);
     }
+    /**
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * 
+     */
+    public Optional<String> timeDisasterRecoveryRoleChanged() {
+        return Optional.ofNullable(this.timeDisasterRecoveryRoleChanged);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -76,6 +88,7 @@ public final class AutonomousDatabaseStandbyDb {
         private @Nullable String lifecycleDetails;
         private @Nullable String state;
         private @Nullable String timeDataGuardRoleChanged;
+        private @Nullable String timeDisasterRecoveryRoleChanged;
         public Builder() {}
         public Builder(AutonomousDatabaseStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,6 +96,7 @@ public final class AutonomousDatabaseStandbyDb {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
+    	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
         }
 
         @CustomType.Setter
@@ -105,12 +119,18 @@ public final class AutonomousDatabaseStandbyDb {
             this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeDisasterRecoveryRoleChanged(@Nullable String timeDisasterRecoveryRoleChanged) {
+            this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            return this;
+        }
         public AutonomousDatabaseStandbyDb build() {
             final var o = new AutonomousDatabaseStandbyDb();
             o.lagTimeInSeconds = lagTimeInSeconds;
             o.lifecycleDetails = lifecycleDetails;
             o.state = state;
             o.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+            o.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             return o;
         }
     }

@@ -15,6 +15,7 @@ namespace Pulumi.Oci.Database.Outputs
     {
         public readonly bool AutoBackupEnabled;
         public readonly string AutoBackupWindow;
+        public readonly string BackupDeletionPolicy;
         public readonly ImmutableArray<Outputs.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult> BackupDestinationDetails;
         public readonly int RecoveryWindowInDays;
 
@@ -24,12 +25,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             string autoBackupWindow,
 
+            string backupDeletionPolicy,
+
             ImmutableArray<Outputs.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult> backupDestinationDetails,
 
             int recoveryWindowInDays)
         {
             AutoBackupEnabled = autoBackupEnabled;
             AutoBackupWindow = autoBackupWindow;
+            BackupDeletionPolicy = backupDeletionPolicy;
             BackupDestinationDetails = backupDestinationDetails;
             RecoveryWindowInDays = recoveryWindowInDays;
         }

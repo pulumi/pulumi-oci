@@ -14,7 +14,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetDeploymentsDeploymentCollectionItemResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult> DeploymentDiagnosticDatas;
         /// <summary>
-        /// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+        /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         /// </summary>
         public readonly string DeploymentType;
         /// <summary>

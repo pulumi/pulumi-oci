@@ -26,6 +26,11 @@ public final class DbSystemDbHomeDatabaseDbBackupConfig {
      */
     private @Nullable String autoBackupWindow;
     /**
+     * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+     * 
+     */
+    private @Nullable String backupDeletionPolicy;
+    /**
      * @return (Updatable) Backup destination details.
      * 
      */
@@ -50,6 +55,13 @@ public final class DbSystemDbHomeDatabaseDbBackupConfig {
      */
     public Optional<String> autoBackupWindow() {
         return Optional.ofNullable(this.autoBackupWindow);
+    }
+    /**
+     * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+     * 
+     */
+    public Optional<String> backupDeletionPolicy() {
+        return Optional.ofNullable(this.backupDeletionPolicy);
     }
     /**
      * @return (Updatable) Backup destination details.
@@ -77,6 +89,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfig {
     public static final class Builder {
         private @Nullable Boolean autoBackupEnabled;
         private @Nullable String autoBackupWindow;
+        private @Nullable String backupDeletionPolicy;
         private @Nullable List<DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private @Nullable Integer recoveryWindowInDays;
         public Builder() {}
@@ -84,6 +97,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfig {
     	      Objects.requireNonNull(defaults);
     	      this.autoBackupEnabled = defaults.autoBackupEnabled;
     	      this.autoBackupWindow = defaults.autoBackupWindow;
+    	      this.backupDeletionPolicy = defaults.backupDeletionPolicy;
     	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
@@ -96,6 +110,11 @@ public final class DbSystemDbHomeDatabaseDbBackupConfig {
         @CustomType.Setter
         public Builder autoBackupWindow(@Nullable String autoBackupWindow) {
             this.autoBackupWindow = autoBackupWindow;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupDeletionPolicy(@Nullable String backupDeletionPolicy) {
+            this.backupDeletionPolicy = backupDeletionPolicy;
             return this;
         }
         @CustomType.Setter
@@ -115,6 +134,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfig {
             final var o = new DbSystemDbHomeDatabaseDbBackupConfig();
             o.autoBackupEnabled = autoBackupEnabled;
             o.autoBackupWindow = autoBackupWindow;
+            o.backupDeletionPolicy = backupDeletionPolicy;
             o.backupDestinationDetails = backupDestinationDetails;
             o.recoveryWindowInDays = recoveryWindowInDays;
             return o;

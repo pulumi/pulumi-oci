@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.autonomous_database_backup_display_name,
  *     state: _var.autonomous_database_backup_state,
+ *     type: _var.autonomous_database_backup_type,
  * });
  * ```
  */
@@ -35,6 +36,7 @@ export function getAutonomousDatabaseBackups(args?: GetAutonomousDatabaseBackups
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "type": args.type,
     }, opts);
 }
 
@@ -59,6 +61,10 @@ export interface GetAutonomousDatabaseBackupsArgs {
      * A filter to return only resources that match the given lifecycle state exactly.
      */
     state?: string;
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
+    type?: string;
 }
 
 /**
@@ -90,6 +96,10 @@ export interface GetAutonomousDatabaseBackupsResult {
      * The current state of the backup.
      */
     readonly state?: string;
+    /**
+     * The type of backup.
+     */
+    readonly type?: string;
 }
 /**
  * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
@@ -107,6 +117,7 @@ export interface GetAutonomousDatabaseBackupsResult {
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.autonomous_database_backup_display_name,
  *     state: _var.autonomous_database_backup_state,
+ *     type: _var.autonomous_database_backup_type,
  * });
  * ```
  */
@@ -135,4 +146,8 @@ export interface GetAutonomousDatabaseBackupsOutputArgs {
      * A filter to return only resources that match the given lifecycle state exactly.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
+    type?: pulumi.Input<string>;
 }

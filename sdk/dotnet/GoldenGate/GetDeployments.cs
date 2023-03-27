@@ -90,7 +90,7 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDeploymentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+        /// Return the deployments to which the specified connectionId may be assigned.
         /// </summary>
         [Input("assignableConnectionId")]
         public string? AssignableConnectionId { get; set; }
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.GoldenGate
         public string? AssignedConnectionId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -154,7 +154,7 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDeploymentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+        /// Return the deployments to which the specified connectionId may be assigned.
         /// </summary>
         [Input("assignableConnectionId")]
         public Input<string>? AssignableConnectionId { get; set; }
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? AssignedConnectionId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;

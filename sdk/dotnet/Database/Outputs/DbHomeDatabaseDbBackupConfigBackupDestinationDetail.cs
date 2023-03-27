@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class DbHomeDatabaseDbBackupConfigBackupDestinationDetail
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        /// </summary>
+        public readonly string? DbrsPolicyId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         /// </summary>
         public readonly string? Id;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private DbHomeDatabaseDbBackupConfigBackupDestinationDetail(
+            string? dbrsPolicyId,
+
             string? id,
 
             string? type)
         {
+            DbrsPolicyId = dbrsPolicyId;
             Id = id;
             Type = type;
         }

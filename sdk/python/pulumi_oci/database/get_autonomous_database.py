@@ -22,7 +22,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_standby_dbs=None, long_term_backup_schedules=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -116,6 +116,9 @@ class GetAutonomousDatabaseResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if disaster_recovery_region_type and not isinstance(disaster_recovery_region_type, str):
+            raise TypeError("Expected argument 'disaster_recovery_region_type' to be a str")
+        pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -197,6 +200,9 @@ class GetAutonomousDatabaseResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if local_disaster_recovery_type and not isinstance(local_disaster_recovery_type, str):
+            raise TypeError("Expected argument 'local_disaster_recovery_type' to be a str")
+        pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         if local_standby_dbs and not isinstance(local_standby_dbs, list):
             raise TypeError("Expected argument 'local_standby_dbs' to be a list")
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
@@ -251,6 +257,12 @@ class GetAutonomousDatabaseResult:
         if refreshable_status and not isinstance(refreshable_status, str):
             raise TypeError("Expected argument 'refreshable_status' to be a str")
         pulumi.set(__self__, "refreshable_status", refreshable_status)
+        if remote_disaster_recovery_configurations and not isinstance(remote_disaster_recovery_configurations, list):
+            raise TypeError("Expected argument 'remote_disaster_recovery_configurations' to be a list")
+        pulumi.set(__self__, "remote_disaster_recovery_configurations", remote_disaster_recovery_configurations)
+        if remote_disaster_recovery_type and not isinstance(remote_disaster_recovery_type, str):
+            raise TypeError("Expected argument 'remote_disaster_recovery_type' to be a str")
+        pulumi.set(__self__, "remote_disaster_recovery_type", remote_disaster_recovery_type)
         if role and not isinstance(role, str):
             raise TypeError("Expected argument 'role' to be a str")
         pulumi.set(__self__, "role", role)
@@ -308,6 +320,9 @@ class GetAutonomousDatabaseResult:
         if time_deletion_of_free_autonomous_database and not isinstance(time_deletion_of_free_autonomous_database, str):
             raise TypeError("Expected argument 'time_deletion_of_free_autonomous_database' to be a str")
         pulumi.set(__self__, "time_deletion_of_free_autonomous_database", time_deletion_of_free_autonomous_database)
+        if time_disaster_recovery_role_changed and not isinstance(time_disaster_recovery_role_changed, str):
+            raise TypeError("Expected argument 'time_disaster_recovery_role_changed' to be a str")
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
         if time_local_data_guard_enabled and not isinstance(time_local_data_guard_enabled, str):
             raise TypeError("Expected argument 'time_local_data_guard_enabled' to be a str")
         pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
@@ -598,6 +613,14 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="disasterRecoveryRegionType")
+    def disaster_recovery_region_type(self) -> str:
+        """
+        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        """
+        return pulumi.get(self, "disaster_recovery_region_type")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -808,6 +831,14 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localDisasterRecoveryType")
+    def local_disaster_recovery_type(self) -> str:
+        """
+        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "local_disaster_recovery_type")
+
+    @property
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabaseLocalStandbyDbResult']:
         """
@@ -953,6 +984,19 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "refreshable_status")
 
     @property
+    @pulumi.getter(name="remoteDisasterRecoveryConfigurations")
+    def remote_disaster_recovery_configurations(self) -> Sequence['outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult']:
+        """
+        Configurations of a Disaster Recovery.
+        """
+        return pulumi.get(self, "remote_disaster_recovery_configurations")
+
+    @property
+    @pulumi.getter(name="remoteDisasterRecoveryType")
+    def remote_disaster_recovery_type(self) -> str:
+        return pulumi.get(self, "remote_disaster_recovery_type")
+
+    @property
     @pulumi.getter
     def role(self) -> str:
         """
@@ -1085,6 +1129,14 @@ class GetAutonomousDatabaseResult:
         The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         """
         return pulumi.get(self, "time_deletion_of_free_autonomous_database")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @property
     @pulumi.getter(name="timeLocalDataGuardEnabled")
@@ -1246,6 +1298,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             db_version=self.db_version,
             db_workload=self.db_workload,
             defined_tags=self.defined_tags,
+            disaster_recovery_region_type=self.disaster_recovery_region_type,
             display_name=self.display_name,
             failed_data_recovery_in_seconds=self.failed_data_recovery_in_seconds,
             freeform_tags=self.freeform_tags,
@@ -1273,6 +1326,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             kms_key_version_id=self.kms_key_version_id,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
+            local_disaster_recovery_type=self.local_disaster_recovery_type,
             local_standby_dbs=self.local_standby_dbs,
             long_term_backup_schedules=self.long_term_backup_schedules,
             max_cpu_core_count=self.max_cpu_core_count,
@@ -1291,6 +1345,8 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             provisionable_cpuses=self.provisionable_cpuses,
             refreshable_mode=self.refreshable_mode,
             refreshable_status=self.refreshable_status,
+            remote_disaster_recovery_configurations=self.remote_disaster_recovery_configurations,
+            remote_disaster_recovery_type=self.remote_disaster_recovery_type,
             role=self.role,
             rotate_key_trigger=self.rotate_key_trigger,
             scheduled_operations=self.scheduled_operations,
@@ -1310,6 +1366,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             time_created=self.time_created,
             time_data_guard_role_changed=self.time_data_guard_role_changed,
             time_deletion_of_free_autonomous_database=self.time_deletion_of_free_autonomous_database,
+            time_disaster_recovery_role_changed=self.time_disaster_recovery_role_changed,
             time_local_data_guard_enabled=self.time_local_data_guard_enabled,
             time_maintenance_begin=self.time_maintenance_begin,
             time_maintenance_end=self.time_maintenance_end,
@@ -1384,6 +1441,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         db_version=__ret__.db_version,
         db_workload=__ret__.db_workload,
         defined_tags=__ret__.defined_tags,
+        disaster_recovery_region_type=__ret__.disaster_recovery_region_type,
         display_name=__ret__.display_name,
         failed_data_recovery_in_seconds=__ret__.failed_data_recovery_in_seconds,
         freeform_tags=__ret__.freeform_tags,
@@ -1411,6 +1469,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         kms_key_version_id=__ret__.kms_key_version_id,
         license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
+        local_disaster_recovery_type=__ret__.local_disaster_recovery_type,
         local_standby_dbs=__ret__.local_standby_dbs,
         long_term_backup_schedules=__ret__.long_term_backup_schedules,
         max_cpu_core_count=__ret__.max_cpu_core_count,
@@ -1429,6 +1488,8 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         provisionable_cpuses=__ret__.provisionable_cpuses,
         refreshable_mode=__ret__.refreshable_mode,
         refreshable_status=__ret__.refreshable_status,
+        remote_disaster_recovery_configurations=__ret__.remote_disaster_recovery_configurations,
+        remote_disaster_recovery_type=__ret__.remote_disaster_recovery_type,
         role=__ret__.role,
         rotate_key_trigger=__ret__.rotate_key_trigger,
         scheduled_operations=__ret__.scheduled_operations,
@@ -1448,6 +1509,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         time_created=__ret__.time_created,
         time_data_guard_role_changed=__ret__.time_data_guard_role_changed,
         time_deletion_of_free_autonomous_database=__ret__.time_deletion_of_free_autonomous_database,
+        time_disaster_recovery_role_changed=__ret__.time_disaster_recovery_role_changed,
         time_local_data_guard_enabled=__ret__.time_local_data_guard_enabled,
         time_maintenance_begin=__ret__.time_maintenance_begin,
         time_maintenance_end=__ret__.time_maintenance_end,

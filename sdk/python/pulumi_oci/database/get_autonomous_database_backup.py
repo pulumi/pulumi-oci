@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetAutonomousDatabaseBackupResult',
@@ -21,13 +22,16 @@ class GetAutonomousDatabaseBackupResult:
     """
     A collection of values returned by getAutonomousDatabaseBackup.
     """
-    def __init__(__self__, autonomous_database_backup_id=None, autonomous_database_id=None, compartment_id=None, database_size_in_tbs=None, db_version=None, display_name=None, id=None, is_automatic=None, is_long_term_backup=None, is_restorable=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_version_id=None, lifecycle_details=None, retention_period_in_days=None, size_in_tbs=None, state=None, time_available_till=None, time_ended=None, time_started=None, type=None, vault_id=None):
+    def __init__(__self__, autonomous_database_backup_id=None, autonomous_database_id=None, backup_destination_details=None, compartment_id=None, database_size_in_tbs=None, db_version=None, display_name=None, id=None, is_automatic=None, is_long_term_backup=None, is_restorable=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_version_id=None, lifecycle_details=None, retention_period_in_days=None, size_in_tbs=None, state=None, time_available_till=None, time_ended=None, time_started=None, type=None, vault_id=None):
         if autonomous_database_backup_id and not isinstance(autonomous_database_backup_id, str):
             raise TypeError("Expected argument 'autonomous_database_backup_id' to be a str")
         pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
         if autonomous_database_id and not isinstance(autonomous_database_id, str):
             raise TypeError("Expected argument 'autonomous_database_id' to be a str")
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if backup_destination_details and not isinstance(backup_destination_details, list):
+            raise TypeError("Expected argument 'backup_destination_details' to be a list")
+        pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -104,6 +108,14 @@ class GetAutonomousDatabaseBackupResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         """
         return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Sequence['outputs.GetAutonomousDatabaseBackupBackupDestinationDetailResult']:
+        """
+        Backup destination details
+        """
+        return pulumi.get(self, "backup_destination_details")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -279,6 +291,7 @@ class AwaitableGetAutonomousDatabaseBackupResult(GetAutonomousDatabaseBackupResu
         return GetAutonomousDatabaseBackupResult(
             autonomous_database_backup_id=self.autonomous_database_backup_id,
             autonomous_database_id=self.autonomous_database_id,
+            backup_destination_details=self.backup_destination_details,
             compartment_id=self.compartment_id,
             database_size_in_tbs=self.database_size_in_tbs,
             db_version=self.db_version,
@@ -329,6 +342,7 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[str] 
     return AwaitableGetAutonomousDatabaseBackupResult(
         autonomous_database_backup_id=__ret__.autonomous_database_backup_id,
         autonomous_database_id=__ret__.autonomous_database_id,
+        backup_destination_details=__ret__.backup_destination_details,
         compartment_id=__ret__.compartment_id,
         database_size_in_tbs=__ret__.database_size_in_tbs,
         db_version=__ret__.db_version,

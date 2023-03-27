@@ -10,6 +10,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     * 
+     */
+    private String dbrsPolicyId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
@@ -22,6 +27,13 @@ public final class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     private String vpcUser;
 
     private GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail() {}
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     * 
+     */
+    public String dbrsPolicyId() {
+        return this.dbrsPolicyId;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
@@ -49,17 +61,24 @@ public final class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String dbrsPolicyId;
         private String id;
         private String type;
         private String vpcUser;
         public Builder() {}
         public Builder(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.type = defaults.type;
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
+        public Builder dbrsPolicyId(String dbrsPolicyId) {
+            this.dbrsPolicyId = Objects.requireNonNull(dbrsPolicyId);
+            return this;
+        }
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
@@ -77,6 +96,7 @@ public final class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail {
         }
         public GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var o = new GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail();
+            o.dbrsPolicyId = dbrsPolicyId;
             o.id = id;
             o.type = type;
             o.vpcUser = vpcUser;

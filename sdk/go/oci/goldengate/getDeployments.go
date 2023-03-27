@@ -57,11 +57,11 @@ func GetDeployments(ctx *pulumi.Context, args *GetDeploymentsArgs, opts ...pulum
 
 // A collection of arguments for invoking getDeployments.
 type GetDeploymentsArgs struct {
-	// Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+	// Return the deployments to which the specified connectionId may be assigned.
 	AssignableConnectionId *string `pulumi:"assignableConnectionId"`
 	// The OCID of the connection which for the deployment must be assigned.
 	AssignedConnectionId *string `pulumi:"assignedConnectionId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                `pulumi:"displayName"`
@@ -113,11 +113,11 @@ func GetDeploymentsOutput(ctx *pulumi.Context, args GetDeploymentsOutputArgs, op
 
 // A collection of arguments for invoking getDeployments.
 type GetDeploymentsOutputArgs struct {
-	// Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+	// Return the deployments to which the specified connectionId may be assigned.
 	AssignableConnectionId pulumi.StringPtrInput `pulumi:"assignableConnectionId"`
 	// The OCID of the connection which for the deployment must be assigned.
 	AssignedConnectionId pulumi.StringPtrInput `pulumi:"assignedConnectionId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput          `pulumi:"displayName"`

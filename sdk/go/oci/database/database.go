@@ -38,12 +38,14 @@ import (
 //					CharacterSet:            pulumi.Any(_var.Database_database_character_set),
 //					DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
 //					DbBackupConfig: &database.DatabaseDatabaseDbBackupConfigArgs{
-//						AutoBackupEnabled: pulumi.Any(_var.Database_database_db_backup_config_auto_backup_enabled),
-//						AutoBackupWindow:  pulumi.Any(_var.Database_database_db_backup_config_auto_backup_window),
+//						AutoBackupEnabled:    pulumi.Any(_var.Database_database_db_backup_config_auto_backup_enabled),
+//						AutoBackupWindow:     pulumi.Any(_var.Database_database_db_backup_config_auto_backup_window),
+//						BackupDeletionPolicy: pulumi.Any(_var.Database_database_db_backup_config_backup_deletion_policy),
 //						BackupDestinationDetails: database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{
 //							&database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{
-//								Id:   pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_id),
-//								Type: pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_type),
+//								DbrsPolicyId: pulumi.Any(oci_identity_policy.Test_policy.Id),
+//								Id:           pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_id),
+//								Type:         pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_type),
 //							},
 //						},
 //						RecoveryWindowInDays: pulumi.Any(_var.Database_database_db_backup_config_recovery_window_in_days),
@@ -127,8 +129,12 @@ type Database struct {
 	KmsKeyRotation pulumi.IntPtrOutput `pulumi:"kmsKeyRotation"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
+	// The duration when the latest database backup created.
+	LastBackupDurationInSeconds pulumi.IntOutput `pulumi:"lastBackupDurationInSeconds"`
 	// The date and time when the latest database backup was created.
 	LastBackupTimestamp pulumi.StringOutput `pulumi:"lastBackupTimestamp"`
+	// The date and time when the latest database backup failed.
+	LastFailedBackupTimestamp pulumi.StringOutput `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
@@ -229,8 +235,12 @@ type databaseState struct {
 	KmsKeyRotation *int `pulumi:"kmsKeyRotation"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
+	// The duration when the latest database backup created.
+	LastBackupDurationInSeconds *int `pulumi:"lastBackupDurationInSeconds"`
 	// The date and time when the latest database backup was created.
 	LastBackupTimestamp *string `pulumi:"lastBackupTimestamp"`
+	// The date and time when the latest database backup failed.
+	LastFailedBackupTimestamp *string `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
@@ -294,8 +304,12 @@ type DatabaseState struct {
 	KmsKeyRotation pulumi.IntPtrInput
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId pulumi.StringPtrInput
+	// The duration when the latest database backup created.
+	LastBackupDurationInSeconds pulumi.IntPtrInput
 	// The date and time when the latest database backup was created.
 	LastBackupTimestamp pulumi.StringPtrInput
+	// The date and time when the latest database backup failed.
+	LastFailedBackupTimestamp pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
@@ -552,9 +566,19 @@ func (o DatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
 
+// The duration when the latest database backup created.
+func (o DatabaseOutput) LastBackupDurationInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *Database) pulumi.IntOutput { return v.LastBackupDurationInSeconds }).(pulumi.IntOutput)
+}
+
 // The date and time when the latest database backup was created.
 func (o DatabaseOutput) LastBackupTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.LastBackupTimestamp }).(pulumi.StringOutput)
+}
+
+// The date and time when the latest database backup failed.
+func (o DatabaseOutput) LastFailedBackupTimestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.LastFailedBackupTimestamp }).(pulumi.StringOutput)
 }
 
 // Additional information about the current lifecycle state.

@@ -9,6 +9,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+    private String dbrsPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
@@ -17,6 +18,9 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     private String type;
 
     private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
+    public String dbrsPolicyId() {
+        return this.dbrsPolicyId;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
@@ -37,15 +41,22 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     }
     @CustomType.Builder
     public static final class Builder {
+        private String dbrsPolicyId;
         private String id;
         private String type;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder dbrsPolicyId(String dbrsPolicyId) {
+            this.dbrsPolicyId = Objects.requireNonNull(dbrsPolicyId);
+            return this;
+        }
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
@@ -58,6 +69,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
         }
         public GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var o = new GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
+            o.dbrsPolicyId = dbrsPolicyId;
             o.id = id;
             o.type = type;
             return o;

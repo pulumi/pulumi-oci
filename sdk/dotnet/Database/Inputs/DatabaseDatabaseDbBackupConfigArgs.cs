@@ -24,6 +24,12 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("autoBackupWindow")]
         public Input<string>? AutoBackupWindow { get; set; }
 
+        /// <summary>
+        /// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        /// </summary>
+        [Input("backupDeletionPolicy")]
+        public Input<string>? BackupDeletionPolicy { get; set; }
+
         [Input("backupDestinationDetails")]
         private InputList<Inputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs>? _backupDestinationDetails;
 

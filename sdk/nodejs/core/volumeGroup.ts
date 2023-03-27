@@ -128,7 +128,7 @@ export class VolumeGroup extends pulumi.CustomResource {
     /**
      * OCIDs for the volumes in this volume group.
      */
-    public /*out*/ readonly volumeIds!: pulumi.Output<string[]>;
+    public readonly volumeIds!: pulumi.Output<string[]>;
 
     /**
      * Create a VolumeGroup resource with the given unique name, arguments, and options.
@@ -180,12 +180,12 @@ export class VolumeGroup extends pulumi.CustomResource {
             resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
             resourceInputs["volumeGroupReplicas"] = args ? args.volumeGroupReplicas : undefined;
             resourceInputs["volumeGroupReplicasDeletion"] = args ? args.volumeGroupReplicasDeletion : undefined;
+            resourceInputs["volumeIds"] = args ? args.volumeIds : undefined;
             resourceInputs["isHydrated"] = undefined /*out*/;
             resourceInputs["sizeInGbs"] = undefined /*out*/;
             resourceInputs["sizeInMbs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
-            resourceInputs["volumeIds"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VolumeGroup.__pulumiType, name, resourceInputs, opts);
@@ -294,4 +294,8 @@ export interface VolumeGroupArgs {
      */
     volumeGroupReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeGroupVolumeGroupReplica>[]>;
     volumeGroupReplicasDeletion?: pulumi.Input<boolean>;
+    /**
+     * OCIDs for the volumes in this volume group.
+     */
+    volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
 }

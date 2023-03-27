@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.outputs.DatabaseUpgradeDatabaseUpgradeSourceDetai
 import com.pulumi.oci.Database.outputs.DatabaseUpgradeDbBackupConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -335,6 +336,20 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
         return this.kmsKeyVersionId;
     }
     /**
+     * The duration when the latest database backup created.
+     * 
+     */
+    @Export(name="lastBackupDurationInSeconds", type=Integer.class, parameters={})
+    private Output<Integer> lastBackupDurationInSeconds;
+
+    /**
+     * @return The duration when the latest database backup created.
+     * 
+     */
+    public Output<Integer> lastBackupDurationInSeconds() {
+        return this.lastBackupDurationInSeconds;
+    }
+    /**
      * The date and time when the latest database backup was created.
      * 
      */
@@ -347,6 +362,20 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lastBackupTimestamp() {
         return this.lastBackupTimestamp;
+    }
+    /**
+     * The date and time when the latest database backup failed.
+     * 
+     */
+    @Export(name="lastFailedBackupTimestamp", type=String.class, parameters={})
+    private Output<String> lastFailedBackupTimestamp;
+
+    /**
+     * @return The date and time when the latest database backup failed.
+     * 
+     */
+    public Output<String> lastFailedBackupTimestamp() {
+        return this.lastFailedBackupTimestamp;
     }
     /**
      * Additional information about the current lifecycle state.

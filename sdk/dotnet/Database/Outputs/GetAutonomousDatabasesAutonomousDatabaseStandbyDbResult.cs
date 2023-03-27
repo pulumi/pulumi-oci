@@ -29,6 +29,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         /// </summary>
         public readonly string TimeDataGuardRoleChanged;
+        /// <summary>
+        /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        /// </summary>
+        public readonly string TimeDisasterRecoveryRoleChanged;
 
         [OutputConstructor]
         private GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(
@@ -38,12 +42,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             string state,
 
-            string timeDataGuardRoleChanged)
+            string timeDataGuardRoleChanged,
+
+            string timeDisasterRecoveryRoleChanged)
         {
             LagTimeInSeconds = lagTimeInSeconds;
             LifecycleDetails = lifecycleDetails;
             State = state;
             TimeDataGuardRoleChanged = timeDataGuardRoleChanged;
+            TimeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// (Updatable) Default value of the parameter.
         /// </summary>
-        public readonly string? DefaultValue;
+        public readonly string DefaultValue;
         /// <summary>
         /// (Updatable) Optional description about the build pipeline.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DevOps.Outputs
 
         [OutputConstructor]
         private BuildPipelineBuildPipelineParametersItem(
-            string? defaultValue,
+            string defaultValue,
 
             string? description,
 

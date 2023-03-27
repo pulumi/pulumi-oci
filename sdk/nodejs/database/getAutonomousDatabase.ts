@@ -161,6 +161,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
+     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     */
+    readonly disasterRecoveryRegionType: string;
+    /**
      * The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     readonly displayName: string;
@@ -263,6 +267,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     */
+    readonly localDisasterRecoveryType: string;
+    /**
      * Autonomous Data Guard standby database details.
      */
     readonly localStandbyDbs: outputs.Database.GetAutonomousDatabaseLocalStandbyDb[];
@@ -336,6 +344,11 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly refreshableStatus: string;
     /**
+     * Configurations of a Disaster Recovery.
+     */
+    readonly remoteDisasterRecoveryConfigurations: outputs.Database.GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration[];
+    readonly remoteDisasterRecoveryType: string;
+    /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
     readonly role: string;
@@ -393,6 +406,10 @@ export interface GetAutonomousDatabaseResult {
      * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      */
     readonly timeDeletionOfFreeAutonomousDatabase: string;
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     */
+    readonly timeDisasterRecoveryRoleChanged: string;
     /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      */

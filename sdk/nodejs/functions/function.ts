@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  * const testFunction = new oci.functions.Function("testFunction", {
  *     applicationId: oci_functions_application.test_application.id,
  *     displayName: _var.function_display_name,
- *     image: _var.function_image,
  *     memoryInMbs: _var.function_memory_in_mbs,
  *     config: _var.function_config,
  *     definedTags: {
@@ -29,10 +28,15 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     image: _var.function_image,
  *     imageDigest: _var.function_image_digest,
  *     provisionedConcurrencyConfig: {
  *         strategy: _var.function_provisioned_concurrency_config_strategy,
  *         count: _var.function_provisioned_concurrency_config_count,
+ *     },
+ *     sourceDetails: {
+ *         pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
+ *         sourceType: _var.function_source_details_source_type,
  *     },
  *     timeoutInSeconds: _var.function_timeout_in_seconds,
  *     traceConfig: {
@@ -122,6 +126,10 @@ export class Function extends pulumi.CustomResource {
      */
     public readonly provisionedConcurrencyConfig!: pulumi.Output<outputs.Functions.FunctionProvisionedConcurrencyConfig>;
     /**
+     * The source details for the Function. The function can be created from various sources.
+     */
+    public readonly sourceDetails!: pulumi.Output<outputs.Functions.FunctionSourceDetails>;
+    /**
      * The current state of the function.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -166,6 +174,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["invokeEndpoint"] = state ? state.invokeEndpoint : undefined;
             resourceInputs["memoryInMbs"] = state ? state.memoryInMbs : undefined;
             resourceInputs["provisionedConcurrencyConfig"] = state ? state.provisionedConcurrencyConfig : undefined;
+            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -179,9 +188,6 @@ export class Function extends pulumi.CustomResource {
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.image === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'image'");
-            }
             if ((!args || args.memoryInMbs === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'memoryInMbs'");
             }
@@ -194,6 +200,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["imageDigest"] = args ? args.imageDigest : undefined;
             resourceInputs["memoryInMbs"] = args ? args.memoryInMbs : undefined;
             resourceInputs["provisionedConcurrencyConfig"] = args ? args.provisionedConcurrencyConfig : undefined;
+            resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
             resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
             resourceInputs["traceConfig"] = args ? args.traceConfig : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -256,6 +263,10 @@ export interface FunctionState {
      */
     provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig>;
     /**
+     * The source details for the Function. The function can be created from various sources.
+     */
+    sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails>;
+    /**
      * The current state of the function.
      */
     state?: pulumi.Input<string>;
@@ -304,7 +315,7 @@ export interface FunctionArgs {
     /**
      * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      */
-    image: pulumi.Input<string>;
+    image?: pulumi.Input<string>;
     /**
      * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
@@ -317,6 +328,10 @@ export interface FunctionArgs {
      * (Updatable) Define the strategy for provisioned concurrency for the function.
      */
     provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig>;
+    /**
+     * The source details for the Function. The function can be created from various sources.
+     */
+    sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails>;
     /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      */

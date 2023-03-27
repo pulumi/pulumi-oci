@@ -86,9 +86,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string KmsKeyVersionId;
         /// <summary>
+        /// The duration when the latest database backup created.
+        /// </summary>
+        public readonly int LastBackupDurationInSeconds;
+        /// <summary>
         /// The date and time when the latest database backup was created.
         /// </summary>
         public readonly string LastBackupTimestamp;
+        /// <summary>
+        /// The date and time when the latest database backup failed.
+        /// </summary>
+        public readonly string LastFailedBackupTimestamp;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
@@ -171,7 +179,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             string kmsKeyVersionId,
 
+            int lastBackupDurationInSeconds,
+
             string lastBackupTimestamp,
+
+            string lastFailedBackupTimestamp,
 
             string lifecycleDetails,
 
@@ -214,7 +226,9 @@ namespace Pulumi.Oci.Database.Outputs
             KmsKeyMigration = kmsKeyMigration;
             KmsKeyRotation = kmsKeyRotation;
             KmsKeyVersionId = kmsKeyVersionId;
+            LastBackupDurationInSeconds = lastBackupDurationInSeconds;
             LastBackupTimestamp = lastBackupTimestamp;
+            LastFailedBackupTimestamp = lastFailedBackupTimestamp;
             LifecycleDetails = lifecycleDetails;
             NcharacterSet = ncharacterSet;
             PdbName = pdbName;

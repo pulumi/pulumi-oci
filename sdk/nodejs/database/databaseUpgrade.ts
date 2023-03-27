@@ -126,9 +126,17 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
      */
     public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string>;
     /**
+     * The duration when the latest database backup created.
+     */
+    public /*out*/ readonly lastBackupDurationInSeconds!: pulumi.Output<number>;
+    /**
      * The date and time when the latest database backup was created.
      */
     public /*out*/ readonly lastBackupTimestamp!: pulumi.Output<string>;
+    /**
+     * The date and time when the latest database backup failed.
+     */
+    public /*out*/ readonly lastFailedBackupTimestamp!: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
@@ -197,7 +205,9 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
             resourceInputs["isCdb"] = state ? state.isCdb : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
+            resourceInputs["lastBackupDurationInSeconds"] = state ? state.lastBackupDurationInSeconds : undefined;
             resourceInputs["lastBackupTimestamp"] = state ? state.lastBackupTimestamp : undefined;
+            resourceInputs["lastFailedBackupTimestamp"] = state ? state.lastFailedBackupTimestamp : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
             resourceInputs["pdbName"] = state ? state.pdbName : undefined;
@@ -233,7 +243,9 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
             resourceInputs["isCdb"] = undefined /*out*/;
             resourceInputs["kmsKeyId"] = undefined /*out*/;
             resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
+            resourceInputs["lastBackupDurationInSeconds"] = undefined /*out*/;
             resourceInputs["lastBackupTimestamp"] = undefined /*out*/;
+            resourceInputs["lastFailedBackupTimestamp"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["ncharacterSet"] = undefined /*out*/;
             resourceInputs["pdbName"] = undefined /*out*/;
@@ -326,9 +338,17 @@ export interface DatabaseUpgradeState {
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
+     * The duration when the latest database backup created.
+     */
+    lastBackupDurationInSeconds?: pulumi.Input<number>;
+    /**
      * The date and time when the latest database backup was created.
      */
     lastBackupTimestamp?: pulumi.Input<string>;
+    /**
+     * The date and time when the latest database backup failed.
+     */
+    lastFailedBackupTimestamp?: pulumi.Input<string>;
     /**
      * Additional information about the current lifecycle state.
      */

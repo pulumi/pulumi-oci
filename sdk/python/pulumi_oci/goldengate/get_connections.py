@@ -189,7 +189,7 @@ def get_connections(assignable_deployment_id: Optional[str] = None,
     :param str assignable_deployment_id: Filters for compatible connections which can be, but currently not assigned to the deployment specified by its id.
     :param str assignable_deployment_type: Filters for connections which can be assigned to the latest version of the specified deployment type.
     :param str assigned_deployment_id: The OCID of the deployment which for the connection must be assigned.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
     :param Sequence[str] connection_types: The array of connection types.
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str state: A filter to return only connections having the 'lifecycleState' given.
@@ -258,7 +258,7 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
     :param str assignable_deployment_id: Filters for compatible connections which can be, but currently not assigned to the deployment specified by its id.
     :param str assignable_deployment_type: Filters for connections which can be assigned to the latest version of the specified deployment type.
     :param str assigned_deployment_id: The OCID of the deployment which for the connection must be assigned.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
     :param Sequence[str] connection_types: The array of connection types.
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str state: A filter to return only connections having the 'lifecycleState' given.

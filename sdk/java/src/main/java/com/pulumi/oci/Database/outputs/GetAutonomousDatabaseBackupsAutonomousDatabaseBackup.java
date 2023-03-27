@@ -4,10 +4,12 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -17,6 +19,11 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      * 
      */
     private String autonomousDatabaseId;
+    /**
+     * @return Backup destination details
+     * 
+     */
+    private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -109,7 +116,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      */
     private String timeStarted;
     /**
-     * @return The type of backup.
+     * @return A filter to return only backups that matches with the given type of Backup.
      * 
      */
     private String type;
@@ -126,6 +133,13 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      */
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
+    }
+    /**
+     * @return Backup destination details
+     * 
+     */
+    public List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails() {
+        return this.backupDestinationDetails;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -257,7 +271,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         return this.timeStarted;
     }
     /**
-     * @return The type of backup.
+     * @return A filter to return only backups that matches with the given type of Backup.
      * 
      */
     public String type() {
@@ -281,6 +295,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousDatabaseId;
+        private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails;
         private String compartmentId;
         private Double databaseSizeInTbs;
         private String dbVersion;
@@ -306,6 +321,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         public Builder(GetAutonomousDatabaseBackupsAutonomousDatabaseBackup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
+    	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.databaseSizeInTbs = defaults.databaseSizeInTbs;
     	      this.dbVersion = defaults.dbVersion;
@@ -333,6 +349,14 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder backupDestinationDetails(List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails) {
+            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+            return this;
+        }
+        public Builder backupDestinationDetails(GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail... backupDestinationDetails) {
+            return backupDestinationDetails(List.of(backupDestinationDetails));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -442,6 +466,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         public GetAutonomousDatabaseBackupsAutonomousDatabaseBackup build() {
             final var o = new GetAutonomousDatabaseBackupsAutonomousDatabaseBackup();
             o.autonomousDatabaseId = autonomousDatabaseId;
+            o.backupDestinationDetails = backupDestinationDetails;
             o.compartmentId = compartmentId;
             o.databaseSizeInTbs = databaseSizeInTbs;
             o.dbVersion = dbVersion;

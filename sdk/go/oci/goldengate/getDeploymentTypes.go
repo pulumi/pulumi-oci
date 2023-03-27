@@ -53,7 +53,7 @@ func GetDeploymentTypes(ctx *pulumi.Context, args *GetDeploymentTypesArgs, opts 
 
 // A collection of arguments for invoking getDeploymentTypes.
 type GetDeploymentTypesArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
 	DeploymentType *string `pulumi:"deploymentType"`
@@ -67,7 +67,7 @@ type GetDeploymentTypesArgs struct {
 // A collection of values returned by getDeploymentTypes.
 type GetDeploymentTypesResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType *string `pulumi:"deploymentType"`
 	// The list of deployment_type_collection.
 	DeploymentTypeCollections []GetDeploymentTypesDeploymentTypeCollection `pulumi:"deploymentTypeCollections"`
@@ -95,7 +95,7 @@ func GetDeploymentTypesOutput(ctx *pulumi.Context, args GetDeploymentTypesOutput
 
 // A collection of arguments for invoking getDeploymentTypes.
 type GetDeploymentTypesOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
 	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
@@ -129,7 +129,7 @@ func (o GetDeploymentTypesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentTypesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 func (o GetDeploymentTypesResultOutput) DeploymentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDeploymentTypesResult) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }

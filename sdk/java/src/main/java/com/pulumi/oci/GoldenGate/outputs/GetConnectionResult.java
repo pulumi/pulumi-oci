@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionAdditionalAttribute;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionBootstrapServer;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionIngressIp;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -16,6 +17,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetConnectionResult {
+    /**
+     * @return Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * 
+     */
+    private String accessKeyId;
     private String accountKey;
     /**
      * @return Sets the Azure storage account name.
@@ -53,9 +59,14 @@ public final class GetConnectionResult {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: &#39;com.stc.jmsjca.core.JConnectionFactoryXA&#39;
+     * 
+     */
+    private String connectionFactory;
     private String connectionId;
     /**
-     * @return JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
+     * @return Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
      * 
      */
     private String connectionString;
@@ -64,7 +75,13 @@ public final class GetConnectionResult {
      * 
      */
     private String connectionType;
+    /**
+     * @return JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * 
+     */
+    private String connectionUrl;
     private String consumerProperties;
+    private String coreSiteXml;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      * 
@@ -121,12 +138,33 @@ public final class GetConnectionResult {
      */
     private String id;
     /**
-     * @return List of ingress IP addresses, from where the GoldenGate deployment connects to this connection&#39;s privateIp.
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
     private List<GetConnectionIngressIp> ingressIps;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * @return The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
+     * 
+     */
+    private String jndiConnectionFactory;
+    /**
+     * @return The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
+     * 
+     */
+    private String jndiInitialContextFactory;
+    /**
+     * @return The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
+     * 
+     */
+    private String jndiProviderUrl;
+    private String jndiSecurityCredentials;
+    /**
+     * @return Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
+     * 
+     */
+    private String jndiSecurityPrincipal;
+    /**
+     * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     private String keyId;
@@ -163,8 +201,9 @@ public final class GetConnectionResult {
      */
     private String region;
     private String sasToken;
+    private String secretAccessKey;
     /**
-     * @return Security protocol for PostgreSQL.
+     * @return Security Protocol for Microsoft SQL Server/PostgreSQL.
      * 
      */
     private String securityProtocol;
@@ -173,6 +212,20 @@ public final class GetConnectionResult {
      * 
      */
     private String sessionMode;
+    /**
+     * @return If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     * 
+     */
+    private Boolean shouldUseJndi;
+    /**
+     * @return If set to true, the driver validates the certificate that is sent by the database server.
+     * 
+     */
+    private Boolean shouldValidateServerCertificate;
+    /**
+     * @return Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * 
+     */
     private String sslCa;
     private String sslCert;
     private String sslCrl;
@@ -231,23 +284,30 @@ public final class GetConnectionResult {
      */
     private String url;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
      * 
      */
     private String userId;
     /**
-     * @return The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
     private String username;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     private String vaultId;
     private String wallet;
 
     private GetConnectionResult() {}
+    /**
+     * @return Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * 
+     */
+    public String accessKeyId() {
+        return this.accessKeyId;
+    }
     public String accountKey() {
         return this.accountKey;
     }
@@ -303,11 +363,18 @@ public final class GetConnectionResult {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: &#39;com.stc.jmsjca.core.JConnectionFactoryXA&#39;
+     * 
+     */
+    public String connectionFactory() {
+        return this.connectionFactory;
+    }
     public String connectionId() {
         return this.connectionId;
     }
     /**
-     * @return JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
+     * @return Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
      * 
      */
     public String connectionString() {
@@ -320,8 +387,18 @@ public final class GetConnectionResult {
     public String connectionType() {
         return this.connectionType;
     }
+    /**
+     * @return JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * 
+     */
+    public String connectionUrl() {
+        return this.connectionUrl;
+    }
     public String consumerProperties() {
         return this.consumerProperties;
+    }
+    public String coreSiteXml() {
+        return this.coreSiteXml;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -401,14 +478,45 @@ public final class GetConnectionResult {
         return this.id;
     }
     /**
-     * @return List of ingress IP addresses, from where the GoldenGate deployment connects to this connection&#39;s privateIp.
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
     public List<GetConnectionIngressIp> ingressIps() {
         return this.ingressIps;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * @return The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
+     * 
+     */
+    public String jndiConnectionFactory() {
+        return this.jndiConnectionFactory;
+    }
+    /**
+     * @return The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
+     * 
+     */
+    public String jndiInitialContextFactory() {
+        return this.jndiInitialContextFactory;
+    }
+    /**
+     * @return The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
+     * 
+     */
+    public String jndiProviderUrl() {
+        return this.jndiProviderUrl;
+    }
+    public String jndiSecurityCredentials() {
+        return this.jndiSecurityCredentials;
+    }
+    /**
+     * @return Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
+     * 
+     */
+    public String jndiSecurityPrincipal() {
+        return this.jndiSecurityPrincipal;
+    }
+    /**
+     * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     public String keyId() {
@@ -473,8 +581,11 @@ public final class GetConnectionResult {
     public String sasToken() {
         return this.sasToken;
     }
+    public String secretAccessKey() {
+        return this.secretAccessKey;
+    }
     /**
-     * @return Security protocol for PostgreSQL.
+     * @return Security Protocol for Microsoft SQL Server/PostgreSQL.
      * 
      */
     public String securityProtocol() {
@@ -487,6 +598,24 @@ public final class GetConnectionResult {
     public String sessionMode() {
         return this.sessionMode;
     }
+    /**
+     * @return If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     * 
+     */
+    public Boolean shouldUseJndi() {
+        return this.shouldUseJndi;
+    }
+    /**
+     * @return If set to true, the driver validates the certificate that is sent by the database server.
+     * 
+     */
+    public Boolean shouldValidateServerCertificate() {
+        return this.shouldValidateServerCertificate;
+    }
+    /**
+     * @return Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * 
+     */
     public String sslCa() {
         return this.sslCa;
     }
@@ -579,21 +708,21 @@ public final class GetConnectionResult {
         return this.url;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
      * 
      */
     public String userId() {
         return this.userId;
     }
     /**
-     * @return The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
     public String username() {
         return this.username;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     public String vaultId() {
@@ -612,6 +741,7 @@ public final class GetConnectionResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String accessKeyId;
         private String accountKey;
         private String accountName;
         private List<GetConnectionAdditionalAttribute> additionalAttributes;
@@ -621,10 +751,13 @@ public final class GetConnectionResult {
         private String clientId;
         private String clientSecret;
         private String compartmentId;
+        private String connectionFactory;
         private String connectionId;
         private String connectionString;
         private String connectionType;
+        private String connectionUrl;
         private String consumerProperties;
+        private String coreSiteXml;
         private String databaseId;
         private String databaseName;
         private String dbSystemId;
@@ -637,6 +770,11 @@ public final class GetConnectionResult {
         private String host;
         private String id;
         private List<GetConnectionIngressIp> ingressIps;
+        private String jndiConnectionFactory;
+        private String jndiInitialContextFactory;
+        private String jndiProviderUrl;
+        private String jndiSecurityCredentials;
+        private String jndiSecurityPrincipal;
         private String keyId;
         private String keyStore;
         private String keyStorePassword;
@@ -651,8 +789,11 @@ public final class GetConnectionResult {
         private String publicKeyFingerprint;
         private String region;
         private String sasToken;
+        private String secretAccessKey;
         private String securityProtocol;
         private String sessionMode;
+        private Boolean shouldUseJndi;
+        private Boolean shouldValidateServerCertificate;
         private String sslCa;
         private String sslCert;
         private String sslCrl;
@@ -677,6 +818,7 @@ public final class GetConnectionResult {
         public Builder() {}
         public Builder(GetConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.accessKeyId = defaults.accessKeyId;
     	      this.accountKey = defaults.accountKey;
     	      this.accountName = defaults.accountName;
     	      this.additionalAttributes = defaults.additionalAttributes;
@@ -686,10 +828,13 @@ public final class GetConnectionResult {
     	      this.clientId = defaults.clientId;
     	      this.clientSecret = defaults.clientSecret;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.connectionFactory = defaults.connectionFactory;
     	      this.connectionId = defaults.connectionId;
     	      this.connectionString = defaults.connectionString;
     	      this.connectionType = defaults.connectionType;
+    	      this.connectionUrl = defaults.connectionUrl;
     	      this.consumerProperties = defaults.consumerProperties;
+    	      this.coreSiteXml = defaults.coreSiteXml;
     	      this.databaseId = defaults.databaseId;
     	      this.databaseName = defaults.databaseName;
     	      this.dbSystemId = defaults.dbSystemId;
@@ -702,6 +847,11 @@ public final class GetConnectionResult {
     	      this.host = defaults.host;
     	      this.id = defaults.id;
     	      this.ingressIps = defaults.ingressIps;
+    	      this.jndiConnectionFactory = defaults.jndiConnectionFactory;
+    	      this.jndiInitialContextFactory = defaults.jndiInitialContextFactory;
+    	      this.jndiProviderUrl = defaults.jndiProviderUrl;
+    	      this.jndiSecurityCredentials = defaults.jndiSecurityCredentials;
+    	      this.jndiSecurityPrincipal = defaults.jndiSecurityPrincipal;
     	      this.keyId = defaults.keyId;
     	      this.keyStore = defaults.keyStore;
     	      this.keyStorePassword = defaults.keyStorePassword;
@@ -716,8 +866,11 @@ public final class GetConnectionResult {
     	      this.publicKeyFingerprint = defaults.publicKeyFingerprint;
     	      this.region = defaults.region;
     	      this.sasToken = defaults.sasToken;
+    	      this.secretAccessKey = defaults.secretAccessKey;
     	      this.securityProtocol = defaults.securityProtocol;
     	      this.sessionMode = defaults.sessionMode;
+    	      this.shouldUseJndi = defaults.shouldUseJndi;
+    	      this.shouldValidateServerCertificate = defaults.shouldValidateServerCertificate;
     	      this.sslCa = defaults.sslCa;
     	      this.sslCert = defaults.sslCert;
     	      this.sslCrl = defaults.sslCrl;
@@ -741,6 +894,11 @@ public final class GetConnectionResult {
     	      this.wallet = defaults.wallet;
         }
 
+        @CustomType.Setter
+        public Builder accessKeyId(String accessKeyId) {
+            this.accessKeyId = Objects.requireNonNull(accessKeyId);
+            return this;
+        }
         @CustomType.Setter
         public Builder accountKey(String accountKey) {
             this.accountKey = Objects.requireNonNull(accountKey);
@@ -793,6 +951,11 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder connectionFactory(String connectionFactory) {
+            this.connectionFactory = Objects.requireNonNull(connectionFactory);
+            return this;
+        }
+        @CustomType.Setter
         public Builder connectionId(String connectionId) {
             this.connectionId = Objects.requireNonNull(connectionId);
             return this;
@@ -808,8 +971,18 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder connectionUrl(String connectionUrl) {
+            this.connectionUrl = Objects.requireNonNull(connectionUrl);
+            return this;
+        }
+        @CustomType.Setter
         public Builder consumerProperties(String consumerProperties) {
             this.consumerProperties = Objects.requireNonNull(consumerProperties);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder coreSiteXml(String coreSiteXml) {
+            this.coreSiteXml = Objects.requireNonNull(coreSiteXml);
             return this;
         }
         @CustomType.Setter
@@ -874,6 +1047,31 @@ public final class GetConnectionResult {
         }
         public Builder ingressIps(GetConnectionIngressIp... ingressIps) {
             return ingressIps(List.of(ingressIps));
+        }
+        @CustomType.Setter
+        public Builder jndiConnectionFactory(String jndiConnectionFactory) {
+            this.jndiConnectionFactory = Objects.requireNonNull(jndiConnectionFactory);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder jndiInitialContextFactory(String jndiInitialContextFactory) {
+            this.jndiInitialContextFactory = Objects.requireNonNull(jndiInitialContextFactory);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder jndiProviderUrl(String jndiProviderUrl) {
+            this.jndiProviderUrl = Objects.requireNonNull(jndiProviderUrl);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder jndiSecurityCredentials(String jndiSecurityCredentials) {
+            this.jndiSecurityCredentials = Objects.requireNonNull(jndiSecurityCredentials);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder jndiSecurityPrincipal(String jndiSecurityPrincipal) {
+            this.jndiSecurityPrincipal = Objects.requireNonNull(jndiSecurityPrincipal);
+            return this;
         }
         @CustomType.Setter
         public Builder keyId(String keyId) {
@@ -949,6 +1147,11 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder secretAccessKey(String secretAccessKey) {
+            this.secretAccessKey = Objects.requireNonNull(secretAccessKey);
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityProtocol(String securityProtocol) {
             this.securityProtocol = Objects.requireNonNull(securityProtocol);
             return this;
@@ -956,6 +1159,16 @@ public final class GetConnectionResult {
         @CustomType.Setter
         public Builder sessionMode(String sessionMode) {
             this.sessionMode = Objects.requireNonNull(sessionMode);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldUseJndi(Boolean shouldUseJndi) {
+            this.shouldUseJndi = Objects.requireNonNull(shouldUseJndi);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldValidateServerCertificate(Boolean shouldValidateServerCertificate) {
+            this.shouldValidateServerCertificate = Objects.requireNonNull(shouldValidateServerCertificate);
             return this;
         }
         @CustomType.Setter
@@ -1065,6 +1278,7 @@ public final class GetConnectionResult {
         }
         public GetConnectionResult build() {
             final var o = new GetConnectionResult();
+            o.accessKeyId = accessKeyId;
             o.accountKey = accountKey;
             o.accountName = accountName;
             o.additionalAttributes = additionalAttributes;
@@ -1074,10 +1288,13 @@ public final class GetConnectionResult {
             o.clientId = clientId;
             o.clientSecret = clientSecret;
             o.compartmentId = compartmentId;
+            o.connectionFactory = connectionFactory;
             o.connectionId = connectionId;
             o.connectionString = connectionString;
             o.connectionType = connectionType;
+            o.connectionUrl = connectionUrl;
             o.consumerProperties = consumerProperties;
+            o.coreSiteXml = coreSiteXml;
             o.databaseId = databaseId;
             o.databaseName = databaseName;
             o.dbSystemId = dbSystemId;
@@ -1090,6 +1307,11 @@ public final class GetConnectionResult {
             o.host = host;
             o.id = id;
             o.ingressIps = ingressIps;
+            o.jndiConnectionFactory = jndiConnectionFactory;
+            o.jndiInitialContextFactory = jndiInitialContextFactory;
+            o.jndiProviderUrl = jndiProviderUrl;
+            o.jndiSecurityCredentials = jndiSecurityCredentials;
+            o.jndiSecurityPrincipal = jndiSecurityPrincipal;
             o.keyId = keyId;
             o.keyStore = keyStore;
             o.keyStorePassword = keyStorePassword;
@@ -1104,8 +1326,11 @@ public final class GetConnectionResult {
             o.publicKeyFingerprint = publicKeyFingerprint;
             o.region = region;
             o.sasToken = sasToken;
+            o.secretAccessKey = secretAccessKey;
             o.securityProtocol = securityProtocol;
             o.sessionMode = sessionMode;
+            o.shouldUseJndi = shouldUseJndi;
+            o.shouldValidateServerCertificate = shouldValidateServerCertificate;
             o.sslCa = sslCa;
             o.sslCert = sslCert;
             o.sslCrl = sslCrl;

@@ -58,6 +58,10 @@ export interface GetBuildPipelineStageResult {
      */
     readonly buildPipelineStageType: string;
     /**
+     * The information about build runner.
+     */
+    readonly buildRunnerShapeConfigs: outputs.DevOps.GetBuildPipelineStageBuildRunnerShapeConfig[];
+    /**
      * Collection of build sources.
      */
     readonly buildSourceCollections: outputs.DevOps.GetBuildPipelineStageBuildSourceCollection[];

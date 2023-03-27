@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Autonomous_database_backup_display_name,
         ///         State = @var.Autonomous_database_backup_state,
+        ///         Type = @var.Autonomous_database_backup_type,
         ///     });
         /// 
         /// });
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Autonomous_database_backup_display_name,
         ///         State = @var.Autonomous_database_backup_state,
+        ///         Type = @var.Autonomous_database_backup_type,
         ///     });
         /// 
         /// });
@@ -113,6 +115,12 @@ namespace Pulumi.Oci.Database
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only backups that matches with the given type of Backup.
+        /// </summary>
+        [Input("type")]
+        public string? Type { get; set; }
+
         public GetAutonomousDatabaseBackupsArgs()
         {
         }
@@ -153,6 +161,12 @@ namespace Pulumi.Oci.Database
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only backups that matches with the given type of Backup.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
         public GetAutonomousDatabaseBackupsInvokeArgs()
         {
         }
@@ -188,6 +202,10 @@ namespace Pulumi.Oci.Database
         /// The current state of the backup.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The type of backup.
+        /// </summary>
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetAutonomousDatabaseBackupsResult(
@@ -203,7 +221,9 @@ namespace Pulumi.Oci.Database
 
             string id,
 
-            string? state)
+            string? state,
+
+            string? type)
         {
             AutonomousDatabaseBackups = autonomousDatabaseBackups;
             AutonomousDatabaseId = autonomousDatabaseId;
@@ -212,6 +232,7 @@ namespace Pulumi.Oci.Database
             Filters = filters;
             Id = id;
             State = state;
+            Type = type;
         }
     }
 }
